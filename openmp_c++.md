@@ -176,7 +176,7 @@ annotate the pragma omp directive as such:
 Variables that are created and assigned inside of a parallel section of code will be inherently be
 private, and variables created outside of parallel sections will be inherently public.
 
-Example:
+### Example:
 Let’s adapt our ‘Hello World’ code to utilize private variables as an example.
 Starting with the code we left off with, let’s create a variable to store the thread id of each
 process.
