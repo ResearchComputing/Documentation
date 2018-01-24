@@ -382,6 +382,7 @@ int main(int argc, char** argv){
     }
     return 0;
 }
+```
 Let’s now set up our work sharing directive. We will use the `#pragma omp for` to declare the
 loop as to be work sharing, followed by the actual C++ loop. Because we want to add all
 number from 1 to 1000, we will initialize out loop at one and end at 1000.
@@ -406,6 +407,7 @@ int main(int argc, char** argv){
     }
     return 0;
 }
+```
 Now we must join our threads. To do this we must use a critical directive to create a thread safe
 section of code. We do this with `#pragma omp critical` directive. Lastly we add partial sum to
 total sum and print out the result outside the parallel section of code.
@@ -438,6 +440,7 @@ int main(int argc, char** argv){
     printf(“Total Sum: %d\n”, total_Sum);
     return 0;
 }
+```
 This will complete our parallel summation. Compiling and submitting our code will result in this
 output:
 
