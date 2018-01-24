@@ -329,7 +329,7 @@ integer ierror          !An error handling variable.
 
 Let’s implement message passing in an example:
 
-__Example__:
+### Example
 
 We will pass the number 42 from one process to another. We will use our “Hello World” program
 as a starting point for this program. Let’s begin by renaming our program and creating a variable
@@ -470,7 +470,7 @@ similarly, and is essentially the converse of the scatter function. Further exam
 the gather function can be found in the MPI tutorials listed as resources at the beginning of this
 document.
 
-__Example__:
+### Example
 
 We will create a new program that scatters one element of a data array to each process.
 Specifically, this code will scatter the four elements of a vector array to four different processes.
