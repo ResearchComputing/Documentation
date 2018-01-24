@@ -33,13 +33,13 @@ will provide openmp functionality.
 Let’s now begin our program by constructing the main body of the program. We will use
 `OMP_GET_THREAD_NUM()` to obtain the thread id of the process. This will let us identify each of
 our threads using that unique id number.
-```diff
+```fortran
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
-+ PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
 
-+ END
+END
 ```
 Let’s compile our code and see what happens. We must first load the compiler module we want
 into our environment. We can do so as such:
@@ -121,13 +121,15 @@ shell.__
 Now let’s re-compile the code and run it to see what happens:
 
 __GNU Fortran__
+```bash
 gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
-
+```
 Or
 
 __Intel Fortran__
+```bash
 ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
-
+```
 Resubmit our job script and we should end with an output file similar to this one:
 
 Hello from process: 3
