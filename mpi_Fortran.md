@@ -1,14 +1,14 @@
-# Introduction
+# MPI Fortran
 Parallel programs enable users to fully utilize the multi-node structure of supercomputing
 clusters. Message Passing Interface (MPI) is a standard used to allow different nodes on a
 cluster to communicate with each other. In this tutorial we will be using the Intel Fortran
 Compiler, GCC, IntelMPI, and OpenMPI to create a multiprocessor programs in Fortran.
 This tutorial assumes the user has experience in both the Linux terminal and Fortran.
 
-__Helpful MPI tutorials:__
-- http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html
-- http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml
-- https://computing.llnl.gov/tutorials/mpi/
+__Helpful MPI tutorials:__  
+http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html  
+http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml  
+https://computing.llnl.gov/tutorials/mpi/
 
 # Setup and “Hello World”
 Begin by logging into the cluster and using ssh to log in to a Summit compile node. This can be
@@ -40,6 +40,7 @@ module load impi
 This should prepare your environment with all the necessary tools to compile and run your MPI
 code. Let’s now begin to construct our Fortran program. In this tutorial, we will name our
 program file: `hello_world_mpi.f90`
+
 Open `hello_world_mpi.f90` and begin by including the mpi library `'mpi.h'` , and titling the
 `program hello_world_mpi`
 
@@ -138,7 +139,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 ```
 
 The flag -np specifies the number of processor that are to be utilized in execution of the
-program.
+program.  
 In your job submission script, load the same compiler and OpenMPI choices you used above to
 create and compile the program, and submit the job with slurm to run the executable. Your job
 submission script should look something like this:
@@ -291,7 +292,7 @@ Hello World from process 3 of 4
 # Message Passing
 Message passing is the primary utility in the MPI application interface that allows for processes
 to communicate with each other. Next, we will learn the basics of message passing between
-two processes.
+two processes.  
 Message passing in MPI is handled by the corresponding functions and their arguments:
 
 ```fortran
@@ -563,8 +564,10 @@ END PROGRAM
 Running this code will print out the four numbers in the distro array as four separate numbers
 each from different processes (note the order of ranks isn’t necessarily sequential):
 
+```
 Process 1 received: 39
 Process 0 received: 72
 Process 3 received: 129
 Process 2 received: 42
+```
 
