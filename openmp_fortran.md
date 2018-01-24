@@ -320,69 +320,100 @@ Work-sharing directives allow for simple and effective splitting of normally ser
 parallel sections of code. In this section we will learn how to implement omp do directive.
 The directive omp do divides a normally serial for loop into a parallel task. We can implement
 this directive as such:
+```fortran
 !$OMP DO
 …
 !$OMP END DO
-Example:
+```
+### Example
 Let’s write a program to add all the numbers between 1 and 1000. Begin with a program title
 and the omp_lib header:
+```fortran
 PROGRAM Parallel_Do
 USE OMP_LIB
+
 END
+```
 Now let’s go ahead and setup variables for our parallel code. Let’s first create variables
-partial_Sum and total_Sum to hold each thread’s partial summation and to hold the total sum
+`partial_Sum` and `total_Sum` to hold each thread’s partial summation and to hold the total sum
 of all threads respectively.
+```fortran
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
+
 INTEGER :: partial_Sum, total_Sum
+
 END
-Next let’s begin our parallel section with !$OMP PARALLEL . We will also set partial_Sum to be
-a private variable and total_Sum to be a shared variable. We shall initialize each variable in the
+```
+Next let’s begin our parallel section with `!$OMP PARALLEL` . We will also set `partial_Sum` to be
+a private variable and `total_Sum` to be a shared variable. We shall initialize each variable in the
 parallel section.
+```fortran
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
+
 INTEGER :: partial_Sum, total_Sum
+
 !$OMP PARALLEL PRIVATE(partial_Sum) SHARED(total_Sum)
-partial_Sum = 0;
-total_Sum = 0;
+
+    partial_Sum = 0;
+    total_Sum = 0;
+
 !$OMP END PARALLEL
+
 END
-Let’s now set up our work sharing directive. We will use the !$OMP DO to declare the loop to be
+```
+Let’s now set up our work sharing directive. We will use the `!$OMP DO` to declare the loop to be
 work sharing, followed by the actual Fortran loop. Because we want to add all number from 1 to
 1000, we will initialize out loop at one and end at 1000.
+```fortran
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
+
 INTEGER :: partial_Sum, total_Sum
+
 !$OMP PARALLEL PRIVATE(partial_Sum) SHARED(total_Sum)
-partial_Sum = 0;
-total_Sum = 0;
-!$OMP DO
-DO i=1,1000
-partial_Sum = partial_Sum + i
-END DO
+    partial_Sum = 0;
+    total_Sum = 0;
+    
+    !$OMP DO
+    DO i=1,1000
+        partial_Sum = partial_Sum + i
+    END DO
+
 !$OMP END PARALLEL
 END
+```
 Now we must join our threads. To do this we must use a critical directive to create a thread safe
-section of code. We do this with the !$OMP CRITICAL directive. Lastly we add partial sum to
+section of code. We do this with the `!$OMP CRITICAL` directive. Lastly we add partial sum to
 total sum and print out the result outside the parallel section of code.
+```fortran
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
+
 INTEGER :: partial_Sum, total_Sum
+
 !$OMP PARALLEL PRIVATE(partial_Sum) SHARED(total_Sum)
-partial_Sum = 0;
-total_Sum = 0;
-!$OMP DO
-DO i=1,1000
-partial_Sum = partial_Sum + i
-END DO
-!$OMP END DO
-!$OMP CRITICAL
-total_Sum = total_Sum + partial_Sum
-!$OMP END CRITICAL
+    partial_Sum = 0;
+    total_Sum = 0;
+
+    !$OMP DO
+    DO i=1,1000
+        partial_Sum = partial_Sum + i
+    END DO
+    !$OMP END DO
+    
+    !$OMP CRITICAL
+        total_Sum = total_Sum + partial_Sum
+    !$OMP END CRITICAL
+    
 !$OMP END PARALLEL
 PRINT *, “Total Sum: ”, total_Sum
+
 END
+```
 This will complete our parallel summation. Compiling and submitting our code will result in this
 output:
+```
 Total Sum: 500500
-
+```
