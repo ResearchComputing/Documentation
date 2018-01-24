@@ -22,8 +22,10 @@ nano parallel_hello_world.f90
 ```
 We will begin with the program title and the use statement at the top of the program:
 ```fortran
+
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
+
 ```
 These flags allow us to utilize the omp library in our program. The ‘USE OMP_LIB’ line of code
 will provide openmp functionality.
@@ -31,13 +33,13 @@ will provide openmp functionality.
 Let’s now begin our program by constructing the main body of the program. We will use
 `OMP_GET_THREAD_NUM()` to obtain the thread id of the process. This will let us identify each of
 our threads using that unique id number.
-```
+```diff
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
-PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
++ PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
 
-END
++ END
 ```
 Let’s compile our code and see what happens. We must first load the compiler module we want
 into our environment. We can do so as such:
