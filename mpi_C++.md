@@ -449,26 +449,26 @@ the use of two functions:
 
 __MPI_Scatter__:
 ```c++
-    void* send_Var;         //Address of the variable that will be scattered.
-    int send_Count;         //Number of elements that will be scattered.
-    MPI_Datatype send_Type; //MPI Datatype of the data that is scattered.
-    void* recv_Var;         //Address of the variable that will store the scattered data.
-    int recv_Count;         //Number of data elements that will be received per process.
-    MPI_Datatype recv_Type; //MPI Datatype of the data that will be received.
-    int root_Process;       //The rank of the process that will scatter the information.
-    MPI_Comm comm;          //The MPI_Communicator.
+void* send_Var;         //Address of the variable that will be scattered.
+int send_Count;         //Number of elements that will be scattered.
+MPI_Datatype send_Type; //MPI Datatype of the data that is scattered.
+void* recv_Var;         //Address of the variable that will store the scattered data.
+int recv_Count;         //Number of data elements that will be received per process.
+MPI_Datatype recv_Type; //MPI Datatype of the data that will be received.
+int root_Process;       //The rank of the process that will scatter the information.
+MPI_Comm comm;          //The MPI_Communicator.
 ```
 
 __MPI_Gather__:
 ```c++
-    void* send_Var;         //Address of the variable that will be sent.
-    int send_Count;         //Number of data elements that will sent .
-    MPI_Datatype send_Type; //MPI Datatype of the data that is sent.
-    void* recv_Var;         //Address of the variable that will store the received data.
-    int recv_Count;         //Number of data elements per process that will be received.
-    MPI_Datatype recv_Type; //MPI Datatype of the data that will be received.
-    int root_Process;       //The rank of the process rank that will gather the information.
-    MPI_Comm comm;          //The MPI_Communicator.
+void* send_Var;         //Address of the variable that will be sent.
+int send_Count;         //Number of data elements that will sent .
+MPI_Datatype send_Type; //MPI Datatype of the data that is sent.
+void* recv_Var;         //Address of the variable that will store the received data.
+int recv_Count;         //Number of data elements per process that will be received.
+MPI_Datatype recv_Type; //MPI Datatype of the data that will be received.
+int root_Process;       //The rank of the process rank that will gather the information.
+MPI_Comm comm;          //The MPI_Communicator.
 ```
 In order to get a better grasp on these functions, let’s go ahead and create a program that will
 utilize the scatter function. Note that the gather function (not shown in the example) works
