@@ -176,7 +176,7 @@ annotate the pragma omp directive as such:
 Variables that are created and assigned inside of a parallel section of code will be inherently be
 private, and variables created outside of parallel sections will be inherently public.
 
-### Example:
+### Example
 Let’s adapt our ‘Hello World’ code to utilize private variables as an example.
 Starting with the code we left off with, let’s create a variable to store the thread id of each
 process.
@@ -250,7 +250,7 @@ parallel process.
 A critical directive ensures that a line of code is only run by one process at a time, ensuring
 thread safety in the body of code.
 
-### Example:
+### Example
 
 Let's implement an OpenMP barrier by making our ‘Hello World’ program print its processes in
 order. Beginning with the code we created in the previous section, let’s nest our print statement
@@ -314,6 +314,8 @@ int main(int argc, char** argv){
     
     #pragma omp parallel
     {
+        thread_id = omp_get_thread_num();
+    
         for( int i = 0; i < omp_get_max_threads(); i++){
             if(i == omp_get_thread_num()){
                 printf(“Hello from process: %d\n”, thread_id);
@@ -341,7 +343,7 @@ this directive as such:
 ```c++
 #pragma omp for { … }
 ```
-### Example:
+### Example
 Let’s write a program to add all the numbers between 1 and 1000. Begin with a main function
 and the stdio and omp headers:
 ```c++
