@@ -1,17 +1,17 @@
-# Introduction
+# MPI C++
 Parallel programs enable users to fully utilize the multi-node structure of supercomputing
 clusters. Message Passing Interface (MPI) is a standard used to allow several different
 processors on a cluster to communicate with each other. In this tutorial we will be using the Intel
 C++ Compiler, GCC, IntelMPI, and OpenMPI to create a multiprocessor ‘hello world’ program in
-C++.
+C++.  
 This tutorial assumes the user has experience in both the Linux terminal and C++.
 
 __Resources:__
 
-- http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html
-- http://mpitutorial.com/tutorials/
-- http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml
-- https://computing.llnl.gov/tutorials/mpi/
+http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html  
+http://mpitutorial.com/tutorials/  
+http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml  
+https://computing.llnl.gov/tutorials/mpi/  
 
 # Setup and “Hello, World”
 
@@ -211,9 +211,11 @@ Like many other parallel programming utilities, synchronization is an essential 
 safety and ensuring certain sections of code are handled at certain points. `MPI_Barrier` is a
 process lock that holds each process at a certain line of code until all processes have reached
 that line in code. `MPI_Barrier` can be called as such:
+
 ```c++
 MPI_Barrier(MPI_Comm comm);
 ```
+
 To get a handle on barriers, let’s modify our "Hello World" program so that it prints out each
 process in order of thread id. Starting with our "Hello World" code from the previous section,
 begin by nesting our print statement in a loop:
@@ -264,6 +266,7 @@ int main(int argc, char** argv){
 
 Lastly, implement the barrier function in the loop. This will ensure that all processes are
 synchronized when passing through the loop.
+
 ```c++
 #include <stdio.h>
 #include <mpi.h>
@@ -288,12 +291,14 @@ int main(int argc, char** argv){
 ```
 
 Compiling and submitting this code will result in this output:
+
 ```
 Hello World from process 0 of 4
 Hello World from process 1 of 4
 Hello World from process 2 of 4
 Hello World from process 3 of 4
 ```
+
 # Message Passing
 
 Message passing is the primary utility in the MPI application interface that allows for processes
@@ -307,7 +312,8 @@ MPI_Send(void* message, int count, MPI_Datatype datatype, int dest, int tag, MPI
 MPI_Recv(void* data, int count, MPI_Datatype datatype, int from, int tag, MPI_Comm comm, MPI_Status* status);
 ```
 
-The arguments are as follows:.
+The arguments are as follows:
+
 *MPI_Send*
 ```c++
 void* message;          //Address for the message you are sending.
@@ -527,6 +533,7 @@ int main(int argc, char** argv){
 
 Now we will begin the use of group operators. We will use the operator scatter to distribute
 `distro_Array` into `scattered_Data` . Let’s take a look at the parameters we will use in this function:
+
 ```c++
 MPI_Scatter(
     &distro_Array,      //Address of array we are scattering from.
