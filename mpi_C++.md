@@ -336,7 +336,7 @@ MPI_Status* status;     //Status object.
 
 Let’s implement message passing in an example:
 
-__Example__
+### Example
 
 We will create a two-process process that will pass the number 42 from one process to another.
 We will use our “Hello World” program as a starting point for this program. Let’s begin by
@@ -476,7 +476,7 @@ similarly, and is essentially the converse of the scatter function. Further exam
 the gather function can be found in the MPI tutorials listed as resources at the beginning of this
 document.
 
-__Example__
+### Example
 
 We will create a program that scatters one element of a data array to each process. Specifically,
 this code will scatter the four elements of an array to four different processes. We will start with
