@@ -29,7 +29,7 @@ Lastly we will run Matlab from the terminal.
 matlab -nosplash
 ```
 
-Note: You can run Matlab without the gui using the -nodesktop command when launching Matlab.
+Note: You can run Matlab without the gui using the `-nodesktop` command when launching Matlab.
 
 # Submitting Matlab Batch Jobs
 Here, we will learn how to run a Matlab script in a non-interactive batch job. For more general information on batch job scripts on Summit, please see:
@@ -37,7 +37,7 @@ Here, we will learn how to run a Matlab script in a non-interactive batch job. F
 <Batch Tutorial Link>
 
 Let’s begin by constructing a small Matlab script that prints ‘hello world’ to the user.
-The Matlab script we will use for the purposes of this tutorial is called “hello_world.m” and contains only one line, the Matlab command:
+The Matlab script we will use for the purposes of this tutorial is called `hello_world.m` and contains only one line, the Matlab command:
 
 ```matlab
 fprintf(‘Hello world\n’)
@@ -70,9 +70,9 @@ matlab -nodesktop -nodisplay -r ‘clear; hello_world;’
 This file has a few basic parts:
 
 1. The first line specifies that it is a bash shell script, and ensures the rest of the lines will be interpreted in the correct shell.
-2. The lines beginning with #SBATCH specify the slurm parameters that will be used for this job. These lines are viewed as comments by bash, but will be read by slurm.  Of particular note is the “--output” parameter which specifies the file where stderr and stdout (including the output from our Matlab script) will be written. For a description of the slurm parameters, please see the general Slurm documentation here: https://slurm.schedmd.com/sbatch.html
-3. The lines beginning with “module” purge any unneeded software and ensure that the appropriate Matlab module is loaded on the compute node. 
-4. The final line calls Matlab and instructs it to run our script. This entire line includes commands that are specific to Matlab; the “nodesktop” and “nodisplay” flags ensure that the Matlab Desktop will not open, and the “r” flag will run the script “hello_world”. The “clear” command forces Matlab to clear any existing variables, and is simply included as good coding practice.
+2. The lines beginning with `#SBATCH` specify the slurm parameters that will be used for this job. These lines are viewed as comments by bash, but will be read by slurm.  Of particular note is the `--output` parameter which specifies the file where stderr and stdout (including the output from our Matlab script) will be written. For a description of the slurm parameters, please see the general Slurm documentation here: https://slurm.schedmd.com/sbatch.html
+3. The lines beginning with `module purge` any unneeded software and ensure that the appropriate Matlab module is loaded on the compute node. 
+4. The final line calls Matlab and instructs it to run our script. This entire line includes commands that are specific to Matlab; the `nodesktop` and `nodisplay` flags ensure that the Matlab Desktop will not open, and the `r` flag will run the script `hello_world`. The `clear` command forces Matlab to clear any existing variables, and is simply included as good coding practice.
 
 You have now completed your batch script.  After saving the script and exiting your text editor, submit the job as follows:
 
