@@ -17,7 +17,6 @@ Videos:
 https://youtu.be/aUVdIShW7W4
 https://youtu.be/Q1_bhA7zgKg
 
-Template:
 Windows Template:
 
 1. Open the PuTTY application on your computer
@@ -28,6 +27,8 @@ Windows Template:
     * If you are logging in with a Vasco OTP device, enter your four-digit PIN plus the six digits shown when you push the button on your device. For example, if your PIN is “1234” and the device shows “567890”, you will type “1234567890”. Press enter.
     * Note that as a security feature, PuTTY does not display any text while you type your password
 Login screen for putty
+
+[alt text](https://www.colorado.edu/p113a299a3a0/sites/default/files/styles/medium/public/page/login.png?itok=23Wma08Q)
 
 Mac Template:
 
