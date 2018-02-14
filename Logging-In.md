@@ -13,9 +13,9 @@ For all other tasks, use:
 - Compile nodes
 Need more assistance? Watch a tutorial video or read the template
 
-Videos:
-https://youtu.be/aUVdIShW7W4
-https://youtu.be/Q1_bhA7zgKg
+Videos:  
+https://youtu.be/aUVdIShW7W4  
+https://youtu.be/Q1_bhA7zgKg  
 
 Windows Template:
 
@@ -28,7 +28,7 @@ Windows Template:
     * Note that as a security feature, PuTTY does not display any text while you type your password
 Login screen for putty
 
-[alt text](https://www.colorado.edu/p113a299a3a0/sites/default/files/styles/medium/public/page/login.png?itok=23Wma08Q)
+![alt text](https://www.colorado.edu/p113a299a3a0/sites/default/files/styles/medium/public/page/login.png?itok=23Wma08Q)
 
 Mac Template:
 
