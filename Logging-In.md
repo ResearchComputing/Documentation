@@ -1,16 +1,20 @@
-Logging into a Research Computing login node is the first step in accessing resources
-Requirements for logging in:
-- Research Computing account
-- Either Duo or an OTP device to prove your identity
-- The PuTTY application (if you are a Windows user)
-Use login nodes only for:
-- Editing
-- Data transfer
-- Job submission
-- Accessing storage resources
-For all other tasks, use:
-- Scheduled or interactive jobs
-- Compile nodes
+Logging into a Research Computing login node is the first step in accessing resources  
+
+- Requirements for logging in:
+    + Research Computing account
+    + Either Duo or an OTP device to prove your identity
+    + The PuTTY application (if you are a Windows user)  
+
+- Use login nodes only for:
+    + Editing
+    + Data transfer
+    + Job submission
+    + Accessing storage resources  
+
+- For all other tasks, use:
+    + Scheduled or interactive jobs
+    + Compile nodes  
+
 Need more assistance? Watch a tutorial video or read the template
 
 Videos:  
