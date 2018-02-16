@@ -34,8 +34,6 @@ You may shorten the command to `ml`, but the shortened command requires differen
          * Before the actual executable is called
 
 Command                 | Shortened Command            | Description  | Example |
-***
-
 ----------------------- | ---------------------------- | ------------ | --------|
 `module avail`          | `ml av`                      | List available software. Modules not listed here may have unmet dependencies which must be loaded for the module to be available. | `module avail`
 `module spider <module>`| `ml spider <module>`         | Searches for a particular software. | `module spider openmpi`
