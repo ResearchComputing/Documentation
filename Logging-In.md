@@ -17,7 +17,8 @@ Logging into a Research Computing login node is the first step in accessing reso
 
 Need more assistance? Watch a tutorial video or read the template
 
-Videos:  
+## Videos:  
+
 - [Logging in from a Windows Machine](https://youtu.be/aUVdIShW7W4)  
 - [Logging in from a Mac](https://youtu.be/Q1_bhA7zgKg)  
 
