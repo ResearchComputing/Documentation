@@ -4,7 +4,7 @@
 
 ## Getting Access
 - [Logging In](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Logging-In)
-- [Loading Modules]()
+- [Loading Modules](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Loading-Modules)
 - [Allocations]()
 - [Blanca Access]()
 - [Peta Library]()
