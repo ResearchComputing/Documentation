@@ -1,5 +1,3 @@
-# Accessing RMACC Summit using XSEDE credentials
-
 ## Getting an XSEDE account
 
 Visit the XSEDE User Portal and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
