@@ -2,6 +2,10 @@
 
 Visit the XSEDE User Portal and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
 
+[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-02-20%20at%2012.49.12%20PM.png]]
+
+[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%2010.29.51%20AM.png]]
+
 ## Configuring Duo
 
 Once your XSEDE account has been created, follow the Multi-Factor Authentication setup instructions on the XSEDE website. Multi-factor authentication with Duo is required for access to the XSEDE SSO Hub, which provides access to RMACC Summit.
