@@ -18,4 +18,8 @@ Send an email from your institutional email address to rc-help@colorado.edu requ
 
 Use an ssh client to connect to the XSEDE SSO Hub using your XSEDE credentials. You will be prompted to authenticate both using your XSEDE password and via Duo.
 
+[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.49.55%20AM.png]]
+
 From there, use gsissh (available in the SSO Hub environment) to log into rmacc-summit, which serves as an alias for the CU Boulder RC login environment.
+
+[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.54.13%20AM.png]]
