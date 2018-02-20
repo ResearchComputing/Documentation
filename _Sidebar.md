@@ -3,6 +3,7 @@
 [Home](https://github.com/ResearchComputing/Wiki_Documentation/wiki)
 
 ## Getting Access
+- [XSEDE accounts](XSEDE)
 - [Logging In](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Logging-In)
 - [Loading Modules](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Loading-Modules)
 - [Allocations]()
