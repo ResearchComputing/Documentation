@@ -18,7 +18,7 @@
 - [Sandstone]()
 
 ## Parallel Programming
-- [Best Coding Practices](Best-Coding-Practices)
+- [Coding Best Practices](Coding-Best-Practices)
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
 - [Matlab](Matlab)
 - MPI
