@@ -22,7 +22,7 @@ Need more assistance? Watch a tutorial video or read the template
 
 ## Template:
 
-Loading Modules Template
+Loading Modules
 
 The module command has a variety of sub-commands, outlined in the table below.
 You may shorten the command to `ml`, but the shortened command requires different syntax.
