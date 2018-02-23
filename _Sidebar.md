@@ -4,8 +4,8 @@
 
 ## Getting Access
 - [XSEDE accounts](XSEDE)
-- [Logging In](Logging_In)
-- [Loading Modules](Loading_Modules)
+- [Logging In](#Logging-In)
+- [Loading Modules](#Loading-Modules)
 - [Allocations]()
 - [Blanca Access]()
 - [Peta Library]()
@@ -13,7 +13,7 @@
 ## Jobs and Operating the System
 - [Job Submissions]()
 - [Job Status]()
-- [The Load Balancer](The_Load_Balancer_Tool)
+- [The Load Balancer](#The-Load-Balancer-Tool)
 - [JupyterHub]()
 - [Sandstone]()
 
