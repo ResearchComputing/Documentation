@@ -1,6 +1,6 @@
 # Navigation
 
-[Home](https://github.com/ResearchComputing/Wiki_Documentation/wiki)
+[Home](Home)
 
 ## Getting Access
 - [XSEDE accounts](XSEDE)
