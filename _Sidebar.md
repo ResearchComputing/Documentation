@@ -4,8 +4,8 @@
 
 ## Getting Access
 - [XSEDE accounts](XSEDE)
-- [Logging In](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Logging-In)
-- [Loading Modules](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Loading-Modules)
+- [Logging In](Logging In)
+- [Loading Modules](Loading Modules)
 - [Allocations]()
 - [Blanca Access]()
 - [Peta Library]()
@@ -13,20 +13,20 @@
 ## Jobs and Operating the System
 - [Job Submissions]()
 - [Job Status]()
-- [The Load Balancer](https://github.com/ResearchComputing/Wiki_Documentation/wiki/The-Load-Balancer-Tool)
+- [The Load Balancer](The Load Balancer Tool)
 - [JupyterHub]()
 - [Sandstone]()
 
 ## Parallel Programming
-- [Best Coding Practices](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Coding-Best-Practices)
-- [Fundamentals of Parallel Computing](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Fundamentals-of-Parallel-Computing)
-- [Matlab](https://github.com/ResearchComputing/Wiki_Documentation/wiki/Matlab-on-Summit)
+- [Best Coding Practices](Best Coding Practices)
+- [Fundamentals of Parallel Computing](Fundamentals of Parallel Computing)
+- [Matlab](Matlab)
 - MPI
-    + [C/C++](https://github.com/ResearchComputing/Wiki_Documentation/wiki/MPI-C--)
-    + [Fortran](https://github.com/ResearchComputing/Wiki_Documentation/wiki/MPI-Fortran)
+    + [C/C++](MPI C)
+    + [Fortran](MPI Fortran)
 - OpenMP 
-    + [C/C++](https://github.com/ResearchComputing/Wiki_Documentation/wiki/OpenMP-C--)
-    + [Fortran](https://github.com/ResearchComputing/Wiki_Documentation/wiki/OpenMP-Fortran)
+    + [C/C++](OpenMP C)
+    + [Fortran](OpenMP Fortran)
 
 ## Maintenance
 - [CHANGELOG](CHANGELOG)
