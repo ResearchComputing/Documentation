@@ -8,7 +8,7 @@
 - [Allocations]()
 - [XSEDE accounts](XSEDE)
 - [Blanca Access]()
-- [Peta Library]()
+- [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
 - [Job Submissions]()
