@@ -3,10 +3,10 @@
 [Home](Home)
 
 ## Getting Access
-- [XSEDE accounts](XSEDE)
 - [Logging In](Logging-In)
 - [Loading Modules](Loading-Modules)
 - [Allocations]()
+- [XSEDE accounts](XSEDE)
 - [Blanca Access]()
 - [Peta Library]()
 
