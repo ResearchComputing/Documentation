@@ -1,4 +1,4 @@
-## Overview
+## Overview:
 
 Research Computing uses a module system for loading software. Most software is not accessible by default and has to be loaded. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
 
