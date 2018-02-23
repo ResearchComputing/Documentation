@@ -1,4 +1,3 @@
-# Fundamentals of Parallel Computing
 In this tutorial we will explore the differences between serial and parallel computation, and look
 at how parallel programs work in general. We will also assess a couple of parallel program
 solutions that utilize the multiprocessor environment of a supercomputer.
