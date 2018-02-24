@@ -1,11 +1,11 @@
-# Matlab
+## Overview
 Research Computing (RC) provides a large suite of software on RC resources. In this tutorial we will learn how to run Matlab on these resources. The tutorial assumes you are familiar with Matlab and basic Linux terminal commands.
 
 There are two basic ways to run Matlab (or many other kinds of software) on RC resources. The first is through an interactive job, and the second is through a batch job.  An interactive job allows one to work in real-time with Matlab. Two reasons you may want to do this would be if you are actively debugging your code, or if you would like to use the GUI (in this instance, the Matlab Desktop). However, there might be other reasons you would like to work interactively with Matlab.  
 
 The second way to run Matlab on RC resources is by submission of a batch job. This allows the job to run in the background when resources become available. You may choose to use this method if you have a large job that may wait in the queue for awhile, or if you are not debugging or in need of a GUI. Both ways to work with Matlab are below.
 
-# Submitting Matlab Interactive Jobs
+## Submitting Matlab Interactive Jobs
 Running Matlab interactive jobs on RC resources is both a simple and easy task to accomplish. In this section we will learn how to launch Matlab as an interactive job. For more information on launching interactive jobs:
 
 <General Interactive Tutorial Link>
@@ -82,7 +82,7 @@ sbatch slurm_hello.sh
 
 Once the job has run, the output of the Matlab script, "Hello world" will be shown in `Matlab_Hello_World.out`. That’s it!  
 
-# Parallel Matlab on Summit
+## Parallel Matlab on Summit
 To fully utilize the multi-core capabilities of Summit to speed up jobs, most code must first be parallelized. Matlab has many built in tools to accomplish this task. In this tutorial we will parallelize our "Hello World" program.
 
 Let’s begin with the Matlab script we created above called `hello_world.m`. First we will modify the fprintf line so that it includes a variable 'i' that will print out the iteration of the parallel loop.
