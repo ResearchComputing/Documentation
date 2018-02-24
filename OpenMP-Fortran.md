@@ -1,4 +1,4 @@
-# OpenMP Fortran
+## Overview
 Because Summit is a cluster of CPUs, parallel programming is the most effective way to utilize
 these resources. Probably the simplest way to begin parallel programming is utilization of
 OpenMP. OpenMP is a Compiler-side solution for creating code that runs on multiple
@@ -13,7 +13,7 @@ __Resources:__
 Much Deeper OpenMP Fortran tutorial:  
 http://www.openmp.org/wp-content/uploads/F95_OpenMPv1_v2.pdf
 
-# Parallel “Hello, World” Program
+## Parallel “Hello, World” Program
 In this section we will learn how to make a simple parallel hello world program in Fortran.
 Let’s begin with creation of a program titled: parallel_hello_world.f90. From the command line
 run the command:
@@ -140,7 +140,7 @@ Hello from process: 1
 (Note don’t worry about order of processes that printed, the threads will print out at varying
 times.)
 
-# Private vs. Shared Variables
+## Private vs. Shared Variables
 
 Memory management is a quintessential component of any parallel program that involves data
 manipulation. In this section, we will learn about the different variable types in OpenMP as well
@@ -224,7 +224,7 @@ Hello from process: 2
 Hello from process: 1
 ```
 
-# Barrier and Critical Directives
+## Barrier and Critical Directives
 OpenMP has a variety of tools for managing processes. One of the more prominent forms of
 control comes with the b__arrier__:
 ```fortran
@@ -318,7 +318,7 @@ Hello from process: 1
 Hello from process: 2
 Hello from process: 3
 ```
-# Work Sharing Directive: omp do
+## Work Sharing Directive: omp do
 OpenMP’s power comes from easily splitting a larger task into multiple smaller tasks.
 Work-sharing directives allow for simple and effective splitting of normally serial tasks into fast
 parallel sections of code. In this section we will learn how to implement omp do directive.
