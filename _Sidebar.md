@@ -22,10 +22,10 @@
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
 - [Matlab](Matlab-on-Summit)
 - MPI
-    + [C/C++](MPI-C--)
+    + [C/C++](MPI-C)
     + [Fortran](MPI-Fortran)
 - OpenMP 
-    + [C/C++](OpenMP-C--)
+    + [C/C++](OpenMP-C)
     + [Fortran](OpenMP-Fortran)
 
 ## Maintenance
