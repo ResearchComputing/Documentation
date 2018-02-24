@@ -1,10 +1,10 @@
-# The Load Balancer Tool on Summit
+## Overview
 The CU Research Computing Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the Summit HPC resource, without the need to learn OpenMP or MPI. This tutorial assumes user knowledge of Slurm job submission, shell scripting, and some python.
  
-# Why use the Load Balancer?
+## Why use the Load Balancer?
 Suppose you have a very simple serial program that crops a photo, and you need to apply it to crop several million photos. You could rewrite the serial program into a parallel program that would utilize multiple processors to more quickly run the program over the entire set of photos (compared to doing one-at-a-time), but this would require some knowledge of parallel programming. Even worse, if your code is in a language that has limited parallelization capabilities, this may not be an option. The easiest solution for this problem is to utilize the Load Balancer.
  
-# Using the Load Balancer
+## Using the Load Balancer
 The Load Balancer is a tool written by CU Boulder Research Computing that allows shell commands (for example, calls to serial programs) to be distributed amongst nodes and cores on Summit. This means code doesn’t need to be explicitly parallelized for MPI or OpenMP. Additionally, code can be written in any language that can be run from a Linux shell.
  
 Let’s create a simple ‘Hello World’ serial python script to demonstrate the Load Balancer tool. We will call the script `hello_World.py` and it will print “Hello World from process: ” followed by a command line argument:
