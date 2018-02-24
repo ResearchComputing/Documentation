@@ -1,4 +1,4 @@
-# OpenMP C++
+## Overview
 
 Because Summit is a cluster of CPUs, the most effective way to utilize these resources involve
 parallel programming. Probably the simplest way to begin parallel programming involves the
@@ -156,7 +156,9 @@ Hello from process: 1
 ```
 (Note don’t worry about order of processes that printed, the threads will print out at varying
 times.)
-# Private vs. Shared Variables
+
+## Private vs. Shared Variables
+
 Memory management is a quintessential component of any parallel program that involves data
 manipulation. In this section, we will learn about the different variable types in OpenMP as well
 as a simple implementation of these types into the program we made in the previous section.
@@ -233,7 +235,7 @@ Hello from process: 0
 Hello from process: 2
 Hello from process: 1
 ```
-# Barrier and Critical Directives
+## Barrier and Critical Directives
 OpenMP has a variety of tools for managing processes. One of the more prominent forms of
 control comes with the __barrier__:
 ```c++
@@ -333,7 +335,7 @@ Hello from process: 1
 Hello from process: 2
 Hello from process: 3
 ```
-# Work Sharing Directive: omp for
+## Work Sharing Directive: omp for
 OpenMP’s power comes from easily splitting a larger task into multiple smaller tasks.
 Work-sharing directives allow for simple and effective splitting of normally serial tasks into fast
 parallel sections of code. In this section we will learn how to implement omp for directive.
