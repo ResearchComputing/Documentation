@@ -16,7 +16,7 @@ http://pages.tacc.utexas.edu/~eijkhout/pcse/html/index.html
 Helpful Slides from the Aristotle University of Thessaloniki:  
 https://training.vi-seem.eu/images/trainingMaterial/HPC/OpenMP/HP-SEE-SS_2011-OpenMP.pdf
 
-# Parallel “Hello, World” Program
+## Parallel “Hello, World” Program
 
 In this section we will learn how to make a simple parallel hello world program in C++.
 Let’s begin with the creation of a program titled: parallel_hello_world.cpp. From the command
