@@ -1,4 +1,4 @@
-## Overview:
+## Overview
 
 Use the PetaLibrary to store, archive and share research data:
 - Minimum project size: 2 TB
@@ -10,11 +10,11 @@ Use the PetaLibrary to store, archive and share research data:
      * 100 TB in Archive Storage
      * Email rc-help@colorado.edu to request more space if necessary
 
-## Video:
+## Video
 
 [PetaLibrary Informational Video](https://youtu.be/i1TVYj4OQOY)
 
-## Accessing the PetaLibrary:
+## Accessing the PetaLibrary
 
 Request access to the PetaLibrary by:
 - Reading the PetaLibrary [Memorandum of Understanding](https://www.colorado.edu/p113a299a3a0/content/petalibrary-mou)
