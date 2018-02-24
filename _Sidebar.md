@@ -20,7 +20,7 @@
 ## Parallel Programming
 - [Coding Best Practices](Coding-Best-Practices)
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
-- [Matlab](Matlab)
+- [Matlab](Matlab-on-Summit)
 - MPI
     + [C/C++](MPI-C--)
     + [Fortran](MPI-Fortran)
