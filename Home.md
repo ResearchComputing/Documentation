@@ -1,4 +1,4 @@
-### Welcome to the Research Computing User Tutorials Wiki.
+### Welcome to the Research Computing User Tutorials Wiki
 
 ------
 
