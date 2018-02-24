@@ -1,4 +1,4 @@
-# MPI C++
+## Overview
 Parallel programs enable users to fully utilize the multi-node structure of supercomputing
 clusters. Message Passing Interface (MPI) is a standard used to allow several different
 processors on a cluster to communicate with each other. In this tutorial we will be using the Intel
@@ -13,7 +13,7 @@ http://mpitutorial.com/tutorials/
 http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml  
 https://computing.llnl.gov/tutorials/mpi/  
 
-# Setup and “Hello, World”
+## Setup and “Hello, World”
 
 Begin by logging into the cluster and using ssh to log in to a compile node. This can be done
 with the command:
@@ -205,7 +205,7 @@ Hello World from process 0 of 4
 ```
 Ref: http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html
 
-# MPI Barriers and Synchronization
+## MPI Barriers and Synchronization
 
 Like many other parallel programming utilities, synchronization is an essential tool in thread
 safety and ensuring certain sections of code are handled at certain points. `MPI_Barrier` is a
@@ -299,7 +299,7 @@ Hello World from process 2 of 4
 Hello World from process 3 of 4
 ```
 
-# Message Passing
+## Message Passing
 
 Message passing is the primary utility in the MPI application interface that allows for processes
 to communicate with each other. In this tutorial, we will learn the basics of message passing
@@ -440,7 +440,7 @@ Message Sent: 42
 Message Received: 42
 ```
 
-# Group Operators: Scatter and Gather
+## Group Operators: Scatter and Gather
 
 Group operators are very useful for MPI. They allow for swaths of data to be distributed from a
 root process to all other available processes, or data from all processes can be collected at one
