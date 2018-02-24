@@ -1,4 +1,4 @@
-## Overview:
+## Overview
 
 Before submitting a job be sure to obtain:
 - A Research Computing account
@@ -13,11 +13,11 @@ When you want to run a non-interactive job:
 
 Need more assistance? Watch a tutorial video or read the template
 
-## Video:
+## Video
 
 [Job Submission Video](https://youtu.be/sStJQKTa9zY)
 
-## Template:
+## Template
 
 (Image Goes Here)
 
