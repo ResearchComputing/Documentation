@@ -12,7 +12,9 @@
 ## Jobs and Operating the System
 - [Job Submissions](Job-Submissions)
 - Job Status
+- File Transfers
 - [The Load Balancer](The-Load-Balancer-Tool)
+- Interactive Jobs
 - JupyterHub
 - Sandstone
 
