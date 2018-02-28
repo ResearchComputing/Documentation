@@ -1,3 +1,7 @@
+## Tuesday, 27 February 2018
+
+* [Reduced memory limits on Summit](https://www.rc.colorado.edu/node/1094)
+
 ## Tuesday, 20 February 2018
 
 * Installed version control clients on Summit in response to a request for Mercurial
