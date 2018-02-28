@@ -15,7 +15,7 @@
 - File Transfers
 - [The Load Balancer](The-Load-Balancer-Tool)
 - Interactive Jobs
-- JupyterHub
+- [JupyterHub](JupyterHub)
 - Sandstone
 
 ## Parallel Programming
