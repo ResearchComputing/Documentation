@@ -1,4 +1,3 @@
-# Parallel Programming with JupyterHub
 This tutorial demonstrates simple parallel processing examples using the CURC JupyterHub web service, in both ipyparallel and MPI for Python.
 
 ## Prerequisites
