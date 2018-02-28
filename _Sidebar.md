@@ -32,3 +32,4 @@
 
 ## Maintenance
 - [CHANGELOG](CHANGELOG)
+- [JupyterHub CHANGELOG](JupyterHub-CHANGELOG)
