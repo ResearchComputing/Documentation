@@ -28,7 +28,7 @@
 - OpenMP 
     + [C/C++](OpenMP-C)
     + [Fortran](OpenMP-Fortran)
-- [Parallel Programming with Jupyter Notebooks](Parallel Programming with Jupyter Notebooks)
+- [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
 ## Maintenance
 - [CHANGELOG](CHANGELOG)
