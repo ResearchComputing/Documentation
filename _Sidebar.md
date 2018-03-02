@@ -7,6 +7,7 @@
 - [Loading Modules](Loading-Modules)
 - [XSEDE accounts](XSEDE)
 - Blanca Access
+- [Condo Access](Condo-Access)
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
