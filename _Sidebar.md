@@ -4,18 +4,19 @@
 
 ## Getting Access
 - [Logging In](Logging-In)
+- [Duo Access](Duo-Access) -Incomplete-
 - [Loading Modules](Loading-Modules)
 - [XSEDE accounts](XSEDE)
-- Blanca Access
-- [Condo Access](Condo-Access)
+- [Blanca Access](Blanca Access) -Incomplete-
+- [Condo Access](Condo-Access) -Incomplete-
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
 - [Job Submissions](Job-Submissions)
 - Job Status
-- File Transfers
+- [File Transfers](File-Transfers) -Incomplete-
 - [The Load Balancer](The-Load-Balancer-Tool)
-- Interactive Jobs
+- [Interactive Jobs](Interactive-Jobs) -Incomplete-
 - [JupyterHub](JupyterHub)
 - Sandstone
 
