@@ -158,8 +158,8 @@ Note that the interactive job won't start until the resources that it needs are 
 5. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most Blanca nodes because there is no high-performance low-latency inter-node network except on blanca-ccn.
 6. Something about using --threads-per-core to choose ht or non-ht nodes
 
-## Blanca Premptable QOS 
-<i>(effective 2018-03-01)>/i> Each partner group has its own high-priority qos (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority qos (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
+## Blanca Preemptable QOS 
+<i>(effective 2018-03-01)</i> Each partner group has its own high-priority qos (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority qos (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
 #### Usage
 To specify the preemptable qos in a job script: 
