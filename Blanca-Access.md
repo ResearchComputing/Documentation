@@ -1,7 +1,7 @@
 ## Table of Contents
 
-[Overview](#Overview)
-
+[Overview](#overview)
+[Blanca Quick-Start](#blanca-quick-start)
 [QoS](#qos)
 
 ## Overview
