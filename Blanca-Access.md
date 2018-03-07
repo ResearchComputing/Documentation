@@ -37,7 +37,7 @@ All jobs are run through a batch/queue system.  Interactive jobs on compute node
 
 Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: “module load slurm/blanca”.
 
-More details about how to use Slurm can be found in the <User Guide https://www.rc.colorado.edu/support/user-guide/batch-queueing.html>
+More details about how to use Slurm can be found in the [User Guide] (https://www.rc.colorado.edu/support/user-guide/batch-queueing.html)
 
 ## QoS
 Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called “blanca-<group identifier>” and can also use the condo-wide low-priority QoS, which is called “blanca”.
