@@ -8,7 +8,7 @@
 
 [QoS Description and Table](#qos)
 
-[Node/QoS/Feature Table](#node/qos/feature-table)
+[Node/QoS/Feature Table](#node-qos-feature-table)
 
 ## Overview
 CU Research Computing operates a shared “condo” compute cluster, named Blanca, which consists of nodes owned by individual research groups or departments.  Condo partners get significantly prioritized access on nodes that they own and can run jobs on any nodes that are not currently in use by other partners. 
@@ -54,7 +54,7 @@ blanca-csdms | | E. Hutton | high
 blanca-sol | N. Featherstone | | high
 preemptable <br> (details below) | | | low
 
-## Node/QoS/Feature table
+## Node-QoS-Feature table
 Since not all Blanca nodes are identical, you can include node features in your job requests to help the scheduler determine which nodes are appropriate for your jobs to run on when you are using the blanca QoS.
 
 Node name     | High-prio QoS | General hardware attributes | Features
