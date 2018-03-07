@@ -1,6 +1,7 @@
 ##Table of Contents
 
 [Overview](##Overview)
+[QoS](##QoS)
 
 ## Overview
 CU Research Computing operates a shared “condo” compute cluster, named Blanca, which consists of nodes owned by individual research groups or departments.  Condo partners get significantly prioritized access on nodes that they own and can run jobs on any nodes that are not currently in use by other partners. 
