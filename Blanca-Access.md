@@ -26,11 +26,11 @@ An allocation of CPU time is not needed in order to run on Blanca.
 If you would like to purchase a Blanca node, please visit [the Research Computing website](https://www.rc.colorado.edu/support/user-guide/compute-resources.html#blanca) for more details.
 
 ## Blanca Quick-Start
-If your group is a Blanca partner, ask your PI or PoC (found in Table 1) to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.
-From a login node, run "module load slurm/blanca" to access the Slurm job scheduler instance for Blanca.
-Consult Table 2 and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
-If needed, compile your application on the appropriate compute node type.
-Read the rest of this page thoroughly.
+1. If your group is a Blanca partner, ask your PI or PoC (found in Table 1) to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.
+2. From a login node, run "module load slurm/blanca" to access the Slurm job scheduler instance for Blanca.
+3. Consult Table 2 and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
+4. If needed, compile your application on the appropriate compute node type.
+5. Read the rest of this page thoroughly.
 
 ## Job Scheduling
 All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler.  Each partner group has its own high-priority queue for jobs that will run on nodes that it has purchased.  High-priority jobs move to the top of the queue and are thus guaranteed to start running within 4 hours, unless other high-priority jobs are already queued or running ahead of them.  High-priority jobs can run for a maximum wall time of 7 days.  All partners also have access to a low-priority queue that can run on any Blanca nodes that are not already in use by their owners.  Low-priority jobs have a maximum wall time of 4 hours. 
@@ -40,7 +40,7 @@ Blanca uses a separate instance of the Slurm scheduling system from the other RC
 More details about how to use Slurm can be found in the [User Guide](https://www.rc.colorado.edu/support/user-guide/batch-queueing.html)
 
 ## QoS
-Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called “blanca-<group identifier>” and can also use the condo-wide low-priority QoS, which is called “blanca”.
+Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `blanca-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `blanca`.
 
 If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to rc-help@colorado.edu.  You are only allowed to use a high-priority QoS if you have specifically been added as a member of it, and you can only use the low-priority blanca QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
@@ -151,25 +151,34 @@ Note that the interactive job won't start until the resources that it needs are 
 
 
 #### Important notes:
-1. Because of differences in the "modules" environment on RHEL 6 and RHEL 7, it is currently necessary to prevent any environment settings from being propagated from an RC login node (which uses RHEL 6) to a Blanca compute note that uses RHEL 7.  Use the Slurm directive "#SBATCH --export=NONE" in this case.  You will then have to load any needed modules directly in your batch script.
-2. To see what RHEL 7 modules are available, start an interactive job on an RHEL 7 compute node and use "module avail" or "module spider" on it.  Login nodes can access only RHEL 6 modules.
+1. Because of differences in the "modules" environment on RHEL 6 and RHEL 7, it is currently necessary to prevent any environment settings from being propagated from an RC login node (which uses RHEL 6) to a Blanca compute note that uses RHEL 7.  Use the Slurm directive `#SBATCH --export=NONE` in this case.  You will then have to load any needed modules directly in your batch script.
+2. To see what RHEL 7 modules are available, start an interactive job on an RHEL 7 compute node and use `module avail` or `module spider` on it.  Login nodes can access only RHEL 6 modules.
 3. /home, /projects, and /work (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  All Blanca nodes also have at least 850 GB of scratch space on a local disk, /local/scratch.  For more info on the different RC storage spaces, please review https://www.rc.colorado.edu/support/user-guide/storage.html
 4. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 5. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most Blanca nodes because there is no high-performance low-latency inter-node network except on blanca-ccn.
 6. Something about using --threads-per-core to choose ht or non-ht nodes
 
 ## Blanca Preemptable QOS 
-<i>(effective 2018-03-01)</i> Each partner group has its own high-priority qos (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority qos (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
+*(effective 2018-03-01)* Each partner group has its own high-priority qos (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority qos (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
 #### Usage
-To specify the preemptable qos in a job script: 
+To specify the preemptable qos in a job script:
+
+```bash 
 #SBATCH --qos=preemptable 
+```
 
 To specify the preemptable qos for an interactive job:
-	$ sinteractive --qos=preemptable <other_arguments>
+
+```bash
+$ sinteractive --qos=preemptable <other_arguments>
+```
 
 Batch jobs that are preempted will automatically requeue if the exit code is non-zero. (It will be non-zero in most cases.) If you would prefer that jobs not requeue, specify:
-	#SBATCH --no-requeue
+
+```bash
+#SBATCH --no-requeue
+```
 
 Interactive jobs will not requeue if preempted.
 
@@ -177,7 +186,7 @@ Interactive jobs will not requeue if preempted.
 
 Checkpointing: Given that preemptable jobs can run up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable qos should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
 
-Requeuing: Users running jobs that do not require requeuing if preempted should specify the “--no-requeue” flag noted above to avoid unnecessary use of compute resources.
+Requeuing: Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
 
 #### Example Job Scripts
 
