@@ -41,5 +41,6 @@ ssh login.rc.colorado.edu -l <rc_username> -X
 ```
 
 ## Videos:
-General Interactive Jobs
-Running GUI applications through an Interactive Job
+
+General Interactive Jobs  
+Running GUI applications through an Interactive Job  
