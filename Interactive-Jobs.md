@@ -42,5 +42,5 @@ ssh login.rc.colorado.edu -l <rc_username> -X
 
 ## Videos:
 
-[General Interactive Jobs](https://www.youtube.com/watch?v=hpdYdBsPynQ)
-[Running GUI applications through an Interactive Job](https://www.youtube.com/watch?v=vSYNKlEKg3Y) 
+[General Interactive Jobs](https://www.youtube.com/watch?v=hpdYdBsPynQ)  
+[Running GUI applications through an Interactive Job](https://www.youtube.com/watch?v=vSYNKlEKg3Y)  
