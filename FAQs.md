@@ -1,6 +1,6 @@
 Questions:
 
-How do I check how full my Summit directories are
+[How do I check how full my Summit directories are?](#how-do-I-check-how-full-my-summit-directories-are?)
 
 ## How do I check how full my Summit directories are?
 
