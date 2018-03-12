@@ -2,6 +2,8 @@
 
 [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are?)
 
+[I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone.-how-do-I-move-my-duo-onto-it?)
+
 ### How do I check how full my Summit directories are?
 
 You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  To see how much space you've used in each, from a Summit 'scompile' node, type `curc-quota` as follows:
@@ -23,3 +25,7 @@ You can also check the amount of space being used by any directory with the `du 
 698M	WRF/run
 698M	WRF
 ```
+
+### I have a new phone. How do I move my Duo onto it?
+
+Text Here
