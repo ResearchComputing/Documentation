@@ -6,7 +6,8 @@
 
 You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  To see how much space you've used in each, from a Summit 'scompile' node, type `curc-quota` as follows:
 
-```[janedoe@shas0136 ~]$ curc-quota
+```
+[janedoe@shas0136 ~]$ curc-quota
 ------------------------------------------------------------------------
                                        Used         Avail    Quota Limit
 ------------------------------------------------------------------------
@@ -15,10 +16,10 @@ You have three directories allocated to your username ($USER).  These include `/
 /scratch/summit                         29G        10211G         10240G
 ```
 
-You can also check the amount of space being used by any directory with the ```du -h
-``` command: 
+You can also check the amount of space being used by any directory with the `du -h` command: 
 
-```[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
+```
+[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
 698M	WRF/run
 698M	WRF
 ```
