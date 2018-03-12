@@ -17,7 +17,7 @@
 - Job Status
 - [File Transfers](File-Transfers) -Incomplete-
 - [The Load Balancer](The-Load-Balancer-Tool)
-- [Interactive Jobs](Interactive-Jobs) -Incomplete-
+- [Interactive Jobs](Interactive-Jobs)
 - [JupyterHub](JupyterHub)
 
 ## Parallel Programming
