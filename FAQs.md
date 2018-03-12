@@ -4,6 +4,8 @@
 
 [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it)
 
+[Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)
+
 [Why do I get the following error when I submit my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-submit-a-job): 
 ```
 sbatch: error: Batch job submission failed: Invalid partition name specified.
@@ -13,8 +15,6 @@ sbatch: error: Batch job submission failed: Invalid partition name specified.
 ```
 Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"
 ```
-
-[Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)
 
 [How do I install my own python library?](#how-do-i-install-my-own-python-library)
 
