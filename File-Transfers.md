@@ -5,13 +5,19 @@ File Transfers from a local machine onto Summit can be done via 2 ways: Through 
 On Globus file transfers are handled through an interactive web application.
 - Globus addresses deficiencies in secure copy requests by automating large data transfers, resuming failed transfers, and simplifying the implementation of high performance transfers between computing centers.
 - [Sign into Globus Connect](https://www.globus.org/app/login) by selecting "University of Colorado at Boulder" using your CU IdentiKey and password.
-![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
     * If you're with an institution outside of the University of Colorado at Boulder that is registered with Globus, sign in with your appropriate credentials.
     * If you're institution is not registered with Globus, you will need to [make an account](https://www.globusid.org/create) with Globus.
+
+<br>
+
+![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 - Files can be transferred easily by setting up a Globus endpoint on your local workstation.
     * You can easily set up a Globus endpoint by installing [Globus Connect Personal](https://www.globus.org/globus-connect-personal) on your local machine.
 - Using the web app, connect your local workstation endpoint with the Research Computing endpoint and transfer files easily using the Globus GUI.
+
+<br>
+
 ![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
 
 ## SSH Protocols
