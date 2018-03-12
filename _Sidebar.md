@@ -19,7 +19,6 @@
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs) -Incomplete-
 - [JupyterHub](JupyterHub)
-- Sandstone
 
 ## Parallel Programming
 - [Coding Best Practices](Coding-Best-Practices)
