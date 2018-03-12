@@ -15,7 +15,7 @@
 - [FAQs](FAQs) -Incomplete-
 - [Job Submissions](Job-Submissions)
 - Job Status
-- [File Transfers](File-Transfers) -Incomplete-
+- [Data Transfers](Data-Transfers)  
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs)
 - [JupyterHub](JupyterHub)
