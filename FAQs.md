@@ -6,12 +6,12 @@
 
 [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)
 
-[Why do I get the following error when I submit my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-submit-a-job): 
+[Why do I get the following 'Invalid Partition' error when I submit my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-submit-a-job): 
 ```
 sbatch: error: Batch job submission failed: Invalid partition name specified.
 ```
 
-[Why do I get the following error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm): 
+[Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm): 
 ```
 Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"
 ```
