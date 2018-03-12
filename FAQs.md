@@ -51,6 +51,15 @@ Visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> and add yo
 
 ***
 
+### Why is my job pending with reason 'ReqNodeNotAvail'?
+
+The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script.  This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you submit a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
+
+If you receive this message, the following solutions are available: 1) submit a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
+
+
+***
+
 ### Why do I get an 'Invalid Partition' error when I try to submit a job?
 
 The 'Invalid Partition' error is common among new account holders.  It usually means users have not requested an Allocation that would provide the service units (SUs) required to submit a job.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system.  Allocations are free. New CU users can request a 'ucb-general' allocation (by emailing rc-help@colorado.edu) which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes.  Users requiring more resources can <a href="https://www.rc.colorado.edu/support/user-guide/allocations.html">request a Project and apply for a Project Allocation</a>.
@@ -60,14 +69,6 @@ The 'Invalid Partition' error is common among new account holders.  It usually m
 ### Why do I get an 'LMOD' error when I try to load Slurm?
 
 Using the Summit module environment from login nodes requires typing `module load slurm/summit`. However, the slurm/summit module environment is already pre-loaded on Summit scompile and compute nodes. Therefore, if you are on a Summit 'scompile' node, in a Summit 'sinteractive' job, or submitting a job to a Summit compute node (via a job script) and you load 'slurm/summit' you will get the 'LMOD' error. This error can be disregarded, as no harm is done.  
-
-***
-
-### Why is my job pending with reason 'ReqNodeNotAvail'?
-
-The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script.  This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you submit a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
-
-If you receive this message, the following solutions are available: 1) submit a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
 
 
 ***
