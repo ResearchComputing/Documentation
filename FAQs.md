@@ -1,4 +1,4 @@
-##Frequently Asked Questions:
+## Frequently Asked Questions:
 
 [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are?)
 
@@ -9,13 +9,8 @@ You have three directories allocated to your username ($USER).  These include `/
 `[janedoe@shas0136 ~]$ curc-quota`
 
 `------------------------------------------------------------------------`
-
-                                       ``Used         Avail    Quota Limit`
-
+                                       `Used         Avail    Quota Limit`
 `------------------------------------------------------------------------`
-
 `/home/janedoe                          1.7G          339M           2.0G`
-
 `/projects/janedoe                       67G          184G           250G`
-
 `/scratch/summit                         29G        10211G         10240G`
