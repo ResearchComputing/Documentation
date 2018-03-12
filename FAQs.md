@@ -14,3 +14,11 @@ You have three directories allocated to your username ($USER).  These include `/
 /projects/janedoe                       67G          184G           250G
 /scratch/summit                         29G        10211G         10240G
 ```
+
+You can also check the amount of space being used by any directory with the ```du -h
+``` command: 
+
+```[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
+698M	WRF/run
+698M	WRF
+```
