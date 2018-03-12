@@ -19,6 +19,7 @@ This will load us into an interactive session that will run on one core of one n
 ## Interactive GUI Applications
 
 To run an interactive General User Interface application, we must enable X11 forwarding on our personal computer.
+Once you've enabled X11 forwarding you will be able to run GUI applications through interactive jobs.
 
 ### Windows
 
