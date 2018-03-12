@@ -1,8 +1,8 @@
 ## Frequently Asked Questions:
 
-[How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are?)
+[How do I check how full my Summit directories are?](##how-do-i-check-how-full-my-summit-directories-are?)
 
-[I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone.-how-do-I-move-my-duo-onto-it?)
+[I have a new phone. How do I move my Duo onto it?](##i-have-a-new-phone.-how-do-I-move-my-duo-onto-it?)
 
 ### How do I check how full my Summit directories are?
 
