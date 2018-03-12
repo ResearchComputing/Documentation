@@ -12,4 +12,5 @@ You have three directories allocated to your username ($USER).  These include `/
 ------------------------------------------------------------------------
 /home/janedoe                          1.7G          339M           2.0G
 /projects/janedoe                       67G          184G           250G
-/scratch/summit                         29G        10211G         10240G```
+/scratch/summit                         29G        10211G         10240G
+```
