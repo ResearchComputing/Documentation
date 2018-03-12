@@ -12,6 +12,7 @@
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
+- [FAQs](FAQs)
 - [Job Submissions](Job-Submissions)
 - Job Status
 - [File Transfers](File-Transfers) -Incomplete-
