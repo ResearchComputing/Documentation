@@ -7,7 +7,7 @@
 - [Duo Access](Duo-Access) -Incomplete-
 - [Loading Modules](Loading-Modules)
 - [XSEDE accounts](XSEDE)
-- [Blanca Access](Blanca-Access) -Incomplete-
+- [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
