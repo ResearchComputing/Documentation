@@ -1,4 +1,4 @@
-Important : Gaussian is available on Summit only to members of universities that have purchased Gaussian licenses.  It cannot be run by other Summit users.  Please note and abide by the licensing, rights, and citation information shown at the top of your Gaussian output files.
+__Important:__ Gaussian is available on Summit only to members of universities that have purchased Gaussian licenses.  It cannot be run by other Summit users.  Please note and abide by the licensing, rights, and citation information shown at the top of your Gaussian output files.
 
 This document describes how to submit G16 jobs efficiently on Summit. It does not attempt to teach how to use Gaussian for solving science/engineering questions.
 
@@ -9,7 +9,7 @@ Good general instructions can be found at [here](http://gaussian.com/running/); 
 To set up your shell environment to use G16, load a Gaussian software module  
 (e.g. `module load gaussian/16_avx2`). Nearly all necessary environment variables are configured for you via the module.  You do not need to source g16.login or g16.profile.
 
-However, it is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files.  These should always be on one of Summit's *<scratch storage systems (URL here)>* (either /scratch/local [accessed via the SLURM_SCRATCH env variable] or /scratch/summit/$USER.)  If `GAUSS_SCRDIR` is not set, then the scratch files will be created in whatever directory G16 is run from; if this directory is in /projects or /work, then your job's performance will be dramatically reduced.
+However, it is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files.  These should always be on one of Summit's [scratch storage systems](https://rc.colorado.edu/support/user-guide/storage.html) (either /scratch/local [accessed via the SLURM_SCRATCH env variable] or /scratch/summit/$USER.)  If `GAUSS_SCRDIR` is not set, then the scratch files will be created in whatever directory G16 is run from; if this directory is in /projects or /work, then your job's performance will be dramatically reduced.
 
 ## Running G16
 
