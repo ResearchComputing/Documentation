@@ -106,5 +106,3 @@ $ sacct –-jobs=<your job id> –-starttime=2017-10-10 --format=jobid,jobname,q
 
 For more information on sacct check out the Slurm page [here](https://slurm.schedmd.com/sacct.html).
 
-## Technical information on Jobs using sstat
-To pull up status information about jobs you run on Research Computing resources, use the sstat command. The sstat command provides information dealing with CPU, Task, Node, Resident Set Size, and Virtual Memory. Pull up status information on sstat by using 
