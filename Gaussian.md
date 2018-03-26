@@ -12,7 +12,8 @@ However, it is important to specify GAUSS_SCRDIR to tell G16 where to put its la
 
 ## Running G16
 
-If you create a Gaussian input file named h2o_dft.com then you can execute it simply via `g16 h2o_dft`.  Output from the computation will go to a file called h2o_dft.log.
+If you create a Gaussian input file named h2o_dft.com then you can execute it simply via  
+`g16 h2o_dft`.  Output from the computation will go to a file called h2o_dft.log.
 
 ## Memory
 
