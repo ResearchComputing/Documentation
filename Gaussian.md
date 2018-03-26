@@ -6,9 +6,10 @@ Good general instructions can be found at [here](http://gaussian.com/running/); 
 
 ## Environment
 
-To set up your shell environment to use G16, load a Gaussian software module (e.g. `module load gaussian/16_avx2`). Nearly all necessary environment variables are configured for you via the module.  You do not need to source g16.login or g16.profile.
+To set up your shell environment to use G16, load a Gaussian software module  
+(e.g. `module load gaussian/16_avx2`). Nearly all necessary environment variables are configured for you via the module.  You do not need to source g16.login or g16.profile.
 
-However, it is important to specify GAUSS_SCRDIR to tell G16 where to put its large scratch files.  These should always be on one of Summit's *<scratch storage systems (URL here)>* (either /scratch/local [accessed via the SLURM_SCRATCH env variable] or /scratch/summit/$USER.)  If GAUSS_SCRDIR is not set, then the scratch files will be created in whatever directory G16 is run from; if this directory is in /projects or /work, then your job's performance will be dramatically reduced.
+However, it is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files.  These should always be on one of Summit's *<scratch storage systems (URL here)>* (either /scratch/local [accessed via the SLURM_SCRATCH env variable] or /scratch/summit/$USER.)  If `GAUSS_SCRDIR` is not set, then the scratch files will be created in whatever directory G16 is run from; if this directory is in /projects or /work, then your job's performance will be dramatically reduced.
 
 ## Running G16
 
@@ -63,7 +64,7 @@ In order to run on more than 24 cores in the "shas" partition on Summit, your jo
 ```
 which tells G16 to use 24 cores on each of three shas nodes, and to set up the connections between nodes using ssh.
 
-Since you don't know in advance what nodes your job will be assigned to, you will have to determine the arguments for "-w" at runtime via commands in your Slurm batch script.  See the batch script example below.  
+Since you don't know in advance what nodes your job will be assigned to, you will have to determine the arguments for '-w' at runtime via commands in your Slurm batch script.  See the batch script example below.  
 
 Not all G16 computations scale efficiently beyond a single node!  According to the G16 documentation: "HF, CIS=Direct, and DFT calculations are Linda parallel, including energies, optimizations, and frequencies. TDDFT energies and gradients and MP2 energies and gradients are also Linda parallel. Portions of MP2 frequency and CCSD calculations are Linda parallel."  As with SMP parallelism, testing the scaling of your Linda parallel computation is very important.
 
