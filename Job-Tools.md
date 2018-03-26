@@ -20,7 +20,7 @@ Lastly we can use the `--iterate` flag to iteratively run squeue every n amount 
 $ squeue --user=<your_rc-username> --start --iterate=<n_seconds>
 ```
 
-__Advanced squeue formatting__
+### Advanced squeue formatting
 
 We can pull more information on each job using the `--format` flag. The output flag allows us to specify what information we would like to see in what order. The flag takes in several arguments that specify what item you would like to be in each field. Each argument is formatted as such:
 ```
@@ -62,7 +62,7 @@ $ scancel <job_id-number1>, <job_id-number2>, <job_id-number3>
 For more information about the scancel command visit the Slurm manual [here](https://slurm.schedmd.com/scancel.html)
 
 ## Controlling Jobs with scontrol
-The `scontrol` command allows users further control of their jobs through slurm. A few examples of this include pausing a job as its running, holding a job from running, or creating a job checkpoint.
+The `scontrol` command allows users further control of their jobs through Slurm. A few examples of this include pausing a job as its running, holding a job from running, or creating a job checkpoint.
 To pause a job, we can use `scontrol` with the `suspend` command:
 ```bash
 $ scontrol suspend <job_id-number>
@@ -83,7 +83,7 @@ Scontrol can also provide detailed information on jobs using the `show job` comm
 For more information on scontrol, visit the Slurm manual [here](https://slurm.schedmd.com/scontrol.html)
 
 ## Getting information on older jobs using sacct
-The `sacct` command allows users to pull up information about jobs that they have run through slurm. The `sacct` command lets up pull up job information by using the job ID:
+The `sacct` command allows users to pull up information about jobs that they have run through Slurm. The `sacct` command lets up pull up job information by using the job ID:
 ```
 $ sacct --jobs=<job_id-number>
 ```
