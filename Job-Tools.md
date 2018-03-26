@@ -1,10 +1,8 @@
 When running a jobs on research computing resources, there may be times where you like more information on the job you are running. In this video, I will be showcasing several tools within research computing resources that provide in-depth information on jobs.
 
 ## Getting information using squeue
-The simplest tool you can utilize when you need to pull up out information about your job is the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster. To run the `squeue` command type:
-```bash
-$ squeue
-```
+The simplest tool you can utilize when you need to pull up out information about your job is the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
+
 The `squeue` command will print out the job ID, partition, username, job status, number of nodes the job is utilizing, and name of the node that the job is running on for all jobs queued or running within Slurm by default. To specify only jobs that you are running use the `--user` flag. Type:
 ```bash
 $ squeue --user=<your_rc-username>
@@ -28,7 +26,7 @@ We can pull more information on each job using the `--format` flag. The output f
 ```
 %[.][size_of_field](information_variable)
 ```
-where `[.]` tells whether or not this field should be right justified, `[size_of_field]` is the minimum size of space the field (If nothing is specified then defaults to space needed), and (information_variable) is the data we want the field to actually carry. Because the list of information variables available for this flag is very large, we’ll just be going over a couple of these options.
+where `[.]` tells whether or not this field should be right justified, `[size_of_field]` is the minimum size of space the field (If nothing is specified then defaults to space needed), and `(information_variable)` is the data we want the field to actually carry. Because the list of information variables available for this flag is very large, we’ll just be going over a couple of these options.
 
 Format code | Description
 ---|-----------------------------
@@ -54,9 +52,13 @@ For more information about the usage of squeue, visit the Slurm manual [here](ht
 
 ## Stopping jobs using scancel
 Sometimes you may need to stop a job while it’s running entirely. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on research computing resources using the job’s job ID. The command looks like this:
-	$ scancel <job_id-number>
+```
+$ scancel <job_id-number>
+```
 To cancel multiple jobs, you can use a comma-separated list of job IDs:
-	$ scancel <job_id-number1>, <job_id-number2>, <job_id-number3>
+```	
+$ scancel <job_id-number1>, <job_id-number2>, <job_id-number3>
+```
 For more information about the scancel command visit the Slurm manual [here](https://slurm.schedmd.com/scancel.html)
 
 ## Controlling Jobs with scontrol
