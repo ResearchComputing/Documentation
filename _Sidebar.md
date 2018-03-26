@@ -18,6 +18,7 @@
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs)
 - [JupyterHub](JupyterHub)
+- [Gaussian](Gaussian)
 
 ## Parallel Programming
 - [Coding Best Practices](Coding-Best-Practices)
