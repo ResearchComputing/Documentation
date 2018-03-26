@@ -13,7 +13,7 @@
 ## Jobs and Operating the System
 - [FAQs](FAQs) -Incomplete-
 - [Job Submissions](Job-Submissions)
-- Job Status
+- [Job Status](Job-Status)
 - [Data Transfers](Data-Transfers)  
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs)
