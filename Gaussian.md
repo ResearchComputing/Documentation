@@ -43,7 +43,9 @@ module load gaussian/16_avx2
 
 # Always specify a scratch directory on a fast storage space (not /home or /projects!)
 export GAUSS_SCRDIR=/scratch/summit/$USER/$SLURM_JOBID
-# export GAUSS_SCRDIR=$SLURM_SCRATCH  # alternatively, to use the local SSD; max 159GB available
+# or export GAUSS_SCRDIR=$SLURM_SCRATCH  
+
+# alternatively, to use the local SSD; max 159GB available
 
 # the next line prevents OpenMP parallelism from conflicting with Gaussian's internal SMP parallelization
 export OMP_NUM_THREADS=1  
