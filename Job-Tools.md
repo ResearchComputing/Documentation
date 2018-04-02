@@ -107,13 +107,13 @@ $ scontrol release <job_id-number>
 Scontrol can also extensive information on jobs using the `show job` command. The information provided from this command is very verbose and detailed, so be sure to either clear your terminal window, grep certain information from the command, or pipe the output to a separate text file. This command would look similar to:
 
 ```bash
-! Output to console
+# Output to console
 $ scontrol show job <job_id-number>
 
-! Streaming output to a textfile
+# Streaming output to a textfile
 $ scontrol show job <job_id-number> > outputfile.txt
 
-! Piping output to Grep
+# Piping output to Grep
 $ scontrol show job <job_id-number> | grep Time
 
 ```
@@ -182,7 +182,7 @@ $ sacct --jobs=<your_job-id> --starttime=<2018-03-12> --format=jobname,nnodes,nc
 This time you would like to pull up information on jobs that were ran on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your script would look like this:
 
 ```bash
-$ sacct –-jobs=<your_job-id> –-starttime=<job_date> --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
+$ sacct –-jobs=<your_job-id> –-starttime=<2018-02-21> --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
 A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by [visiting the slurm page on sacct](https://slurm.schedmd.com/sacct.html).
 
