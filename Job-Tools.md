@@ -176,13 +176,13 @@ user        | Username of the person who ran the job.
 Suppose you want to find information jobs that were ran on March 12, 2018. You want to show information regarding the job name, the number of nodes used in the job, the number of cpus, the maxrss, and the elapsed time. Your `--format` flag would look like this:
 
 ```bash
-$ sacct --jobs=<your_job-id> --starttime=<2018-03-12> --format=jobname,nnodes,ncpus,maxrss,elapsed
+$ sacct --jobs=<your_job-id> --starttime=2018-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
 ```
 
 This time you would like to pull up information on jobs that were ran on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your script would look like this:
 
 ```bash
-$ sacct –-jobs=<your_job-id> –-starttime=<2018-02-21> --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
+$ sacct –-jobs=<your_job-id> –-starttime=2018-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
 A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by [visiting the slurm page on sacct](https://slurm.schedmd.com/sacct.html).
 
