@@ -1,7 +1,7 @@
 When running jobs on research computing resources, there may be times where you like more information on the job you are running. In this tutorial, we will be showcasing several tools within research computing resources that provide in-depth information on jobs.
 
 ## Getting information using squeue
-The simplest tool you can utilize when needed to obtain information about your job is via the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
+The simplest tool you can utilize when needed to obtain information about your job is through the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
 
 The `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of the node_ that the job is running on for all jobs queued or running within Slurm by default. To specify only jobs that you are running use the `--user` flag. Type:
 
@@ -15,7 +15,7 @@ Verbose information on the job can be printed using the `--long` flag. This flag
 $ squeue --user=<your_rc-username> --long
 ```
 
-The squeue also allows users to pull up information on an estimated start time by appending the `--start` flag to our command. This will add Slurm's estimated start time of each job to our output information. (Note: the start time presented can be fairly inaccurate because of jobs ending sooner or later than expected)
+The squeue also allows users to pull up information on an estimated start time when we append the `--start` flag to our command. This will add Slurm's estimated start time of each job to our output information. (Note: the start time presented can be fairly inaccurate)
 
 ```bash
 $ squeue --user=<your_rc-userame> --start
@@ -37,7 +37,7 @@ We can pull more information on each job using the `--format` flag. The output f
 %[.][size_of_field](information_variable)
 ```
 
-where `[.]` tells whether or not this field should be right justified, `[size_of_field]` is the minimum size of space the field (If nothing is specified then defaults to space needed), and `(information_variable)` is the data we want the field to actually carry. Because the list of information variables available for this flag is very large, we’ll just be going over a couple of these options.
+where `[.]` tells whether or not this field should be right justified, `[size_of_field]` is the minimum size of space the field (If nothing is specified then defaults to space needed), and `(information_variable)` is the data we want the field to actually hold. Because the list of information variables available for this flag is very large, we’ll just be going over a couple of these options.
 
 Format code | Description
 ---|-----------------------------
@@ -80,7 +80,7 @@ For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.
 ## Controlling Jobs with scontrol
 The `scontrol` command allows users further control of their jobs through Slurm. A few examples of this include pausing a job as its running, holding a job from running, or printing information about the job.
 
-To pause a job that is currently running on the system, we can use `scontrol` with the `suspend` command. This will stop a running job on its current step that can be resumed at a later time. We can pause a job by typing in the command:
+To suspend a job that is currently running on the system, we can use `scontrol` with the `suspend` command. This will stop a running job on its current step that can be resumed at a later time. We can suspend a job by typing in the command:
 
 ```bash
 $ scontrol suspend <job_id-number>
@@ -98,16 +98,24 @@ Holding a job differs from suspending a job in the state in which the command ca
 $ scontrol hold <job_id-number>
 ```
 
-We can then release a held job using the release command. The command would look like this on the command line.
+We can then release a held job using the release command. The command would look like this on the command line:
 
 ```bash
 $ scontrol release <job_id-number>
 ```
 
-Scontrol can also provide detailed information on jobs using the `show job` command. The information provided from this command is very verbose and detailed, so be sure to either clear your terminal window, grep certain information from the command, or pipe the output to a separate text file. This command would look similar to:
+Scontrol can also extensive information on jobs using the `show job` command. The information provided from this command is very verbose and detailed, so be sure to either clear your terminal window, grep certain information from the command, or pipe the output to a separate text file. This command would look similar to:
 
 ```bash
+! Output to console
 $ scontrol show job <job_id-number>
+
+! Streaming output to a textfile
+$ scontrol show job <job_id-number> > outputfile.txt
+
+! Piping output to Grep
+$ scontrol show job <job_id-number> | grep Time
+
 ```
 
 For more information, [visit the Slurm page on scontrol](https://slurm.schedmd.com/scontrol.html)
