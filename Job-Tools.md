@@ -60,12 +60,6 @@ $ squeue --user=<your_rc-username> --format=%A%j%C%T%S
 Now let’s set our out output to display a username with a 8 character minimum chart value and a right justified ‘job-name’ with a 12 character minimum chart value.
 	$ squeue --user=<your_rc-username> -- format=%9U%7j%.12J
 
-Useful examples:
-
-Example 1:
-Example 2:
-Example 3:
-
 For more information, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
 
 ## Stopping jobs using scancel
