@@ -29,7 +29,7 @@ $ squeue --user=<your_rc-username> --start --iterate=<n_seconds>
 
 Pressing `ctrl`-`z` will stop the command from looping and bring you back to the terminal.
 
-### Advanced squeue formatting
+### Formatting output with squeue
 
 We can pull more information on each job using the `--format` flag. The output flag allows us to specify what information we would like to see in what order. The flag takes in several arguments that specify what item you would like to be in each field. Each argument is formatted as such:
 
@@ -182,7 +182,5 @@ This time you would like to pull up information on jobs that were ran on Februar
 ```bash
 $ sacct –-jobs=<your_job-id> –-starttime=<job_date> --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
-A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by visiting the slurm page on [sacct](https://slurm.schedmd.com/sacct.html).
-
-For more information, [check out the Slurm page on sacct](https://slurm.schedmd.com/sacct.html).
+A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by [visiting the slurm page on sacct](https://slurm.schedmd.com/sacct.html).
 
