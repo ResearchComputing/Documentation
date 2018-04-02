@@ -66,7 +66,7 @@ Example 1:
 Example 2:
 Example 3:
 
-For more information about the usage of squeue, visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+For more information, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
 
 ## Stopping jobs using scancel
 Sometimes you may need to stop a job while it’s running entirely. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on research computing resources using the job’s job ID. The command looks like this:
@@ -81,7 +81,7 @@ To cancel multiple jobs, you can use a comma-separated list of job IDs:
 $ scancel <job_id-number1>, <job_id-number2>, <job_id-number3>
 ```
 
-For more information about the scancel command visit the Slurm manual on [scancel](https://slurm.schedmd.com/scancel.html)
+For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
 
 ## Controlling Jobs with scontrol
 The `scontrol` command allows users further control of their jobs through Slurm. A few examples of this include pausing a job as its running, holding a job from running, or printing information about the job.
@@ -116,7 +116,7 @@ Scontrol can also provide detailed information on jobs using the `show job` comm
 $ scontrol show job <job_id-number>
 ```
 
-For more information on scontrol, visit the Slurm page on [scontrol](https://slurm.schedmd.com/scontrol.html)
+For more information, [visit the Slurm page on scontrol](https://slurm.schedmd.com/scontrol.html)
 
 ## Getting information on older jobs using sacct
 The `sacct` command allows users to pull up information about jobs that they have run through Slurm. With the `sacct` command, we can pull up job information by using the job ID:
@@ -138,6 +138,8 @@ To see an on-abbreviated version of sacct output, use the `--long` flag:
 ```bash
 $ sacct –-job <your job id> –-starttime=2017-10-10 --long
 ```
+
+### Formatting Output with sacct
 
 Oftentimes, the standard output of `sacct` will not provide the information we want. To remedy this, we can use the `--format` flag to choose what we want in our output. The format flag is handled by a list of comma separated variables that specify data that sacct handles. The command with the `--format` flag looks as so:
 
@@ -168,20 +170,19 @@ reqcpu      | Required number of CPUs
 reqmem      | Required amount of memory for a job.
 user        | Username of the person who ran the job.
 
-##### Example:
+#### Examples:
 Suppose you want to find information jobs that were ran on March 12, 2018. You want to show information regarding the job name, the number of nodes used in the job, the number of cpus, the maxrss, and the elapsed time. Your `--format` flag would look like this:
 
 ```bash
 $ sacct --jobs=<your_job-id> --starttime=<2018-03-12> --format=jobname,nnodes,ncpus,maxrss,elapsed
 ```
 
-##### Another Example:
-This time you would like to pull up information on jobs that were ran 
+This time you would like to pull up information on jobs that were ran on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your script would look like this:
 
 ```bash
 $ sacct –-jobs=<your_job-id> –-starttime=<job_date> --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
 A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by visiting the slurm page on [sacct](https://slurm.schedmd.com/sacct.html).
 
-For more information on sacct check out the Slurm page on [sacct](https://slurm.schedmd.com/sacct.html).
+For more information, [check out the Slurm page on sacct](https://slurm.schedmd.com/sacct.html).
 
