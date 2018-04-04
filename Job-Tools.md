@@ -1,4 +1,4 @@
-When running jobs on Research Computing resources, there may be times when you would like more information on the job you are running. In this tutorial, we will be showcasing several tools used on Research Computing resources that provide in-depth information on jobs.
+When running jobs on Research Computing resources, there may be times when you would like more information on the job you are running. In this tutorial, we will be showcasing several tools that provide in-depth information on jobs.
 
 ## Getting information using squeue
 The simplest tool you can utilize when needed to obtain information about your job is through the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
