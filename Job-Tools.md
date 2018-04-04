@@ -64,7 +64,7 @@ Now let’s set our out output to display a username with a 8 character minimum 
 For more information, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
 
 ## Stopping jobs using scancel
-Sometimes you may need to stop a job while it’s running entirely. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on research computing resources using the job’s job ID. The command looks like this:
+Sometimes you may need to stop a job entirely while it’s running. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on research computing resources using the job’s job ID. The command looks like this:
 
 ```bash
 $ scancel <job_id-number>
