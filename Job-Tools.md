@@ -1,7 +1,7 @@
 When running jobs on Research Computing resources, there may be times when more information on a running or pending job would be beneficial. In this tutorial, we will be showcasing several tools that provide in-depth information on jobs.
 
 ## Getting information using squeue
-The simplest tool you can utilize when needed to obtain information about your job is through the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
+The simplest tool you can utilize when needing to obtain information about your job is through the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
 
 The `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of the node_ that the job is running on for all jobs queued or running within Slurm by default. To specify only jobs that you are running use the `--user` flag. Type:
 
