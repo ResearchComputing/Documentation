@@ -8,6 +8,7 @@ The `squeue` command will print out the _job ID, partition, username, job status
 ```bash
 $ squeue --user=<your_rc-username>
 ```
+(Note that the "<" and ">" characters should not be keyed in).
 
 Verbose information on the job can be printed using the `--long` flag. This flag will print out the non-abbreviated default information with the addition of a time limit field. The command using the flag would look something like:
 
