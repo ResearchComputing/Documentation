@@ -53,6 +53,7 @@ You can check how much memory your job used by using
 
 ```
 sacct --format=MaxRSS
+```
 
 ## Where is my current fair share priority level at?
 
