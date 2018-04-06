@@ -1,16 +1,22 @@
-When running jobs on Research Computing resources, there may be times when more information on a running or pending job would be beneficial. In this tutorial, we will be showcasing several tools that provide in-depth information on jobs.
+## Table of Contents
+* [Overview](#0)
+* [squeue](#1)
+* [scancel](#2)
+* [scontrol](#3)
+* [sacct](#4)
+* [sshare](#5)
 
-## Getting information using squeue
-The simplest tool you can utilize when needing to obtain information about your job is through the `squeue` command. The `squeue` command pulls up information on all jobs pending or running on the cluster.  
+## <a name=index0></a>Overview
+When running jobs on Research Computing resources, there may be times where you would like specific information on a running or pending job. You may also wish to have some extended control over jobs that you have submitted to summit. In this tutorial, we will be showcasing several tools that provide control over submitted jobs as well as in-depth information.
 
-The `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of the node_ that the job is running on for all jobs queued or running within Slurm by default. To specify only jobs that you are running use the `--user` flag. Type:
+## <a name=1></a>squeue 
+The `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of the nodes that the job is running on_ for all jobs queued or running within Slurm by default. To specify only jobs that you are running use the `--user` flag. Type:
 
 ```bash
 $ squeue --user=<your_rc-username>
 ```
-(Note that the "<" and ">" characters should not be keyed in).
 
-Verbose information on the job can be printed using the `--long` flag. This flag will print out the non-abbreviated default information with the addition of a time limit field. The command using the flag would look something like:
+Squeue can also print verbose output on jobs by using the `--long` flag. This flag will print out the non-abbreviated default information with the addition of a time limit field. The command using the flag would look something like:
 
 ```bash
 $ squeue --user=<your_rc-username> --long
@@ -30,7 +36,7 @@ $ squeue --user=<your_rc-username> --start --iterate=<n_seconds>
 
 Pressing `ctrl`-`z` will stop the command from looping and bring you back to the terminal.
 
-### Formatting output with squeue
+### squeue formatting
 
 We can pull more information on each job using the `--format` flag. The output flag allows us to specify what information we would like to see in what order. The flag takes in several arguments that specify what item you would like to be in each field. Each argument is formatted as such:
 
@@ -55,73 +61,78 @@ Format code | Description
 %v | Reservation for the job
 
 For example let’s set up our output to display the job id, the job name, the number of CPUs requested, the job state, and the expected start time, all left justified:
+
 ```bash
 $ squeue --user=<your_rc-username> --format=%A%j%C%T%S
 ```
+
 Now let’s set our out output to display a username with a 8 character minimum chart value and a right justified ‘job-name’ with a 12 character minimum chart value.
-	$ squeue --user=<your_rc-username> -- format=%9U%7j%.12J
+
+```bash
+$ squeue --user=<your_rc-username> --format=%9U%7j%.12J
+```
 
 For more information, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
 
-## Stopping jobs using scancel
-Sometimes you may need to stop a job entirely while it’s running. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on research computing resources using the job’s job ID. The command looks like this:
+## <a name=2></a> scancel
+Sometimes you may need to stop a job entirely while it’s running. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on Research Computing resources using the job’s job ID. The command looks like this:
 
 ```bash
-$ scancel <job_id-number>
+$ scancel <job_id>
 ```
 
 To cancel multiple jobs, you can use a comma-separated list of job IDs:
 
 ```bash
-$ scancel <job_id-number1>, <job_id-number2>, <job_id-number3>
+$ scancel <job_id1>, <job_id2>, <job_id3>
 ```
 
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
 
-## Controlling Jobs with scontrol
+## <a name=3></a> scontrol
 The `scontrol` command allows users further control of their jobs through Slurm. A few examples of this include pausing a job as its running, holding a job from running, or printing information about the job.
 
 To suspend a job that is currently running on the system, we can use `scontrol` with the `suspend` command. This will stop a running job on its current step that can be resumed at a later time. We can suspend a job by typing in the command:
 
 ```bash
-$ scontrol suspend <job_id-number>
+$ scontrol suspend <job_id>
 ```
 
 To resume a paused job, we use `scontrol` with the `resume` command:
 
 ```bash
-$ scontrol resume <job_id-number>
+$ scontrol resume <job_id>
 ```
 
 Holding a job differs from suspending a job in the state in which the command can be executed. Holding a job puts a pending jobs priority to the 0, stopping the job from being run. To hold a pending job we can use the `hold` command:
 
 ```bash	
-$ scontrol hold <job_id-number>
+$ scontrol hold <job_id>
 ```
 
 We can then release a held job using the release command. The command would look like this on the command line:
 
 ```bash
-$ scontrol release <job_id-number>
+$ scontrol release <job_id>
 ```
 
 Scontrol can also extensive information on jobs using the `show job` command. The information provided from this command is very verbose and detailed, so be sure to either clear your terminal window, grep certain information from the command, or pipe the output to a separate text file. This command would look similar to:
 
 ```bash
 # Output to console
-$ scontrol show job <job_id-number>
+$ scontrol show job <job_id>
 
 # Streaming output to a textfile
-$ scontrol show job <job_id-number> > outputfile.txt
+$ scontrol show job <job_id> > outputfile.txt
 
 # Piping output to Grep
-$ scontrol show job <job_id-number> | grep Time
+$ scontrol show job <job_id> | grep Time
 
 ```
 
 For more information, [visit the Slurm page on scontrol](https://slurm.schedmd.com/scontrol.html)
 
-## Getting information on older jobs using sacct
+## <a name=4></a> sacct
 The `sacct` command allows users to pull up information about jobs that they have run through Slurm. With the `sacct` command, we can pull up job information by using the job ID:
 
 ```bash
@@ -187,3 +198,4 @@ $ sacct –-jobs=<your_job-id> –-starttime=2018-02-21 --format=jobid,jobname,q
 ```
 A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by [visiting the slurm page on sacct](https://slurm.schedmd.com/sacct.html).
 
+## <a name=5></a> sshare
