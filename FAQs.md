@@ -40,22 +40,41 @@ You can also check the amount of space being used by any directory with the `du 
 
 ## When will my job start?
 
-You can pull up your job's start time using the command: 
+You can pull up your job's start time using the `squeue` command: 
 ```
 squeue --user=your_rc-username --start
 ```
-Note that this start time can vary substantially because Slurm calculates this time based off of what jobs are currently in the system. Any job that is added in later with a higher priority may delay your job.
+Start time can be inaccurate in its predicted time because Slurm calculates this time based off of what jobs are currently in the system. Any job that is added in later with a higher priority may delay your job.
 
-For detailed information on the squeue command, [take a look at our Job Tools tutorial](Job Tools)
+For more information on the `squeue` command, [take a look at our Job Tools tutorial.](Job-Tools) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
 ## How much memory did my job use?
-You can check how much memory your job used by using 
+
+You can check how much memory your job used by using the `sacct` command. Simply replace `YYYY-MM-DD` with the day you ran the job.
 
 ```
-sacct --format=MaxRSS
+sacct --starttime=YYYY-MM-DD --format=User,JobName,JobId,MaxRSS
 ```
+
+If you'd like to monitor memory usage on running jobs, use the `sstat` command instead:
+
+```
+sstat --format=User,JobName,JobId,MaxRSS
+```
+
+For more information on `sstat` or `sacct` commands, [take a look at our Job Tools tutorial.](Job-Tools) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
 
 ## Where is my current fair share priority level at?
+
+You can check your current fair share priority level using the `sshare` command:
+```
+sshare --users=your_username -l
+```
+
+
+The `sshare` command will print out 
+
+For more information on the `sshare` command, [take a look at our Job Tools tutorial.](Job-Tools) Or check out the Slurm reference page on [sshare](https://slurm.schedmd.com/sshare.html)
 
 ## Why is my job pending with reason 'ReqNodeNotAvail'?
 
@@ -73,7 +92,7 @@ Using the Summit module environment from login nodes requires typing `module loa
 
 ## How do I install my own python library?
 
-Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the <a href="https://www.rc.colorado.edu/support/user-guide/modules.html">new module system</a>. That being said, this guide can be tweaked to be used on the older modules as well.
+Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Loading-Modules). That being said, this guide can be tweaked to be used on the older modules as well.
 
 First login to a login node and then ssh to a compile node.
 
