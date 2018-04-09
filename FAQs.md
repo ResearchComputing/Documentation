@@ -44,7 +44,7 @@ You can pull up information on your job's start time using the `squeue` command:
 ```
 squeue --user=your_rc-username --start
 ```
-Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this time based off of what jobs are currently in the system. Any job that is added in later with a higher priority may delay your job.
+Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
 For more information on the `squeue` command, [take a look at our Job Tools tutorial.](Job-Tools) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
@@ -70,7 +70,7 @@ You can check your current fair share priority level using the `sshare` command:
 ```
 sshare --users=your_username -l
 ```
-The `sshare` command will print out a table of information regarding an associations usage and priority. The field that describes an association's fair share priority is the LevelFS. The LevelFS field holds a number from 0 to inf that describes the fair share of an association in relation to it's other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of inf.
+The `sshare` command will print out a table of information regarding an associations usage and priority. The field we are looking for is the LevelFS. The LevelFS holds a number from 0 to inf that describes the fair share of an association in relation to it's other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of inf.
 
 For more information on the `sshare` command, [take a look at our Job Tools tutorial.](Job-Tools) Or check out the Slurm reference page on [sshare](https://slurm.schedmd.com/sshare.html)
 
