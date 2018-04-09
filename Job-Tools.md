@@ -1,11 +1,11 @@
 ## Table of Contents
 * [Overview](#Overview)
-* [squeue](#Finding queuing information with squeue)
-* [scancel](#Stopping jobs with scancel)
-* [sstat](#Finding status information with sstat)
-* [sacct](#Analyzing past jobs with sacct )
-* [sshare](#Finding fair share information with sshare)
-* [scontrol](#Controlling queued and running jobs using scontrol)
+* [Finding queuing information with squeue](#Finding-queuing-information-with-squeue)
+* [Stopping jobs with scancel](#Stopping-jobs-with-scancel)
+* [Finding status information with sstat](#Finding-status-information-with-sstat)
+* [Analyzing past jobs with sacct](#Analyzing-past-jobs-with-sacct)
+* [Finding fair share information with sshare](#Finding-fair-share-information-with-sshare)
+* [Controlling queued and running jobs using scontrol](#Controlling-queued-and-running-jobs-using-scontrol)
 
 ## Overview
 When running a job on Research Computing resources, there may be times where you would like specific information about about your job. You may also wish to have some extended control over jobs that you have submitted to Summit. This tutorial showcases several tools that provide information about jobs as well as extended control over submitted jobs.
@@ -204,13 +204,13 @@ Scontrol can also provide information on jobs using the `show job` command. The 
 
 ```bash
 # Output to console
-$ scontrol show job <job_id>
+$ scontrol show job job_id
 
 # Streaming output to a textfile
-$ scontrol show job <job_id> > outputfile.txt
+$ scontrol show job job_id > outputfile.txt
 
 # Piping output to Grep
-$ scontrol show job <job_id> | grep Time
+$ scontrol show job job_id | grep Time
 ```
 
 For more information, [visit the Slurm page on scontrol](https://slurm.schedmd.com/scontrol.html)
