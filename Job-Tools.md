@@ -1,11 +1,11 @@
 ## Table of Contents
-* [Overview](#Overview)
-* [Finding queuing information with squeue](#Finding-queuing-information-with-squeue)
-* [Stopping jobs with scancel](#Stopping-jobs-with-scancel)
-* [Finding status information with sstat](#Finding-status-information-with-sstat)
-* [Analyzing past jobs with sacct](#Analyzing-past-jobs-with-sacct)
-* [Finding fair share information with sshare](#Finding-fair-share-information-with-sshare)
-* [Controlling queued and running jobs using scontrol](#Controlling-queued-and-running-jobs-using-scontrol)
+* [Overview](#overview)
+* [Finding queuing information with squeue](#finding-queuing-information-with-squeue)
+* [Stopping jobs with scancel](#stopping-jobs-with-scancel)
+* [Finding status information with sstat](#finding-status-information-with-sstat)
+* [Analyzing past jobs with sacct](#analyzing-past-jobs-with-sacct)
+* [Finding fair share information with sshare](#finding-fair-share-information-with-sshare)
+* [Controlling queued and running jobs using scontrol](#controlling-queued-and-running-jobs-using-scontrol)
 
 ## Overview
 When running a job on Research Computing resources, there may be times where you would like specific information about about your job. You may also wish to have some extended control over jobs that you have submitted to Summit. This tutorial showcases several tools that provide information about jobs as well as extended control over submitted jobs.
