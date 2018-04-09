@@ -70,21 +70,19 @@ You can check your current fair share priority level using the `sshare` command:
 ```
 sshare --users=your_username -l
 ```
-
-
-The `sshare` command will print out 
+The `sshare` command will print out a large table of information regarding usage and priority. The LevelFS field holds a number from 0 to inf that describes the fairshare in relation to others accounts. Over serviced accounts will have a LevelFS thats between 0 and 1. Under serviced accounts will have a LevelFS thats greater than 1. Accounts that have never been used will have a value of inf.
 
 For more information on the `sshare` command, [take a look at our Job Tools tutorial.](Job-Tools) Or check out the Slurm reference page on [sshare](https://slurm.schedmd.com/sshare.html)
 
 ## Why is my job pending with reason 'ReqNodeNotAvail'?
 
-The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script.  This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you submit a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
+The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you submit a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
 
 If you receive this message, the following solutions are available: 1) submit a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
 
 ## Why do I get an 'Invalid Partition' error when I try to submit a job?
 
-The 'Invalid Partition' error is common among new account holders.  It usually means users have not requested an Allocation that would provide the service units (SUs) required to submit a job.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system.  Allocations are free. New CU users can request a 'ucb-general' allocation (by emailing rc-help@colorado.edu) which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes.  Users requiring more resources can <a href="https://www.rc.colorado.edu/support/user-guide/allocations.html">request a Project and apply for a Project Allocation</a>.
+The 'Invalid Partition' error is common among new account holders.  It usually means users have not requested an Allocation that would provide the service units (SUs) required to submit a job.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users can request a 'ucb-general' allocation (by emailing rc-help@colorado.edu) which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. Users requiring more resources can [request a Project and apply for a Project Allocation]("https://www.rc.colorado.edu/support/user-guide/allocations.html").
 
 ## Why do I get an 'LMOD' error when I try to load Slurm?
 
@@ -92,7 +90,7 @@ Using the Summit module environment from login nodes requires typing `module loa
 
 ## How do I install my own python library?
 
-Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Loading-Modules). That being said, this guide can be tweaked to be used on the older modules as well.
+Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](Loading-Modules). That being said, this guide can be tweaked to be used on the older modules as well.
 
 First login to a login node and then ssh to a compile node.
 
