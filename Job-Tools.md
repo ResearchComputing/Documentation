@@ -8,72 +8,37 @@
 * [Controlling queued and running jobs using scontrol](#controlling-queued-and-running-jobs-using-scontrol)
 
 ## Overview
+
+
 When running a job on Research Computing resources, there may be times where you would like specific information about about your job. You may also wish to have some extended control over jobs that you have submitted to Summit. This tutorial showcases several tools that provide information about jobs as well as extended control over submitted jobs.
 
 ## Finding queuing information with squeue
-The `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of nodes the job is running on_ for all jobs queued or running within Slurm by default. To specify jobs that only you are running, use the `--user` flag:
+The `squeue` command is a tool we use to pull up information about the jobs in queue. By default, the `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of nodes the job is running on_ for all jobs queued or running within Slurm. Usually you wouldn't need information for all Jobs that were queued in the system, so we can specify jobs that only you are running, use the `--user` flag:
 
 ```bash
 $ squeue --user=your_rc-username
 ```
 
-Squeue can also output non-abbreviated information on jobs with the `--long` flag. This flag will print out the non-abbreviated default information with the addition of a timelimit field. The command using the flag would look like:
+We can output non-abbreviated information with the `--long` flag. This flag will print out the non-abbreviated default information with the addition of a timelimit field:
 
 ```bash
 $ squeue --user=your_rc-username --long
 ```
 
-The squeue also allows users to calculate an estimated start time by adding the `--start` flag to our command. This will append Slurm's estimated start time for each job in our output information. (Note: The start time provided by this command can be inaccurate. This is because the time calculated is based off of jobs queued or running in the system. If a job with a higher priority is queued after the command is run, you job may be delayed.)
+The squeue also provides users with a means to calculate a jobs estimated start time by adding the `--start` flag to our command. This will append Slurm's estimated start time for each job in our output information. (Note: The start time provided by this command can be inaccurate. This is because the time calculated is based off of jobs queued or running in the system. If a job with a higher priority is queued after the command is run, you job may be delayed.)
 
 ```bash
 $ squeue --user=your_rc-username --start
 ```
-
-Lastly squeue provides us with a means to continuously repeat our squeue command. This will run squeue every _n seconds_, allowing for a frequent, continuous update of queue information without needing to repeatedly call squeue. We can accomplish this by adding the `--iterate` flag to our squeue command.  Running squeue with this flag would look like:
+When checking the status of a job, you may want to repeatedly call the squeue command to check for updates. We can accomplish this by adding the `--iterate` flag to our squeue command. This will run squeue every _n seconds_, allowing for a frequent, continuous update of queue information without needing to repeatedly call squeue:
 
 ```bash
 $ squeue --user=your_rc-username --start --iterate=n_seconds
 ```
 
-Pressing `ctrl`-`z` will stop the command from looping and bring you back to the terminal.
+Press `ctrl`-`z` to stop the command from looping and bring you back to the terminal.
 
-### Formatting squeue output
-
-We can obtain even more information about each job using the `--format` flag. The output flag allows us to specify what information we would like to see in what order. The flag takes in several arguments that specify what item you would like to be in each field. Each argument is formatted as such:
-
-```
-%[.][size_of_field][information_variable]
-```
-
-where `[.]` tells whether or not this field should be right justified, `[size_of_field]` is the minimum size of space the field (If nothing is specified then defaults to space needed), and `[information_variable]` is the data we want the field to actually hold. Because the list of variables available for this flag is large, we’ll just be going over a couple of these options.
-
-Format code | Description
----|-----------------------------
-%A | Job ID
-%C | Number of CPUs requested or allocated
-%j | Job name
-%J | Number of threads per core requested by the job
-%m | Minimum size of memory requested by the job in MB
-%M | Time used by the job
-%p | Priority of the job
-%S | Actual or expected job start time
-%T | Job state
-%U | User ID for a job
-%v | Reservation for the job
-
-For example, let’s set up our output to display the job id, the job name, the number of CPUs requested, the job state, and the expected start time, all left justified:
-
-```bash
-$ squeue --user=your_rc-username --format=%A%j%C%T%S
-```
-
-Now let’s set our out output to display a username with a 8 character minimum chart value and a right justified ‘job-name’ with a 12 character minimum chart value.
-
-```bash
-$ squeue --user=your_rc-username --format=%9U%7j%.12J
-```
-
-For more information, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
+For more information on squeue, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
 
 ## Stopping jobs with scancel
 Sometimes you may need to stop a job entirely while it’s running. The best way to accomplish this is with the `scancel` command. The `scancel` command allows you to cancel jobs you are running on Research Computing resources using the job’s ID. The command looks like this:
@@ -92,10 +57,28 @@ For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.
 
 ## Finding status information with sstat
 
+The `sstat` command allows users to easily pull up status information about their jobs. This includes information about CPU usage, Task information, Node information, Resident Set Size (RSS), and Virtual Memory (VM). We can invoke the `sstat` as such:
+```
+$ sstat --jobs=your_job-id
+```
+By default, sstat is unlikely to pull up information you'd like with the commands default output. To remedy this, we can use the `--format` flag to choose what we want in our output. The format flag is handled by a list of comma separated variables which specify output data:
 
+```bash
+$ sstat --jobs=your_job-id --format=var_1,var_2, ... , var_N
+```
+A chart of some these variables are listed in the table below:
 
+Variable    | Description
+------------|------------
+avecpu      | Average CPU time of all tasks in job.
+averss      | Average resident set size of all tasks.
+avevmsize   | Average virtual memory of all tasks in a job.
+jobid       | The id of the Job.
+maxrss      | Maximum number of bytes read by all tasks in the job.
+maxvsize    | Maximum number of bytes written by all tasks in the job.
+ntasks      | Number of tasks in a job.
 
-
+A full list of variables that specify data handled by sstat can be found with the `--helpformat` flag or by [visiting the slurm page on sstat](https://slurm.schedmd.com/sstat.html).
 
 ## Analyzing past jobs with sacct 
 The `sacct` command allows users to pull up status information about past jobs. We can use a job's id:
@@ -103,25 +86,30 @@ The `sacct` command allows users to pull up status information about past jobs. 
 ```bash
 $ sacct --jobs=your_job-id
 ```
+
 ...or your rc username:
+
 ```bash
 $ sacct --user=your_rc-username
 ```
 
-to pull up accounting information on jobs ran at an earlier time.
+To pull up accounting information on jobs ran at an earlier time.
 
 By default, `sacct` will only pull up jobs that were ran on the current day. We can use the `--starttime` flag so the command knows to look beyond its short-term cache of jobs.
+
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD
 ```
+
 To see a non-abbreviated version of sacct output, use the `--long` flag:
+
 ```bash
 $ sacct –-job your_job-id –-starttime=YYYY-MM-DD --long
 ```
 
 ### Formatting Output with sacct
 
-Oftentimes, the standard output of `sacct` will not provide the information we want. To remedy this, we can use the `--format` flag to choose what we want in our output. The format flag is handled by a list of comma separated variables which specify output data. The command with the `--format` flag looks as such:
+Like sstat, the standard output of `sacct` will usually not provide the information we want. To remedy this, we can use the `--format` flag to choose what we want in our output. Similarly, the format flag is handled by a list of comma separated variables which specify output data:
 
 ```bash
 $ sacct --user=your_rc-username --format=var_1,var_2, ... , var_N
@@ -133,6 +121,7 @@ Variable    | Description
 ------------|------------
 account     | Account the job ran under.
 avecpu      | Average CPU time of all tasks in job.
+averss      | Average resident set size of all tasks in the job.
 cputime     | Formatted (Elapsed time * CPU) count used by a job or step.
 elapsed     | Jobs elapsed time formated as DD-HH:MM:SS.
 exitcode    | The exit code returned by the job script or salloc.
