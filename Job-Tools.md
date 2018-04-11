@@ -4,12 +4,11 @@
 * [Stopping jobs with scancel](#stopping-jobs-with-scancel)
 * [Finding status information with sstat](#finding-status-information-with-sstat)
 * [Analyzing past jobs with sacct](#analyzing-past-jobs-with-sacct)
-* [Finding fair share information with sshare](#finding-fair-share-information-with-sshare)
 * [Controlling queued and running jobs using scontrol](#controlling-queued-and-running-jobs-using-scontrol)
 
 ## Overview
 
-When running a job on Research Computing resources, there may be times where you would like specific information about about your job. You may also wish to have some extended control over jobs that you have submitted to Summit. This tutorial showcases several tools that provide information about jobs as well as extended control over submitted jobs.
+When running a job on Research Computing resources, you might want some more information regarding your submission. There may be times you would like to pause or cancel a job that is currently queued or running. This tutorial will provide information on a variety of tools Slurm provides for managing and understanding your jobs.  
 
 ## Finding queuing information with squeue
 The `squeue` command is a tool we use to pull up information about the jobs in queue. By default, the `squeue` command will print out the _job ID, partition, username, job status, number of nodes the job is utilizing,_ and _name of nodes the job is running on_ for all jobs queued or running within Slurm. Usually you wouldn't need information for all Jobs that were queued in the system, so we can specify jobs that only you are running, use the `--user` flag:
