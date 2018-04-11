@@ -9,7 +9,6 @@
 
 ## Overview
 
-
 When running a job on Research Computing resources, there may be times where you would like specific information about about your job. You may also wish to have some extended control over jobs that you have submitted to Summit. This tutorial showcases several tools that provide information about jobs as well as extended control over submitted jobs.
 
 ## Finding queuing information with squeue
@@ -80,7 +79,7 @@ ntasks      | Number of tasks in a job.
 
 A full list of variables that specify data handled by sstat can be found with the `--helpformat` flag or by [visiting the slurm page on sstat](https://slurm.schedmd.com/sstat.html).
 
-## Analyzing past jobs with sacct 
+## Analyzing past jobs with sacct
 The `sacct` command allows users to pull up status information about past jobs. We can use a job's id:
 
 ```bash
@@ -153,14 +152,6 @@ Now you would like to pull up information on jobs that were ran on February 21, 
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=2018-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
-
-## Finding fair share information with sshare
-
-
-
-
-
-
 
 ## Controlling queued and running jobs using scontrol
 The `scontrol` command provides users extended control of their jobs through Slurm. This includes actions like suspending a job, holding a job from running, or pulling extensive status information on jobs.
