@@ -50,7 +50,7 @@ For more information on the `squeue` command, [take a look at our Job Tools tuto
 
 ## How much memory did my job use?
 
-You can check how much memory your job used by using the `sacct` command. Simply replace `YYYY-MM-DD` with the date you ran the job.
+You can check how much memory your job used by using the `sacct` command. Simply replace `YYYY-MM-DD` with the date you ran the job to pull up the information:
 
 ```
 sacct --starttime=YYYY-MM-DD --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
