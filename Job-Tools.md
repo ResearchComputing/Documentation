@@ -2,7 +2,7 @@
 * [Overview](#overview)
 * [Finding queuing information with squeue](#finding-queuing-information-with-squeue)
 * [Stopping jobs with scancel](#stopping-jobs-with-scancel)
-* [Finding status information with sstat](#finding-status-information-with-sstat)
+* [Learning status information with sstat](#learning-status-information-with-sstat)
 * [Analyzing past jobs with sacct](#analyzing-past-jobs-with-sacct)
 * [Controlling queued and running jobs using scontrol](#controlling-queued-and-running-jobs-using-scontrol)
 
@@ -53,7 +53,7 @@ $ scancel your_job-id1, your_job-id2, your_jobiid3
 
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
 
-## Finding status information with sstat
+## Learning status information with sstat
 
 The `sstat` command allows users to easily pull up status information about their jobs. This includes information about *__CPU usage__*, *__task information__*, *__node information__*, *__resident set size (RSS)__*, and *__virtual memory (VM)__*. We can invoke the sstat command as such:
 ```bash
@@ -163,13 +163,13 @@ The `scontrol` command provides users extended control of their jobs run through
 To suspend a job that is currently running on the system, we can use scontrol with the `suspend` command. This will stop a running job on its current step that can be resumed at a later time. We can suspend a job by typing the command:
 
 ```bash
-$ scontrol suspend <job_id>
+$ scontrol suspend job_id
 ```
 
 To resume a paused job, we use scontrol with the `resume` command:
 
 ```bash
-$ scontrol resume <job_id>
+$ scontrol resume job_id
 ```
 
 Slurm also provides a utility to hold jobs that are queued in the system. Holding a job will place the job in the lowest priority, effectively "holding" the job from being run. A job can only be held if it's waiting on the system to be run. We use the `hold` command to place a job into a held state:
