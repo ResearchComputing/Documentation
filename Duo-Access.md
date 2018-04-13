@@ -1,4 +1,4 @@
-Note: Once you have Duo set up you can make changes via the duo.colorado.edu website.
+Note: Once you have Duo set up you can make changes via the [duo.colorado.edu](duo.colorado.edu) website.
  
 ## Duo Instructions
 1. CU Identity verification (done)
