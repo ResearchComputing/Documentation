@@ -5,16 +5,16 @@ Note: Once you have Duo set up you can make changes via the duo.colorado.edu web
 2. A Duo account is created for you and Duo sends you an invitation email, which comes from duosecurity.com or duo.com
 3. You install the relevant Duo Mobile app if you want to use a smartphone (search for Duo Mobile in your app store)
 4. You respond to the invitation and provision your Duo smartphone app for Duo Push
-    a. It is best to open the Duo Invite email on a desktop or laptop so you can scan the barcode with the phone.
-    b. If you want to use the app be sure not to request a phone call for authentication!
-    c. Scan the barcode in the email with your Duo app to provision it.
+   * It is best to open the Duo Invite email on a desktop or laptop so you can scan the barcode with the phone.
+   * If you want to use the app be sure not to request a phone call for authentication!
+   * Scan the barcode in the email with your Duo app to provision it.
 5. Test your login process, in this case via ssh to the RC login nodes:
-    a. Use your CU IdentiKey username "ssh <username>@login.rc.colorado.edu" or "ssh -l <username> login.rc.colorado.edu" and note that "ssh -l" uses a lowercase L.
-    b. You enter "duo:" followed by your IdentiKey Password at the password prompt, i.e. if your password is "MyUCB_PW" you enter "duo:MyUCB_PW" (omitting the quotes) as your password. Our system recognizes the duo: prefix and knows you are using Duo rather than the hardware device option.
-    c. Duo contacts your smartphone and requests that you authorize the login via the Duo app.
-    d. You open the app and approve/deny the login request
-    e. Also confirm approval in the app
-    f. If your request is approved and confirmed in your app, you should be logged in
+   * Use your CU IdentiKey username `ssh <username>@login.rc.colorado.edu` or `ssh -l <username> login.rc.colorado.edu` and note that you should remove the <> from the command and that `ssh -l` uses a lowercase L.
+   * You enter "duo:" followed by your IdentiKey Password at the password prompt, i.e. if your password is `MyUCB_PW` you enter `duo:MyUCB_PW` as your password. Our system recognizes the duo: prefix and knows you are using Duo rather than the hardware device option.
+   * Duo contacts your smartphone and requests that you authorize the login via the Duo app.
+   * You open the app and approve/deny the login request
+   * Also confirm approval in the app
+   * If your request is approved and confirmed in your app, you should be logged in
  
 ## Issues:
 - Duo Invite email (from duosecurity.com) goes to Spam folder or is overlooked.
