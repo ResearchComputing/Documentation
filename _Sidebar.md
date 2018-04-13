@@ -33,7 +33,7 @@
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
 ## Additional Resources
-- [University-of-Utah-Videos]
+- [University of Utah Videos](University-of-Utah-Videos)
 
 ## Maintenance
 - [CHANGELOG](CHANGELOG)
