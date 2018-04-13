@@ -32,6 +32,9 @@
     + [Fortran](OpenMP-Fortran)
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
+## Additional Resources
+- [University-of-Utah-Videos]
+
 ## Maintenance
 - [CHANGELOG](CHANGELOG)
 - [JupyterHub CHANGELOG](JupyterHub-CHANGELOG)
