@@ -23,7 +23,7 @@ We can output non-abbreviated information with the `--long` flag. This flag will
 $ squeue --user=your_rc-username --long
 ```
 
-The squeue also provides users with a means to calculate a jobs estimated start time by adding the `--start` flag to our command. This will append Slurm's estimated start time for each job in our output information. (Note: The start time provided by this command can be inaccurate. This is because the time calculated is based off of jobs queued or running in the system. If a job with a higher priority is queued after the command is run, you job may be delayed.)
+The squeue command also provides users with a means to calculate a job's estimated start time by adding the `--start` flag to our command. This will append Slurm's estimated start time for each job in our output information. (Note: The start time provided by this command can be inaccurate. This is because the time calculated is based off of jobs queued or running in the system. If a job with a higher priority is queued after the command is run, you job may be delayed.)
 
 ```bash
 $ squeue --user=your_rc-username --start
@@ -59,7 +59,7 @@ The `sstat` command allows users to easily pull up status information about thei
 ```bash
 $ sstat --jobs=your_job-id
 ```
-By default, sstat will pull up significantly more information than what would be needed in the commands default output. To remedy this, we can use the `--format` flag to choose what we want in our output. The format flag is handled by a list of comma separated variables which specify output data:
+By default, sstat will pull up significantly more information than what would be needed in the commands default output. To remedy this, we can use the `--format` flag to choose what we want in our output. The format flag takes a list of comma separated variables which specify output data:
 
 ```bash
 $ sstat --jobs=your_job-id --format=var_1,var_2, ... , var_N
@@ -85,19 +85,19 @@ sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
 A full list of variables that specify data handled by sstat can be found with the `--helpformat` flag or by [visiting the slurm page on sstat](https://slurm.schedmd.com/sstat.html).
 
 ## Analyzing past jobs with sacct
-The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously ran on the system instead of currently running jobs. We can use a job's id:
+The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously ran on the system instead of currently running jobs. We can use a job's id...
 
 ```bash
 $ sacct --jobs=your_job-id
 ```
 
-...or your rc username:
+...or your rc username...
 
 ```bash
 $ sacct --user=your_rc-username
 ```
 
-to pull up accounting information on jobs ran at an earlier time.
+...to pull up accounting information on jobs ran at an earlier time.
 
 By default, sacct will only pull up jobs that were ran on the current day. We can use the `--starttime` flag to tell the command to look beyond its short-term cache of jobs.
 
@@ -149,7 +149,7 @@ As an example, suppose you want to find information jobs that were ran on March 
 $ sacct --jobs=your_job-id --starttime=2018-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
 ```
 
-As another example, now you would like to pull up information on jobs that were ran on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your command would look like this:
+As another example, suppose you would like to pull up information on jobs that were ran on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your command would look like this:
 
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=2018-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
@@ -172,7 +172,7 @@ To resume a paused job, we use scontrol with the `resume` command:
 $ scontrol resume <job_id>
 ```
 
-Slurm also provides a utility to hold jobs that are queued in the system. Holding a job will place the job in the lowest priority, effectively holding the job from being run. A job can only be held if it's waiting on the system to be run. We use the `hold` command to place a job into a held state:
+Slurm also provides a utility to hold jobs that are queued in the system. Holding a job will place the job in the lowest priority, effectively "holding" the job from being run. A job can only be held if it's waiting on the system to be run. We use the `hold` command to place a job into a held state:
 
 ```bash	
 $ scontrol hold job_id
@@ -196,6 +196,8 @@ $ scontrol show job job_id > outputfile.txt
 # Piping output to Grep and find lines containing the word "Time"
 $ scontrol show job job_id | grep Time
 ```
+
+For a full primer on grep and regular expressions, [visit GNU's page on Grep](https://www.gnu.org/software/grep/manual/grep.html)
 
 For more information on scontrol, [visit the Slurm page on scontrol](https://slurm.schedmd.com/scontrol.html)
 
