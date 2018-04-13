@@ -53,13 +53,13 @@ For more information on the `squeue` command, [take a look at our Job Tools tuto
 You can check how much memory your job used by using the `sacct` command. Simply replace `YYYY-MM-DD` with the date you ran the job.
 
 ```
-sacct --starttime=YYYY-MM-DD --format=User,JobName,JobId,MaxRSS
+sacct --starttime=YYYY-MM-DD --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 ```
 
 If you'd like to monitor memory usage on jobs that are currently running, use the `sstat` command:
 
 ```
-sstat --format=User,JobName,JobId,MaxRSS
+sstat --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 ```
 
 For more information on `sstat` or `sacct` commands, [take a look at our Job Tools tutorial.](Job-Tools) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
