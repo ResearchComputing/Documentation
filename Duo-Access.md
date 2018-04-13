@@ -16,7 +16,7 @@ Note: Once you have Duo set up you can make changes via the [duo.colorado.edu](d
    * Also confirm approval in the app
    * If your request is approved and confirmed in your app, you should be logged in
  
-## Issues:
+## Issues
 - Duo Invite email (from duosecurity.com) goes to Spam folder or is overlooked.
 - Users open the email on their phone and then struggle with the provisioning, unable to scan the barcode on the screen.
 - Users request a phone call instead of Push for authentication.
