@@ -53,17 +53,18 @@ Modules in a job script can be loaded after your `#SBATCH` directives and before
 
 ```bash
 #!bin/bash
-#SBATCH 
-#SBATCH 
-#SBATCH 
-#SBATCH 
-#SBATCH 
-#SBATCH 
+#SBATCH --nodes=1
+#SBATCH --time=00:01:00
+#SBATCH --qos=debug
+#SBATCH --ntasks=1
+#SBATCH --job-name=test-job
+#SBATCH --output=test-job.%j.out
 
 module purge
 module load python/3.5.1
 
-python3 hello-world.py
+python3 test-program.py
+```
 
 ## Table of Sub-Commands
 The `module` command has a variety of sub-commands, outlined in the table below. You may shorten the command to `ml`, but the shortened command may require specialized syntax.
