@@ -1,6 +1,6 @@
 ## Overview
 
-[![How to load modules video](https://img.youtube.com/vi/csgl4czhD_k/0.jpg)](https://youtu.be/csgl4czhD_k)
+[![How to load modules video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Loading-Modules/videopreview.j.jpg)](https://youtu.be/csgl4czhD_k)
 
 Research Computing uses a [module system](##Using-Modules-on-RC-Systems) for loading software. Most software is not accessible by default and must be loaded into the environment. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
 
