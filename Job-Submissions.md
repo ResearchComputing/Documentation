@@ -15,11 +15,26 @@ Need more assistance? Watch a tutorial video or read the template
 
 ## Video
 
-[Job Submission Video](https://youtu.be/sStJQKTa9zY)
+[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-In/logging-in-vid.jpg)](https://youtu.be/sStJQKTa9zY)
 
 ## Template
 
-(Image Goes Here)
+```
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --time=00:05:00
+#SBATCH --qos=debug
+#SBATCH --partition=shas
+#SBATCH --ntasks=1
+#SBATCH --job-name=test-job
+#SBATCH --output=test-job.%j.out
+
+module purge
+
+echo "hello!"
+sleep 30
+echo "goodbye!"
+```
 
 1. Write your job script in a text editor
     - You will submit the script to Slurm, a batch queuing system that will schedule the job to run non-interactively when resources are available
@@ -27,15 +42,11 @@ Need more assistance? Watch a tutorial video or read the template
     - You can confirm the content of your script with this command: cat job-name.sh
     - Replace “job-name” with the name of your job
 
-(Image Goes Here)
-
 2. Submit your job
     - Load the Slurm module with the command module load slurm/summit
     - Submit the script to Slurm with the command sbatch test-job.sh
     - When Slurm accepts the job, it responds with a job ID number
          * Reference the ID number to expedite support if you contact rc-help@colorado.edu about your job
-
-(Image Goes Here)
 
 3. To check your job status
     - Use the command squeue -u $USER
@@ -48,10 +59,6 @@ Need more assistance? Watch a tutorial video or read the template
          * Number of nodes
          * Name of the node on which the job is running
 
-(Image Goes Here)
-
 4. To view the job output
      - Use the command cat job-name.jobid.out
      - Replace “job-name” with your job name and “jobid” with your job ID number
-
-(Image Goes Here)
