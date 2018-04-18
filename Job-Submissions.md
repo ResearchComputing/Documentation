@@ -15,7 +15,7 @@ Need more assistance? Watch a tutorial video or read the template
 
 ## Video
 
-[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-In/logging-in-vid.jpg)](https://youtu.be/sStJQKTa9zY)
+[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY)
 
 ## Template
 
