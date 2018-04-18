@@ -1,36 +1,50 @@
 ## Overview
 
-Research Computing uses a [module system](##Using-Modules-on-RC-Systems) for loading software. Most software is not accessible by default and has to be loaded. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
+[![How to load modules video](https://img.youtube.com/vi/csgl4czhD_k/0.jpg)](https://youtu.be/csgl4czhD_k)
 
-Loading a module:
-+ Sets or modifies a user’s environment variables
-+ Enables access to the software package provided by that module  
+Research Computing uses a [module system](##Using-Modules-on-RC-Systems) for loading software. Most software is not accessible by default and must be loaded into the environment. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
 
-The Lmod hierarchical module system:
-+ Five layers to support programs built with compiler and library consistency requirements
-+ A module’s dependencies must be loaded before the module can be loaded
-+ Layers include
-    - Independent programs
-    - Compilers
-    - Compiler dependent programs
-    - MPI implementations
-    - MPI dependent programs
+## The module command
 
+Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly on a login node. The login node will restricts loading of modules so you won't be able to access software unless you do so through a job or a compile node.
 
-## Using Modules on RC Systems
+The Lmod hierarchical module system provides Five layers to support programs built with compiler and library consistency requirements. A module’s dependencies must be loaded before the module can be loaded.
+The Layers include:
++ Independent programs
++ Compilers
++ Compiler dependent programs
++ MPI implementations
++ MPI dependent programs 
 
-+ [How to load modules video](https://youtu.be/csgl4czhD_k)
+To see what modules are available to load type:
+```
+module avail
+```
+This will return a list of modules available to load into the environment.
+To load your modules into the environment type:
+```
+module load some_module
+```
+You can specify version by appending a `/` with the version number:
+```
+module load some_module/version
+```
+If you cannot load your module because of dependencies, you can use the `module spider` to find what dependencies you need to load your module.
+```
+module spider some_module
+```
 
-## The `module` command
+## Loading Modules in a job script
 
-The module command has a variety of sub-commands, outlined in the table below.
-You may shorten the command to `ml`, but the shortened command requires different syntax.
+Loading a module will set or modify a user’s environment variables. Additionally, modules will enable access to the software package provided by that module.
+
+The `module` command has a variety of sub-commands, outlined in the table below. You may shorten the command to `ml`, but the shortened command may require specialized syntax.
 - Loading modules in Slurm jobs
     + Load modules in your job script
          * Do this if an application running in a Slurm job needs access to any module-provided software packages
-    + In script, place module load commands
-         * After #SBATCH directives
-         * Before the actual executable is called
++ In script, place module load commands
+    * After #SBATCH directives
+      Before the actual executable is called
 
 Command                 | Shortened Command            | Description  | Example |
 ----------------------- | ---------------------------- | ------------ | --------|
