@@ -2,6 +2,8 @@
 
 Research Computing uses a [module system](##Using-Modules-on-RC-Systems) for loading software. Most software is not accessible by default and must be loaded into the environment. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
 
+## Video Tutorial
+
 [![How-to-load-modules-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Loading-Modules/videopreview.j.jpg)](https://youtu.be/csgl4czhD_k)
 
 ## The module command
@@ -38,13 +40,15 @@ module spider some_module
 
 Loading a module will set or modify a user’s environment variables. Additionally, modules will enable access to the software package provided by that module.
 
-The `module` command has a variety of sub-commands, outlined in the table below. You may shorten the command to `ml`, but the shortened command may require specialized syntax.
 - Loading modules in Slurm jobs
     + Load modules in your job script
          * Do this if an application running in a Slurm job needs access to any module-provided software packages
 + In script, place module load commands
     * After #SBATCH directives
       Before the actual executable is called
+
+## Table of Sub-Commands
+The `module` command has a variety of sub-commands, outlined in the table below. You may shorten the command to `ml`, but the shortened command may require specialized syntax.
 
 Command                 | Shortened Command            | Description  | Example |
 ----------------------- | ---------------------------- | ------------ | --------|
