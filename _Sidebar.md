@@ -1,7 +1,6 @@
 # Navigation
 
-[Home](Home)
-
+[Home](Home)  
 [FAQs](FAQs) -Incomplete-
 
 ## Getting Access
