@@ -8,6 +8,6 @@ This wiki hosts tutorials on how to operate and utilize research computing resou
 - Utilizing software tools on Research Computing resources
 - [Job submission and job tools](Job-Submissions)
 - Parallel programming
-- [FAQs] (FAQs)
+- [FAQs](FAQs)
 
 For general information on Research Computing and Research Computing resources, go to the [Research Computing](https://www.colorado.edu/rc) website.
