@@ -6,7 +6,7 @@ Research Computing uses a module system to load most software into a user's envi
 
 [![How-to-load-modules-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Loading-Modules/videopreview.j.jpg)](https://youtu.be/csgl4czhD_k)
 
-## The module command
+## The `module` Command
 
 **_Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly onto a login node._** The login node will restrict the loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
 
@@ -45,7 +45,7 @@ module spider some_module
 # example: "module spider openmpi"
 ```
 
-## Loading Modules in a job script
+## Loading Modules in a Job Script
 
 Loading a module will set or modify a user’s environment variables. Additionally, modules will enable access to the software package provided by that module. This can be useful in interactive jobs or in job-scripts that are dependent on software like python.
 
