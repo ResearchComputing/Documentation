@@ -5,7 +5,7 @@
 
 ## Getting Access
 - [Logging In](Logging-In)
-- [Duo Access](Duo-Access) -Incomplete-
+- [Duo Access](Duo-Access)
 - [XSEDE accounts](XSEDE)
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
