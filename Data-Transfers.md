@@ -1,6 +1,6 @@
 ## Overview
 
-File Transfers from a local machine onto Summit can be done via 2 ways: Through Globus or through SSH protocols.  
+Research Computing supports several methods of file transfers onto Summit. File transfers from a local machine can be done via 2 ways: Through [Globus](https://www.globus.org/) or through SSH protocols.  
 
 ## Video Tutorial
 [![Data-Transfer-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/file-transf-vid.jpg)](https://www.youtube.com/watch?v=BGgOVBh6rQY)
