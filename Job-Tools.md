@@ -10,7 +10,7 @@
 
 Slurm provides a variety of tools that allow a user to manage and understand their jobs. This tutorial will introduce these tools, as well as provide details on how to use them. 
 
-## Finding queuing information with squeue
+## Finding queuing information with `squeue`
 The `squeue` command is a tool we use to pull up information about the jobs in queue. By default, the squeue command will print out the *__job ID__*, *__partition__*, *__username__*, *__job status__*, *__number of nodes__*, and *__name of nodes__* for all jobs queued or running within Slurm. Usually you wouldn't need information for all jobs that were queued in the system, so we can specify jobs that only you are running with the `--user` flag:
 
 ```bash
@@ -38,7 +38,7 @@ Press `ctrl`-`z` to stop the command from looping and bring you back to the term
 
 For more information on squeue, [visit the Slurm page on squeue](https://slurm.schedmd.com/squeue.html)
 
-## Stopping jobs with scancel
+## Stopping jobs with `scancel`
 Sometimes you may need to stop a job entirely while it’s running. The best way to accomplish this is with the `scancel` command. The scancel command allows you to cancel jobs you are running on Research Computing resources using the job’s ID. The command looks like this:
 
 ```bash
@@ -53,7 +53,7 @@ $ scancel your_job-id1, your_job-id2, your_jobiid3
 
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
 
-## Learning status information with sstat
+## Learning status information with `sstat`
 
 The `sstat` command allows users to easily pull up status information about their jobs. This includes information about *__CPU usage__*, *__task information__*, *__node information__*, *__resident set size (RSS)__*, and *__virtual memory (VM)__*. We can invoke the sstat command as such:
 ```bash
@@ -84,7 +84,7 @@ sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
 
 A full list of variables that specify data handled by sstat can be found with the `--helpformat` flag or by [visiting the slurm page on sstat](https://slurm.schedmd.com/sstat.html).
 
-## Analyzing past jobs with sacct
+## Analyzing past jobs with `sacct`
 The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously ran on the system instead of currently running jobs. We can use a job's id...
 
 ```bash
@@ -111,7 +111,7 @@ To see a non-abbreviated version of sacct output, use the `--long` flag:
 $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD --long
 ```
 
-### Formatting Output with sacct
+### Formatting Output with `sacct`
 
 Like sstat, the standard output of sacct usually does not provide the information we want. To remedy this, we can use the `--format` flag to choose what we want in our output. Similarly, the format flag is handled by a list of comma separated variables which specify output data:
 
@@ -157,7 +157,7 @@ $ sacct –-jobs=your_job-id –-starttime=2018-02-21 --format=jobid,jobname,qos
 
 A full list of variables that specify data handled by sacct can be found with the `--helpformat` flag or by [visiting the slurm page on sacct](https://slurm.schedmd.com/sacct.html).
 
-## Controlling queued and running jobs using scontrol
+## Controlling queued and running jobs using `scontrol`
 The `scontrol` command provides users extended control of their jobs run through Slurm. This includes actions like suspending a job, holding a job from running, or pulling extensive status information on jobs.
 
 To suspend a job that is currently running on the system, we can use scontrol with the `suspend` command. This will stop a running job on its current step that can be resumed at a later time. We can suspend a job by typing the command:
