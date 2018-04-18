@@ -1,7 +1,7 @@
 # Navigation
 
 [Home](Home)  
-[FAQs](FAQs) -Incomplete-
+[FAQs](FAQs)
 
 ## Getting Access
 - [Logging In](Logging-In)
@@ -12,7 +12,7 @@
 
 ## Jobs and Operating the System
 - [Job Submissions](Job-Submissions)
-- [Job Tools](Job-Tools) -Incomplete-
+- [Job Tools](Job-Tools)
 - [Data Transfers](Data-Transfers)  
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs)
