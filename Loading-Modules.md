@@ -16,15 +16,12 @@ The Lmod hierarchical module system:
     - MPI implementations
     - MPI dependent programs
 
-Need more assistance? Watch a tutorial video or read the template
 
-## Video
+## Using Modules on RC systems
 
 + [Loading Modules](https://youtu.be/csgl4czhD_k)
 
-## Template
-
-Loading Modules
+## The `module` command
 
 The module command has a variety of sub-commands, outlined in the table below.
 You may shorten the command to `ml`, but the shortened command requires different syntax.

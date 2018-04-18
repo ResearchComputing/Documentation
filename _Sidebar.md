@@ -2,21 +2,24 @@
 
 [Home](Home)
 
+[FAQs](FAQs) -Incomplete-
+
 ## Getting Access
 - [Logging In](Logging-In)
 - [Duo Access](Duo-Access) -Incomplete-
-- [Loading Modules](Loading-Modules)
 - [XSEDE accounts](XSEDE)
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
-- [FAQs](FAQs) -Incomplete-
 - [Job Submissions](Job-Submissions)
 - [Job Tools](Job-Tools) -Incomplete-
 - [Data Transfers](Data-Transfers)  
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs)
+
+##  Software
+- [Loading Modules](Loading-Modules)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
 
