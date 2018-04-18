@@ -1,6 +1,6 @@
 ## Overview
 
-Research Computing uses a module system for loading software. Most software is not accessible by default and has to be loaded. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
+Research Computing uses a [module system](using-modules-on-RC-systems) for loading software. Most software is not accessible by default and has to be loaded. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
 
 Loading a module:
 + Sets or modifies a user’s environment variables
@@ -19,7 +19,7 @@ The Lmod hierarchical module system:
 
 ## Using Modules on RC systems
 
-+ [Loading Modules](https://youtu.be/csgl4czhD_k)
++ [How to load modules video](https://youtu.be/csgl4czhD_k)
 
 ## The `module` command
 
