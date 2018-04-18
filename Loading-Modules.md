@@ -1,6 +1,6 @@
 ## Overview
 
-Research Computing uses a [module system](##Using-Modules-on-RC-Systems) for loading software. Most software is not accessible by default and must be loaded into the environment. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
+Research Computing uses a module system to load software . Most software is not accessible by default and must be loaded into the environment. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
 
 ## Video Tutorial
 
@@ -8,9 +8,29 @@ Research Computing uses a [module system](##Using-Modules-on-RC-Systems) for loa
 
 ## The module command
 
-Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly on a login node. The login node will restricts loading of modules so you won't be able to access software unless you do so through a job or a compile node.
+**Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly on a login node.** The login node will restrict loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
 
-The Lmod hierarchical module system provides Five layers to support programs built with compiler and library consistency requirements. A module’s dependencies must be loaded before the module can be loaded.
+To see what modules are available to load, ssh into a compile node and type:
+```
+module avail
+```
+This will return a list of modules available to load into the environment. **Please note if you run this command on a login node you will not receive a full list of modules present on the system.**
+
+To load your modules into the environment type:
+```bash
+module load some_module
+
+# example: "module load python"
+```
+
+You can specify version by appending a `/` with the version number:
+```bash
+module load some_module/version 
+
+# example: "module load python/3.5.1"
+```
+
+The Lmod hierarchical module system provides five layers to support programs built with compiler and library consistency requirements. A module’s dependencies must be loaded before the module can be loaded.
 The Layers include:
 + Independent programs
 + Compilers
@@ -18,34 +38,32 @@ The Layers include:
 + MPI implementations
 + MPI dependent programs 
 
-To see what modules are available to load type:
-```
-module avail
-```
-This will return a list of modules available to load into the environment.
-To load your modules into the environment type:
-```
-module load some_module
-```
-You can specify version by appending a `/` with the version number:
-```
-module load some_module/version
-```
 If you cannot load your module because of dependencies, you can use the `module spider` to find what dependencies you need to load your module.
-```
+```bash
 module spider some_module
+
+#example: "module spider openmpi"
 ```
 
 ## Loading Modules in a job script
 
-Loading a module will set or modify a user’s environment variables. Additionally, modules will enable access to the software package provided by that module.
+Loading a module will set or modify a user’s environment variables. Additionally, modules will enable access to the software package provided by that module. This can be useful in interactive jobs or in job-scripts that are dependent on software like python.
 
-- Loading modules in Slurm jobs
-    + Load modules in your job script
-         * Do this if an application running in a Slurm job needs access to any module-provided software packages
-+ In script, place module load commands
-    * After #SBATCH directives
-      Before the actual executable is called
+Modules in a job script can be loaded after your `#SBATCH` directives and before your actual executable is called. A sample job script that loads python into the environment is provided below:
+
+```bash
+#!bin/bash
+#SBATCH 
+#SBATCH 
+#SBATCH 
+#SBATCH 
+#SBATCH 
+#SBATCH 
+
+module purge
+module load python/3.5.1
+
+python3 hello-world.py
 
 ## Table of Sub-Commands
 The `module` command has a variety of sub-commands, outlined in the table below. You may shorten the command to `ml`, but the shortened command may require specialized syntax.
