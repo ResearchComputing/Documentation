@@ -8,7 +8,7 @@ Research Computing uses a module system to load most software into a user's envi
 
 ## The module command
 
-**_Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly onto a login node._** The login node will restrict loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
+**_Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly onto a login node._** The login node will restrict the loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
 
 To see what modules are available to load, ssh into a compile node and type:
 ```
