@@ -1,6 +1,6 @@
 ## Overview
 
-Research Computing uses a module system to load software . Most software is not accessible by default and must be loaded into the environment. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions of software.  
+Research Computing uses a module system to load most software into a user's environment. Most software is not accessible by default and must be loaded in. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions.  
 
 ## Video Tutorial
 
@@ -8,22 +8,22 @@ Research Computing uses a module system to load software . Most software is not 
 
 ## The module command
 
-**Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly on a login node.** The login node will restrict loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
+**_Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly onto a login node._** The login node will restrict loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
 
 To see what modules are available to load, ssh into a compile node and type:
 ```
 module avail
 ```
-This will return a list of modules available to load into the environment. **Please note if you run this command on a login node you will not receive a full list of modules present on the system.**
+This will return a list of modules available to load into the environment. **_Please note if you run this command on a login node you will not receive a full list of modules present on the system._**
 
-To load your modules into the environment type:
+To load your chosen modules into the environment type:
 ```bash
 module load some_module
 
 # example: "module load python"
 ```
 
-You can specify version by appending a `/` with the version number:
+You can specify the version of the software by appending a `/` with the version number:
 ```bash
 module load some_module/version 
 
@@ -38,11 +38,11 @@ The Layers include:
 + MPI implementations
 + MPI dependent programs 
 
-If you cannot load your module because of dependencies, you can use the `module spider` to find what dependencies you need to load your module.
+If you cannot load a module because of dependencies, you can use the `module spider` to find what dependencies you need to load the module.
 ```bash
 module spider some_module
 
-#example: "module spider openmpi"
+# example: "module spider openmpi"
 ```
 
 ## Loading Modules in a job script
