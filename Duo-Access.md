@@ -1,4 +1,4 @@
-##Duo Instructions
+## Duo Instructions
 
 1. Open your duo invitation email (from duo security or duo.com) on a desktop/laptop computer
 1. Login with your CU identikey and follow the instructions to setup 
@@ -9,7 +9,7 @@
 *  Enter "duo:" followed by your IdentiKey Password at the password prompt, i.e. if your password is "MyUCB_PW" you enter "duo:MyUCB_PW" (omitting the quotes) as your password. 
 *  Open the duo app and authorize the login via the Duo app.
 
-#Issues to note:
+## Issues to note:
 
 * Duo Invite email may go to your Spam folder.
 * Do not request a phone call instead of Push for authentication.
