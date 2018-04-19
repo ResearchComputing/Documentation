@@ -4,6 +4,10 @@
 
 ## Overview
 
+All Research-Computing users are allocated space on the `home` and `projects` file systems.  Additionally, separate `scratch` file systems are visible from Summit and Blanca and are made available to users of those systems.
+
+# The Home File System
+Every user is allocated 2G
 You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  
 
 ## Accounting
@@ -21,7 +25,7 @@ Disk usage may be checked using the `curc-quota` command.  When run from a Summi
 ```
 If the command is run from a `login node`, information concerning /scratch/summit will be omitted.
 
-Note that to check the amount of space occupied by a particular directory and its subdirectories, you may use the `du -h` command: 
+Note that the space occupied by a particular directory and its subdirectories can be obtained via the `du -h` command: 
 
 ```
 [janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
