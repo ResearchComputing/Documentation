@@ -1,8 +1,7 @@
 - [Overview](#overview)
 - [Monitoring Disk Usage](#monitoring-disk-usage)
 - [Backups](#backups)
-- [Best Practices](#best-practices)
-- [Sharing Directories](#sharing-directories)
+- [Workspace Sharing](#workspace-sharing)
 
 ## Overview
 
@@ -76,11 +75,5 @@ For our collaborators, we may want a writeable directory in addition to a read-o
 [janedoe@shas0136 ~]$ mkdir group_read_write
 [janedoe@shas0136 ~]$ chmod g+rwx group_read_write
 ```
-If you make a mistake or change your mind, use the `-` symbol in lieu of the `+` to remove privileges.  Note that the `x` is necessary if you want other users to be able to `cd` into your directory.
-
-
-## Best Practices
-- Ensure that your compute jobs perform output to your /scratch/summit or /rc_scratch (for Blanca) directories only.  Users whose jobs perform excessive I/O to /home or /projects may have their jobs killed and their accounts temporarily disabled.
-- Store frequently used input data on /projects
-- Don't forget to backup data written to /scratch.  Files older than 90 days are wiped daily!
+A similar methodology will need to be followed for all subdirectories you wish to share.  If you make a mistake or change your mind, use the `-` symbol in lieu of `+` to remove privileges.  Note that the `x` is necessary if you want other users to be able to `cd` into your directory.
 
