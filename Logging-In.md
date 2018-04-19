@@ -22,7 +22,7 @@ Logging into a Research Computing login node is the first step in accessing reso
     + Scheduled or interactive jobs
     + Compile nodes  
 
-Need more assistance? Watch a tutorial video or read the template
+Need more assistance? Watch a tutorial video or read the text below.
 
 ## Videos
 
