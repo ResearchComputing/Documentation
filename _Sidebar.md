@@ -11,7 +11,7 @@
 - [PetaLibrary](PetaLibrary)
 
 ## The Compute Environment
-- [File Systems](File-Systems)
+- [Filesystems](Filesystems)
 - [Compiling Software](Compiling-and-Linking)
 - [The Module System](Loading-Modules)
 - [Job Submission and Accounting](Job-Submissions)
