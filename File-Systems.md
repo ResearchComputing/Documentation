@@ -52,12 +52,33 @@ Note that the space occupied by a particular directory and its subdirectories ca
 Text
 
 ## Workspace Sharing
-All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory.   Directories may be shared among your collaborators only or, if desired, with all Research Computing users.  
+All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory due to the limited space and potentially sensitive information stored there.   
+
+Directories may be shared with all Research Computing users or with only a subset of our users.  In the latter case, a system administrator will need to add your chosen collaborators to your Linux group.  Please email rc-help@colorado.edu if you would like to add users to your Linux group.
+
+In the example that follows, we make our `/projects` directory open to all users and then create subdirectories with select read/write permissions for all users and our chosen collaborators. 
+
+First, we make our `/projects` directory world-readable:
 ```
-[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
-698M	WRF/run
-698M	WRF
+[janedoe@shas0136 ~]$ chmod a+rx /projects/janedoe
 ```
+Next, we create a subdirectory that is visible to all users and which is read-only:
+```
+[janedoe@shas0136 ~]$ cd /projects/janedoe
+[janedoe@shas0136 ~]$ mkdir world_read
+[janedoe@shas0136 ~]$ chmod a+rx world_read
+```
+For our collaborators, we may want a writeable directory in addition to a read-only directory:
+```
+[janedoe@shas0136 ~]$ cd /projects/janedoe
+[janedoe@shas0136 ~]$ mkdir group_read
+[janedoe@shas0136 ~]$ chmod g+rx group_read
+[janedoe@shas0136 ~]$ mkdir group_read_write
+[janedoe@shas0136 ~]$ chmod g+rwx group_read_write
+```
+If you make a mistake or change your mind, use the `-` symbol in lieu of the `+` to remove privileges.  Note that the `x` is necessary if you want other users to be able to `cd` into your directory.
+
+
 ## Best Practices
 - Ensure that your compute jobs perform output to your /scratch/summit or /rc_scratch (for Blanca) directories only.  Users whose jobs perform excessive I/O to /home or /projects may have their jobs killed and their accounts temporarily disabled.
 - Store frequently used input data on /projects
