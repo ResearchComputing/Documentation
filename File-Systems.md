@@ -1,10 +1,10 @@
-- [File Systems Overview](#file-systems-overview)
+- [Overview](#overview)
 - [Monitoring Disk Usage](#monitoring-disk-usage)
 - [Backups](#backups)
 - [Best Practices](#best-practices)
 - [Sharing Directories](#sharing-directories)
 
-## File Systems Overview
+## Overview
 
 All users are allocated space on the `/home` and `/projects` file systems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are provided to high-performance and/or parallel I/O for jobs running on those two systems.  
 
