@@ -11,6 +11,7 @@
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
+- [Compiling Software](Compiling-and-Linking)
 - [Job Submissions](Job-Submissions)
 - [Job Tools](Job-Tools)
 - [Data Transfers](Data-Transfers)  
