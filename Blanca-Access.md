@@ -143,7 +143,7 @@ Note that the interactive job won't start until the resources that it needs are 
 
 
 
-#### Important notes:
+## Important notes:
 1. Because of differences in the "modules" environment on RHEL 6 and RHEL 7, it is currently necessary to prevent any environment settings from being propagated from an RC login node (which uses RHEL 6) to a Blanca compute note that uses RHEL 7.  Use the Slurm directive `#SBATCH --export=NONE` in this case.  You will then have to load any needed modules directly in your batch script.
 2. To see what RHEL 7 modules are available, start an interactive job on an RHEL 7 compute node and use `module avail` or `module spider` on it.  Login nodes can access only RHEL 6 modules.
 3. /home, /projects, and /work (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  All Blanca nodes also have at least 850 GB of scratch space on a local disk, /local/scratch.  For more info on the different RC storage spaces, please review https://www.rc.colorado.edu/support/user-guide/storage.html
