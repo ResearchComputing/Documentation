@@ -15,7 +15,7 @@ Every user is allocated 2 GB of space on the `/home` file system in a subdirecto
 
 ### The Projects File System
 
-Each user has access to a 250 GB of space in their subdirectory of `/projects` (e.g., `/projects/janedoe`).  As with the `/home` system, these directories are visible from all Research Computing nodes and are regularly backed up. The projects directory is intended to store software builds and smaller data sets.  Projects directories may be [shared with other RC users](#sharing-directories).  
+Each user has access to a 250 GB of space in their subdirectory of `/projects` (e.g., `/projects/janedoe`).  As with the `/home` system, these directories are visible from all Research Computing nodes and are regularly backed up. The projects directory is intended to store software builds and smaller data sets. 
 
 ### Scratch File Systems
 
@@ -51,8 +51,13 @@ Note that the space occupied by a particular directory and its subdirectories ca
 
 Text
 
-## Sharing Directories
-
+## Workspace Sharing
+All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory.   Directories may be shared among your collaborators only or, if desired, with all Research Computing users.  
+```
+[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
+698M	WRF/run
+698M	WRF
+```
 ## Best Practices
 - Ensure that your compute jobs perform output to your /scratch/summit or /rc_scratch (for Blanca) directories only.  Users whose jobs perform excessive I/O to /home or /projects may have their jobs killed and their accounts temporarily disabled.
 - Store frequently used input data on /projects
