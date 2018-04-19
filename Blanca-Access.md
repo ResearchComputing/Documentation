@@ -61,7 +61,7 @@ Since not all Blanca nodes are identical, you can include node features in your 
 Node name     | High-prio QoS | General hardware attributes | Features
 --------------|---------------|-----------------------------|---------
 bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel6
-bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
+bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
 bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
 bnode01[12-14] | blanca-mrg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
 bnode01[15-16] | blanca-el | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
