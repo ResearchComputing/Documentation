@@ -37,7 +37,7 @@ Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for sche
 
 If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to rc-help@colorado.edu.  You are only allowed to use a high-priority QoS if you have specifically been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
-#### Table of QoSes
+#### Table of QoSes (Table 1)
 
 QoS | PI | Point of Contact | Priority
 ----|----|------------------|---------
@@ -55,7 +55,7 @@ blanca-csdms | | E. Hutton | high
 blanca-sol | N. Featherstone | | high
 preemptable <br> (details below) | | | low
 
-## Node-QoS-Feature table
+## Node-QoS-Feature table (Table 2)
 Since not all Blanca nodes are identical, you can include node features in your job requests to help the scheduler determine which nodes are appropriate for your jobs to run on when you are using the preemptable QoS.
 
 Node name     | High-prio QoS | General hardware attributes | Features
