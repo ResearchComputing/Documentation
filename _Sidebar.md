@@ -3,7 +3,7 @@
 [Home](Home)  
 [FAQs](FAQs)
 
-## Getting Access
+## Accessing RC Resources
 - [Logging In](Logging-In)
 - [Duo Access](Duo-Access)
 - [XSEDE accounts](XSEDE)
