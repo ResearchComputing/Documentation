@@ -1,8 +1,8 @@
 - [Overview](#overview)
 - [Getting an XSEDE account](#xsede-account)
 - [Configuring Duo](#configuring-duo)
-- [Getting Authorization for RMACC Summit](#getting-authorization-rmacc-summit)
-- [XSEDE SSO Hub](#xsede-sso-hub)
+- [Getting Authorization for RMACC Summit](#getting-authorization-for-rmacc-summit)
+- [XSEDE SSO Hub](#logging-in-to-cu-boulder-rc-using-the-xsede-sso-hub)
 
 ## Overview
 
