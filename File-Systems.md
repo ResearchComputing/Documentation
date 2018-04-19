@@ -1,7 +1,8 @@
 - [File Systems Overview](#file-systems-overview)
-- [Best Practices](#best-practices)
 - [Monitoring Disk Usage](#monitoring-disk-usage)
 - [Backups](#backups)
+- [Best Practices](#best-practices)
+- [Sharing Directories](#sharing-directories)
 
 ## File Systems Overview
 
@@ -42,6 +43,8 @@ Note that the space occupied by a particular directory and its subdirectories ca
 ## Backups
 
 Text
+
+## Sharing Directories
 
 ## Best Practices
 - Ensure that your compute jobs perform output to your /scratch/summit or /rc_scratch (for Blanca) directories only.  Users whose jobs perform excessive I/O to /home or /projects may have their jobs killed and their accounts temporarily disabled.
