@@ -1,3 +1,13 @@
+- [Overview](#overview)
+- [Getting an XSEDE account](#xsede-account)
+- [Configuring Duo](#configuring-duo)
+- [Getting Authorization for RMACC Summit](#getting-authorization-rmacc-summit)
+- [XSEDE SSO Hub](#xsede-sso-hub)
+
+## Overview
+
+If you are at an RMACC institution and would like to use Summit, please see the below steps to gain access.  
+
 ## Getting an XSEDE account
 
 Visit the XSEDE User Portal and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
