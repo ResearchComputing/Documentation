@@ -16,7 +16,7 @@ CU Research Computing operates a shared “condo” compute cluster, named Blanc
 
 An allocation of CPU time is not needed in order to run on Blanca.
 
-If you would like to purchase a Blanca node, please visit [the Research Computing website](https://www.rc.colorado.edu/support/user-guide/compute-resources.html#blanca) for more details.
+If you would like to purchase a Blanca node, please visit [the Research Computing website](https://www.colorado.edu/rc/resources/blanca) for more details.
 
 ## Blanca Quick-Start
 1. If your group is a Blanca partner, ask your PI or PoC (found in Table 1) to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.
