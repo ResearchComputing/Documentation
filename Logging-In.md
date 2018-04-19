@@ -1,5 +1,4 @@
 - [Overview](#overview)
-- [Videos](#videos)
 - [Logging in from a Windows Machine](#logging-in-from-a-windows-machine)
 - [Logging in from a Mac](#logging-in-from-a-mac)
 
@@ -24,12 +23,10 @@ Logging into a Research Computing login node is the first step in accessing reso
 
 Need more assistance? Watch a tutorial video or read the text below.
 
-## Videos
-
-- [Logging in from a Windows Machine](https://youtu.be/aUVdIShW7W4)  
-- [Logging in from a Mac](https://youtu.be/Q1_bhA7zgKg)  
-
 ## Logging in from a Windows Machine
+
+Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
+
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter “login.rc.colorado.edu”. Select “SSH” as the connection type. Click on “Open”.
@@ -43,6 +40,9 @@ Login screen for putty
 ![alt text](https://www.colorado.edu/p113a299a3a0/sites/default/files/styles/medium/public/page/login.png?itok=23Wma08Q)
 
 ## Logging in from a Mac
+
+- Watch this [video](https://youtu.be/Q1_bhA7zgKg) or read the text below:
+
 
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window. When the terminal window opens, type “ssh @login.rc.colorado.edu”. Press enter.
 2. Enter your password:
