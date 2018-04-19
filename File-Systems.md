@@ -1,6 +1,6 @@
 - [Overview](#overview)
 - [Monitoring Disk Usage](#monitoring-disk-usage)
-- [Backups](#backups)
+- [Filesystem Backups](#filesystem-backups)
 - [Workspace Sharing](#workspace-sharing)
 
 ## Overview
@@ -46,9 +46,9 @@ Note that the space occupied by a particular directory and its subdirectories ca
 698M	WRF/run
 698M	WRF
 ```
-## Backups
+## Filesystem Backups
 
-Regular backups are performed for all `/home` and `/projects` directories.  Backups are performed at a range of cadences.  Low-cadence backups are retained for longer periods of time than high-cadence backups.  A summary of the backup schedule is provided in the table below.
+Regular backups are performed for all `/home` and `/projects` directories and at a range of cadences.  Low-cadence backups are retained for longer periods of time than high-cadence backups.  A summary of the backup schedule is provided in the table below.
 
 | File System        | Cadence           | Retention Period  |
 | ------------- |------------:| -----:|
@@ -61,7 +61,7 @@ Regular backups are performed for all `/home` and `/projects` directories.  Back
 | `\scratch`    | **no backups** | N/A |
 | `\rc_scratch` | **no backups** | N/A |
 
-A hidden .snapshot/ directory is available in each project directory (and in each subdirectory) and contains recent copies of the files at 6-hour, daily, and weekly intervals. These snapshots can be used to recover files after accidental deletion or corruption.
+If disaster strikes and you need access to a previous version of your `/home` or `/projects` directories, change to that directory and look through the .snapshot subdirectory.   You will see a subdirectory associated with each snapshot indicated in the table above.  change to  A hidden .snapshot/ directory is available in each project directory (and in each subdirectory) and contains recent copies of the files at 6-hour, daily, and weekly intervals. These snapshots can be used to recover files after accidental deletion or corruption.
 
 ## Workspace Sharing
 All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory due to the limited space and potentially sensitive information stored there.   
