@@ -23,7 +23,7 @@ Summit users are provided a subdirectory on `/scratch/summit`, the high-performa
 
 Scratch space should be used for all compute jobs run on Summit or Blanca.  These high-performance scratch directories are **not backed up**, and are not appropriate for long-term storage.  Data may be purged at any time subject to overall system needs. Files are automatically removed 90 days after their initial creation.
 
-Users requiring longer-term retention of their files should perform regular backups to their local machine if they have not purchased space on the [PetaLibrary](PetaLibrary).  Inappropriate use of Summit scratch, including attempts to circumvent the automatic file purge policy, may result in loss of access to Summit.
+Users requiring longer-term retention of their files should perform regular backups to their local machine if they have not purchased space on the [PetaLibrary](PetaLibrary).  Inappropriate use of scratch storage, including attempts to circumvent the automatic file purge policy, may result in loss of access to Research Computing resources.
 
 ## Monitoring Disk Usage
 
