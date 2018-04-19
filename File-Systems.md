@@ -8,7 +8,7 @@ You have three directories allocated to your username ($USER).  These include `/
 
 ## Accounting
 
-To see how much space you've used in each directory, from a Summit *scompile* node, run the `curc-quota` command:
+Disk usage may be checked using the `curc-quota' command.  When run from an *scompile* node, you will see output similar to:
 
 ```
 [janedoe@shas0136 ~]$ curc-quota
@@ -19,8 +19,9 @@ To see how much space you've used in each directory, from a Summit *scompile* no
 /projects/janedoe                       67G          184G           250G
 /scratch/summit                         29G        10211G         10240G
 ```
+If the command is run from a login node, information concerning /scratch/summit will be omitted.
 
-You can also check the amount of space being used by any directory with the `du -h` command: 
+Note that to check the amount of space occupied by a particular directory and its subdirectories, you may use the `du -h` command: 
 
 ```
 [janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
