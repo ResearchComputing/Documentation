@@ -17,6 +17,17 @@ Every user is allocated 2 GB of space on the `/home` file system in a subdirecto
 
 Each user has access to a 250 GB of space in their subdirectory of `/projects` (e.g., `/projects/janedoe`).  As with the `/home` system, these directories are visible from all Research Computing nodes and are regularly backed up. The projects directory is intended to store software builds and smaller data sets.  Projects directories may be [shared with other RC users](#sharing-directories).  
 
+### Scratch File Systems
+
+Summit users are provided a subdirectory on `/scratch/summit`, the high-performance parallel scratch file system meant for I/O from jobs running on that system (e.g., `/scratch/summit/janedoe`).  By default, each user is limited to a quota of 10 TB worth of storage space and 20M files and directories. Email rc-help@colorado.edu if you need these limits increased.
+
+Summit scratch should be used for all compute jobs running on Summit.  These high-performance scratch directories are **not backed up**, and are not appropriate for long-term storage.  Data may be purged at any time subject to overall system needs. Files are automatically removed 90 days after their initial creation.
+
+Users requiring longer-term retention of their files should perform regular backups to their local machine or to  
+
+High-performance scratch directories are not backed up or checkpointed, and are not appropriate for long-term storage. Data may be purged at any time. Files are automatically removed 90 days after their initial creation.
+
+Inappropriate use of Summit scratch, including attempts to circumvent the automatic file purge policy, may result in loss of access to Summit.
 
 ## Monitoring Disk Usage
 
