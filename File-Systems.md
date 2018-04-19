@@ -48,7 +48,20 @@ Note that the space occupied by a particular directory and its subdirectories ca
 ```
 ## Backups
 
-Text
+Regular backups are performed for all `/home` and `/projects` directories.  Backups are performed at a range of cadences.  Low-cadence backups are retained for longer periods of time than high-cadence backups.  A summary of the backup schedule is provided in the table below.
+
+| File System        | Cadence           | Retention Period  |
+| ------------- |------------:| -----:|
+| `\home`       | 2 hr          |    25 hr |
+| `\home`       | 1 d           |     8 d |
+| `\home`       | 1 wk          |    29 d |
+| `\projects`   | 6 hr          |    25 hr |
+| `\projects`   | 1 d           |    8 d |
+| `\projects`   | 1 wk          |   15 d |
+| `\scratch`    | **no backups** | N/A |
+| `\rc_scratch` | **no backups** | N/A |
+
+A hidden .snapshot/ directory is available in each project directory (and in each subdirectory) and contains recent copies of the files at 6-hour, daily, and weekly intervals. These snapshots can be used to recover files after accidental deletion or corruption.
 
 ## Workspace Sharing
 All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory due to the limited space and potentially sensitive information stored there.   
