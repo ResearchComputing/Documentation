@@ -5,16 +5,12 @@
 
 ## File Systems Overview
 
-All users are allocated space on the `home` and `projects` file systems.  Additionally, separate `scratch` file systems are visible from Summit and Blanca and are made available to users of those systems.  The scratch directories are provided to support high-performance I/O on Summit and Blanca.  Use of non-scratch directories during a high-performance or parallel compute jobs may negatively affect the environment for all users.  **Running compute jobs that involve intensive I/O on the `/home` or `/projects` file systems will result in termination of the job and may result in restricted access to Research Computing resources.**
+All users are allocated space on the `/home` and `/projects` file systems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are provided to high-performance and/or parallel I/O for jobs running on those two systems.  
 
- A summary of the capacity and intended purpose of each file system is provided below.  
+Please  note that the use of `/home` or `/scratch` for high-performance I/O may negatively affect the environment for all users.  As a result, all compute jobs should write to the appropriate `scratch` file system.  **Users performing intensive I/O on the `/home` or `/projects` file systems will  have their jobs terminated and may have their accounts temporarily disabled.**
 
 ### The Home File System
-Every user is allocated 2 GB of space on the `home` filesystem in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).  Home directories are not stored on a high-performance file-system and, as such, they are not intended to be written to by compute jobs. 
-
-A hidden .snapshot/ directory is available in each home directory (and in each subdirectory) and contains recent copies of the files at 2-hour, daily, and weekly intervals. These snapshots can be used to recover files after accidental deletion or corruption.
-
-Home directories are intended for the use of their owner only; sharing the contents of home directories with other users is strongly discouraged. 
+Every user is allocated 2 GB of space on the `/home` file system in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).  Home directories are backed up frequently ([see below](#backups)) and are intended for the use of their owner only; sharing the contents of home directories with other users is strongly discouraged.  Your `/home` directory is a good place to store source code, small compiled programs, and job scripts.  
 
 ### The Projects File System
 
