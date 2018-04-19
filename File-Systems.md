@@ -7,7 +7,7 @@
 All Research-Computing users are allocated space on the `home` and `projects` file systems.  Additionally, separate `scratch` file systems are visible from Summit and Blanca and are made available to users of those systems.  A summary of the capacity and intended purpose of each file system is provided below.
 
 ### The Home File System
-Every user is allocated 2G
+Every user is allocated 2 GB of space on the `home` filesystem in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).
 You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  
 
 ## Accounting
