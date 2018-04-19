@@ -61,7 +61,7 @@ Regular backups are performed for all `/home` and `/projects` directories and at
 | `\scratch`    | **no backups** | N/A |
 | `\rc_scratch` | **no backups** | N/A |
 
-If disaster strikes and you need access to a previous version of your `/home` or `/projects` directories, change to that directory and look through the .snapshot subdirectory.   You will see a subdirectory associated with each snapshot indicated in the table above.  change to  A hidden .snapshot/ directory is available in each project directory (and in each subdirectory) and contains recent copies of the files at 6-hour, daily, and weekly intervals. These snapshots can be used to recover files after accidental deletion or corruption.
+If disaster strikes and you need access to a previous version of your `/home` or `/projects` directories, change to that directory and look through the .snapshot subdirectory.   You will see a subdirectory associated with each snapshot of your `\home` or `\projects` directory, named using the time-stamp associated with the snapshot.
 
 ## Workspace Sharing
 All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory due to the limited space and potentially sensitive information stored there.   
