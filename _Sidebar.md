@@ -14,7 +14,7 @@
 - [File Systems](File-Systems)
 - [Compiling Software](Compiling-and-Linking)
 - [The Module System](Loading-Modules)
-- [Job Submissions](Job-Submissions)
+- [Job Submission and Accounting](Job-Submissions)
 - [Job Tools](Job-Tools)
 - [Data Transfers](Data-Transfers)  
 - [Interactive Jobs](Interactive-Jobs)
