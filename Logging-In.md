@@ -1,3 +1,11 @@
+cat ~/projects/Dockerfile.vim/README.md | ./gh-md-toc -
+  * [Dockerfile.vim](#dockerfilevim)
+  * [Screenshot](#screenshot)
+  * [Installation](#installation)
+        * [OR using Pathogen:](#or-using-pathogen)
+        * [OR using Vundle:](#or-using-vundle)
+  * [License](#license)
+
 - [Overview](#overview)
 - [Videos](#videos)
 - [Logging in from a Windows Machine](#logging-in-from-a-windows-machine)
