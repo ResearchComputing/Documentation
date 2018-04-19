@@ -5,7 +5,7 @@
 
 ## Overview
 
-All users are allocated space on the `/home` and `/projects` file systems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are provided to high-performance and/or parallel I/O for jobs running on those two systems.  
+All users are allocated space on the `/home` and `/projects` file systems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are hosted on separate, high-performance file systems designed to support intensive, parallel I/O operations.  
 
 Please  note that the use of `/home` or `/scratch` for high-performance I/O may negatively affect the environment for all users.  As a result, all compute jobs should write to the appropriate `scratch` file system.  **Users performing intensive I/O on the `/home` or `/projects` file systems will  have their jobs terminated and may have their accounts temporarily disabled.**
 
