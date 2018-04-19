@@ -8,6 +8,10 @@ All Research-Computing users are allocated space on the `home` and `projects` fi
 
 ### The Home File System
 Every user is allocated 2 GB of space on the `home` filesystem in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).
+
+### The Projects File System
+
+All users are allocated 250 GB of space on the scratch file system.  
 You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  
 
 ## Accounting
