@@ -1,6 +1,6 @@
 - [File Systems Overview](#file-systems-overview)
 - [Best Practices](#best-practices)
-- [Accounting](#accounting)
+- [Monitoring Disk Usage](#monitoring-disk-usage)
 - [Backups](#backups)
 
 ## File Systems Overview
@@ -17,7 +17,7 @@ Every user is allocated 2 GB of space on the `/home` file system in a subdirecto
 Each user has access to a 250 GB of space in their subdirectory of `/projects` (e.g., `/projects/janedoe`).  As with the `/home` system, these directories are visible from all Research Computing nodes and are regularly backed up. The projects directory is intended to store software builds and smaller data sets.  Projects directories may be [shared with other RC users](#sharing-directories).  
 
 
-## Accounting
+## Monitoring Disk Usage
 
 Disk usage may be checked using the `curc-quota` command.  When run from a Summit `compile node`, you will see output similar to:
 
