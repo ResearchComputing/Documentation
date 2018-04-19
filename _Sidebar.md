@@ -10,7 +10,7 @@
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
 
-## Jobs and Operating the System
+## The Compute Environment
 - [File Systems](File-Systems)
 - [Compiling Software](Compiling-and-Linking)
 - [Job Submissions](Job-Submissions)
