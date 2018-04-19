@@ -11,6 +11,7 @@
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and Operating the System
+- [File Systems](File-Systems)
 - [Compiling Software](Compiling-and-Linking)
 - [Job Submissions](Job-Submissions)
 - [Job Tools](Job-Tools)
