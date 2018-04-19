@@ -19,9 +19,9 @@ Each user has access to a 250 GB of space in their subdirectory of `/projects` (
 
 ### Scratch File Systems
 
-Summit users are provided a subdirectory on `/scratch/summit`, the high-performance parallel scratch file system meant for I/O from jobs running on that system (e.g., `/scratch/summit/janedoe`).  By default, each user is limited to a quota of 10 TB worth of storage space and 20M files and directories. Email rc-help@colorado.edu if you need these limits increased.
+Summit users are provided a subdirectory on `/scratch/summit`, the high-performance parallel scratch file system meant for I/O from jobs running on that system (e.g., `/scratch/summit/janedoe`).  By default, each user is limited to a quota of 10 TB worth of storage space and 20M files and directories. Email rc-help@colorado.edu if you need these limits increased.  Blanca users should write to `/rc_scratch/janedoe` instead of `/scratch/summit`.
 
-Summit scratch should be used for all compute jobs running on Summit.  These high-performance scratch directories are **not backed up**, and are not appropriate for long-term storage.  Data may be purged at any time subject to overall system needs. Files are automatically removed 90 days after their initial creation.
+Scratch space should be used for all compute jobs run on Summit or Blanca.  These high-performance scratch directories are **not backed up**, and are not appropriate for long-term storage.  Data may be purged at any time subject to overall system needs. Files are automatically removed 90 days after their initial creation.
 
 Users requiring longer-term retention of their files should perform regular backups to their local machine if they have not purchased space on the [PetaLibrary](PetaLibrary).  Inappropriate use of Summit scratch, including attempts to circumvent the automatic file purge policy, may result in loss of access to Summit.
 
