@@ -5,20 +5,20 @@
 
 ## Overview
 
-All users are allocated space on the `/home` and `/projects` file systems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are hosted on separate, high-performance file systems designed to support intensive, parallel I/O operations.  
+All users are allocated space on the `/home` and `/projects` filesystems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are hosted on separate, high-performance filesystems designed to support intensive, parallel I/O operations.  
 
-Please  note that the use of `/home` or `/scratch` for high-performance I/O may negatively affect the environment for all users.  As a result, all compute jobs should write to the appropriate `scratch` file system.  **Users performing intensive I/O on the `/home` or `/projects` file systems will  have their jobs terminated and may have their accounts temporarily disabled.**
+Please  note that the use of `/home` or `/scratch` for high-performance I/O may negatively affect the environment for all users.  As a result, all compute jobs should write to the appropriate `scratch` filesystem.  **Users performing intensive I/O on the `/home` or `/projects` filesystems will  have their jobs terminated and may have their accounts temporarily disabled.**
 
-### The Home File System
-Every user is allocated 2 GB of space on the `/home` file system in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).  Home directories are [backed up frequently](#backups) and are intended for the use of their owner only; sharing the contents of home directories with other users is strongly discouraged.  Your `/home` directory is a good place to store source code, small compiled programs, and job scripts.  
+### The Home Filesystem
+Every user is allocated 2 GB of space on the `/home` filesystem in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).  Home directories are [backed up frequently](#backups) and are intended for the use of their owner only; sharing the contents of home directories with other users is strongly discouraged.  Your `/home` directory is a good place to store source code, small compiled programs, and job scripts.  
 
-### The Projects File System
+### The Projects Filesystem
 
 Each user has access to a 250 GB of space in their subdirectory of `/projects` (e.g., `/projects/janedoe`).  As with the `/home` system, these directories are visible from all Research Computing nodes and are regularly backed up. The projects directory is intended to store software builds and smaller data sets. 
 
-### Scratch File Systems
+### Scratch Filesystems
 
-Summit users are provided a subdirectory on `/scratch/summit`, the high-performance parallel scratch file system meant for I/O from jobs running on that system (e.g., `/scratch/summit/janedoe`).  By default, each user is limited to a quota of 10 TB worth of storage space and 20M files and directories. Email rc-help@colorado.edu if you need these limits increased.  Blanca users should write to `/rc_scratch/janedoe` instead of `/scratch/summit`.
+Summit users are provided a subdirectory on `/scratch/summit`, the high-performance parallel scratch filesystem meant for I/O from jobs running on that system (e.g., `/scratch/summit/janedoe`).  By default, each user is limited to a quota of 10 TB worth of storage space and 20M files and directories. Email rc-help@colorado.edu if you need these limits increased.  Blanca users should write to `/rc_scratch/janedoe` instead of `/scratch/summit`.
 
 Scratch space should be used for all compute jobs run on Summit or Blanca.  These high-performance scratch directories are **not backed up**, and are not appropriate for long-term storage.  Data may be purged at any time subject to overall system needs. Files are automatically removed 90 days after their initial creation.
 
@@ -50,7 +50,7 @@ Note that the space occupied by a particular directory and its subdirectories ca
 
 Regular backups are performed for all `/home` and `/projects` directories and at a range of cadences.  Low-cadence backups are retained for longer periods of time than high-cadence backups.  A summary of the backup schedule is provided in the table below.
 
-| File System        | Cadence           | Retention Period  |
+| Filesystem        | Cadence           | Retention Period  |
 | ------------- |------------:| -----:|
 | `\home`       | 2 hr          |    25 hr |
 | `\home`       | 1 d           |     8 d |
