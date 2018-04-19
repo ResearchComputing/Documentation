@@ -13,14 +13,14 @@
 ## The Compute Environment
 - [File Systems](File-Systems)
 - [Compiling Software](Compiling-and-Linking)
+- [Loading Modules](Loading-Modules)
 - [Job Submissions](Job-Submissions)
 - [Job Tools](Job-Tools)
 - [Data Transfers](Data-Transfers)  
-- [The Load Balancer](The-Load-Balancer-Tool)
 - [Interactive Jobs](Interactive-Jobs)
 
 ##  Software
-- [Loading Modules](Loading-Modules)
+- [The Load Balancer](The-Load-Balancer-Tool)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
 
