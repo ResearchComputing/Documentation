@@ -1,3 +1,7 @@
+- [Overview](#overview)
+- [Duo Instructions](#duo-instructions)
+- [Issues to Note](#issues-to-note)
+
 ## Overview
 
 - Once you have a Research Computing account, you will need to set up two-factor authentication using Duo.
