@@ -8,7 +8,7 @@ You have three directories allocated to your username ($USER).  These include `/
 
 ## Accounting
 
-To see how much space you've used in each directory, from a Summit 'scompile' node, run the `curc-quota` command:
+To see how much space you've used in each directory, from a Summit *scompile* node, run the `curc-quota` command:
 
 ```
 [janedoe@shas0136 ~]$ curc-quota
