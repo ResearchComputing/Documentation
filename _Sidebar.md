@@ -37,7 +37,10 @@
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
 ## Templates
-- [Job Submission Script](https://raw.githubusercontent.com/ResearchComputing/Parallelization_Workshop/master/batch_script_template.sh)
+- [General Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
+- [Matlab Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/Matlab-Job-Template.sh)
+- [MPI Job Script]()
+- [OpenMP Job Script]()
 
 ## Additional Resources
 - [University of Utah Videos](University-of-Utah-Videos)
