@@ -40,7 +40,7 @@ If you are a new Blanca user, ask your PI or Point of Contact person to request 
 ## Node-QoS-Features
 Since not all Blanca nodes are identical, you can include node features in your job requests to help the scheduler determine which nodes are appropriate for your jobs to run on when you are using the preemptable QoS.
 
-To determine which nodes exist on the system, type `scontrol show nodes` to get a list
+To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
 
 
 ## Examples
