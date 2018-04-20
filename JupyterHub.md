@@ -14,7 +14,7 @@
 * [See Also](#see-also)
 
 ## Overview
-[JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) is a multi-user server for [Jupyter](https://jupyter.org/) (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. The CURC environment includes support for parallel computation on local HPC resources.
+[JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) is a multi-user server for [Jupyter](https://jupyter.org/) (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. The CU Research Computing environment includes support for parallel computation on local HPC resources.
 
 JupyterHub is available at https://jupyter.rc.colorado.edu. To log in use your RC credentials. If you do not have an RC account, please [request an account](https://portals.rc.colorado.edu/accounts/account-request/create/general) before continuing.
 
