@@ -1,3 +1,10 @@
+## Table of Contents
+- [Overview](#overview)
+- [Why Parallel?](#why-parallel?)
+- [Serial and Parallel Processes](#serial-and-parallel-processes)
+- [How Parallel Computation Works](#how-parallel-computation-works)
+- [Tools for Parallel Programming](#tools-for-parallel-programming)
+
 ## Overview
 
 In this tutorial we will explore the differences between serial and parallel computation, and look
