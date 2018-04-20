@@ -37,7 +37,7 @@
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
 ## Templates
-- Job Submission Script
+- [Job Submission Script](https://raw.githubusercontent.com/ResearchComputing/Parallelization_Workshop/master/batch_script_template.sh)
 
 ## Additional Resources
 - [University of Utah Videos](University-of-Utah-Videos)
