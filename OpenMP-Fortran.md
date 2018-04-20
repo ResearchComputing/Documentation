@@ -1,3 +1,10 @@
+## Table of Contents
+- [Overview](#overview)
+- [Parallel "Hello, World" Program](#parallel-hello-world-program)
+- [Private vs. Shared Variables](#private-vs-shared-variables)
+- [Barrier and Critical Directives](#barrier-and-critical-directives)
+- [Work Sharing Directive: omp for](#work-sharing-directive-omp-for)
+
 ## Overview
 Because Summit is a cluster of CPUs, parallel programming is the most effective way to utilize
 these resources. Probably the simplest way to begin parallel programming is utilization of
