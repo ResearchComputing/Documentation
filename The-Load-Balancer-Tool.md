@@ -3,7 +3,7 @@
 - [Overview](#overview)
 - [Why Use the Load Balancer?](#why-use-the-load-balancer)
 - [Using the Load Balancer](#using-the-load-balancer)
-- [Additional Resources](#additional-resources)
+- [Additional Resources](##additional-resources)
 
 ## Overview
 The CU Research Computing Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the Summit HPC resource, without the need to learn OpenMP or MPI. This tutorial assumes user knowledge of Slurm job submission, shell scripting, and some python.
