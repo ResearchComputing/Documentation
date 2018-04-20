@@ -6,7 +6,7 @@
 ## Accessing RC Resources
 - [Logging In](Logging-In)
 - [Duo Access for CU Users](Duo-Access-For-CU-Users)
-- [XSEDE accounts](XSEDE)
+- [RMACC Access to Summit](RMACC-Access-To-Summit)
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
 
