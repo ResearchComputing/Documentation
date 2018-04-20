@@ -1,9 +1,9 @@
 ## Table of Contents
-- [Overview](##Overview)
-- [Video Tutorial](##video-tutorial)
-- [The Module Command](##the-module-command)
-- [Loading Modules in a Job Script](##loading-modules-in-a-job-script)
-- [Table of Sub-Commands](##table-of-sub-commands)
+- [Overview](#overview)
+- [Video Tutorial](#video-tutorial)
+- [The Module Command](#the-module-command)
+- [Loading Modules in a Job Script](#loading-modules-in-a-job-script)
+- [Table of Sub-Commands](#table-of-sub-commands)
 
 ## Overview
 
