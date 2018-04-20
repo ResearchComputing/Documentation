@@ -1,7 +1,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [How to Access the PetaLibrary](#how-to-access-the-petaLibrary)
+- [How to Access the PetaLibrary](#how-to-access-the-petalibrary)
 
 ## Overview
 
