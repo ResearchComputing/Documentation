@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --nodes=1				                  # Number of requested nodes
-#SBATCH --time=0:01:00				            # Max wall time
-#SBATCH --qos Debug				                # Specify debug QOS
-#SBATCH --partition=shas			            # Specify Summit haswell nodes
-#SBATCH --ntasks=4				                # Number of tasks per job
-#SBATCH --job-name=parallel_hello		      # Job submission name
-#SBATCH --output=GENERAL_MPI_JOB.%j.out		# Output file name with Job ID
+#SBATCH --nodes=1                         # Number of requested nodes
+#SBATCH --time=0:01:00                    # Max wall time
+#SBATCH --qos Debug                       # Specify debug QOS
+#SBATCH --partition=shas                  # Specify Summit haswell nodes
+#SBATCH --ntasks=4                        # Number of tasks per job
+#SBATCH --job-name=parallel_hello         # Job submission name
+#SBATCH --output=GENERAL_MPI_JOB.%j.out   # Output file name with Job ID
 
 # Written by: Daniel Trahan
 # Date: 20 April 2018
