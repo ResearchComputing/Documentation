@@ -1,3 +1,5 @@
+## Table of Contents
+
 - [Overview](#overview)
 - [Getting an XSEDE account](#getting-an-xsede-account)
 - [Configuring Duo](#configuring-duo)
