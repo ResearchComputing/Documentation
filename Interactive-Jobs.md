@@ -1,4 +1,20 @@
+## Table of Contents
+- [Overview](#overview)
+- [Videos](#videos)
+- [General Interactive Jobs](#general-interactive-jobs)
+- [Interactive GUI Applications](#interactive-gui-applications)
+
+## Overview
+
 Interactive jobs are jobs that allow a user to interact with applications in real time. With interactive jobs, applications such as python or matlab can be ran in an interactive environment. Summit supports X11 forwarding and can thus run GUI applications remotely.
+
+## Videos
+
+### General Interactive Jobs
+[![General interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Interactive-Jobs-Video.jpg)](https://www.youtube.com/watch?v=hpdYdBsPynQ)  
+
+### Interactive GUI applications
+[![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=vSYNKlEKg3Y) 
 
 ## General Interactive Jobs
 To run an interactive job load the slurm module into the enviornment with:
@@ -45,9 +61,4 @@ Opening the application will bring up a terminal window. On this window type:
 # Replace <rc_username> with your rc-username
 
 ssh login.rc.colorado.edu -l <rc_username> -X
-```
-
-## Videos:
-
-[General Interactive Jobs](https://www.youtube.com/watch?v=hpdYdBsPynQ)  
-[Running GUI applications through an Interactive Job](https://www.youtube.com/watch?v=vSYNKlEKg3Y)  
+``` 
