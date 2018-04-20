@@ -25,7 +25,7 @@ Good general instructions can be found at [here](http://gaussian.com/running/); 
 To set up your shell environment to use G16, load a Gaussian software module  
 (e.g. `module load gaussian/16_avx2`). Nearly all necessary environment variables are configured for you via the module.  You do not need to source g16.login or g16.profile.
 
-However, it is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files.  These should always be on one of Summit's [scratch storage systems](https://rc.colorado.edu/support/user-guide/storage.html) (either /scratch/local [accessed via the SLURM_SCRATCH env variable] or /scratch/summit/$USER.)  If `GAUSS_SCRDIR` is not set, then the scratch files will be created in whatever directory G16 is run from; if this directory is in /projects or /work, then your job's performance will be dramatically reduced.
+However, it is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files.  These should always be on one of Summit's [scratch storage systems](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/File-Systems) (either /scratch/local [accessed via the SLURM_SCRATCH env variable] or /scratch/summit/$USER.)  If `GAUSS_SCRDIR` is not set, then the scratch files will be created in whatever directory G16 is run from; if this directory is in /projects or /work, then your job's performance will be dramatically reduced.
 
 ## Running G16
 
