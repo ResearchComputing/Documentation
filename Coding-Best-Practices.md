@@ -1,3 +1,10 @@
+## Table of Contents
+- [Overview](#overview)
+- [Variable Naming Conventions](#variable-naming-conventions)
+- [Function and Class Naming Conventions](#function-and-class-naming-conventions)
+- [Whitespace and Tabbing](#whitespace-and-tabbing)
+- [Commenting your code](#commenting-your-code)
+
 ## Overview
 
 Programmers employ numerous tactics to ensure readable and organized code. These include:
@@ -105,7 +112,7 @@ It is important to note that like variable naming, whitespace can be utilized in
 different styles and approaches. Just remember to use whitespace and tabbing in a
 consistent and intuitive manner throughout your code.
 
-## Comments Comments Comments
+## Commenting your code
 Commenting may be the most important way to organize and segment code. Comments
 are sections of code that the compiler ignores, but humans can read, and thus can be
 used to label code and divide it into logical segments to aid users. For example, one
