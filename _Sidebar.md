@@ -5,7 +5,7 @@
 
 ## Accessing RC Resources
 - [Logging In](Logging-In)
-- [Duo Access](Duo-Access)
+- [Duo Access for CU Users](Duo-Access-For-CU-Users)
 - [XSEDE accounts](XSEDE)
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
