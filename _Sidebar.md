@@ -11,7 +11,7 @@
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and the Compute Environment
-- [Filesystems](Filesystems)
+- [File Systems](File Systems)
 - [Compiling Software](Compiling-and-Linking)
 - [The Module System](The-Module-System)
 - [Job Submission](Job-Submissions)
