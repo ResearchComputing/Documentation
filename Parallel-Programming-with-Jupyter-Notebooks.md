@@ -1,3 +1,11 @@
+## Table of Contents
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Log in](#log-in)
+- [Creating a parallel-processing notebook](#creating-a-parallel-processing-notebook)
+- [Shutting down](#shutting-down)
+
+## Overview
 This tutorial demonstrates simple parallel processing examples using the CURC JupyterHub web service, in both ipyparallel and MPI for Python.
 
 ## Prerequisites
