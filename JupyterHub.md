@@ -52,7 +52,7 @@ Use the _Stop My Server_ button in the _Control Panel_ to shut down the Jupyter 
 Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
 
 ## IPython Clusters
-Notebook servers started on RC compute resources can also launch IPython clusters for parallel processing. See [IPython Parallel](http://ipyparallel.readthedocs.org/en/latest/) and [MPI for Python](http://pythonhosted.org/mpi4py/) for general information on parallel processing with IPython clusters.
+Notebook servers started on RC compute resources can also launch IPython clusters for parallel processing. See [IPython Parallel](http://ipyparallel.readthedocs.org/en/latest/) and [MPI for Python](http://mpi4py.scipy.org/docs/) for general information on parallel processing with IPython clusters.
 
 The RC environment provisions two IPython profiles automatically which can be used as a reference point for starting IPython clusters. These profiles are available in the _IPython Clusters_ tab.
 
