@@ -1,3 +1,5 @@
+## Table of Contents
+
 - [Overview](#overview)
 - [Logging in from a Windows Machine](#logging-in-from-a-windows-machine)
 - [Logging in from a Mac](#logging-in-from-a-mac)
