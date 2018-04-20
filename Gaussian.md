@@ -1,9 +1,16 @@
 ## Table of Contents
 
-- [Overview](#overview)
-- [Environment](#environment)
-- [Running G16](#running-=g16)
-- [Memory](#memory)
+* [Overview](#overview)
+* [Environment](#environment)
+* [Running G16](#running-g16)
+* [Memory](#memory)
+* [Parallel Jobs](#parallel-jobs)
+  * [Single node (SMP) Parallelism](#single-node-(smp)-parallelism)
+* [Multi-node (Linda) Parallelism](#multi-node-(linda)-parallelism)
+  * [G16 on GPU](#g16-on-gpu)
+  * [G16 on Knights Landing](#g16-on-knights-landing)
+* [Sample Input File](#sample-input-file)
+
 
 ## Overview
 
