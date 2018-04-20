@@ -1,3 +1,10 @@
+## Table of Contents
+- [Overview](#overview)
+- [Setup and “Hello, World”](#setup-and-hello-world)
+- [MPI Barriers and Synchronization](#mpi-barriers-and-synchronization)
+- [Message Passing](#message-passing)
+- [Group Operators: Scatter and Gather](#group-operators-scatter-and-gather)
+
 ## Overview
 Parallel programs enable users to fully utilize the multi-node structure of supercomputing
 clusters. Message Passing Interface (MPI) is a standard used to allow different nodes on a
