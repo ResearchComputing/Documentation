@@ -1,8 +1,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Blanca Quick-Start](#blanca-quick-start)
-- [Job Scheduling](#job-scheduling)
+- [How to Access the PetaLibrary](#how-to-access-the-PetaLibrary)
 
 ## Overview
 
@@ -18,14 +17,12 @@ Use the PetaLibrary to store, archive and share research data:
      * 100 TB in Archive Storage
      * Email rc-help@colorado.edu to request more space if necessary
 
-## Video
+## How to Access the PetaLibrary
 
-[PetaLibrary Informational Video](https://youtu.be/i1TVYj4OQOY)
-
-## Accessing the PetaLibrary
+For information on how to access the PetaLibrary, watch our [video](https://youtu.be/i1TVYj4OQOY) or read the text below.
 
 Request access to the PetaLibrary by:
-- Reading the PetaLibrary [Memorandum of Understanding](https://www.colorado.edu/p113a299a3a0/content/petalibrary-mou)
+- Reading the PetaLibrary [Memorandum of Understanding](https://www.colorado.edu/rc/sites/default/files/attached-files/petalibrarymou.pdf)
 - Filling out the attached End User Agreement and Order Form (found in the MOU), and emailing those documents to rc-help@colorado.edu  
 
 Each person who accesses the PetaLibrary is required to have a Research Computing account and two-factor authentication
