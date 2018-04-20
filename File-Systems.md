@@ -54,16 +54,16 @@ Regular backups are performed for all `/home` and `/projects` directories and at
 
 | Filesystem        | Cadence           | Retention Period  |
 | ------------- |------------:| -----:|
-| `\home`       | 2 hr          |    25 hr |
-| `\home`       | 1 d           |     8 d |
-| `\home`       | 1 wk          |    29 d |
-| `\projects`   | 6 hr          |    25 hr |
-| `\projects`   | 1 d           |    8 d |
-| `\projects`   | 1 wk          |   15 d |
-| `\scratch`    | **no backups** | N/A |
-| `\rc_scratch` | **no backups** | N/A |
+| `/home`       | 2 hr          |    25 hr |
+| `/home`       | 1 d           |     8 d |
+| `/home`       | 1 wk          |    29 d |
+| `/projects`   | 6 hr          |    25 hr |
+| `/projects`   | 1 d           |    8 d |
+| `/projects`   | 1 wk          |   15 d |
+| `/scratch`    | **no backups** | N/A |
+| `/rc_scratch` | **no backups** | N/A |
 
-If disaster strikes and you need access to a previous version of your `/home` or `/projects` directories, change to that directory and look through the .snapshot subdirectory.   You will see a subdirectory associated with each snapshot of your `\home` or `\projects` directory, named using the time-stamp associated with the snapshot.
+If disaster strikes and you need access to a previous version of your `/home` or `/projects` directories, change to that directory and look through the .snapshot subdirectory.   You will see a subdirectory associated with each snapshot of your `/home` or `/projects` directory, named using the time-stamp associated with the snapshot.
 
 ## Workspace Sharing
 All users have complete control over their personal directory permissions.   While we encourage you to share your `/projects` and `/scratch` directories with collaborators as appropriate, we strongly discourage sharing of your `/home` directory due to the limited space and potentially sensitive information stored there.   
