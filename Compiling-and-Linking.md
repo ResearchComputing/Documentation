@@ -1,3 +1,5 @@
+## Table of Contents
+
 - [The Compilation Environment](#the-compilation-environment)
 - [Compilation Examples](#compilation-examples)
 
