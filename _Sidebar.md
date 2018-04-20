@@ -13,7 +13,7 @@
 ## The Compute Environment
 - [Filesystems](Filesystems)
 - [Compiling Software](Compiling-and-Linking)
-- [The Module System](Loading-Modules)
+- [The Module System](The-Module-System)
 - [Job Submission and Accounting](Job-Submissions)
 - [Job Tools](Job-Tools)
 - [Data Transfers](Data-Transfers)  
