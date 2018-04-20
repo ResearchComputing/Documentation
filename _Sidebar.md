@@ -10,7 +10,7 @@
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
 
-## The Compute Environment
+## Jobs and the Compute Environment
 - [Filesystems](Filesystems)
 - [Compiling Software](Compiling-and-Linking)
 - [The Module System](The-Module-System)
@@ -19,7 +19,7 @@
 - [Data Transfers](Data-Transfers)  
 - [Interactive Jobs](Interactive-Jobs)
 
-##  Software
+## Software
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
