@@ -30,7 +30,7 @@ Virtual notebook servers are started on the JupyterHub host, and are **not inten
 ### Summit Haswell
 These notebook servers start on the `shas` partition using the `normal` QOS. The following features are supported by Summit Haswell notebooks:
 * Access to standard RC file systems
-* Access to [RC environment modules](https://www.rc.colorado.edu/support/user-guide/modules.html)
+* Access to [RC environment modules](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Loading-Modules)
 * Python 3 notebooks
 * Python 2.7 notebooks
 * BASH notebooks
@@ -39,7 +39,7 @@ These notebook servers start on the `shas` partition using the `normal` QOS. The
 ### Summit Knight's Landing
 These notebook servers start on the `sknl` partition using the `normal` QOS. The following features are supported by Summit KNL notebooks:
 * Access to standard RC file systems
-* Access to [RC environment modules](https://www.rc.colorado.edu/support/user-guide/modules.html)
+* Access to [RC environment modules](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Loading-Modules)
 * Python 3 notebooks
 * Python 2.7 notebooks
 * BASH notebooks
