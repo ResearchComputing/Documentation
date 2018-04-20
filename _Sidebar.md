@@ -15,7 +15,7 @@
 - [Compiling Software](Compiling-and-Linking)
 - [The Module System](The-Module-System)
 - [Job Submission](Job-Submissions)
-- [Job Tools](Job-Tools)
+- [Useful Slurm Commands](useful-slurm-commands)
 - [Data Transfers](Data-Transfers)  
 - [Interactive Jobs](Interactive-Jobs)
 
