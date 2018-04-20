@@ -18,6 +18,7 @@
 - [Useful Slurm Commands](useful-slurm-commands)
 - [Data Transfers](Data-Transfers)  
 - [Interactive Jobs](Interactive-Jobs)
+- [Coding Best Practices](Coding-Best-Practices)
 
 ## Software
 - [The Load Balancer](The-Load-Balancer-Tool)
@@ -25,7 +26,6 @@
 - [Gaussian](Gaussian)
 
 ## Parallel Programming
-- [Coding Best Practices](Coding-Best-Practices)
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
 - [Matlab](Matlab-on-Summit)
 - MPI
