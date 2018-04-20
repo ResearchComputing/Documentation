@@ -1,3 +1,9 @@
+## Table of Contents
+- [Overview](#overview)
+- [Submitting Matlab Interactive Jobs](#submitting-matlab-interactive-jobs)
+- [Submitting Matlab Batch Jobs](#submitting-matlab-batch-jobs)
+- [Parallel Matlab on Summit](#parallel-matlab-on-summit)
+
 ## Overview
 Research Computing (RC) provides a large suite of software on RC resources. In this tutorial we will learn how to run Matlab on these resources. The tutorial assumes you are familiar with Matlab and basic Linux terminal commands.
 
@@ -6,9 +12,7 @@ There are two basic ways to run Matlab (or many other kinds of software) on RC r
 The second way to run Matlab on RC resources is by submission of a batch job. This allows the job to run in the background when resources become available. You may choose to use this method if you have a large job that may wait in the queue for awhile, or if you are not debugging or in need of a GUI. Both ways to work with Matlab are below.
 
 ## Submitting Matlab Interactive Jobs
-Running Matlab interactive jobs on RC resources is both a simple and easy task to accomplish. In this section we will learn how to launch Matlab as an interactive job. For more information on launching interactive jobs:
-
-<General Interactive Tutorial Link>
+Running Matlab interactive jobs on RC resources is both a simple and easy task to accomplish. In this section we will learn how to launch Matlab as an interactive job. For more information on launching interactive jobs [check out our interactive jobs tutorial](Interactive-Jobs)
 
 Begin by launching an interactive job by loading slurm/summit into your environment and running the `sinteractive` command.
 
@@ -31,10 +35,8 @@ matlab -nosplash
 
 Note: You can run Matlab without the gui using the `-nodesktop` command when launching Matlab.
 
-# Submitting Matlab Batch Jobs
-Here, we will learn how to run a Matlab script in a non-interactive batch job. For more general information on batch job scripts on Summit, please see:
-
-<Batch Tutorial Link>
+## Submitting Matlab Batch Jobs
+Here, we will learn how to run a Matlab script in a non-interactive batch job. For more general information on batch job scripts on Summit, [please see our Job Submissions Tutorial](Job-Submission)
 
 Let’s begin by constructing a small Matlab script that prints ‘hello world’ to the user.
 The Matlab script we will use for the purposes of this tutorial is called `hello_world.m` and contains only one line, the Matlab command:
