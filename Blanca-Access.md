@@ -19,9 +19,9 @@ An allocation of CPU time is not needed in order to run on Blanca.
 If you would like to purchase a Blanca node, please visit the Research Computing [website](https://www.colorado.edu/rc/resources/blanca) for more details.
 
 ## Blanca Quick-Start
-1. If your group is a Blanca partner, ask your PI or PoC (found in Table 1) to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.
+1. If your group is a Blanca partner, ask your PI or PoC to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.  
 2. From a login node, run "module load slurm/blanca" to access the Slurm job scheduler instance for Blanca.
-3. Consult Table 2 and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
+3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
 5. Read the rest of this page thoroughly.
 
@@ -37,61 +37,10 @@ Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for sche
 
 If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to rc-help@colorado.edu.  You are only allowed to use a high-priority QoS if you have specifically been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
-#### Table of QoSes (Table 1)
-
-QoS | PI | Point of Contact | Priority
-----|----|------------------|---------
-blanca-ics | M. Banich | N. Speer | high
-blanca-ibg, <br> blanca-ibgc1 | M. Keller | J. Lessem | high
-blanca-ccn | R. O'Reilly | K. Krueger | high
-blanca-igg | I.Grooms | | high
-blanca-mrg | J. Michl | E. Buchanan | high
-blanca-el | J. Balch | T. Dunn | high
-blanca-sha | S. Sharma | | high
-blanca-ceae | R. Regueiro | | high
-blanca-dhl | M. Hoefer | | high
-blanca-pccs | P. Constantine | | high
-blanca-csdms | | E. Hutton | high
-blanca-sol | N. Featherstone | | high
-preemptable <br> (details below) | | | low
-
-## Node-QoS-Feature table (Table 2)
+## Node-QoS-Feature
 Since not all Blanca nodes are identical, you can include node features in your job requests to help the scheduler determine which nodes are appropriate for your jobs to run on when you are using the preemptable QoS.
 
-Node name     | High-prio QoS | General hardware attributes | Features
---------------|---------------|-----------------------------|---------
-bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel6
-bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
-bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
-bnode01[12-14] | blanca-mrg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
-bnode01[15-16] | blanca-el | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode02[01-36] | blanca-ccn | 16 cores, 3.3 GHz,<br> 64 GB RAM,<br> 1 TB local disk |ivybridge,<br> Quadro,<br> k2000,<br> avx,<br> fdr,<br> rhel7
-bnode0301 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel6
-bnode030[2-9] | blanca-sha | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0310 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel6
-bnode0311 | blanca-ceae | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bgpu-dhl1 | blanca-dhl | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
-bnode03[12-15] | blanca-pccs | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0316,<br> bnode0401 | blanca-csdms | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode04[02-03] | blanca-sol | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel6
-
-#### Description of features:
-**westmere-ex**: Intel processor generation  
-**sandybridge**: Intel processor generation  
-**ivybridge**: Intel processor generation  
-**haswell**: Intel processor generation  
-**broadwell**: Intel processor generation  
-**avx**: AVX processor instruction set  
-**avx2**: AVX2 processor instruction set  
-**fdr**: InfiniBand network generation  
-**Quadro**: NVIDIA GPU generation  
-**Tesla**: NVIDIA GPU generation  
-**k2000**: NVIDIA K2000 GPU  
-**P100**: NVIDIA P100 GPU  
-**localraid**: large, fast RAID disk storage in node  
-**rhel6**: RedHat Enterprise Linux version 6 operating system  
-**rhel7**: RedHat Enterprise Linux version 7 operating system  
+To determine which nodes exist on the system, type `scontrol show nodes` to get a list
 
 
 ## Examples
