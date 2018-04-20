@@ -1,3 +1,5 @@
+## Table of Contents
+
 - [Overview](#overview)
 - [Duo Instructions](#duo-instructions)
 - [Issues to Note](#issues-to-note)
