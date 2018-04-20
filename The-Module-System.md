@@ -11,13 +11,15 @@ Research Computing uses a module system to load most software into a user's envi
 
 ## Video Tutorial
 
+Watch the video on using modules, or read the text below.
+
 [![How-to-load-modules-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Loading-Modules/videopreview.j.jpg)](https://youtu.be/csgl4czhD_k)
 
 ## The `module` Command
 
 **_Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly onto a login node._** The login node will restrict the loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
 
-To see what modules are available to load, ssh into a compile node and type:
+To see what modules are available to load, ssh into a compile node by typing `ssh scompile` from a login node, and type:
 ```
 module avail
 ```
