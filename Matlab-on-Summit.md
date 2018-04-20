@@ -36,7 +36,7 @@ matlab -nosplash
 Note: You can run Matlab without the gui using the `-nodesktop` command when launching Matlab.
 
 ## Submitting Matlab Batch Jobs
-Here, we will learn how to run a Matlab script in a non-interactive batch job. For more general information on batch job scripts on Summit, [please see our Job Submissions Tutorial](Job-Submission)
+Here, we will learn how to run a Matlab script in a non-interactive batch job. For more general information on batch job scripts on Summit, [please see our Job Submissions Tutorial](Job-Submissions)
 
 Let’s begin by constructing a small Matlab script that prints ‘hello world’ to the user.
 The Matlab script we will use for the purposes of this tutorial is called `hello_world.m` and contains only one line, the Matlab command:
