@@ -1,7 +1,13 @@
+## Table of Contents
+
+- [Overview](#overview)
+- [Why Use the Load Balancer?](#why-use-the-load-balancer)
+- [Using the Load Balancer](#using-the-load-balancer)
+
 ## Overview
 The CU Research Computing Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the Summit HPC resource, without the need to learn OpenMP or MPI. This tutorial assumes user knowledge of Slurm job submission, shell scripting, and some python.
  
-## Why use the Load Balancer?
+## Why Use the Load Balancer?
 Suppose you have a very simple serial program that crops a photo, and you need to apply it to crop several million photos. You could rewrite the serial program into a parallel program that would utilize multiple processors to more quickly run the program over the entire set of photos (compared to doing one-at-a-time), but this would require some knowledge of parallel programming. Even worse, if your code is in a language that has limited parallelization capabilities, this may not be an option. The easiest solution for this problem is to utilize the Load Balancer.
  
 ## Using the Load Balancer
