@@ -39,8 +39,8 @@
 ## Templates
 - [General Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
 - [Matlab Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/Matlab-Job-Template.sh)
-- [MPI Job Script]()
-- [OpenMP Job Script]()
+- [MPI Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/MPI-Job-Template.sh)
+- [OpenMP Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/OpenMP-Job-Template)
 
 ## Additional Resources
 - [University of Utah Videos](University-of-Utah-Videos)
