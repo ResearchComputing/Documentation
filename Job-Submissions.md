@@ -38,7 +38,7 @@ echo "goodbye!"
 
 1. Write your job script in a text editor
     - You will submit the script to Slurm, a batch queuing system that will schedule the job to run non-interactively when resources are available
-    - Use this [template]() to write your job script in the text editor
+    - Use this [template](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh) to write your job script in the text editor
     - You can confirm the content of your script with this command: cat job-name.sh
     - Replace “job-name” with the name of your job
 
