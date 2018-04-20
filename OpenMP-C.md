@@ -122,14 +122,14 @@ int main(int argc, char** argv){
 We must do one more thing before achieving parallelization. To set the amount of threads we
 want OpenMP to run on, we must set an Linux environment variable to be specify how many
 threads we wish to use. The environment variable: `OMP_NUM_THREADS` will store this information.
-On the command line type:
+Changing this variable does not require recompilation of the the program, so this command can be placed in either the command line or on your job script:
 
 ```bash
 export OMP_NUM_THREADS=4
 ```
 
 __Important to note: this environment variable will need to be set every time you exit your
-shell.__ If you would like to make this change permanent you will need to add this line your
+shell.__ If you would like to make this change permanent you will need to add these lines to your
 `.bash_profile` file in your home directory:
 
 ```bash
@@ -137,7 +137,7 @@ OMP_NUM_THREADS=4;
 export OMP_NUM_THREADS
 ```
 
-Now let’s re-compile the code and run it to see what happens:
+Now let’s re-compile the code and run it to see what happens:  
 __Compile with GCC__
 ```bash
 g++ parallel_hello_world.cpp -o parrallel_hello_world.exe -fopenmp
