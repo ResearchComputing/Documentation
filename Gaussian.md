@@ -5,6 +5,7 @@
 - [Running G16](#running-=g16)
 - [Memory](#memory)
 
+## Overview
 
 __Important:__ Gaussian is available on Summit only to members of universities that have purchased Gaussian licenses.  It cannot be run by other Summit users.  Please note and abide by the licensing, rights, and citation information shown at the top of your Gaussian output files.
 
