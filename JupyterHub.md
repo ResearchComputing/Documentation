@@ -60,7 +60,7 @@ The RC environment provisions two IPython profiles automatically which can be us
 The `default` profile is generated automatically by IPython. Engines are dispatched in the same resources as the notebook server, and provide no MPI support or cluster performance.
 
 #### `example-shas`
-Each `example-shas` engine provides access to a [Summit Haswell](https://www.rc.colorado.edu/support/user-guide/compute-resources.html#Summit) CPU thread. Multiple engines are aggregated into a single MPI session.
+Each `example-shas` engine provides access to a Summit Haswell CPU thread. Multiple engines are aggregated into a single MPI session.
 
 **Note:** IPython engines on RC cluster resources are provisioned as batch jobs using Slurm, but Jupyter does not yet report queue progress. The exception "NoEnginesRegistered: Can't build targets without any engines" indicates that the cluster job is still in the queue and not ready to accept work.
 
