@@ -1,6 +1,6 @@
 ## Table of Contents
 - [Overview](#overview)
-- [Why Parallel?](#why-parallel?)
+- [Why Parallel?](#why-parallel)
 - [Serial and Parallel Processes](#serial-and-parallel-processes)
 - [How Parallel Computation Works](#how-parallel-computation-works)
 - [Tools for Parallel Programming](#tools-for-parallel-programming)
