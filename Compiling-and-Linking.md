@@ -4,7 +4,7 @@
 - [Navigating the Software Stack](#navigating-the-software-stack)
 - [Compilation Examples](#compilation-examples)
 - [Compiler and Optimization Recommendations](#compiler-and-optimization-recommendations)
-- [Linking to Intel's Math Kernel Library (MKL)]
+- [Linking to the Math Kernel Library (MKL)](#linking-to-the-math-kernel-library)
 
 ## Overview
 
@@ -131,3 +131,6 @@ $FC -O3 -xCORE-AVX512 my_program.f90 -o my_program.out
 $CC -O3 -xCORE-AVX512 my_program.c -o my_program.out
 $CXX -O3 -xCORE-AVX512 my_program.cpp -o my_program.out
 ```
+
+## Linking to the Math Kernel Library
+Intel's Math Kernel Library
