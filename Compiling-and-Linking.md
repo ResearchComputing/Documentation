@@ -33,6 +33,7 @@ Once the relevant modules are loaded, you are ready to compile.  For our HDF5 ex
 ```
 $FC my_program.f90 -I$(CURC_HDF5_INC) -L$(CURC_HDF5_LIB) -lhdf5_fortran -o my_program
 ```
+**Note:** Your run-time environment should reflect your compilation environment.   Be sure to include the same sequence of `module` commands in your job script as that used at compile time.
 
 
 
