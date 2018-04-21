@@ -109,7 +109,8 @@ Finally, to see which modules must be loaded to make your desired version availa
     Description:
       HDF5 Tools and Library
 
-    You will need to load all module(s) on any one of the lines below before the "hdf5/1.10.1" module is available to load.
+    You will need to load all module(s) on any one of the lines below before 
+    the "hdf5/1.10.1" module is available to load.
 
       intel/17.4
       intel/17.4  impi/17.3
