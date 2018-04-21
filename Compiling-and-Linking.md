@@ -58,13 +58,15 @@ Several compiler-independent modules will also be displayed.  Those modules (e.g
 
 If multiple versions of a particular compiler are available, the `D` denotes the default version.  If the version number is omitted in the `module load` command, this is the version that will be used.  Considering the output above, the following two commands are equivalent:
 
-```[janedoe@shas0136 ~]$ ml intel ```
+```[janedoe@shas0136 ~]$ module load intel ```
 
 
-```[janedoe@shas0136 ~]$ ml intel/17.4 ```
+```[janedoe@shas0136 ~]$ module load intel/17.4 ```
 
 Once the compiler is loaded, MPI-implementations and third-party serial libraries that depend on that compiler appear in the available module list until `MPI Implementations` and `Compiler Dependent Applications`:
-  ```[janedoe@shas0136 ~]$ ml avail 
+  ```
+[janedoe@shas0136 ~]$ module load intel
+[janedoe@shas0136 ~]$ module avail 
 ----------------------------------- MPI Implementations --------------------------------------
    impi/17.3
 ---------------------------------- Compiler Dependent Applications ---------------------------
