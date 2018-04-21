@@ -38,10 +38,6 @@ $FC my_program.f90 -I$(CURC_HDF5_INC) -L$(CURC_HDF5_LIB) -lhdf5_fortran -o my_pr
 
 
 
-
-
-
-
 ## Navigating the Software Stack
 
 Compilation on RC systems works hand-in-hand with the Lmod module system.  Detailed of semantics of Lmod are discussed in **LINK HERE**, and we only discuss some key points of the module system here.  Namely, modules should be loaded in a certain order,  loading a module modifies the `PATH` and `LD_LIBRARY_ENVIRONMENT` variables, and certain RC-specific environment variables are set which may be useful during the compilation process.
