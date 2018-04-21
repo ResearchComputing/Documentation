@@ -56,7 +56,7 @@ This will yield output similar to
 ```
 Several compiler-independent modules will also be displayed.  Those modules (e.g., the Julia module) can be loaded at any time, irrespective of the compiler or MPI version in use.
 
-If multiple versions of a particular compiler are available, the `D` denotes the default version.  If the version number is omitted in the `module load` command, this is the version that will be used.  Considering the output above, the following two commands are equivalent:
+If multiple versions of a package are available, a `D` is used to indicate the default version.  When the version number is omitted during the `module load` command, the default version will be used.  Considering the output above, the following two commands are equivalent:
 
 ```[janedoe@shas0136 ~]$ module load intel ```
 
@@ -74,4 +74,12 @@ Once the compiler is loaded, MPI-implementations and third-party serial librarie
    fftw/3.3.4     geos/3.6.2    hdf5/1.8.18    intel_cluster_tools/17.3        jpeg/9b           nco/4.6.0        netcdf/4.4.1.1    proj/4.9.2        zlib/1.2.11
 
 ```
-Choosing an MPI implementation will similarly reveal third-party software compiled against the particular compiler/MPI-implementation you have selected:
+Choosing an MPI implementation will similarly reveal MPI-dependent software under the header `MPI Dependent Applications`:
+```
+[janedoe@shas0136 ~]$ module load impi
+[janedoe@shas0136 ~]$ module avail
+ ------------------------------------------------- MPI Dependent Applications --------------------------------------------------
+   boost/1.64.0        hdf5/1.8.18        lammps/31Mar17        perfsuite/1.1.4    pnetcdf/1.8.1
+   fftw/3.3.4   (D)    hdf5/1.10.1 (D)    netcdf/4.4.1.1 (D)    petsc/3.8.0
+
+```
