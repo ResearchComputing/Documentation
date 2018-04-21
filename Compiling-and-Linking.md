@@ -95,7 +95,7 @@ $FC -O3 -xCORE-AVX2 my_program.f90 -o my_program.out
 $CC -O3 -xCORE-AVX2 my_program.c -o my_program.out
 $CXX -O3 -xCORE-AVX2 my_program.cpp -o my_program.out
 ```
-For this Phi and Skylake nodes, you might instead resemble:
+For the Phi and Skylake nodes, the appropriate commands would be:
 ```
 $FC -O3 -xCORE-AVX512 my_program.f90 -o my_program.out
 $CC -O3 -xCORE-AVX512 my_program.c -o my_program.out
