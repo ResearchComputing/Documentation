@@ -78,8 +78,8 @@ Choosing an MPI implementation will similarly reveal MPI-dependent software unde
 ```
 [janedoe@shas0136 ~]$ module load impi
 [janedoe@shas0136 ~]$ module avail
- ------------------------------------------------- MPI Dependent Applications --------------------------------------------------
-   boost/1.64.0        hdf5/1.8.18        lammps/31Mar17        perfsuite/1.1.4    pnetcdf/1.8.1
+ ---------------------------------- MPI Dependent Applications -------------------
+   boost/1.64.0        hdf5/1.8.18        lammps/31Mar17        perfsuite/1.1.4
    fftw/3.3.4   (D)    hdf5/1.10.1 (D)    netcdf/4.4.1.1 (D)    petsc/3.8.0
 
 ```
