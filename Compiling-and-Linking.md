@@ -85,9 +85,23 @@ Choosing an MPI implementation will similarly reveal MPI-dependent software unde
    fftw/3.3.4   (D)    hdf5/1.10.1 (D)    netcdf/4.4.1.1 (D)    petsc/3.8.0
 
 ```
+You may search for a particular software package using the `module spider` command.  This is typically a two-stage process.  First search on the general software name without including any version information.  If the software exists on our system, a list of available versions will appear:
+```
+[janedoe@shas0136 ~]$ module spider hdf5
+---------------------------------------------------------------------------------------------------------------------------
+  hdf5:
+---------------------------------------------------------------------------------------------------------------------------
+    Description:
+      HDF5 Tools and Library
 
+     Versions:
+        hdf5/1.8.15
+        hdf5/1.8.18
+        hdf5/1.10.0
+        hdf5/1.10.1
+```
 ## Optimization Considerations ##
-The Summit and Blanca clusters run on Intel-designed hardware, and we **strongly recommend** using the Intel compiler along with Intel's MPI library when building your software.   For production, we suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on.  For Haswell nodes, this means compiling with the `-xCORE-AVX2` flag.  For the Xeon-Phi and Skylake nodes, use `-xCORE-AVX512`. 
+The Summit and Blanca clusters run on Intel-designed hardware.  As such, we **strongly recommend** using the Intel compiler along with Intel's MPI library when compiling software.   For production, we suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on.  For Haswell nodes, this means compiling with the `-xCORE-AVX2` flag.  For the Xeon-Phi and Skylake nodes, use `-xCORE-AVX512`. 
 
 Compilation commands for a typical Summit Haswell node should resemble:
 ```
