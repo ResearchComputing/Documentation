@@ -141,3 +141,4 @@ If your application uses FFTW, you will also need to include MKL's FFTW director
 ```
 $CXX -O3 -xCORE-AVX2 -I$CURC_MKL_INC/fftw my_program.cpp -o my_program.out -mkl
 ```
+For the GNU and PGI compilers, the link syntax becomes more complex.  We suggest using the [Intel Link Advisor](#https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor) to   We provide an example for GNU
