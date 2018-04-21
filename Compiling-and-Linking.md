@@ -89,13 +89,13 @@ Choosing an MPI implementation will similarly reveal MPI-dependent software unde
 ## Optimization Considerations ##
 The Summit and Blanca clusters run on Intel-designed hardware, and we **strongly recommend** using the Intel compiler along with Intel's MPI library when building your software.   For production, we suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on.  For Haswell nodes, this means compiling with the `-xCORE-AVX2` flag.  For the Xeon-Phi and Skylake nodes, use `-xCORE-AVX512`. 
 
-Compilation commands for a typical Summit Haswell node may thus look like:
+Compilation commands for a typical Summit Haswell node should resemble:
 ```
 $FC -O3 -xCORE-AVX2 my_program.f90 -o my_program.out
 $CC -O3 -xCORE-AVX2 my_program.c -o my_program.out
 $CXX -O3 -xCORE-AVX2 my_program.cpp -o my_program.out
 ```
-For this Phi and Skylake nodes, you might instead use:
+For this Phi and Skylake nodes, you might instead resemble:
 ```
 $FC -O3 -xCORE-AVX512 my_program.f90 -o my_program.out
 $CC -O3 -xCORE-AVX512 my_program.c -o my_program.out
