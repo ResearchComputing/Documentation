@@ -1,5 +1,6 @@
 ## Table of Contents
 
+- [Overview](#overview)
 - [Navigating the Software Stack](#navigating-the-software-stack)
 - [Compilation Examples](#compilation-examples)
 
