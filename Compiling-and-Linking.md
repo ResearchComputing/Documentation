@@ -133,7 +133,9 @@ $CXX -O3 -xCORE-AVX512 my_program.cpp -o my_program.out
 ```
 
 ## Linking to the Math Kernel Library
-The Intel Math Kernel Library ([MKL](https://software.intel.com/en-us/mkl/documentation)) provides optimized routines for a number of common mathematical operations.  Notably, it provides interfaces to the LAPack and BLAS linear algebra libraries as well as the FFTW Fourier transform package.   If you wish to link MKL to your Intel-compiled application, use the `-mkl` flag:
+The Intel Math Kernel Library ([MKL](https://software.intel.com/en-us/mkl/documentation)) provides optimized routines for a number of common mathematical operations.  Notably, it provides interfaces to the LAPack and BLAS linear algebra libraries as well as the FFTW Fourier transform package.   
+
+If you wish to link MKL to your Intel-compiled application, use the `-mkl` flag:
 ```
 $CXX -O3 -xCORE-AVX2 my_program.cpp -o my_program.out -mkl
 ```
