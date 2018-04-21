@@ -26,10 +26,9 @@ CURC_HDF5_ROOT=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4
 CURC_HDF5_INC=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/include
 CURC_HDF5_BIN=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/bin
 CURC_HDF5_LIB=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/lib
-CURC_IMPI_LIB=/curc/sw/intel/17.4/impi/2017.3.196/lib64
-CURC_IMPI_ROOT=/curc/sw/intel/17.4/impi/2017.3.196
+...
 ``` 
-Once the relevant modules are loaded, you are ready to compile.  For our HDF5 example, a suitable compilation command may look like:
+Once the relevant modules are loaded, you are ready to compile.  For our HDF5 example, a compilation command that uses the environment variables set by the module system may look like:
 ```
 $FC my_program.f90 -I$(CURC_HDF5_INC) -L$(CURC_HDF5_LIB) -lhdf5_fortran -o my_program
 ```
