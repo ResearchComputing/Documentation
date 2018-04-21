@@ -88,9 +88,9 @@ Choosing an MPI implementation will similarly reveal MPI-dependent software unde
 You may search for a particular software package using the `module spider` command.  This is typically a two-stage process.  First search on the general software name without including any version information.  If the software exists on our system, a list of available versions will appear:
 ```
 [janedoe@shas0136 ~]$ module spider hdf5
----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------
   hdf5:
----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------
     Description:
       HDF5 Tools and Library
 
@@ -100,6 +100,29 @@ You may search for a particular software package using the `module spider` comma
         hdf5/1.10.0
         hdf5/1.10.1
 ```
+Finally, to see which modules must be loaded to make your desired version available, run the `module spider` command again with the version information included:
+```
+[janedoe@shas0136 ~]$ module spider hdf5/1.10.1
+------------------------------------------------------------------
+  hdf5: hdf5/1.10.1
+------------------------------------------------------------------
+    Description:
+      HDF5 Tools and Library
+
+    You will need to load all module(s) on any one of the lines below before the "hdf5/1.10.1" module is available to load.
+
+      intel/17.4
+      intel/17.4  impi/17.3
+ 
+    Help:
+      HDF5 is a data model, library, and file format for storing and managing
+      data. It supports an unlimited variety of datatypes, and is designed for
+      flexible and efficient I/O and for high volume and complex data. HDF5 is
+      portable and is extensible, allowing applications to evolve in their use
+      of HDF5. The HDF5 Technology suite includes tools and applications for
+      managing, manipulating, viewing, and analyzing data in the HDF5 format.
+
+``` 
 ## Optimization Considerations ##
 The Summit and Blanca clusters run on Intel-designed hardware.  As such, we **strongly recommend** using the Intel compiler along with Intel's MPI library when compiling software.   For production, we suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on.  For Haswell nodes, this means compiling with the `-xCORE-AVX2` flag.  For the Xeon-Phi and Skylake nodes, use `-xCORE-AVX512`. 
 
