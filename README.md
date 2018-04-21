@@ -1,3 +1,6 @@
+# User Guide
+For the Research Computing user guide, [see the wiki.](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki)
+
 # Research Computing User Tutorials
 
 This repository houses general user tutorials created by CU Boulder Research Computing.  
