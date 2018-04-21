@@ -141,4 +141,14 @@ If your application uses FFTW, you will also need to include MKL's FFTW director
 ```
 $CXX -O3 -xCORE-AVX2 -I$CURC_MKL_INC/fftw my_program.cpp -o my_program.out -mkl
 ```
-For the GNU and PGI compilers, the link syntax becomes more complex.  We suggest using the [Intel Link Advisor](#https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor) to   We provide an example for GNU
+For the GNU and PGI compilers, the link syntax becomes more complex.  The [Intel Link Advisor](#https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor) can be used to generate the appropriate linking syntax based on your application's needs.
+
+For the GNU compiler, linking against sequential MKL libraries, the appropriate Fortran linking syntax is:
+```
+$FC my_program.f90  -m64 -I$CURC_MKL_INC -o my_program.out  -L$CURC_MKL_LIB -Wl,--no-as-needed -lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl
+```
+The comparable c/c++ syntax would be:
+```
+$FC my_program.cpp  -m64 -I$CURC_MKL_INC -o my_program.out   -L$CURC_MKL_LIB -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl
+```
+Note that if your application uses FFTW, you will must use the FFTW include flag just as with the Intel compiler.  See the link advisor or contact rc-help@colorado.edu if you have additional questions about how to link MKL to your application.
