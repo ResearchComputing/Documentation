@@ -40,27 +40,30 @@ $FC my_program.f90 -I$(CURC_HDF5_INC) -L$(CURC_HDF5_LIB) -lhdf5_fortran -o my_pr
 
 ## Navigating the Software Stack
 
-Compilation on RC systems works hand-in-hand with the Lmod module system.  Detailed of semantics of Lmod are discussed in **LINK HERE**, and we only discuss some key points of the module system here.  Namely, modules should be loaded in a certain order,  loading a module modifies the `PATH` and `LD_LIBRARY_ENVIRONMENT` variables, and certain RC-specific environment variables are set which may be useful during the compilation process.
+The RC module system is hierarchical in nature, and available software libraries become visible to the user only after the compiler and MPI implementations that they depend on have been loaded.  As noted above, modules should be loaded in the order: compiler, MPI, third-party software.   At each stage of the load, executing `module avail` will reveal a list of newly available modules.   The `module purge` command can be used to unload all currently loaded modules.
 
-### Choosing a Compiler
-Before compiling, we suggest that you clear any loaded modules from memory:
+For example, before choosing a compiler, we can view the available compilers with
 
-```[janedoe@shas0136 ~]$ ml purge ```
-
-Next, you can view the available compilers, as well as compiler-independent modules via:
-
- ```[janedoe@shas0136 ~]$ ml avail 
------------------------------------ Compilers --------------------------------------
-   gcc/6.1.0    intel/16.0.3 (m)    intel/17.0.0 (m)    intel/17.4 (m,D)    pgi/16.5
 ```
-If multiple versions of a particular compiler are available, the `D` denotes the default version.  If the version number is omitted in the `module load` command, this is the version that will be used.  In the example above, the following two commands are equivalent:
+[janedoe@shas0136 ~]$ module purge 
+[janedoe@shas0136 ~]$ module avail
+```
+This will yield output similar to
+
+ ```
+----------------------------------- Compilers --------------------------------------
+   gcc/6.1.0    intel/16.0.3 (m)    intel/17.0.0 (m)    intel/17.4 (m,D)    pgi/16.5 ,
+```
+Several compiler-independent modules will also be displayed.  Those modules (e.g., the Julia module) can be loaded at any time, irrespective of the compiler or MPI version in use.
+
+If multiple versions of a particular compiler are available, the `D` denotes the default version.  If the version number is omitted in the `module load` command, this is the version that will be used.  Considering the output above, the following two commands are equivalent:
 
 ```[janedoe@shas0136 ~]$ ml intel ```
 
 
 ```[janedoe@shas0136 ~]$ ml intel/17.4 ```
 
-Once the compiler is loaded, MPI-implementations and third-party serial libraries that have been built using that compiler appear in the available module list:
+Once the compiler is loaded, MPI-implementations and third-party serial libraries that depend on that compiler appear in the available module list until `MPI Implementations` and `Compiler Dependent Applications`:
   ```[janedoe@shas0136 ~]$ ml avail 
 ----------------------------------- MPI Implementations --------------------------------------
    impi/17.3
