@@ -3,7 +3,7 @@
 - [Overview](#overview)
 - [Navigating the Software Stack](#navigating-the-software-stack)
 - [Compilation Examples](#compilation-examples)
-- [Recommended Compilers and Optimization Flags]
+- [Compiler and Optimization Recommendations](#compiler-and-optimization-recommendations)
 - [Linking to Intel's Math Kernel Library (MKL)]
 
 ## Overview
@@ -114,17 +114,9 @@ Finally, to see which modules must be loaded to make your desired version availa
 
       intel/17.4
       intel/17.4  impi/17.3
- 
-    Help:
-      HDF5 is a data model, library, and file format for storing and managing
-      data. It supports an unlimited variety of datatypes, and is designed for
-      flexible and efficient I/O and for high volume and complex data. HDF5 is
-      portable and is extensible, allowing applications to evolve in their use
-      of HDF5. The HDF5 Technology suite includes tools and applications for
-      managing, manipulating, viewing, and analyzing data in the HDF5 format.
-
+...
 ``` 
-## Optimization Considerations ##
+## Compiler and Optimization Recommendations ##
 The Summit and Blanca clusters run on Intel-designed hardware.  As such, we **strongly recommend** using the Intel compiler along with Intel's MPI library when compiling software.   For production, we suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on.  For Haswell nodes, this means compiling with the `-xCORE-AVX2` flag.  For the Xeon-Phi and Skylake nodes, use `-xCORE-AVX512`. 
 
 Compilation commands for a typical Summit Haswell node should resemble:
