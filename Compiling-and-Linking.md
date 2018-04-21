@@ -3,6 +3,8 @@
 - [Overview](#overview)
 - [Navigating the Software Stack](#navigating-the-software-stack)
 - [Compilation Examples](#compilation-examples)
+- [Recommended Compilers and Optimization Flags]
+- [Linking to Intel's Math Kernel Library (MKL)]
 
 ## Overview
 
@@ -83,3 +85,6 @@ Choosing an MPI implementation will similarly reveal MPI-dependent software unde
    fftw/3.3.4   (D)    hdf5/1.10.1 (D)    netcdf/4.4.1.1 (D)    petsc/3.8.0
 
 ```
+
+## Optimization Considerations ##
+The Summit and Blanca clusters run on Intel-designed hardware.  As such, we **strongly recommend** using the Intel compiler along with Intel MPI to build your software.   Typical
