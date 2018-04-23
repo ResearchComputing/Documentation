@@ -30,11 +30,11 @@ Need more assistance? Watch a tutorial video or read the text below.
 
 ### Logging in from Windows
 
-[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4)
+[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows-Small.jpg)](https://youtu.be/aUVdIShW7W4)
 
 ### Logging in from a Mac
 
-[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid.jpg)](https://youtu.be/Q1_bhA7zgKg)
+[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid-Small.jpg)](https://youtu.be/Q1_bhA7zgKg)
 
 ## Logging in from a Windows Machine
 
