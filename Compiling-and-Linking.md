@@ -2,7 +2,6 @@
 
 - [Overview](#overview)
 - [Navigating the Software Stack](#navigating-the-software-stack)
-- [Compilation Examples](#compilation-examples)
 - [Compiler and Optimization Recommendations](#compiler-and-optimization-recommendations)
 - [Linking to the Math Kernel Library (MKL)](#linking-to-the-math-kernel-library)
 
