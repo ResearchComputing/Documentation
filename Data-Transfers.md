@@ -37,7 +37,7 @@ SSH protocols also provide two additional means of file transfers onto Research 
 
 ### Secure Copy (SCP)
 
-The Secure Copy protocol or `scp` allows users to send and receive data to the server remotely via a terminal command. The command appears a so:
+The Secure Copy protocol or `scp` allows users to send and receive data to the server remotely via a terminal command. The command appears as:
 
 #### Command to copy files from a local workstation to research computing resources
 ```bash
