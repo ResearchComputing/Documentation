@@ -70,11 +70,6 @@ For more information on secure copy take a look at some of our listed resources 
 man scp
 ```
 
-**Resources:**  
-[Indiana University Tutorial on SCP](https://kb.iu.edu/d/agye)  
-[Linux Academy's Tutorial on SSH and SCP](https://linuxacademy.com/blog/linux/ssh-and-scp-howto-tips-tricks/)  
-[ssh.com's Tutorial on SCP and SFTP](https://www.ssh.com/ssh/sftp/)
-
 ### Secure File Transfer Protocol (SFTP)
 
 The Secure File Transfer Protocol is an interactive terminal solution to transfer data to and from research computing resources. SFTP works much like moving files in a terminal, we use a series of file system commands to navigate, move, remove, and copy information from a client's personal machine to research computing resources. To invoke SFTP type the command:
@@ -99,4 +94,5 @@ help | Displays application information on using commands | help
 
 **Resources:**  
 [Indiana University Tutorial on SFTP](https://kb.iu.edu/d/akqg)  
+[Linux Academy's Tutorial on SSH and SCP](https://linuxacademy.com/blog/linux/ssh-and-scp-howto-tips-tricks/)  
 [ssh.com's Tutorial on SCP and SFTP](https://www.ssh.com/ssh/sftp/)  
