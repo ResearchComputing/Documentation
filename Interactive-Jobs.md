@@ -6,7 +6,7 @@
 
 ## Overview
 
-Interactive jobs are jobs that allow a user to interact with applications in our HPC environment in real time. With interactive jobs, applications such as Python or Matlab can be ran in an interactive environment. Summit supports X11 forwarding and can thus run GUI applications remotely.
+Interactive jobs are jobs that allow a user to interact with applications in our HPC environment in real time. With interactive jobs, applications such as Python or Matlab can be ran in an interactive environment. Summit supports X11 forwarding and can thus run GUI applications remotely.  Common reasons for running interactive jobs include debugging, familiarity with only the GUI interface of an application, or designing workflows.
 
 ## Videos
 
