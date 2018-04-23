@@ -24,7 +24,7 @@ module load slurm/summit
 ```
 
 and request an interactive session by utilizing the `sinteractive` command. 
-The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify quality of service and amount of time the job will run for respectively. The command we run is:
+The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify quality of service and amount of time the job will run for, respectively. The command we run is:
 
 ```bash
 sinteractive --qos=debug --time=00:10:00
