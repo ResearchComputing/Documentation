@@ -162,7 +162,7 @@ The `scontrol` command provides users extended control of their jobs run through
 
 To suspend a job that is currently running on the system, we can use scontrol with the `suspend` command. This will stop a running job on its current step that can be resumed at a later time. We can suspend a job by typing the command:
 
-```bash
+```
 $ scontrol suspend job_id
 ```
 
