@@ -30,7 +30,7 @@ The `sinteractive` command can take any number of flags that could be used with 
 sinteractive --qos=debug --time=00:10:00
 ``` 
 
-This will load us into an interactive session that will run on one core of one node on the debug quality of service for 10 minutes. From here you can run any interactive terminal application you may need.
+This will load an interactive session that will run on one core of one node on the debug quality of service for 10 minutes. From here you can run any interactive terminal application you may need.
 
 ## Interactive GUI Applications
 
