@@ -58,7 +58,5 @@ On Mac, we will also need to install an X window server application to allow Sum
 
 Opening the application will bring up a terminal window. On this window type:
 ```bash
-# Replace <rc_username> with your rc-username
-
-ssh login.rc.colorado.edu -l <rc_username> -X
+ssh login.rc.colorado.edu -l your_rc-username -X
 ``` 
