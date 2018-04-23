@@ -72,7 +72,7 @@ matlab -nodesktop -nodisplay -r ‘clear; hello_world;’
 This file has a few basic parts:
 
 1. The first line specifies that it is a bash shell script, and ensures the rest of the lines will be interpreted in the correct shell.
-2. The lines beginning with `#SBATCH` specify the slurm parameters that will be used for this job. These lines are viewed as comments by bash, but will be read by slurm.  Of particular note is the `--output` parameter which specifies the file where stderr and stdout (including the output from our Matlab script) will be written. For a description of the slurm parameters, please see the general Slurm documentation here: https://slurm.schedmd.com/sbatch.html
+2. The lines beginning with `#SBATCH` specify the Slurm parameters that will be used for this job. These lines are viewed as comments by bash, but will be read by Slurm.  Of particular note is the `--output` parameter which specifies the file where stderr and stdout (including the output from our Matlab script) will be written. For a description of the Slurm parameters, [please see the general Slurm documentation here](https://slurm.schedmd.com/sbatch.html)
 3. The lines beginning with `module purge` any unneeded software and ensure that the appropriate Matlab module is loaded on the compute node. 
 4. The final line calls Matlab and instructs it to run our script. This entire line includes commands that are specific to Matlab; the `nodesktop` and `nodisplay` flags ensure that the Matlab Desktop will not open, and the `r` flag will run the script `hello_world`. The `clear` command forces Matlab to clear any existing variables, and is simply included as good coding practice.
 
