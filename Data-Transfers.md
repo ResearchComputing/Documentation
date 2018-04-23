@@ -13,7 +13,7 @@ Research Computing supports several methods of file transfers onto Summit. File 
 
 ## Globus
 
-On Globus file transfers are handled through an interactive web application. Globus addresses deficiencies in secure copy requests by automating large data transfers, resuming failed transfers, and simplifying the implementation of high performance transfers between computing centers.  
+On Globus, file transfers are handled through an interactive web application. Globus addresses deficiencies in secure copy requests by automating large data transfers, resuming failed transfers, and simplifying the implementation of high performance transfers between computing centers.  
 
 [Sign into Globus Connect](https://www.globus.org/app/login) by selecting "University of Colorado at Boulder" using your CU IdentiKey and password.  
 * If you're with an institution outside of the University of Colorado at Boulder that is registered with Globus, sign in with your appropriate credentials.
