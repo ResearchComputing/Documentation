@@ -2,7 +2,7 @@
 
 ------
 
-This wiki hosts tutorials on how to operate and utilize research computing resources. These tutorials cover a broad range of topics surrounding the resources that Research Computing which include:  
+This wiki hosts tutorials on how to operate and utilize research computing resources. These tutorials cover a broad range of topics surrounding the operation and efficient usage of resources including:  
 - [Logging into Research Computing resources](Logging-In)
 - [Data transfer onto Research Computing resources](Data-Transfers)
 - [Utilizing software tools on Research Computing resources](Loading-Modules)
