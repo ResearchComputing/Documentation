@@ -30,7 +30,7 @@ The `sinteractive` command can take any number of flags that could be used with 
 sinteractive --qos=debug --time=00:10:00
 ``` 
 
-This will load an interactive session that will run on one core of one node on the debug quality of service for 10 minutes. From here you can run any interactive terminal application you may need.  For example, if you simply type 'python' you will open up a Python terminal window but will be running on the compute nodes.  You can also execute scripts safely in this mode as you are not running on the login nodes.  If you want to run an application (such as Matlab Desktop) in an interactive job, please read below.
+This will load an interactive session that will run on one core of one node on the debug quality of service for 10 minutes. From here you can run any interactive terminal application you may need.  For example, if you simply type `python` you will open up a Python terminal window but will be running on the compute nodes (rather than the login nodes, which is forbidden).  You can also execute scripts safely in this mode.  If you want to run an application (such as Matlab Desktop) in an interactive job, please read below.
 
 ## Interactive GUI Applications
 
