@@ -6,7 +6,9 @@
 
 ## Overview
 
-Interactive jobs are jobs that allow a user to interact with applications in our HPC environment in real time. With interactive jobs, applications such as Python or Matlab can be ran in an interactive environment. Summit supports X11 forwarding and can thus run GUI applications remotely.  Common reasons for running interactive jobs include debugging, familiarity with only the GUI interface of an application, or designing workflows.
+Interactive jobs are jobs that allow a user to interact with applications in our HPC environment in real time. With interactive jobs, users will request time on the compute nodes and be able to work at the command line interface to do such things as run General User Interface (GUI) applications, execute scripts, or run other commands directly on a compute node.  Common reasons for running interactive jobs include debugging, designing workflows, or preference in using the GUI interface of an application.
+
+This tutorial will show you first how to run an interactive job to get a prompt on a compute node, and then will demonstrate how to run a GUI application.
 
 ## Videos
 
@@ -17,25 +19,24 @@ Interactive jobs are jobs that allow a user to interact with applications in our
 [![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=vSYNKlEKg3Y) 
 
 ## General Interactive Jobs
-To run an interactive job load the slurm module in our environment with:
+To run an interactive job load the Slurm module in our environment with:
 
 ```bash
 module load slurm/summit
 ```
 
 and request an interactive session by utilizing the `sinteractive` command. 
-The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify quality of service and amount of time the job will run for, respectively. The command we run is:
+The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to Slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify quality of service and amount of time the job will run for, respectively. The command we run is:
 
 ```bash
 sinteractive --qos=debug --time=00:10:00
 ``` 
 
-This will load an interactive session that will run on one core of one node on the debug quality of service for 10 minutes. From here you can run any interactive terminal application you may need.  For example, if you simply type `python` you will open up a Python terminal window but will be running on the compute nodes (rather than the login nodes, which is forbidden).  You can also execute scripts safely in this mode.  If you want to run an application (such as Matlab Desktop) in an interactive job, please read below.
+This will load an interactive session that will run on one core of one node on the debug quality of service for ten minutes. From here you can run any interactive terminal application you may need.  For example, if you simply type `python` you will open up a Python terminal window but will be running on the compute nodes (rather than the login nodes, which is forbidden).  You can also execute scripts safely in this mode.  If you want to run an application (such as Matlab Desktop) in an interactive job, please read below.
 
 ## Interactive GUI Applications
 
-To run an interactive General User Interface application, we must enable X11 forwarding on our personal computer.
-Once you've enabled X11 forwarding you will be able to run GUI applications through interactive jobs.
+To run an interactive GUI application, we must first enable X11 forwarding on our personal computer.  
 
 ### Windows
 
