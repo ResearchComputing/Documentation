@@ -17,14 +17,14 @@ Interactive jobs are jobs that allow a user to interact with applications in our
 [![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=vSYNKlEKg3Y) 
 
 ## General Interactive Jobs
-To run an interactive job load the slurm module into the enviornment with:
+To run an interactive job load the slurm module in our environment with:
 
 ```bash
 module load slurm/summit
 ```
 
 and request an interactive session by utilizing the `sinteractive` command. 
-The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify quality of service and amount of time the job will run for respectively. We can run the command like so:
+The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify quality of service and amount of time the job will run for respectively. The command we run is:
 
 ```bash
 sinteractive --qos=debug --time=00:10:00
