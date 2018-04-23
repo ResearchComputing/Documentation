@@ -145,12 +145,14 @@ export OMP_NUM_THREADS
 ```
 
 Now let’s re-compile the code and run it to see what happens:  
-__Compile with GCC__
+
+__GCC__
 ```bash
 g++ parallel_hello_world.cpp -o parrallel_hello_world.exe -fopenmp
 ```
-Or
-__Compile with Intel__
+Or  
+
+__Intel__
 ```bash
 icc parallel_hello_world.cpp -o parrallel_hello_world.exe -qopenmp
 ````
