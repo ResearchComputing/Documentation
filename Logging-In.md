@@ -34,7 +34,7 @@ Need more assistance? Watch a tutorial video or read the text below.
 
 ### Logging in from a Mac
 
-[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid-Small.jpg)](https://youtu.be/Q1_bhA7zgKg)
+[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid-Small.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
 
 ## Logging in from a Windows Machine
 
@@ -54,7 +54,7 @@ Login screen for putty
 
 ## Logging in from a Mac
 
-- Watch this [video](https://youtu.be/Q1_bhA7zgKg) or read the text below:
+- Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text below:
 
 
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window. When the terminal window opens, type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
