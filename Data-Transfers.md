@@ -4,7 +4,7 @@
 - [Globus](#globus)
 - [SSH Protocols](#ssh-protocols)
 - [Other Options](#other-options)
-- [DTN SSH Host Keys] (#dtn-ssh-host-keys)
+- [DTN SSH Host Keys](#dtn-ssh-host-keys)
 
 ## Overview
 
