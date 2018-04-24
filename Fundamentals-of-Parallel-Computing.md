@@ -25,7 +25,7 @@ computation by splitting one large task into smaller tasks that multiple process
 all at once. With parallel processes a task that would normally take several weeks can
 potentially be reduced to several hours.
 
-* Puzzle analogy for describing parallel computing adopted from Henry Neeman's [Supercomputing in Plain English](http://www.oscer.ou.edu/education.php) tutorial series.
+*Puzzle analogy for describing parallel computing adopted from Henry Neeman's [Supercomputing in Plain English](http://www.oscer.ou.edu/education.php) tutorial series.
 
 ## Serial and Parallel Processes
 
