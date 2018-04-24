@@ -16,7 +16,7 @@ __Useful Links:__
 <https://computing.llnl.gov/tutorials/parallel_comp/#Whatis>
 
 ## Why Parallel?
-Assume you are attempting to assemble a 10,000-piece jigsaw puzzle on a rainy weekend. The
+Assume you are attempting to assemble a 10,000-piece jigsaw puzzle* on a rainy weekend. The
 number of pieces is staggering, and instead of a weekend it takes you several weeks to finish
 the puzzle. Now assume you have three friends helping with the puzzle -- it goes much faster,
 and you are able to finish the puzzle over the weekend.
@@ -24,6 +24,8 @@ This principle is the central idea behind parallel computation. You can dramatic
 computation by splitting one large task into smaller tasks that multiple processors can perform
 all at once. With parallel processes a task that would normally take several weeks can
 potentially be reduced to several hours.
+
+* Puzzle analogy for describing parallel computing adopted from Henry Neeman's [Supercomputing in Plain English](http://www.oscer.ou.edu/education.php) tutorial series.
 
 ## Serial and Parallel Processes
 
