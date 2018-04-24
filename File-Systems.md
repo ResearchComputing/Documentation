@@ -1,6 +1,9 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [The Home Filesystem](#the-home-filesystem)
+- [The Projects Filesystem](#the-projects-filesystem)
+- [Scratch Filesystems](#scratch-filesystems)
 - [Monitoring Disk Usage](#monitoring-disk-usage)
 - [Filesystem Backups](#filesystem-backups)
 - [Workspace Sharing](#workspace-sharing)
