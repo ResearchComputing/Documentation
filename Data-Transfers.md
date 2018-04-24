@@ -3,6 +3,8 @@
 - [Video Tutorial](#video-tutorial)
 - [Globus](#globus)
 - [SSH Protocols](#ssh-protocols)
+- [Other Options](#other-options)
+- [DTN SSH Host Keys] (#dtn-ssh-host-keys)
 
 ## Overview
 
@@ -91,6 +93,28 @@ get | Copies a file from the remote directory to the local directory | get remot
 put | Copies a file from the local directory to the remote directory | put local_file
 exit | Closes the connection to the remote computer and exits the program | exit
 help | Displays application information on using commands | help
+
+## Other Options
+
+OIT also offers a file transfer service with a web interface which provides a good way to transfer files to collaborators. Files are uploaded to a server and a link to download the file can be emailed to an on, or off-campus, user: http://oit.colorado.edu/safe-transfer
+
+## DTN SSH Host Keys
+
+```bash
+ecdsa-sha2-nistp256 
+AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOA0dGntTpowZ/YdjXJzaummHbw59nTRuUQZDXjnPvZXrEtpF+Db31iM9ytWCyjHAfH8FGfKJt/MuPubNcfr1Sg=
+```
+
+```bash
+ssh-ed25519 
+AAAAC3NzaC1lZDI1NTE5AAAAIKXkp8RQhYvNZMYGYzBpECKwwyB929enmFVz1Jm2LtkG
+```
+
+```bash
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0Pp4D+GvSYfq0GB+dAEBQcKJTkeTkJ5bQlMPzkh1N8Zs1koh3fKymmV6FuMI5chuvP6pnmWogbwaCHuarF8pMKAIiYC6QHGKkMODFeA
+O1V0+ZBmRpTO0PdkqNCV04Y76lCnYH+VD2/gClqenTcEVS8OD7WZYz9YhlevXFuw/4aQGCMmU0OdpKsJ1bAEGXDGrBasOXRV5uekbX6WrTYphr/ayPOjqltlTfP4/2qhh2YCQhOEH+
+cKGIj2Tg7asP3PB/7VFqRPKsN7nLrGCYD8tcdmvi6J0A0hmab1zgxYunxbEq+XSlN3gyT4WEy3qb1zu60IWRO4rJbrPD/uParzN3
+```
 
 **Resources:**  
 [Indiana University Tutorial on SFTP](https://kb.iu.edu/d/akqg)  
