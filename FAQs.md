@@ -46,7 +46,7 @@ squeue --user=your_rc-username --start
 ```
 Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
-For more information on the `squeue` command, [take a look at our Job Tools tutorial.](Job-Tools) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+For more information on the `squeue` command, [take a look at our "Useful Slurm Commands" tutorial.](Useful-Slurm-Commands) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
 ## How much memory did my job use?
 
