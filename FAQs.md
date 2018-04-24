@@ -90,7 +90,7 @@ Using the Summit module environment from login nodes requires typing `module loa
 
 ## How do I install my own python library?
 
-Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](Loading-Modules). That being said, this guide can be tweaked to be used on the older modules as well.
+Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](The-Module-System). That being said, this guide can be tweaked to be used on the older modules as well.
 
 First login to a login node and then ssh to a compile node.
 
