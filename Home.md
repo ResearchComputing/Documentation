@@ -4,12 +4,11 @@
 
 This wiki hosts tutorials on how to operate and utilize Research Computing resources. These tutorials cover a broad range of topics surrounding the operation and efficient usage of resources including:  
 - [Logging into Research Computing resources](Logging-In)
-- [Node Types](node-types)
 - [Filesystems](File-systems)
-- [Utilizing software tools on Research Computing resources](The-Module-System)
+- [Compiling Software](compiling-software)
+- [Job submission](Job-Submissions)
+- [Running Software](The-Module-System)
 - [QOS and Partitions](QOS-and-partitions)
-- [Job submission and job tools](Job-Submissions)
-- [Parallel programming](Fundamentals-of-Parallel-Computing)
 - [FAQs](FAQs)
 
 If you notice an error on this site, or would like to make a suggestion of other topics to include, please create an issue.
