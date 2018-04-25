@@ -7,7 +7,7 @@
 
 ## Overview
 
-Before compiling in the RC environment, first ssh to one of the Summit compile nodes via `ssh scompile`.  Next, load modules those modules corresponding to the compiler, MPI version (if needed), and third-party libraries required by your application.   The load order should always be compiler first, MPI second, and third-party libraries last.
+Before compiling in the RC environment, first ssh to one of the Summit compile nodes via `ssh scompile`.  Next, load those modules corresponding to the compiler, MPI version (if needed), and third-party libraries required by your application.   The load order should always be compiler first, MPI second, and third-party libraries last.
 
 For example, suppose your application requires MPI and the HDF5 library.  To compile using the Intel compiler and Intel MPI, the sequence of `module` commands would be:
 ``` 
