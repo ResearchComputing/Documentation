@@ -23,7 +23,7 @@ Logging into a Research Computing login node is the first step in accessing reso
     + Scheduled or interactive jobs
     + Compile nodes  
 
-Need more assistance? Watch a tutorial videos for a [Mac](https://www.youtube.com/watch?v=2Mnr840YdiE) or [Windows](https://youtu.be/aUVdIShW7W4), or read the text below.
+Need more assistance? Watch our tutorial videos for [Mac](https://www.youtube.com/watch?v=2Mnr840YdiE) or [Windows](https://youtu.be/aUVdIShW7W4), or read the text below.
 
 <!---
 ## Videos
