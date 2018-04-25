@@ -19,6 +19,7 @@
 - [Data Transfers](Data-Transfers)  
 
 ## Running Jobs
+- [The SBATCH Command](the-sbatch-command)
 - [Job Submission](Job-Submissions)
 - [Useful Slurm Commands](useful-slurm-commands)
 - [Interactive Jobs](Interactive-Jobs)
