@@ -2,7 +2,7 @@
 
 - [Overview](#overview)
 - [SBATCH](#sbatch)
-- [Important Flags](#important flags)
+- [Important Flags](#important-flags)
 
 # Overview
 
@@ -10,7 +10,7 @@ The sbatch command is the Slurm command used to submit batch jobs.  This documen
 
 # SBATCH
 
-This command is used to submit batch jobs to the queue.  Batch jobs are those that run on the compute nodes in the background.  An analogous command is the [sinteractive](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Interactive-Jobs) command, except that this allows you to run a job on the compute nodes while interacting directly.
+This command is used to submit batch jobs to the queue.  Batch jobs are those that run on the compute nodes in the background.  An analogous command is the [sinteractive](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Interactive-Jobs) command, except that this allows you to run a job on the compute nodes while interacting directly.  Many of the flags used in the `sbatch` command can be used in `sinteractive`.
 
 The `sbatch` command is most powerful when using appropriate flags to specify exactly how you would like your job to run.  The first, less common way is to add the flags in the terminal window after sbatch:
 
@@ -20,7 +20,7 @@ sbatch --flag1 --flag2
 
 The second is to create a script that includes the bash flags, and to submit that script.  See the [Job Submission](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Job-Submissions) page for information on this, or view one of our recommended [templates](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh) for an example of how to best write up a script.
 
-The primary reason that writing a script is more ideal is than putting the flags behind the `sbatch` command in the terminal window is that when you put these flags in a script you can reuse the script in the future.  It's also less typing, and we all like that!
+The primary reason that writing a script is more ideal than putting the flags behind the `sbatch` command in the terminal window is that when you put these flags in a script you can reuse the script in the future.  It's also less typing, and we all like that!
 
 To submit a job using a script, we will type:
 ``` bash
