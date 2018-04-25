@@ -1,6 +1,5 @@
 ## Table of Contents
 - [Overview](#overview)
-- [Video Tutorial](#video-tutorial)
 - [The Module Command](#the-module-command)
 - [Loading Modules in a Job Script](#loading-modules-in-a-job-script)
 - [Table of Sub-Commands](#table-of-sub-commands)
@@ -9,11 +8,12 @@
 
 Research Computing uses a module system to load most software into a user's environment. Most software is not accessible by default and must be loaded in. This allows Research Computing to provide multiple versions of the software concurrently and enables users to switch easily between different versions.  
 
-## Video Tutorial
+Watch the [video](https://youtu.be/csgl4czhD_k) on using modules, or read the text below.
 
-Watch the video on using modules, or read the text below.
-
+<!---
 [![How-to-load-modules-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Loading-Modules/videopreview.j.jpg)](https://youtu.be/csgl4czhD_k)
+
+--->
 
 ## The `module` Command
 
