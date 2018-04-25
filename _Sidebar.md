@@ -10,14 +10,17 @@
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
 
-## Jobs and the Compute Environment
+## The Compute Environment
 - [QOS and Partitions](qos-and-partitions)
+- [Node Types](node-types)
 - [File Systems](File-Systems)
 - [The Module System](The-Module-System)
 - [Compiling Software](Compiling-and-Linking)
+- [Data Transfers](Data-Transfers)  
+
+## Running Jobs
 - [Job Submission](Job-Submissions)
 - [Useful Slurm Commands](useful-slurm-commands)
-- [Data Transfers](Data-Transfers)  
 - [Interactive Jobs](Interactive-Jobs)
 - [Coding Best Practices](Coding-Best-Practices)
 
