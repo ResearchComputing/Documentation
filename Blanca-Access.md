@@ -5,7 +5,7 @@
 - [Job Scheduling](#job-scheduling)
 - [QoS Description](#qos)
 - [Node and QOS Features](#node-qos-features)
-- [Node Features Table](node-features-table)
+- [Node Features Table](#node-features-table)
 - [Examples](#examples)
 - [Important Notes](#important-notes)
 - [Preemptable QoS](#blanca-preemptable-qos)
