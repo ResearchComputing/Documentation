@@ -20,7 +20,7 @@ Research Computing has several node types available on our resources.  Each node
 
 # Compile nodes
   
-* Where you compile code, such as Fortran, C, C++
+  * Where you compile code, such as Fortran, C, C++
   * No heavy computation
   * Can submit jobs from compile nodes, but do not need to run `module load slurm/summit`
   * Access these nodes by typing `ssh scompile` from a login node
