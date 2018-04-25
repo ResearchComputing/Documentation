@@ -3,7 +3,7 @@
 - [Parallel "Hello, World" Program](#parallel-hello-world-program)
 - [Private vs. Shared Variables](#private-vs-shared-variables)
 - [Barrier and Critical Directives](#barrier-and-critical-directives)
-- [Work Sharing Directive: omp for](#work-sharing-directive-omp-for)
+- [Work Sharing Directive: omp do](#work-sharing-directive-omp-do)
 
 ## Overview
 Because Summit is a cluster of CPUs, parallel programming is the most effective way to utilize
