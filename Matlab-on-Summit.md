@@ -107,7 +107,7 @@ parfor(int i = 1:5, 4)
 end
 ```
 
-Now all we have left to do is modify our batch script to specify that we want to run 4 tasks on the node (we can use up to 24 cores on each ‘shas’ node on Summit). We can also change the name of the job and the output file if we choose. Lines in blue below have been modified compared to our original batch script. 
+Now all we have left to do is modify our batch script to specify that we want to run 4 tasks on the node (we can use up to 24 cores on each ‘shas’ node on Summit). We can also change the name of the job and the output file if we choose. 
 
 ```bash
 #!/bin/bash
