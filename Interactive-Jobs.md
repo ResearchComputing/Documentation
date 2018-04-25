@@ -19,7 +19,7 @@ This tutorial will show you first how to run an interactive job to get a prompt 
 [![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be) 
 
 ## General Interactive Jobs
-To run an interactive job load the Slurm module in our environment with:
+To run an interactive job load the Slurm module (on the login nodes) in our environment with:
 
 ```bash
 module load slurm/summit
