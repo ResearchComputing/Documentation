@@ -11,9 +11,10 @@
 - [PetaLibrary](PetaLibrary)
 
 ## Jobs and the Compute Environment
+- [QOS and Partitions](qos-and-partitions)
 - [File Systems](File-Systems)
-- [Compiling Software](Compiling-and-Linking)
 - [The Module System](The-Module-System)
+- [Compiling Software](Compiling-and-Linking)
 - [Job Submission](Job-Submissions)
 - [Useful Slurm Commands](useful-slurm-commands)
 - [Data Transfers](Data-Transfers)  
