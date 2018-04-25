@@ -24,7 +24,7 @@
 - [Interactive Jobs](Interactive-Jobs)
 - [Coding Best Practices](Coding-Best-Practices)
 
-## Software
+## Specific Software at RC
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
@@ -40,7 +40,7 @@
     + [Fortran](OpenMP-Fortran)
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
-## Templates
+## Job Templates
 - [General Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
 - [Matlab Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/Matlab-Job-Template.sh)
 - [MPI Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/MPI-Job-Template.sh)
