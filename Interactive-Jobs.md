@@ -1,6 +1,5 @@
 ## Table of Contents
 - [Overview](#overview)
-- [Videos](#videos)
 - [General Interactive Jobs](#general-interactive-jobs)
 - [Interactive GUI Applications](#interactive-gui-applications)
 
@@ -10,6 +9,7 @@ Interactive jobs are jobs that allow a user to interact with applications in our
 
 This tutorial will show you first how to run an interactive job to get a prompt on a compute node, and then will demonstrate how to run a GUI application.
 
+<!--
 ## Videos
 
 ### General Interactive Jobs
@@ -18,7 +18,10 @@ This tutorial will show you first how to run an interactive job to get a prompt 
 ### Interactive GUI applications
 [![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be) 
 
+-->
 ## General Interactive Jobs
+To learn about running interactive jobs at the command line, please watch this [video](https://www.youtube.com/watch?v=s53sjDubBpo) or read the text below.
+
 To run an interactive job load the Slurm module on the login nodes with:
 
 ```bash
@@ -35,6 +38,8 @@ sinteractive --qos=debug --time=00:10:00
 This will load an interactive session that will run on one core of one node on the debug quality of service for ten minutes. From here you can run any interactive terminal application you may need.  For example, if you simply type `python` you will open up a Python terminal window but will be running on the compute nodes (rather than the login nodes, which is forbidden).  You can also execute scripts safely in this mode.  If you want to run an application (such as Matlab Desktop) in an interactive job, please read below.
 
 ## Interactive GUI Applications
+
+To learn more about running GUI applications please watch this [video](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be) or read the text below.
 
 To run an interactive GUI application, we must first enable X11 forwarding on our personal computer.  
 
