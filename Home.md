@@ -11,4 +11,6 @@ This wiki hosts tutorials on how to operate and utilize Research Computing resou
 - [Parallel programming](Fundamentals-of-Parallel-Computing)
 - [FAQs](FAQs)
 
+If you notice an error on this site, or would like to make a suggestion of other topics to include, please create an issue.
+
 For general information on Research Computing and Research Computing resources, go to the [Research Computing](https://www.colorado.edu/rc) website.
