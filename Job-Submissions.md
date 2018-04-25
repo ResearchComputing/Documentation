@@ -1,3 +1,9 @@
+## Table of Contents
+
+- [Overview](#overview)
+- [Videos](#videos)
+- [How to Submit a Job](#how-to-submit-a-job)
+
 ## Overview
 
 Before submitting a job be sure to obtain:
@@ -15,9 +21,9 @@ Need more assistance? Watch a tutorial video or read the template
 
 ## Video
 
-[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY)
+[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY | width=100)
 
-## Template
+## How to Submit a Job
 
 ```
 #!/bin/bash
