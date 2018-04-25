@@ -11,9 +11,11 @@ There are several ways to define in Slurm where your job will run.  Two of these
 
 On Summit, nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using  --partition in sbatch in order for your job to run on the appropriate type of node.
 
+These are the partitions available on Research Computing resources.
+
 |Partition name|    Description        |# of nodes|cores/nodes|RAM/core (GB)|Max Walltime|Billing weight|
 |--------------|-----------------------|----------|-----------|-------------|------------|--------------|
-|     shas     |Haswell CPUs (default) |   380    |    24     |    5.25     |    24H     |       1      |
+|     shas     | Haswell CPUs (default)|   380    |    24     |    5.25     |    24H     |       1      |
 |     sgpu     |      GPU-enabled      |    10    |    24     |    5.25     |    24H     |      2.5     |
 |     smem     |      High-memory      |     5    |    48     |     42      |     7D     |       6      |
 |     sknl     | Phi (Knights Landing) |    20    |    64     |    TBD      |    24H     |      0.1     |
@@ -22,11 +24,9 @@ More details about each type of node can be found [here](https://www.colorado.ed
 
 # Quality of service
 
-On Blanca, a QoS is specified to submit a job to either a group's high-priority queue or to the shared low-priority queue.
+On Summit, QoSes are used to constrain or modify the characteristics that a job can have. For example, by selecting the "debug" QoS, a user can obtain higher queue priority for a job with the tradeoff that the maximum allowed wall time is reduced from what would otherwise be allowed on that partition. We recommend specifying a QoS (using the  --qos  flag or directive in Slurm) as well as a partition for every job.
 
-On Summit, QoSes are used to constrain or modify the characteristics that a job can have. For example, by selecting the "debug" QoS, a user can obtain higher queue priority for a job with the tradeoff that the maximum allowed wall time is reduced from what would otherwise be allowed on that partition. We recommend specifying a QoS (using the  --qos  flag or directive in Slurm) as well as a partition for every job
-
-The available Summit QoSes are
+The available Summit QoSes are:
 
 |QOS name|       Description          |     Max walltime     |Max jobs/user|   Node limits   |Priority boost|
 |--------|----------------------------|----------------------|-------------|-----------------|--------------|
