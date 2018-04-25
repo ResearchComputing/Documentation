@@ -1,7 +1,7 @@
 ### Table of Contents
-[Overview](#overview)
-[Partitions](#partitions)
-[Quality of Services](#quality-of-service)
+- [Overview](#overview)
+- [Partitions](#partitions)
+- [Quality of Services](#quality-of-service)
 
 # Overview
 
