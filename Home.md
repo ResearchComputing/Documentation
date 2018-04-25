@@ -7,7 +7,7 @@ This wiki hosts tutorials on how to operate and utilize Research Computing resou
 - [Filesystems](File-systems)
 - [Compiling Software](compiling-software)
 - [Job submission](Job-Submissions)
-- [Running Software](The-Module-System)
+- [Using Software](The-Module-System)
 - [QOS and Partitions](QOS-and-partitions)
 - [FAQs](FAQs)
 
