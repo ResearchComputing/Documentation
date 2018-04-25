@@ -44,7 +44,7 @@ Since not all Blanca nodes are identical, you can include node features in your 
 To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
 
 ## Node Features Table
-Node name     | High-prio QoS | General hardware attributes | Features
+Node name     | High-priority QoS | General hardware attributes | Features
 --------------|---------------|-----------------------------|---------
 bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel6
 bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
