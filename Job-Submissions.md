@@ -1,7 +1,6 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Videos](#videos)
 - [How to Submit a Job](#how-to-submit-a-job)
 
 ## Overview
@@ -17,7 +16,7 @@ When you want to run a non-interactive job:
 - Submit the job from a login node or compile node
 - The job will run in the background when resources are available.
 
-Need more assistance? Watch a tutorial [video](https://youtu.be/sStJQKTa9zY) or read the template
+Need more assistance? Watch a tutorial [video](https://youtu.be/sStJQKTa9zY) or read the information below.
 
 <!---
 ## Video
