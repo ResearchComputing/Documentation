@@ -24,8 +24,9 @@ Logging into a Research Computing login node is the first step in accessing reso
     + Scheduled or interactive jobs
     + Compile nodes  
 
-Need more assistance? Watch a tutorial video or read the text below.
+Need more assistance? Watch a tutorial videos for a [Mac](https://www.youtube.com/watch?v=2Mnr840YdiE) or [Windows](https://youtu.be/aUVdIShW7W4), or read the text below.
 
+<!---
 ## Videos
 
 ### Logging in from Windows
@@ -36,6 +37,7 @@ Need more assistance? Watch a tutorial video or read the text below.
 
 [![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid-Small.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
 
+--->
 ## Logging in from a Windows Machine
 
 Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
