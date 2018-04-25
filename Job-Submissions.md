@@ -21,7 +21,7 @@ Need more assistance? Watch a tutorial video or read the template
 
 ## Video
 
-[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY | width=100)
+[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg | width=10)](https://youtu.be/sStJQKTa9zY)
 
 ## How to Submit a Job
 
