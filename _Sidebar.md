@@ -23,14 +23,15 @@
 - [Job Submission](Job-Submissions)
 - [Useful Slurm Commands](useful-slurm-commands)
 - [Interactive Jobs](Interactive-Jobs)
-- [Coding Best Practices](Coding-Best-Practices)
+
 
 ## Notable RC Software
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
 
-## Parallel Programming
+## Additional Resources
+- [Coding Best Practices](Coding-Best-Practices)
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
 - [Matlab](Matlab-on-Summit)
 - MPI
