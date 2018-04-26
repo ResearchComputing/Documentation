@@ -25,7 +25,7 @@
 - [Interactive Jobs](Interactive-Jobs)
 - [Coding Best Practices](Coding-Best-Practices)
 
-## Specific Software at RC
+## Notable RC Software
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
