@@ -2,12 +2,12 @@
 
 ------
 
-This wiki hosts tutorials on how to operate and utilize Research Computing resources. These tutorials cover a broad range of topics surrounding the operation and efficient usage of resources including:  
-- [Logging into Research Computing resources](Logging-In)
-- [Filesystems](File-systems)
+This wiki hosts documentation covering the usage of ResearchComputing resources including:  
+- [Accessing our Systems](Logging-In)
+- [Available Filesystems](File-systems)
 - [Compiling Software](compiling-and-linking)
 - [Job submission](Job-Submissions)
-- [Using Software](The-Module-System)
+- [Software Libraries](The-Module-System)
 - [QOS and Partitions](QOS-and-partitions)
 - [FAQs](FAQs)
 
