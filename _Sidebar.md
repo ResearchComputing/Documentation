@@ -11,10 +11,9 @@
 - [PetaLibrary](PetaLibrary)
 
 ## The Compute Environment
-- [QOS and Partitions](qos-and-partitions)
 - [Node Types](node-types)
 - [File Systems](File-Systems)
-- [The Module System](The-Module-System)
+- [RC-Supported Software](The-Module-System)
 - [Compiling Software](Compiling-and-Linking)
 - [Data Transfers](Data-Transfers)  
 
