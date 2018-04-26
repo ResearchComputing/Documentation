@@ -3,8 +3,8 @@
 ------
 
 This wiki hosts documentation covering the usage of ResearchComputing resources including:  
-- [Accessing our Systems](Logging-In)
-- [Available Filesystems](File-systems)
+- [Logging In](Logging-In)
+- [Research Computing Filesystems](File-systems)
 - [Compiling Software](compiling-and-linking)
 - [Job submission](Job-Submissions)
 - [Software Libraries](The-Module-System)
