@@ -7,8 +7,7 @@ This wiki hosts documentation covering the usage of ResearchComputing resources 
 - [Research Computing Filesystems](File-systems)
 - [Compiling Software](compiling-and-linking)
 - [Job submission](Job-Submissions)
-- [Software Libraries](The-Module-System)
-- [QOS and Partitions](QOS-and-partitions)
+- [Research Computing Supported Software](The-Module-System)
 - [FAQs](FAQs)
 
 If you notice an error on this site, or would like to make a suggestion of other topics to include, please create an issue.
