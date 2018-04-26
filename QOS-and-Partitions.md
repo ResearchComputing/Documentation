@@ -22,7 +22,7 @@ These are the partitions available on Research Computing resources.
 
 More details about each type of node can be found [here](https://www.colorado.edu/rc/resources/summit/specifications).
 
-# Quality of Service (Qos)
+# Quality of Service (QoS)
 
 On Summit, QoS's are used to constrain or modify the characteristics that a job can have. For example, by selecting the "debug" QoS, a user can obtain higher queue priority for a job with the tradeoff that the maximum allowed wall time is reduced from what would otherwise be allowed on that partition. We recommend specifying a QoS (using the  --qos  flag or directive in Slurm) as well as a partition for every job.
 
