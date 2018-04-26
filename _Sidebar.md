@@ -24,6 +24,11 @@
 - [Useful Slurm Commands](useful-slurm-commands)
 - [Interactive Jobs](Interactive-Jobs)
 
+## Job Templates
+- [General Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
+- [Matlab Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/Matlab-Job-Template.sh)
+- [MPI Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/MPI-Job-Template.sh)
+- [OpenMP Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/OpenMP-Job-Template)
 
 ## Notable RC Software
 - [The Load Balancer](The-Load-Balancer-Tool)
@@ -31,6 +36,7 @@
 - [Gaussian](Gaussian)
 
 ## Additional Resources
+- [University of Utah Videos](University-of-Utah-Videos)
 - [Coding Best Practices](Coding-Best-Practices)
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
 - [Matlab](Matlab-on-Summit)
@@ -42,14 +48,6 @@
     + [Fortran](OpenMP-Fortran)
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
-## Job Templates
-- [General Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
-- [Matlab Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/Matlab-Job-Template.sh)
-- [MPI Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/MPI-Job-Template.sh)
-- [OpenMP Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/OpenMP-Job-Template)
-
-## Additional Resources
-- [University of Utah Videos](University-of-Utah-Videos)
 
 ## Maintenance
 - [CHANGELOG](CHANGELOG)
