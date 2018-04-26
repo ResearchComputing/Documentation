@@ -17,7 +17,7 @@ Watch the [video](https://youtu.be/csgl4czhD_k) on using modules, or read the te
 
 ## The `module` Command
 
-**_Modules should only ever be loaded in job scripts, interactive jobs, or on compile nodes and should never be loaded directly onto a login node._** The login node will restrict the loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
+**_Modules should be loaded in job scripts, interactive jobs, or on compile nodes only.  They should not be loaded when on one of the login nodes._** The login node will restrict the loading of modules, so you won't be able to access software unless you do so through a job or a compile node.
 
 To see what modules are available to load, ssh into a compile node by typing `ssh scompile` from a login node, and type:
 ```
