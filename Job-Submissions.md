@@ -16,11 +16,11 @@ When you want to run a non-interactive job:
 - Submit the job from a login node or compile node
 - The job will run in the background when resources are available.
 
-## How to Submit a Job
-
-Watch a tutorial [video](https://youtu.be/sStJQKTa9zY) or read the information below.
+Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
 
 [![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY)
+
+## How to Submit a Job
 
 ```
 #!/bin/bash
