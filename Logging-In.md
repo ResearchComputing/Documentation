@@ -39,8 +39,9 @@ Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
     * If you are logging in with a Vasco OTP device, enter your four-digit PIN plus the six digits shown when you push the button on your device. For example, if your PIN is “1234” and the device shows “567890”, you will type `1234567890`. Press enter.
     * Note that as a security feature, PuTTY does not display any text while you type your password
 Login screen for putty
-
+<!--
 ![Logging-in-example-screen](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Pic1.png)
+-->
 
 ## Logging in from a Mac
 
