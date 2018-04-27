@@ -9,9 +9,9 @@
 
 Research Computing supports several methods of file transfers onto Summit. File transfers from a local machine can be done via two ways: Through [Globus](https://www.globus.org/) or through SSH protocols.  
 
-Need more information?  Watch our [video](https://www.youtube.com/watch?v=UMBD7pSE0qI) or read the text below.
-
 ## Globus
+
+Watch this [video](https://www.youtube.com/watch?v=UMBD7pSE0qI) or read the text below.
 
 [![Data-Transfer-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/file-transf-vid.jpg)](https://www.youtube.com/watch?v=UMBD7pSE0qI)
 
