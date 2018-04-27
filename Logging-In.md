@@ -27,8 +27,6 @@ Need more assistance? Watch our tutorial videos for [Mac](https://www.youtube.co
 
 ## Logging in from a Windows Machine
 
-### Video
-
 Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
 
 [![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4)
@@ -46,9 +44,7 @@ Login screen for putty
 
 ## Logging in from a Mac
 
-### Video Guide
-
-- Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text below:
+Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text below:
 
 [![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
 
