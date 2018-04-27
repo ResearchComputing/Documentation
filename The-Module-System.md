@@ -10,10 +10,7 @@ Research Computing uses a module system to load most software into a user's envi
 
 Watch the [video](https://youtu.be/csgl4czhD_k) on using modules, or read the text below.
 
-<!---
 [![How-to-load-modules-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Loading-Modules/videopreview.j.jpg)](https://youtu.be/csgl4czhD_k)
-
---->
 
 ## The `module` Command
 
