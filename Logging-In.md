@@ -23,25 +23,21 @@ Logging into a Research Computing login node is the first step in accessing reso
     + Scheduled or interactive jobs
     + Compile nodes  
 
-<!---
-
 Need more assistance? Watch our tutorial videos for [Mac](https://www.youtube.com/watch?v=2Mnr840YdiE) or [Windows](https://youtu.be/aUVdIShW7W4), or read the text below.
 
 ## Videos
 
 ### Logging in from Windows
 
-[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows-Small.jpg)](https://youtu.be/aUVdIShW7W4)
+[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4)
 
 ### Logging in from a Mac
 
-[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid-Small.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
+[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
 
---->
 ## Logging in from a Windows Machine
 
 Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
-
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
