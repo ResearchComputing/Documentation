@@ -25,19 +25,13 @@ Logging into a Research Computing login node is the first step in accessing reso
 
 Need more assistance? Watch our tutorial videos for [Mac](https://www.youtube.com/watch?v=2Mnr840YdiE) or [Windows](https://youtu.be/aUVdIShW7W4), or read the text below.
 
-## Videos
-
-### Logging in from Windows
-
-[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4)
-
-### Logging in from a Mac
-
-[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
-
 ## Logging in from a Windows Machine
 
+### Video
+
 Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
+
+[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4)
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
@@ -52,8 +46,11 @@ Login screen for putty
 
 ## Logging in from a Mac
 
+### Video Guide
+
 - Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text below:
 
+[![Logging-In-From-A-Mac-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Mac-Vid.jpg)](https://www.youtube.com/watch?v=2Mnr840YdiE)
 
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window. When the terminal window opens, type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
