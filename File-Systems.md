@@ -12,7 +12,7 @@
 
 All users are allocated space on the `/home` and `/projects` filesystems.  In addition, separate `scratch` directories are visible from Summit and Blanca.  These scratch directories are hosted on separate, high-performance filesystems designed to support intensive, parallel I/O operations.  
 
-Please  note that the use of `/home` or `/scratch` for high-performance I/O may negatively affect the environment for all users.  As a result, all compute jobs should write to the appropriate `scratch` filesystem.  **Users performing intensive I/O on the `/home` or `/projects` filesystems will  have their jobs terminated and may have their accounts temporarily disabled.**
+Please  note that the use of `/home` or `/projects` for high-performance I/O may negatively affect the environment for all users.  As a result, all compute jobs should write to the appropriate `scratch` filesystem.  **Users performing intensive I/O on the `/home` or `/projects` filesystems will  have their jobs terminated and may have their accounts temporarily disabled.**
 
 ### The Home Filesystem
 Every user is allocated 2 GB of space on the `/home` filesystem in a subdirectory corresponding to their user name (e.g., `/home/janedoe`).  Home directories are [backed up frequently](#filesystem-backups) and are intended for the use of their owner only; sharing the contents of home directories with other users is strongly discouraged.  Your `/home` directory is a good place to store source code, small compiled programs, and job scripts.  
