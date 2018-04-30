@@ -1,14 +1,14 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [SBATCH](#sbatch)
+- [sbatch](#sbatch)
 - [Important Flags](#important-flags)
 
 # Overview
 
 The sbatch command is the Slurm command used to submit batch jobs.  This documentation will briefly discuss this command and talk about some of the more common flags used.
 
-# SBATCH
+# sbatch
 
 This command is used to submit batch jobs to the queue.  Batch jobs are those that run on the compute nodes in the background.  An analogous command is the [sinteractive](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Interactive-Jobs) command, except that this allows you to run a job on the compute nodes while interacting directly.  Many of the flags used in the `sbatch` command can be used in `sinteractive`.
 
