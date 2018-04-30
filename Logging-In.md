@@ -53,3 +53,12 @@ Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text
 2. Enter your password:
     * If you are logging in using Duo, type `duo:` followed by your Identikey password. For example, if your Identikey password is 123, type `duo:123`. Press enter. You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are logging in with a Vasco OTP device, enter your four-digit PIN plus the six digits shown when you push the button on your device. For example, if your PIN is “1234” and the device shows “567890”, you will type `1234567890`. Press enter.
+
+## Logging in from Linux
+
+1. Open a terminal window and type: `ssh username@login.rc.colorado.edu`, where `username` is your assigned username.
+
+2. Enter your password:
+    * If you are logging in using Duo, type `duo:` followed by your Identikey password. For example, if your Identikey password is 123, type `duo:123`. Press enter. You will then receive an authentication request on the Duo app on your phone. Approve the request.
+    * If you are logging in with a Vasco OTP device, enter your four-digit PIN plus the six digits shown when you push the button on your device. For example, if your PIN is “1234” and the device shows “567890”, you will type `1234567890`. Press enter.
+
