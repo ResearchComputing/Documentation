@@ -9,3 +9,10 @@
 ## Monday, 19 February 2018
 
 * [Reduced default per-core memory requests on Summit](https://www.rc.colorado.edu/node/1094)
+
+## 25 September 2017
+
+* `/work/` mounts are now supported for JupyterHub Virtual Notebooks.
+* JupyterHub Notebooks can now be spawned on Summit, and the Crestone spawn option has been deprecated.
+* JupyterHub Ipyparallel profiles have been updated for Summit. To remove stale Janus/Crestone profiles, please follow the procedure described in the [JupyterHub User Guide](https://github.com/ResearchComputing/jupyter-at-rc/wiki/JupyterHub-User-Guide#updating-your-jupyterhub-config)
+* JupyterHub Cluster notebooks now use lmod instead of virtualenv for software dependencies.
