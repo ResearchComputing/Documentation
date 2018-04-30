@@ -2,7 +2,7 @@
 
 ------
 
-This wiki hosts documentation covering the usage of ResearchComputing resources including:  
+This wiki hosts documentation covering the usage of Research Computing resources including:  
 - [Logging In](Logging-In)
 - [Research Computing Filesystems](File-systems)
 - [Compiling Software](compiling-and-linking)
