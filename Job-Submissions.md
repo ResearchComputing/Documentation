@@ -24,7 +24,7 @@ Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
 
 1. Write your job script in a text editor
     - You will submit the script to Slurm, a batch queuing system that will schedule the job to run non-interactively when resources are available
-    - The basics of a job script are described here: [link]()
+    <!-- - The basics of a job script are described here: [link]() -->
     - Use this [template](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh) to write your job script in the text editor
     - Update your template with any job specifications, including [QOS or Partitions](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions) 
     - You can confirm the content of your script with this command: `cat job-name.sh`
