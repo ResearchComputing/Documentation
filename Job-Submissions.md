@@ -15,23 +15,15 @@ Login to a Research Computing resource to submit your job.
 When you want to run a non-interactive job:
 - Submit the job from a login node or compile node
 - The job will run in the background when resources are available.
-
-## How to Submit a Job
-
-Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
-
-[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY)
-
-1. Write your job script in a text editor
-    - You will submit the script to Slurm, a batch queuing system that will schedule the job to run non-interactively when resources are available
-    <!-- - The basics of a job script are described here: [link]() -->
-    - Use this [template](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh) to write your job script in the text editor
-    - Update your template with any job specifications, including [QOS or Partitions](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions) 
-    - You can confirm the content of your script with this command: `cat job-name.sh`
-    - Replace “job-name” with the name of your job
+<!--
+## Job Scripts
+Though Research Computing provides a variety of template samples for users to utilize, but knowing each part of a Job Submission script can be useful to know when writing your own job scripts. A job submission script is composed of 5 parts:
 
 ```bash
-#!/bin/bash
+# === 1. Shebang: Tells bash to run the following script as a Shell command ===
+#!/bin/bash 
+
+# === 2. List of SBATCH arguements ===
 #SBATCH --nodes=1
 #SBATCH --time=00:05:00
 #SBATCH --qos=debug
@@ -40,12 +32,80 @@ Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
 #SBATCH --job-name=test-job
 #SBATCH --output=test-job.%j.out
 
+# === 3. Purge and load needed modules ===
 module purge
 
-echo "hello!"
-sleep 30
-echo "goodbye!"
+module load python
+
+# === 4. Additional commands needed to run a program ===
+echo "Set environment variables or create directories here!"
+
+# === 5. Running the program ===
+python Sample_Program.py
 ```
+
+1. Shebang -- This section of the script tells the terminal to run the file as a bash script. Do not modify this section of code.
+
+2. SBATCH arguments -- This section of tells sbatch what arguments to pass into the command when the script is run. A variety of these commands can be found at the bottom of this document [here]() and on [the Slurm page for sbatch](). Adust and modify these lines to fit the needs of your program.
+
+3. Modules -- This section of code is meant to hold commands that will clean up and add any modules needed to our program. In this example we purge all existing modules from the environment and adds the python module afterwards. It is best practice to first purge all modules needed and add any modules you need after. 
+
+4. Additional Commands -- This section of code allows a user to run any additional commands that may be needed to run your program. This can include the creation of directories, changing directories, the setting of environment variables and a whole variety of other commands. 
+
+5. Running the Program -- This line of code actually runs your code. Adjust the command to execute your program.
+
+Using these 5 parts of a job script can be useful in the construction of efficient and organized job submissions that can be easily recycled or reused. 
+
+### Examples
+
+Job script to run a 7 minute long, 1 node, 4 core C++ OpenMP Job:
+
+``` 
+#SBATCH --nodes=1
+#SBATCH --time=00:07:00
+#SBATCH --qos=debug
+#SBATCH --partition=shas
+#SBATCH --ntasks=4
+#SBATCH --job-name=omp-cpp-job
+#SBATCH --output=omp-cpp-job.%j.out
+
+module purge
+
+export OMP_NUM_THREADS=4
+
+./omp_Program.exe
+```
+
+Job script to run a 10 minute long, 2 node, 32 core C++ MPI Job: 
+
+```
+#SBATCH --nodes=2
+#SBATCH --time=00:07:00
+#SBATCH --qos=debug
+#SBATCH --partition=shas
+#SBATCH --ntasks=16
+#SBATCH --job-name=mpi-cpp-job
+#SBATCH --output=mpi-cpp-job.%j.out
+
+module purge
+module load intel
+module load impi
+
+mpirun -np 32 ./hello_world_mpi.exe
+```
+-->
+## How to Submit a Job
+
+Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
+
+[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY)
+
+1. Write your job script in a text editor
+    - You will submit the script to Slurm, a batch queuing system that will schedule the job to run non-interactively when resources are available
+    - Use this [template](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh) to write your job script in the text editor
+    - Update your template with any job specifications, including [QOS or Partitions](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions) 
+    - You can confirm the content of your script with this command: `cat job-name.sh`
+    - Replace “job-name” with the name of your job
 
 2. Submit your job
     - Load the Slurm module with the command `module load slurm/summit` if you are submitting from a login node.  When submitting from a compile node this step is not necessary.
