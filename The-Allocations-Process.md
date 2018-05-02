@@ -18,7 +18,7 @@ Having an account only validates that you are eligible to use RC resources.  An 
    * We need to make sure we have enough resources to accommodate all of our users
    * Helps for reporting to NSF and the CU Research & Innovation Office.  Summit is funded through a grant from NSF.
 
-# How does the process work?
+# How does this process work?
 
 To apply for an allocation, you must do the following:
 
