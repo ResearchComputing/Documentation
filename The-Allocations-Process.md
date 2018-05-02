@@ -22,9 +22,9 @@ Having an account only validates that you are eligible to use RC resources.  An 
 
 To apply for an allocation, you must do the following:
 
-1.  Login to [RCAMP](https://rcamp.rc.colorado.edu/)
-2.  Fill out some basic information on your project
-3.  Fill out the [template](https://www.colorado.edu/rc/userservices/allocations) at the linked page in your preferred format.  If you need assistance, please always feel free to email rc-help@colorado.edu.  
+1.  Fill out the [template](https://www.colorado.edu/rc/userservices/allocations) at the linked page in your preferred format.  If you need assistance, please always feel free to email rc-help@colorado.edu.  
+2.  Login to [RCAMP](https://rcamp.rc.colorado.edu/)
+3.  Fill out some basic information on your project
 4.  A committee will review your proposal and either accept, provide comments on adjustments that need to be made, or deny
 
 
