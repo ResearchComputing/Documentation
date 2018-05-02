@@ -9,7 +9,7 @@
 - [RMACC Access to Summit](RMACC-Access-to-Summit)
 - [Blanca Access](Blanca-Access)  
 - [PetaLibrary](PetaLibrary)
-- [Allocations](Fair-share-allocations)
+- [Allocations](the-allocations-process)
 
 ## The Compute Environment
 - [Node Types](node-types)
