@@ -15,7 +15,7 @@ Login to a Research Computing resource to submit your job.
 When you want to run a non-interactive job:
 - Submit the job from a login node or compile node
 - The job will run in the background when resources are available.
-<!--
+
 ## Job Scripts
 Though Research Computing provides a variety of template samples for users to utilize, but knowing each part of a Job Submission script can be useful to know when writing your own job scripts. A job submission script is composed of 5 parts:
 
