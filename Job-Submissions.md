@@ -41,12 +41,12 @@ module load python
 echo "Set environment variables or create directories here!"
 
 # === 5. Running the program ===
-python Sample_Program.py
+python example_Program.py
 ```
 
-1. Shebang -- This section of the script tells the terminal to run the file as a bash script. Do not modify this section of code.
+1. Shebang -- This section of the script tells the terminal to run the file as a bash script. This line should not be modified in anyway.
 
-2. SBATCH arguments -- This section of tells sbatch what arguments to pass into the command when the script is run. A variety of these commands can be found at the bottom of this document [here]() and on [the Slurm page for sbatch](). Adust and modify these lines to fit the needs of your program.
+2. SBATCH arguments -- This section of tells sbatch what arguments to pass into the command when the script is run. A variety of these commands can be found at the bottom of this document [here]() and on [the Slurm page for sbatch](). Adjust and modify these lines to fit the needs of your program.
 
 3. Modules -- This section of code is meant to hold commands that will clean up and add any modules needed to our program. In this example we purge all existing modules from the environment and adds the python module afterwards. It is best practice to first purge all modules needed and add any modules you need after. 
 
@@ -54,13 +54,33 @@ python Sample_Program.py
 
 5. Running the Program -- This line of code actually runs your code. Adjust the command to execute your program.
 
-Using these 5 parts of a job script can be useful in the construction of efficient and organized job submissions that can be easily recycled or reused. 
+Using this information we can construct efficient and organized job submissions that can be recycled or reused. 
 
 ### Examples
 
+Job script to run a 5 minute long, 1 node, 1 core C++ Job:
+
+```bash
+#!/bin/bash 
+
+#SBATCH --nodes=1
+#SBATCH --time=00:05:00
+#SBATCH --qos=debug
+#SBATCH --partition=shas
+#SBATCH --ntasks=1
+#SBATCH --job-name=cpp-job
+#SBATCH --output=cpp-job.%j.out
+
+module purge
+
+./example_cpp.exe
+```
+
 Job script to run a 7 minute long, 1 node, 4 core C++ OpenMP Job:
 
-``` 
+```bash
+#!/bin/bash 
+
 #SBATCH --nodes=1
 #SBATCH --time=00:07:00
 #SBATCH --qos=debug
@@ -73,17 +93,19 @@ module purge
 
 export OMP_NUM_THREADS=4
 
-./omp_Program.exe
+./example_omp.exe
 ```
 
-Job script to run a 10 minute long, 2 node, 32 core C++ MPI Job: 
+Job script to run a 10 minute long, 2 node, 48 core C++ MPI Job: 
 
-```
+```bash
+#!/bin/bash 
+
 #SBATCH --nodes=2
 #SBATCH --time=00:07:00
 #SBATCH --qos=debug
 #SBATCH --partition=shas
-#SBATCH --ntasks=16
+#SBATCH --ntasks=24
 #SBATCH --job-name=mpi-cpp-job
 #SBATCH --output=mpi-cpp-job.%j.out
 
@@ -91,9 +113,9 @@ module purge
 module load intel
 module load impi
 
-mpirun -np 32 ./hello_world_mpi.exe
+mpirun -np 48 ./example_mpi.exe
 ```
--->
+
 ## How to Submit a Job
 
 Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
