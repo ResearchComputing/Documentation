@@ -8,7 +8,7 @@
 
 # Overview
 
-Allocations are a crucial component of running on an HPC system.  They are required to run on RC resources.  When you receive an account you will automatically be assigned a ucb-general share, which is intended for you to use to test and benchmark your code.  After you have done this, you should apply for an [allocation](https://www.colorado.edu/rc/userservices/allocations) to run on our systems.  
+Allocations are a crucial component of running on an HPC system.  They are required to run on RC resources.  When you receive an account you will automatically be assigned a ucb-general share.  ucb-general is a great place to run smaller jobs or to use to test and benchmark your code.  ucb-general users have a lower priority.  To receive higher priority, you can apply for an [allocation](https://www.colorado.edu/rc/userservices/allocations) to run on our systems.  
 
 In this document, we will describe the allocation process and how Fair Share works to give priority.
 
