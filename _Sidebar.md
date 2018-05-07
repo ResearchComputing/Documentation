@@ -3,13 +3,15 @@
 [Home](Home)  
 [FAQs](FAQs)
 
-## Accessing RC Resources
-- [Logging In](Logging-In)
-- [Duo Access for CU Users](Duo-Access-For-CU-Users)
-- [RMACC Access to Summit](RMACC-Access-to-Summit)
-- [Blanca Access](Blanca-Access)  
-- [PetaLibrary](PetaLibrary)
-- [Allocations](the-allocations-process)
+<details><summary> Accessing RC Resources
+
+<li> [Logging In](Logging-In) </li>
+<li> [Duo Access for CU Users](Duo-Access-For-CU-Users) </li>
+<li> [RMACC Access to Summit](RMACC-Access-to-Summit) </li>
+<li> [Blanca Access](Blanca-Access) </li>
+<li> [PetaLibrary](PetaLibrary) </li>
+<li> [Allocations](the-allocations-process) </li>
+</details>
 
 ## The Compute Environment
 - [Node Types](node-types)
