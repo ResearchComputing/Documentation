@@ -5,9 +5,8 @@
 
 
 
-<h3> Accessing RC Resources <h3>
-<details>
-    <summary></summary>
+
+## Accessing RC Resources
 
 - [Logging In](Logging-In)
 - [Duo Access for CU Users](Duo-Access-For-CU-Users)
@@ -15,10 +14,6 @@
 - [Blanca Access](Blanca-Access)
 - [PetaLibrary](PetaLibrary)
 - [Allocations](the-allocations-process)
-
-</details>
-
-
 
 
 ## The Compute Environment
