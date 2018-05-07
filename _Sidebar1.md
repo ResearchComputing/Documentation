@@ -4,10 +4,10 @@
 [FAQs](FAQs)
 
 
+
+<h3> Accessing RC Resources <h3>
 <details>
-    <summary>
-        <h2> Accessing RC Resources </h2>
-    </summary>
+    <summary></summary>
 
 - [Logging In](Logging-In)
 - [Duo Access for CU Users](Duo-Access-For-CU-Users)
