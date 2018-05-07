@@ -157,7 +157,7 @@ On Summit, nodes with the same hardware configuration are grouped into partition
 These are the partitions available on Research Computing resources.
 
 |Partition name|    Description        |# of nodes|cores/nodes|RAM/core (GB)|Max Walltime|Billing weight|Default Walltime|Max Walltime|
-|--------------|-----------------------|----------|-----------|-------------|------------|--------------|----------------|------------|   4H
+|--------------|-----------------------|----------|-----------|-------------|------------|--------------|----------------|------------|
 |     shas     | Haswell CPUs (default)|   380    |    24     |    5.25     |    24H     |       1      |       4H       |     24H*   |
 |     sgpu     |      GPU-enabled      |    10    |    24     |    5.25     |    24H     |      2.5     |       4H       |     24H*   |
 |     smem     |      High-memory      |     5    |    48     |     42      |     7D     |       6      |       4H       |      7D    |
