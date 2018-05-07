@@ -3,8 +3,6 @@
 [Home](Home)  
 [FAQs](FAQs)
 
-
-
 <details>
     <summary>Accessing RC Resources</summary>
 
@@ -15,7 +13,9 @@
 - [PetaLibrary](PetaLibrary)
 - [Allocations](the-allocations-process)
 
-</details>
+</details>  
+
+---
 
 <details>
 <summary>The Compute Environment</summary>
@@ -28,6 +28,8 @@
 
 </details>
 
+---
+
 <details>
 <summary>Running Jobs</summary>
 
@@ -37,6 +39,8 @@
 - [Interactive Jobs](Interactive-Jobs)
 
 </details>
+
+---
 
 <details>
 <summary>Job Templates</summary>
@@ -48,6 +52,8 @@
 
 </details>
 
+---
+
 <details>
 <summary>Notable RC Software</summary>
 
@@ -57,6 +63,7 @@
 
 </details>
 
+---
 
 <details>
 <summary>Additional Resources</summary>
@@ -74,6 +81,8 @@
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
 </details>
+
+---
 
 <details>
 <summary>Maintenance</summary>
