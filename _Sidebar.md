@@ -5,8 +5,8 @@
 
 
 
-
-## Accessing RC Resources
+<details>
+    <summary>Accessing RC Resources</summary>
 
 - [Logging In](Logging-In)
 - [Duo Access for CU Users](Duo-Access-For-CU-Users)
@@ -15,32 +15,52 @@
 - [PetaLibrary](PetaLibrary)
 - [Allocations](the-allocations-process)
 
+</details>
 
-## The Compute Environment
+<details>
+<summary>The Compute Environment</summary>
+
 - [Node Types](node-types)
 - [File Systems](File-Systems)
 - [RC-Supported Software](The-Module-System)
 - [Compiling Software](Compiling-and-Linking)
 - [Data Transfers](Data-Transfers)  
 
-## Running Jobs
+</details>
+
+<details>
+<summary>Running Jobs</summary>
+
 - [The sbatch Command](the-sbatch-command)
 - [Job Submission](Job-Submissions)
 - [Useful Slurm Commands](useful-slurm-commands)
 - [Interactive Jobs](Interactive-Jobs)
 
-## Job Templates
+</details>
+
+<details>
+<summary>Job Templates</summary>
+
 - [General Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
 - [Matlab Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/Matlab-Job-Template.sh)
 - [MPI Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/MPI-Job-Template.sh)
 - [OpenMP Job Script](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/OpenMP-Job-Template)
 
-## Notable RC Software
+</details>
+
+<details>
+<summary>Notable RC Software</summary>
+
 - [The Load Balancer](The-Load-Balancer-Tool)
 - [JupyterHub](JupyterHub)
 - [Gaussian](Gaussian)
 
-## Additional Resources
+</details>
+
+
+<details>
+<summary>Additional Resources</summary>
+
 - [University of Utah Videos](University-of-Utah-Videos)
 - [Coding Best Practices](Coding-Best-Practices)
 - [Fundamentals of Parallel Computing](Fundamentals-of-Parallel-Computing)
@@ -53,7 +73,12 @@
     + [Fortran](OpenMP-Fortran)
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
 
+</details>
 
-## Maintenance
+<details>
+<summary>Maintenance</summary>
+
 - [CHANGELOG](CHANGELOG)
 - [JupyterHub CHANGELOG](JupyterHub-CHANGELOG)
+
+</details>
