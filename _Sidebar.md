@@ -6,7 +6,9 @@
 ---
 
 <details>
-    <summary>Accessing RC Resources</summary>
+    <summary> Accessing RC Resources
+
+</summary>
 
 ---
 
