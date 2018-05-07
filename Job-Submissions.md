@@ -156,12 +156,16 @@ On Summit, nodes with the same hardware configuration are grouped into partition
 
 These are the partitions available on Research Computing resources.
 
-|Partition name|    Description        |# of nodes|cores/nodes|RAM/core (GB)|Max Walltime|Billing weight|
-|--------------|-----------------------|----------|-----------|-------------|------------|--------------|
-|     shas     | Haswell CPUs (default)|   380    |    24     |    5.25     |    24H     |       1      |
-|     sgpu     |      GPU-enabled      |    10    |    24     |    5.25     |    24H     |      2.5     |
-|     smem     |      High-memory      |     5    |    48     |     42      |     7D     |       6      |
-|     sknl     | Phi (Knights Landing) |    20    |    64     |    TBD      |    24H     |      0.1     |
+|Partition name|    Description        |# of nodes|cores/nodes|RAM/core (GB)|Max Walltime|Billing weight|Default Walltime|Max Walltime|
+|--------------|-----------------------|----------|-----------|-------------|------------|--------------|----------------|------------|   4H
+|     shas     | Haswell CPUs (default)|   380    |    24     |    5.25     |    24H     |       1      |       4H       |     24H*   |
+|     sgpu     |      GPU-enabled      |    10    |    24     |    5.25     |    24H     |      2.5     |       4H       |     24H*   |
+|     smem     |      High-memory      |     5    |    48     |     42      |     7D     |       6      |       4H       |      7D    |
+|     sknl     | Phi (Knights Landing) |    20    |    64     |    TBD      |    24H     |      0.1     |       4H       |     24H*   |
+
+* The _normal_ QOS is the default QOS if no other is specified.
+
+To run a job longer than 24 hours on the _shas_, _sgpu_, or _sknl_ partitions, use the _long_ QOS.
 
 More details about each type of node can be found [here](https://www.colorado.edu/rc/resources/summit/specifications).
 
@@ -173,19 +177,8 @@ The available Summit QoS's are:
 
 |QOS name|       Description          |     Max walltime     |Max jobs/user|   Node limits   |Priority boost|
 |--------|----------------------------|----------------------|-------------|-----------------|--------------|
-| normal |         default            |    see table below   |     n/a     |  256/user       |       0      |
+| normal |         default            |    see table above   |     n/a     |  256/user       |       0      |
 | debug  |     For quick testing      |          1H          |      1      |   32/job        |Equiv. of 3-day queue wait time|
 |  long  |     Longer wall times      |          7D          |     n/a     |22/user;40 total |0       |
 |  condo | Condo purchased nodes only |          7D          |     n/a     |n/a              |Equiv. of 1 day queue wait time|
-
-The normal QOS has different default and max wall times depending on the partition.  The specifications for the **normal** QOS by partition is given below.
-
-|       partition      |     Max walltime     |    default walltime    |
-|----------------------|----------------------|------------------------|
-|        shas          |         24H          |          4H            |
-|        sgpu          |         24H          |          4H            | 
-|        smem          |          7D          |          4H            |
-|        sknl          |         24H          |          4H            |
-
-To run a job longer than 24 hours on the _shas_, _sgpu_, or _sknl_ partitions, use the _long_ QOS.
 
