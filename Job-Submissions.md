@@ -173,7 +173,19 @@ The available Summit QoS's are:
 
 |QOS name|       Description          |     Max walltime     |Max jobs/user|   Node limits   |Priority boost|
 |--------|----------------------------|----------------------|-------------|-----------------|--------------|
-| normal |         default            |Derived from partition|     n/a     |  256/user       |       0      |
+| normal |         default            |    see table below   |     n/a     |  256/user       |       0      |
 | debug  |     For quick testing      |          1H          |      1      |   32/job        |Equiv. of 3-day queue wait time|
 |  long  |     Longer wall times      |          7D          |     n/a     |22/user;40 total |0       |
 |  condo | Condo purchased nodes only |          7D          |     n/a     |n/a              |Equiv. of 1 day queue wait time|
+
+The normal QOS has different default and max wall times depending on the partition.  The specifications for the **normal** QOS by partition is given below.
+
+|       partition      |     Max walltime     |    default walltime    |
+|----------------------|----------------------|------------------------|
+|        shas          |         24H          |          4H            |
+|        sgpu          |         24H          |          4H            | 
+|        smem          |          7D          |          4H            |
+|        sknl          |         24H          |          4H            |
+
+To run a job longer than 24 hours on the _shas_, _sgpu_, or _sknl_ partitions, use the _long_ QOS.
+
