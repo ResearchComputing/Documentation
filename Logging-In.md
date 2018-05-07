@@ -63,3 +63,32 @@ Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text
     * If you are logging in using Duo, type `duo:` followed by your Identikey password. For example, if your Identikey password is 123, type `duo:123`. Press enter. You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are logging in with a Vasco OTP device, enter your four-digit PIN plus the six digits shown when you push the button on your device. For example, if your PIN is “1234” and the device shows “567890”, you will type `1234567890`. Press enter.
 
+## SSH host keys
+
+The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
+
+Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
+
+### login-legacy (current default at login.rc.colorado.edu)
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsLNQ5V53yNut9QzVrlYbiOI/1G5Vu4SXP4sdnR39Jqv3vFhu6RyPUCRURn3BZm9brwYi0sLLWwK6BdkvgRwvhyLhRmTAPbmPw0X235i9b0zfWaychrsdxTCqhgzMUUNGjfcgJ0DHLOl33Mhq5ECNWRU+Ggsf5XA/cZVQT7aUx2wAHg4B4OfTjTsQX5mO3sKHuaFxnWpTlY6JF+t2CbAgwtwY/PLGNqupDsXbHcaarSLlhB2I/Wr4zongK5FYykLHJ4+Wkty5aiD0BmZG9J0GDJ5o1xNNZB2JfyLYSrC6pfW9zgHp9HLq6QX+XTmfLS6O5rO9kMIiAZIh1OV8m5xhzw==
+```
+
+### login-new.rc.colorado.edu
+
+```
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPfjz9VZAwSS0329z6RNZQDNrN3vU1YcthmBRqQAgxmDxBVPJzhazEzKqigoWuuQDHNzfm+05xTOYAmcnL3V7tc=
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPub4h8XLU3dXJBNZljS4PdPWOORXoBdSdaKnwFcMTxe
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWIqetVDUqKB2im3HyQZJ72PMYXFJUXR2Z+dzhGfOERABAV6m0fKcVcPrBjX9SYR4QYbxR+Yu2bIDDxpK+PZs2sAy/LU4po9mZUN8VAWBE0rwgcEvKfbQriwyhkdqdjEEzbEN5FTx05iYMN2o2vpshmi3dUpHaKMZPI0bhQKmwjM3bf77gpxXWNANsGIag0SdX4bmiWYQhR+CnzUJUis9DVOpVNfN+Jtw4IgnuJedehkZi/z/v7JKvV26jIxXmdq6+VkRCpoVnL3pJkoU5e4vaSc4V5kvgfI9G4tj6BEDGsRgHXAcZXk+hLtNp2nj2VsSocWcOVkn85obSfnVwV/f
+```
+
+### blogin01
+
+A private login node owned by ICS
+
+```
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNcwOXb6FQ0kOwEtoNHqYur2xc3t+DwidHJbzRBasCqp8+YE/GSr2SGgtI4JkJ40ptAPjkdj+Qq9BRdu4ZExVdE=
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIqWL6qCI0y4MzZBgNyRrNX/Wd39/j1F/onx9tPMPos
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjjl4hOTvUCrfyIgFriFn+6ypLKxb7RQtWEmmmS0a8+icnocCiaZLpiS6lC7sMy7NYly6P6jnasTZvYUZ+6hcIm61YyOSDCCsMZCU+LQb66LIUPttz7ZF12KMgC/DDBAE8xj48hRmp9iZjFnYCEQi9eb4y1IN3VJz1k7nDfLa/Ae3DRBorGZVSKCoeBXfzjpTutCZwgoNUSHQUnZlLnwdut4WH9qq7GtnKRnstVJt+i72vOxLCFSuCgskCjBr5KP/aCEiXT5l93R01hceENIzKqN4zm0MhzULef6KXS7aZZDKb/zklOGUtxcHgdrQ9IeEQIESvn385yZU6IZIM+Hsb
+```
