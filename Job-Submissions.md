@@ -156,15 +156,15 @@ On Summit, nodes with the same hardware configuration are grouped into partition
 
 These are the partitions available on Research Computing resources.
 
-|Partition name|    Description        |# of nodes|cores/nodes|RAM/core (GB)|Billing weight|Default Walltime|Max Walltime|
-|--------------|-----------------------|----------|-----------|-------------|--------------|----------------|-------------|
-|     shas     | Haswell CPUs (default)|   380    |    24     |    5.25     |       1      |       4H       |     
+|Partition|    Description        |# of nodes|cores/nodes|RAM/core (GB)|Billing weight|Default Walltime|Max Walltime|
+|---------|-----------------------|----------|-----------|-------------|--------------|----------------|-------------|
+|   shas  |Haswell CPUs (default)|   380    |    24     |    5.25     |       1      |       4H       |     
  24H*   |
-|     sgpu     |      GPU-enabled      |    10    |    24     |    5.25     |      2.5     |       4H       |     
+|   sgpu  |     GPU-enabled      |    10    |    24     |    5.25     |      2.5     |       4H       |     
  24H*   |
-|     smem     |      High-memory      |     5    |    48     |     42      |       6      |       4H       |      
+|   smem  |     High-memory      |     5    |    48     |     42      |       6      |       4H       |      
  7D    |
-|     sknl     | Phi (Knights Landing) |    20    |    64     |    TBD      |      0.1     |       4H       |     
+|   sknl  |Phi (Knights Landing) |    20    |    64     |    TBD      |      0.1     |       4H       |     
  24H*   |
 
 * The _normal_ QOS is the default QOS if no other is specified.
