@@ -6,9 +6,7 @@
 ---
 
 <details>
-    <summary> Accessing RC Resources
-
-</summary>
+    <summary> Accessing RC Resources </summary>
 
 ---
 
@@ -24,7 +22,7 @@
 ---
 
 <details>
-<summary>The Compute Environment</summary>
+<summary> The Compute Environment </summary>
 
 ---
 
@@ -39,7 +37,7 @@
 ---
 
 <details>
-<summary>Running Jobs</summary>
+<summary> Running Jobs </summary>
 
 ---
 
@@ -53,7 +51,7 @@
 ---
 
 <details>
-<summary>Job Templates</summary>
+<summary> Job Templates </summary>
 
 ---
 
@@ -67,7 +65,7 @@
 ---
 
 <details>
-<summary>Notable RC Software</summary>
+<summary> Notable RC Software </summary>
 
 ---
 
@@ -80,7 +78,7 @@
 ---
 
 <details>
-<summary>Additional Resources</summary>
+<summary> Additional Resources </summary>
 
 ---
 
@@ -101,7 +99,7 @@
 ---
 
 <details>
-<summary>Maintenance</summary>
+<summary> Maintenance </summary>
 
 ---
 
