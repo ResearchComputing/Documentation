@@ -1,6 +1,6 @@
 ## Wednesday, 9 May 2018
 
-* [Moved login.rc.colorado.edu to a new set of login nodes.](https://www.colorado.edu/rc/news/rcloginnodemigration)
+* [Moved login.rc.colorado.edu to a new set of login nodes](https://www.colorado.edu/rc/news/rcloginnodemigration)
 
 ## Tuesday, 27 February 2018
 
