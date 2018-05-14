@@ -2,7 +2,6 @@
 
 * [Overview](#overview)
 * [Start a notebook server](#start-a-notebook-server)
-     * [Virtual Notebook Server](#virtual-notebook-server)
      * [Summit Haswell](#summit-haswell)
      * [Summit Knight's Landing](#summit-knights-landing)
 * [Stopping a Notebook Server](#stopping-a-notebook-server)
@@ -20,12 +19,6 @@ JupyterHub is available at https://jupyter.rc.colorado.edu. To log in use your R
 
 ## Start a notebook server
 To start a notebook server, select one of the available options in the _Select job profile_ menu and click _Spawn_. Available options are explained below.
-
-### Virtual Notebook Server
-Virtual notebook servers are started on the JupyterHub host, and are **not intended for computational work**. The following features are supported by virtual notebooks:
-* Access to standard RC file systems
-* Python 3 notebooks
-* BASH notebooks
 
 ### Summit Haswell
 These notebook servers start on the `shas` partition using the `normal` QOS. The following features are supported by Summit Haswell notebooks:
