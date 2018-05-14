@@ -2,6 +2,11 @@ This page tracks changes to the CURC JupyterHub service, as well as changes plan
 
 ## Changelog
 
+### 2018-14-05
+* Deprecated _Virtual Notebooks_. Only cluster notebooks are supported via JupyterHub.
+* Added 2 and 12 hour notebook profiles.
+* Added profiles for select Blanca groups.
+
 ### 2017-09-25
 * `/work/` mounts are now supported for Virtual Notebooks.
 * Notebooks can now be spawned on Summit, and the Crestone spawn option has been deprecated.
