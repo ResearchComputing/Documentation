@@ -12,6 +12,7 @@
 
 - [Logging In](Logging-In)
 - [Duo Access for CU Users](Duo-Access-For-CU-Users)
+- [Logging in with Duo](Logging-in-with-duo)
 - [RMACC Access to Summit](RMACC-Access-to-Summit)
 - [Blanca Access](Blanca-Access)
 - [PetaLibrary](PetaLibrary)
