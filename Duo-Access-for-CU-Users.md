@@ -9,6 +9,9 @@
 - Once you have a Research Computing account, you will need to set up two-factor authentication using Duo.
 - Read below for instructions on how to set this up with Research Computing
 
+If you already have Duo and want information on how to use Duo to login, please visit this [link](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Logging-in-with-duo)
+
+
 ## Duo Instructions
 
 1. Open your duo invitation email (from duo security or duo.com) on a desktop/laptop computer
