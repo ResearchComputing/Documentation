@@ -1,3 +1,7 @@
+## Wednesday, 16 May 2018
+
+* [Shut down legacy login nodes](https://www.colorado.edu/rc/news/rcloginnodemigration)
+
 ## Wednesday, 9 May 2018
 
 * [Moved login.rc.colorado.edu to a new set of login nodes](https://www.colorado.edu/rc/news/rcloginnodemigration)
