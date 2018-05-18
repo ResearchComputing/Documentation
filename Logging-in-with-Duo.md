@@ -57,7 +57,7 @@ Method 4: using the duo token: (if you prefer a physical device, similar to the 
 
 Step 1: ssh <username>@login.rc.colorado.edu . For example, if my username is jodo2018 I would type "ssh jodo2018@login.rc.colorado.edu"
 
-Step 2: Enter your password when prompted, as "duo:<mypassword>,6-digit-number". The 6-digit number is given to you on the Duo token.  For example, if my password is Ih3artdu0, and I press the button on the token and it is 123456, I would type (without quotes): "duo:Ih3artdu0,123456"
+Step 2: Enter your password when prompted, as "duo:mypassword,6-digit-number". The 6-digit number is given to you on the Duo token.  For example, if my password is Ih3artdu0, and I press the button on the token and it is 123456, I would type (without quotes): "duo:Ih3artdu0,123456"
 
 --------------------------------------
 --------------------------------------
