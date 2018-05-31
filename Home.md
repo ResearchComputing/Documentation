@@ -7,7 +7,7 @@ This wiki hosts documentation covering the usage of Research Computing resources
 - [Research Computing Filesystems](File-systems)
 - [Compiling Software](compiling-and-linking)
 - [Job submission](Job-Submissions)
-- [Research Computing Supported Software](The-Module-System)
+- [The Module System](The-Module-System)
 - [FAQs](FAQs)
 
 If you notice an error on this site, or would like to make a suggestion of other topics to include, please create an issue.
