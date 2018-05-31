@@ -69,13 +69,7 @@ The first time you log into an RC login node you will be asked to verify the hos
 
 Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
 
-### login-legacy
-
-```
-ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsLNQ5V53yNut9QzVrlYbiOI/1G5Vu4SXP4sdnR39Jqv3vFhu6RyPUCRURn3BZm9brwYi0sLLWwK6BdkvgRwvhyLhRmTAPbmPw0X235i9b0zfWaychrsdxTCqhgzMUUNGjfcgJ0DHLOl33Mhq5ECNWRU+Ggsf5XA/cZVQT7aUx2wAHg4B4OfTjTsQX5mO3sKHuaFxnWpTlY6JF+t2CbAgwtwY/PLGNqupDsXbHcaarSLlhB2I/Wr4zongK5FYykLHJ4+Wkty5aiD0BmZG9J0GDJ5o1xNNZB2JfyLYSrC6pfW9zgHp9HLq6QX+XTmfLS6O5rO9kMIiAZIh1OV8m5xhzw==
-```
-
-### login-new (default for login.rc.colorado.edu as of 9 May 2018)
+### login.rc.colorado.edu (as of 9 May 2018)
 
 ```
 # Fingerprint
