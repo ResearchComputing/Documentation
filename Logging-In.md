@@ -1,8 +1,8 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Logging in from Windows](#logging-in-from-windows-machine)
-- [Logging in from Mac](#logging-in-from-mac)
+- [Logging in from Windows](#logging-in-from-a-windows-machine)
+- [Logging in from Mac](#logging-in-from-a-mac)
 - [Logging in from Linux](#logging-in-from-linux)
 
 ## Overview
