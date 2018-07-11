@@ -82,7 +82,7 @@ specifying slurm to run the executable. Your submission script should look somet
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --qos=debug
+#SBATCH --qos=testing
 #SBATCH --partition=shas
 #SBATCH --ntasks=4
 #SBATCH --job-name=Fortran_Hello_World
