@@ -161,7 +161,7 @@ __GNU Fortran Compiler__
 #SBATCH --partition shas
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
-#SBATCH --qos Debug
+#SBATCH --qos=testing
 
 module purge
 
@@ -181,7 +181,7 @@ __Intel Fortran Compiler__
 #SBATCH --partition shas
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
-#SBATCH --qos Debug
+#SBATCH --qos=testing
 
 module purge
 
