@@ -60,7 +60,7 @@ Though Research Computing provides a variety of template samples for users to ut
 # === 2. List of SBATCH arguements ===
 #SBATCH --nodes=1
 #SBATCH --time=00:05:00
-#SBATCH --qos=debug
+#SBATCH --qos=testing
 #SBATCH --partition=shas
 #SBATCH --ntasks=1
 #SBATCH --job-name=test-job
@@ -117,7 +117,7 @@ Job script to run a 7 minute long, 1 node, 4 core C++ OpenMP Job:
 
 #SBATCH --nodes=1
 #SBATCH --time=00:07:00
-#SBATCH --qos=debug
+#SBATCH --qos=testing
 #SBATCH --partition=shas
 #SBATCH --ntasks=4
 #SBATCH --job-name=omp-cpp-job
@@ -137,7 +137,7 @@ Job script to run a 10 minute long, 2 node, 48 core C++ MPI Job:
 
 #SBATCH --nodes=2
 #SBATCH --time=00:07:00
-#SBATCH --qos=debug
+#SBATCH --qos=testing
 #SBATCH --partition=shas
 #SBATCH --ntasks=24
 #SBATCH --job-name=mpi-cpp-job
