@@ -14,9 +14,9 @@ This document will describe how to use Duo to log into Research Computing resour
 
 Method 1: using duo push (if you have a smart phone and have downloaded the duo app)
 
-Step 1: Step 1: ssh username@login.rc.colorado.edu . For example, if my username is jodo2018 I would type "ssh jodo2018@login.rc.colorado.edu"
+Step 1: Type: `ssh username@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
 
-Step 2: Enter your password when prompted, as "duo:mypassword". For example, if my password is Ih3artdu0 I would type (without quotes): "duo:Ih3artdu0"
+Step 2: Enter your password when prompted, as `duo:mypassword`. For example, if my password is Ih3artdu0 I would type: `duo:Ih3artdu0`
 
 Step 3: Wait for a push to your phone.
 
