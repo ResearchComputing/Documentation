@@ -20,8 +20,6 @@ Method 1: Using Duo Push (if you have a smart phone and have downloaded the duo 
 
 **Step 3.** Wait for a push to your phone.
 
---------------------------------------
-
 ## Using Duo SMS
 
 Method 2: Using Duo SMS (if you do not have a smart phone or prefer not to use the Duo app):
