@@ -24,7 +24,7 @@ and request an interactive session by utilizing the `sinteractive` command.
 The `sinteractive` command can take any number of flags that could be used with the `sbatch` command when submitted to Slurm but the primary flags we will use are the `qos` flag and the `time` flag. These flags will specify [quality of service](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions) and amount of time the job will run for, respectively. The command we run is:
 
 ```bash
-sinteractive --qos=debug --time=00:10:00
+sinteractive --qos=interactive --time=00:10:00
 ``` 
 
 This will load an interactive session that will run on one core of one node on the debug quality of service for ten minutes. From here you can run any interactive terminal application you may need.  For example, if you simply type `python` you will open up a Python terminal window but will be running on the compute nodes (rather than the login nodes, which is forbidden).  You can also execute scripts safely in this mode.  If you want to run an application (such as Matlab Desktop) in an interactive job, please read below.
