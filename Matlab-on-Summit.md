@@ -56,7 +56,7 @@ We will submit this job using a bash script titled: `slurm_hello.sh`, which cont
 
 #SBATCH --nodes=1				
 #SBATCH --time=0:01:00			
-#SBATCH --qos=debug			
+#SBATCH --qos=testing	
 #SBATCH --partition=shas		
 #SBATCH --ntasks=1			
 #SBATCH --job-name=Matlab_Hello_World		
@@ -114,7 +114,7 @@ Now all we have left to do is modify our batch script to specify that we want to
 
 #SBATCH --nodes=1				
 #SBATCH --time=0:01:00			
-#SBATCH --qos=debug			
+#SBATCH --qos=testing			
 #SBATCH --partition=shas		
 #SBATCH --ntasks=4			
 #SBATCH --job-name=Matlab_Parallel_Hello		
