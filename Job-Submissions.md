@@ -99,7 +99,7 @@ Job script to run a 5 minute long, 1 node, 1 core C++ Job:
 
 #SBATCH --nodes=1
 #SBATCH --time=00:05:00
-#SBATCH --qos=debug
+#SBATCH --qos=testing
 #SBATCH --partition=shas
 #SBATCH --ntasks=1
 #SBATCH --job-name=cpp-job
