@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes=1                         # Number of requested nodes
 #SBATCH --time=0:01:00                    # Max wall time
-#SBATCH --qos=testing                     # Specify debug QOS
+#SBATCH --qos=testing                     # Specify testing QOS
 #SBATCH --partition=shas                  # Specify Summit haswell nodes
 #SBATCH --ntasks=4                        # Number of tasks per job
 #SBATCH --job-name=parallel_hello         # Job submission name
