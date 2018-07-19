@@ -72,7 +72,7 @@ For more information on `sstat` or `sacct` commands, [take a look at our Useful 
 
 You can check your current fair share priority level using the `sshare` command:
 ```
-sshare --Users=your_username -l
+sshare --users=your_username -l
 ```
 The `sshare` command will print out a table of information regarding an associations usage and priority. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to it's other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
 
