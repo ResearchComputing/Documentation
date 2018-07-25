@@ -11,7 +11,7 @@
 # Written by:	 Shelley Knuth
 # Modified by: Daniel Trahan
 # Date:		     24 February 2014
-# Updated:	   20 April 2018
+# Updated:	   25 July 2018
 # Purpose: 	   This script submits a general job to the Slurm job scheduler
 
 # purge all existing modules
