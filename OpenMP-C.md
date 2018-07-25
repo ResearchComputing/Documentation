@@ -96,7 +96,7 @@ specifying slurm to run the executable. Your submission script should look somet
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
 #SBATCH --qos=testing
-#SBATCH --partition=shas
+#SBATCH --partition=shas-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=CPP_Hello_World
 #SBATCH --output=CPP_Hello_World.out
