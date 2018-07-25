@@ -32,7 +32,7 @@ do
 done
 ``` 
 
-Next run the this bash script by first changing the script to be executable by typing: `chmod +x create_hello.sh` and then typing `./create_hello.sh` at the terminal prompt. It will create a file called `lb_cmd_file` that contains 4 calls to our `hello_World.py` script:  
+Next run the bash script by first changing permissions of the script to be executable by typing: `chmod +x create_hello.sh` and then typing `./create_hello.sh` at the terminal prompt. It will create a file called `lb_cmd_file` that contains 4 calls to our `hello_World.py` script:  
 
 ```bash
 python hello_World.py 1;
