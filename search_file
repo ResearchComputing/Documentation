@@ -25,14 +25,6 @@
 #
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
 # Common search terms:
 # scancel qos sbatch squeue sinteractive log logging compile compiling module modules software job software installation submission submitting jobs filesystems
 # scratch home projects petalibrary duo blanca rmacc allocation nodes cores  partitions python matlab mpi openmp sstat sacct scontrol load balance load balancing load balancer
