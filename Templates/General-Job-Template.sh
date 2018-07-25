@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --nodes=1                               # Number of requested nodes
 #SBATCH --time=0:05:00                          # Max wall time
-#SBATCH --qos=testing                             # Specify testing QOS
-#SBATCH --partition=shas                        # Specify Summit haswell nodes
+#SBATCH --qos=testing                           # Specify testing QOS
+#SBATCH --partition=shas-testing                # Specify Summit haswell nodes
 #SBATCH --ntasks=1                              # Number of tasks per job
 #SBATCH --job-name=General-Job-Submission       # Job submission name
 #SBATCH --output=GENERAL-JOB-SUBMISSION.%j.out  # Output file name with Job ID
