@@ -49,7 +49,7 @@ Now create a job script called `run_hello.sh` that will submit all instances of 
 #SBATCH --nodes=1
 #SBATCH --time 00:02:00
 #SBATCH --qos=testing
-#SBATCH --partition shas
+#SBATCH --partition shas-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name lbPythonDemo
 #SBATCH --output loadbalance.out
