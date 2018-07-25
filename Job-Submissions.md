@@ -30,7 +30,6 @@ Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
     - Replace “job-name” with the name of your job
 
 2. Submit your job
-    - Load the Slurm module with the command `module load slurm/summit` if you are submitting from a login node.  When submitting from a compile node this step is not necessary.
     - Submit the script to Slurm with the command `sbatch test-job.sh`
     - When Slurm accepts the job, it responds with a job ID number
          * Reference the ID number to expedite support if you contact rc-help@colorado.edu about your job
