@@ -169,7 +169,7 @@ __OpenMPI__
 #SBATCH -N 1
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
-#SBATCH --partition shas
+#SBATCH --partition shas-testing
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
 #SBATCH --qos=testing
@@ -187,7 +187,7 @@ __Intel MPI__
 #SBATCH -N 1
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
-#SBATCH --partition shas
+#SBATCH --partition shas-testing
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
 #SBATCH --qos=testing
