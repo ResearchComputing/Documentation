@@ -61,7 +61,7 @@ Though Research Computing provides a variety of template samples for users to ut
 #SBATCH --nodes=1
 #SBATCH --time=00:05:00
 #SBATCH --qos=testing
-#SBATCH --partition=shas
+#SBATCH --partition=shas-testing
 #SBATCH --ntasks=1
 #SBATCH --job-name=test-job
 #SBATCH --output=test-job.%j.out
