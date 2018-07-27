@@ -204,6 +204,7 @@ int main(int argc, char** argv){
     }
     return 0;
 }
+```
 Now let’s define `thread_id` as a private variable. Because we want each task to have a unique
 thread id, using the `private(thread_id)` will create a separate instance of `thread_id` for
 each task.
@@ -219,6 +220,7 @@ int main(int argc, char** argv){
         printf(“Hello from process: %d\n”, omp_get_thread_num());
     }
 }
+```
 Lastly, let’s assign the thread id to our private variable and print out the variable instead of the
 `omp_get_thread_num()` function call:
 ```c++
@@ -381,7 +383,7 @@ int main(int argc, char** argv){
 Next let’s begin our parallel section with `pragma omp parallel` . We will also set `partial_Sum`
 to be a private variable and `total_Sum` to be a shared variable. We shall initialize each variable
 in the parallel section.
-```
+```c++
 #include <stdio.h>
 #include <omp.h>
 
