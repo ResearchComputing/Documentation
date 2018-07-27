@@ -76,7 +76,6 @@ himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk 
 **k2000**: NVIDIA K2000 GPU  
 **P100**: NVIDIA P100 GPU  
 **localraid**: large, fast RAID disk storage in node  
-**rhel6**: RedHat Enterprise Linux version 6 operating system  
 **rhel7**: RedHat Enterprise Linux version 7 operating system  
 
 
