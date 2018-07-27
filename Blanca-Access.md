@@ -46,21 +46,21 @@ To determine which nodes exist on the system, type `scontrol show nodes` to get 
 ## Node Features Table
 Node name     | High-priority QoS | General hardware attributes | Features
 --------------|---------------|-----------------------------|---------
-bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel6
+bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel7
 bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
-bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
-bnode01[12-14] | blanca-mrg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel6
+bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
+bnode01[12-14] | blanca-mrg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
 bnode01[15-16] | blanca-el | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode02[01-36] | blanca-ccn | 16 cores, 3.3 GHz,<br> 64 GB RAM,<br> 1 TB local disk |ivybridge,<br> Quadro,<br> k2000,<br> avx,<br> fdr,<br> rhel7
-bnode0301 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel6
+bnode0301 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode030[2-9] | blanca-sha | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0310 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel6
+bnode0310 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode0311 | blanca-ceae | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bgpu-dhl1 | blanca-dhl | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
 bnode03[12-15] | blanca-pccs | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode0316,<br> bnode0401 | blanca-csdms | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode04[02-03] | blanca-sol | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel6
+himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel7
 
 #### Description of features:
 **westmere-ex**: Intel processor generation  
@@ -130,11 +130,10 @@ Note that the interactive job won't start until the resources that it needs are 
 
 
 ## Important notes:
-1. Because of differences in the "modules" environment on RHEL 6 and RHEL 7, it is currently necessary to prevent any environment settings from being propagated from an RC login node (which uses RHEL 6) to a Blanca compute note that uses RHEL 7.  Use the Slurm directive `#SBATCH --export=NONE` in this case.  You will then have to load any needed modules directly in your batch script.
-2. To see what RHEL 7 modules are available, start an interactive job on an RHEL 7 compute node and use `module avail` or `module spider` on it.  Login nodes can access only RHEL 6 modules.
-3. /home, /projects, and /work (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  All Blanca nodes also have at least 850 GB of scratch space on a local disk, /local/scratch.  For more info on the different RC storage spaces, please review https://www.colorado.edu/rc/resources/filesystemstorage
-4. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
-5. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most Blanca nodes because there is no high-performance low-latency inter-node network except on blanca-ccn.
+1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it. 
+2. /home, /projects, and /work (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  All Blanca nodes also have at least 850 GB of scratch space on a local disk, /local/scratch.  For more info on the different RC storage spaces, please review https://www.colorado.edu/rc/resources/filesystemstorage
+3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
+4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most Blanca nodes because there is no high-performance low-latency inter-node network except on blanca-ccn.
 
 ## Blanca Preemptable QOS 
 *(effective 2018-03-01)* Each partner group has its own high-priority QoS (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
