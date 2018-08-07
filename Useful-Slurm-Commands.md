@@ -135,7 +135,7 @@ maxdiskread | Maximum number of bytes read by all tasks in the job.
 maxdiskwrite| Maximum number of bytes written by all tasks in the job.
 maxrss      | Maximum resident set size of all tasks in the job.
 ncpus       | Amount of allocated CPUs.
-nnodes      | Then number of nodes used in a job.
+nnodes      | The number of nodes used in a job.
 ntasks      | Number of tasks in a job.
 priority    | Slurm priority.
 qos         | Quality of service.
