@@ -19,8 +19,9 @@ module purge
 # load the matlab module
 module load matlab
 
-# The directory where you want the job to run
-cd /projects/$USER/tutorials/parallelization_workshop/new
+# Traverse to the directory that contains any matlab scripts you would like to run
+cd /projects/$USER/target_Directory
 
 # Run matlab without a GUI and ask for all available workers
+# In this example we will run the matlab script "parallel_std.m"
 matlab -nosplash -nodesktop -r "clear; num_workers=$SLURM_NTASKS; parallel_std;"
