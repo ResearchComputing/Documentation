@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes=1                    		        # Number of requested nodes
 #SBATCH --time=0:05:00               		        # Max wall time
-#SBATCH --qos=tesing                            # Specify testing QOS
+#SBATCH --qos=testing                           # Specify testing QOS
 #SBATCH --partition=shas-testing             		# Specify Summit haswell nodes
 #SBATCH --ntasks=24          	 	                # Number of tasks per job
 #SBATCH --job-name=Matlab_Gen_Parallel          # Job submission name
