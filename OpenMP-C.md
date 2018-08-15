@@ -7,7 +7,7 @@
 
 ## Overview
 
-Because Summit is a cluster of CPUs, the most effective way to utilize these resources involve
+Because Summit is a cluster of CPUs, the most effective way to utilize these resources involves
 parallel programming. Probably the simplest way to begin parallel programming involves the
 utilization of OpenMP. OpenMP is a Compiler-side solution for creating code that runs on
 multiple cores/threads. Because OpenMP is built into a compiler, no external libraries need to
