@@ -15,7 +15,6 @@
 - [Logging in with Duo](Logging-in-with-duo)
 - [RMACC Access to Summit](RMACC-Access-to-Summit)
 - [Blanca Access](Blanca-Access)
-- [PetaLibrary](PetaLibrary)
 - [Allocations](the-allocations-process)
 
 </details>  
@@ -31,7 +30,8 @@
 - [File Systems](File-Systems)
 - [RC-Supported Software](The-Module-System)
 - [Compiling Software](Compiling-and-Linking)
-- [Data Transfers](Data-Transfers)  
+- [Data Transfers](Data-Transfers) 
+- [PetaLibrary](PetaLibrary) 
 
 </details>
 
