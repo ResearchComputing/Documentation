@@ -19,7 +19,7 @@ On Globus, file transfers are handled through an interactive web application. Gl
 
 [Sign into Globus Connect](https://www.globus.org/app/login) by selecting "University of Colorado at Boulder" using your CU IdentiKey and password.  
 * If you're with an institution outside of the University of Colorado at Boulder that is registered with Globus, sign in with your appropriate credentials.
-* If you're institution is not registered with Globus, you will need to [make an account](https://www.globusid.org/create) with Globus.
+* If your institution is not registered with Globus, you will need to [make an account](https://www.globusid.org/create) with Globus.
 
 <br>
 
