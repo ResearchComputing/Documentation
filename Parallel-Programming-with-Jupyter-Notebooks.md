@@ -11,7 +11,7 @@ This tutorial demonstrates simple parallel processing examples using the CURC Ju
 ## Prerequisites
 Before you begin, you need
 * an RC account
-* a registered OTP authenticator or Duo credential
+* Duo credentials
 * access to a CU campus network or VPN
 * a web browser
 
