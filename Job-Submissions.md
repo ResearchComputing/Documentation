@@ -129,7 +129,7 @@ export OMP_NUM_THREADS=4
 ./example_omp.exe
 ```
 
-Job script to run a 10 minute long, 2 node, 48 core C++ MPI Job: 
+Job script to run a 10 minute long, 2 node, 24 core C++ MPI Job: 
 
 ```bash
 #!/bin/bash 
@@ -138,7 +138,7 @@ Job script to run a 10 minute long, 2 node, 48 core C++ MPI Job:
 #SBATCH --time=00:07:00
 #SBATCH --qos=testing
 #SBATCH --partition=shas-testing
-#SBATCH --ntasks=24
+#SBATCH --ntasks=12
 #SBATCH --job-name=mpi-cpp-job
 #SBATCH --output=mpi-cpp-job.%j.out
 
