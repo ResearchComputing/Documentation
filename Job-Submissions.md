@@ -135,7 +135,7 @@ Job script to run a 10 minute long, 2 node, 24 core C++ MPI Job:
 #!/bin/bash 
 
 #SBATCH --nodes=2
-#SBATCH --time=00:07:00
+#SBATCH --time=00:10:00
 #SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=12
@@ -146,7 +146,7 @@ module purge
 module load intel
 module load impi
 
-mpirun -np 48 ./example_mpi.exe
+mpirun -np 24 ./example_mpi.exe
 ```
 
 ## Partitions
