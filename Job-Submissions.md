@@ -146,7 +146,7 @@ module purge
 module load intel
 module load impi
 
-mpirun -n 2 -np 12 ./example_mpi.exe
+mpirun -np 24 ./example_mpi.exe
 ```
 
 ## Partitions
