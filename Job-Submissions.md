@@ -157,18 +157,18 @@ These are the partitions available on Research Computing resources.
 
 |Partition|    Description   |# of nodes|cores/node|RAM/core (GB)|Billing weight|Default and Max Walltime|
 |---------|------------------|----------|----------|-------------|--------------|------------------------|
-|   shas  | Haswell (default)|   380    |    24    |    5.25     |       1      |       4H, 24H          |
-|   sgpu  |     GPU-enabled  |    10    |    24    |    5.25     |      2.5     |       4H, 24H          |
-|   smem  |     High-memory  |     5    |    48    |     42      |       6      |       4H, 7D           |
+|   shas  | Haswell (default)|   380    |    24    |    4.48     |       1      |       4H, 24H          |
+|   sgpu  |     GPU-enabled  |    10    |    24    |    4.48     |      2.5     |       4H, 24H          |
+|   smem  |     High-memory  |     5    |    48    |    42.7      |       6      |       4H, 7D           |
 |   sknl  |    Phi (KNL)     |    20    |    68    |    TBD      |      0.1     |       4H, 24H          |
 
 In addition to these partitions, Research Computing has also provides specialized partitions for interactive and test jobs.
 
 |      Partition      |    Description   | Max Nodes |  Max cores |RAM/core (GB)|Billing weight|Default and Max Walltime|
 |---------------------|------------------|-----------|------------|-------------|--------------|------------------------|
-|   shas-testing *     | Haswell (default)|    24     |     24     |    5.25     |       1      |       0.5H, 0.5H       |
-|   shas-interactive  | Haswell (default)|     1     |      1     |    5.25     |       1      |       1H, 4H           |
-|   sgpu-testing      |   GPU-enabled    |     1     |     24     |    5.25     |      2.5     |       0.5H, 0.5H       |
+|   shas-testing *     | Haswell (default)|    24     |     24     |    4.48     |       1      |       0.5H, 0.5H       |
+|   shas-interactive  | Haswell (default)|     1     |      1     |    4.48     |       1      |       1H, 4H           |
+|   sgpu-testing      |   GPU-enabled    |     1     |     24     |    4.48     |      2.5     |       0.5H, 0.5H       |
 |   sknl-testing      |    Phi (KNL)     |     1     |     24     |    TBD      |       1      |       0.5H, 0.5H       |
 
 * The _shas testing_ partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
