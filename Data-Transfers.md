@@ -25,9 +25,9 @@ On Globus, file transfers are handled through an interactive web application. Gl
 
 ![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
-Files can be transferred easily by setting up a Globus endpoint on your local workstation.
+Files can easily be transferred from Summit to your local computer with Globus
 * Research Computing resources are installed with a Globus endpoint. You can connect to this endpoint by clicking the "endpoint" field and searching for the endpoint: `CU Boulder Research Computing`. Log into the end point by using your Research computing credentials.
-* You can easily set up a Globus endpoint by installing [Globus Connect Personal](https://www.globus.org/globus-connect-personal) on your local machine.  
+* Your local computer must also have an endpoint. You can easily set up a Globus endpoint by installing [Globus Connect Personal](https://www.globus.org/globus-connect-personal) on your local machine.  
 
 Using the web app, connect your local workstation endpoint with the Research Computing endpoint and transfer files easily using the Globus GUI.  
 
