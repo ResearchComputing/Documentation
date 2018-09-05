@@ -17,7 +17,7 @@ Watch this [video](https://www.youtube.com/watch?v=UMBD7pSE0qI) or read the text
 
 On Globus, file transfers are handled through an interactive web application. Globus addresses deficiencies in secure copy requests by automating large data transfers, resuming failed transfers, and simplifying the implementation of high performance transfers between computing centers.  
 
-[Sign into Globus Connect](https://www.globus.org/app/login) by selecting "University of Colorado at Boulder" using your CU IdentiKey and password.  
+[Sign into Globus Connect](https://www.globus.org/app/login) by selecting "University of Colorado at Boulder" from the dropdown menu and by logging in using your CU IdentiKey and password.  
 * If you're with an institution outside of the University of Colorado at Boulder that is registered with Globus, sign in with your appropriate credentials.
 * If your institution is not registered with Globus, you will need to [make an account](https://www.globusid.org/create) with Globus.
 
@@ -26,6 +26,7 @@ On Globus, file transfers are handled through an interactive web application. Gl
 ![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 Files can be transferred easily by setting up a Globus endpoint on your local workstation.
+* Research Computing resources are installed with a Globus endpoint. You can connect to this endpoint by clicking the "endpoint" field and searching for the endpoint: `CU Boulder Research Computing`
 * You can easily set up a Globus endpoint by installing [Globus Connect Personal](https://www.globus.org/globus-connect-personal) on your local machine.  
 Using the web app, connect your local workstation endpoint with the Research Computing endpoint and transfer files easily using the Globus GUI.  
 
