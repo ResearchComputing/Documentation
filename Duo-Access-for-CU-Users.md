@@ -21,7 +21,7 @@ If you already have Duo and want information on how to use Duo to login, please 
 4. Test your login process, in this case via ssh to the RC login nodes:
    * Use your CU IdentiKey username `ssh @login.rc.colorado.edu` or `ssh -l login.rc.colorado.edu` and note that "ssh -l" uses a lowercase L.
    *  Enter your IdentiKey password at the password prompt.
-   *  Open the duo app and authorize the login via the Duo app.
+   *  Open the Duo app and authorize the login via the Duo app.
 
 ## Issues to note:
 
