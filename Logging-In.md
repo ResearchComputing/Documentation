@@ -11,7 +11,7 @@ Logging into a Research Computing login node is the first step in accessing reso
 
 - Requirements for logging in:
     + Research Computing account
-    + Either Duo or an OTP device to prove your identity
+    + Duo 2 factor authentication
     + [The PuTTY application](https://www.putty.org/) (if you are a Windows user)  
 
 - Use login nodes only for:
