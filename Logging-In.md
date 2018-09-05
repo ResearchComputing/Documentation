@@ -59,10 +59,10 @@ Watch this [video](https://www.youtube.com/watch?v=2Mnr840YdiE) or read the text
 
 ## Logging in from Linux
 
-1. Open a terminal window from your distribution's application menu and type: `ssh username@login.rc.colorado.edu`, where `username` is your assigned username.
+1. Open a terminal window from your distribution's application menu and type: `ssh username@login.rc.colorado.edu`, where `username` is your research computing username.
 
 2. Enter your password:
-    * If you are logging in using Duo Push, type your Identikey password. For example, if your Identikey password is 123, type `123`. Press enter. You will then receive an authentication request on the Duo app on your phone. Approve the request.
+    * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Logging-in-with-Duo).
 
 ## SSH host keys
