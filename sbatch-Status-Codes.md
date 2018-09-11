@@ -15,6 +15,8 @@ The `squeue` command details a variety of information on an active job’s statu
 | SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
+A full list of these Job State can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
+
 ### Job Reason Codes:
 
 | Reason Code              | Explaination                                                                                |
@@ -34,4 +36,4 @@ The `squeue` command details a variety of information on an active job’s statu
 | `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association have been met; job will run eventually.   |
 | `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; job will run eventually. |
 
-A full list of these Job State and Job Reason Codes can be found [within Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
+A full list of these Job Reason Codes can be found [in Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
