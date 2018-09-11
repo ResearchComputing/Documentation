@@ -1,10 +1,14 @@
-## `squeue` Job State and Reason Codes:
-
 ## Table of Contents
+
+- [Overview](#squeue-job-state-and-reason-codes)
+- [Job State Codes](#job-state-codes)
+- [Job Reason Codes](#job-reason-codes)
+
+## `squeue` Job State and Reason Codes
 
 The `squeue` command details a variety of information on an active job’s status including reasons why a job has a particular status. The following tables outline a variety of job state and reason codes you may encounter when using squeue to check on your jobs. Job state codes describe a job’s current state in queue (e.g. pending, completed). Job reason codes describe the reason why the job is in its current state.
 
-### Job State Codes:
+### Job State Codes
 
 | Status        | Code  | Explaination                                                           |
 | ------------- | :---: | ---------------------------------------------------------------------- |
@@ -19,7 +23,7 @@ The `squeue` command details a variety of information on an active job’s statu
 
 A full list of these Job State can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
 
-### Job Reason Codes:
+### Job Reason Codes
 
 | Reason Code              | Explaination                                                                                |
 | ------------------------ | ------------------------------------------------------------------------------------------- |
