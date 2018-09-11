@@ -21,7 +21,7 @@ The `squeue` command details a variety of information on an active job’s statu
 | SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
-A full list of these Job State can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
+A full list of these Job State codes can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
 
 ### Job Reason Codes
 
