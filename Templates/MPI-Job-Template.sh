@@ -12,7 +12,7 @@
 # Updated: 25 July 2018
 # Purpose: This script submits a general MPI program to the Slurm job scheduler.
 
-# purge all exisitng modules
+# purge all existing modules
 module purge
 
 # load any modules needed to run your program
