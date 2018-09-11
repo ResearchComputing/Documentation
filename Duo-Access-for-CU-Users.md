@@ -15,6 +15,7 @@ If you already have Duo and want information on how to use Duo to login, please 
 ## Duo Instructions
 
 1. Open your duo invitation email (from duo security or duo.com) on a desktop/laptop computer
+   * **If you didn't receive an invitation or your invitation has expired, then contact rc-help@colorado.edu for a new invitation.**
 2. Login with your CU identikey and follow the instructions to setup 
 3. Install the Duo Mobile app and provision for Duo Push
          Note: If you want to use the app do not request a phone call for authentication!
