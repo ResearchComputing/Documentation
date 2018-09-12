@@ -45,6 +45,7 @@
 - [The sbatch Command](the-sbatch-command)
 - [Job Submission](Job-Submissions)
 - [Useful Slurm Commands](useful-slurm-commands)
+- [squeue Status Codes](squeue-status-codes)
 - [Interactive Jobs](Interactive-Jobs)
 
 </details>
