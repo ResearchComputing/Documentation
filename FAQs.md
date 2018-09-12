@@ -10,9 +10,10 @@ See our documentation [homepage](https://github.com/ResearchComputing/Research-C
 6. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
 7. [Why do I get the following 'Invalid Partition' error when I submit my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-submit-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
-8. [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
+8. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
+9. [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
-9. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
+10. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
 
 ## I have a new phone. How do I move my Duo onto it?
 
@@ -87,6 +88,14 @@ If you receive this message, the following solutions are available: 1) submit a 
 ## Why do I get an 'Invalid Partition' error when I try to submit a job?
 
 This error usually means users do not have an allocation that would provide the service units (SUs) required to submit a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing, and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
+
+## How can I check what allocations I belong to?
+
+You can check the allocations you belong to with the `sacctmgr` command. Simply type:
+```bash
+sacctmgr -p show associations user=$USER
+```
+...from a login or compile node. This will print out an assortment of information including allocations and QoS available to you. For more information on sacctmgr, [check out the Slurm's documentation](https://slurm.schedmd.com/sacctmgr.html)
 
 ## Why do I get an 'LMOD' error when I try to load Slurm?
 
