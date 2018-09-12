@@ -95,7 +95,7 @@
     + [C/C++](OpenMP-C)
     + [Fortran](OpenMP-Fortran)
 - [Parallel Programming with Jupyter Notebooks](Parallel-Programming-with-Jupyter-Notebooks)
-- [Facilities Statement](Facilities-quipment-and-other-resources)
+- [Facilities Statement](facilities-equipment-and-other-resources)
 
 </details>
 
