@@ -61,7 +61,7 @@ module load impi
 module load python
 module load loadbalance
 
-mpirun lb cmd_file
+mpirun lb lb_cmd_file
 ```
 
 Submitting this script via sbatch will run the commands we stored in lb_cmd_file in parallel. A successful job will result in output that looks something like this:
