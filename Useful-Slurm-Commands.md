@@ -97,9 +97,9 @@ $ sacct --jobs=your_job-id
 $ sacct --user=your_rc-username
 ```
 
-...to pull up accounting information on jobs ran at an earlier time.
+...to pull up accounting information on jobs run at an earlier time.
 
-By default, sacct will only pull up jobs that were ran on the current day. We can use the `--starttime` flag to tell the command to look beyond its short-term cache of jobs.
+By default, sacct will only pull up jobs that were run on the current day. We can use the `--starttime` flag to tell the command to look beyond its short-term cache of jobs.
 
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD
