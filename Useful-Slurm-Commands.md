@@ -23,7 +23,7 @@ We can output non-abbreviated information with the `--long` flag. This flag will
 $ squeue --user=your_rc-username --long
 ```
 
-The squeue command also provides users with a means to calculate a job's estimated start time by adding the `--start` flag to our command. This will append Slurm's estimated start time for each job in our output information. (Note: The start time provided by this command can be inaccurate. This is because the time calculated is based off of jobs queued or running in the system. If a job with a higher priority is queued after the command is run, you job may be delayed.)
+The squeue command also provides users with a means to calculate a job's estimated start time by adding the `--start` flag to our command. This will append Slurm's estimated start time for each job in our output information. (Note: The start time provided by this command can be inaccurate. This is because the time calculated is based on jobs queued or running in the system. If a job with a higher priority is queued after the command is run, your job may be delayed.)
 
 ```bash
 $ squeue --user=your_rc-username --start
@@ -76,7 +76,7 @@ maxrss      | Maximum number of bytes read by all tasks in the job.
 maxvsize    | Maximum number of bytes written by all tasks in the job.
 ntasks      | Number of tasks in a job.
 
-For an example, lets print out a job's average job id, cpu time, max rss, and number of tasks. We can do this by typing out the command:
+For an example, let's print out a job's average job id, cpu time, max rss, and number of tasks. We can do this by typing out the command:
 
 ```bash
 sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
@@ -85,7 +85,7 @@ sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
 A full list of variables that specify data handled by sstat can be found with the `--helpformat` flag or by [visiting the slurm page on sstat](https://slurm.schedmd.com/sstat.html).
 
 ## Analyzing past jobs with `sacct`
-The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously ran on the system instead of currently running jobs. We can use a job's id...
+The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously run on the system instead of currently running jobs. We can use a job's id...
 
 ```bash
 $ sacct --jobs=your_job-id
@@ -143,13 +143,13 @@ reqcpu      | Required number of CPUs
 reqmem      | Required amount of memory for a job.
 user        | Username of the person who ran the job.
 
-As an example, suppose you want to find information jobs that were ran on March 12, 2018. You want to show information regarding the job name, the number of nodes used in the job, the number of cpus, the maxrss, and the elapsed time. Your command would look like this:
+As an example, suppose you want to find information about jobs that were run on March 12, 2018. You want to show information regarding the job name, the number of nodes used in the job, the number of cpus, the maxrss, and the elapsed time. Your command would look like this:
 
 ```bash
 $ sacct --jobs=your_job-id --starttime=2018-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
 ```
 
-As another example, suppose you would like to pull up information on jobs that were ran on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your command would look like this:
+As another example, suppose you would like to pull up information on jobs that were run on February 21, 2018. You would like information on job ID, job name, QoS, Number of Nodes used, Number of CPUs used, Maximum RSS, CPU time, Average CPU time, and elapsed time. Your command would look like this:
 
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=2018-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
