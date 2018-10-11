@@ -1,6 +1,5 @@
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 2
 
    index
    faq
