@@ -4,7 +4,7 @@
 
 Documentation covering the use of Research Computing resources.
 
-- [Logging In](Logging-In)
+- [Logging In](access/login.html)
 - [Research Computing Filesystems](File-systems)
 - [Compiling Software](compiling-and-linking)
 - [Job submission](Job-Submissions)
