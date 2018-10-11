@@ -1,10 +1,4 @@
-## Table of Contents
-
-- [Overview](#overview)
-- [Duo Instructions](#duo-instructions)
-- [Issues to Note](#issues-to-note)
-
-## Overview
+## Duo Access for CU Users
 
 - Once you have a Research Computing account, you will need to set up two-factor authentication using Duo.
 - Read below for instructions on how to set this up with Research Computing
@@ -12,7 +6,7 @@
 If you already have Duo and want information on how to use Duo to login, please visit this [link](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Logging-in-with-duo)
 
 
-## Duo Instructions
+### Duo Instructions
 
 1. Open your duo invitation email (from duo security or duo.com) on a desktop/laptop computer
    * **If you didn't receive an invitation or your invitation has expired, then contact rc-help@colorado.edu for a new invitation.**
@@ -24,7 +18,7 @@ If you already have Duo and want information on how to use Duo to login, please 
    *  Enter your IdentiKey password at the password prompt.
    *  Open the Duo app and authorize the login via the Duo app.
 
-## Issues to note:
+### Issues to note
 
 * Duo Invite email may go to your Spam folder.
 * Do not request a phone call instead of Push for authentication.
