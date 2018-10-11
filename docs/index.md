@@ -9,7 +9,7 @@ Documentation covering the use of Research Computing resources.
 - [Compiling Software](compiling-and-linking)
 - [Job submission](Job-Submissions)
 - [The Module System](The-Module-System)
-- [FAQs](faq)
+- [Frequently Asked Questions (FAQ)](faq.html)
 
 ---
 
