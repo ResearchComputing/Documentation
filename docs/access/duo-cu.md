@@ -18,6 +18,7 @@ If you already have Duo and want information on how to use Duo to login, please 
    *  Enter your IdentiKey password at the password prompt.
    *  Open the Duo app and authorize the login via the Duo app.
 
+
 ### Issues to note
 
 * Duo Invite email may go to your Spam folder.
@@ -25,4 +26,3 @@ If you already have Duo and want information on how to use Duo to login, please 
 * Each login will need to be approved and confirmed (two presses) through the duo app.
 * Duo accounts are purged if unused for 3-6 months.
 * If you need additional help or Duo does not work for you please contact us at rc-help@colorado.edu
-
