@@ -1,49 +1,42 @@
-## Table of Contents
+## Blanca
 
-- [Overview](#overview)
-- [Blanca Quick-Start](#blanca-quick-start)
-- [Job Scheduling](#job-scheduling)
-- [QoS Description](#qos)
-- [Node and QOS Features](#node-qos-features)
-- [Node Features Table](#node-features-table)
-- [Examples](#examples)
-- [Important Notes](#important-notes)
-- [Preemptable QoS](#blanca-preemptable-qos)
-
-
-
-## Overview
-CU Research Computing operates a shared “condo” compute cluster, named Blanca, which consists of nodes owned by individual research groups or departments.  Condo partners get significantly prioritized access on nodes that they own and can run jobs on any nodes that are not currently in use by other partners. 
+CU Research Computing operates a shared “condo” compute cluster, named Blanca, which consists of nodes owned by individual research groups or departments.  Condo partners get significantly prioritized access on nodes that they own and can run jobs on any nodes that are not currently in use by other partners.
 
 An allocation of CPU time is not needed in order to run on Blanca.
 
 If you would like to purchase a Blanca node, please visit the Research Computing [website](https://www.colorado.edu/rc/resources/blanca) for more details.
 
-## Blanca Quick-Start
-1. If your group is a Blanca partner, ask your PI or PoC to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.  
+### Blanca Quick-Start
+
+1. If your group is a Blanca partner, ask your PI or PoC to send an email to rc-help@colorado.edu requesting access for you to their high-priority queue.
 2. From a login node, run "module load slurm/blanca" to access the Slurm job scheduler instance for Blanca.
 3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
 5. Read the rest of this page thoroughly.
 
-## Job Scheduling
-All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler.  Each partner group has its own high-priority QoS (analogous to a queue) for jobs that will run on nodes that it has purchased.  High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them.  High-priority jobs can run for a maximum wall time of 7 days.  All partners also have access to a low-priority preemptable QoS that can run on any Blanca nodes that are not already in use by their owners.  Low-priority jobs have a maximum wall time of 24 hours. 
+
+### Job Scheduling
+
+All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler.  Each partner group has its own high-priority QoS (analogous to a queue) for jobs that will run on nodes that it has purchased.  High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them.  High-priority jobs can run for a maximum wall time of 7 days.  All partners also have access to a low-priority preemptable QoS that can run on any Blanca nodes that are not already in use by their owners.  Low-priority jobs have a maximum wall time of 24 hours.
 
 Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: “module load slurm/blanca”.
 
 More details about how to use Slurm can be found [here](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Job-Submissions).
 
-## QoS
+### QoS
+
 Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `blanca-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `preemptable`.
 
 If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to rc-help@colorado.edu.  You are only allowed to use a high-priority QoS if you have specifically been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
-## Node-QoS-Features
+### Node-QoS-Features
+
 Since not all Blanca nodes are identical, you can include node features in your job requests to help the scheduler determine which nodes are appropriate for your jobs to run on when you are using the preemptable QoS.
 
 To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
 
-## Node Features Table
+### Node Features Table
+
 Node name     | High-priority QoS | General hardware attributes | Features
 --------------|---------------|-----------------------------|---------
 bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel7
@@ -62,24 +55,25 @@ bnode0316,<br> bnode0401 | blanca-csdms | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br>
 bnode04[02-03] | blanca-sol | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel7
 
-#### Description of features:
-**westmere-ex**: Intel processor generation  
-**sandybridge**: Intel processor generation  
-**ivybridge**: Intel processor generation  
-**haswell**: Intel processor generation  
-**broadwell**: Intel processor generation  
-**avx**: AVX processor instruction set  
-**avx2**: AVX2 processor instruction set  
-**fdr**: InfiniBand network generation  
-**Quadro**: NVIDIA GPU generation  
-**Tesla**: NVIDIA GPU generation  
-**k2000**: NVIDIA K2000 GPU  
-**P100**: NVIDIA P100 GPU  
-**localraid**: large, fast RAID disk storage in node  
-**rhel7**: RedHat Enterprise Linux version 7 operating system  
+### Description of features
+
+**westmere-ex**: Intel processor generation
+**sandybridge**: Intel processor generation
+**ivybridge**: Intel processor generation
+**haswell**: Intel processor generation
+**broadwell**: Intel processor generation
+**avx**: AVX processor instruction set
+**avx2**: AVX2 processor instruction set
+**fdr**: InfiniBand network generation
+**Quadro**: NVIDIA GPU generation
+**Tesla**: NVIDIA GPU generation
+**k2000**: NVIDIA K2000 GPU
+**P100**: NVIDIA P100 GPU
+**localraid**: large, fast RAID disk storage in node
+**rhel7**: RedHat Enterprise Linux version 7 operating system
 
 
-## Examples
+### Examples
 
 Here are examples of Slurm directives that can be used in your batch scripts in order to meet certain job requirements.  Note that the "constraint" directive constrains a job to run only on nodes with the corresponding feature.
 
@@ -120,28 +114,29 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --constraint="avx|avx2"
 ```
 
-5. To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line: 
+5. To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:
 ```bash
 sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
 ```
 Note that the interactive job won't start until the resources that it needs are available, so you may not get a command prompt on your assigned compute node immediately.
 
 
+### Important notes
 
-## Important notes:
-1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it. 
+1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
 2. /home, /projects, and /work (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  All Blanca nodes also have at least 850 GB of scratch space on a local disk, /local/scratch.  For more info on the different RC storage spaces, please review https://www.colorado.edu/rc/resources/filesystemstorage
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most Blanca nodes because there is no high-performance low-latency inter-node network except on blanca-ccn.
 
-## Blanca Preemptable QOS 
+### Blanca Preemptable QOS
+
 *(effective 2018-03-01)* Each partner group has its own high-priority QoS (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
 #### Usage
 To specify the preemptable QoS in a job script:
 
-```bash 
-#SBATCH --QoS=preemptable 
+```bash
+#SBATCH --QoS=preemptable
 ```
 
 To specify the preemptable QoS for an interactive job:
@@ -201,7 +196,7 @@ module load python
 python myscript.py
 ```
 
-Same as Example 1, but specify desired node features, in this case the avx2 instruction set and Redhat V7 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node). 
+Same as Example 1, but specify desired node features, in this case the avx2 instruction set and Redhat V7 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node).
 
 ```bash
 #!/bin/bash
