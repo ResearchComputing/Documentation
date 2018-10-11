@@ -1,6 +1,6 @@
 from recommonmark.parser import CommonMarkParser
 
-project = "CURC Documentation"
+project = "University of Colorado Boulder\nResearch Computing"
 
 source_parsers = {
     '.md': CommonMarkParser,
