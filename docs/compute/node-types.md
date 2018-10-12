@@ -6,7 +6,7 @@ relatively common for other HPC centers. We will discuss each node
 type and its intended use below.
 
 
-## Login nodes
+### Login nodes
 
 * Four virtual machines
 * This is where you are when you log in
@@ -16,7 +16,7 @@ type and its intended use below.
 * To submit jobs from these nodes, will first need to run the command `module load slurm/summit`
 
 
-## Compile nodes
+### Compile nodes
 
 * Where you compile code, such as Fortran, C, C++
 * No heavy computation
@@ -24,7 +24,7 @@ type and its intended use below.
 * Access these nodes by typing `ssh scompile` from a login node
 
 
-## Compute nodes
+### Compute nodes
 
 This is where jobs that are submitted through the scheduler run.
 
