@@ -12,11 +12,11 @@ Documentation covering the use of Research Computing resources.
 
 ----
 
-* `Research Computing <https://www.colorado.edu/rc>`
+* Research Computing <https://www.colorado.edu/rc>
 
 
 .. toctree::
-   :maxdepth: 0
+   :maxdepth: 1
 
    faq
 
