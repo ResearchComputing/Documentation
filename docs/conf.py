@@ -1,6 +1,6 @@
 from recommonmark.parser import CommonMarkParser
 
-project = "University of Colorado Boulder\nResearch Computing"
+project = "Research Computing\nUniversity of Colorado Boulder"
 
 master_doc = 'index'
 
