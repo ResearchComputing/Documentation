@@ -14,3 +14,14 @@
    access/rmacc
    access/blanca
    access/allocations
+
+.. toctree::
+   :maxdepth: 2
+   :caption: The Compute Environment
+
+   compute/node-types
+   compute/filesystems
+   compute/modules
+   compute/compiling
+   compute/data-transfer
+   compute/petalibrary
