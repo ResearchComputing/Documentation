@@ -1,56 +1,59 @@
-## Table of Contents
-- [Overview](#overview)
-- [Setup and “Hello, World”](#setup-and-hello-world)
-- [MPI Barriers and Synchronization](#mpi-barriers-and-synchronization)
-- [Message Passing](#message-passing)
-- [Group Operators: Scatter and Gather](#group-operators-scatter-and-gather)
+## Using MPI with C
 
-## Overview
-Parallel programs enable users to fully utilize the multi-node structure of supercomputing
-clusters. Message Passing Interface (MPI) is a standard used to allow several different
-processors on a cluster to communicate with each other. In this tutorial we will be using the Intel
-C++ Compiler, GCC, IntelMPI, and OpenMPI to create a multiprocessor ‘hello world’ program in
-C++.  This tutorial assumes the user has experience in both the Linux terminal and C++.
+Parallel programs enable users to fully utilize the multi-node
+structure of supercomputing clusters. Message Passing Interface (MPI)
+is a standard used to allow several different processors on a cluster
+to communicate with each other. In this tutorial we will be using the
+Intel C++ Compiler, GCC, IntelMPI, and OpenMPI to create a
+multiprocessor ‘hello world’ program in C++.  This tutorial assumes
+the user has experience in both the Linux terminal and C++.
 
 __Resources:__
 
-http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html  
-http://mpitutorial.com/tutorials/  
-http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml  
-https://computing.llnl.gov/tutorials/mpi/  
+http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html
+http://mpitutorial.com/tutorials/
+http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml
+https://computing.llnl.gov/tutorials/mpi/
 
-## Setup and “Hello, World”
 
-Begin by logging into the cluster and using ssh to log in to a compile node. This can be done
-with the command:
+### Setup and “Hello, World”
+
+Begin by logging into the cluster and using ssh to log in to a compile
+node. This can be done with the command:
 
 ```bash
 ssh scompile
 ```
 
-Next we must load MPI into our environment. Begin by loading in your choice of C++ compiler
-and its corresponding MPI library. Use the following commands if using the GNU C++ compiler:
+Next we must load MPI into our environment. Begin by loading in your
+choice of C++ compiler and its corresponding MPI library. Use the
+following commands if using the GNU C++ compiler:
 
 __GNU C++ Compiler__
+
 ```bash
 module load gcc
 module load openmpi
 ```
 
-Or, use the following commands if you prefer to use the Intel C++ compiler:
+Or, use the following commands if you prefer to use the Intel C++
+compiler:
 
 __Intel C++ Compiler__
+
 ```bash
 module load intel
 module load impi
 ```
 
-This should prepare your environment with all the necessary tools to compile and run your MPI
-code. Let’s now begin to construct our C++ file. In this tutorial, we will name our code file:
+This should prepare your environment with all the necessary tools to
+compile and run your MPI code. Let’s now begin to construct our C++
+file. In this tutorial, we will name our code file:
 `hello_world_mpi.cpp`
 
-Open `hello_world_mpi.cpp` and begin by including the C standard library `<stdio.h>` and the
-MPI library `<mpi.h>` , and by constructing the main function of the C++ code:
+Open `hello_world_mpi.cpp` and begin by including the C standard
+library `<stdio.h>` and the MPI library `<mpi.h>` , and by
+constructing the main function of the C++ code:
 
 ```c++
 #include <stdio.h>
@@ -61,30 +64,33 @@ int main(int argc, char** argv){
 }
 ```
 
-Now let’s set up several MPI directives to parallelize our code. In this ‘Hello World’ tutorial we’ll
-be utilizing the following four directives:
+Now let’s set up several MPI directives to parallelize our code. In
+this ‘Hello World’ tutorial we’ll be utilizing the following four
+directives:
 
-*MPI_Init():* 
+*MPI_Init():*
 > This function initializes the MPI environment. It takes in the addresses of the C++
 > command line arguments argc and argv.
 
-*MPI_Comm_size():* 
+*MPI_Comm_size():*
 > This function returns the total size of the environment via quantity of
 > processes. The function takes in the MPI environment, and the memory address of an
 > integer variable.
 
-*MPI_Comm_rank():* 
+*MPI_Comm_rank():*
 > This function returns the process id of the processor that called the
 > function. The function takes in the MPI environment, and the memory address of an
 > integer variable.
 
-*MPI_Finalize():* 
+*MPI_Finalize():*
 > This function cleans up the MPI environment and ends MPI communications.
 
-These four directives should be enough to get our parallel 'hello world' running. We will begin by
-creating `two variables`, `process_Rank`, and `size_Of_Cluster`, to store an identifier for each of
-the parallel processes and the number of processes running in the cluster respectively. We will
-also implement the `MPI_Init` function which will initialize the mpi communicator:
+These four directives should be enough to get our parallel 'hello
+world' running. We will begin by creating `two variables`,
+`process_Rank`, and `size_Of_Cluster`, to store an identifier for each
+of the parallel processes and the number of processes running in the
+cluster respectively. We will also implement the `MPI_Init` function
+which will initialize the mpi communicator:
 
 ```c++
 #include <stdio.h>
@@ -92,16 +98,17 @@ also implement the `MPI_Init` function which will initialize the mpi communicato
 
 int main(int argc, char** argv){
     int process_rank, size_Of_Cluster
-    
+
     MPI_Init(&argc, &argv);
-    
+
     return 0;
 }
 ```
 
-Let's now obtain some information about our cluster of processors and print the information out
-for the user. We will use the functions `MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the
-count of processes and the rank of a process respectively:
+Let's now obtain some information about our cluster of processors and
+print the information out for the user. We will use the functions
+`MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the count of
+processes and the rank of a process respectively:
 
 ```c++
 #include <stdio.h>
@@ -109,18 +116,19 @@ count of processes and the rank of a process respectively:
 
 int main(int argc, char** argv){
     int process_Rank, size_Of_Cluster;
-    
+
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     printf("Hello World from process %d of %d\n", process_Rank, size_Of_Cluster);
-    
+
     return 0;
 }
 ```
 
 Lastly let's close the environment using `MPI_Finalize()`:
+
 ```c++
 #include <stdio.h>
 #include <mpi.h>
@@ -138,32 +146,40 @@ int main(int argc, char** argv){
     return 0;
 }
 ```
-Now the code is complete and ready to be compiled. Because this is an MPI program, we have
-to use a specialized compiler. Be sure to use the correct command based off of what compiler
-you have loaded.
+
+Now the code is complete and ready to be compiled. Because this is an
+MPI program, we have to use a specialized compiler. Be sure to use the
+correct command based off of what compiler you have loaded.
+
 __OpenMPI__
+
 ```bash
 mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
 ```
 
 __Intel MPI__
+
 ```bash
 mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
 ```
 
-This will produce an executable we can submit to Summit as a job.
-In order to execute MPI compiled code, a special command must be used:
+This will produce an executable we can submit to Summit as a job.  In
+order to execute MPI compiled code, a special command must be used:
+
 ```bash
 mpirun -np 4 ./hello_world_mpi.exe
 ```
-The flag -np specifies the number of processor that are to be utilized in execution of the
-program.
 
-In your job submission script, load the same compiler and OpenMPI choices you used above to
-compile the program, and submit the job with slurm to run the executable. Your job submission
-script should look something like this:
+The flag -np specifies the number of processor that are to be utilized
+in execution of the program.
+
+In your job submission script, load the same compiler and OpenMPI
+choices you used above to compile the program, and submit the job with
+slurm to run the executable. Your job submission script should look
+something like this:
 
 __OpenMPI__
+
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -181,7 +197,9 @@ module load openmpi
 
 mpirun -np 4 ./hello_world_mpi.exe
 ```
+
 __Intel MPI__
+
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -200,31 +218,37 @@ module load impi
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-It is important to note that on Summit, there is a total of 24 cores per node. For applications that
-require more than 24 processes, you will need to request multiple nodes in your job submission.
-Our output file should look something like this:
+It is important to note that on Summit, there is a total of 24 cores
+per node. For applications that require more than 24 processes, you
+will need to request multiple nodes in your job submission.  Our
+output file should look something like this:
+
 ```
 Hello World from process 3 of 4
 Hello World from process 2 of 4
 Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
+
 Ref: http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html
 
-## MPI Barriers and Synchronization
 
-Like many other parallel programming utilities, synchronization is an essential tool in thread
-safety and ensuring certain sections of code are handled at certain points. `MPI_Barrier` is a
-process lock that holds each process at a certain line of code until all processes have reached
-that line in code. `MPI_Barrier` can be called as such:
+### MPI Barriers and Synchronization
+
+Like many other parallel programming utilities, synchronization is an
+essential tool in thread safety and ensuring certain sections of code
+are handled at certain points. `MPI_Barrier` is a process lock that
+holds each process at a certain line of code until all processes have
+reached that line in code. `MPI_Barrier` can be called as such:
 
 ```c++
 MPI_Barrier(MPI_Comm comm);
 ```
 
-To get a handle on barriers, let’s modify our "Hello World" program so that it prints out each
-process in order of thread id. Starting with our "Hello World" code from the previous section,
-begin by nesting our print statement in a loop:
+To get a handle on barriers, let’s modify our "Hello World" program so
+that it prints out each process in order of thread id. Starting with
+our "Hello World" code from the previous section, begin by nesting our
+print statement in a loop:
 
 ```c++
 #include <stdio.h>
@@ -236,18 +260,18 @@ int main(int argc, char** argv){
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     for(int i = 0, i < size_Of_Cluster, i++){
         printf("Hello World from process %d of %d\n", process_Rank, size_Of_Cluster);
     }
-    
+
     MPI_Finalize();
     return 0;
 }
-
 ```
-Next, let’s implement a conditional statement in the loop to print only when the loop iteration
-matches the process rank.
+
+Next, let’s implement a conditional statement in the loop to print
+only when the loop iteration matches the process rank.
 
 ```c++
 #include <stdio.h>
@@ -255,11 +279,11 @@ matches the process rank.
 
 int main(int argc, char** argv){
     int process_Rank, size_Of_Cluster;
-    
+
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     for(int i = 0, i < size_Of_Cluster, i++){
         if(i == process_Rank){
             printf("Hello World from process %d of %d\n", process_Rank, size_Of_Cluster);
@@ -270,8 +294,8 @@ int main(int argc, char** argv){
 }
 ```
 
-Lastly, implement the barrier function in the loop. This will ensure that all processes are
-synchronized when passing through the loop.
+Lastly, implement the barrier function in the loop. This will ensure
+that all processes are synchronized when passing through the loop.
 
 ```c++
 #include <stdio.h>
@@ -279,18 +303,18 @@ synchronized when passing through the loop.
 
 int main(int argc, char** argv){
     int process_Rank, size_Of_Cluster;
-    
+
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     for(int i = 0, i < size_Of_Cluster, i++){
         if(i == process_Rank){
             printf("Hello World from process %d of %d\n", process_Rank, size_Of_Cluster);
         }
         MPI_Barrier(MPI_COMM_WORLD);
     }
-    
+
     MPI_Finalize();
     return 0;
 }
@@ -305,13 +329,16 @@ Hello World from process 2 of 4
 Hello World from process 3 of 4
 ```
 
-## Message Passing
 
-Message passing is the primary utility in the MPI application interface that allows for processes
-to communicate with each other. In this tutorial, we will learn the basics of message passing
-between 2 processes.
+### Message Passing
 
-Message passing in MPI is handled by the corresponding functions and their arguments:
+Message passing is the primary utility in the MPI application
+interface that allows for processes to communicate with each other. In
+this tutorial, we will learn the basics of message passing between 2
+processes.
+
+Message passing in MPI is handled by the corresponding functions and
+their arguments:
 
 ```c++
 MPI_Send(void* message, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm, communicator);
@@ -329,6 +356,7 @@ int dest;               //Rank of destination process.
 int tag;                //Message tag.
 MPI_Comm comm;          //The MPI Communicator handle.
 ```
+
 *MPI_Recv*
 ```c++
 void* message;          //Address to the message you are receiving.
@@ -342,11 +370,13 @@ MPI_Status* status;     //Status object.
 
 Let’s implement message passing in an example:
 
-### Example
+#### Example
 
-We will create a two-process process that will pass the number 42 from one process to another.
-We will use our “Hello World” program as a starting point for this program. Let’s begin by
-creating a variable to store some information.
+We will create a two-process process that will pass the number 42 from
+one process to another.  We will use our “Hello World” program as a
+starting point for this program. Let’s begin by creating a variable to
+store some information.
+
 ```c++
 #include <stdio.h>
 #include <mpi.h>
@@ -357,26 +387,27 @@ int main(int argc, char** argv){
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     MPI_Finalize();
     return 0;
 }
 ```
 
-Now create `if` and `else if` conditionals that specify appropriate process to call `MPI_Send()` and
-`MPI_Recv()` functions. In this example we want process 1 to send out a message containing the
-integer 42 to process 2.
+Now create `if` and `else if` conditionals that specify appropriate
+process to call `MPI_Send()` and `MPI_Recv()` functions. In this
+example we want process 1 to send out a message containing the integer
+42 to process 2.
 
 ```c++
 #include <stdio.h>
 #include <mpi.h>
 int main(int argc, char** argv){
     int process_Rank, size_Of_Cluster, message_Item;
-    
+
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     if(process_Rank == 0){
         message_Item = 42;
         printf(“Sending message containing: %d\n”, message_Item)
@@ -411,6 +442,7 @@ MPI_Recv(
     MPI_STATUS_IGNORE   //MPI Status Object
 );
 ```
+
 Lets implement these functions in our code:
 
 ```c++
@@ -429,29 +461,32 @@ int main(int argc, char** argv) {
         MPI_Send(&message_Item, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);
         printf("Message Sent: %d\n", message_Item);
     }
-    
+
     else if(process_Rank == 1){
         MPI_Recv(&message_Item, 1, MPI_INT, 0, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         printf("Message Received: %d\n", message_Item);
     }
-    
+
     MPI_Finalize();
     return 0;
 }
 ```
 
-Compiling and submitting our code with 2 processes will result in the following output:
+Compiling and submitting our code with 2 processes will result in the
+following output:
+
 ```
 Message Sent: 42
 Message Received: 42
 ```
 
-## Group Operators: Scatter and Gather
+### Group Operators: Scatter and Gather
 
-Group operators are very useful for MPI. They allow for swaths of data to be distributed from a
-root process to all other available processes, or data from all processes can be collected at one
-process. These operators can eliminate the need for a surprising amount of boilerplate code via
-the use of two functions:
+Group operators are very useful for MPI. They allow for swaths of data
+to be distributed from a root process to all other available
+processes, or data from all processes can be collected at one
+process. These operators can eliminate the need for a surprising
+amount of boilerplate code via the use of two functions:
 
 __MPI_Scatter__:
 ```c++
@@ -476,28 +511,36 @@ MPI_Datatype recv_Type; //MPI Datatype of the data that will be received.
 int root_Process;       //The rank of the process rank that will gather the information.
 MPI_Comm comm;          //The MPI_Communicator.
 ```
-In order to get a better grasp on these functions, let’s go ahead and create a program that will
-utilize the scatter function. Note that the gather function (not shown in the example) works
-similarly, and is essentially the converse of the scatter function. Further examples which utilize
-the gather function can be found in the MPI tutorials listed as resources at the beginning of this
-document.
 
-### Example
+In order to get a better grasp on these functions, let’s go ahead and
+create a program that will utilize the scatter function. Note that the
+gather function (not shown in the example) works similarly, and is
+essentially the converse of the scatter function. Further examples
+which utilize the gather function can be found in the MPI tutorials
+listed as resources at the beginning of this document.
 
-We will create a program that scatters one element of a data array to each process. Specifically,
-this code will scatter the four elements of an array to four different processes. We will start with
-a basic C++ main function along with variables to store process rank and number of processes.
+#### Example
+
+We will create a program that scatters one element of a data array to
+each process. Specifically, this code will scatter the four elements
+of an array to four different processes. We will start with a basic
+C++ main function along with variables to store process rank and
+number of processes.
+
 ```c++
 #include <stdio.h>
 #include <mpi.h>
 
 int main(int argc, char** argv){
     int process_Rank, size_Of_Comm;
-    
+
     return 0;
 }
 ```
-Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size` , `MPI_Comm_rank` , and
+
+Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
+, `MPI_Comm_rank` , and
+
 `MPI_Finaize`:
 ```c++
 #include <stdio.h>
@@ -515,30 +558,32 @@ int main(int argc, char** argv){
 }
 ```
 
-Next let’s generate an array named `distro_Array` to store four numbers. We will also create a
-variable called `scattered_Data` that we shall scatter the data to.
+Next let’s generate an array named `distro_Array` to store four
+numbers. We will also create a variable called `scattered_Data` that
+we shall scatter the data to.
 
 ```c++
 #include <stdio.h>
 #include <mpi.h>
 
 int main(int argc, char** argv){
-    
+
     int process_Rank, size_Of_Comm;
     int distro_Array[4] = {39, 72, 129, 42};
     int scattered_Data;
-    
+
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Comm);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
-    
+
     MPI_Finalize();
     return 0;
 }
 ```
 
-Now we will begin the use of group operators. We will use the operator scatter to distribute
-`distro_Array` into `scattered_Data` . Let’s take a look at the parameters we will use in this function:
+Now we will begin the use of group operators. We will use the operator
+scatter to distribute `distro_Array` into `scattered_Data` . Let’s
+take a look at the parameters we will use in this function:
 
 ```c++
 MPI_Scatter(
@@ -553,7 +598,8 @@ MPI_Scatter(
 )
 ```
 
-Let’s see this implemented in code. We will also write a print statement following the scatter call:
+Let’s see this implemented in code. We will also write a print
+statement following the scatter call:
 
 ```c++
 #include <stdio.h>
@@ -576,8 +622,9 @@ return 0;
 }
 ```
 
-Running this code will print out the four numbers in the distro array as four separate numbers
-each from different processors (note the order of ranks isn’t necessarily sequential):
+Running this code will print out the four numbers in the distro array
+as four separate numbers each from different processors (note the
+order of ranks isn’t necessarily sequential):
 
 ```
 Process has received: 39

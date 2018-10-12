@@ -59,4 +59,18 @@ Documentation covering the use of Research Computing resources.
    software-and-tools/loadbalancer
    software-and-tools/jupyterhub
    software-and-tools/gaussian
-   software-and-tools/matlab
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Additional resources
+
+   additional-resources/utah-videos
+   additional-resources/coding-best-practices
+   additional-resources/parallel-programming-fundamentals
+   additional-resources/matlab
+   additional-resources/mpi/mpi-c
+   additional-resources/mpi/mpi-fortran
+   additional-resources/openmp/openmp-c
+   additional-resources/openmp/openmp-fortran
+   additional-resources/parallel-programming-jupyter
+   additional-resources/other
