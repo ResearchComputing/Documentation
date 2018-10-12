@@ -51,3 +51,12 @@ Documentation covering the use of Research Computing resources.
    running-jobs/slurm-commands
    running-jobs/squeue-status-codes
    running-jobs/interactive-jobs
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Software and Tools
+
+   software-and-tools/loadbalancer
+   software-and-tools/jupyterhub
+   software-and-tools/gaussian
+   software-and-tools/matlab
