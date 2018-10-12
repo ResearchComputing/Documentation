@@ -40,7 +40,7 @@ cores, and is designed for parallel computing. However, without the
 use of parallel software design, we cannot fully utilize
 supercomputing resources.
 
-## How parallel computation works
+### How parallel computation works
 
 Parallel computation connects multiple processors to memory that is
 either pooled or connected via high speed networks. Here are three
