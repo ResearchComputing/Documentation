@@ -76,7 +76,7 @@ Documentation covering the use of Research Computing resources.
    additional-resources/other
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Maintenance
 
    maintenance/CHANGELOG
