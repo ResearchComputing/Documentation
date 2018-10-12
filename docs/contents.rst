@@ -25,3 +25,13 @@
    compute/compiling
    compute/data-transfer
    compute/petalibrary
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Running Jobs
+
+   running-jobs/sbatch
+   running-jobs/submission
+   running-jobs/slurm-commands
+   running-jobs/squeue-status-codes
+   running-jobs/interactive-jobs
