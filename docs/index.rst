@@ -74,3 +74,9 @@ Documentation covering the use of Research Computing resources.
    additional-resources/openmp/openmp-fortran
    additional-resources/parallel-programming-jupyter
    additional-resources/other
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Maintenance
+
+   maintenance/CHANGELOG
