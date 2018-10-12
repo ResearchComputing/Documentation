@@ -18,7 +18,6 @@ Documentation covering the use of Research Computing resources.
 .. toctree::
    :maxdepth: 0
 
-   index
    faq
 
 .. toctree::
