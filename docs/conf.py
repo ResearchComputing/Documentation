@@ -6,4 +6,8 @@ source_parsers = {
     '.md': CommonMarkParser,
 }
 
+extensions = [
+    'sphinx_markdown_tables',
+]
+
 source_suffix = ['.rst', '.md']
