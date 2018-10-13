@@ -3,6 +3,8 @@ Research Computing User Guide
 
 Documentation covering the use of Research Computing resources.
 
+Here are some quick links into the documentation to get you started.
+
 * :doc:`Logging In <access/login>`
 * :doc:`Research Computing Filesystems <compute/filesystems>`
 * :doc:`Compiling Software <compute/compiling-and-linking>`
@@ -10,9 +12,12 @@ Documentation covering the use of Research Computing resources.
 * :doc:`The Module System <compute/modules>`
 * :doc:`Frequently Asked Questions (FAQ) <faq>`
 
+More information is available at https://www.colorado.edu/rc.
+
+If you have any questions, please contact rc-help@colorado.edu.
+
 ----
 
-* Research Computing <https://www.colorado.edu/rc>
 
 
 .. toctree::
