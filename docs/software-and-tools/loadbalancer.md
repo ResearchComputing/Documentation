@@ -6,6 +6,7 @@ resource, without the need to learn OpenMP or MPI. This tutorial
 assumes user knowledge of Slurm job submission, shell scripting, and
 some python.
 
+
 ### Why Use the Load Balancer?
 
 Suppose you have a very simple serial program that crops a photo, and
@@ -17,6 +18,7 @@ knowledge of parallel programming. Even worse, if your code is in a
 language that has limited parallelization capabilities, this may not
 be an option. The easiest solution for this problem is to utilize the
 Load Balancer.
+
 
 ### Using the Load Balancer
 
@@ -39,11 +41,15 @@ print “Hello World from process: ”, sys.argv[1]
 ```
 
 Now we will create a list of calls to the python script that will be
-distributed to multiple cores (note that a processor may have one or
-more cores, and each core can perform a task). Instead of slowly
-typing out commands one-at-a-time, we will use a bash shell script to
-create our commands. In a text editor, create a bash shell script
-called `create_hello.sh`, that has the following text:
+distributed to multiple cores. (Each compute node has one or more
+discrete compute processor; most modern processors are made up of
+multiple compute "cores", each of which can operate independently and
+simultaneously.)
+
+Instead of slowly typing out commands one-at-a-time, we will use a
+bash shell script to create our commands. In a text editor, create a
+bash shell script called `create_hello.sh`, that has the following
+text:
 
 ```bash
 #!/bin/bash
@@ -106,6 +112,7 @@ Hello World from process: 1
 Hello World from process: 4
 Hello World from process: 3
 ```
+
 
 ### Additional Resources
 
