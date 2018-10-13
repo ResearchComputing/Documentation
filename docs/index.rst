@@ -18,8 +18,6 @@ If you have any questions, please contact rc-help@colorado.edu.
 
 ----
 
-
-
 .. toctree::
    :maxdepth: 1
 
