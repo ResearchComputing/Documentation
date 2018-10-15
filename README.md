@@ -1,5 +1,8 @@
 ## User Guide
+
 For the Research Computing user guide, see the docs page, which renders at https://curc.readthedocs.io.
+
+Manage user guide builds at https://readthedocs.org/projects/curc/.
 
 ## Research Computing User Tutorials
 
