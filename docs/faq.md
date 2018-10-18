@@ -73,9 +73,9 @@ For more information on `sstat` or `sacct` commands, [take a look at our Useful 
 
 You can check your current fair share priority level using the `sshare` command:
 ```
-sshare --users=your_username -l
+sshare -U -l
 ```
-The `sshare` command will print out a table of information regarding an associations usage and priority. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
+The `sshare` command will print out a table of information regarding your association usage and priority. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
 
 For more information on fair share the `sshare` command, [take a look at Slurm's documentation on fair share](https://slurm.schedmd.com/fair_tree.html) Or [check out the Slurm reference page on sshare](https://slurm.schedmd.com/sshare.html)
 
