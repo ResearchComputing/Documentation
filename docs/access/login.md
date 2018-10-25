@@ -66,48 +66,37 @@ Note that each login node may support more than one type of key, but only one is
 
 #### login.rc.colorado.edu (as of 9 May 2018)
 
+<!--
 ```
 # Fingerprint
 # 256 SHA256:MB+601umlOc1sPXT4AXbV0rNRywUH4UlOIB9oJMuD8Q no comment (ECDSA)
-
 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPfjz9VZAwSS0329z6RNZQDNrN3vU1YcthmBRqQAgxmDxBVPJzhazEzKqigoWuuQDHNzfm+05xTOYAmcnL3V7tc=
 ```
-
 ```
 # Fingerprint
 # 256 SHA256:uNn+9REKipRZ59VZQEKlBzB8xjOCe/9yII8uBgEFOGY no comment (ED25519)
-
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPub4h8XLU3dXJBNZljS4PdPWOORXoBdSdaKnwFcMTxe
 ```
-
 ```
 # Fingerprint
 # 2048 SHA256:xZ9xXWtJwBWYqm3ZSvqq2Q7Vq0qnhnImGfTyanytrEk no comment (RSA)
-
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWIqetVDUqKB2im3HyQZJ72PMYXFJUXR2Z+dzhGfOERABAV6m0fKcVcPrBjX9SYR4QYbxR+Yu2bIDDxpK+PZs2sAy/LU4po9mZUN8VAWBE0rwgcEvKfbQriwyhkdqdjEEzbEN5FTx05iYMN2o2vpshmi3dUpHaKMZPI0bhQKmwjM3bf77gpxXWNANsGIag0SdX4bmiWYQhR+CnzUJUis9DVOpVNfN+Jtw4IgnuJedehkZi/z/v7JKvV26jIxXmdq6+VkRCpoVnL3pJkoU5e4vaSc4V5kvgfI9G4tj6BEDGsRgHXAcZXk+hLtNp2nj2VsSocWcOVkn85obSfnVwV/f
 ```
-
 #### blogin01.rc.colorado.edu
-
 A private login node owned by ICS
-
 ```
 # Fingerprint
 # 256 SHA256:SLljPqUgIZZrMPY127ssUeg++52w1vsqJva9NBKB8vk no comment (ECDSA)
-
 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNcwOXb6FQ0kOwEtoNHqYur2xc3t+DwidHJbzRBasCqp8+YE/GSr2SGgtI4JkJ40ptAPjkdj+Qq9BRdu4ZExVdE=
 ```
-
 ```
 # Fingerprint
 # 256 SHA256:wTJn1ncRQOHETKi7M2HSdjPFhzvo7bG4KczP0ugqNX0 no comment (ED25519)
-
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIqWL6qCI0y4MzZBgNyRrNX/Wd39/j1F/onx9tPMPos
 ```
-
 ```
 # Fingerprint
 # 2048 SHA256:MkKuFpFDNn9xWPBURKxHdUk55q5NBcGeRzgh+BANKpI no comment (RSA)
-
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjjl4hOTvUCrfyIgFriFn+6ypLKxb7RQtWEmmmS0a8+icnocCiaZLpiS6lC7sMy7NYly6P6jnasTZvYUZ+6hcIm61YyOSDCCsMZCU+LQb66LIUPttz7ZF12KMgC/DDBAE8xj48hRmp9iZjFnYCEQi9eb4y1IN3VJz1k7nDfLa/Ae3DRBorGZVSKCoeBXfzjpTutCZwgoNUSHQUnZlLnwdut4WH9qq7GtnKRnstVJt+i72vOxLCFSuCgskCjBr5KP/aCEiXT5l93R01hceENIzKqN4zm0MhzULef6KXS7aZZDKb/zklOGUtxcHgdrQ9IeEQIESvn385yZU6IZIM+Hsb
 ```
+-->
