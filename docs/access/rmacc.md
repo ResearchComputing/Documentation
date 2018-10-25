@@ -7,10 +7,8 @@ If you are at an RMACC institution and would like to use Summit, please see the 
 
 Visit the XSEDE User Portal and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
 
-![XSEDE User Portal 1](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-02-20%20at%2012.49.12%20PM.png)
-
-![XSEDE User Portal 2](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%2010.29.51%20AM.png)
-
+<!-- ![XSEDE User Portal 1](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-02-20%20at%2012.49.12%20PM.png)
+![XSEDE User Portal 2](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%2010.29.51%20AM.png) -->
 
 ### Configuring Duo
 
