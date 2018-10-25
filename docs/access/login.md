@@ -32,7 +32,7 @@ Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/Logging-in-with-Duo).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-login.md).
     * Note that as a security feature, PuTTY does not display any text while you type your password
 Login screen for putty
 <!--
