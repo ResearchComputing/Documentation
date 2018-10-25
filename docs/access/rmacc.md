@@ -7,9 +7,9 @@ If you are at an RMACC institution and would like to use Summit, please see the 
 
 Visit the XSEDE User Portal and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
 
-[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-02-20%20at%2012.49.12%20PM.png]]
+![XSEDE User Portal 1](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-02-20%20at%2012.49.12%20PM.png)
 
-[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%2010.29.51%20AM.png]]
+![XSEDE User Portal 2](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%2010.29.51%20AM.png)
 
 
 ### Configuring Duo
@@ -26,8 +26,8 @@ Send an email from your institutional email address to rc-help@colorado.edu requ
 
 Use an ssh client to connect to the XSEDE SSO Hub using your XSEDE credentials. You will be prompted to authenticate both using your XSEDE password and via Duo.
 
-[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.49.55%20AM.png]]
+![XSEDE Single sign on](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.49.55%20AM.png)
 
 From there, use gsissh (available in the SSO Hub environment) to log into rmacc-summit, which serves as an alias for the CU Boulder RC login environment.
 
-[[https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.54.13%20AM.png]]
+![Summit Login node](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.54.13%20AM.png)
