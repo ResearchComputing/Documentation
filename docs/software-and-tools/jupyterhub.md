@@ -116,5 +116,5 @@ start a notebook server.
 
 ## See Also
 
-* [[Parallel Programming with Jupyter Notebooks]]
+* [Parallel Programming with Jupyter Notebooks](../additional-resources/parallel-programming-jupyter.html)
 * [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
