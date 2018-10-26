@@ -28,7 +28,7 @@ Running Matlab interactive jobs on RC resources is both a simple and
 easy task to accomplish. In this section we will learn how to launch
 Matlab as an interactive job. For more information on launching
 interactive jobs [check out our interactive jobs
-tutorial](Interactive-Jobs)
+tutorial](../running-jobs/interactive-jobs.html)
 
 Begin by launching an interactive job by loading slurm/summit into
 your environment and running the `sinteractive` command.
@@ -58,7 +58,7 @@ command when launching Matlab.
 
 Here, we will learn how to run a Matlab script in a non-interactive
 batch job. For more general information on batch job scripts on
-Summit, [please see our Job Submissions Tutorial](Job-Submissions)
+Summit, [please see our Job Submissions Tutorial](../running-jobs/submission.html)
 
 Let’s begin by constructing a small Matlab script that prints ‘hello
 world’ to the user.  The Matlab script we will use for the purposes of
