@@ -15,11 +15,9 @@ application.
 
 ### General Interactive Jobs
 
-To learn about running interactive jobs at the command line, please
-watch this [video](https://www.youtube.com/watch?v=s53sjDubBpo) or
-read the text below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s53sjDubBpo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[![General interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Interactive-Jobs-Video.jpg)](https://www.youtube.com/watch?v=s53sjDubBpo)  
+---
 
 To run an interactive job load the Slurm module on the login nodes with:
 
