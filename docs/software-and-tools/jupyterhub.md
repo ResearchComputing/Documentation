@@ -8,10 +8,9 @@ visualizations and explanatory text. The CU Research Computing
 environment includes support for parallel computation on local HPC
 resources.
 
-JupyterHub is available at https://jupyter.rc.colorado.edu. To log in
+JupyterHub is available at [https://jupyter.rc.colorado.ed](https://jupyter.rc.colorado.edu). To log in
 use your RC credentials. If you do not have an RC account, please
-[request an
-account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
+[request an account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
 before continuing.
 
 ### Start a notebook server
