@@ -46,14 +46,14 @@ page](http://slurm.schedmd.com/sbatch.html). Below, we have listed a
 few ones you may want to consider when submitting your job via
 `sbatch`.
 
-|        Type         |                    Description                    |           Flag           |
+|        Type         |                    Description                    |           Flag             |
 |---------------------|---------------------------------------------------|----------------------------|
 |     Allocations     |Specify an allocation account if you have multiple |    --account=account_no    |
-|     Partitions      |              Specify a [partition](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions)                |--partition=partition_name  |
+|     Partitions      |              Specify a partition                  |--partition=partition_name  |
 |    Sending emails   |Receive email at beginning or end of job completion|      --mail-type=type      |
 |    Email address    |         Email address to receive the email        |      --mail-user=user      |
 |   Number of nodes   |     The number of nodes needed to run the job     |       --nodes=nodes        |
 |   Number of tasks   |     The number of cores needed to run the job     |     --ntasks=processes     |
-|  Quality of service |              Specify a [QOS](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions)                      |          --qos=qos         |
+|  Quality of service |              Specify a QOS                        |          --qos=qos         |
 |      Wall time      |   The max. amount of time your job will run for   |      --time=wall time      |
-|       Job Name      |     Name your job so you can identify in queue    |	--job-name=jobname     |
+|       Job Name      |     Name your job so you can identify in queue    |	--job-name=jobname         |
