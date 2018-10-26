@@ -122,7 +122,7 @@ help | Displays application information on using commands | help
 OIT also offers a file transfer service with a web interface which
 provides a good way to transfer files to collaborators. Files are
 uploaded to a server and a link to download the file can be emailed to
-an on, or off-campus, user: http://oit.colorado.edu/safe-transfer
+an on, or off-campus, user: [http://oit.colorado.edu/safe-transfer](http://oit.colorado.edu/safe-transfer)
 
 ### DTN SSH Host Keys
 
