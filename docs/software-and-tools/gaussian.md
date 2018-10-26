@@ -25,7 +25,7 @@ not need to source g16.login or g16.profile.
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
 to put its large scratch files. These should always be on one of
 Summit's [scratch storage
-systems](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/File-Systems)
+systems](../compute/filesystems.html)
 (either /scratch/local [accessed via the SLURM_SCRATCH env variable]
 or /scratch/summit/$USER.) If `GAUSS_SCRDIR` is not set, then the
 scratch files will be created in whatever directory G16 is run from;
