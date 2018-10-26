@@ -25,7 +25,9 @@ Need more assistance? Watch our tutorial videos for [Mac](https://www.youtube.co
 
 Watch this [video](https://youtu.be/aUVdIShW7W4) or read the text below:
 
-[![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aUVdIShW7W4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<!-- [![Logging-In-From-Windows-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Logging-in/Logging-In-Windows.jpg)](https://youtu.be/aUVdIShW7W4) -->
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
