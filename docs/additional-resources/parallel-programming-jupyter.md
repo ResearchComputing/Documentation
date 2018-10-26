@@ -16,7 +16,7 @@ Before you begin, you need
 ### Log in
 
 First, log into the RC JupyterHub service by nagivating to
-https://jupyter.rc.colorado.edu. Enter your RC username and password
+[https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). Enter your RC username and password
 (where your password may be a combination of a password, OTP, and/or
 credential prefix).
 
