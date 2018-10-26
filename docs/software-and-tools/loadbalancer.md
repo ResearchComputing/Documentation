@@ -116,7 +116,7 @@ Hello World from process: 3
 
 ### Additional Resources
 
-* https://github.com/ResearchComputing/lb
-* https://github.com/t-brown/lb
-* https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance
-* https://www.inspirenignite.com/load-balancing-in-parallel-computers/
+* [https://github.com/ResearchComputing/lb](https://github.com/ResearchComputing/lb)
+* [https://github.com/t-brown/lb](https://github.com/t-brown/lb)
+* [https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance](https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance)
+* [https://www.inspirenignite.com/load-balancing-in-parallel-computers/](https://www.inspirenignite.com/load-balancing-in-parallel-computers/)
