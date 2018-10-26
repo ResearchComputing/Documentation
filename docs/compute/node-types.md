@@ -29,5 +29,5 @@ type and its intended use below.
 This is where jobs that are submitted through the scheduler run.
 
 * Intended for heavy computation
-* When run an [interactive job](running-jobs/interactive-jobs) will be
+* When run an [interactive job](../running-jobs/interactive-jobs.html) will be
   performing tasks directly on the compute nodes
