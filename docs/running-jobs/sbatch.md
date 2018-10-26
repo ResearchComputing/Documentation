@@ -3,7 +3,7 @@
 The sbatch command submits batch jobs into the Slurm batch queue.
 Batch jobs are those that run on the compute nodes in the
 background. An analogous command is the
-[sinteractive](running-jobs/interactive-jobs) command, except that
+[sinteractive](interactive-jobs.html) command, except that
 this allows you to run a job on the compute nodes while interacting
 directly. Many of the flags used in the `sbatch` command can be used
 in `sinteractive`.
@@ -17,7 +17,7 @@ sbatch --flag1 --flag2
 ```
 
 The second is to create a script that includes the bash flags, and to
-submit that script. See the [Job Submission](running-jobs/submission)
+submit that script. See the [Job Submission](submission.html)
 page for information on this, or view one of our recommended
 [templates](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/Templates/General-Job-Template.sh)
 for an example of how to best write up a script.
