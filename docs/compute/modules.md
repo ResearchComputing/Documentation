@@ -6,8 +6,6 @@ must be loaded in. This allows Research Computing to provide multiple
 versions of the software concurrently and enables users to switch
 easily between different versions.
 
-Watch the [video](https://youtu.be/csgl4czhD_k) on using modules, or read the text below.
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/csgl4czhD_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ---
