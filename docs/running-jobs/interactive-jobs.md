@@ -48,11 +48,9 @@ Matlab Desktop) in an interactive job, please read below.
 
 ### Interactive GUI Applications
 
-To learn more about running GUI applications please watch this
-[video](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be)
-or read the text below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DFnHsMxPC5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be)
+---
 
 To run an interactive GUI application, we must first enable X11
 forwarding on our personal computer.
