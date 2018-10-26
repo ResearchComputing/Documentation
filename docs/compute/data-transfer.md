@@ -7,7 +7,9 @@ Through [Globus](https://www.globus.org/) or through SSH protocols.
 Watch this [video](https://www.youtube.com/watch?v=UMBD7pSE0qI) or
 read the text below.
 
-[![Data-Transfer-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/file-transf-vid.jpg)](https://www.youtube.com/watch?v=UMBD7pSE0qI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UMBD7pSE0qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+---
 
 ### Globus
 
