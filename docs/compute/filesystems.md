@@ -18,7 +18,7 @@ have their accounts temporarily disabled.**
 
 Every user is allocated 2 GB of space on the `/home` filesystem in a
 subdirectory corresponding to their user name (e.g., `/home/janedoe`).
-Home directories are [backed up frequently](#filesystem-backups) and
+Home directories are [backed up frequently](#backups) and
 are intended for the use of their owner only; sharing the contents of
 home directories with other users is strongly discouraged. Your
 `/home` directory is a good place to store source code, small compiled
@@ -52,7 +52,7 @@ automatically removed 90 days after their initial creation.
 
 Users requiring longer-term retention of their files should perform
 regular backups to their local machine if they have not purchased
-space on the [PetaLibrary](PetaLibrary). Inappropriate use of scratch
+space on the [PetaLibrary](petalibrary.html). Inappropriate use of scratch
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
