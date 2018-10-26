@@ -161,7 +161,7 @@ rm tsnet.nodes.$SLURM_JOBID
 
 #### G16 on GPU
 
-Please read http://gaussian.com/running/?tabid=5 carefully to
+Please read [http://gaussian.com/running/?tabid=5](http://gaussian.com/running/?tabid=5) carefully to
 determine whether the K80 GPUs in Summit's "sgpu" partition will be
 effective for your calculations. In many cases, SMP parallelization
 across all of the cores in a shas node will provide better speedup
