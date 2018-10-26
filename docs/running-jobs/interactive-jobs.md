@@ -31,9 +31,8 @@ and request an interactive session by utilizing the `sinteractive`
 command.  The `sinteractive` command can take any number of flags that
 could be used with the `sbatch` command when submitted to Slurm but
 the primary flags we will use are the `qos` flag and the `time`
-flag. These flags will specify [quality of
-service](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions)
-and amount of time the job will run for, respectively. The command we
+flag. These flags will specify quality of service and amount of
+time the job will run for, respectively. The command we
 run is:
 
 ```bash
