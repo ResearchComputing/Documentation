@@ -113,7 +113,7 @@ rm -rf profile_janus-*
 The new configurations will be automatically applied the next time you
 start a notebook server.
 
-## See Also
+### See Also
 
 * [Parallel Programming with Jupyter Notebooks](../additional-resources/parallel-programming-jupyter.html)
 * [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
