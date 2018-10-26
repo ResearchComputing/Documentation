@@ -15,9 +15,9 @@ want to run a non-interactive job:
 
 ### How to Submit a Job
 
-Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sStJQKTa9zY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[![Logging-in-video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Job-Submissions/job-submissions-vid.jpg)](https://youtu.be/sStJQKTa9zY)
+---
 
 1. Write your job script in a text editor
 
