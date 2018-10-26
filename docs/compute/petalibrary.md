@@ -39,4 +39,4 @@ or large read/writes of archived data.
 
 ### More information
 
-* https://www.colorado.edu/rc/resources/petalibrary
+* [https://www.colorado.edu/rc/resources/petalibrary](https://www.colorado.edu/rc/resources/petalibrary)
