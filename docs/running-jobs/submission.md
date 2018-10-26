@@ -29,10 +29,7 @@ Watch this [video](https://youtu.be/sStJQKTa9zY) or read the information below.
      [template](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Templates/General-Job-Template.sh)
      to write your job script in the text editor
 
-   - Update your template with any job specifications, including [QOS
-     or
-     Partitions](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions)
-
+   - Update your template with any job specifications, including QOS or Partitions
    - You can confirm the content of your script with this command: `cat job-name.sh`
 
    - Replace “job-name” with the name of your job
@@ -102,8 +99,8 @@ python example_Program.py
 
 2. SBATCH arguments -- This section of tells sbatch what arguments to
    pass into the command when the script is run. A variety of these
-   commands can be found at the bottom of this document [here]() and
-   on [the Slurm page for sbatch](). Adjust and modify these lines to
+   commands can be found [here](sbatch.html) and
+   on [the Slurm page for sbatch](https://slurm.schedmd.com/sbatch.html). Adjust and modify these lines to
    fit the needs of your program.
 
 3. Modules -- This section of code is meant to hold commands that will
