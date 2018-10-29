@@ -13,14 +13,13 @@ type and its intended use below.
 * No computation, compiling code, interactive jobs, or long running processes
 * Script or code editing
 * Job submission
-* To submit jobs from these nodes, will first need to run the command `module load slurm/summit`
 
 
 ### Compile nodes
 
 * Where you compile code, such as Fortran, C, C++
 * No heavy computation
-* Can submit jobs from compile nodes, but do not need to run `module load slurm/summit`
+* Job submission
 * Access these nodes by typing `ssh scompile` from a login node
 
 
