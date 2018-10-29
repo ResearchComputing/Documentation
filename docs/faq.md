@@ -17,7 +17,15 @@ See our documentation [homepage](https://github.com/ResearchComputing/Research-C
 
 ### I have a new phone. How do I move my Duo onto it?
 
-You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Menu" and then click "Add a new device." Duo will then try to authenticate your account by push notification, text message, or phone number. Choose one of the authentication methods and follow the instructions provided by duo to add your device.
+You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Menu": 
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
+
+...and then click "Add a new device.":
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
+
+Duo will then try to authenticate your account by push notification, text message, or phone number. Choose one of the authentication methods and follow the instructions provided by duo to add your device.
 
 If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
 
