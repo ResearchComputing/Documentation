@@ -59,7 +59,7 @@ squeue --user=your_rc-username --start
 ```
 Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
-For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](Useful-Slurm-Commands) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
 ### How much memory did my job use?
 
@@ -75,7 +75,7 @@ If you'd like to monitor memory usage on jobs that are currently running, use th
 sstat --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 ```
 
-For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](Useful-Slurm-Commands) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
+For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
 
 ### Where is my current fair share priority level at?
 
@@ -111,7 +111,7 @@ Using the Summit module environment from login nodes requires typing `module loa
 
 ### How do I install my own python library?
 
-Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](The-Module-System). That being said, this guide can be tweaked to be used on the older modules as well.
+Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](compute/modules.html). That being said, this guide can be tweaked to be used on the older modules as well.
 
 First login to a login node and then ssh to a compile node.
 
