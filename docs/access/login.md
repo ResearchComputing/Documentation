@@ -19,8 +19,6 @@ Logging into a Research Computing login node is the first step in accessing reso
 
 __For CSU users, please refer to the CSU login guide [found here](https://www.acns.colostate.edu/hpc/#remote-login)__
 
-Need more assistance? Watch our tutorial videos for [Mac](https://www.youtube.com/watch?v=2Mnr840YdiE) or [Windows](https://youtu.be/aUVdIShW7W4), or read the text below.
-
 ### Logging in from a Windows Machine
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aUVdIShW7W4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
