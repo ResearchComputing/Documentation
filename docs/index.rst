@@ -27,12 +27,12 @@ If you have any questions, please contact rc-help@colorado.edu.
    :maxdepth: 2
    :caption: Accessing RC Resources
 
-       access/login
-       access/duo-cu
-       access/duo-login
-       access/rmacc
-       access/blanca
-       access/allocations
+   access/login
+   access/duo-cu
+   access/duo-login
+   access/rmacc
+   access/blanca
+   access/allocations
 
 .. toctree::
    :maxdepth: 2
