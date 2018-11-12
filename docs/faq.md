@@ -17,7 +17,7 @@ See our documentation [homepage](https://github.com/ResearchComputing/Research-C
 
 ### I have a new phone. How do I move my Duo onto it?
 
-You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Menu": 
+You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Settings": 
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
 
@@ -77,7 +77,7 @@ sstat --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 
 For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
 
-### Where is my current fair share priority level at?
+### How can I see my current FairShare priority?
 
 You can check your current fair share priority level using the `sshare` command:
 ```
@@ -107,7 +107,7 @@ sacctmgr -p show associations user=$USER
 
 ### Why do I get an 'LMOD' error when I try to load Slurm?
 
-Using the Summit module environment from login nodes requires typing `module load slurm/summit`. However, the slurm/summit module environment is already pre-loaded on Summit scompile and compute nodes. Therefore, if you are on a Summit 'scompile' node, in a Summit 'sinteractive' job, or submitting a job to a Summit compute node (via a job script) and you load 'slurm/summit' you will get the 'LMOD' error. This error can be disregarded, as no harm is done.  
+The slurm/summit module environment can not be loaded from compile or compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Summit enviornments. This error can be disregarded, as no harm is done.
 
 ### How do I install my own python library?
 
