@@ -35,7 +35,7 @@ After logging in, select "Remote Desktop" from the list of services in
 the left sidebar. (Other custom services may be configured for you as
 well.)
 
-![EnginFrame vdi interface](vdi.png)
+![EnginFrame vdi interface](enginframe/vdi.png)
 
 When starting a Remote Desktop session you may customize the resources
 allocated to the session and other characteristics of the dispatched
@@ -43,7 +43,7 @@ Slurm job. In most cases the defaults should be sufficient; however,
 you may need to supply a Slurm account if you are associated with more
 than one and you do not want to use your default account.
 
-![Remote Desktop service](remote-desktop.png)
+![Remote Desktop service](enginframe/remote-desktop.png)
 
 Once the session has started, a thumbnail of the running session
 appears in the Sessions list. EnginFrame will attempt to open the
@@ -51,13 +51,13 @@ session automatically, but may be blocked by the browser. In that
 case, simply select the session thumbnail from the list, or use the
 "click here" link in the notification text.
 
-![Remote Desktop session](session.png)
+![Remote Desktop session](enginframe/session.png)
 
 With the Remote Desktop session running and open, you should be able
 to run standard Linux desktop applications, including 3d-acellerated
 OpenGL applications.
 
-![glxgears running via DCV](glxgears.png)
+![glxgears running via DCV](enginframe/glxgears.png)
 
 
 ### Upstream documentation
