@@ -57,11 +57,17 @@ If you have any questions, please contact rc-help@colorado.edu.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Software and Tools
+   :caption: Gateways
 
-   software-and-tools/loadbalancer
-   software-and-tools/jupyterhub
-   software-and-tools/gaussian
+   gateways/jupyterhub
+   gateways/enginframe
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Software
+
+   software/loadbalancer
+   software/gaussian
 
 .. toctree::
    :maxdepth: 2
