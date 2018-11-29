@@ -8,10 +8,9 @@ visualizations and explanatory text. The CU Research Computing
 environment includes support for parallel computation on local HPC
 resources.
 
-JupyterHub is available at https://jupyter.rc.colorado.edu. To log in
+JupyterHub is available at [https://jupyter.rc.colorado.ed](https://jupyter.rc.colorado.edu). To log in
 use your RC credentials. If you do not have an RC account, please
-[request an
-account](https://portals.rc.colorado.edu/accounts/account-request/create/general)
+[request an account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
 before continuing.
 
 ### Start a notebook server
@@ -27,7 +26,7 @@ These notebook servers start on the `shas` partition using the
 notebooks:
 
 * Access to standard RC file systems
-* Access to [RC environment modules](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/The-Module-System)
+* Access to [RC environment modules](../compute/modules.html)
 * Python 3 notebooks
 * Python 2.7 notebooks
 * BASH notebooks
@@ -40,7 +39,7 @@ These notebook servers start on the `sknl` partition using the
 notebooks:
 
 * Access to standard RC file systems
-* Access to [RC environment modules](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/The-Module-System)
+* Access to [RC environment modules](../compute/modules.html)
 * Python 3 notebooks
 * Python 2.7 notebooks
 * BASH notebooks
@@ -63,7 +62,7 @@ notebook startup or execution.
 Notebook servers started on RC compute resources can also launch
 IPython clusters for parallel processing. See [IPython
 Parallel](http://ipyparallel.readthedocs.org/en/latest/) and [MPI for
-Python](http://mpi4py.scipy.org/docs/) for general information on
+Python](https://mpi4py.readthedocs.io/en/stable/) for general information on
 parallel processing with IPython clusters.
 
 The RC environment provisions two IPython profiles automatically which
@@ -114,7 +113,7 @@ rm -rf profile_janus-*
 The new configurations will be automatically applied the next time you
 start a notebook server.
 
-## See Also
+### See Also
 
-* [[Parallel Programming with Jupyter Notebooks]]
-* [RC JupyterHub CHANGELOG](software-and-tools/jupyterhub/CHANGELOG)
+* [Parallel Programming with Jupyter Notebooks](../additional-resources/parallel-programming-jupyter.html)
+* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)

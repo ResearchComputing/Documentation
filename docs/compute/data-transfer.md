@@ -4,10 +4,9 @@ Research Computing supports several methods of file transfers onto
 Summit. File transfers from a local machine can be done via two ways:
 Through [Globus](https://www.globus.org/) or through SSH protocols.
 
-Watch this [video](https://www.youtube.com/watch?v=UMBD7pSE0qI) or
-read the text below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UMBD7pSE0qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[![Data-Transfer-Video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/file-transf-vid.jpg)](https://www.youtube.com/watch?v=UMBD7pSE0qI)
+---
 
 ### Globus
 
@@ -122,7 +121,7 @@ help | Displays application information on using commands | help
 OIT also offers a file transfer service with a web interface which
 provides a good way to transfer files to collaborators. Files are
 uploaded to a server and a link to download the file can be emailed to
-an on, or off-campus, user: http://oit.colorado.edu/safe-transfer
+an on, or off-campus, user: [http://oit.colorado.edu/safe-transfer](http://oit.colorado.edu/safe-transfer)
 
 ### DTN SSH Host Keys
 

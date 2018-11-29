@@ -25,7 +25,7 @@ not need to source g16.login or g16.profile.
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
 to put its large scratch files. These should always be on one of
 Summit's [scratch storage
-systems](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/File-Systems)
+systems](../compute/filesystems.html)
 (either /scratch/local [accessed via the SLURM_SCRATCH env variable]
 or /scratch/summit/$USER.) If `GAUSS_SCRDIR` is not set, then the
 scratch files will be created in whatever directory G16 is run from;
@@ -161,7 +161,7 @@ rm tsnet.nodes.$SLURM_JOBID
 
 #### G16 on GPU
 
-Please read http://gaussian.com/running/?tabid=5 carefully to
+Please read [http://gaussian.com/running/?tabid=5](http://gaussian.com/running/?tabid=5) carefully to
 determine whether the K80 GPUs in Summit's "sgpu" partition will be
 effective for your calculations. In many cases, SMP parallelization
 across all of the cores in a shas node will provide better speedup

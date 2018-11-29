@@ -7,7 +7,7 @@ Here are some quick links into the documentation to get you started.
 
 * :doc:`Logging In <access/login>`
 * :doc:`Research Computing Filesystems <compute/filesystems>`
-* :doc:`Compiling Software <compute/compiling-and-linking>`
+* :doc:`Compiling Software <compute/compiling>`
 * :doc:`Job submission <running-jobs/submission>`
 * :doc:`The Module System <compute/modules>`
 * :doc:`Frequently Asked Questions (FAQ) <faq>`
@@ -57,11 +57,17 @@ If you have any questions, please contact rc-help@colorado.edu.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Software and Tools
+   :caption: Gateways
 
-   software-and-tools/loadbalancer
-   software-and-tools/jupyterhub
-   software-and-tools/gaussian
+   gateways/jupyterhub
+   gateways/enginframe
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Software
+
+   software/loadbalancer
+   software/gaussian
 
 .. toctree::
    :maxdepth: 2

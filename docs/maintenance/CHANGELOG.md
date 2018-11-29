@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Wednesday, 17 October 2018
+
+* Configured Slurm to reject invalid jobs during submit, rather than accept and pend forever
+
 ### Wednesday, 16 May 2018
 
 * [Shut down legacy login nodes](https://www.colorado.edu/rc/news/rcloginnodemigration)

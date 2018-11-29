@@ -14,8 +14,9 @@ Use the PetaLibrary to store, archive and share research data.
 
 ### Accessing the PetaLibrary
 
-For information on how to access the PetaLibrary, watch our
-[video](https://youtu.be/i1TVYj4OQOY) or read the text below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i1TVYj4OQOY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+---
 
 Request access to the PetaLibrary by:
 
@@ -39,4 +40,4 @@ or large read/writes of archived data.
 
 ### More information
 
-* https://www.colorado.edu/rc/resources/petalibrary
+* [https://www.colorado.edu/rc/resources/petalibrary](https://www.colorado.edu/rc/resources/petalibrary)

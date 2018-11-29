@@ -17,7 +17,15 @@ See our documentation [homepage](https://github.com/ResearchComputing/Research-C
 
 ### I have a new phone. How do I move my Duo onto it?
 
-You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Menu" and then click "Add a new device." Duo will then try to authenticate your account by push notification, text message, or phone number. Choose one of the authentication methods and follow the instructions provided by duo to add your device.
+You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Settings": 
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
+
+...and then click "Add a new device.":
+
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png)
+
+Duo will then try to authenticate your account by push notification, text message, or phone number. Choose one of the authentication methods and follow the instructions provided by duo to add your device.
 
 If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
 
@@ -51,7 +59,7 @@ squeue --user=your_rc-username --start
 ```
 Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
-For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](Useful-Slurm-Commands) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
 ### How much memory did my job use?
 
@@ -67,15 +75,15 @@ If you'd like to monitor memory usage on jobs that are currently running, use th
 sstat --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 ```
 
-For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](Useful-Slurm-Commands) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
+For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
 
-### Where is my current fair share priority level at?
+### How can I see my current FairShare priority?
 
 You can check your current fair share priority level using the `sshare` command:
 ```
-sshare --users=your_username -l
+sshare -U -l
 ```
-The `sshare` command will print out a table of information regarding an associations usage and priority. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
+The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The -U flag will specify the current user and the -l flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
 
 For more information on fair share the `sshare` command, [take a look at Slurm's documentation on fair share](https://slurm.schedmd.com/fair_tree.html) Or [check out the Slurm reference page on sshare](https://slurm.schedmd.com/sshare.html)
 
@@ -99,11 +107,11 @@ sacctmgr -p show associations user=$USER
 
 ### Why do I get an 'LMOD' error when I try to load Slurm?
 
-Using the Summit module environment from login nodes requires typing `module load slurm/summit`. However, the slurm/summit module environment is already pre-loaded on Summit scompile and compute nodes. Therefore, if you are on a Summit 'scompile' node, in a Summit 'sinteractive' job, or submitting a job to a Summit compute node (via a job script) and you load 'slurm/summit' you will get the 'LMOD' error. This error can be disregarded, as no harm is done.  
+The slurm/summit module environment can not be loaded from compile or compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Summit enviornments. This error can be disregarded, as no harm is done.
 
 ### How do I install my own python library?
 
-Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](The-Module-System). That being said, this guide can be tweaked to be used on the older modules as well.
+Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](compute/modules.html). That being said, this guide can be tweaked to be used on the older modules as well.
 
 First login to a login node and then ssh to a compile node.
 

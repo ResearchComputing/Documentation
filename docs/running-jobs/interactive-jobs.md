@@ -15,11 +15,9 @@ application.
 
 ### General Interactive Jobs
 
-To learn about running interactive jobs at the command line, please
-watch this [video](https://www.youtube.com/watch?v=s53sjDubBpo) or
-read the text below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s53sjDubBpo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[![General interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Interactive-Jobs-Video.jpg)](https://www.youtube.com/watch?v=s53sjDubBpo)  
+---
 
 To run an interactive job load the Slurm module on the login nodes with:
 
@@ -31,9 +29,8 @@ and request an interactive session by utilizing the `sinteractive`
 command.  The `sinteractive` command can take any number of flags that
 could be used with the `sbatch` command when submitted to Slurm but
 the primary flags we will use are the `qos` flag and the `time`
-flag. These flags will specify [quality of
-service](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki/qos-and-partitions)
-and amount of time the job will run for, respectively. The command we
+flag. These flags will specify quality of service and amount of
+time the job will run for, respectively. The command we
 run is:
 
 ```bash
@@ -51,11 +48,9 @@ Matlab Desktop) in an interactive job, please read below.
 
 ### Interactive GUI Applications
 
-To learn more about running GUI applications please watch this
-[video](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be)
-or read the text below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DFnHsMxPC5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[![Running GUI applications through interactive jobs video](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/Gui-Applications-Video.jpg)](https://www.youtube.com/watch?v=DFnHsMxPC5w&feature=youtu.be)
+---
 
 To run an interactive GUI application, we must first enable X11
 forwarding on our personal computer.
