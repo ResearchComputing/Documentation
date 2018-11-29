@@ -26,6 +26,7 @@ If you have any questions, please contact rc-help@colorado.edu.
 .. toctree::
    :maxdepth: 2
    :caption: Accessing RC Resources
+   :numbered:
 
    access/login
    access/duo-cu
