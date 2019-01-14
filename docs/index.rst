@@ -54,6 +54,7 @@ If you have any questions, please contact rc-help@colorado.edu.
    running-jobs/slurm-commands
    running-jobs/squeue-status-codes
    running-jobs/interactive-jobs
+   running-jobs/roce-enabled
 
 .. toctree::
    :maxdepth: 2
