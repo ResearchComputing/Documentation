@@ -9,13 +9,13 @@ In order to take advantage of RoCE on these nodes, you will need to compile your
 MPI compiler that was built with support for Unified Communication X (UCX). Without UCX a job
 submitted to these nodes will fail.
 
-## Using pre-built modules
+### Using pre-built modules
 
 You can easily build/rebuild your binaries with support for the 10G RoCE network by building 
 your code with the module keys gcc/8.2.0 and openmpi_ucx/4.0.0.  Once you have loaded those software
 keys you can begin building your code as you normally would.
 
-## Build a MPI compiler with support for UCX
+### Build a MPI compiler with support for UCX
 
 First ensure that you have UCX installed on the node you intend to build the MPI on
 
