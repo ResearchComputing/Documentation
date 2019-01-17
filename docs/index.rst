@@ -27,9 +27,8 @@ If you have any questions, please contact rc-help@colorado.edu.
    :maxdepth: 2
    :caption: Accessing RC Resources
 
-   access/login
-   access/duo-cu
-   access/duo-login
+   access/logging-in
+   access/duo-2-factor-authentication
    access/rmacc
    access/blanca
    access/allocations
@@ -49,11 +48,12 @@ If you have any questions, please contact rc-help@colorado.edu.
    :maxdepth: 2
    :caption: Running Jobs
 
-   running-jobs/sbatch
-   running-jobs/submission
+   running-jobs/running-apps-with-jobs
+   running-jobs/batch-jobs
+   running-jobs/interactive-jobs-new
    running-jobs/slurm-commands
+   running-jobs/job-resources
    running-jobs/squeue-status-codes
-   running-jobs/interactive-jobs
    running-jobs/roce-enabled
 
 .. toctree::
