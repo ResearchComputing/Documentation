@@ -55,7 +55,7 @@ The available QoS's for Summit are:
 | QOS name    | Description                           | Max walltime    | Max jobs/user | Node limits               | Priority boost                  |
 | ----------- | ------------------------------------- | --------------- | ------------- | ------------------------- | ------------------------------- |
 | normal*     | default                               | see table above | n/a           | 256/user                  | 0                               |
-| testing     | For quick turnaround when testing     | 30M             | 1             | 2/user; max 12 cores/node | QoS has dedicated cores         |
+| testing     | For quick turnaround when testing     | 30M             | 1             | 24 cores *across* up to 24 nodes | QoS has dedicated cores         |
 | interactive | For interactive jobs (command or GUI) | 4H              | 1             | 1 core                    | QoS has dedicated cores         |
 | long        | Longer wall times                     | 7D              | n/a           | 22/user; 40 total         | 0                               |
 | condo       | Condo purchased nodes only            | 7D              | n/a           | n/a                       | Equiv. of 1 day queue wait time |
