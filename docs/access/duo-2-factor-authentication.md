@@ -9,7 +9,7 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 
 1. You will receive a Duo invitation when your RC account is created. Open your Duo invitation email (from Duo security or duo.com) on a desktop/laptop computer.
 
-   * **Within one business day you should recieve a duo invtation. If you didn't receive an invitation or your invitation has expired, then please contact rc-help@colorado.edu for a new invitation.**
+   * **Within one business day you should recieve a duo invitation. If you didn't receive an invitation or your invitation has expired, then please contact rc-help@colorado.edu for a new invitation.**
 2. Login with your CU identikey and follow the instructions to setup 
 3. Install the Duo Mobile app and provision for Duo Push
 
