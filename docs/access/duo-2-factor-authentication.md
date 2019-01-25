@@ -10,10 +10,10 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 1. You will receive a Duo invitation when your RC account is created. Open your Duo invitation email (from Duo security or duo.com) on a desktop/laptop computer.
 
    * **Within one business day you should recieve a duo invitation. If you didn't receive an invitation or your invitation has expired, then please contact rc-help@colorado.edu for a new invitation.**
-2. Login with your CU identikey and follow the instructions to setup 
-3. Install the Duo Mobile app and provision for Duo Push
+2. Login with your CU identikey and follow the setup instructions 
+3. Install the Duo Mobile app on your smart device and provision for Duo Push
 
-     - **Note: If you want to use the app do not request a phone call for authentication!**
+     - **Note: If you want to use the app do not request text or phone call for authentication!**
 4. Test your login process, in this case via ssh to the RC login nodes:
    * Using your CU IdentiKey username:
 
@@ -22,9 +22,7 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
      **Note: "ssh -l" uses a lowercase L.**
 
    * Enter your IdentiKey password at the password prompt.
-
    * Open the Duo app and authorize the login via the Duo Push notification.
-
    * If you are using a Windows machine, utilize the PuTTY application to test your login.
 
 #### Common Issues
