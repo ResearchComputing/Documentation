@@ -48,7 +48,7 @@ If you have any questions, please contact rc-help@colorado.edu.
    :maxdepth: 2
    :caption: Running Jobs
 
-   running-jobs/running-apps-with-jobs
+   running-jobs/running-apps-through-jobs
    running-jobs/batch-jobs
    running-jobs/interactive-jobs-new
    running-jobs/slurm-commands
