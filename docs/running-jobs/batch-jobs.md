@@ -183,13 +183,13 @@ The `sbatch` command supports many optional flags. To review all the options, pl
 
 | Type                   | Description                                         | Flag                       |
 | :--------------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocations]()        | Specify an allocation account if you have multiple  | --account=account_no       |
-| [Partitions]()         | Specify a partition                                 | --partition=partition_name |
+| [Allocations](../access/allocations.html)        | Specify an allocation account if you have multiple  | --account=account_no       |
+| [Partitions](job-resources.html)         | Specify a partition                                 | --partition=partition_name |
 | Sending email          | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address          | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes        | The number of nodes needed to run the job           | --nodes=nodes              |
 | Number of tasks        | The total number of cores needed to run the job     | --ntasks=processes         |
-| [Quality of service]() | Specify a QOS                                       | --qos=qos                  |
+| [Quality of service](job-resources.html) | Specify a QOS                                       | --qos=qos                  |
 | Wall time              | The max. amount of time your job will run for       | --time=wall time           |
 | Job Name               | Name your job so you can identify in queue          | --job-name=<jobname>       |
 
