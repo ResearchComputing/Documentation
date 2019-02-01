@@ -1,4 +1,4 @@
-## Job Resources Information
+##     Job Resources Information
 
 Slurm allows the use of flags to specify resources needed for a job. Below is a table describing some of the most common Slurm resource flags, followed by tables describing available Summit partitions and Quality of Service (QoS) options.
 
