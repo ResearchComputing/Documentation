@@ -12,7 +12,7 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
    * **Within one business day you should recieve a duo invitation. If you didn't receive an invitation or your invitation has expired, then please contact rc-help@colorado.edu for a new invitation.**
 2. Login with your CU identikey and follow the instructions to setup
      - Research Computing recommends users utilize Duo Push as  Duo push, install the Duo Mobile app and link your account with your device. Duo
-3. Login to RC Resources via ssh [as described below.]()
+3. Login to RC Resources via ssh [as described below.](#logging-in-with-duo)
 
 #### Common Issues
 
