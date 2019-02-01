@@ -1,29 +1,29 @@
 ## Logging In
 
-Research Computing offers a variety of resources for users to utilize in their own research and projects. To get started with Research Computing resources users will need the following: 
+Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources we need the following: 
 
-- [A Research Computing account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
+- [A Research Computing account]()
 - [Duo 2 factor authentication]()
 - [The PuTTY application](https://www.putty.org/) (if you are a Windows user)  
 
-Users accessing RC's resources will be connected to a login node. A login node is a outward facing node within the Research Computing's environment that users can connect to from their local machine with the ssh protocol. Once on a login node, users can perform a limited number of tasks:
+Users accessing RC's resources will be connected to a login node. A login node is a outward facing node within the Research Computing environment that users can connect to with the ssh protocol. Once on a login node, users can perform a limited number of tasks:
 
 + Edit files
 + Transfer Data
 + Submit Jobs
 + Access storage resources  
 
-Note that the login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should use batch jobs, interactive jobs, or use the compile nodes 
+Note that the login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should submit batch jobs, interactive jobs, or use the compile nodes.
 
-**For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**
+__For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)__
 
-**For RMACC users, pleaser refer to [RMACC Access to Summit.]()**
+**For RMACC users, pleaser refer to [RMACC Access to Summit.]() **
 
 ### Getting an account
 
-Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtains an individual Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an *individual* Research Computing account if you wish to access Research Computing resources.**
+Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
 
-A Research Computing account can be secured quickly and easily by [filling out the form here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). Once you've received an account with Research Computing, you will automatically be sent an invitation for Duo enrollment via email. After you have accepted the Duo invitation, you will be able to log into the system.
+A Research Computing account can be secured quickly and easily [by filling out the form here](). Once you've received an account with Research Computing, you will automatically be sent an invitation for Duo enrollment via email. After you have accepted the Duo invitation, you will be able to authenticate via Duo and log into the system.
 
 ### Logging in from a Windows Machine
 
@@ -31,14 +31,14 @@ A Research Computing account can be secured quickly and easily by [filling out t
 
 ---
 
-Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client]() onto your local machine. This application allows users to connect to remote servers from their Windows machine using the ssh protocol. Though there are a large variety of different tools that allows Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity. 
+Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client]() onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-login.html).
     * Note that as a security feature, PuTTY does not display any text while you type your password
 
 
@@ -48,7 +48,7 @@ Logging in from a Windows machine requires the additional step of [installing th
 
 ---
 
-Logging in with a Mac requires no extra installation on your local machine. Simply use the terminal application that is pre-installed with your operating system to access Research Computing resources. 
+Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
 
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
@@ -57,7 +57,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 
 ### Logging in from Linux
 
-Much like with a Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the Linux terminal to access Research Computing resources. 
+Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
 
 1. Open a terminal window from your application menu and type: `ssh username@login.rc.colorado.edu`, where `username` is your research computing username.
 
