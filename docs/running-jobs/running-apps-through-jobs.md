@@ -2,9 +2,9 @@
 
 Because Summit is shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
-In order to run a program on Summit, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job]() or an [interactive job]().
+In order to run a program on Summit, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job](batch-jobs.html) or an [interactive job](interactive-jobs.html).
 
-When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.]()
+When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](slurm-commands.html)
 
 ### Batch Jobs
 
@@ -24,7 +24,7 @@ sbatch <your-jobscript-name>
 
 If no job script is provided then `sbatch` will take whatever commands follow as standard input.
 
-A detailed guide [on constructing and submitting Job scripts can be found here.]()
+A detailed guide [on constructing and submitting Job scripts can be found here.](batch-jobs.html)
 
 ### Interactive Jobs
 
@@ -40,8 +40,8 @@ You can request an interactive job by using the `sinteractive`command. Unlike th
 sinteractive --qos=interactive --time=00:10:00
 ```
 
-[A list of sinteractive parameters can be found here]()
+[A list of sinteractive parameters can be found here](job-resources.html)
 
 The example above will submit an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
-More details [on running Interactive Jobs can be found here.]()
+More details [on running Interactive Jobs can be found here.](interactive-jobs.html)
