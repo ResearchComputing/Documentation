@@ -31,7 +31,7 @@ These are the partitions available on Summit.
 | smem      | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
 | sknl      | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
 
-In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below]()).
+In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
 
 | Partition        | Description       | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default and Max Walltime |
 | ---------------- | ----------------- | --------- | --------- | ------------- | -------------- | ------------------------ |
