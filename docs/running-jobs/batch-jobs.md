@@ -81,7 +81,7 @@ For example if you wanted to request 2 nodes with an sbatch directive, you would
 #SBATCH --nodes=2
 ```
 
-A list of some useful sbatch directives [can be found here.]() A full list of commands [can be found in Slurm's documentation for sbatch.]()
+A list of some useful sbatch directives [can be found here.](job-resources.html) A full list of commands [can be found in Slurm's documentation for sbatch.](https://slurm.schedmd.com/sbatch.html)
 
 #### 2. Software
 
@@ -97,7 +97,7 @@ module purge
 module load <software>
 ```
 
-More information about [software modules can be found here.]()
+More information about [software modules can be found here.](../compute/modules.html)
 
 #### 3. User Scripting
 
