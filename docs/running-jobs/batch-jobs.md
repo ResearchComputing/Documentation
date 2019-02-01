@@ -1,6 +1,6 @@
 ## Batch Jobs and Job Scripting
 
-Batch Jobs are by far the most common job on Summit. Batch jobs are resource provisions that run applications on nodes away from the user. Batch jobs are commonly used for applications that run for a long period of time or applications that require little to no user input. 
+Batch jobs are by far the most common type of job on Summit. Batch jobs are resource provisions that run applications on nodes away from the user and do not require supervision or interaction. Batch jobs are commonly used for applications that run for long periods of time or require little to no user input. 
 
 Batch jobs are created from a job script which provide resource requirements and commands for the job.
 
@@ -19,10 +19,10 @@ Even though it is possible to submit jobs completely from the command line, it i
 Submitting a job script can be done with the `sbatch` command:
 
 ```bash
-sbatch <your-job-script>
+sbatch <your-job-script-name>
 ```
 
-Because job script specify the desired resources for your job, you won't need to specify any resources on the command line. You can, however, overwrite or add any job parameter by providing the specific resource as a flag within `sbatch` command:
+Because job scripts specify the desired resources for your job, you won't need to specify any resources on the command line. You can, however, overwrite or add any job parameter by providing the specific resource as a flag within `sbatch` command:
 
 ```bash
 sbatch --partition=sgpu <your-job-script>
@@ -61,15 +61,15 @@ Normally job scripts are divided into 3 primary parts: directives, loading softw
 
 #### 1. Directives
 
-A directive is a comment that is included at the top of a job script that tells the shell some sort of information about the script. 
+A directive is a comment that is included at the top of a job script that tells the shell information about the script. 
 
-The first directive, the shebang directive, is always on the first line of any script. The directive indicates which shell you want running commands in your job. Most users will likely utilize bash as their shell, so we will specify bash by typing:
+The first directive, the shebang directive, is always on the first line of any script. The directive indicates which shell you want running commands in your job. Most users employ bash as their shell, so we will specify bash by typing:
 
 ```bash
 #!/bin/bash
 ```
 
-The next directives that must be included with your job script are *sbatch* directives. These directives specifies resource requirements for a batch job.  These directives must come after the shebang directive and before any commands are issued in the Job script. Each directive contains a flag that requests resource the job would need to complete execution. An sbatch directive is written as such:
+The next directives that must be included with your job script are *sbatch* directives. These directives specify resource requirements to Slurm for a batch job.  These directives must come after the shebang directive and before any commands are issued in the job script. Each directive contains a flag that requests resource the job would need to complete execution. An sbatch directive is written as such:
 
 ```bash
 #SBATCH --<resource>=<amount>
@@ -81,25 +81,27 @@ For example if you wanted to request 2 nodes with an sbatch directive, you would
 #SBATCH --nodes=2
 ```
 
-A list of some useful sbatch directives [can be found here.]() A full list of commands [can be found on Slurm's documentation on sbatch.]()
+A list of some useful sbatch directives [can be found here.]() A full list of commands [can be found in Slurm's documentation for sbatch.]()
 
 #### 2. Software
 
-Because jobs run on a different node than from where you submit, any shared software that is needed must be loaded in via the job script. Software can be loaded in a job script just like you would on the command line. First we will want to purge all software that may be left behind from a previous job by running the command:
+Because jobs run on a different node than from where you submit, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First we will purge all software that may be left behind from a previous job by running the command:
 
 ```bash
 module purge
 ```
 
- After this you can load whatever piece of software you may need by running the following command:
+ After this you can load whatever software you need by running the following command:
 
 ```bash
 module load <software>
 ```
 
+More information about [software modules can be found here.]()
+
 #### 3. User Scripting
 
-The last part of a job script is the actual user scripting that will execute when the job is submitted. This part of the job script includes all user commands that are utilized in the jobs completion. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
+The last part of a job script is the actual user scripting that will execute when the job is submitted. This part of the job script includes all user commands that are needed to set up and execute the desired task. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
 
 ```bash
 echo "== This is the scripting step! =="
@@ -129,6 +131,7 @@ Job script to run a 5 minute long, 1 node, 1 core C++ Job:
 #SBATCH --output=cpp-job.%j.out
 
 module purge
+module load gcc
 
 ./example_cpp.exe
 ```
@@ -147,6 +150,7 @@ Job script to run a 7 minute long, 1 node, 4 core C++ OpenMP Job:
 #SBATCH --output=omp-cpp-job.%j.out
 
 module purge
+module load gcc
 
 export OMP_NUM_THREADS=4
 
@@ -175,8 +179,7 @@ mpirun -np 24 ./example_mpi.exe
 
 ### Job Flags
 
-The `sbatch` command supports many optional flags. To review all the options, please visit the Slurm [sbatch page](http://slurm.schedmd.com/sbatch.html). Below, we have listed a few ones you may want to consider when submitting your job via
-`sbatch`.
+The `sbatch` command supports many optional flags. To review all the options, please visit the Slurm [sbatch page](http://slurm.schedmd.com/sbatch.html). Below are a few flags you may want to consider when submitting your job via `sbatch`.
 
 | Type                   | Description                                         | Flag                       |
 | :--------------------- | :-------------------------------------------------- | :------------------------- |
