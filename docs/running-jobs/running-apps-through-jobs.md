@@ -1,4 +1,4 @@
-## Running applications with Jobs
+## -- Running applications with Jobs --
 
 Because Summit is shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
