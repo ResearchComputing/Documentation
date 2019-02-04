@@ -11,7 +11,9 @@ has experience in both the Linux terminal and Fortran.
 __Helpful MPI tutorials:__
 
 [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)  
+
 [http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml)  
+
 [https://computing.llnl.gov/tutorials/mpi/](https://computing.llnl.gov/tutorials/mpi/)  
 
 
