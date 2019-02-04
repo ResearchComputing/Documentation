@@ -62,5 +62,5 @@ OpenGL applications.
 
 ### Upstream documentation
 
-- https://www.nice-software.com/products/enginframe
-- https://www.nice-software.com/products/dcv
+- [https://www.nice-software.com/products/enginframe](https://www.nice-software.com/products/enginframe)
+- [https://www.nice-software.com/products/dcv](https://www.nice-software.com/products/dcv)
