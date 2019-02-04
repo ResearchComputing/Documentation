@@ -58,7 +58,7 @@ command when launching Matlab.
 
 Here, we will learn how to run a Matlab script in a non-interactive
 batch job. For more general information on batch job scripts on
-Summit, [please see our Job Submissions Tutorial](../running-jobs/submission.html)
+Summit, [please see our tutorial on batch jobs](../running-jobs/batch-jobs.html)
 
 Let’s begin by constructing a small Matlab script that prints ‘hello
 world’ to the user.  The Matlab script we will use for the purposes of
