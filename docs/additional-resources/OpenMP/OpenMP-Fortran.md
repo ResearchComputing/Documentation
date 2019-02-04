@@ -179,7 +179,7 @@ Hello from process: 1
 (Note don’t worry about order of processes that printed, the threads
 will print out at varying times.)
 
-## Private vs. Shared Variables
+### Private vs. Shared Variables
 
 Memory management is a quintessential component of any parallel
 program that involves data manipulation. In this section, we will
