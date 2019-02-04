@@ -60,7 +60,7 @@ OpenGL applications.
 ![glxgears running via DCV](enginframe/glxgears.png)
 
 
-### Upstream documentation
+### Additional Resources
 
 - [https://www.nice-software.com/products/enginframe](https://www.nice-software.com/products/enginframe)
 - [https://www.nice-software.com/products/dcv](https://www.nice-software.com/products/dcv)
