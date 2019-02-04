@@ -72,16 +72,21 @@ If you have any questions, please contact rc-help@colorado.edu.
 
 .. toctree::
    :maxdepth: 2
+   :caption: Programming and Parallelization
+   
+   programming/coding-best-practices
+   programming/parallel-programming-fundamentals
+   programming/MPI-C
+   programming/MPI-Fortran
+   programming/OpenMP-C
+   programming/OpenMP-Fortran
+
+.. toctree::
+   :maxdepth: 2
    :caption: Additional resources
 
    additional-resources/utah-videos
-   additional-resources/coding-best-practices
-   additional-resources/parallel-programming-fundamentals
    additional-resources/matlab
-   additional-resources/MPI/MPI-C
-   additional-resources/MPI/MPI-Fortran
-   additional-resources/OpenMP/OpenMP-C
-   additional-resources/OpenMP/OpenMP-Fortran
    additional-resources/parallel-programming-jupyter
    additional-resources/other
 
