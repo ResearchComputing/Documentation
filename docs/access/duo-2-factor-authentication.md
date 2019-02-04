@@ -32,12 +32,12 @@ Duo Push is Research Computing's recommended method of 2-factor authentication. 
 
 1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
 2. Enter your identikey password when prompted. 
+3. Wait for a push to your phone.  
+
 <p align="middle">
   <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/duo2factor/duo_app2.png"/>
   <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/duo2factor/duo_app1.png" /> 
 </p>
-
-3. Wait for a push to your phone.
 
 **Note: Duo push is tied to your device so [so you will need to add or remove your device if you get a new phone.](#managing-duo-devices)**
 
