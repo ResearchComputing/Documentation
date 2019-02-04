@@ -21,7 +21,7 @@ All jobs are run through a batch/queue system.  Interactive jobs on compute node
 
 Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: “module load slurm/blanca”.
 
-More details about how to use Slurm can be found [here](../running-jobs/submission.html).
+More details about how to use Slurm can be found [here](../running-jobs/running-apps-with-jobs.html).
 
 ### QoS
 
