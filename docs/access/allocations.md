@@ -34,6 +34,6 @@ Fair share scheduling starts in the allocation application process.  When you ar
 
 For allocations, your target percentage depends on your priority based on your project proposal (as described above).  Everyone not associated with a project shares a target percentage of 13% (20% of the CU fraction).  Your jobs are likely to have a lower priority if you are running in ucb-general than if you are running with a target percentage assigned from writing a project allocation proposal.
 
-Everyone therefore has an assigned target percentage, and your priority will depend upon how far under or over that target percentage you are based on a four week average.  If you are under (over) your four week target percentage, your priority is increased (decreased).  Information on how to check your fair share priority level can be found [here](../faq.html#where-is-my-current-fair-share-priority-level-at).
+Everyone therefore has an assigned target percentage, and your priority will depend upon how far under or over that target percentage you are based on a four week average.  If you are under (over) your four week target percentage, your priority is increased (decreased).  Information on how to check your fair share priority level can be found [here](../faq.html#how-can-i-see-my-current-fairshare-priority).
 
 Finally - just a reminder that this only impacts pending jobs.  If there are no other pending jobs and enough resources are available then your job will run regardless of your previous usage!
