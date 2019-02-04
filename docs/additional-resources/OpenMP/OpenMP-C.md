@@ -14,7 +14,7 @@ the C++ Language.
 
 Resources:
 
-Much Deeper OpenMP and MPI C++ tutorial:
+Much more in depth OpenMP and MPI C++ tutorial:
 http://pages.tacc.utexas.edu/~eijkhout/pcse/html/index.html
 
 Helpful Slides from the Aristotle University of Thessaloniki:
