@@ -40,17 +40,17 @@ If you have any questions, please contact rc-help@colorado.edu.
    compute/node-types
    compute/filesystems
    compute/modules
-   compute/compiling
    compute/data-transfer
+   compute/compiling
    compute/petalibrary
 
 .. toctree::
    :maxdepth: 2
    :caption: Running Jobs
 
-   running-jobs/running-apps-through-jobs
+   running-jobs/running-apps-with-jobs
    running-jobs/batch-jobs
-   running-jobs/interactive-jobs-new
+   running-jobs/interactive-jobs
    running-jobs/slurm-commands
    running-jobs/job-resources
    running-jobs/squeue-status-codes
@@ -78,10 +78,10 @@ If you have any questions, please contact rc-help@colorado.edu.
    additional-resources/coding-best-practices
    additional-resources/parallel-programming-fundamentals
    additional-resources/matlab
-   additional-resources/mpi/mpi-c
-   additional-resources/mpi/mpi-fortran
-   additional-resources/openmp/openmp-c
-   additional-resources/openmp/openmp-fortran
+   additional-resources/MPI/MPI-C
+   additional-resources/MPI/MPI-Fortran
+   additional-resources/OpenMP/OpenMP-C
+   additional-resources/OpenMP/OpenMP-Fortran
    additional-resources/parallel-programming-jupyter
    additional-resources/other
 
