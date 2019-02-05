@@ -61,6 +61,7 @@ If you have any questions, please contact rc-help@colorado.edu.
    :caption: Gateways
 
    gateways/jupyterhub
+   gateways/parallel-programming-jupyter
    gateways/enginframe
 
 .. toctree::
@@ -69,6 +70,7 @@ If you have any questions, please contact rc-help@colorado.edu.
 
    software/loadbalancer
    software/gaussian
+   software/matlab
 
 .. toctree::
    :maxdepth: 2
@@ -86,8 +88,6 @@ If you have any questions, please contact rc-help@colorado.edu.
    :caption: Additional resources
 
    additional-resources/utah-videos
-   additional-resources/matlab
-   additional-resources/parallel-programming-jupyter
    additional-resources/other
 
 .. toctree::
