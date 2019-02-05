@@ -8,7 +8,7 @@ Here are some quick links into the documentation to get you started.
 * :doc:`Logging In <access/login>`
 * :doc:`Research Computing Filesystems <compute/filesystems>`
 * :doc:`Compiling Software <compute/compiling>`
-* :doc:`Job submission <running-jobs/submission>`
+* :doc:`Batch Jobs <running-jobs/batch-jobs>`
 * :doc:`The Module System <compute/modules>`
 * :doc:`Frequently Asked Questions (FAQ) <faq>`
 
