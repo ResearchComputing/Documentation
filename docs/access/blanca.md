@@ -53,6 +53,7 @@ bgpu-dhl1 | blanca-dhl | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk 
 bnode03[12-15] | blanca-pccs | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode0316,<br> bnode0401 | blanca-csdms | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode04[02-03] | blanca-sol | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
+bnode05[01-02] | blanca-appm | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake, <br> avx2,<br> rhel7 2x hyperthreading/core
 himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel7
 
 ### Description of features
