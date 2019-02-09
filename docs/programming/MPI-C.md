@@ -9,11 +9,10 @@ multiprocessor ‘hello world’ program in C++.  This tutorial assumes
 the user has experience in both the Linux terminal and C++.
 
 __Resources:__
-
-http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html
-http://mpitutorial.com/tutorials/
-http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml
-https://computing.llnl.gov/tutorials/mpi/
+- [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)  
+- [http://mpitutorial.com/tutorials/](http://mpitutorial.com/tutorials/)  
+- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml)  
+- [https://computing.llnl.gov/tutorials/mpi/](https://computing.llnl.gov/tutorials/mpi/)  
 
 
 ### Setup and “Hello, World”

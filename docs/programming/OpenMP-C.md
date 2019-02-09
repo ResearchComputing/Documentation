@@ -14,11 +14,11 @@ the C++ Language.
 
 Resources:
 
-Much Deeper OpenMP and MPI C++ tutorial:
-http://pages.tacc.utexas.edu/~eijkhout/pcse/html/index.html
+Much more in depth OpenMP and MPI C++ tutorial:
+- http://pages.tacc.utexas.edu/~eijkhout/pcse/html/index.html
 
 Helpful Slides from the Aristotle University of Thessaloniki:
-https://training.vi-seem.eu/images/trainingMaterial/HPC/OpenMP/HP-SEE-SS_2011-OpenMP.pdf
+- https://training.vi-seem.eu/images/trainingMaterial/HPC/OpenMP/HP-SEE-SS_2011-OpenMP.pdf
 
 
 ### Parallel “Hello, World” Program

@@ -8,7 +8,7 @@ Here are some quick links into the documentation to get you started.
 * :doc:`Logging In <access/login>`
 * :doc:`Research Computing Filesystems <compute/filesystems>`
 * :doc:`Compiling Software <compute/compiling>`
-* :doc:`Job submission <running-jobs/submission>`
+* :doc:`Batch Jobs <running-jobs/batch-jobs>`
 * :doc:`The Module System <compute/modules>`
 * :doc:`Frequently Asked Questions (FAQ) <faq>`
 
@@ -27,9 +27,8 @@ If you have any questions, please contact rc-help@colorado.edu.
    :maxdepth: 2
    :caption: Accessing RC Resources
 
-   access/login
-   access/duo-cu
-   access/duo-login
+   access/logging-in
+   access/duo-2-factor-authentication
    access/rmacc
    access/blanca
    access/allocations
@@ -41,19 +40,20 @@ If you have any questions, please contact rc-help@colorado.edu.
    compute/node-types
    compute/filesystems
    compute/modules
-   compute/compiling
    compute/data-transfer
+   compute/compiling
    compute/petalibrary
 
 .. toctree::
    :maxdepth: 2
    :caption: Running Jobs
 
-   running-jobs/sbatch
-   running-jobs/submission
-   running-jobs/slurm-commands
-   running-jobs/squeue-status-codes
+   running-jobs/running-apps-with-jobs
+   running-jobs/batch-jobs
    running-jobs/interactive-jobs
+   running-jobs/slurm-commands
+   running-jobs/job-resources
+   running-jobs/squeue-status-codes
    running-jobs/roce-enabled
 
 .. toctree::
@@ -61,6 +61,7 @@ If you have any questions, please contact rc-help@colorado.edu.
    :caption: Gateways
 
    gateways/jupyterhub
+   gateways/parallel-programming-jupyter
    gateways/enginframe
 
 .. toctree::
@@ -69,20 +70,24 @@ If you have any questions, please contact rc-help@colorado.edu.
 
    software/loadbalancer
    software/gaussian
+   software/matlab
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Programming and Parallelization
+   
+   programming/coding-best-practices
+   programming/parallel-programming-fundamentals
+   programming/MPI-C
+   programming/MPI-Fortran
+   programming/OpenMP-C
+   programming/OpenMP-Fortran
 
 .. toctree::
    :maxdepth: 2
    :caption: Additional resources
 
    additional-resources/utah-videos
-   additional-resources/coding-best-practices
-   additional-resources/parallel-programming-fundamentals
-   additional-resources/matlab
-   additional-resources/mpi/mpi-c
-   additional-resources/mpi/mpi-fortran
-   additional-resources/openmp/openmp-c
-   additional-resources/openmp/openmp-fortran
-   additional-resources/parallel-programming-jupyter
    additional-resources/other
 
 .. toctree::

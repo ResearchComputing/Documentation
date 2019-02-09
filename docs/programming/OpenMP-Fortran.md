@@ -13,8 +13,8 @@ This guide assumes you have basic knowledge of the command line and the Fortran 
 
 __Resources:__
 
-Much Deeper OpenMP Fortran tutorial:
-http://www.openmp.org/wp-content/uploads/F95_OpenMPv1_v2.pdf
+Much more in depth OpenMP Fortran tutorial:
+- [http://www.openmp.org/wp-content/uploads/F95_OpenMPv1_v2.pdf](http://www.openmp.org/wp-content/uploads/F95_OpenMPv1_v2.pdf)
 
 
 ### Parallel “Hello, World” Program
@@ -179,7 +179,7 @@ Hello from process: 1
 (Note don’t worry about order of processes that printed, the threads
 will print out at varying times.)
 
-## Private vs. Shared Variables
+### Private vs. Shared Variables
 
 Memory management is a quintessential component of any parallel
 program that involves data manipulation. In this section, we will

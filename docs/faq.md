@@ -1,12 +1,12 @@
 ## Frequently Asked Questions
 
-See our documentation [homepage](https://github.com/ResearchComputing/Research-Computing-User-Tutorials/wiki) for information about our most common topics.
+See our documentation [homepage](index.html) for information about our most common topics.
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
 2. [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are)  
 3. [When will my job start?](#when-will-my-job-start)  
 4. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
-5. [Where is my current fair share priority level at?](#where-is-my-current-fair-share-priority-level-at)  
+5. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
 6. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
 7. [Why do I get the following 'Invalid Partition' error when I submit my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-submit-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
