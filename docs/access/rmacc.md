@@ -1,6 +1,6 @@
 ## RMACC Access to Summit
 
-If you are at an RMACC institution and would like to use Summit, please see the below steps to gain access.  
+If you are at an RMACC institution other than CU Boulder or CSU and would like to use Summit, please see the below steps to gain access.  
 
 
 ### Getting an XSEDE account
