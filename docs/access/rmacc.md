@@ -1,6 +1,6 @@
 ## RMACC Access to Summit
 
-If you are at an RMACC institution and would like to use Summit, please see the below steps to gain access.  
+If you are at an RMACC institution other than CU Boulder or CSU and would like to use Summit, please see the below steps to gain access.  
 
 
 ### Getting an XSEDE account
@@ -28,7 +28,7 @@ Use an ssh client to connect to the XSEDE SSO Hub using your XSEDE credentials. 
 <!--![XSEDE Single sign on](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.49.55%20AM.png)-->
 
 ```
-ssh -l <your-xsede-username> login.xsede.com
+ssh -l <your-xsede-username> login.xsede.org
 ```
 
 From there, use gsissh (available in the SSO Hub environment) to log into rmacc-summit, which serves as an alias for the CU Boulder RC login environment.
