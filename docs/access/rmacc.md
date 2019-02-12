@@ -28,7 +28,7 @@ Use an ssh client to connect to the XSEDE SSO Hub using your XSEDE credentials. 
 <!--![XSEDE Single sign on](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.49.55%20AM.png)-->
 
 ```
-ssh -l <your-xsede-username> login.xsede.com
+ssh -l <your-xsede-username> login.xsede.org
 ```
 
 From there, use gsissh (available in the SSO Hub environment) to log into rmacc-summit, which serves as an alias for the CU Boulder RC login environment.
