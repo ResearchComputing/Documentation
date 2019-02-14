@@ -33,7 +33,7 @@ These are the partitions available on Summit.
 | smem *    | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
 | sknl      | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
 
-* The *smem* partition is limited to 1 node per job. If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
+*The *smem* partition is limited to 1 node per job. If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
 
@@ -44,7 +44,7 @@ In addition to these partitions, Research Computing also provides specialized pa
 | sgpu-testing     | GPU-enabled       | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)         | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
 
-* The *shas testing* partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
+*The *shas testing* partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
 
 To run a job longer than 24 hours on the *shas*, *sgpu*, or *sknl* partitions, use the *long* QOS.
 
