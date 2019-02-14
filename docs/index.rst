@@ -19,7 +19,7 @@ If you have any questions, please contact rc-help@colorado.edu.
 ----
 
 Acknowledging RC
-================
+----------------
 
 Use of University of Colorado Research Computing resources, including (but not limited to) the Janus and Summit supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
 
