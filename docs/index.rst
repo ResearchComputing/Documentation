@@ -16,7 +16,6 @@ More information is available at https://www.colorado.edu/rc.
 
 If you have any questions, please contact rc-help@colorado.edu.
 
-----
 
 Acknowledging RC
 ----------------
