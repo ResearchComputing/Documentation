@@ -31,7 +31,7 @@ These are the partitions available on Summit.
 | --------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
 | shas      | Haswell (default) | 380        | 24         | 4.84          | 1              | 4H, 24H                  |
 | sgpu      | GPU-enabled       | 10         | 24         | 4.84          | 2.5            | 4H, 24H                  |
-| smem *    | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
+| smem*    | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
 | sknl      | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
 
 *The *smem* partition is limited to 1 node per job. If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
@@ -40,7 +40,7 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 | Partition        | Description       | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default and Max Walltime |
 | ---------------- | ----------------- | --------- | --------- | ------------- | -------------- | ------------------------ |
-| shas-testing *   | Haswell (default) | 24        | 24        | 4.84          | 1              | 0.5H, 0.5H               |
+| shas-testing*   | Haswell (default) | 24        | 24        | 4.84          | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell (default) | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled       | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)         | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
