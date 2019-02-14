@@ -1,4 +1,4 @@
-##     Job Resources Information
+## Job Resource Information
 
 Slurm allows the use of flags to specify resources needed for a job. Below is a table describing some of the most common Slurm resource flags, followed by tables describing available Summit partitions and Quality of Service (QoS) options.
 
@@ -8,13 +8,14 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocations](../access/allocations)    | Specify an allocation account  | --account=account_name     |
-| Partitions         | Specify a partition ([see table below](#partitions)) | --partition=partition_name |
+| [Allocations](../access/allocations)    | Specify an allocation account  | --account=accountName     |
+| Partitions         | Specify a partition ([see table below](#partitions)) | --partition=partitionName |
 | Sending email      | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address      | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
 | Number of tasks    | The ***total*** number of processes needed to run the job | --ntasks=processes   |
 | Tasks per node     | The number of processes you wish to assign to each node | --ntasks-per-node=processes |
+| Total Memory       | The total memory required to complete the Job. Requesting more memory will reserve additional cores proportional to how much memory was requested. Units can be specified with the suffixes: K,M,G,T | --mem=memory |
 | Quality of service | Specify a QOS ([see table below](#quality-of-service)) | --qos=qos               |
 | Wall time          | The max. amount of time your job will run for       | --time=wall time           |
 | Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
