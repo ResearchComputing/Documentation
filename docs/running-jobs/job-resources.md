@@ -8,8 +8,8 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocations](../access/allocations)    | Specify an allocation account  | --account=accountName     |
-| Partitions         | Specify a partition ([see table below](#partitions)) | --partition=partitionName |
+| [Allocations](../access/allocations)    | Specify an allocation account  | --account=allocation       |
+| Partitions         | Specify a partition ([see table below](#partitions)) | --partition=partition |
 | Sending email      | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address      | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
