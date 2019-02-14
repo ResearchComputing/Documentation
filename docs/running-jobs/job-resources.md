@@ -15,7 +15,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 | Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
 | Number of tasks    | The ***total*** number of processes needed to run the job | --ntasks=processes   |
 | Tasks per node     | The number of processes you wish to assign to each node | --ntasks-per-node=processes |
-| Total Memory       | The total memory required to complete the Job. Requesting more memory will reserve additional cores proportional to how much memory was requested. Units can be specified with the suffixes: K,M,G,T | --mem=memory |
+| Total Memory       | The total memory required to complete the Job. <br> Requesting more memory will reserve additional <br> cores proportional to how much memory was requested. <br> Units can be specified with the suffixes: K,M,G,T | --mem=memory |
 | Quality of service | Specify a QOS ([see table below](#quality-of-service)) | --qos=qos               |
 | Wall time          | The max. amount of time your job will run for       | --time=wall time           |
 | Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
