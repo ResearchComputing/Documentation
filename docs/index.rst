@@ -18,6 +18,19 @@ If you have any questions, please contact rc-help@colorado.edu.
 
 ----
 
+Acknowledging RC
+================
+
+Use of University of Colorado Research Computing resources, including (but not limited to) the Janus and Summit supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
+
+Acknowledging Summit:
+"This work utilized the Summit supercomputer, which is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University. The Summit supercomputer is a joint effort of the University of Colorado Boulder and Colorado State University."
+
+Acknowledging PetaLibrary:
+"Data storage supported by the University of Colorado Boulder 'PetaLibrary'"
+
+----
+
 .. toctree::
    :maxdepth: 1
 
