@@ -5,7 +5,7 @@ Documentation covering the use of Research Computing resources.
 
 Here are some quick links into the documentation to get you started.
 
-* :doc:`Logging In <access/login>`
+* :doc:`Logging In <access/logging-in>`
 * :doc:`Research Computing Filesystems <compute/filesystems>`
 * :doc:`Compiling Software <compute/compiling>`
 * :doc:`Batch Jobs <running-jobs/batch-jobs>`
