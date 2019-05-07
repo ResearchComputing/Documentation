@@ -30,7 +30,10 @@ Duo will then try to authenticate your account by push notification to verify yo
 
 <!-- insert image here ![]() -->
 
-...and click on "Enter a Passcode", or "Call Me". If you select "Call Me" the simply recieve the call and press 1. If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. Once you have verified your identity, follow the instructions provided by Duo to add your device.
+...and click on "Enter a Passcode", or "Call Me". 
+- If you select "Call Me" the simply recieve the call and press 1. 
+- If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
+Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
 If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
 
