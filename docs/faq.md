@@ -17,15 +17,20 @@ See our documentation [homepage](index.html) for information about our most comm
 
 ### I have a new phone. How do I move my Duo onto it?
 
-You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. After a CU authorization page you will be directed to a Duo authentication page. From here, click "Settings": 
+You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
+After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Settings":** 
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
 
-...and then click "Add a new device.":
+In this settings side bar click "Add a new device.":
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png)
 
-Duo will then try to authenticate your account by push notification, text message, or phone number. Choose one of the authentication methods and follow the instructions provided by duo to add your device.
+Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notifcation...  
+
+<!-- insert image here ![]() -->
+
+...and click on "Enter a Passcode", or "Call Me". If you select "Call Me" the simply recieve the call and press 1. If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
 If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
 
@@ -34,7 +39,7 @@ If you cannot authenticate your account, contact rc-help@colorado.edu for furthe
 You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  To see how much space you've used in each, from a Summit 'scompile' node, type `curc-quota` as follows:
 
 ```
-[janedoe@shas0136 ~]$ curc-quota
+[user@shas0100 ~]$ curc-quota
 ------------------------------------------------------------------------
                                        Used         Avail    Quota Limit
 ------------------------------------------------------------------------
@@ -116,38 +121,38 @@ Research Computing provides commonly used Python libraries as modules. This guid
 First login to a login node and then ssh to a compile node.
 
 ```
-@login01$ ssh scompile
+[user@login01 ~]$ ssh scompile
 ```
 
 Next load the version of Python you'd like to add a library too. For this guide we'll be using Intel and Python 2.7.11.
 
 ```
-@scompile1 ~]$ ml intel/17.4
-@scompile1 ~]$ ml python/2.7.11
+[user@shas0100 ~]$ ml intel/17.4
+[user@shas0100 ~]$ ml python/2.7.11
 ```
 
 Before installing, create a directory in which to keep your local Python libraries. It is recommended that the /projects directory be used as it has more space.
 
 ```
-@scompile1 ~]$ mkdir /projects/$USER/python_libs
+[user@shas0100 ~]$ mkdir /projects/$USER/python_libs
 ```
 
 You can now install your local python library.
 
 ```
-@scompile1 ~]$ pip install --prefix="/projects/$USER/python_libs" pyDOE
+[user@shas0100 ~]$ pip install --prefix="/projects/$USER/python_libs" pyDOE
 ```
 
 In order to use your newly installed library it needs to be added to your PYTHONPATH. Use the following export command:
 
 ```
-@scompile1 ~]$ export PYTHONPATH=$PYTHONPATH:/projects/$USER/python_libs/lib/python2.7/site-packages/
+[user@shas0100 ~]$ export PYTHONPATH=$PYTHONPATH:/projects/$USER/python_libs/lib/python2.7/site-packages/
 ```
 
 You can quickly check if your install worked with the following:
 
 ```
-@scompile1 ~]$ python -c "import pyDOE"
+[user@shas0100 ~]$ python -c "import pyDOE"
 ```
 
 Every time you log out you will need to rerun the above export to use your Python library (don't forget to load Python as well). Two ways of avoiding this are to add the export command to your bashrc. `vim ~/.bashrc`. An alternative is to make your own modulefile.
