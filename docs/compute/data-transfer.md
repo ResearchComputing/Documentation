@@ -64,7 +64,7 @@ appears as:
 # Replace target_directory with the directory you would like
 # to send the file to within your rc home directory.
 
-scp source_file rc_username@login.rc.colorado.edu:~/target_directory
+scp source_file rc_username@login.rc.colorado.edu:/target_directory
 ```
 
 ```bash
@@ -77,7 +77,7 @@ scp source_file rc_username@login.rc.colorado.edu:~/target_directory
 # Replace source_directory with the directory you would like
 # to copy from within your rc home directory.
 
-scp rc_username@login.rc.colorado.edu:~/source_directory/source_file .
+scp rc_username@login.rc.colorado.edu:/source_directory/source_file .
 ```
 
 For more information on secure copy take a look at some of our listed
