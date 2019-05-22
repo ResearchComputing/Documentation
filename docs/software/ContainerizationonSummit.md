@@ -2,9 +2,7 @@
 
 When installing software, you may come across applications that have complex chains of dependencies that are challenging to compile and install. Some software may require very specific versions of libraries that may not be available on Summit or conflict with libraries needed for other applications. You may also need to move between several workstations or HPC platforms, which often requires reinstalling your software on each  system. Containers are a good way to tackle all of these issues and more.
 
----
-
-### Containerization Fundamentals
+## Containerization Fundamentals
 
 Containers build upon an idea that has long existed within computing: hardware can be emulated through software. **Virtualization** simulates physical computing hardware through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale.
 
@@ -15,9 +13,7 @@ Containers build upon an idea that has long existed within computing: hardware c
 
 Containers distinguish themselves through their low computational  overhead and their ability to utilize all of a host system’s resources. Building containers is a relatively simple process that starts with a container engine.
 
----
-
-### Docker
+## Docker
 
 Docker is by far the most popular container engine, and  can be used on any system where you have administrative privileges. Because of this need for administrative privileges, Docker containers cannot be built or run directly on Research Computing resources. **To utilize a Docker container on Research Computing resources please build a singularity image using a Docker image as a base.**
 
@@ -36,7 +32,7 @@ A **Docker image** is a saved instance of all the software, tools, and workflows
 
 A **Docker container** is an ephemeral instance of a Docker image. Docker images are mutable, but because they are killed on exit, and do not actually save any changes made to the container.
 
-#### Running a Docker container
+### Running a Docker container
 
 **Note:** Docker containers cannot be run with Docker on RMACC Summit or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using a software called Singularity.  See the documentation on Singularity (below) if you wish to run a Docker container on RMACC Summit or Blanca. 
 
@@ -90,7 +86,7 @@ If Python is not the default application of the container, then we can specify t
 docker run -it example-python python
 ```
 
-#### Building a Docker image
+### Building a Docker image
 
 To build your own custom Docker images that can then be run as containers, you will need to first create a Dockerfile. As stated above, a Dockerfile is essentially a recipe that specifies a source image to build upon, along with a set of instructions Docker will run when building the new image. The Dockerfile will also contain a set of instructions that Docker can run by default when the image is executed as a container instance.
 
@@ -129,11 +125,11 @@ docker build -t <container-name> .
 
 The `-t` flag specifies the name or title of container. If you do not provide a title for the container then docker will assign the image with an auto-generated name.
 
-#### File access
+### File access
 
 By default, Docker containers are run without access to any part of the host file system. Luckily we can use Docker mounts to circumvent this restriction and link a location in the container file system with a location in the host file system. Directories linked this way will be visible to both the host operating system and the container. There are 2 different forms of mounting available to Docker containers: **Bind mounts** and **Volume mounts**.
 
-##### Bind Mounts
+#### Bind Mounts
 
 A bind mount is a simple binding between a folder on the host filesystem and a folder on the container filesystem. All files within the bind mount are available to both container and host operating systems. To invoke a bind mount, simply add the following to your docker run script: 
 
@@ -141,7 +137,7 @@ A bind mount is a simple binding between a folder on the host filesystem and a f
 docker run --mount type=bind,source=<host-folder>target=<container-folder> <docker-image>
 ```
 
-##### Volume Mounts
+#### Volume Mounts
 
 Similar to a bind mount, a volume mount is a simple bind between a folder on the host filesystem and and a folder on the container filesystem. Volumes, however, are completely managed by Docker. Because of this, volumes must be managed much like containers and images. You must first create a volume with the command:
 
@@ -157,7 +153,7 @@ docker run --mount type=volume,source=<volume>target=<container-folder> <docker-
 
 Docker volumes are almost entirely managed by Docker so you will not be able to specify the location of your volume in the filesystem directly.  
 
-#### Docker Hub
+### Docker Hub
 
 Docker Hub is Docker’s solution for cloud storage of Docker images. Docker Hub is a repository system that allows users of docker to upload or download docker images from public or private repositories. Unlimited public repositories are available for free while users are limited to 1 private repository on free accounts. To pull an image from Docker Hub, simply type:
 
@@ -183,9 +179,7 @@ We can then push our image with the command:
 docker push <your-docker-username>/<repository>
 ```
 
----
-
-### Singularity
+## Singularity
 
 Singularity is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources such as RMACC Summit and Blanca. Singularity is preinstalled on Research Computing resources, so all that is needed to run Singularity containers is to load the Singularity module on a compute node on RMACC Summit or Blanca:
 
@@ -195,7 +189,7 @@ module load singularity/3.0.2
 
 Much like Docker, Singularity is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of Singularity images which can be run as ephemeral Singularity containers. Unlike Docker, however, Singularity does not manage images, containers, or volumes through a central application. Instead, Singularity generates saved image files that can either be mutable or immutable based on compression.
 
-#### Singularity Hub
+### Singularity Hub
 
 Singularity Hub is a container registry that allows users to pull images from a server and into a system with Singularity installed. Singularity Hub uses Github to host image recipes, builds images in the cloud from these recipes, and places the resulting images in the Singularity Hub registry. .
 
@@ -207,7 +201,7 @@ Singularity Hub has a variety of useful prebuilt images for different software p
 
 **Note:** As of 2019, there are presently two Singularity container registries. The former is Singularity Hub, described above, which is managed by Stanford University and Lawrence Berkeley National Laboratory.  The latter is the Sylabs Singularity Container Library, which was created in late 2018 when Singularity was spun off into the private company Sylabs.  Below we provide documentation on how to pull images from either repository, and on how to build images on Singularity Hub via Github, and in the Sylabs Singularity Container Library using their “Remote Builder” functionality.
 
-#### Pulling Singularity Images
+### Pulling Singularity Images
 
 Because we cannot build our own Singularity images on HPC systems, we must instead bring our images over from another location. Pulling images from public repositories is often the easiest solution to this problem. 
 
@@ -251,7 +245,7 @@ Pulling the Docker image of the latest tag of ubuntu can be done with the follow
 singularity pull docker://ubuntu:latest
 ```
 
-#### Running a Singularity image as a container
+### Running a Singularity image as a container
 
 Singularity images can be run as containers much like Docker images. Singularity commands, however, follow a bit more nuanced syntax depending on what you’d like to do. After pulling your image from either Docker Hub or Singularity Hub, you can run the image by using the `singularity run` command. Type:
 
@@ -285,7 +279,7 @@ If the default application for the image is not python we could run python as fo
 singularity exec python-cont.img python
 ```
 
-#### File Access
+### File Access
 
 By default most user-owned files and directories are available to any container that is run on RMACC Summit and Blanca (this includes files in `/home/$USER`, `/projects/$USER`, `/scratch/summit/$USER` and `/rc_scratch/$USER`). This means that normally a user will not need to bind any folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized. 
 
@@ -304,11 +298,11 @@ export SINGULARITY_BINDPATH=/source/directory1:/target/directory1,\
 
 Then run, execute, or shell into the container as normal.
 
-#### Building a Singularity image
+### Building a Singularity image
 
 **Important: You cannot build Singularity images directly on Summit. If you cannot build an image on your local machine you will need to build it on Singularity Hub or Sylabs Remote Builder.**
 
-#### _Singularity Build_
+#### Singularity Build
 
 Just like Docker, Singularity allows a user to build images using a *definition file*. The file is saved with the name “Singularity” and contains instructions on how to prepare a Singularity image file. Just like a Dockerfile, this file has a variety of directives that allow for the customization of your image. A sample image would look something like this: 
 
@@ -336,7 +330,7 @@ sudo singularity build <img-name.img> <recipe-name.def>
 
 **Again, it is important to note that if you build an image locally as described above, you must build your image on a computer that you have administrative privileges on. If you do not have administrative privileges you will not be able to build the container in this manner.  Fortunately, there are other ways to build containers remotely, which are discussed next.**
 
-#### _Building Images Remotely with Singularity Hub_
+#### Building Images Remotely with Singularity Hub
 
 To  build images with Singularity Hub, you must first create a Github account at https://github.com/join if you do not have one already. After completing this step log into your github account and create an empty repository. 
 
@@ -374,5 +368,3 @@ After this you can now build containers through the Sylabs remote builder on RMA
 ```
 singularity build --remote <desired-image-name> <your-recipe>
 ```
-
-​	
