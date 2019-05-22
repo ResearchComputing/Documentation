@@ -1,4 +1,4 @@
-## Containerization on Summit
+# Containerization on Summit
 
 When installing software, you may come across applications that have complex chains of dependencies that are challenging to compile and install. Some software may require very specific versions of libraries that may not be available on Summit or conflict with libraries needed for other applications. You may also need to move between several workstations or HPC platforms, which often requires reinstalling your software on each  system. Containers are a good way to tackle all of these issues and more.
 
@@ -308,7 +308,7 @@ Then run, execute, or shell into the container as normal.
 
 **Important: You cannot build Singularity images directly on Summit. If you cannot build an image on your local machine you will need to build it on Singularity Hub or Sylabs Remote Builder.**
 
-##### Singularity Build
+#### _Singularity Build_
 
 Just like Docker, Singularity allows a user to build images using a *definition file*. The file is saved with the name “Singularity” and contains instructions on how to prepare a Singularity image file. Just like a Dockerfile, this file has a variety of directives that allow for the customization of your image. A sample image would look something like this: 
 
@@ -336,7 +336,7 @@ sudo singularity build <img-name.img> <recipe-name.def>
 
 **Again, it is important to note that if you build an image locally as described above, you must build your image on a computer that you have administrative privileges on. If you do not have administrative privileges you will not be able to build the container in this manner.  Fortunately, there are other ways to build containers remotely, which are discussed next.**
 
-##### Building Images Remotely with Singularity Hub
+#### _Building Images Remotely with Singularity Hub_
 
 To  build images with Singularity Hub, you must first create a Github account at https://github.com/join if you do not have one already. After completing this step log into your github account and create an empty repository. 
 
@@ -348,7 +348,7 @@ Your container should build automatically if you have a recipe file named “Sin
 
 More on building containers: <https://www.sylabs.io/guides/3.0/user-guide/build_a_container.html>
 
-##### Building Images Remotely with the Singularity Remote Builder
+#### _Building Images Remotely with the Singularity Remote Builder_
 
 With Singularity 3.0, users have the ability to build containers remotely through Sylabs remote builder. Unlike Singularity Hub though, the Singularity remote builder can be utilized directly on the command line from RMACC Summit or Blanca without needing to upload to a repository.  
 
