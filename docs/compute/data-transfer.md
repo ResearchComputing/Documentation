@@ -123,10 +123,6 @@ provides a good way to transfer files to collaborators. Files are
 uploaded to a server and a link to download the file can be emailed to
 an on, or off-campus, user: [http://oit.colorado.edu/safe-transfer](http://oit.colorado.edu/safe-transfer)
 
-### XSEDE File Transfers
-
-
-
 ### DTN SSH Host Keys
 
 ```
