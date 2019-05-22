@@ -1,4 +1,4 @@
-##     Job Resources Information
+## Job Resource Information
 
 Slurm allows the use of flags to specify resources needed for a job. Below is a table describing some of the most common Slurm resource flags, followed by tables describing available Summit partitions and Quality of Service (QoS) options.
 
@@ -8,15 +8,18 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocations](../access/allocations)    | Specify an allocation account                       | --account=account_name     |
-| Partitions         | Specify a partition ([see table below](#partitions))           | --partition=partition_name |
+| [Allocations](../access/allocations)    | Specify an allocation account  | --account=allocation       |
+| Partitions         | Specify a partition ([see table below](#partitions)) | --partition=partition |
 | Sending email      | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address      | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
-| Number of tasks    | The total number of cores needed to run the job     | --ntasks=processes         |
-| Quality of service | Specify a QOS ([see table below](#quality-of-service))                 | --qos=qos                  |
+| Number of tasks    | The ***total*** number of processes needed to run the job | --ntasks=processes   |
+| Tasks per node     | The number of processes you wish to assign to each node | --ntasks-per-node=processes |
+| Total Memory       | The total memory required to complete the Job. <br> Requesting more memory will reserve additional <br> cores proportional to how much memory was requested. <br> Units can be specified with the suffixes: K,M,G,T | --mem=memory |
+| Quality of service | Specify a QOS ([see table below](#quality-of-service)) | --qos=qos               |
 | Wall time          | The max. amount of time your job will run for       | --time=wall time           |
 | Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
+
 
 ### Partitions
 
@@ -28,14 +31,16 @@ These are the partitions available on Summit.
 | --------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
 | shas      | Haswell (default) | 380        | 24         | 4.84          | 1              | 4H, 24H                  |
 | sgpu      | GPU-enabled       | 10         | 24         | 4.84          | 2.5            | 4H, 24H                  |
-| smem      | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
+| smem*    | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
 | sknl      | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
+
+*The *smem* partition is limited to 1 node per job. If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
 
 | Partition        | Description       | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default and Max Walltime |
 | ---------------- | ----------------- | --------- | --------- | ------------- | -------------- | ------------------------ |
-| shas-testing *   | Haswell (default) | 24        | 24        | 4.84          | 1              | 0.5H, 0.5H               |
+| shas-testing*   | Haswell (default) | 24        | 24        | 4.84          | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell (default) | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled       | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)         | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |

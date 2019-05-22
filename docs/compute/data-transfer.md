@@ -57,27 +57,27 @@ appears as:
 ```bash
 # Command to copy files from a local workstation to research computing resources
 
-# Replace source_file with the file you wish to copy
+# Replace <path-to-file> with the file you wish to copy
 
-# Replace rc_username with your research computing username
+# Replace <rc_username> with your Research Computing username
 
-# Replace target_directory with the directory you would like
-# to send the file to within your rc home directory.
+# Replace <target_directory> with the full path to the directory you would like
+# to send the file to.
 
-scp source_file rc_username@login.rc.colorado.edu:~/target_directory
+scp <path-to-file> rc_username@login.rc.colorado.edu:<target-path>
 ```
 
 ```bash
 # Command to copy files from research computing resources to a local workstation
 
-# Replace source_file with the file you wish to copy
+# Replace <path-to-file> with the file you wish to copy
 
-# Replace rc_username with your research computing username
+# Replace <rc_username> with your Research Computing username
 
-# Replace source_directory with the directory you would like
-# to copy from within your rc home directory.
+# Replace <target_directory> with the full path to the directory you would like
+# to send the file to.
 
-scp rc_username@login.rc.colorado.edu:~/source_directory/source_file .
+scp <rc_username>@login.rc.colorado.edu:<path-to-file> <target-path>
 ```
 
 For more information on secure copy take a look at some of our listed
