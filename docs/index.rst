@@ -84,7 +84,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    software/gaussian
    software/matlab
    software/GNUParallel
-   software/Containerization-on-Summit
+   software/ContainerizationonSummit
 
 .. toctree::
    :maxdepth: 2
