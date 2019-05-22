@@ -68,7 +68,7 @@ In this example the 20 invocations of your python script will run across the 4 c
 
 Tip: For sufficiently-large workflows one can add the `--joblog` and `--resume` flags in `$my_srun`. These flags will enable GNU Parallel to keep track of tasks it has run successfully and, if needed, rerun tasks that failed or were not executed. Additional details can be found in the links below. 
 
-## **Additional Resources**
+### **Additional Resources**
 
 - https://www.gnu.org/software/parallel/
 - https://www.gnu.org/software/parallel/parallel_tutorial.html
