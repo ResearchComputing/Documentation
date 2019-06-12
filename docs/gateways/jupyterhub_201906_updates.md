@@ -131,5 +131,5 @@ queue and not ready to accept work.
 
 #### See Also
 
-* [Parallel Programming with Jupyter Notebooks](../additional-resources/parallel-programming-jupyter.html)
-* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
+* [Parallel Programming with Jupyter Notebooks](./parallel-programming-jupyter.md)
+* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.md)
