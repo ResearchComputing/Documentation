@@ -4,16 +4,16 @@
 
 ### Step 1: Log  in to CURC JupyterHub
 
-JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) before continuing.
+CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) before continuing.
 
 ### Step 2: Start a notebook server
 
 To start a notebook server, select one of the available options in the _Select job profile_ menu under _Spawner Options_ and click _Spawn_. Available options are:
 
-* Summit Haswell - 2hr (a 2-hour, 1 core job on a Summit "shas" node)
-* Summit Haswell - 12hr (a 12-hour, 1 core job on a Summit "shas" node)
-* Summit Knight's Landing - 2hr (a 2-hour, full node job on a Summit "sknl" node)
-* Blanca - 12hr (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+* _Summit Haswell - 2hr_ (a 2-hour, 1 core job on a Summit "shas" node)
+* _Summit Haswell - 12hr_ (a 12-hour, 1 core job on a Summit "shas" node)
+* _Summit Knight's Landing - 2hr_ (a 2-hour, full node job on a Summit "sknl" node)
+* _Blanca - 12hr_ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC _/home_ directory under the _Files_ tab.  You will also see the following buttons in the upper right of the screen:
 
@@ -32,11 +32,12 @@ The server will take a few moments to start.  When it does, you will be taken to
   * /pl/active (for users with PetaLibrary allocations)
   * /scratch/summit (Summit only)
   * /rc_scratch (Blanca only)
-* Access to three default kernels in the CURC Anaconda distribution:
+* Access to three default kernels in the CURC Anaconda distribution 
+  (_Note: documentation on creating and importing your own custom kernels is provided below_):
   * Python2 notebooks
   * Python3 notebooks
   * BASH notebooks
-    * _documentation on creating and importing your own custom kernels is provided below_ 
+  * R notebooks 
 * IPyParallel/IPython clusters
 
 ### Step 3: Open a notebook
@@ -54,7 +55,47 @@ Using the _Logout_ button will both shut down the Jupyter notebook server and lo
 
 #### Creating your own custom Jupyter kernels
 
-TEXT HERE.
+The following steps describe how to create your own custom Jupyter environments and associated kernels for use in RC JupyterHub. Note that the CURC JupyterHub runs on top of Anaconda, an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using conda.    
+
+To follow these steps, you must first login to a terminal session on Blanca or Summit (i.e., you can't do this from within CURC JupyterHub).  
+
+##### 1. Activate the CURC Anaconda environment
+
+```source /curc/sw/anaconda3/2019.03/bin/activate```
+
+##### 2. Create an environment in a predetermined location in your /projects directory.  
+
+###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_ in the preexisting location _/projects/$USER/software/anaconda/envs_:
+
+```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
+
+or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
+
+```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16```
+
+###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_ in the preexisting location _/projects/$USER/software/anaconda/envs_:
+
+```conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
+
+##### 3. Activate your new environment
+
+```conda activate /projects/$USER/software/anaconda/envs/mycustomenv```
+
+##### 4. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
+
+```python -m ipykernel install --user --name mycustomenv --display-name mycustomenv```
+
+This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_.  By specifying the `--user` flag, the kernel will be in _/home/$USER/.local/share/jupyter/kernels_, a directory that is in the default JUPYTER_PATH that will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+
+[Notes on creating environments:]
+* You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your /projects directory because it is much larger than your /home directory).
+* Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
+* We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
+* If you have already installed your own version of Anaconda or Miniconda, it is possible to create kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
+* If you need to use custom kernels that are in a location other than _/home/$USER/.local/share/jupyter_ (for example, if your research team has a group installation of Anaconda environments located in _/pl/active/<some_env>_, you can create a file in your home directory named _~/.jupyterrc_ containing the following line:
+
+   ```export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter```
+* If you need assistance creating or installing environments or kernels, contact us at rc-help@colorado.edu. 
 
 #### Troubleshooting
 
