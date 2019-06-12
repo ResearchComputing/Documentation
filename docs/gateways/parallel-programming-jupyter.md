@@ -135,7 +135,8 @@ Both the IPython cluster and notebook server will persist until
 manually stopped or each reaches its time limit. IPython clusters have
 a 4-hour time limit by default (though this can be changed by editing
 the profile in `$HOME/.ipython/`). The notebook server itself has a
-time limit of 2 hours. When you're done using a resource, please shut
+time limit of 2 or 12 hours depending on which job profile you select. 
+When you are done using a resource, please shut
 it down so that the resources can be used for other work.
 
 Return to the "IPython Clusters" tab and press the "Stop" button for
