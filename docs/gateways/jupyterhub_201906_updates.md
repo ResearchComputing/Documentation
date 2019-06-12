@@ -108,7 +108,7 @@ Jupyter notebook servers spawned on RC compute resources log to _`~/.jupyterhub-
 
 #### IPython Clusters
 
-Notebook servers started on RC compute resources can also launch IPython clusters for parallel processing. See [IPython Parallel](http://ipyparallel.readthedocs.org/en/latest/) and [MPI for Python](https://mpi4py.readthedocs.io/en/stable/) for general information on parallel processing with IPython clusters.
+Notebook servers started on Summit can also launch IPython clusters for parallel processing. See [IPython Parallel](http://ipyparallel.readthedocs.org/en/latest/) and [MPI for Python](https://mpi4py.readthedocs.io/en/stable/) for general information on parallel processing with IPython clusters.
 
 The RC environment provisions two IPython profiles automatically which can be used as a reference point for starting IPython clusters. These profiles are available in the _IPython Clusters_ tab.
 
