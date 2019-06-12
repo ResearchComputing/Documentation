@@ -1,6 +1,6 @@
-## JupyterHub
+# JupyterHub
 
-[JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) is a multi-user server for [Jupyter](https://jupyter.org/) (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. The CU Research Computing environment includes support for parallel computation on local HPC resources.
+[JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) is a multi-user server for [Jupyter](https://jupyter.org/) (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. CU Research Computing (CURC) operates a JupyterHub server includes support for serial and parallel computation on local HPC resources. The following documentation outlines how to use the CURC JupyterHub.
 
 ### Step 1: Log  in to CURC JupyterHub
 
@@ -32,7 +32,7 @@ The server will take a few moments to start.  When it does, you will be taken to
   * /pl/active (for users with PetaLibrary allocations)
   * /scratch/summit (Summit only)
   * /rc_scratch (Blanca only)
-* Access to three default kernels in the CURC Anaconda distribution 
+* Access to the following default kernels in the CURC Anaconda distribution 
   (_Note: documentation on creating and importing your own custom kernels is provided below_):
   * Python2 notebooks
   * Python3 notebooks
@@ -42,6 +42,9 @@ The server will take a few moments to start.  When it does, you will be taken to
 
 ### Step 3: Open a notebook
 
+There are two ways to open a notebook:
+* [To open a new notebook]: click on the _New_ button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language (python, R, etc.) you wish to use in the notebook. Once you are in the notebook, you can save it to <myfilename>.ipynb using the _File -> Save as.._ option.
+* [To open an existing notebook]: Click on the <myfilename>.ipynb notebook that you want to work in.  This will open the notebook in the appropriate kernel (assuming that kernel is available on CURC Jupyterhub).
 
 ### Step 4: Shut down a Notebook Server
 
@@ -55,7 +58,7 @@ Using the _Logout_ button will both shut down the Jupyter notebook server and lo
 
 #### Creating your own custom Jupyter kernels
 
-The following steps describe how to create your own custom Jupyter environments and associated kernels for use in RC JupyterHub. Note that the CURC JupyterHub runs on top of Anaconda, an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using conda.    
+The CURC JupyterHub runs on top of Anaconda, an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using conda. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
 
 To follow these steps, you must first login to a terminal session on Blanca or Summit (i.e., you can't do this from within CURC JupyterHub).  
 
