@@ -17,11 +17,11 @@ To start a notebook server, select one of the available options in the _`Select 
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC _`/home`_ directory under the _`Files`_ tab.  You will also see the following buttons in the upper right of the screen:
 
-* `Quit`: Will terminate your notebook server (i.e., terminates the job you just started).  
-* `Logout`: Will log you out of CURC Jupyterhub and terminate your notebook server.
-* `Control Panel`: Will enable you to manually terminate and (if desired) restart your server.
-* `Upload`: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
-* `New`: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R)
+* _`Quit`_: Will terminate your notebook server (i.e., terminates the job you just started).  
+* _`Logout`_: Will log you out of CURC Jupyterhub and terminate your notebook server.
+* _`Control Panel`_: Will enable you to manually terminate and (if desired) restart your server.
+* _`Upload`_: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
+* _`New`_: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R)
   * _documentation on opening new notebooks is provided below_
 
 #### Default Notebook Features
@@ -90,7 +90,7 @@ To follow these steps, you must first login to a terminal session on Blanca or S
 
 ```python -m ipykernel install --user --name mycustomenv --display-name mycustomenv```
 
-This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default JUPYTER_PATH) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 ##### Notes on creating environments:
 * You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _`/projects`_ directory because it is much larger than your _`/home`_ directory).
