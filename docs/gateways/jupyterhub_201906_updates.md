@@ -52,7 +52,7 @@ Use the _`Stop My Server`_ button in the _`Control Panel`_ to shut down the Jupy
 
 Alternately, you can use the _`Quit`_ button from the Jupyter home page to shut down the Jupyter notebook server.
 
-Using the _`Logout`_ button will both shut down the Jupyter notebook server and log you out of CURC JupyterHub
+Using the _`Logout`_ button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
 
 -----------------------------
 
