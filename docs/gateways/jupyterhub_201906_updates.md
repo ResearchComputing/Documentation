@@ -22,7 +22,7 @@ The server will take a few moments to start.  When it does, you will be taken to
 * _`Control Panel`_: Will enable you to manually terminate and (if desired) restart your server.
 * _`Upload`_: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
 * _`New`_: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R)
-  * _documentation on opening new notebooks is provided below_
+  * _documentation on opening new notebooks is provided in "Step 3" below_
 
 #### Default Notebook Features
 
@@ -33,7 +33,7 @@ The server will take a few moments to start.  When it does, you will be taken to
   * _`/scratch/summit`_ (Summit only)
   * _`/rc_scratch`_ (Blanca only)
 * Access to the following default kernels in the CURC Anaconda distribution 
-  (_Note: documentation on creating and importing your own custom kernels is provided below_):
+  (_Note: documentation on creating and importing your own custom kernels is provided in the "Additinoal Documentation" below_):
   * Python2 notebooks
   * Python3 notebooks
   * BASH notebooks
