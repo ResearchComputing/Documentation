@@ -43,8 +43,8 @@ The server will take a few moments to start.  When it does, you will be taken to
 ### Step 3: Open a notebook
 
 There are two ways to open a notebook:
-* [To open a new notebook]: click on the _New_ button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language (python, R, etc.) you wish to use in the notebook. Once you are in the notebook, you can save it to <myfilename>.ipynb using the _File -> Save as.._ option.
-* [To open an existing notebook]: Click on the <myfilename>.ipynb notebook that you want to work in.  This will open the notebook in the appropriate kernel (assuming that kernel is available on CURC Jupyterhub).
+* _To open a new notebook_: click on the _New_ button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language you wish to use in the notebook (e.g., python, R, bash). Once you are in the notebook, you can save it to _myfilename_.ipynb using the _File -> Save as.._ option.
+* To open an existing notebook: Click on the _myfilename_.ipynb notebook that you want to work in.  This will open the notebook in the appropriate kernel (assuming that kernel is available on CURC Jupyterhub).
 
 ### Step 4: Shut down a Notebook Server
 
@@ -54,11 +54,13 @@ Alternately, you can use the _Quit_ button from the Jupyter home page to shut do
 
 Using the _Logout_ button will both shut down the Jupyter notebook server and log you out of CURC JupyterHub
 
+-----------------------------
+
 ### Additional Documentation
 
 #### Creating your own custom Jupyter kernels
 
-The CURC JupyterHub runs on top of Anaconda, an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using conda. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
+The CURC JupyterHub runs on top of [Anaconda](http://anaconda.com), an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
 
 To follow these steps, you must first login to a terminal session on Blanca or Summit (i.e., you can't do this from within CURC JupyterHub).  
 
@@ -66,19 +68,19 @@ To follow these steps, you must first login to a terminal session on Blanca or S
 
 ```source /curc/sw/anaconda3/2019.03/bin/activate```
 
-##### 2. Create an environment in a predetermined location in your /projects directory.  
+##### 2. Create a new environment in a predetermined location in your /projects directory.  
 
-###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_ in the preexisting location _/projects/$USER/software/anaconda/envs_:
+ ###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_ in the preexisting location _/projects/$USER/software/anaconda/envs_:
 
-```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
+ ```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
 
-or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
+ or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
 
-```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16```
+ ```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16```
 
-###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_ in the preexisting location _/projects/$USER/software/anaconda/envs_:
+ ###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_ in the preexisting location _/projects/$USER/software/anaconda/envs_:
 
-```conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
+ ```conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
 
 ##### 3. Activate your new environment
 
@@ -88,17 +90,17 @@ or if you want a specific version of python other than the default installed in 
 
 ```python -m ipykernel install --user --name mycustomenv --display-name mycustomenv```
 
-This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_.  By specifying the `--user` flag, the kernel will be in _/home/$USER/.local/share/jupyter/kernels_, a directory that is in the default JUPYTER_PATH that will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name). By specifying the `--user` flag, the kernel will be in _/home/$USER/.local/share/jupyter/kernels_ (a directory that is in the default JUPYTER_PATH) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 [Notes on creating environments:]
-* You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your /projects directory because it is much larger than your /home directory).
+* You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _/projects_ directory because it is much larger than your _/home_ directory).
 * Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
 * We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
-* If you have already installed your own version of Anaconda or Miniconda, it is possible to create kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
-* If you need to use custom kernels that are in a location other than _/home/$USER/.local/share/jupyter_ (for example, if your research team has a group installation of Anaconda environments located in _/pl/active/<some_env>_, you can create a file in your home directory named _~/.jupyterrc_ containing the following line:
+* If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
+* If you need to use custom kernels that are in a location other than _/home/$USER/.local/share/jupyter_ (for example, if your research team has a group installation of Anaconda environments located in _/pl/active/<some_env>_), you can create a file in your home directory named _~/.jupyterrc_ containing the following line:
 
    ```export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter```
-* If you need assistance creating or installing environments or kernels, contact us at rc-help@colorado.edu. 
+* If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
 
 #### Troubleshooting
 
