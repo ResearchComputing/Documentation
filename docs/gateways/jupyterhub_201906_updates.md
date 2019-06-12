@@ -92,12 +92,12 @@ To follow these steps, you must first login to a terminal session on Blanca or S
 
 This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name). By specifying the `--user` flag, the kernel will be in _/home/$USER/.local/share/jupyter/kernels_ (a directory that is in the default JUPYTER_PATH) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
-[Notes on creating environments:]
+##### Notes on creating environments:
 * You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _/projects_ directory because it is much larger than your _/home_ directory).
 * Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
 * We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
-* If you need to use custom kernels that are in a location other than _/home/$USER/.local/share/jupyter_ (for example, if your research team has a group installation of Anaconda environments located in _/pl/active/<some_env>_), you can create a file in your home directory named _~/.jupyterrc_ containing the following line:
+* If you need to use custom kernels that are in a location other than `_/home/$USER/.local/share/jupyter_` (for example, if your research team has a group installation of Anaconda environments located in `_/pl/active/<some_env>_`), you can create a file in your home directory named `_~/.jupyterrc_` containing the following line:
 
    ```export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter```
 * If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
