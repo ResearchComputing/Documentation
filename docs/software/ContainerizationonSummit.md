@@ -381,7 +381,7 @@ OpenMPI needs to be installed both inside and outside of the Singularity contain
 
 The following Singularity recipe ensures that OpenMPI 2.0.1 is installed in the image, which matches the openmpi/2.0.1 module that is available on RMACC Summit. This recipe can be used as a template to build your own MPI-enabled container images for RMACC Summit and can be found at: https://github.com/ResearchComputing/core-software/tree/master/singularity
 
-Once you’ve built the container with one of the methods outlined above, you can place it on RMACC Summit and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Singularity on RMACC Summit. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs "mpi_hello_world" with MPI from a container.
+Once you’ve built the container with one of the methods outlined above, you can place it on RMACC Summit and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Singularity on RMACC Summit. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
 
 ```
 ml gcc/6.1.0
@@ -391,4 +391,4 @@ ml singularity/3.0.2
 mpirun -np 4 singularity exec openmpi.sif mpi_hello_world"
 ```
 
-Note that it is also possible to build intel/IMPI containers for use on RMACC Summit, which are likely to have enhanced performance on Summit’s intel architecture compared to gcc/OpenMPI containers. If you would like assistance building MPI-enabled containers contact rc-help@colorado.edu.
+Note that it is also possible to build intel/IMPI containers for use on RMACC Summit, which are likely to have enhanced performance on Summit’s intel architecture compared to gcc/OpenMPI containers. If you would like assistance building MPI-enabled containers contact [rc-help@colorado.edu](rc-help@colorado.edu).
