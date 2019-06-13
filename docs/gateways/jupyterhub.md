@@ -33,7 +33,7 @@ The server will take a few moments to start.  When it does, you will be taken to
   * _`/scratch/summit`_ (Summit only)
   * _`/rc_scratch`_ (Blanca only)
 * Access to the following default kernels in the CURC Anaconda distribution 
-  (_Note: documentation on creating and importing your own custom kernels is provided in the "Additinoal Documentation" below_):
+  (_Note: documentation on creating and importing your own custom kernels is provided in the "Additional Documentation" below_):
   * Python2 notebooks
   * Python3 notebooks
   * BASH notebooks
@@ -106,30 +106,6 @@ This command will create a kernel with the name _mycustomenv_ and the Jupyter di
 
 Jupyter notebook servers spawned on RC compute resources log to _`~/.jupyterhub-spawner.log`_. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
 
-#### IPython Clusters
-
-Notebook servers started on Summit can also launch IPython clusters for parallel processing. See [IPython Parallel](http://ipyparallel.readthedocs.org/en/latest/) and [MPI for Python](https://mpi4py.readthedocs.io/en/stable/) for general information on parallel processing with IPython clusters.
-
-The RC environment provisions two IPython profiles automatically which can be used as a reference point for starting IPython clusters. These profiles are available in the _IPython Clusters_ tab.
-
-##### `default`
-
-The `default` profile is generated automatically by IPython. Engines
-are dispatched in the same resources as the notebook server, and
-provide no MPI support or cluster performance.
-
-##### `example-shas`
-
-Each `example-shas` engine provides access to a Summit Haswell CPU
-thread. Multiple engines are aggregated into a single MPI session.
-
-**Note:** IPython engines on RC cluster resources are provisioned as
-batch jobs using Slurm, but Jupyter does not yet report queue
-progress. The exception "NoEnginesRegistered: Can't build targets
-without any engines" indicates that the cluster job is still in the
-queue and not ready to accept work.
-
 #### See Also
 
-* [Parallel Programming with Jupyter Notebooks](./parallel-programming-jupyter.md)
 * [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.md)
