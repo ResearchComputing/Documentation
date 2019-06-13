@@ -17,6 +17,8 @@ Containers distinguish themselves through their low computational  overhead and 
 
 Docker is by far the most popular container engine, and  can be used on any system where you have administrative privileges. Because of this need for administrative privileges, Docker containers cannot be built or run directly on Research Computing resources. **To utilize a Docker container on Research Computing resources please build a singularity image using a Docker image as a base.**
 
+See the documentation on Singularity (below) if you wish to run a Docker container on RMACC Summit or Blanca. 
+<!--
 Docker can be divided into 4 primary components:
 
 - The Docker application
@@ -178,7 +180,7 @@ We can then push our image with the command:
 ```
 docker push <your-docker-username>/<repository>
 ```
-
+-->
 ## Singularity
 
 Singularity is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources such as RMACC Summit and Blanca. Singularity is preinstalled on Research Computing resources, so all that is needed to run Singularity containers is to load the Singularity module on a compute node on RMACC Summit or Blanca:
