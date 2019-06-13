@@ -4,7 +4,7 @@ When installing software, you may come across applications that have complex cha
 
 ## Containerization Fundamentals
 
-Containers build upon an idea that has long existed within computing: hardware can be emulated through software. **Virtualization** simulates physical computing hardware through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale.
+Containers build upon an idea that has long existed within computing: hardware can be emulated through software. **Virtualization** simulates some or all components of computation through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale and contained within a system's kernel
 
 **Containers** are portable compartmentalizations of some or all of the following: An operating system, software, libraries, data, and workflows. Containers offer: 
 
@@ -344,7 +344,7 @@ Your container should build automatically if you have a recipe file named “Sin
 
 More on building containers: <https://www.sylabs.io/guides/3.0/user-guide/build_a_container.html>
 
-#### _Building Images Remotely with the Singularity Remote Builder_
+#### Building Images Remotely with the Singularity Remote Builder
 
 With Singularity 3.0, users have the ability to build containers remotely through Sylabs remote builder. Unlike Singularity Hub though, the Singularity remote builder can be utilized directly on the command line from RMACC Summit or Blanca without needing to upload to a repository.  
 
@@ -370,3 +370,25 @@ After this you can now build containers through the Sylabs remote builder on RMA
 ```
 singularity build --remote <desired-image-name> <your-recipe>
 ```
+
+### Building MPI-enabled Singularity images
+MPI-enabled Singularity containers can be deployed on RMACC Summit with the caveat that the MPI software within the container stays consistent with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
+
+Here we provide an example of using a gcc compiler with OpenMPI. RMACC Summit uses an Omni-Path interconnect (a low latency network fabric that enables MPI to be efficiently implemented across nodes). In order to use a Singularity container with OpenMPI (or any MPI) on Summit, there are two requirements:
+
+Singularity container needs to have Omni-Path libraries installed inside. 
+OpenMPI needs to be installed both inside and outside of the Singularity container. More specifically, the SAME version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, ex: 2.1 and 2.0). 
+
+The following Singularity recipe ensures that OpenMPI 2.0.1 is installed in the image, which matches the openmpi/2.0.1 module that is available on RMACC Summit. This recipe can be used as a template to build your own MPI-enabled container images for RMACC Summit and can be found at: https://github.com/ResearchComputing/core-software/tree/master/singularity
+
+Once you’ve built the container with one of the methods outlined above, you can place it on RMACC Summit and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Singularity on RMACC Summit. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs "mpi_hello_world" with MPI from a container.
+
+```
+ml gcc/6.1.0
+ml openmpi/2.0.1
+ml singularity/3.0.2
+
+mpirun -np 4 singularity exec openmpi.sif mpi_hello_world"
+```
+
+Note that it is also possible to build intel/IMPI containers for use on RMACC Summit, which are likely to have enhanced performance on Summit’s intel architecture compared to gcc/OpenMPI containers. If you would like assistance building MPI-enabled containers contact rc-help@colorado.edu.
