@@ -1,6 +1,8 @@
 # JupyterHub
 
-[JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) is a multi-user server for [Jupyter](https://jupyter.org/) (formerly known as IPython) notebooks. It provides a web service that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. CU Research Computing (CURC) operates a JupyterHub server includes support for serial and parallel computation on local HPC resources. The following documentation outlines how to use the CURC JupyterHub.
+Do you user [Jupyter notebooks](https://jupyter.org/) on your laptop for coding and data analysis using python, R or other languages? Jupyter notebooks contain live code, equations, visualizations and explanatory text, and are a great way to use, learn and teach computer languages for interactive data analysis.  
+
+CU Research Computing (CURC) operates a [JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) server that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
 ### Step 1: Log  in to CURC JupyterHub
 
@@ -60,7 +62,7 @@ Using the _`Logout`_ button will log you out of CURC JupyterHub.  It will not sh
 
 #### Creating your own custom Jupyter kernels
 
-The CURC JupyterHub runs on top of [Anaconda](http://anaconda.com), an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
+The CURC JupyterHub runs on top of the [CURC Anaconda distribution](../software/python.md). [Anaconda](http://anaconda.com) is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
 
 Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using _`New`_ -> _`Terminal`_.
 
@@ -108,4 +110,5 @@ Jupyter notebook servers spawned on RC compute resources log to _`~/.jupyterhub-
 
 #### See Also
 
+* [CURC Anaconda distribution](../software/python.md)
 * [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.md)
