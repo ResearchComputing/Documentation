@@ -20,16 +20,28 @@ source /curc/sw/anaconda3/2019.03/bin/activate
 conda activate idp
 ```
 
-The first command activates the base python2 or python3 environment, which is the Anaconda python distribution.  You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: `(base) [johndoe@shas0137 ~]$`
+The first command activates the base python2 or python3 environment, which is the Anaconda python distribution.  You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
+```
+(base) [johndoe@shas0137 ~]$
+```
 
-The second line activates the Intel python distribution, which is optimized for many mathematics functions and will run more efficiently on the Intel architecture of Summit and Blanca. You will know that you have properly activated the environment because you should see _`(idp)`_ in front of your prompt. E.g.: `(idp) [johndoe@shas0137 ~]$`
+The second command (_conda activate idp_) activates the Intel python distribution (idp), which is optimized for many mathematics functions and will run more efficiently on the Intel architecture of Summit and Blanca. You will know that you have properly activated the environment because you should see _`(idp)`_ in front of your prompt. E.g.: 
+```
+(idp) [johndoe@shas0137 ~]$
+```
+
+_*We strongly recommend using the Intel python distribution on Summit_.
 
 ##### 1. Using python in Anaconda
 
 NOTES: 
-idp in anaconda2 is just idp
-idp in anaconda3 is just idp
-R is in anaconda3 and is idp
+Should I provide documentation on using R in Anaconda?  Possibly should rename `rstudio` to something else? 
+
+Common things to show them:
+list packages
+list environments
+activate and deactivate environments
+create environments
 
 Install idp2: `conda create -n idp2 intelpython2_core python=2`
 ```conda info envs```
