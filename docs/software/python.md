@@ -1,6 +1,6 @@
 # Using Python with Anaconda
 
-To support the diverse python workflows high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+To support the diverse python workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 ## Using the CURC Anaconda environment
 
@@ -8,14 +8,28 @@ Follow these steps from a Research Computing terminal session.
 
 ##### 1. Activate the CURC Anaconda environment
 
-```source /curc/sw/anaconda3/2019.03/bin/activate```
+###### ___For python2___:
+```
+source /curc/sw/anaconda2/2019.03/bin/activate
+conda activate idp
+```
 
-You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: `(base) [johndoe@shas0137 ~]$`
+###### ___For python3___:
+```
+source /curc/sw/anaconda3/2019.03/bin/activate
+conda activate idp
+```
+
+The first command activates the base python2 or python3 environment, which is the Anaconda python distribution.  You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: `(base) [johndoe@shas0137 ~]$`
+
+The second line activates the Intel python distribution, which is optimized for many mathematics functions and will run more efficiently on the Intel architecture of Summit and Blanca. You will know that you have properly activated the environment because you should see _`(idp)`_ in front of your prompt. E.g.: `(idp) [johndoe@shas0137 ~]$`
+
+##### 1. Using python in Anaconda
 
 NOTES: 
-CHANGE idp to idp3 (unfortunately there is no easy way to rename in conda, so:
-`conda create --name idp3 --clone idp`
-`conda remove --name idp --all`
+idp in anaconda2 is just idp
+idp in anaconda3 is just idp
+R is in anaconda3 and is idp
 
 Install idp2: `conda create -n idp2 intelpython2_core python=2`
 ```conda info envs```
@@ -94,8 +108,12 @@ This command will create a kernel with the name _mycustomenv_ and the Jupyter di
 
 #### Troubleshooting
 
-Jupyter notebook servers spawned on RC compute resources log to _`~/.jupyterhub-spawner.log`_. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
+If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their verion numbers in your current conda environment. Use `conda install <packagname>` to add a new package or `conda install <packagename==version>` for a specific verison; e.g., `conda install numpy=1.16.2`.
+
+Sometimes conda environments can "break" if two packages in the environment require different versions of the same shared library.  In these cases you try a couple of things.
+* Reinstall the packages all within the same _install_ command (e.g., `conda install <package1> <package2>`).  This forces conda to attempt to resolve shared library conflicts. 
+* Create a new environment and reinstall the packages you need (preferably installing all with the same `conda install` command, rather than one-at-a-time, in order to resolve the conflicts).
 
 #### See Also
 
-* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.md)
+* [CURC JupyterHub](../gateways/jupyterhub.md)
