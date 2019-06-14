@@ -68,6 +68,10 @@ Follow these steps from a terminal session. You can get a new terminal session d
 
 ##### 1. Activate the CURC Anaconda environment
 
+___For python2___:
+```source /curc/sw/anaconda2/2019.03/bin/activate```
+
+___For python3___:
 ```source /curc/sw/anaconda3/2019.03/bin/activate```
 
 ##### 2. Create a new environment in a predetermined location in your /projects directory.  
