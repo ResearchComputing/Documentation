@@ -36,10 +36,10 @@ The server will take a few moments to start.  When it does, you will be taken to
   * _`/rc_scratch`_ (Blanca only)
 * Access to the following default kernels in the CURC Anaconda distribution 
   (_Note: documentation on creating and importing your own custom kernels is provided in the "Additional Documentation" below_):
-  * Python2 notebooks
-  * Python3 notebooks
-  * BASH notebooks
-  * R notebooks 
+  * _Python 2 (idp)_: Python2 notebook (Intel Python distribution)
+  * _Python 3 (idp)_: Python3 notebook (Intel Python distribution)
+  * _Bash_: BASH notebook
+  * _R_: R notebook 
 * IPyParallel/IPython clusters
 
 ### Step 3: Open a notebook
@@ -68,15 +68,17 @@ Follow these steps from a terminal session. You can get a new terminal session d
 
 ##### 1. Activate the CURC Anaconda environment
 
-___For python2___:
+###### ___For python2___:
 ```source /curc/sw/anaconda2/2019.03/bin/activate```
 
-___For python3___:
+###### ___For python3___:
 ```source /curc/sw/anaconda3/2019.03/bin/activate```
 
 ##### 2. Create a new environment in a predetermined location in your /projects directory.  
 
- ###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_ in the preexisting location _`/projects/$USER/software/anaconda/envs`_:
+ _*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
+
+ ###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_:
 
  ```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
 
@@ -84,7 +86,9 @@ ___For python3___:
 
  ```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16```
 
- ###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_ in the preexisting location _`/projects/$USER/software/anaconda/envs`_:
+ or...
+
+ ###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
  ```conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
 
@@ -96,7 +100,7 @@ ___For python3___:
 
 ```python -m ipykernel install --user --name mycustomenv --display-name mycustomenv```
 
-This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 ##### Notes on creating environments:
 * You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _`/projects`_ directory because it is much larger than your _`/home`_ directory).
