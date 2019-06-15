@@ -1,6 +1,6 @@
 # JupyterHub
 
-Do you user [Jupyter notebooks](https://jupyter.org/) on your laptop for coding and data analysis using python, R or other languages? Jupyter notebooks contain live code, equations, visualizations and explanatory text, and are a great way to use, learn and teach computer languages for interactive data analysis.  
+Do you use [Jupyter notebooks](https://jupyter.org/) on your laptop for coding and data analysis with python, R or other languages? Jupyter notebooks contain live code, equations, visualizations and explanatory text, and are a great way to use, learn and teach computer languages for interactive data analysis.  
 
 CU Research Computing (CURC) operates a [JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) server that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
@@ -36,10 +36,10 @@ The server will take a few moments to start.  When it does, you will be taken to
   * _`/rc_scratch`_ (Blanca only)
 * Access to the following default kernels in the CURC Anaconda distribution 
   (_Note: documentation on creating and importing your own custom kernels is provided in the "Additional Documentation" below_):
-  * _Python 2 (idp)_: Python2 notebook (Intel Python distribution)
-  * _Python 3 (idp)_: Python3 notebook (Intel Python distribution)
-  * _Bash_: BASH notebook
-  * _R_: R notebook 
+  * ___Python 2 (idp)___: Python2 notebook (Intel Python distribution)
+  * ___Python 3 (idp)___: Python3 notebook (Intel Python distribution)
+  * ___Bash___: BASH notebook
+  * ___R___: R notebook 
 * IPyParallel/IPython clusters
 
 ### Step 3: Open a notebook
@@ -47,6 +47,15 @@ The server will take a few moments to start.  When it does, you will be taken to
 There are two ways to open a notebook:
 * _To open a new notebook_: click on the _`New`_ button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language you wish to use in the notebook (e.g., python, R, bash). Once you are in the notebook, you can save it to _myfilename_.ipynb using the _File -> Save as.._ option.
 * To open an existing notebook: Click on the _myfilename_.ipynb notebook that you want to work in.  This will open the notebook in the appropriate kernel (assuming that kernel is available on CURC Jupyterhub).
+
+_Tip_: The ___Python 2 (idp)___ and ___Python 3 (idp)___ notebook environments have many preinstalled packages. To query a list of available packages from a python notebook, you can use the following nomenclature:
+
+```
+from pip._internal import main as pipmain 
+pipmain(['freeze'])
+```
+
+If the packages you need are not available, you can create your own custom environment and Jupyter kernel (see the _Additional Documentation_ below).
 
 ### Step 4: Shut down a Notebook Server
 
@@ -105,7 +114,7 @@ This command will create a kernel with the name _mycustomenv_ and the Jupyter di
 ##### Notes on creating environments:
 * You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _`/projects`_ directory because it is much larger than your _`/home`_ directory).
 * Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
-* We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
+* We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) (idp) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than _`/home/$USER/.local/share/jupyter`_ (for example, if your research team has a group installation of Anaconda environments located in _`/pl/active/<some_env>`_), you can create a file in your home directory named _`~/.jupyterrc`_ containing the following line:
 
