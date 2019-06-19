@@ -2,6 +2,8 @@
 
 To support the diverse python workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
+_Note: CURC also hosts several python modules for those users who prefer modules over Anaconda. Type ```module spider python``` for a list of available python versions. Each module employs the Intel python distribution and has numerous pre-installed packages which can be queried by typing ```pip freeze```._ 
+
 ## Using the CURC Anaconda environment
 
 Follow these steps from a Research Computing terminal session. 
@@ -71,7 +73,7 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 (base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
- ##### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_:
+ ##### 2a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
 
 ```
 (idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
@@ -83,7 +85,7 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 (idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
 ```
 
- ##### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
+ ##### 2b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
 ```
 (idp) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
