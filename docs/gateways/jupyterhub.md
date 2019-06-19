@@ -97,7 +97,7 @@ You will know that you have properly activated the environment because you shoul
 
  _*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
 
- ###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_:
+ ###### 2a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
 
  ``` You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
 
@@ -113,7 +113,7 @@ You will know that you have properly activated the environment because you shoul
 
  or...
 
- ###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
+ ###### 2b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
  ```
  (base) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
