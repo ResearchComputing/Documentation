@@ -60,41 +60,46 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 (idp) [johndoe@shas0137 ~]$ conda deactivate
 ```
 
-#### Create a new environment in a predetermined location in your /projects directory.  
+#### To create a new environment in a predetermined location in your /projects directory.  
+
+*Note: In the examples below the environment is created in /projects/$USER/software/anaconda/envs. This assumes that the software, anaconda, and envs directories already exist in /projects/$USER. Environments can be installed in any writable location the user chooses.
 
  ##### 1a Activate the conda environment if you haven't already done so.
  
- ```
+```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
 (base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
- ##### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_ in the preexisting location _`/projects/$USER/software/anaconda/envs`_:
+ ##### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_:
 
- ```
- (idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
- ```
+```
+(idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
+```
 
  or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
 
- ```
- (idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
- ```
+```
+(idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
+```
 
- ##### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_ in the preexisting location _`/projects/$USER/software/anaconda/envs`_:
+ ##### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
- ```
- (idp) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
- ```
+```
+(idp) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
+```
 
 ##### 3. Activate your new environment
 
-```conda activate /projects/$USER/software/anaconda/envs/mycustomenv```
-
+```
+(idp) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
+```
 
 ##### Notes on creating environments:
 * You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _`/projects`_ directory because it is much larger than your _`/home`_ directory).
+
 * Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
+
 * We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
 
 #### Troubleshooting
