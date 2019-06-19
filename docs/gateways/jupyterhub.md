@@ -78,10 +78,20 @@ Follow these steps from a terminal session. You can get a new terminal session d
 ##### 1. Activate the CURC Anaconda environment
 
 ###### ___For python2___:
-```source /curc/sw/anaconda2/2019.03/bin/activate```
+```
+[johndoe@shas0137 ~]$ source /curc/sw/anaconda2/2019.03/bin/activate
+```
 
 ###### ___For python3___:
-```source /curc/sw/anaconda3/2019.03/bin/activate```
+```
+[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
+```
+
+You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
+
+```
+(base) [johndoe@shas0137 ~]$
+```
 
 ##### 2. Create a new environment in a predetermined location in your /projects directory.  
 
@@ -89,25 +99,37 @@ Follow these steps from a terminal session. You can get a new terminal session d
 
  ###### 2a. [Ceate a custom environment "from scratch"]: Here we create a new environment called _mycustomenv_:
 
- ```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
+ ``` You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
+
+```
+(base) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
+```
 
  or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
 
- ```conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16```
+ ```
+ (base) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
+ ```
 
  or...
 
  ###### 2b. [Ceate a custom environment by cloning a preexisting environment]: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
- ```conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv```
+ ```
+ (base) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
+ ```
 
 ##### 3. Activate your new environment
 
-```conda activate /projects/$USER/software/anaconda/envs/mycustomenv```
+```
+(base) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
+```
 
 ##### 4. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
-```python -m ipykernel install --user --name mycustomenv --display-name mycustomenv```
+```
+(mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
+```
 
 This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
