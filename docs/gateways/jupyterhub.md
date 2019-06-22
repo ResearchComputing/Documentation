@@ -93,11 +93,31 @@ You will know that you have properly activated the environment because you shoul
 (base) [johndoe@shas0137 ~]$
 ```
 
-##### 2. Create a new environment in a predetermined location in your /projects directory.  
+##### 2. Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory
 
- _*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
+Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called _~/.condarc_, to change the default location of _pkgs_dirs_ so that the packages are downloaed to your (much bigger) _/projects_ directory.
 
- ###### 2a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
+Open your _~/.condarc_ file in your favorite text editor (e.g., nano):
+_(note: this file may not exist yet -- if not, just create a new file with this name)_
+```
+(base) [johndoe@blogin01]$ nano ~/.condarc
+```
+
+...and add the following two lines:
+```
+pkgs_dirs:
+  - /projects/$USER/.conda_pkgss
+```
+
+...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
+
+Note that there are lots of other things you can customize using the [~/.condarc file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
+
+##### 3. Create a new environment in a predetermined location in your /projects directory.  
+
+_*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
+
+ ###### 3a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
 
  ``` You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
 
@@ -113,19 +133,19 @@ You will know that you have properly activated the environment because you shoul
 
  or...
 
- ###### 2b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
+ ###### 3b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
  ```
  (base) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
  ```
 
-##### 3. Activate your new environment
+##### 4. Activate your new environment
 
 ```
 (base) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
 ```
 
-##### 4. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
+##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
