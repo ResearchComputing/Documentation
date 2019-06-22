@@ -17,7 +17,7 @@ Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By
 Open your _~/.condarc_ file in your favorite text editor (e.g., nano):
 _(note: this file may not exist yet -- if not, just create a new file with this name)_
 ```
-[johndoe@blogin01]$ nano ~/.condarc
+[johndoe@shas0137]$ nano ~/.condarc
 ```
 
 ...and add the following two lines:
