@@ -8,6 +8,28 @@ _Note: CURC also hosts several python modules for those users who prefer modules
 
 Follow these steps from a Research Computing terminal session. 
 
+#### Before you use conda for the first time:
+
+##### Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory
+
+Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called _~/.condarc_, to change the default location of _pkgs_dirs_ so that the packages are downloaed to your (much bigger) _/projects_ directory.
+
+Open your _~/.condarc_ file in your favorite text editor (e.g., nano):
+_(note: this file may not exist yet -- if not, just create a new file with this name)_
+```
+[johndoe@blogin01]$ nano ~/.condarc
+```
+
+...and add the following two lines:
+```
+pkgs_dirs:
+  - /projects/$USER/.conda_pkgss
+```
+
+...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
+
+Note that there are lots of other things you can customize using the [~/.condarc file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
+
 ### Activate the CURC Anaconda environment
 
 #### ___For python2___:
