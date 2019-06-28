@@ -23,7 +23,7 @@ _(note: this file may not exist yet -- if not, just create a new file with this 
 ...and add the following two lines:
 ```
 pkgs_dirs:
-  - /projects/$USER/.conda_pkgss
+  - /projects/$USER/.conda_pkgs
 ```
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
