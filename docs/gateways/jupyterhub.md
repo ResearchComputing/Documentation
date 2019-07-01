@@ -12,10 +12,15 @@ CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyte
 
 To start a notebook server, select one of the available options in the _`Select job profile`_ menu under _`Spawner Options`_ and click _`Spawn`_. Available options are:
 
-* ___Summit Haswell - 2hr___ (a 2-hour, 1 core job on a Summit "shas" node)
-* ___Summit Haswell - 12hr___ (a 12-hour, 1 core job on a Summit "shas" node)
+* ___Summit interactive (testing)___ (a 12-hour, 1 core job on a Summit "shas" node)
+* ___Summit Haswell (1 node, 12hr) (testing)___ (a 12-hour, 24 core job on a Summit "shas" node)
+* ___Blanca (testing)___ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+<!--
 * ___Summit Knight's Landing - 2hr___ (a 2-hour, full node job on a Summit "sknl" node)
 * ___Blanca - 12hr___ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+* ___Summit Haswell - 2hr___ (a 2-hour, 1 core job on a Summit "shas" node)
+* ___Summit Haswell - 12hr___ (a 12-hour, 1 core job on a Summit "shas" node)
+-->
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC _`/home`_ directory under the _`Files`_ tab.  You will also see the following buttons in the upper right of the screen:
 
