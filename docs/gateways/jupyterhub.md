@@ -76,7 +76,7 @@ Using the _`Logout`_ button will log you out of CURC JupyterHub.  It will not sh
 
 The CURC JupyterHub runs on top of the [CURC Anaconda distribution](../software/python.md). [Anaconda](http://anaconda.com) is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
 
-Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using *New* -> _`Terminal`_.
+Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
 
 #### 1. Activate the CURC Anaconda environment
 
