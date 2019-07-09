@@ -1,6 +1,6 @@
-# JupyterHub
+## JupyterHub
 
-Do you use [Jupyter notebooks](https://jupyter.org/) on your laptop for coding and data analysis with python, R or other languages? Jupyter notebooks contain live code, equations, visualizations and explanatory text, and are a great way to use, learn and teach computer languages for interactive data analysis.  
+[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using Python, R, and other languages. Jupyter notebooks contain live code, equations, visualizations and explanatory text, and are a great way to use, learn and teach computer languages for interactive data analysis.  
 
 CU Research Computing (CURC) operates a [JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) server that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
@@ -10,41 +10,41 @@ CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyte
 
 ### Step 2: Start a notebook server
 
-To start a notebook server, select one of the available options in the _`Select job profile`_ menu under _`Spawner Options`_ and click _`Spawn`_. Available options are:
+To start a notebook server, select one of the available options in the *Select job profile* menu under *Spawner Options* and click *Spawn*. Available options are:
 
-* ___Summit interactive (testing)___ (a 12-hour, 1 core job on a Summit "shas" node)
-* ___Summit Haswell (1 node, 12hr) (testing)___ (a 12-hour, 24 core job on a Summit "shas" node)
-* ___Blanca (testing)___ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+* __Summit interactive (testing)__ (a 12-hour, 1 core job on a Summit "shas" node)
+* __Summit Haswell (1 node, 12hr) (testing)__ (a 12-hour, 24 core job on a Summit "shas" node)
+* __Blanca (testing)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
 <!--
-* ___Summit Knight's Landing - 2hr___ (a 2-hour, full node job on a Summit "sknl" node)
-* ___Blanca - 12hr___ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
-* ___Summit Haswell - 2hr___ (a 2-hour, 1 core job on a Summit "shas" node)
-* ___Summit Haswell - 12hr___ (a 12-hour, 1 core job on a Summit "shas" node)
+* __Summit Knight's Landing - 2hr__ (a 2-hour, full node job on a Summit "sknl" node)
+* __Blanca - 12hr__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+* __Summit Haswell - 2hr__ (a 2-hour, 1 core job on a Summit "shas" node)
+* __Summit Haswell - 12hr__ (a 12-hour, 1 core job on a Summit "shas" node)
 -->
 
-The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC _`/home`_ directory under the _`Files`_ tab.  You will also see the following buttons in the upper right of the screen:
+The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory under the `Files` tab.  You will also see the following buttons in the upper right of the screen:
 
-* _`Quit`_: Will terminate your notebook server (i.e., terminates the job you just started).  
-* _`Logout`_: Will log you out of CURC Jupyterhub and terminate your notebook server.
-* _`Control Panel`_: Will enable you to manually terminate and (if desired) restart your server.
-* _`Upload`_: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
-* _`New`_: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R)
-  * _documentation on opening new notebooks is provided in "Step 3" below_
+* _Quit_: Will terminate your notebook server (i.e., terminates the job you just started).  
+* _Logout_: Will log you out of CURC Jupyterhub and terminate your notebook server.
+* _Control Panel_: Will enable you to manually terminate and (if desired) restart your server.
+* _Upload_: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
+* _New_: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R) 
+    * _documentation on opening new notebooks is provided in "Step 3" below_
 
 #### Default Notebook Features
 
 * Access to standard RC file systems: 
-  * _`/home`_
-  * _`/projects/`_
-  * _`/pl/active`_ (for users with PetaLibrary allocations)
-  * _`/scratch/summit`_ (Summit only)
-  * _`/rc_scratch`_ (Blanca only)
+  * `/home`
+  * `/projects/`
+  * `/pl/active` (for users with PetaLibrary allocations)
+  * `/scratch/summit` (Summit only)
+  * `/rc_scratch` (Blanca only)
 * Access to the following default kernels in the CURC Anaconda distribution 
   (_Note: documentation on creating and importing your own custom kernels is provided in the "Additional Documentation" below_):
-  * ___Python 2 (idp)___: Python2 notebook (Intel Python distribution)
-  * ___Python 3 (idp)___: Python3 notebook (Intel Python distribution)
-  * ___Bash___: BASH notebook
-  * ___R___: R notebook 
+  * __Python 2 (idp)__: Python2 notebook (Intel Python distribution)
+  * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
+  * __Bash__: BASH notebook
+  * __R__: R notebook 
 * IPyParallel/IPython clusters
 
 ### Step 3: Open a notebook
@@ -70,39 +70,37 @@ Alternately, you can use the _`Quit`_ button from the Jupyter home page to shut 
 
 Using the _`Logout`_ button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
 
------------------------------
+## Additional Documentation
 
-### Additional Documentation
-
-#### Creating your own custom Jupyter kernels
+### Creating your own custom Jupyter kernels
 
 The CURC JupyterHub runs on top of the [CURC Anaconda distribution](../software/python.md). [Anaconda](http://anaconda.com) is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
 
-Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using _`New`_ -> _`Terminal`_.
+Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using *New* -> _`Terminal`_.
 
-##### 1. Activate the CURC Anaconda environment
+#### 1. Activate the CURC Anaconda environment
 
-###### ___For python2___:
+__For python2__:
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda2/2019.03/bin/activate
 ```
 
-###### ___For python3___:
+__For python3__:
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
 ```
 
-You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
+You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
 
 ```
 (base) [johndoe@shas0137 ~]$
 ```
 
-##### 2. Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory
+#### 2. Modify your `~/.condarc` file so that packages are downloaded to your `/projects` directory
 
-Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called _~/.condarc_, to change the default location of _pkgs_dirs_ so that the packages are downloaed to your (much bigger) _/projects_ directory.
+Your `/home/$USER` directory (also denoted with `~`) is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called `~/.condarc`, to change the default location of `pkgs_dirs` so that the packages are downloaed to your (much bigger) `/projects` directory.
 
-Open your _~/.condarc_ file in your favorite text editor (e.g., nano):
+Open your `~/.condarc` file in your favorite text editor (e.g., nano, vim):
 _(note: this file may not exist yet -- if not, just create a new file with this name)_
 ```
 (base) [johndoe@shas0137]$ nano ~/.condarc
@@ -116,13 +114,13 @@ pkgs_dirs:
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
 
-Note that there are lots of other things you can customize using the [~/.condarc file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
+Note that you can customize a [variety of jupyter settings using the `~/.condarc` file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
 
-##### 3. Create a new environment in a predetermined location in your /projects directory.  
+#### 3. Create a new environment in a predetermined location in your /projects directory.  
 
 _*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
 
- ###### 3a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
+##### 3a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
 
  ``` You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
 
@@ -138,19 +136,19 @@ _*Note: In the examples below the environment is created in `/projects/$USER/sof
 
  or...
 
- ###### 3b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
+##### 3b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
  ```
  (base) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
  ```
 
-##### 4. Activate your new environment
+#### 4. Activate your new environment
 
 ```
 (base) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
 ```
 
-##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
+#### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
@@ -168,11 +166,11 @@ This command will create a kernel with the name _mycustomenv_ and the Jupyter di
    ```export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter```
 * If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
 
-#### Troubleshooting
+## Troubleshooting
 
 Jupyter notebook servers spawned on RC compute resources log to _`~/.jupyterhub-spawner.log`_. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
 
-#### See Also
+## See Also
 
 * [CURC Anaconda distribution](../software/python.md)
 * [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.md)
