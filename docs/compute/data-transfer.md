@@ -59,12 +59,12 @@ appears as:
 
 # Replace <path-to-file> with the file you wish to copy
 
-# Replace <rc_username> with your Research Computing username
+# Replace <username> with your Research Computing username
 
 # Replace <target_directory> with the full path to the directory you would like
 # to send the file to.
 
-scp <path-to-file> rc_username@login.rc.colorado.edu:<target-path>
+scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>
 ```
 
 ```bash
@@ -72,12 +72,12 @@ scp <path-to-file> rc_username@login.rc.colorado.edu:<target-path>
 
 # Replace <path-to-file> with the file you wish to copy
 
-# Replace <rc_username> with your Research Computing username
+# Replace <username> with your Research Computing username
 
 # Replace <target_directory> with the full path to the directory you would like
 # to send the file to.
 
-scp <rc_username>@login.rc.colorado.edu:<path-to-file> <target-path>
+scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>
 ```
 
 For more information on secure copy take a look at some of our listed
@@ -97,7 +97,7 @@ client's personal machine to research computing resources. To invoke
 SFTP type the command:
 
 ```bash
-sftp rc_username@login.rc.colorado.edu
+sftp <username>@login.rc.colorado.edu
 ```
 
 We can then use various commands to traverse and manipulate both file
