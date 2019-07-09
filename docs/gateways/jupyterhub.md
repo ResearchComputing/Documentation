@@ -1,12 +1,12 @@
 ## JupyterHub
 
-[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using Python, R, and other languages. Jupyter notebooks contain live code, equations, visualizations and explanatory text, and are a great way to use, learn and teach computer languages for interactive data analysis.  
+[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using Python, R, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an excellent enviornment to use, learn, and teach interactive data analysis.  
 
-CU Research Computing (CURC) operates a [JupyterHub](https://jupyterhub.readthedocs.org/en/latest/) server that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
+CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
 ### Step 1: Log  in to CURC JupyterHub
 
-CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) before continuing.
+CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account before continuing.](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
 
 ### Step 2: Start a notebook server
 
@@ -60,7 +60,7 @@ from pip._internal import main as pipmain
 pipmain(['freeze'])
 ```
 
-If the packages you need are not available, you can create your own custom environment and Jupyter kernel (see the _Additional Documentation_ below).
+If the packages you need are not available, [you can create your own custom environment and Jupyter kernel](#additional-documentation).
 
 ### Step 4: Shut down a Notebook Server
 
@@ -98,7 +98,7 @@ You will know that you have properly activated the environment because you shoul
 
 #### 2. Modify your `~/.condarc` file so that packages are downloaded to your `/projects` directory
 
-Your `/home/$USER` directory (also denoted with `~`) is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called `~/.condarc`, to change the default location of `pkgs_dirs` so that the packages are downloaed to your (much bigger) `/projects` directory.
+By default, conda downloads packages to your `home/$USER` directory when creating a new environment. Your `/home/$USER` directory (also denoted with `~`) is small -- only 2 GB. The steps here modify the conda configration file, called `~/.condarc`, to change the default location of `pkgs_dirs` so that the packages are downloaed to your (much bigger) `/projects` directory.
 
 Open your `~/.condarc` file in your favorite text editor (e.g., nano, vim):
 _(note: this file may not exist yet -- if not, just create a new file with this name)_
@@ -114,13 +114,13 @@ pkgs_dirs:
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
 
-Note that you can customize a [variety of jupyter settings using the `~/.condarc` file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
+Note: You can customize [a variety of jupyter settings using the `~/.condarc` file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
 
 #### 3. Create a new environment in a predetermined location in your /projects directory.  
 
 _*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
 
-##### 3a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
+##### a. _Create a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
 
  ``` You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
 
@@ -136,7 +136,7 @@ _*Note: In the examples below the environment is created in `/projects/$USER/sof
 
  or...
 
-##### 3b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
+##### b. _Create a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
  ```
  (base) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
