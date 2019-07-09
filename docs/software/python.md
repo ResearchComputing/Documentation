@@ -32,13 +32,13 @@ Note that there are lots of other things you can customize using the [~/.condarc
 
 ### Activate the CURC Anaconda environment
 
-#### ___For python2___:
+#### For python2:
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda2/2019.03/bin/activate
 (base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
-#### ___For python3___:
+#### For python3:
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
 (base) [johndoe@shas0137 ~]$ conda activate idp
@@ -95,7 +95,7 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 (base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
- ##### 2a. _Ceate a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
+ ##### 2a. _Create a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
 
 ```
 (idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
@@ -107,7 +107,7 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 (idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
 ```
 
- ##### 2b. _Ceate a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
+ ##### 2b. _Create a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
 
 ```
 (idp) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
