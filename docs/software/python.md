@@ -124,7 +124,7 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 
 * Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
 
-* We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
+* We *strongly recommend* cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
 
 #### Troubleshooting
 
