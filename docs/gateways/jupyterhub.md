@@ -21,9 +21,9 @@ To start a notebook server, select one of the available options in the *Select j
    * __Legacy - Summit Haswell - 2hr__ (a 2-hour, 1 core job on a Summit "shas" node)
    * __Legacy - Summit Haswell - 12hr__ (a 12-hour, 1 core job on a Summit "shas" node)
    * __Legacy - Summit Knight's Landing__ (a 2-hour, full node job on a Summit "sknl" node)
-   * __Legacy - Blanca CSDMS__ (A 12-hour, 1 core job the Blanca CSDMS partition; only available to Blanca CSDMS users)
-   * __Legacy - Blanca Sol__ (A 12-hour, 1 core job the Blanca Sol partition; only available to Blanca Sol users)
-   * __Legacy - Blanca APPM__ (A 12-hour, 1 core job the Blanca APPM partition; only available to Blanca APPM users)
+   * __Legacy - Blanca CSDMS__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
+   * __Legacy - Blanca Sol__ (A 12-hour, 1 core job on the Blanca Sol partition; only available to Blanca Sol users)
+   * __Legacy - Blanca APPM__ (A 12-hour, 1 core job on the Blanca APPM partition; only available to Blanca APPM users)
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory under the `Files` tab.  You will also see the following buttons in the upper right of the screen:
 
