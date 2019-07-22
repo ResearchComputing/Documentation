@@ -12,15 +12,18 @@ CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyte
 
 To start a notebook server, select one of the available options in the *Select job profile* menu under *Spawner Options* and click *Spawn*. Available options are:
 
-* __Summit interactive (testing)__ (a 12-hour, 1 core job on a Summit "shas" node)
-* __Summit Haswell (1 node, 12hr) (testing)__ (a 12-hour, 24 core job on a Summit "shas" node)
-* __Blanca (testing)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
-<!--
-* __Summit Knight's Landing - 2hr__ (a 2-hour, full node job on a Summit "sknl" node)
-* __Blanca - 12hr__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
-* __Summit Haswell - 2hr__ (a 2-hour, 1 core job on a Summit "shas" node)
-* __Summit Haswell - 12hr__ (a 12-hour, 1 core job on a Summit "shas" node)
--->
+* __Anaconda-based servers (recommended)__
+   * __Summit interactive (12hr)__ (a 12-hour, 1 core job on a Summit "shas" node)
+   * __Summit Haswell (1 node, 12hr)__ (a 12-hour, 24 core job on a Summit "shas" node)
+   * __Blanca (12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+   * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
+* __Module-based servers (legacy; no longer supported)__
+   * __Legacy - Summit Haswell - 2hr__ (a 2-hour, 1 core job on a Summit "shas" node)
+   * __Legacy - Summit Haswell - 12hr__ (a 12-hour, 1 core job on a Summit "shas" node)
+   * __Legacy - Summit Knight's Landing__ (a 2-hour, full node job on a Summit "sknl" node)
+   * __Legacy - Blanca CSDMS__ (A 12-hour, 1 core job the Blanca CSDMS partition; only available to Blanca CSDMS users)
+   * __Legacy - Blanca Sol__ (A 12-hour, 1 core job the Blanca Sol partition; only available to Blanca Sol users)
+   * __Legacy - Blanca APPM__ (A 12-hour, 1 core job the Blanca APPM partition; only available to Blanca APPM users)
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory under the `Files` tab.  You will also see the following buttons in the upper right of the screen:
 
