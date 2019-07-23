@@ -83,6 +83,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    software/loadbalancer
    software/gaussian
    software/matlab
+   software/python
    software/GNUParallel
    software/ContainerizationonSummit
 
