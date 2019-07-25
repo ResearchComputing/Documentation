@@ -43,7 +43,7 @@ bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB loca
 bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
 bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
 bnode01[12-14] | blanca-mrg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
-bnode01[15-16] | blanca-el | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
+bnode01[15-16] | blanca-el | 28 cores w/ 2x hyperthreading/core, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode02[01-36] | blanca-ccn | 16 cores, 3.3 GHz,<br> 64 GB RAM,<br> 1 TB local disk |ivybridge,<br> Quadro,<br> k2000,<br> avx,<br> fdr,<br> rhel7
 bnode0301 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bnode030[2-9] | blanca-sha | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
@@ -51,10 +51,16 @@ bnode0310 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk 
 bnode0311 | blanca-ceae | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
 bgpu-dhl1 | blanca-dhl | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
 bnode03[12-15] | blanca-pccs | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0316,<br> bnode0401 | blanca-csdms | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode04[02-03] | blanca-sol | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode05[01-02] | blanca-appm | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake, <br> avx2,<br> rhel7, 2x hyperthreading/core
+bnode0316,<br> bnode0401 | blanca-csdms | 28 cores w/ 2x hyperthreading/core, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7, <br> 2x hyperthreading/core
+bnode04[02-03] | blanca-sol | 28 cores w/ 2x hyperthreading/core, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7, <br> 2x hyperthreading/core
+bnode05[01-02] | blanca-appm | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake, <br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel7
+bnode0404 | blanca-rittger | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bnode04[05-08] | blanca-ics | 28 cores, 2.4 GHz,<br> 250.000 GB RAM,<br>1 TB local disk | broadwell,<br> avx2,<br> rhel7
+bnode04[12-14] | blanca-ibg | 32 cores, 2.10 GHz,<br> 1000.00 GB RAM,<br> 10 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bnode05[03-04] | blanca-csdms | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bnode05[05-06] | blanca-geol | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bgpu-mktg1 | blanca-mktg | 32 cores, 2.10 GHz,<br> 772.476 GB RAM,<br> 1.8 TB local disk,<br> 1 NVIDIA P100 GPU | skylake,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
 
 ### Description of features
 
