@@ -69,7 +69,7 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 #### To add a new package named "foo" to the environment:
 
 ```
-(idp) [johndoe@shas0137 ~]$ conda add foo 
+(idp) [johndoe@shas0137 ~]$ conda install foo 
 ```
 
 #### To list the conda environments currently available:
