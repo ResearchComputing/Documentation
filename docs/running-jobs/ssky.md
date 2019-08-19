@@ -8,7 +8,7 @@ Each Skylake node has 24 cores, 174.6 GB of available memory, and employs the AV
 
 Summit condo contributors have access to a summit condo contributor account with the format `ucb-summit-{group}` or `csu-summit-{group}`; for example, `ucb-summit-rcops`, if the RC operations group had contributed nodes (note: the `rcops` group is just used here for the sake of example). You can determine what accounts you are affiliated with using the command `sacctmgr list associations cluster=summit user=$USER format=Account -p`.
 
-Contributed condo nodes have been placed into discrete partitions, with a name based on the contributor account name and node type. For example, `ssky-ucb-rcops` for RC operations contributed Skylake compute nodes. You can see the list of all ssky partitions using the command `scontrol show partition | grep PartitionName=ssky`.
+Contributed condo nodes have been placed into discrete partitions, with a name based on the contributor account name and node type; for example, `ssky-ucb-rcops` for RC operations contributed Skylake compute nodes. You can see the list of all ssky partitions using the command `scontrol show partition | grep PartitionName=ssky`.
 
 To submit a job (in this case assuming your group is `rcops`), specify the account and partition in your job script or interactive job command (e.g., `--account=ucb-summit-rcops` and `--partition=ssky-ucb-rcops`).
 
