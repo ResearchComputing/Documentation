@@ -42,7 +42,7 @@ or
 mpiexec -n 48 ./myexecutable.exe
 ```
 
-In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on both Summit and Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with Intel-MPI can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#intel_mpi). 
+In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on both Summit and Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with _Intel-MPI_ can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#intel_mpi). 
 
 #### With gcc/OpenMPI
 
@@ -67,15 +67,7 @@ or
 mpiexec -n 48 ./myexecutable.exe
 ```
 
-In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on both Summit and Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with OpenMPI can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#open_mpi).
-
-### Notes
-
-* Software compiled with _intel/impi_ modules on Summit presently work on Blanca and visa-versa.
-* Software compiled with _gcc/openmpi_ modules on Summit presently will not work on Blanca, and likely visa-versa, due to differences in the available shared libraries used for openmpi-based parallelization between the two systems. Therefore, when compiling software with _gcc/openmpi_ users should do so on the system they intend to use it on.
-* When invoking _gcc/openmpi_-compiled softare via the `srun` command, make sure the code is compiled with _openmpi_ version 2.X or greater. 
-* Other compiler/mpi combos are also available in the RC module stack.  For example, Portland Group (_pgi_) compilers are available with OpenMPI.  There are also _gcc/impi_ and _intel/openmpi_ combos available.  To explore options, first choose and load a compiler module (e.g., `intel/V.XX`, `gcc/V.XX` or `pgi/V.XX`) and then type `module avail` to see the list of MPI modules available for that particular compiler. 
-* ___Tip___: you can substitute `-n $SLURM_NTASKS` for `-n 48` in the examples above, which will prevent you from having to change the number of tasks each time you change the number of _--ntasks_ requested in your job script.  The _$SLURM_NTASKS_ variable will automatically take on the value of the number of tasks requested.  
+In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on both Summit and Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with _OpenMPI_ can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#open_mpi).
 
 ### Example job script for running a parallel executable:
 
@@ -97,6 +89,16 @@ module load impi/17.3
 #Run a 48 core job across 2 nodes:
 srun -n $SLURM_NTASKS /path/to/mycode.exe
 ```
+
+### Notes
+
+* Software compiled with _intel/impi_ modules on Summit presently work on Blanca and visa-versa.
+* Software compiled with _gcc/openmpi_ modules on Summit presently will not work on Blanca, and likely visa-versa, due to differences in the available shared libraries used for openmpi-based parallelization between the two systems. Therefore, when compiling software with _gcc/openmpi_ users should do so on the system they intend to use it on.
+* When invoking _gcc/openmpi_-compiled softare via the `srun` command, make sure the code is compiled with _openmpi_ version 2.X or greater. 
+* Other compiler/mpi combos are also available in the RC module stack.  For example, Portland Group (_pgi_) compilers are available with OpenMPI.  There are also _gcc/impi_ and _intel/openmpi_ combos available.  To explore options, first choose and load a compiler module (e.g., `intel/V.XX`, `gcc/V.XX` or `pgi/V.XX`) and then type `module avail` to see the list of MPI modules available for that particular compiler. 
+* ___Tip___: you can substitute `-n $SLURM_NTASKS` for `-n 48` in the examples above, which will prevent you from having to change the number of tasks each time you change the number of _--ntasks_ requested in your job script.  The _$SLURM_NTASKS_ variable will automatically take on the value of the number of tasks requested.  
+
+
 
 
 
