@@ -31,15 +31,15 @@ export I_MPI_PMI_LIBRARY=/lib64/libpmi.so
 __Step 3__
 Now use one of the following three commands (`srun`, `mpirun`, or `mpiexec`) to invoke your parallel executable.  In this example the parallel executable is called _myexecutable.exe_ (yours will have a different name), and we are parallelizing across 2 cores (`-n 48`):
 ```
-srun -n 48 myexecutable.exe
+srun -n 48 ./myexecutable.exe
 ```
 or
 ```
-mpirun -n 48 myexecutable.exe
+mpirun -n 48 ./myexecutable.exe
 ```
 or
 ```
-mpiexec -n 48 myexecutable.exe
+mpiexec -n 48 ./myexecutable.exe
 ```
 
 In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on both Summit and Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with Intel-MPI can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#intel_mpi). 
@@ -56,15 +56,15 @@ module load openmpi/2.0.1
 __Step 2__
 Now use one of the following three commands (`srun`, `mpirun`, or `mpiexec`) to invoke your parallel executable. In this example the parallel executable is called _myexecutable.exe_ (yours will have a different name), and we are parallelizing across 2 cores (`-n 48`):
 ```
-srun -n 48 myexecutable.exe
+srun -n 48 ./myexecutable.exe
 ```
 or
 ```
-mpirun -n 48 myexecutable.exe
+mpirun -n 48 ./myexecutable.exe
 ```
 or
 ```
-mpiexec -n 48 myexecutable.exe
+mpiexec -n 48 ./myexecutable.exe
 ```
 
 In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on both Summit and Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with OpenMPI can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#open_mpi).
@@ -79,6 +79,24 @@ In practice, all three methods will provide nearly identical performance, so cho
 
 ### Example job script for running a parallel executable:
 
+```bash
+#!/bin/bash
+
+#SBATCH --nodes=2
+#SBATCH --time=04:00:00
+#SBATCH --qos=normal
+#SBATCH --partition=shas
+#SBATCH --ntasks=48
+#SBATCH --job-name=mpi-job
+#SBATCH --output=mpi-job.%j.out
+
+module purge
+module load intel/17.4
+module load impi/17.3
+
+#Run a 48 core job across 2 nodes:
+srun -n $SLURM_NTASKS /path/to/mycode.exe
+```
 
 
 
