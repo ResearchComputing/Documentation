@@ -10,7 +10,11 @@ This documentation assumes you have already compiled your parallel software into
 
 ### Running parallel executables
 
-Shared memory parallel codes (that run across multiple cores on a single node) can be run anywhere on Summit or Blanca.  Distributed memory parallel codes (that run across multiple cores _and_ multiple nodes) can be run on any Summit partition, as well as any Blanca-HPC partition (e.g.,`blanca-nso` and `blanca-topopt`) and the `blanca-ccn` partition.
+Shared memory parallel codes (that run across multiple cores on a single node) can be run anywhere on Summit or Blanca.  Distributed memory parallel codes (that run across multiple cores _and_ multiple nodes) can be run on any Summit partition, as well as any Blanca-HPC partition (e.g.,`blanca-nso` and `blanca-topopt`) and the `blanca-ccn` partition.  If uncertain, Blanca users can check one of the nodes in the partition of interest by typing `scontrol show node <nodename> | grep AvailableFeatures` and check if _fdr_ or _edr_ is listed.  For example, to check one of the `blanca-ccn` nodes: 
+```
+$ scontrol show node bnode0201 |grep AvailableFeatures
+   AvailableFeatures=ivybridge,Quadro,K2000,avx,fdr,rhel7
+   ```
 
 #### With Intel/IMPI
 
