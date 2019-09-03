@@ -2,7 +2,12 @@
 
 Many scientific software packages are programmed such that they can parallelize tasks across multiple cores on one node (shared memory parallelization) or multiple cores across multiple nodes (distributed memory parallelization).  Either way, running the executable programs that result from compiling parallel-capable software packages requires the use of MPI ("message passing interface") libraries which coordinate the passing of information between the parallel tasks.
 
-This documentation covers the best way to _run_ parallel executables on Summit and Blanca across multiple cores and nodes. Running a parallel executable on Summit or Blanca requires loading both a compiler and an mpi module, in addition to any other modules one needs.  Here the focus is on the two primary compiler/mpi module "combos": 1) Intel compilers with Intel-MPI (IMPI) and 2) Gnu (gcc) compilers with OpenMPI.  ___It is recommended that you always use the Intel/IMPI combo to compile and run your parallel software on Summit and Blanca, because Intel/IMPI-compiled codes typically run more efficiently. The gcc/OpenMPI combo can be used as a fallback if the code will not compile with Intel/IMPI.___
+This documentation covers the best way to _run_ parallel executables on Summit and Blanca across multiple cores and nodes. Running a parallel executable on Summit or Blanca requires loading both a compiler and an mpi module, in addition to any other modules one needs.  Here the focus is on the two primary compiler/mpi module "combos": 
+
+1) Intel compilers with Intel-MPI (IMPI)
+2) Gnu (gcc) compilers with OpenMPI.  
+
+___It is recommended that you always use the Intel/IMPI combo to compile and run your parallel software on Summit and Blanca, because Intel/IMPI-compiled codes typically run more efficiently. The gcc/OpenMPI combo can be used as a fallback if the code will not compile with Intel/IMPI.___
 
 This documentation assumes you have already compiled your parallel software into an executable program.  Additonal information on compiling (and programming) MPI-capable software in [Fortran](https://curc.readthedocs.io/en/latest/programming/MPI-Fortran.html) and [C](https://curc.readthedocs.io/en/latest/programming/MPI-C.html) is provided in the RC documentation. ___To run your parallel executable you should always load and use the same compiler/mpi module combo that you used to compile it.___  
 
@@ -18,22 +23,22 @@ $ scontrol show node bnode0201 |grep AvailableFeatures
 
 #### With Intel/IMPI
 
-__Step1__
+__Step1:__
 Load the _intel_ and _impi_ modules. In this example _intel/17.4_ and _impi/17.3_ are loaded, but note that other options are also available and can be viewed with the `module avail` command.
 ```
 module load intel/17.4
 module load impi/17.3
 ```
 
-__Step 2__
+__Step 2:__
 Export the following two environment variables:
 ```
 export I_MPI_FABRICS=shm:ofi
 export I_MPI_PMI_LIBRARY=/lib64/libpmi.so
 ```
 
-__Step 3__
-Now use one of the following three commands (`srun`, `mpirun`, or `mpiexec`) to invoke your parallel executable.  In this example the parallel executable is called _myexecutable.exe_ (yours will have a different name), and we are parallelizing across 2 cores (`-n 48`):
+__Step 3:__
+Now use one of the following three commands (`srun`, `mpirun`, or `mpiexec`) to invoke your parallel executable.  In this example the parallel executable is called _myexecutable.exe_ (yours will have a different name), and we are parallelizing across 48 cores (`-n 48`):
 ```
 srun -n 48 ./myexecutable.exe
 ```
@@ -50,14 +55,14 @@ In practice, all three methods will provide nearly identical performance, so cho
 
 #### With gcc/OpenMPI
 
-__Step1__
+__Step1:__
 Load the _gcc_ and _openmpi_ modules. In this example _gcc/6.1.0_ and _openmpi/2.0.1_ are loaded), but note that other options are also available and can be viewed with the `module avail` command.
 ```
 module load gcc/6.1.0
 module load openmpi/2.0.1
 ```
 
-__Step 2__
+__Step 2:__
 Now use one of the following three commands (`srun`, `mpirun`, or `mpiexec`) to invoke your parallel executable. In this example the parallel executable is called _myexecutable.exe_ (yours will have a different name), and we are parallelizing across 2 cores (`-n 48`):
 ```
 srun -n 48 ./myexecutable.exe
@@ -92,6 +97,8 @@ module load impi/17.3
 
 #Run a 48 core job across 2 nodes:
 srun -n $SLURM_NTASKS /path/to/mycode.exe
+
+#Note: $SLURM_NTASKS has a value of the amount of cores you requested
 ```
 
 ### Notes
