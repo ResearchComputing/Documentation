@@ -93,6 +93,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    
    programming/coding-best-practices
    programming/parallel-programming-fundamentals
+   programming/running-mpi-best-practices
    programming/MPI-C
    programming/MPI-Fortran
    programming/OpenMP-C
