@@ -7,13 +7,8 @@ Each Skylake node has 24 cores, 174.6 GB of available memory, and employs the AV
 ## Access for condo contributors
 
 Summit condo contributors have access to a summit condo contributor account with the format:  
-```
-ucb-summit-{group}
-```  
-or  
-```
-csu-summit-{group}
-``` 
+
+`ucb-summit-{group}`  or  `csu-summit-{group}` 
 
 For example if the RC operations group had contributed nodes then their condo account would be: `ucb-summit-rcops` (note: the `rcops` group is just used here for the sake of example). You can determine what accounts you are affiliated with using the command: 
 
