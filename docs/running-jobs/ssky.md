@@ -38,7 +38,7 @@ To submit a job to `ssky`, users would simply change the "partition" flag in the
 
 | *Partition* | *Description* |
 |-----------------|-------------------------------------------------------|
-| `ssky-ucb-rcops` | Contributor access; preempts `ssky-preemptable` |
+| `ssky-ucb-{group}` | Contributor access; preempts `ssky-preemptable` |
 | `ssky` | General access |
 | `ssky-preemptable` | General access; all nodes; preempted by `ssky-{ucb,csu}-{group}`|
 
