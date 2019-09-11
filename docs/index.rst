@@ -67,6 +67,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/job-resources
    running-jobs/squeue-status-codes
    running-jobs/roce-enabled
+   running-jobs/ssky
 
 .. toctree::
    :maxdepth: 2
