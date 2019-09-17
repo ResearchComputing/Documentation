@@ -76,6 +76,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    gateways/jupyterhub
    gateways/parallel-programming-jupyter
    gateways/enginframe
+   gateways/labhub
 
 .. toctree::
    :maxdepth: 2
@@ -112,3 +113,4 @@ Use of University of Colorado Research Computing resources, including (but not l
    :caption: Maintenance
 
    maintenance/CHANGELOG
+
