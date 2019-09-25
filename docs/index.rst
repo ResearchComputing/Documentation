@@ -67,6 +67,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/job-resources
    running-jobs/squeue-status-codes
    running-jobs/roce-enabled
+   running-jobs/ssky
 
 .. toctree::
    :maxdepth: 2
@@ -75,6 +76,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    gateways/jupyterhub
    gateways/parallel-programming-jupyter
    gateways/enginframe
+   gateways/labhub
 
 .. toctree::
    :maxdepth: 2
@@ -112,3 +114,4 @@ Use of University of Colorado Research Computing resources, including (but not l
    :caption: Maintenance
 
    maintenance/CHANGELOG
+
