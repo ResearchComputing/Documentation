@@ -15,13 +15,14 @@ In the `File` menu, the last option is `Logout`. You can also navigate directly 
 
 ### Switching between Interfaces
 
-JupyterHub can offer a variety of interfaces that may be available to you. The interfaces can be switched between by appending the proper name to the end of your workspace url. For Example, J. Doe logins in and has a base url of `hxxps://labhub.rc.colorado.edu/user/jdoe/XXXX`. The following can replace the XXXX in the url to switch interfaces:
+JupyterHub can offer a variety of interfaces that may be available to you. The interfaces can be switched between by appending the proper name to the end of your workspace url. For Example, J. Doe logins in and has a base url of `hxxps://labhub.rc.colorado.edu/user/jdoe/XXXX`. The following can replace the XXXX in the url to switch interfaces:  
+
 | XXXX    | Description                    | Example                                           |  
 |---------|--------------------------------|---------------------------------------------------|  
-| lab     | JupyterLab interface (default) | hxxps://labhub.rc.colorado.edu/user/jdoe/lab       |  
-| tree    | JupyterNotebook interface      | hxxps://labhub.rc.colorado.edu/user/jdoe/tree      |  
-| rstudio | RStudio interface              | hxxps://labhub.rc.colorado.edu/user/jdoe/rstudio   |  
-| vscode  | Visual Studio Code interface   | hxxps://labhub.rc.colorado.edu/user/jdoe/vscode    |  
+| lab     | JupyterLab interface (default) | hxxps://labhub.rc.colorado.edu/user/jdoe/lab      |  
+| tree    | JupyterNotebook interface      | hxxps://labhub.rc.colorado.edu/user/jdoe/tree     |  
+| rstudio | RStudio interface              | hxxps://labhub.rc.colorado.edu/user/jdoe/rstudio  |  
+| vscode  | Visual Studio Code interface   | hxxps://labhub.rc.colorado.edu/user/jdoe/vscode   |  
 
 Note: Access to the named interfaces may not be available to all users.
 
