@@ -104,6 +104,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :caption: Additional resources
 
    additional-resources/utah-videos
+   additional-resources/blanca-MOU
    additional-resources/other
 
 .. toctree::
