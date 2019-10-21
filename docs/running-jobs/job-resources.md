@@ -31,40 +31,36 @@ These are the partitions available on Summit.
 | --------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
 | shas      | Haswell (default) | 380        | 24         | 4.84          | 1              | 4H, 24H                  |
 | sgpu      | GPU-enabled       | 10         | 24         | 4.84          | 2.5            | 4H, 24H                  |
-| smem*    | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
+| smem*     | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
 | sknl      | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
+| ssky*     | Skylake           |            |            |               |                |                          |
 
-*The *smem* partition is limited to 96 cores (2 entire nodes) across _all_ running *smem* jobs. For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
+\*The `smem` partition is limited to 96 cores (2 entire nodes) across *all running smem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
 
 | Partition        | Description       | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default and Max Walltime |
 | ---------------- | ----------------- | --------- | --------- | ------------- | -------------- | ------------------------ |
-| shas-testing*   | Haswell (default) | 2        | 24        | 4.84          | 1              | 0.5H, 0.5H               |
+| shas-testing*    | Haswell (default) | 2         | 24        | 4.84          | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell (default) | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled       | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)         | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
 
-*The *shas testing* partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
+\*The `shas-testing` partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
 
-To run a job longer than 24 hours on the *shas*, *sgpu*, or *sknl* partitions, use the *long* QOS.
+To run a job longer than 24 hours on the `shas`, `sgpu`, or `sknl` partitions, use the `long` QOS.
 
 More details about each type of node can be found [here](https://www.colorado.edu/rc/resources/summit/specifications).
 
 ### Quality of Service
 
-On Summit, Quality of Service or QoS is used to constrain or modify the characteristics that a job can have. For example, by selecting the *testing* QoS, a user can obtain higher queue priority for a job with the trade-off that the maximum allowed wall time is reduced from what would otherwise be allowed on that partition. We recommend specifying a QoS as well as a partition for every job.
+On Summit, Quality of Service or QoS is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a qos to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
+
+**Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or condo job.**
 
 The available QoS's for Summit are:
 
-| QOS name    | Description                           | Max walltime    | Max jobs/user | Node limits                      | Priority boost                  |
-| ----------- | ------------------------------------- | --------------- | ------------- | -------------------------------- | ------------------------------- |
-| normal*     | default                               | see table above | n/a           | 256/user                         | 0                               |
-| testing     | For quick turnaround when testing     | 30M             | 1             | 24 cores *across* up to 24 nodes | QoS has dedicated cores         |
-| interactive | For interactive jobs (command or GUI) | 4H              | 1             | 1 core                           | QoS has dedicated cores         |
-| long        | Longer wall times                     | 7D              | n/a           | 22/user; 40 total                | 0                               |
-| condo       | Condo purchased nodes only            | 7D              | n/a           | n/a                              | Equiv. of 1 day queue wait time |
-
-*The _normal_ QOS is the default QOS if no other is specified.
-
-**The testing and interactive QOS must be paired with a testing or interactive partition. Jobs that utilize testing and interactive QOS will fail if paired with a any other partition**
+| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
+| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
+| long        | Longer wall times          | 7D              | n/a           | 22/user; 40 total; | shas, sknl, ssky | 0                    |
+| condo       | Condo purchased nodes only | 7D              | n/a           | n/a                | shas, ssky       | Equiv. of 1 day queue wait time |
