@@ -27,26 +27,28 @@ On Summit, nodes with the same hardware configuration are grouped into partition
 
 These are the partitions available on Summit.
 
-| Partition | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default and Max Walltime |
-| --------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| shas      | Haswell (default) | 380        | 24         | 4.84          | 1              | 4H, 24H                  |
-| sgpu      | GPU-enabled       | 10         | 24         | 4.84          | 2.5            | 4H, 24H                  |
-| smem*     | High-memory       | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
-| sknl      | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
-| ssky*     | Skylake           |            |            |               |                |                          |
+| Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default & Max Walltime |
+| --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
+| shas            | Haswell (default) | 380        | 24         | 4.84          | 1              | 4H, 24H                  |
+| sgpu            | GPU-enabled       | 10         | 24         | 4.84          | 2.5            | 4H, 24H                  |
+| smem <sup>1</sup> | High-memory     | 5          | 48         | 42.7          | 6              | 4H, 7D                   |
+| sknl            | Phi (KNL)         | 20         | 68         | 5.25          | 0.1            | 4H, 24H                  |
+| ssky <sup>2</sup> | Skylake         | 5          | 24         | 7.68          | 1              | 4H, 24H                 |
+| ssky-preemptable <sup>2</sup> | Skylake | 15     | 24         | 7.68          | 1              | 4H, 24H                  |
 
-\*The `smem` partition is limited to 96 cores (2 entire nodes) across *all running smem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
+<sup>1</sup> The `smem` partition is limited to 96 cores (2 entire nodes) across *all running smem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
 
-\*The `ssky` partition
+<sup>2</sup> The `ssky` partition consists of 5 public nodes and 15 private nodes 
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
 
-| Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default and Max Walltime |
+| Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default & Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
 | shas-testing*    | Haswell      | 2         | 24        | 4.84          | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell      | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled  | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)    | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
+
 
 \*The `shas-testing` partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
 
