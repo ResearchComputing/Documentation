@@ -27,7 +27,7 @@ On Summit, nodes with the same hardware configuration are grouped into partition
 
 These are the partitions available on Summit.
 
-| Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default & Max Walltime |
+| Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
 | shas            | Haswell (default) | 380        | 24         | 4.84          | 1              | 4H, 24H                  |
 | sgpu            | GPU-enabled       | 10         | 24         | 4.84          | 2.5            | 4H, 24H                  |
@@ -42,7 +42,7 @@ These are the partitions available on Summit.
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
 
-| Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default & Max Walltime |
+| Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
 | shas-testing*    | Haswell      | 2         | 24        | 4.84          | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell      | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
