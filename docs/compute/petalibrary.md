@@ -27,7 +27,7 @@ Request access to the PetaLibrary by:
   the MOU), and emailing those documents to rc-help@colorado.edu
 
 Each person who accesses the PetaLibrary is required to have a
-Research Computing account and two-factor authentication. Your PetaLibrary allocation will have a name that is selected by you.  For example, Jane Doe might select an allocation name of `jdoe_lab`. 
+Research Computing account and two-factor authentication. Your PetaLibrary allocation will have a name that is selected by you.  For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
 
 - **To access active storage:** Log in to a Research Computing via login.rc.colorado.edu
     and navigate to: `/pl/active/<your_allocation_name>` (e.g., `/pl/active/jdoe_lab`)
