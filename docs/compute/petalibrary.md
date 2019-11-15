@@ -29,10 +29,10 @@ Request access to the PetaLibrary by:
 Each person who accesses the PetaLibrary is required to have a
 Research Computing account and two-factor authentication.
 
-- **To access active storage:** Log in to a Research Computing login
-    node and use the command `/work/`
+- **To access active storage:** Log in to a Research Computing via login.rc.colorado.edu
+    and navigate to: `/pl/active/<your_allocation_name>`
 
-- **To access archive storage:** Use the command `/archive/`
+- **To access archive storage:** Archive storage is located at: `/pl/archive/<your_allocation_name>`
 
 Note that access via the login nodes is not recommended for frequent
 or large read/writes of archived data.
