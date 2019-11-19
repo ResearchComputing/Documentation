@@ -119,7 +119,13 @@ The slurm/summit module environment can not be loaded from compile or compute no
 
 ### How do I install my own python library?
 
-Research Computing provides commonly used Python libraries as modules. This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](compute/modules.html). That being said, this guide can be tweaked to be used on the older modules as well.
+Although Research Computing provides commonly used Python libraries as module, you may need to install individual python libraries for your research. This is best handled by utilizing Research Computing's Anaconda installation to set up a local Conda enviornment.
+
+[Find out more about using Python with Anaconda here.](software/python.html)
+
+
+<!-- 
+This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](compute/modules.html). That being said, this guide can be tweaked to be used on the older modules as well.
 
 First login to a login node and then ssh to a compile node.
 
@@ -161,3 +167,5 @@ You can quickly check if your install worked with the following:
 Every time you log out you will need to rerun the above export to use your Python library (don't forget to load Python as well). Two ways of avoiding this are to add the export command to your bashrc. `vim ~/.bashrc`. An alternative is to make your own modulefile.
 
 One final item of note is a Python virtualenv. Virtualenvs allow you to keep multiple Python environments with separate versions of packages. There are plenty of guides available online such as this one: [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/). These are especially handy if you have several projects which require different versions of the same Python library.
+
+-->
