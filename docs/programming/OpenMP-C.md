@@ -102,7 +102,6 @@ executable. Your submission script should look something like this:
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=CPP_Hello_World
