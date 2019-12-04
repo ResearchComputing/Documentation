@@ -44,7 +44,7 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 | Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
-| shas-testing<sup>3</sup> | Haswell| 24      | 24        | 4.84          | 1              | 0.5H, 0.5H               |
+| shas-testing <sup>3</sup> | Haswell| Up to 24 | 24      | 4.84         | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell      | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled  | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)    | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
