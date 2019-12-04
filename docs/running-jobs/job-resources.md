@@ -40,7 +40,7 @@ These are the partitions available on Summit.
 
 <sup>2</sup> Skylake nodes are seperated into 2 partitions and consists of 5 public nodes in the `ssky` partition and 15 private nodes that can be used by anyone with the `ssky-preemptable`. Jobs running on the `ssky-preemptable` partition will be pushed off the node if the condo owner of the node submits a job to their private partition. More information on Skylake nodes [can be found here.](ssky.html)
 
-In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. Each of these partitions must be paired with their corresponding Quality of Service ([see QoS options below](#quality-of-service)).
+In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs.
 
 | Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
