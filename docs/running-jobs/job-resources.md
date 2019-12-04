@@ -44,13 +44,12 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 | Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
-| shas-testing<sup>3</sup> | Haswell| 2       | 24        | 4.84          | 1              | 0.5H, 0.5H               |
+| shas-testing<sup>3</sup> | Haswell| 24      | 24        | 4.84          | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell      | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled  | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)    | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
 
-
-> <sup>3</sup> The `shas-testing` partition is limited to 24 cores total. These cores can be spread upon multiple nodes but only 24 will be available for the partition.
+> <sup>3</sup> The `shas-testing` partition is limited to 24 cores total. These cores can come from multiple nodes but a user is limited to maximum of 24 cores per job.
 
 To run a job longer than 24 hours on the `shas`, `sgpu`, or `sknl` partitions, use the `long` QOS.
 
