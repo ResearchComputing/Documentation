@@ -1,4 +1,4 @@
-## Job Resource Information
+## Slurm Flags, Partition, and QoS
 
 Slurm allows the use of flags to specify resources needed for a job. Below is a table describing some of the most common Slurm resource flags, followed by tables describing available Summit partitions and Quality of Service (QoS) options.
 
@@ -17,7 +17,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 | Tasks per node     | The number of processes you wish to assign to each node | --ntasks-per-node=processes |
 | Total Memory       | The total memory required to complete the Job. <br> Requesting more memory will reserve additional <br> cores proportional to how much memory was requested. <br> Units can be specified with the suffixes: K,M,G,T | --mem=memory |
 | Quality of service | Specify a QOS ([see table below](#quality-of-service)) | --qos=qos               |
-| Wall time          | The max. amount of time your job will run for       | --time=wall time           |
+| Wall time          | The max amount of time your job will run for        | --time=wall time           |
 | Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
 
 
@@ -40,7 +40,7 @@ These are the partitions available on Summit.
 
 <sup>2</sup> Skylake nodes are seperated into 2 partitions and consists of 5 public nodes in the `ssky` partition and 15 private nodes that can be used by anyone with the `ssky-preemptable`. Jobs running on the `ssky-preemptable` partition will be pushed off the node if the condo owner of the node submits a job to their private partition. More information on Skylake nodes [can be found here.](ssky.html)
 
-In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs.
+In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. These partitions allow quick access to a reserved set of cores provided for testing and interactive use. 
 
 | Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
