@@ -16,7 +16,7 @@ Any resource that could be specified in a job script or with `sbatch` can also b
 sinteractive --partition=shas-interactive --time=00:10:00
 ```
 
-This will submit an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node with the interactive shas partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
+This will submit an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the interactive shas partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
 
 ### Interactive GUI Applications
 
