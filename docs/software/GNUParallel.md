@@ -24,7 +24,6 @@ Now create a job script called `run_hello.sh` that will use GNU Parallel to subm
 #!/bin/bash
 
 #SBATCH --time 00:02:00
-#SBATCH --qos=testing
 #SBATCH --partition shas-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name gpPythonDemo
