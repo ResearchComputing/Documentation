@@ -85,7 +85,6 @@ In practice, all three methods will provide nearly identical performance, so cho
 
 #SBATCH --nodes=2
 #SBATCH --time=04:00:00
-#SBATCH --qos=normal
 #SBATCH --partition=shas
 #SBATCH --ntasks=48
 #SBATCH --job-name=mpi-job
