@@ -23,8 +23,8 @@ environment variables are configured for you via the module. You do
 not need to source g16.login or g16.profile.
 
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
-to put its large scratch files. These should always be on Summit's [scratch storage system](../compute/filesystems.html)
-(`/scratch/summit/$USER`.) If `GAUSS_SCRDIR` is not set, then the
+to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.html)
+(`/scratch/summit/$USER` on Summit or `rc_scratch/$USER` on Blanca.) If `GAUSS_SCRDIR` is not set, then the
 scratch files will be created in whatever directory G16 is run from;
 if this directory is in `/projects` or `/home`, then your job's
 performance will be dramatically reduced.
