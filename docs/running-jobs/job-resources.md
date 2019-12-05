@@ -1,4 +1,4 @@
-## Slurm Flags, Partition, and QoS
+## Slurm Flags, Partitions, and QoS
 
 Slurm allows the use of flags to specify resources needed for a job. Below is a table describing some of the most common Slurm resource flags, followed by tables describing available Summit partitions and Quality of Service (QoS) options.
 
@@ -8,8 +8,8 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocations](../access/allocations)    | Specify an allocation account  | --account=allocation       |
-| Partitions         | Specify a partition ([see table below](#partitions)) | --partition=partition |
+| [Allocation](../access/allocations.html)    | Specify an allocation account  | --account=allocation       |
+| Partition          | Specify a partition ([see table below](#partitions)) | --partition=partition |
 | Sending email      | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address      | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
@@ -44,12 +44,12 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 | Partition        | Description  | Max Nodes | Max cores | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | ---------------- | ------------ | --------- | --------- | ------------- | -------------- | ------------------------ |
-| shas-testing <sup>3</sup> | Haswell| Up to 24 | 24      | 4.84         | 1              | 0.5H, 0.5H               |
+| shas-testing <sup>3</sup> | Haswell| Up to 2| 24      | 4.84         | 1              | 0.5H, 0.5H               |
 | shas-interactive | Haswell      | 1         | 1         | 4.84          | 1              | 1H, 4H                   |
 | sgpu-testing     | GPU-enabled  | 1         | 24        | 4.84          | 2.5            | 0.5H, 0.5H               |
 | sknl-testing     | Phi (KNL)    | 1         | 24        | 5.25          | 1              | 0.5H, 0.5H               |
 
-> <sup>3</sup> The `shas-testing` partition is limited to 24 cores total. These cores can come from multiple nodes but a user is limited to maximum of 24 cores per job.
+> <sup>3</sup> The `shas-testing` partition is limited to 24 cores total. These cores can come from up to 2 nodes but a user is limited to maximum of 24 cores per job.
 
 To run a job longer than 24 hours on the `shas`, `sgpu`, or `sknl` partitions, use the `long` QOS.
 
@@ -63,7 +63,8 @@ On Summit, Quality of Service or QoS is used to constrain or modify the characte
 
 The available QoS's for Summit are:
 
-| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
+| QOS name    | Description                | Max walltime    | Max submit/user | Node limits        | Partition limits | Priority Adjustment  |
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| long        | Longer wall times          | 7D              | n/a           | 22/user; 40 total; | shas, sknl, ssky | 0                    |
-| condo       | Condo purchased nodes only | 7D              | n/a           | n/a                | shas, ssky       | Equiv. of 1 day queue wait time |
+| normal      | Default                    | 1D              | 1000          | 256/user           | n/a              | 0 |
+| long        | Longer wall times          | 7D              | 200           | 22/user; 40 total; | shas, sknl, ssky | 0 |
+| condo       | Condo purchased nodes only | 7D              | 500           | n/a                | shas, ssky       | Equiv. of 1 day queue wait time |
