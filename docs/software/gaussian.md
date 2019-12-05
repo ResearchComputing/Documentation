@@ -68,13 +68,12 @@ __Example SMP BASH script:__
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name g16-test
-#SBATCH -p shas
-#SBATCH --qos normal
-#SBATCH --nodes 1
-#SBATCH --ntasks-per-node 24
-#SBATCH --time 00:50:00
-#SBATCH --output g16-test.%j.out
+#SBATCH --job-name=g16-test
+#SBATCH --partition=shas
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --time=00:50:00
+#SBATCH --output=g16-test.%j.out
 
 module load gaussian/16_avx2
 
@@ -127,14 +126,13 @@ __Linda Parallel__
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name g16-test
-#SBATCH -p shas
-#SBATCH --qos normal
-#SBATCH --nodes 2
-#SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 24
-#SBATCH --time 00:50:00
-#SBATCH --output g16-test.%j.out
+#SBATCH --job-name=g16-test
+#SBATCH --partition=shas
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=24
+#SBATCH --time=00:50:00
+#SBATCH --output=g16-test.%j.out
 
 module load gaussian/16_avx2
 
