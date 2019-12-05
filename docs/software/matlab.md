@@ -85,7 +85,6 @@ which contains the following lines:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=1
 #SBATCH --job-name=Matlab_Hello_World
@@ -185,7 +184,6 @@ output file if we choose.
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=Matlab_Parallel_Hello
