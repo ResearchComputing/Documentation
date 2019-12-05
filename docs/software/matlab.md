@@ -161,7 +161,7 @@ The order of runtime in the loop is not guaranteed, so the output may
 not be in sequential order. The loop is formatted as such:
 
 ```matlab
-parfor(int i = initial_Value:final_Value, maximum_amount_of_threads)
+parfor(i = initial_Value:final_Value, maximum_amount_of_threads)
 ```
 
 For example, let’s use parfor to implement an 5-iteration loop with a
@@ -169,7 +169,7 @@ maximum of 4 processors in our script (new lines are highlighted here
 in blue):
 
 ```matlab
-parfor(int i = 1:5, 4)
+parfor(i = 1:5, 4)
         fprintf("Hello, World from process %i", i)
 end
 ```
