@@ -187,7 +187,6 @@ __OpenMPI__
 #SBATCH --partition shas-testing
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
-#SBATCH --qos=testing
 
 module purge
 
@@ -207,7 +206,6 @@ __Intel MPI__
 #SBATCH --partition shas-testing
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
-#SBATCH --qos=testing
 
 module purge
 

@@ -23,13 +23,10 @@ environment variables are configured for you via the module. You do
 not need to source g16.login or g16.profile.
 
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
-to put its large scratch files. These should always be on one of
-Summit's [scratch storage
-systems](../compute/filesystems.html)
-(either /scratch/local [accessed via the SLURM_SCRATCH env variable]
-or /scratch/summit/$USER.) If `GAUSS_SCRDIR` is not set, then the
+to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.html)
+(`/scratch/summit/$USER` on Summit or `rc_scratch/$USER` on Blanca.) If `GAUSS_SCRDIR` is not set, then the
 scratch files will be created in whatever directory G16 is run from;
-if this directory is in /projects or /work, then your job's
+if this directory is in `/projects` or `/home`, then your job's
 performance will be dramatically reduced.
 
 
@@ -68,13 +65,12 @@ __Example SMP BASH script:__
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name g16-test
-#SBATCH -p shas
-#SBATCH --qos normal
-#SBATCH --nodes 1
-#SBATCH --ntasks-per-node 24
-#SBATCH --time 00:50:00
-#SBATCH --output g16-test.%j.out
+#SBATCH --job-name=g16-test
+#SBATCH --partition=shas
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --time=00:50:00
+#SBATCH --output=g16-test.%j.out
 
 module load gaussian/16_avx2
 
@@ -127,14 +123,13 @@ __Linda Parallel__
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name g16-test
-#SBATCH -p shas
-#SBATCH --qos normal
-#SBATCH --nodes 2
-#SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 24
-#SBATCH --time 00:50:00
-#SBATCH --output g16-test.%j.out
+#SBATCH --job-name=g16-test
+#SBATCH --partition=shas
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=24
+#SBATCH --time=00:50:00
+#SBATCH --output=g16-test.%j.out
 
 module load gaussian/16_avx2
 

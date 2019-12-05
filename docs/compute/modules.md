@@ -82,7 +82,6 @@ loads python into the environment is provided below:
 #!bin/bash
 #SBATCH --nodes=1
 #SBATCH --time=00:01:00
-#SBATCH --qos=debug
 #SBATCH --ntasks=1
 #SBATCH --job-name=test-job
 #SBATCH --output=test-job.%j.out

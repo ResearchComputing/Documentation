@@ -43,7 +43,6 @@ A job script looks something like this:
 #SBATCH --ntasks=1
 #SBATCH --time=00:10:00
 #SBATCH --partition=shas-testing
-#SBATCH --qos=testing
 #SBATCH --output=sample-%j.out
 
 module purge
@@ -124,7 +123,6 @@ Job script to run a 5 minute long, 1 node, 1 core C++ Job:
 
 #SBATCH --nodes=1
 #SBATCH --time=00:05:00
-#SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=1
 #SBATCH --job-name=cpp-job
@@ -143,7 +141,6 @@ Job script to run a 7 minute long, 1 node, 4 core C++ OpenMP Job:
 
 #SBATCH --nodes=1
 #SBATCH --time=00:07:00
-#SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=omp-cpp-job
@@ -164,7 +161,6 @@ Job script to run a 10 minute long, 2 node, 24 core C++ MPI Job:
 
 #SBATCH --nodes=2
 #SBATCH --time=00:10:00
-#SBATCH --qos=testing
 #SBATCH --partition=shas-testing
 #SBATCH --ntasks=24
 #SBATCH --job-name=mpi-cpp-job
