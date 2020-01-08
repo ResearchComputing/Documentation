@@ -21,7 +21,7 @@ Use the PetaLibrary to store, archive and share research data.
 Request access to the PetaLibrary by:
 
 - Reading the PetaLibrary [Memorandum of
-  Understanding](https://www.colorado.edu/rc/sites/default/files/attached-files/petalibrarymou.pdf)
+  Understanding](https://www.colorado.edu/rc/sites/default/files/attached-files/petalibrary_mou.pdf)
 
 - Filling out the attached End User Agreement and Order Form (found in
   the MOU), and emailing those documents to rc-help@colorado.edu
