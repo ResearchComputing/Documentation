@@ -60,7 +60,7 @@ bnode04[05-08] | blanca-ics | 28 cores, 2.4 GHz,<br> 250.000 GB RAM,<br>1 TB loc
 bnode04[12-14] | blanca-ibg | 32 cores, 2.10 GHz,<br> 1000.00 GB RAM,<br> 10 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bnode05[03-04] | blanca-csdms | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bnode05[05-06] | blanca-geol | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bnode05[07] | blanca-rittiger | 32 cores, 2.10 GHz,<br> 191.840 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bnode05[07] | blanca-rittger | 32 cores, 2.10 GHz,<br> 191.840 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bnode05[08-09] | blanca-appm | 40 cores, 2.10 Ghz,<br> 191.668 GB RAM,<br> 1 TB local disk | cascade,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bgpu-mktg1 | blanca-mktg | 32 cores, 2.10 GHz,<br> 772.476 GB RAM,<br> 1.8 TB local disk,<br> 1 NVIDIA P100 GPU | skylake,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
 
