@@ -102,7 +102,7 @@ processes and the rank of a given process respectively:
 PROGRAM hello_world_mpi
 include 'mpif.h'
 
-integer process_Rank, size_Of_Cluster, ierror
+integer rank, size, ierror
 
 call MPI_INIT(ierror)
 call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
