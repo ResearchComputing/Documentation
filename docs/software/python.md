@@ -2,7 +2,7 @@
 
 To support the diverse _python_ and _R_ workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
-_Note: CURC also hosts several python modules for those users who prefer modules over Anaconda. Type ```module spider python``` for a list of available python versions. Each module employs the Intel python distribution and has numerous pre-installed packages which can be queried by typing ```pip freeze```._ 
+_Note: CURC also hosts several legacy python and R modules for those users who prefer modules over Anaconda. Type ```module spider python``` or ```module spider R``` for a list of available versions. We recommend using Anaconda.
 
 ## Using the CURC Anaconda environment
 
@@ -83,38 +83,58 @@ You will know that you have properly activated the environment because you shoul
 
 *Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your ~/.condarc file. Environments can be installed in any user-writable location the user chooses -- just add the path to ~/.condarc.
 
- ####### 1a Activate the conda environment if you haven't already done so.
+__1. Activate the _base_ conda environment if you haven't already done so.__
  
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
-(base) [johndoe@shas0137 ~]$ conda activate idp
+(base) [johndoe@shas0137 ~]$ 
 ```
 
- ##### 2a. _Create a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
+ __2. Create a custom environment Here we create a new environment called _mycustomenv_ (you can call it anything you want!!):__
 
 ```
-(idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
+(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv
 ```
 
- or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
+ ...if you want a specific version of _python_ or _R_, you can modify the above commmand as follows (e.g.): 
 
+...for _python_ v2.7.16:
 ```
-(idp) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
-```
-
- ##### 2b. _Create a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
-
-```
-(idp) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
+(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv python==2.7.16
 ```
 
-##### 3. Activate your new environment
+...for _python_ v3.6.8
+```
+(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv python==3.6.8
+```
+...for the latest version of _R_:
 
 ```
-(idp) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
+(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv r-base
 ```
 
+__3. Activate your new environment__
 
+```
+(base) [johndoe@shas0137 ~]$ conda activate mycustomenv
+```
+
+If successful, your prompt will now be preceded with _(mycustomenv))_.
+
+__4. Install needed packages in your new environment__
+
+The best way to do this for python packages is to install everything you need with one command, because it forces conda to resolve package conflicts.  E.g.,:
+
+```
+(mycustomenv) [johndoe@shas0137 ~]$ conda install numpy scipy tensorflow
+```
+
+For R packages, it is easiest to start an R session and install the packages as you normally would with "install.packages".  E.g.,:
+
+```
+(mycustomenv) [johndoe@shas0137 ~]$ R
+>install.packages("ggplot2")
+```
 
 #### Basic conda commands:
 
