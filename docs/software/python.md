@@ -8,9 +8,9 @@ _Note: CURC also hosts several legacy python and R modules for those users who p
 
 Follow these steps from a Research Computing terminal session on a Summit `scompile` node or from an interactive session on a Blanca compute node. 
 
-### Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory 
+###  Configure your conda settings
 
-Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called _~/.condarc_, to change the default location of _pkgs_dirs_ so that the packages are downloaed to your (much bigger) _/projects_ directory.
+Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By default, _conda_ puts all package source code and environments in your _/home/$USER_ directory , and it will quickly become full. The steps here modify the _conda_ configration file, called _~/.condarc_, to change the default locations of for packages and environments to your (much bigger) _/projects_ directory.
 
 Open your _~/.condarc_ file in your favorite text editor (e.g., nano):
 _(note: this file may not exist yet -- if not, just create a new file with this name)_
