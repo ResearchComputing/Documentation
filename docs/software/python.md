@@ -6,7 +6,7 @@ _Note: CURC also hosts several legacy python and R modules for those users who p
 
 ## Using the CURC Anaconda environment
 
-Follow these steps from a Research Computing terminal session. 
+Follow these steps from a Research Computing terminal session on a Summit `scompile` node or from an interactive session on a Blanca compute node. 
 
 ### Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory 
 
