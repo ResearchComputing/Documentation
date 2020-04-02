@@ -1,6 +1,6 @@
-# Using Python with Anaconda
+# Using Python and R with Anaconda
 
-To support the diverse python workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+To support the diverse _python_ and _R_ workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 _Note: CURC also hosts several python modules for those users who prefer modules over Anaconda. Type ```module spider python``` for a list of available python versions. Each module employs the Intel python distribution and has numerous pre-installed packages which can be queried by typing ```pip freeze```._ 
 
@@ -24,6 +24,8 @@ _(note: this file may not exist yet -- if not, just create a new file with this 
 ```
 pkgs_dirs:
   - /projects/$USER/.conda_pkgs
+envs_dirs:
+  - /projects/$USER/software/anaconda/envs
 ```
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
@@ -32,23 +34,25 @@ Note that there are lots of other things you can customize using the [~/.condarc
 
 ### Activate the CURC Anaconda environment
 
-#### For python2:
+#### Type the following to activate anaconda3:
+
 ```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda2/2019.03/bin/activate
-(base) [johndoe@shas0137 ~]$ conda activate idp
+[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
 ```
 
-#### For python3:
-```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
-(base) [johndoe@shas0137 ~]$ conda activate idp
-```
+___note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use anaconda3 to create a custom environment with the python2.X version of your choice, per the steps below._  
 
-The first command activates the "base" python2 or python3 environment, which uses the Anaconda python distribution.  You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
+You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
 
 ```
 (base) [johndoe@shas0137 ~]$
 ```
+
+Now that you have the base conda environment installed
+
+
+
+
 
 The second command (_conda activate idp_) activates the Intel python distribution (idp), which is optimized for many mathematics functions and will run more efficiently on the Intel architecture of Summit and Blanca. You will know that you have properly activated the environment because you should see _`(idp)`_ in front of your prompt. E.g.: 
 
