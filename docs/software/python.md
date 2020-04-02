@@ -8,9 +8,7 @@ _Note: CURC also hosts several python modules for those users who prefer modules
 
 Follow these steps from a Research Computing terminal session. 
 
-#### Before you use conda for the first time:
-
-##### Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory
+#### Modify your ~/.condarc file so that packages are downloaded to your _/projects_ directory 
 
 Your _/home/$USER_ directory (also denoted with "_~_") is small -- only 2 GB. By default, conda downloads packages to your home directory when creating a new environment, and it will quickly become full. The steps here modify the conda configration file, called _~/.condarc_, to change the default location of _pkgs_dirs_ so that the packages are downloaed to your (much bigger) _/projects_ directory.
 
@@ -20,7 +18,7 @@ _(note: this file may not exist yet -- if not, just create a new file with this 
 [johndoe@shas0137]$ nano ~/.condarc
 ```
 
-...and add the following two lines:
+...and add the following four lines:
 ```
 pkgs_dirs:
   - /projects/$USER/.conda_pkgs
@@ -28,19 +26,17 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
-...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
+...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify _~/.condarc_ later.
 
 Note that there are lots of other things you can customize using the [~/.condarc file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
 
-### Activate the CURC Anaconda environment
-
-#### Type the following to activate anaconda3:
+#### Activate the CURC Anaconda environment:
 
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
 ```
 
-___note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use anaconda3 to create a custom environment with the python2.X version of your choice, per the steps below._  
+___note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice, per the steps below._  
 
 You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
 
@@ -48,54 +44,49 @@ You will know that you have properly activated the environment because you shoul
 (base) [johndoe@shas0137 ~]$
 ```
 
-Now that you have the base conda environment installed
+#### Using Conda:
 
+Now that you have activated the _base_ conda environment, you can use conda for _python_ and _R_!  There are two ways forward, depending on your needs.  You can:
 
+_1. Use one of CURC's pre-installed environments._ 
+* Pros: You can begin using one of these immediately, and they contain mainy of the most widely used python and R packages. 
+* Cons: These are root-owned environments, so you can't add additional packages. 
 
+or
 
+_2. Create your own custom environment(s)._
+* Pros: You own these, so you can add packages as needed, control package versions, etc.
+* Cons: There really aren't any cons, other than the time needed to create a custom environment (usually 5-30 minutes depending on the number of packages you install).     
 
-The second command (_conda activate idp_) activates the Intel python distribution (idp), which is optimized for many mathematics functions and will run more efficiently on the Intel architecture of Summit and Blanca. You will know that you have properly activated the environment because you should see _`(idp)`_ in front of your prompt. E.g.: 
+Both options are discussed next.
 
-```
-(idp) [johndoe@shas0137 ~]$
-```
+##### Using one of CURC's pre-installed enviroments:
 
-_*We strongly recommend using the Intel python distribution on Summit_.
-
-### Using python in Anaconda
-
-#### To list the packages currently installed in the environment:
-
-```
-(idp) [johndoe@shas0137 ~]$ conda list
-```
-
-#### To add a new package named "foo" to the environment:
+To use our Intel Python distribution (python v3.6.8):
 
 ```
-(idp) [johndoe@shas0137 ~]$ conda install foo 
+(base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
-#### To list the conda environments currently available:
+You will know that you have properly activated the environment because you should see _`(idp)`_ in front of your prompt. To see the python packages available in the _idp_ environment, you can type `conda list`. Now, you can use _python_ as you normally would.  
+
+To use our R distribution (R v3.6.0):
 
 ```
-(idp) [johndoe@shas0137 ~]$ conda env list
+(base) [johndoe@shas0137 ~]$ conda activate rstudio
 ```
 
-#### To deactivate an environment:
+You will know that you have properly activated the environment because you should see _`(rstudio)`_ in front of your prompt. To see the R packages available in the _rstudio_ environment, you can type `conda list`. Now, you can use _R_ as you normally would.  Most users use R on our system within batch jobs, rather than interactively (they find that doing interactive development of R code is more convenient on their laptop).  However, should you need to use _rstudio_ on top of R for interactive development on Summit, you can login to our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from within an `sinteractive` job.  
 
-```
-(idp) [johndoe@shas0137 ~]$ conda deactivate
-```
 
-#### To create a new environment in a predetermined location in your /projects directory.  
+##### Create your own custom environment:
 
-*Note: In the examples below the environment is created in /projects/$USER/software/anaconda/envs. This assumes that the software, anaconda, and envs directories already exist in /projects/$USER. Environments can be installed in any writable location the user chooses.
+*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your ~/.condarc file. Environments can be installed in any user-writable location the user chooses -- just add the path to ~/.condarc.
 
- ##### 1a Activate the conda environment if you haven't already done so.
+ ####### 1a Activate the conda environment if you haven't already done so.
  
 ```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
+[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
 (base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
@@ -123,12 +114,33 @@ _*We strongly recommend using the Intel python distribution on Summit_.
 (idp) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
 ```
 
-##### Notes on creating environments:
-* You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _`/projects`_ directory because it is much larger than your _`/home`_ directory).
 
-* Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
 
-* We *strongly recommend* cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
+#### Basic conda commands:
+
+##### To list the packages currently installed in the environment:
+
+```
+(idp) [johndoe@shas0137 ~]$ conda list
+```
+
+##### To list the conda environments currently available:
+
+```
+(idp) [johndoe@shas0137 ~]$ conda env list
+```
+
+##### To add a new package named "foo" to your _custom_ environment:
+
+```
+(myenv) [johndoe@shas0137 ~]$ conda install foo 
+```
+
+##### To deactivate an environment:
+
+```
+(idp) [johndoe@shas0137 ~]$ conda deactivate
+```
 
 #### Troubleshooting
 
