@@ -1,6 +1,6 @@
 ## JupyterHub
 
-[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using Python, R, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an excellent enviornment to use, learn, and teach interactive data analysis.  
+[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an excellent enviornment to use, learn, and teach interactive data analysis.  
 
 CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
@@ -17,6 +17,7 @@ To start a notebook server, select one of the available options in the *Select j
    * __Summit Haswell (1 node, 12hr)__ (a 12-hour, 24 core job on a Summit "shas" node)
    * __Blanca (12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
    * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
+   * __Blanca CURC (12hr)__ (A 12-hour, 1 core job on the Blanca CURC partition; only available to Blanca CURC users)
 * __Module-based servers (legacy; no longer supported)__
    * __Legacy - Summit Haswell - 2hr__ (a 2-hour, 1 core job on a Summit "shas" node)
    * __Legacy - Summit Haswell - 12hr__ (a 12-hour, 1 core job on a Summit "shas" node)
@@ -48,7 +49,6 @@ The server will take a few moments to start.  When it does, you will be taken to
   * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
   * __Bash__: BASH notebook
   * __R__: R notebook 
-* IPyParallel/IPython clusters
 
 ### Step 3: Open a notebook
 
@@ -81,16 +81,14 @@ The CURC JupyterHub runs on top of the [CURC Anaconda distribution](../software/
 
 Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
 
-##### 1. Activate the CURC Anaconda environment
+##### 1.  Configure your conda settings
 
-__For python2__:
-```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda2/2019.03/bin/activate
-```
+Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc] (https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.md#configure-your-conda-settings).
 
-__For python3__:
+##### 2. Activate the CURC Anaconda environment
+
 ```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/2019.03/bin/activate
+[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
 ```
 
 You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
@@ -99,70 +97,29 @@ You will know that you have properly activated the environment because you shoul
 (base) [johndoe@shas0137 ~]$
 ```
 
-##### 2. Modify your `~/.condarc` file so that packages are downloaded to your `/projects` directory
+##### 3. Create a new custom environment. 
 
-By default, conda downloads packages to your `home/$USER` directory when creating a new environment. Your `/home/$USER` directory (also denoted with `~`) is small -- only 2 GB. The steps here modify the conda configration file, called `~/.condarc`, to change the default location of `pkgs_dirs` so that the packages are downloaed to your (much bigger) `/projects` directory.
+Follow our Anaconda documentation for [steps on creating your own custom conda environment](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.md#create-your-own-custom-environment).
 
-Open your `~/.condarc` file in your favorite text editor (e.g., nano, vim):
-_(note: this file may not exist yet -- if not, just create a new file with this name)_
-```
-(base) [johndoe@shas0137]$ nano ~/.condarc
-```
-
-...and add the following two lines:
-```
-pkgs_dirs:
-  - /projects/$USER/.conda_pkgss
-```
-
-...then save and exit the file. You won't need to perform this step again -- it's permanent unless you change _pkgs_dirs_ by editing _~/.condarc_ again.
-
-Note: You can customize [a variety of jupyter settings using the `~/.condarc` file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
-
-##### 3. Create a new environment in a predetermined location in your /projects directory.  
-
-_*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`. This assumes that the `software`, `anaconda`, and `envs` directories already exist in `/projects/$USER`. Environments can be installed in any writable location the user chooses._ 
-
-##### a. _Create a custom environment "from scratch"_: Here we create a new environment called _mycustomenv_:
-
- ``` You will know that you have properly activated the environment because you should see _`(base)`_ in front of your prompt. E.g.: 
-
-```
-(base) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv
-```
-
- or if you want a specific version of python other than the default installed in the CURC Anaconda base environment:
-
- ```
- (base) [johndoe@shas0137 ~]$ conda create --prefix /projects/$USER/software/anaconda/envs/mycustomenv python==2.7.16
- ```
-
- or...
-
-##### b. _Create a custom environment by cloning a preexisting environment_: Here we clone the preexisting Intel Python3 distribution in the CURC Anaconda environment, creating a new environment called _mycustomenv_:
-
- ```
- (base) [johndoe@shas0137 ~]$ conda create --clone idp --prefix /projects/$USER/software/anaconda/envs/mycustomenv
- ```
 
 ##### 4. Activate your new environment
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate /projects/$USER/software/anaconda/envs/mycustomenv
+(base) [johndoe@shas0137 ~]$ conda activate mycustomenv
 ```
+
+(Note: we assume here that you've named your environmenet _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!)
 
 ##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
 ```
+(mycustomenv) [johndoe@shas0137 ~]$ conda install -y ipykernel
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
 ```
 
-This command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+The first command will install the ipykernel package (this may already be installed, but it doesn't hurt to try again). The second command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
-##### Notes on creating environments:
-* You can create an environment in any directory location you prefer (as long as you have access to that directory).  We recommend using your _`/projects`_ directory because it is much larger than your _`/home`_ directory).
-* Although we don't show it here, it is expected that you will be installing whatever software and packages you need in this environment, as you normally would with conda).
-* We [strongly recommend] cloning the [Intel Python distribution](https://software.intel.com/en-us/distribution-for-python) (idp) if you will be doing any computationally-intensive work, or work that requires parallelization. The Intel Python distribution will run more efficiently on our Intel architecture than other python distributions.
+##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than _`/home/$USER/.local/share/jupyter`_ (for example, if your research team has a group installation of Anaconda environments located in _`/pl/active/<some_env>`_), you can create a file in your home directory named _`~/.jupyterrc`_ containing the following line:
 
