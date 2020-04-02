@@ -83,7 +83,7 @@ Follow these steps from a terminal session. You can get a new terminal session d
 
 ##### 1.  Configure your conda settings
 
-Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc] (https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.md#configure-your-conda-settings).
+Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.md#configure-your-conda-settings).
 
 ##### 2. Activate the CURC Anaconda environment
 
@@ -108,7 +108,7 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 (base) [johndoe@shas0137 ~]$ conda activate mycustomenv
 ```
 
-(Note: we assume here that you've named your environmenet _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!)
+(Note: we assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!)
 
 ##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
