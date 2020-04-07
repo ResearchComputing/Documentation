@@ -10,7 +10,7 @@ The conda package manager allows modification of default settings to be done thr
 
 Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configration file to change the default locations of for packages and environments to your larger `/projects/$USER` directory.
 
-Open your _~/.condarc_ file in your favorite text editor (e.g., nano):
+Open your `.condarc` file in your favorite text editor (e.g., nano):  
 _(note: this file may not exist yet -- if not, just create a new file with this name)_
 
 ```
@@ -25,16 +25,16 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
-...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify _~/.condarc_ later.
+...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
 
-Note that there is [a varaitey of settings you can customize using the .condarc file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
+The `.condarc` file provides a variety of settings that can be detailed to speed up your workflows. For more information on `.condarc`, [check out the Anaconda documentation.](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
 
 ## Using the CURC Anaconda environment
 Follow these steps from a Research Computing terminal session on a Summit `scompile` node or within a Summit/Blanca batch or interactive job.
 
 ### Activate the CURC Anaconda environment:
 
-Loading the CURC Anaconda enviornment is a little different compared to other software on Summit. Run the following command to initialize the base Anaconda software:
+Loading the CURC Anaconda enviornment is a little different compared to other software on Summit. Run the following command to initialize the base Anaconda software:  
 
 ```
 [johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
@@ -50,7 +50,7 @@ You will know that you have properly activated the environment because you shoul
 
 ### Using Conda:
 
-Now that you have activated the _base_ conda environment, you can use conda for _python_ and _R_!  There are two ways forward, depending on your needs.  You can:
+Now that you have activated the base conda environment, you can use conda for python and R! There are two ways forward, depending on your needs. You can:
 
 __1. Use one of CURC's pre-installed environments.__
 * Pros: You can begin using one of these immediately, and they contain mainy of the most widely used python and R packages. 
@@ -66,7 +66,7 @@ Both options are discussed below.
 
 #### Using one of CURC's pre-installed enviroments:
 
-To use the CURC Intel Python distribution or _"idp"_ (python v3.6.8), run the following command with Anaconda initialized:
+To use the CURC Intel Python distribution or **"idp"** (python v3.6.8), run the following command with Anaconda initialized:
 
 ```
 (base) [johndoe@shas0137 ~]$ conda activate idp
@@ -74,7 +74,7 @@ To use the CURC Intel Python distribution or _"idp"_ (python v3.6.8), run the fo
 
 You will know that you have properly activated the environment because you should see `(idp)` replace the `(base)` in front of your prompt. Now the Intel Python distribution is loaded into your enviornment and can be accessed with the `python` command.
 
-To see the python packages available in the _"idp"_ environment, you can type `conda list`.   
+To see the python packages available in the idp environment, you can type `conda list`.   
 
 Similarly to use the CURC R distribution (R v3.6.0), run the following command with Anaconda initialized:
 
