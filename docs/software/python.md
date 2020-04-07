@@ -84,7 +84,7 @@ Similarly to use the CURC R distribution (R v3.6.0), run the following command w
 
 You will know that you have properly activated the environment because you should see `(rstudio)` in front of your prompt. To see the R packages available in the environment, you can type `conda list`. Now, you can use R as you normally would. 
 
-Because interactive development is more easily done locally, most R users on CURC resources submit their work within batch jobs. Should you need to use _rstudio_ on top of R for interactive development on Summit, you can login to our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from within an interactive job.  
+Because interactive development is more easily done locally, most CURC R users exclusively run R code within batch jobs. Should you need to use rstudio on top of R for interactive development on Summit, you can login to our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from within an interactive job.  
 
 
 
