@@ -72,7 +72,7 @@ To use the CURC Intel Python distribution or _"idp"_ (python v3.6.8), run the fo
 (base) [johndoe@shas0137 ~]$ conda activate idp
 ```
 
-You will know that you have properly activated the environment because you should see `(idp)` replace the `(base)` in front of your prompt. Now the intel python distribution is loaded into your enviornment and can be accessed with the `python` command.
+You will know that you have properly activated the environment because you should see `(idp)` replace the `(base)` in front of your prompt. Now the Intel Python distribution is loaded into your enviornment and can be accessed with the `python` command.
 
 To see the python packages available in the _"idp"_ environment, you can type `conda list`.   
 
@@ -106,7 +106,7 @@ Here we create a new environment called _mycustomenv_ (you can call it anything 
 (base) [johndoe@shas0137 ~]$ conda create -n mycustomenv
 ```
 
-If you want a specific version of python or R, you can modify the above commmand as follows (e.g.): 
+If you want a specific version of python or R, you can modify the above commmand as follows (e.g.):  
 _Python v2.7.16:_
 ```
 (base) [johndoe@shas0137 ~]$ conda create -n mycustomenv python==2.7.16
@@ -144,36 +144,26 @@ For R packages, it is easiest to start an R session and install the packages as 
 (mycustomenv) [johndoe@shas0137 ~]$ R
 >install.packages("ggplot2")
 ```
+For more information on managing conda enviornments. [Check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+
 
 ### Basic conda commands to get you started:
 
-__List the packages currently installed in the environment__
+| Command | Function |
+|---------|----------|
+| `conda list` | List the packages currently installed in the environment |
+| `conda search <package>` | Searches the Anaconda package channel for a package named `<pakage>` |
+| `conda install <package>` | Installs a package named `<package>` to your currently loaded environment |
+| `conda uninstall <package>` | Uninstalls a package named `<package>` from your currently loaded environment |
+| `conda env list` | List the conda environments currently available |
+| `conda create <env>` | Creates a new anaconda enviornment named `<env>` |
+| `conda remove --name <env> --all` | Removes an environment named `<env>` |
+| `conda deactivate` | Deactivates current enviornment |
 
-```
-(mycustomenv) [johndoe@shas0137 ~]$ conda list
-```
-
-__List the conda environments currently available__
-
-```
-(base) [johndoe@shas0137 ~]$ conda env list
-```
-
-__Add a new package named "foo" to your _custom_ environment__
-
-```
-(mycustomenv) [johndoe@shas0137 ~]$ conda install foo 
-```
-
-__Deactivate an environment:__
-
-```
-(mycustomenv) [johndoe@shas0137 ~]$ conda deactivate
-```
 
 ### Troubleshooting
 
-If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current conda environment. Use `conda install <packagname>` to add a new package or `conda install <packagename==version>` for a specific verison; e.g., `conda install numpy=1.16.2`.
+If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current conda environment. Use `conda install <package>` to add a new package or `conda install <package==version>` for a specific verison; e.g., `conda install numpy=1.16.2`.
 
 Sometimes conda environments can "break" if two packages in the environment require different versions of the same shared library. In these cases you try a couple of things.
 * Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces conda to attempt to resolve shared library conflicts. 
