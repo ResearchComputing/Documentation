@@ -1,10 +1,10 @@
-# Using Python and R with Anaconda
+# Python and R with Anaconda
 
 To support the diverse _python_ and _R_ workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda uses the _conda_ package manager to easily install software and associated packages, and supports _python_, _R_, and many other applications. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 _Note: CURC also hosts several legacy python and R modules for those users who prefer modules over Anaconda. Type `module spider python` or `module spider R` for a list of available versions. We recommend using Anaconda._
 
-##  Configuring conda with `.condarc`
+## Configuring conda with `.condarc`
 
 The conda package manager allows modification of default settings to be done through a text file known as the `.condarc`. This file exists within a user's `/home/$USER/` directory and can be quickly be accessed using the file's full path at `~/.condarc`.
 
