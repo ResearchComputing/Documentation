@@ -35,10 +35,12 @@ Since not all Blanca nodes are identical, you can include node features in your 
 
 To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
 
-### Node Features Table
+### Node Features Tables
 
-Node name     | High-priority QoS | General hardware attributes | Features
---------------|---------------|-----------------------------|---------
+#### Blanca Core
+
+Node Name     | High-Priority QoS | General Hardware Attributes | Features  
+--------------|---------------|-----------------------------|---------  
 bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel7
 bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
 bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
@@ -60,7 +62,14 @@ bnode04[05-08] | blanca-ics | 28 cores, 2.4 GHz,<br> 250.000 GB RAM,<br>1 TB loc
 bnode04[12-14] | blanca-ibg | 32 cores, 2.10 GHz,<br> 1000.00 GB RAM,<br> 10 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bnode05[03-04] | blanca-csdms | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bnode05[05-06] | blanca-geol | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bnode05[07] | blanca-rittger | 32 cores, 2.10 GHz,<br> 191.840 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
+bnode05[08-09] | blanca-appm | 40 cores, 2.10 Ghz,<br> 191.668 GB RAM,<br> 1 TB local disk | cascade,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
 bgpu-mktg1 | blanca-mktg | 32 cores, 2.10 GHz,<br> 772.476 GB RAM,<br> 1.8 TB local disk,<br> 1 NVIDIA P100 GPU | skylake,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
+bhpc-c7-u7-[1-18]  | blanca-nso    | 36 cores, 2.70 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
+bhpc-c7-u7-[19-23] | blanca-topopt | 64 cores, 2.10 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
+bhpc-c7-u7-24      | blanca-curc   | 32 cores, 2.10 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
+bhpc-c7-u19-[1-18] | blanca-nso    | 36 cores, 2.70 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
+hhpc-c7-u19-[19-20] | blanca-curc  | 32 cores, 2.10 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
 
 ### Description of features
 
@@ -69,9 +78,12 @@ bgpu-mktg1 | blanca-mktg | 32 cores, 2.10 GHz,<br> 772.476 GB RAM,<br> 1.8 TB lo
 - **ivybridge**: Intel processor generation  
 - **haswell**: Intel processor generation  
 - **broadwell**: Intel processor generation  
+- **skylake**: Intel processor generation
+- **cascade**: Intel processor generation
 - **avx**: AVX processor instruction set  
 - **avx2**: AVX2 processor instruction set  
 - **fdr**: InfiniBand network generation  
+- **edr**: InfiniBand network generation
 - **Quadro**: NVIDIA GPU generation  
 - **Tesla**: NVIDIA GPU generation  
 - **k2000**: NVIDIA K2000 GPU  

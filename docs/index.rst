@@ -43,7 +43,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    access/duo-2-factor-authentication
    access/rmacc
    access/blanca
-   access/allocations
 
 .. toctree::
    :maxdepth: 2
@@ -76,7 +75,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    gateways/jupyterhub
    gateways/parallel-programming-jupyter
    gateways/enginframe
-   gateways/labhub
 
 .. toctree::
    :maxdepth: 2
