@@ -53,7 +53,7 @@ The server will take a few moments to start.  When it does, you will be taken to
 ### Step 3: Open a notebook
 
 There are two ways to open a notebook:
-* _To open a new notebook_: click on the _`New`_ button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language you wish to use in the notebook (e.g., python, R, bash). Once you are in the notebook, you can save it to _myfilename_.ipynb using the _File -> Save as.._ option.
+* _To open a new notebook_: click on the `New` button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language you wish to use in the notebook (e.g., python, R, bash). Once you are in the notebook, you can save it to _myfilename_.ipynb using the _File -> Save as.._ option.
 * To open an existing notebook: Click on the _myfilename_.ipynb notebook that you want to work in.  This will open the notebook in the appropriate kernel (assuming that kernel is available on CURC Jupyterhub).
 
 _Tip_: The ___Python 2 (idp)___ and ___Python 3 (idp)___ notebook environments have many preinstalled packages. To query a list of available packages from a python notebook, you can use the following nomenclature:
@@ -67,23 +67,23 @@ If the packages you need are not available, [you can create your own custom envi
 
 ### Step 4: Shut down a Notebook Server
 
-Use the _`Stop My Server`_ button in the _`Control Panel`_ to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired (for example, if you want to change from a "shas" to a "sknl" server).
+Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired (for example, if you want to change from a "shas" to a "sknl" server).
 
-Alternately, you can use the _`Quit`_ button from the Jupyter home page to shut down the Jupyter notebook server.
+Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
-Using the _`Logout`_ button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
+Using the `Logout` button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
 
 ### Additional Documentation
 
 #### Creating your own custom Jupyter kernels
 
-The CURC JupyterHub runs on top of the [CURC Anaconda distribution](../software/python.md). [Anaconda](http://anaconda.com) is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
+The CURC JupyterHub runs on top of the [CURC Anaconda distribution](../software/python.html). [Anaconda](http://anaconda.com) is an open-source _python_ and _R_ distribution that uses the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use on RC JupyterHub. 
 
 Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
 
 ##### 1.  Configure your conda settings
 
-Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.md#configure-your-conda-settings).
+Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.html#configure-your-conda-settings).
 
 ##### 2. Activate the CURC Anaconda environment
 
@@ -99,7 +99,7 @@ You will know that you have properly activated the environment because you shoul
 
 ##### 3. Create a new custom environment. 
 
-Follow our Anaconda documentation for [steps on creating your own custom conda environment](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.md#create-your-own-custom-environment).
+Follow our Anaconda documentation for [steps on creating your own custom conda environment](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.html#create-your-own-custom-environment).
 
 
 ##### 4. Activate your new environment
@@ -117,20 +117,23 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
 ```
 
-The first command will install the ipykernel package (this may already be installed, but it doesn't hurt to try again). The second command will create a kernel with the name _mycustomenv_ and the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the _`--user`_ flag, the kernel will be in _`/home/$USER/.local/share/jupyter/kernels`_ (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+The first command will install the ipykernel package if not installed already. The second command will create a kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
-* If you need to use custom kernels that are in a location other than _`/home/$USER/.local/share/jupyter`_ (for example, if your research team has a group installation of Anaconda environments located in _`/pl/active/<some_env>`_), you can create a file in your home directory named _`~/.jupyterrc`_ containing the following line:
+* If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
 
-   ```export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter```
-* If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
+```
+export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
+```
+
+If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
 
 ### Troubleshooting
 
-Jupyter notebook servers spawned on RC compute resources log to _`~/.jupyterhub-spawner.log`_. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
+Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
 
 ### See Also
 
-* [CURC Anaconda distribution](../software/python.md)
-* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.md)
+* [CURC Anaconda distribution](../software/python.html)
+* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
