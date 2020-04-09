@@ -102,13 +102,13 @@ processes and the rank of a given process respectively:
 PROGRAM hello_world_mpi
 include 'mpif.h'
 
-integer rank, size, ierror
+integer process_Rank, size_Of_Cluster, ierror
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
-print *, 'Hello World from process: ', rank, 'of ', size
+print *, 'Hello World from process: ', process_Rank, 'of ', size_Of_Cluster
 ```
 
 Lastly let's close the environment using `MPI_Finalize()`:
@@ -117,13 +117,13 @@ Lastly let's close the environment using `MPI_Finalize()`:
 PROGRAM hello_world_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, tag
+integer process_Rank, size_Of_Cluster, ierror, tag
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
-print *, 'Hello World from process: ', rank, 'of ', size
+print *, 'Hello World from process: ', process_Rank, 'of ', size_Of_Cluster
 
 call MPI_FINALIZE(ierror)
 END PROGRAM
@@ -234,14 +234,14 @@ print statement in a loop:
 PROGRAM hello_world_mpi
 include 'mpif.h'
 
-integer rank, size, ierror
+integer process_Rank, size_Of_Cluster, ierror
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
 DO i = 0, 3, 1
-    print *, 'Hello World from process: ', rank, 'of ', size
+    print *, 'Hello World from process: ', process_Rank, 'of ', size_Of_Cluster
 END DO
 
 call MPI_FINALIZE(ierror)
@@ -255,15 +255,15 @@ only when the loop iteration matches the process rank.
 PROGRAM hello_world_mpi
 include 'mpif.h'
 
-integer rank, size, ierror
+integer process_Rank, size_Of_Cluster, ierror
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
 DO i = 0, 3, 1
-    IF(i == rank) THEN
-        print *, 'Hello World from process: ', rank, 'of ', size
+    IF(i == process_Rank) THEN
+        print *, 'Hello World from process: ', process_Rank, 'of ', size_Of_Cluster
     END IF
 END DO
 
@@ -278,15 +278,15 @@ that all processes are synchronized when passing through the loop.
 PROGRAM hello_world_mpi
 include 'mpif.h'
 
-integer rank, size, ierror
+integer process_Rank, size_Of_Cluster, ierror
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
 DO i = 0, 3, 1
-    IF(i == rank) THEN
-        print *, 'Hello World from process: ', rank, 'of ', size
+    IF(i == process_Rank) THEN
+        print *, 'Hello World from process: ', process_Rank, 'of ', size_Of_Cluster
     END IF
     call MPI_BARRIER( MPI_COMM_WORLD, i_error)
 END DO
@@ -358,11 +358,11 @@ to store some information.
 PROGRAM send_recv_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
 call MPI_FINALIZE(ierror)
 END PROGRAM
@@ -377,16 +377,16 @@ containing the integer 42 to process 2.
 PROGRAM send_recv_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
-IF(rank == 0) THEN
+IF(process_Rank == 0) THEN
     message_Item = 42
     print *, "Sending message containing: ", message_Item
-ELSE IF(rank == 1) THEN
+ELSE IF(process_Rank == 1) THEN
     print *, "Received message containing: ", message_Item
 END IF
 
@@ -425,17 +425,17 @@ Lets implement these functions in our code:
 PROGRAM send_recv_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
-IF(rank == 0) THEN
+IF(process_Rank == 0) THEN
     message_Item = 42
     call MPI_SEND(message_Item, 1, MPI_INT, 1, 1, MPI_COMM_WORLD, ierror)
     print *, "Sending message containing: ", message_Item
-ELSE IF(rank == 1) THEN
+ELSE IF(process_Rank == 1) THEN
     call MPI_RECV(message_Item, 1, MPI_INT, 0, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE, ierror)
     print *, "Received message containing: ", message_Item
 END IF
@@ -506,7 +506,7 @@ number of processes.
 PROGRAM scatter_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 
 END PROGRAM
 ```
@@ -518,11 +518,11 @@ Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
 PROGRAM scatter_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
 call MPI_FINALIZE(ierror)
 END PROGRAM
@@ -536,14 +536,14 @@ which we will scatter the data.
 PROGRAM scatter_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 integer scattered_Data
 integer, dimension(4) :: distro_Array
 distro_Array = (/39, 72, 129, 42/)
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 
 call MPI_FINALIZE(ierror)
 END PROGRAM
@@ -574,17 +574,17 @@ following the scatter call:
 PROGRAM scatter_mpi
 include 'mpif.h'
 
-integer rank, size, ierror, message_Item
+integer process_Rank, size_Of_Cluster, ierror, message_Item
 integer scattered_Data
 integer, dimension(4) :: distro_Array
 distro_Array = (/39, 72, 129, 42/)
 
 call MPI_INIT(ierror)
-call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, size_Of_Cluster, ierror)
+call MPI_COMM_RANK(MPI_COMM_WORLD, process_Rank, ierror)
 call MPI_Scatter(distro_Array, 1, MPI_INT, scattered_Data, 1, MPI_INT, 0, MPI_COMM_WORLD, ierror);
 
-print *, "Process ", rank, "received: ", scattered_Data
+print *, "Process ", process_Rank, "received: ", scattered_Data
 call MPI_FINALIZE(ierror)
 
 END PROGRAM
