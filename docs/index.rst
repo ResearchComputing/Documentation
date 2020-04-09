@@ -73,7 +73,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    :caption: Gateways
 
    gateways/jupyterhub
-   gateways/parallel-programming-jupyter
    gateways/enginframe
 
 .. toctree::
