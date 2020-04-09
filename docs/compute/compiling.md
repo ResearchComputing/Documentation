@@ -48,7 +48,7 @@ our HDF5 example, a compilation command that uses the environment
 variables set by the module system may look like:
 
 ```
-$FC my_program.f90 -I$(CURC_HDF5_INC) -L$(CURC_HDF5_LIB) -lhdf5_fortran -o my_program
+$FC my_program.f90 -I$CURC_HDF5_INC -L$CURC_HDF5_LIB -lhdf5_fortran -o my_program
 ```
 
 **Note:** Your run-time environment should reflect your compilation
