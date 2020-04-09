@@ -136,4 +136,4 @@ Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-s
 ### See Also
 
 * [CURC Anaconda distribution](../software/python.html)
-* [RC JupyterHub CHANGELOG](../jupyterhub/CHANGELOG.html)
+* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
