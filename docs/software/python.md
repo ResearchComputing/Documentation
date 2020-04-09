@@ -107,6 +107,7 @@ Here we create a new environment called _mycustomenv_ (you can call it anything 
 ```
 
 If you want a specific version of python or R, you can modify the above commmand as follows (e.g.):  
+
 _Python v2.7.16:_
 ```
 (base) [johndoe@shas0137 ~]$ conda create -n mycustomenv python==2.7.16
@@ -144,7 +145,7 @@ For R packages, it is easiest to start an R session and install the packages as 
 (mycustomenv) [johndoe@shas0137 ~]$ R
 >install.packages("ggplot2")
 ```
-For more information on managing conda enviornments. [Check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+For more information on managing conda enviornments, [check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
 
 ### Basic conda commands to get you started:
