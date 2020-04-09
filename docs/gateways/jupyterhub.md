@@ -83,7 +83,7 @@ Follow these steps from a terminal session. You can get a new terminal session d
 
 ##### 1.  Configure your conda settings
 
-Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.html#configure-your-conda-settings).
+Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](../software/python.html#configure-your-conda-settings).
 
 ##### 2. Activate the CURC Anaconda environment
 
@@ -99,7 +99,7 @@ You will know that you have properly activated the environment because you shoul
 
 ##### 3. Create a new custom environment. 
 
-Follow our Anaconda documentation for [steps on creating your own custom conda environment](https://github.com/ResearchComputing/Documentation/blob/sprint6/docs/software/python.html#create-your-own-custom-environment).
+Follow our Anaconda documentation for [steps on creating your own custom conda environment](../software/python.html#create-your-own-custom-environment).
 
 
 ##### 4. Activate your new environment
@@ -136,4 +136,4 @@ Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-s
 ### See Also
 
 * [CURC Anaconda distribution](../software/python.html)
-* [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
+* [RC JupyterHub CHANGELOG](../jupyterhub/CHANGELOG.html)
