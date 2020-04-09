@@ -76,9 +76,7 @@ python hello_World.py 4;
 Now create a job script called `run_hello.sh` that will submit all
 instances of your python script in `lb_cmd_file` using the Load
 Balancer. Within the script, before using Load Balancer, we need to
-load the Intel C++ compiler, Intel MPI, Python, and the Load Balancer
-utility itself. We load Intel and Intel MPI because the Load Balancer
-uses mpirun to parallelize commands. Your job script should look
+load the Python, and the Load Balancer utility itself. Your job script should look
 something like this:
 
 ```bash
@@ -93,8 +91,6 @@ something like this:
 
 module purge
 
-module load intel
-module load impi
 module load python
 module load loadbalance
 
