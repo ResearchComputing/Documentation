@@ -2,7 +2,7 @@
 
 [Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an excellent enviornment to use, learn, and teach interactive data analysis.  
 
-CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
+CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the next-generation [JupyterLab](https://jupyterlab.readthedocs.io) user interface. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
 ### Step 1: Log  in to CURC JupyterHub
 
@@ -17,15 +17,9 @@ To start a notebook server, select one of the available options in the *Select j
    * __Summit Haswell (1 node, 12hr)__ (a 12-hour, 24 core job on a Summit "shas" node)
    * __Blanca (12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
    * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
-   * __Blanca CURC (12hr)__ (A 12-hour, 1 core job on the Blanca CURC partition; only available to Blanca CURC users)
-* __Module-based servers (legacy; no longer supported)__
-   * __Legacy - Summit Haswell - 2hr__ (a 2-hour, 1 core job on a Summit "shas" node)
-   * __Legacy - Summit Haswell - 12hr__ (a 12-hour, 1 core job on a Summit "shas" node)
-   * __Legacy - Summit Knight's Landing__ (a 2-hour, full node job on a Summit "sknl" node)
-   * __Legacy - Blanca CSDMS__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
-   * __Legacy - Blanca Sol__ (A 12-hour, 1 core job on the Blanca Sol partition; only available to Blanca Sol users)
-   * __Legacy - Blanca APPM__ (A 12-hour, 1 core job on the Blanca APPM partition; only available to Blanca APPM users)
-
+  
+  
+  # Additional editing starts here to tailor docs for JH2
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory under the `Files` tab.  You will also see the following buttons in the upper right of the screen:
 
 * _Quit_: Will terminate your notebook server (i.e., terminates the job you just started).  
@@ -49,6 +43,10 @@ The server will take a few moments to start.  When it does, you will be taken to
   * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
   * __Bash__: BASH notebook
   * __R__: R notebook 
+  
+ #### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
+
+You can access the Jupyter classic view by [Insert text here].
 
 ### Step 3: Open a notebook
 
@@ -72,6 +70,8 @@ Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter 
 Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
 Using the `Logout` button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
+
+# Additional edits for JH2 end here.  Shouldn't need to edit below this.
 
 ### Additional Documentation
 
@@ -119,6 +119,7 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 
 The first command will install the ipykernel package if not installed already. The second command will create a kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
+
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
@@ -129,6 +130,10 @@ export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
 
 If you need assistance creating or installing environments or Jupyter kernels, contact us at rc-help@colorado.edu. 
 
+#### Using Dask to spawn multi-core jobs from CURC JupyterHub
+
+_Dask is a flexible library for parallel computing in Python. Documentation for using Dask on RC JupyterHub is forthcoming. In the meantime, if you need help integrating Dask with Slurm so that you can run multicore jobs on the CURC JupyterHub, please contact us at rc-help@colorado.edu._
+
 ### Troubleshooting
 
 Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
@@ -137,3 +142,4 @@ Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-s
 
 * [CURC Anaconda distribution](../software/python.html)
 * [RC JupyterHub CHANGELOG](jupyterhub/CHANGELOG.html)
+* [JupyterLab homepage](https://jupyterlab.readthedocs.io)
