@@ -20,7 +20,14 @@ To start a notebook server, select one of the available options in the *Select j
   
   
   # Additional editing starts here to tailor docs for JH2
-The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory under the `Files` tab.  You will also see the following buttons in the upper right of the screen:
+The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left panel. On the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
+
+<p align="middle">
+  <img src="./jupyterhub/jupyterlab1.png"/>
+</p>
+
+
+You will also see the following buttons in the upper right of the screen:
 
 * _Quit_: Will terminate your notebook server (i.e., terminates the job you just started).  
 * _Logout_: Will log you out of CURC Jupyterhub and terminate your notebook server.
