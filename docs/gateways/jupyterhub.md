@@ -27,10 +27,11 @@ The server will take a few moments to start.  When it does, you will be taken to
 </p>
 
 
-You will also see the following buttons in the upper right of the screen:
+The following features are also availabe:
 
-* _Quit_: Will terminate your notebook server (i.e., terminates the job you just started).  
-* _Logout_: Will log you out of CURC Jupyterhub and terminate your notebook server.
+* Left-hand side
+  * You can navigate to your other CURC directories by clicking the folder next to `/home/<yourusername>`
+  * Above your working directory contents are buttons to add a new Launcher, create a new folder, upload files from your local computer, and refresh the working directory. 
 * _Control Panel_: Will enable you to manually terminate and (if desired) restart your server.
 * _Upload_: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
 * _New_: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R) 
