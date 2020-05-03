@@ -1,6 +1,6 @@
 ## JupyterHub
 
-[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an excellent enviornment to use, learn, and teach interactive data analysis.  
+[Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
 
 CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the next-generation [JupyterLab](https://jupyterlab.readthedocs.io) user interface. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
@@ -40,7 +40,7 @@ The following features are availabe in the [JupyterLab Interface](https://jupyte
       * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
       * __Bash__: BASH notebook
       * __R__: R notebook 
-      * ...and any custom kernels you add _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
+      * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
    * Open a new console (command line) for any of the kernels
    * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
 * See the [documentation on the JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html) for additional features. 
@@ -59,17 +59,15 @@ If the packages you need are not available, [you can create your own custom envi
     
 #### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
 
-You can access the Jupyter classic view by going to the address bar at the top of your broswer and change "lab" to "tree" in the URL.  For, example, if your session URL is https://jupyter2.rc.colorado.edu/user/janedoe/lab ; you can change this to https://jupyter2.rc.colorado.edu/user/janedoe/tree . 
+You can access the Jupyter classic view by going to the address bar at the top of your broswer and changing "lab" to "tree" in the URL.  For, example, if your session URL is https://jupyter.rc.colorado.edu/user/janedoe/lab, you can change this to https://jupyter.rc.colorado.edu/user/janedoe/tree . 
 
 ### Step 4: Shut down a Notebook Server
 
-Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired (for example, if you want to change from a "shas" to a "sknl" server).
+Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired (for example, if you want to change from a "Summit Interactive" to a "Summit Haswell" server).
 
 Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
 Using the `Logout` button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
-
-# Additional edits for JH2 end here.  Shouldn't need to edit below this.
 
 ### Additional Documentation
 
