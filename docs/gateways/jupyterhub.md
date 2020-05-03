@@ -25,6 +25,8 @@ The server will take a few moments to start.  When it does, you will be taken to
 </p>
 
 
+### Step 3: Navigating the JupyterLab Interface
+
 The following features are availabe in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
 
 * _Left sidebar:_ Click on a tab to change what you see in the left menu bar.  Options include the file browser, a list of running kernels and terminals, a command palette, a notebook cell tools inspector, and a tabs list.
@@ -42,18 +44,10 @@ The following features are availabe in the [JupyterLab Interface](https://jupyte
    * Open a new console (command line) for any of the kernels
    * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
 * See the [documentation on the JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html) for additional features. 
-    
-#### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
 
-You can access the Jupyter classic view by [Insert text here].
+#### Tip for finding the packages available to you within a notebook
 
-### Step 3: Open a notebook
-
-There are two ways to open a notebook:
-* _To open a new notebook_: click on the `New` button on the right hand side of the Jupyter home screen, and select one of the available options (kernels) under "Notebook", depending on the programming language you wish to use in the notebook (e.g., python, R, bash). Once you are in the notebook, you can save it to _myfilename_.ipynb using the _File -> Save as.._ option.
-* To open an existing notebook: Click on the _myfilename_.ipynb notebook that you want to work in.  This will open the notebook in the appropriate kernel (assuming that kernel is available on CURC Jupyterhub).
-
-_Tip_: The ___Python 2 (idp)___ and ___Python 3 (idp)___ notebook environments have many preinstalled packages. To query a list of available packages from a python notebook, you can use the following nomenclature:
+The ___Python 3 (idp)___ notebook kernels have many preinstalled packages. To query a list of available packages from a python notebook, you can use the following nomenclature:
 
 ```
 from pip._internal import main as pipmain 
@@ -61,6 +55,11 @@ pipmain(['freeze'])
 ```
 
 If the packages you need are not available, [you can create your own custom environment and Jupyter kernel](#additional-documentation).
+
+    
+#### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
+
+You can access the Jupyter classic view by going to the address bar at the top of your broswer and change "lab" to "tree" in the URL.  For, example, if your session URL is https://jupyter2.rc.colorado.edu/user/janedoe/lab ; you can change this to https://jupyter2.rc.colorado.edu/user/janedoe/tree . 
 
 ### Step 4: Shut down a Notebook Server
 
