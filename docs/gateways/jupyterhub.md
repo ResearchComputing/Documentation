@@ -18,41 +18,32 @@ To start a notebook server, select one of the available options in the *Select j
    * __Blanca (12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
    * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
   
-  
-  # Additional editing starts here to tailor docs for JH2
-The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left panel. On the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
+The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
 <p align="middle">
   <img src="./jupyterhub/jupyterlab1.png"/>
 </p>
 
 
-The following features are also availabe:
+The following features are availabe in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
 
-* Left-hand side
-  * You can navigate to your other CURC directories by clicking the folder next to `/home/<yourusername>`
-  * Above your working directory contents are buttons to add a new Launcher, create a new folder, upload files from your local computer, and refresh the working directory. 
-* _Control Panel_: Will enable you to manually terminate and (if desired) restart your server.
-* _Upload_: Enables you to upload files from your local computer to your CURC _`/home`_ directory.
-* _New_: Enables you to open a new notebook via a chosen kernel (e.g., Python2, Python3, bash, R) 
-    * _documentation on opening new notebooks is provided in "Step 3" below_
-
-#### Default Notebook Features
-
-* Access to standard RC file systems: 
-  * `/home`
-  * `/projects/`
-  * `/pl/active` (for users with PetaLibrary allocations)
-  * `/scratch/summit` (Summit only)
-  * `/rc_scratch` (Blanca only)
-* Access to the following default kernels in the CURC Anaconda distribution 
-  (_Note: documentation on creating and importing your own custom kernels is provided in the "Additional Documentation" below_):
-  * __Python 2 (idp)__: Python2 notebook (Intel Python distribution)
-  * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
-  * __Bash__: BASH notebook
-  * __R__: R notebook 
-  
- #### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
+* _Left sidebar:_ Click on a tab to change what you see in the left menu bar.  Options include the file browser, a list of running kernels and terminals, a command palette, a notebook cell tools inspector, and a tabs list.
+* _Left menu bar:_ 
+  * The _file browser_ will be active when you log in. 
+    * You can navigate to your other CURC directories by clicking the folder next to `/home/<yourusername>`. Your other CURC file systems are available too: `/projects/`, `/pl/active` (for users with PetaLibrary allocations), `/scratch/summit` (Summit only), and `/rc_scratch` (Blanca only).
+    * To open an existing notebook, just click on the notebook name in the file browser (e.g., _mynotebook.ipynb_).
+    * Above your working directory contents are buttons to add a new Launcher, create a new folder, upload files from your local computer, and refresh the working directory. 
+* _Main Work Area:_ Your workspaces will be in this large area on the right hand side. Under the "Launcher" tab you can" 
+  * Open a new notebook with any of the kernels listed:
+      * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
+      * __Bash__: BASH notebook
+      * __R__: R notebook 
+      * ...and any custom kernels you add _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
+   * Open a new console (command line) for any of the kernels
+   * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
+* See the [documentation on the JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html) for additional features. 
+    
+#### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
 
 You can access the Jupyter classic view by [Insert text here].
 
