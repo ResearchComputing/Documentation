@@ -32,18 +32,18 @@ The following features are availabe in the [JupyterLab Interface](https://jupyte
 * _Left sidebar:_ Click on a tab to change what you see in the left menu bar.  Options include the file browser, a list of running kernels and terminals, a command palette, a notebook cell tools inspector, and a tabs list.
 * _Left menu bar:_ 
   * The _file browser_ will be active when you log in. 
-    * You can navigate to your other CURC directories by clicking the folder next to `/home/<yourusername>`. Your other CURC file systems are available too: `/projects/`, `/pl/active` (for users with PetaLibrary allocations), `/scratch/summit` (Summit only), and `/rc_scratch` (Blanca only).
+    * You can navigate to your other CURC directories by clicking the folder next to `/home/<username>`. Your other CURC file systems are available too: `/projects/<username>`, `/pl/active` (for users with PetaLibrary allocations), `/scratch/summit/<username>` (Summit only), and `/rc_scratch/<username>` (Blanca only).
     * To open an existing notebook, just click on the notebook name in the file browser (e.g., _mynotebook.ipynb_).
     * Above your working directory contents are buttons to add a new Launcher, create a new folder, upload files from your local computer, and refresh the working directory. 
-* _Main Work Area:_ Your workspaces will be in this large area on the right hand side. Under the "Launcher" tab you can" 
+* _Main Work Area:_ Your workspaces will be in this large area on the right hand side. Under the "Launcher" tab you can: 
   * Open a new notebook with any of the kernels listed:
       * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
       * __Bash__: BASH notebook
       * __R__: R notebook 
       * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
-   * Open a new console (command line) for any of the kernels
+   * Open a new console (command line) for any of the kernels.
    * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
-* See the [documentation on the JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html) for additional features. 
+* See Jupyter's [documentation on the JupyterLab Interface for additional information.](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
 
 #### Tip for finding the packages available to you within a notebook
 
