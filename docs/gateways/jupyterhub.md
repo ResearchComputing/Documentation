@@ -21,7 +21,7 @@ To start a notebook server, select one of the available options in the *Select j
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
 <p align="middle">
-  <img src="./jupyterhub/jupyterlab1.png"/>
+  <img src="https://github.com/ResearchComputing/Documentation/blob/dev/docs/gateways/jupyterhub/jupyterlab1.png"/>
 </p>
 
 
