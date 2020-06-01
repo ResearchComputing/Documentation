@@ -10,7 +10,8 @@ Please note that this page *does not* go over compiling or optimization of MPI a
 Currently, only CURC’s older modules are visible within our base module stack. Luckily newer modules do exist within Summit and simply needs to be activated with a few commands. To see more newer versions of compilers and MPI libraries, simply run the following commands on a compute or compile node:  
 
 ```
-source /curc/sw/opt/spack/linux-rhel7-haswell/gcc-4.8.5/lmod-8.3-pvwkxsyumgym34z7b7cq52uny77cfx4l/lmod/lmod/init/bashexport MODULEPATH=/curc/sw/modules/spack/spring2020/linux-rhel7-x86_64/Core
+source /curc/sw/opt/spack/linux-rhel7-haswell/gcc-4.8.5/lmod-8.3-pvwkxsyumgym34z7b7cq52uny77cfx4l/lmod/lmod/init/bashexport 
+MODULEPATH=/curc/sw/modules/spack/spring2020/linux-rhel7-x86_64/Core
 ```
 
 To return to the base module stack, simply exit the current node and return to a compile or compute node.  
