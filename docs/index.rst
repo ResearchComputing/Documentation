@@ -65,7 +65,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/slurm-commands
    running-jobs/job-resources
    running-jobs/squeue-status-codes
-   running-jobs/roce-enabled
    running-jobs/ssky
 
 .. toctree::
@@ -92,7 +91,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    
    programming/coding-best-practices
    programming/parallel-programming-fundamentals
-   programming/running-mpi-best-practices
+   programming/MPIBestpractices
    programming/MPI-C
    programming/MPI-Fortran
    programming/OpenMP-C
