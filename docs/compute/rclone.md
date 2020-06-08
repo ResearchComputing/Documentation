@@ -56,12 +56,18 @@ This next step can't be documented exactly as every client system will be differ
 
 ### Install rclone on the backup source host
 
-rclone is available download here for a variety of architectures:
+rclone is available download here for a variety of architectures. For MacOS, you can open a terminal and install _rclone_ from the command line as follows:
+
+```
+$ curl https://rclone.org/install.sh | sudo bash
+```
+_note: you will be prompted for your password -- you must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
+
+* WINDOWS: Windows hosts users, download _rclone_ from here:
 
 https://rclone.org/downloads/
 
-* WINDOWS: Windows hosts users, download and unzip the rclone folder to desired location. The folder contains the rclone.exe. Run config from the commandline (e.g. WSL2, Powershell, ect). This is covered in the next section.
-
+Now unzip the rclone folder to desired location. The folder contains the rclone.exe. Run config from the commandline (e.g. WSL2, Powershell, ect). This is covered in the next section.
 
 ### Configure rclone
 
