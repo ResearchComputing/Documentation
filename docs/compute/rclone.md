@@ -291,7 +291,7 @@ _Example_: The syntax for using rclone to synchronize a local directory `/tmp/lo
 
 ```$ rclone sync /tmp/local_backup_dir cu_rc_dtn:/pl/active/pl_allocation/pl_backup_dir```
 
-This should synchronize the data in the two directories. The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`.
+This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`.
 
 ### Run rclone on a schedule
 On unix/macOS hosts, you can set up a cron job to run the rclone sync job regularly. To create a crontab entry type:
