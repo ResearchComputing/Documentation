@@ -1,4 +1,4 @@
-## Use rclone to back up directory to PetaLibrary
+## Using _rclone_ to back up a local directory to PetaLibrary
 
 This is a guide to making a backup of a local directory on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
