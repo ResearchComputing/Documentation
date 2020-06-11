@@ -24,7 +24,7 @@ for programming languages to interpret. Because of this variables
 must be delimited in some way. Here are several delimiting conventions
 commonly used in code:  
 
-__Snakecase:__ Words are delimited by anunderscore.
+__Snakecase:__ Words are delimited by an underscore.
 
 ```
 variable_one
@@ -46,16 +46,10 @@ variableOne
 variableTwo
 ```
 
-These conventions are by no means binding, but instead examples of how
-many programmers format their code. Consistency and readability are
-key ideas that should be utilized in the naming of variables.
-
-#### Hungarian Notation
-
-This notation describes the variable type or purpose at the start of
+__Hungarian Notation:__ This notation describes the variable type or purpose at the start of
 the variable name, followed by a descriptor that indicates the
 variable’s function. The Camelcase notation is used to delimit
-words. Here are a few examples of Hungarian Notation:
+words.
 
 ```c++
 arrDistrubuteGroup  //Array called “Distribute Group”
@@ -63,6 +57,9 @@ sUserName           //String called “User Name”
 iRandomSeed         //Integer called “Random Seed”
 ```
 
+These conventions are by no means binding, but instead examples of how
+many programmers format their code. Consistency and readability are
+key ideas that should be utilized in the naming of variables.
 Regardless of how you choose to name your variables, always ensure
 that your naming conventions are consistent throughout the
 code. Consistency allows others to more easily understand your code.
@@ -82,13 +79,12 @@ sections of comments that would otherwise be needed.
 
 ### Whitespace and Tabbing
 
-Whitespace and tabbing are critical for organizing code. Whitespace is
-essentially any bit of space in your code that is not taken up by
-physical characters. Tabbing is one way to create whitespace in
-consistent units using the ‘tab’ key. Many languages ignore whitespace
-and tabbing all together, so it is important to ensure your code is
-correctly tabbed and you utilize whitespace to segment your code into
-neat blocks. Whitespace and tabbing are often used to clarify nested
+Whitespace and tabbing are critical for organizing code. Whitespace is 
+any space in your code that is not taken up by physical characters.
+Tabbing is one way to create whitespace in consistent units using the ‘tab’ key. 
+While some languages ignore whitespace and tabbing all together, others entirely rely on the concept.
+Because of this, it is important to ensure your code is
+consistently organized. Whitespace and tabbing are often used to clarify nested
 loops and logical statements. Let’s look at some examples of C code
 that demonstrate the effect of whitespace.
 
@@ -120,18 +116,17 @@ int main(int argc, char** argv){
 
 It is important to note that like variable naming, whitespace can be
 utilized in various different styles and approaches. Just remember to
-use whitespace and tabbing in a consistent and intuitive manner
+use whitespace and tabbing in a consistent, readable style
 throughout your code.
 
 ### Commenting your code
 
 Commenting may be the most important way to organize and segment
-code. Comments are sections of code that the compiler ignores, but
-humans can read, and thus can be used to label code and divide it into
-logical segments to aid users. For example, one can label loops,
-scopes, functions, and other code snippets. Lines with comments in
-code are preceded by a symbol that tells the compiler to ignore that
-line when compiling, for example “#”, “!” or “;” (the symbol depends
+code. Comments are sections of code that the compiler ignores, 
+which are useful to label code and segment code. For example, one can label loops,
+scopes, functions, and other code snippets with the expected function of the code.
+Lines with comments in code are preceded by a symbol that tells 
+the compiler/interpretor to ignore that line, for example “#”, “!” or “;” (the symbol depends
 on the programming language). Let’s look at some C++ code that uses no
 comments vs. comments.
 
@@ -172,7 +167,7 @@ using namespace std;
 
 int main(int argc, char** argv){
 
-    //Declare a vector to store
+    //Declare a vector to store values
     vector<int> multiples;
 
     //Iterate from 0 to 50
