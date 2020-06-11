@@ -48,6 +48,12 @@ GUI.
 
 ![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
 
+### Globus Shared Endpoints
+With Globus you can share files with users outside of your organization by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with has to have a Globus account.
+
+To learn how to setup a shared endpoint:
+[Globus Shared Endpoint Documentation](https://docs.globus.org/how-to/share-files/)
+
 ### Secure Copy (SCP)
 
 The Secure Copy protocol or `scp` allows users to send and receive
