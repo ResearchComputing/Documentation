@@ -50,8 +50,11 @@ Lastly we will run Matlab from the terminal.
 matlab -nosplash
 ```
 
-Note: You can run Matlab without the gui using the `-nodesktop`
-command when launching Matlab.
+By default Matlab will load an interactive terminal session. If you would like to access the Matlab GUI 
+then simply run Matlab with X11 forwarding enabled.
+
+To find out how you enable X11 forwarding in your terminal session, [check out our X11 forwarding tutorial here.](../running-jobs/interactive-jobs.html#interactive-gui-applications)
+
 
 
 ### Submitting Matlab Batch Jobs
@@ -131,7 +134,7 @@ sbatch slurm_hello.sh
 ```
 
 Once the job has run, the output of the Matlab script, "Hello world"
-will be shown in `Matlab_Hello_World.out`. That’s it!
+will be shown in `Matlab_Hello_World.out`.
 
 
 ### Parallel Matlab on Summit
@@ -206,8 +209,6 @@ Hello World from process 1
 Hello World from process 2
 Hello World from process 3
 ```
-
-Viola! You have run a parallel job on Summit with Matlab!
 
 RC Matlab currently does not support parallelization across nodes,
 only across cores on one node.
