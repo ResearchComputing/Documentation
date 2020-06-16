@@ -6,7 +6,7 @@ enabled switches to enable users to run MPI jobs over the 10G interfaces. While 
 you can still get line speed for bandwidth.
 
 In order to take advantage of RoCE on these nodes, you will need to compile your code with a
-MPI compiler that was built with support for Unified Communication X (UCX). Without UCX a job
+MPI compiler that was built with support for Unified Communication X (UCX). Without UCX, a job
 submitted to these nodes will fail.
 
 ### Using pre-built modules
