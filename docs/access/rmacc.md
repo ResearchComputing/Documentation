@@ -7,9 +7,9 @@ If you are at an RMACC institution other than CU Boulder or CSU and would like t
 
 Visit the XSEDE User Portal and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
 
-![XSEDE User Portal 1](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/XSEDE/xsede1.png)  
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/XSEDE/xsede1.png)  
 
-![XSEDE User Portal 2](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/XSEDE/xsede2.png)  
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/XSEDE/xsede2.png)  
 
 ### Configuring Duo
 
