@@ -68,7 +68,7 @@ The first directive, the shebang directive, is always on the first line of any s
 #!/bin/bash
 ```
 
-The next directives that must be included with your job script are *sbatch* directives. These directives specify resource requirements to Slurm for a batch job.  These directives must come after the shebang directive and before any commands are issued in the job script. Each directive contains a flag that requests resource the job would need to complete execution. An sbatch directive is written as such:
+The next directives that must be included with your job script are *sbatch* directives. These directives specify resource requirements to Slurm for a batch job.  These directives must come after the shebang directive and before any commands are issued in the job script. Each directive contains a flag that requests a resource the job would need to complete execution. An sbatch directive is written as such:
 
 ```bash
 #SBATCH --<resource>=<amount>
@@ -84,7 +84,7 @@ A list of some useful sbatch directives [can be found here.](job-resources.html)
 
 #### 2. Software
 
-Because jobs run on a different node than from where you submit, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First we will purge all software that may be left behind from a previous job by running the command:
+Because jobs run on a different node than from where you submit, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First we will purge all software that may be left behind from your working environment on a compile node by running the command:
 
 ```bash
 module purge
