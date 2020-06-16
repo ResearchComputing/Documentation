@@ -57,7 +57,7 @@ More details about each type of node can be found [here](https://www.colorado.ed
 
 ### Quality of Service
 
-On Summit, Quality of Service or QoS is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a qos to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
+On Summit, Quality of Service or QoS is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
 
 **Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or condo job.**
 
