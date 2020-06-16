@@ -18,7 +18,7 @@ Once your XSEDE account has been created, follow the Multi-Factor Authentication
 
 ### Getting authorization for RMACC Summit
 
-Send an email from your institutional email address to [rc-help@colorado.edu] requesting access to RMACC Summit via XSEDE. Include the full name of your home institution, specific department within the institution, a short summary of why you require access to RMACC Summit, and your XSEDE username. You will receive a response indicating whether your account has been added to the rmacc-summit.colorado.xsede.org project.
+Send an email from your institutional email address to <rc-help@colorado.edu> requesting access to RMACC Summit via XSEDE. Include the full name of your home institution, specific department within the institution, a short summary of why you require access to RMACC Summit, and your XSEDE username. You will receive a response indicating whether your account has been added to the rmacc-summit.colorado.xsede.org project.
 
 
 ### Logging in to CU Boulder RC using the XSEDE SSO Hub
