@@ -179,7 +179,7 @@ The `sbatch` command supports many optional flags. To review all the options, pl
 
 | Type                   | Description                                         | Flag                       |
 | :--------------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocations](../access/allocations.html)        | Specify an allocation account if you have multiple  | --account=account_no       |
+| Allocations            | Specify an allocation account if you have multiple  | --account=account_no       |
 | [Partitions](job-resources.html)         | Specify a partition                                 | --partition=partition_name |
 | Sending email          | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address          | Email address to receive the email                  | --mail-user=user           |
