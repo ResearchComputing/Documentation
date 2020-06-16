@@ -1,7 +1,7 @@
 ## `squeue` status and reason codes
 
 The `squeue` command details a variety of information on an active
-job’s status including reasons why a job has a particular status. The
+job’s status including state and reason codes. The
 following tables outline a variety of job state and reason codes you
 may encounter when using squeue to check on your jobs. *__Job state
 codes__* describe a job’s current state in queue (e.g. pending,
