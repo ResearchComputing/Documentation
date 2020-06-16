@@ -4,7 +4,7 @@ Slurm allows the use of flags to specify resources needed for a job. Below is a 
 
 ### Slurm Resource Flags
 
-Job scripts, the `sbatch` command, and the `sinteractive` command support many different resource requests in the form of flags. These flags are available to all forms of job subission. To review all possible flags for these commands, please visit the [Slurm page on sbatch](http://slurm.schedmd.com/sbatch.html). Below, we have listed some useful flags to consider when submitting your job script.
+Job scripts, the `sbatch` command, and the `sinteractive` command support many different resource requests in the form of flags. These flags are available to all forms of job submission. To review all possible flags for these commands, please visit the [Slurm page on sbatch](http://slurm.schedmd.com/sbatch.html). Below, we have listed some useful flags to consider when submitting your job script.
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
