@@ -2,7 +2,7 @@
 
 _Note: you must be logged in to [campus VPN](https://oit.colorado.edu/services/network-internet-services/vpn) to do a passwordless data transfer to CURC_
 
-### generate an ssh keypair on your local laptop/desktop
+### Generate an ssh keypair on your local laptop/desktop
 
 You only need to perform this step once. From a local terminal run:
 
@@ -10,7 +10,7 @@ You only need to perform this step once. From a local terminal run:
 ssh-keygen -t ed25519
 ``` 
 
-This will create ~/.ssh/id_ed25519 and ~/.ssh/id_ed25519.pub on your local machine (_note: the "~" denotes your home directory). 
+This will create `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub` on your local machine (_note: the "~" denotes your home directory). 
 
 ### Copy the public key to ~/.ssh/authorized_keys on a CURC login node 
 
@@ -25,15 +25,15 @@ _Note: If you have trouble running the command above, you can also just login to
 
 ### Use `rsync` or `scp` to transfer files without a password
 
-Now you are ready to transfer files.  Make sure you are logged on campus or logged into CU VPN. 
+Now you are ready to transfer files.  Make sure you are logged on campus or logged into CU VPN. Examples:
 
-For example, to tranfer a `myfile.txt` from your local machine to your `/projects/$USER` directory on CURC
+User "ralphie" employs _rsync_ to tranfer `myfile.txt` to `/projects/ralphie` on CURC:
 
 ```
 rsync -av ./myfile.txt dtn-new-data.rc.int.colorado.edu:/projects/ralphie/myfile.txt
 ```
 
-or, you can use scp.  Here user `ralphie` transfers to a PetaLibrary allocation called "crdds" that Ralphie has access to:
+User "ralphie" employs _scp_ to transfer `myfile.txt` from Ralphie's local machine to a PetaLibrary allocation called "crdds" that Ralphie has access to:
 
 ```
 scp ./myfile.txt dtn-new-data.rc.int.colorado.edu:/pl/active/crdds/myfile.txt
