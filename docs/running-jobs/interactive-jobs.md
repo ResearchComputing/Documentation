@@ -10,7 +10,9 @@ Interactive jobs allow a user to interact with applications in real time within 
 
 To run an interactive job on Research Computing resources, request an interactive session by utilizing the `sinteractive` command.  The `sinteractive` command creates a job with parameters provided through flags run with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. 
 
-Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
+Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. [Check out this page for a list of Slurm directives that can be used with interactive jobs.](job-resources.html) 
+
+The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
 
 ```bash
 sinteractive --partition=shas-interactive --time=00:10:00
@@ -33,11 +35,11 @@ this. [Download the Xming here](https://sourceforge.net/projects/xming/).
 
 Next we must enable X11 forwarding on the PuTTY application. Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
-![Putty-Image-1](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-1.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-1.png)
 
 Expand the SSH tab on the left side of the application and click X11.
 
-![Putty-Image-2](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking open will open a terminal window where you can login.
 

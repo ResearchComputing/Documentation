@@ -1,6 +1,6 @@
 ## Logging In
 
-Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources we need the following: 
+Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources you need the following: 
 
 - [A Research Computing account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
 - [Duo 2 factor authentication](duo-2-factor-authentication.html)

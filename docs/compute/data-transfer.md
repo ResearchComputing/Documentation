@@ -27,7 +27,7 @@ and by logging in using your CU IdentiKey and password.
 * If your institution is not registered with Globus, you will need to
   [make an account](https://www.globusid.org/create) with Globus.
 
-![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 Files can easily be transferred from Summit to your local computer with Globus.
 
@@ -46,7 +46,7 @@ Using the web app, connect your local workstation endpoint with the
 Research Computing endpoint and transfer files easily using the Globus
 GUI.
 
-![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
 
 ### Globus Shared Endpoints
 With Globus you can share files with users outside of your organization by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with has to have a Globus account.
@@ -96,7 +96,7 @@ man scp
 ### Secure File Transfer Protocol (SFTP)
 
 The Secure File Transfer Protocol is an interactive terminal solution
-to transfer data to and from research computing resources. SFTP works
+to transfer data to and from Research Computing resources. SFTP works
 much like moving files in a terminal, we use a series of file system
 commands to navigate, move, remove, and copy information from a
 client's personal machine to research computing resources. To invoke

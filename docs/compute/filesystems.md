@@ -40,7 +40,7 @@ Summit users are provided a subdirectory on `/scratch/summit`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
 running on that system (e.g., `/scratch/summit/janedoe`). By default,
 each user is limited to a quota of 10 TB worth of storage space and
-20M files and directories. Email rc-help@colorado.edu if you need
+20M files and directories. Email <rc-help@colorado.edu> if you need
 these limits increased. Blanca users should write to
 `/rc_scratch/janedoe` instead of `/scratch/summit`.
 
@@ -105,7 +105,7 @@ summary of the backup schedule is provided in the table below.
 
 If disaster strikes and you need access to a previous version of your
 `/home` or `/projects` directories, change to that directory and look
-through the .snapshot subdirectory. You will see a subdirectory
+through the `.snapshot` hidden subdirectory. You will see a subdirectory
 associated with each snapshot of your `/home` or `/projects`
 directory, named using the time-stamp associated with the snapshot.
 
@@ -120,7 +120,7 @@ and potentially sensitive information stored there.
 Directories may be shared with all Research Computing users or with
 only a subset of our users. In the latter case, a system
 administrator will need to add your chosen collaborators to your Linux
-group. Please email rc-help@colorado.edu if you would like to add
+group. Please email <rc-help@colorado.edu> if you would like to add
 users to your Linux group.
 
 In the example that follows, we make our `/projects` directory open to

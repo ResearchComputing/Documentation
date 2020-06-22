@@ -9,7 +9,7 @@ Use the PetaLibrary to store, archive and share research data.
 - New customers are limited to either
      * 75 TB in Active Storage, or
      * 100 TB in Archive Storage
-     * Email rc-help@colorado.edu to request more space if necessary
+     * Email <rc-help@colorado.edu> to request more space if necessary
 
 
 ### Accessing the PetaLibrary
@@ -24,7 +24,7 @@ Request access to the PetaLibrary by:
   Understanding](https://www.colorado.edu/rc/sites/default/files/attached-files/petalibrary_mou.pdf)
 
 - Filling out the attached End User Agreement and Order Form (found in
-  the MOU), and emailing those documents to rc-help@colorado.edu
+  the MOU), and emailing those documents to <rc-help@colorado.edu>
 
 Each person who accesses the PetaLibrary is required to have a
 Research Computing account and two-factor authentication. 

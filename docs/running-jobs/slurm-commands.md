@@ -76,7 +76,7 @@ For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.
 ### Learning status information with `sstat`
 
 The `sstat` command allows users to easily pull up status information
-about their jobs. This includes information about *__CPU usage__*,
+about their currently running jobs. This includes information about *__CPU usage__*,
 *__task information__*, *__node information__*, *__resident set size
 (RSS)__*, and *__virtual memory (VM)__*. We can invoke the sstat
 command as such:
@@ -129,7 +129,7 @@ running jobs. We can use a job's id...
 $ sacct --jobs=your_job-id
 ```
 
-...or your rc username...
+...or your Research Computing username...
 
 ```bash
 $ sacct --user=your_rc-username
@@ -249,7 +249,7 @@ We can then release a held job using the `release` command:
 $ scontrol release job_id
 ```
 
-Scontrol can also provide information on jobs using the `show job`
+`scontrol` can also provide information on jobs using the `show job`
 command. The information provided from this command is quite extensive
 and detailed, so be sure to either clear your terminal window, grep
 certain information from the command, or pipe the output to a separate

@@ -26,7 +26,7 @@ To submit a job (in this case assuming your group is `rcops`), specify the accou
 
 Jobs submitted with condo accounts/partitions will immediately preempt jobs running on a given condo partition that were submitted via the `ssky-preemptable` partition (see below). 
 
-_Tip:_ If it is appropriate for your jobs, you can use a an ordered list of preferred partitions when submitting your jobs to `ssky`. E.g., `--partition=ssky-ucb-rcops,ssky` or (if you are willing to run preemtably) `--partition=ssky-ucb-rcops,ssky,ssky-preemptable`. If your first choice of partition is not available, the next partition in the list will be attempted, and so on.
+_Tip:_ If it is appropriate for your jobs, you can use an ordered list of preferred partitions when submitting your jobs to `ssky`. E.g., `--partition=ssky-ucb-rcops,ssky` or (if you are willing to run preemtably) `--partition=ssky-ucb-rcops,ssky,ssky-preemptable`. If your first choice of partition is not available, the next partition in the list will be attempted, and so on.
 
 ## General and preemptable access for all Summit users
 
