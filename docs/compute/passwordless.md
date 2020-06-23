@@ -10,7 +10,7 @@ You only need to perform this step once. From a local terminal run:
 ssh-keygen -t ed25519
 ``` 
 
-This will create `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub` on your local machine (_note: the "~" denotes your home directory). 
+This will create `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub` on your local machine (_note: the "~" denotes your home directory_). 
 
 ### Copy the public key to ~/.ssh/authorized_keys on a CURC login node 
 
