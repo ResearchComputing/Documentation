@@ -21,7 +21,7 @@ cat ~/.ssh/id_ed25519.pub | ssh ralphie@login.rc.colorado.edu -T "cat >> ~/.ssh/
 ```
 ...where you should substitute your CURC username for "ralphie"; you will be required to enter your password and accept a Duo push in order to transfer the key.
 
-_Note: If you have trouble running the command above, you can also just login to a CURC login node, open `~/.ssh/authorized_keys` and paste the text from `~/.ssh/id_ed25519.pub` that resides on your local machine.
+_Note: If you have trouble running the command above, you can also just login to a CURC login node, open `~/.ssh/authorized_keys` and paste the text from `~/.ssh/id_ed25519.pub` that resides on your local machine._
 
 ### Use `rsync` or `scp` to transfer files without a password
 
