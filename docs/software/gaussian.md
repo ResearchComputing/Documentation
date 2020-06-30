@@ -20,7 +20,7 @@ are needed when running on Summit.
 To set up your shell environment to use G16, load a Gaussian software
 module (e.g. `module load gaussian/16_avx2`). Nearly all necessary
 environment variables are configured for you via the module. You do
-not need to source g16.login or g16.profile.
+not need to source g16.login or g16.profile if running single-node jobs, but if you are running multi-node parallel jobs you will need to add `source $g16root/g16/bsd/g16.login` (tcsh shell) or `source $g16root/g16/bsd/g16.profile` (bash shell) to your job script.
 
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
 to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.html)
@@ -132,6 +132,7 @@ __Linda Parallel__
 #SBATCH --output=g16-test.%j.out
 
 module load gaussian/16_avx2
+source $g16root/g16/bsd/g16.profile
 
 for n in `scontrol show hostname | sort -u`; do
  echo ${n}-opa
