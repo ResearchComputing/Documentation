@@ -1,6 +1,6 @@
-## Using _rclone_ to back up a local directory to PetaLibrary
+## Backing up local data to PetaLibrary with Rclone
 
-This is a guide to making a backup of a local directory on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
+This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _Rclone_, which is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
 ### Generate public/private keypair on login.rc.colorado.edu
 
@@ -42,36 +42,35 @@ Copy the newly generated public key rclone_ssh_key.pub to your authorized_keys f
 ```
 $ cat ~/.ssh/rclone_ssh_key.pub >> ~/.ssh/authorized_keys
 ```
-This will append the contents of `rclone_ssh_key.pub` to the file authorized_keys (authorized_keys will be created if it does not exist). Now anyone with your private key (`rclone_ssh_key`) can login to hosts that mount home directories from RC core storage.
+This will append the contents of `rclone_ssh_key.pub` to the file `authorized_keys` (authorized_keys will be created if it does not exist). Now anyone with your private key (`rclone_ssh_key`) can login to hosts that mount home directories from RC core storage.
 
 ### Copy private key to the backup source host
 
 This next step can't be documented exactly as every client system will be different, but use a secure method (such as scp or sftp) to copy the private key in `~/.ssh/rclone_ssh_key` to the system that you want to back up to PetaLibrary (e.g., your laptop or lab server).
 
-* WINDOWS: Windows host users, make sure you run your copy client (e.g. WSL2, WinSCP, ect) as Admin. Change directories to rclone file location and run:
+**Windows:** Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run:
 
+<!--
 ```$ .\rclone.exe config```
 ...then select n) New Remote
-
+-->
 
 ### Install rclone on the backup source host
 
-rclone is available download here for a variety of architectures. For MacOS, you can open a terminal and install _rclone_ from the command line as follows:
+Rclone is available download here for a variety of architectures. For MacOS, you can open a terminal and install Rclone from the command line as follows:
 
 ```
 $ curl https://rclone.org/install.sh | sudo bash
 ```
-_note: you will be prompted for your password -- you must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
+_Note: you will be prompted for your password -- you must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
 
-* WINDOWS: Windows hosts users, download _rclone_ from here:
-
-https://rclone.org/downloads/
+**Windows:** Windows hosts users, [download Rclone from here](https://rclone.org/downloads/)
 
 Now unzip the rclone folder to desired location. The folder contains the rclone.exe. Run config from the commandline (e.g. WSL2, Powershell, ect). This is covered in the next section.
 
 ### Configure rclone
 
-rclone is a command line program that requires you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. We will configure an sftp endpoint in rclone that points to the data transfer node (DTN) hosts.
+Rclone is a command line program that requires you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. We will configure an sftp endpoint in Rclone that points to the data transfer node (DTN) hosts.
 
 In this example we use rclone to create an sftp endpoint with the following settings:
 ```
@@ -81,11 +80,11 @@ host: dtn-data.rc.int.colorado.edu
 key_file = /Users/jesse/.ssh/rclone_ssh_key
 user = jesse
 ```
-rclone is interactive and will prompt you for all of the above information. Here is the ouput of my interactive session when creating an endpoint with the above settings:
+Rclone is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
 
 ```$  rclone config```     
 
-* WINDOWS: Windows host users, cd to rclone file location and run
+**Windows:** Windows host users, cd to rclone file location and run:
 ```$ .\rclone.exe config```
 
 ```
@@ -271,7 +270,8 @@ You can verify your settings by running 'rclone config show'. The results from t
 ```
 $ rclone config show
 ```
-* WINDOWS: Windows host users
+
+**Windows:** Windows host users
 ```$ .\rclone.exe config```
 
 ```
@@ -317,4 +317,4 @@ command - command to execute
 
 Windows systems can set up scheduled tasks to run rclone automatically.
 
-* WINDOWS: Windows host users, if you do not have WSL2 installed use taskschd.msc (Task Scheduler) as Admin and run Action=>Create Basic Task
+**Windows:** Windows host users, if you do not have WSL2 installed use taskschd.msc (Task Scheduler) as Admin and run Action=>Create Basic Task
