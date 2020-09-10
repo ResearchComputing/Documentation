@@ -134,6 +134,7 @@ help | Displays application information on using commands | help
 ### Passwordless `scp` and `rsync`
 
 The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few simple set up procedures to prepare your local machine.  
+  
 *Note: Passwordless data transfers are only available for Mac and Linux users. You must be [logged into the campus VPN](https://oit.colorado.edu/services/network-internet-services/vpn) to perform passwordless data transfers to CURC*
 
 #### Generate an ssh keypair on your local laptop/desktop
