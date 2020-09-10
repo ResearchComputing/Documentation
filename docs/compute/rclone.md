@@ -1,6 +1,6 @@
-## Backing up local data to PetaLibrary with Rclone
+## Backing up local data to PetaLibrary with `rclone`
 
-This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _Rclone_, which is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
+This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
 ### Generate public/private keypair on login.rc.colorado.edu
 
@@ -57,20 +57,20 @@ This next step can't be documented exactly as every client system will be differ
 
 ### Install rclone on the backup source host
 
-Rclone is available download here for a variety of architectures. For MacOS, you can open a terminal and install Rclone from the command line as follows:
+The rclone application is available download here for a variety of architectures. For MacOS, you can open a terminal and install rclone from the command line as follows:
 
 ```
 $ curl https://rclone.org/install.sh | sudo bash
 ```
 _Note: you will be prompted for your password -- you must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
 
-**Windows:** Windows hosts users, [download Rclone from here](https://rclone.org/downloads/)
+**Windows:** Windows hosts users, [download rclone from here](https://rclone.org/downloads/)
 
 Now unzip the rclone folder to desired location. The folder contains the rclone.exe. Run config from the commandline (e.g. WSL2, Powershell, ect). This is covered in the next section.
 
 ### Configure rclone
 
-Rclone is a command line program that requires you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. We will configure an sftp endpoint in Rclone that points to the data transfer node (DTN) hosts.
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. We will configure an sftp endpoint in rclone that points to the data transfer node (DTN) hosts.
 
 In this example we use rclone to create an sftp endpoint with the following settings:
 ```
@@ -80,7 +80,7 @@ host: dtn-data.rc.int.colorado.edu
 key_file = /Users/jesse/.ssh/rclone_ssh_key
 user = jesse
 ```
-Rclone is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
+The rclone application is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
 
 ```$  rclone config```     
 
