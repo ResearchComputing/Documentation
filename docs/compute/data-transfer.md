@@ -48,7 +48,7 @@ GUI.
 
 ![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
 
-### Secure Copy (SCP)
+### Secure Copy `scp`
 
 The Secure Copy protocol or `scp` allows users to send and receive
 data to the server remotely via a terminal command. The command
@@ -57,11 +57,9 @@ appears as:
 ```bash
 # Command to copy files from a local workstation to research computing resources
 
-# Replace <path-to-file> with the file you wish to copy
-
+# Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
-
-# Replace <target_directory> with the full path to the directory you would like
+# Replace <target-path> with the full path to the directory you would like
 # to send the file to.
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>
@@ -70,24 +68,43 @@ scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>
 ```bash
 # Command to copy files from research computing resources to a local workstation
 
-# Replace <path-to-file> with the file you wish to copy
-
+# Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
-
-# Replace <target_directory> with the full path to the directory you would like
+# Replace <target-path> with the full path to the directory you would like
 # to send the file to.
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>
 ```
 
-For more information on secure copy take a look at some of our listed
-resources or consult the man page with the command:
+For more information on secure copy take a [look at some of our listed
+resources](#more-reading) or consult the scp man page.
+
+### Using `rsync` on Summit
+Another popular file transfer utility that can be used is the `rsync` command. While similar in function to scp, the major differences between rsync and scp are how the  commands approach data transfer. **Scp will bindly copy files from one server to another. Rsync aims to synchronize 2 files/directories to be the same.** Because of this approach, rsync only copies files that are different from the source and target directories. This can be very useful in reducing the amount of copies you may perform whem synchronizing two datasets. On a local machine, the command is called as follows:
 
 ```bash
-man scp
+# Command to synchronizing from a local machine to research computing resources
+
+# Replace <path-to-file> with the path of the file you wish to copy
+# Replace <username> with your Research Computing username
+# Replace <target-path> with the full path to the directory you would like to send the file to.
+
+rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>
 ```
 
-### Secure File Transfer Protocol (SFTP)
+```bash
+# Command to synchronizing from research computing resources to a local machine
+
+# Replace <path-to-file> with the path of the file you wish to copy
+# Replace <username> with your Research Computing username
+# Replace <target-path> with the full path to the directory you would like to send the file to.
+
+rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>
+```
+
+For more information on rsync [check out some of our listed resources](#more-reading) or consult the rsync man page.
+
+### Secure File Transfer Protocol: `sftp`
 
 The Secure File Transfer Protocol is an interactive terminal solution
 to transfer data to and from research computing resources. SFTP works
@@ -115,6 +132,49 @@ get | Copies a file from the remote directory to the local directory | get remot
 put | Copies a file from the local directory to the remote directory | put local_file
 exit | Closes the connection to the remote computer and exits the program | exit
 help | Displays application information on using commands | help
+
+### Passwordless `scp` and `rsync`
+
+The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few simple set up procedures to prepare your local machine.  
+*Note: Passwordless data transfers are only available for Mac and Linux users. You must be [logged into the campus VPN](https://oit.colorado.edu/services/network-internet-services/vpn) to perform passwordless data transfers to CURC*
+
+#### Generate an ssh keypair on your local laptop/desktop
+
+You only need to perform this step once. From a local terminal run:
+
+```
+ssh-keygen -t ed25519
+``` 
+
+This will create `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub` on your local machine (_note: the "~" denotes your home directory_). 
+
+#### Copy the public key to ~/.ssh/authorized_keys on a CURC login node 
+
+You only need to perform this step once. From a local terminal run:
+
+```
+cat ~/.ssh/id_ed25519.pub | ssh <your-username>@login.rc.colorado.edu -T "cat >> ~/.ssh/authorized_keys"
+```
+...where you should substitute your CURC username for `<your-username>`; you will be required to enter your password and accept a Duo push in order to transfer the key.
+
+_Note: If you have trouble running the command above, you can also just login to a CURC login node, open `~/.ssh/authorized_keys` and paste the text from `~/.ssh/id_ed25519.pub` that resides on your local machine._
+
+#### Use `rsync` or `scp` to transfer files without a password
+
+Now you are ready to transfer files. Make sure you are logged on campus or logged into CU VPN and run rsync or scp. Examples:
+
+User "ralphie" employs _rsync_ to tranfer `myfile.txt` to `/projects/ralphie` on CURC:
+
+```
+rsync -av ./myfile.txt dtn-new-data.rc.int.colorado.edu:/projects/ralphie/myfile.txt
+```
+
+User "ralphie" employs _scp_ to transfer `myfile.txt` from Ralphie's local machine to a PetaLibrary allocation called "crdds" that Ralphie has access to:
+
+```
+scp ./myfile.txt dtn-new-data.rc.int.colorado.edu:/pl/active/crdds/myfile.txt
+```
+
 
 ### Other Options
 
@@ -146,3 +206,5 @@ cKGIj2Tg7asP3PB/7VFqRPKsN7nLrGCYD8tcdmvi6J0A0hmab1zgxYunxbEq+XSlN3gyT4WEy3qb1zu6
 * [Indiana University Tutorial on SFTP](https://kb.iu.edu/d/akqg)
 * [Linux Academy's Tutorial on SSH and SCP](https://linuxacademy.com/blog/linux/ssh-and-scp-howto-tips-tricks/)
 * [ssh.com's Tutorial on SCP and SFTP](https://www.ssh.com/ssh/sftp/)
+* [Linuxize's Tutorial on Rsync](https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/)
+* [Ubuntu's Documentation on Rsync](https://help.ubuntu.com/community/rsync)
