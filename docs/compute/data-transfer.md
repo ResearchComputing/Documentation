@@ -27,7 +27,7 @@ and by logging in using your CU IdentiKey and password.
 * If your institution is not registered with Globus, you will need to
   [make an account](https://www.globusid.org/create) with Globus.
 
-![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 Files can easily be transferred from Summit to your local computer with Globus.
 
@@ -46,7 +46,7 @@ Using the web app, connect your local workstation endpoint with the
 Research Computing endpoint and transfer files easily using the Globus
 GUI.
 
-![alt text](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
 
 ### Secure Copy `scp`
 
@@ -55,23 +55,21 @@ data to the server remotely via a terminal command. The command
 appears as:
 
 ```bash
-# Command to copy files from a local workstation to research computing resources
+# Command to copy files from a local workstation to Research Computing resources
 
 # Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
-# Replace <target-path> with the full path to the directory you would like
-# to send the file to.
+# Replace <target-path> with the full path to the directory you would like to send the file to.
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>
 ```
 
 ```bash
-# Command to copy files from research computing resources to a local workstation
+# Command to copy files from Research Computing resources to a local workstation
 
 # Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
-# Replace <target-path> with the full path to the directory you would like
-# to send the file to.
+# Replace <target-path> with the full path to the directory you would like to send the file to.
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>
 ```
@@ -83,7 +81,7 @@ resources](#more-reading) or consult the scp man page.
 Another popular file transfer utility that can be used is the `rsync` command. While similar in function to scp, the major differences between rsync and scp are how the  commands approach data transfer. **Scp will bindly copy files from one server to another. Rsync aims to synchronize 2 files/directories to be the same.** Because of this approach, rsync only copies files that are different from the source and target directories. This can be very useful in reducing the amount of copies you may perform whem synchronizing two datasets. On a local machine, the command is called as follows:
 
 ```bash
-# Command to synchronizing from a local machine to research computing resources
+# Command to synchronizing from a local machine to Research Computing resources
 
 # Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
@@ -93,7 +91,7 @@ rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>
 ```
 
 ```bash
-# Command to synchronizing from research computing resources to a local machine
+# Command to synchronizing from Research Computing resources to a local machine
 
 # Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
