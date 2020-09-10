@@ -54,6 +54,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    compute/data-transfer
    compute/compiling
    compute/petalibrary
+   compute/rclone
 
 .. toctree::
    :maxdepth: 2
