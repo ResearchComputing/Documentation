@@ -77,10 +77,8 @@ scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>             # 
 scp <username>@dtn-new-data.rc.int.colorado.edu:<path-to-file> <target-path>  # using a dtn node
 ``` 
 
-Windows users can access scp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)
-
-For more information on secure copy take a [look at some of our listed
-resources](#more-reading) or consult the scp man page.
+Windows users can access scp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)  
+For more information on secure copy take a [look at some of our listed resources](#more-reading) or consult the scp man page.  
 
 ### Using `rsync` on Summit
 Another popular file transfer utility that can be used is the `rsync` command. While similar in function to scp, the major differences between rsync and scp are how the  commands approach data transfer. **Scp will bindly copy files from one server to another. Rsync aims to synchronize 2 files/directories to be the same.** Because of this approach, rsync only copies files that are different from the source and target directories. This can be very useful in reducing the amount of copies you may perform whem synchronizing two datasets. On a local machine, the command is called as follows:
@@ -106,9 +104,8 @@ rsync -r <path-to-directory> <username>@dtn-new-data.rc.int.colorado.edu:<target
 rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>             # using a login node
 rsync -r <username>@dtn-new-data.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node
 ```
-Windows users cannot access rsync by default and must [install external software to access the command](https://www.itefix.net/cwrsync) or [through the Windows Subsystem for Linux (WSL).](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-
-For more information on rsync [check out some of our listed resources](#more-reading) or consult the rsync man page.
+Windows users cannot access rsync by default and must [install external software to access the command](https://www.itefix.net/cwrsync) or [through the Windows Subsystem for Linux (WSL).](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
+For more information on rsync [check out some of our listed resources](#more-reading) or consult the rsync man page.  
 
 ### Secure File Transfer Protocol: `sftp`
 
@@ -123,7 +120,6 @@ sftp type the command:
 sftp <username>@login.rc.colorado.edu             # using a login node
 sftp <username>@dtn-new-data.rc.int.colorado.edu  # using a dtn node
 ```
-Windows users can access sftp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)
 
 We can then use various commands to traverse and manipulate both file
 systems. A list of commands are listed below:
@@ -140,6 +136,9 @@ get | Copies a file from the remote directory to the local directory | get remot
 put | Copies a file from the local directory to the remote directory | put local_file
 exit | Closes the connection to the remote computer and exits the program | exit
 help | Displays application information on using commands | help
+
+Windows users can access sftp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)  
+For more information on sftp [check out some of our listed resources](#more-reading) or consult the sftp man page.  
 
 ### Passwordless `scp` and `rsync`
 
