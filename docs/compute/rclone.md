@@ -57,7 +57,7 @@ This next step can't be documented exactly as every client system will be differ
 
 ### Install rclone on the backup source host
 
-The rclone application is available download here for a variety of architectures. [Download rclone here]() and follow Rclone's provided instruction on setup.   
+The rclone application is available download here for a variety of architectures. [Download rclone here](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
 _Note: You must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
 
 **Windows:** Windows hosts users, [download rclone from here](https://rclone.org/downloads/)
