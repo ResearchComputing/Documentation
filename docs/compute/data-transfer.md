@@ -78,6 +78,7 @@ scp <username>@dtn-new-data.rc.int.colorado.edu:<path-to-file> <target-path>  # 
 ``` 
 
 Windows users can access scp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)  
+
 For more information on secure copy take a [look at some of our listed resources](#more-reading) or consult the scp man page.  
 
 ### Using `rsync` on Summit
@@ -105,6 +106,7 @@ rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>     
 rsync -r <username>@dtn-new-data.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node
 ```
 Windows users cannot access rsync by default and must [install external software to access the command](https://www.itefix.net/cwrsync) or [through the Windows Subsystem for Linux (WSL).](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
+
 For more information on rsync [check out some of our listed resources](#more-reading) or consult the rsync man page.  
 
 ### Secure File Transfer Protocol: `sftp`
@@ -138,6 +140,7 @@ exit | Closes the connection to the remote computer and exits the program | exit
 help | Displays application information on using commands | help
 
 Windows users can access sftp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)  
+
 For more information on sftp [check out some of our listed resources](#more-reading) or consult the sftp man page.  
 
 ### Passwordless `scp` and `rsync`
