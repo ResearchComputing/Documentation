@@ -1,4 +1,4 @@
-## Backing up local data to PetaLibrary with rclone
+## Backing up local data to PetaLibrary
 
 This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
@@ -58,15 +58,16 @@ This next step can't be documented exactly as every client system will be differ
 ### Install rclone on the backup source host
 
 The rclone application is available download here for a variety of architectures. [Download rclone here](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
+
 _Note: You must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
 
-**Windows:** Windows hosts users, [download rclone from here](https://rclone.org/downloads/)
+**Windows:** Download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
 
-Now unzip the rclone folder to desired location. The folder contains the rclone.exe. Run config from the commandline (e.g. WSL2, Powershell, ect). This is covered in the next section.
 
 ### Configure rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. We will configure an sftp endpoint in rclone that points to the data transfer node (DTN) hosts.
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. For more information on DTN nodes, [check out our documentation on data transfers.](./data-transfers.html)
+
 
 In this example we use rclone to create an sftp endpoint with the following settings:
 ```
@@ -80,7 +81,7 @@ The rclone application is interactive and will prompt you for all of the above i
 
 ```$  rclone config```     
 
-**Windows:** Windows host users, cd to rclone file location and run:
+**Windows:** From the Command Prompt, navagate to rclone file location and run:
 ```$ .\rclone.exe config```
 
 ```
@@ -290,7 +291,7 @@ _Example_: The syntax for using rclone to synchronize a local directory `/tmp/lo
 This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`.
 
 ### Run rclone on a schedule
-On unix/macOS hosts, you can set up a cron job to run the rclone sync job regularly. To create a crontab entry type:
+On Mac or Linux hosts, you can set up a cron job to run the rclone sync job regularly. To create a crontab entry type:
 
 ```$ crontab -e```
 
