@@ -66,7 +66,7 @@ _Note: You must have adminstrative priveleges on your laptop or lab server in or
 
 ### Configure rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. For more information on DTN nodes, [check out our documentation on data transfers.](./data-transfers.html)
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](./data-transfer.html)
 
 
 In this example we use rclone to create an sftp endpoint with the following settings:
@@ -288,7 +288,7 @@ _Example_: The syntax for using rclone to synchronize a local directory `/tmp/lo
 
 ```$ rclone sync /tmp/local_backup_dir cu_rc_dtn:/pl/active/pl_allocation/pl_backup_dir```
 
-This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`.
+This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`. 
 
 ### Run rclone on a schedule
 On Mac or Linux hosts, you can set up a cron job to run the rclone sync job regularly. To create a crontab entry type:
