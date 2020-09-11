@@ -1,8 +1,9 @@
 ## Data transfer
 
-Research Computing supports several methods of file transfers onto
-Summit. File transfers from a local machine can be done via two ways:
-Through [Globus](https://www.globus.org/) or through SSH protocols.
+Research Computing supports several methods of file transfers onto the CURC system. File transfers from a local machine can be done through a web-based application called _Globus_ or through command line tools such as secure copy (_scp_), secure ftp (_sftp_) and _rsync_. Please note that use of some command line tools are limited to Mac and Linux Operating Systems.
+
+Data transfers using SSH protocols can be done via the CURC login nodes, or through the CURC data transfer nodes (DTNs).  Transfers via the login nodes work well for small and/or infrequent file transfers, and do not require users to be connected to the CU network.  Transfers via the DTNs work well for all types of transfers, including large and/or frequent file transfers and automated (passwordless) transfers. Users must be connected to the CU network to use the DTNs.  
+Details on all types of transfers are provided below.  
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UMBD7pSE0qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -14,7 +15,7 @@ On Globus, file transfers are handled through an interactive web
 application. Globus addresses deficiencies in secure copy requests by
 automating large data transfers, resuming failed transfers, and
 simplifying the implementation of high performance transfers between
-computing centers.
+computing centers. Globus is available on Mac, Linux, and Windows operating systems and is RC's recommended way of transfering data.
 
 [Sign into Globus Connect](https://www.globus.org/app/login) by
 selecting "University of Colorado at Boulder" from the dropdown menu
@@ -61,7 +62,8 @@ appears as:
 # Replace <username> with your Research Computing username
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
-scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>
+scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>              # using a login node
+scp <path-to-file> <username>@dtn-new-data.rc.int.colorado.edu:<target-path>   # using a dtn node
 ```
 
 ```bash
@@ -71,8 +73,11 @@ scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>
 # Replace <username> with your Research Computing username
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
-scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>
-```
+scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>             # using a login node
+scp <username>@dtn-new-data.rc.int.colorado.edu:<path-to-file> <target-path>  # using a dtn node
+``` 
+
+Windows users can access scp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)
 
 For more information on secure copy take a [look at some of our listed
 resources](#more-reading) or consult the scp man page.
@@ -87,7 +92,8 @@ Another popular file transfer utility that can be used is the `rsync` command. W
 # Replace <username> with your Research Computing username
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
-rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>
+rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>             # using a login node
+rsync -r <path-to-directory> <username>@dtn-new-data.rc.int.colorado.edu:<target-path>  # using a dtn node
 ```
 
 ```bash
@@ -97,8 +103,10 @@ rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>
 # Replace <username> with your Research Computing username
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
-rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>
+rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>             # using a login node
+rsync -r <username>@dtn-new-data.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node
 ```
+Windows users cannot access rsync by default and must [install external software to access the command](https://www.itefix.net/cwrsync) or [through the Windows Subsystem for Linux (WSL).](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 For more information on rsync [check out some of our listed resources](#more-reading) or consult the rsync man page.
 
@@ -109,11 +117,13 @@ to transfer data to and from research computing resources. SFTP works
 much like moving files in a terminal, we use a series of file system
 commands to navigate, move, remove, and copy information from a
 client's personal machine to research computing resources. To invoke
-SFTP type the command:
+sftp type the command:
 
 ```bash
-sftp <username>@login.rc.colorado.edu
+sftp <username>@login.rc.colorado.edu             # using a login node
+sftp <username>@dtn-new-data.rc.int.colorado.edu  # using a dtn node
 ```
+Windows users can access sftp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)
 
 We can then use various commands to traverse and manipulate both file
 systems. A list of commands are listed below:
@@ -133,7 +143,7 @@ help | Displays application information on using commands | help
 
 ### Passwordless `scp` and `rsync`
 
-The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few simple set up procedures to prepare your local machine.  
+The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few simple set up procedures to prepare your local machine. 
   
 *Note: Passwordless data transfers are only available for Mac and Linux users. You must be [logged into the campus VPN](https://oit.colorado.edu/services/network-internet-services/vpn) to perform passwordless data transfers to CURC*
 
@@ -160,7 +170,7 @@ _Note: If you have trouble running the command above, you can also just login to
 
 #### Use `rsync` or `scp` to transfer files without a password
 
-Now you are ready to transfer files. Make sure you are logged on campus or logged into CU VPN and run rsync or scp. Examples:
+Now you are ready to transfer files. Passwordless transfers must be through RC Data Transfer Nodes. Make sure you are within the CU network and transfer with scp/rsync to a DTN node. Examples:
 
 User "ralphie" employs _rsync_ to tranfer `myfile.txt` to `/projects/ralphie` on CURC:
 
