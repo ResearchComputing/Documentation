@@ -47,7 +47,13 @@ Using the web app, connect your local workstation endpoint with the
 Research Computing endpoint and transfer files easily using the Globus
 GUI.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-2.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
+
+### Globus Shared Endpoints
+With Globus you can share files with users outside of your organization by creating shared endpoints. You can share any file/folder that you have access to.  The user you are sharing with has to have a Globus account.
+
+To learn how to setup a shared endpoint:
+[Globus Shared Endpoint Documentation](https://docs.globus.org/how-to/share-files/)
 
 ### Secure Copy `scp`
 
@@ -112,7 +118,7 @@ For more information on rsync [check out some of our listed resources](#more-rea
 ### Secure File Transfer Protocol: `sftp`
 
 The Secure File Transfer Protocol is an interactive terminal solution
-to transfer data to and from research computing resources. SFTP works
+to transfer data to and from Research Computing resources. SFTP works
 much like moving files in a terminal, we use a series of file system
 commands to navigate, move, remove, and copy information from a
 client's personal machine to research computing resources. To invoke

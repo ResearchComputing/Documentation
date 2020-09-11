@@ -13,8 +13,8 @@ This guide assumes you have basic knowledge of the command line and the Fortran 
 
 __Resources:__
 
-Much more in depth OpenMP Fortran tutorial:
-- [http://www.openmp.org/wp-content/uploads/F95_OpenMPv1_v2.pdf](http://www.openmp.org/wp-content/uploads/F95_OpenMPv1_v2.pdf)
+Much more in depth OpenMP tutorial:
+- [https://computing.llnl.gov/tutorials/openMP/](https://computing.llnl.gov/tutorials/openMP/)
 
 
 ### Parallel “Hello, World” Program

@@ -2,7 +2,7 @@
 
 The CU Research Computing Load Balancer is an effective tool for
 optimally utilizing multiple processors and nodes on the Summit HPC
-resource, without the need to learn OpenMP or MPI. This tutorial
+resource, without the need to learn OpenMP or MPI. This document
 assumes user knowledge of Slurm job submission, shell scripting, and
 some python.
 
@@ -15,14 +15,14 @@ the serial program into a parallel program that would utilize multiple
 processors to more quickly run the program over the entire set of
 photos (compared to doing one-at-a-time), but this would require some
 knowledge of parallel programming. Even worse, if your code is in a
-language that has limited parallelization capabilities, this may not
+language that has limited parallelization capabilities, so this may not
 be an option. The easiest solution for this problem is to utilize the
 Load Balancer.
 
 
 ### Using the Load Balancer
 
-The Load Balancer is a tool written by CU Boulder Research Computing
+The Load Balancer is a tool provided by CU Boulder Research Computing
 that allows shell commands (for example, calls to serial programs) to
 be distributed amongst nodes and cores on Summit. This means code
 doesn’t need to be explicitly parallelized for MPI or
@@ -73,8 +73,8 @@ python hello_World.py 3;
 python hello_World.py 4;
 ```
 
-Now create a job script called `run_hello.sh` that will submit all
-instances of your python script in `lb_cmd_file` using the Load
+Now create a job script called `run_hello.sh` that will run all
+instances of your python script in `lb_cmd_file` with the Load
 Balancer. Within the script, before using Load Balancer, we need to
 load the Python, and the Load Balancer utility itself. Your job script should look
 something like this:

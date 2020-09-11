@@ -1,21 +1,20 @@
 ## Fundamentals of parallel programming
 
-In this tutorial we will explore the differences between serial and
-parallel computation, and look at how parallel programs work in
-general. We will also assess a couple of parallel program solutions
-that utilize the multiprocessor environment of a supercomputer.
+Parallel commputation can often be a bit more complex compared to
+standard serial applications. This page will explore these differences and describe how parallel programs work in general.
+We will also assess two parallel programming solutions that utilize the multiprocessor environment of a supercomputer.
 
 __Useful Links:__
 
-<https://computing.llnl.gov/tutorials/parallel_comp/#Whatis>
+[https://computing.llnl.gov/tutorials/parallel_comp/#Whatis](https://computing.llnl.gov/tutorials/parallel_comp/#Whatis)
 
 ### Why Parallel?
 
-Assume you are attempting to assemble a 10,000-piece jigsaw puzzle* on
+Say you are attempting to assemble a 10,000-piece jigsaw puzzle* on
 a rainy weekend. The number of pieces is staggering, and instead of a
 weekend it takes you several weeks to finish the puzzle. Now assume
-you have three friends helping with the puzzle -- it goes much faster,
-and you are able to finish the puzzle over the weekend. This
+you have a team of friends helping with the puzzle. It progresses much faster,
+and you are able to finish the puzzle within desired weekend. This
 principle is the central idea behind parallel computation. You can
 dramatically cut down on computation by splitting one large task into
 smaller tasks that multiple processors can perform all at once. With
@@ -31,14 +30,15 @@ potentially be reduced to several hours.
 A serial process is simply a process that is run entirely by one core
 of one processor. This means tasks are run one after another as they
 appear in code. This is analogous to you doing the jigsaw puzzle on
-your own. A parallel process is a process that is divided among
+your own.  
+
+A parallel process is a process that is divided among
 multiple cores in a processor or set of processors. Each sub process
 can have its own set of memory as well as share memory with other
 processes. This is analogous to doing the puzzle with the help of
-friends. A supercomputer has a large network of nodes with many
-cores, and is designed for parallel computing. However, without the
-use of parallel software design, we cannot fully utilize
-supercomputing resources.
+friends. Because a supercomputer has a large network of nodes with many
+cores, we must implement parallelization strategies with our applications 
+to fully utilize a supercomputing resource.
 
 ### How parallel computation works
 
@@ -51,7 +51,7 @@ __Shared Memory Model:__
 In a shared memory model all processors to have access to a pool of
 common memory that they can freely use.
 
-![Alt text](https://computing.llnl.gov/tutorials/parallel_comp/images/shared_mem.gif "shared_model")
+![](https://computing.llnl.gov/tutorials/parallel_comp/images/shared_mem.gif "shared_model")
 
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
 
@@ -62,7 +62,7 @@ available to each processor.  Because memory isn’t shared inherently,
 information that must be shared between processes is sent over a
 network.
 
-![Alt text](https://computing.llnl.gov/tutorials/parallel_comp/images/distributed_mem.gif "distributed_model")
+![](https://computing.llnl.gov/tutorials/parallel_comp/images/distributed_mem.gif "distributed_model")
 
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/>)
 
@@ -72,7 +72,7 @@ A split distributed/shared model is a hybrid between a shared and
 distributed model and has the properties of both. Each separate set of
 processors sharing a set of common memory is called a node.
 
-![Alt text](https://computing.llnl.gov/tutorials/parallel_comp/images/hybrid_mem2.gif "hybrid_model")
+![](https://computing.llnl.gov/tutorials/parallel_comp/images/hybrid_mem2.gif "hybrid_model")
 
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
 
@@ -105,8 +105,8 @@ parallel processing. Unlike OpenMP, MPI has much more flexibility in
 how individual processes handle memory. MPI is also compatible with
 multi-node structures, allowing for very large, multi-node
 applications (i.e, distributed memory models). MPI is, however, often
-considered more difficult to learn.  Regardless, learning the library
-provides a user with the ability to maximize processing ability.  MPI
+considered less accessable and more difficult to learn. Regardless, learning the library
+provides a user with the ability to maximize processing ability. MPI
 is a library standard, meaning there are several libraries based on
 MPI that you can use to develop parallel code. Two solutions available
 on Summit are OpenMPI and Intel MPI.

@@ -3,8 +3,8 @@
 Research Computing uses a module system to load most software into a
 user's environment. Most software is not accessible by default and
 must be loaded in. This allows Research Computing to provide multiple
-versions of the software concurrently and enables users to switch
-easily between different versions.
+versions of the software concurrently and enables users to easily switch 
+between different versions.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/csgl4czhD_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -27,7 +27,7 @@ module avail
 
 This will return a list of modules available to load into the
 environment. **_Please note if you run this command on a login node
-you will not receive a full list of modules present on the system._**
+you will not receive a list of modules present on the system._**
 
 To load your chosen modules into the environment type:
 
@@ -69,14 +69,14 @@ module spider some_module
 
 ### Loading Modules in a Job Script
 
-Loading a module will set or modify a user’s environment
-variables. Additionally, modules will enable access to the software
-package provided by that module. This can be useful in interactive
-jobs or in job-scripts that are dependent on software like python.
+Loading a module will enable access to the modules 
+described software package. Additionally, modules 
+will set or modify a user’s environment
+variables.
 
 Modules in a job script can be loaded after your `#SBATCH` directives
 and before your actual executable is called. A sample job script that
-loads python into the environment is provided below:
+loads Python into the environment is provided below:
 
 ```bash
 #!bin/bash
