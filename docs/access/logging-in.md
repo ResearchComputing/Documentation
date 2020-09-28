@@ -1,9 +1,5 @@
 ## Logging In
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=PCMy5qDw3Nw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  
-
----
-
 Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources you need the following: 
 
 - [A Research Computing account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
@@ -21,6 +17,8 @@ Note that the login nodes should not be used for resource-intensive tasks such a
 
 + **For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**  
 + **For RMACC users, pleaser refer to [RMACC Access to Summit.](rmacc.html)**
+
+<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0"></iframe>  
 
 ### Getting an account
 
