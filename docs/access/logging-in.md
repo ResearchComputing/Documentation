@@ -1,6 +1,7 @@
 ## Logging In
 
-<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=170" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=170" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  
+
 ---
 
 Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources you need the following: 
