@@ -20,12 +20,14 @@ Note that the login nodes should not be used for resource-intensive tasks such a
 
 <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0"></iframe>  
 
+---
+
 ### Getting an account
 
 Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
 
 A Research Computing account can be secured quickly and easily [by filling out the form here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). Once you've received an account with Research Computing, you will automatically be sent an invitation for Duo enrollment via email. After you have accepted the Duo invitation, you will be able to authenticate via Duo and log into the system.
-
+  
 ### Logging in from a Windows Machine
 
 Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
