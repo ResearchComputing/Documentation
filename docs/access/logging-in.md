@@ -26,7 +26,7 @@ A Research Computing account can be secured quickly and easily [by filling out t
 
 ### Logging in from a Windows Machine
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aUVdIShW7W4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=170" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ---
 
@@ -43,7 +43,7 @@ Logging in from a Windows machine requires the additional step of [installing th
 
 ### Logging in from a Mac
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2Mnr840YdiE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=74" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ---
 
