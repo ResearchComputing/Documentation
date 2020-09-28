@@ -1,5 +1,8 @@
 ## Logging In
 
+<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=170" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+---
+
 Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources you need the following: 
 
 - [A Research Computing account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
@@ -26,10 +29,6 @@ A Research Computing account can be secured quickly and easily [by filling out t
 
 ### Logging in from a Windows Machine
 
-<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=170" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
----
-
 Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
 1. Open the PuTTY application on your computer
@@ -42,10 +41,6 @@ Logging in from a Windows machine requires the additional step of [installing th
 
 
 ### Logging in from a Mac
-
-<iframe width="560" height="315" src="https://youtu.be/PCMy5qDw3Nw?t=74" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
----
 
 Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
 
