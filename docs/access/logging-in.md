@@ -18,7 +18,7 @@ Note that the login nodes should not be used for resource-intensive tasks such a
 + **For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**  
 + **For RMACC users, pleaser refer to [RMACC Access to Summit.](rmacc.html)**
 
-<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0"></iframe>  
+<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>  
 
 ---
 
