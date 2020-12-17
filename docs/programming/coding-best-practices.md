@@ -19,7 +19,7 @@ your code. Let’s take a look at some naming conventions.
 #### Multiword Delimited
 
 This convention is to separate words in a variable name without the
-use of white space. White space within variables is usually difficult
+use of whitespace. Whitespace within variables is usually difficult
 for programming languages to interpret. Because of this variables
 must be delimited in some way. Here are several delimiting conventions
 commonly used in code:  
