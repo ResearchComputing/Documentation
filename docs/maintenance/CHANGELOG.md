@@ -2,7 +2,7 @@
 
 ### Wednesday, 17 October 2018
 
-* Configured Slurm to reject invalid jobs during submit, rather than accept and pend forever
+* Configured Slurm to reject invalid jobs during queueing, rather than accept and pend forever
 
 ### Wednesday, 16 May 2018
 
