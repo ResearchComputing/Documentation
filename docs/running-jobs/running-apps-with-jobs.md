@@ -4,7 +4,7 @@ Because Summit is shared among many researchers, Research Computing manages usag
 
 In order to run a program on Summit, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job](batch-jobs.html) or an [interactive job](interactive-jobs.html).
 
-When you submit a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](slurm-commands.html)
+When you run a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](slurm-commands.html)
 
 ### Batch Jobs
 
@@ -14,9 +14,9 @@ The primary method of running applications on Research Computing resources is th
 - Any application that requires little or no user input
 - Applications that you do not need to monitor extensively
 
-Unlike running an application on your personal machine, you do not call the application you wish to run directly. Instead you create a **job script** that includes a call to your application. Job scripts are simply a set of resource requests and commands. When a job script is submitted all the commands in the job script are executed on a compute node. 
+Unlike running an application on your personal machine, you do not call the application you wish to run directly. Instead you create a **job script** that includes a call to your application. Job scripts are simply a set of resource requests and commands. When a job script is run, all the commands in the job script are executed on a compute node. 
 
-Once you've created your job script it can be submitted to the Slurm queue with the `sbatch` command followed by your job script name:
+Once created, you can run your job script by passing it to the Slurm queue with the `sbatch` command followed by your job script name:
 
 ```bash
 sbatch <your-jobscript-name>
@@ -24,7 +24,7 @@ sbatch <your-jobscript-name>
 
 If no job script is provided then `sbatch` will take whatever commands follow as standard input.
 
-A detailed guide [on constructing and submitting Job scripts can be found here.](batch-jobs.html)
+A detailed guide [on constructing and running Job scripts can be found here.](batch-jobs.html)
 
 ### Interactive Jobs
 
@@ -42,6 +42,6 @@ sinteractive --qos=interactive --time=00:10:00
 
 [A list of sinteractive parameters can be found here](job-resources.html)
 
-The example above will submit an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 More details [on running Interactive Jobs can be found here.](interactive-jobs.html)
