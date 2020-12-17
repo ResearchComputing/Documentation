@@ -12,20 +12,20 @@ type and its intended use below.
 * This is where you are when you log in
 * No computation, compiling code, interactive jobs, or long running processes
 * Script or code editing
-* Job submission
+* Running Jobs
 
 
 ### Compile nodes
 
 * Where you compile code, such as Fortran, C, C++
 * No heavy computation
-* Job submission
+* Running Jobs
 * Access these nodes by typing `ssh scompile` from a login node
 
 
 ### Compute nodes
 
-This is where jobs that are submitted through the scheduler run.
+This is where jobs are executed after being passed to the scheduler.
 
 * Intended for heavy computation
 * When run an [interactive job](../running-jobs/interactive-jobs.html) will be
