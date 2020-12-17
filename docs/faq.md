@@ -8,7 +8,7 @@ See our documentation [homepage](index.html) for information about our most comm
 4. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
 5. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
 6. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
-7. [Why do I get the following 'Invalid Partition' error when I submit my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-submit-a-job):   
+7. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
 8. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
 9. [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
@@ -97,13 +97,13 @@ For more information on fair share the `sshare` command, [take a look at Slurm's
 
 ### Why is my job pending with reason 'ReqNodeNotAvail'?
 
-The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you submit a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
+The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you run a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
 
-If you receive this message, the following solutions are available: 1) submit a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
+If you receive this message, the following solutions are available: 1) run a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
 
-### Why do I get an 'Invalid Partition' error when I try to submit a job?
+### Why do I get an 'Invalid Partition' error when I try to run a job?
 
-This error usually means users do not have an allocation that would provide the service units (SUs) required to submit a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing, and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
+This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing, and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
 
 ### How can I check what allocations I belong to?
 
