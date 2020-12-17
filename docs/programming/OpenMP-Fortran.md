@@ -85,9 +85,9 @@ __Intel Fortran__
 ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
 ```
 
-This will give us an executable we can submit as a job to
-Summit. Simply submit the job specifying slurm to run the
-executable. Your submission script should look something like this:
+This will give us an executable we can run as a job on
+Summit. Simply run the job specifying slurm to run the
+executable. Your job script should look something like this:
 
 ```bash
 #!/bin/bash
@@ -167,7 +167,7 @@ __Intel Fortran__
 ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
 ```
 
-Resubmit our job script and we should end with an output file similar
+Running our job script and we should end with an output file similar
 to this one:
 
 Hello from process: 3
@@ -267,7 +267,7 @@ INTEGER :: thread_id
 END
 ```
 
-Compiling and submitting our code will result in a similar result to
+Compiling and running our code will result in a similar result to
 our original hello world:
 
 ```
@@ -381,7 +381,7 @@ INTEGER :: thread_id
 END
 ```
 
-Compiling and submitting our code should order our print statements as
+Compiling and running our code should order our print statements as
 such:
 
 ```fortran
@@ -509,7 +509,7 @@ PRINT *, “Total Sum: ”, total_Sum
 END
 ```
 
-This will complete our parallel summation. Compiling and submitting
+This will complete our parallel summation. Compiling and running
 our code will result in this output:
 
 ```
