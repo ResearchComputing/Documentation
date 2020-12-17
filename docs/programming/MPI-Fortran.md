@@ -143,7 +143,7 @@ __Intel Fortran Compiler__
 mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
 ```
 
-This will produce an executable we can submit to Summit as a job.  In
+This will produce an executable we can pass to Summit as a job.  In
 order to execute MPI compiled code, a special command must be used:
 
 ```shell
@@ -151,10 +151,10 @@ mpirun -np 4 ./hello_world_mpi.exe
 ```
 
 The flag -np specifies the number of processor that are to be utilized
-in execution of the program.  In your job submission script, load the
+in execution of the program.  In your job script, load the
 same compiler and OpenMPI choices you used above to create and compile
-the program, and submit the job with slurm to run the executable. Your
-job submission script should look something like this:
+the program, and run the job to execute the application. Your
+job script should look something like this:
 
 __GNU Fortran Compiler__
 
@@ -196,7 +196,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 
 It is important to note that on Summit, there are 24 cores per
 node. For applications that require more than 24 processes, you will
-need to request multiple nodes in your job submission (i.e., "" -N
+need to request multiple nodes in your job (i.e., "" -N
 <number of nodes> "").
 
 Our output file should look something like this (note the order of
@@ -295,7 +295,7 @@ call MPI_FINALIZE(ierror)
 END PROGRAM
 ```
 
-Compiling and submitting this code will result in the following output
+Compiling and running this code will result in the following output
 (note the ranks are now sequential):
 
 ```
@@ -444,7 +444,7 @@ call MPI_FINALIZE(ierror)
 END PROGRAM
 ```
 
-Compiling and submitting a batch job with our code that requests 2
+Compiling and running a batch job with our code that requests 2
 processes (--ntasks 2) will result in the following output:
 
 ```
