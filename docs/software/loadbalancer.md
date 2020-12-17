@@ -3,7 +3,7 @@
 The CU Research Computing Load Balancer is an effective tool for
 optimally utilizing multiple processors and nodes on the Summit HPC
 resource, without the need to learn OpenMP or MPI. This document
-assumes user knowledge of Slurm job submission, shell scripting, and
+assumes user knowledge of Slurm jobs, shell scripting, and
 some python.
 
 
@@ -97,7 +97,7 @@ module load loadbalance
 mpirun lb lb_cmd_file
 ```
 
-Submitting this script via sbatch will run the commands we stored in
+Running this script via sbatch will run the commands we stored in
 lb_cmd_file in parallel. A successful job will result in output that
 looks something like this:
 
