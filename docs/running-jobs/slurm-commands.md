@@ -48,7 +48,7 @@ information without needing to repeatedly call squeue:
 $ squeue --user=your_rc-username --start --iterate=n_seconds
 ```
 
-Press `ctrl`-`z` to stop the command from looping and bring you back
+Press `ctrl`-`c` to stop the command from looping and bring you back
 to the terminal.
 
 For more information on squeue, [visit the Slurm page on
