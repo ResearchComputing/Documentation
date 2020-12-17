@@ -91,9 +91,9 @@ __Intel__:
 icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
 ```
 
-This will give us an executable we can submit as a job to
-Summit. Simply submit the job specifying slurm to run the
-executable. Your submission script should look something like this:
+This will give us an executable we can run as a job to
+Summit. Simply run the job specifying slurm to run the
+executable. Your job script should look something like this:
 
 ```bash
 #!/bin/bash
@@ -170,7 +170,7 @@ __Intel__
 icc parallel_hello_world.cpp -o parrallel_hello_world.exe -qopenmp
 ```
 
-Resubmit our job script and we should end with an output file similar to this one:
+Running our job script and we should end with an output file similar to this one:
 
 ```
 Hello from process: 3
@@ -272,7 +272,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Compiling and submitting our code will result in a similar result to
+Compiling and running our code will result in a similar result to
 our original hello world:
 
 ```
@@ -389,7 +389,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Compiling and submitting our code should order our print statements as
+Compiling and running our code should order our print statements as
 such:
 
 ```
@@ -531,7 +531,7 @@ int main(int argc, char** argv){
 }
 ```
 
-This will complete our parallel summation. Compiling and submitting
+This will complete our parallel summation. Compiling and running
 our code will result in this output:
 
 ```
