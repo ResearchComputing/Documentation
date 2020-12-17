@@ -379,7 +379,7 @@ Here we provide an example of using a gcc compiler with OpenMPI. RMACC Summit us
 Singularity container needs to have Omni-Path libraries installed inside. 
 OpenMPI needs to be installed both inside and outside of the Singularity container. More specifically, the SAME version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, ex: 2.1 and 2.0). 
 
-The following Singularity recipe ensures that OpenMPI 2.0.1 is installed in the image, which matches the openmpi/2.0.1 module that is available on RMACC Summit. This recipe can be used as a template to build your own MPI-enabled container images for RMACC Summit and can be found at: [https://github.com/ResearchComputing/core-software/tree/master/singularity](https://github.com/ResearchComputing/core-software/tree/master/singularity)
+The following Singularity recipe ensures that OpenMPI 2.0.1 is installed in the image, which matches the openmpi/2.0.1 module that is available on RMACC Summit. This recipe can be used as a template to build your own MPI-enabled container images for RMACC Summit and [can be found here.](https://github.com/ResearchComputing/core-software/tree/master/singularity)
 
 Once you’ve built the container with one of the methods outlined above, you can place it on RMACC Summit and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Singularity on RMACC Summit. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
 
