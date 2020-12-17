@@ -4,7 +4,7 @@ Slurm allows the use of flags to specify resources needed for a job. Below is a 
 
 ### Slurm Resource Flags
 
-Job scripts, the `sbatch` command, and the `sinteractive` command support many different resource requests in the form of flags. These flags are available to all forms of job submission. To review all possible flags for these commands, please visit the [Slurm page on sbatch](http://slurm.schedmd.com/sbatch.html). Below, we have listed some useful flags to consider when submitting your job script.
+Job scripts, the `sbatch` command, and the `sinteractive` command support many different resource requests in the form of flags. These flags are available to all forms of jobs. To review all possible flags for these commands, please visit the [Slurm page on sbatch](http://slurm.schedmd.com/sbatch.html). Below, we have listed some useful flags to consider when running your job script.
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
@@ -38,7 +38,7 @@ These are the partitions available on Summit.
 
 > <sup>1</sup> The `smem` partition is limited to 96 cores (2 entire nodes) across *all running smem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact [rc-help@colorado.edu](rc-help@colorado.edu).
 > 
-> <sup>2</sup> Skylake nodes are seperated into 2 partitions and consists of 5 public nodes in the `ssky` partition and 15 private nodes that can be used by anyone with the `ssky-preemptable`. Jobs running on the `ssky-preemptable` partition will be pushed off the node if the condo owner of the node submits a job to their private partition. More information on Skylake nodes [can be found here.](ssky.html)
+> <sup>2</sup> Skylake nodes are seperated into 2 partitions and consists of 5 public nodes in the `ssky` partition and 15 private nodes that can be used by anyone with the `ssky-preemptable`. Jobs running on the `ssky-preemptable` partition will be pushed off the node if the condo owner of the node runs a job to their private partition. More information on Skylake nodes [can be found here.](ssky.html)
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs. These partitions allow quick access to a reserved set of cores provided for testing and interactive use. 
 
@@ -63,7 +63,7 @@ On Summit, Quality of Service or QoS is used to constrain or modify the characte
 
 The available QoS's for Summit are:
 
-| QOS name    | Description                | Max walltime    | Max submit/user | Node limits        | Partition limits | Priority Adjustment  |
+| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
 | normal      | Default                    | 1D              | 1000          | 256/user           | n/a              | 0 |
 | long        | Longer wall times          | 7D              | 200           | 22/user; 40 total; | shas, sknl, ssky | 0 |
