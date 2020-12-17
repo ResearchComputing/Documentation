@@ -18,7 +18,7 @@ The primary flags we recommend users specify are the `partition` flag and the `t
 sinteractive --partition=shas-interactive --time=00:10:00
 ```
 
-This will submit an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the interactive shas partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
+This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the interactive shas partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
 
 ### Interactive GUI Applications
 
@@ -57,13 +57,13 @@ ssh -X your_rc-username@login.rc.colorado.edu
 
 Once you have logged into Summit with X11 Forwarding enabled, you will be able to initialize a GUI application by starting an interactive job and running your selected application. The X-window server application installed on your local system will display the window generated on the cluster on your local machine.
 
-If you plan on submitting your interactive job from a compile node, you must also enable x11 forwarding when you ssh into scompile:
+If you plan on running interactive job from a compile node, you must also enable x11 forwarding when you ssh into scompile:
 
 ```bash
 ssh -X scompile
 ```
 
-From here you will be able to submit your interactive job like normal and X11 forwarding will carry through to the job. 
+From here you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
 
 
 
