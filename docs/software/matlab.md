@@ -14,7 +14,7 @@ to use the GUI (in this instance, the Matlab Desktop). However, there
 might be other reasons you would like to work interactively with
 Matlab.
 
-The second way to run Matlab on RC resources is by submission of a
+The second way to run Matlab on RC resources through a
 batch job. This allows the job to run in the background when resources
 become available. You may choose to use this method if you have a
 large job that may wait in the queue for awhile, or if you are not
@@ -22,7 +22,7 @@ debugging or in need of a GUI. Both ways to work with Matlab are
 below.
 
 
-### Submitting Matlab Interactive Jobs
+### Running Matlab Interactive Jobs
 
 Running Matlab interactive jobs on RC resources is both a simple and
 easy task to accomplish. In this section we will learn how to launch
@@ -57,7 +57,7 @@ To find out how you enable X11 forwarding in your terminal session, [check out o
 
 
 
-### Submitting Matlab Batch Jobs
+### Running Matlab Batch Jobs
 
 Here, we will learn how to run a Matlab script in a non-interactive
 batch job. For more general information on batch job scripts on
@@ -74,13 +74,13 @@ fprintf(‘Hello world\n’)
 
 Which simply prints "Hello world" when called.
 
-Next, we will construct our batch script that will enable us to submit
+Next, we will construct our batch script that will enable us to run
 this job. The batch script organizes the variety of flags slurm needs
-to submit a job and specifies the software commands we want to
+to run a job and specifies the software commands we want to
 execute. An advantage of batch scripts is that they are easily
 reusable and adaptable for other similar tasks.
 
-We will submit this job using a bash script titled: `slurm_hello.sh`,
+We will run this job using a bash script titled: `slurm_hello.sh`,
 which contains the following lines:
 
 ```bash
@@ -127,7 +127,7 @@ This file has a few basic parts:
    existing variables, and is simply included as good coding practice.
 
 You have now completed your batch script. After saving the script and
-exiting your text editor, submit the job as follows:
+exiting your text editor, run the job as follows:
 
 ```bash
 sbatch slurm_hello.sh
@@ -199,7 +199,7 @@ module load matlab
 matlab -nodesktop -nodisplay -r 'clear; hello_world;'
 ```
 
-Now we submit the job using the `sbatch` command shown above, and our
+Now we run the job using the `sbatch` command shown above, and our
 output in `Matlab_Parallel_Hello.out` will be as follows (the process
 order may be different in your output):
 
