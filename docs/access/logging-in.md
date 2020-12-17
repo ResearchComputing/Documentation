@@ -10,10 +10,10 @@ Users accessing RC's resources will be connected to a login node. A login node i
 
 + Edit files
 + Transfer Data
-+ Submit Jobs
++ Running Jobs
 + Access storage resources  
 
-Note that the login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should submit batch jobs, interactive jobs, or use the compile nodes.
+Note that the login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes.
 
 + **For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**  
 + **For RMACC users, pleaser refer to [RMACC Access to Summit.](rmacc.html)**

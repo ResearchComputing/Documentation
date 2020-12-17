@@ -6,7 +6,7 @@ by other Summit users. Please note and abide by the licensing,
 rights, and citation information shown at the top of your Gaussian
 output files.
 
-This document describes how to submit G16 jobs efficiently on
+This document describes how to run G16 jobs efficiently on
 Summit. It does not attempt to teach how to use Gaussian for solving
 science/engineering questions.
 

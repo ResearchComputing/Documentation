@@ -162,7 +162,7 @@ __Intel MPI__
 mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
 ```
 
-This will produce an executable we can submit to Summit as a job.  In
+This will produce an executable we can pass to Summit as a job. In
 order to execute MPI compiled code, a special command must be used:
 
 ```bash
@@ -172,9 +172,9 @@ mpirun -np 4 ./hello_world_mpi.exe
 The flag -np specifies the number of processor that are to be utilized
 in execution of the program.
 
-In your job submission script, load the same compiler and OpenMPI
-choices you used above to compile the program, and submit the job with
-slurm to run the executable. Your job submission script should look
+In your job script, load the same compiler and OpenMPI
+choices you used above to compile the program, and run the job with
+slurm to execute the application. Your job script should look
 something like this:
 
 __OpenMPI__
@@ -217,7 +217,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 
 It is important to note that on Summit, there is a total of 24 cores
 per node. For applications that require more than 24 processes, you
-will need to request multiple nodes in your job submission.  Our
+will need to request multiple nodes in your job. Our
 output file should look something like this:
 
 ```
@@ -317,7 +317,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Compiling and submitting this code will result in this output:
+Compiling and running this code will result in this output:
 
 ```
 Hello World from process 0 of 4
@@ -469,7 +469,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-Compiling and submitting our code with 2 processes will result in the
+Compiling and running our code with 2 processes will result in the
 following output:
 
 ```

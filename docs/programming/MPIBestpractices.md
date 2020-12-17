@@ -37,7 +37,7 @@ module load gcc openmpi
 # SLURM_EXPORT_ENV=ALL
 ```
 
-It is important to note that GCC and OpenMPI should be paired with the `SLURM_EXPORT_ENV=ALL` environment variable when loading the pair into a job script. This will ensure the job can function when submitted on a login node!
+It is important to note that GCC and OpenMPI should be paired with the `SLURM_EXPORT_ENV=ALL` environment variable when loading the pair into a job script. This will ensure the job can function when run on a login node!
 
 In most situations you will want to try to compile and run your applications utilizing the Intel set of compilers and MPI libraries. Most cores on Summit and Blanca are of Intel architecture, so utilizing Intel will ensure the highest level of optimization comes from your compiler. GCC should only be utilized when your application cannot be compiled on intel software or if compiler specific optimizations exist within your code.  
 

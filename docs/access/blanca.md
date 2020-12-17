@@ -179,7 +179,7 @@ Requeuing: Users running jobs that do not require requeuing if preempted should 
 
 #### Example Job Scripts
 
-Submit a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).
+Run a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).
 
 ```bash
 #!/bin/bash

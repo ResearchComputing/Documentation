@@ -22,17 +22,17 @@ Contributed condo nodes have been placed into discrete partitions, with a name b
 scontrol show partition | grep PartitionName=ssky
 ```
 
-To submit a job (in this case assuming your group is `rcops`), specify the account and partition in your job script or interactive job command (e.g., `--account=ucb-summit-rcops` and `--partition=ssky-ucb-rcops`).
+To run a job (in this case assuming your group is `rcops`), specify the account and partition in your job script or interactive job command (e.g., `--account=ucb-summit-rcops` and `--partition=ssky-ucb-rcops`).
 
-Jobs submitted with condo accounts/partitions will immediately preempt jobs running on a given condo partition that were submitted via the `ssky-preemptable` partition (see below). 
+Jobs run with condo accounts/partitions will immediately preempt jobs running on a given condo partition that were executing via the `ssky-preemptable` partition (see below). 
 
-_Tip:_ If it is appropriate for your jobs, you can use an ordered list of preferred partitions when submitting your jobs to `ssky`. E.g., `--partition=ssky-ucb-rcops,ssky` or (if you are willing to run preemtably) `--partition=ssky-ucb-rcops,ssky,ssky-preemptable`. If your first choice of partition is not available, the next partition in the list will be attempted, and so on.
+_Tip:_ If it is appropriate for your jobs, you can use an ordered list of preferred partitions when running your jobs to `ssky`. E.g., `--partition=ssky-ucb-rcops,ssky` or (if you are willing to run preemtably) `--partition=ssky-ucb-rcops,ssky,ssky-preemptable`. If your first choice of partition is not available, the next partition in the list will be attempted, and so on.
 
 ## General and preemptable access for all Summit users
 
-All Summit users, including condo contributors, can submit jobs to either general-access (e.g., `ssky`) partitions or preemptable (e.g., `ssky-preemptable`) partitions. Jobs submitted to the `ssky` partition will not be preempted, but are limited to the five general-access nodes. Jobs submitted to the `ssky-preemptable` partition may run on any `ssky` node, but are subject to being preempted by a job submitted by a condo contributor, as described above.
+All Summit users, including condo contributors, can run jobs to either general-access (e.g., `ssky`) partitions or preemptable (e.g., `ssky-preemptable`) partitions. Jobs using the `ssky` partition will not be preempted, but are limited to the five general-access nodes. Jobs using the `ssky-preemptable` partition may run on any `ssky` node, but are subject to being preempted by a job from a condo contributor, as described above.
 
-To submit a job to `ssky`, users would simply change the "partition" flag in their job script or interactive job command to either `--partition=ssky` or `--partition=ssky-preemptable`.  Other flags in their job script would remain the same, though users may want to tweak flags or recompile code (optimized for AVX-512) per the specifications of `ssky` nodes (see above).
+To run a job to `ssky`, users would simply change the "partition" flag in their job script or interactive job command to either `--partition=ssky` or `--partition=ssky-preemptable`.  Other flags in their job script would remain the same, though users may want to tweak flags or recompile code (optimized for AVX-512) per the specifications of `ssky` nodes (see above).
 
 ## Summary
 

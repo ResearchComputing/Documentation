@@ -6,7 +6,7 @@ Batch jobs are created from a job script which provide resource requirements and
 
 ### Job Scripts
 
-Even though it is possible to submit jobs completely from the command line, it is often overly tedious and unorganized to do so. Instead, Research Computing recommends constructing a job script for your batch jobs. A **job script** is set of Linux commands paired with a set of resource requirements that can be submitted to the Slurm job scheduler. Slurm will then generate a job according to the parameters set in the job script. Any commands that are included with the job script will be run within the job.
+Even though it is possible to run jobs completely from the command line, it is often overly tedious and unorganized to do so. Instead, Research Computing recommends constructing a job script for your batch jobs. A **job script** is set of Linux commands paired with a set of resource requirements that can be passed to the Slurm job scheduler. Slurm will then generate a job according to the parameters set in the job script. Any commands that are included with the job script will be run within the job.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sStJQKTa9zY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -14,9 +14,9 @@ Even though it is possible to submit jobs completely from the command line, it i
 
 
 
-### Submitting a Job Script
+### Running a Job Script
 
-Submitting a job script can be done with the `sbatch` command:
+Running a job script can be done with the `sbatch` command:
 
 ```bash
 sbatch <your-job-script-name>
@@ -84,7 +84,7 @@ A list of some useful sbatch directives [can be found here.](job-resources.html)
 
 #### 2. Software
 
-Because jobs run on a different node than from where you submit, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First we will purge all software that may be left behind from your working environment on a compile node by running the command:
+Because jobs run on a different node than from where you ran, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First we will purge all software that may be left behind from your working environment on a compile node by running the command:
 
 ```bash
 module purge
@@ -100,7 +100,7 @@ More information about [software modules can be found here.](../compute/modules.
 
 #### 3. User Scripting
 
-The last part of a job script is the actual user scripting that will execute when the job is submitted. This part of the job script includes all user commands that are needed to set up and execute the desired task. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
+The last part of a job script is the actual user scripting that will execute when the job is executing. This part of the job script includes all user commands that are needed to set up and execute the desired task. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
 
 ```bash
 echo "== This is the scripting step! =="
@@ -175,7 +175,7 @@ mpirun -np 24 ./example_mpi.exe
 
 ### Job Flags
 
-The `sbatch` command supports many optional flags. To review all the options, please visit the Slurm [sbatch page](http://slurm.schedmd.com/sbatch.html). Below are a few flags you may want to consider when submitting your job via `sbatch`.
+The `sbatch` command supports many optional flags. To review all the options, please visit the Slurm [sbatch page](http://slurm.schedmd.com/sbatch.html). Below are a few flags you may want to consider when running your job via `sbatch`.
 
 | Type                   | Description                                         | Flag                       |
 | :--------------------- | :-------------------------------------------------- | :------------------------- |

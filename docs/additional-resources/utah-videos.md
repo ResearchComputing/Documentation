@@ -26,7 +26,7 @@ This video demonstrates the use of modules on a CHPC resource. CHPC uses the Lmo
 
 ---
 
-This video provides a description of the clusters, partitions and types of accounts available at CHPC. It also demonstrates use of the "squeue" and "srun" commands, as well as the use of the "sbatch" command to submit a batch job.
+This video provides a description of the clusters, partitions and types of accounts available at CHPC. It also demonstrates use of the "squeue" and "srun" commands, as well as the use of the "sbatch" command to run a batch job.
 
 ### Slurm Batch Scripting
 
