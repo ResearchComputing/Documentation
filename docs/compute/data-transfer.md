@@ -200,18 +200,32 @@ provides a good way to transfer files to collaborators. Files are
 uploaded to a server and a link to download the file can be emailed to
 an on, or off-campus, user: [http://oit.colorado.edu/safe-transfer](http://oit.colorado.edu/safe-transfer)
 
-### DTN SSH Host Keys
+### DTN SSH Host Keys (as of 9 February 2021)
+
+The first time you use the data transfer nodes you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid data transfer node.
+
+Note that each data transfer node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
+
+---
+
+Fingerprint: `256 SHA256:c8362Adxws21Si5dyqngBp1eCfvo7m/3cjT+gG6Nln4 no comment (ECDSA)`
 
 ```
 ecdsa-sha2-nistp256
 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOA0dGntTpowZ/YdjXJzaummHbw59nTRuUQZDXjnPvZXrEtpF+Db31iM9ytWCyjHAfH8FGfKJt/MuPubNcfr1Sg=
 ```
 
+---
+
+Fingerprint: `256 SHA256:7o6maYG7Y3Mgw0js7GUTMb2r+FLIrcirXX1cHMOiUeo no comment (ED25519)`
 ```
 ssh-ed25519
 AAAAC3NzaC1lZDI1NTE5AAAAIKXkp8RQhYvNZMYGYzBpECKwwyB929enmFVz1Jm2LtkG
 ```
 
+---
+
+Fingerprint: `2048 SHA256:6ZOTX25SbIBaH2HU3VClSD5GpdScFkeyzl/v4uWpBGI no comment (RSA)`
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0Pp4D+GvSYfq0GB+dAEBQcKJTkeTkJ5bQlMPzkh1N8Zs1koh3fKymmV6FuMI5chuvP6pnmWogbwaCHuarF8pMKAIiYC6QHGKkMODFeA
 O1V0+ZBmRpTO0PdkqNCV04Y76lCnYH+VD2/gClqenTcEVS8OD7WZYz9YhlevXFuw/4aQGCMmU0OdpKsJ1bAEGXDGrBasOXRV5uekbX6WrTYphr/ayPOjqltlTfP4/2qhh2YCQhOEH+
