@@ -127,7 +127,7 @@ sftp type the command:
 
 ```bash
 sftp <username>@login.rc.colorado.edu             # using a login node
-sftp <username>@.rc.int.colorado.edu  # using a dtn node
+sftp <username>@dtn.rc.int.colorado.edu  # using a dtn node
 ```
 
 We can then use various commands to traverse and manipulate both file
