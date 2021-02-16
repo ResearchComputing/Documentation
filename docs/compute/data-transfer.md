@@ -69,7 +69,7 @@ appears as:
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>              # using a login node
-scp <path-to-file> <username>@dtn-new-data.rc.int.colorado.edu:<target-path>   # using a dtn node
+scp <path-to-file> <username>@dtn.rc.int.colorado.edu:<target-path>   # using a dtn node
 ```
 
 ```bash
@@ -77,10 +77,11 @@ scp <path-to-file> <username>@dtn-new-data.rc.int.colorado.edu:<target-path>   #
 
 # Replace <path-to-file> with the path of the file you wish to copy
 # Replace <username> with your Research Computing username
-# Replace <target-path> with the full path to the directory you would like to send the file to.
+# Replace <target-path> with thf
+e full path to the directory you would like to send the file to.
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>             # using a login node
-scp <username>@dtn-new-data.rc.int.colorado.edu:<path-to-file> <target-path>  # using a dtn node
+scp <username>@dtn.rc.int.colorado.edu:<path-to-file> <target-path>  # using a dtn node
 ``` 
 
 Windows users can access scp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)  
@@ -98,7 +99,7 @@ Another popular file transfer utility that can be used is the `rsync` command. W
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
 rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>             # using a login node
-rsync -r <path-to-directory> <username>@dtn-new-data.rc.int.colorado.edu:<target-path>  # using a dtn node
+rsync -r <path-to-directory> <username>@dtn.rc.int.colorado.edu:<target-path>  # using a dtn node
 ```
 
 ```bash
@@ -109,7 +110,7 @@ rsync -r <path-to-directory> <username>@dtn-new-data.rc.int.colorado.edu:<target
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
 rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>             # using a login node
-rsync -r <username>@dtn-new-data.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node
+rsync -r <username>@dtn.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node
 ```
 Windows users cannot access rsync by default and must [install external software to access the command](https://www.itefix.net/cwrsync) or [through the Windows Subsystem for Linux (WSL).](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
 
@@ -126,7 +127,7 @@ sftp type the command:
 
 ```bash
 sftp <username>@login.rc.colorado.edu             # using a login node
-sftp <username>@dtn-new-data.rc.int.colorado.edu  # using a dtn node
+sftp <username>@.rc.int.colorado.edu  # using a dtn node
 ```
 
 We can then use various commands to traverse and manipulate both file
@@ -183,13 +184,13 @@ Now you are ready to transfer files. Passwordless transfers must be through RC D
 User "ralphie" employs _rsync_ to tranfer `myfile.txt` to `/projects/ralphie` on CURC:
 
 ```
-rsync -av ./myfile.txt dtn-new-data.rc.int.colorado.edu:/projects/ralphie/myfile.txt
+rsync -av ./myfile.txt dtn.rc.int.colorado.edu:/projects/ralphie/myfile.txt
 ```
 
 User "ralphie" employs _scp_ to transfer `myfile.txt` from Ralphie's local machine to a PetaLibrary allocation called "crdds" that Ralphie has access to:
 
 ```
-scp ./myfile.txt dtn-new-data.rc.int.colorado.edu:/pl/active/crdds/myfile.txt
+scp ./myfile.txt dtn.rc.int.colorado.edu:/pl/active/crdds/myfile.txt
 ```
 
 
