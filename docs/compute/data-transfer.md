@@ -3,7 +3,7 @@
 Research Computing supports several methods of file transfers onto the CURC system. File transfers from a local machine can be done through a web-based application called _Globus_ or through command line tools such as secure copy (_scp_), secure ftp (_sftp_) and _rsync_. Please note that use of some command line tools are limited to Mac and Linux Operating Systems.
 
 Data transfers using SSH protocols can be done via the CURC login nodes, or through the CURC data transfer nodes (DTNs).  Transfers via the login nodes work well for small and/or infrequent file transfers, and do not require users to be connected to the CU network.  Transfers via the DTNs work well for all types of transfers, including large and/or frequent file transfers and automated (passwordless) transfers. Users must be connected to the CU network to use the DTNs.  
-Details on all types of transfers are provided below.  
+ Details on all types of transfers are provided below.  
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UMBD7pSE0qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -69,7 +69,8 @@ appears as:
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>              # using a login node
-scp <path-to-file> <username>@dtn.rc.int.colorado.edu:<target-path>   # using a dtn node
+scp <path-to-file> <username>@dtn.rc.int.colorado.edu:<target-path>   # using a dtn node on campus network
+scp <path-to-file> <username>@dtn.rc.colorado.edu:<target-path>   # using a dtn node outside campus network
 ```
 
 ```bash
@@ -81,7 +82,8 @@ scp <path-to-file> <username>@dtn.rc.int.colorado.edu:<target-path>   # using a 
 e full path to the directory you would like to send the file to.
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>             # using a login node
-scp <username>@dtn.rc.int.colorado.edu:<path-to-file> <target-path>  # using a dtn node
+scp <username>@dtn.rc.int.colorado.edu:<path-to-file> <target-path>  # using a dtn node on campus network
+scp <username>@dtn.rc.colorado.edu:<path-to-file> <target-path>  # using a dtn node outside campus network
 ``` 
 
 Windows users can access scp through PowerShell or a [GUI application like WinSCP.](https://winscp.net/eng/docs/protocols)  
@@ -99,7 +101,8 @@ Another popular file transfer utility that can be used is the `rsync` command. W
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
 rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>             # using a login node
-rsync -r <path-to-directory> <username>@dtn.rc.int.colorado.edu:<target-path>  # using a dtn node
+rsync -r <path-to-directory> <username>@dtn.rc.int.colorado.edu:<target-path>  # using a dtn node on campus network
+rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>  # using a dtn node outside campus network
 ```
 
 ```bash
@@ -110,7 +113,8 @@ rsync -r <path-to-directory> <username>@dtn.rc.int.colorado.edu:<target-path>  #
 # Replace <target-path> with the full path to the directory you would like to send the file to.
 
 rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>             # using a login node
-rsync -r <username>@dtn.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node
+rsync -r <username>@dtn.rc.int.colorado.edu:<path-to-directory> <target-path>  # using a dtn node on campus network
+rsync -r <username>@dtn.rc.colorado.edu:<path-to-directory> <target-path>  # using a dtn node outside campus network
 ```
 Windows users cannot access rsync by default and must [install external software to access the command](https://www.itefix.net/cwrsync) or [through the Windows Subsystem for Linux (WSL).](https://docs.microsoft.com/en-us/windows/wsl/install-win10)  
 
@@ -127,7 +131,8 @@ sftp type the command:
 
 ```bash
 sftp <username>@login.rc.colorado.edu             # using a login node
-sftp <username>@dtn.rc.int.colorado.edu  # using a dtn node
+sftp <username>@dtn.rc.int.colorado.edu  # using a dtn node on campus network
+sftp <username>@dtn.rc.colorado.edu  # using a dtn node outside campus network
 ```
 
 We can then use various commands to traverse and manipulate both file
