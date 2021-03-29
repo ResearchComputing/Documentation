@@ -1,4 +1,4 @@
- ## XDMoD: 
+ ## XDMoD
  
  ### A portal for viewing metrics at the system-, partition- and user-levels. 
 
@@ -53,22 +53,23 @@ XDMoD can query a seemingly endless number of metrics, more than could ever be d
 
 https://xdmod.rc.colorado.edu/user_manual/index.php
 
-#### Example Use case
+#### Example use case
 
 Let's say you want to see how many core hours you project account has used over time, including the usage by user.  
 
-1. Go to the _Usage_ tab.
-2. In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period.
-3. Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
+* Go to the _Usage_ tab.
+* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period.
+* Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
+
 <p align="middle">
   <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/docs/gateways/xdmod/xdmod_cpuhrs_total.png"/>
 </p>
-4. Choose the "PI" option.  In XDMoD syntax a "PI" is a project account (e.g., `ucb-general` or `ucb124_summit1`).  
-5. This will revise the graph to show CPU usage for different "PIs" (accounts), showing only the accounts with the greatest usage. Your account may not be shown. To find it click the _Filter_ tab at the top and search for your project (e.g., `ucb-general`).  
-6. You will now see a graph showing only core hours used by your account.  
-7. To see core hours used for each user of the account, click anywhere on the line to expose the "Drill Down" menu and choose the _User_ option.
-8. This will revise the graph to show CPU usage by user.  If you don't see your user of interest, you can use the _Filter_ tab at the top to find them.
-9. You can change the time range of the x-axis by specifying the dates in the "Start" and "End" boxes near the top of the screen.
+
+* Choose the "PI" option.  In XDMoD syntax a "PI" is a project account (e.g., `ucb-general` or `ucb124_summit1`).  
+* This will revise the graph to show CPU usage for different "PIs" (accounts), showing only the accounts with the greatest usage. Your account may not be shown. To find it click the _Filter_ tab at the top and search for your project (e.g., `ucb-general`). 
+* You will now see a graph showing only core hours used by your account. To see core hours used for each user of the account, click anywhere on the line to expose the "Drill Down" menu and choose the _User_ option.
+* This will revise the graph to show CPU usage by user.  If you don't see your user of interest, you can use the _Filter_ tab at the top to find them.
+* You can change the time range of the x-axis by specifying the dates in the "Start" and "End" boxes near the top of the screen.
 
 
 
