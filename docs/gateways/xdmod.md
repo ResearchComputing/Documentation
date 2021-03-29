@@ -1,6 +1,6 @@
  ## XDMoD
  
- ### A portal for viewing metrics at the system-, partition- and user-levels. 
+__A portal for viewing metrics at the system-, partition- and user-levels.__
 
 _Overview:_ Would you like to know average queue wait times?  Do you need to better understand your and historical resource utilization, or utilization of your project account by user? The XDMoD ([XD Metrics on Demand](https://open.xdmod.org/9.0/index.html)) web-based tool provides users with the ability to easily obtain detailed metrics for high performance computing resources. This open-source tool was developed by the University at Buffalo [Center for Computational Research (CCR)](http://www.buffalo.edu/ccr.html). CU Boulder Research Computing runs its own instance, [CURC XDMoD](https://xdmod.rc.colorado.edu) that enables users to query metrics for the _RMACC Summit_ and _Blanca_ computing resources. 
 
@@ -53,7 +53,7 @@ XDMoD can query a seemingly endless number of metrics, more than could ever be d
 
 https://xdmod.rc.colorado.edu/user_manual/index.php
 
-#### Example use case
+### Example use case
 
 Let's say you want to see how many core hours you project account has used over time, including the usage by user.  
 
