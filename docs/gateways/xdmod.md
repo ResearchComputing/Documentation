@@ -12,7 +12,7 @@ All CURC users have access to XDMoD (CU Boulder, CSU and RMACC). At this time, l
 
 In your browser navigate to https://xdmod.rc.colorado.edu. Upon reaching there you will see a summary screen similar to the following image.
 
-![](gateways/xdmod/xdmod_homescreen.png)
+![](xdmod/xdmod_homescreen.png)
 
 This screen provides some "quick stats" and summary plots that address some of the most common user questions, such as average wait times and recent resource usage by system (Summit or Blanca) and partition.  These metrics may be all you need. If you want to personalize metrics you can login with your CURC username and password (currently supported for CU Boulder users only).
 
@@ -20,7 +20,7 @@ This screen provides some "quick stats" and summary plots that address some of t
 
 Choose the __Sign In__ option near the upper left of the screen.  This will initiate a pop-up window that gives you the option to _"Sign in with CU Boulder Research Computing"_ or _"Sign in with a local XDMoD account"_. 
 
-![](gateways/xdmod/xdmod_sign_in.png)
+![](xdmod/xdmod_sign_in.png)
 
 Choose the option for _"Sign in with CU Boulder Research Computing"_ and enter your CURC username and password. The portal uses 2-factor authentication, so you will need to accept the Duo push to your phone to complete login.
 
@@ -28,7 +28,7 @@ Choose the option for _"Sign in with CU Boulder Research Computing"_ and enter y
 
 Whether or not you login, you'll start on the _"Summary"_ screen.  
 
-![](gateways/xdmod/xdmod_post_login.png)
+![](xdmod/xdmod_post_login.png)
 
 The following tabs will be available, depending on whether you are logged in
 * __Summary__ (the screen you are on when you login)
@@ -55,7 +55,7 @@ Let's say you want to see how many core hours you project account has used over 
 * In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period.
 * Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
 
-![](gateways/xdmod/xdmod_cpuhrs_total.png)
+![](xdmod/xdmod_cpuhrs_total.png)
 
 * Choose the "PI" option.  In XDMoD syntax a "PI" is a project account (e.g., `ucb-general` or `ucb124_summit1`).  
 * This will revise the graph to show CPU usage for different "PIs" (accounts), showing only the accounts with the greatest usage. Your account may not be shown. To find it click the _Filter_ tab at the top and search for your project (e.g., `ucb-general`). 
