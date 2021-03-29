@@ -16,7 +16,7 @@ Having an account only validates that you are eligible to use RC resources.  An 
 
 To apply for an allocation, you must do the following:
 
-1.  Contact rc-help@colorado.edu for an allocation proposal template and complete the document. If you need assistance, please always feel free to email rc-help@colorado.edu.  
+1.  Contact rc-help@colorado.edu for an allocation proposal template. Complete this template. If you need assistance, please [let us know](rc-help@colorado.edu) and we would be happy to assist.  
 2.  Login to [RCAMP](https://rcamp.rc.colorado.edu/)
 3.  Fill out some basic information about your request and create a project.  This project is a space in which you can link multiple allocations, manage PIs, etc.
 4.  After creating a project, upload the template to complete your allocation request.
