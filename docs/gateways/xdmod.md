@@ -1,4 +1,4 @@
- ## XDMoD
+ ## XDMoD _(CURC system metrics)_
  
 __A portal for viewing metrics at the system-, partition- and user-levels.__
 
