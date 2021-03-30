@@ -1,4 +1,4 @@
-## EnginFrame _(remote desktops on CURC)_
+## EnginFrame _(visualization, GUIs on CURC)_
 
 NICE EnginFrame provides a 3d-accelerated remote desktop environment
 on an Nvidia GPU-equipped compute node. Coupled with the proprietary
