@@ -17,7 +17,7 @@ From the welcome page, select "Views" from the available interfaces (or use <a h
 ![](enginframe/welcome.png)
 
 Provide your RC login credentials at the login prompt. You will be
-promted to use a second authentication factor (e.g., the Duo mobile
+prompted to use a second authentication factor (e.g., the Duo mobile
 app) to log in.
 
 ![](enginframe/login.png)
@@ -51,6 +51,10 @@ matlab
 ```
 
 ![](enginframe/matlab_enginframe.png)
+
+### Tips and Tricks
+
+* Desktop sessions in EnginFrame have default screensaver and screen locking functions that activate after a short period of inactivity.  When this happens, the user will need to login again with their CURC credentials and accept a Duo push. To lengthen the period of inactivity that will cause the screen to lock, in the desktop session navigate to `System`-->`Control Center`-->`Screensaver Preferences` and increase the time for the "Regard the computer as idle after" category. _To ensure unauthorized users cannot access the CURC system, please use this feature with caution and lock your screen manually if you will be leaving the session unattended._
 
 ### Additional Resources
 
