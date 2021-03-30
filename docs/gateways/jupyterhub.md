@@ -1,4 +1,4 @@
-## JupyterHub _(Jupyter notebooks on CURC)_
+## JupyterHub _(Python and R notebooks on CURC)_
 
 [Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
 
