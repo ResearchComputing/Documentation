@@ -111,13 +111,24 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 
 ##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
+__For a _python_ kernel__
+
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ conda install -y ipykernel
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
 ```
 
-The first command will install the ipykernel package if not installed already. The second command will create a kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+The first command will install the _ipykernel_ package if not installed already. The second command will create a _python_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
+__For an _R_ kernel__
+
+```
+(mycustomenv) [johndoe@shas0137 ~]$ conda install -y r-irkernel
+(mycustomenv) [johndoe@shas0137 ~]$ R
+> IRkernel::installspec(name = 'mycustomenv', displayname = 'mycustomenv')
+```
+
+The first command will install the _irkernel_ package if not installed already. The second command will start _R_. The third command, executed from within _R_, will create an _R_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). The kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
