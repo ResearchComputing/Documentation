@@ -19,7 +19,7 @@ transfers and automated (passwordless) transfers.
 ---
 
 
-### Globus
+### Globus transfers
 
 Globus file transfers are typically initiated through an interactive
 web application. (Command-line access to Globus is also available, but
@@ -45,10 +45,10 @@ and by logging in using your CU IdentiKey and password.
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 Research Computing storage resources are available via multiple Globus
-"endpoints." You can connect to an RC endpoint by clicking the
-"endpoint" field in the Globus web interface and searching for "CU
-Boulder Research Computing". Log into the end point using your
-Research Computing credentials.
+"endpoints." You can connect to an RC endpoint using the "endpoint"
+field in the Globus web interface and searching for "CU Boulder
+Research Computing". Log into the end point using your Research
+Computing credentials.
 
 You must also configure a local endpoint to transfer files to or from
 your local computer. You can easily set up a Globus endpoint by
@@ -62,13 +62,17 @@ GUI.
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
 
 
-#### Globus Shared Endpoints
+### Guest Collections (Globus Shared Endpoints)
 
-Globus can also be used to share files with users outside of your
-organization by creating [Globus Shared
-Endpoints](https://docs.globus.org/how-to/share-files/). You can share
-any file or folder that you have access to, but the user you are
-sharing as must have a Globus account.
+PetaLibrary allocation owners can nominate a technical contact that is
+able to create [Globus Guest
+Collections](https://docs.globus.org/how-to/share-files/). Using a
+Guest Collection (also known as a "Shared Endpoint"), You can share
+any PetaLibrary file or folder that you have access to with anyone who
+has a Globus account.
+
+Detailed information on creating Guest Collections is available [at
+docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 
 ### Secure Copy (scp)
