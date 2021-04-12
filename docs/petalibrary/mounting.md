@@ -1,12 +1,12 @@
 ## Adding Petalibrary to a Local Machine
 
-Petalibrary Allocations allow for machines within the CU internal network to access files without needing to formally transfer. This form of data access is referred to as mounting and can be done on any operating system in a variety of ways.
+Users with Petalibrary allocations may access and transfer files to/from their local desktop workstatation within the CU internal network without needing to formally tranfer files via traditional methods such as `scp`, `sftp` `rsync` or `Globus`. This form of data access is referred to as _mounting_ and can be done on any operating system in a variety of ways.
 
 ### SMB mounting to Petalibrary
 
-SMB (Secure Message Block) is a cross platform network sharing protocol that allows users to mount their Petalibrary allocations onto their local machines. SMB is supported on all major operating systems and all it takes to mount is a simple connection to RC's network.
+SMB (Secure Message Block) is a cross platform network sharing protocol that allows users to mount their Petalibrary allocations onto their local machines. SMB is supported on all major operating systems and all it takes to mount is a simple connection to CURC's network.
 
-**You must be on within CU Boulder internal network in order to access your allocation with SMB.**
+**You must be on the CU Boulder internal network in order to access your allocation with SMB. Off-campus users can use VPN to login to the internal network.**
 
 **Note:** SMB support for individual Petalibrary allocations is limited at the moment and requires additional setup from a system administrator. Please contact rc-help@colorado.edu if you’d like to set up SMB support with your Petalibrary Allocation.
 
@@ -33,11 +33,11 @@ You will be prompted for your RC Username and Password. Type in the required inf
 
 #### Mounting with SMB on Windows
 
-Mounting on Windows is a little more involved then on a Mac or Linux counterpart. First ensure you are connected to the CU VPN. Navigate to ‘This PC’ and click on Computer -> Add a network location.
+Mounting on Windows is a little more involved then on a Mac or Linux counterpart. First ensure you are connected to the CU VPN. Navigate to `This PC` and click on `Computer` -> `Add a network location`.
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smb1.PNG)
 
-This will bring up a setup utility. Continue through the prompt, selecting ‘Choose a custom network location’ when prompted. This will bring up a text field asking for an Internet or Network Address. Provide the hostname to a RC's internal server appended with your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
+This will bring up a setup utility. Continue through the prompt, selecting `Choose a custom network location` when prompted. This will bring up a text field asking for an Internet or Network Address. Provide the hostname to a RC's internal server appended with your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
 ```
 \\<RC-provided-hostname>\<your-pl-allocation>
 ```
@@ -74,13 +74,13 @@ Your selected directory will now be mounted to your Petalibrary allocation.
 #### `sshfs` on Windows
 Sshfs on Windows comes from the installation of 2 applications. First install the application sshfs-win: Installation instructions and files [can be found here.](https://github.com/billziss-gh/sshfs-win)
 
-Next install the sshfs GUI frontend. Installation instructions and files [can be found here.](https://github.com/evsar3/sshfs-win-manager)
+Next install the sshfs graphical user interface (GUI) frontend. Installation instructions and files [can be found here.](https://github.com/evsar3/sshfs-win-manager)
 
 Once both applications are installed, run the application “sshfs-win manager”. A window will pop up showing you a list of all sshfs connections you have saved. 
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/sshfsmenu.PNG)
 
-Click on “Add a connection.” This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the 'IP/Host' to dtn.rc.int.colorado.edu. Add your RC username for 'User' field and click the dropdown menu on 'Password' and select: *Password (ask on connect)*. Lastly set 'PATH' to `/pl/active/<your-petalibrary-space>` and select a drive letter.
+Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to dtn.rc.int.colorado.edu. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/sshfs.PNG)
 
