@@ -39,6 +39,9 @@ Use of University of Colorado Research Computing resources, including (but not l
 **Acknowledging Summit:**
 "This work utilized the Summit supercomputer, which is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University. The Summit supercomputer is a joint effort of the University of Colorado Boulder and Colorado State University."
 
+**Acknowledging Blanca:**
+"This work utilized the Blanca condo computing resource at the University of Colorado Boulder. Blanca is jointly funded by computing users and the University of Colorado Boulder."
+
 **Acknowledging PetaLibrary:**
 "Data storage supported by the University of Colorado Boulder 'PetaLibrary'"
 
