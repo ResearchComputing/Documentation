@@ -86,7 +86,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Petalibrary
    
-   petalibrary/example
+   petalibrary/mounting
 
 .. toctree::
    :maxdepth: 2
