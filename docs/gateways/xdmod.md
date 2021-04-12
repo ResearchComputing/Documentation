@@ -41,6 +41,10 @@ The following tabs will be available, depending on whether you are logged in
 
 _** - only available to users who are logged in._
 
+_Notes on XDMoD Syntax_
+* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multipled by how long the job runs)
+* a "PI" is a project account (e.g., `ucb-general` or `ucb124_summit1`)
+
 #### Step 4: Become a pro!
 
 XDMoD can query a seemingly endless number of metrics, more than could ever be described in this documentation.  To learn how to query specific metrics, customize your views, etc., please refer to the XDMoD documentation:
@@ -52,7 +56,7 @@ https://xdmod.rc.colorado.edu/user_manual/index.php
 Let's say you want to see how many core hours you project account has used over time, including the usage by user.  
 
 * Go to the _Usage_ tab.
-* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period.
+* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period. In XDMoD syntax a "CPU Hour" refers to a "core hour" (for a single job, this would be the number of `ntasks` a user chooses in their job script multipled by how long the job runs).  
 * Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
 
 ![](xdmod/xdmod_cpuhrs_total.png)
