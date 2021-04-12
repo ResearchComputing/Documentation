@@ -1,6 +1,6 @@
-### ZFS Snapshots
+## ZFS Snapshots
 
-# Overview
+### Overview
 
 Every ZFS-based PetaLibrary allocation has snapshots enabled by default.
 ZFS snapshots are read-only representations of a ZFS filesystem at the
@@ -8,19 +8,19 @@ time the snapshot is taken. Many allocations still reside in BeeGFS where
 snapshots are not available; we expect to complete migrations from BeeGFS
 to ZFS by the end of 2021.
 
-# How to access snapshots
+### How to access snapshots
 
 Snapshots are accessible in the root of the filesystem. If, for example,
-your allocation is located in /pl/active/rcops, your snapshots are
-accessible in /pl/active/rcops/.zfs/snapshot. Note that the .zfs directory
+your allocation is located in `/pl/active/rcops`, your snapshots are
+accessible in `/pl/active/rcops/.zfs/snapshot`. Note that the `.zfs` directory
 is not visible to any utilities that list directory contents, so an 'ls'
-of the .zfs directory will fail, although you can 'cd' to it.
+of the `.zfs` directory will fail, although you can 'cd' to it.
 
 Snapshots times are in UTC, which is not affected by daylight savings
 time. To convert from UTC to MDT, subtract six hours, and to convert
 from UTC to MST, subtract seven hours.
 
-# How snapshots affect free space in your allocation
+### How snapshots affect free space in your allocation
 
 PetaLibrary allocation sizes are set with quotas, and snapshot use does
 count against your quota. Removing a file from your filesystem will
@@ -31,7 +31,7 @@ can cause confusion about how space is utilized within an allocation,
 the default snapshot schedule discards snapshots that are more than one
 week old.
 
-# Default snapshot schedule
+### Default snapshot schedule
 
 The default snapshot schedule is as follows:
 
