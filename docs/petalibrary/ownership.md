@@ -1,6 +1,6 @@
-### PetaLibrary Ownership/Contacts
+## PetaLibrary Ownership/Contacts
 
-# PetaLibrary Owners
+### PetaLibrary Owners
 
 Every PetaLibrary allocation must have one owner. The owner is permitted
 to make any changes to the allocation, including file permissions,
@@ -12,7 +12,7 @@ appropriate. In the event a former PetaLibrary owner is not available
 to designate a new owner, the owner of the speedtype that was last used
 to pay for a PetaLibrary allocation may designate a new owner.
 
-# PetaLibrary billing contacts
+### PetaLibrary billing contacts
 
 A PetaLibrary allocation may have one or more billing contacts. A billing
 contact may speak on behalf of the owner of an allocation, making any
@@ -23,7 +23,7 @@ are present, we will send email to the billing contact(s) and cc: the
 allocation owner. If no billing contacts are specified, we will email
 the allocation owner.
 
-# PetaLibrary technical contacts
+### PetaLibrary technical contacts
 
 A PetaLibrary allocation may have one or more technical
 contacts. Technical contacts are largely identical to billing contacts,
@@ -34,7 +34,7 @@ RC will email technical contacts, if present, of an allocation regarding
 technical issues, and cc: the owner. In the absense of technical contacts,
 RC will email the allocation owner.
 
-# Recommended owner/contacts
+### Recommended owner/contacts
 
 In most cases, PetaLibrary allocation owners are principal investigators
 for one or more grants. If the allocation is being funded with a fund 30
