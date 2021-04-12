@@ -1,4 +1,4 @@
-## JupyterHub
+## JupyterHub _(Python and R notebooks on CURC)_
 
 [Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
 
@@ -12,12 +12,14 @@ CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyte
 
 To start a notebook server, select one of the available options in the *Select job profile* menu under *Spawner Options* and click *Spawn*. Available options are:
 
-* __Summit interactive (12hr)__ (a 12-hour, 1 core job on a Summit "shas" node)
-* __Summit Haswell (1 node, 12hr)__ (a 12-hour, 24 core job on a Summit "shas" node)
-* __Blanca (12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+* __Summit interactive (1 core, 12hr, instant access)__ (a 12-hour, 1 core job on a Summit "shas" node)
+* __Summit Haswell (12 cores, 4 hours)__ (a 4-hour, 12 core job on a Summit "shas" node)
+* __Blanca (1 core, 12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
+* __Blanca (12 cores, 4 hr)__ (A 4-hour, 12 core job on your default Blanca partition; only available to Blanca users)
 * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
+* __Summit interactive Rstudio (1 core, 12hr)__ (a 12-hour, 1 core _Rstudio_ job on a Summit "shas" node)
   
-___Note__: The "Summit interactive (12hr)" option spawns a 1-core job to an oversubscribed partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveat is that 1) users may only run one "shas-interactive" job at a time, and 2) "shas-interactive" jobs only have 1 core and 1.2 GB of memory allocated to them. Therefore, this option works well for light work such as interactive code development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow va batch job on Summit, or try the "Summit Haswell (1 node, 12hr)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (1 node, 12hr)" option because this provides 24-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility)._
+___Note__: The "Summit interactive (1 core, 12hr, instant access)" option spawns a 1-core job to a partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveat is that 1) users may only run one "shas-interactive" job at a time, and 2) "shas-interactive" jobs only have 1 core and 4 GB of memory allocated to them. Therefore, this option works well for light work such as interactive code development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility)._
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
@@ -109,13 +111,24 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 
 ##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
+__For a _python_ kernel__
+
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ conda install -y ipykernel
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
 ```
 
-The first command will install the ipykernel package if not installed already. The second command will create a kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+The first command will install the _ipykernel_ package if not installed already. The second command will create a _python_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
+__For an _R_ kernel__
+
+```
+(mycustomenv) [johndoe@shas0137 ~]$ conda install -y r-irkernel
+(mycustomenv) [johndoe@shas0137 ~]$ R
+> IRkernel::installspec(name = 'mycustomenv', displayname = 'mycustomenv')
+```
+
+The first command will install the _irkernel_ package if not installed already. The second command will start _R_. The third command, executed from within _R_, will create an _R_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). The kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  

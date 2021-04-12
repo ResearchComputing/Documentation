@@ -15,12 +15,15 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 3. Login to RC Resources via ssh [as described below.](#logging-in-with-duo)
 
 #### Common Issues
+A few common issues users will come across when using Duo include:
 
-* Duo Invite email may be sent to your Spam folder.
-* Do not request a phone call if you want to use the Push app for authentication.
-* Duo accounts are purged if unused for 6-9 months.
+* A Duo Invite email may be sent to your Spam folder.
+* Requesting a phone call if you want to use the Push app for authentication.
+* A Duo account purged after remaining unused for 6-9 months.
+* Having a new device and want to move Duo onto it.
+    * (Check out our FAQ for detailed instructions on accomplishing this.)[https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it]
 
-Please contact us at rc-help@colorado.edu if you encounter any issues with Duo setup.
+Please contact us at rc-help@colorado.edu if you encounter these or any other issues regarding Duo.
 
 ### Logging in with Duo
 

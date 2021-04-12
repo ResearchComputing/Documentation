@@ -92,10 +92,11 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
-   :caption: Gateways
+   :caption: Gateways & Portals
 
    gateways/jupyterhub
    gateways/enginframe
+   gateways/xdmod
 
 .. toctree::
    :maxdepth: 2

@@ -4,11 +4,12 @@ See our documentation [homepage](index.html) for information about our most comm
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
 2. [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are)  
-3. [When will my job start?](#when-will-my-job-start)  
-4. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
-5. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
-6. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
-7. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
+3. [When will my job start?](#when-will-my-job-start) 
+4. [How can I get system metrics?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
+5. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
+6. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
+7. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
+8. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
 8. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
 9. [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
@@ -68,6 +69,12 @@ squeue --user=your_rc-username --start
 Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
 For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+
+Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](https://curc.readthedocs.io/en/latest/gateways/xdmod.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+
+### How can I get metics about CURC systems such as how busy they are, wait times, and account usage?
+
+Visit the [CURC metrics portal](https://curc.readthedocs.io/en/latest/gateways/xdmod.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
 
 ### How much memory did my job use?
 
