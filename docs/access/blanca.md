@@ -34,43 +34,23 @@ Since not all Blanca nodes are identical, you can include node features in your 
 
 To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
 
-### Node Features Tables
+### Node Features
 
-#### Blanca Core
+Blanca is a pervasively heterogeneous cluster. A variety of feature tags are applied to nodes deployed in Blanca to allow jobs to target specific CPU, GPU, network, and storage requirements.
 
-Node Name     | High-Priority QoS | General Hardware Attributes | Features  
---------------|---------------|-----------------------------|---------  
-bnode010[1-5] | blanca-ics    | 32 cores, 2.6 GHz,<br> 256 GB RAM,<br> 1 TB local disk | sandybridge,<br> avx,<br> rhel7
-bnode010[6-7] | blanca-igg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
-bnode01[08-11] | blanca-ibgc1 | 48 cores, 2.5 GHz,<br> 256 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
-bnode01[12-14] | blanca-mrg | 24 cores, 2.5 GHz,<br> 128 GB RAM,<br> 1 TB local disk | haswell,<br> avx2,<br> rhel7
-bnode01[15-16] | blanca-el | 28 cores w/ 2x hyperthreading/core, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode02[01-36] | blanca-ccn | 16 cores, 3.3 GHz,<br> 64 GB RAM,<br> 1 TB local disk |ivybridge,<br> Quadro,<br> k2000,<br> avx,<br> fdr,<br> rhel7
-bnode0301 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode030[2-9] | blanca-sha | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0310 | blanca-ics | 32 cores, 2.4 GHz,<br> 256 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0311 | blanca-ceae | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bgpu-dhl1 | blanca-dhl | 56 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
-bnode03[12-15] | blanca-pccs | 28 cores, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode0316,<br> bnode0401 | blanca-csdms | 28 cores w/ 2x hyperthreading/core, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7, <br> 2x hyperthreading/core
-bnode04[02-03] | blanca-sol | 28 cores w/ 2x hyperthreading/core, 2.4 GHz,<br> 128 GB RAM,<br> 1 TB local disk | broadwell,<br> avx2,<br> rhel7, <br> 2x hyperthreading/core
-bnode05[01-02] | blanca-appm | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake, <br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-himem04 | blanca-ibg | 80 cores, 2.1 GHz,<br> 1024 GB RAM,<br> 10 TB local disk | westmere-ex,<br> localraid,<br> rhel7
-bnode0404 | blanca-rittger | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bnode04[05-08] | blanca-ics | 28 cores, 2.4 GHz,<br> 250.000 GB RAM,<br>1 TB local disk | broadwell,<br> avx2,<br> rhel7
-bnode04[12-14] | blanca-ibg | 32 cores, 2.10 GHz,<br> 1000.00 GB RAM,<br> 10 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bnode05[03-04] | blanca-csdms | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bnode05[05-06] | blanca-geol | 32 cores, 2.10 GHz,<br> 191.904 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bnode05[07] | blanca-rittger | 32 cores, 2.10 GHz,<br> 191.840 GB RAM,<br> 1 TB local disk | skylake,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bnode05[08-09] | blanca-appm | 40 cores, 2.10 Ghz,<br> 191.668 GB RAM,<br> 1 TB local disk | cascade,<br> avx2,<br> rhel7,<br> 2x hyperthreading/core
-bgpu-mktg1 | blanca-mktg | 32 cores, 2.10 GHz,<br> 772.476 GB RAM,<br> 1.8 TB local disk,<br> 1 NVIDIA P100 GPU | skylake,<br> avx2,<br> rhel7,<br> Tesla,<br> P100
-bhpc-c7-u7-[1-18]  | blanca-nso    | 36 cores, 2.70 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
-bhpc-c7-u7-[19-23] | blanca-topopt | 64 cores, 2.10 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
-bhpc-c7-u7-24      | blanca-curc   | 32 cores, 2.10 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
-bhpc-c7-u19-[1-18] | blanca-nso    | 36 cores, 2.70 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
-hhpc-c7-u19-[19-20] | blanca-curc  | 32 cores, 2.10 Ghz,<br> 185 GB RAM,<br> 480 GB local disk | skylake,<br> avx2,<br> rhel7,<br> edr  
+Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
-### Description of features
+```bash
+sinfo --format="%N | %f"
+```
+
+The `sinfo` query may be further specified to look at the features available within a specific partition.
+
+```bash
+sinfo --format="%N | %f" --partition="blanca-curc"
+```
+
+#### Description of features
 
 - **westmere-ex**: Intel processor generation  
 - **sandybridge**: Intel processor generation  
