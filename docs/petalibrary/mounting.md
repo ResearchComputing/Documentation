@@ -47,8 +47,10 @@ And click next.
 
 Lastly you will be prompted to provide your credentials. Type your credentials as such:
 
+```
 Username: AD\<your-rc-username>
 Password: <your-rc-password>
+```
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smb3.PNG)
 
