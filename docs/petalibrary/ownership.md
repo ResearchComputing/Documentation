@@ -1,4 +1,4 @@
-## PetaLibrary Ownership/Contacts
+## PetaLibrary Ownership and Contacts
 
 ### PetaLibrary Owners
 
