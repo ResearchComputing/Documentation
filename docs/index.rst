@@ -67,8 +67,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    compute/modules
    compute/data-transfer
    compute/compiling
-   compute/petalibrary
-   compute/rclone
 
 .. toctree::
    :maxdepth: 2
@@ -85,8 +83,11 @@ Use of University of Colorado Research Computing resources, including (but not l
 .. toctree::
    :maxdepth: 2
    :caption: Petalibrary
-   
+   petalibrary/petalibrary
+   petalibrary/rclone
    petalibrary/mounting
+   petalibrary/zfs_snapshots
+   petalibrary/ownership
 
 .. toctree::
    :maxdepth: 2
