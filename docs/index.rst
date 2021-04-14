@@ -90,6 +90,8 @@ Use of University of Colorado Research Computing resources, including (but not l
    petalibrary/petalibrary
    petalibrary/rclone
    petalibrary/mounting
+   petalibrary/gdrive
+   petalibrary/synology
    petalibrary/zfs_snapshots
    petalibrary/ownership
 
