@@ -125,6 +125,7 @@ Note that the interactive job won't start until the resources that it needs are 
 2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  All Blanca nodes also have at least 850 GB of scratch space on a local disk, /local/scratch.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics like Blanca CCN or any node on Blanca HPC can run MPI application much more efficiently.
+5. Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.
 
 ### Blanca Preemptable QOS
 
