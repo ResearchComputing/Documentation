@@ -57,9 +57,9 @@ storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
 #### Local Scratch on Summit and Blanca
-All Summit nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the $SLURM_SCRATCH variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your /projects/$USER directory. 
+All Summit nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
 
-As an example of how to use $SLURM_SCRATCH, the following code copies a file to the temporary directory, operates on the file in some fashion creating a new file, then copies that new file back to the projects directory before the job ends.
+As an example of how to use `$SLURM_SCRATCH`, the following code copies a file to the temporary directory, operates on the file in some fashion creating a new file, then copies that new file back to the projects directory before the job ends.
 
 ```
 cp /projects/user1234/job/tmp_file $SLURM_SCRATCH
