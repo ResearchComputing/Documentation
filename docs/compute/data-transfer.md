@@ -76,7 +76,7 @@ docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 ### Filezilla
 
-RC Users also have the option of connecting to RC via Filezilla. Filezilla is a file transfer GUI application that can be used on Windows, Mac, and Linux. Simply [install Filezilla](https://filezilla-project.org/) and follow these steps:
+RC Users also have the option of connecting to RC via _Filezilla_. _Filezilla_ is a file transfer GUI application that can be used on Windows, Mac, and Linux. Simply [install Filezilla](https://filezilla-project.org/) and follow these steps:
 
 1. Fill in the hostname, username, and password fields at the top of the application window. Note: RC Users have the choice of selecting a login or data transfer node. You must be on CU Boulder’s internal network if you want to access a data transfer node.
 
@@ -89,13 +89,13 @@ RC Users also have the option of connecting to RC via Filezilla. Filezilla is a 
       - Username: your-rc-username
       - Password: your-rc-password
 
-2. Press Enter. Accept your Duo 2-Factor Notification. If your connection succeeds you will see your Summit filesystem on the “Remote Site” tab.
-3. Navigate to your selected file in either your Local filesystem or your RC filesystem. Right click the file and click Upload or Download.
+2. Press Enter. Accept your Duo 2-Factor notification. If the connection succeeds you will see your CURC filesystem on the “Remote Site” tab.
+3. Navigate to the file you would like to transfer in either your local filesystem or your CURC filesystem. Right click the file and click "Upload" or "Download".
 
 __Troubleshooting:__
-- If you find your connection timing out before getting a Duo notification, try extending Timeout in File->Settings to be larger.
-- If you receive a 'Insecure FTP Notification', simply click cancel and ensure you have selected 'sftp' as your file transfer method.
-- If your connection to a Data Transfer Node is not prompting a Duo notification double check you are connected to the RC Internal Network.
+- If your connection is timing out before getting a Duo notification, try increasing the _Timeout_ setting in `File->Settings`.
+- If you receive the message 'Insecure FTP Notification', simply click cancel and ensure you have selected 'sftp' as your file transfer method.
+- If your connection to a Data Transfer Node is not prompting a Duo notification double check you are connected to the CU Boulder Internal Network (if you are off campus VPN is required to connect to the campus internal network).
 
 
 ### Secure Copy (scp)
