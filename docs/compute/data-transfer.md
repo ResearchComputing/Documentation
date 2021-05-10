@@ -74,6 +74,29 @@ has a Globus account.
 Detailed information on creating Guest Collections is available [at
 docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
+### Filezilla
+
+RC Users also have the option of connecting to RC via Filezilla. Filezilla is a file transfer GUI application that can be used on Windows, Mac, and Linux. Simply [install Filezilla](https://filezilla-project.org/) and follow these steps:
+
+1. Fill in the hostname, username, and password fields at the top of the application window. Note: RC Users have the choice of selecting a login or data transfer node. You must be on CU Boulder’s internal network if you want to access a data transfer node.
+
+    - _Login Node_
+      - Host: sftp://login.rc.colorado.edu
+      - Username: your-rc-username
+      - Password: your-rc-password
+    - _Data Transfer Node_
+      - Host: sftp://dtn.rc.int.colorado.edu
+      - Username: your-rc-username
+      - Password: your-rc-password
+
+2. Press Enter. Accept your Duo 2-Factor Notification. If your connection succeeds you will see your Summit filesystem on the “Remote Site” tab.
+3. Navigate to your selected file in either your Local filesystem or your RC filesystem. Right click the file and click Upload or Download.
+
+__Troubleshooting:__
+- If you find your connection timing out before getting a Duo notification, try extending Timeout in File->Settings to be larger.
+- If you receive a 'Insecure FTP Notification', simply click cancel and ensure you have selected 'sftp' as your file transfer method.
+- If your connection to a Data Transfer Node is not prompting a Duo notification double check you are connected to the RC Internal Network.
+
 
 ### Secure Copy (scp)
 
