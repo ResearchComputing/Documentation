@@ -67,6 +67,45 @@ cp /projects/user1234/job/tmp_file $SLURM_SCRATCH
 cp new_file /projects/user1234/job/new_file
 ```
 
+### Best practices for using CURC filesystems
+
+#### Storage spaces on CURC, ordered by preference/performance for doing data Input/Output (I/O) during jobs:
+
+1. `$SLURM_SCRATCH` (local SSD)
+  * 100-800 GB/node
+  * Lowest contention of all RC storage resources (only shared with other jobs on the same node)
+  * Deleted when job terminates
+
+
+2. `/scratch/summit/$USER` (Summit only) or `/rc_scratch/$USER` (Blanca only)
+* 10 TB/user (Summit) or ~2 TB/user (Blanca)
+* Data purged after 90 days
+
+3. `/pl/active/<group>`
+* Fee-based compute-capable storage platform
+
+
+4. `/projects/$USER`
+* 250 GB/user
+* Only use if you have a few small files to do I/O on. 
+
+
+#### How to increase I/O performance: 
+
+1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca) first.  
+
+2. If you need to read data from `/pl/active` more than once during a job, copy it to `$SLURM_SCRATCH` at the beginning of the job and read it from there. Or. if the dataset is too big for `$SLURM_SCRATCH`, copy it to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca) and read it from there. 
+
+3. If output files from one job need to be read by other compute jobs, write to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca). 
+
+4. All filesystems struggle to be performant with small file I/O. If you can choose between one file and 100 files for storing the same amount of data, you will see far better performance from the single large file.
+
+5. PetaLibrary (`/pl/active`) is backed by ZFS, which is a Copy on Write filesystem. This means that ZFS does not ever modify a block in place. If you make a small change to a file, ZFS doesn’t change the underlying block, it copies the entire block and makes your change to the new block. Over time this leads to fragmentation and poor performance. When possible, copy data from `/pl/active` to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca), compute against it, and copy data back to `/pl/active`. This helps to avoid fragmentation and write amplification.
+
+6.  If you reuse data within code, try to read it in once and keep it stored as a variable in memory, rather than repeatedly opening the same file each time you need the data (i.e., move file reads outside of “do loops”)
+
+7. Complex codes such as conda environments may not run optimally out of `/pl/active`, although simple codes should be fine.  If you have code on PetaLibrary and suspect the performace is being impacted, make a copy on `/projects/$USER` and use that copy. 
+
 
 ### Monitoring Disk Usage
 
