@@ -78,15 +78,16 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g., V100, A100) if desired.  The available Blanca GPU resources and configurations can be viewed as follows on a login node with the `slurm/blanca` module loaded:
 
 ```bash
-$ blanca sinfo --Format NodeList:30,Gres
-NODELIST                      GRES                
-bgpu-bortz1                   gpu:t4:1            
-bgpu-dhl1                     gpu:p100:2          
-bgpu-mktg1                    gpu:p100:1          
-bnode[0201-0236]              gpu:k2000:1         
-bgpu-casa1,bgpu-papp1         gpu:v100:1          
-bgpu-curc[1-4]                gpu:a100:3          
-bgpu-kann1                    gpu:v100:4         
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "blanca "
+NODELIST                      PARTITION           GRES
+bgpu-bortz1                   blanca-bortz        gpu:t4:1
+bgpu-casa1                    blanca-casa         gpu:v100:1
+bnode[0201-0236]              blanca-ccn          gpu:k2000:1
+bgpu-curc[1-4]                blanca-curc-gpu     gpu:a100:3
+bgpu-dhl1                     blanca-dhl          gpu:p100:2
+bgpu-kann1                    blanca-kann         gpu:v100:4
+bgpu-mktg1                    blanca-mktg         gpu:p100:1
+bgpu-papp1                    blanca-papp         gpu:v100:1      
 ```
 
 __Examples of configurations one could request__:
@@ -96,7 +97,7 @@ _request a single gpu of any type_
 #SBATCH --gres=gpu
 ```
 
-_request a multiple gpus of any type_
+_request multiple gpus of any type_
 ```
 #SBATCH --gres=gpu:3
 ```
@@ -106,14 +107,14 @@ _request a single gpu of type NVIDIA V100_
 #SBATCH --gres=gpu:v100:1
 ```
 
-_request a two gpus of type NVIDIA A100_
+_request two gpus of type NVIDIA A100_
 ```
 #SBATCH --gres=gpu:a100:2
 ```
 
 __Notes__:
   * Examples of full job scripts for GPUs are shown in the next section.
-  * If you will be running preemptable GPU jobs in `--qos=preemptable`, requesting `-gres=gpu` will give you the greatest number of GPU options (i.e., your job will run on _any_ Blanca node that has at least one GPU).  However, you can request specific GPUs as well (e.g,. `gpu:a100`), but your jobs will only run on the subset of GPU nodes that has NVIDIA A100 GPUs.  
+  * If you will be running preemptable GPU jobs in `--qos=preemptable`, requesting `--gres=gpu` will give you the greatest number of GPU options (i.e., your job will run on _any_ Blanca node that has at least one GPU).  However, you can request specific GPUs as well (e.g,. `gpu:a100`), but your jobs will only run on the subset of GPU nodes that has that type.  
 
 ### Examples
 
