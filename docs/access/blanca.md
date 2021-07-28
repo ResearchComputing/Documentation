@@ -66,10 +66,55 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 - **Quadro**: NVIDIA GPU generation  
 - **Tesla**: NVIDIA GPU generation  
 - **k2000**: NVIDIA K2000 GPU  
+- **T4**: NVIDIA T4 GPU  
 - **P100**: NVIDIA P100 GPU  
+- **V100**: NVIDIA V100 GPU  
+- **A100**: NVIDIA A100 GPU  
 - **localraid**: large, fast RAID disk storage in node  
 - **rhel7**: RedHat Enterprise Linux version 7 operating system  
 
+#### Requesting GPUs in jobs
+
+Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g., V100, A100) if desired.  The available Blanca GPU resources and configurations can be viewed as follows on a login node with the `slurm/blanca` module loaded:
+
+```bash
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "blanca "
+NODELIST                      PARTITION           GRES
+bgpu-bortz1                   blanca-bortz        gpu:t4:1
+bgpu-casa1                    blanca-casa         gpu:v100:1
+bnode[0201-0236]              blanca-ccn          gpu:k2000:1
+bgpu-curc[1-4]                blanca-curc-gpu     gpu:a100:3
+bgpu-dhl1                     blanca-dhl          gpu:p100:2
+bgpu-kann1                    blanca-kann         gpu:v100:4
+bgpu-mktg1                    blanca-mktg         gpu:p100:1
+bgpu-papp1                    blanca-papp         gpu:v100:1      
+```
+
+__Examples of configurations one could request__:
+
+_request a single gpu of any type_
+```
+#SBATCH --gres=gpu
+```
+
+_request multiple gpus of any type_
+```
+#SBATCH --gres=gpu:3
+```
+
+_request a single gpu of type NVIDIA V100_
+```
+#SBATCH --gres=gpu:v100:1
+```
+
+_request two gpus of type NVIDIA A100_
+```
+#SBATCH --gres=gpu:a100:2
+```
+
+__Notes__:
+  * Examples of full job scripts for GPUs are shown in the next section.
+  * If you will be running preemptable GPU jobs in `--qos=preemptable`, requesting `--gres=gpu` will give you the greatest number of GPU options (i.e., your job will run on _any_ Blanca node that has at least one GPU).  However, you can request specific GPUs as well (e.g,. `gpu:a100`), but your jobs will only run on the subset of GPU nodes that has that type.  
 
 ### Examples
 
@@ -92,7 +137,16 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --export=NONE
 ```
 
-3. To run an 8-core job in the low-priority QoS on any node that has broadwell processors and uses the RHEL 7 operating system:
+3. To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three gpus:
+```bash
+#SBATCH --qos=blanca-curc-gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --time=36:00:00
+#SBATCH --gres=gpu:3
+```
+
+4. To run an 8-core job in the low-priority QoS on any node that has broadwell processors and uses the RHEL 7 operating system:
 ```bash
 #SBATCH --qos=preemptable
 #SBATCH --nodes=1
@@ -102,7 +156,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --constraint="broadwell&rhel7"
 ```
 
-4. To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:
+5. To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:
 ```bash
 #SBATCH --qos=preemptable
 #SBATCH --nodes=1
@@ -112,7 +166,17 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --constraint="avx|avx2"
 ```
 
-5. To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:
+6. To run an 8-core job in the low-priority QoS on any node that has at least 1 GPU:
+```bash
+#SBATCH --qos=preemptable
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --time=4:00:00
+#SBATCH --export=NONE
+#SBATCH --gres=gpu
+```
+
+7. To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:
 ```bash
 sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
 ```

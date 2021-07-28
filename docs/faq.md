@@ -3,13 +3,14 @@
 See our documentation [homepage](index.html) for information about our most common topics.
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
-2. [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are)  
-3. [When will my job start?](#when-will-my-job-start) 
-4. [How can I get system metrics?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
-5. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
-6. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
-7. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
-8. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
+2. [How do I acknowledge use of CURC Resources?](https://curc.readthedocs.io/en/latest/index.html#acknowledging-rc)
+3. [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are)  
+4. [When will my job start?](#when-will-my-job-start) 
+5. [How can I get system metrics?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
+6. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
+7. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
+8. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
+9. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
 8. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
 9. [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  

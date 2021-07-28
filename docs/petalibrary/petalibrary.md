@@ -11,6 +11,8 @@ Use the PetaLibrary to store, archive and share research data.
      * 100 TB in Archive Storage
      * Email <rc-help@colorado.edu> to request more space if necessary
 
+PetaLibrary access is subject to the [PetaLibrary Terms of Service](https://www.colorado.edu/rc/resources/petalibrary/tos).
+
 
 ### Accessing the PetaLibrary
 
