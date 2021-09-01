@@ -53,6 +53,8 @@ common memory that they can freely use.
 
 ![](https://computing.llnl.gov/tutorials/parallel_comp/images/shared_mem.gif "shared_model")
 
+![shared_model](https://computing.llnl.gov/tutorials/parallel_comp/images/shared_mem.gif)
+
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
 
 __Distributed Memory Model:__
