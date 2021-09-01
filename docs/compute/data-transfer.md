@@ -36,7 +36,7 @@ is RC's recommended way of transfering data.
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
-*If you're with an institution other than CU Boulder, your institution
+*If you're with an institution other than CU Boulder (e.g. XSEDE), your institution
  may still be available for Globus authentication using the InCommon
  federation. Look for your institution in the list and sign in with
  your local credentials. If your institution is not listed, you will
