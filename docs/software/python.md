@@ -69,7 +69,7 @@ Both options are discussed below.
 To use the CURC Intel Python distribution or **"idp"** (python v3.6.8), run the following command with Anaconda initialized:
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate idp
+(base) [johndoe@shas0137 ~]$ conda activate /curc/sw/anaconda3/2019.03/envs/idp 
 ```
 
 You will know that you have properly activated the environment because you should see `(idp)` replace the `(base)` in front of your prompt. Now the Intel Python distribution is loaded into your enviornment and can be accessed with the `python` command.
@@ -79,7 +79,7 @@ To see the python packages available in the idp environment, you can type `conda
 Similarly to use the CURC R distribution (R v3.6.0), run the following command with Anaconda initialized:
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate rstudio
+(base) [johndoe@shas0137 ~]$ conda activate /curc/sw/anaconda3/2019.03/envs/rstudio
 ```
 
 You will know that you have properly activated the environment because you should see `(rstudio)` in front of your prompt. To see the R packages available in the environment, you can type `conda list`. Now, you can use R as you normally would. 

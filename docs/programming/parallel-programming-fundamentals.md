@@ -51,7 +51,7 @@ __Shared Memory Model:__
 In a shared memory model all processors to have access to a pool of
 common memory that they can freely use.
 
-![](https://computing.llnl.gov/tutorials/parallel_comp/images/shared_mem.gif "shared_model")
+![](https://hpc.llnl.gov/sites/default/files/shared_mem.gif "shared memory model")
 
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
 
@@ -62,7 +62,7 @@ available to each processor.  Because memory isn’t shared inherently,
 information that must be shared between processes is sent over a
 network.
 
-![](https://computing.llnl.gov/tutorials/parallel_comp/images/distributed_mem.gif "distributed_model")
+![](https://hpc.llnl.gov/sites/default/files/distributed_mem.gif "distributed memory model")
 
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/>)
 
@@ -72,7 +72,7 @@ A split distributed/shared model is a hybrid between a shared and
 distributed model and has the properties of both. Each separate set of
 processors sharing a set of common memory is called a node.
 
-![](https://computing.llnl.gov/tutorials/parallel_comp/images/hybrid_mem2.gif "hybrid_model")
+![](https://hpc.llnl.gov/sites/default/files/hybrid_mem2.gif "hybrid_model")
 
 (Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
 
