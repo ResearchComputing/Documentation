@@ -6,7 +6,7 @@ CU OnDemand is a browser based, integrated, single access point for all of your 
 
 > **_NOTE:_** _OnDemand is in beta and is currenly only available to CU users_
  
-To connect to CU OnDemand, visit https://ondemand.rc.colorado.edu/. The first page of CU OnDemand will bring you to a login prompt. Use your CU Research Computing credentials to login and 2-factor authenticate using Duo. If you need a CU Research Computing account please visit https://curc.readthedocs.io/en/latest/access/logging-in.html to get started.
+To connect to CU OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CU OnDemand will bring you to a login prompt. Use your CU Research Computing credentials to login and 2-factor authenticate using Duo. If you need a CU Research Computing account please visit [our acccount request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
 
 Once you successfully login you will land on the welcome page.
 
@@ -18,11 +18,11 @@ The File menu allows users to view and operate on files in three different file 
 
 Selecting one of the file spaces will open a separate browser window which will allow you to navigate the space in a graphical setting similar to a file browser on personal computers. From here users can download, upload, create, delete, and open files.
 
-> **_NOTE 1:_** _Use Globus to transfer files to /scratch/summit or /rc_scratch._
+> **_NOTE 1:_** _Use [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers) to transfer files to /scratch/summit or /rc_scratch._
 
-> **_NOTE 2:_** _If you have more than 1 GB of data to transfer, please use Globus._
+> **_NOTE 2:_** _If you have more than 1 GB of data to transfer, please use [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers)._
 
-For additional detail: OSC's File Transfer and Management help page provides details on its use.
+For additional detail: [OSC's File Transfer and Management help page](https://www.osc.edu/resources/online_portals/ondemand/file_transfer_and_management).
 
 #### Jobs Menu
 
@@ -30,7 +30,7 @@ Jobs can be monitored, created, edited and scheduled with the job management too
 
 * __Active Jobs:__ Under the “Active Jobs” tab you can view active jobs. You can choose to view your jobs (or all jobs) as well as choose from specific clusters (Blanca, Summit, Viz-Core, or all Custers). From this menu you can cancel your own jobs.
 
-* __Job Composer:__ Create and edit job scripts and schedule jobs under this menu.  OSC's File Transfer and Management help page provides details on its use.
+* __Job Composer:__ Create and edit job scripts and schedule jobs under this menu. [OSC's File Transfer and Management help page](https://www.osc.edu/resources/online_portals/ondemand/file_transfer_and_management) provides details on its use.
 
 #### Shell Access
 
@@ -38,7 +38,7 @@ The Clusters tab provides shell access to login nodes on CURC clusters. The shel
 
 * __Summit:__ The Summit tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal.
 
-* __Blanca:__ The Blanca tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal. To load the Blanca Slurm environment, make sure to type “module load slurm/blanca upon login. More information on using the Blanca cluster can be found here.
+* __Blanca:__ The Blanca tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal. To load the Blanca Slurm environment, make sure to type “module load slurm/blanca upon login. More information on using the [Blanca cluster can be found here](https://curc.readthedocs.io/en/latest/access/blanca.html).
 
 #### Interactive Applications
 
@@ -49,7 +49,7 @@ The Interactive Applications menu contains options to launch certain application
 1. When starting a Remote Desktop session on the Viz cluster you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify account).
 2. Click “launch” to submit the Remote Destop job to the queue. The wait time depends on the number of cores as well as time requested. 
 3. When your Remote Desktop is ready you can click the “Launch VIZ CORE VNC.” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust these settings as necessary. 
-4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software.
+4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
 
 > **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._
 
@@ -58,10 +58,8 @@ The Interactive Applications menu contains options to launch certain application
 1. When starting an interactive MatLab job you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job including the Matlab version. In most cases the defaults will be adequate (i.e, no need to specify an account).
 2. Click “launch” to submit the MATLAB job to the queue. The wait time depends on the number of cores, nodes, and time requested.
 3. When your Matlab session is ready you can click the “Launch MATLAB on Core- CURC” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Matlab session will be started in a new window.
-4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software.
 
-
-> **_NOTE:_** _Matlab can also be opened in the Remote Desktop (VIZ CORE VNC), once you’ve opened a Remote Desktop session instructions can be found at https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software._
+> **_NOTE:_** _Matlab can also be opened in the Remote Desktop (VIZ CORE VNC), once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software)._
 
 > **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._
 
@@ -73,10 +71,7 @@ The Interactive Applications menu contains options to launch certain application
 
 3. Click “launch” to submit the JupyterNotebook job to the queue. The wait time depends on the number of nodes and cores as well as time requested.
 4. Once your Jupyter Notebook session is ready you can click the “Launch Jupyter Notebook” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Jupyter Notebook session will be started in a new window.
-5. For more information on running Jupyter Notebooks check out RC’s page on Jupyter.
-
-
-> **_NOTE:_** _Note: Matlab can also be opened in the Remote Desktop (VIZ CORE VNC), once you’ve opened a Remote Desktop session instructions can be found at https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software._
+5. For more information on running Jupyter Notebooks [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
 
 > **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._ 
 
