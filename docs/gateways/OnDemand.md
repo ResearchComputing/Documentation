@@ -8,6 +8,8 @@ CU OnDemand is a browser based, integrated, single access point for all of your 
  
 To connect to CU OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CU OnDemand will bring you to a login prompt. Use your CU Research Computing credentials to login and 2-factor authenticate using Duo. If you need a CU Research Computing account please visit [our acccount request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
 
+![](OnDemand/login_page.png)
+
 ### Features
 
 When you have successfully logged into Cu OnDemand you will see the landing page with the following features broken into tabs along the top of the page: Files, Jobs, Clusters (shell access), Interactive Apps, and My Interactive Sessions.
