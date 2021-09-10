@@ -103,6 +103,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    gateways/jupyterhub
    gateways/enginframe
    gateways/xdmod
+   gateways/OnDemand
 
 .. toctree::
    :maxdepth: 2
