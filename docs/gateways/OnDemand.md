@@ -8,9 +8,9 @@ CU OnDemand is a browser based, integrated, single access point for all of your 
  
 To connect to CU OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CU OnDemand will bring you to a login prompt. Use your CU Research Computing credentials to login and 2-factor authenticate using Duo. If you need a CU Research Computing account please visit [our acccount request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
 
-Once you successfully login you will land on the welcome page.
-
 ### Features
+
+When you have successfully logged into Cu OnDemand you will see the landing page with the following features broken into tabs along the top of the page: Files, Jobs, Clusters (shell access), Interactive Apps, and My Interactive Sessions.
 
 #### File Menu
 
@@ -32,7 +32,7 @@ Jobs can be monitored, created, edited and scheduled with the job management too
 
 * __Job Composer:__ Create and edit job scripts and schedule jobs under this menu. [OSC's File Transfer and Management help page](https://www.osc.edu/resources/online_portals/ondemand/file_transfer_and_management) provides details on its use.
 
-#### Shell Access
+#### Clusters (i.e. Shell Access)
 
 The Clusters tab provides shell access to login nodes on CURC clusters. The shell terminal is similar to many other tools that provide terminal access.
 
@@ -42,7 +42,7 @@ The Clusters tab provides shell access to login nodes on CURC clusters. The shel
 
 #### Interactive Applications
 
-The Interactive Applications menu contains options to launch certain applications that have graphical user interfaces (GUIs), for interactive use on CURC clusters. Current supported applications include a remote desktop from the visual cluster (viz), MATLAB, and Jupyter Notebook.
+The Interactive Applications menu contains options to launch certain applications that have graphical user interfaces (GUIs), for interactive use on CURC clusters. Current supported applications include a __remote desktop from the visual cluster (viz), MATLAB, and Jupyter Notebook__.
 
 ##### Remote Desktop (Viz-Core VNC)
 
@@ -69,9 +69,9 @@ The Interactive Applications menu contains options to launch certain application
 
 > **_NOTE:_** _Jobs are currently limited to 1 core per node requested._
 
-3. Click “launch” to submit the JupyterNotebook job to the queue. The wait time depends on the number of nodes and cores as well as time requested.
-4. Once your Jupyter Notebook session is ready you can click the “Launch Jupyter Notebook” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Jupyter Notebook session will be started in a new window.
-5. For more information on running Jupyter Notebooks [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
+2. Click “launch” to submit the JupyterNotebook job to the queue. The wait time depends on the number of nodes and cores as well as time requested.
+3. Once your Jupyter Notebook session is ready you can click the “Launch Jupyter Notebook” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Jupyter Notebook session will be started in a new window.
+4. For more information on running Jupyter Notebooks [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
 
 > **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._ 
 
