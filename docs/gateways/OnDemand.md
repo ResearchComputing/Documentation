@@ -38,7 +38,7 @@ Jobs can be monitored, created, edited and scheduled with the job management too
 
 ![](OnDemand/active_jobs.png)
 
-* __Job Composer:__ Create and edit job scripts and schedule jobs under this menu. [OSC's File Transfer and Management help page](https://www.osc.edu/resources/online_portals/ondemand/file_transfer_and_management) provides details on its use.
+* __Job Composer:__ Create and edit job scripts and schedule jobs under this menu. [OSC's Job Management help page](https://www.osc.edu/resources/online_portals/ondemand/job_management) provides details on its use.
 
 ![](OnDemand/job_composer.png)
 
