@@ -1,10 +1,10 @@
-## CU OnDemand _(Browser based access for all of your HPC resources)_
+## CU Open OnDemand _(Browser based access for all of your HPC resources)_
 
 CU OnDemand is a browser based, integrated, single access point for all of your HPC resources. CU OnDemand provides a graphical interface to view, edit, download, and upload files, manage and create job templates, and access CURC interactive applications (Viz cluster, Matlab, and JupyterNotebooks), all via a web browser and with minimal knowledge of Linux and scheduler commands.
 
-### Getting started with OnDemand
+### Getting started with CU Open OnDemand
 
-> **_NOTE:_** _OnDemand is in beta and is currenly only available to CU users_
+> **_NOTE:_** _This is a beta release of Open OnDemand currenly only available to CU users_
  
 To connect to CU OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CU OnDemand will bring you to a login prompt. Use your CU Research Computing credentials to login and 2-factor authenticate using Duo. If you need a CU Research Computing account please visit [our acccount request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
 
