@@ -107,6 +107,14 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
+   :caption: CUmulus
+
+   cumulus/cumulus
+   cumulus/allocation
+   cumulus/project-management
+
+.. toctree::
+   :maxdepth: 2
    :caption: Software
 
    software/loadbalancer
