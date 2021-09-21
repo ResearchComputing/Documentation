@@ -22,16 +22,16 @@ CU Research Computing manages the resources and address systems-level issues as 
 
 ### Using CUmulus
 
-#### Appropreate use cases:
+#### Appropriate use cases:
 - Workflow management software that monitors/schedules jobs on Summit, Alpine, or Blanca
 - Running a research database/website application that queries data stored on CURC PetaLibrary 
 - Web-based research “Hubs” (JupyterHub, Shiny Apps)
 
-#### Inappropreate use cases: 
+#### Inappropriate use cases: 
 - Running workflows that you could run on Summit, Alpine or Blanca
 - Websites that do not require connectivity to CURC resources
 - Websites that do not require connectivity to CURC resources
-- Severless applications
+- Serverless applications
 
 > **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have a small seed grant from Amazon Web Services and may be able to provide you with AWS resources that suit your needs._
 > Possible AWS Cases:

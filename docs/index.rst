@@ -106,12 +106,18 @@ Use of University of Colorado Research Computing resources, including (but not l
    gateways/OnDemand
 
 .. toctree::
-   :maxdepth: 2
-   :caption: CUmulus
+   :maxdepth: 3
+   :caption: CURC Hybric Cloud
 
-   cumulus/cumulus
-   cumulus/allocation
-   cumulus/project-management
+   hybrid-cloud/hybrid-cloud
+   hybrid-cloud/mist/mist
+   hybrid-cloud/mist/add-cloud
+   hybrid-cloud/cumulus/cumulus
+   hybrid-cloud/cumulus/allocation
+   hybrid-cloud/cumulus/project-management
+   hybrid-cloud/aws/aws
+   hybrid-cloud/aws/allocation
+   hybrid-cloud/aws/project-management
 
 .. toctree::
    :maxdepth: 2
