@@ -1,4 +1,4 @@
-## CURC Hybrid Cloud
+## CUmulus (CURC Hybrid Cloud)
 
 The University of Colorado Research Computing hybrid-cloud supports computing, data, and science gateway needs that may not be good fits for the existing high-performance and high-throughput computing infrastructure provided to campus and regional research groups.
 
