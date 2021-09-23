@@ -100,19 +100,21 @@ Once we receive your request the allocation committee will review it. If the cas
 
 Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select this option from the authentication pull-down).
 
-> login image
+![](cumulus/login.png)
 
 The first attempt to login will fail because you have not been assigned to any groups or roles. Once you have attempted to login respond to the email that your project was set up and your username will be processed.
 
 Once your username is processed you will be able to login, you will land on the "Overview page" which provides information about your project (computing, volume, and network usage). You can select a period of time to query usage below the main overview graphics as well as view all current vm instances.
 
-> overview image
+![](cumulus/overview.png)
 
 #### Create New Instance
 
-> instance creation window
+![](cumulus/instances.png)
 
 To create a new vm instance navigate to Project -> Compute -> Instances on the side-bar. On this page you will see all currently running instances(there should be no instances running your first time). Click on "Launch Instance," which will bring up the instance creation window. 
+
+![](cumulus/instance_creation.png)
 
 1) Details: naming and giving your instance a brief description (availability zone and count can be left as defaults).
 
@@ -141,7 +143,7 @@ To create a new vm instance navigate to Project -> Compute -> Instances on the s
 To add a publicly accessible IP to your instance, navigate to Project -> Network -> Floating IPs, which will show you a list of currently available public IP addresses. Select "Associate IP" from the list under the "Actions" column to associate with an instance. 
 > _Note:_ If no floating IPs exist, email [rc-help@colorado.edu](rc-help@colorado.edu).
 
-> Floating IPs image
+![](cumulus/floating_ips.png)
 
 #### Adding Users to your Project
 
