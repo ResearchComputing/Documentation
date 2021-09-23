@@ -2,7 +2,7 @@
 
 ### About CUmulus
 
-CUmulus is an NSF-funded on-premise cloud system hosted by CU Research Computing. The CUmulus service includes access to a private cloud "vpc" with a small number of outside routable "floating IPs".  Within this "vpc" customers will be given an allocation of:
+CUmulus is an NSF-funded on-premise cloud system hosted by CU Research Computing based on OpenStack, an open standard cloud computing platform. The CUmulus service includes access to a private cloud "vpc" with a small number of outside routable "floating IPs".  Within this "vpc" customers will be given an allocation of:
  - CPU cores
  - Memory
  - Storage
@@ -95,6 +95,58 @@ Once we receive your request the allocation committee will review it. If the cas
 - Production period: 
 
 	If trial period was successful, adjust resources based on trial period and grant 1-year allocation.  
+
+### Project Management
+
+Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select this option from the authentication pull-down).
+
+> login image
+
+The first attempt to login will fail because you have not been assigned to any groups or roles. Once you have attempted to login respond to the email that your project was set up and your username will be processed.
+
+Once your username is processed you will be able to login, you will land on the "Overview page" which provides information about your project (computing, volume, and network usage). You can select a period of time to query usage below the main overview graphics as well as view all current vm instances.
+
+> overview image
+
+#### Create New Instance
+
+> instance creation window
+
+To create a new vm instance navigate to Project -> Compute -> Instances on the side-bar. On this page you will see all currently running instances(there should be no instances running your first time). Click on "Launch Instance," which will bring up the instance creation window. 
+
+1) Details: naming and giving your instance a brief description (availability zone and count can be left as defaults).
+
+2) Source: "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available.
+
+3) Flavor: Select general purpose compute flavors for research workload; the general resources needed for this instance (keep in mind OS prerequisites).
+
+4) Networks: defaults
+
+5) Network Ports: defaults
+
+6) Security Groups: Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping and troubleshoot your instance).
+
+7) Key Pair: Create an ssh-key from your local machine ([ssh documentation](https://www.ssh.com/academy/ssh/public-key-authentication))and upload the public-key.
+
+8) Configuration: defaults
+
+9) Server Group: defaults
+
+10) Scheduler Hints: defaults
+
+11) Metadata: defaults
+
+#### Connect Floating IP to instance
+
+To add a publicly accessible IP to your instance, navigate to Project -> Network -> Floating IPs, which will show you a list of currently available public IP addresses. Select "Associate IP" from the list under the "Actions" column to associate with an instance. 
+> _Note:_ If no floating IPs exist, email [rc-help@colorado.edu](rc-help@colorado.edu).
+
+> Floating IPs image
+
+#### Adding Users to your Project
+
+Project group members can be added/removed using CU Boulder's [Grouper application](https://oit.colorado.edu/tutorial/grouper-manage-members-email-enabled-groups).
+
 
 
 
