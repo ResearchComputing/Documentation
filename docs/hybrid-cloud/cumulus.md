@@ -1,5 +1,7 @@
 ## CUmulus _(CURC On-Premise Cloud Service)_
 
+### About CUmulus
+
 CUmulus is an NSF-funded on-premise cloud system hosted by CU Research Computing. The CUmulus service includes access to a private cloud "vpc" with a small number of outside routable "floating IPs".  Within this "vpc" customers will be given an allocation of:
  - CPU cores
  - Memory
@@ -13,7 +15,7 @@ Research Computing staff will manage the security of the OpenStack platform and 
 
 In addition, OIT Public Cloud Broker staff will provide [consultation services](https://oit.colorado.edu/services/consulting-professional-services/public-cloud-broker/consulting-services) with cloud architecture planning and optimization to assist with usage of this platform.
 
-### Features
+#### Features
 - Virtual machine creation
 - Disk volume creation/snapshot
 - Basic Infrastructure monitoring
@@ -27,7 +29,7 @@ In addition, OIT Public Cloud Broker staff will provide [consultation services](
 > - 4GB RAM per CPU core
 > - 101.3TB of object-oriented storage
 
-### Eligibility
+#### Eligibility
 
 CUmulus is a free-to-use cloud system where:
 - 80% of cycles: CU Boulder faculty, staff, students, and affiliates
@@ -35,7 +37,7 @@ CUmulus is a free-to-use cloud system where:
 
 > To ensure optimal usage, unused cycles are preemptively available to the Open Science Grid ([OSG](https://opensciencegrid.org/))
 
-### Expectations
+#### Expectations
 
 CU Research Computing manages the resources and address systems-level issues as they arise. Users will be expected to deploy and manage their cloud instances, including selecting security policies and networking protocols, installing and maintaining software, and running computational workflows. Users are essentially “system administrators” of their cloud instance. 
 
@@ -59,14 +61,14 @@ Customers of CUmulus will:
 - Comply with baseline security standards (see [https://www.cu.edu/security/system-wide-baseline-security-standards](https://www.cu.edu/security/system-wide-baseline-security-standards))
 - Comply with acceptable use policies [https://www.colorado.edu/policies/acceptable-use-cu-boulders-it-resources](https://www.colorado.edu/policies/acceptable-use-cu-boulders-it-resources) 
 
-### Using CUmulus
+#### Using CUmulus
 
-#### Appropriate use cases:
+##### Appropriate use cases:
 - Workflow management software that monitors/schedules jobs on Summit, Alpine, or Blanca
 - Running a research database/website application that queries data stored on CURC PetaLibrary 
 - Web-based research “Hubs” (JupyterHub, Shiny Apps)
 
-#### Inappropriate use cases: 
+##### Inappropriate use cases: 
 - Running workflows that you could run on Summit, Alpine or Blanca
 - Websites that do not require connectivity to CURC resources
 - Websites that do not require connectivity to CURC resources
@@ -76,3 +78,24 @@ Customers of CUmulus will:
 > Possible AWS Cases:
 > - Workflow that cannot be run on Summit/Alpine/Blanca and resource needs are too big for CUmulus
 > - Workflow that require access to very large datasets that are only hosted on AWS (e.g., some NASA satellite datasets)
+
+###  Requesting Access to CUmulus
+
+The application process for CUmulus requires to submit a [Google form]() to propose your use case. In this application you will:
+- Describe your proposed CUmulus workflow
+- Describe why this workflow is appropriate for CUmulus and cannot be accommodated by other CURC resources (Summit, Alpine or Blanca)
+- Estimate the resources you require (operating system, CPU cores, disk space, memory)
+
+Once we receive your request the allocation committee will review it. If the case is deemed appropriate by the allocations committee the following will occur.
+
+- 30 day trial period to allow you to set up your instance and test it:
+
+	We will review trial usage with you at 30 days. 
+
+- Production period: 
+
+	If trial period was successful, adjust resources based on trial period and grant 1-year allocation.  
+
+
+
+
