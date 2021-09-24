@@ -1,6 +1,6 @@
 ## CUmulus _(On-Premise Cloud)_
 
-CU Research Computing hosts an on-premise cloud service, called CUmulus, which supports cases not well suited for HPC such as webservers, databases, and long-running services. 
+CU Research Computing hosts a free-to-use on-premise cloud service, called _CUmulus_, which supports cases not well-suited for HPC such as webservers, databases, and long-running services. 
 
 The CUmulus service includes access to a Virtual Private Cloud (VPC) which provides users with a logically isolated section of the cloud with a small number of outside routable floating IP addresses.  Within this VPC customers will be given an allocation of:
  - CPU cores
@@ -13,14 +13,14 @@ which can be used to host virtual machines and volumes to host workloads.
 
 1) Request access to CUmulus by filling out the [Google Form]() application.
 2) Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/).
-- Create VM instances
-- Create volumes
+- Create virtual machine instances with specified CPUs and memory
+- Create storage volumes
 
 #### Features
 - Virtual machine creation
-- Disk volume creation/snapshot
+- Storage volume creation/snapshot
 - Basic Infrastructure monitoring
-- Assignment of routable "floating IPs"
+- Assignment of routable "floating IPs" (e.g., for web-hosting)
 - High availability in the event of underlying hardware failure
 - Load balancing of virtual resources across multiple physical machines
 - Console access to hosted VMs
@@ -44,8 +44,6 @@ CU Research Computing manages the resources and address systems-level issues as 
 
 > **_NOTE:_** _CU Research Computing does not support administration within CUmulus cloud instances._
 
-#### Using CUmulus
-
 ##### Appropriate use cases:
 - Workflow management software that monitors/schedules jobs on Summit, Alpine, or Blanca
 - Running a research database/website application that queries data stored on CURC PetaLibrary 
@@ -53,7 +51,6 @@ CU Research Computing manages the resources and address systems-level issues as 
 
 ##### Inappropriate use cases: 
 - Running workflows that you could run on Summit, Alpine or Blanca
-- Websites that do not require connectivity to CURC resources
 - Websites that do not require connectivity to CURC resources
 - Serverless applications
 
@@ -117,8 +114,8 @@ To create a new VM instance click on "Launch Instance" button on the top bar fro
 > - Windows 10 Enterprise LTSC 2019
 
 
-3) Flavor: Choose from a list of pre-selected resource (flavors manage the sizing for the compute, memory, and storage of the instance).
-> _Note:_ keep in mind OS prerequisites).
+3) Flavor: Choose from a list of pre-selected resources (these "flavors" manage the sizing for the compute, memory, and storage of the instance).
+> _Note:_ keep in mind your OS prerequisites.
 
 4) Networks: Keep defaults.
 
