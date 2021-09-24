@@ -1,6 +1,4 @@
-## CUmulus _(CURC On-Premise Cloud Service)_
-
-### About CUmulus
+## CUmulus _(On-Premise Cloud)_
 
 CU Research Computing hosts an on-premise cloud service, called CUmulus, which supports cases not well suited for HPC such as webservers, databases, and long-running services. 
 
@@ -10,6 +8,11 @@ The CUmulus service includes access to a Virtual Private Cloud (VPC) which provi
  - Storage
 
 which can be used to host virtual machines and volumes to host workloads.
+
+#### CUmulus Quick Start
+
+1) Request access to CUmulus by filling out the [Google Form]() application.
+2) Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/).
 
 #### Features
 - Virtual machine creation
@@ -39,24 +42,6 @@ CU Research Computing manages the resources and address systems-level issues as 
 
 > **_NOTE:_** _CU Research Computing does not support administration within CUmulus cloud instances._
 
-RC will:
-- Maintain a recent version of OpenStack with availability of both command line and web console access with Identikey
-- Maintain a high availability environment within the constraints of business hours staffing (no on-call support)
-- Maintain the platform according to baseline security standards (see [https://www.cu.edu/security/system-wide-baseline-security-standards](https://www.cu.edu/security/system-wide-baseline-security-standards))
-- Respond within 24 hours to any support requests
-- Assist with planning and architecture for usage of the platform
-- Take action to address any abuse or misuse of the platform
-- Provide supported base images for customers to use on the platform (these are provided without warranty, but represent known working operating systems on the CUmulus platform). Over time we may add additional features to these images to make them more usable in this environment
-
-
-Customers of CUmulus will:
-- Utilize the platform only for the storage/processing of Public data (see [https://www.cu.edu/security/data-classification](https://www.cu.edu/security/data-classification))
-- Plan for and maintain an operating system patching process that ensures patches are installed at least quarterly
-- Configure applications software with security in mind (e.g. use of least privilege when configuring security groups)
-- Address any vulnerabilities identified by OIT or OIS in running operating systems or software in a timely manner
-- Comply with baseline security standards (see [https://www.cu.edu/security/system-wide-baseline-security-standards](https://www.cu.edu/security/system-wide-baseline-security-standards))
-- Comply with acceptable use policies [https://www.colorado.edu/policies/acceptable-use-cu-boulders-it-resources](https://www.colorado.edu/policies/acceptable-use-cu-boulders-it-resources) 
-
 #### Using CUmulus
 
 ##### Appropriate use cases:
@@ -70,7 +55,7 @@ Customers of CUmulus will:
 - Websites that do not require connectivity to CURC resources
 - Serverless applications
 
-> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have a small seed grant from Amazon Web Services and may be able to provide you with AWS resources that suit your needs._
+> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._
 > Possible AWS Cases:
 > - Workflow that cannot be run on Summit/Alpine/Blanca and resource needs are too big for CUmulus
 > - Workflow that require access to very large datasets that are only hosted on AWS (e.g., some NASA satellite datasets)
@@ -94,13 +79,13 @@ Once we receive your request the allocation committee will review it. If the cas
 
 ### Project Management
 
-Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select this option from the authentication pull-down).
+Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface at: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
 ![](cumulus/login.png)
 
-The first attempt to login will fail because you have not been assigned to any groups or roles. Once you have attempted to login respond to the email that your project was set up and your username will be processed.
+The first attempt to login will automatically fail because you have not been assigned to any groups or roles. Once you have attempted to login please respond to your acceptance email that you have attempted to login and your username will be processed. 
 
-Once your username is processed you will be able to login, you will land on the "Overview page" which provides information about your project (computing, volume, and network usage). You can select a period of time to query usage below the main overview graphics as well as view all current vm instances.
+Once your username is processed you will be able to login. The landing page for CUmulus is the "Overview page" which provides you basic information about your project (compute, volume, and network usage). You can select a period of time to query usage below the main overview graphics as well as view all current vm instances.
 
 ![](cumulus/overview.png)
 
