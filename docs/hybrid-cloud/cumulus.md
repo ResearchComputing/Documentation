@@ -13,6 +13,8 @@ which can be used to host virtual machines and volumes to host workloads.
 
 1) Request access to CUmulus by filling out the [Google Form]() application.
 2) Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/).
+- Create VM instances
+- Create volumes
 
 #### Features
 - Virtual machine creation
@@ -91,15 +93,29 @@ Once your username is processed you will be able to login. The landing page for 
 
 #### Create New Instance
 
+Instances are virtual machines (VM) within your Virtual Private Cloud's (VPC) project. You can view the resources each instance is using at the bottom of the "Overview" page. In order to create an instance you must specify the resources you wish to allocate from your project.
+
+To view more details about your instances navigate to: Project -> Compute -> Instances, on the side-bar. On this page you will see all currently running instances(there should be no instances running your first time logging in). 
+
 ![](cumulus/instances.png)
 
-To create a new vm instance navigate to Project -> Compute -> Instances on the side-bar. On this page you will see all currently running instances(there should be no instances running your first time). Click on "Launch Instance," which will bring up the instance creation window. 
+To create a new VM instance click on "Launch Instance" button on the top bar from the "Instances" page (above). This will bring up the instance launch window which will guide you in creating a new instance by selecting your operating system, allocating resources, choosing security groups, and adding ssh keys.
 
 ![](cumulus/instance_creation.png)
 
-1) Details: naming and giving your instance a brief description (availability zone and count can be left as defaults).
+1) Details: Name and give your instance a brief description (availability zone and count can be left as defaults).
 
-2) Source: "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available.
+2) Source: You can choose an operating system from the images CURC provides (below). "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available.
+> Available Operating Systems:
+> - CentOS 7
+> - CentOS 8
+> - Debian 10
+> - Red Hat Enterprise Linux 8
+> - Ubuntu Server 18.04 LTS
+> - Ubuntu Server 20.04 LTS
+> - Windows 10 Enterprise 20H2
+> - Windows 10 Enterprise LTSC 2019
+
 
 3) Flavor: Select general purpose compute flavors for research workload; the general resources needed for this instance (keep in mind OS prerequisites).
 
