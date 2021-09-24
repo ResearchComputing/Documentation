@@ -117,28 +117,31 @@ To create a new VM instance click on "Launch Instance" button on the top bar fro
 > - Windows 10 Enterprise LTSC 2019
 
 
-3) Flavor: Select general purpose compute flavors for research workload; the general resources needed for this instance (keep in mind OS prerequisites).
+3) Flavor: Choose from a list of pre-selected resource (flavors manage the sizing for the compute, memory, and storage of the instance).
+> _Note:_ keep in mind OS prerequisites).
 
-4) Networks: defaults
+4) Networks: Keep defaults.
 
-5) Network Ports: defaults
+5) Network Ports: Keep defaults. 
 
-6) Security Groups: Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping and troubleshoot your instance).
+6) Security Groups: Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic. Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping your instance).
+> _Note:_ Security groups act at the instance level.
 
-7) Key Pair: Create an ssh-key from your local machine ([ssh documentation](https://www.ssh.com/academy/ssh/public-key-authentication))and upload the public-key.
+7) Key Pair: A key pair allows you to SSH into your new instance. You may select an existing key pair, import a key pair, or generate a new key pair. 
+> Documentation to generate an ssh-key pair from your local machine ([ssh documentation](https://www.ssh.com/academy/ssh/public-key-authentication)). Upload the public key via the "Import Key Pair" button.
 
-8) Configuration: defaults
+8) Configuration: Keep defaults.
 
-9) Server Group: defaults
+9) Server Group: Keep defaults. 
 
-10) Scheduler Hints: defaults
+10) Scheduler Hints: Keep defaults. 
 
-11) Metadata: defaults
+11) Metadata: Keep defaults. 
 
 #### Connect Floating IP to instance
 
-To add a publicly accessible IP to your instance, navigate to Project -> Network -> Floating IPs, which will show you a list of currently available public IP addresses. Select "Associate IP" from the list under the "Actions" column to associate with an instance. 
-> _Note:_ If no floating IPs exist, email [rc-help@colorado.edu](rc-help@colorado.edu).
+To add an outside routable "floating IP" to your instance navigate to Project -> Network -> Floating IPs. This page will show you a list of currently available "floating IP" addresses. Select "Associate IP" from the list under the "Actions" column to associate with an instance (or the "Associate IP to Project button). 
+> _Note:_ If no floating IPs are listed, email [rc-help@colorado.edu](rc-help@colorado.edu).
 
 ![](cumulus/floating_ips.png)
 
