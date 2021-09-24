@@ -2,18 +2,14 @@
 
 ### About CUmulus
 
-CUmulus is an NSF-funded on-premise cloud system hosted by CU Research Computing based on OpenStack, an open standard cloud computing platform. The CUmulus service includes access to a private cloud "vpc" with a small number of outside routable "floating IPs".  Within this "vpc" customers will be given an allocation of:
+CU Research Computing hosts an on-premise cloud service, called CUmulus, which supports cases not well suited for HPC such as webservers, databases, and long-running services. 
+
+The CUmulus service includes access to a Virtual Private Cloud (VPC) which provides users with a logically isolated section of the cloud with a small number of outside routable floating IP addresses.  Within this VPC customers will be given an allocation of:
  - CPU cores
  - Memory
  - Storage
 
 which can be used to host virtual machines and volumes to host workloads.
-
-These virtual machines and volumes will be considered unmanaged meaning that customers of the CUmulus platform are fully responsible for the software contents running in the virtual machine and security within (including keeping that security up to date).
-
-Research Computing staff will manage the security of the OpenStack platform and associated technologies and keep these up to date.
-
-In addition, OIT Public Cloud Broker staff will provide [consultation services](https://oit.colorado.edu/services/consulting-professional-services/public-cloud-broker/consulting-services) with cloud architecture planning and optimization to assist with usage of this platform.
 
 #### Features
 - Virtual machine creation
