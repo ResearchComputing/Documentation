@@ -144,7 +144,14 @@ To add an outside routable "floating IP" to your instance navigate to Project ->
 
 #### Adding Users to your Project
 
-Project group members can be added/removed using CU Boulder's [Grouper application](https://oit.colorado.edu/tutorial/grouper-manage-members-email-enabled-groups).
+Project access is managed through the Grouper application. Grouper is an enterprise access management system that empowers the right people to manage access, without the need for central IT. Group creation will be handled during project creation (if you don't see your group in "My Groups" in the Grouper application please email [rc-help@colorado.edu](rc-help@colorado.edu)).
+
+To view your groups in Grouper navigate to [mygroups.colorado.edu](mygroups.colorado.edu) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
+>_Note:_ If you do not see your group, please contact [rc-help@colorado.edu](rc-help@colorado.edu) to create a group with the correct permissions and connections to CUmulus (_do not create your own group_).
+
+![](cumulus/grouper.png)
+
+Detailed instructions to add and remove members from your group can be found here: [Add/Remove Members](https://oit.colorado.edu/tutorial/grouper-manage-members-email-enabled-groups).
 
 
 
