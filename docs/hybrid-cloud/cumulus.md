@@ -102,7 +102,7 @@ To create a new VM instance click on "Launch Instance" button on the top bar fro
 
 1) Details: Name and give your instance a brief description (availability zone and count can be left as defaults).
 
-2) Source: You can choose an operating system from the images CURC provides (below). "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available.
+2) Source: You can choose an operating system from the images CURC provides (below). "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available. You will also select your volume size (default 1GB) and can choose to have volume deleted upon instance deletion (default: volume _not_ deleted).
 > Available Operating Systems:
 > - CentOS 7
 > - CentOS 8
@@ -113,6 +113,7 @@ To create a new VM instance click on "Launch Instance" button on the top bar fro
 > - Windows 10 Enterprise 20H2
 > - Windows 10 Enterprise LTSC 2019
 
+> _Note:_ be aware that if you choose to _not_ delete volume upon instance deletion and do not intend to use them you will have "zombie" volumes which will continue to take up storage.
 
 3) Flavor: Choose from a list of pre-selected resources (these "flavors" manage the sizing for the compute, memory, and storage of the instance).
 > _Note:_ keep in mind your OS prerequisites.
