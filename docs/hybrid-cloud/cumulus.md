@@ -11,10 +11,10 @@ which can be used to host virtual machines and volumes to host workloads.
 
 #### CUmulus Quick Start
 
-1) Request access to CUmulus by filling out the [Google Form]() application.
+1) Request a CUmulus application by contacting the RC helpdesk at [rc-help@colorado.edu](rc-help@colorado.edu)
 2) Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/).
-- Create virtual machine instances with specified CPUs and memory
-- Create storage volumes
+- Create virtual instances with specific operating systems and storage requirements
+- Manage network configurations 
 
 #### Features
 - Virtual machine creation
@@ -61,8 +61,8 @@ CU Research Computing manages the resources and address systems-level issues as 
 
 ###  Requesting Access to CUmulus
 
-The application process for CUmulus requires to submit a [Google form]() to propose your use case. In this application you will:
-- Describe your proposed CUmulus workflow
+The application process for CUmulus requires users to submit an proposal for your use case, which can be requested by emailing [rc-help@colorado.edu](rc-help@colorado.edu). In this proposal you will:
+- Describe your CUmulus workflow
 - Describe why this workflow is appropriate for CUmulus and cannot be accommodated by other CURC resources (Summit, Alpine or Blanca)
 - Estimate the resources you require (operating system, CPU cores, disk space, memory)
 
