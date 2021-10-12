@@ -113,7 +113,6 @@ would like to send the file to.
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>    # using a login node
 scp <path-to-file> <username>@dtn.rc.int.colorado.edu:<target-path>  # using DTN while on campus network
-scp <path-to-file> <username>@dtn.rc.colorado.edu:<target-path>      # using DTN while outside campus network
 ```
 
 ```bash
@@ -121,7 +120,6 @@ scp <path-to-file> <username>@dtn.rc.colorado.edu:<target-path>      # using DTN
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>    # using a login node
 scp <username>@dtn.rc.int.colorado.edu:<path-to-file> <target-path>  # using DTN while on campus network
-scp <username>@dtn.rc.colorado.edu:<path-to-file> <target-path>      # using DTN while outside campus network
 ``` 
 
 Windows users can access scp through PowerShell or using a GUI
@@ -152,7 +150,6 @@ would like to send the file to.
 
 rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>    # using a login node
 rsync -r <path-to-directory> <username>@dtn.rc.int.colorado.edu:<target-path>  # using DTN while on campus network
-rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>      # using DTN while outside campus network
 ```
 
 ```bash
@@ -160,7 +157,6 @@ rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>      #
 
 rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>    # using a login node
 rsync -r <username>@dtn.rc.int.colorado.edu:<path-to-directory> <target-path>  # using DTN while on campus network
-rsync -r <username>@dtn.rc.colorado.edu:<path-to-directory> <target-path>      # using DTN while outside campus network
 ```
 
 rsync is not available on Windows by default, but [may be installed
@@ -183,7 +179,6 @@ between a local system and Research Computing resources.
 ```bash
 sftp <username>@login.rc.colorado.edu    # using a login node
 sftp <username>@dtn.rc.int.colorado.edu  # using DTN while on campus network
-sftp <username>@dtn.rc.colorado.edu      # using DTN while outside campus network
 ```
 
 We can then use various commands to traverse and manipulate both local
