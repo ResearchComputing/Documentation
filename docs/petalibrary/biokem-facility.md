@@ -2,7 +2,7 @@
 
 ### Overview
 
-BioKEM facility users can choose to have their data deposited directly into their PetaLibrary allocations. This process involves creating a biokem-deposit directory in your allocation's root directory and setting permissions to a biokem specific owner and group. The process is outlined below for full transparency.
+If you are a BioKEM facility user, you can choose to have your data deposited directly into your PetaLibrary allocations. This process involves creating a biokem-deposit directory in your allocation's root directory and setting permissions to a biokem specific owner and group. The process is outlined below:
 
 ```
 dir="/pl/active/${ALLOCATION}/biokem-deposit"
