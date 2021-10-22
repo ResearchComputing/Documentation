@@ -12,6 +12,8 @@ appropriate. In the event a former PetaLibrary owner is not available
 to designate a new owner, the owner of the speedtype that was last used
 to pay for a PetaLibrary allocation may designate a new owner.
 
+An optional _technical contact_ and _billing contact_ may also be defined. These contacts are treated as delegates of the allocation owner for normal or regular operation.
+
 ### PetaLibrary billing contacts
 
 A PetaLibrary allocation may have one or more billing contacts. A billing
