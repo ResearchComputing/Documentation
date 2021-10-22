@@ -94,7 +94,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    petalibrary/synology
    petalibrary/zfs_snapshots
    petalibrary/ownership
-   petalibrary/biokem-facility
 
 .. toctree::
    :maxdepth: 2
@@ -135,6 +134,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    additional-resources/utah-videos
    additional-resources/blanca-MOU
    additional-resources/other
+   additional-resources/biokem-facility
 
 .. toctree::
    :maxdepth: 2
