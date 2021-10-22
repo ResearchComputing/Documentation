@@ -35,7 +35,7 @@ Request PetaLibrary storage by filling out the application form at the [RC PetaL
 > _**Note:**_ Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](https://curc.readthedocs.io/en/latest/petalibrary/ownership.html). 
 
 
- When an allocation is created the full, supported path is defined and provided, based on a name slected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
+ When an allocation is created the full, supported path is defined and provided, based on a name selected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
 
 - **To access active storage:** Log in to a Research Computing via login.rc.colorado.edu
     and navigate to: `/pl/active/<your_allocation_name>` (e.g., `/pl/active/jdoe_lab`)
