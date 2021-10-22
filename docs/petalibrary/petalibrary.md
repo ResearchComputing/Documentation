@@ -1,15 +1,14 @@
 ## The PetaLibrary
 
-The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archive, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado Boulder.
+The PetaLibrary is a University of Colorado Boulder Research Computing payed service that supports the storage, archive, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado Boulder.
  
 ### PetaLibrary Features 
 - Minimum project size: 1 TB/year
 - 2 classes of storage: active and archive
      * See our [website](https://www.colorado.edu/rc/resources/petalibrary/storageandrates) for pricing information
-- New customers are limited to either
-     * 200 TB* in Active Storage, or
+- New customers are limited to either: 
+     * 200 TB* in Active Storage
      * 100 TB* in Archive Storage
-     * Email <rc-help@colorado.edu> to request more space if necessary
 		 > _*Pending availability_
 
 PetaLibrary access is subject to the [PetaLibrary Terms of Service](https://www.colorado.edu/rc/resources/petalibrary/tos).
@@ -17,14 +16,23 @@ PetaLibrary access is subject to the [PetaLibrary Terms of Service](https://www.
 
 ### Accessing the PetaLibrary
 
-PetaLibrary storage is presented as a file system directory with an administratively-defined and automatically-enforced size limit.
+#### General Access
+
+PetaLibrary storage is presented as a file system directory under either:
+```
+/pl/active/<your_allocation_name>
+/pl/archive/<your_allocation_name>
+```
+
+Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group using their existing Research Computing accounts by request of the allocation owner or delegate contact to the [RC help desk](rc-help@colorado.edu).
+
+> _**Note:**_ Each person who accesses the PetaLibrary is required to have a Research Computing account and two-factor authentication. 
 
 #### Request a PetaLibrary allocation
 
-Request PetaLibrary storage by filling out the Docusign at the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary), under the "Request a new PetaLibrary allocation" link.  
+Request PetaLibrary storage by filling out the application form at the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary), under the "Request a new PetaLibrary allocation" link.  
 
-Each PetaLibrary allocation must define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](https://curc.readthedocs.io/en/latest/petalibrary/ownership.html). 
-> _**Note:**_ Each person who accesses the PetaLibrary is required to have a Research Computing account and two-factor authentication. 
+> _**Note:**_ Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](https://curc.readthedocs.io/en/latest/petalibrary/ownership.html). 
 
 
  When an allocation is created the full, supported path is defined and provided, based on a name slected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
@@ -47,11 +55,10 @@ Each PetaLibrary allocation must define an allocation owner, read more about Pet
 - Appropriate for data that is infrequently accessed
 - Stores data on tapes in a robotic tape library, with all data written to at least two tapes
 
-### Data Transfer
-External access to PetaLibrary storage is provided primarily via the Research Computing data transfer service which supports Globus (reccomended), SFTP, and (by request only) anonymous FTP data transfer protocols. Local data backups, mounting PetaLibrary to a local system, and transfering data from Google Drive or a NAS are covered in the respective PetaLibrary documents.  
+### Performance
+PetaLibrary is a shared infrastructure, and actual, individual performance will vary depending on each individual workload and competing workloads from other clients.
 
-> More information on [data transfer](https://curc.readthedocs.io/en/latest/compute/data-transfer.html) at CURC
-
+The PetaLibrary service is designed for file storage and retrieval, and is not an ideal backend for highly transactional workloads (e.g., relational databases).
 
 
 ### More information
