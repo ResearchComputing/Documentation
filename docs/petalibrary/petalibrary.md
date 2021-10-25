@@ -1,12 +1,12 @@
 ## The PetaLibrary
 
-The PetaLibrary is a University of Colorado Boulder Research Computing payed service that supports the storage, archive, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado Boulder.
+The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs). It is available at an unsubsidized cost to researhers from other institutions. 
  
 ### PetaLibrary Features 
 - Minimum project size: 1 TB/year
 - 2 classes of storage: active and archive
      * See our [website](https://www.colorado.edu/rc/resources/petalibrary/storageandrates) for pricing information
-- New customers are limited to either: 
+- New customers are initially limited to a maximum allocation size of: 
      * 200 TB* in Active Storage
      * 100 TB* in Archive Storage
 		 > _*Pending availability_
@@ -24,9 +24,9 @@ PetaLibrary storage is presented as a file system directory under either:
 /pl/archive/<your_allocation_name>
 ```
 
-Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group using their existing Research Computing accounts by request of the allocation owner or delegate contact to the [RC help desk](rc-help@colorado.edu).
+Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group by requesting that the allocation owner or delegate contact to the [RC help desk](rc-help@colorado.edu) to request their RC account be added to the group.
 
-> _**Note:**_ Each person who accesses the PetaLibrary is required to have a Research Computing account and two-factor authentication. 
+> _**Note:**_ Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. 
 
 #### Request a PetaLibrary allocation
 
@@ -35,7 +35,7 @@ Request PetaLibrary storage by filling out the application form at the [RC PetaL
 > _**Note:**_ Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](https://curc.readthedocs.io/en/latest/petalibrary/ownership.html). 
 
 
- When an allocation is created the full, supported path is defined and provided, based on a name selected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
+ When a new allocation is created the path to it is defined and provisioned based on a name selected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
 
 - **To access active storage:** Log in to a Research Computing via login.rc.colorado.edu
     and navigate to: `/pl/active/<your_allocation_name>` (e.g., `/pl/active/jdoe_lab`)
@@ -56,7 +56,7 @@ Request PetaLibrary storage by filling out the application form at the [RC PetaL
 - Stores data on tapes in a robotic tape library, with all data written to at least two tapes
 
 ### Performance
-PetaLibrary is a shared infrastructure, and actual, individual performance will vary depending on each individual workload and competing workloads from other clients.
+PetaLibrary is a shared infrastructure and the instantaneous performance will vary depending on each individual workload and competing workloads from other clients.
 
 The PetaLibrary service is designed for file storage and retrieval, and is not an ideal backend for highly transactional workloads (e.g., relational databases).
 
