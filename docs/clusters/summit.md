@@ -45,7 +45,7 @@ sinfo --format="%N | %f" --partition="summit-curc"
 - **A100**: NVIDIA A100 GPU  
 - **MI100**: AMD MI100 GPU  
 - **localraid**: large, fast RAID disk storage in node  
-- **rhel8**: RedHat Enterprise Linux version 8 operating system  
+- **rhel7**: RedHat Enterprise Linux version 7 operating system  
 
 #### Requesting GPUs in jobs
 
