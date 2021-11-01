@@ -73,6 +73,12 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
+   :caption: Clusters
+
+   clusters/blanca 
+
+.. toctree::
+   :maxdepth: 2
    :caption: Running Jobs
 
    running-jobs/running-apps-with-jobs
