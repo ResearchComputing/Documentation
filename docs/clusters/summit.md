@@ -1,10 +1,10 @@
-## Alpine
+## Summit
 
 tbd
 
-### Alpine Quick-Start
+### Summit Quick-Start
 
-1. From a login node, run "module load slurm/alpine" to access the Slurm job scheduler instance for Alpine.
+1. From a login node, run "module load slurm/summit" to access the Slurm job scheduler instance for Summit.
 2. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 3. If needed, compile your application on the appropriate compute node type.
 
@@ -16,7 +16,7 @@ More details about how to use Slurm can be found [here](../running-jobs/running-
 
 ### QoS
 
-Slurm on Alpine uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `alpine-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `preemptable`.
+Slurm on Summit uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `summit-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `preemptable`.
 
 ### Node-QoS-Features
 
@@ -26,7 +26,7 @@ tbd
 
 ### Node Features
 
-The Alpine cluster features some heterogeneity. A variety of feature tags are applied to nodes deployed in Alpine to allow jobs to target specific CPU, GPU, network, and storage requirements.
+The Summit cluster features some heterogeneity. A variety of feature tags are applied to nodes deployed in Summit to allow jobs to target specific CPU, GPU, network, and storage requirements.
 
 Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
@@ -37,7 +37,7 @@ sinfo --format="%N | %f"
 The `sinfo` query may be further specified to look at the features available within a specific partition.
 
 ```bash
-sinfo --format="%N | %f" --partition="alpine-curc"
+sinfo --format="%N | %f" --partition="summit-curc"
 ```
 
 #### Description of features
@@ -49,10 +49,10 @@ sinfo --format="%N | %f" --partition="alpine-curc"
 
 #### Requesting GPUs in jobs
 
-Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g. A100, MI100) if desired.  The available Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
+Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g. A100, MI100) if desired.  The available Summit GPU resources and configurations can be viewed as follows on a login node with the `slurm/summit` module loaded:
 
 ```bash
-$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "alpine "
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "summit "
 ```
 
 __Examples of configurations one could request__:
@@ -84,10 +84,10 @@ tbd
 Not yet fully reviewed, subject to update:
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Alpine nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Alpine nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
-3. There are no dedicated Alpine compile nodes.  To build software that will run on Alpine, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
+2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Summit nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Summit nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
+3. There are no dedicated Summit compile nodes.  To build software that will run on Summit, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 
-### Alpine Preemptable QOS
+### Summit Preemptable QOS
 
 tbd
 
