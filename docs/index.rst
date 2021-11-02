@@ -106,6 +106,12 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
+   :caption: CURC Hybric Cloud
+
+   hybrid-cloud/cumulus
+
+.. toctree::
+   :maxdepth: 2
    :caption: Software
 
    software/loadbalancer
