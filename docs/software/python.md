@@ -25,6 +25,8 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
+> _**Note:**_ CSU and XSEDE users may need to use a different `$USER` variable because the `@` symbol can occasionally be misinterpreted by environments that employ PERL. Directions to set up this user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
+
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
 
 The `.condarc` file provides a variety of settings that can be detailed to speed up your workflows. For more information on `.condarc`, [check out the Anaconda documentation.](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
