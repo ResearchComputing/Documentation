@@ -78,7 +78,7 @@ Once we receive your request the allocation committee will review it. If the cas
 
 ### Project Management
 
-Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface at: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
+Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
 ![](cumulus/login.png)
 
@@ -88,19 +88,23 @@ Once your username is processed you will be able to login. The landing page for 
 
 ![](cumulus/overview.png)
 
+#### Navigate to Instances
+
+1) Select a project
+2) Navigate to "Compute"
+3) Select "Instances"
+4) Select "Launch Instance" (to create new instance)
+
+![](cumulus/navigate_to_instances.png)
+
 #### Create New Instance
 
 Instances are virtual machines (VM) within your Virtual Private Cloud's (VPC) project. You can view the resources each instance is using at the bottom of the "Overview" page. In order to create an instance you must specify the resources you wish to allocate from your project.
 
-To view more details about your instances navigate to: Project -> Compute -> Instances, on the side-bar. On this page you will see all currently running instances(there should be no instances running your first time logging in). 
+To create a new VM instance click on "Launch Instance" button on the top bar from the "Instances" page (step 4 above). This will bring up the instance launch window which will guide you in creating a new instance by selecting your operating system, allocating resources, choosing security groups, and adding ssh keys. Follow the steps and images below.
 
-![](cumulus/instances.png)
-
-To create a new VM instance click on "Launch Instance" button on the top bar from the "Instances" page (above). This will bring up the instance launch window which will guide you in creating a new instance by selecting your operating system, allocating resources, choosing security groups, and adding ssh keys.
-
-![](cumulus/instance_creation.png)
-
-1) Details: Name and give your instance a brief description (availability zone and count can be left as defaults).
+1) Details: Fill out Instance details, including a name and description (availability zone and count can be left as defaults).
+> _**Note:**_ if launching Windows Server, the hostname will be truncated if greater than 15 characters in the OS
 
 2) Source: You can choose an operating system from the images CURC provides (below). "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available. You will also select your volume size (default 1GB) and can choose to have volume deleted upon instance deletion (default: volume _not_ deleted).
 > Available Operating Systems:
@@ -118,30 +122,47 @@ To create a new VM instance click on "Launch Instance" button on the top bar fro
 3) Flavor: Choose from a list of pre-selected resources (these "flavors" manage the sizing for the compute, memory, and storage of the instance).
 > _Note:_ keep in mind your OS prerequisites.
 
-4) Networks: Keep defaults.
+4) Networks: Select a project network, which determines routability of either a public/internet or campus/internal floating IP. Keep defaults.
 
-5) Network Ports: Keep defaults. 
-
-6) Security Groups: Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic. Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping your instance).
+5) Security Groups: Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic. Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping your instance).
 > _Note:_ Security groups act at the instance level.
+
+6) Review default account information.
 
 7) Key Pair: A key pair allows you to SSH into your new instance. You may select an existing key pair, import a key pair, or generate a new key pair. 
 > Documentation to generate an ssh-key pair from your local machine ([ssh documentation](https://www.ssh.com/academy/ssh/public-key-authentication)). Upload the public key via the "Import Key Pair" button.
 
-8) Configuration: Keep defaults.
+8) Add a 1-time script (optional)
 
-9) Server Group: Keep defaults. 
+9) Launch the instance.
 
-10) Scheduler Hints: Keep defaults. 
+![](cumulus/instance_creation.png)
 
-11) Metadata: Keep defaults. 
-
-#### Connect Floating IP to instance
+#### Associate Floating IP to instance
 
 To add an outside routable "floating IP" to your instance navigate to Project -> Network -> Floating IPs. This page will show you a list of currently available "floating IP" addresses. Select "Associate IP" from the list under the "Actions" column to associate with an instance (or the "Associate IP to Project button). 
-> _Note:_ If no floating IPs are listed, email [rc-help@colorado.edu](rc-help@colorado.edu).
 
 ![](cumulus/floating_ips.png)
+
+or 
+
+Expand the instance action menu, and select "Associate Floating IP"
+
+![](cumulus/associate_ip.png)
+
+If no available addresses are allocated to the project, allocate one.
+
+![](cumulus/allocate_floating_ip.png)
+
+Depending on which network was selected in Step 4 from above, allocate either an public/internet floating IP, (scinet-external) or a campus internal floating IP. (scinet-internal)
+
+![](cumulus/int_vs_ext_ip.png)
+
+Associate the IP Address to your instance
+
+![](cumulus/finalize_floating_ip.png)
+
+> Note: If an instance is terminated, the floating IP will be disassociated but remain with the project as an available address. If the floating IP is  it is returned to the SN IP pool and can be difficult to re-allocate if the same address is desired.
 
 #### Adding Users to your Project
 
@@ -154,7 +175,28 @@ To view your groups in Grouper navigate to [mygroups.colorado.edu](mygroups.colo
 
 Detailed instructions to add and remove members from your group can be found here: [Add/Remove Members](https://oit.colorado.edu/tutorial/grouper-manage-members-email-enabled-groups).
 
+#### Get the default DNS name (optional)
 
+1) All Floating IP's have a default A record, this can optionally be used in place of an IP address.
+2) Perform a reverse lookup:
 
+![](cumulus/reverse_lookup.png)
 
+3) If a specific record is desired, contact NEO via [oithelp@colorado.edu](oithelp@colorado.edu).
+
+#### Access Linux Instances for the first time via SSH
+
+1) Determine the default username; which will vary based on the Image maintainer. Review in the "Launch Instances" screenshot above.
+2) SSH into your new Linux instance
+
+![](cumulus/ssh_access.png)
+
+or ssh directly with public floating IP:
+```
+ssh -i ~/.ssh/demo_id_rsa cloud-user@<floating IP>
+```
+
+3) If desired, set a password on the root account to make troubleshooting easier via the recovery console if the instance loses network connectivity.
+
+![](cumulus/set_root_pw.png)
 
