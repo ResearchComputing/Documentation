@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Tuesday, 2 November 2021
+
+* Adding CUmulus documents for CUmulus beta release
+
 ### Wednesday, 27 October 2021
 
 * Stable version of documents set: 1.0.0
