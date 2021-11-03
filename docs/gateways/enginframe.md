@@ -42,7 +42,7 @@ Once the session has started, an indicator of the running session appears in the
 > ```
 > Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.
 > ``` 
-> visit [our anaconda documents](../software/python.md#dbus-error).
+> visit [our anaconda documents](../software/python.html#dbus-error).
 
 
 ### Step 3: Use graphical software
