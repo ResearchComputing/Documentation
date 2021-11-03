@@ -1,6 +1,6 @@
 ## Alpine
 
-tbd
+Alpine is the third-generation HPC cluster at CURC, following Janus and RMACC Summit.
 
 ### Alpine Quick-Start
 
@@ -16,7 +16,7 @@ More details about how to use Slurm can be found [here](../running-jobs/running-
 
 ### QoS
 
-Slurm on Alpine uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `alpine-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `preemptable`.
+Slurm on Alpine uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.
 
 ### Node-QoS-Features
 
@@ -42,6 +42,7 @@ sinfo --format="%N | %f" --partition="alpine-curc"
 
 #### Description of features
 
+- **Milan**: dual-socket 32-core AMD Milan CPU
 - **A100**: NVIDIA A100 GPU  
 - **MI100**: AMD MI100 GPU  
 - **localraid**: large, fast RAID disk storage in node  
@@ -52,7 +53,7 @@ sinfo --format="%N | %f" --partition="alpine-curc"
 Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g. A100, MI100) if desired.  The available Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
 ```bash
-$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "alpine "
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
 ```
 
 __Examples of configurations one could request__:
@@ -84,7 +85,7 @@ tbd
 Not yet fully reviewed, subject to update:
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Alpine nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Alpine nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
+2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Alpine nodes.  I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Alpine nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
 3. There are no dedicated Alpine compile nodes.  To build software that will run on Alpine, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 
 ### Alpine Preemptable QOS
@@ -97,13 +98,26 @@ tbd
 
 #### Best practices
 
-Checkpointing: Given that preemptable jobs can request wall times up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is preempted, killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable QoS should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
+**Checkpointing**: Given that preemptable jobs can request wall times up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is preempted, killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable QoS should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
 
-Requeuing: Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
+**Requeuing**: Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
 
 #### Example Job Scripts
 
-tbd
+```
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --partition=alpine-cpu-a2
+#SBATCH --account=mySlurmAccount
+#SBATCH --qos=myQOSname
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --job-name=slurm-example
+#SBATCH --output=slurm-example.%j.out
+
+/usr/bin/hostname
+```
+
 
 #### Other considerations
 
