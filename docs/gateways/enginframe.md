@@ -38,6 +38,13 @@ Once the session has started, an indicator of the running session appears in the
 
 ![](enginframe/session_new.png)
 
+> Note: If you are getting an error associated with `dbus`: 
+> ```
+> Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.
+> ``` 
+> visit [our anaconda documents](../software/python.html#dbus-error).
+
+
 ### Step 3: Use graphical software
 
 With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). A commonly-used example would be Matlab. To start the Matlab GUI, do the following:
