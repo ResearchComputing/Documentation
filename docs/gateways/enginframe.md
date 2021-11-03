@@ -39,10 +39,10 @@ Once the session has started, an indicator of the running session appears in the
 ![](enginframe/session_new.png)
 
 > Note: If you are getting an error associated with `dbus`: 
-```
-Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.
-``` 
-visit [our anaconda documents](../software/python.md).
+> ```
+> Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.
+> ``` 
+> visit [our anaconda documents](../software/python.md#dbus-error).
 
 
 ### Step 3: Use graphical software
