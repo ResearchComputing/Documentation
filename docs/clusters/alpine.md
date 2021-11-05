@@ -6,11 +6,11 @@ Alpine is the third-generation HPC cluster at CURC, following Janus and RMACC Su
 
 1. From a login node, run "module load slurm/alpine" to access the Slurm job scheduler instance for Alpine.
 2. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
-3. If needed, compile your application on the appropriate compute node type.
+3. If needed, compile your application on a compile node.
 
 ### Job Scheduling
 
-All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler.  High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them.  High-priority jobs can run for a maximum wall time of 7 days.  Low-priority jobs have a maximum wall time of 24 hours.
+All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 7 days. Low-priority jobs have a maximum wall time of 24 hours.
 
 More details about how to use Slurm can be found [here](../running-jobs/running-apps-with-jobs.html).
 
