@@ -1,4 +1,4 @@
-#Slurm Integration for CUmulus Virtual Machines
+##Slurm Integration for CUmulus Virtual Machines
 
 ###Instructions for Ubuntu20.04:
 
