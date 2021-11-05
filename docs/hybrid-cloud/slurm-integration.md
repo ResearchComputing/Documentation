@@ -26,7 +26,7 @@ sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
 cd /opt
 sudo git clone -b slurm-20-02-4-1 https://github.com/SchedMD/slurm.git
 cd slurm
-sudo ./configure --with-jwt -- --disable-dependency-tracking
+sudo ./configure --with-jwt --disable-dependency-tracking
 sudo make && sudo make install
 ```
 
