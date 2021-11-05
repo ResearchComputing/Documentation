@@ -109,7 +109,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :caption: CURC Hybric Cloud
 
    hybrid-cloud/cumulus
-   hybrid-cloud/slurm-integration
+   hybrid-cloud/slurm_integration
 
 .. toctree::
    :maxdepth: 2
