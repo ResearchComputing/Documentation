@@ -44,7 +44,7 @@ sudo vi slurm.conf  # edit slurm.conf with sudo and change:
 ------------------------------------------------------------------------
 ...
 ControlMachine=slurm3    ----> ControlMachine=slurm3.rc.int.colorado.edu
-BackupController=slurm4  ----> ControlMachine=slurm4.rc.int.colorado.edu
+BackupController=slurm4  ----> BackupController=slurm4.rc.int.colorado.edu
 ...
 ------------------------------------------------------------------------
 ```
