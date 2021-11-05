@@ -1,6 +1,6 @@
-##Slurm Integration for CUmulus Virtual Machines
+## Slurm Integration with CUmulus 
 
-###Instructions for Ubuntu20.04:
+### Instructions for Ubuntu20.04:
 
 ```
 #login to VM using your private key and the floating IP
@@ -63,3 +63,6 @@ export SLURM_CONF=/etc/slurm/slurm.conf
 sbatch --qos <blanca-qos> --chdir="/home/USERNAME" --wrap="hostname"
 Submitted batch job 12451234
 ```
+
+
+
