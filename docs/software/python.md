@@ -25,6 +25,8 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
+> _**Note:**_ CSU and XSEDE users may need to use a custom `$USER` variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
+
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
 
 The `.condarc` file provides a variety of settings that can be detailed to speed up your workflows. For more information on `.condarc`, [check out the Anaconda documentation.](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
@@ -169,6 +171,40 @@ If you are having trouble loading a package, you can use `conda list` or `pip fr
 Sometimes conda environments can "break" if two packages in the environment require different versions of the same shared library. In these cases you try a couple of things.
 * Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces conda to attempt to resolve shared library conflicts. 
 * Create a new environment and reinstall the packages you need (preferably installing all with the same `conda install` command, rather than one-at-a-time, in order to resolve the conflicts).
+
+---
+
+#### Dbus Error
+
+If you see a 'dbus' connection error when trying to connect via a virtual environment (EnginFrame, JupterHub):
+
+```
+Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.
+```
+This is likely due to your `~/.bashrc` configuration file auto-activating a conda environment with a problematic dbus package. You can resolve this issue by opening your `~/.bashrc` with a text editor (ex. vim, nano) and commenting out the following lines (or any lines that add a conda environment to your `$PATH`):
+
+> Note: Commenting lines out instead of removing them will allow you to add them back in later if needed. These lines have been commented out using `#` preceeding each line.
+
+```
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/curc/sw/anaconda3/2019.07/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/curc/sw/anaconda3/2019.07/etc/profile.d/conda.sh" ]; then
+#         . "/curc/sw/anaconda3/2019.07/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/curc/sw/anaconda3/2019.07/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+```
+
+Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda envioronment with `source /curc/sw/anaconda3/latest` to activate any custom environments.
+
 
 ### See Also
 

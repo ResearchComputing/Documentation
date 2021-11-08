@@ -133,6 +133,7 @@ The first command will install the _irkernel_ package if not installed already. 
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
+* If you are a CSU or XSEDE user and are having trouble with packages that employ PERL (due to the `@` symbol) visit our documentation on setting up a user variables that links to alternate paths without the `@` symbol [CSU and XSEDE usernames](../additional-resources/csu-xsede-usernames.md)
 
 ```
 export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
