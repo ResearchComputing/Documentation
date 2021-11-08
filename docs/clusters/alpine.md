@@ -2,6 +2,8 @@
 
 Alpine is the third-generation HPC cluster at CURC, following Janus and RMACC Summit.
 
+> _**Note:**_ The Alpine cluster is in early/beta release and being actively developed. If you see any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).
+
 ### Alpine Quick-Start
 
 1. From a login node, run "module load slurm/alpine" to access the Slurm job scheduler instance for Alpine.
@@ -10,25 +12,21 @@ Alpine is the third-generation HPC cluster at CURC, following Janus and RMACC Su
 
 ### Job Scheduling
 
-All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 7 days. Low-priority jobs have a maximum wall time of 24 hours.
+All jobs are run through a batch/queue system. Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
 
 More details about how to use Slurm can be found [here](../running-jobs/running-apps-with-jobs.html).
 
-### QoS
+### Nodes
 
-Slurm on Alpine uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.
-
-### Node-QoS-Features
-
-To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
-
-tbd
+To determine which nodes exist on the Alpine system, type `scontrol show nodes` to get a full list.
 
 ### Node Features
 
 The Alpine cluster features some heterogeneity. A variety of feature tags are applied to nodes deployed in Alpine to allow jobs to target specific CPU, GPU, network, and storage requirements.
 
 Use the `sinfo` command to determine the features that are available on any node in the cluster.
+
+> Note: Alpine is currently in a beta release, not all feature descriptions have been added to nodes.
 
 ```bash
 sinfo --format="%N | %f"
@@ -88,13 +86,6 @@ Not yet fully reviewed, subject to update:
 2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Alpine nodes.  I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Alpine nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
 3. There are no dedicated Alpine compile nodes.  To build software that will run on Alpine, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 
-### Alpine Preemptable QOS
-
-tbd
-
-#### Usage
-
-tbd
 
 #### Best practices
 
@@ -104,21 +95,19 @@ tbd
 
 #### Example Job Scripts
 
+Run a 1-hour job on 4 cores on the alpine-cpu-a2 compute nodes
+
 ```
 #!/bin/bash
+#SBATCH --job-name=example-job
+#SBATCH --output=example-job.%j.out
 #SBATCH --time=01:00:00
 #SBATCH --partition=alpine-cpu-a2
-#SBATCH --account=mySlurmAccount
-#SBATCH --qos=myQOSname
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --job-name=slurm-example
-#SBATCH --output=slurm-example.%j.out
+#SBATCH --ntasks=4
 
-/usr/bin/hostname
+module purge
+module load python
+
+python myscript.py
 ```
-
-
-#### Other considerations
-
-tbd
