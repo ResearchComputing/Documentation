@@ -1,7 +1,7 @@
 ## Alpine
 
-> **:warning: Early Release.**
-> The Alpine cluster is in early/beta release and being actively developed. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).
+> _**Early Release.**_
+> _**The Alpine cluster is in early/beta release and being actively developed. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**_
 
 Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit.
 
@@ -27,7 +27,7 @@ The Alpine cluster features some heterogeneity. A variety of feature tags are ap
 
 Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
-> :warning: Feature descriptions and finalized partitions names are still being added to Alpine nodes. Refer to the [description of features](#description-of-features) list below for current node features.
+> _**Feature descriptions and finalized partitions names are still being added to Alpine nodes. Refer to the [description of features](#description-of-features) list below for current node features.**_
 
 ```bash
 sinfo --format="%N | %f"
@@ -82,7 +82,7 @@ Using GPUs in jobs requires one to use the General Resource ("gres") functionali
 ```bash
 $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
 ```
-> :warning: GPU resouces to be added
+> _**GPU resouces to be added**_
 
 __Examples of configurations one could request__:
 
