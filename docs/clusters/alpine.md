@@ -19,13 +19,15 @@ More details about how to use Slurm can be found [here](../running-jobs/running-
 
 ### Nodes
 
-To determine which nodes exist on the Alpine system, type `scontrol show nodes` to get a full list.
+To determine which nodes exist on the Alpine system, type `scontrol show nodes` to get a full list 
+
+> _Note:_ `scontrol` gives an in depth description into all nodes on your current cluster, you can specify a specific node with `scontrol show nodes <node name>`
 
 ### Node Features
 
 The Alpine cluster features some heterogeneity. A variety of feature tags are applied to nodes deployed in Alpine to allow jobs to target specific CPU, GPU, network, and storage requirements.
 
-Use the `sinfo` command to determine the features that are available on any node in the cluster.
+Use the `sinfo` command to determine the features that are available on any node in the cluster. 
 
 > _**Note:**_ **Feature descriptions and finalized partitions names are still being added to Alpine nodes. Refer to the [description of features](#description-of-features) list below for current node features.**
 
@@ -58,9 +60,11 @@ These are the partitions available on Alpine.
 
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan-[gX] | Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
-| ami100-[gX] | GPU-enabled (3xMI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
-| aa100-[gX] | GPU-enabled (3xA100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| amilan-\<institute> | Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
+| ami100-g2-\<institute>  | GPU-enabled (3xMI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| aa100-g2-\<institute>  | GPU-enabled (3xA100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+
+> Where \<institute> is ucb (CU Boulder), csu (Colorado State University), or amc (Anschutz Medical Campus). So for example, a full partition specification would look like `--partition=amilan-ucb` 
 
 #### Quality of Service
 
