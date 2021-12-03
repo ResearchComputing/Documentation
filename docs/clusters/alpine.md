@@ -60,11 +60,11 @@ These are the partitions available on Alpine.
 
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan-\<institute> | Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
-| ami100-g2-\<institute>  | GPU-enabled (3xMI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
-| aa100-g2-\<institute>  | GPU-enabled (3xA100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| amilan-\<institute> | AMD Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
+| ami100-g2-\<institute>  | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| aa100-g2-\<institute>  | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
 
-> Where \<institute> is ucb (CU Boulder), csu (Colorado State University), or amc (Anschutz Medical Campus). So for example, a full partition specification would look like `--partition=amilan-ucb` 
+> Where \<institute> is ucb (CU Boulder), csu (Colorado State University), or amc (Anschutz Medical Campus). So for example, a full partition specification would be `--partition=amilan-ucb` 
 
 #### Quality of Service
 
@@ -78,6 +78,8 @@ The available QoS's for Summit are:
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
 | normal      | Default                    | 1D              | tbd | tbd | n/a              | 0 |
 | long        | Longer wall times          | 7D              | tbd | tbd | tbd | 0 |
+
+> _Note:_ Currently only a "normal" qos has been implemented, addition of the "long" qos will be coming soon.
 
 #### Requesting GPUs in jobs
 
@@ -112,33 +114,45 @@ __Notes__:
 
 Here are examples of Slurm directives that can be used in your batch scripts in order to meet certain job requirements.
 
-1. To run a 32-core job for 36 hours on a single (default) Alpine CPU node:
+1. To run a 32-core job for 36 hours on a single (default) Alpine CPU node (as a UCB user):
 ```bash
-#SBATCH --partition=amilan
+#SBATCH --partition=amilan-ucb
 #SBATCH --nodes=1
 #SBATCH --ntasks=32
 #SBATCH --time=36:00:00
 ```
 
-2. To run a 56-core job across two alpine nodes in the low-priority qos for seven days:
+2. To run a 56-core job (28 cores/node) across two Alpine CPU nodes (as a CSU user) in the low-priority qos for seven days:
 ```bash
+#SBATCH --partition=amilan-ucb
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 #SBATCH --time=7-00:00:00
 #SBATCH --qos=long
 ```
 
-3. To run a 16-core job for 36 hours on a single Alpine gpu node, using all three gpus:
+3. To run a 16-core job for 24 hours on a single Alpine AMD GPU node (as a AMC user), using all three GPUs:
 ```bash
+#SBATCH --partition=ami100-amc
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=16
-#SBATCH --time=36:00:00
+#SBATCH --ntasks=16
+#SBATCH --time=24:00:00
 #SBATCH --gres=gpu:3
 ```
-4. To run an 8-core job for 4 hours on any node that has at least 1 GPU:
+
+4. To run a 50-core job for 2 hours on a single Alpine NVIDIA GPU node (as a UCB user), using 2 GPUs:
+```bash
+#SBATCH --partition=aa100-amc
+#SBATCH --nodes=1
+#SBATCH --ntasks=50
+#SBATCH --time=02:00:00
+#SBATCH --gres=gpu:2
+```
+
+5. To run an 8-core job for 4 hours on any node that has at least 1 GPU:
 ```bash
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks=8
 #SBATCH --time=4:00:00
 #SBATCH --gres=gpu
 ```
@@ -153,14 +167,14 @@ Not yet fully reviewed, subject to update:
 
 #### Example Job Scripts
 
-Run a 1-hour job on 4 cores on an amilan cpu node with the normal qos.
+Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos (as a UCB user).
 
 ```
 #!/bin/bash
+#SBATCH --partition=amilan-ucb
 #SBATCH --job-name=example-job
 #SBATCH --output=example-job.%j.out
 #SBATCH --time=01:00:00
-#SBATCH --partition=amilan
 #SBATCH --qos=normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
