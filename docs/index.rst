@@ -59,7 +59,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    access/logging-in
    access/duo-2-factor-authentication
    access/rmacc
-   access/blanca
 
 .. toctree::
    :maxdepth: 2
@@ -70,6 +69,14 @@ Use of University of Colorado Research Computing resources, including (but not l
    compute/modules
    compute/data-transfer
    compute/compiling
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Clusters
+
+   clusters/alpine
+   clusters/blanca 
+   clusters/summit
 
 .. toctree::
    :maxdepth: 2
