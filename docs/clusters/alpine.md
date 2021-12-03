@@ -60,11 +60,11 @@ These are the partitions available on Alpine.
 
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan-\<institute> | AMD Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
-| ami100-g2-\<institute>  | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
-| aa100-g2-\<institute>  | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| amilan-[institute] | AMD Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
+| ami100-g2-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| aa100-g2-[institute] | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
 
-> Where \<institute> is ucb (CU Boulder), csu (Colorado State University), or amc (Anschutz Medical Campus). So for example, a full partition specification would be `--partition=amilan-ucb` 
+> Where [institute] is either ucb (CU Boulder), csu (Colorado State University), or amc (Anschutz Medical Campus). So for example, a full partition specification would be `--partition=amilan-ucb` 
 
 #### Quality of Service
 
@@ -84,6 +84,8 @@ The available QoS's for Summit are:
 #### Requesting GPUs in jobs
 
 Using GPUs in jobs requires one to use the General Resource ("gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g. A100, MI100) if desired.  The available Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
+
+> _**Note:**_ General resources (gres) has not yet been implemented for Alpine (coming soon), for the meantime you can request a GPU node by _just_ specifying a GPU partition (leave out `gres`). 
 
 ```bash
 $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
