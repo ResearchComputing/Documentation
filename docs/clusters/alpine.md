@@ -165,15 +165,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --gres=gpu
 ```
 
-### Important notes
-
-Not yet fully reviewed, subject to update:
-
-1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Alpine nodes.  I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Alpine nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
-3. There are no dedicated Alpine compile nodes.  To build software that will run on Alpine, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
-
-#### Example Job Scripts
+#### Full Example Job Script
 
 Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos (as a UCB user).
 
@@ -188,7 +180,29 @@ Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos (as a UCB 
 #SBATCH --ntasks=4
 
 module purge
-module load python
+source /curc/sw/anaconda3/latest
+conda source custom-env
 
 python myscript.py
 ```
+
+### Allocations
+
+All new Alpine users are granted an initial allocation (account) called "ucb-general". Users who require more core hours than "ucb-general" can provide are advised to apply for an allocation. The allocation process requires that users have run example jobs in ucb-general that can be assessed by RC for efficiency/optimation on Alpine. We then work with users to make workflows more efficient if needed, and then grant the allocation.
+
+You can read more about the allocation process and why you would want to apply for one on our [Allocation's page](../access/allocations.md).
+
+> _**Note:**_ For Alpine early adopters, you may finish off your Summit project year on Alpine (i.e. port pro-rated Summit SUs ath the same level). For example, if you have 3 months left on an 1.2M SU grant, we can port 300k SU to Alpine.
+
+### Moving from Summit to Alpine
+
+* All software available on Summit should also be available on Alpine ([contact us](rc-help@colorado.edu) if you run into a software issue).
+
+### Important notes
+
+Not yet fully reviewed, subject to update:
+
+1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it. 
+2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Alpine nodes.  I/O can be written to {alpine_scatach, yet to be provisioned}, which should offer much better performance than /projects.  Most Alpine nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
+3. There are no dedicated Alpine compile nodes.  To build software that will run on Alpine, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
+
