@@ -61,10 +61,16 @@ These are the partitions available on Alpine.
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
 | amilan-[institute] | AMD Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
-| ami100-g2-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
-| aa100-g2-[institute] | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| aa100-[institute] | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
 
-> Where [institute] is either ucb (CU Boulder), csu (Colorado State University), or amc (Anschutz Medical Campus). So for example, a full partition specification would be `--partition=amilan-ucb` 
+**Where [institute] should be substituted for your institute** (examples):
+* `ucb` (CU Boulder)
+>`--partition=amilan-ucb` <br /> `--partition=ami100-ucb` <br /> `--partition=aa100-ucb` 
+* `csu` (Colorado State University)
+>`--partition=amilan-csu` <br /> `--partition=ami100-csu` <br /> `--partition=aa100-csu` 
+* `amc` (Anschutz Medical Campus). 
+>`--partition=amilan-amc` <br /> `--partition=ami100-amc` <br /> `--partition=aa100-amc` 
 
 #### Quality of Service
 
