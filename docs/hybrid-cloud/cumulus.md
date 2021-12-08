@@ -50,8 +50,8 @@ CU Research Computing manages the resources and address systems-level issues as 
 - Web-based research “Hubs” (JupyterHub, Shiny Apps)
 
 ##### Inappropriate use cases: 
-- Running workflows that you could run on Summit, Alpine or Blanca
-- Websites that do not require connectivity to CURC resources
+- Running workflows that can more efficiently be run on Summit, Alpine or Blanca
+- Personal websites or websites unrelated to research
 - Serverless applications
 
 > **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._
