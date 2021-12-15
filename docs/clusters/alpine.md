@@ -62,7 +62,9 @@ These are the partitions available on Alpine.
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
 | amilan-[institute] | AMD Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
 | ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
-| aa100-[institute] | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| aa100-[institute]* | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+
+> \* Nvidia A100 GPUs only support CUDA versions >11.x 
 
 **Where [institute] should be substituted for your institute** (examples):
 * `ucb` (CU Boulder)
@@ -91,12 +93,10 @@ The available QoS's for Summit are:
 
 Using GPUs in jobs requires one to use the General Resource ("gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g. A100, MI100) if desired.  The available Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
-> _**Note:**_ General resources (gres) has not yet been implemented for Alpine (coming soon), for the meantime you can request a GPU node by _just_ specifying a GPU partition (leave out `gres`). 
+> _**Note:**_ AMD MI100 have yet to be provisioned with `gres` if needed, you can request a _whole_ AMD MI100 node by simply specifying `--partition=ami100-<institute>` without the `gres` functionality.
 
 ```bash
 $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
-```
-> _**Note:**_ **GPU resouces to be added**
 
 __Examples of configurations one could request__:
 
