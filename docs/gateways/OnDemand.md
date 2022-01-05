@@ -20,39 +20,45 @@ When you have successfully logged into CU Open OnDemand you will see the landing
 
 ![](OnDemand/landing_page.png)
 
-#### File Menu
+We'll step through these features one at a time.
 
-The _File_ menu allows you to view and operate on files in three different file spaces: your _home_ directory, _projects_ directory, and (if applicable) shared _PetaLibary_ directories.
+#### Files
+
+The _File_ menu allows you to view and operate on files in different file spaces: your _home_ directory, _projects_ directory, scratch spaces, and (if you own one or are part of a group with one) access to _PetaLibary_ allocations.
 
 Selecting one of the file spaces will open a separate browser window which will allow you to navigate the space in a graphical setting similar to a file browser on a personal computer. From here you can download, upload, create, delete, and open files.
 
-> **_NOTE 1:_** _Use [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers) to transfer files to `/scratch/summit` or `/rc_scratch.`_
-
-> **_NOTE 2:_** _If you have more than 1 GB of data to transfer, please use [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers)._
+> **_NOTE:_** _Please use [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers) to transfer files to/from `/scratch/summit` or `/rc_scratch` or if you have more than 1 GB of data to transfer. OnDemand is not designed to handle large file transfers._
 
 ![](OnDemand/home_file.png)
 
-For additional documentation visit [OSC's File Transfer and Management help page](https://www.osc.edu/resources/online_portals/ondemand/file_transfer_and_management).
+> For additional documentation visit [OSC's File Transfer and Management help page](https://www.osc.edu/resources/online_portals/ondemand/file_transfer_and_management).
 
-#### Jobs Menu
+#### Jobs 
 
 Jobs can be monitored, created, edited and scheduled with the job management tools under the _Jobs_ menu.
 
-* __Active Jobs:__ Under the “Active Jobs” tab you can view active jobs. You can choose to view your jobs (or all jobs) as well as choose from specific clusters (Blanca, Summit, Viz-Core, or all Custers). From this menu you can cancel your own jobs.
+* __Active Jobs:__ Under the “Active Jobs” tab you can view active jobs. You can choose to view your jobs (or all jobs) as well as choose from specific clusters (Alpine, Core, Summit, or All Clusters). From this menu you can cancel your own jobs.
 
 ![](OnDemand/active_jobs.png)
 
-* __Job Composer:__ Create and edit job scripts and schedule jobs under this menu. [OSC's Job Management help page](https://www.osc.edu/resources/online_portals/ondemand/job_management) provides details on its use.
+* __Job Composer:__ Create and edit job scripts and schedule jobs under this menu.
+
+> See [OSC's Job Management help page](https://www.osc.edu/resources/online_portals/ondemand/job_management) for detailed use of the job composer feature.
 
 ![](OnDemand/job_composer.png)
 
-#### Clusters Menu (i.e. Shell Access)
+#### Clusters (Shell Access)
 
 The _Clusters_ menu provides shell access to login nodes on CURC clusters. The shell terminal is similar to many other tools that provide terminal access.
 
+> Currently both Summit and Alpine shells log you into a basic login node, you can load in either Alpine, Summit, or Blanca slurm instances from here: `module load slurm/<cluster>` with either summit, alpine, or blanca.
+
+* __Alpine:__ The Alpine tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal.
+
 * __Summit:__ The Summit tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal.
 
-* __Blanca:__ The Blanca tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal. To load the Blanca Slurm environment, make sure to type “module load slurm/blanca upon login. More information on using the Blanca cluster can be found [in the Blanca documentation](https://curc.readthedocs.io/en/latest/access/blanca.html).
+<!-- * __Blanca:__ The Blanca tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal. To load the Blanca Slurm environment, make sure to type “module load slurm/blanca upon login. More information on using the Blanca cluster can be found [in the Blanca documentation](https://curc.readthedocs.io/en/latest/access/blanca.html). -->
 
 #### Interactive Applications Menu
 
