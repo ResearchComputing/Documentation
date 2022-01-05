@@ -1,14 +1,18 @@
-## CURC Open OnDemand _(Browser based portal for CURC HPC resources)_
+> **_Early Release:_ Open OnDemand is in early/beta release, currenly only available to CU users, if you encounter any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**
 
-CURC Open OnDemand is a browser based, integrated, single access portal for all of your high performance computing (HPC) resources. CURC Open OnDemand provides a graphical interface to view, edit, download, and upload files, manage and create job templates for CURC's Summit and Blanca clusters, and access CURC interactive applications (visualization nodes, Matlab, and JupyterNotebooks), all via a web browser and with minimal knowledge of Linux and scheduler commands.
+## Open OnDemand _(Browser Based HPC Portal)_
+
+CURC Open OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing. CURC Open OnDemand provides a graphical interface to view, edit, download, and upload files, manage and create job templates for CURC's clusters, and access CURC interactive applications (Virtual Desktops, Matlab, and JupyterNotebooks), all via a web browser and with minimal knowledge of Linux and scheduler commands required.
 
 ### Getting started with CURC Open OnDemand
-
-> **_NOTE:_** _This is a beta release of Open OnDemand currenly only available to CU users_
  
 To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CU Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
 
 ![](OnDemand/login_page.png)
+
+> _Note:_ You must completely quit your browser in order for "logout" to occur. If after reopening your browser you are still logged in, please clear your cookies. If you are on a Chromebook or Chromebox, you will need to reboot your device in order to "quit the browser" and thus "logout".  
+
+> _**Tip: Using a "private browsing mode"** window while using OnDemand is a great way to handle "auto-logout", as closing your browser window will remove all associated cookies and session information._ 
 
 ### Features
 
