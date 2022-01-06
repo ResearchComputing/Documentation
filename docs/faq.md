@@ -12,7 +12,7 @@ See our documentation [homepage](index.html) for information about our most comm
 8. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
 9. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
-10. [Why do I get the following 'Invalid Partition' error when I run a Blanca job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-Blanca-job) 
+10. [Why do I get the following 'Invalid Partition' error when I run a Blanca job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-blanca-job) 
 11. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
 [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
@@ -133,7 +133,7 @@ If you receive this message, the following solutions are available: 1) run a sho
 This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing, and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
 
 ### Why do I get an 'Invalid Partition' error when I try to run a Blanca job?
-If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/summit or slurm/alpine scheduler instance. From a login node, run “module load slurm/blanca” to access the Slurm job scheduler instance for Blanca then try to resubmit your job.
+If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/summit or slurm/alpine scheduler instance. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 
 ### How can I check what allocations I belong to?
 
