@@ -12,36 +12,37 @@ See our documentation [homepage](index.html) for information about our most comm
 8. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
 9. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
-8. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
-9. [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
+10. [Why do I get the following 'Invalid Partition' error when I run a Blanca job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-Blanca-job) 
+11. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
+[Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
-10. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
+12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
 
 ### I have a new phone. How do I move my Duo onto it?
 
 You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
-After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Settings":** 
+After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Add a new device":** 
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png)
+<!-- ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management1edit.png) -->
+![](faq/duo_new_device1.png)
 
-In this settings side bar click "Add a new device.":
-
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png)
+<!-- ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/FAQ/duo-management2edit.png) -->
 
 Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notifcation...  
 
-<!-- insert image here ![]() -->
+![](faq/duo_new_device2.png)
 
 ...and click on "Enter a Passcode", or "Call Me". 
 - If you select "Call Me" the simply recieve the call and press 1. 
 - If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
+
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account, contact rc-help@colorado.edu for further assistance.
+If you cannot authenticate your account (e.g. do not have your old device), contact rc-help@colorado.edu for further assistance.
 
 ### How do I check how full my Summit directories are?
 
-You have three directories allocated to your username ($USER).  These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  To see how much space you've used in each, from a Summit 'scompile' node, type `curc-quota` as follows:
+You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  To see how much space you've used in each, from a Summit 'scompile' node, type `curc-quota` as follows:
 
 ```
 [user@shas0100 ~]$ curc-quota
@@ -53,7 +54,7 @@ You have three directories allocated to your username ($USER).  These include `/
 /scratch/summit                         29G        10211G         10240G
 ```
 
-You can also check the amount of space being used by any directory with the `du -h` command: 
+You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
 
 ```
 [janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
@@ -95,13 +96,31 @@ For more information on `sstat` or `sacct` commands, [take a look at our Useful 
 
 ### How can I see my current FairShare priority?
 
-You can check your current fair share priority level using the `sshare` command:
-```
-sshare -U -l
-```
-The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The -U flag will specify the current user and the -l flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
+There are a couple ways you can check your FairShare priority:
 
-For more information on fair share the `sshare` command, [take a look at Slurm's documentation on fair share](https://slurm.schedmd.com/fair_tree.html) Or [check out the Slurm reference page on sshare](https://slurm.schedmd.com/sshare.html)
+1. Using the `levelfs` tool in the `slurmtools` module. `levelfs` shows the current fair share priority of a specified user.
+	
+	You can use this tool by first loading in the `slurmtools` module (available from login nodes):
+	```
+	$ module load slurmtools
+	```
+	> _Tip: slurmtools is packed with lots of great features and tools like suacct, suuser, jobstats, seff, etc._
+	
+	Then using `levelfs` on your username:
+	```
+	$ levelfs $USER
+	```
+	* A value of 1 indicates average priority compared to other users in an account.
+	* A value of < 1 indicates lower than average priority (longer than average queue waits) 
+	* A value of > 1 indicates higher than average priority (shorter than average queue waits)
+<br/><br/>
+2. Using the `sshare` command:
+	```
+	sshare -U -l
+	```
+	The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The -U flag will specify the current user and the -l flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
+
+	For more information on fair share the `sshare` command, [take a look at Slurm's documentation on fair share](https://slurm.schedmd.com/fair_tree.html) Or [check out the Slurm reference page on sshare](https://slurm.schedmd.com/sshare.html)
 
 ### Why is my job pending with reason 'ReqNodeNotAvail'?
 
@@ -112,6 +131,9 @@ If you receive this message, the following solutions are available: 1) run a sho
 ### Why do I get an 'Invalid Partition' error when I try to run a job?
 
 This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing, and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
+
+### Why do I get an 'Invalid Partition' error when I try to run a Blanca job?
+If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/summit or slurm/alpine scheduler instance. From a login node, run “module load slurm/blanca” to access the Slurm job scheduler instance for Blanca then try to resubmit your job.
 
 ### How can I check what allocations I belong to?
 
