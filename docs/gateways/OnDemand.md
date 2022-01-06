@@ -6,7 +6,7 @@ CURC Open OnDemand is a browser based, integrated, single access point for all o
 
 ### Getting started with CURC Open OnDemand
  
-To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CU Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
+To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
 
 ![](OnDemand/login_page.png)
 
@@ -62,14 +62,14 @@ The _Clusters_ menu provides shell access to login nodes on CURC clusters. The s
 
 #### Interactive Applications Menu
 
-The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs), for interactive use on CURC clusters. Current supported applications include a __remote desktop atop the visualization ("Viz") cluster__ (aka "EnginFrame"), __MATLAB__, and __Jupyter Notebook__.
+The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs), for interactive use on CURC clusters. Current supported applications include a __remote desktop atop the core cluster__, __MATLAB__, and __JupyterHub__ .
 
-##### Remote Desktop (Viz-Core VNC)
+##### Core Desktop (Remote Desktop)
 
-1. When starting a Remote Desktop session on the _Viz_ cluster you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify account).
-![](OnDemand/viz_launch.png)
+1. When starting a Remote Desktop session you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify account).
+![](OnDemand/core_launch.png)
 2. Click “launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
-3. When your Remote Desktop is ready you can click the “Launch VIZ CORE VNC.” In most cases the default compression and image quality will suffice but if you do have problems with image quality you can adjust these settings as necessary. 
+3. When your Remote Desktop is ready you can click the “Launch” button. In most cases the default compression and image quality will suffice but if you do have problems with image quality you can adjust these settings as necessary. 
 4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
 
 > **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._
@@ -81,7 +81,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 2. Click “launch” to submit the MATLAB job to the queue. The wait time depends on the number of cores, nodes, and time requested.
 3. When your Matlab session is ready you can click the “Launch MATLAB on Core- CURC” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Matlab session will be started in a new window.
 
-> **_NOTE:_** _Matlab can also be opened in the Remote Desktop (VIZ CORE VNC), once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software). Some users find running Matlab in the Remote Desktop (VIZ CORE VNC) option provides an enhanced experience._
+> **_NOTE:_** _Matlab can also be opened in the Core Remote Desktop, once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software). Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience._
 
 > **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._
 
