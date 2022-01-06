@@ -35,6 +35,9 @@ Acknowledging RC
 
 Use of University of Colorado Research Computing resources, including (but not limited to) the Janus, Summit, and Alpine supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
 
+**Acknowledging Alpine:**
+"This work utilized the Alpine high performance computing resource at the University of Colorado Boulder. Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, and Colorado State University."
+
 **Acknowledging Summit:**
 "This work utilized the Summit supercomputer, which is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University. The Summit supercomputer is a joint effort of the University of Colorado Boulder and Colorado State University."
 
