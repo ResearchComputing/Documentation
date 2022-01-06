@@ -30,11 +30,10 @@ Early in the process we will need to know details about the proposed class usage
 - Typical computational work (number of jobs or sessions, length, number of CPUs)  
 - Date if 1st usage in class/lab  
 - Class roster including TAs and auditors.  
-
 Acknowledging RC
 ----------------
 
-Use of University of Colorado Research Computing resources, including (but not limited to) the Janus and Summit supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
+Use of University of Colorado Research Computing resources, including (but not limited to) the Janus, Summit, and Alpine supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
 
 **Acknowledging Summit:**
 "This work utilized the Summit supercomputer, which is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University. The Summit supercomputer is a joint effort of the University of Colorado Boulder and Colorado State University."
@@ -107,10 +106,10 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Gateways & Portals
 
+   gateways/OnDemand
    gateways/jupyterhub
    gateways/enginframe
    gateways/xdmod
-   gateways/OnDemand
 
 .. toctree::
    :maxdepth: 2
