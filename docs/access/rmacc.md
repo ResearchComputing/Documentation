@@ -69,14 +69,14 @@ gsissh rmacc-summit
 
 ### Data Transfer
 
-**Globus is the recommended data transfer method for XSEDE users.** Instructions to setup Globus can be found [here](../compute/data-transfer.html#globus). 
+Traditional command line file transfer tools such as scp, sftp, and rsync won't work for xsede users because they cannot bypass the XSEDE SSO. For that reason, **Globus is the RC recommended data transfer method** for XSEDE users. 
 
-> **Note: Traditional command line file transfer tools such as scp, sftp, and rsync won't work for xsede users because they cannot bypass the XSEDE SSO.** 
+[Sign into Globus Connect](https://www.globus.org/app/login) by selecting `XSEDE` from the dropdown menu and by logging in using your XSEDE username and password.
+> **_Note:_** As an XSEDE user, you **must** use the `XSEDE` oganization option to login to Globus and **not** the `University of Colorado at Boulder` option.
 
-As an XSEDE user, you **must** use the XSEDE oganization option to login to Globus (**not** the University of Colorado at Boulder option).
 ![](rmacc/xsede_globus_login.png)
 
-Once you are logged into Globus and have your personal endpoint established, you can connect to our filesystems using the "CU Research Computing XSEDE Endpoint". 
+Once you are logged into Globus and have your personal endpoint established, you can connect to our filesystems using the "CU Research Computing XSEDE Endpoint". Further instructions to setup Globus endpoints, configuring a local endpoint, and Globus shared collections can be found [here](../compute/data-transfer.html#globus). 
 
 ### Other useful information
 
