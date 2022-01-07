@@ -11,7 +11,7 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 
    * **Within one business day you should recieve a duo invitation. If you didn't receive an invitation or your invitation has expired, then please contact rc-help@colorado.edu for a new invitation.**
 2. Login with your CU identikey and follow the instructions to setup
-     - Research Computing recommends users utilize Duo Push as  Duo push, install the Duo Mobile app and link your account with your device. Duo
+     - Research Computing recommends users utilize Duo Mobile Push as your method of authenication: install the Duo Mobile app and link your account with your device.
 3. Login to RC Resources via ssh [as described below.](#logging-in-with-duo)
 
 #### Common Issues
@@ -21,7 +21,7 @@ A few common issues users will come across when using Duo include:
 * Requesting a phone call if you want to use the Push app for authentication.
 * A Duo account purged after remaining unused for 6-9 months.
 * Having a new device and want to move Duo onto it.
-    * (Check out our FAQ for detailed instructions on accomplishing this.)[https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it]
+    * [Check out our FAQ for detailed instructions on accomplishing this.](https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it)
 
 Please contact us at rc-help@colorado.edu if you encounter these or any other issues regarding Duo.
 
@@ -29,9 +29,9 @@ Please contact us at rc-help@colorado.edu if you encounter these or any other is
 
 Duo offers a variety of methods to log into your account. Depending on what you select when setting up your Duo account, you should have several different methods of 2-factor authentication when logging into RC Resources. 
 
-#### Using Duo Push
+#### Using Duo Mobile Push
 
-Duo Push is Research Computing's recommended method of 2-factor authentication. Because Duo Push is tied to your physical smart device instead of a phone number or account, Duo Push is provides a more secure method of 2-factor authentication than either SMS or phone call.
+**Duo Mobile Push is Research Computing's recommended method of 2-factor authentication.** Because Duo Push is tied to your physical smart device instead of a phone number or account, Duo Push is provides a more secure method of 2-factor authentication than either SMS or phone call.
 
 1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
 2. Enter your identikey password when prompted. 
