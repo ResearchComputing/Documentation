@@ -1,8 +1,8 @@
-## Compiling and linking
+## Compiling and Linking
 
 Before compiling in the RC environment, first ssh to one of the Summit
 compile nodes via `ssh scompile`. Next, load those modules
-corresponding to the compiler, MPI version (if needed), and
+corresponding to the compiler, MPI version (if needed), and any
 third-party libraries required by your application. The load order
 should always be compiler first, MPI second, and third-party libraries
 last.
@@ -26,7 +26,7 @@ appropriate for your compiler/MPI combination. These environment
 variables reference to the Fortran, C, and C++ compilers respectively
 
 In addition, several environment variables are set that may be useful
-during the compilation process.  These variables possess the prefix
+during the compilation process.  These variables are prefixed by
 `CURC` and may easily be found by searching your environment for
 `CURC` via `env | grep CURC`. This will yield output similar to:
 
@@ -51,7 +51,7 @@ variables set by the module system may look like:
 $FC my_program.f90 -I$CURC_HDF5_INC -L$CURC_HDF5_LIB -lhdf5_fortran -o my_program
 ```
 
-**Note:** Your run-time environment should reflect your compilation
+> **Note:** Your run-time environment should reflect your compilation
 environment. Be sure to include the same sequence of `module` commands
 in your job script as that used at compile time.
 

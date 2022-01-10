@@ -1,4 +1,4 @@
-## Data transfer
+## Data Transfer
 
 Research Computing supports several methods of file transfer. File
 transfers from a local system can be done through a web-based
@@ -36,18 +36,14 @@ is RC's recommended way of transfering data.
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
-*If you're with an institution other than CU Boulder (e.g. XSEDE), your institution
- may still be available for Globus authentication using the InCommon
- federation. Look for your institution in the list and sign in with
- your local credentials. If your institution is not listed, you will
- need to [create a Globus account](https://www.globusid.org/create).*
+> **_Note for non-CU Boulder users:_** If you are with an institution other than CU Boulder (e.g. **XSEDE**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `XSEDE`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 Research Computing storage resources are available via multiple Globus
 "endpoints." You can connect to an RC endpoint using the "endpoint"
-field in the Globus web interface and searching for "CU Boulder
-Research Computing". Log into the end point using your Research
+field in the Globus web interface and searching for `CU Boulder
+Research Computing`. Log into the end point using your Research
 Computing credentials.
 
 You must also configure a local endpoint to transfer files to or from
