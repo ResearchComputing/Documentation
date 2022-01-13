@@ -15,7 +15,7 @@ the C++ Language.
 Resources:
 
 Much more in depth OpenMP and MPI C++ tutorial:
-- [https://computing.llnl.gov/tutorials/openMP/](https://computing.llnl.gov/tutorials/openMP/)
+- [https://hpc-tutorials.llnl.gov/openmp/](https://hpc-tutorials.llnl.gov/openmp/)
 
 
 ### Parallel “Hello, World” Program

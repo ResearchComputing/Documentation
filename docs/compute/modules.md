@@ -1,4 +1,4 @@
-## The modules system
+## The Modules System
 
 Research Computing uses a module system to load most software into a
 user's environment. Most software is not accessible by default and

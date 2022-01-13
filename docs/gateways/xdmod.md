@@ -10,11 +10,11 @@ All CURC users have access to XDMoD (CU Boulder, CSU and RMACC). At this time, l
 
 #### Step 1: Navigate to the CURC XDMoD instance
 
-In your browser navigate to https://xdmod.rc.colorado.edu. Upon reaching there you will see a summary screen similar to the following image.
+In your browser navigate to [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu). Upon reaching there you will see a summary screen similar to the following image.
 
 ![](xdmod/xdmod_homescreen.png)
 
-This screen provides some "quick stats" and summary plots that address some of the most common user questions, such as average wait times and recent resource usage by system (Summit or Blanca) and partition.  These metrics may be all you need. If you want to personalize metrics you can login with your CURC username and password (currently supported for CU Boulder users only).
+This screen provides some "quick stats" and summary plots that address some of the most common user questions, such as average wait times and recent resource usage by system (Summit or Blanca) and partition.  These metrics may be all you need. If you want to personalize metrics you can login with your CURC username and password (*currently only supported for CU Boulder users*).
 
 #### Step 2: Login (CU Boulder users only)
 
@@ -41,9 +41,9 @@ The following tabs will be available, depending on whether you are logged in
 
 _** - only available to users who are logged in._
 
-_Notes on XDMoD Syntax_
-* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multipled by how long the job runs)
-* a "PI" is a project account (e.g., `ucb-general` or `ucb124_summit1`)
+> _Notes on XDMoD Syntax_
+>	* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multipled by how long the job runs)
+>	* a "PI" is a project account (e.g., `ucb-general` or `ucb124_summit1`)
 
 #### Step 4: Become a pro!
 

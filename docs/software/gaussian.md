@@ -43,7 +43,7 @@ The default dynamic memory request in G16 is frequently too small to
 support the amount of memory that needs to be allocated to efficiently
 support computations on even modest-sized molecules. If too little
 memory is requested, the job can crash. Thus, use the '-m' flag in
-your g16 command line (e.g. `-m=48gb`) to specify at least of 50% of
+your g16 command line (e.g. `-m=48gb`) to specify at least 50% of
 the amount of memory your Slurm job has requested.
 
 
@@ -77,7 +77,6 @@ module load gaussian/16_avx2
 # Always specify a scratch directory on a fast storage space (not /home or /projects!)
 export GAUSS_SCRDIR=/scratch/summit/$USER/$SLURM_JOBID
 # or export GAUSS_SCRDIR=$SLURM_SCRATCH
-
 # alternatively, to use the local SSD; max 159GB available
 
 # the next line prevents OpenMP parallelism from conflicting with Gaussian's internal SMP parallelization

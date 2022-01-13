@@ -159,6 +159,8 @@ through the `.snapshot` hidden subdirectory. You will see a subdirectory
 associated with each snapshot of your `/home` or `/projects`
 directory, named using the time-stamp associated with the snapshot.
 
+> Note: The .snapshot directory is not visible to any utilities that list directory contents, so an ‘ls’ of the .snapshot directory will fail, although you can ‘cd’ to it.
+
 ### Workspace Sharing
 
 All users have complete control over their personal directory

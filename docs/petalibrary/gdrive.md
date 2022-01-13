@@ -2,7 +2,7 @@
 
 #### Step 1: download/install rclone and make sure you can run it
 
-* Download the latest version from https://rclone.org/downloads/ and install per the developer's documentation.
+* Download the latest version from [https://rclone.org/downloads/](https://rclone.org/downloads/) and install per the developer's documentation.
 * To test, run `rclone --version` at your prompt; if the software is installed a version number will be reported back to you, similar to:
 
 ```

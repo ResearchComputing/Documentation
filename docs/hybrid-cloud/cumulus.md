@@ -12,7 +12,7 @@ which can be used to host virtual machines and volumes to host workloads.
 #### CUmulus Quick Start
 
 1. Request a CUmulus application by contacting the RC helpdesk at [rc-help@colorado.edu](rc-help@colorado.edu)
-2. Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/).
+2. Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/).
 	- Create virtual instances with specific operating systems and storage requirements
 	- Manage network configurations 
 
@@ -26,9 +26,9 @@ which can be used to host virtual machines and volumes to host workloads.
 - Console access to hosted VMs
 
 > CUmulus Resources
-	> - 244 total CPU cores
-	> - 4GB RAM per CPU core
-	> - 101.3TB of object-oriented storage
+> - 244 total CPU cores
+> - 4GB RAM per CPU core
+> - 101.3TB of object-oriented storage
 
 #### Eligibility
 
@@ -54,8 +54,7 @@ CU Research Computing manages the resources and address systems-level issues as 
 - Personal websites or websites unrelated to research
 - Serverless applications
 
-> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._
-> Possible AWS Cases:
+> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._ Some Possible AWS Cases are listed below:
 > - Workflow that cannot be run on Summit/Alpine/Blanca and resource needs are too big for CUmulus
 > - Workflow that require access to very large datasets that are only hosted on AWS (e.g., some NASA satellite datasets)
 
@@ -78,7 +77,7 @@ Once we receive your request the allocation committee will review it. If the cas
 
 ### Project Management
 
-Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
+Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
 ![](cumulus/login.png)
 
@@ -172,7 +171,7 @@ Associate the IP Address to your instance
 
 Project access is managed through the Grouper application. Grouper is an enterprise access management system that empowers users to manage access, without the need for central IT. Group creation will be handled during project creation (if you don't see your group in "My Groups" in the Grouper application please email [rc-help@colorado.edu](rc-help@colorado.edu)).
 
-To view your groups in Grouper navigate to [mygroups.colorado.edu](mygroups.colorado.edu) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
+To view your groups in Grouper navigate to [mygroups.colorado.edu](https://mygroups.colorado.edu/grouper/) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
 >_Note:_ If you do not see your group, please contact [rc-help@colorado.edu](rc-help@colorado.edu) to create a group with the correct permissions and connections to CUmulus (_do not create your own group_).
 
 ![](cumulus/grouper.png)

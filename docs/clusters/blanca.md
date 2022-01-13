@@ -8,8 +8,8 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 
 ### Blanca Quick-Start
 
-1. If your group is a Blanca partner, ask your PI or PoC to send an email to <rc-help@colorado.edu> requesting access for you to their high-priority queue.
-2. From a login node, run "module load slurm/blanca" to access the Slurm job scheduler instance for Blanca.
+1. If your group is a Blanca partner, ask your PI or PoC to send an email to <rc-help@colorado.edu> requesting access for you to their high-priority queue. Please include the blanca group identifier and user identikey (e.g. user1234 requesting access to blanca-curc)
+2. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca.
 3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
 
@@ -18,7 +18,7 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 
 All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler.  Each partner group has its own high-priority QoS (analogous to a queue) for jobs that will run on nodes that it has purchased.  High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them.  High-priority jobs can run for a maximum wall time of 7 days.  All partners also have access to a low-priority preemptable QoS that can run on any Blanca nodes that are not already in use by their owners.  Low-priority jobs have a maximum wall time of 24 hours.
 
-Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: “module load slurm/blanca”.
+Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: `module load slurm/blanca`.
 
 More details about how to use Slurm can be found [here](../running-jobs/running-apps-with-jobs.html).
 
@@ -186,13 +186,13 @@ Note that the interactive job won't start until the resources that it needs are 
 ### Important notes
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
+2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics like Blanca CCN or any node on Blanca HPC can run MPI application much more efficiently.
 
 ### Blanca Preemptable QOS
 
-*(effective 2018-03-01)* Each partner group has its own high-priority QoS (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
+*(effective 2018-03-01)* Each partner group has its own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
 #### Usage
 To specify the preemptable QoS in a job script:

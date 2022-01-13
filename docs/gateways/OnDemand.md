@@ -10,9 +10,9 @@ To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https
 
 ![](OnDemand/login_page.png)
 
-> _Note:_ You must completely quit your browser in order for "logout" to occur. If after reopening your browser you are still logged in, please clear your cookies. If you are on a Chromebook or Chromebox, you will need to reboot your device in order to "quit the browser" and thus "logout".  
-
-> _**Tip: Using a "private browsing mode"** window while using OnDemand is a great way to handle "auto-logout", as closing your browser window will remove all associated cookies and session information._ 
+_**Notes on logging out:**_ 
+* You must **completely quit your browser in order for "logout" to occur**. If after reopening your browser you are still logged in, please clear your cookies. If you are on a Chromebook or Chromebox, you will need to reboot your device in order to "quit the browser" and thus "logout".  
+* **Tip: Using a "private browsing mode"** window while using OnDemand is a great way to handle "auto-logout", as closing your browser window will remove all associated cookies and session information. 
 
 ### Features
 
@@ -69,10 +69,14 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 1. When starting a Remote Desktop session you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify account).
 ![](OnDemand/core_launch.png)
 2. Click “launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
-3. When your Remote Desktop is ready you can click the “Launch” button. In most cases the default compression and image quality will suffice but if you do have problems with image quality you can adjust these settings as necessary. 
+3. When your Remote Desktop is ready you can click the "Launch Core Desktop" button. In most cases the default compression and image quality will suffice but if you do have problems with image quality you can adjust these settings as necessary. 
+<!-- ![](OnDemand/core_session.png) -->
 4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
 
-> **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._
+**Notes**:
+* You can copy/paste into/out of the VNC desktop using the clipboard in the "hidden" tab on the left-hand-side of the virtual desktop.
+![](OnDemand/copypasta.png)
+* Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
 ##### MATLAB
 
@@ -81,9 +85,9 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 2. Click “launch” to submit the MATLAB job to the queue. The wait time depends on the number of cores, nodes, and time requested.
 3. When your Matlab session is ready you can click the “Launch MATLAB on Core- CURC” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Matlab session will be started in a new window.
 
-> **_NOTE:_** _Matlab can also be opened in the Core Remote Desktop, once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software). Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience._
-
-> **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._
+**_Notes:_** 
+* Matlab can also be opened in the Core Remote Desktop, once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software). Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience.
+* Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
 ##### Jupyter Notebook
 
@@ -96,9 +100,10 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 3. Once your Jupyter Notebook session is ready you can click the “Launch Jupyter Notebook” In most cases the default compression and image quality will suffice but if you do have problems with image quality of the Remote Desktop you can adjust as necessary. An interactive Jupyter Notebook session will be started in a new window.
 4. For more information on running Jupyter Notebooks [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
 
-> **_NOTE:_** _Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them._ 
+**_Notes:_** 
+* Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
-> **_NOTE:_** _Users can also run Jupyter Notebooks in the CURC Jupyterhub at https://jupyter.rc.colorado.edu_. 
+* Users can also run Jupyter Notebooks in the CURC Jupyterhub at https://jupyter.rc.colorado.edu.
 
 #### My Interactive Sessions
 

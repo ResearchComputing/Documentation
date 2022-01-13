@@ -29,10 +29,11 @@ $ squeue --user=your_rc-username --long
 The squeue command also provides users with a means to calculate a
 job's estimated start time by adding the `--start` flag to our
 command. This will append Slurm's estimated start time for each job in
-our output information. (Note: The start time provided by this command
+our output information. 
+> Note: The start time provided by this command
 can be inaccurate. This is because the time calculated is based on
 jobs queued or running in the system. If a job with a higher priority
-is queued after the command is run, your job may be delayed.)
+is queued after the command is run, your job may be delayed.
 
 ```bash
 $ squeue --user=your_rc-username --start
@@ -73,7 +74,7 @@ $ scancel your_job-id1, your_job-id2, your_jobiid3
 
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
 
-### Learning status information with `sstat`
+### Analyzing currently running jobs with `sstat`
 
 The `sstat` command allows users to easily pull up status information
 about their currently running jobs. This includes information about *__CPU usage__*,
