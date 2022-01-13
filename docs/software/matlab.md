@@ -25,36 +25,45 @@ below.
 ### Running Matlab Interactive Jobs
 
 Running Matlab interactive jobs on RC resources is both a simple and
-easy task to accomplish. In this section we will learn how to launch
-Matlab as an interactive job. For more information on launching
-interactive jobs [check out our interactive jobs
-tutorial](../running-jobs/interactive-jobs.html)
+easy task to accomplish. In this section we will learn 2 ways to launch
+Matlab as an interactive job: 
 
-Begin by launching an interactive job by loading slurm/summit into
-your environment and running the `sinteractive` command.
+1. MATLAB Interactive Application (CURC OnDemand):
 
-```bash
-module load slurm/summit
-sinteractive
-```
+	You can access a full Matlab GUI in your browser with CURC OnDemand. CURC OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing which includes access to interactive apps such as Matlab, a Virtual Desktop, and more. 
 
-From here you will load the Matlab module into your environment.
+	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../gateways/OnDemand.html#matlab). 
 
-```bash
-module load matlab
-```
+2. Interactive SLURM job:
 
-Lastly we will run Matlab from the terminal.
+	For more information on launching
+	interactive jobs [check out our interactive jobs
+	tutorial](../running-jobs/interactive-jobs.html)
 
-```bash
-matlab -nosplash
-```
+	Begin by launching an interactive job by loading slurm/summit into
+	your environment and running the `sinteractive` command.
 
-By default Matlab will load an interactive terminal session. If you would like to access the Matlab GUI 
-then simply run Matlab with X11 forwarding enabled.
+	```bash
+	module load slurm/summit
+	sinteractive
+	```
 
-To find out how you enable X11 forwarding in your terminal session, [check out our X11 forwarding tutorial here.](../running-jobs/interactive-jobs.html#interactive-gui-applications)
+	From here you will load the Matlab module into your environment.
 
+	```bash
+	module load matlab
+	```
+
+	Lastly we will run Matlab from the terminal.
+
+	```bash
+	matlab -nosplash
+	```
+
+	By default Matlab will load an interactive terminal session. If you would like to access the Matlab GUI 
+	then simply run Matlab with X11 forwarding enabled.
+
+	To find out how you enable X11 forwarding in your terminal session, [check out our X11 forwarding tutorial here.](../running-jobs/interactive-jobs.html#interactive-gui-applications)
 
 
 ### Running Matlab Batch Jobs
