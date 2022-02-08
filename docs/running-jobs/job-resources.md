@@ -51,7 +51,7 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 > <sup>3</sup> The `shas-testing` partition is limited to 24 cores total. These cores can come from up to 2 nodes but a user is limited to maximum of 24 cores per job.
 
-To run a job longer than 24 hours on the `shas`, `sgpu`, or `sknl` partitions, use the `long` QOS.
+To run a job longer than 24 hours on the `shas`, or `sknl` partitions, use the `long` QOS.
 
 More details about each type of node can be found [here](https://www.colorado.edu/rc/resources/summit/specifications).
 
