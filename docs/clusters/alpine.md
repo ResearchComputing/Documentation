@@ -49,6 +49,12 @@ sinfo --format="%N | %f" --partition="alpine-curc"
 - **localraid**: large, fast RAID disk storage in node  
 - **rhel8**: RedHat Enterprise Linux version 8 operating system  
 
+### Cluster Interconnect
+
+- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric)
+- **GPU nodes**: 2x25 Gb Ethernet +RoCE
+- **Scratch Storage**: 25Gb Ethernet +RoCE 
+
 ### Requesting Resources 
 
 #### Partitions
