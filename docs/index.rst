@@ -94,7 +94,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/ssky
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Petalibrary
    
    petalibrary/petalibrary
