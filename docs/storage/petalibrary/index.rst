@@ -69,7 +69,7 @@ The PetaLibrary service is designed for file storage and retrieval, and is not a
 ----
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
 
     *
