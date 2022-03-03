@@ -95,6 +95,13 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 3
+   :caption: Storage
+
+   :caption: Scratch Filesystems
+
+   storage/scratch/summit_scratch.md
+   storage/scratch/alpine_scratch.md
+
    :caption: Petalibrary
    
    petalibrary/petalibrary
