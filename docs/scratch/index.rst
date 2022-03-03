@@ -1,3 +1,6 @@
+Scratch
+=======
+
 .. toctree::
     :maxdepth: 2
 

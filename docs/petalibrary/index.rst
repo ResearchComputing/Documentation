@@ -1,3 +1,6 @@
+PetaLibrary
+===========
+
 .. toctree::
     :maxdepth: 2
 
