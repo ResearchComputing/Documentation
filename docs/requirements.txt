@@ -1,2 +1,2 @@
 sphinx-markdown-tables
-myst-parser
+m2r2

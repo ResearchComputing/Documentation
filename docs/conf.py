@@ -10,7 +10,7 @@ source_parsers = {
 
 extensions = [
     'sphinx_markdown_tables',
-    'myst_parser',
+    'm2r2',
 ]
 
 source_suffix = ['.rst', '.md']
