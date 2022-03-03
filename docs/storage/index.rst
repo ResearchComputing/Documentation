@@ -1,7 +1,7 @@
 .. toctree::
     :maxdepth: 2
 
-    alpine_scratch.md
-    summit_scratch.md
+    alpine_scratch
+    summit_scratch
   
     
