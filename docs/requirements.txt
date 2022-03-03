@@ -1,2 +1,1 @@
 sphinx-markdown-tables
-m2r2
