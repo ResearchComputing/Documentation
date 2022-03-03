@@ -73,7 +73,7 @@ USERGROUP
 * Now create user/group on VM:
 ```
 sudo groupadd -g 111111 USERGROUP
-sudo useradd -u 111111 -g 111111 USERNAME
+sudo useradd -u -m 111111 -g 111111 USERNAME
 ```
 
 8) Generate JWT (java web token) on a login node
