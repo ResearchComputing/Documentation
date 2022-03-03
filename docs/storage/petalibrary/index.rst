@@ -1,4 +1,5 @@
-## The PetaLibrary
+PetaLibrary
+===========
 
 The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs). It is available at an unsubsidized cost to researhers from other institutions. 
  
@@ -64,3 +65,9 @@ The PetaLibrary service is designed for file storage and retrieval, and is not a
 ### More information
 
 * [https://www.colorado.edu/rc/resources/petalibrary](https://www.colorado.edu/rc/resources/petalibrary)
+
+----
+
+.. toctree::
+    :glob:
+    :maxdepth: 2

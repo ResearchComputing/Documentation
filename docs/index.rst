@@ -97,8 +97,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 1
    :caption: Storage
 
-   petalibrary/index
-   scratch/index
+   storage/petalibrary/index
    
 .. toctree::
    :maxdepth: 2
