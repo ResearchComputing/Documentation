@@ -94,11 +94,12 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/ssky
 
 .. toctree::
+   :matlab: 1
    :caption: Storage
-   
-   storage/index
-   petalibrary/index
 
+   petalibrary/petalibrary.md
+   storage/alpine_scratch.md
+   
 .. toctree::
    :maxdepth: 2
    :caption: Gateways & Portals
