@@ -94,10 +94,9 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/ssky
 
 .. toctree::
-   :maxdepth: 1
    :caption: Storage
    
-   scratch/index
+   storage/index
    petalibrary/index
 
 .. toctree::
