@@ -94,25 +94,11 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/ssky
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Storage
-
-   :caption: Scratch Filesystems
-
-   storage/scratch/summit_scratch.md
-   storage/scratch/alpine_scratch.md
-
-   :caption: Petalibrary
    
-   petalibrary/petalibrary
-   petalibrary/rclone
-   petalibrary/mounting
-   petalibrary/gdrive
-   petalibrary/synology
-   petalibrary/zfs_snapshots
-   petalibrary/ownership
-   petalibrary/faq
-   petalibrary/test/test
+   petalibrary/index
+   scratch/index
 
 .. toctree::
    :maxdepth: 2
