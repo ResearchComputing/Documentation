@@ -105,6 +105,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    petalibrary/zfs_snapshots
    petalibrary/ownership
    petalibrary/faq
+   petalibrary/test/test
 
 .. toctree::
    :maxdepth: 2
