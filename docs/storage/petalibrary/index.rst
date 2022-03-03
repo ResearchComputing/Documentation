@@ -1,7 +1,7 @@
 PetaLibrary
 ===========
 
-.. ../petalibrary.md
+.. mdinclude:: ../petalibrary.md
 
 ----
 
