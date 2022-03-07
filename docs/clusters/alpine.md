@@ -9,11 +9,10 @@ Alpine is the third-generation HPC cluster at University of Colorado Research Co
 
 ### Alpine Quick-Start:
 
-1. From a login node, run the command:
+1. From a login node load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
    ```bash
    $ module load slurm/alpine
    ```
-to access the Slurm job scheduler instance for Alpine.
 
 2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [table](anchor) and the [examples](anchor) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
