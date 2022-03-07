@@ -1,6 +1,6 @@
 ## Alpine
 
- ### _EARLY RELEASE:_ The Alpine cluster is currently in early/beta release. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).
+### _EARLY RELEASE:_ The Alpine cluster is currently in early/beta release. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).
 
 ### _NOTE:_ CURC Alpine is currently in Beta testing available only for Early Adopters.
 
