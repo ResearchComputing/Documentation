@@ -16,4 +16,4 @@ PetaLibrary access is subject to the [PetaLibrary Terms of Service](https://www.
 
 .. toctree::
 
-   petalibrary
+   petalibrary.md
