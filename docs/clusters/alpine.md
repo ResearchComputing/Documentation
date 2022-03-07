@@ -1,8 +1,8 @@
 ## Alpine
 
- ### _**EARLY RELEASE:**_ **The Alpine cluster is currently in early/beta release. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**
+ ### _EARLY RELEASE:_ The Alpine cluster is currently in early/beta release. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).
 
-### _**NOTE:_ CURC Alpine is currently in Beta testing available only for Early Adopters.**
+### _NOTE:_ CURC Alpine is currently in Beta testing available only for Early Adopters.
 
 Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit. Alpine is a heterogeneous cluster with pooled resources from the following institutions: CU Boulder, Colorado State University, and Anschutz Medical Campus. 
 
