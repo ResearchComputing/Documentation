@@ -1,7 +1,8 @@
 ## Alpine
 
 > _**Early Release:**_ **The Alpine cluster is in early/beta release and being actively developed. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**
-> CURC Alpine is currently in Beta testing available only for Early Adopters. 
+
+> _**NOTE:_CURC Alpine is currently in Beta testing available only for Early Adopters. 
 
 Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit.
 
