@@ -14,6 +14,6 @@ The PetaLibrary is a University of Colorado Boulder Research Computing service t
 
 PetaLibrary access is subject to the [PetaLibrary Terms of Service](https://www.colorado.edu/rc/resources/petalibrary/tos).
 
-.. toctree::
-
-   petalibrary.md
+```{toctree}
+petalibrary.md
+```
