@@ -1,6 +1,7 @@
 ## Alpine
 
-### _EARLY RELEASE:_ CURC Alpine is currently in early testing available only for the Early Adopters group.
+### _EARLY RELEASE:_ CURC Alpine is currently in early testing available _only_ for the early adopters group.
+> If you are interested in becoming an early adopter to help us test the cluster please email us at rc-help@colorado.edu. **Please be prepared to attend early adopter meetings and provide feedback.** 
 
 ### _EARLY RELEASE:_ The Alpine cluster is currently in early release. If you see or experience any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).
 
@@ -9,26 +10,29 @@ Alpine is the third-generation HPC cluster at University of Colorado Research Co
 
 ### Alpine Quick-Start:
 
-1. From a login node load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
+1. From a *login node* load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
    ```bash
    $ module load slurm/alpine
    ```
 
 2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [table](anchor) and the [examples](anchor) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
-3. Software can be loaded into the Alpine compute environment via the [module system](link), which allows users choose from our pre-installed software stack.
+3. Software can be loaded into the Alpine compute environment via the LMOD [module system](link), which allows users choose software from our pre-installed software stack.
 
-4. If you would like to use software that is not within our preinstalled stack you can compile your application on a compute node via an interactive job (as Alpine does not yet have dedicated compile nodes). Consult our [compiling and linking](../compute/compiling.md) for more information on compiling software. You can also request a software installation by submitting a [software request form](lnk).
+4. If you would like to use software that is not within our preinstalled stack your application must be compiled on a compute node via an interactive job (as Alpine does not yet have dedicated compile nodes). Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also request a software installation by submitting a [software request form](lnk).
 
 ### Cluster Specifications:
 #### Nodes
+The Alpine cluster is made up of different types of nodes outlined below: 
 - **CPU nodes**: 64 AMD Milan Compute nodes (64 cores/node)
 - **GPU nodes**: 
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	- 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
 
 > For a full list of nodes on Alpine use the command:  `scontrol show nodes.` Get single node details with the `scontrol show nodes <node name>` command.
+
 #### Interconnect
+The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
 - **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric)
 - **GPU nodes**: 2x25 Gb Ethernet +RoCE
 - **Scratch Storage**: 25Gb Ethernet +RoCE
@@ -54,20 +58,23 @@ sinfo --format="%N | %f"
 
 ### Job Scheduling
 
-All jobs on Alpine are run through a batch/queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed but these must be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
+All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed but these must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
 
 More details about how to use SLURM to run jobs can be found in our [running applications with jobs](../running-jobs/running-apps-with-jobs.html) documentation.
 
 
 ### Requesting Resources
-Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or the command line when submitting a job. Below are some common resource directives for Alpine: 
-* **Partition:** specify node type
-* **Gres (General Resources):** specify GPU amount (required if using a GPU node)
-* **QOS (Quality of Service):** constrain or modify job characteristics
+Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed): 
+* **Partition:** Specify node type
+* **Gres (General Resources):** Specify GPU amount (*required if using a GPU node*)
+* **QOS (Quality of Service):** Constrain or modify job characteristics
+
+  
+> Examples of full job scripts are shown in the next section.
 
 #### Partitions
 
-**Nodes with the same hardware configuration are grouped into partitions**. You will need to specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting a job) in order for your job to run on the appropriate type of node. On Alpine nodes are also grouped by institution. You need to include your institutions suffix in order to request the required nodes. 
+**Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting an interactice job) in order for your job to run on the appropriate type of node. On Alpine nodes are also grouped by institution. You need to include your institutions suffix in order to request the required nodes. 
 
 > **Note:** GPU nodes require the additional `--gres` directive (see next section).
 
@@ -104,36 +111,28 @@ Partitions available on Alpine:
 
 #### General Resources (gres)
 
-General resources allows for fine-grain hardware specifications. On Alpine the gres directive is **required** to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have more than one. The available Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
+**General resources allows for fine-grain hardware specifications**. On Alpine the gres directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
 ```bash
 $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
 ```
 
-> _**Note:**_ AMD MI100 have yet to be provisioned with `gres` if needed, you can request a _whole_ AMD MI100 node by simply specifying `--partition=ami100-<institute>` without the `gres` functionality.
+__Examples of GPU configurations/requests__:
 
-__Examples of configurations one could request__:
-
-_request a single gpu of any type_
+_request a single GPU accelerator:_ 
 ```
-#SBATCH --gres=gpu
+--gres=gpu
 ```
-
-_request multiple gpus of any type_
+_request multiple (in this case 3) GPU accelerators:_
 ```
-#SBATCH --gres=gpu:3
-```
-
-_request two gpus of type NVIDIA A100_
-```
-#SBATCH --gres=gpu:a100:2
+--gres=gpu:3
 ```
 
 #### Quality of Service (qos)
 
-Quality of Service or QoS is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
 
-**Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long job.**
+> Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long job.
 
 The available QoS's for Summit are:
 
@@ -143,35 +142,28 @@ The available QoS's for Summit are:
 | long        | Longer wall times          | 7D              | tbd | tbd | tbd | 0 |
 
 
-#### Requesting GPUs in jobs
+### Examples:
 
+Below are some examples of SLURM directives that can be used in your batch scripts in order to meet certain job requirements.
 
-
-__Notes__:
-  * Examples of full job scripts for GPUs are shown in the next section.
-
-### Examples
-
-Here are examples of Slurm directives that can be used in your batch scripts in order to meet certain job requirements.
-
-1. To run a 32-core job for 36 hours on a single (default) Alpine CPU node (as a UCB user):
+1. To run a 32-core job for 24 hours on a single Alpine CPU node (as a UCB user):
 ```bash
 #SBATCH --partition=amilan-ucb
 #SBATCH --nodes=1
 #SBATCH --ntasks=32
-#SBATCH --time=36:00:00
+#SBATCH --time=24:00:00
 ```
 
 2. To run a 56-core job (28 cores/node) across two Alpine CPU nodes (as a CSU user) in the low-priority qos for seven days:
 ```bash
-#SBATCH --partition=amilan-ucb
+#SBATCH --partition=amilan-csu
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 #SBATCH --time=7-00:00:00
 #SBATCH --qos=long
 ```
 
-3. To run a 16-core job for 24 hours on a single Alpine AMD GPU node (as a AMC user), using all three GPUs:
+3. To run a 16-core job for 24 hours on a single Alpine AMD GPU node (as a AMC user), using all three GPU accelerators:
 ```bash
 #SBATCH --partition=ami100-amc
 #SBATCH --nodes=1
@@ -199,7 +191,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 #### Full Example Job Script
 
-Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos (as a UCB user).
+Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos (as a UCB user) that runs a python script using a custom conda environment.
 
 ```
 #!/bin/bash
@@ -220,22 +212,22 @@ python myscript.py
 
 ### Allocations
 
-All new Alpine users are granted an initial allocation (account) called `ucb-general`. Users who require more core hours than `ucb-general` can provide are advised to apply for an allocation. The allocation process requires that users have run example jobs in ucb-general that can be assessed by RC for efficiency/optimation on Alpine. We then work with users to make workflows more efficient if needed, and then grant the allocation.
+All new Alpine users are granted an initial allocation (account) called `ucb-general`. Users who require more core hours than `ucb-general` can provide are advised to apply for an allocation. The allocation process requires that users have run example jobs in ucb-general that can be assessed by RC for efficiency/optimation on Alpine. Research Computing will then work with users to make workflows more efficient if needed and then grant the allocation.
 
-You can read more about the allocation process and why you would want to apply for one on our [Allocation's page](../access/allocations.md).
+You can read more about the allocation process and why you might choose to apply for one on our [Allocation's page](../access/allocations.md).
 
 > _**Note:**_ For Alpine early adopters, you may finish off your Summit project year on Alpine (i.e. port pro-rated Summit SUs ath the same level). For example, if you have 3 months left on an 1.2M SU grant, we can port 300k SU to Alpine.
 
 ### Moving from Summit to Alpine
 
-* All software available on Summit should also be available on Alpine ([contact us](rc-help@colorado.edu) if you run into a software issue).
+There are some notable changes on Alpine from Summit: out main processor type has changed from Intel (on Summit) to AMD (on Alpine) which may have an impact on software. All software available on Summit should also be available on Alpine ([contact the RC helpdesk](rc-help@colorado.edu) if you run into a software issue). 
 
-### Important notes
+### Important notes:
 
-Not yet fully reviewed, subject to update:
-
-1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. Filesystems: `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Alpine nodes.
-> Note that for job I/O, `/scratch/summit/$USER` is replaced by `/scratch/alpine/$USER`. The Alpine scratch directory will offer much better performance than doing I/O from `/projects`.
-3. Node-local scratch: Most Alpine nodes also have at least 400 GB of scratch space on a local SSD disk, which will offer the fastest I/O possible.  We presently are working to make this space available to users, but presently _it is not_.  Once we make it available, this job specific directory will be available within jobs as `$SLURM_SCRATCH`. Note that this storage is only available during jobs and is deleted after jobs, so be sure to copy new data you want to keep off of it at the end of your job script. For more info on the different RC storage spaces, please see our page on [storage](../compute/filesystems.html).
-4. Head-nodes: There are presently no dedicated Alpine "head nodes" that would be analogous to the Summit "scompile" nodes.  We are working to address this need. In the meantime, to build software that will run on Alpine, start an interactive job on an Alpine node on the partition on which you expect your jobs to run, and compile your software there. Do not compile on the login nodes!
+1. **Software**: To see what modules are available on Alpine, start an interactive job on a compute node and use the `module avail` or `module spider` commands.
+2. **Filesystems**: `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are mounted on all Alpine nodes.
+3. **Scratch Space**: `/scratch/summit/$USER` is replaced by `/scratch/alpine/$USER`. 
+	> Alpine scratch will offer much better performance than doing I/O from `/projects`.
+4. **Node-local scratch**: Most Alpine nodes also have at least 400 GB of scratch space on a local SSD disk, which will offer the fastest I/O possible.  
+	> We are presently working to make this space available to users, but at the time of writing _it is not available_. Once we make it available, this job specific directory will be available within jobs as `$SLURM_SCRATCH`. Note that this storage is only available during jobs and is deleted after jobs, so be sure to copy new data you want to keep off of it at the end of your job script. For more info on the different RC storage spaces, please see our page on [storage](../compute/filesystems.html).
+4. **Head-nodes**: There are presently no dedicated Alpine "head nodes" that would be analogous to the Summit "scompile" nodes.  We are working to address this need. In the meantime, to build software that will run on Alpine, start an interactive job on an Alpine node on the partition on which you expect your jobs to run, and compile your software there. _**Do not compile on the login nodes!**_
