@@ -1,5 +1,3 @@
-
-
 ### Accessing the PetaLibrary
 
 #### General Access
