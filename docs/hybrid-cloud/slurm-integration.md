@@ -124,4 +124,3 @@ You have now successfully connected your CUmulus instance to CURC HPC resources!
 Before reporting issues to rc-help@colorado.edu follow the troublshooting steps below:
 * No access to [CUmulus Portal](link)? Make sure you have a CUmlus project set up, they are not automatically included with an RC account. You can request a project [here](link). 
 * Trouble creating a CUmlulus instance? Follow our [guided instructions](link) to instance creation.
-* 
