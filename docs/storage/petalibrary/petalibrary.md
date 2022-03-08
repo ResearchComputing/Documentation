@@ -1,4 +1,4 @@
-### Accessing PetaLibrary
+## Accessing PetaLibrary
 
 #### General Access
 Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. 
