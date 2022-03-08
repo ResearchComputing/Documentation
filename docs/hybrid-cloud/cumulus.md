@@ -11,10 +11,10 @@ which can be used to host virtual machines and volumes to host workloads.
 
 #### CUmulus Quick Start
 
-1) Request a CUmulus application by contacting the RC helpdesk at [rc-help@colorado.edu](rc-help@colorado.edu)
-2) Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/).
-- Create virtual instances with specific operating systems and storage requirements
-- Manage network configurations 
+1. Request a CUmulus application by contacting the RC helpdesk at [rc-help@colorado.edu](rc-help@colorado.edu)
+2. Once your application has been accepted, manage your project at [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/).
+	- Create virtual instances with specific operating systems and storage requirements
+	- Manage network configurations 
 
 #### Features
 - Virtual machine creation
@@ -50,12 +50,11 @@ CU Research Computing manages the resources and address systems-level issues as 
 - Web-based research “Hubs” (JupyterHub, Shiny Apps)
 
 ##### Inappropriate use cases: 
-- Running workflows that you could run on Summit, Alpine or Blanca
-- Websites that do not require connectivity to CURC resources
+- Running workflows that can more efficiently be run on Summit, Alpine or Blanca
+- Personal websites or websites unrelated to research
 - Serverless applications
 
-> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._
-> Possible AWS Cases:
+> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._ Some Possible AWS Cases are listed below:
 > - Workflow that cannot be run on Summit/Alpine/Blanca and resource needs are too big for CUmulus
 > - Workflow that require access to very large datasets that are only hosted on AWS (e.g., some NASA satellite datasets)
 
@@ -78,7 +77,7 @@ Once we receive your request the allocation committee will review it. If the cas
 
 ### Project Management
 
-Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](cumulus.rc.colorado.edu/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
+Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
 ![](cumulus/login.png)
 
@@ -87,6 +86,8 @@ The first attempt to login will automatically fail because you have not been ass
 Once your username is processed you will be able to login. The landing page for CUmulus is the "Overview page" which provides you basic information about your project (compute, volume, and network usage). You can select a period of time to query usage below the main overview graphics as well as view all current vm instances.
 
 ![](cumulus/overview.png)
+
+To use your CUmulus resources, you must create "Instances" or Virtual Machines which will each utilize portions of your main project's allocated reources. You can see all instances by navigating to the instances sub-tab (steps 1-3 below), read on to learn how to create a new instance.
 
 #### Navigate to Instances
 
@@ -103,38 +104,41 @@ Instances are virtual machines (VM) within your Virtual Private Cloud's (VPC) pr
 
 To create a new VM instance click on "Launch Instance" button on the top bar from the "Instances" page (step 4 above). This will bring up the instance launch window which will guide you in creating a new instance by selecting your operating system, allocating resources, choosing security groups, and adding ssh keys. Follow the steps and images below.
 
-1) Details: Fill out Instance details, including a name and description (availability zone and count can be left as defaults).
-> _**Note:**_ if launching Windows Server, the hostname will be truncated if greater than 15 characters in the OS
+1. Details: Fill out Instance details, including a name and description (availability zone and count can be left as defaults).
+	> _**Note:**_ if launching Windows Server, the hostname will be truncated if greater than 15 characters in the OS
 
-2) Source: You can choose an operating system from the images CURC provides (below). "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available. You will also select your volume size (default 1GB) and can choose to have volume deleted upon instance deletion (default: volume _not_ deleted).
-> Available Operating Systems:
-> - CentOS 7
-> - CentOS 8
-> - Debian 10
-> - Red Hat Enterprise Linux 8
-> - Ubuntu Server 18.04 LTS
-> - Ubuntu Server 20.04 LTS
-> - Windows 10 Enterprise 20H2
-> - Windows 10 Enterprise LTSC 2019
+2. Source: You can choose an operating system from the images CURC provides. "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available. You will also select your volume size (default 1GB) and can choose to have volume deleted upon instance deletion (default: volume _not_ deleted).
+	<!-- > Available Operating Systems: -->
+	<!-- > - CentOS 7 -->
+	<!-- > - CentOS 8 -->
+	<!-- > - Debian 10 -->
+	<!-- > - Red Hat Enterprise Linux 8 -->
+	<!-- > - Ubuntu Server 18.04 LTS -->
+	<!-- > - Ubuntu Server 20.04 LTS -->
+	<!-- > - Windows 10 Enterprise 20H2 -->
+	<!-- > - Windows 10 Enterprise LTSC 2019 -->
 
-> _Note:_ be aware that if you choose to _not_ delete volume upon instance deletion and do not intend to use them you will have "zombie" volumes which will continue to take up storage.
+	> _Note:_ be aware that if you choose to _not_ delete volume upon instance deletion and do not intend to use them you will have "zombie" volumes which will continue to take up storage.
 
-3) Flavor: Choose from a list of pre-selected resources (these "flavors" manage the sizing for the compute, memory, and storage of the instance).
-> _Note:_ keep in mind your OS prerequisites.
+3. Flavor: Choose from a list of pre-selected resources called "flavors" (these flavors manage the sizing for the compute, memory, and storage of the instance).
+	> _Note:_ If you don't see a list of flavors contact rc-help@colorado.edu; instances are added based on your project needs (generally done during the allocation process).
 
-4) Networks: Select a project network, which determines routability of either a public/internet or campus/internal floating IP. Keep defaults.
+4. Networks: Select a project network, which determines routability of either a public/internet or campus/internal floating IP. 
+	> _Note:_ If you 
 
-5) Security Groups: Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic. Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping your instance).
-> _Note:_ Security groups act at the instance level.
+5. Security Groups: Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic. Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping your instance).
+	> _Note:_ Security groups act at the instance level and can be changed after instance creation.
 
-6) Review default account information.
+6. Review default account information.
 
-7) Key Pair: A key pair allows you to SSH into your new instance. You may select an existing key pair, import a key pair, or generate a new key pair. 
-> Documentation to generate an ssh-key pair from your local machine ([ssh documentation](https://www.ssh.com/academy/ssh/public-key-authentication)). Upload the public key via the "Import Key Pair" button.
+7. Key Pair: A key pair allows you to SSH into your new instance. You may select an existing key pair, import a key pair, or generate a new key pair. 
+	> Documentation to generate an ssh-key pair from your local machine ([ssh documentation](https://www.ssh.com/academy/ssh/public-key-authentication)). Upload the public key via the "Import Key Pair" button.
 
-8) Add a 1-time script (optional)
+8. Add a 1-time script (optional)
 
-9) Launch the instance.
+9. Launch the instance.
+
+Your instance will now be available from the "Instance" sub-tab.
 
 ![](cumulus/instance_creation.png)
 
@@ -150,7 +154,7 @@ Expand the instance action menu, and select "Associate Floating IP"
 
 ![](cumulus/associate_ip.png)
 
-If no available addresses are allocated to the project, allocate one.
+If no available addresses are allocated to the project, you can allocate one by clicking the "+" button:
 
 ![](cumulus/allocate_floating_ip.png)
 
@@ -168,7 +172,7 @@ Associate the IP Address to your instance
 
 Project access is managed through the Grouper application. Grouper is an enterprise access management system that empowers users to manage access, without the need for central IT. Group creation will be handled during project creation (if you don't see your group in "My Groups" in the Grouper application please email [rc-help@colorado.edu](rc-help@colorado.edu)).
 
-To view your groups in Grouper navigate to [mygroups.colorado.edu](mygroups.colorado.edu) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
+To view your groups in Grouper navigate to [mygroups.colorado.edu](https://mygroups.colorado.edu/grouper/) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
 >_Note:_ If you do not see your group, please contact [rc-help@colorado.edu](rc-help@colorado.edu) to create a group with the correct permissions and connections to CUmulus (_do not create your own group_).
 
 ![](cumulus/grouper.png)
@@ -177,26 +181,26 @@ Detailed instructions to add and remove members from your group can be found her
 
 #### Get the default DNS name (optional)
 
-1) All Floating IP's have a default A record, this can optionally be used in place of an IP address.
-2) Perform a reverse lookup:
+1. All Floating IP's have a default A record, this can optionally be used in place of an IP address.
+2. Perform a reverse lookup:
 
-![](cumulus/reverse_lookup.png)
+	![](cumulus/reverse_lookup.png)
 
-3) If a specific record is desired, contact NEO via [oithelp@colorado.edu](oithelp@colorado.edu).
+3. If a specific record is desired, contact NEO via [oithelp@colorado.edu](oithelp@colorado.edu).
 
 #### Access Linux Instances for the first time via SSH
 
-1) Determine the default username; which will vary based on the Image maintainer. Review in the "Launch Instances" screenshot above.
-2) SSH into your new Linux instance
+1. Determine the default username; which will vary based on the Image maintainer. Review in the "Launch Instances" screenshot above.
+2. SSH into your new Linux instance
 
-![](cumulus/ssh_access.png)
+	![](cumulus/ssh_access.png)
 
-or ssh directly with public floating IP:
-```
-ssh -i ~/.ssh/demo_id_rsa cloud-user@<floating IP>
-```
+	or ssh directly with public floating IP:
+	```
+	ssh -i ~/.ssh/demo_id_rsa cloud-user@<floating IP>
+	```
 
-3) If desired, set a password on the root account to make troubleshooting easier via the recovery console if the instance loses network connectivity.
+3. If desired, set a password on the root account to make troubleshooting easier via the recovery console if the instance loses network connectivity.
 
-![](cumulus/set_root_pw.png)
+	![](cumulus/set_root_pw.png)
 
