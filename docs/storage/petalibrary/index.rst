@@ -18,6 +18,13 @@ PetaLibrary access is subject to the `PetaLibrary Terms of Service <https://www.
 .. toctree::
     :maxdepth: 1
     :caption: PetaLibrary Table of Contents 
-    :glob:
 
-    *
+    petalibrary
+    faq
+    billing
+    zfs_snapshots
+    rclone
+    mounting
+    gdrive
+    synology
+    ownership
