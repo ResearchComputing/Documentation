@@ -1,105 +1,127 @@
-## Slurm Integration with CUmulus VM 
+## CUmulus integration with CURC HPC 
 
-### Instructions for Ubuntu20.04:
+One potentially useful application of CUmulus is the ability to integrate your VMs with CU Research Computing High Performance Computing (HPC) resources. HPC compute is typically time-limited (at CURC 24 hours for regular joband 7 days long job) due finite resources and user competition for those resources. One way to deal with this problem is to schedule your jobs over time (e.g. by using cronjobs) though this isn't always practical for more complex workflows. Using authentication keys (in this case Java Web Tokens or JWTs) you can setup a connection from your CUmulus instance to CURC HPC and schedule jobs remotely to set up more complex workflow specific pipelines. 
 
-Slurm can be integrated with CUmulus Virtual Machines so that you can submit jobs from CUmulus in the same way you would on the CURC system. These directions are for Ubuntu20.04. Once you have your CUmulus Ubuntu VM started with the following setting:
-* Ubuntu20.04 image
-* Security groups: ssh-restrictedk
-* Floating IP
-> Note: Don't forget to make an SSH-key!
+We have documented the process for an **Ubuntu 20.04 instance on CUmulus connecting to the CURC Blanca cluster**. Below is an outline with links to specific sections:
+1. [Create your CUmulus instance](link)
+2. [Install SLURM on CUmlus Instance](link) 
 
-#### Directions 
+### Instructions for Ubuntu 20.04:
 
-1) Login to VM from local machine using your private key and the floating IP
-```
-ssh -i ~/.ssh/<ssh_key> ubuntu@<Floating IP>
-```
+#### 1. Create your CUmlus instance
 
-2) Update and install dependencies
-```
-sudo apt-get update
-sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
-```
+The first thing we will need to do is create a Ubuntu 20.04 CUmulus instance. Log in to the [CUmlus portal](link) and follow our [documentation](link) to create a CUmulus instance with the following specifications: 
+* Image: Ubuntu 20.04 
+* Flavor: 
+* Network: 
+* Security groups: ssh-restricted
+* Set up a Floating IP
 
-3) Install slurm
-```
-cd /opt
-sudo git clone -b slurm-20-02-4-1 https://github.com/SchedMD/slurm.git
-cd slurm
-sudo ./configure --with-jwt --disable-dependency-tracking
-sudo make && sudo make install
-```
+#### 2. Install SLURM on CUmlus Instance 
+The second thing we'll need to do is install SLURM on our CUmulus instance. To do so we will log into our instance using ssh, update our instance, then install SLURM. 
 
-4) Add slurm.conf
-```
-sudo mkdir -p /etc/slurm
-cd /etc/slurm
-sudo scp <RC_username>@login.rc.colorado.edu:/curc/slurm/blanca/etc/slurm.conf . 
-```
-> Note: type your CURC password and accept Duo push
+* **Log in to your instance** from a local machine by specifying your ssh key file (with the `-i` flag) and the floating IP you set up in step 1:
+	> Note: this command is entered from your local machine's terminal
+	```
+	$ ssh -i ~/.ssh/<ssh_key> ubuntu@<Floating IP>
+	```
+* From your CUmulus instance **update and install SLURM dependencies** 
+	> Note: these commands require administative (sudo) privilage
+	```
+	$ sudo apt-get update
+	$ sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
+	```
+* **Install SLURM**. It looks like there's a lot going on with this step, but all we're doing is downloading SLURM from github to the `/opt` directory of your instance, configuring the compilation to include Java Web Tokens (JWT) functionaliy, and then compiling and installing SLURM. Note that it is **VERY IMPORTANT** that the SLURM version on your CUmulus instance matches the CURC HPC version otherwise it will not connect. 
 
-5) Edit the following two variables in slurm.conf using a text editor of your choice (i.e. vim, nano)
-```
-sudo vi slurm.conf  # edit slurm.conf with sudo and change:
-------------------------------------------------------------------------
-...
-ControlMachine=slurm3    ----> ControlMachine=slurm3.rc.int.colorado.edu
-BackupController=slurm4  ----> BackupController=slurm4.rc.int.colorado.edu
-...
-------------------------------------------------------------------------
-```
+	> You can check the SLURM version on CURC HPC resources by loading your cluster specific SLURM module from a login node (either `module load slurm/summit`, `module load slurm/blanca`, or `module load slurm/alpine`) then checking the version of a SLURM command (e.g. `sbatch --version`). 
 
-6) Create a slurm user & group
-```
-sudo groupadd -g 515 slurm
-sudo useradd -u 515 -g 515 slurm
-```
+	> In this example we're using the 20.02.4 SLURM version and specifying it with git clone branch flag (`-b`)
+	```
+	$ cd /opt
+	$ sudo git clone -b slurm-20-02-4-1 https://github.com/SchedMD/slurm.git
+	$ cd slurm
+	$ sudo ./configure --with-jwt --disable-dependency-tracking
+	$ sudo make && sudo make install
+	```
 
-7) Configure your user and group on the VM
+#### 3. Configure SLURM in CUmulus 
+Now that we have SLURM installed we can start to configure our instance to make the proper connection to CURC HPC resources. In this step we'll add/edit the `slurm.conf` file, create a user and group for SLURM, create a user and group for you that match your user/group from CURC HPC.  
 
-* first query your user/group info on a CURC login node:
-```
-[user@login11 ~]$ ml slurm/blanca
-[user@login11 ~]$ id -u $USER
-111111
-[user@login11 ~]$ id -g $USER
-111111
-[user@login11 ~]$ whoami
-USERNAME
-[user@login11 ~]$ id -g -n $USER
-USERGROUP
-```
+* Add `slurm.conf`. Here we make a slurm directory at `/etc/slurm` and copy the `slurm.conf` file straight from CURC HPC using the secure copy (`scp`) tool into that new directory.
 
-* Now create user/group on VM:
-```
-sudo groupadd -g 111111 USERGROUP
-sudo useradd -u 111111 -g 111111 USERNAME
-```
+	> Note: We are copying the `slurm.conf` file from Blanca in this example
+	```
+	$ sudo mkdir -p /etc/slurm
+	$ cd /etc/slurm
+	$ sudo scp <RC_username>@login.rc.colorado.edu:/curc/slurm/blanca/etc/slurm.conf . 
+	```
+	to finish the copy from CURC HPC, type your CURC password and accept Duo push.
 
-8) Generate JWT (java web token) on a login node
-```
-ml slurm/blanca
-scontrol token lifespan=72000 #token with 2 hour duration
-SLURM_JWT=...
-```
+* Edit the following two variables in slurm.conf using a text editor of your choice (i.e. vim, nano):
+	* Change `ControlMachine=slurm3` to `ControlMachine=slurm3.rc.int.colorado.edu`
+	* Change `BackupController=slurm4` to `BackupController=slurm4.rc.int.colorado.edu`
 
-9) Submit job from VM
+* Create a SLURM user & group. Use the group and user add commands to create the SLURM user and group with the 515 IDs:
+	```
+	sudo groupadd -g 515 slurm
+	sudo useradd -u 515 -g 515 slurm
+	```
 
-* In VM, sudo to your user and export token
-```
-sudo su - USERNAME
-export SLURM_JWT=...
-```
+* Configure your user and group on the VM. First we will query our user/group info on CURC HPC. From a CURC login node run the following commands and note the outputs: 
+	```
+	[user@login11 ~]$ id -u $USER
+	<userid>
+	[user@login11 ~]$ id -g $USER
+	<groupid>
+	[user@login11 ~]$ whoami
+	<username>
+	[user@login11 ~]$ id -g -n $USER
+	<groupname>
+	```
 
-* Tell slurm where slurm.conf is:
-```
-export SLURM_CONF=/etc/slurm/slurm.conf
-```
+	We can now create a user and group for ourselves on our instance that match CURC HPC:
+	```
+	$ sudo groupadd -g <groupid> <groupname> 
+	$ sudo useradd -u <userid> -g <groupid> <username> 
+	```
 
-* Now try a test job:
-```
-sbatch --qos <blanca-qos> --chdir="/home/USERNAME" --wrap="hostname"
-Submitted batch job 12451234
-```
-> Note: you can use the `--chdir` flag to direct the output to an directory you have write access to.
+#### 4. Generate Java Web Token (JWT) in CURC HPC  
 
+* Next we will genrate the Java Web Token on a CURC login node. Keep in mind that these tokens are generated with an expiration. The max time CURC systems will keep a JWT is **#TODO**. Note the JWT output in order submit jobs.
+	> Note: In this example we are genrating this token on the Blanca cluster 
+	```
+	$ module load slurm/blanca
+	$ scontrol token lifespan=72000 #token with 2 hour duration
+	$ SLURM_JWT=<jwt-token>
+	```
+
+#### 5. Submit your job from your CUmulus instance 
+Our CUmulus instance is now configured to submit jobs to CURC HPC resources. When we ssh to our instance we are (likely) logged in as the admin user. We need to log in to the user we created in the previous step to submit jobs so CURC HPC will recognize the incoming request.
+
+* Use the `sudo su -` command to log into your user 
+	```
+	$ sudo su - <username> 
+	```
+* Set the `SLURM_JWT` and `SLURM_CONF` variables in your environemt:
+	```
+	export SLURM_JWT=<jwt-token>
+	export SLURM_CONF=/etc/slurm/slurm.conf
+	```
+* Submit a test job! We're finally ready to test a job submission from CUmulus. Use the `sbatch` command to submit a job from the command line (i.e. without a batch script). In the example job submission below we use the `--chdir` flag to change into our home directory (so we can easily find the job output) and use the `--wrap` command to run the simple `hostname` bash command on a CURC compute node.
+
+	```
+	$ sbatch --qos=<blanca-qos> --chdir="/home/<username>" --wrap="hostname"
+	Submitted batch job 12451234
+	```
+	> Note: you can use the `--chdir` flag to direct the output to an directory you have write access to.
+
+You have now successfully connected your CUmulus instance to CURC HPC resources! From this point you have a number of ways to integrate this connection into your workflow:
+* Pass raw data to CURC HPC resources for post-processing once it becomes available.
+* example 2
+* example 3
+
+### Troubleshooting
+Before reporting issues to rc-help@colorado.edu follow the troublshooting steps below:
+* No access to [CUmulus Portal](link)? Make sure you have a CUmlus project set up, they are not automatically included with an RC account. You can request a project [here](link). 
+* Trouble creating a CUmlulus instance? Follow our [guided instructions](link) to instance creation.
+* 
