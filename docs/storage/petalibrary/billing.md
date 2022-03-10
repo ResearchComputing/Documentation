@@ -72,11 +72,6 @@ invoices are emailed to the billing contacts, and copied to the allocation
 owner. If no billing contacts are defined, invoices are email to the
 owner.
 
-Below is a sample invoice:
+View a sample invloice [here](./resources/petalibrary_invoice_example.pdf)
 
-<object data="./images/petalibrary_invoice_example.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="./images/petalibrary_invoice_example.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./images/petalibrary_invoice_example.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
 
