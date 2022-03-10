@@ -1,7 +1,5 @@
 ## PetaLibrary Billing
 
-
-
 #### General information
 
 PetaLibrary allocations are billed on a per-TB basis. Service begin
@@ -11,7 +9,6 @@ if you purchase two 5 TB allocations for one year, and after six months
 no longer need one of the them, you may reallocate that space to the
 remaining allocation, and have one 10 TB allocation for the remaining
 six months.
-
 
 
 #### Services dates
@@ -56,9 +53,7 @@ invoices are emailed to the billing contacts, and copied to the allocation
 owner. If no billing contacts are defined, invoices are email to the
 owner.
 
-View a [sample invoice](https://www.dropbox.com/s/iw3jcjra4bjcs4v/petalibrary_invoice_00000000_5366ccfbc4b0.pdf?dl=0)
-
-
+View a [sample invoice](https://raw.githubusercontent.com/ResearchComputing/Documentation/pl-gerardo-reorg/docs/storage/petalibrary/resources/invoice_example.pdf)
 
 #### Retirement of old billing procedure
 
