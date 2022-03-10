@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### Thursday, 13 January 2022
+
+* 2022 Q1 Documentation Review
+> Major Changes:
+> - Add Alpine resources/documentation
+> - Source Anaconda: `source /curc/sw/anaconda3/latest` -> `module load anaconda`
+> - FAQ page added to PetaLibrary
+
 ### Tuesday, 2 November 2021
 
 * Adding CUmulus documents for CUmulus beta release

@@ -14,7 +14,7 @@ This guide assumes you have basic knowledge of the command line and the Fortran 
 __Resources:__
 
 Much more in depth OpenMP tutorial:
-- [https://computing.llnl.gov/tutorials/openMP/](https://computing.llnl.gov/tutorials/openMP/)
+- [https://hpc-tutorials.llnl.gov/openmp/](https://hpc-tutorials.llnl.gov/openmp/)
 
 
 ### Parallel “Hello, World” Program

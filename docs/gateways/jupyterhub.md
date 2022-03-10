@@ -19,7 +19,11 @@ To start a notebook server, select one of the available options in the *Select j
 * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
 * __Summit interactive Rstudio (1 core, 12hr)__ (a 12-hour, 1 core _Rstudio_ job on a Summit "shas" node)
   
-___Note__: The "Summit interactive (1 core, 12hr, instant access)" option spawns a 1-core job to a partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveat is that 1) users may only run one "shas-interactive" job at a time, and 2) "shas-interactive" jobs only have 1 core and 4 GB of memory allocated to them. Therefore, this option works well for light work such as interactive code development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility)._
+> __Note__: The "Summit interactive (1 core, 12hr, instant access)" option spawns a 1-core job to a partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveat is that 
+> 1. users may only run one "shas-interactive" job at a time
+> 2. "shas-interactive" jobs only have 1 core and 4 GB of memory allocated to them. 
+>
+> Therefore, this option works well for light work such as interactive code development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility).
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
@@ -70,7 +74,7 @@ Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop M
 
 Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
-Using the `Logout` button will log you out of CURC JupyterHub.  It will not shut down your notebook server if one happens to be running.  
+Using the `Logout` button will log you out of CURC JupyterHub.  It will **not shut down your notebook server** if one happens to be running.  
 
 ### Additional Documentation
 
@@ -87,7 +91,7 @@ Follow our Anaconda documentation for [steps on configuring your conda settings 
 ##### 2. Activate the CURC Anaconda environment
 
 ```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
+[johndoe@shas0137 ~]$ module load anaconda
 ```
 
 You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
@@ -107,7 +111,7 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 (base) [johndoe@shas0137 ~]$ conda activate mycustomenv
 ```
 
-(Note: we assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!)
+> Note: We assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!
 
 ##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
 
@@ -118,7 +122,8 @@ __For a _python_ kernel__
 (mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
 ```
 
-The first command will install the _ipykernel_ package if not installed already. The second command will create a _python_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+* The first command will install the _ipykernel_ package if not installed already. 
+* The second command will create a _python_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note: that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 __For an _R_ kernel__
 
@@ -128,13 +133,12 @@ __For an _R_ kernel__
 > IRkernel::installspec(name = 'mycustomenv', displayname = 'mycustomenv')
 ```
 
-The first command will install the _irkernel_ package if not installed already. The second command will start _R_. The third command, executed from within _R_, will create an _R_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). The kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+* The first command will install the _irkernel_ package if not installed already. 
+* The second command will start _R_. The third command, executed from within _R_, will create an _R_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note: that the name and display-name are not required to match the environment name -- call them anything you want). The kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
-* If you are a CSU or XSEDE user and are having trouble with packages that employ PERL (due to the `@` symbol) visit our documentation on setting up a user variables that links to alternate paths without the `@` symbol [CSU and XSEDE usernames](../additional-resources/csu-xsede-usernames.md)
-
 ```
 export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
 ```
@@ -147,7 +151,9 @@ _Dask is a flexible library for parallel computing in Python. Documentation for 
 
 ### Troubleshooting
 
-Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
+* If you are a CSU or XSEDE user and are having trouble with packages that employ PERL (due to the `@` symbol) visit our documentation on setting up a user variables that links to alternate paths without the `@` symbol [CSU and XSEDE usernames](../additional-resources/csu-xsede-usernames.md)
+* Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
+
 
 ### See Also
 

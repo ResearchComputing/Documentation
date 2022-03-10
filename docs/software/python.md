@@ -10,8 +10,8 @@ The conda package manager allows modification of default settings to be done thr
 
 Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configration file to change the default locations of for packages and environments to your larger `/projects/$USER` directory.
 
-Open your `.condarc` file in your favorite text editor (e.g., nano):  
-_(note: this file may not exist yet -- if not, just create a new file with this name)_
+Open your `.condarc` file in your favorite text editor (e.g., nano, vim):  
+> _Note: this file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command_
 
 ```
 [johndoe@shas0137]$ nano ~/.condarc
@@ -36,13 +36,13 @@ Follow these steps from a Research Computing terminal session on a Summit `scomp
 
 ### Activate the CURC Anaconda environment:
 
-Loading the CURC Anaconda enviornment is a little different compared to other software on Summit. Run the following command to initialize the base Anaconda software:  
+Run the following command to load the base Anaconda software:  
 
 ```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
+[johndoe@shas0137 ~]$ module load anaconda
 ```
 
-___Note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)_. 
+>___Note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)_. 
 
 You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
 
@@ -56,7 +56,7 @@ Now that you have activated the base conda environment, you can use conda for py
 
 __1. Use one of CURC's pre-installed environments.__
 * Pros: You can begin using one of these immediately, and they contain mainy of the most widely used python and R packages. 
-* Cons: These are root-owned environments, so you can't add additional packages. 
+* Cons: These are root-owned environments, so you **can not** add additional packages. 
 
 or
 
@@ -92,12 +92,12 @@ Because interactive development is more easily done locally, most CURC R users e
 
 #### Create your own custom environment:
 
-\*Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your `.condarc file`. Environments can be installed in any user-writable location the user chooses; just add the path to `~/.condarc`.
+> Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your `.condarc file`. Environments can be installed in any user-writable location the user chooses; just add the path to `~/.condarc`.
 
 __1. Initialize Anaconda if you haven't already done so:__
  
 ```
-[johndoe@shas0137 ~]$ source /curc/sw/anaconda3/latest
+[johndoe@shas0137 ~]$ module load anaconda
 (base) [johndoe@shas0137 ~]$ 
 ```
 
@@ -129,6 +129,7 @@ __3. Activate your new environment:__
 
 ```
 (base) [johndoe@shas0137 ~]$ conda activate mycustomenv
+(mycustomenv) [johndoe@shas0137 ~]$ 
 ```
 
 If successful, your prompt will now be preceded with `(mycustomenv)`.
@@ -141,12 +142,17 @@ The best way to do this for python packages is to install everything you need wi
 (mycustomenv) [johndoe@shas0137 ~]$ conda install numpy scipy tensorflow
 ```
 
-For R packages, it is easiest to start an R session and install the packages as you normally would with "install.packages".  E.g.,:
+For R packages, it is easiest to 1) start an R session and 2) install the packages as you normally would with "install.packages".  E.g.,:
 
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ R
 >install.packages("ggplot2")
 ```
+If you encounter a `--- Please select a CRAN mirror for use in this session ---` message, you can select a US mirror from the provided list or use the `repos` install flag:
+```
+>install.packages('RMySQL', repos='http://cran.us.r-project.org')
+```
+
 For more information on managing conda enviornments, [check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
 
@@ -203,7 +209,7 @@ This is likely due to your `~/.bashrc` configuration file auto-activating a cond
 
 ```
 
-Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda envioronment with `source /curc/sw/anaconda3/latest` to activate any custom environments.
+Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda envioronment with `module load anaconda` to activate the base environment.
 
 
 ### See Also

@@ -79,6 +79,8 @@ Balancer. Within the script, before using Load Balancer, we need to
 load the Python, and the Load Balancer utility itself. Your job script should look
 something like this:
 
+> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](/software/python.html)_
+
 ```bash
 #!/bin/bash
 
@@ -91,7 +93,8 @@ something like this:
 
 module purge
 
-module load python
+module load anaconda 
+conda activate custom_python_env
 module load loadbalance
 
 mpirun lb lb_cmd_file

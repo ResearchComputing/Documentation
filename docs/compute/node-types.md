@@ -12,14 +12,14 @@ type and its intended use below.
 * This is where you are when you log in
 * No computation, compiling code, interactive jobs, or long running processes
 * Script or code editing
-* Running Jobs
+* Submit Jobs
 
 
 ### Compile nodes
 
 * Where you compile code, such as Fortran, C, C++
 * No heavy computation
-* Running Jobs
+* Submit Jobs
 * Access these nodes by typing `ssh scompile` from a login node
 
 

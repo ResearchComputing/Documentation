@@ -20,6 +20,8 @@ print “Hello World from task: ”, sys.argv[1]
 
 Now create a job script called `run_hello.sh` that will use GNU Parallel to run as many instances of your python script as you want. Before running GNU Parallel in our script, we need to load the Python and GNU Parallel modules. Your job script should look something like this:
 
+> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](/software/python.html)_
+
 ```bash
 #!/bin/bash
 
@@ -30,7 +32,8 @@ Now create a job script called `run_hello.sh` that will use GNU Parallel to run 
 #SBATCH --output gnuparallel.out
 
 module purge
-module load python
+module load anaconda 
+conda activate custom_python_environment
 module load gnu_parallel
 
 my_parallel="parallel --delay .2 -j $SLURM_NTASKS"

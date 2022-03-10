@@ -21,7 +21,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 | Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
 
 
-### Partitions
+### Partitions (Summit)
 
 On Summit, nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using `--partition` in your job script in order for your job to run on the appropriate type of node.
 
@@ -51,11 +51,11 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 > <sup>3</sup> The `shas-testing` partition is limited to 24 cores total. These cores can come from up to 2 nodes but a user is limited to maximum of 24 cores per job.
 
-To run a job longer than 24 hours on the `shas`, `sgpu`, or `sknl` partitions, use the `long` QOS.
+To run a job longer than 24 hours on the `shas`, or `sknl` partitions, use the `long` QOS.
 
 More details about each type of node can be found [here](https://www.colorado.edu/rc/resources/summit/specifications).
 
-### Quality of Service
+### Quality of Service (Summit)
 
 On Summit, Quality of Service or QoS is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
 
