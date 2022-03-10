@@ -1,21 +1,4 @@
-## The PetaLibrary
-
-The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available at a subsidized cost to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs). It is available at an unsubsidized cost to researhers from other institutions. 
- 
-### PetaLibrary Features 
-- Minimum project size: 1 TB/year
-- 2 classes of storage: active and archive
-     * See our [website](https://www.colorado.edu/rc/resources/petalibrary/storageandrates) for pricing information
-<br/><br/>
-- New customers are initially limited to a maximum allocation size of: 
-     * 200 TB* in Active Storage
-     * 100 TB* in Archive Storage
-		 > _*Pending availability_
-
-PetaLibrary access is subject to the [PetaLibrary Terms of Service](https://www.colorado.edu/rc/resources/petalibrary/tos).
-
-
-### Accessing the PetaLibrary
+## Accessing PetaLibrary
 
 #### General Access
 Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. 
@@ -32,7 +15,7 @@ Access to a PetaLibrary allocation is granted using an access group. This group 
 
 Request PetaLibrary storage by filling out the application form at the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary), under the "Request a new PetaLibrary allocation" link.  
 
-> Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](https://curc.readthedocs.io/en/latest/petalibrary/ownership.html). 
+> Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](./ownership.html). 
 
 
  When a new allocation is created the path to it is defined and provisioned based on a name selected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
@@ -64,3 +47,4 @@ The PetaLibrary service is designed for file storage and retrieval, and is not a
 ### More information
 
 * [https://www.colorado.edu/rc/resources/petalibrary](https://www.colorado.edu/rc/resources/petalibrary)
+

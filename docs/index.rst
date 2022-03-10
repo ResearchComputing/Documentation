@@ -94,18 +94,11 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/ssky
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Petalibrary
-   
-   petalibrary/petalibrary
-   petalibrary/rclone
-   petalibrary/mounting
-   petalibrary/gdrive
-   petalibrary/synology
-   petalibrary/zfs_snapshots
-   petalibrary/ownership
-   petalibrary/faq
+   :maxdepth: 1
+   :caption: Storage
 
+   storage/petalibrary/index
+   
 .. toctree::
    :maxdepth: 2
    :caption: Gateways & Portals

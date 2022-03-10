@@ -1,4 +1,4 @@
-## PetaLibrary FAQ
+## FAQ
 
 1. [Why does my allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
 2. [I am a BioKEM facility user, how do I have my data deposited to my PetaLibrary Allocation?](#biokem-facility-data-deposit)
