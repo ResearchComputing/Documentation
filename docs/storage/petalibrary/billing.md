@@ -74,4 +74,9 @@ owner.
 
 Below is a sample invoice:
 
-<sample invoice.pdf>
+<object data="./images/petalibrary_invoice_example.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="./images/petalibrary_invoice_example.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./images/petalibrary_invoice_example.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
