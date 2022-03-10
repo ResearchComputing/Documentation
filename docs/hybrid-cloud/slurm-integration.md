@@ -1,23 +1,29 @@
-## CUmulus integration with CURC HPC 
+## CUmulus-Slurm Integration
 
-One potentially useful application of CUmulus is the ability to integrate your VMs with CU Research Computing High Performance Computing (HPC) resources. HPC compute is typically time-limited (at CURC 24 hours for regular joband 7 days long job) due finite resources and user competition for those resources. One way to deal with this problem is to schedule your jobs over time (e.g. by using cronjobs) though this isn't always practical for more complex workflows. Using authentication keys (in this case Java Web Tokens or JWTs) you can setup a connection from your CUmulus instance to CURC HPC and schedule jobs remotely to set up more complex workflow specific pipelines. 
+One useful application of CUmulus is the ability to integrate your VMs with CU Research Computing High Performance Computing (HPC) resources. HPC compute is typically time-limited (at CURC 24 hours for regular joband 7 days long job) due finite resources and user competition for those resources. One way to deal with this problem is to schedule your jobs over time (e.g. by using cronjobs) though this isn't always practical for more complex workflows. Using authentication keys (in this case Java Web Tokens or JWTs) you can setup a connection from your CUmulus instance to CURC HPC and schedule jobs remotely to set up more complex workflow specific pipelines. 
 
 We have documented the process for an **Ubuntu 20.04 instance on CUmulus connecting to the CURC Blanca cluster**. Below is an outline with links to specific sections:
-1. [Create your CUmulus instance](link)
-2. [Install SLURM on CUmlus Instance](link) 
+1. Create your CUmulus instance
+2. Install SLURM on CUmlus Instance
+3. Configure SLURM in CUmulus
+4. Generate Java Web Token
+5. Submit Job
 
 ### Instructions for Ubuntu 20.04:
 
-#### 1. Create your CUmlus instance
-
-The first thing we will need to do is create a Ubuntu 20.04 CUmulus instance. Log in to the [CUmlus portal](link) and follow our [documentation](link) to create a CUmulus instance with the following specifications: 
+---
+#### Part 1: Create your Instance
+---
+The first thing we will need to do is create a Ubuntu 20.04 CUmulus instance. Log in to the [CUmlus portal](https://cumulus.rc.colorado.edu) and follow our [docs](./cumulus.md) to create a CUmulus instance with the following specifications: 
 * Image: Ubuntu 20.04 
 * Flavor: 
 * Network: 
 * Security groups: ssh-restricted
 * Set up a Floating IP
 
-#### 2. Install SLURM on CUmlus Instance 
+---
+####  Part 2: Install SLURM on CUmlus Instance
+---
 The second thing we'll need to do is install SLURM on our CUmulus instance. To do so we will log into our instance using ssh, update our instance, then install SLURM. 
 
 * **Log in to your instance** from a local machine by specifying your ssh key file (with the `-i` flag) and the floating IP you set up in step 1:
@@ -43,8 +49,9 @@ The second thing we'll need to do is install SLURM on our CUmulus instance. To d
 	$ sudo ./configure --with-jwt --disable-dependency-tracking
 	$ sudo make && sudo make install
 	```
-
-#### 3. Configure SLURM in CUmulus 
+---
+####  Part 3. Configure SLURM in CUmulus
+---
 Now that we have SLURM installed we can start to configure our instance to make the proper connection to CURC HPC resources. In this step we'll add/edit the `slurm.conf` file, create a user and group for SLURM, create a user and group for you that match your user/group from CURC HPC.  
 
 * Add `slurm.conf`. Here we make a slurm directory at `/etc/slurm` and copy the `slurm.conf` file straight from CURC HPC using the secure copy (`scp`) tool into that new directory.
@@ -85,8 +92,9 @@ Now that we have SLURM installed we can start to configure our instance to make 
 	$ sudo useradd -u <userid> -g <groupid> <username> 
 	```
 
-#### 4. Generate Java Web Token (JWT) in CURC HPC  
-
+---
+####  Part 4. Generate Java Web Token
+---
 * Next we will genrate the Java Web Token on a CURC login node. Keep in mind that these tokens are generated with an expiration. The max time CURC systems will keep a JWT is **#TODO**. Note the JWT output in order submit jobs.
 	> Note: In this example we are genrating this token on the Blanca cluster 
 	```
@@ -95,7 +103,9 @@ Now that we have SLURM installed we can start to configure our instance to make 
 	$ SLURM_JWT=<jwt-token>
 	```
 
-#### 5. Submit your job from your CUmulus instance 
+---
+####  Part 5. Submit Job
+---
 Our CUmulus instance is now configured to submit jobs to CURC HPC resources. When we ssh to our instance we are (likely) logged in as the admin user. We need to log in to the user we created in the previous step to submit jobs so CURC HPC will recognize the incoming request.
 
 * Use the `sudo su -` command to log into your user 
@@ -115,12 +125,4 @@ Our CUmulus instance is now configured to submit jobs to CURC HPC resources. Whe
 	```
 	> Note: you can use the `--chdir` flag to direct the output to an directory you have write access to.
 
-You have now successfully connected your CUmulus instance to CURC HPC resources! From this point you have a number of ways to integrate this connection into your workflow:
-* Pass raw data to CURC HPC resources for post-processing once it becomes available.
-* example 2
-* example 3
-
-### Troubleshooting
-Before reporting issues to rc-help@colorado.edu follow the troublshooting steps below:
-* No access to [CUmulus Portal](link)? Make sure you have a CUmlus project set up, they are not automatically included with an RC account. You can request a project [here](link). 
-* Trouble creating a CUmlulus instance? Follow our [guided instructions](link) to instance creation.
+You have now successfully connected your CUmulus instance to CURC HPC resources! 
