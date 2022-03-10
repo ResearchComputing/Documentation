@@ -109,6 +109,8 @@ Partitions available on Alpine:
 
 #### General Resources (gres)
 
+> _**Note:**_ AMD MI100 have yet to be provisioned with `gres` if needed, you can request a _whole_ AMD MI100 node by simply specifying `--partition=ami100-<institute>` without the `gres` functionality.
+
 **General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
 ```bash
