@@ -1,21 +1,5 @@
 ## PetaLibrary Billing
 
-### Retirement of old billing procedure
-
-Starting March 1 2022, Research Computing is changing the billing
-procedure for PetaLibrary allocations. Historically an email conversation
-for each billing transaction would take place, confirming the service
-dates, speedtype(s) to use, and amounts. Once the transaction went
-through, handled by OIT Finance, Planning & Procurement office, a receipt
-would be generated and delivered to the customer.
-
-As the number of PetaLibrary allocations has increased, it isn't practical
-to have an email conversation for each transaction.
-
-
-
-### PetaLibrary billing information
-
 
 
 #### General information
@@ -54,12 +38,12 @@ has to deal with, and that we will avoid doing so when possible.
 
 When a PetaLibrary billable event occurs, such as a request for additional
 storage or a renewal being due, Research Computing will generate an
-invoice. The invoice details the services being billed for, and includes
+invoice. The invoice details the services being billed for, and include
 a speedtype. For new allocations, the speedtype will be the one provided
 on the new allocation request form. For renewals or additional space,
 the speedtype will be the last one used for the allocation in question. A
-Journal ID will also be provided, which allows you to track down the
-university transaction in which the money is moved between speedtypes.
+Journal ID will also be provided, which allows you to find the university
+transaction in which the money is moved between speedtypes.
 
 The invoice specifies a time frame for you to contact us to make
 changes. If anything on the invoice is incorrect, please notify us right
@@ -72,4 +56,21 @@ invoices are emailed to the billing contacts, and copied to the allocation
 owner. If no billing contacts are defined, invoices are email to the
 owner.
 
-View a sample invloice [here](https://www.dropbox.com/s/iw3jcjra4bjcs4v/petalibrary_invoice_00000000_5366ccfbc4b0.pdf?dl=0)
+View a [sample invoice](https://www.dropbox.com/s/iw3jcjra4bjcs4v/petalibrary_invoice_00000000_5366ccfbc4b0.pdf?dl=0)
+
+
+
+#### Retirement of old billing procedure
+
+Starting March 1 2022, Research Computing is changing the billing
+procedure for PetaLibrary allocations. Historically an email conversation
+for each billing transaction would take place, confirming the service
+dates, speedtype(s) to use, and amounts. Once the transaction went
+through, handled by OIT Finance, Planning & Procurement office, a receipt
+would be generated and delivered to the customer.
+
+As the number of PetaLibrary allocations has increased, it isn't practical
+to have an email conversation for each transaction.
+
+
+
