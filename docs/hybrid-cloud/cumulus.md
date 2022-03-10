@@ -107,26 +107,27 @@ To create a new VM instance click on "Launch Instance" button on the top bar fro
 1. Details: Fill out Instance details, including a name and description (availability zone and count can be left as defaults).
 	> _**Note:**_ if launching Windows Server, the hostname will be truncated if greater than 15 characters in the OS
 
-2. Source: You can choose an operating system from the images CURC provides (below). "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available. You will also select your volume size (default 1GB) and can choose to have volume deleted upon instance deletion (default: volume _not_ deleted).
-	> Available Operating Systems:
-	> - CentOS 7
-	> - CentOS 8
-	> - Debian 10
-	> - Red Hat Enterprise Linux 8
-	> - Ubuntu Server 18.04 LTS
-	> - Ubuntu Server 20.04 LTS
-	> - Windows 10 Enterprise 20H2
-	> - Windows 10 Enterprise LTSC 2019
+2. Source: You can choose an operating system from the images CURC provides. "Image" should be pre-selected from the "Select Boot Source" pull-down. Select your Operating System from the list of images available. You will also select your volume size (default 1GB) and can choose to have volume deleted upon instance deletion (default: volume _not_ deleted).
+	<!-- > Available Operating Systems: -->
+	<!-- > - CentOS 7 -->
+	<!-- > - CentOS 8 -->
+	<!-- > - Debian 10 -->
+	<!-- > - Red Hat Enterprise Linux 8 -->
+	<!-- > - Ubuntu Server 18.04 LTS -->
+	<!-- > - Ubuntu Server 20.04 LTS -->
+	<!-- > - Windows 10 Enterprise 20H2 -->
+	<!-- > - Windows 10 Enterprise LTSC 2019 -->
 
 	> _Note:_ be aware that if you choose to _not_ delete volume upon instance deletion and do not intend to use them you will have "zombie" volumes which will continue to take up storage.
 
-3. Flavor: Choose from a list of pre-selected resources (these "flavors" manage the sizing for the compute, memory, and storage of the instance).
-	> _Note:_ keep in mind your OS prerequisites.
+3. Flavor: Choose from a list of pre-selected resources called "flavors" (these flavors manage the sizing for the compute, memory, and storage of the instance).
+	> _Note:_ If you don't see a list of flavors contact rc-help@colorado.edu; instances are added based on your project needs (generally done during the allocation process).
 
-4. Networks: Select a project network, which determines routability of either a public/internet or campus/internal floating IP. Keep defaults.
+4. Networks: Select a project network, which determines routability of either a public/internet or campus/internal floating IP. 
+	> _Note:_ If you 
 
 5. Security Groups: Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic. Select the secrity groups to launch the instance in (e.g. ssh-restricted in order to ssh into your vm, icmp to ping your instance).
-	> _Note:_ Security groups act at the instance level.
+	> _Note:_ Security groups act at the instance level and can be changed after instance creation.
 
 6. Review default account information.
 
