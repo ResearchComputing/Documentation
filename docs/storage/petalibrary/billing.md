@@ -53,7 +53,7 @@ invoices are emailed to the billing contacts, and copied to the allocation
 owner. If no billing contacts are defined, invoices are email to the
 owner.
 
-View a [sample invoice](https://github.com/ResearchComputing/Documentation/blob/master/docs/storage/petalibrary/petalibrary_invoice.pdf)
+View a [sample invoice](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/storage/petalibrary/petalibrary_invoice.pdf)
 
 #### Retirement of old billing procedure
 
