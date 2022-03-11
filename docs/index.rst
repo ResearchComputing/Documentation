@@ -72,6 +72,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    compute/modules
    compute/data-transfer
    compute/compiling
+   compute/monitoring-resources
 
 .. toctree::
    :maxdepth: 2
@@ -106,7 +107,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    gateways/OnDemand
    gateways/jupyterhub
    gateways/enginframe
-   gateways/xdmod
 
 .. toctree::
    :maxdepth: 2
