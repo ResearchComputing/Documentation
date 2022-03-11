@@ -2,15 +2,20 @@
 
 ### Expertise
 
-Research Computing at CU Boulder consists of a small group of computational scientists, high-performance computing specialists, and system administrators with the mission to provide leadership in developing, deploying, and operating an integrated cyberinfrastructure.  This cyberinfrastructure consists of high-performance computing, storage, and high speed networking that supports research, collaboration and discovery. Research Computing contributes to the educational mission of the university by providing training workshops and consultation services for cyberinfrastructure related topics.
+Research Computing at CU Boulder consists of a small group of computational scientists, high-performance computing specialists, and system administrators with the mission to provide leadership in developing, deploying, and operating an integrated cyberinfrastructure.  This cyberinfrastructure consists of high-performance computing, on-premise and commerical cloud computing, storage, and high speed networking that supports research, collaboration and discovery. Research Computing contributes to the educational mission of the university by providing training workshops and consultation services for cyberinfrastructure related topics.
 
 ### Compute
 
 * Research Computing operates the joint RMACC Summit supercomputer, funded by NSF under Grant No. AC- 1532236. The system has peak performance of over 400 TFLOPS. The 472 general compute nodes each have 24 cores aboard Intel Haswell CPUs, 128 GB of RAM and a local SSD. Additionally, the system has 11 GPU nodes with two NVIDIA K80 GPUs each, 5 high-memory nodes with ~2TiB of main memory, and 20 Xeon Phi (“Knight’s Landing”) nodes each with 68 real cores supporting 272 threads.  All nodes are connected through a high-performance network based on Intel Omni-Path with a bandwidth of 100 Gb/s and a latency of 0.4 microseconds. A 1.2 PB high-performance IBM GPFS file system is provided. This system is available to CU-Boulder and Colorado State University researchers and collaborators, and 10% of cycles are provided to members of the Rocky Mountain Advanced Computing Consortium.
 
-* The Research Computing Condo Computing service offers researchers the opportunity to purchase and own compute nodes that are operated as part of a cluster, named “Blanca.” The aggregate cluster is made available to all condo partners while maintaining priority for the owner of each node. 
+* Beginning in 2022, Research Computing introduced their third-generation Alpine supercomputer, funded by contributions from the University of Colorado Boulder, Colorado State University, and the University of Colorado Anschutz. The first phase of the University of Colorado Boulder contribution to Alpine includes 64 general compute nodes, each with 64 cores aboard AMD Milan CPUs, 256 GB of RAM and a local SSD. Additionally, Alpine has 8 GPU nodes each with 3x NVIDIA A100 GPUs, and 8 GPU nodes each with 3x AMD MI100 GPUs. All nodes are connected through a high-performance network based on Mellanox Infiniband with a bandwidth of 200 Gb/s. A 2 PB high-performance IBM GPFS file system is provided. Additional hardware phases will be added to Alpine each year.
+
+* Research Computing offers a condo computing service that enables researchers to purchase and own compute nodes that are operated as part of a cluster, named “Blanca.” The aggregate cluster is made available to all condo partners while maintaining priority for the owner of each node. 
 
 * Research Computing provides a 3d-accelerated virtual desktop environment for real-time visualization and rendering using EnginFrame and DCV. This environment is powered by two visualization nodes, each equipped with 2x AMD EPYC 7402 24-core processors, 256GiB memory, and 2x Nvidia Quadro RTX 8000 GPU accelerators. Each accelerator is itself equipped with 48 GiB of high-speed GDDR6 memory.
+
+* Research Computing hosts a free-to-use on-premise cloud service, called CUmulus, which supports cases not well-suited for HPC such as webservers, databases, and long-running services. The CUmulus service includes access to a Virtual Private Cloud (VPC) which provides users with a logically isolated section of the cloud with a small number of outside routable floating IP addresses. Within this VPC customers are given an allocation of CPU cores, memory and storage, which can be used to host virtual machines and volumes to host workloads.  In addition to the CUmulus service, Research Computing can also facilitate researcher access to offsite commercial cloud resources at negotiated rates. 
+
 
 ### Networking
 
@@ -24,7 +29,7 @@ The CU Office of Information Technology also offers a file transfer service with
 
 ### Storage  
 
-Each Research Computing user has a 2 GB home directory and a 250 GB projects directory, each of which are backed up regularly. Each RMACC Summit user has a 10 TB scratch directory.
+Each Research Computing user has a 2 GB home directory and a 250 GB projects directory, each of which are backed up regularly. Each RMACC Summit and Alpine user has a 10 TB scratch directory.
 
 ### PetaLibrary Storage Services
 
@@ -39,6 +44,10 @@ JupyterHub is a multi-user server for Jupyter notebooks. It provides a web servi
 ### EnginFrame
 
 NICE EnginFrame provides a 3D-accelerated remote desktop environment on Nvidia GPU-equipped compute nodes. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the Research Computing EnginFrame supports the use of common visualization applications in a typical desktop environment using only a modern web browser.
+
+### OnDemand
+
+Open OnDemand is a browser based, integrated, single access portal for CURC high performance computing (HPC) resources. It provides a graphical interface to view, edit, download, and upload files, manage and create job templates for CURC’s computing clusters, and access CURC interactive applications (visualization nodes, Matlab, and Jupyter Notebooks), all via a web browser.
 
 ### Center for Research Data and Digital Scholarship (CRDDS)
 
