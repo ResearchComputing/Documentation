@@ -110,7 +110,7 @@ Your instance will take a few minutes to finish provisioning. Once it's finished
 * You can now associate a Floating IP to enable access to the instance from outside of the CU network.
   * On the right hand side of the newly created instance choose `Associate Floating IP` under the `Actions` dropdown
   
-![](cumulus/instance_ip1.png =x500)
+![](cumulus/instance_ip1.png)
 
 * Now select from available IP addresses if needed (e.g., if you'll be adding a web portal to your instance)
 * The _Select port to be associated_ option should already be pre-populated with the internal IP of your new instance. Click associate.
