@@ -40,18 +40,18 @@ a speedtype. For new allocations, the speedtype will be the one provided
 on the new allocation request form. For renewals or additional space,
 the speedtype will be the last one used for the allocation in question. A
 Journal ID will also be provided, which allows you to find the university
-transaction in which the money is moved between speedtypes.
+transaction in which funds are moved between speedtypes.
 
 The invoice specifies a time frame for you to contact us to make
 changes. If anything on the invoice is incorrect, please notify us right
 away, and we will issue a new invoice. If we do not hear from you within
-the specified time frame, we will assume that we can make the charges
-outlined in the invoice.
+the specified time frame, we will proceed with the charges outlined in
+the invoice.
 
 If a PetaLibrary allocation has one or more billing contacts defined,
 invoices are emailed to the billing contacts, and copied to the allocation
-owner. If no billing contacts are defined, invoices are email to the
-owner.
+owner. If no billing contacts are defined, invoices are emailed to
+the owner.
 
 View a [sample invoice](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/storage/petalibrary/petalibrary_invoice.pdf)
 
