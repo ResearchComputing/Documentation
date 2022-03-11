@@ -1,7 +1,9 @@
+
+
 ## Monitoring Resources
 
-CU Research Computing has two main tools which can help users monitor their HPC resources
-* [Slurmtools](#slurmtools): A commmand line tool which is loaded in with a [module](./modules.html).
+CU Research Computing has two main tools which can help users monitor their HPC resources:
+* [Slurmtools](#slurmtools): A commmand line tool which is loaded into your environment using a [module](./modules.html).
 * [XDMoD](#xdmod): A web portal for viewing metrics at the system, partition, and user-levels.
 
 ### Slurmtools
@@ -16,17 +18,17 @@ Slurmtools is a collection of helper scripts for everyday use of the [SLURM](htt
 If you have a CURC account, login as you [normally would](../access/logging-in.html) using your identikey and Duo from a terminal: 
 
 ```bash
-ssh ralphie@login.rc.colorado.edu
+$ ssh ralphie@login.rc.colorado.edu
 ```
 
 #### __Step 2__: Load the slurm module for the HPC resource you want to query metrics about (Summit, Blanca, Alpine):
 ```bash
-module load slurm/summit # substitute summit for blanca or alpine
+$ module load slurm/summit # substitute summit for blanca or alpine
 ```
 
 #### __Step 3__: Load the `slurmtools` module
 ```bash
-module load slurmtools
+$ module load slurmtools
 ```
 
 You will see the following informational message:
@@ -55,7 +57,7 @@ ___How many Service Units (core hours) have I used?___
 
 Type the command name for usage hint:
 ```bash
-suuser
+$ suuser
 ```
 ```
 Purpose: This function computes the number of Service Units (SUs)
@@ -67,7 +69,7 @@ Hint: suuser ralphie 15
 
 Check usage for the last 365 days:
 ```bash
-suuser ralphie 365
+$ suuser ralphie 365
 ```
 ```
 SU used by user ralphie in the last 365 days:
@@ -88,7 +90,7 @@ ___Who is using all of the SUs on my groups' account?___
 
 Type the command name for usage hint:
 ```bash
-suacct
+$ suacct
 ```
 ```
 Purpose: This function computes the number of Service Units (SUs)
@@ -101,7 +103,7 @@ Hint: suacct ucb-general 15
 Check `admin` account usage over past 180 days:
 > Note: Most user accounts follow the naming convention `ucbXXX_summitX`, in this example we show the `admin` account.
 ```bash
-suacct admin 180
+$ suacct admin 180
 ```
 ```
 SU used by account (allocation) admin in the last 180 days:
@@ -124,7 +126,7 @@ ___What jobs have I run over the past few days?___
 
 Type the command name for usage hint:
 ```bash
-jobstats
+$ jobstats
 ```
 ```
 Purpose: This function shows statistics for each job
@@ -136,7 +138,7 @@ Hint: jobstats ralphie 15
 
 Check ralphie's jobstats for the past 35 days:
 ```bash
-jobstats ralphie 35
+$ jobstats ralphie 35
 ```
 ```
 job stats for user ralphie over past 35 days
@@ -170,7 +172,7 @@ ___What is my priority?___
 
 Type the command name for usage hint:
 ```bash
-levelfs
+$ levelfs
 ```
 ```
 Purpose: This function shows the current fair share priority of a specified user.
@@ -184,9 +186,9 @@ Usage: levelfs [userid]
 Hint: levelfs ralphie
 ```
 
-Check ralphie's fair share priority:
+Check Ralphie's fair share priority:
 ```bash
-levelfs ralphie
+$ levelfs ralphie
 ```
 ```
 ralphie
@@ -219,7 +221,7 @@ ___How efficient are my jobs?___
 
 Type the command name for usage hint:
 ```bash
-seff
+$ seff
 ```
 ```
 Usage: seff [Options] <Jobid>
@@ -231,7 +233,7 @@ Usage: seff [Options] <Jobid>
 
 Now check the efficiency of job 8636572:
 ```bash
-seff 8636572
+$ seff 8636572
 ```
 ```
 Job ID: 8636572
@@ -320,8 +322,4 @@ Let's say you want to see how many core hours you project account has used over 
 * You will now see a graph showing only core hours used by your account. To see core hours used for each user of the account, click anywhere on the line to expose the "Drill Down" menu and choose the _User_ option.
 * This will revise the graph to show CPU usage by user.  If you don't see your user of interest, you can use the _Filter_ tab at the top to find them.
 * You can change the time range of the x-axis by specifying the dates in the "Start" and "End" boxes near the top of the screen.
-
-
-
-
 
