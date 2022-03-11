@@ -110,10 +110,12 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
-   :caption: CURC Hybrid Cloud
+   :caption: Cloud
 
-   hybrid-cloud/cumulus
-   hybrid-cloud/slurm-integration
+   cloud/cumulus
+   cloud/project-management
+   cloud/instance-creation
+   cloud/slurm-integration
 
 .. toctree::
    :maxdepth: 2
