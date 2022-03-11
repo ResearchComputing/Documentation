@@ -4,9 +4,7 @@
 
 Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
-<p align="center">
-<img src="cumulus/login.png" width="70%" />
-</p>
+![](cumulus/login.png)
 
 > __Note to XSEDE users__: The first attempt to login will automatically fail because you have not been assigned to any groups or roles. Once you have attempted to login please respond to your acceptance email that you have attempted to login and your username will be processed. 
 
