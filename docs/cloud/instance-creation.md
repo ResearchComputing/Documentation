@@ -19,6 +19,8 @@ To create an instance you must first specify the resources you wish to allocate 
 
 ### Create New Instance
 
+Follow the docs below for general instance creation or follow our [step-by-step tutorial](https://github.com/ResearchComputing/CUmulus_tutorials/tree/main/tutorial1).
+
 #### Launch Instance  
 Click on `Launch Instance` button on the top bar from the "Instances" page (step 4 above). This will bring up the instance launcher which will guide you in creating your new instance by selecting your operating system, allocating resources, choosing security groups, and adding security keys. We'll go through each step one at a time:
 
