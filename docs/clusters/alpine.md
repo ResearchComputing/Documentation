@@ -82,9 +82,9 @@ Partitions available on Alpine:
 
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan-[institute] | AMD Milan (default) | 64 | 64 | 4.01 | 1              | 4H, 24H                  |
-| ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
-| aa100-[institute]* | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 4.01 | tbd | 4H, 24H                  |
+| amilan-[institute] | AMD Milan (default) | 64 | 64 | 3.83 | 1              | 4H, 24H                  |
+| ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 3.83 | tbd | 4H, 24H                  |
+| aa100-[institute]* | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 3.83 | tbd | 4H, 24H                  |
 
 > * Note: Nvidia A100 GPUs only support CUDA versions >11.x
 
