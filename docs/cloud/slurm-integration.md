@@ -9,6 +9,8 @@ We have documented the process for an **Ubuntu 20.04 instance on CUmulus connect
 4. Generate Java Web Token
 5. Submit Job
 
+Follow the docs below for general HPC integration or follow our [step-by-step tutorial](https://github.com/ResearchComputing/CUmulus_tutorials/tree/main/tutorial3).
+
 ### Instructions for Ubuntu 20.04:
 
 ---
