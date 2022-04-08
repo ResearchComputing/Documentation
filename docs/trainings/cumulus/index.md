@@ -1,8 +1,8 @@
 # CUmulus
 
-# Clearing the Fog! Getting Started on CUmulus, a Near to the Ground On Campus Cloud Solution
+## Clearing the Fog! Getting Started on CUmulus, a Near to the Ground On Campus Cloud Solution
 
-## What is CUmulus?
+### What is CUmulus?
 
 [Cumulus](https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html) is [CU Research Computing](https://www.colorado.edu/rc)'s free-to-use on-premise cloud service, which supports cases not well-suited for HPC such as web servers, databases, and long-running services.
 
@@ -16,7 +16,7 @@ You get your own virtual “world” for experimentation - an environment that c
 
 You can request specific resources (CPU, storage, memory) and can set up persistent storage.
 
-## How do I access CUmulus? 
+### How do I access CUmulus? 
 
 _Step 1:_ Users will submit a proposal for your use case (email rc-help@colorado.edu):
 * Describe your CUmulus workflow
@@ -27,7 +27,7 @@ _Step 2:_ The CURC allocation committee reviews your proposal and provide feedba
 
 _Step 3:_ After iteration, a decision on your proposal is made.  If awarded, you can proceed with [creating a CUmulus instance](./tutorial1/README.md) and start using CUmulus!
 
-## Using CUmulus
+### Using CUmulus
 
 Using CUmulus is best explained via a series of tutorials that enable you to learn in a hands-on manner.  The first tutorial, "Creating a CUmulus Instance" is recommended for anyone using CUmulus.  Subsequent tutorials are optional and cover some common use cases and may be useful for informing your how to set up your specific workflow. 
 
