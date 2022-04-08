@@ -141,7 +141,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    programming/OpenMP-Fortran
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Tutorials
    
    trainings/cumulus/index
