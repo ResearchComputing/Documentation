@@ -142,6 +142,12 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
+   :caption: Amazon Web Services (AWS)
+
+   aws/utah-videos
+
+.. toctree::
+   :maxdepth: 2
    :caption: Additional resources
 
    additional-resources/utah-videos
