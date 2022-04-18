@@ -144,7 +144,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Amazon Web Services (AWS)
 
-   aws/utah-videos
+   aws/managing-grouper-groups
 
 .. toctree::
    :maxdepth: 2
