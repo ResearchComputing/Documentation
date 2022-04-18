@@ -12,13 +12,13 @@ Use the link that was sent to you in your welcome email, and follow these steps:
 4. Click the 'Add' button
 5. Verify the new user show up in the table
 
-![](aws/managing-grouper-groups/add-members-button.png)
+![](images/managing-grouper-groups/add-members-button.png)
 
-![](aws/managing-grouper-groups/enter-identikey.png)
+![](images/managing-grouper-groups/enter-identikey.png)
 
-![](aws/managing-grouper-groups/add-user.png)
+![](images/managing-grouper-groups/add-user.png)
 
-![](aws/managing-grouper-groups/verify-user.png)
+![](images/managing-grouper-groups/verify-user.png)
 
 ### Removing Users
 
@@ -26,4 +26,4 @@ Users can be removed from accessing the AWS account by removing them from the Gr
 
 Place a 'check' next to the user(s), and click the 'Remove selected members' button.
 
-![](aws/managing-grouper-groups/remove-user.png)
+![](images/managing-grouper-groups/remove-user.png)
