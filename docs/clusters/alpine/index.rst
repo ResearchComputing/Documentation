@@ -7,16 +7,15 @@ Alpine
 
 Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit. Alpine is a heterogeneous cluster with pooled resources from the following institutions: CU Boulder, Colorado State University, and Anschutz Medical Campus.
 
-*********
-Cluster Specifications:
-*********
+**Cluster Specifications:**
 
-**Total Cores: 5120** 
+Total Cores: 5120
 
-**Nodes:**
+Nodes:
 The Alpine cluster is made up of different types of nodes outlined below:
-* **CPU nodes**: 64 AMD Milan Compute nodes (64 cores/node)
-* **GPU nodes**:
+* CPU nodes: 
+  * 64 AMD Milan Compute nodes (64 cores/node)
+* GPU nodes:
 	* 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	* 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
 
