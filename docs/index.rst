@@ -78,9 +78,9 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Clusters
 
-   clusters/alpine/alpine
+   clusters/alpine/index
    clusters/blanca/blanca 
-   clusters/blanca/summit
+   clusters/summit/summit
 
 .. toctree::
    :maxdepth: 2
