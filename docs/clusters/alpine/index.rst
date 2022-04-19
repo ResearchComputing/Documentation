@@ -1,16 +1,19 @@
 Alpine
 ===============
 
-**_Early Release:_ CURC Alpine is currently in early testing available _only_ for the early adopters group.**
+**Early Release: CURC Alpine is currently in early testing available _only_ for the early adopters group.**
 
-**_Early Release:_ Pardon our dust! We are actively developing the Alpine cluster -- if you see or experience any errors or unexpected behavior, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**
+**Early Release: Pardon our dust! We are actively developing the Alpine cluster -- if you see or experience any errors or unexpected behavior, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**
 
-Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit. Alpine is a heterogeneous cluster with pooled resources from the following institutions: CU Boulder, Colorado State University, and Anschutz Medical Campus.
+**Overview**
 
-**Cluster Specifications:**
+CURC Alpine is the third-generation high performance computing (HPC) cluster at University of Colorado Research Computing, following Janus and RMACC Summit. Alpine is a heterogeneous cluster with pooled resources from the following institutions: CU Boulder, Colorado State University, and Anschutz Medical Campus. Alpine offers 80 compute nodes and a total of 5120 cores.
 
-Total Cores: 5120
+Alpine can be securely accessed anywhere, anytime using ssh connectivity to the CURC system.
 
+**Hardware Summary:**
+
+Total Core Count: 5120
 Nodes:
 The Alpine cluster is made up of different types of nodes outlined below:
 * CPU nodes: 
@@ -24,7 +27,7 @@ The Alpine cluster is made up of different types of nodes outlined below:
     :caption: Alpine Table of Contents 
 
     quick-start
-    alpine-resources
+    alpine-hardware
     examples
     moving-from-summit
     important-notes

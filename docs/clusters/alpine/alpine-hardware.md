@@ -1,5 +1,11 @@
 ## Alpine Resources
 
+### Hardware Summary
+
+| Count & Type | Scheduler Partition | Processor | Sockets | Cores | Threads/Core | Clock (GHz) | RAM (GB) | GPU type | GPU count | Local Disk Capacity & Type | Fabric | OS
+| --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
+| 64 Milan CPU | amilan-[institution] | AMD Milan | 2 | 64 | 1 | x.x | 
+
 ### Requesting Resources
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
 * **Partition:** Specify node type

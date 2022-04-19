@@ -2,7 +2,7 @@
 
 Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit. Alpine is a heterogeneous cluster with pooled resources from the following institutions: CU Boulder, Colorado State University, and Anschutz Medical Campus. Alpine has a total of 5120 cores and 80 nodes.
 
-### Alpine Quick-Start:
+### Alpine Quick-Start
 
 1. From a *login node* load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
    ```bash
@@ -15,7 +15,7 @@ Alpine is the third-generation HPC cluster at University of Colorado Research Co
 
 4. If you would like to use software that is not within our preinstalled stack your application must be compiled on a compute node via an interactive job (as Alpine does not yet have dedicated compile nodes). Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
 
-### Cluster Specifications:
+### Cluster Summary
 #### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
 - **CPU nodes**: 64 AMD Milan Compute nodes (64 cores/node)
