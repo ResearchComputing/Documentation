@@ -17,12 +17,13 @@ Furthermore, licensed/proprietary software are subject the following requirement
 - The user has access to an appropriate license for cluster usage.
 - The license can be installed or accessed on the cluster. 
 
-
 Software accepted to be installed will be given an estimated installation time based on capacity of the team and urgency of the request. Note that this time is an estimation and not a hard set deadline. Installed software will be available to load with a module in the ‘User Software’ category in the software stack. Unused modules will be pruned after 12 months without usage. Any pruned module may be restored by user request.
 
 Core software such as compilers, MPIs, and relevant libraries will be updated at a semesterly interval. A different version of these core softwares can be requested at any point, but installation may be performed in accordance to that timeline.
 
 All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources.
 
-Please note that this software policy is subject to change. Please review the software policy before submitting a request.
+To request a software installation please fill out the [Software Request Form](link)
+
+_Please note that this software policy is subject to change. Please review the software policy before submitting a request._
 
