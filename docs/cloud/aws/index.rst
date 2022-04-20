@@ -3,6 +3,8 @@ AWS
 
 Amazon Web Services (AWS)
 
+Documentation for users who are using a CU Cloud Team managed AWS account.
+
 .. toctree::
     :maxdepth: 1
     :caption: Getting Started Documentation
