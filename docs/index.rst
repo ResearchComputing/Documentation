@@ -112,6 +112,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Cloud
 
+   aws/index
    cloud/cumulus
    cloud/project-management
    cloud/instance-creation
@@ -139,12 +140,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    programming/MPI-Fortran
    programming/OpenMP-C
    programming/OpenMP-Fortran
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Amazon Web Services (AWS)
-
-   aws/managing-grouper-groups
 
 .. toctree::
    :maxdepth: 2
