@@ -13,4 +13,4 @@ Amazon Web Services (AWS)
     :maxdepth: 1
     :caption: Frequently Asked Questions
 
-    faq/index
+    faq/faq
