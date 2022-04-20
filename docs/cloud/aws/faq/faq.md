@@ -10,16 +10,17 @@ Login using your <a href="https://oit.colorado.edu/services/identity-access-mana
 
 ---
 
-### What region has the lowest latency from CU Campus?
+### Why can't I see the AWS resources I created?
 **Answer:**
-The **us-west-2** AWS region has the lowest latency from Colorado's Front Range region (CU Campuses).
+Be sure that you have selected the correct AWS region.
+Many AWS services are region specific.
+Also make sure you are logged in to the correct AWS account with the correct Role.
 
 ---
 
-### Are MTurk users supported?
+### What region has the lowest latency from CU Campus?
 **Answer:**
-MTurk users are only supported for programmatic access (AWS CLI).
-Console users are not supported because it requires root user access.
+The **us-west-2** AWS region has the lowest latency from Colorado's Front Range region (CU Campuses).
 
 ---
 
@@ -31,10 +32,9 @@ You must use your Customer-Admin role.
 
 ---
 
-### Why can't I see the AWS resources I created?
+### Are MTurk users supported?
 **Answer:**
-Be sure that you have selected the correct AWS region.
-Many AWS services are region specific.
-Also make sure you are logged in to the correct AWS account with the correct Role.
+MTurk users are only supported for programmatic access (AWS CLI).
+Console users are not supported because it requires root user access.
 
 ---
