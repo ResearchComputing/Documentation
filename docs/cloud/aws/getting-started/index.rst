@@ -1,8 +1,8 @@
-Getting Started
+AWS - Getting Started
 ===============
 
 .. toctree::
     :maxdepth: 1
-    :caption: Getting Started
+    :caption: Getting Started CAP
 
     managing-grouper-groups
