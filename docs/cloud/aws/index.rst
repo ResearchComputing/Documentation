@@ -3,11 +3,8 @@ AWS
 
 Amazon Web Services (AWS)
 
-Getting Started
-===============
-
 .. toctree::
     :maxdepth: 1
-    :caption: Getting Started
+    :caption: Getting Started TOC
 
     getting-started/index
