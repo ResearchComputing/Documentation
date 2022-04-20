@@ -1,10 +1,10 @@
-Amazon Web Services (AWS)
+AWS
 ===============
 
-AWS todo
+Amazon Web Services (AWS)
 
 .. toctree::
     :maxdepth: 1
-    :caption: AWS - Getting Started
+    :caption: Getting Started
 
-    managing-grouper-groups
+    getting-started/managing-grouper-groups
