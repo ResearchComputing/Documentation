@@ -1,8 +1,3 @@
-AWS
-===============
-
-Amazon Web Services (AWS)
-
 Getting Started
 ===============
 
@@ -10,4 +5,4 @@ Getting Started
     :maxdepth: 1
     :caption: Getting Started
 
-    getting-started/index
+    managing-grouper-groups
