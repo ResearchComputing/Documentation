@@ -6,7 +6,7 @@ AWS customers can add team members as Administrators to their AWS account.  This
 
 Use the link that was sent to you in your welcome email, and follow these steps:
 
-1. Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
+1. Login using your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a>.
 2. In the 'Members' tab view, click the "Add members" button.
 
    ![](images/managing-grouper-groups/add-members-button.png)
@@ -27,7 +27,7 @@ Use the link that was sent to you in your welcome email, and follow these steps:
 
 Users can be removed from accessing the AWS account by removing them from the Grouper Group.
 
-1. Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
+1. Login using your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a>.
 2. Place a 'check' next to the user(s), and click the 'Remove selected members' button.
 
     ![](images/managing-grouper-groups/remove-user.png)
