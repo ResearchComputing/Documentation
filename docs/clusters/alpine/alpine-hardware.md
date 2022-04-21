@@ -1,19 +1,20 @@
-## Alpine Resources
+## Alpine Hardware
 
 ### Hardware Summary
 
-| Count & Type | Scheduler Partition | Processor | Sockets | Cores | Threads/Core | Clock (GHz) | RAM (GB) | GPU type | GPU count | Local Disk Capacity & Type | Fabric | OS
-| --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| 64 Milan CPU | amilan-[institution] | AMD Milan | 2 | 64 | 1 | x.x | 
+| Count & Type | Scheduler Partition | Processor | Sockets | Cores (total) | Threads/Core | Clock (GHz) | RAM (GB) | L3 Cache (MB) | GPU type | GPU count | Local Disk Capacity & Type | Fabric | OS |
+| ------------ | ------------------- | --------- | ------- | ----- | ------------ | ----------- | -------- | -------- | - | --------- | -------------------------- | ------ | -- |
+| 64 Milan General CPU | amilan-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 263 | 32 | | | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4|
+| 8 Milan AMD GPU | ami100-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 263 | 32 | AMD MI100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
+| 8 Milan NVIDIA GPU | aa100-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 263 | 32 | NVIDIA A100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
 
-### Requesting Resources
+
+### Requesting Hardware Resources
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
 * **Partition:** Specify node type
 * **Gres (General Resources):** Specify GPU amount (*required if using a GPU node*)
 * **QOS (Quality of Service):** Constrain or modify job characteristics
 
-
-> Examples of full job scripts are shown in the next section.
 
 #### Partitions
 
