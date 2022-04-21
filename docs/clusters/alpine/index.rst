@@ -17,7 +17,7 @@ Total Core Count: **5120**
 
 Nodes: The Alpine cluster is made up of different types of nodes outlined below.
 
-* **CPU nodes:** 
+* **CPU nodes:**
   * 64 AMD Milan Compute nodes (64 cores/node)
 
 * **GPU nodes:**
