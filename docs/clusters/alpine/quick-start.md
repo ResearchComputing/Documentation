@@ -1,6 +1,8 @@
 ## Alpine Quick Start
 
-Alpine is the third-generation HPC cluster at University of Colorado Research Computing, following Janus and RMACC Summit. Alpine is a heterogeneous cluster with pooled resources from the following institutions: CU Boulder, Colorado State University, and Anschutz Medical Campus. Alpine has a total of 5120 cores and 80 nodes.
+Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado Boulder. Additional contributions provided from Colorado State University and Anschutz Medical Campus are planned for the near future. Alpine currently offers 80 compute nodes and a total of 5120 cores.
+
+Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh connectivity to the CURC system.
 
 ### Alpine Quick-Start
 
