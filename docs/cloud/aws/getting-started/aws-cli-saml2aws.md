@@ -9,7 +9,7 @@ Visit OIT's <a href="https://oit.colorado.edu/services/identity-access-managemen
 
 The **saml2aws** CLI tool is used to login and retrieve AWS temporary credentials.
 You use your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> to authenticate from CU's Shibboleth Identity Provider.
-To install **saml2aws** (MacOS, Windows, Linux), visit the online documentation: https://github.com/Versent/saml2aws#install
+To install **saml2aws** (MacOS, Windows, Linux), visit the online documentation: <a href="https://github.com/Versent/saml2aws#install" target="_blank">saml2aws installation instructions</a>
 
 Verify **saml2aws** is installed by running the following command (output should show the installed version):
 
@@ -17,7 +17,8 @@ Verify **saml2aws** is installed by running the following command (output should
 
 ### Configure saml2aws
 
-Run the following command to begin the configuration process.  This only needs to be done one time:
+Run the following command to begin the configuration process.
+This only needs to be done one time:
 
 `$ saml2aws configure`
 
@@ -25,7 +26,7 @@ Provide the following values for the configuration:
 
 ```buildoutcfg
 Provider:    ShibbolethECP
-MFA:         push (preferred, though you can choose other options - auto doesn't appear to work in configure)
+MFA:         push (preferred, though you can choose other options)
 AWS Profile: default (just hit the enter key)
 URL:         https://fedauth.colorado.edu/idp/profile/SAML2/SOAP/ECP
 Username:    <identikey>
@@ -72,7 +73,10 @@ Accept all the defaults (hit the enter key), but use the new password.
 
 ### Using saml2aws
 
-Using **saml2aws** involves logging in first using the `saml2aws login` command.  Once logged in, you can then execute AWS CLI commands using the `saml2aws exec` command.  You can also establish an interactive shell to run your commands in.  Both methods are described below.
+Using **saml2aws** involves logging in first using the `saml2aws login` command.
+Once logged in, you can then execute AWS CLI commands using the `saml2aws exec` command.
+You can also establish an interactive shell to run your commands in.
+Both methods are described below.
 
 #### saml2aws login
 
@@ -80,7 +84,8 @@ Log in using the following command:
 
 `$ saml2aws login`
 
-When prompted for the Username and Password, just hit the ENTER key to accept the defaults you configured earlier.  Alternatively, you could log in with a different CU IdentiKey if needed.
+When prompted for the Username and Password, just hit the ENTER key to accept the defaults you configured earlier.
+Alternatively, you could log in with a different <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> if needed.
 
 Next, choose the AWS Account and Role to log in to.
 
@@ -121,17 +126,20 @@ $ aws --profile saml sts get-caller-identity
 
 #### saml2aws exec
 
-You can use `saml2aws exec` to run a command using the login credentials from the `saml2aws login` command from above.  AWS CLI commands can be executed by using the format:
+You can use `saml2aws exec` to run a command using the login credentials from the `saml2aws login` command from above.
+AWS CLI commands can be executed by using the format:
 
 `saml2aws exec aws <aws subcommands here>`
 
-Run the following command, which is equivalent to the command you ran above.  You should get the same output:
+Run the following command, which is equivalent to the command you ran above.
+You should get the same output:
 
 `$ saml2aws exec aws sts get-caller-identity`
 
 #### saml2aws shell
 
-Most times, users will want to establish a shell to type AWS CLI commands in to without the extra hassle of providing a profile or prepending with the saml2aws exec command.  Here's how it's done:
+Most times, users will want to establish a shell to type AWS CLI commands in to without the extra hassle of providing a profile or prepending with the saml2aws exec command.
+Here's how it's done:
 
 `$ saml2aws exec -- $SHELL`
 
@@ -139,4 +147,40 @@ Now try the following AWS CLI command:
 
 `$ aws sts get-caller-identity`
 
-You should see the same output from earlier.  Now you can run all the AWS CLI commands you want, or run a shell script.  All AWS CLI commands will run under the saml2aws login from earlier.
+You should see the same output from earlier.
+Now you can run all the AWS CLI commands you want, or run a shell script.
+All AWS CLI commands will run under the saml2aws login from earlier.
+
+### saml2aws Advanced Configuration
+
+You can manually add profiles for each AWS Account/Role.
+This is particularly helpful for automating **saml2aws** commands non-interactively.
+Profiles are added by editing the %HOME_DIR%/.saml2aws file (ie. ~/.saml2aws).
+Profiles can be added using the following template:
+* substitute <account_alias> for the AWS Alias
+* substitute XXXXXXXXXXXX for the AWS Account Number
+
+```
+[admin-<account_alias>]
+url                  = https://fedauth.colorado.edu/idp/profile/SAML2/SOAP/ECP
+username             = ralphie
+provider             = ShibbolethECP
+mfa                  = auto
+skip_verify          = false
+timeout              = 0
+aws_urn              = urn:amazon:webservices
+aws_session_duration = 3600
+aws_profile          = <account_alias>
+role_arn             = arn:aws:iam::XXXXXXXXXXXX:role/Shibboleth-Customer-Admin
+```
+
+Example command for establishing an interactive shell in a single command.
+Note that you will have to manually accept the MFA request.
+
+```shell
+$ saml2aws -a admin-<account_alias> login --skip-prompt --duo-mfa-option="Duo Push" --session-duration=14400 && saml2aws -a admin-<account_alias> exec -- $SHELL
+```
+
+You can run the `saml2aws exec` portion of the above command however you need.
+For example, you can execute a shell script.
+Again, MFA will need to be performed manually.
