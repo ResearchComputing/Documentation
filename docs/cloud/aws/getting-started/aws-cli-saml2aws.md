@@ -149,7 +149,7 @@ Now try the following AWS CLI command:
 
 You should see the same output from earlier.
 Now you can run all the AWS CLI commands you want, or run a shell script.
-All AWS CLI commands will run under the saml2aws login from earlier.
+All AWS CLI commands will run under the saml2aws login credentials from earlier.
 
 ### saml2aws Advanced Configuration
 
