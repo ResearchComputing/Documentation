@@ -22,5 +22,4 @@ If you have access to multiple AWS Accounts and/or Roles, you will be presented 
 ![](images/aws-console-access/select-role.png)
 6. You will be logged in to the AWS Management Console.  Always be sure to verify you have the AWS Region you are working with selected after logging in.
 ![](images/aws-console-access/select-region.png)
-
 Once logged in, you have a 60 minute session.  You will be asked to log back in and re-authenticate using MFA when your session expires.
