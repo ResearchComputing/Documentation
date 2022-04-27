@@ -61,7 +61,7 @@ The following examples show the Project Value = argovis.
 </td>
 </tr>
 </table>
-
+<br>
 For these examples, the tag value (or name of the Project) is "**argovis**" (all lower-case).
 Almost every resource that you create in the AWS Console will have a 'Tags' section as described in the following examples.
 
