@@ -21,4 +21,4 @@ Documentation for users who are using a CU Cloud Team managed AWS account.
     :maxdepth: 1
     :caption: Best Practices
 
-    best-practices/ccstar-project-tagging
+    best-practices/index
