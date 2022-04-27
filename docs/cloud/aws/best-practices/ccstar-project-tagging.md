@@ -42,12 +42,7 @@ Using "<span style="color:red">project</span>" (all lower case) as the key will 
 </td>
 </tr>
 </table>
-
-
-The "tag **key**" is case sensitive.
-This means that "<span style="color:green">**Project**"</span> is valid (must contain capital 'P').
-Using "<span style="color:red">project</span>" (all lower case) as the key will generate an error, and this is the expected behavior.
-
+<br>
 
 The "tag **value**" will be the name of the Project that is given to you when your project was on-boarded by the Cloud Team (ie. argovis, flywheel).
 The value must match exactly, and is case-sensitive.
@@ -79,7 +74,7 @@ The following examples show the Project Value = argovis.
 </td>
 </tr>
 </table>
-
+<br>
 
 For these examples, the tag value (or name of the Project) is "**argovis**" (all lower-case).
 Almost every resource that you create in the AWS Console will have a 'Tags' section as described in the following examples.
