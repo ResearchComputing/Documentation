@@ -26,9 +26,11 @@ This is the "**Project**" tag.
 You are free to add more tags, as there are several other benefits of tagging discussed in the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html" target="_blank">AWS documentation describing Tags</a>.
 
 ---
+
 **IMPORTANT**: Note that the "tag **key**" is case sensitive.
 This means that "<span style="color:green">**Project**"</span> is valid (must contain capital 'P').
 Using "<span style="color:red">project</span>" (all lower case) as the key will generate an error, and this is the expected behavior.
+
 ---
 
 The "tag **value**" will be the name of the Project that is given to you when your project was on-boarded by the Cloud Team (ie. argovis, flywheel).
@@ -43,7 +45,7 @@ This is why users need to be in the good habit of always adding the Project tag 
 
 ### Tag Examples
 
-<table border=1>
+<table style="background-color: Tomato; filter: alpha(opacity=40); opacity: 0.95;">
 <tr>
 <td>
 <b>( ! ) IMPORTANT: </b>
