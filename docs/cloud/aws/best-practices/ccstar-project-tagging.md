@@ -45,10 +45,10 @@ This is why users need to be in the good habit of always adding the Project tag 
 
 ### Tag Examples
 
-<table style="background-color: Tomato; filter: alpha(opacity=40); opacity: 0.95;">
+<table style="background-color: #dcdcdc; filter: alpha(opacity=40); opacity: 0.95;">
 <tr>
 <td>
-<b>( ! ) IMPORTANT: </b>
+<b>( ! ) IMPORTANT</b>
 </td>
 </tr>
 
