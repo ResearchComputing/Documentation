@@ -2,6 +2,8 @@
 
 Frequently Asked Questions
 
+If you are looking for help with specific errors, please visit the [Troubleshooting](../troubleshooting/troubleshooting.md) guide.
+
 ---
 
 ### What is the URL for the Single Sign-On Console?
