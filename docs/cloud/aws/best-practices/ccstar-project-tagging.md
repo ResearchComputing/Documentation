@@ -110,9 +110,9 @@ Each resource in the CloudFormation template will need to have the 'Tags' block 
 Syntax can be different for each service, so always consult AWS docs as a best practice.
 
 **CloudFormation Tags Snippet:**
-
 ```json
 ...
+
 "Tags" : [
     {
         "Key" : "Project",
@@ -123,6 +123,7 @@ Syntax can be different for each service, so always consult AWS docs as a best p
         "Value" : "value2"
     }
 ]
+
 ...
 ```
 
@@ -135,7 +136,6 @@ When using the AWS CLI to create resources, you may need to run one command to c
 This example shows how to create a S3 bucket and add the related tag.
 
 **Create and Tag S3 Bucket using CLI:**
-
 ```shell
 # create a new s3 bucket
 aws s3api create-bucket --bucket my-bucket --region us-west-2
