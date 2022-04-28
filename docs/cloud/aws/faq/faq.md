@@ -18,6 +18,22 @@ Also make sure you are logged in to the correct AWS account with the correct Rol
 
 ---
 
+### Failed to create role: not authorized to perform: iam:CreateRole
+
+**Answer:**
+When creating AWS Roles, you must attach the "Customer_Admin_PermissionBoundary" Permission Boundary.
+See [Admin Account Permission Exclusions](../getting-started/customer-permission-boundary.md)
+
+---
+
+### Unable to create user: not authorized to perform: iam:CreateUser
+
+**Answer:**
+When creating AWS Users, you must attach the "Customer_Admin_PermissionBoundary" Permission Boundary.
+See [Admin Account Permission Exclusions](../getting-started/customer-permission-boundary.md)
+
+---
+
 ### What region has the lowest latency from CU Campus?
 **Answer:**
 The **us-west-2** AWS region has the lowest latency from Colorado's Front Range region (CU Campuses).
