@@ -7,6 +7,7 @@ Troubleshooting AWS Errors
 ### Failed to create role: not authorized to perform: iam:CreateRole
 
 **Error:**
+
 ![](images/create-role.png)
 
 **Solution:**
@@ -19,6 +20,7 @@ See [Admin Account Permission Exclusions](../getting-started/customer-permission
 ### Unable to create user: not authorized to perform: iam:CreateUser
 
 **Error:**
+
 ![](images/create-user.png)
 
 **Solution:**
