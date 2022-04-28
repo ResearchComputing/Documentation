@@ -56,13 +56,15 @@ This is why users need to be in the good habit of always adding the Project tag 
 
 ### Tag Examples
 
+![](../../../image-share/high-importance-16.png)
+
 <!---
 Info Table
 -->
 <table style="background-color: #dcdcdc; filter: alpha(opacity=40); opacity: 0.95;">
 <tr>
 <td>
-<b>( ! ) IMPORTANT</b>
+<img src="../../../image-share/high-importance-16.png"><b>IMPORTANT</b>
 </td>
 </tr>
 <tr>
@@ -76,11 +78,14 @@ The following examples show the Project Value = argovis.
 </table>
 <br>
 
-For these examples, the tag value (or name of the Project) is "**argovis**" (all lower-case).
+For the following examples, the tag value (or name of the Project) is "**argovis**" (all lower-case).
 Almost every resource that you create in the AWS Console will have a 'Tags' section as described in the following examples.
 
-
 #### Tag S3 Bucket in AWS Console
+
+When creating a S3 Bucket, be sure to look for the 'Tags' section.
+Click the 'Add tag' button, then enter the Key = **Project** and the Value = **argovis**.
+
 
 
 #### Tag EC2 Instance in AWS Console
