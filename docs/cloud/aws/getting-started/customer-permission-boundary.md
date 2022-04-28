@@ -21,6 +21,7 @@ Then, in the wizard, you need to pick the Role you created.
 </td>
 </tr>
 </table>
+<br>
 
 ### Standard Customer Administrator Role
 
@@ -31,7 +32,7 @@ Please consider the principal of least privilege when managing your accounts.
 In order to ensure that this role is not breaking components deployed as part of the CU Boulder standard AWS Account Baseline there are certain restrictions on what this role can perform.
 Outside of these restrictions, the Customer Admin role will have full administrative privileges.
 
-All users, including Customer Administrators, automatically have Explicit Denial of the following actions:
+All Users, including Customer Administrators, automatically have Explicit Denial of the following actions:
 * Changes to OIT Cloud Admin Roles, Users, Policies, and Groups
 * Using AWS CloudTrail
 * Using AWS GuardDuty
@@ -50,6 +51,8 @@ New Users and Roles have the same restrictions as above, plus:
 
 ### Attaching Permission Boundary
 
-On Step 2 of the 'Create role' wizard, search for and add the "Customer_Admin_PermissionBoundary" Policy to the 'Set permissions boundary' section.
+When creating new AWS Roles or Users, you must set the Permission Boundary.
+
+On Step 2 of the 'Create role' or 'Create user' wizard, search for and add the "Customer_Admin_PermissionBoundary" Policy to the 'Set permissions boundary' section.
 
 ![](images/customer-permission-boundary/permission-boundary.jpeg)
