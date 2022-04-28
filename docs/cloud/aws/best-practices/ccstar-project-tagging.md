@@ -1,7 +1,5 @@
 ## Project Tagging Requirement for ucboitrccumulus
 
-<a href="url" target="_blank">LinkText</a>
-
 ### Document Purpose
 
 This document describes the requirements that are expected of end users when using the **CUmulus** AWS Account.
@@ -84,16 +82,71 @@ Almost every resource that you create in the AWS Console will have a 'Tags' sect
 When creating a S3 Bucket, be sure to look for the 'Tags' section.
 Click the 'Add tag' button, then enter the Key = **Project** and the Value = **argovis**.
 
+![](images/ccstar-project-tagging/s3-bucket.jpg)
 
+Note that the creation wizard for this example is a single form, which is common for many AWS services.
+Look for the Tags section.
 
 #### Tag EC2 Instance in AWS Console
 
+On step 5 of the EC2 launch wizard, click the "Add tag" button, then enter Key = **Project** and the Value = **argovis**.
+
+![](images/ccstar-project-tagging/ec2-instance.jpg)
+
+Note that the creation wizard for this example has more than one step, which is common for many AWS services.
+Be sure to add your tag(s) when you get to the proper step.
+This can be easy to miss, so look carefully!
 
 #### Clustered Services
 
+When creating clustered environments, especially when using autoscaling, be sure to set your template up to set the default tags so that when resources are spun up and down, the proper tag will get added for you automatically.
+See AWS documentation for the specific service to see how to set the default tags (ie. EKS for Kubernetes).
 
 #### Tags Block in a CloudFormation Template
 
+When using AWS CloudFormation to create resources, you will need to specify the 'Tags' block.
+See <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank">AWS CloudFormation Resource Tag Documentation</a> for more details.
+Each resource in the CloudFormation template will need to have the 'Tags' block added as specified in the AWS documentation for each resource block.
+Syntax can be different for each service, so always consult AWS docs as a best practice.
+
+**CloudFormation Tags Snippet:**
+
+```json
+...
+"Tags" : [
+    {
+        "Key" : "Project",
+        "Value" : "argovis"
+    },
+    {
+        "Key" : "keyname2",
+        "Value" : "value2"
+    }
+]
+...
+```
+
+The above example shows multiple tags in the block.
+You will need the Project tag at a minimum for each resource.
 
 #### Add Tag using AWS CLI
 
+When using the AWS CLI to create resources, you may need to run one command to create the resource and another command to add the tag.
+This example shows how to create a S3 bucket and add the related tag.
+
+**Create and Tag S3 Bucket using CLI:**
+
+```shell
+# create a new s3 bucket
+aws s3api create-bucket --bucket my-bucket --region us-west-2
+ 
+# create tags for the new s3 bucket
+aws s3api put-bucket-tagging --bucket my-bucket --tagging 'TagSet=[{Key=Project,Value=argovis},{Key=keynmame2,Value=value2}]'
+```
+
+The above example shows multiple tags.
+You will need the Project tag at a minimum.
+
+Always be sure to refer to the AWS CLI documentation.
+Each resource may have its own unique syntax for adding Tags.
+This example was created using this <a href="https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-tagging.html" target="_blank">AWS CLI Documentation</a>.
