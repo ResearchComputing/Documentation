@@ -58,13 +58,16 @@ This is why users need to be in the good habit of always adding the Project tag 
 
 ![](images/high-importance-16.png)
 
+| ![](images/high-importance-16.png) | IMPORTANT |
+| --- | --- |
+
 <!---
 Info Table
 -->
 <table style="background-color: #dcdcdc; filter: alpha(opacity=40); opacity: 0.95;">
 <tr>
 <td>
-<img src="images/high-importance-16.png"><b>IMPORTANT</b>
+<b>IMPORTANT</b>
 </td>
 </tr>
 <tr>
