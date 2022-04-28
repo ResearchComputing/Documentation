@@ -22,3 +22,9 @@ Documentation for users who are using a CU Cloud Team managed AWS account.
     :caption: Best Practices Documentation
 
     best-practices/index
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Troubleshooting Documentation
+
+    troubleshooting/troubleshooting
