@@ -3,7 +3,7 @@ AWS
 
 Amazon Web Services (AWS)
 
-Documentation for users who are using a CU Cloud Team managed AWS account.
+Documentation for users who are using a **Research Computing - Cloud Team** managed AWS account.
 
 .. toctree::
     :maxdepth: 1
@@ -25,6 +25,6 @@ Documentation for users who are using a CU Cloud Team managed AWS account.
 
 .. toctree::
     :maxdepth: 1
-    :caption: Troubleshooting Documentation
+    :caption: Troubleshooting Errors
 
     troubleshooting/troubleshooting
