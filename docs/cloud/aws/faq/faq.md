@@ -29,7 +29,7 @@ The **us-west-2** AWS region has the lowest latency from Colorado's Front Range 
 ### Can I use the root user?
 **Answer:**
 No.
-The root user is owned by the CU Cloud Team.
+The root user is owned by the **Research Computing Cloud Team**.
 You must use your Customer-Admin role.
 
 ---

@@ -44,7 +44,7 @@ All Users, including Customer Administrators, automatically have Explicit Denial
 ### Permission Boundary (limits permissions of new users or roles created by Customer Admin)
 
 Creation of new Users and Roles by a Customer Admin Role is only allowed if the Permission Boundary is attached at the creation of the User or Role.
-Permission Boundary is a policy created by Cloud Broker in your account named Customer_Admin_PermissionBoundary
+Permission Boundary is a policy created by **Research Computing Cloud Team** in your account named "Customer_Admin_PermissionBoundary".
 
 New Users and Roles have the same restrictions as above, plus:
 * New Users/Roles are Explicitly Denied the ability to Create/Update any additional AWS Roles/Users
