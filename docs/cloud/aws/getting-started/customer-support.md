@@ -19,8 +19,8 @@ See below on how to obtain your AWS Account Number.
 To upgrade your support plan, send an email to oithelp@colorado.edu and request for a "AWS Support Change Request".
 Please also provide the AWS Account Number in your request.
 You can also call the OIT Support Center.
-For more information about OIT Support, visit the website: https://oit.colorado.edu/support
+For more information about OIT Support, visit the website: [https://oit.colorado.edu/support](https://oit.colorado.edu/support)
 
 **Support Levels and Costs**
 
-For more information about AWS Support Plans and Pricing, please see the AWS documentation here: https://aws.amazon.com/premiumsupport/pricing/?nc=sn&loc=3
+For more information about AWS Support Plans and Pricing, please see the AWS documentation here: [https://aws.amazon.com/premiumsupport/pricing/?nc=sn&loc=3](https://aws.amazon.com/premiumsupport/pricing/?nc=sn&loc=3)

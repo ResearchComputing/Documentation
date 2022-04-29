@@ -11,7 +11,7 @@ Use the link that was sent to you in your welcome email, and follow these steps:
 
    ![](images/managing-grouper-groups/add-members-button.png)
 
-3. In the 'Member name or ID' field, enter the user's CU Identikey and select the matching entry.
+3. In the 'Member name or ID' field, enter the user's <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> and select the matching entry.
 
    ![](images/managing-grouper-groups/enter-identikey.png)
 
