@@ -42,7 +42,7 @@ Using "<span style="color:red">project</span>" (all lower case) as the key will 
 </table>
 <br>
 
-The "tag **value**" will be the name of the Project that is given to you when your project was on-boarded by the Cloud Team (ie. argovis, flywheel).
+The "tag **value**" will be the name of the Project that is given to you when your project was on-boarded by the **Research Computing Cloud Team** (ie. argovis, flywheel).
 The value must match exactly, and is case-sensitive.
 You may not use any other value other than the one given to your Project.
 Values that do not match a project will cause errors.
