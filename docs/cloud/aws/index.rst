@@ -1,9 +1,9 @@
 AWS
 ===============
 
-Amazon Web Services (AWS)
+Amazon Web Services (AWS) Documentation
 
-Documentation for users who are using a **Research Computing - Cloud Team** managed AWS account.
+For users who are using a **Research Computing Cloud Team** managed AWS account.
 
 .. toctree::
     :maxdepth: 1
