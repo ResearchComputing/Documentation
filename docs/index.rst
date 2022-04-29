@@ -112,6 +112,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Cloud
 
+   cloud/aws/index
    cloud/cumulus
    cloud/project-management
    cloud/instance-creation
