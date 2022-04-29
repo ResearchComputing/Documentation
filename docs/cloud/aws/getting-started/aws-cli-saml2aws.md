@@ -169,7 +169,7 @@ mfa                  = auto
 skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
-aws_session_duration = 3600
+aws_session_duration = 14400
 aws_profile          = <account_alias>
 role_arn             = arn:aws:iam::XXXXXXXXXXXX:role/Shibboleth-Customer-Admin
 ```
