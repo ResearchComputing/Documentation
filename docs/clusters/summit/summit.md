@@ -6,7 +6,7 @@ Summit is the second-generation HPC cluster at University of Colorado Research C
 
 1. From a login node, run "module load slurm/summit" to access the Slurm job scheduler instance for Summit.
 2. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
-3. If needed, compile your application on a compile node ([Compiling and Linking](../compute/compiling.md)).
+3. If needed, compile your application on a compile node ([Compiling and Linking](../../compute/compiling.html)).
 
 ### Job Scheduling
 
