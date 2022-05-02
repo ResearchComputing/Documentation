@@ -157,7 +157,7 @@ $ passwd root
 
 	![](cumulus/reverse_lookup.png)
 
-3. If a specific record is desired, contact NEO via [oithelp@colorado.edu](oithelp@colorado.edu).
+3. If a specific record is desired, contact NEO via <oithelp@colorado.edu>.
 
 
 #### Troubleshooting
