@@ -16,10 +16,10 @@ Having a Research Computing account only validates that you are eligible to use 
 
 To apply for an allocation, you must do the following:
 
-1.  Contact [rc-help@colorado.edu](rc-help@colorado.edu) for an allocation proposal template. Complete this template. If you need assistance, please let us know and we would be happy to assist.  
+1.  Contact rc-help@colorado.edu for an allocation proposal template. Complete this template. If you need assistance, please let us know and we would be happy to assist.  
 2.  Login to [RCAMP](https://rcamp.rc.colorado.edu/)
 3.  Fill out some basic information about your request and create a project.  This project is a space in which you can link multiple allocations, manage PIs, etc.
-4.  After creating a project, email [rc-help@colorado.edu](rc-help@colorado.edu) and provide your project number (e.g. ucb123)
+4.  After creating a project, email rc-help@colorado.edu and provide your project number (e.g. ucb123)
 5.  A committee will review your proposal and either accept, provide comments on adjustments that need to be made, or deny.
 
 
