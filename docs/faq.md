@@ -72,7 +72,7 @@ Note that Slurm's estimated start time can be a bit inaccurate. This is because 
 
 For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
-Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](https://curc.readthedocs.io/en/latest/gateways/xdmod.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](./compute/monitoring-resources.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
 
 ### How can I get metics about CURC systems such as how busy they are, wait times, and account usage?
 
