@@ -79,7 +79,7 @@ Balancer. Within the script, before using Load Balancer, we need to
 load the Python, and the Load Balancer utility itself. Your job script should look
 something like this:
 
-> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](/software/python.html)_
+> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](./python.html)_
 
 ```bash
 #!/bin/bash
