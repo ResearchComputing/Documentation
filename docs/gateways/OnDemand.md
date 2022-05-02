@@ -1,4 +1,4 @@
-> **_Early Release:_ Open OnDemand is in early/beta release, currenly only available to CU users, if you encounter any errors, please report them to [rc-help@colorado.edu](rc-help@colorado.edu).**
+> **_Early Release:_ Open OnDemand is in early/beta release, currenly only available to CU users, if you encounter any errors, please report them to <rc-help@colorado.edu>.**
 
 ## Open OnDemand _(Browser Based HPC Portal)_
 
