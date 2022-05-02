@@ -11,7 +11,7 @@ which can be used to host virtual machines and volumes to host workloads.
 
 #### CUmulus Quick Start
 
-1. Request a CUmulus application by contacting the RC helpdesk at [rc-help@colorado.edu](rc-help@colorado.edu)
+1. Request a CUmulus application by contacting the RC helpdesk at <rc-help@colorado.edu>
 2. Once your application has been accepted, manage your project at the [CUmulus Web Portal](https://cumulus.rc.colorado.edu/auth/login/?next=/).
 	- Documentation on [managing your CUmulus project](./project-management.html)
 3. Get started with your Cloud Instances by following our documentation on:
