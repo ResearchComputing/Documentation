@@ -13,7 +13,7 @@ Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh conn
 
 2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](#requesting-resources) section and the [examples](#examples) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
-3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../compute/modules.html), which allows users choose software from our pre-installed software stack.
+3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
 
 4. If you would like to use software that is not within our preinstalled stack your application must be compiled on a compute node via an interactive job (as Alpine does not yet have dedicated compile nodes). Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
 
@@ -63,6 +63,6 @@ More details about how to use SLURM to run jobs can be found in our [running app
 
 All new Alpine users are granted an initial allocation (account) called `ucb-general`. Users who require more core hours than `ucb-general` can provide are advised to apply for an allocation. The allocation process requires that users have run example jobs in ucb-general that can be assessed by RC for efficiency/optimation on Alpine. Research Computing will then work with users to make workflows more efficient if needed and then grant the allocation.
 
-You can read more about the allocation process and why you might choose to apply for one on our [Allocation's page](../access/allocations.md).
+You can read more about the allocation process and why you might choose to apply for one on our [Allocation's page](../../access/allocations.md).
 
 > _**Note:**_ For Alpine early adopters, you may finish off your Summit project year on Alpine (i.e. port pro-rated Summit SUs ath the same level). For example, if you have 3 months left on an 1.2M SU grant, we can port 300k SU to Alpine.
