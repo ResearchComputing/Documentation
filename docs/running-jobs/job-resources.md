@@ -68,3 +68,5 @@ The available QoS's for Summit are:
 | normal      | Default                    | 1D              | 1000          | 256/user           | n/a              | 0 |
 | long        | Longer wall times          | 7D              | 200           | 22/user; 40 total; | shas, sknl, ssky | 0 |
 | condo       | Condo purchased nodes only | 7D              | 500           | 256/user           | shas, ssky       | Equiv. of 1 day queue wait time |
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

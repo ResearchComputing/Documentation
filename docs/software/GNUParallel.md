@@ -77,3 +77,5 @@ Tip: For sufficiently-large workflows one can add the `--joblog` and `--resume` 
 - [https://github.com/ResearchComputing/HTC_Short_Course_Spring_2019](https://github.com/ResearchComputing/HTC_Short_Course_Spring_2019)
 - [https://rcc.uchicago.edu/documentation/_build/html/running-jobs/srun-parallel/index.html](https://rcc.uchicago.edu/documentation/_build/html/running-jobs/srun-parallel/index.html)
 - [https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html](https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html)
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

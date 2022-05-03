@@ -47,3 +47,5 @@ If you would like to set a custom snapshot schedule for your allocation,
 please contact rc-help@colorado.edu. Note that the longer you retain
 snapshots, the longer it will take to free up space by deleting files
 from your allocation.
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

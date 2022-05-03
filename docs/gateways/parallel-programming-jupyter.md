@@ -146,3 +146,5 @@ Finally, if you are done using Jupyter notebook for now, access the
 "Control Panel" and press the "Stop My Server" button to stop the
 Jupyter notebook server. After that, you may press "Logout", or simply
 close the browser window.
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
