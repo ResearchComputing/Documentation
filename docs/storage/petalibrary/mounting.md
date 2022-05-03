@@ -89,3 +89,5 @@ Once this is done click the connect button. You will be prompted for a password.
 ##### Troubleshooting
 - The sshfs-win manager application may point to the incorrect sshfs binary by default. You can correct this in the "Settings" menu and adding the correct path to the application.
 - You may run into an issue where sshfs fails to wait for your Duo response. To correct this, open the "Settings" menu and increase the 'Process Timeout' field.
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

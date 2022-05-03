@@ -18,3 +18,5 @@ More details about how to use Slurm can be found [here](../../running-jobs/runni
 
 Job resources are specified via slurm job scripts, more information and script examples can be found at our [batch job page](../../running-jobs/batch-jobs.md). Summit resources are described in detail at our [slurm flags, partitions, and qos page](../../running-jobs/job-resources.md) 
 
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

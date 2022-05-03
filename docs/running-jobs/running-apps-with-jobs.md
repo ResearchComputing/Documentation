@@ -45,3 +45,5 @@ sinteractive --qos=interactive --time=00:10:00
 The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 More details [on running Interactive Jobs can be found here.](interactive-jobs.html)
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

@@ -128,3 +128,5 @@ Our CUmulus instance is now configured to submit jobs to CURC HPC resources. Whe
 	> Note: you can use the `--chdir` flag to direct the output to an directory you have write access to.
 
 You have now successfully connected your CUmulus instance to CURC HPC resources! 
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

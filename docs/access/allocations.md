@@ -37,3 +37,5 @@ For allocations, your target percentage depends on your priority based on your p
 Everyone therefore has an assigned target percentage, and your priority will depend upon how far under or over that target percentage you are based on a four week average.  If you are under (over) your four week target percentage, your priority is increased (decreased).  Information on how to check your fair share priority level can be found [here](../faq.html#how-can-i-see-my-current-fairshare-priority).
 
 Finally - just a reminder that this only impacts pending jobs.  If there are no other pending jobs and enough resources are available then your job will run regardless of your previous usage!
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

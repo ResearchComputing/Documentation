@@ -392,3 +392,5 @@ mpirun -np 4 singularity exec openmpi.sif mpi_hello_world"
 ```
 
 Note that it is also possible to build intel/IMPI containers for use on RMACC Summit, which are likely to have enhanced performance on Summit’s intel architecture compared to gcc/OpenMPI containers. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
