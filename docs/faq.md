@@ -126,7 +126,13 @@ There are a couple ways you can check your FairShare priority:
 
 The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you run a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
 
-If you receive this message, the following solutions are available: 1) run a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
+If you receive this message, the following solutions are available: 
+1. Run a shorter job that does not intersect the maintenance window
+> You can update your current job's time so that it does not intersect with the maintenance window using the `scontrol` command:
+> ```bash
+> $ scontrol update jobid=<jobid> time=<time>
+> ```
+2. Wait until after maintenance window has finished, your job will resume automatically 
 
 ### Why do I get an 'Invalid Partition' error when I try to run a job?
 
