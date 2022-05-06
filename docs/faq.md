@@ -18,7 +18,7 @@ See our documentation [homepage](index.html) for information about our most comm
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
 12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
 13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
-14. [Why is my JupyterHub job pending with reason 'QOSMaxSubmitJobPerUserLimit'?](#why-is-my-job-pending-with-reason-qosmaxsubmitjobperuserlimit)
+14. [Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?](#why-is-my-jupyterhub-session-pending-with-reason-qosmaxsubmitjobperuserlimit)
 
 
 ### I have a new phone. How do I move my Duo onto it?
@@ -217,7 +217,7 @@ PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does coun
 
 If you would like to set a custom snapshot schedule for your allocation, please contact rc-help@colorado.edu. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 
-### Why is my JupyterHub job pending with reason 'QOSMaxSubmitJobPerUserLimit'?
+### Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?
 
 JupyterHub on CURC is run using a SLURM compute job under the cluster with the `shas-interactive` partition. The shas-interactive partition provides users with rapid turn around start times but is limited to a [single core/node](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html#partitions-summit). This means only one instance of JupyterHub (or any job using the interactive partitions) can be run at a time. 
 
