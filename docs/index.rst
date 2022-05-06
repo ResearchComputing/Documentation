@@ -12,7 +12,7 @@ Here are some quick links into the documentation to get you started.
 * :doc:`The Module System <compute/modules>`
 * :doc:`Frequently Asked Questions (FAQ) <faq>`
 
-:ref:`Provide feedback on the CURC docs <https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit>`
+`Provide feedback on the CURC docs <https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit>`_
 
 More information is available at https://www.colorado.edu/rc.
 
