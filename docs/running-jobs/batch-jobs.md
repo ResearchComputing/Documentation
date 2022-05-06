@@ -189,3 +189,5 @@ The `sbatch` command supports many optional flags. To review all the options, pl
 | Wall time              | The max. amount of time your job will run for       | --time=wall time           |
 | Job Name               | Name your job so you can identify in queue          | --job-name=<jobname>       |
 
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

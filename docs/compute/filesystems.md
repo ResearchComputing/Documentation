@@ -52,7 +52,7 @@ automatically removed 90 days after their initial creation.
 
 Users requiring longer-term retention of their files should perform
 regular backups to their local machine if they have not purchased
-space on the [PetaLibrary](petalibrary.html). Inappropriate use of scratch
+space on the [PetaLibrary](../storage/petalibrary/index.html). Inappropriate use of scratch
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
@@ -210,3 +210,5 @@ you wish to share. If you make a mistake or change your mind, use the
 `-` symbol in lieu of `+` to remove privileges. Note that the `x` is
 necessary if you want other users to be able to `cd` into your
 directory.
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

@@ -16,10 +16,10 @@ Having a Research Computing account only validates that you are eligible to use 
 
 To apply for an allocation, you must do the following:
 
-1.  Contact [rc-help@colorado.edu](rc-help@colorado.edu) for an allocation proposal template. Complete this template. If you need assistance, please let us know and we would be happy to assist.  
+1.  Contact rc-help@colorado.edu for an allocation proposal template. Complete this template. If you need assistance, please let us know and we would be happy to assist.  
 2.  Login to [RCAMP](https://rcamp.rc.colorado.edu/)
 3.  Fill out some basic information about your request and create a project.  This project is a space in which you can link multiple allocations, manage PIs, etc.
-4.  After creating a project, email [rc-help@colorado.edu](rc-help@colorado.edu) and provide your project number (e.g. ucb123)
+4.  After creating a project, email rc-help@colorado.edu and provide your project number (e.g. ucb123)
 5.  A committee will review your proposal and either accept, provide comments on adjustments that need to be made, or deny.
 
 
@@ -37,3 +37,5 @@ For allocations, your target percentage depends on your priority based on your p
 Everyone therefore has an assigned target percentage, and your priority will depend upon how far under or over that target percentage you are based on a four week average.  If you are under (over) your four week target percentage, your priority is increased (decreased).  Information on how to check your fair share priority level can be found [here](../faq.html#how-can-i-see-my-current-fairshare-priority).
 
 Finally - just a reminder that this only impacts pending jobs.  If there are no other pending jobs and enough resources are available then your job will run regardless of your previous usage!
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

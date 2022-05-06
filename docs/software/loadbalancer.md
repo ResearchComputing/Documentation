@@ -79,7 +79,7 @@ Balancer. Within the script, before using Load Balancer, we need to
 load the Python, and the Load Balancer utility itself. Your job script should look
 something like this:
 
-> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](/software/python.html)_
+> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](./python.html)_
 
 ```bash
 #!/bin/bash
@@ -116,5 +116,6 @@ Hello World from process: 3
 
 * [https://github.com/ResearchComputing/lb](https://github.com/ResearchComputing/lb)
 * [https://github.com/t-brown/lb](https://github.com/t-brown/lb)
-* [https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance](https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance)
 * [https://www.inspirenignite.com/load-balancing-in-parallel-computers/](https://www.inspirenignite.com/load-balancing-in-parallel-computers/)
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

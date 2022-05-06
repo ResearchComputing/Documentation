@@ -1,9 +1,7 @@
-
-
 ## Monitoring Resources
 
 CU Research Computing has two main tools which can help users monitor their HPC resources:
-* [Slurmtools](#slurmtools): A commmand line tool which is loaded into your environment using a [module](./modules.html).
+* [Slurmtools](#slurmtools): A [module](./modules.html) that loads a collection of functions to assess recent usage statistics
 * [XDMoD](#xdmod): A web portal for viewing metrics at the system, partition, and user-levels.
 
 ### Slurmtools
@@ -323,3 +321,5 @@ Let's say you want to see how many core hours you project account has used over 
 * This will revise the graph to show CPU usage by user.  If you don't see your user of interest, you can use the _Filter_ tab at the top to find them.
 * You can change the time range of the x-axis by specifying the dates in the "Start" and "End" boxes near the top of the screen.
 
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

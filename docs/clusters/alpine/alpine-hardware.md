@@ -84,3 +84,5 @@ The available QoS's for Summit are:
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
 | normal      | Default                    | 1D              | tbd | tbd | n/a              | 0 |
 | long        | Longer wall times          | 7D              | tbd | tbd | tbd | 0 |
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

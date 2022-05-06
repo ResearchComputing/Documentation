@@ -11,8 +11,7 @@ the user has experience in both the Linux terminal and C++.
 __Resources:__
 - [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)  
 - [http://mpitutorial.com/tutorials/](http://mpitutorial.com/tutorials/)  
-- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml)  
-- [https://computing.llnl.gov/tutorials/mpi/](https://computing.llnl.gov/tutorials/mpi/)  
+- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml)
 
 
 ### Setup and “Hello, World”
@@ -629,3 +628,5 @@ Process has received: 72
 Process has received: 129
 Process has received: 42
 ```
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)

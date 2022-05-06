@@ -17,6 +17,9 @@ See our documentation [homepage](index.html) for information about our most comm
 [Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
 12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
+13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
+14. [Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?](#why-is-my-jupyterhub-session-pending-with-reason-qosmaxsubmitjobperuserlimit)
+
 
 ### I have a new phone. How do I move my Duo onto it?
 
@@ -72,7 +75,7 @@ Note that Slurm's estimated start time can be a bit inaccurate. This is because 
 
 For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
-Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](https://curc.readthedocs.io/en/latest/gateways/xdmod.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](./compute/monitoring-resources.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
 
 ### How can I get metics about CURC systems such as how busy they are, wait times, and account usage?
 
@@ -126,7 +129,13 @@ There are a couple ways you can check your FairShare priority:
 
 The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you run a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
 
-If you receive this message, the following solutions are available: 1) run a shorter job that does not intersect the maintenance window; or 2) wait until after maintenance. 
+If you receive this message, the following solutions are available: 
+1. Run a shorter job that does not intersect the maintenance window
+> You can update your current job's time so that it does not intersect with the maintenance window using the `scontrol` command:
+> ```bash
+> $ scontrol update jobid=<jobid> time=<time>
+> ```
+2. Wait until after maintenance window has finished, your job will resume automatically 
 
 ### Why do I get an 'Invalid Partition' error when I try to run a job?
 
@@ -199,3 +208,22 @@ Every time you log out you will need to rerun the above export to use your Pytho
 One final item of note is a Python virtualenv. Virtualenvs allow you to keep multiple Python environments with separate versions of packages. There are plenty of guides available online such as this one: [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/). These are especially handy if you have several projects which require different versions of the same Python library.
 
 -->
+
+### Why does my allocation report less storage than I requested?
+
+Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. Read more about [ZFS Snapshots](./storage/petalibrary/zfs_snapshots.html) 
+
+PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
+
+If you would like to set a custom snapshot schedule for your allocation, please contact rc-help@colorado.edu. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+
+### Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?
+
+JupyterHub on CURC is run using a SLURM compute job under the cluster with the `shas-interactive` partition. The shas-interactive partition provides users with rapid turn around start times but is limited to a [single core/node](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html#partitions-summit). This means only one instance of JupyterHub (or any job using the interactive partitions) can be run at a time. 
+
+In order to spawn another JupyterHub job you first need to close the current job.
+
+You can either do so by [shutting down your current JupyterHub server](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#step-4-shut-down-a-notebook-server) or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
+
+
+Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
