@@ -1,9 +1,7 @@
-
-
 ## Monitoring Resources
 
 CU Research Computing has two main tools which can help users monitor their HPC resources:
-* [Slurmtools](#slurmtools): A commmand line tool which is loaded into your environment using a [module](./modules.html).
+* [Slurmtools](#slurmtools): A [module](./modules.html) that loads a collection of functions to assess recent usage statistics
 * [XDMoD](#xdmod): A web portal for viewing metrics at the system, partition, and user-levels.
 
 ### Slurmtools
