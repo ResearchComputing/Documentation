@@ -18,6 +18,7 @@ See our documentation [homepage](index.html) for information about our most comm
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
 12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
 13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
+14. [Why is my JupyterHub job pending with reason 'QOSMaxSubmitJobPerUserLimit'?](#why-is-my-job-pending-with-reason-qosmaxsubmitjobperuserlimit)
 
 
 ### I have a new phone. How do I move my Duo onto it?
@@ -215,5 +216,14 @@ Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS sna
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
 If you would like to set a custom snapshot schedule for your allocation, please contact rc-help@colorado.edu. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+
+### Why is my JupyterHub job pending with reason 'QOSMaxSubmitJobPerUserLimit'?
+
+JupyterHub on CURC is run using a SLURM compute job under the cluster with the `shas-interactive` partition. The shas-interactive partition provides users with rapid turn around start times but is limited to a [single core/node](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html#partitions-summit). This means only one instance of JupyterHub (or any job using the interactive partitions) can be run at a time. 
+
+In order to spawn another JupyterHub job you first need to close the current job.
+
+You can either do so by [shutting down your current JupyterHub server](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#step-4-shut-down-a-notebook-server) or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
+
 
 Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
