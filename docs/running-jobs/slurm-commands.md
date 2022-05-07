@@ -273,4 +273,4 @@ on Grep](https://www.gnu.org/software/grep/manual/grep.html)
 For more information on scontrol, [visit the Slurm page on
 scontrol](https://slurm.schedmd.com/scontrol.html)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
+Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

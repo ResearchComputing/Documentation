@@ -46,4 +46,4 @@ The example above will run an interactive job that will run a terminal session o
 
 More details [on running Interactive Jobs can be found here.](interactive-jobs.html)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
+Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

@@ -44,3 +44,5 @@ Users can be removed from accessing the AWS account by removing them from the Gr
     ![](images/managing-grouper-groups/remove-user.png)
 
 3. Verify the user(s) no longer appear in the table.
+
+Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
