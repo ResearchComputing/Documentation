@@ -150,3 +150,5 @@ You will need the Project tag at a minimum.
 Always be sure to refer to the AWS CLI documentation.
 Each resource may have its own unique syntax for adding Tags.
 This example was created using this <a href="https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-tagging.html" target="_blank">AWS CLI Documentation</a>.
+
+Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

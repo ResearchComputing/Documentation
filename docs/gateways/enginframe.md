@@ -79,4 +79,4 @@ Select your running session from the "Sessions" menu, and select "Close" (verify
 * [https://aws.amazon.com/hpc/enginframe/](https://aws.amazon.com/hpc/enginframe/) 
 * [https://aws.amazon.com/hpc/dcv/](https://aws.amazon.com/hpc/dcv/) 
 
-Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
+Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

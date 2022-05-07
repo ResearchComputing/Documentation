@@ -31,4 +31,4 @@ This is where jobs are executed after being passed to the scheduler.
 * When run an [interactive job](../running-jobs/interactive-jobs.html) will be
   performing tasks directly on the compute nodes
 
-Couldn't find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/1WoP_KtLp9lnTEsgW7Os-we45_JbEt3aUgS6j61jARnk/edit)
+Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
