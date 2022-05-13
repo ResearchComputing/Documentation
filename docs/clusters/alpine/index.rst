@@ -1,6 +1,10 @@
 Alpine
 ===============
 
+.. image:: ./images/summit_alpine_timeline.jpg
+  :width: 400
+  :alt: Summit-Alpine timeline
+
 **Early Release: CURC Alpine is currently in early testing available only for the early adopters group.**
 
 **Early Release: Pardon our dust! We are actively developing the Alpine cluster -- if you see or experience any errors or unexpected behavior, please report them to rc-help@colorado.edu**
