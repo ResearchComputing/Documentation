@@ -1,7 +1,9 @@
 ## Summit
 
 <!-- ![](./images/alpine_summit_timeline.png) -->
-<img src="/images/alpine_summit_timeline.png" style="width: 25px">
+<p>
+    <img src="/images/alpine_summit_timeline.png" width="220" height="240" />
+</p>
 
 Summit is the second-generation HPC cluster at University of Colorado Research Computing, following Janus. Summit is an NSF-Funded cluster shared between th University of Colorado, Colorado State University, and institutions in the Rocky Mountain Advanced Computing Consortuium (RMACC).
 
