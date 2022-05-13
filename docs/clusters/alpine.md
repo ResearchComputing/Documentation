@@ -113,7 +113,7 @@ Partitions available on Alpine:
 **General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
 ```bash
-$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100|a100"
 ```
 
 __Examples of GPU configurations/requests__:
