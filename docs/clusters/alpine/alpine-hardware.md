@@ -4,9 +4,9 @@
 
 | Count & Type | Scheduler Partition | Processor | Sockets | Cores (total) | Threads/Core | Clock (GHz) | RAM (GB) | L3 Cache (MB) | GPU type | GPU count | Local Disk Capacity & Type | Fabric | OS |
 | ------------ | ------------------- | --------- | ------- | ----- | ------------ | ----------- | -------- | -------- | - | --------- | -------------------------- | ------ | -- |
-| 64 Milan General CPU | amilan-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 263 | 32 | | | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4|
-| 8 Milan AMD GPU | ami100-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 263 | 32 | AMD MI100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 8 Milan NVIDIA GPU | aa100-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 263 | 32 | NVIDIA A100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
+| 64 Milan General CPU | amilan-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 239 | 32 | | | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4|
+| 8 Milan AMD GPU | ami100-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 239 | 32 | AMD MI100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
+| 8 Milan NVIDIA GPU | aa100-[institution] | x86_64  AMD Milan | 2 | 64 | 1 | 3.2 | 239 | 32 | NVIDIA A100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
 
 
 ### Requesting Hardware Resources
@@ -27,9 +27,9 @@ Partitions available on Alpine:
 
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan-[institute] | AMD Milan (default) | 64 | 64 | 3.83 | 1              | 4H, 24H                  |
-| ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 3.83 | tbd | 4H, 24H                  |
-| aa100-[institute]* | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 3.83 | tbd | 4H, 24H                  |
+| amilan-[institute] | AMD Milan (default) | 64 | 64 | 3.74 | 1              | 4H, 24H                  |
+| ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 3.74 | tbd | 4H, 24H                  |
+| aa100-[institute]* | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 3.74 | tbd | 4H, 24H                  |
 
 > * Note: Nvidia A100 GPUs only support CUDA versions >11.x
 
