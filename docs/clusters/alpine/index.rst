@@ -3,6 +3,7 @@ Alpine
 
 .. image:: ./images/summit_alpine_timeline.jpg
   :width: 400
+  :align: center
   :alt: Summit-Alpine timeline
 
 **Early Release: CURC Alpine is currently in early testing available only for the early adopters group.**
