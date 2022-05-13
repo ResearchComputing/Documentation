@@ -3,7 +3,8 @@
 <!-- ![](./images/alpine_summit_timeline.png) -->
 
 <p align="middle">
-  <img src="https://github.com/ResearchComputing/Documentation/blob/feat-summit-alpine-timeline/docs/clusters/alpine/images/alpine_summit_timeline.png?raw=true"/>
+  <!-- <img src="https://github.com/ResearchComputing/Documentation/blob/feat-summit-alpine-timeline/docs/clusters/alpine/images/alpine_summit_timeline.png?raw=true"/> -->
+  <img src="https://drive.google.com/file/d/180KQIeQciUbad8iyH7dwg4JSjmrQS5M4/view?usp=sharing"/>
   <!-- <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/duo2factor/duo_app1.png" /> --> 
 </p>
 
