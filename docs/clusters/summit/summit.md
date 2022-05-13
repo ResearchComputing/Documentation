@@ -3,7 +3,7 @@
 <!-- ![](./images/alpine_summit_timeline.png) -->
 
 <p align="middle">
-  <img src="./images/alpine_summit_timeline.png"/>
+  <img src="https://github.com/ResearchComputing/Documentation/blob/feat-summit-alpine-timeline/docs/clusters/alpine/images/alpine_summit_timeline.png?raw=true"/>
   <!-- <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/duo2factor/duo_app1.png" /> --> 
 </p>
 
