@@ -1,7 +1,7 @@
 Alpine
 ===============
 
-.. image:: ./images/summit_alpine_timeline.jpg
+.. image:: ./images/alpine_summit_timeline.png
   :width: 400
   :align: center
   :alt: Summit-Alpine timeline
