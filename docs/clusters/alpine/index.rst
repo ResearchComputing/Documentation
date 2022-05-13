@@ -6,7 +6,7 @@ Alpine
   :align: center
   :alt: Summit-Alpine timeline
 
-**Early Release: CURC Alpine is currently in early testing available only for the early adopters group.**
+Starting May 18, 2022, CU Research Computing will be releasing phase 1 of Alpine, the third generation CURC High Performance Computing Cluster. CU Boulder users can begin using Alpine at that time. The warranty of the Summit cluster's storage will end in September of 2022 with the full sun-setting of the Summit system yet to be finalized. 
 
 **Early Release: Pardon our dust! We are actively developing the Alpine cluster -- if you see or experience any errors or unexpected behavior, please report them to rc-help@colorado.edu**
 
