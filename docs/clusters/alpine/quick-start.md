@@ -15,7 +15,14 @@ Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh conn
 
 3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
 
-4. If you would like to use software that is not within our preinstalled stack your application must be compiled on a compute node via an interactive job (as Alpine does not yet have dedicated compile nodes). Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
+4. If you would like to use software that is not within our preinstalled stack your application must be compiled using an `acompile` job (similar to ssh'ing to an `scompile` node on Summit)*. Once you have loaded in the `slurm/alpine` module you can run the following command to open up a compile job with a default of 1 core, 3.75GB RAM, for 60 minutes**:
+```bash
+$ acompile
+```
+> *Note the lack of `ssh` before `acompile.`
+> \**Note that only 1 `acompile` job can be open at a time.
+
+Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
 
 ### Cluster Summary
 #### Nodes
@@ -50,6 +57,30 @@ sinfo --format="%N | %f"
 - **A100**: NVIDIA A100 GPU
 - **MI100**: AMD MI100 GPU- **localraid**: large, fast RAID disk storage in node
 - **rhel8**: RedHat Enterprise Linux version 8 operating system
+
+### Compile Jobs
+
+If you have used Summit in the past, compiling on Alpine bahaves slightly differently. Instead of having dedicated hardware (2 full nodes) which are oversubscribed for users to `ssh` directly into, Alpine's `acompile` command starts an interactive job for users which provides the following benefits:
+- Users can request specific resources (i.e. more cores to compile with, specific GPU resources)
+- Limits dedicated hardware permanently set aside
+- Users can't accidentally run full workflows that can slow down the entire system
+
+Once you have loaded in the `slurm/alpine` module you can run the following command to open up a compile job with a default of 1 core, 3.75GB RAM, for 60 minutes:
+```bash
+$ acompile
+```
+or for options/help:
+```bash
+$ acompile --help
+acompile: CURC utility to access a single alpine compute node for compiling software
+usage:
+       -t | --time=<time-limit>        : set the job's minimum runtime (default 60 minutes)
+       -n | --ntasks=<number-of-cores> : set the number of cores required for the session (default 1/max 4)
+       -G | --gpu=<nvidia|amdgpu>      : request a gpu to compile against
+       -X | --x11                      : enable x11 support for the session
+       -h | --help                     : print this message
+```
+
 
 
 ### Job Scheduling
