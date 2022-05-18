@@ -15,12 +15,12 @@ Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh conn
 
 3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
 
-4. If you would like to use software that is not within our preinstalled stack your application must be compiled using an `acompile` job (similar to ssh'ing to an `scompile` node on Summit)*. Once you have loaded in the `slurm/alpine` module you can run the following command to open up a compile job with a default of 1 core, 3.75GB RAM, for 60 minutes**:
+4. If you would like to use software that is not within our preinstalled stack your application must be compiled using an `acompile` job (similar to ssh'ing to an `scompile` node on Summit). Once you have loaded in the `slurm/alpine` module you can run the following command to open up a compile job with a default of 1 core, 3.75GB RAM, for 60 minutes:
 ```bash
 $ acompile
 ```
-> *Note the lack of `ssh` before `acompile.`
-> \**Note that only 1 `acompile` job can be open at a time.
+> Note: the lack of `ssh` before `acompile`
+> Note that only 1 `acompile` job can be open at a time
 
 Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
 
