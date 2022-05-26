@@ -23,7 +23,7 @@ Core software such as compilers, MPIs, and relevant libraries will be updated at
 
 All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources.
 
-To request a software installation please fill out the [Software Request Form](link)
+To request a software installation please fill out the [Software Request Form](https://www.colorado.edu/rc/userservices/software-request)
 
 _Please note that this software policy is subject to change. Please review the software policy before submitting a request._
 

@@ -36,5 +36,7 @@ Nodes: The Alpine cluster is made up of different types of nodes outlined below.
     quick-start
     alpine-hardware
     examples
+    software
     moving-from-summit
     important-notes
+
