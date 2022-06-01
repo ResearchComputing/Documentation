@@ -78,6 +78,7 @@ Once we receive your request the allocation committee will review it. If the cas
 
 	If trial period was successful, adjust resources based on trial period and grant 1-year allocation.  
 
+<br>
 
 The CU Research Computing group would like to acknowledge support of this project from the National Science Foundation (OAC-1925766).
 
