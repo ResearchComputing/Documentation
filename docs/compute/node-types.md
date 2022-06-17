@@ -10,9 +10,12 @@ type and its intended use below.
 
 * Four virtual machines
 * This is where you are when you log in
-* No computation, compiling code, interactive jobs, or long running processes
-* Script or code editing
-* Submit Jobs
+* _Do not use for_: computation, compiling code, interactive jobs, or long running processes
+* _Use for_: editing scripts, moving files, scheduling jobs
+
+#### Policy for use of login nodes:
+
+The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including Blanca, Summit and Alpine. They are strictly intended for non-computational tasks including editing scripts, moving files, scheduling jobs to run on CURC computing resources, and non-intensive workflow monitoring/management tasks. They are not intended for computational tasks of any kind. CURC personnel regularly monitor processes on the login nodes and reserve the right to terminate processes in violation of this policy without notice.  Repeated violations by the same user may result in a suspended account.
 
 
 ### Compile nodes
