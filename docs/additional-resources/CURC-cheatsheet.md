@@ -1,3 +1,3 @@
 ## CURC Cheat Sheet
 
-<embed src="https://github.com/ResearchComputing/Documentation/blob/748835ba6a3bb1bf8855d7aacbace3f962d87fba/CURC-Cheat-Sheet.pdf" type="application/pdf">
+<iframe src="https://drive.google.com/file/d/1PCOn54bdx2qBYyg1jBjSzWSaW70_lGoi/preview" width="640" height="480" allow="autoplay"></iframe>
