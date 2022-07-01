@@ -28,4 +28,6 @@ To request a software installation please fill out the [Software Request Form](h
 _Please note that this software policy is subject to change. Please review the software policy before submitting a request._
 
 
+Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
+
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
