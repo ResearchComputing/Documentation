@@ -6,6 +6,7 @@ Starting May 18, 2022, CU Research Computing will be releasing phase 1 of Alpine
 .. image:: ./images/alpine_summit_timeline.png
   :width: 400
   :align: center
+
   :alt: Summit-Alpine timeline
 
 **Early Release: Pardon our dust! We are actively developing the Alpine cluster -- if you see or experience any errors or unexpected behavior, please report them to rc-help@colorado.edu**
@@ -40,3 +41,5 @@ Nodes: The Alpine cluster is made up of different types of nodes outlined below.
     moving-from-summit
     important-notes
 
+
+Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
