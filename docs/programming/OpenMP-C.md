@@ -354,7 +354,7 @@ int main(int argc, char** argv){
         thread_id = omp_get_thread_num();
 
         for(i = 0; i < omp_get_max_threads(); i++){
-            if(i == thread_ID){
+            if(i == thread_id){
                 printf(“Hello from process: %d\n”, thread_id);
             }
         }
