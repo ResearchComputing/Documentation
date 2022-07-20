@@ -23,7 +23,7 @@ $ acompile
 
 > Note that only 1 `acompile` job can be open at a time
 
-Consult our [compiling and linking documentation](../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
+Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
 
 ### Cluster Summary
 #### Nodes
