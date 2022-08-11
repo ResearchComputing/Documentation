@@ -18,7 +18,7 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 #### Partitions
 
-**Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting an interactive job) in order for your job to run on the appropriate type of node. On Alpine nodes are also grouped by institution. You need to include your institutions suffix in order to request the required nodes.
+**Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting an interactive job) in order for your job to run on the appropriate type of node. 
 
 > **Note:** GPU nodes require the additional `--gres` directive (see next section).
 
@@ -27,30 +27,17 @@ Partitions available on Alpine:
 
 | Partition       | Description       | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime |
 | --------------- | ----------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan-[institute] | AMD Milan (default) | 64 | 64 | 3.74 | 1              | 4H, 24H                  |
-| ami100-[institute] | GPU-enabled (3x AMD MI100) | 8 | 64 | 3.74 | tbd | 4H, 24H                  |
-| aa100-[institute]* | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 3.74 | tbd | 4H, 24H                  |
+| amilan | AMD Milan (default) | 64 | 64 | 3.74 | 1              | 4H, 24H                  |
+| ami100 | GPU-enabled (3x AMD MI100) | 8 | 64 | 3.74 | tbd | 4H, 24H                  |
+| aa100  | GPU-enabled (3x NVIDIA A100) | 8 | 64 | 3.74 | tbd | 4H, 24H                  |
 
 > * Note: Nvidia A100 GPUs only support CUDA versions >11.x
 
-** [institute] should be substituted for your institute** (examples):
-* `ucb` (CU Boulder)
+All users, regardless of institution, should specify partitions as follows:
 ```bash
---partition=amilan-ucb
---partition=aa100-ucb
---partition=ami100-ucb
-```
-* `csu` (Colorado State University)
-```bash
---partition=amilan-csu
---partition=aa100-csu
---partition=ami100-csu
-```
-* `amc` (Anschutz Medical Campus).
-```bash
---partition=amilan-amc
---partition=aa100-amc
---partition=ami100-amc
+--partition=amilan
+--partition=aa100
+--partition=ami100
 ```
 
 #### General Resources (gres)
