@@ -10,7 +10,7 @@ Note: This documentation assumes that **prior to August 23, 2022** you have (1) 
 
 ## Logging in to Open OnDemand
 
-- Visit [https://ondemand-rmacc.rc.colorado.edu](url).
+- Visit [https://ondemand-rmacc.rc.colorado.edu](https://ondemand-rmacc.rc.colorado.edu).
 You will be redirected to CILogon.
 
 ![](rmacc/cilogon.png)
