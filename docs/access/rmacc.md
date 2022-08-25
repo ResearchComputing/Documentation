@@ -35,7 +35,12 @@ You will be redirected to CILogon.
 - Select "Jupyter Notebook (Summit)" from the drop-down list under _Interactive Apps_.
 - Enter the desired number of hours and nodes. Leaving the account and partition fields empty will default to the `ucb-general` account and the `shas` partition. 
 - Once the interactive session begins running, you can access the terminal in two ways:
-    1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png)
+
+<br>
+    1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png) 
+
+<br>
+
     2. select "Connect to Jupyter" to start a Notebook, then click "Terminal" in the launcher tab. You can open additional terminal tabs from the _File_ menu (_File_ -> _New Launcher_).![](rmacc/terminal_method2.png)
 
 <br>
