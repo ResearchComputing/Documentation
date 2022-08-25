@@ -1,89 +1,72 @@
-## RMACC Access to Summit
+# RMACC Access to CURC Resources with Open OnDemand 
 
-If you are at an RMACC institution other than CU Boulder or CSU and would like to use Summit, please see the below steps to apply for access.  
+Starting September 1, 2022, when XSEDE transitions to ACCESS, Rocky Mountain Advanced Computing Consortium (RMACC) members will be unable to use the XSEDE SSO Hub to log in to CURC systems. To this end, CURC has leveraged the power and convenience of Open OnDemand to provide RMACC users with streamlined access to our resources.
 
+:::note
 
-### Getting an XSEDE account
+This documentation assumes that **prior to August 23, 2022** you have (1) an XSEDE account, (2) Duo two-factor authentication configured through XSEDE, and (3) authorization to RMACC Summit. 
 
-Visit the [XSEDE User Portal](https://portal.xsede.org) and use the “Create Account” button. Complete the form and follow the instructions to create an XSEDE account. As part of the process, you will select an XSEDE username, which will be used to access the XSEDE User Portal and the XSEDE SSO Hub.
-
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/XSEDE/xsede1.png)  
-
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/XSEDE/xsede2.png)  
-
-### Configuring Duo
-
-Once your XSEDE account has been created, follow the [Multi-Factor Authentication setup instructions on the XSEDE website](https://portal.xsede.org/mfa). Multi-factor authentication with Duo is required for access to the XSEDE SSO Hub, which provides access to RMACC Summit.
+We will provide updated instructions for creating and using ACCESS accounts after the new User Portal launches.
+:::
 
 
-### Getting authorization for RMACC Summit
+## Logging in to Open OnDemand
 
-Send an email from your institutional email address to <rc-help@colorado.edu> requesting access to RMACC Summit via XSEDE. Include the full name of your home institution, specific department within the institution, a short summary of why you require access to RMACC Summit, and your XSEDE username. You will receive a response indicating whether your account has been added to the rmacc-summit.colorado.xsede.org project.
-
-> _Note: Some institutions may require additional setup (verification or paperwork from their users accessing Summit) which may require additional time._
-
-### Logging in to CU Boulder RC using the XSEDE SSO Hub
-
-Use an [ssh client](../access/logging-in.html#logging-in-from-a-windows-machine) to connect to the XSEDE SSO Hub using your XSEDE credentials. You will be prompted to authenticate both using your XSEDE password and via Duo.
-
-```
-ssh -l <your-xsede-username> login.xsede.org
-```
-
-From there, use gsissh (available in the SSO Hub environment) to log into rmacc-summit, which serves as an alias for the CU Boulder RC login environment. [More information on the XSEDE SSO hub](https://portal.xsede.org/web/xup/single-sign-on-hub).
-
-<!--![Summit Login node](https://github.com/ResearchComputing/Wiki_Documentation/blob/master/XSEDE/Screen%20Shot%202018-01-18%20at%209.54.13%20AM.png)-->
-
-```
-gsissh rmacc-summit
-```
-#### Login example from Mac terminal:
-
-1. user1234 first logs into the XSEDE SSO Hub from their terminal application, using a Duo Mobile push (option 1) for authentication:
-	```
-	$ ssh -l user1234 login.xsede.org
-
-	Please login to this system using your XSEDE username and password:
-	password:
-	Duo two-factor login for user1234 
-
-	Enter a passcode or select one of the following options:
-
-	 1. Duo Push to XXX-XXX-1234
-	 2. Phone call to XXX-XXX-1234
-
-	Passcode or option (1-2): 1
-	Success. Logging you in...
-	#  Welcome to the XSEDE Single Sign-On (SSO) Hub!
-	...
-	[user1234@ssohub ~]$
-	```
-2. user1234 then logs into rmacc-summit using `gsissh`:
-	```
-	[user1234@ssohub ~]$ gsissh rmacc-summit
-	Welcome to CU-Boulder Research Computing.
-	...
-	[user1234@xsede.org@login13 ~]$
-	```
-	user1234 is now logged into a Research Computing login node, which serves as a gateway to both Summit and Blanca.
-
-### Data Transfer
-
-Traditional command line file transfer tools such as scp, sftp, and rsync won't work for xsede users because they cannot bypass the XSEDE SSO. For that reason, **Globus is the RC recommended data transfer method** for XSEDE users. 
-
-[Sign into Globus Connect](https://www.globus.org/app/login) by selecting `XSEDE` from the dropdown menu and by logging in using your XSEDE username and password.
-> **_Note:_** As an XSEDE user, you **must** use the `XSEDE` oganization option to login to Globus and **not** the `University of Colorado at Boulder` option.
-
-![](rmacc/xsede_globus_login.png)
-
-Once you are logged into Globus and have your personal endpoint established, you can connect to our filesystems using the "CU Research Computing XSEDE Endpoint". Further instructions to setup Globus endpoints, configuring a local endpoint, and Globus shared collections can be found [here](../compute/data-transfer.html#globus). 
-
-### Other useful information
-
-* [Your personal directories](../compute/filesystems.html)
-* [Available software (modules)](../compute/modules.html)
-* [Compiling software](../compute/compiling.html)
-* [Node Types](../compute/node-types.html)
+- Visit [https://ondemand-rmacc.rc.colorado.edu](url).
+You will be redirected to CILogon.
 
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
+- Select "ACCESS CI" from the list of identity providers:
+
+
+![](rmacc/cilogon.png)
+
+- Select "Log On". This will redirect you to the ACCESS login page. 
+
+- Enter your XSEDE username and password:
+
+ 
+![](rmacc/access_cilogon.png)
+
+- Select "Login", then accept the Duo push notification from your device to be directed to the RMACC Open OnDemand homepage.
+
+![](rmacc/ood_homepage.png)
+
+<br>
+
+
+## Shell Access to Summit Compute Nodes  
+
+
+**The shells visible in the 'Clusters' dropdown menu are currently unavailable. Shell access is available only through the JupyterHub terminal.**
+
+- Select "Jupyter Notebook (Summit)" from the drop-down list under _Interactive Apps_.
+- Enter the desired number of hours and nodes. Leaving the account and partition fields empty will default to the `ucb-general` account and the `shas` partition. 
+- Once the interactive session begins running, you can access the terminal in two ways:
+    1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png)
+    2. select "Connect to Jupyter" to start a Notebook, then click "Terminal" in the launcher tab. You can open additional terminal tabs from the _File_ menu (_File_ -> _New Launcher_).![](rmacc/terminal_method2.png)
+
+<br>
+
+
+### Other Features and Tools
+
+Additional features and tools in RMACC Open OnDemand is under active development. Please see [CURC Open OnDemand documentation](https://curc.readthedocs.io/en/latest/gateways/OnDemand.html?highlight=Open%20OnDemand#jobs) for information about monitoring, creating, and editing jobs using the _Jobs_
+menu. 
+  
+**_Notes on data transfer_**:
+  - `scp` and Globus are currently unavailable to RMACC users
+  - File transfer using Open OnDemand's _Files_ menu is  limited to < 10 GB per file
+
+  
+
+
+**_Notes on logging out_**:
+
+- You must **completely quit your browser in order for “logout” to occur**. If after reopening your browser you are still logged in, please clear your cookies. If you are on a Chromebook or Chromebox, you will need to reboot your device in order to “quit the browser” and thus “logout”.
+- **Tip: Using a “private browsing mode”** window while using OnDemand is a great way to handle “auto-logout”, as closing your browser window will remove all associated cookies and session information.
+
+
+<br>
+
+Couldn’t find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/e/1FAIpQLSeaoraGl8x_ubyGNEYe3WP2cw_wg6aZM7Dy0v4X5s2ND-06RA/viewform)
