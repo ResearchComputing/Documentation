@@ -41,7 +41,7 @@ You will be redirected to CILogon.
 
 <br>
 
-### Other Features and Tools
+## Other Features and Tools
 
 Additional features and tools in RMACC Open OnDemand are under active development. Please see [CURC Open OnDemand documentation](https://curc.readthedocs.io/en/latest/gateways/OnDemand.html?highlight=Open%20OnDemand#jobs) for information about monitoring, creating, and editing jobs using the _Jobs_
 menu. 
@@ -54,22 +54,17 @@ Globus data transfers are supported for RMACC users who have current XSEDE.org o
 The Globus Collection for CURC resources is available at "CU Boulder Research Computing ACCESS" and will require login with credentials from one of those providers.
 
 Once connected Globus can be used to transfer data to:
-/home
-/projects
-/pl
+
+<br>
+
+`/home`
+`/projects`
+`/pl`
 
 
 **_Notes on data transfer_**:
   - `scp` is currently unavailable to RMACC users
   - File transfer using Open OnDemand's _Files_ menu is  limited to < 10 GB per file
-
-  
-
-
-**_Notes on logging out_**:
-
-- You must **completely quit your browser in order for “logout” to occur**. If after reopening your browser you are still logged in, please clear your cookies. If you are on a Chromebook or Chromebox, you will need to reboot your device in order to “quit the browser” and thus “logout”.
-- **Using a “private browsing mode”** window while using OnDemand is a great way to handle “auto-logout”, as closing your browser window will remove all associated cookies and session information.
 
 
 <br>
