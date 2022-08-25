@@ -13,19 +13,13 @@ Note: This documentation assumes that **prior to August 23, 2022** you have (1) 
 - Visit [https://ondemand-rmacc.rc.colorado.edu](url).
 You will be redirected to CILogon.
 
-
-- Select "ACCESS CI" from the list of identity providers:
-
-
 ![](rmacc/cilogon.png)
 
-- Select "Log On". This will redirect you to the ACCESS login page. 
-
-- Enter your XSEDE username and password:
-
+- Select "ACCESS CI" from the list of identity providers then "Log On". This will redirect you to the ACCESS login page. 
  
 ![](rmacc/access_cilogon.png)
 
+- Enter your XSEDE username and password.
 - Select "Login", then accept the Duo push notification from your device to be directed to the RMACC Open OnDemand homepage.
 
 ![](rmacc/ood_homepage.png)
@@ -41,21 +35,14 @@ You will be redirected to CILogon.
 - Select "Jupyter Notebook (Summit)" from the drop-down list under _Interactive Apps_.
 - Enter the desired number of hours and nodes. Leaving the account and partition fields empty will default to the `ucb-general` account and the `shas` partition. 
 - Once the interactive session begins running, you can access the terminal in two ways:
-
-<br>
-
     1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png)
-
-<br>
-
     2. select "Connect to Jupyter" to start a Notebook, then click "Terminal" in the launcher tab. You can open additional terminal tabs from the _File_ menu (_File_ -> _New Launcher_).![](rmacc/terminal_method2.png)
 
 <br>
 
-
 ### Other Features and Tools
 
-Additional features and tools in RMACC Open OnDemand is under active development. Please see [CURC Open OnDemand documentation](https://curc.readthedocs.io/en/latest/gateways/OnDemand.html?highlight=Open%20OnDemand#jobs) for information about monitoring, creating, and editing jobs using the _Jobs_
+Additional features and tools in RMACC Open OnDemand are under active development. Please see [CURC Open OnDemand documentation](https://curc.readthedocs.io/en/latest/gateways/OnDemand.html?highlight=Open%20OnDemand#jobs) for information about monitoring, creating, and editing jobs using the _Jobs_
 menu. 
   
 **_Notes on data transfer_**:
