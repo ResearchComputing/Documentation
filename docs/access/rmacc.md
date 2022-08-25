@@ -45,9 +45,22 @@ You will be redirected to CILogon.
 
 Additional features and tools in RMACC Open OnDemand are under active development. Please see [CURC Open OnDemand documentation](https://curc.readthedocs.io/en/latest/gateways/OnDemand.html?highlight=Open%20OnDemand#jobs) for information about monitoring, creating, and editing jobs using the _Jobs_
 menu. 
-  
+
+
+### Globus Data Transfers
+
+Globus data transfers are supported for RMACC users who have current XSEDE.org or future access-ci.org credentials.  
+
+The Globus Collection for CURC resources is available at "CU Boulder Research Computing ACCESS" and will require login with credentials from one of those providers.
+
+Once connected Globus can be used to transfer data to:
+/home
+/projects
+/pl
+
+
 **_Notes on data transfer_**:
-  - `scp` and Globus are currently unavailable to RMACC users
+  - `scp` is currently unavailable to RMACC users
   - File transfer using Open OnDemand's _Files_ menu is  limited to < 10 GB per file
 
   

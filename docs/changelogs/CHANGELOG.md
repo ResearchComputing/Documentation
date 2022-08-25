@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Thursday, 25 August 2022
+
+* Updates for Globus access from XSEDE and ACCESS
+
 ### Thursday, 13 January 2022
 
 * 2022 Q1 Documentation Review
