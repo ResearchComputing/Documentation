@@ -29,7 +29,7 @@ Although Research Computing resources are free and available to the CU Boulder r
 A Research Computing account can be secured quickly and easily [by filling out the form 
 here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). Once you've received a computing 
 account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
-mobile app to your phone (available via Apple App Store or Google Play Store), visit https://duo.colorado.edu to enroll. 
+mobile app to your phone (available via Apple App Store or Google Play Store), visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> to enroll. 
   
 ### Logging in from a Windows Machine
 

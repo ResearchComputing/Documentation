@@ -11,24 +11,24 @@ Before you can use our large-scale resources, you will need to be enrolled in CU
 service. If you are not presently enrolled, you can do so as follows: 
 
 1. Download the Duo mobile app to your phone (available via Apple App Store or Google Play Store).
-2. Once installed, visit https://duo.colorado.edu to enroll. 
+2. Once installed, visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> to enroll. 
 
 #### Common Issues
 
 If you are having issues logging in to CURC services with Duo, you can enroll, re-enroll, change devices, and manage your 
-Duo account by visiting the CU Duo self-service portal at https://duo.colorado.edu.  
+Duo account by visiting the CU Duo self-service portal at <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.  
 
 If you are not receiving a Duo prompt when attempting to login to CURC services, the following are possible issues and 
 solutions: 
 
 Issue 1: Your Duo account may have expired. The university purges Duo accounts after six months of non-use.  You can 
-re-enroll by visiting https://duo.colorado.edu.
+re-enroll by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
 
 Issue 2: You have changed your mobile device (e.g., purchased a new phone). You can add a new device to your duo account by 
 following the instructions 
 [here](https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
 
-If you need human assistance with Duo, contact the University helpdesk at oithelp@colorado.edu or call 303-735-4357. 
+If you need human assistance with Duo, contact the University helpdesk at <oithelp@colorado.edu> or call 303-735-4357. 
 
 ### Logging in with Duo
 
