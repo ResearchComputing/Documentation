@@ -26,7 +26,10 @@ Users accessing RC's resources will be connected to a login node. A login node i
 
 Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
 
-A Research Computing account can be secured quickly and easily [by filling out the form here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). Once you've received an account with Research Computing, you will automatically be sent an invitation for Duo enrollment via email. After you have accepted the Duo invitation, you will be able to authenticate via Duo and log into the system.
+A Research Computing account can be secured quickly and easily [by filling out the form 
+here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). Once you've received a computing 
+account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
+mobile app to your phone (available via Apple App Store or Google Play Store), visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> to enroll. 
   
 ### Logging in from a Windows Machine
 

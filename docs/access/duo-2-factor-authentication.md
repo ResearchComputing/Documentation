@@ -7,23 +7,28 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 
 ### Setting up Duo
 
-1. You will receive a Duo invitation when your RC account is created. Open your Duo invitation email (from Duo security or duo.com) on a desktop/laptop computer.
+Before you can use our large-scale resources, you will need to be enrolled in CU Boulder’s Duo two-factor authentication 
+service. If you are not presently enrolled, you can do so as follows: 
 
-   * **Within one business day you should recieve a duo invitation. If you didn't receive an invitation or your invitation has expired, then please contact rc-help@colorado.edu for a new invitation.**
-2. Login with your CU identikey and follow the instructions to setup
-     - Research Computing recommends users utilize Duo Mobile Push as your method of authenication: install the Duo Mobile app and link your account with your device.
-3. Login to RC Resources via ssh [as described below.](#logging-in-with-duo)
+1. Download the Duo mobile app to your phone (available via Apple App Store or Google Play Store).
+2. Once installed, visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> to enroll. 
 
 #### Common Issues
-A few common issues users will come across when using Duo include:
 
-* A Duo Invite email may be sent to your Spam folder.
-* Requesting a phone call if you want to use the Push app for authentication.
-* A Duo account purged after remaining unused for 6-9 months.
-* Having a new device and want to move Duo onto it.
-    * [Check out our FAQ for detailed instructions on accomplishing this.](https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it)
+If you are having issues logging in to CURC services with Duo, you can enroll, re-enroll, change devices, and manage your 
+Duo account by visiting the CU Duo self-service portal at <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.  
 
-Please contact us at rc-help@colorado.edu if you encounter these or any other issues regarding Duo.
+If you are not receiving a Duo prompt when attempting to login to CURC services, the following are possible issues and 
+solutions: 
+
+Issue 1: Your Duo account may have expired. The university purges Duo accounts after six months of non-use.  You can 
+re-enroll by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
+
+Issue 2: You have changed your mobile device (e.g., purchased a new phone). You can add a new device to your duo account by 
+following the instructions 
+[here](https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
+
+If you need human assistance with Duo, contact the University helpdesk at <oithelp@colorado.edu> or call 303-735-4357. 
 
 ### Logging in with Duo
 
