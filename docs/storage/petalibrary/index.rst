@@ -21,6 +21,7 @@ PetaLibrary access is subject to the `PetaLibrary Terms of Service <https://www.
 
     petalibrary
     faq
+    usage_statistics	
     billing
     zfs_snapshots
     rclone
