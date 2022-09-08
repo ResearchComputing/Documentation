@@ -1,7 +1,7 @@
 # RMACC Access to Summit 
 
-_Note to existing RMACC account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are 
-unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC Resources._
+_Note to existing account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are 
+unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources._
 
 
 ### Requesting an RMACC Account on CURC Resources
@@ -13,15 +13,16 @@ one -- just go to step 2].
 
 Step 2: Email us at [rc-help@colorado.edu](rc-help@colorado.edu), and request an account. Please include the following information:
 
+- your ACCESS or XSEDE username
 - your institutional affiliation (e.g., "University of Awesome")
 - your role (undergraduate graduate student, postdoc, staff, instructor, faculty or affiliated faculty)
 - your department
-- your first and last Name
+- your first and last name
 - your preferred email address for communication
 
 <br>
 
-Step 3: Our team will provision your account and and will follow up with a confirmation email 
+Step 3: Our team will provision your account and we  will follow up with a confirmation email 
 
 <br>
 
@@ -53,9 +54,9 @@ You will be redirected to CILogon.
 **The shells visible in the 'Clusters' dropdown menu are currently unavailable. Shell access is only available through the JupyterHub terminal.**
 
 - Select "Jupyter Notebook" from the drop-down list under _Interactive Apps_.
-- Accept the default cluster (`Summit`), queue (`shas-interactive`), number of hours (1), and cores (1). Leaving the account 
+- Accept the default cluster (`Summit`), queue (`shas-interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
 field empty will default to `ucb-general`. 
-- Select 'Launch'.
+- Select "Launch".
 - Once the interactive session begins running, you can access the terminal in two ways:
     1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png) 
 
