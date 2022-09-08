@@ -1,6 +1,7 @@
 # RMACC Access to Summit 
 
-Starting September 1, 2022, when XSEDE transitions to ACCESS, Rocky Mountain Advanced Computing Consortium (RMACC) members will be unable to use the XSEDE SSO Hub to log in to CURC systems. To this end, CURC has leveraged the power and convenience of Open OnDemand to provide RMACC users with streamlined access to our resources.
+_Note to existing RMACC account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are 
+unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC Resources._
 
 
 ### Requesting an RMACC Account on CURC Resources
