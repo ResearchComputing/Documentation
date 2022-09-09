@@ -1,13 +1,34 @@
 # RMACC Access to Summit 
 
-Starting September 1, 2022, when XSEDE transitions to ACCESS, Rocky Mountain Advanced Computing Consortium (RMACC) members will be unable to use the XSEDE SSO Hub to log in to CURC systems. To this end, CURC has leveraged the power and convenience of Open OnDemand to provide RMACC users with streamlined access to our resources.
+_Note to existing account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are 
+unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources._
 
 
-Note: This documentation assumes that **prior to August 23, 2022** you have (1) an XSEDE account, (2) Duo two-factor authentication configured through XSEDE, and (3) authorization to RMACC Summit. 
+### Requesting an RMACC Account on CURC Resources
 
-**We will provide updated instructions for creating and using ACCESS accounts after the new User Portal launches.**
+Step 1: Create an ACCESS-CI account in the ACCESS user portal [Note: If you already have an XSEDE or ACCESS account, please do not create another 
+one -- just go to step 2].
 
+<br>
 
+Step 2: Email us at [rc-help@colorado.edu](rc-help@colorado.edu), and request an account. Please include the following information:
+
+- your ACCESS or XSEDE username
+- your institutional affiliation (e.g., "University of Awesome")
+- your role (undergraduate graduate student, postdoc, staff, instructor, faculty or affiliated faculty)
+- your department
+- your first and last name
+- your preferred email address for communication
+
+<br>
+
+Step 3: Our team will provision your account and we  will follow up with a confirmation email 
+
+<br>
+
+Step 4: Login to the [RMACC OnDemand](https://curc.readthedocs.io/en/latest/access/rmacc.html#logging-in-to-open-ondemand) portal to access CURC 
+resources! The first time you login you will be prompted to set up two-factor authentication.
+ 
 ## Logging in to Open OnDemand
 
 - Visit [https://ondemand-rmacc.rc.colorado.edu](https://ondemand-rmacc.rc.colorado.edu).
@@ -19,7 +40,7 @@ You will be redirected to CILogon.
  
 ![](rmacc/access_cilogon.png)
 
-- Enter your XSEDE username and password.
+- Enter your ACCESS/XSEDE username and password.
 - Select "Login", then accept the Duo push notification from your device to be directed to the RMACC Open OnDemand homepage.
 
 ![](rmacc/ood_homepage.png)
@@ -32,8 +53,10 @@ You will be redirected to CILogon.
 
 **The shells visible in the 'Clusters' dropdown menu are currently unavailable. Shell access is only available through the JupyterHub terminal.**
 
-- Select "Jupyter Notebook (Summit)" from the drop-down list under _Interactive Apps_.
-- Enter the desired number of hours and nodes. Leaving the account and partition fields empty will default to the `ucb-general` account and the `shas` partition. 
+- Select "Jupyter Notebook" from the drop-down list under _Interactive Apps_.
+- Accept the default cluster (`Summit`), queue (`shas-interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
+field empty will default to `ucb-general`. 
+- Select "Launch".
 - Once the interactive session begins running, you can access the terminal in two ways:
     1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png) 
 
@@ -57,9 +80,9 @@ Once connected Globus can be used to transfer data to:
 
 <br>
 
-`/home`
-`/projects`
-`/pl`
+- `/home`
+- `/projects`
+- `/pl`
 
 
 **_Notes on data transfer_**:
