@@ -56,7 +56,7 @@ Computing resources.
 
 <br>
 
-### Alpine Scratch quota increases
+### Alpine scratch quota increases
 
 Each user is allocated 10 TB in `/alpine/scratch/`. Users requiring more than 10 TB may request a supplemental space allocation by 
 submitting a brief (approximately one paragraph) justification. The justification should describe why a group's workflow requires 
@@ -79,7 +79,7 @@ opportunity to copy their needed data elsewhere.
 
 <br>
 
-### Compute Allocations
+### Compute allocations
 
 The cumulative computing allocations of a single research group across all projects may not exceed 5 M SU/year or 2.5 M SU over 6 
 months. Project allocations submitted by members of the same research group should have distinguishable research objectives. CURC 
