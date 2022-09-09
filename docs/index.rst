@@ -150,6 +150,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Additional resources
 
+   additional-resources/policies
    additional-resources/CURC-cheatsheet
    additional-resources/utah-videos
    additional-resources/blanca-MOU
