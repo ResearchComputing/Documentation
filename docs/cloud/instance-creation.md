@@ -129,6 +129,7 @@ Associate the IP Address to your instance
 At a minimum, you'll need to login to your instance via `ssh` to install the software you'll be using. Other reasons to login to the instance may be to stop or start services, associate a domain name with your IP, run your software, troubleshoot problems, etc. You are essentially the "system administrator" of your own instance.
 
 * To login to an instance via `ssh`, you _must_ be on CU VPN to connect (this is CURC restriction)
+* If you are not a CU Boulder user (and therefore do not have VPN access), please follow the instructions provided here <https://curc.readthedocs.io/en/latest/access/rmacc.html#shell-access-to-summit-compute-nodes> for running a terminal through Open OnDemand and then SSH from the provided terminal.
 * Open up an ssh connection providing the identity (key) file that you associated with the instance in the _Key Pair_ step covered earlier:
 
 ```bash
