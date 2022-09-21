@@ -28,8 +28,7 @@ $ acompile
 
 Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
 You can also submit a [software 
-request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?highlight=software%20request#alpine-software)  
-using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
+request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?highlight=software%20request#alpine-software) using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
 
 ### Cluster Summary
 #### Nodes
