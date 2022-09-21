@@ -3,7 +3,7 @@
 ### Hardware Summary
 
 | Count & Type | Scheduler Partition | Processor | Sockets | Cores (total) | Threads/Core | RAM (GB) | L3 Cache (MB) | GPU type | GPU count | Local Disk Capacity & Type | Fabric | OS |
-| ------------ | ------------------- | --------- | ------- | ----- | ------------ | ----------- | -------- | -------- | - | --------- | -------------------------- | ------ | -- |
+| ------------ | ------------------- | --------- | ------- | ------------- | ----------- | -------- | -------- | - | --------- | -------------------------- | ------ | -- |
 | 64 Milan General CPU | amilan | x86_64  AMD Milan | 1 or 2 | 64 | 1 | 239 | 32 | | | 416G SSD | HDR-100 InfiniBand 
 (200Gb inter-node fabric) | RHEL 8.4|
 | 8 Milan AMD GPU | ami100 | x86_64  AMD Milan | 2 | 64 | 1 | 239 | 32 | AMD MI100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
