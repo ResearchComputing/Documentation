@@ -1,6 +1,9 @@
 ## Alpine Quick Start
 
-Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado Boulder. Additional contributions provided from Colorado State University and Anschutz Medical Campus are planned for the near future. Alpine currently offers 80 compute nodes and a total of 5120 cores.
+Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
+cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
+Boulder. Additional contributions provided from Colorado State University and Anschutz Medical Campus are planned for the 
+near future. Alpine currently offers 204 compute nodes and a total of 12,992 cores.
 
 Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh connectivity to the CURC system.
 
@@ -23,12 +26,15 @@ $ acompile
 
 > Note that only 1 `acompile` job can be open at a time
 
-Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. You can also submit a software request to rc-help@colorado.edu.
+Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
+You can also submit a [software 
+request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?highlight=software%20request#alpine-software)  
+using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
 
 ### Cluster Summary
 #### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 64 AMD Milan Compute nodes (64 cores/node)
+- **CPU nodes**: 188 AMD Milan Compute nodes (184 nodes with 64 cores/node, 4 nodes with 48 cores/node)
 - **GPU nodes**:
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	- 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
@@ -37,7 +43,7 @@ The Alpine cluster is made up of different types of nodes outlined below:
 
 #### Interconnect
 The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
-- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric)
+- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric); InfiniBand in progress as of September 2022
 - **GPU nodes**: 2x25 Gb Ethernet +RoCE
 - **Scratch Storage**: 25Gb Ethernet +RoCE
 
@@ -54,7 +60,7 @@ sinfo --format="%N | %f"
 ```
 
 #### Description of features
-- **Milan**: dual-socket 32-core AMD Milan CPU
+- **Milan**: 64-core and dual-socket 32-core AMD Milan EPYC CPU
 - **A100**: NVIDIA A100 GPU
 - **MI100**: AMD MI100 GPU- **localraid**: large, fast RAID disk storage in node
 - **rhel8**: RedHat Enterprise Linux version 8 operating system
@@ -97,7 +103,6 @@ All new Alpine users are granted an initial allocation (account) called `ucb-gen
 
 You can read more about the allocation process and why you might choose to apply for one on our [Allocation's page](../../access/allocations.md).
 
-> _**Note:**_ For Alpine early adopters, you may finish off your Summit project year on Alpine (i.e. port pro-rated Summit SUs ath the same level). For example, if you have 3 months left on an 1.2M SU grant, we can port 300k SU to Alpine.
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
