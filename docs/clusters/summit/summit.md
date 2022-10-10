@@ -1,6 +1,6 @@
 ## Summit
 
-Starting May 18, 2022, CU Research Computing will be releasing phase 1 of Alpine, the third generation CURC High Performance Computing Cluster. CU Boulder users can begin using Alpine at that time. The warranty of the Summit cluster's storage will end in September of 2022 with the full sun-setting of the Summit system yet to be finalized. 
+CU Research Computing's Alpine cluster, the third generation CURC High Performance Computing Cluster, launched in May 2022 and as of October 2022 has resources at approximate parity with Summit. The warranty of Summit's scratch storage ended in September of 2022, so data on `/scratch/summit` will be lost if the filesystem fails. CU Boulder users should migrate workflows to Alpine as soon as possible. Non-CU users will soon be able to migrate to Alpine as well.
 
 <p align="middle">
   <img src="https://github.com/ResearchComputing/curc-images/blob/main/images/alpine_summit_timeline.png?raw=true" width="400"/>
