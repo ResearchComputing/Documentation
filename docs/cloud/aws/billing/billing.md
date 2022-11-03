@@ -28,8 +28,6 @@ Note: For now the CloudCheckr has access to the technical contacts, responsible 
 
 
 ![](images/firsttimelogin.png)
-
-
 2. Click on the select account. You will see the list of accounts associated to the user. Select the one account that you want to see the data for. 
 
 
