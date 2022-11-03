@@ -31,11 +31,23 @@ This section is only when you don't have a CloudCheckr Account.
 
 1. You will need to open a ticket with the rc-help 
 2. Please do add your AWS account number and AWS account alias for which you want the CloudCheckr Access need to be created.
-3. Send an email to rc-help@colorado.edu
+3. Email to rc-help@colorado.edu
 
 ## How to Check Billing in CloudCheckr
 
-### If the user has only one account under them
+### If the user has only one AWS Account under them
 
-1. When you login to the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal associated to your account.
-2. 
+1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal associated to your account.
+2. Towards your left, there is panel with Home, Resources , etc. 
+3. You can see a option called "COST" [You can refer the image below]
+![](images/cost.png)
+4. GO to Cost -> AWS Billing -> Dashboard 
+5. You can see your billing linked to that AWS Account. 
+
+### If the user has multiple AWS Accounts under them
+
+1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal associated to your account.
+2. In the top right corner you can see your account number and alias for a AWS Account. Click on the Account number.
+3. You can see a drop down where you can select the account number of the AWS account for which you want to check the billing for.
+4. Follow the same steps described in the above section to check the billing for the selected account. 
+
