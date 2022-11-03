@@ -49,12 +49,15 @@ This section is only when you don't have a CloudCheckr Account.
 
 ![](images/cost.png)
 3. Go to Cost.
+
 4. Click on the AWS Billing
 
 ![](images/AWSBilling.png)
+
 5. Click on Dashboard
 
 ![](images/Dashboard.png)
+
 6. You can see your billing details linked to the selected AWS Account.
 
 ![](images/Billing.png)
@@ -67,10 +70,12 @@ This section is only when you don't have a CloudCheckr Account.
 
 
 ![](images/summary.png)
+
 3. You can check the daily or monthly summary report.
 
 
 ![](images/twoviews.png)
+
 4. For daily report, click on the Daily under the summary reports. It opens the Daily report and select a date to view the summary
 
 5. For Monthly report, click on the Monthly under the summary reports. It opens the Daily report and select a month to view the summary
