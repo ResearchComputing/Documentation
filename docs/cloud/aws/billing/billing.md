@@ -13,7 +13,7 @@ This document describes the steps to be followed when checking the AWS Account B
    2. Identity key's Password 
 
 2. SSO Link to Login
-   1. SSO Link: https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://auth-us.cloudcheckr.com/auth
+   1. SSO Link: [Click here](https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://auth-us.cloudcheckr.com/auth)
 
 ### Steps to Login
 
