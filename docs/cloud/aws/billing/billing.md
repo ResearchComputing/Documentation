@@ -23,7 +23,18 @@ This document describes the steps to be followed when checking the AWS Account B
 
 Note: For now the CloudCheckr has access to the technical contacts, responsible person and billing contacts associated to the AWS Account. If you need to add someone or modify the access then please contact us.
 
-If you don't have any CloudCheckr Account, please refer to the section below.
+### After logging in for the first time
+1. You can see a welcome page like in the image shown below. When you are logging in for the first time, you need to select the account to view the data for a account.
+
+
+![](images/firsttimelogin.png)
+
+
+2. Click on the select account. You will see the list of accounts associated to the user. Select the one account that you want to see the data for. 
+
+
+![](images/selectaccount.png)
+
 
 ### Requesting to open a CloudCheckr Account
 
@@ -33,21 +44,36 @@ This section is only when you don't have a CloudCheckr Account.
 2. Please do add your AWS account number and AWS account alias for which you want the CloudCheckr Access need to be created.
 3. Email to rc-help@colorado.edu
 
-## How to Check Billing in CloudCheckr
+## How to Check your Bill in CloudCheckr
 
-### If the user has only one AWS Account under them
+1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal after you select your Account.
+2. Towards your left, there is panel with Home, Favorites and cost.
 
-1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal associated to your account.
-2. Towards your left, there is panel with Home, Resources , etc. 
-3. You can see a option called "COST" [You can refer the image below]
 ![](images/cost.png)
-4. GO to Cost -> AWS Billing -> Dashboard 
-5. You can see your billing linked to that AWS Account. 
+3. Go to Cost.
+4. Click on the AWS Billing
 
-### If the user has multiple AWS Accounts under them
+![](images/AWSBilling.png)
+5. Click on Dashboard
 
-1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal associated to your account.
-2. In the top right corner you can see your account number and alias for a AWS Account. Click on the Account number.
-3. You can see a drop down where you can select the account number of the AWS account for which you want to check the billing for.
-4. Follow the same steps described in the above section to check the billing for the selected account. 
+![](images/Dashboard.png)
+6. You can see your billing details linked to the selected AWS Account.
+
+![](images/Billing.png)
+
+## How to access the Summary Reports
+
+1. Follow the steps from 1 to 4 from the above section. 
+2. Click on the Summary Reports 
+
+![](images/summary.png)
+3. You can check the daily or monthly summary report.
+
+![](images/twoviews.png)
+
+4. For daily report, click on the Daily under the summary reports. It opens the Daily report and select a date to view the summary
+
+5. For Monthly report, click on the Monthly under the summary reports. It opens the Daily report and select a month to view the summary
+
+![](images/summarymonthly.png)
 
