@@ -44,6 +44,35 @@ All users, regardless of institution, should specify partitions as follows:
 --partition=amem
 ```
 
+**Special-purpose partitions**
+
+`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (16 cores per node) for a maximum runtime of 3 hours (default 30 minutes). Users who need GPU nodes to test workflows should use the appropriate GPU partition (`ami100` or `aa100`) instead of `atesting`.
+
+`atesting` usage examples:
+
+_Request one core per node for 10 minutes_
+```
+sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
+```
+_Request 4 cores for the default time of 30 minutes_
+```
+sinteractive --partition=atesting --ntasks=4  
+```
+
+`acompile` provides near immediate access to limited resources for the purpose of compiling and viewing the module stack. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
+
+`acompile` usage examples:
+
+_Get usage information for_ `acompile`
+```
+acompile --help
+```
+_Request 2 CPU cores for 2 hours_
+```
+acompile --ntasks=2 --time=02:00:00
+```
+
+
 #### General Resources (gres)
 
 **General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
