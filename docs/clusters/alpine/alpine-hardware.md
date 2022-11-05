@@ -49,6 +49,7 @@ All users, regardless of institution, should specify partitions as follows:
 `atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (16 cores per node) for a maximum runtime of 3 hours (default 30 minutes). Users who need GPU nodes to test workflows should use the appropriate GPU partition (`ami100` or `aa100`) instead of `atesting`.
 
 `atesting` usage examples:
+
 _Request one core per node for 10 minutes_
 ```
 sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
@@ -61,6 +62,7 @@ sinteractive --partition=atesting --ntasks=4
 `acompile` provides near immediate access to limited resources for the purpose of compiling and viewing the module stack. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
 `acompile` usage examples:
+
 _Get usage information for_ `acompile`
 ```
 acompile --help
