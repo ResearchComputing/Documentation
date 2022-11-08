@@ -11,4 +11,4 @@ AWS - Billing
     :maxdepth: 1
     :caption: Email Notifications
 
-    alerts    
+    alerts

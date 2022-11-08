@@ -25,9 +25,9 @@ Note: For now the CloudCheckr has access to the technical contacts, responsible 
 
 ### After logging in for the first time
 1. You can see a welcome page like in the image shown below. When you are logging in for the first time, you need to select the account to view the data for a account. <br>
-![](images/firsttimelogin.png) <br>
+   <br>![](images/firsttimelogin.png) <br><br>
 2. Click on the select account. You will see the list of accounts associated to the user. Select the one account that you want to see the data for. <br>
-![](images/selectaccount.png) <br>
+   <br>![](images/selectaccount.png) <br><br>
 
 
 ### Requesting to open a CloudCheckr Account
@@ -42,23 +42,23 @@ This section is only when you don't have a CloudCheckr Account.
 
 1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal after you select your Account.
 2. Towards your left, there is panel with Home, Favorites and cost. <br>
-![](images/cost.png) <br>
+   <br>![](images/cost.png) <br><br>
 3. Go to Cost. 
 4. Click on the AWS Billing. <br>
-![](images/AWSBilling.png) <br>
+   <br>![](images/AWSBilling.png) <br><br>
 5. Click on Dashboard. <br>
-![](images/Dashboard.png) <br>
+   <br>![](images/Dashboard.png) <br><br>
 6. You can see your billing details linked to the selected AWS Account. <br>
-![](images/Billing.png) <br>
+   <br>![](images/Billing.png) <br><br>
 
 ## How to access the Summary Reports
 
 1. Follow the steps from 1 to 4 from the above section.
 2. Click on the Summary Reports. <br>
-![](images/summary.png) <br>
+   <br>![](images/summary.png) <br><br>
 3. You can check the daily or monthly summary report. <br>
-![](images/twoviews.png) <br>
+   <br>![](images/twoviews.png) <br><br>
 4. For daily report, click on the Daily under the summary reports. It opens the Daily report and select a date to view the summary. 
 5. For Monthly report, click on the Monthly under the summary reports. It opens the Daily report and select a month to view the summary. <br>
-![](images/summarymonthly.png) <br>
+   <br>![](images/summarymonthly.png) <br><br>
 
