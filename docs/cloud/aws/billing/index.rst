@@ -3,7 +3,12 @@ AWS - Billing
 
 .. toctree::
     :maxdepth: 1
-    :caption: Billing and Alerts
+    :caption: View Billing
 
-    View Billing Data
-    Email Notifications
+    viewbilling
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Email Notifications
+
+    alerts    
