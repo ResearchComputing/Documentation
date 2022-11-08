@@ -41,7 +41,7 @@ This section is only when you don't have a CloudCheckr Account.
 ## How to Check your Bill in CloudCheckr
 
 1. When you log into the CloudCheckr as instructed in the above section. It will directly navigate to CloudCheckr Portal after you select your Account.
-2. Towards your left, there is panel with Home, Favorites and cost. <br>
+2. Towards your left, there is panel with Home, Favorites and Cost. <br>
    <br>![](images/cost.png) <br><br>
 3. Go to Cost. 
 4. Click on the AWS Billing. <br>
@@ -56,9 +56,9 @@ This section is only when you don't have a CloudCheckr Account.
 1. Follow the steps from 1 to 4 from the above section.
 2. Click on the Summary Reports. <br>
    <br>![](images/summary.png) <br><br>
-3. You can check the daily or monthly summary report. <br>
+3. You can check the Daily or Monthly Summary Report. <br>
    <br>![](images/twoviews.png) <br><br>
-4. For daily report, click on the Daily under the summary reports. It opens the Daily report and select a date to view the summary. 
-5. For Monthly report, click on the Monthly under the summary reports. It opens the Daily report and select a month to view the summary. <br>
+4. For Daily Report, click on the Daily under the Summary Reports. It opens the Daily Report page and select a date to view the summary. 
+5. For Monthly Report, click on the Monthly under the Summary Reports. It opens the Monthly Report page and select a month to view the summary. <br>
    <br>![](images/summarymonthly.png) <br><br>
 
