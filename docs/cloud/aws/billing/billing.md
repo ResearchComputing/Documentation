@@ -1,4 +1,4 @@
-# AWS - Billing 
+# AWS - View Billing Data
 
 ## Document Purpose
 
