@@ -24,7 +24,7 @@ Courses using RC Resources
 Students are welcome to use RC resources on their own for class projects and can request access as a regular UCB affiliate via the link off the RC homepage at: https://www.colorado.edu/rc.  When requesting help please indicate that the work is for a class project and any deadlines.  
 If students are to be required to use RC resources for a class, see below.
 
-Instructors who wish to lead a class using RC resources must contact us at rc-help@colorado.edu before the class begins.  This is to insure that our resources can meet your needs and if adequate resources and support are available.
+Instructors who wish to lead a class using RC resources must contact us at rc-help@colorado.edu before the class begins.  This is to ensure that our resources can meet your needs and if adequate resources and support are available.
 Early in the process we will need to know details about the proposed class usage such as:  
 
 - Number of students  
