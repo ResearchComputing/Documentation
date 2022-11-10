@@ -28,3 +28,8 @@ For users who are using a **Research Computing Cloud Team** managed AWS account.
     :caption: Troubleshooting Errors
 
     troubleshooting/troubleshooting
+
+.. toctree::
+    :maxdepth: 1
+
+    cloud-quick-link/index.html
