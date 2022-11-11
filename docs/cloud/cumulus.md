@@ -33,6 +33,10 @@ which can be used to host virtual machines and volumes to host workloads.
 > - 4GB RAM per CPU core
 > - 101.3TB of object-oriented storage
 
+#### Why use CUmulus?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bX1J641oqNc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 #### Eligibility
 
 CUmulus is a free-to-use cloud system where:
