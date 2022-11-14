@@ -29,8 +29,3 @@ For users who are using a **Research Computing Cloud Team** managed AWS account.
 
     troubleshooting/troubleshooting
 
-.. toctree::
-    :maxdepth: 1
-    :caption: 
-
-    cloud-quick-link/index.html
