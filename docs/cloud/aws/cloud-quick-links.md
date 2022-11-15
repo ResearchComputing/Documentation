@@ -51,6 +51,18 @@ th {
     <td>https://oitkb.colorado.edu/pages/viewpage.action?spaceKey=PC&title=HowTo%3A+Fix+Missing+Project+Tags
 </td>
   </tr>
+ <!--<tr>
+    <td><a href="" target="_blank">Missing Project tag Document</a></td>
+    <td></td>
+  </tr>-->
+ <tr>
+    <td><a href="https://oitkb.colorado.edu/display/PC/CloudCheckr+User+Access" target="_blank">CloudCheckr User and Role creation</a></td>
+    <td>https://oitkb.colorado.edu/display/PC/CloudCheckr+User+Access</td>
+  </tr>
+<tr>
+    <td><a href="https://jira.colorado.edu/secure/RapidBoard.jspa?rapidView=194&quickFilter=823" target="_blank">Jira</a></td>
+    <td>https://jira.colorado.edu/secure/RapidBoard.jspa?rapidView=194&quickFilter=823</td>
+  </tr>
 
 </table>
 
