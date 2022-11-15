@@ -12,12 +12,12 @@ This document describes the steps to be followed when checking the AWS Account B
    1. CU Identity Key.
    2. Identity key's Password. 
 
-2. SSO Link to Login
-   1. SSO Link: [Click here](https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://auth-us.cloudcheckr.com/auth)
+2. CloudCheckr SSO Link to Login
+   1. CloudCheckr SSO Link: [Click here](https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://auth-us.cloudcheckr.com/auth)
 
 ### Steps to Login
 
-1. Click the SSO Link given in the above section. 
+1. Click the CloudCheckr SSO Link given in the above section. 
 2. Enter your CU Credentials
 3. The page will navigate you to your CloudCheckr Portal.
 
