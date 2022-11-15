@@ -36,19 +36,21 @@ th {
     <td><a href="https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://auth-us.cloudcheckr.com/auth" target="_blank">CloudCheckr SSO</a></td>
     <td>https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://auth-us.cloudcheckr.com/auth</td>
   </tr>
-  <tr>
-    <td><a href="https://curc.readthedocs.io/en/latest/cloud/aws/getting-started/index.html" target="_blank">AWS Getting Started Documents</a></td>
-    <td>https://curc.readthedocs.io/en/latest/cloud/aws/getting-started/index.html</td>
+   <tr>
+    <td><a href="https://readthedocs.org/projects/curc/builds/" target="_blank">Read the Docs - Builds</a></td>
+    <td>https://readthedocs.org/projects/curc/builds/</td>
   </tr>
-  <tr>
-    <td><a href="https://curc.readthedocs.io/en/latest/cloud/aws/getting-started/customer-support.html" target="_blank">AWS Support Process</a></td>
-    <td>https://curc.readthedocs.io/en/latest/cloud/aws/getting-started/customer-support.html</td>
+   <tr>
+    <td><a href="https://github.com/orgs/UCBoulder/teams/oit-cb/repositories" target="_blank">Cloud Repositories</a></td>
+    <td>https://github.com/orgs/UCBoulder/teams/oit-cb/repositories</td>
   </tr>
-  <tr>
-    <td><a href="https://curc.readthedocs.io/en/latest/cloud/aws/faq/faq.html" target="_blank">Frequently Asked Questions</a></td>
-    <td>https://curc.readthedocs.io/en/latest/cloud/aws/faq/faq.html</td>
+ </tr>
+   <tr>
+    <td><a href="https://oitkb.colorado.edu/pages/viewpage.action?spaceKey=PC&title=HowTo%3A+Fix+Missing+Project+Tags
+" target="_blank">Missing Project tag Document</a></td>
+    <td>https://oitkb.colorado.edu/pages/viewpage.action?spaceKey=PC&title=HowTo%3A+Fix+Missing+Project+Tags
+</td>
   </tr>
-
 
 </table>
 
