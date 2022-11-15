@@ -63,6 +63,10 @@ th {
     <td><a href="https://jira.colorado.edu/secure/RapidBoard.jspa?rapidView=194&quickFilter=823" target="_blank">Jira</a></td>
     <td>https://jira.colorado.edu/secure/RapidBoard.jspa?rapidView=194&quickFilter=823</td>
   </tr>
+<tr>
+    <td><a href="https://colorado.service-now.com/snportal/?id=ucb_login" target="_blank">Service</a></td>
+    <td>https://colorado.service-now.com/snportal/?id=ucb_login</td>
+  </tr>
 
 </table>
 
