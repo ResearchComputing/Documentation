@@ -67,6 +67,16 @@ th {
     <td><a href="https://colorado.service-now.com/snportal/?id=ucb_login" target="_blank">Service</a></td>
     <td>https://colorado.service-now.com/snportal/?id=ucb_login</td>
   </tr>
+<tr>
+    <td><a href="https://airtable.com/appkh2oH5WFFmqBQG/tbllKADY4neLp3Ahw/viwFTfay5XbmXgzgB?blocks=hide
+" target="_blank">Airtable</a></td>
+    <td>https://curc.readthedocs.io/en/iaasce-1573_cloud_quick_links/cloud/aws/cloud-quick-links.html</td>
+  </tr>
+
+<tr>
+    <td><a href="https://mygroups.colorado.edu/grouper/grouperUi/app/UiV2Main.index?operation=UiV2Stem.viewStem&stemName=Services:Cloud+Broker:AWS" target="_blank">Grouper Link</a></td>
+    <td>https://mygroups.colorado.edu/grouper/grouperUi/app/UiV2Main.index?operation=UiV2Stem.viewStem&stemName=Services:Cloud+Broker:AWS</td>
+  </tr>
 
 </table>
 
