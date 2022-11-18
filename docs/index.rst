@@ -150,7 +150,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    :maxdepth: 2
    :caption: Tutorials
    
-   tutorials/CUmulus
+   tutorials/index
    
 .. toctree::
    :maxdepth: 2
