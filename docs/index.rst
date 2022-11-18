@@ -145,7 +145,13 @@ Use of University of Colorado Research Computing resources, including (but not l
    programming/MPI-Fortran
    programming/OpenMP-C
    programming/OpenMP-Fortran
-
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials
+   
+   tutorials/CUmulus
+   
 .. toctree::
    :maxdepth: 2
    :caption: Additional resources
