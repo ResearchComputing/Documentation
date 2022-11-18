@@ -78,6 +78,7 @@ reviewed on an annual basis.
 Step 1: Fill out the [Ascent Allocation 
 Request](https://forms.office.com/r/eAA15b8Gsg) form. You need to be 
 logged in to Office365 with your CU Boulder account.
+
 Step 2: Look out for an email message from the CURC ticketing system (rc-help@colorado.edu) indicating when your allocation is ready to 
 use.
 
@@ -87,11 +88,13 @@ Step 1: Download and complete the [Peak Allocation Request Supplementary
 Information](https://o365coloradoedu.sharepoint.com/:w:/s/RC-Team/EdKWaQYfHPBAv1IdvFVFvtUBjnUnDfZFHWVII30CGv9OkA?e=cNZwom) 
 document. You need to be logged into Office365 with your CU Boulder 
 account.
+
 Step 2: Fill out the [Peak Allocation 
 Request](https://forms.office.com/r/5VtLpiCh01) form. You need to be 
 logged into Office365 with your CU Boulder account.
 The last question will ask you to upload your completed Peak Allocation 
 Request Supplementary Information document from step 1. 
+
 Step 3: Look out for email messages from the CURC ticketing system (rc-help@colordo.edu). User Support will contact you when the proposal 
 is received, during the initial 
 review stages, and when the allocation is ready to use.
