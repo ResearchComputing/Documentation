@@ -1,128 +1,89 @@
-## Alpine Hardware
+## Alpine Quick Start
 
-### Hardware Summary
+Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
+cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
+Boulder. Additional contributions provided from Colorado State University and Anschutz Medical Campus are planned for the 
+near future. Alpine currently offers 204 compute nodes and a total of 12,992 cores.
 
-| Count & Type          | Scheduler Partition | Processor | Sockets | Cores (total) | Threads/Core | RAM/Core (GB) | L3 Cache (MB) | GPU type | GPU count | Local Disk Capacity & Type | Fabric | OS |
-| --------------------- | ------------------- | --------- | ------- | ------------- | ------------ | ------------- | ------------- | -------- | --------- | -------------------------- | ------ | -- |
-| 184 Milan General CPU | amilan   | x86_64 AMD Milan | 1 or 2 | 64 | 1 |  3.2 |  239 | 32 | N/A         | 0 | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4|
-| 4 Milan High-Memory   | amem     | x86_64 AMD Milan | 2      | 48 | 1 | 21.5 |      |    | N/A         | 0 | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
-| 8 Milan AMD GPU       | ami100   | x86_64 AMD Milan | 2      | 64 | 1 |  3.2 |  239 | 32 | AMD MI100   | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 8 Milan NVIDIA GPU    | aa100    | x86_64 AMD Milan | 2      | 64 | 1 |  3.2 |  239 | 32 | NVIDIA A100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 28 Milan General CPU  | csu      | x86_64 AMD Milan | 2      | 48 | 1 |  3.2 |  239 | 32 | N/A         | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 49 Milan General CPU  | csu      | x86_64 AMD Milan | 2      | 32 | 1 |  3.2 |  239 | 32 | N/A         | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 14 Milan General CPU  | amc      | x86_64 AMD Milan | 2      | 64 | 1 |  3.2 |  239 | 32 | NVIDIA A100 | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 2 Milan High-Memory   | amc,amem | x86_64 AMD Milan | 2      | 64 | 1 | 21.5 |  239 | 32 | N/A         | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
-| 4 Milan NVIDIA GPU    | amc      | x86_64 AMD Milan | 2      | 64 | 1 |  3.2 |  239 | 32 | N/A         | 3 | 416G SSD | 2x25 Gb Ethernet +RoCE | RHEL 8.4 |
+Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh connectivity to the CURC system.
 
-### Requesting Hardware Resources
-Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
-* **Partition:** Specify node type
-* **Gres (General Resources):** Specify GPU amount (*required if using a GPU node*)
-* **QOS (Quality of Service):** Constrain or modify job characteristics
+### Alpine Quick-Start
 
+1. From a *login node* load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
+   ```bash
+   $ module load slurm/alpine
+   ```
 
-#### Partitions
+2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](#requesting-resources) section and the [examples](#examples) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
-**Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting an interactive job) in order for your job to run on the appropriate type of node. 
+3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
 
-> **Note:** GPU nodes require the additional `--gres` directive (see next section).
+4. If you would like to use software that is not within our preinstalled stack your application 
+must be compiled using `acompile` (similar to ssh'ing to an `scompile` node on Summit). 
+More information about the `acompile` function can be found under our 
+[partitions](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#partitions) 
+section.
 
-Partitions available on Alpine:
+Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
+You can also submit a [software 
+request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?highlight=software%20request#alpine-software) using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
 
+### Cluster Summary
+#### Nodes
+The Alpine cluster is made up of different types of nodes outlined below:
+- **CPU nodes**: 188 AMD Milan Compute nodes (184 nodes with 64 cores/node, 4 nodes with 48 cores/node) with 256 GB RAM
+- **GPU nodes**:
+	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
+	- 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
+- **High-memory nodes**: 12 AMD Milan nodes with 1TB of memory
 
-| Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime     |
-| --------- | ---------------------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan    | AMD Milan (default)          | 184        | 64         |   3.74        | 1              | 24H, 24H                 |
-| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
-| aa100     | GPU-enabled (3x NVIDIA A100) | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
-| amem<sup>1</sup> | High-memory           | 4          | 48         | 21.486        | tbd            |  4H,  7D                 |
-| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | 1              | 24H, 24H                 |
-| amc       | Nodes contributed by AMC     | 20         | 64         |   3.74        | 1              | 24H, 24H                 |
+Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
+- Colorado State University: 77 AMD Milan Compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
+- CU Anschutz Medical Campus: 16 AMD Milan Compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, and 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan)
 
-<sup>1</sup>The amem partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact rc-help@colorado.edu.
+All nodes are available to all users. For full details about node access, please read the Alpine node access and FairShare policy.
 
-> * Note: Nvidia A100 GPUs only support CUDA versions >11.x
+> For a full list of nodes on Alpine use the command:  `scontrol show nodes.` Get single node details with the `scontrol show nodes <node name>` command.
 
-All users, regardless of institution, should specify partitions as follows:
-```bash
---partition=amilan
---partition=aa100
---partition=ami100
---partition=amem
---partition=csu
---partition=amc
-```
+#### Interconnect
+The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
+- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric); available on most CPU nodes as of September 2022 and on most remaining CPU nodes pending hardware arrivals
+- **GPU nodes**: 2x25 Gb Ethernet +RoCE
+- **High-memory nodes**: 2x25 Gb Ethernet +RoCE
+- **Scratch Storage**: 25Gb Ethernet +RoCE
 
-**Special-purpose partitions**
+### Node Features
+The Alpine cluster features some heterogeneity. A variety of feature tags are applied to nodes deployed in Alpine to allow jobs to target specific CPU, GPU, network, and storage requirements.
 
-`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (16 cores per node) for a maximum runtime of 3 hours (default 30 minutes). Users who need GPU nodes to test workflows should use the appropriate GPU partition (`ami100` or `aa100`) instead of `atesting`.
+Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
-`atesting` usage examples:
-
-_Request one core per node for 10 minutes_
-```
-sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
-```
-_Request 4 cores for the default time of 30 minutes_
-```
-sinteractive --partition=atesting --ntasks=4  
-```
-
-`acompile` provides near immediate access to limited resources for the purpose of compiling and viewing the module stack. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
-
-`acompile` usage examples:
-
-_Get usage information for_ `acompile`
-```
-acompile --help
-```
-_Request 2 CPU cores for 2 hours_
-```
-acompile --ntasks=2 --time=02:00:00
-```
-
-
-#### General Resources (gres)
-
-<<<<<<< HEAD
-**General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
+> _**Note:**_ **Feature descriptions and finalized partitions names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
 
 ```bash
-$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
+sinfo --format="%N | %f"
 ```
 
-__Examples of GPU configurations/requests__:
+#### Description of features
+- **Milan**: 64-core and dual-socket 32-core AMD Milan EPYC CPU
+- **A100**: NVIDIA A100 GPU
+- **MI100**: AMD MI100 GPU- **localraid**: large, fast RAID disk storage in node
+- **rhel8**: RedHat Enterprise Linux version 8 operating system
 
-_request a single GPU accelerator:_
-```
---gres=gpu
-```
-_request multiple (in this case 3) GPU accelerators:_
-```
---gres=gpu:3
-```
+### Job Scheduling
 
-#### Quality of Service (qos)
+All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed but these must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
 
-**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+More details about how to use SLURM to run jobs can be found in our [running applications with jobs](../running-jobs/running-apps-with-jobs.html) documentation.
 
-> Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or high-memory job.
 
-The available QoS's for Alpine are:
+### Allocations
 
-| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
-| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| normal      | Default                    | 1D              | tbd           | tbd | n/a       | 0 |
-| long        | Longer wall times          | 7D              | tbd           | tbd | tbd       | 0 |
-| mem         | High-memory jobs           | 7D              | tbd           | 12  | amem only | 0 |
-=======
-When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
-of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of 
-allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 250,000 SUs over a 
-12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 12 month 
-period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.  
->>>>>>> 0067d7d4e30993081c50d3a059f0f55033b7c6ce
+All new Alpine users are granted an initial allocation (account) called `ucb-general`. Users who require more core hours than `ucb-general` can provide are advised to apply for an allocation. The allocation process requires that users have run example jobs in ucb-general that can be assessed by RC for efficiency/optimation on Alpine. Research Computing will then work with users to make workflows more efficient if needed and then grant the allocation.
+
+You can read more about the allocation process and why you might choose to apply for one on our [Allocation's page](../../access/allocations.md).
+
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
+
