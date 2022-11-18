@@ -18,7 +18,7 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 #### Partitions
 
-**Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting an interactive job) in order for your job to run on the appropriate type of node. 
+**Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using the `--partition` SLURM directive in your job script (or at the command line when submitting an interactive job) in order for your job to run on the appropriate type of node. 
 
 > **Note:** GPU nodes require the additional `--gres` directive (see next section).
 
@@ -94,7 +94,7 @@ _request multiple (in this case 3) GPU accelerators:_
 
 #### Quality of Service (qos)
 
-**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+**Quality of Service (or QoS) is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
 
 > Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or high-memory job.
 
