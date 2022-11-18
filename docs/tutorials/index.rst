@@ -5,9 +5,9 @@ CU Research Computing hosts a free-to-use on-premise cloud service, called [CUmu
 
 .. toctree::
     :maxdepth: 1
-    :caption: CUmulus Tutorials
+    :caption: CUmulus Tutorials 
 
-    cumulus_tutoral1/README
-    cumulus_tutoral2/README
-    cumulus_tutoral3/README
-    cumulus_tutoral4/README
+    cumulus1
+    cumulus2
+    cumulus3
+    cumulus4
