@@ -8,7 +8,7 @@ accounts in Slurm's documentation and are indicated by the `--account`
 directive:
 
 ```
-#SBATCH --account=______`
+#SBATCH --account=______
 ```
 
 Allocations are required to run on CURC clusters. They help us keep track 
@@ -79,7 +79,7 @@ Request](https://forms.office.com/r/eAA15b8Gsg) form. You need to be
 logged in to Office365 with your CU Boulder account.
 
 
-Step 2: Look out for a message from our ticketing system when your 
+Step 2: Look out for a message from our ticketing system indicating when your 
 allocation is ready to use.
 
 #### Get a Peak Allocation 
@@ -102,13 +102,9 @@ review stages, and when the allocation is ready to use.
 <br>
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the 
 National Science Foundation (award 2201538).
+
 <br>
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
-
-
-
-
-
 
 
 
