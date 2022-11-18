@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+ web:
+  build:
+   context: .
+  ports:
+  - ${WEB_PORT}:5000
+  volumes:
+  - ./:/app
+  environment:
+  -  API_KEY=${API_KEY}
+  -  API_KEY_SECRET=${API_KEY_SECRET}
+  -  BEARER_TOKEN=${BEARER_TOKEN}
+  -  ACCESS_TOKEN=${ACCESS_TOKEN}
+  -  ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
+  -  MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+ mysqldb:
+  image: mysql
+  ports:
+  - 3306:3306
+  environment:
+  - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+  volumes:
+  - mysql:/var/lib/mysql
+  - mysql_config:/etc/mysql
+
+volumes:
+  mysql:
+  mysql_config:
