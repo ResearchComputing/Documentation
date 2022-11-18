@@ -71,10 +71,11 @@ More details about how to use SLURM to run jobs can be found in our [running app
 
 ### Allocations
 
-All new Alpine users are granted an initial allocation (account) called `ucb-general`. Users who require more core hours than `ucb-general` can provide are advised to apply for an allocation. The allocation process requires that users have run example jobs in ucb-general that can be assessed by RC for efficiency/optimation on Alpine. Research Computing will then work with users to make workflows more efficient if needed and then grant the allocation.
-
-You can read more about the allocation process and why you might choose to apply for one on our [Allocation's page](../../access/allocations.md).
-
+When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
+of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of 
+allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 250,000 SUs over a 
+12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 12 month 
+period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.  
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
