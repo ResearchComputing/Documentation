@@ -17,6 +17,12 @@ resources to accommodate all of our users.
 
 ### FairShare, Priority, and Allocations
 
+#### Fairshare Scheduling
+The idea behind fairshare scheduling is simple, even though its
+implementation is complex: jobs submitted by people who have underutilized
+their allocated resources get higher priority, while jobs submitted by
+people who have overutilized their allocated resources get lower priority.
+
 #### Level Fairshare
 A Level Fairshare (`LevelFS`) is a value calculated by [Slurm's Fairshare 
 Algorithm](https://slurm.schedmd.com/fair_tree.html#algorithm). A user's 
@@ -34,12 +40,7 @@ position in the queue relative to other jobs. A job’s priority is based on
 multiple factors, including (but not limited to) FairShare score, job age, 
 resources requested, job size, and QOS. 
 
-#### Fairshare Scheduling
-The idea behind fairshare scheduling is simple, even though its 
-implementation is complex: jobs submitted by people who have underutilized 
-their allocated resources get higher priority, while jobs submitted by 
-people who have overutilized their allocated resources get lower priority. 
-
+#### Allocations
 When you receive a Research Computing account you are automatically 
 assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
 of `ucb-general`. The Trailhead is a great allocation for smaller jobs or 
@@ -51,16 +52,16 @@ combat this is to apply for an allocation.
 
 ### Alpine Allocation Tiers
 
-To accommodate a variety of allocation sizes on Alpine, CURC offers two 
-application-based tiers. The **Ascent Allocation** tier provides users 
+In addition to Trailhead auto-allocation (`ucb-general`) that all users are awarded automatically, CURC offers two 
+additional tiers to accommodate larger computing needs on Alpine. The **Ascent Allocation** tier provides users 
 with 250,000 SUs over a 12 month period. The **Peak Allocation** tier is 
 aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 
-12 month period.
+12 month period. Users may apply for these tiers as described below.
 
 CURC's tiered allocations are structured in a way such that your jobs are 
 likely to have a higher priority if they are running in Ascent or Peak 
-Allocations (`ucb-projects`) than if they are running in a Trailhead 
-Auto-Allocation (`ucb-general`).
+Allocations than if they are running in a Trailhead 
+Auto-Allocation.
 
 #### Comparing Trailhead Auto-Allocation, Ascent Allocation, and Peak Allocation Tiers
 
@@ -77,10 +78,8 @@ reviewed on an annual basis.
 Step 1: Fill out the [Ascent Allocation 
 Request](https://forms.office.com/r/eAA15b8Gsg) form. You need to be 
 logged in to Office365 with your CU Boulder account.
-
-
-Step 2: Look out for a message from our ticketing system indicating when your 
-allocation is ready to use.
+Step 2: Look out for an email message from the CURC ticketing system (rc-help@colorado.edu) indicating when your allocation is ready to 
+use.
 
 #### Get a Peak Allocation 
 
@@ -88,15 +87,13 @@ Step 1: Download and complete the [Peak Allocation Request Supplementary
 Information](https://o365coloradoedu.sharepoint.com/:w:/s/RC-Team/EdKWaQYfHPBAv1IdvFVFvtUBjnUnDfZFHWVII30CGv9OkA?e=cNZwom) 
 document. You need to be logged into Office365 with your CU Boulder 
 account.
-
 Step 2: Fill out the [Peak Allocation 
 Request](https://forms.office.com/r/5VtLpiCh01) form. You need to be 
 logged into Office365 with your CU Boulder account.
 The last question will ask you to upload your completed Peak Allocation 
 Request Supplementary Information document from step 1. 
-
-Step 3: Look out for messages from our ticketing system. A member of User 
-Support will contact you when the proposal is received, during the initial 
+Step 3: Look out for email messages from the CURC ticketing system (rc-help@colordo.edu). User Support will contact you when the proposal 
+is received, during the initial 
 review stages, and when the allocation is ready to use.
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the 
