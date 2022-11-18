@@ -84,6 +84,7 @@ acompile --ntasks=2 --time=02:00:00
 
 #### General Resources (gres)
 
+<<<<<<< HEAD
 **General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
 ```bash
@@ -114,6 +115,13 @@ The available QoS's for Alpine are:
 | normal      | Default                    | 1D              | tbd           | tbd | n/a       | 0 |
 | long        | Longer wall times          | 7D              | tbd           | tbd | tbd       | 0 |
 | mem         | High-memory jobs           | 7D              | tbd           | 12  | amem only | 0 |
+=======
+When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
+of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of 
+allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 250,000 SUs over a 
+12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 12 month 
+period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.  
+>>>>>>> 0067d7d4e30993081c50d3a059f0f55033b7c6ce
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
