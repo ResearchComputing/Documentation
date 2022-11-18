@@ -7,7 +7,9 @@ of Alpine's computational resources. Allocations are referred to as
 accounts in Slurm's documentation and are indicated by the `--account` 
 directive:
 
-`#SBATCH --account=______`
+```
+#SBATCH --account=______`
+```
 
 Allocations are required to run on CURC clusters. They help us keep track 
 of system usage for reporting purposes and to ensure we have enough 
@@ -21,7 +23,7 @@ Algorithm](https://slurm.schedmd.com/fair_tree.html#algorithm). A user's
 assigned shares (determined by their allocation) and usage (based on their 
 job history) contribute to their `LevelFS` value. Information on how to 
 check your `LevelFS` score can be found 
-[here](../faq.html#how-can-i-see-my-current-fairshare-priority).
+[here](../../faq.html#how-can-i-see-my-current-fairshare-priority).
 
 Note that if there are no other pending jobs and enough resources are 
 available then your job will run regardless of your previous usage.
@@ -45,7 +47,7 @@ testing and benchmarking your code. However, if you consume more than your
 fixed share of `ucb-general`,  your `LevelFS` will decrease, causing your 
 priority score to decrease. The end result is that your jobs will sit 
 lower (read: longer) in the queue relative to other jobs. One way to 
-combat this is to apply for a larger allocation.
+combat this is to apply for an allocation.
 
 ### Alpine Allocation Tiers
 
@@ -60,8 +62,7 @@ likely to have a higher priority if they are running in Ascent or Peak
 Allocations (`ucb-projects`) than if they are running in a Trailhead 
 Auto-Allocation (`ucb-general`).
 
-#### Comparing Trailhead Auto-Allocation, Ascent Allocation, and Peak 
-Allocation Tiers
+#### Comparing Trailhead Auto-Allocation, Ascent Allocation, and Peak Allocation Tiers
 
 The following table summarizes the required information, size, approval 
 process, and renewal requirement for each tier.
@@ -99,12 +100,10 @@ Support will contact you when the proposal is received, during the initial
 review stages, and when the allocation is ready to use.
 
 <br>
-Alpine is jointly funded by the University of Colorado Boulder, the 
-University of Colorado Anschutz, Colorado State University, and the 
+Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the 
 National Science Foundation (award 2201538).
-
-Couldn't find what you need? [Provide feedback on these 
-docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
+<br>
+Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
 
 
 
