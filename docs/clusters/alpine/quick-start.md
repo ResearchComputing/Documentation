@@ -14,11 +14,11 @@ Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh conn
    $ module load slurm/alpine
    ```
 
-2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](#requesting-resources) section and the [examples](#examples) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
+2. Once the Alpine Slurm job scheduler has been loaded, you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](#requesting-resources) section and the [examples](#examples) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
 3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
 
-4. If you would like to use software that is not within our preinstalled stack your application 
+4. If you would like to use software that is not within our preinstalled stack, your application 
 must be compiled using `acompile` (similar to ssh'ing to an `scompile` node on Summit). 
 More information about the `acompile` function can be found under our 
 [partitions](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#partitions) 
@@ -36,7 +36,7 @@ The Alpine cluster is made up of different types of nodes outlined below:
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	- 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
 
-> For a full list of nodes on Alpine use the command:  `scontrol show nodes.` Get single node details with the `scontrol show nodes <node name>` command.
+> For a full list of nodes on Alpine, use the command:  `scontrol show nodes.` Get single node details with the `scontrol show nodes <node name>` command.
 
 #### Interconnect
 The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
@@ -64,7 +64,7 @@ sinfo --format="%N | %f"
 
 ### Job Scheduling
 
-All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed but these must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
+All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed. However, these must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
 
 More details about how to use SLURM to run jobs can be found in our [running applications with jobs](../running-jobs/running-apps-with-jobs.html) documentation.
 

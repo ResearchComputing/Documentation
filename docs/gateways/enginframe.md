@@ -5,9 +5,9 @@ NICE EnginFrame provides a 3d-accelerated remote desktop environment on an Nvidi
 
 ### Step 1: Login to EnginFrame
 
-> **_NOTE 1:_** _To use EnginFrame **you will need to be on the CU Virtual Private Network (VPN)**, even if you are already on the CU network. If you already have a VPN client on your machine you can connect to `vpn.colorado.edu` through that (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can <a href="https://oit.colorado.edu/services/network-internet-services/vpn/help" target="_blank">download one from the CU Office of Information Technology</a>._
+> **_NOTE 1:_** _To use EnginFrame **you will need to be on the CU Virtual Private Network (VPN)**, even if you are already on the CU network. If you already have a VPN client on your machine, you can connect to `vpn.colorado.edu` (login credentials are your CU IdentiKey and password). If you don't have a VPN client on your machine, you can <a href="https://oit.colorado.edu/services/network-internet-services/vpn/help" target="_blank">download one from the CU Office of Information Technology</a>._
 
-> **_NOTE 2:_** _If you registered for a CURC account in 2021 or later you should have automatically received access to EnginFrame at the time the account was provisioned. However, if you find you cannot login per the documentation below, or if you registered for a CURC account prior to 2021, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access._
+> **_NOTE 2:_** _If you registered for a CURC account in 2021 or later, you should have automatically received access to EnginFrame at the time the account was provisioned. However, if you find you cannot login per the documentation below, or if you registered for a CURC account prior to 2021, please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access._
 
 In your web browser, navigate to the CURC EnginFrame instance at
 <a href="https://viz.rc.colorado.edu" target="_blank">https://viz.rc.colorado.edu</a>.
@@ -30,7 +30,7 @@ the left sidebar. Choose the opton for the "Nvidia Quadro RTX 8000" (there may b
 
 ![](enginframe/vdi_new.png)
 
-When starting a Remote Desktop session you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. In most cases the defaults will be adequate (i.e, no need to specify an account, nodelist or reservation).
+When starting a Remote Desktop session, you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. In most cases, the defaults will be adequate (i.e, no need to specify an account, nodelist or reservation).
 
 ![](enginframe/remote-desktop_new.png)
 
@@ -44,7 +44,7 @@ Once the session has started, an indicator of the running session appears in the
 
 ### Step 3: Use graphical software
 
-With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). A commonly-used example would be Matlab. To start the Matlab GUI, do the following:
+With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). A commonly used example would be Matlab. To start the Matlab GUI, do the following:
 
 1. Open a terminal by clicking `Applications`-->`System Tools`-->`MATE Terminal`
 2. Load the Matlab software and start Matlab by typing:

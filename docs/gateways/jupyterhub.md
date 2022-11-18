@@ -6,7 +6,7 @@ CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.r
 
 ### Step 1: Log  in to CURC JupyterHub
 
-CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in use your RC credentials. If you do not have an RC account, please [request an account before continuing.](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
+CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyter.rc.colorado.edu). To log in, use your RC credentials. If you do not have an RC account, please [request an account before continuing.](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
 
 ### Step 2: Start a notebook server
 
@@ -19,7 +19,7 @@ To start a notebook server, select one of the available options in the *Select j
 * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
 * __Summit interactive Rstudio (1 core, 12hr)__ (a 12-hour, 1 core _Rstudio_ job on a Summit "shas" node)
   
-> __Note__: The "Summit interactive (1 core, 12hr, instant access)" option spawns a 1-core job to a partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveat is that 
+> __Note__: The "Summit interactive (1 core, 12hr, instant access)" option spawns a 1-core job to a partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveats are: 
 > 1. users may only run one "shas-interactive" job at a time
 > 2. "shas-interactive" jobs only have 1 core and 4 GB of memory allocated to them. 
 >
@@ -34,7 +34,7 @@ The server will take a few moments to start.  When it does, you will be taken to
 
 ### Step 3: Navigating the JupyterLab Interface
 
-The following features are availabe in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
+The following features are available in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
 
 * _Left sidebar:_ Click on a tab to change what you see in the left menu bar.  Options include the file browser, a list of running kernels and terminals, a command palette, a notebook cell tools inspector, and a tabs list.
 * _Left menu bar:_ 
@@ -49,7 +49,7 @@ The following features are availabe in the [JupyterLab Interface](https://jupyte
       * __R__: R notebook 
       * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
    * Open a new console (command line) for any of the kernels.
-   * Open other functions; the "Terminal" function is particularly useful, as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
+   * Open other functions; the "Terminal" function is particularly useful as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
 * See Jupyter's [documentation on the JupyterLab Interface for additional information.](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
 
 #### Tip for finding the packages available to you within a notebook
@@ -66,7 +66,7 @@ If the packages you need are not available, [you can create your own custom envi
     
 #### For users who prefer the "old school" classic Jupyter interface in favor of JupyterLab
 
-You can access the Jupyter classic view by going to the address bar at the top of your broswer and changing "lab" to "tree" in the URL.  For, example, if your session URL is https://jupyter.rc.colorado.edu/user/janedoe/lab, you can change this to https://jupyter.rc.colorado.edu/user/janedoe/tree . 
+You can access the Jupyter classic view by going to the address bar at the top of your broswer and changing "lab" to "tree" in the URL.  For example, if your session URL is https://jupyter.rc.colorado.edu/user/janedoe/lab, you can change this to https://jupyter.rc.colorado.edu/user/janedoe/tree . 
 
 ### Step 4: Shut down a Notebook Server
 
@@ -123,7 +123,7 @@ __For a _python_ kernel__
 ```
 
 * The first command will install the _ipykernel_ package if not installed already. 
-* The second command will create a _python_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note: that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
+* The second command will create a _python_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note: the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
 __For an _R_ kernel__
 
@@ -151,7 +151,7 @@ _Dask is a flexible library for parallel computing in Python. Documentation for 
 
 ### Troubleshooting
 
-* If you are a CSU or XSEDE user and are having trouble with packages that employ PERL (due to the `@` symbol) visit our documentation on setting up a user variables that links to alternate paths without the `@` symbol [CSU and XSEDE usernames](../additional-resources/csu-xsede-usernames.md)
+* If you are a CSU or XSEDE user and are having trouble with packages that employ PERL (due to the `@` symbol), visit our documentation on setting up a user variable that links to alternate paths without the `@` symbol in [CSU and XSEDE usernames](../additional-resources/csu-xsede-usernames.md)
 * Jupyter notebook servers spawned on RC compute resources log to `~/.jupyterhub-spawner.log`. Watching the contents of this file provides useful information regarding any problems encountered during notebook startup or execution.
 
 

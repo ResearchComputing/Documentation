@@ -2,7 +2,7 @@
 
 
 
-Historically software installations have been a sticking point for many users or CURC resources. Though we still encourage users to install and manage their own packages locally, CURC has decided to move forward with the following software policy:
+Historically, software installations have been a sticking point for many users or CURC resources. Though we still encourage users to install and manage their own packages locally, CURC has decided to move forward with the following software policy:
 
 CURC will perform software installations for users of CURC resources in a globally accessible module stack provided:
 
@@ -17,7 +17,7 @@ Furthermore, licensed/proprietary software are subject the following requirement
 - The user has access to an appropriate license for cluster usage.
 - The license can be installed or accessed on the cluster. 
 
-Software accepted to be installed will be given an estimated installation time based on capacity of the team and urgency of the request. Note that this time is an estimation and not a hard set deadline. Installed software will be available to load with a module in the ‘User Software’ category in the software stack. Unused modules will be pruned after 12 months without usage. Any pruned module may be restored by user request.
+Software accepted for installation will be given an estimated installation time based on capacity of the team and urgency of the request. Note that this time is an estimation and not a strict deadline. Installed software will be available to load with a module in the ‘User Software’ category in the software stack. Unused modules will be pruned after 12 months without usage. Any pruned module may be restored by user request.
 
 Core software such as compilers, MPIs, and relevant libraries will be updated at a semesterly interval. A different version of these core softwares can be requested at any point, but installation may be performed in accordance to that timeline.
 
