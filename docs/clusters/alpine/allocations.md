@@ -65,7 +65,7 @@ Auto-Allocation (`ucb-general`).
 #### Comparing Trailhead Auto-Allocation, Ascent Allocation, and Peak Allocation Tiers
 
 The following table summarizes the required information, size, approval 
-process, and renewal requirement for each tier.
+process, and renewal requirements for each tier.
 
 ![](images/alpine-allocation-tiers-chart.png)
 
@@ -99,12 +99,9 @@ Step 3: Look out for messages from our ticketing system. A member of User
 Support will contact you when the proposal is received, during the initial 
 review stages, and when the allocation is ready to use.
 
-<br>
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the 
 National Science Foundation (award 2201538).
 
-<br>
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
-
 
 
