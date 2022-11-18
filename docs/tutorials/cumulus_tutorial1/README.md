@@ -19,7 +19,8 @@ _Horizon is the CUmulus web portal, hosted at https://cumulus.rc.colorado.edu. L
 Navigate to https://cumulus.rc.colorado.edu and authenticate using your insitution's credentials (e.g., University of Colorado Boulder)
 
 <p align="center">
-<img src="images/login.png" width="40%" />
+<img src="![]images/login.png" width="40%" />
+<img src="./images/login.png" width="40%" />
 </p>
 
 ---
