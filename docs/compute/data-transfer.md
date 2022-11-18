@@ -32,7 +32,7 @@ computing centers.
 Globus can be used on macOS, Linux, and Windows operating systems and
 is RC's recommended way of transfering data.
 
-[Sign into Globus Connect](https://www.globus.org/app/login) by
+[Sign into Globus Connect](https://app.globus.org/) by
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
