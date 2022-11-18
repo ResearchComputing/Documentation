@@ -161,7 +161,7 @@ directory, named using the time-stamp associated with the snapshot.
 
 > Note: The .snapshot directory is not visible to any utilities that list directory contents, so an ‘ls’ of the .snapshot directory will fail, although you can ‘cd’ to it.
 
-### A brief introduction
+### File permissions, ownership, and group membership
 
 In the Linux/Unix system, files are organized into hierarchical trees, similar to a filing cabinet. Files can have several different types, The most important for everyday use are directories and files, which can be data or executable files (programs).  Note that each file has an owner, a group, and a class of others (those not owners or group members). File permissions can be different for each of the above depending on the permissions specified for that file.
 
@@ -245,7 +245,7 @@ See the man page for `chmod` for a complete exposition of controlling the permis
 
 The `umask` environment variable will override indicated permission bits. That is, if a bit is set in the `umask`, the corresponding permissions bit is stripped from default permissions a file or directory would otherwise be created with. This latter default permission set is known as the _mode creation mask_, a parameter each process in the Unix/Linux OS has.
  
-The `umask` is usually represented by a string of octal numbers. So, for example, a `umask` of `007` will turn off the 3 permission bits for “other” in a file or directory created. `070` likewise would turn off the group permissions. The octal numbers correspond directly with the permission bits described above, so 
+The `umask` is usually represented by a string of octal numbers. So, for example, a `umask` of `007` will turn off the 3 permission bits for “other” in a file or directory created. `070` likewise would turn off the group permissions. The octal numbers correspond directly with the permission bits described above, so <br />
 7 = rwx<br /> 
 6 = rw-<br />
 5 = r-x<br /> 
