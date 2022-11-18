@@ -52,7 +52,7 @@ combat this is to apply for an allocation.
 
 ### Alpine Allocation Tiers
 
-In addition to Trailhead auto-allocation (`ucb-general`) that all users are awarded automatically, CURC offers two 
+In addition to the Trailhead auto-allocation (`ucb-general`) that all users are awarded automatically, CURC offers two 
 additional tiers to accommodate larger computing needs on Alpine. The **Ascent Allocation** tier provides users 
 with 250,000 SUs over a 12 month period. The **Peak Allocation** tier is 
 aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 
