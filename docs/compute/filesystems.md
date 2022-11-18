@@ -215,28 +215,28 @@ For a more comprehensive and detailed exposition of the UNIX file system permiss
 
 **How to turn on/off the execute bits**
 
-Turn on all execute bits for `<file_pathname>` \
+Turn on all execute bits for `<file_pathname>`<br />
 `chmod a+x <file_pathname>`
 
-Turn off all execute bits for `<file_pathname>` \
+Turn off all execute bits for `<file_pathname>`<br />
 `chmod a-x <file_pathname>`
 
-Turn on “other” execute bits for `<file_pathname>` \ 
+Turn on “other” execute bits for `<file_pathname>`<br />  
 `chmod o+x <file_pathname>`
 
-Turn off “other” execute for `<file_pathname>` \
+Turn off “other” execute for `<file_pathname>`<br /> 
 `chmod o-x <file_pathname>`
 
-Turn on “group” execute bits for `<file_pathname>` \ 
+Turn on “group” execute bits for `<file_pathname>`<br /> 
 `chmod g+x <file_pathname>`
 
-Turn off “group” execute bits for `<file_pathname>` \ 
+Turn off “group” execute bits for `<file_pathname>`<br />   
 `chmod g-x <file_pathname>`
 
-Turn on “owner” execute bits for `<file_pathname>` \
+Turn on “owner” execute bits for `<file_pathname>`<br /> 
 `chmod u+x <file_pathname>`
 
-Turn off “owner” execute bits for `<file_pathname>` \
+Turn off “owner” execute bits for `<file_pathname>`<br /> 
 `chmod u-x <file_pathname>`
 
 See the man page for `chmod` for a complete exposition of controlling the permission bits.
@@ -246,25 +246,25 @@ See the man page for `chmod` for a complete exposition of controlling the permis
 The `umask` environment variable will override indicated permission bits. That is, if a bit is set in the `umask`, the corresponding permissions bit is stripped from default permissions a file or directory would otherwise be created with. This latter default permission set is known as the _mode creation mask_, a parameter each process in the Unix/Linux OS has.
  
 The `umask` is usually represented by a string of octal numbers. So, for example, a `umask` of `007` will turn off the 3 permission bits for “other” in a file or directory created. `070` likewise would turn off the group permissions. The octal numbers correspond directly with the permission bits described above, so 
-7 = rwx \
-6 = rw- \
-5 = r-x \
-4 = r-- \
-3 = -wx \
-2 = -w- \
-1 = --x \
+7 = rwx<br /> 
+6 = rw-<br />
+5 = r-x<br /> 
+4 = r--<br /> 
+3 = -wx<br /> 
+2 = -w-<br /> 
+1 = --x<br /> 
 
 The man page for `umask` explains the details of this parameter.
 
 **Creating and copying directories and files**
 
-`mkdir <new_directory_name>` \
+`mkdir <new_directory_name>`<br />
 A directory with the specified name is created having permissions defined by the user’s default _mode creation mask_, modified by the user’s `umask`.
 
-`cp <source_file> <destination_file>` \  
+`cp <source_file> <destination_file>`<br /> 
 The destination file will have the same permissions as the source file unless those are modified by the user’s `umask`. Note that more sophisticated copy programs can modify the destination permissions, again subject to the user’s `umask`.
 
-`rsync -var <source_file/directory>/ <destination_file/driectory/` \ 
+`rsync -var <source_file/directory>/ <destination_file/driectory/`<br />  
 See our [Data Transfer](https://curc.readthedocs.io/en/latest/compute/data-transfer.html?highlight=rsync#rsync) page for more information about `rsync`.
 
 ### Workspace Sharing
