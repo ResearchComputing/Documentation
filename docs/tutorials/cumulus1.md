@@ -123,7 +123,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 #### _Instance creation: Key Pair_
 
-![](instance_keypair.png)
+![](images/instance_keypair.png)
 
 * A key pair allows you to SSH into your new instance.
 * You may select an existing key pair, import a key pair, or generate a new key pair.
