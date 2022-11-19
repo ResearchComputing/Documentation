@@ -17,7 +17,7 @@ which can be used to host virtual machines and volumes to host workloads.
 3. Get started with your Cloud Instances by following our documentation on:
 	- [Creating a cloud instance](./instance-creation.html)
 	- [Integrating CUmulus with CURC HPC resources](./slurm-integration.html)
-4. Visit our [CUmulus specific tutorials](https://github.com/ResearchComputing/CUmulus_tutorials) on the Research Computing GitHub for step-by-step examples.
+4. Visit our [CUmulus specific tutorials](../tutorials/index.rst) on the Research Computing GitHub for step-by-step examples.
 
 #### Features
 - Virtual machine creation
