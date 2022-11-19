@@ -2,8 +2,7 @@
 
 Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
 cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
-Boulder. Additional contributions provided from Colorado State University and Anschutz Medical Campus are planned for the 
-near future. Alpine currently offers 317 compute nodes and a total of 18,080 cores.
+Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 317 compute nodes and a total of 18,080 cores.
 
 Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh connectivity to the CURC system.
 
@@ -31,7 +30,7 @@ request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?hig
 ### Cluster Summary
 #### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 188 AMD Milan Compute nodes (184 nodes with 64 cores/node, 4 nodes with 48 cores/node) with 256 GB RAM
+- **CPU nodes**: 188 AMD Milan compute nodes (184 nodes with 64 cores/node, 4 nodes with 48 cores/node) with 256 GB RAM
 - **GPU nodes**:
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	- 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
