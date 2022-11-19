@@ -18,21 +18,7 @@ Alpine is the University of Colorado Boulder Research Computing’s third-genera
 
 Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh connectivity to the CURC system.
 
-**Nodes and Hardware Summary:**
-
 Total Core Count: **18,080**
-
-The Alpine cluster is made up of different types of nodes outlined below:
-
-CPU nodes: 188 AMD Milan Compute nodes (184 nodes with 64 cores/node, 4 nodes with 48 cores/node) with 256 GB RAM
-GPU nodes:
-8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
-8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
-High-memory nodes: 12 AMD Milan nodes with 1TB of memory
-Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
-
-Colorado State University: 77 AMD Milan compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
-CU Anschutz Medical Campus: 16 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, and 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan)
 
 All nodes are available to all users. For full details about node access, please refer to the Alpine Node Access and FairShare policy.
 
