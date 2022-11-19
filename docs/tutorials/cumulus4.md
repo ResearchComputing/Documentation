@@ -9,11 +9,11 @@ ___Learning Objectives:___
 
 ## Introduction
 
-Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This enables access to large datasets that may not otherwise be practical to place on the CUmulus VM, where storage is more limited. This tutorial demonstrates this capability. As a prerequisite, it is assumed you have already "spun-up" a CUmulus VM, as covered in [Tutorial 1](../tutorial1/README.md).
+Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This enables access to large datasets that may not otherwise be practical to place on the CUmulus VM, where storage is more limited. This tutorial demonstrates this capability. As a prerequisite, it is assumed you have already "spun-up" a CUmulus VM, as covered in [Tutorial 1](./cumulus1.md).
 
 ## Tutorial
 
-Completing the steps below requires that you have first [logged into your VM](../tutorial1#part-3-logging-into-your-instance)
+Completing the steps below requires that you have first [logged into your VM](./cumulus1#part-3-logging-into-your-instance)
 
 ---
 
@@ -109,7 +109,7 @@ sshfs umount ~/mypetalibrary
 ### Additional Information
 ---
 
-  * [CUmulus documentation](https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html)
+  * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)
   * [PetaLibrary Documentation](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html)
 
