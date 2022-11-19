@@ -1,3 +1,0 @@
-Flask==2.0.3
-mysql-connector-python==8.0.28
-tweepy==4.6.0
