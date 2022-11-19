@@ -7,7 +7,7 @@ CU Research Computing hosts a free-to-use on-premise cloud service, called [CUmu
     :maxdepth: 1
     :caption: CUmulus Tutorials
 
-    cumulus1
-    cumulus2
-    cumulus3
-    cumulus4
+    cumulus1.md
+    cumulus2.md
+    cumulus3.md
+    cumulus4.md
