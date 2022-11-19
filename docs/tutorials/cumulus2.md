@@ -48,7 +48,7 @@ We need a working CUmulus instance running Ubuntu with http port exposed (defaul
 ####  Part 3: Getting the Source Code
 ---
 
-Download the <a href="app.zip" download> source code directory </a> into your home (`~`) directory, unzip it, and cd into it: 
+Download the :download:`source code directory <_download_files/app.zip>` into your home (`~`) directory, unzip it, and cd into it: 
 
 ```
 $ cd ~
