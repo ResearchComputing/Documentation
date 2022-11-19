@@ -20,7 +20,7 @@ Our main objective in tutorial is to demonstrate potential workflows that could 
 ## Tutorial
 
 
-Before we can get this application up and running in a CUmulus instance we have some house-keeping to take care of. Many of steps below assume you have worked through [tutorial1](https://github.com/ResearchComputing/CUmulus_tutorials/tree/twitterapi-dev/tutorial1), which describes the instance creation process.
+Before we can get this application up and running in a CUmulus instance we have some house-keeping to take care of. Many of steps below assume you have worked through [tutorial1](./cumulus1.md), which describes the instance creation process.
 
 ---
 ####  Part 1: Instance Setup
@@ -28,7 +28,7 @@ Before we can get this application up and running in a CUmulus instance we have 
 We need a working CUmulus instance running Ubuntu with http port exposed (default 80) and a public floating IP. 
 * Adding a routable http port to an instance can be done within the instance creation launcher by adding the `http` security groups or after the instance has been created by editing the security groups of the individual instance.
 * Add a floating IP after the instance has been created.
-	- Log into your instance via ssh (see  [tutorial 1](https://github.com/ResearchComputing/CUmulus_tutorials/tree/twitterapi-dev/tutorial1)); *ensure you are on the CU VPN*.
+	- Log into your instance via ssh (see  [tutorial 1](./cumulus1.md)); *ensure you are on the CU VPN*.
 	- Updating and upgrading you instance at this point is a good idea, you can do so with the following command:
 		 ```
 		 $ sudo apt-get update && sudo apt-get upgrade -y
@@ -48,7 +48,7 @@ We need a working CUmulus instance running Ubuntu with http port exposed (defaul
 ####  Part 3: Getting the Source Code
 ---
 
-You will need to clone this github repo (which you may have already done if following [tutorial1](https://github.com/ResearchComputing/CUmulus_tutorials/tree/twitterapi-dev/tutorial1)). The code for this application lives in this git repo, which you can download with `git clone` into your instance using:
+You will need to clone this github repo (which you may have already done if following [tutorial1](./cumulus1.md)). The code for this application lives in this git repo, which you can download with `git clone` into your instance using:
 ```
 $ git clone https://github.com/ResearchComputing/CUmulus_tutorials.git
 ```
