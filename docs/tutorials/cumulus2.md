@@ -48,11 +48,11 @@ We need a working CUmulus instance running Ubuntu with http port exposed (defaul
 ####  Part 3: Getting the Source Code
 ---
 
-Download the :download:`source code <_download_files/app.zip>` into your home (`~`) directory, unzip it, and cd into it: 
+Download the [source code](https://github.com/ResearchComputing/CUmulus_tutorials/raw/main/app.zip) into your home (`~`) directory, unzip it, and cd into it: 
 
 ```
 $ cd ~
-$ wget https://curc.readthedocs.io/en/latest/tutorials/app.zip .
+$ wget https://github.com/ResearchComputing/CUmulus_tutorials/raw/main/app.zip
 $ unzip ~/app.zip
 $ cd ~/app
 ```
