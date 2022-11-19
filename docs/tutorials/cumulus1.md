@@ -204,7 +204,7 @@ $ sudo su - root
 ### Additional Information
 ---
 
-  * [CUmulus documentation](https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html)
+  * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)
 
 
