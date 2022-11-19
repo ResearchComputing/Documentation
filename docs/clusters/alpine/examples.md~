@@ -1,4 +1,4 @@
-## Slurm Directives Examples
+## Examples
 
 Below are some examples of SLURM directives that can be used in your batch scripts in order to meet certain job requirements.
 
@@ -51,7 +51,6 @@ Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos that runs 
 
 ```
 #!/bin/bash
-
 #SBATCH --partition=amilan
 #SBATCH --job-name=example-job
 #SBATCH --output=example-job.%j.out
@@ -59,8 +58,6 @@ Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos that runs 
 #SBATCH --qos=normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=youridentikey@colorado.edu
 
 module purge
 module load anaconda

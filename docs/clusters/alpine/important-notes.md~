@@ -13,10 +13,10 @@ Note: For more information on `acompile` options use the command:
 $ acompile --help
 acompile: CURC utility to access a single alpine compute node for compiling software
 usage:
-       -t | --time=<time-limit>        : set the job's minimum runtime (default 60 minutes/max 12 hours)
+       -t | --time=<time-limit>        : set the job's minimum runtime (default 60 minutes)
        -n | --ntasks=<number-of-cores> : set the number of cores required for the session (default 1/max 4)
-       -X | --x11                      : enable x11 support for the session (requires user to login w/ -X or -Y flag)
-          | --test-only                : stop job submission and print submit command
+       -G | --gpu=<nvidia|amdgpu>      : request a gpu to compile against
+       -X | --x11                      : enable x11 support for the session
        -h | --help                     : print this message
 ```
 
