@@ -48,18 +48,21 @@ We need a working CUmulus instance running Ubuntu with http port exposed (defaul
 ####  Part 3: Getting the Source Code
 ---
 
-You will need to clone this github repo (which you may have already done if following [tutorial1](./cumulus1.md)). The code for this application lives in this git repo, which you can download with `git clone` into your instance using:
+Download the source code directory into your home (`~`) directory, unzip it, and cd into it: 
+
 ```
-$ git clone https://github.com/ResearchComputing/CUmulus_tutorials.git
+$ cd ~
+$ wget https://curc.readthedocs.io/en/latest/tutorials/app.zip .
+$ unzip ~/app.zip
+$ cd ~/app
 ```
-* `cd` into into `/path/to/CUmulus_tutorials/tutorial2/app` directory
 
 ---
 ####  Part 4: Configuring your Environment
 ---
 
  Once you have your Twitter API keys, we can set up our config file which will allow for our applications to use the necessary passwords, ports, keys, etc. as environment variables.
-* Using a text editor of your choice create the file `/path/to/CUmulus_tutorial/tutorial2/app/.env` (*note the period in front of `.env`*) and paste the following lines in adding your web port (default 80 for http in CUmulus), your mysql password (you choose this), and your Twitter API keys. You can use the examples to format your environment variables.
+* Using a text editor of your choice create the file `~/app/.env` (*note the period in front of `.env`*) and paste the following lines in adding your web port (default 80 for http in CUmulus), your mysql password (you choose this), and your Twitter API keys. You can use the examples to format your environment variables.
 ```
 #### Comment out or delete any unused entries
 
@@ -95,7 +98,7 @@ The python application will also be containerized when run, but in order to give
 
 ##### Installing and Testing
 
-1) The first thing we'll need to do is install Docker. There are many ways to install Docker based on your OS, but we're going for an [Ubuntu install](https://docs.docker.com/engine/install/ubuntu/) in this tutorial. We will assume this is a brand new instance so we don't have to check for previous versions of Docker so we will go straight to the "install with the convenience script" section (bottom of the page). From the home directory (~/) of your instance run the following: 
+1) The first thing we'll need to do is install Docker. There are many ways to install Docker based on your OS, but we're going for an [Ubuntu install](https://docs.docker.com/engine/install/ubuntu/) in this tutorial. We will assume this is a brand new instance so we don't have to check for previous versions of Docker so we will go straight to the "install with the convenience script" section (bottom of the page). From the home directory (`~`) of your instance run the following: 
 	```
 	 $ curl -fsSL https://get.docker.com -o get-docker.sh
 	 $ sudo sh get-docker.sh
@@ -140,7 +143,7 @@ Docker is setup!
 Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. Read more about docker compose here: https://docs.docker.com/compose/.
 
 ##### Installing and Testing
-1) We'll install docker-compose next (https://docs.docker.com/compose/install/), from the home directory (~/) of your instance run the following command to download the current stable release of Docker Compose:
+1) We'll install docker-compose next (https://docs.docker.com/compose/install/), from the home directory (`~`) of your instance run the following command to download the current stable release of Docker Compose:
 	```
 	 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 	```
@@ -171,7 +174,7 @@ When a container runs, it uses the various layers from an image for its filesyst
 ---
 ####  Part 7: Running the Application
 ---
-We're all set and ready to run out application and database! From the `/path/to/CUmulus_tutorial/tutorial2/app` directory run:
+We're all set and ready to run out application and database! From the `~/app` directory run:
 ```
 $ sudo docker-compose up --build -d
 ```
@@ -182,7 +185,7 @@ If all went well, in a browser you can navigate to `<your floating IP>:80`, for 
 ---
 ####  Part 8: Finishing up
 ---
-Your application is up and running and accessible through the Public internet! Because this is a public facing page, I would suggest bringing down the application after playing around with it a bit in order to prevent others from finding and filling up the database. You can do that with the following command from  the `/path/to/CUmulus_tutorial/tutorial2/app` directory:
+Your application is up and running and accessible through the Public internet! Because this is a public facing page, I would suggest bringing down the application after playing around with it a bit in order to prevent others from finding and filling up the database. You can do that with the following command from  the `~/app` directory:
 ```
 $ docker-compose down
 ```
