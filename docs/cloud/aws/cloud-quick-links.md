@@ -56,7 +56,7 @@ th {
     <td></td>
   </tr>-->
  <tr>
-    <td><a href="https://oitkb.colorado.edu/display/PC/CloudCheckr+User+Access" target="_blank">CloudCheckr User and Role creation</a></td>
+    <td><a href="https://oitkb.colorado.edu/display/PC/CloudCheckr+User+Access" target="_blank">CloudCheckr Document</a></td>
     <td>https://oitkb.colorado.edu/display/PC/CloudCheckr+User+Access</td>
   </tr>
 <tr>
