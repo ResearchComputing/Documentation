@@ -5,7 +5,7 @@
 3. **Scratch Space**: `/scratch/summit/$USER` is replaced by `/scratch/alpine/$USER`.
 	> Alpine scratch will offer much better performance than doing I/O from `/projects`.
 4. **Node-local scratch**: Most Alpine nodes also have at least 400 GB of scratch space on a local SSD disk, which will offer the fastest I/O possible.
-	> We are presently working to make this space available to users, but at the time of writing _it is not available_. Once we make it available, this job specific directory will be available within jobs as `$SLURM_SCRATCH`. Note that this storage is only available during jobs and is deleted after jobs, so be sure to copy new data you want to keep off of it at the end of your job script. For more info on the different RC storage spaces, please see our page on [storage](../../compute/filesystems.html).
+	> This job specific directory is available within jobs as `$SLURM_SCRATCH`. Note that this storage is only available during jobs and is deleted after jobs, so be sure to copy new data you want to keep off of it at the end of your job script. For more info on the different RC storage spaces, please see our page on [storage](../../compute/filesystems.html).
 4. **Head-nodes**: There are no dedicated Alpine "head nodes" that would be analogous to the Summit "scompile" nodes, instead `acompile` jobs have been implemented with the `acompile` command (note the lack of `ssh`). To build software that will run on Alpine, start an interactive or an `acompile` job on Alpine and compile your software there. _**Do not compile on the login nodes!**_
 
 Note: For more information on `acompile` options use the command:
