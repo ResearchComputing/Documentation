@@ -43,9 +43,9 @@ Once you have verified your identity, follow the instructions provided by Duo to
 
 If you cannot authenticate your account (e.g. do not have your old device), contact rc-help@colorado.edu for further assistance.
 
-### How do I check how full my Summit directories are?
+### How do I check how full my directories are?
 
-You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/summit/$USER` (10 T).  To see how much space you've used in each, from a Summit 'scompile' node, type `curc-quota` as follows:
+You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a compile node, type `curc-quota` as follows:
 
 ```
 [user@shas0100 ~]$ curc-quota
@@ -54,13 +54,13 @@ You have three directories allocated to your username (`$USER`). These include `
 ------------------------------------------------------------------------
 /home/janedoe                          1.7G          339M           2.0G
 /projects/janedoe                       67G          184G           250G
-/scratch/summit                         29G        10211G         10240G
+/scratch/alpine                         29G        10211G         10240G
 ```
 
 You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
 
 ```
-[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
+[janedoe@shas0136 ~]$ du -h /scratch/alpine/janedoe/WRF
 698M	WRF/run
 698M	WRF
 ```
@@ -95,7 +95,9 @@ If you'd like to monitor memory usage on jobs that are currently running, use th
 sstat --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 ```
 
-For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html).
+For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
+
+You can also view information related to service unit (SU) usage and CPU & RAM efficiency by using [slurmtools](https://curc.readthedocs.io/en/latest/compute/monitoring-resources.html?highlight=slurmtools#slurmtools). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
 
 ### How can I see my current FairShare priority?
 
@@ -121,7 +123,7 @@ There are a couple ways you can check your FairShare priority:
 	```
 	sshare -U -l
 	```
-	The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The -U flag will specify the current user and the -l flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over serviced accounts will have a LevelFS that's between 0 and 1. Under serviced accounts will have a LevelFS that's greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
+	The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The -U flag will specify the current user and the -l flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over-serviced accounts will have a LevelFS between 0 and 1. Under-serviced accounts will have a LevelFS greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
 
 	For more information on fair share the `sshare` command, [take a look at Slurm's documentation on fair share](https://slurm.schedmd.com/fair_tree.html) Or [check out the Slurm reference page on sshare](https://slurm.schedmd.com/sshare.html)
 
@@ -139,7 +141,7 @@ If you receive this message, the following solutions are available:
 
 ### Why do I get an 'Invalid Partition' error when I try to run a job?
 
-This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing, and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
+This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
 
 ### Why do I get an 'Invalid Partition' error when I try to run a Blanca job?
 If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/summit or slurm/alpine scheduler instance. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
@@ -154,7 +156,7 @@ sacctmgr -p show associations user=$USER
 
 ### Why do I get an 'LMOD' error when I try to load Slurm?
 
-The slurm/summit module environment can not be loaded from compile or compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Summit enviornments. This error can be disregarded, as no harm is done.
+The slurm/alpine module environment cannot be loaded from compile or compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine enviornments. This error can be disregarded, as no harm is done.
 
 ### How do I install my own python library?
 
@@ -166,41 +168,41 @@ Although Research Computing provides commonly used Python libraries as module, y
 <!-- 
 This guide covers installing a local Python library (pyDOE) which is not included in the Research Computing modules. One prerequisite assumption is that you are using the [new module system](compute/modules.html). That being said, this guide can be tweaked to be used on the older modules as well.
 
-First login to a login node and then ssh to a compile node.
+First login to a login node and then switch to a compile node.
 
 ```
-[user@login01 ~]$ ssh scompile
+[user@login01 ~]$ acompile
 ```
 
 Next load the version of Python you'd like to add a library too. For this guide we'll be using Intel and Python 2.7.11.
 
 ```
-[user@shas0100 ~]$ ml intel/17.4
-[user@shas0100 ~]$ ml python/2.7.11
+[user@acompile ~]$ ml intel/17.4
+[user@acompile ~]$ ml python/2.7.11
 ```
 
 Before installing, create a directory in which to keep your local Python libraries. It is recommended that the /projects directory be used as it has more space.
 
 ```
-[user@shas0100 ~]$ mkdir /projects/$USER/python_libs
+[user@acompile ~]$ mkdir /projects/$USER/python_libs
 ```
 
 You can now install your local python library.
 
 ```
-[user@shas0100 ~]$ pip install --prefix="/projects/$USER/python_libs" pyDOE
+[user@acompile ~]$ pip install --prefix="/projects/$USER/python_libs" pyDOE
 ```
 
 In order to use your newly installed library it needs to be added to your PYTHONPATH. Use the following export command:
 
 ```
-[user@shas0100 ~]$ export PYTHONPATH=$PYTHONPATH:/projects/$USER/python_libs/lib/python2.7/site-packages/
+[user@acompile ~]$ export PYTHONPATH=$PYTHONPATH:/projects/$USER/python_libs/lib/python2.7/site-packages/
 ```
 
 You can quickly check if your install worked with the following:
 
 ```
-[user@shas0100 ~]$ python -c "import pyDOE"
+[user@acompile ~]$ python -c "import pyDOE"
 ```
 
 Every time you log out you will need to rerun the above export to use your Python library (don't forget to load Python as well). Two ways of avoiding this are to add the export command to your bashrc. `vim ~/.bashrc`. An alternative is to make your own modulefile.
@@ -217,11 +219,11 @@ PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does coun
 
 If you would like to set a custom snapshot schedule for your allocation, please contact rc-help@colorado.edu. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 
-### Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?
+### Why is my Jupyter session pending throwing 'QOSMaxSubmitJobPerUserLimit'?
 
-JupyterHub on CURC is run using a SLURM compute job under the cluster with the `shas-interactive` partition. The shas-interactive partition provides users with rapid turn around start times but is limited to a [single core/node](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html#partitions-summit). This means only one instance of JupyterHub (or any job using the interactive partitions) can be run at a time. 
+Jupyter on CURC is run using a SLURM compute job under the cluster with the `shas-interactive` partition. The shas-interactive partition provides users with rapid turn around start times but is limited to a [single core/node](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html#partitions-summit). This means only one instance of JupyterHub (or any job using the interactive partitions) can be run at a time. 
 
-In order to spawn another JupyterHub job you first need to close the current job.
+In order to spawn another JupyterHub job, you first need to close the current job.
 
 You can either do so by [shutting down your current JupyterHub server](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#step-4-shut-down-a-notebook-server) or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
 

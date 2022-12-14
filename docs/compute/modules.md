@@ -19,7 +19,7 @@ so you won't be able to access software unless you do so through a job
 or a compile node.
 
 To see what modules are available to load, ssh into a compile node by
-typing `ssh scompile` from a login node, and type:
+typing `acompile` from a login node, and type:
 
 ```
 module avail
@@ -27,7 +27,7 @@ module avail
 
 This will return a list of modules available to load into the
 environment. **_Please note if you run this command on a login node
-you will not receive a list of modules present on the system._**
+you will not receive a list of modules present on the system._** It is also important to note that if a module has dependencies, you may not see the module listed until dependencies are loaded.  
 
 To load your chosen modules into the environment type:
 

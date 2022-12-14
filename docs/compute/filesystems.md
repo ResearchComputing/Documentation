@@ -36,15 +36,14 @@ software builds and smaller data sets.
 
 ### Scratch Filesystems
 
-Summit users are provided a subdirectory on `/scratch/summit`, the
+Alpine users are provided a subdirectory on `/scratch/alpine`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
-running on that system (e.g., `/scratch/summit/janedoe`). By default,
+running on that system (e.g., `/scratch/alpine/janedoe`). By default,
 each user is limited to a quota of 10 TB worth of storage space and
-20M files and directories. Email <rc-help@colorado.edu> if you need
-these limits increased. Blanca users should write to
-`/rc_scratch/janedoe` instead of `/scratch/summit`.
+20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](https://curc.readthedocs.io/en/latest/additional-resources/policies.html#alpine-scratch-quota-increases). Blanca users should write to
+`/rc_scratch/janedoe` instead of `/scratch/alpine`.
 
-Scratch space should be used for all compute jobs run on Summit or
+Scratch space should be used for all compute jobs run on Alpine or
 Blanca. These high-performance scratch directories are **not backed
 up**, and are not appropriate for long-term storage. Data may be
 purged at any time subject to overall system needs. Files are
@@ -56,8 +55,8 @@ space on the [PetaLibrary](../storage/petalibrary/index.html). Inappropriate use
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
-#### Local Scratch on Summit and Blanca
-All Summit nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
+#### Local Scratch on Alpine and Blanca
+All Alpine nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
 
 As an example of how to use `$SLURM_SCRATCH`, the following code copies a file to the temporary directory, operates on the file in some fashion creating a new file, then copies that new file back to the projects directory before the job ends.
 
@@ -72,35 +71,33 @@ cp new_file /projects/user1234/job/new_file
 #### Storage spaces on CURC, ordered by preference/performance for doing data Input/Output (I/O) during jobs:
 
 1. `$SLURM_SCRATCH` (local SSD)
-  * 100-800 GB/node
+  * Approximately 300 GB/node
   * Lowest contention of all RC storage resources (only shared with other jobs on the same node)
   * Deleted when job terminates
 
-
-2. `/scratch/summit/$USER` (Summit only) or `/rc_scratch/$USER` (Blanca only)
-* 10 TB/user (Summit) or ~2 TB/user (Blanca)
-* Data purged after 90 days
+2. `/scratch/alpine/$USER` (Alpine only) or `/rc_scratch/$USER` (Blanca only)
+  * 10 TB/user (Alpine) or ~2 TB/user (Blanca)
+  * Data purged after 90 days
 
 3. `/pl/active/<group>`
-* Fee-based compute-capable storage platform
-
+  * Fee-based compute-capable storage platform
 
 4. `/projects/$USER`
-* 250 GB/user
-* Only use if you have a few small files to do I/O on. 
+  * 250 GB/user
+  * Only use if you have a few small files to do I/O on. 
 
 
 #### How to increase I/O performance: 
 
-1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca) first.  
+1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca) first.  
 
-2. If you need to read data from `/pl/active` more than once during a job, copy it to `$SLURM_SCRATCH` at the beginning of the job and read it from there. Or. if the dataset is too big for `$SLURM_SCRATCH`, copy it to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca) and read it from there. 
+2. If you need to read data from `/pl/active` more than once during a job, copy it to `$SLURM_SCRATCH` at the beginning of the job and read it from there. Or. if the dataset is too big for `$SLURM_SCRATCH`, copy it to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca) and read it from there. 
 
-3. If output files from one job need to be read by other compute jobs, write to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca). 
+3. If output files from one job need to be read by other compute jobs, write to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca). 
 
 4. All filesystems struggle to be performant with small file I/O. If you can choose between one file and 100 files for storing the same amount of data, you will see far better performance from the single large file.
 
-5. PetaLibrary (`/pl/active`) is backed by ZFS, which is a Copy on Write filesystem. This means that ZFS does not ever modify a block in place. If you make a small change to a file, ZFS doesn’t change the underlying block, it copies the entire block and makes your change to the new block. Over time this leads to fragmentation and poor performance. When possible, copy data from `/pl/active` to `/scratch/summit/$USER` (Summit) or `/rc_scratch/$USER` (Blanca), compute against it, and copy data back to `/pl/active`. This helps to avoid fragmentation and write amplification.
+5. PetaLibrary (`/pl/active`) is backed by ZFS, which is a Copy on Write filesystem. This means that ZFS does not ever modify a block in place. If you make a small change to a file, ZFS doesn’t change the underlying block, it copies the entire block and makes your change to the new block. Over time this leads to fragmentation and poor performance. When possible, copy data from `/pl/active` to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca), compute against it, and copy data back to `/pl/active`. This helps to avoid fragmentation and write amplification.
 
 6.  If you reuse data within code, try to read it in once and keep it stored as a variable in memory, rather than repeatedly opening the same file each time you need the data (i.e., move file reads outside of “do loops”)
 
@@ -119,17 +116,17 @@ from a Summit `compile node`, you will see output similar to:
 ------------------------------------------------------------------------
 /home/janedoe                          1.7G          339M           2.0G
 /projects/janedoe                       67G          184G           250G
-/scratch/summit                         29G        10211G         10240G
+/scratch/alpine                         29G        10211G         10240G
 ```
 
 If the command is run from a `login node`, information concerning
-/scratch/summit will be omitted.
+/scratch/alpine will be omitted.
 
 Note that the space occupied by a particular directory and its
 subdirectories can be obtained via the `du -h` command:
 
 ```
-[janedoe@shas0136 ~]$ du -h /scratch/summit/janedoe/WRF
+[janedoe@shas0136 ~]$ du -h /scratch/alpine/janedoe/WRF
 698M	WRF/run
 698M	WRF
 ```
@@ -210,7 +207,7 @@ The file permissions flags are arranged in four groups, the first character of t
 
 Note: For files, the owner and group execute flags(bits) can occasionally be replaced with an ‘s’. In the owner’s permissions bits, an ‘x’ replaced with an ‘s’ indicates the file is executable but will execute with an effective user ID of the file owner. The ‘S’ replacing the ‘x’ in the group permission bits indicates the file can execute but with effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the “other” execute bit if set to ‘t’ or ‘T’, indicates that files in this directory can only be moved or deleted by the owner of the file.
 
-For a more comprehensive and detailed exposition of the UNIX file system permissions, see the Traditional Unix permissions section of https://en.wikipedia.org/wiki/File-system_permissions.
+For a more comprehensive and detailed exposition of the UNIX file system permissions, see the Traditional Unix permissions section of [https://en.wikipedia.org/wiki/File-system_permissions](https://en.wikipedia.org/wiki/File-system_permissions).
 
 
 **How to turn on/off the execute bits**
@@ -264,7 +261,7 @@ A directory with the specified name is created having permissions defined by the
 `cp <source_file> <destination_file>`<br /> 
 The destination file will have the same permissions as the source file unless those are modified by the user’s `umask`. Note that more sophisticated copy programs can modify the destination permissions, again subject to the user’s `umask`.
 
-`rsync -var <source_file/directory>/ <destination_file/driectory/`<br />  
+`rsync -var <source_file/directory>/ <destination_file/directory/`<br />  
 See our [Data Transfer](https://curc.readthedocs.io/en/latest/compute/data-transfer.html?highlight=rsync#rsync) page for more information about `rsync`.
 
 ### Workspace Sharing
@@ -288,27 +285,27 @@ permissions for all users and our chosen collaborators.
 First, we make our `/projects` directory world-readable:
 
 ```
-[janedoe@shas0136 ~]$ chmod a+rx /projects/janedoe
+[janedoe@c3cpu-a2-u32-4 ~]$ chmod a+rx /projects/janedoe
 ```
 
 Next, we create a subdirectory that is visible to all users and which
 is read-only:
 
 ```
-[janedoe@shas0136 ~]$ cd /projects/janedoe
-[janedoe@shas0136 ~]$ mkdir world_read
-[janedoe@shas0136 ~]$ chmod a+rx world_read
+[janedoe@c3cpu-a2-u32-4 ~]$ cd /projects/janedoe
+[janedoe@c3cpu-a2-u32-4 ~]$ mkdir world_read
+[janedoe@c3cpu-a2-u32-4 ~]$ chmod a+rx world_read
 ```
 
 For our collaborators, we may want a writeable directory in addition
 to a read-only directory:
 
 ```
-[janedoe@shas0136 ~]$ cd /projects/janedoe
-[janedoe@shas0136 ~]$ mkdir group_read
-[janedoe@shas0136 ~]$ chmod g+rx group_read
-[janedoe@shas0136 ~]$ mkdir group_read_write
-[janedoe@shas0136 ~]$ chmod g+rwx group_read_write
+[janedoe@c3cpu-a2-u32-4 ~]$ cd /projects/janedoe
+[janedoe@c3cpu-a2-u32-4 ~]$ mkdir group_read
+[janedoe@c3cpu-a2-u32-4 ~]$ chmod g+rx group_read
+[janedoe@c3cpu-a2-u32-4 ~]$ mkdir group_read_write
+[janedoe@c3cpu-a2-u32-4 ~]$ chmod g+rwx group_read_write
 ```
 
 A similar methodology will need to be followed for all subdirectories

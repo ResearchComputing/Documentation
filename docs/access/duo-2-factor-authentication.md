@@ -3,7 +3,7 @@
 Research Computing utilizes a 2-factor authentication utility called **Duo** that must be utilized in order to log into RC resources. **This document covers installing and logging in with Duo for CU Boulder users only.**
 
 - For CSU Users please see [CSU's documentation on Duo 2-factor authentication](https://www.acns.colostate.edu/hpc/#remote-login)
-- For RMACC Users please see [XSEDE's documentation on Duo 2-factor authentication](https://portal.xsede.org/mfa)
+- For RMACC Users please see [Duo's documentation on 2-factor authentication](https://guide.duo.com/)
 
 ### Setting up Duo
 
@@ -49,6 +49,7 @@ Duo offers a variety of methods to log into your account. Depending on what you 
 
 **Note: Duo push is tied to your device so [so you will need to add or remove your device if you get a new phone.](#managing-duo-devices)**
 
+There is also an option to generate a temporary passcode from within the Duo app. This passcode can be used to log into <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
 
 #### Using Duo SMS
 
