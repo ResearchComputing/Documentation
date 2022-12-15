@@ -1,6 +1,8 @@
 ## Batch Jobs and Job Scripting
 
-Batch jobs are, by far, the most common type of job on our HPC system. Batch jobs are resource provisions that run applications on compute nodes and do not require supervision or interaction. Batch jobs are commonly used for applications that run for long periods of time or require little to no user input. 
+Batch jobs are, by far, the most common type of job on our HPC system. Batch jobs are resource provisions that run applications on nodes away from the user and do not require supervision or interaction. Batch jobs are commonly used for applications that run for long periods of time or require little to no user input. 
+
+Batch jobs are created from a job script which provide resource requirements and commands for the job.
 
 ### Job Scripts
 
@@ -82,13 +84,13 @@ A list of some useful sbatch directives [can be found here.](job-resources.html)
 
 #### 2. Software
 
-Because jobs run on different nodes, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First, we will purge all software that may be left behind from your working environment on a compile node by running the command:
+Because jobs run on a different node than from where you ran, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First we will purge all software that may be left behind from your working environment on a compile node by running the command:
 
 ```bash
 module purge
 ```
 
-Next, you can load whatever software you need by running the following command:
+ After this you can load whatever software you need by running the following command:
 
 ```bash
 module load <software>
@@ -98,7 +100,7 @@ More information about [software modules can be found here.](../compute/modules.
 
 #### 3. User Scripting
 
-The last part of a job script is the actual script. This includes all user commands that are needed to set up and execute the desired task. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
+The last part of a job script is the actual user scripting that will execute when the job is executing. This part of the job script includes all user commands that are needed to set up and execute the desired task. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
 
 ```bash
 echo "== This is the scripting step! =="

@@ -1,8 +1,8 @@
 ## Running applications with Jobs
 
-Because our HPC system is shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
+Because Summit is shared among many researchers, Research Computing manages usage of the system through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
-In order to run a program on a cluster, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job](batch-jobs.html) or an [interactive job](interactive-jobs.html).
+In order to run a program on Summit, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide you commands depends on whether you are running a [batch job](batch-jobs.html) or an [interactive job](interactive-jobs.html).
 
 When you run a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](slurm-commands.html)
 
@@ -34,13 +34,13 @@ Another method of running applications on Research Computing resources is throug
 - Any application that requires user input at runtime
 - Any application with a GUI (Graphical User Interface)
 
-You can request an interactive job by using the `ainteractive` command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `time` directive to avoid long queue times. 
+You can request an interactive job by using the `sinteractive`command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `qos` and a `time` parameter to avoid long queue times or accidental overuse of your priority. 
 
 ```bash
-ainteractive --time=00:10:00
+sinteractive --qos=interactive --time=00:10:00
 ```
 
-[A list of ainteractive parameters can be found here](../clusters/alpine/alpine-hardware.html)
+[A list of sinteractive parameters can be found here](job-resources.html)
 
 The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
