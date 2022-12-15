@@ -33,7 +33,7 @@ sudo apt-get install sshfs
 yum install fuse-sshfs
 ```
 
-...or, if you are on a _Windows_ VM, see our documenation [here](https://curc.readthedocs.io/en/latest/storage/petalibrary/mounting.html?highlight=sshfs#sshfs-on-windows)
+...or, if you are on a _Windows_ VM, see our documentation [here](https://curc.readthedocs.io/en/latest/storage/petalibrary/mounting.html?highlight=sshfs#sshfs-on-windows)
 
 ---
 

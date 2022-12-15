@@ -165,7 +165,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 * Now select from available IP addresses if needed (e.g., if you'll be adding a web portal to your instance)
 * The _Select port to be associated_ option should already be pre-populated with the internal IP of your new instance
 
-![]images/instance_ip2.png)
+![](images/instance_ip2.png)
 
 ---
 ### Part 3: Logging into your Instance
