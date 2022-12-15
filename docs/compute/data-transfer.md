@@ -8,7 +8,7 @@ command-line tools may be unavailable on Windows, though alternative
 applications exist. (e.g., WinSCP, FileZilla)
 
 Data transfers using SSH protocols can be done via CURC login nodes or
-through the CURC data transfer nodes (DTN). Transfers via the login
+through the [CURC data transfer nodes](https://curc.readthedocs.io/en/latest/compute/node-types.html) (DTN). Transfers via the login
 nodes work well for small and/or infrequent file transfers, and do not
 require users to be connected to the CU network. Transfers via DTN
 support all types of transfers, including large and/or frequent file
@@ -22,31 +22,31 @@ transfers and automated (passwordless) transfers.
 ### Globus transfers
 
 Globus file transfers are typically initiated through an interactive
-web application. (Command-line access to Globus is also available, but
-is beyond the scope of this document.) Globus addresses deficiencies
+web application (command-line access to Globus is also available, but
+is beyond the scope of this document). Globus addresses deficiencies
 in traditional file-transfer mechanisms by automating large data
 transfers, resuming failed transfers, distributing large transfers
 across multiple servers, and brokering direct transfers between remote
-computing centers.
+computing centers. Globus performs an MD5-Checksum for transfer verification.
 
 Globus can be used on macOS, Linux, and Windows operating systems and
-is RC's recommended way of transfering data.
+is RC's recommended way of transferring data.
 
 [Sign into Globus Connect](https://app.globus.org/) by
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
-> **_Note for non-CU Boulder users:_** If you are with an institution other than CU Boulder (e.g. **XSEDE**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `XSEDE`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
+> **_Note for non-CU Boulder users:_** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
 Research Computing storage resources are available via multiple Globus
-"endpoints." You can connect to an RC endpoint using the "endpoint"
+"endpoints." You can connect to an RC endpoint using the "collections"
 field in the Globus web interface and searching for `CU Boulder
-Research Computing`. Log into the end point using your Research
+Research Computing`. Log into the endpoint using your Research
 Computing credentials.
 
-You must also configure a local endpoint to transfer files to or from
+You must configure a local endpoint in order to transfer files to/from
 your local computer. You can easily set up a Globus endpoint by
 installing [Globus Connect
 Personal](https://www.globus.org/globus-connect-personal)
@@ -55,17 +55,16 @@ Using the web app, connect your local workstation endpoint with the
 Research Computing endpoint and transfer files easily using the Globus
 GUI.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/june-updates/File-Transfers/globus-image-2new.PNG)
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/4597b5079815b791944251a1645ae91180e22d59/File-Transfers/globus-image-2new.PNG)
 
 
 ### Guest Collections (Globus Shared Endpoints)
 
-PetaLibrary allocation owners can nominate a technical contact that is
-able to create [Globus Guest
-Collections](https://docs.globus.org/how-to/share-files/). Using a
-Guest Collection (also known as a "Shared Endpoint"), You can share
-any PetaLibrary file or folder that you have access to with anyone who
-has a Globus account.
+Using a Guest Collection (also known as a "Shared Endpoint"), You can share
+any file or folder that you have access to with anyone who
+has a Globus account. This is particularly useful for PetaLibrary users. PetaLibrary 
+allocation owners can nominate a technical contact that is able to create [Globus Guest
+Collections](https://docs.globus.org/how-to/share-files/). 
 
 Detailed information on creating Guest Collections is available [at
 docs.globus.org](https://docs.globus.org/how-to/share-files/).
@@ -146,7 +145,7 @@ locations. This can often lead to efficiencies in repeat-transfer
 scenarios, as rsync only copies files that are different between the
 source and target locations (and can even transfer partial files when
 only part of a file has changed). This can be very useful in reducing
-the amount of copies you may perform whem synchronizing two
+the amount of copies you may perform when synchronizing two
 datasets.
 
 In the examples here, replace `<path-to-file>` with the path of the
@@ -239,7 +238,7 @@ ssh-keygen -t ed25519
 ``` 
 
 This creates `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub` on your
-local workstation. ("~" denotes your home directory.) `id_ed25519.pub`
+local workstation ("~" denotes your home directory). `id_ed25519.pub`
 is public, and can be shared with others (including Research
 Computing). `id_ed25519` is private and **should never leave the
 system that it was generated on.**
@@ -320,13 +319,7 @@ Since rclone is intended to be used with cloud technologies, any server that can
 
 **On CURC:** 
 Rclone has been added to the Summit and Alpine module stacks. To use rclone first first load the cluster-specific SLURM job scheduler instance (either Summit or Alpine in this case) from a *login node*, then ssh to a compile or compute node to access the cluster's module stack:
-- Summit Example
-```
-$ module load slurm/summit  	# Load Summit Slurm Instance
-$ ssh scompile			# Access Summit Compile Node
-$ module load rclone/1.58.0 	# Load rclone module
-```
-- Alpine Example
+
 ```
 $ module load slurm/alpine 	# Load Alpine Slurm Instance
 $ sinteractive 			# Access an Alpine compute node via an interactive job
@@ -582,14 +575,13 @@ which provides a good way to transfer files to collaborators. Files
 are uploaded to a server and a link to download the file can be
 emailed to an on- or off-campus user.
 
+### DTN SSH Host Keys
 
-### DTN SSH Host Keys (as of 9 February 2021)
-
-The first time you use `scp`, `sftp`, or `ssh` with DTN you will be
+The first time you use `scp`, `sftp`, or `ssh` with a DTN you will be
 asked to verify the host key. You can refer to the keys published here
 to confirm that you are connecting to a valid data transfer node.
 
-DTN supports multiple key types, but only one is used (or displayed)
+Our DTNs support multiple key types, but only one is used (or displayed)
 by your client at any given time.
 
 ---
