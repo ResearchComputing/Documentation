@@ -98,7 +98,7 @@ Now that we have SLURM installed we can start to configure our instance to make 
 ---
 ####  Part 4. Generate Java Web Token (JWT) in CURC HPC 
 ---
-* Next we will genrate the Java Web Token on a CURC login node. Keep in mind that these tokens are generated with an expiration. The max time CURC systems will keep a JWT is **#TODO**. Note the JWT output in order submit jobs.
+* Next we will generate the Java Web Token on a CURC login node. Keep in mind that these tokens are generated with an expiration. Note the JWT output in order submit jobs.
 	> Note: In this example we are generating this token on the Blanca cluster 
 	```
 	$ module load slurm/blanca
