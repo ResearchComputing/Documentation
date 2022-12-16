@@ -1,6 +1,6 @@
 ## Using OpenMP with Fortran
 
-Because Summit is a cluster of CPUs, parallel programming is the most
+Because clusters are comprised of many CPUs, parallel programming is the most
 effective way to utilize these resources. Probably the simplest way to
 begin parallel programming is utilization of OpenMP. OpenMP is a
 Compiler-side solution for creating code that runs on multiple
@@ -86,7 +86,7 @@ ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
 ```
 
 This will give us an executable we can run as a job on
-Summit. Simply run the job specifying slurm to run the
+a cluster. Simply run the job telling Slurm to run the
 executable. Your job script should look something like this:
 
 ```bash
@@ -94,7 +94,9 @@ executable. Your job script should look something like this:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=shas-testing
+#SBATCH --partition=atesting
+#SBATCH --constraint=ib
+#SBATCH --qos=testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=Fortran_Hello_World
 #SBATCH --output=Fortran_Hello_World.out
@@ -280,7 +282,7 @@ Hello from process: 1
 ### Barrier and Critical Directives
 
 OpenMP has a variety of tools for managing processes. One of the more
-prominent forms of control comes with the b__arrier__:
+prominent forms of control comes with the __barrier__:
 
 ```fortran
 !$OMP BARRIER
@@ -397,8 +399,8 @@ Hello from process: 3
 OpenMP’s power comes from easily splitting a larger task into multiple
 smaller tasks.  Work-sharing directives allow for simple and effective
 splitting of normally serial tasks into fast parallel sections of
-code. In this section we will learn how to implement omp do directive.
-The directive omp do divides a normally serial for loop into a
+code. In this section we will learn how to implement the `!$OMP DO` directive.
+The directive `!$OMP DO` divides a normally serial for loop into a
 parallel task. We can implement this directive as such:
 
 ```fortran
@@ -410,7 +412,7 @@ parallel task. We can implement this directive as such:
 #### Example
 
 Let’s write a program to add all the numbers between 1 and 1000. Begin
-with a program title and the omp_lib header:
+with a program title and the `OMP_LIB` header:
 
 ```fortran
 PROGRAM Parallel_Do
