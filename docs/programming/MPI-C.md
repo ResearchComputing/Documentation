@@ -16,11 +16,11 @@ __Resources:__
 
 ### Setup and “Hello, World”
 
-Begin by logging into the cluster and using ssh to log in to a compile
-node. This can be done with the command:
+Begin by logging into the cluster and logging in to a compile
+node. This can be done by loading the Alpine scheduler and using the command:
 
 ```bash
-ssh scompile
+acompile
 ```
 
 Next we must load MPI into our environment. Begin by loading in your
@@ -84,7 +84,7 @@ directives:
 > This function cleans up the MPI environment and ends MPI communications.
 
 These four directives should be enough to get our parallel 'hello
-world' running. We will begin by creating `two variables`,
+world' running. We will begin by creating two variables,
 `process_Rank`, and `size_Of_Cluster`, to store an identifier for each
 of the parallel processes and the number of processes running in the
 cluster respectively. We will also implement the `MPI_Init` function
@@ -161,19 +161,19 @@ __Intel MPI__
 mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
 ```
 
-This will produce an executable we can pass to Summit as a job. In
+This will produce an executable we can pass to the cluster as a job. In
 order to execute MPI compiled code, a special command must be used:
 
 ```bash
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-The flag -np specifies the number of processor that are to be utilized
+The flag `-np` specifies the number of processor that are to be utilized
 in execution of the program.
 
 In your job script, load the same compiler and OpenMPI
 choices you used above to compile the program, and run the job with
-slurm to execute the application. Your job script should look
+Slurm to execute the application. Your job script should look
 something like this:
 
 __OpenMPI__
@@ -183,7 +183,8 @@ __OpenMPI__
 #SBATCH -N 1
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
-#SBATCH --partition shas-testing
+#SBATCH --constraint ib
+#SBATCH --partition atesting
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
 
@@ -214,8 +215,8 @@ module load impi
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-It is important to note that on Summit, there is a total of 24 cores
-per node. For applications that require more than 24 processes, you
+It is important to note that on Alpine, there is a total of 64 cores
+per node. For applications that require more than 64 processes, you
 will need to request multiple nodes in your job. Our
 output file should look something like this:
 

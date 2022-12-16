@@ -6,11 +6,11 @@ We will also assess two parallel programming solutions that utilize the multipro
 
 __Useful Links:__
 
-[https://computing.llnl.gov/tutorials/parallel_comp/#Whatis](https://computing.llnl.gov/tutorials/parallel_comp/#Whatis)
+[https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis)
 
 ### Why Parallel?
 
-Say you are attempting to assemble a 10,000-piece jigsaw puzzle* on
+Say you are attempting to assemble a 10,000-piece jigsaw puzzle\* on
 a rainy weekend. The number of pieces is staggering, and instead of a
 weekend it takes you several weeks to finish the puzzle. Now assume
 you have a team of friends helping with the puzzle. It progresses much faster,
@@ -21,7 +21,7 @@ smaller tasks that multiple processors can perform all at once. With
 parallel processes a task that would normally take several weeks can
 potentially be reduced to several hours.
 
-* Puzzle analogy for describing parallel computing adopted from Henry
+\* Puzzle analogy for describing parallel computing adopted from Henry
   Neeman's [Supercomputing in Plain
   English](http://www.oscer.ou.edu/education.php) tutorial series.
 
@@ -64,7 +64,7 @@ network.
 
 ![](https://hpc.llnl.gov/sites/default/files/distributed_mem.gif "distributed memory model")
 
-(Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/>)
+(Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch>)
 
 __Distributed/Shared Model:__
 
@@ -74,17 +74,17 @@ processors sharing a set of common memory is called a node.
 
 ![](https://hpc.llnl.gov/sites/default/files/hybrid_mem2.gif "hybrid_model")
 
-(Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
+(Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch> )
 
-Summit utilizes a hybrid distributed/shared model: there are 380
-nodes, each having 24 cores.
+Alpine utilizes a hybrid distributed/shared model: there are 188 AMD Milan Compute
+nodes, 184 having 64 cores. 4 with 48 cores.
 
 ### Tools for Parallel Programming
 
 Two common solutions for creating parallel code are OpenMP and
 MPI. Both solutions are limited to the C++ or Fortran programming
-languages. (Though other languages may be extended with C++ or Fortran
-code to utilize OpenMP or MPI.)
+languages (though, other languages may be extended with C++ or Fortran
+code to utilize OpenMP or MPI).
 
 #### OpenMP
 
@@ -95,8 +95,7 @@ your code. OpenMP is often considered more user friendly with thread
 safe methods and parallel sections of code that can be set with simple
 scoping.  OpenMP is, however, limited to the amount of threads
 available on a node -- in other words, it follows a shared memory
-model. On Summit, this means that no more than 24 processors can be
-utilized with programs parallelized using OpenMP.
+model. On a node with 64 CPUs, you can use no more than 64 processors.
 
 #### MPI
 
@@ -108,7 +107,6 @@ applications (i.e, distributed memory models). MPI is, however, often
 considered less accessable and more difficult to learn. Regardless, learning the library
 provides a user with the ability to maximize processing ability. MPI
 is a library standard, meaning there are several libraries based on
-MPI that you can use to develop parallel code. Two solutions available
-on Summit are OpenMPI and Intel MPI.
+MPI that you can use to develop parallel code. OpenMPI and Intel MPI are solutions available on most CURC systems.
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
