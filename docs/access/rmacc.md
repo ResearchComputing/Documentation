@@ -48,13 +48,13 @@ You will be redirected to CILogon.
 <br>
 
 
-## Shell Access to Summit Compute Nodes  
+## Shell Access to Compute Nodes  
 
 
 **The shells visible in the 'Clusters' dropdown menu are currently unavailable. Shell access is only available through the JupyterHub terminal.**
 
 - Select "Jupyter Notebook" from the drop-down list under _Interactive Apps_.
-- Accept the default cluster (`Summit`), queue (`shas-interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
+- Accept the cluster (`Alpine`), partition (`amilan`), account (`rmacc-general`), number of hours (`1`), and cores (`1`). Leaving the account 
 field empty will default to `rmacc-general`. 
 - Select "Launch".
 - Once the interactive session begins running, you can access the terminal in two ways:
