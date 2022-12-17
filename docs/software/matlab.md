@@ -36,7 +36,7 @@ point for HPC resources. It includes access to interactive apps such
 as Matlab, a virtual desktop, and more. 
 
 	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../gateways/OnDemand.html#matlab). 
-<br>
+
 
 2. Interactive SLURM job:
 
