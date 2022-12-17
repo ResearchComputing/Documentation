@@ -30,9 +30,13 @@ Matlab as an interactive job:
 
 1. MATLAB Interactive Application (CURC OnDemand):
 
-	You can access a full Matlab GUI in your browser with CURC OnDemand. CURC OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing which includes access to interactive apps such as Matlab, a Virtual Desktop, and more. 
+	You can access a full Matlab GUI in your browser with CURC 
+OnDemand. CURC OnDemand is a browser-based, integrated, single access 
+point for HPC resources. It includes access to interactive apps such 
+as Matlab, a virtual desktop, and more. 
 
 	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../gateways/OnDemand.html#matlab). 
+<br>
 
 2. Interactive SLURM job:
 
@@ -40,11 +44,11 @@ Matlab as an interactive job:
 	interactive jobs [check out our interactive jobs
 	tutorial](../running-jobs/interactive-jobs.html)
 
-	Begin by launching an interactive job by loading slurm/summit into
+	Begin by launching an interactive job by loading slurm/alpine into
 	your environment and running the `sinteractive` command.
 
 	```bash
-	module load slurm/summit
+	module load slurm/alpine
 	sinteractive
 	```
 
@@ -63,14 +67,16 @@ Matlab as an interactive job:
 	By default Matlab will load an interactive terminal session. If you would like to access the Matlab GUI 
 	then simply run Matlab with X11 forwarding enabled.
 
-	To find out how you enable X11 forwarding in your terminal session, [check out our X11 forwarding tutorial here.](../running-jobs/interactive-jobs.html#interactive-gui-applications)
+	To find out how you enable X11 forwarding in your terminal 
+session, check out our [X11 forwarding tutorial.](../running-jobs/interactive-jobs.html#interactive-gui-applications)
 
 
 ### Running Matlab Batch Jobs
 
 Here, we will learn how to run a Matlab script in a non-interactive
 batch job. For more general information on batch job scripts on
-Summit, [please see our tutorial on batch jobs](../running-jobs/batch-jobs.html)
+Alpine, [please see our tutorial on batch 
+jobs](../running-jobs/batch-jobs.html)
 
 Let’s begin by constructing a small Matlab script that prints ‘hello
 world’ to the user.  The Matlab script we will use for the purposes of
@@ -83,10 +89,10 @@ fprintf(‘Hello world\n’)
 
 Which simply prints "Hello world" when called.
 
-Next, we will construct our batch script that will enable us to run
+Next, we will construct a batch script that will enable us to run
 this job. The batch script organizes the variety of flags slurm needs
 to run a job and specifies the software commands we want to
-execute. An advantage of batch scripts is that they are easily
+execute. One advantage of batch scripts is that they are easily
 reusable and adaptable for other similar tasks.
 
 We will run this job using a bash script titled: `slurm_hello.sh`,
@@ -97,7 +103,8 @@ which contains the following lines:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=shas-testing
+#SBATCH --partition=atesting
+#SBATCH --qos=testing
 #SBATCH --ntasks=1
 #SBATCH --job-name=Matlab_Hello_World
 #SBATCH --output=Matlab_Hello_World.out
@@ -146,9 +153,9 @@ Once the job has run, the output of the Matlab script, "Hello world"
 will be shown in `Matlab_Hello_World.out`.
 
 
-### Parallel Matlab on Summit
+### Parallel Matlab on Alpine
 
-To fully utilize the multi-core capabilities of Summit to speed up
+To fully utilize the multi-core capabilities of Alpine to speed up
 jobs, most code must first be parallelized. Matlab has many built in
 tools to accomplish this task. In this tutorial we will parallelize
 our "Hello World" program.
@@ -163,11 +170,11 @@ fprintf(“Hello World from process %i”, i)
 ```
 
 Next, we need to encapsulate the print statement in a parallel 'for'
-loop. Matlab uses the construct parfor to separate the task into
+loop. Matlab uses the construct `parfor` to separate the task into
 multiple threads. In order to utilize the `parfor` command one must
 ensure that the Parallel Computing Toolbox is available as part of the
-Matlab software package. RC has this available and thus no additional
-action is required on your part if you are utilizing RC resources.
+Matlab software package. CURC has this available and thus no additional
+action is required on your part if you are utilizing CURC resources.
 
 The order of runtime in the loop is not guaranteed, so the output may
 not be in sequential order. The loop is formatted as such:
@@ -176,9 +183,8 @@ not be in sequential order. The loop is formatted as such:
 parfor(i = initial_Value:final_Value, maximum_amount_of_threads)
 ```
 
-For example, let’s use parfor to implement an 5-iteration loop with a
-maximum of 4 processors in our script (new lines are highlighted here
-in blue):
+For example, let’s use `parfor` to implement an 5-iteration loop with a
+maximum of 4 processors in our script:
 
 ```matlab
 parfor(i = 1:5, 4)
@@ -187,8 +193,8 @@ end
 ```
 
 Now all we have left to do is modify our batch script to specify that
-we want to run 4 tasks on the node (we can use up to 24 cores on each
-‘shas’ node on Summit). We can also change the name of the job and the
+we want to run 4 tasks on the node (we can use up to 64 cores on each
+‘amilan' node on Alpine). We can also change the name of the job and the
 output file if we choose.
 
 ```bash
@@ -196,7 +202,8 @@ output file if we choose.
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=shas-testing
+#SBATCH --partition=atesting
+#SBATCH --qos=testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=Matlab_Parallel_Hello
 #SBATCH --output=Matlab_Parallel_Hello.out
@@ -219,7 +226,7 @@ Hello World from process 2
 Hello World from process 3
 ```
 
-RC Matlab currently does not support parallelization across nodes,
+CURC Matlab currently does not support parallelization across nodes,
 only across cores on one node.
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
