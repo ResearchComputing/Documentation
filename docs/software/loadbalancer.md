@@ -1,8 +1,8 @@
 ## Load Balancer
 
 The CU Research Computing Load Balancer is an effective tool for
-optimally utilizing multiple processors and nodes on the Summit HPC
-resource, without the need to learn OpenMP or MPI. This document
+optimally utilizing multiple processors and nodes on the CURC HPC
+resources, without the need to learn OpenMP or MPI. This document
 assumes user knowledge of Slurm jobs, shell scripting, and
 some python.
 
@@ -24,7 +24,7 @@ Load Balancer.
 
 The Load Balancer is a tool provided by CU Boulder Research Computing
 that allows shell commands (for example, calls to serial programs) to
-be distributed amongst nodes and cores on Summit. This means code
+be distributed amongst nodes and cores on CURC clusters. This means code
 doesn’t need to be explicitly parallelized for MPI or
 OpenMP. Additionally, code can be written in any language that can be
 run from a Linux shell.
@@ -76,8 +76,8 @@ python hello_World.py 4;
 Now create a job script called `run_hello.sh` that will run all
 instances of your python script in `lb_cmd_file` with the Load
 Balancer. Within the script, before using Load Balancer, we need to
-load the Python, and the Load Balancer utility itself. Your job script should look
-something like this:
+load the python module, and the Load Balancer utility itself. Your job 
+script should look something like this:
 
 > _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](./python.html)_
 
@@ -86,7 +86,8 @@ something like this:
 
 #SBATCH --nodes=1
 #SBATCH --time 00:02:00
-#SBATCH --partition shas-testing
+#SBATCH --partition atesting
+#SBATCH --qos testing
 #SBATCH --ntasks=4
 #SBATCH --job-name lbPythonDemo
 #SBATCH --output loadbalance.out
