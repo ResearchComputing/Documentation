@@ -93,7 +93,8 @@ should see `(pyomp_2022)` replace the `(base)` in front of your prompt.
 
 To see the python packages available in the environment, you can type `conda list`.   
 
-Similarly to use the CURC R distribution (R v3.6.0), run the following command with Anaconda initialized:
+Similarly, to use the CURC R distribution (R v3.6.0), run the following 
+command with Anaconda initialized:
 
 ```
 (base) [johndoe@c3cpu-a7-u19-1 ~]$ conda activate 

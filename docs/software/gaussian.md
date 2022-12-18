@@ -128,6 +128,7 @@ __Linda Parallel__
 #SBATCH --cpus-per-task=64
 #SBATCH --time=00:50:00
 #SBATCH --output=g16-test.%j.out
+#SBATCH --constraint=ib
 
 module load gaussian/16_avx2
 source $g16root/g16/bsd/g16.profile

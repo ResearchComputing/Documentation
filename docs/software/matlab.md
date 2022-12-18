@@ -14,7 +14,7 @@ to use the GUI (in this instance, the Matlab Desktop). However, there
 might be other reasons you would like to work interactively with
 Matlab.
 
-The second way to run Matlab on RC resources through a
+The second way to run Matlab on RC resources is through a
 batch job. This allows the job to run in the background when resources
 become available. You may choose to use this method if you have a
 large job that may wait in the queue for awhile, or if you are not
