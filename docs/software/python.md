@@ -1,14 +1,23 @@
 # Python and R with Anaconda
 
-To support the diverse _python_ and _R_ workflows and high levels of customization Research Computing users require, [Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda uses the _conda_ package manager to easily install software and associated packages, and supports _python_, _R_, and many other applications. The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. Additional documentation on the [CURC JupyterHub](../gateways/jupyterhub.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+To support the diverse _python_ and _R_ workflows and high levels of 
+customization Research Computing users require, 
+[Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda 
+uses the _conda_ package manager to easily install software and associated 
+packages, and supports _python_, _R_, and many other applications. The 
+following documentation describes how to activate the CURC Anaconda 
+distribution and our default environments, as well as how to create and 
+activate your own custom Anaconda environments. Additional documentation 
+on [CURC OpenOnDemand](../gateways/OnDemand.md) is available for users 
+desiring to 
+interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
-_Note: CURC also hosts several legacy python and R modules for those users who prefer modules over Anaconda. Type `module spider python` or `module spider R` for a list of available versions. We recommend using Anaconda._
 
 ## Configuring conda with `.condarc`
 
 The conda package manager allows modification of default settings to be done through a text file known as the `.condarc`. This file exists within a user's `/home/$USER/` directory and can be quickly be accessed using the file's full path at `~/.condarc`.
 
-Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configration file to change the default locations of for packages and environments to your larger `/projects/$USER` directory.
+Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configration file to change the default locations for packages and environments to your larger `/projects/$USER` directory.
 
 Open your `.condarc` file in your favorite text editor (e.g., nano, vim):  
 > _Note: this file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command_
@@ -25,14 +34,16 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
-> _**Note:**_ CSU and XSEDE users may need to use a custom `$USER` variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
+> _**Note:**_ CSU and XSEDE/ACCESS users may need to use a custom `$USER` 
+variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
 
-The `.condarc` file provides a variety of settings that can be detailed to speed up your workflows. For more information on `.condarc`, [check out the Anaconda documentation.](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
+The `.condarc` file provides a variety of settings that can be detailed to speed up your workflows. For more information on `.condarc`, [check out the Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
 
 ## Using the CURC Anaconda environment
-Follow these steps from a Research Computing terminal session on a Summit `scompile` node or within a Summit/Blanca batch or interactive job.
+Follow these steps from a Research Computing terminal session on an Alpine 
+`acompile` node or within a Alpine/Blanca batch or interactive job.
 
 ### Activate the CURC Anaconda environment:
 
@@ -44,7 +55,8 @@ Run the following command to load the base Anaconda software:
 
 >___Note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)_. 
 
-You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
+You will know that you have properly activated the environment because you 
+should see `(base)` in front of your prompt. For example: 
 
 ```
 (base) [johndoe@shas0137 ~]$
@@ -68,25 +80,34 @@ Both options are discussed below.
 
 #### Using one of CURC's pre-installed enviroments:
 
-To use the CURC Intel Python distribution or **"idp"** (python v3.6.8), run the following command with Anaconda initialized:
+To use the CURC environment with OpenMP, run the following command with 
+Anaconda initialized:
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate /curc/sw/anaconda3/2019.03/envs/idp 
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda activate 
+/curc/sw/anaconda3/2022.10/envs/pyomp_2022 
 ```
 
-You will know that you have properly activated the environment because you should see `(idp)` replace the `(base)` in front of your prompt. Now the Intel Python distribution is loaded into your enviornment and can be accessed with the `python` command.
+You will know that you have properly activated the environment because you 
+should see `(pyomp_2022)` replace the `(base)` in front of your prompt.  
 
-To see the python packages available in the idp environment, you can type `conda list`.   
+To see the python packages available in the environment, you can type `conda list`.   
 
-Similarly to use the CURC R distribution (R v3.6.0), run the following command with Anaconda initialized:
+Similarly, to use the CURC R distribution (R v3.6.0), run the following 
+command with Anaconda initialized:
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate /curc/sw/anaconda3/2019.03/envs/rstudio
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda activate 
+/curc/sw/anaconda3/2019.03/envs/rstudio
 ```
 
 You will know that you have properly activated the environment because you should see `(rstudio)` in front of your prompt. To see the R packages available in the environment, you can type `conda list`. Now, you can use R as you normally would. 
 
-Because interactive development is more easily done locally, most CURC R users exclusively run R code within batch jobs. Should you need to use rstudio on top of R for interactive development on Summit, you can login to our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from within an interactive job.  
+Because interactive development is more easily done locally, most CURC R 
+users exclusively run R code within batch jobs. Should you need to use 
+rstudio on top of R for interactive development on Alpine, you can login 
+to 
+our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from within an interactive job.  
 
 
 
@@ -136,13 +157,16 @@ If successful, your prompt will now be preceded with `(mycustomenv)`.
 
 __4. Install needed packages in your new environment:__
 
-The best way to do this for python packages is to install everything you need with one command, because it forces conda to resolve package conflicts.  E.g.,:
+The best way to do this for python packages is to install everything you 
+need with one command, because it forces conda to resolve package 
+conflicts. For example:
 
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ conda install numpy scipy tensorflow
 ```
 
-For R packages, it is easiest to 1) start an R session and 2) install the packages as you normally would with "install.packages".  E.g.,:
+For R packages, it is easiest to start an R session and then install the 
+packages as you normally would with "install.packages". For example:
 
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ R
@@ -182,7 +206,7 @@ Sometimes conda environments can "break" if two packages in the environment requ
 
 #### Dbus Error
 
-If you see a 'dbus' connection error when trying to connect via a virtual environment (EnginFrame, JupterHub):
+If you see a 'dbus' connection error when trying to connect via a virtual environment:
 
 ```
 Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.

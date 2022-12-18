@@ -69,7 +69,7 @@ The first time you log into an RC login node you will be asked to verify the hos
 
 Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
 
-#### login.rc.colorado.edu (as of 9 May 2018)
+#### login.rc.colorado.edu
 
 ```
 # Fingerprint

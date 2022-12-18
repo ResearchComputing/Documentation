@@ -4,15 +4,15 @@
 
 | Count & Type          | Scheduler Partition | Processor        | Sockets | Cores (total) | Threads/Core | RAM/Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
 | --------------------- | ------------------- | ---------------- | ------- | ------------- | ------------ | ------------- | ------------- | ----------- | --------- | -------------------------- | -------------------------------------------- | -------- |
-| 184 Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.2          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| 184 Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | 4 Milan High-Memory   | amem                | x86_64 AMD Milan | 2       | 48            | 1            | 21.5          | tbd           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
-| 8 Milan AMD GPU       | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.2          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-| 8 Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  3.2          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-| 28 Milan General CPU  | csu                 | x86_64 AMD Milan | 2       | 48            | 1            |  3.2          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-| 49 Milan General CPU  | csu                 | x86_64 AMD Milan | 2       | 32            | 1            |  3.2          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-| 14 Milan General CPU  | amc                 | x86_64 AMD Milan | 2       | 64            | 1            |  3.2          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 8 Milan AMD GPU       | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 8 Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 28 Milan General CPU  | csu                 | x86_64 AMD Milan | 2       | 48            | 1            |  3.8          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 49 Milan General CPU  | csu                 | x86_64 AMD Milan | 2       | 32            | 1            |  3.8          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 14 Milan General CPU  | amc                 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 2 Milan High-Memory   | amc,amem            | x86_64 AMD Milan | 2       | 64            | 1            | 21.5          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-| 4 Milan NVIDIA GPU    | amc                 | x86_64 AMD Milan | 2       | 64            | 1            |  3.2          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 4 Milan NVIDIA GPU    | amc                 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 
 ### Requesting Hardware Resources
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
@@ -91,7 +91,7 @@ acompile --ntasks=2 --time=02:00:00
 **General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
 ```bash
-$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100\|a100"
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100|a100"
 ```
 
 __Examples of GPU configurations/requests__:

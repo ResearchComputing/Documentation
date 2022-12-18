@@ -21,7 +21,7 @@ $ ssh ralphie@login.rc.colorado.edu
 
 #### __Step 2__: Load the slurm module for the HPC resource you want to query metrics about (Summit, Blanca, Alpine):
 ```bash
-$ module load slurm/summit # substitute summit for blanca or alpine
+$ module load slurm/alpine # substitute alpine for blanca
 ```
 
 #### __Step 3__: Load the `slurmtools` module
@@ -72,10 +72,10 @@ $ suuser ralphie 365
 ```
 SU used by user ralphie in the last 365 days:
 Cluster|Account|Login|Proper Name|Used|Energy|
-summit|admin|ralphie|Ralphie|15987|0|
-summit|ucb-testing|ralphie|Ralphie|3812|0|
-summit|tutorial1|ralphie|Ralphie|3812|0|
-summit|ucb-general|ralphie|Ralphie|5403|0|
+alpine|admin|ralphie|Ralphie|15987|0|
+alpine|ucb-testing|ralphie|Ralphie|3812|0|
+alpine|tutorial1|ralphie|Ralphie|3812|0|
+alpine|ucb-general|ralphie|Ralphie|5403|0|
 ```
 
 This output tells us that:
@@ -99,19 +99,19 @@ Hint: suacct ucb-general 15
 ```
 
 Check `admin` account usage over past 180 days:
-> Note: Most user accounts follow the naming convention `ucbXXX_summitX`, in this example we show the `admin` account.
+> Note: Most user accounts follow the naming convention `ucbXXX_ascX`, in this example we show the `admin` account.
 ```bash
 $ suacct admin 180
 ```
 ```
 SU used by account (allocation) admin in the last 180 days:
 Cluster|Account|Login|Proper Name|Used|Energy
-summit|admin|||763240|0
-summit| admin|coke4948|Corey Keasling|84216|0
-summit| admin|frahm|Joel Frahm|24|0
-summit| admin|holtat|Aaron Holt|9832|0
-summit| admin|joan5896|Jonathon Anderson|9357|0
-summit| admin|ralphie|Ralphie|9357|0
+alpine|admin|||763240|0
+alpine| admin|coke4948|Corey Keasling|84216|0
+alpine| admin|frahm|Joel Frahm|24|0
+alpine| admin|holtat|Aaron Holt|9832|0
+alpine| admin|joan5896|Jonathon Anderson|9357|0
+alpine| admin|ralphie|Ralphie|9357|0
 ```
 
 This output tells us that:
@@ -142,20 +142,20 @@ $ jobstats ralphie 35
 job stats for user ralphie over past 35 days
 jobid        jobname  partition    qos          account      cpus state    start-date-time     elapsed    wait
 -------------------------------------------------------------------------------------------------------------------
-8483382      sys/dash shas         normal       ucb-gener+   1    TIMEOUT  2021-09-14T09:32:09 01:00:16   0 hrs
-8487254      test.sh  shas         normal       ucb-gener+   1    COMPLETE 2021-09-14T13:21:12 00:00:02   0 hrs
-8487256      spawner- shas-inte+   interacti+   ucb-gener+   1    TIMEOUT  2021-09-14T13:22:11 12:00:22   0 hrs
-8508557      test     shas-test+   testing      ucb-gener+   2    COMPLETE 2021-09-16T10:41:45 00:00:00   0 hrs
-8508561      test     shas-test+   testing      ucb-gener+   24   CANCELLE 2021-09-22T10:07:03 00:00:00   143 hrs
-8508569      test     shas         normal       ucb-gener+   4096 FAILED   2021-09-16T10:42:46 00:00:00   0 hrs
-8508575      test     shas         normal       ucb-gener+   8192 FAILED   2021-09-16T10:43:17 00:00:00   0 hrs
-8508593      test     shas         normal       ucb-gener+   4096 CANCELLE 2021-09-16T10:44:47 00:00:00   0 hrs
-8508604      test     shas         normal       ucb-gener+   2048 CANCELLE 2021-09-16T10:45:40 00:00:00   0 hrs
-8512083      spawner- shas-inte+   interacti+   ucb-gener+   1    TIMEOUT  2021-09-16T16:55:37 04:00:23   0 hrs
-8579077      sinterac shas-test+   testing      ucb-gener+   1    COMPLETE 2021-09-24T15:26:32 00:00:47   0 hrs
-8627076      sinterac sgpu-test+   testing      ucb-gener+   24   CANCELLE 2021-10-04T12:17:30 00:10:03   0 hrs
-8672525      spawner- shas-inte+   interacti+   ucb-gener+   1    CANCELLE 2021-10-08T13:29:13 00:07:25   0 hrs
-8800741      spawner- shas-inte+   interacti+   ucb-gener+   1    CANCELLE 2021-10-19T08:11:44 01:48:38   0 hrs
+8483382      sys/dash amilan       normal       ucb-gener+   1    TIMEOUT  2021-09-14T09:32:09 01:00:16   0 hrs
+8487254      test.sh  amilan       normal       ucb-gener+   1    COMPLETE 2021-09-14T13:21:12 00:00:02   0 hrs
+8487256      interact ahub         interacti+   ucb-gener+   1    TIMEOUT  2021-09-14T13:22:11 12:00:22   0 hrs
+8508557      acompile acompile     compile      ucb-gener+   2    COMPLETE 2021-09-16T10:41:45 00:00:00   0 hrs
+8508561      test.sh  amilan       normal       ucb-gener+   24   CANCELLE 2021-09-22T10:07:03 00:00:00   143 hrs
+8508569      test     amilan       normal       ucb-gener+   4096 FAILED   2021-09-16T10:42:46 00:00:00   0 hrs
+8508575      test     amilan       normal       ucb-gener+   8192 FAILED   2021-09-16T10:43:17 00:00:00   0 hrs
+8508593      test     amilan       normal       ucb-gener+   4096 CANCELLE 2021-09-16T10:44:47 00:00:00   0 hrs
+8508604      test     amilan       normal       ucb-gener+   2048 CANCELLE 2021-09-16T10:45:40 00:00:00   0 hrs
+8512083      spawner- ahub         interacti+   ucb-gener+   1    TIMEOUT  2021-09-16T16:55:37 04:00:23   0 hrs
+8579077      acompile acompile     compile      ucb-gener+   1    COMPLETE 2021-09-24T15:26:32 00:00:47   0 hrs
+8627076      acompile acompile     compile      ucb-gener+   24   CANCELLE 2021-10-04T12:17:30 00:10:03   0 hrs
+8672525      interact ahub         interacti+   ucb-gener+   1    CANCELLE 2021-10-08T13:29:13 00:07:25   0 hrs
+8800741      interact ahub         interacti+   ucb-gener+   1    CANCELLE 2021-10-19T08:11:44 01:48:38   0 hrs
 ```
 
 This output tells me that:
@@ -251,6 +251,7 @@ This output tells us that:
 * the 24 cores reserved for this job were 92% utilized (anything > 80% is pretty good)
 * 163.49 MB RAM was used of 113.62 GB RAM reserved (0.14%). This job is "cpu bound" so the memory inefficiency is not a major issue.
 
+This information is also sent to users who include the `--mail` directive in jobs.
 
 ### XDMoD 
  
@@ -301,9 +302,7 @@ _** - only available to users who are logged in._
 
 #### Step 4: Become a pro!
 
-XDMoD can query a seemingly endless number of metrics, more than could ever be described in this documentation.  To learn how to query specific metrics, customize your views, etc., please refer to the XDMoD documentation:
-
-https://xdmod.rc.colorado.edu/user_manual/index.php
+XDMoD can query a seemingly endless number of metrics, more than could ever be described in this documentation.  To learn how to query specific metrics, customize your views, etc., please refer to the [XDMoD documentation](https://xdmod.rc.colorado.edu/user_manual/index.php).
 
 #### Example use case
 

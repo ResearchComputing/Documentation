@@ -1,4 +1,4 @@
-# RMACC Access to Summit 
+# RMACC Access to Alpine 
 
 _Note to existing account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are 
 unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources._
@@ -48,14 +48,14 @@ You will be redirected to CILogon.
 <br>
 
 
-## Shell Access to Summit Compute Nodes  
+## Shell Access to Compute Nodes  
 
 
 **The shells visible in the 'Clusters' dropdown menu are currently unavailable. Shell access is only available through the JupyterHub terminal.**
 
 - Select "Jupyter Notebook" from the drop-down list under _Interactive Apps_.
-- Accept the default cluster (`Summit`), queue (`shas-interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
-field empty will default to `ucb-general`. 
+- Accept the cluster (`Alpine`), partition (`ahub`), account (`rmacc-general`), QoS (`interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
+field empty will default to `rmacc-general`. 
 - Select "Launch".
 - Once the interactive session begins running, you can access the terminal in two ways:
     1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png) 

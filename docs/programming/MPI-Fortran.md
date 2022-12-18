@@ -16,11 +16,11 @@ __Helpful MPI tutorials:__
 
 ### Setup and “Hello World”
 
-Begin by logging into the cluster and using ssh to log in to a Summit
-compile node. This can be done with the command:
+Begin by logging into the cluster and logging in to a
+compile node. This can be done by loading the Alpine module and using the command:
 
 ```shell
-ssh scompile
+acompile
 ```
 
 Next we must load MPI into our environment. Begin by loading in the
@@ -150,7 +150,7 @@ order to execute MPI compiled code, a special command must be used:
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-The flag -np specifies the number of processor that are to be utilized
+The flag `-np` specifies the number of processor that are to be utilized
 in execution of the program.  In your job script, load the
 same compiler and OpenMPI choices you used above to create and compile
 the program, and run the job to execute the application. Your
@@ -163,7 +163,8 @@ __GNU Fortran Compiler__
 #SBATCH -N 1
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
-#SBATCH --partition shas-testing
+#SBATCH --partition atesting
+#SBATCH --constraint ib
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
 
@@ -182,7 +183,8 @@ __Intel Fortran Compiler__
 #SBATCH -N 1
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
-#SBATCH --partition shas-testing
+#SBATCH --partition atesting
+#SBATCH --constraint ib
 #SBATCH --time 0:01:00
 #SBATCH --output parallel_hello_world.out
 
@@ -194,8 +196,8 @@ module load impi
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-It is important to note that on Summit, there are 24 cores per
-node. For applications that require more than 24 processes, you will
+It is important to note that on Alpine, there are 64 cores per
+node. For applications that require more than 64 processes, you will
 need to request multiple nodes in your job (i.e., "" -N
 <number of nodes> "").
 

@@ -20,7 +20,7 @@ Our main objective in tutorial is to demonstrate potential workflows that could 
 ## Tutorial
 
 
-Before we can get this application up and running in a CUmulus instance we have some house-keeping to take care of. Many of steps below assume you have worked through [tutorial1](./cumulus1.md), which describes the instance creation process.
+Before we can get this application up and running in a CUmulus instance we have some house-keeping to take care of. Many of the steps below assume you have worked through [tutorial1](./cumulus1.md), which describes the instance creation process.
 
 ---
 ####  Part 1: Instance Setup
@@ -92,7 +92,7 @@ Okay, now we can get into the  real content of this Demo!
 ---
 ####  Part 5: Setting up Docker
 ---
-The next thing we'll need to do is install Docker. Docker is an open source containerization platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. For a great overview of Docker containerization visit https://docs.docker.com/get-started/overview/. In this tutorial we will use Docker to "pull" and "run" a mysql database images that we can store data (in this case tweets) into. A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments.  Instead of downloading mysql directly to the host machine (your instance) and having to deal with dependencies and uninstalling/fixing if anything goes wrong we can use the mysql image which we can easily create/remove a Docker container from.
+The next thing we'll need to do is install Docker. Docker is an open source containerization platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. For a great overview of Docker containerization visit https://docs.docker.com/get-started/overview/. In this tutorial we will use Docker to "pull" and "run" a mysql database image that we can store data (in this case tweets) into. A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments.  Instead of downloading mysql directly to the host machine (your instance) and having to deal with dependencies and uninstalling/fixing if anything goes wrong we can use the mysql image which we can easily create/remove a Docker container from.
 
 The python application will also be containerized when run, but in order to give you a platform to iterate and develop this application on your own going forward we are going to include the source code and Dockerfile which will allow you to tweak the application, build the container back up to use it, and even [publish the container](https://docs.docker.com/docker-hub/) if you'd like.
 
@@ -112,7 +112,7 @@ The python application will also be containerized when run, but in order to give
 	```
 	sudo docker run hello-world
 	```
-	It will download a test container and run it. You should see an out similar to the one below:
+	It will download a test container and run it. You should see an output similar to the one below:
 	```
 	Hello from Docker!
 	This message shows that your installation appears to be working correctly.
@@ -174,7 +174,7 @@ When a container runs, it uses the various layers from an image for its filesyst
 ---
 ####  Part 7: Running the Application
 ---
-We're all set and ready to run out application and database! From the `~/app` directory run:
+We're all set and ready to run our application and database! From the `~/app` directory run:
 ```
 $ sudo docker-compose up --build -d
 ```

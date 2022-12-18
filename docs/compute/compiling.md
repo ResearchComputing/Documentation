@@ -1,7 +1,7 @@
 ## Compiling and Linking
 
 Before compiling in the RC environment, first ssh to one of the Summit
-compile nodes via `ssh scompile`. Next, load those modules
+compile nodes via `acompile`. Next, load those modules
 corresponding to the compiler, MPI version (if needed), and any
 third-party libraries required by your application. The load order
 should always be compiler first, MPI second, and third-party libraries
@@ -31,7 +31,7 @@ during the compilation process.  These variables are prefixed by
 `CURC` via `env | grep CURC`. This will yield output similar to:
 
 ```
-[johndoe@shas0137 ~]$ env | grep CURC
+[johndoe@@c3cpu-a5-u17-2 ~]$ env | grep CURC
 CURC_INTEL_BIN=/curc/sw/intel/17.4/bin
 CURC_INTEL_INC=/curc/sw/intel/17.4/include
 CURC_INTEL_ROOT=/curc/sw/intel/17.4
@@ -64,14 +64,14 @@ implementations that they depend on have been loaded. As noted above,
 modules should be loaded in the order: compiler, MPI, third-party
 software.  At each stage of the load, executing `module avail` will
 reveal a list of newly available modules.  The `module purge` command
-can be used to unload all currently loaded modules.
+can be used to unload all currently loaded modules (note that the software stack will be unavailable from login nodes).
 
 For example, before choosing a compiler, we can view the available
 compilers with
 
 ```
-[janedoe@shas0136 ~]$ module purge
-[janedoe@shas0136 ~]$ module avail
+[janedoe@c3cpu-a5-u17-2 ~]$ module purge
+[janedoe@c3cpu-a5-u17-2 ~]$ module avail
 ```
 
 This will yield output similar to
@@ -91,9 +91,9 @@ during the `module load` command, the default version will be
 used. Considering the output above, the following two commands are
 equivalent:
 
-```[janedoe@shas0136 ~]$ module load intel ```
+```[janedoe@c3cpu-a5-u17-2 ~]$ module load intel ```
 
-```[janedoe@shas0136 ~]$ module load intel/17.4 ```
+```[janedoe@c3cpu-a5-u17-2 ~]$ module load intel/17.4 ```
 
 Once the compiler is loaded, MPI-implementations and third-party
 serial libraries that depend on that compiler appear in the available
@@ -101,8 +101,8 @@ module list until `MPI Implementations` and `Compiler Dependent
 Applications`:
 
 ```
-[janedoe@shas0136 ~]$ module load intel
-[janedoe@shas0136 ~]$ module avail
+[janedoe@c3cpu-a5-u17-2 ~]$ module load intel
+[janedoe@c3cpu-a5-u17-2 ~]$ module avail
 ----------------------------------- MPI Implementations --------------------------------------
    impi/17.3
 ---------------------------------- Compiler Dependent Applications ---------------------------
@@ -114,8 +114,8 @@ Choosing an MPI implementation will similarly reveal MPI-dependent
 software under the header `MPI Dependent Applications`:
 
 ```
-[janedoe@shas0136 ~]$ module load impi
-[janedoe@shas0136 ~]$ module avail
+[janedoe@c3cpu-a5-u17-2 ~]$ module load impi
+[janedoe@c3cpu-a5-u17-2 ~]$ module avail
  ---------------------------------- MPI Dependent Applications -------------------
    boost/1.64.0        hdf5/1.8.18        lammps/31Mar17        perfsuite/1.1.4
    fftw/3.3.4   (D)    hdf5/1.10.1 (D)    netcdf/4.4.1.1 (D)    petsc/3.8.0
@@ -129,7 +129,7 @@ information. If the software exists on our system, a list of available
 versions will appear:
 
 ```
-[janedoe@shas0136 ~]$ module spider hdf5
+[janedoe@c3cpu-a5-u17-2 ~]$ module spider hdf5
 ----------------------------------------------------------------
   hdf5:
 ----------------------------------------------------------------
@@ -148,7 +148,7 @@ version available, run the `module spider` command again with the
 version information included:
 
 ```
-[janedoe@shas0136 ~]$ module spider hdf5/1.10.1
+[janedoe@c3cpu-a5-u17-2 ~]$ module spider hdf5/1.10.1
 ------------------------------------------------------------------
   hdf5: hdf5/1.10.1
 ------------------------------------------------------------------
@@ -166,30 +166,12 @@ version information included:
 
 ### Compiler and Optimization Recommendations
 
-The Summit and Blanca clusters run on Intel-designed hardware. As
-such, we **strongly recommend** using the Intel compiler along with
-Intel's MPI library when compiling software.  For production, we
+The Alpine cluster runs on AMD-designed hardware, whereas the Blanca
+cluster runs on Intel-designed hardware. As such, we **strongly recommend** 
+using the appropriate compiler and MPI library when compiling software.  For production, we
 suggest compiling with the `-O2` or `-O3` optimization flags along
 with the vectorization flags appropriate for the node you plan to run
-on. For Haswell nodes, this means compiling with the `-xCORE-AVX2`
-flag. For the Xeon-Phi and Skylake nodes, use `-xCORE-AVX512`.
-
-Compilation commands for a typical Summit Haswell node should resemble:
-
-```
-$FC -O3 -xCORE-AVX2 my_program.f90 -o my_program.out
-$CC -O3 -xCORE-AVX2 my_program.c -o my_program.out
-$CXX -O3 -xCORE-AVX2 my_program.cpp -o my_program.out
-```
-
-For the Phi and Skylake nodes, the appropriate commands would be:
-
-```
-$FC -O3 -xCORE-AVX512 my_program.f90 -o my_program.out
-$CC -O3 -xCORE-AVX512 my_program.c -o my_program.out
-$CXX -O3 -xCORE-AVX512 my_program.cpp -o my_program.out
-```
-
+on. More compiler options and flags can be found in [AMD's reference guide](https://developer.amd.com/wp-content/resources/Compiler%20Options%20Quick%20Ref%20Guide%20for%20AMD%20EPYC%207xx3%20Series%20Processors.pdf). 
 
 ### Linking to the Math Kernel Library (MKL)
 

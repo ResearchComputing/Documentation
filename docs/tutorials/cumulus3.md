@@ -3,7 +3,7 @@
 
 ## CUmulus integration with CURC HPC 
 
-One potentially useful application of CUmulus is the ability to integrate your VMs with CU Research Computing High Performance Computing (HPC) resources. HPC compute is typically time-limited (at CURC 24 hours for regular joband 7 days long job) due finite resources and user competition for those resources. One way to deal with this problem is to schedule your jobs over time (e.g. by using cronjobs) though this isn't always practical for more complex workflows. Using authentication keys (in this case Java Web Tokens or JWTs) you can setup a connection from your CUmulus instance to CURC HPC and schedule jobs remotely to set up more complex workflow specific pipelines. 
+One potentially useful application of CUmulus is the ability to integrate your VMs with CU Research Computing High Performance Computing (HPC) resources. HPC compute is typically time-limited (at CURC 24 hours for regular job and 7 days long job) due to finite resources and user competition for those resources. One way to deal with this problem is to schedule your jobs over time (e.g. by using cronjobs) though this isn't always practical for more complex workflows. Using authentication keys (in this case Java Web Tokens or JWTs) you can setup a connection from your CUmulus instance to CURC HPC and schedule jobs remotely to set up more complex workflow specific pipelines. 
 
 We have documented the process for an **Ubuntu 20.04 instance on CUmulus connecting to the CURC Blanca cluster**. Below is an outline with links to specific sections:
 1. Create your CUmulus instance
@@ -15,7 +15,7 @@ We have documented the process for an **Ubuntu 20.04 instance on CUmulus connect
 ### Instructions for Ubuntu 20.04:
 
 ---
-####  Part 1 Create your CUmlus instance
+####  Part 1 Create your CUmlus instance:
 ---
 The first thing we will need to do is create a Ubuntu 20.04 CUmulus instance. Log in to the [CUmlus portal](https://cumulus.rc.colorado.edu) and follow our [tutorial1](./cumulus1) to create a CUmulus instance with the following specifications: 
 * Image: Ubuntu 20.04 
@@ -40,7 +40,7 @@ The second thing we'll need to do is install SLURM on our CUmulus instance. To d
 	$ sudo apt-get update
 	$ sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
 	```
-* **Install SLURM**. It looks like there's a lot going on with this step, but all we're doing is downloading SLURM from github to the `/opt` directory of your instance, configuring the compilation to include Java Web Tokens (JWT) functionaliy, and then compiling and installing SLURM. Note that it is **VERY IMPORTANT** that the SLURM version on your CUmulus instance matches the CURC HPC version otherwise it will not connect. 
+* **Install SLURM**. It looks like there's a lot going on with this step, but all we're doing is downloading SLURM from github to the `/opt` directory of your instance, configuring the compilation to include Java Web Tokens (JWT) functionality, and then compiling and installing SLURM. Note that it is **VERY IMPORTANT** that the SLURM version on your CUmulus instance matches the CURC HPC version otherwise it will not connect. 
 
 	> You can check the SLURM version on CURC HPC resources by loading your cluster specific SLURM module from a login node (either `module load slurm/summit`, `module load slurm/blanca`, or `module load slurm/alpine`) then checking the version of a SLURM command (e.g. `sbatch --version`). 
 
@@ -98,8 +98,8 @@ Now that we have SLURM installed we can start to configure our instance to make 
 ---
 ####  Part 4. Generate Java Web Token (JWT) in CURC HPC 
 ---
-* Next we will genrate the Java Web Token on a CURC login node. Keep in mind that these tokens are generated with an expiration. The max time CURC systems will keep a JWT is **#TODO**. Note the JWT output in order submit jobs.
-	> Note: In this example we are genrating this token on the Blanca cluster 
+* Next we will generate the Java Web Token on a CURC login node. Keep in mind that these tokens are generated with an expiration. Note the JWT output in order submit jobs.
+	> Note: In this example we are generating this token on the Blanca cluster 
 	```
 	$ module load slurm/blanca
 	$ scontrol token lifespan=72000 #token with 2 hour duration

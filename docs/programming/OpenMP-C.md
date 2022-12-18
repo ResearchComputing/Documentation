@@ -1,6 +1,6 @@
 ## Using OpenMP with C
 
-Because Summit is a cluster of CPUs, the most effective way to utilize
+Because a cluster consists of many CPUs, the most effective way to utilize
 these resources involves parallel programming. Probably the simplest
 way to begin parallel programming involves the utilization of
 OpenMP. OpenMP is a Compiler-side solution for creating code that runs
@@ -91,15 +91,16 @@ __Intel__:
 icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
 ```
 
-This will give us an executable we can run as a job to
-Summit. Simply run the job specifying slurm to run the
+This will give us an executable we can submit as a job to our cluster.
+Simply submit the job to Slurm, running the
 executable. Your job script should look something like this:
 
 ```bash
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=shas-testing
+#SBATCH --partition=atesting
+#SBATCH --constraint=ib
 #SBATCH --ntasks=4
 #SBATCH --job-name=CPP_Hello_World
 #SBATCH --output=CPP_Hello_World.out
@@ -179,7 +180,7 @@ Hello from process: 2
 Hello from process: 1
 ```
 
-Don’t worry about order of processes that printed, the threads will
+Note: Don’t worry about the order of processes that printed, the threads will
 print out at varying times.
 
 
@@ -470,7 +471,7 @@ int main(int argc, char** argv){
 Let’s now set up our work sharing directive. We will use the `#pragma
 omp for` to declare the loop as to be work sharing, followed by the
 actual C++ loop. Because we want to add all number from 1 to 1000, we
-will initialize out loop at one and end at 1000.
+will initialize our loop at one and end at 1000.
 
 ```c++
 #include <stdio.h>

@@ -1,23 +1,33 @@
-# Containerization on Summit
+# Containerization 
 
-When installing software, you may come across applications that have complex chains of dependencies that are challenging to compile and install. Some software may require very specific versions of libraries that may not be available on Summit or conflict with libraries needed for other applications. You may also need to move between several workstations or HPC platforms, which often requires reinstalling your software on each  system. Containers are a good way to tackle all of these issues and more.
+When installing software, you may come across applications that have 
+complex chains of dependencies that are challenging to compile and 
+install. Some software may require very specific versions of libraries 
+that may not be available on Alpine or conflict with libraries needed for 
+other applications. You may also need to move between several workstations or HPC platforms, which often requires reinstalling your software on each  system. Containers are a good way to tackle all of these issues and more.
 
 ## Containerization Fundamentals
 
-Containers build upon an idea that has long existed within computing: hardware can be emulated through software. **Virtualization** simulates some or all components of computation through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale and contained within a system's kernel
+Containers build upon an idea that has long existed within computing: 
+hardware can be emulated through software. **Virtualization** simulates some or all components of computation through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale and contained within a system's kernel.
 
-**Containers** are portable compartmentalizations of some or all of the following: An operating system, software, libraries, data, and workflows. Containers offer: 
+**Containers** are portable compartmentalizations of an operating system, 
+software, libraries, data, and/or workflows. Containers offer portability 
+and reproducibility. 
 
 - Portability: containers can run on any system equipped with its specified container manager.
 - Reproducibility: because containers are instances of prebuilt isolated software, software will always execute the same every time.
 
-Containers distinguish themselves through their low computational  overhead and their ability to utilize all of a host system’s resources. Building containers is a relatively simple process that starts with a container engine.
+Containers distinguish themselves through their low computational overhead and their ability to utilize all of a host system’s resources. Building containers is a relatively simple process that starts with a container engine.
 
 ## Docker
 
-Docker is by far the most popular container engine, and  can be used on any system where you have administrative privileges. Because of this need for administrative privileges, Docker containers cannot be built or run directly on Research Computing resources. **To utilize a Docker container on Research Computing resources please build a singularity image using a Docker image as a base.**
+Docker is by far the most popular container engine, and  can be used on 
+any system where you have administrative privileges. Because of this need 
+for administrative privileges, Docker containers cannot be built or run directly on Research Computing resources. **To utilize a Docker container on Research Computing resources, please build a Singularity image using a Docker image as a base.**
 
-See the documentation on Singularity (below) if you wish to run a Docker container on RMACC Summit or Blanca. 
+See the documentation on Singularity (below) if you wish to run a Docker 
+container on Alpine or Blanca. 
 <!--
 Docker can be divided into 4 primary components:
 
@@ -183,10 +193,13 @@ docker push <your-docker-username>/<repository>
 -->
 ## Singularity
 
-Singularity is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources such as RMACC Summit and Blanca. Singularity is preinstalled on Research Computing resources, so all that is needed to run Singularity containers is to load the Singularity module on a compute node on RMACC Summit or Blanca:
+Singularity is a containerization software package that does not require 
+users to have administrative privileges when running containers, and can 
+thus be safely used on Research Computing resources such as Alpine and 
+Blanca. Singularity is preinstalled on Research Computing resources, so all that is needed to run Singularity containers is to load the Singularity module on a compute node:
 
 ```
-module load singularity/3.0.2
+module load singularity/3.6.4
 ```
 
 Much like Docker, Singularity is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of Singularity images which can be run as ephemeral Singularity containers. Unlike Docker, however, Singularity does not manage images, containers, or volumes through a central application. Instead, Singularity generates saved image files that can either be mutable or immutable based on compression.
@@ -283,9 +296,14 @@ singularity exec python-cont.img python
 
 ### File Access
 
-By default most user-owned files and directories are available to any container that is run on RMACC Summit and Blanca (this includes files in `/home/$USER`, `/projects/$USER`, `/scratch/summit/$USER` and `/rc_scratch/$USER`). This means that normally a user will not need to bind any folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized. 
+By default most user-owned files and directories are available to any 
+container that is run on Alpine and Blanca (this includes files in 
+`/home/$USER`, `/projects/$USER`, `/scratch/summit/$USER` and `/rc_scratch/$USER`). This means that normally a user will not need to bind any folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized. 
 
-Sometimes, however, certain folders that are not bound by default may be necessary to run your application. To bind any additional folders or files to your Singularity container, you can utilize the -B flag in your singularity run, exec, and shell commands. To bind an additional folder to your Singularity container, type:
+Sometimes, however, certain folders that are not bound by default may be 
+necessary to run your application. To bind any additional folders or files 
+to your Singularity container, you can utilize the `-B` flag in your 
+singularity run, exec, and shell commands. To bind an additional folder to your Singularity container, type:
 
 ```bash
 singularity run -B /source/directory:/target/directory sample-image.img
@@ -302,7 +320,9 @@ Then run, execute, or shell into the container as normal.
 
 ### Building a Singularity image
 
-**Important: You cannot build Singularity images directly on Summit. If you cannot build an image on your local machine you will need to build it on Singularity Hub or Sylabs Remote Builder.**
+**Important: You cannot build Singularity images directly on Alpine. If 
+you cannot build an image on your local machine you will need to build it 
+on Singularity Hub or Sylabs Remote Builder.**
 
 #### Singularity Build
 
@@ -346,7 +366,10 @@ More on building containers: <https://www.sylabs.io/guides/3.0/user-guide/build_
 
 #### Building Images Remotely with the Singularity Remote Builder
 
-With Singularity 3.0, users have the ability to build containers remotely through Sylabs remote builder. Unlike Singularity Hub though, the Singularity remote builder can be utilized directly on the command line from RMACC Summit or Blanca without needing to upload to a repository.  
+With Singularity 3.0, users have the ability to build containers remotely 
+through the remote builder. The Singularity remote builder can be utilized 
+directly on the command line from Alpine or Blanca without needing to 
+upload to a repository.  
 
 To begin using Singularity Remote Builder, navigate to your home directory and run the commands:
 
@@ -355,42 +378,61 @@ mkdir .singularity
 cd .singularity 
 ```
 
-Now on your local machine, navigate to: <https://cloud.sylabs.io/auth>
+Now on your local machine, navigate to <https://cloud.sylabs.io> and log 
+into Sylabs with your Google, Github, Gitlab, or Microsoft account. Once 
+you have logged into Sylabs, select 'Access Tokens' from the dropdown menu 
+under your username or go to <https://cloud.sylabs.io./tokens>. Enter a 
+name for your token in the label field and then click “Create Access 
+Token”. This will generate a large string that will be read by Singularity on Alpine or 
+Blanca.
 
-...and log into Sylabs with your Google, Github, Gitlab, or Microsoft account. Once you have logged into Sylabs, provide a label for your token under the field “Create A New Access Token” and click “Create a new Token.” This will generate a large string that will be read by Singularity on RMACC Summit or Blanca.
-
-Now on RMACC Summit or Blanca run the command:
+Now on Alpine or Blanca run the command:
 
 ```
 echo “<your-token>” > ~/.singularity/sylabs-token
 ```
 
-After this you can now build containers through the Sylabs remote builder on RMACC Summit or Blanca. Simply load Singularity 3.0.2 into your module stack and run the command:
+After this you can now build containers through the Sylabs Remote Builder 
+on Alpine or Blanca. Simply load the Singularity module into your 
+environment and run 
+the command:
 
 ```
 singularity build --remote <desired-image-name> <your-recipe>
 ```
 
 ### Building MPI-enabled Singularity images
-MPI-enabled Singularity containers can be deployed on RMACC Summit with the caveat that the MPI software within the container stays consistent with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
+MPI-enabled Singularity containers can be deployed on Alpine with the 
+caveat that the MPI software within the container stays consistent with 
+MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
 
-Here we provide an example of using a gcc compiler with OpenMPI. RMACC Summit uses an Omni-Path interconnect (a low latency network fabric that enables MPI to be efficiently implemented across nodes). In order to use a Singularity container with OpenMPI (or any MPI) on Summit, there are two requirements:
+Here we provide an example of using a gcc compiler with OpenMPI. Alpine 
+uses an Infiniband interconnect. In order to use a Singularity 
+container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be 
+installed both inside and outside of the Singularity container. More 
+specifically, the _same_ version of OpenMPI needs to be installed inside 
+and outside (at least very similar, you can sometimes get away with two 
+different minor versions, e.g. 2.1 and 2.0). 
 
-Singularity container needs to have Omni-Path libraries installed inside. 
-OpenMPI needs to be installed both inside and outside of the Singularity container. More specifically, the SAME version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, ex: 2.1 and 2.0). 
+CURC can provide users with a Singularity recipe that ensures the 
+appropriate version of OpenMPI is installed in the image. This recipe can 
+be used as a template to build your own MPI-enabled container images for Alpine.
 
-The following Singularity recipe ensures that OpenMPI 2.0.1 is installed in the image, which matches the openmpi/2.0.1 module that is available on RMACC Summit. This recipe can be used as a template to build your own MPI-enabled container images for RMACC Summit and [can be found here.](https://github.com/ResearchComputing/core-software/tree/master/singularity)
-
-Once you’ve built the container with one of the methods outlined above, you can place it on RMACC Summit and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Singularity on RMACC Summit. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
+Once you’ve built the container with one of the methods outlined above, 
+you can place it on Alpine and run it on a compute node. The following is 
+an example of running a gcc/OpenMPI container with Singularity on Alpine. 
+The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
 
 ```
-ml gcc/6.1.0
-ml openmpi/2.0.1
-ml singularity/3.0.2
+ml gcc/11.2.0
+ml openmpi/4.1.1
+ml singularity/3.6.4
 
 mpirun -np 4 singularity exec openmpi.sif mpi_hello_world"
 ```
 
-Note that it is also possible to build intel/IMPI containers for use on RMACC Summit, which are likely to have enhanced performance on Summit’s intel architecture compared to gcc/OpenMPI containers. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
+Note that it is also possible to build intel/IMPI containers for use on 
+Alpine. If you would like assistance building MPI-enabled containers 
+contact <rc-help@colorado.edu>.
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
