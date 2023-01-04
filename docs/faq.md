@@ -48,7 +48,8 @@ If you cannot authenticate your account (e.g. do not have your old device), cont
 You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a compile node, type `curc-quota` as follows:
 
 ```
-[user@shas0100 ~]$ curc-quota
+[janedoe@c3cpu-a7-u26-3 ~]$ module load curc-quota
+[janedoe@c3cpu-a7-u26-3 ~]$ curc-quota
 ------------------------------------------------------------------------
                                        Used         Avail    Quota Limit
 ------------------------------------------------------------------------
@@ -60,7 +61,7 @@ You have three directories allocated to your username (`$USER`). These include `
 You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
 
 ```
-[janedoe@shas0136 ~]$ du -h /scratch/alpine/janedoe/WRF
+[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
 698M	WRF/run
 698M	WRF
 ```

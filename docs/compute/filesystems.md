@@ -107,10 +107,11 @@ cp new_file /projects/user1234/job/new_file
 ### Monitoring Disk Usage
 
 Disk usage may be checked using the `curc-quota` command. When run
-from a Summit `compile node`, you will see output similar to:
+from an Alpine `compile node`, you will see output similar to:
 
 ```
-[janedoe@shas0136 ~]$ curc-quota
+[janedoe@c3cpu-a7-u26-3 ~]$ module load curc-quota
+[janedoe@c3cpu-a7-u26-3 ~]$ curc-quota
 ------------------------------------------------------------------------
                                        Used         Avail    Quota Limit
 ------------------------------------------------------------------------
@@ -126,7 +127,7 @@ Note that the space occupied by a particular directory and its
 subdirectories can be obtained via the `du -h` command:
 
 ```
-[janedoe@shas0136 ~]$ du -h /scratch/alpine/janedoe/WRF
+[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
 698M	WRF/run
 698M	WRF
 ```
