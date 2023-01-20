@@ -49,7 +49,6 @@ All users, regardless of institution, should specify partitions as follows:
 --partition=ami100
 --partition=amem
 --partition=csu
---partition=amc
 ```
 
 **Special-purpose partitions**
