@@ -33,8 +33,7 @@ These are the partitions available on Alpine.
 | ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
 | aa100     | GPU-enabled (3x NVIDIA A100) | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
 | amem<sup>1</sup> | High-memory           | 4          | 48         | 21.486        | tbd            |  4H,  7D                 |
-| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | 1              | 24H, 24H                 |
-| amc       | Nodes contributed by AMC     | 20         | 64         |   3.74        | 1              | 24H, 24H                 |   
+| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | 1              | 24H, 24H                
 
 > <sup>1</sup> The `amem` partition is limited to 96 cores (2 entire nodes) across *all running amem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact <rc-help@colorado.edu>.
 > 

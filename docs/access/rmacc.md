@@ -55,7 +55,7 @@ You will be redirected to CILogon.
 
 - Select "Jupyter Notebook" from the drop-down list under _Interactive Apps_.
 - Accept the cluster (`Alpine`), partition (`ahub`), account (`rmacc-general`), QoS (`interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
-field empty will default to `rmacc-general`. 
+field empty will default to `rmacc-general`. Anschutz users should instead use `amc-general`.  
 - Select "Launch".
 - Once the interactive session begins running, you can access the terminal in two ways:
     1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png) 
