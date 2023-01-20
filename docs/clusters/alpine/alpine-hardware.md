@@ -37,7 +37,6 @@ Partitions available on Alpine:
 | aa100     | GPU-enabled (3x NVIDIA A100) | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
 | amem<sup>1</sup> | High-memory           | 4          | 48         | 21.486        | tbd            |  4H,  7D                 |
 | csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | 1              | 24H, 24H                 |
-| amc       | Nodes contributed by AMC     | 20         | 64         |   3.74        | 1              | 24H, 24H                 |
 
 <sup>1</sup>The amem partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
 
@@ -50,7 +49,6 @@ All users, regardless of institution, should specify partitions as follows:
 --partition=ami100
 --partition=amem
 --partition=csu
---partition=amc
 ```
 
 **Special-purpose partitions**
