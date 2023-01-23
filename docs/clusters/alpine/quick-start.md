@@ -42,7 +42,7 @@ Alpine also includes nodes contributed by partner institutions. Contributors wit
 
 All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 
-> For a full list of nodes on Alpine use the command:  `scontrol show nodes.` Get single node details with the `scontrol show nodes <node name>` command.
+> For a full list of nodes on Alpine use the command:  `scontrol show nodes`. Get single node details with the `scontrol show nodes <node name>` command.
 
 #### Interconnect
 The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
