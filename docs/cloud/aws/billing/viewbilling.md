@@ -36,7 +36,7 @@ This section is only when you don't have a CloudCheckr Account.
 
 1. You will need to open a ticket with the rc-help. 
 2. Please do add your AWS account number and AWS account alias for which you want the CloudCheckr Access need to be created.
-3. Email to rc-help@colorado.edu
+3. Email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu)
 
 ## How to Check your Bill in CloudCheckr
 
