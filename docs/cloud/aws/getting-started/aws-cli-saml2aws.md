@@ -1,5 +1,7 @@
 ## Accessing the AWS CLI Using saml2aws
 
+The **saml2aws** CLI tool is used to login and retrieve AWS temporary credentials.
+
 ### Prerequisite
 
 The <a href="https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access" target="_blank">DUO Multi-Factor Remote Access</a> (MFA) app is installed and enrolled.
@@ -7,7 +9,6 @@ Visit OIT's <a href="https://oit.colorado.edu/services/identity-access-managemen
 
 ### Install saml2aws
 
-The **saml2aws** CLI tool is used to login and retrieve AWS temporary credentials.
 You use your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> to authenticate from CU's Shibboleth Identity Provider.
 To install **saml2aws** (MacOS, Windows, Linux), visit the online documentation: <a href="https://github.com/Versent/saml2aws#install" target="_blank">saml2aws installation instructions</a>
 

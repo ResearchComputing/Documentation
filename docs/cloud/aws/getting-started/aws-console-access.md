@@ -14,7 +14,7 @@ You can access your AWS Account from anywhere with internet access.  You do not 
 1. Launch the <a href="http://bit.ly/OIT-AWS" target="_blank">AWS Management Console (SSO URL)</a>.
 2. Provide your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> credentials.
 ![](images/aws-console-access/login.png)
-3. Choose a method for authentication.  It's recommended to "Send Me a Push".  **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
+3. Choose a method for authentication.  We recommend you select "Send Me a Push".  **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
 ![](images/aws-console-access/mfa.png)
 4. Accept the MFA request on your device.
 5. If you only have access to a single AWS Account and a single Role, you will be logged straight in to the AWS Console.
