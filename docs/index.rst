@@ -132,6 +132,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    software/matlab
    software/python
    software/GNUParallel
+   software/vasp
    software/ContainerizationonSummit
 
 .. toctree::
