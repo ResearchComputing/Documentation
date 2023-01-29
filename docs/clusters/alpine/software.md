@@ -74,7 +74,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [ORCA](https://orcaforum.kofo.mpg.de/app.php/portal) | 5.0.3 | ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods.| 
 | [PAPI](https://icl.utk.edu/papi/index.html)| 5.4.3, 5.5.1 (D) | A complete, cross-platform solution to record, convert and stream audio and video. |
 | [ParaView](https://www.paraview.org/) | 5.0.1, 5.6.0, 5.9.0, 5.10.0 (D) | ParaView is an open-source multiple-platform application for interactive, scientific visualization. | 
-| [Program Database Toolkit (PDT)](https://www.cs.uoregon.edu/research/pdt/home.php) | 3.22, 3.25.1 (D) | PDT is a framework for analyzing source code written in several programming languages and for making rich program knowledge accessible to developers of static and dynamic analysis tools | 
+| [PDT (Program Database Toolkit)](https://www.cs.uoregon.edu/research/pdt/home.php) | 3.22, 3.25.1 (D) | PDT is a framework for analyzing source code written in several programming languages and for making rich program knowledge accessible to developers of static and dynamic analysis tools | 
 | [Perl](https://www.perl.org/) | 5.16.3, 5.24.0 (D), 5.28.1, 5.36.0 | Perl is a high-level, interpreted, general-purpose programming language originally developed for text manipulation.| 
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
@@ -104,6 +104,8 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [vtf3](https://www.paratools.com/otf/) | 1.43 |VTF3 trace generation package.|  
 | [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zipfiles.|
 | [zlib](https://www.zlib.net/) | 1.2.11 | Lossless data-compression library.|
+
+**(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
 
 ## Alpine Software Policy 
 
