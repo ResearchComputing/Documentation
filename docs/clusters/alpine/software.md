@@ -2,19 +2,9 @@
 
 ## Software Installed on Alpine
 
-This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC Alpine. 
-
-Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modules.html) page for instructions on how to view and load software.
- 
 | Count & Type          | Scheduler Partition | Processor        |
 | --------------------- | ------------------- | ---------------- |
 | 184 Milan General CPU | amilan              | x86_64 AMD Milan |
-
-
-
-**(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
-
-**Last updated:** January 28, 2023
 
 ## Alpine Software Policy 
 
