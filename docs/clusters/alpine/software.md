@@ -6,8 +6,8 @@ This list includes the software applications, compilers, libaries, and software 
 
 Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modules.html) page for instructions on how to view and load software.
  
-| Application                     | Version(s) | Description                                                                                               |
-| ------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------- |
+| Application | Version(s) | Description  |
+| ----------- | ---------- | ------------ |
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
 | [Allinea DDT](https://developer.nvidia.com/allinea-ddt) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
 | [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11, 2022.10 (D) | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)| 
