@@ -6,17 +6,13 @@ This list includes the software applications, compilers, libaries, and software 
 
 Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modules.html) page for instructions on how to view and load software.
  
-|        Application      | Version(s) | Description                                               |
-| ----------------------- | ---------- | --------------------------------------------------------- |
-| [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
+| Application      | Version(s) | Description |
+| ------------- | -------- | ------------------------------- |
+| [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided 
+engineering.|  
 | [Allinea DDT](https://developer.nvidia.com/allinea-ddt) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
-| [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11, 2022.10 (D) | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide (https://curc.readthedocs.io/en/latest/software/python.html)| 
-| [Ansys](https://www.ansys.com/) (L,G) | EM21.2 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
-| [Arm Forge](https://developer.arm.com/Tools%20and%20Software/Arm%20Forge) | 19.1.3 | Arm Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
-| [AOCC](https://www.amd.com/en/developer/aocc.html) | 3.1.0 (D), 3.2.0 |The AMD Optimizing C/C++ and Fortran Compilers (“AOCC”) are a set of production compilers optimized for software performance when running on AMD host processors using the AMD “Zen” core architecture.| 
-| [AOCL](https://www.amd.com/en/developer/aocl.html) | 3.2.0 |AOCL is a set of numerical libraries optimized for AMD processors based on the AMD “Zen” core architecture and generations.| 
-| [Autotools](https://www.gnu.org/software/automake/faq/autotools-faq.html) | 2.6.9, 2.7.1 (D)| The GNU Autotools, also known as the GNU Build System, is a suite of programming tools designed to assist in making source code packages portable to many Unix like systems.|
-
+| [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11, 2022.10 (D) | Anaconda is a distribution of the Python and R programming languages for scientific 
+computing, that aims to simplify package management and deployment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)|
 
 
 
