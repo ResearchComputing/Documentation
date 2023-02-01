@@ -32,13 +32,15 @@ Partitions available on Alpine:
 
 | Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime     |
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan    | AMD Milan (default)          | 184        | 64         |   3.74        | 1              | 24H, 24H                 |
-| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
-| aa100     | GPU-enabled (3x NVIDIA A100) | 8          | 64         |   3.74        | tbd            | 24H, 24H                 |
-| amem<sup>1</sup> | High-memory           | 4          | 48         | 21.486        | tbd            |  4H,  7D                 |
-| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | 1              | 24H, 24H                 |
+| amilan    | AMD Milan (default)          | 184        | 64         |   3.75        | 1              | 24H, 24H                 |
+| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | tbd            | 24H, 24H                 |
+| aa100     | GPU-enabled (3x NVIDIA A100) | 8          | 64         |   3.75        | tbd            | 24H, 24H                 |
+| amem<sup>1</sup> | High-memory           | 4          | 48         |  20.83<sup>2</sup>        | tbd            |  4H,  7D                 |
+| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.75        | 1              | 24H, 24H                 |
 
-<sup>1</sup>The amem partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
+<sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
+
+<sup>2</sup>On the `amem` partition, if you request all 48 cores on a node without specifying the `--mem` flag, you will receive 1000 GB (1024000 MB) of RAM on the node.  Because of the way slurm handles units conversions, if you use the `--mem` flag, the maximum RAM you can request is 976.5 GB (1000000 MB) RAM.  
 
 > * Note: NVIDIA A100 GPUs only support CUDA versions >11.x
 
