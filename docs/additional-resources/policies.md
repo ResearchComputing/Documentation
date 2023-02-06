@@ -1,6 +1,10 @@
 ## CURC User Policies
 <br>
 
+### CURC Annual Survey
+
+CURC issues an annual survey to all CURC users asking several questions about research grants, scholarly works, and student success that have been supported by CURC systems/services. These metrics are critical for fulfilling CURC's annual reporting requirements quantifying the Return on Investment of CURC resources for the University.  The survey be open for responses for 10 weeks. To facilitate responses, this policy states that if a user does not respond to the survey by the deadline, CURC will temporarily remove their access to CURC systems until the survey is completed. CURC will not delete any data or remove any accounts. User access will be reinstated upon completion of the survey.
+
 ### Login nodes
 
 The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including Blanca, Summit, 
