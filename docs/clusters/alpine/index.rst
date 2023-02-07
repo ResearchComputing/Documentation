@@ -3,7 +3,7 @@ Alpine
 
 On May 18, 2022, CU Research Computing released phase 1 of Alpine, the third generation CURC High Performance 
 Computing Cluster. Phase 2 was released in September 2022. The warranty of the Summit cluster's storage ended on 
-September 30, 2022. The full sun-setting of the Summit system is yet to be finalized. 
+September 30, 2022. The full sun-setting of the Summit system is March 1, 2023. 
 
 .. image:: ./images/alpine_summit_timeline.png
   :width: 400
