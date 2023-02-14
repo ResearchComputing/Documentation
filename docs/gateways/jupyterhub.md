@@ -19,10 +19,6 @@ To start a notebook server, select one of the available options in the *Select j
 * __Blanca (12 cores, 4 hr)__ (A 4-hour, 12 core job on your default Blanca partition; only available to Blanca users)
 * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
   
-
-<!--- > Therefore, this option works well for light work such as interactive code 
-development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility).
-
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
 <p align="middle">
