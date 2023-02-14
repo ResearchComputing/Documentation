@@ -72,7 +72,6 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 ![](OnDemand/core_launch.png)
 2. Click “launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
 3. When your Remote Desktop is ready, you can click the "Launch Core Desktop" button. In most cases, the default compression and image quality will suffice. If you do have problems with image quality you can adjust these settings as necessary. 
-<!-- ![](OnDemand/core_session.png) -->
 4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
 
 **Notes**:
