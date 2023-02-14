@@ -85,7 +85,7 @@ use.
 #### Get a Peak Allocation 
 
 Step 1: Download and complete the [Peak Allocation Request Supplementary 
-Information](https://o365coloradoedu.sharepoint.com/:w:/s/RC-Team/EdKWaQYfHPBAv1IdvFVFvtUBjnUnDfZFHWVII30CGv9OkA?e=cNZwom) 
+Information](https://o365coloradoedu.sharepoint.com/:x:/s/RC-Team/EW-ZgyLKV8VNhDrYVwH_UvoBGLFgZcZVU2-W2_xjx1EoAg?e=EsOj4M) 
 document. You need to be logged into Office365 with your CU Boulder 
 account.
 

@@ -298,7 +298,9 @@ singularity exec python-cont.img python
 
 By default most user-owned files and directories are available to any 
 container that is run on Alpine and Blanca (this includes files in 
-`/home/$USER`, `/projects/$USER`, `/scratch/summit/$USER` and `/rc_scratch/$USER`). This means that normally a user will not need to bind any folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized. 
+`/home/$USER`, `/projects/$USER`, `/scratch/alpine/$USER` and `/rc_scratch/$USER`). 
+This 
+means that normally a user will not need to bind any folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized. 
 
 Sometimes, however, certain folders that are not bound by default may be 
 necessary to run your application. To bind any additional folders or files 

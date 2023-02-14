@@ -1,3 +1,6 @@
+> **CURC JupyterHub will retire March 1, 2023. Users should access JupyterHub 
+through [CURC Open OnDemand](https://ondemand.rc.colorado.edu).**
+
 ## JupyterHub _(Python and R notebooks on CURC)_
 
 [Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
@@ -12,18 +15,13 @@ CURC JupyterHub is available at [https://jupyter.rc.colorado.edu](https://jupyte
 
 To start a notebook server, select one of the available options in the *Select job profile* menu under *Spawner Options* and click *Spawn*. Available options are:
 
-* __Summit interactive (1 core, 12hr, instant access)__ (a 12-hour, 1 core job on a Summit "shas" node)
-* __Summit Haswell (12 cores, 4 hours)__ (a 4-hour, 12 core job on a Summit "shas" node)
 * __Blanca (1 core, 12hr)__ (A 12-hour, 1 core job on your default Blanca partition; only available to Blanca users)
 * __Blanca (12 cores, 4 hr)__ (A 4-hour, 12 core job on your default Blanca partition; only available to Blanca users)
 * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
-* __Summit interactive Rstudio (1 core, 12hr)__ (a 12-hour, 1 core _Rstudio_ job on a Summit "shas" node)
   
-> __Note__: The "Summit interactive (1 core, 12hr, instant access)" option spawns a 1-core job to a partition on Summit called "shas-interactive". This partition is intended to provide "instant" access to computing resources for JupyterHub users.  The caveats are: 
-> 1. users may only run one "shas-interactive" job at a time
-> 2. "shas-interactive" jobs only have 1 core and 4 GB of memory allocated to them. 
->
-> Therefore, this option works well for light work such as interactive code development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility).
+
+<!-- > Therefore, this option works well for light work such as interactive code 
+development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility).
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
 
@@ -39,7 +37,11 @@ The following features are available in the [JupyterLab Interface](https://jupyt
 * _Left sidebar:_ Click on a tab to change what you see in the left menu bar.  Options include the file browser, a list of running kernels and terminals, a command palette, a notebook cell tools inspector, and a tabs list.
 * _Left menu bar:_ 
   * The _file browser_ will be active when you log in. 
-    * You can navigate to your other CURC directories by clicking the folder next to `/home/<username>`. Your other CURC file systems are available too: `/projects/<username>`, `/pl/active` (for users with PetaLibrary allocations), `/scratch/summit/<username>` (Summit only), and `/rc_scratch/<username>` (Blanca only).
+    * You can navigate to your other CURC directories by clicking the folder next 
+to `/home/<username>`. Your other CURC file systems are available too: 
+`/projects/<username>`, `/pl/active` (for users with PetaLibrary allocations), 
+`/scratch/alpine/<username>` (Alpine only), and `/rc_scratch/<username>` (Blanca 
+only).
     * To open an existing notebook, just click on the notebook name in the file browser (e.g., _mynotebook.ipynb_).
     * Above your working directory contents are buttons to add a new Launcher, create a new folder, upload files from your local computer, and refresh the working directory. 
 * _Main Work Area:_ Your workspaces will be in this large area on the right hand side. Under the "Launcher" tab you can: 
@@ -49,7 +51,9 @@ The following features are available in the [JupyterLab Interface](https://jupyt
       * __R__: R notebook 
       * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
    * Open a new console (command line) for any of the kernels.
-   * Open other functions; the "Terminal" function is particularly useful as it enables you to access the command line on the Summit or Blanca node your Jupyterhub job is currently running on. 
+   * Open other functions; the "Terminal" function is particularly useful as it 
+enables you to access the command line on the Alpine or Blanca node your Jupyterhub 
+job is currently running on. 
 * See Jupyter's [documentation on the JupyterLab Interface for additional information.](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
 
 #### Tip for finding the packages available to you within a notebook
@@ -70,7 +74,7 @@ You can access the Jupyter classic view by going to the address bar at the top o
 
 ### Step 4: Shut down a Notebook Server
 
-Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired (for example, if you want to change from a "Summit Interactive" to a "Summit Haswell" server).
+Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired.
 
 Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
