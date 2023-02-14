@@ -1,11 +1,11 @@
-> **CURC JupyterHub will retire March 1, 2023. Users should access JupyterHub 
-through [CURC Open OnDemand](https://ondemand.rc.colorado.edu).**
+> **CURC JupyterHub will retire March 1, 2023. CURC users can run JupyterHub 
+notebooks through [CURC Open OnDemand](https://ondemand.rc.colorado.edu).**
 
 ## JupyterHub _(Python and R notebooks on CURC)_
 
 [Jupyter notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text which provide an integrated enviornment to use, learn, and teach interactive data analysis.  
 
-CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Summit or Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the next-generation [JupyterLab](https://jupyterlab.readthedocs.io) user interface. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
+CU Research Computing (CURC) operates a [JupyterHub server](https://jupyterhub.readthedocs.org/en/latest/) that enables users to run Jupyter notebooks on Blanca for serial (single core) and shared-memory parallel (single node) workflows. The CURC JupyterHub uses the next-generation [JupyterLab](https://jupyterlab.readthedocs.io) user interface. The CURC JupyterHub runs atop of [Anaconda](http://anaconda.com).  Additional documentation on the [CURC Anaconda distribution](../software/python.md) is available and may be a good pre-requisite for the following documentation outlining use of the CURC JupyterHub.
 
 ### Step 1: Log  in to CURC JupyterHub
 
@@ -20,7 +20,7 @@ To start a notebook server, select one of the available options in the *Select j
 * __Blanca CSDMS (12hr)__ (A 12-hour, 1 core job on the Blanca CSDMS partition; only available to Blanca CSDMS users)
   
 
-<!-- > Therefore, this option works well for light work such as interactive code 
+<!--- > Therefore, this option works well for light work such as interactive code 
 development and small processing tasks, but jobs may crash if large files are ingested or memory-intensive computing is conducted.  If this is your case, please consider running your workflow via a batch job on Summit, or try the "Summit Haswell (12 cores, 4 hours)" option (queue waits will be longer for this option).  Dask users should either run their workflows via a batch job on Summit, or use the "Summit Haswell (12 cores, 4 hours)" option because this provides 12-cores to the Dask array. Using "shas-interactive" for Dask jobs would only provide one core to the Dask array, negating its utility).
 
 The server will take a few moments to start.  When it does, you will be taken to the Jupyter home screen, which will show the contents of your CURC `/home` directory in the left menu bar. In the main work area on the right hand side you will see the "Launcher" and any other tabs you may have open from previous sessions.
