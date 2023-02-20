@@ -43,7 +43,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Gmsh](https://gmsh.info/) | 2.16.0, 4.11.1 (D) | Gmsh is an open source 3D finite element mesh generator with a built-in CAD engine and post-processor.|
 | [GNU Parallel](https://www.gnu.org/software/parallel/) | 20160622, 20210322 (D) | GNU parallel is a shell tool for executing jobs in parallel using one or more computers. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/GNUParallel.html)| 
 | [gnuplot](http://www.gnuplot.info/) | 5.4.3 | gnuplot is a command-line and GUI program that can generate two- and three-dimensional plots of functions, data, and data fits.| 
-| [gromacs](https://www.gromacs.org/) (G) | 2022.4 | GROMACS is a molecular dynamics package mainly designed for simulations of proteins, lipids, and nucleic acids.| 
+| [GROMACS](https://www.gromacs.org/) (G) | 2022.4 | GROMACS is a molecular dynamics package mainly designed for simulations of proteins, lipids, and nucleic acids.| 
 | [GSL](https://www.gnu.org/software/gsl/doc/html/#) | 2.7 |The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.|
 | [HDF5](https://portal.hdfgroup.org/display/support/Documentation) | 1.10.1, 1.12.1 | HDF5 is a data model, library, and file format for storing and managing data.|
 | [IDL](https://www.l3harrisgeospatial.com/Software-Technology/IDL) | 8.7 |IDL software is a scientific programming language used across disciplines to create visualizations out of complex numerical data.|
