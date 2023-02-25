@@ -78,6 +78,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [PDT (Program Database Toolkit)](https://www.cs.uoregon.edu/research/pdt/home.php) | 3.22, 3.25.1 (D) | PDT is a framework for analyzing source code written in several programming languages and for making rich program knowledge accessible to developers of static and dynamic analysis tools. | 
 | [Perl](https://www.perl.org/) | 5.16.3, 5.24.0 (D), 5.28.1, 5.36.0 | Perl is a high-level, interpreted, general-purpose programming language originally developed for text manipulation.| 
 | [PETSc](https://petsc.org/) | 3.18.3 (D) | PETSc is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations.| 
+| [pigz](https://zlib.net/pigz/) | 2.7 (D) | Pigz is a parallel implementation of gzip.| 
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
 | [Q-Chem](https://www.q-chem.com/) | 4010 |Q-Chem is a comprehensive ab initio quantum chemistry software for accurate predictions of molecular structures, reactivities, and vibrational, electronic and NMR spectra.| 
