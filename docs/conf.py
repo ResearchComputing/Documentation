@@ -13,3 +13,5 @@ extensions = [
 ]
 
 source_suffix = ['.rst', '.md']
+
+html_theme = 'sphinx_rtd_theme'
