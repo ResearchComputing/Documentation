@@ -2,8 +2,8 @@
 
 # You can set these variables from the command line.
 SPHINXBUILD   = python -m sphinx -T -E
-BUILDDIR      = build 
-SOURCEDIR     = docs 
+BUILDDIR      = build
+SOURCEDIR     = docs
 
 .PHONY: default clean view html
 
