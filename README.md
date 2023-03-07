@@ -11,7 +11,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 ## Generating Documentation Locally
 
-The full documentation can be generated locally using the provided `Makefile`. For convenience a yaml file is also included, which allows one to easily construct a conda environment. To create the conda environment using the yaml file and a terminal, first [download Anaconda](https://www.anaconda.com/). Once Anaconda has been installed the conda environment `rc-docs` can be created using
+The full documentation can be generated locally using the provided `Makefile`. Note that Windows users may need to install `make` before proceeding with the below steps. For convenience a yaml file is also included, which allows one to easily construct a conda environment. To create the conda environment using the yaml file and a terminal, first [download Anaconda](https://www.anaconda.com/). Once Anaconda has been installed the conda environment `rc-docs` can be created using
 ```
 conda env create -f conda_dev_env.yml
 ```
