@@ -14,7 +14,6 @@ Several families of compilers are available to users: Intel, GCC, and AOCC _(Alp
 ```
 module load intel/<version> impi
 ```
-
 or...
 
 **GCC**
@@ -37,7 +36,7 @@ module load aocc/<version> openmpi
 
 It is important to note that use of OpenMPI should be paired with the `SLURM_EXPORT_ENV=ALL` environment variable to ensure the job can function when scheduled from a login node!
 
-On summit and Blanca, in most situations you will want to try to compile and run your applications utilizing the Intel set of compilers and MPI libraries. Most CPUs on Summit and Blanca are of Intel architecture, so utilizing Intel will ensure the highest level of optimization comes from your compiler. GCC should only be utilized when your application cannot be compiled on intel software or if compiler specific optimizations exist within your code. We do not yet have compiler/MPI recommendations for Alpine, which has AMD CPUs. 
+On Blanca, in most situations you will want to try to compile and run your applications utilizing the Intel set of compilers and MPI libraries. Most CPUs on Blanca are of Intel architecture, so utilizing Intel will ensure the highest level of optimization comes from your compiler. GCC should only be utilized when your application cannot be compiled on intel software or if compiler specific optimizations exist within your code. We do not yet have compiler/MPI recommendations for Alpine, which has AMD CPUs. 
 
 ### Commands to Run MPI Applications
 Regardless of compiler or MPI distribution, there are 3 “wrapper” commands that will run MPI applications: `mpirun`, `mpiexec`, and `srun`. These “wrapper” commands should be used after loading in your desired compiler and MPI distribution and simply prepend whatever application you wish to run. Each command offers their own pros and cons alongside nuance as to how they function.  
@@ -64,7 +63,7 @@ RC usually recommends `mpirun` and `mpiexec` for simplicity and reliability when
 
 ### Running MPI on Alpine
 
-Alpine is the successor to Summit, and is built in a similar way, so running MPI jobs is relatively straightforward. One caveat on Alpine is that MPI jobs cannot be run across chassis, which limits them to a maximum `--ntask` count of 4096 cores (64 nodes per chassis * 64 cores each).
+Running MPI jobs on Alpine is relatively straightforward. However, one caveat on Alpine is that MPI jobs cannot be run across chassis, which limits them to a maximum `--ntask` count of 4096 cores (64 nodes per chassis * 64 cores each).
 
 Simply select the Compiler and MPI wrapper you wish to use and place it in a job script. In the following example, we run a 128 core, 4 hour job with a gcc compiler and OpenMPI:  
 
