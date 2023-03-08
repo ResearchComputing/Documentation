@@ -70,7 +70,7 @@ You can access the Jupyter classic view by going to the address bar at the top o
 
 ### Step 4: Shut down a Notebook Server
 
-Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Summit or Blanca). You also have the option to restart a server if desired.
+Go to the "File" menu at the top and choose "Hub Control Panel". Use the `Stop My Server` button in the `Control Panel` to shut down the Jupyter notebook server when finished (this cancels the job you are running on Alpine or Blanca). You also have the option to restart a server if desired.
 
 Alternately, you can use the `Quit` button from the Jupyter home page to shut down the Jupyter notebook server.
 
@@ -91,13 +91,13 @@ Follow our Anaconda documentation for [steps on configuring your conda settings 
 ##### 2. Activate the CURC Anaconda environment
 
 ```
-[johndoe@shas0137 ~]$ module load anaconda
+[johndoe@c3cpu-a5-u15-4 ~]$ module load anaconda
 ```
 
 You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. E.g.: 
 
 ```
-(base) [johndoe@shas0137 ~]$
+(base) [johndoe@c3cpu-a5-u15-4 ~]$
 ```
 
 ##### 3. Create a new custom environment. 
@@ -108,7 +108,7 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 ##### 4. Activate your new environment
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate mycustomenv
+(base) [johndoe@c3cpu-a5-u15-4 ~]$ conda activate mycustomenv
 ```
 
 > Note: We assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!
@@ -118,8 +118,8 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 __For a _python_ kernel__
 
 ```
-(mycustomenv) [johndoe@shas0137 ~]$ conda install -y ipykernel
-(mycustomenv) [johndoe@shas0137 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
+(mycustomenv) [johndoe@c3cpu-a5-u15-4 ~]$ conda install -y ipykernel
+(mycustomenv) [johndoe@c3cpu-a5-u15-4 ~]$ python -m ipykernel install --user --name mycustomenv --display-name mycustomenv
 ```
 
 * The first command will install the _ipykernel_ package if not installed already. 
@@ -128,8 +128,8 @@ __For a _python_ kernel__
 __For an _R_ kernel__
 
 ```
-(mycustomenv) [johndoe@shas0137 ~]$ conda install -y r-irkernel
-(mycustomenv) [johndoe@shas0137 ~]$ R
+(mycustomenv) [johndoe@c3cpu-a5-u15-4 ~]$ conda install -y r-irkernel
+(mycustomenv) [johndoe@c3cpu-a5-u15-4 ~]$ R
 > IRkernel::installspec(name = 'mycustomenv', displayname = 'mycustomenv')
 ```
 
