@@ -7,7 +7,7 @@ CURC issues an annual survey to all CURC users asking several questions about re
 
 ### Login nodes
 
-The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including Blanca, Summit, 
+The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including both Blanca 
 and Alpine. They are strictly intended for non-computational tasks including editing scripts, moving files, scheduling jobs to run 
 on CURC computing resources, and non-intensive workflow monitoring/management tasks. They are not intended for computational tasks 
 of any kind. CURC personnel regularly monitor processes on the login nodes and reserve the right to terminate processes in 
@@ -93,7 +93,7 @@ reserves the right to reject new project allocation requests and/or suggest amen
 
 ### Planned Maintenance 
 The first Wednesday of each month is reserved for Planned Maintenance (PM). CURC resources, including compute clusters, file 
-systems, and servers (JupyterHub, Open OnDemand, etc.), will be unavailable during this time. Users are encouraged to check 
+systems, and servers (Open OnDemand, etc.), will be unavailable during this time. Users are encouraged to check 
 [https://curc.statuspage.io/](https://curc.statuspage.io/) for updates on PMs. RC reserves the right to cancel, move, or extend 
 the maintenance window as needed. 
 
