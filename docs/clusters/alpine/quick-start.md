@@ -18,8 +18,7 @@ Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh conn
 3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
 
 4. If you would like to use software that is not within our preinstalled stack your application 
-must be compiled using `acompile` (similar to ssh'ing to an `scompile` node on Summit). 
-More information about the `acompile` function can be found under our 
+must be compiled using `acompile`. More information about the `acompile` function can be found under our 
 [partitions](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#partitions) 
 section.
 
