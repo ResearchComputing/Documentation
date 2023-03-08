@@ -49,7 +49,7 @@ Fortran program. In this tutorial, we will name our program file:
 `hello_world_mpi.f90`
 
 Open `hello_world_mpi.f90` and begin by including the mpi library
-`'mpi.h'` , and titling the `program hello_world_mpi`
+`'mpi.h'` , and titling the program `hello_world_mpi`
 
 ```fortran
 PROGRAM hello_world_mpi
@@ -143,7 +143,7 @@ __Intel Fortran Compiler__
 mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
 ```
 
-This will produce an executable we can pass to Summit as a job.  In
+This will produce an executable we can pass to our prefered HPC system (e.g. Alpine or Blanca) as a job.  In
 order to execute MPI compiled code, a special command must be used:
 
 ```shell
@@ -198,8 +198,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 
 It is important to note that on Alpine, there are 64 cores per
 node. For applications that require more than 64 processes, you will
-need to request multiple nodes in your job (i.e., "" -N
-<number of nodes> "").
+need to request multiple nodes in your job (i.e. modify the value for `-N`).
 
 Our output file should look something like this (note the order of
 ranks isn’t necessarily sequential):
