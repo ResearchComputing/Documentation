@@ -318,12 +318,12 @@ Since rclone is intended to be used with cloud technologies, any server that can
 **On a laptop or desktop:** Before connecting CURC storage resources to your local machine, you will need to first [download](https://rclone.org/downloads/) and [install](https://rclone.org/install/) it according to your system from the rclone [website](https://rclone.org/).
 
 **On CURC:** 
-Rclone has been added to the Summit and Alpine module stacks. To use rclone first first load the cluster-specific SLURM job scheduler instance (either Summit or Alpine in this case) from a *login node*, then ssh to a compile or compute node to access the cluster's module stack:
+Rclone has been added to the Alpine module stacks. To use rclone first first load the cluster-specific SLURM job scheduler instance (Alpine in this case) from a *login node*, then ssh to a compile or compute node to access the cluster's module stack:
 
 ```
 $ module load slurm/alpine 	# Load Alpine Slurm Instance
 $ sinteractive 			# Access an Alpine compute node via an interactive job
-$ mosule load rclone/1.58.0 	# Load rclone module
+$ module load rclone/1.58.0 	# Load rclone module
 ```
 
 ##### Step 2: Configuring rclone remote connections 
