@@ -2,7 +2,7 @@
 
 All users are allocated space on the `/home` and `/projects`
 filesystems. In addition, separate `scratch` directories are visible
-from Summit and Blanca. These scratch directories are hosted on
+from Alpine and Blanca. These scratch directories are hosted on
 separate, high-performance filesystems designed to support intensive,
 parallel I/O operations.
 
