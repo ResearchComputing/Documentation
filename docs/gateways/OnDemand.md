@@ -1,6 +1,6 @@
 ## Open OnDemand _(Browser Based HPC Portal)_
 
-CURC Open OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing. CURC Open OnDemand provides a graphical interface to view, edit, download, and upload files; manage and create job templates for CURC's clusters; and access CURC interactive applications (Virtual Desktops, Matlab, and JupyterNotebooks); all via a web browser and with minimal knowledge of Linux and scheduler commands required.
+CURC Open OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing. CURC Open OnDemand provides a graphical interface to view, edit, download, and upload files; manage and create job templates for CURC's clusters; and access CURC interactive applications (Virtual Desktops, Matlab, and JupyterNotebooks). All of these actions are completed via a web browser and require only minimal knowledge of Linux and scheduler commands.
 
 ### Getting started with CURC Open OnDemand
  
@@ -28,9 +28,7 @@ Selecting one of the file spaces will open a separate browser window which will 
 
 > **_NOTE:_** _Please use 
 [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers) 
-to transfer files to/from `/scratch/alpine` or `/rc_scratch` or if you have more 
-than 
-1 GB of data to transfer. OnDemand is not designed to handle large file transfers._
+to transfer files to and from `/scratch/alpine` or `/rc_scratch`. Additionally, Globus should be used if you have more than 1 GB of data to transfer. OnDemand is not designed to handle large file transfers._
 
 ![](OnDemand/home_file.png)
 
@@ -40,7 +38,7 @@ than
 
 Jobs can be monitored, created, edited and scheduled with the job management tools under the _Jobs_ menu.
 
-* __Active Jobs:__ Under the “Active Jobs” tab you can view active jobs. You can choose to view your jobs (or all jobs) as well as choose from specific clusters (Alpine, Core, or All Clusters). From this menu you can cancel your own jobs.
+* __Active Jobs:__ Under the “Active Jobs” tab you can view active jobs. You can choose to view your jobs (or all jobs) as well as choose from specific clusters (Alpine, Core, or All Clusters). From this menu you can also cancel your own jobs.
 
 ![](OnDemand/active_jobs.png)
 
@@ -54,11 +52,11 @@ Jobs can be monitored, created, edited and scheduled with the job management too
 
 The _Clusters_ menu provides shell access to login nodes on CURC clusters. The shell terminal is similar to many other tools that provide terminal access.
 
-> Currently, both Summit and Alpine shells log you into a basic login node. You can 
+> Currently, Alpine shells log you into a basic login node. You can 
 load in either Alpine or Blanca slurm instances from here: `module load 
-slurm/<cluster>` with either alpine or blanca.
+slurm/<cluster>` with either Alpine or Blanca.
 
-* __Alpine:__ The Alpine tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal.
+* __Alpine:__ The Alpine tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone, which will complete the login to the terminal.
 
 <!-- * __Blanca:__ The Blanca tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone to complete login to the terminal. To load the Blanca Slurm environment, make sure to type “module load slurm/blanca upon login. More information on using the Blanca cluster can be found [in the Blanca documentation](https://curc.readthedocs.io/en/latest/access/blanca.html). -->
 
@@ -68,11 +66,11 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ##### Core Desktop (Remote Desktop)
 
-1. When starting a Remote Desktop session, you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify account).
+1. When starting a Remote Desktop session, you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify "Account").
 ![](OnDemand/core_launch.png)
-2. Click “launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
+2. Click “Launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
 3. When your Remote Desktop is ready, you can click the "Launch Core Desktop" button. In most cases, the default compression and image quality will suffice. If you do have problems with image quality you can adjust these settings as necessary. 
-4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
+4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions on how to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
 
 **Notes**:
 * You can copy/paste into/out of the VNC desktop using the clipboard in the "hidden" tab on the left-hand-side of the virtual desktop.
@@ -83,7 +81,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 1. When starting an interactive MatLab job, you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job, including the Matlab version. In most cases, the defaults will be adequate (i.e, no need to specify an account).
 ![](OnDemand/matlab_launch.png)
-2. Click “launch” to submit the MATLAB job to the queue. The wait time depends on the number of cores, nodes, and time requested.
+2. Click “Launch” to submit the MATLAB job to the queue. The wait time depends on the number of cores, nodes, and time requested.
 3. When your Matlab session is ready, you can click the “Launch MATLAB on Core- CURC”. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. An interactive Matlab session will be started in a new window.
 
 **_Notes:_** 
@@ -95,7 +93,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 1. When starting an interactive JupyterHub job, you may customize the resources 
 allocated to the session and other characteristics of the dispatched Slurm job. Note that jobs are currently limited to 8 cores.
 
-2. Click “launch” to submit the JupyterNotebook job to the queue. The wait time 
+2. Click “Launch” to submit the JupyterNotebook job to the queue. The wait time 
 depends on the number of cores and time requested.
 ![](OnDemand/jupyter_launch.png)
 3. Once your Jupyter Notebook session is ready, you can click “Launch Jupyter Notebook”. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. An interactive Jupyter Notebook session will be started in a new window.

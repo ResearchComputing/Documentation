@@ -46,7 +46,7 @@ A **Docker container** is an ephemeral instance of a Docker image. Docker images
 
 ### Running a Docker container
 
-**Note:** Docker containers cannot be run with Docker on RMACC Summit or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using a software called Singularity.  See the documentation on Singularity (below) if you wish to run a Docker container on RMACC Summit or Blanca. 
+**Note:** Docker containers cannot be run with Docker on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using a software called Singularity.  See the documentation on Singularity (below) if you wish to run a Docker container on Alpine or Blanca. 
 
 To run a Docker container on your laptop or other system on which you have Docker installed, simply type the command:
 

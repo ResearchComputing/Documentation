@@ -52,24 +52,24 @@ CU Research Computing manages the resources and address systems-level issues as 
 > **_NOTE:_** _CU Research Computing does not support administration within CUmulus cloud instances._
 
 ##### Appropriate use cases:
-- Workflow management software that monitors/schedules jobs on Summit, Alpine, or Blanca
+- Workflow management software that monitors/schedules jobs on Alpine or Blanca
 - Running a research database/website application that queries data stored on CURC PetaLibrary 
 - Web-based research “Hubs” (JupyterHub, Shiny Apps)
 
 ##### Inappropriate use cases: 
-- Running workflows that can more efficiently be run on Summit, Alpine or Blanca
+- Running workflows that can more efficiently be run on Alpine or Blanca
 - Personal websites or websites unrelated to research
 - Serverless applications
 
-> **_NOTE:_** _If neither CUmulus nor other CURC resources (Summit, Alpine, Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._ Some Possible AWS Cases are listed below:
-> - Workflow that cannot be run on Summit/Alpine/Blanca and resource needs are too big for CUmulus
+> **_NOTE:_** _If neither CUmulus nor other CURC resources (Alpine or Blanca) are appropriate for your use case, we have limited access to Amazon Web Services and may be able to provide you with AWS resources that suit your needs._ Some Possible AWS Cases are listed below:
+> - Workflow that cannot be run on Alpine or Blanca and resource needs are too big for CUmulus
 > - Workflow that require access to very large datasets that are only hosted on AWS (e.g., some NASA satellite datasets)
 
 ###  Requesting Access to CUmulus
 
 The application process for CUmulus requires users to submit an proposal for your use case, which can be requested by emailing [rc-help@colorado.edu](rc-help@colorado.edu). In this proposal you will:
 - Describe your CUmulus workflow
-- Describe why this workflow is appropriate for CUmulus and cannot be accommodated by other CURC resources (Summit, Alpine or Blanca)
+- Describe why this workflow is appropriate for CUmulus and cannot be accommodated by other CURC resources (Alpine or Blanca)
 - Estimate the resources you require (operating system, CPU cores, disk space, memory)
 
 Once we receive your request the allocation committee will review it. If the case is deemed appropriate by the allocations committee the following will occur.

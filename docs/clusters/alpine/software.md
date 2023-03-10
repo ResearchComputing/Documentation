@@ -90,7 +90,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3 |ROCm is an AMD software stack for GPU programming.| 
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
-| [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/ContainerizationonSummit.html#singularity)|
+| [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/Containerizationon.html#singularity)|
 | [Slurmtools](https://curc.readthedocs.io/en/latest/compute/monitoring-resources.html#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
 | [SQLite](https://sqlite.org/index.html) | 3.36.0, 3.38.01 |SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.| 
 | [Subversion](https://subversion.apache.org/) | 1.8.16, 1.10.2, 1.14.1 (D) |Apache Subversion is a software versioning and revision control system.| 

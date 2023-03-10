@@ -42,7 +42,7 @@ The second thing we'll need to do is install SLURM on our CUmulus instance. To d
 	```
 * **Install SLURM**. It looks like there's a lot going on with this step, but all we're doing is downloading SLURM from github to the `/opt` directory of your instance, configuring the compilation to include Java Web Tokens (JWT) functionality, and then compiling and installing SLURM. Note that it is **VERY IMPORTANT** that the SLURM version on your CUmulus instance matches the CURC HPC version otherwise it will not connect. 
 
-	> You can check the SLURM version on CURC HPC resources by loading your cluster specific SLURM module from a login node (either `module load slurm/summit`, `module load slurm/blanca`, or `module load slurm/alpine`) then checking the version of a SLURM command (e.g. `sbatch --version`). 
+	> You can check the SLURM version on CURC HPC resources by loading your cluster specific SLURM module from a login node (either `module load slurm/blanca` or `module load slurm/alpine`) then checking the version of a SLURM command (e.g. `sbatch --version`). 
 
 	> In this example we're using the 20.02.4 SLURM version and specifying it with git clone branch flag (`-b`)
 	```

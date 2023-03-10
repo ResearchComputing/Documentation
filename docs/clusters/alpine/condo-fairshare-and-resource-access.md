@@ -84,12 +84,7 @@ To distribute the FairShare score, each institutional contributor will
 receive an account (containing all its affiliated users) that will hold 
 the full score. In turn, each of those accounts will contain a "general" 
 subaccount that will have 20% of the FairShare pool and a "projects" 
-subaccount with 80%. (The general/projects pattern is already in place on 
-Alpine and is a pattern CURC initially set up on Summit.) Contributors 
-wishing for a different accounting arrangement from "general/projects" 
-should reach out to CURC with specific requests. 
-
-This crediting and billing system is intended to balance contributions and 
+subaccount with 80%. The general/projects pattern is already in place on Alpine. Contributors wishing for a different accounting arrangement from "general/projects" should reach out to CURC with specific requests. This crediting and billing system is intended to balance contributions and 
 utilization. 
 
 #### Example and comment on FairShare and billing 
