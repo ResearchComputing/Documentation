@@ -92,8 +92,7 @@ reserves the right to reject new project allocation requests and/or suggest amen
 <br>
 
 ### Planned Maintenance 
-The first Wednesday of each month is reserved for Planned Maintenance (PM). CURC resources, including compute clusters, file 
-systems, and servers (Open OnDemand, etc.), will be unavailable during this time. Users are encouraged to check 
+The first Wednesday of each month is reserved for Planned Maintenance (PM). CURC resources, including compute clusters, file systems, and servers, will be unavailable during this time. Users are encouraged to check 
 [https://curc.statuspage.io/](https://curc.statuspage.io/) for updates on PMs. RC reserves the right to cancel, move, or extend 
 the maintenance window as needed. 
 

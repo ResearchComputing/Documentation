@@ -18,8 +18,6 @@ See our documentation [homepage](index.html) for information about our most comm
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/alpine"`
 12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
 13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
-14. [Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?](#why-is-my-jupyterhub-session-pending-with-reason-qosmaxsubmitjobperuserlimit)
-
 
 ### I have a new phone. How do I move my Duo onto it?
 
@@ -219,13 +217,12 @@ PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does coun
 
 If you would like to set a custom snapshot schedule for your allocation, please contact rc-help@colorado.edu. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 
+
 ### Why is my Jupyter session pending throwing 'QOSMaxSubmitJobPerUserLimit'?
 
-Jupyter on CURC is run using a Slurm compute job under the cluster. On Alpine, these jobs should usually be run under the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any job using the partition). 
-
-In order to spawn another Jupyter session, you first need to close the current job.
-
-You can do so by [shutting down your current JupyterHub server](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#step-4-shut-down-a-notebook-server) or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
+Our OnDemand servers allocate resources for JupyterHub sessions using a Slurm compute job under the cluster. The `JupyterHub 1 (Presets)` server submits jobs to Alpine's `ahub` partition. 
+This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). 
+In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current JupyterHub server or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
 
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

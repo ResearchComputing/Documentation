@@ -236,8 +236,4 @@ This is likely due to your `~/.bashrc` configuration file auto-activating a cond
 Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda envioronment with `module load anaconda` to activate the base environment.
 
 
-### See Also
-
-* [CURC JupyterHub](../gateways/jupyterhub.md)
-
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
