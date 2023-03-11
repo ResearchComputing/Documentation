@@ -8,17 +8,17 @@ Interactive jobs allow a user to interact with applications in real time within 
 
 ---
 
-To run an interactive job on Research Computing resources, request an interactive session by utilizing the `ainteractive` command.  The `ainteractive` command creates a job with parameters provided through flags run with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. 
+To run an interactive job on Research Computing resources, request an interactive session by utilizing the `sinteractive` command.  The `sinteractive` command creates a job with parameters provided through flags run with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. 
 
-Any resource that could be specified in a job script or with `sbatch` can also be used with `ainteractive`. [Check out this page for a list of Slurm directives that can be used with interactive jobs.](job-resources.html) 
+Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. [Check out this page for a list of Slurm directives that can be used with interactive jobs.](job-resources.html) 
 
-The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `ainteractive` command is run as follows:
+The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
 
 ```bash
-sinteractive --partition=ainteractive --time=00:10:00
+sinteractive --partition=amilan --time=00:10:00 --ntasks=1
 ```
 
-This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the interactive shas partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
+This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the amilan partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
 
 ### Interactive GUI Applications
 

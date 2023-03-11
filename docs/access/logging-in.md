@@ -16,7 +16,7 @@ Users accessing RC's resources will be connected to a login node. A login node i
 > **Note:** the [login node policy](https://github.com/ResearchComputing/Documentation/edit/master/docs/compute/node-types.md#policy-for-use-of-login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
 
 + **For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**  
-+ **For RMACC users, pleaser refer to [RMACC Access to Summit.](rmacc.html)**
++ **For RMACC users, pleaser refer to [RMACC Access to Alpine.](rmacc.html)**
 
 <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>  
 

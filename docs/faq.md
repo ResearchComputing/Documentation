@@ -4,7 +4,7 @@ See our documentation [homepage](index.html) for information about our most comm
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
 2. [How do I acknowledge use of CURC Resources?](https://curc.readthedocs.io/en/latest/index.html#acknowledging-rc)
-3. [How do I check how full my Summit directories are?](#how-do-i-check-how-full-my-summit-directories-are)  
+3. [How do I check how full my directories are?](#how-do-i-check-how-full-my-directories-are)  
 4. [When will my job start?](#when-will-my-job-start) 
 5. [How can I get system metrics?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
 6. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
@@ -14,8 +14,8 @@ See our documentation [homepage](index.html) for information about our most comm
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
 10. [Why do I get the following 'Invalid Partition' error when I run a Blanca job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-blanca-job) 
 11. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
-[Why do I get the following 'LMOD' error when I try to load slurm/summit?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
-    `Lmod has detected the following error:  The following module(s) are unknown: "slurm/summit"`
+[Why do I get the following 'LMOD' error when I try to load a slurm module?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
+    `Lmod has detected the following error:  The following module(s) are unknown: "slurm/alpine"`
 12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
 13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
 14. [Why is my JupyterHub session pending with reason 'QOSMaxSubmitJobPerUserLimit'?](#why-is-my-jupyterhub-session-pending-with-reason-qosmaxsubmitjobperuserlimit)
@@ -55,7 +55,6 @@ You have three directories allocated to your username (`$USER`). These include `
 ------------------------------------------------------------------------
 /home/janedoe                          1.7G          339M           2.0G
 /projects/janedoe                       67G          184G           250G
-/scratch/alpine                         29G        10211G         10240G
 ```
 
 You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
@@ -145,7 +144,7 @@ If you receive this message, the following solutions are available:
 This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
 
 ### Why do I get an 'Invalid Partition' error when I try to run a Blanca job?
-If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/summit or slurm/alpine scheduler instance. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
+If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/alpine scheduler instance. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 
 ### How can I check what allocations I belong to?
 
@@ -222,11 +221,11 @@ If you would like to set a custom snapshot schedule for your allocation, please 
 
 ### Why is my Jupyter session pending throwing 'QOSMaxSubmitJobPerUserLimit'?
 
-Jupyter on CURC is run using a SLURM compute job under the cluster with the `shas-interactive` partition. The shas-interactive partition provides users with rapid turn around start times but is limited to a [single core/node](https://curc.readthedocs.io/en/latest/running-jobs/job-resources.html#partitions-summit). This means only one instance of JupyterHub (or any job using the interactive partitions) can be run at a time. 
+Jupyter on CURC is run using a Slurm compute job under the cluster. On Alpine, these jobs should usually be run under the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any job using the partition). 
 
-In order to spawn another JupyterHub job, you first need to close the current job.
+In order to spawn another Jupyter session, you first need to close the current job.
 
-You can either do so by [shutting down your current JupyterHub server](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#step-4-shut-down-a-notebook-server) or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
+You can do so by [shutting down your current JupyterHub server](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html#step-4-shut-down-a-notebook-server) or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
 
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
