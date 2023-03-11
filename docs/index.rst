@@ -97,7 +97,6 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/slurm-commands
    running-jobs/job-resources
    running-jobs/squeue-status-codes
-   running-jobs/ssky
 
 .. toctree::
    :maxdepth: 1
@@ -133,7 +132,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    software/python
    software/GNUParallel
    software/vasp
-   software/ContainerizationonSummit
+   software/Containerizationon
 
 .. toctree::
    :maxdepth: 2

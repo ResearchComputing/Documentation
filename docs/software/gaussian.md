@@ -81,7 +81,7 @@ export GAUSS_SCRDIR=/scratch/alpine/$USER/$SLURM_JOBID
 # the next line prevents OpenMP parallelism from conflicting with Gaussian's internal SMP parallelization
 export OMP_NUM_THREADS=1
 
-mkdir $GAUSS_SCRDIR  # only needed if using /scratch/summit
+mkdir $GAUSS_SCRDIR  # only needed if using /scratch/alpine
 date  # put a date stamp in the output file for timing/scaling testing if desired
 g16 -m=50gb -p=24 my_input.com
 date
@@ -100,7 +100,7 @@ flags might include
 -p=64 -s=ssh -w=c3cpu-a2-u1-2-opa,c3cpu-a2-u1-1-opa,c3cpu-a2-u1-4-opa
 ```
 
-which tells G16 to use 24 cores on each of three shas nodes, and to
+which tells G16 to use 64 cores on three Alpine nodes, and to
 set up the connections between nodes using ssh.
 
 Since you don't know in advance what nodes your job will be assigned
