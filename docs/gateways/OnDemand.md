@@ -90,7 +90,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ##### JupyterHub
 
-1. When starting an interactive JupyterHub job, you may select `JupyterHub 1 (Presets)` or `JupyterHub 2 (Custom)` from the list of servers. The first server option offers preset configurations for convenience; you may select 1 core for 12 hours or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The second server option allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
+1. When starting an interactive JupyterHub job, you may select `JupyterHub 1 (Presets)` or `JupyterHub 2 (Custom)` from the list of servers. The first server option offers preset configurations for convenience; you may select 1 core for 12 hours or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The `JupyterHub 1 (Presets)` server submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one Jupyter session__ (or any one job using the partition). `JupyterHub 2 (Custom)` allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
 
 2. Click “Launch” to submit the JupyterNotebook job to the queue. The wait time 
 depends on the number of cores and time requested.
