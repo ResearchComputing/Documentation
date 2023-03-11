@@ -88,20 +88,23 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 * Matlab can also be opened in the Core Remote Desktop, once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software). Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience.
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
-##### Jupyter Notebook
+##### JupyterHub
 
-1. When starting an interactive JupyterHub job, you may customize the resources 
-allocated to the session and other characteristics of the dispatched Slurm job. Note that jobs are currently limited to 8 cores.
+1. When starting an interactive JupyterHub job, you may select `JupyterHub 1 (Presets)` or `JupyterHub 2 (Custom)` from the list of servers. The first server option offers preset configurations for convenience; you may select 1 core for 12 hours or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The second server option allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
 
 2. Click “Launch” to submit the JupyterNotebook job to the queue. The wait time 
 depends on the number of cores and time requested.
-![](OnDemand/jupyter_launch.png)
-3. Once your Jupyter Notebook session is ready, you can click “Launch Jupyter Notebook”. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. An interactive Jupyter Notebook session will be started in a new window.
 
-For more information on running Jupyter Notebooks, [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
+
+3. Once your Jupyter Notebook session is ready, you can click “Connect to Jupyter”. An interactive Jupyter Notebook session will be started in a new window.
+
+4. To shut down a Notebook server, go to the "File" menu at the top and choose "Shut Down". This will shut down the Jupyter notebook server and cancels the job you are running on Alpine or Blanca. You also have the option to restart a server if desired. Closing the window will not terminate the job. You can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
 
 **_Notes:_** 
-* Closing the window will not terminate the job. You can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
+* In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. 
+* When the server starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
+
+For more information on running Jupyter Notebooks, [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
 
 #### My Interactive Sessions
 
