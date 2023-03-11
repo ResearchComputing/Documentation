@@ -37,10 +37,6 @@ The PetaLibrary is a CU Research Computing service supporting the storage, archi
 
 Through a collaboration with the CU Libraries, the PetaLibrary can also host the publication and long-term archival of large datasets. The datasets are assigned unique digital object identifiers (DOIs) that are searchable and accessible via the “CU Scholar” institutional repository.
 
-### JupyterHub
-
-JupyterHub is a multi-user server for Jupyter notebooks. It provides a web service enabling users to create and share documents that contain live code, equations, visualizations and explanatory text. The CU Research Computing JuypterHub deploys into the RMACC Summit supercomputer and Blanca condo cluster and includes support for parallel computation.
-
 ### EnginFrame
 
 NICE EnginFrame provides a 3D-accelerated remote desktop environment on Nvidia GPU-equipped compute nodes. Coupled with the proprietary Desktop Cloud Visualization (DCV) VNC server, the Research Computing EnginFrame supports the use of common visualization applications in a typical desktop environment using only a modern web browser.
