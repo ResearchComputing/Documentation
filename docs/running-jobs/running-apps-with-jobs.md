@@ -34,10 +34,10 @@ Another method of running applications on Research Computing resources is throug
 - Any application that requires user input at runtime
 - Any application with a GUI (Graphical User Interface)
 
-You can request an interactive job by using the `ainteractive` command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `time` directive to avoid long queue times. 
+You can request an interactive job by using the `sinteractive` command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `time` directive to avoid long queue times. 
 
 ```bash
-ainteractive --time=00:10:00
+sinteractive --time=00:10:00
 ```
 
 [A list of ainteractive parameters can be found here](../clusters/alpine/alpine-hardware.html)

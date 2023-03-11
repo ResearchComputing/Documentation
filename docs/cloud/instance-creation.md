@@ -2,7 +2,7 @@
 
 ### Instances
 
-Instances are virtual machines that run inside the cloud, more simply: an instance is just a digital version of a physical computer. Instances are the basic "unit" of compute you will use within CUmulus. Once you have requested a CUmulus allocation you will be provided with a "project" which contains the total resources you requested. Within your project you can spin up a finite number of instances (determined by your allocation) each of which can be thought of as it's own computer. 
+Instances are virtual machines that run inside the cloud. More simply, an instance is just a digital version of a physical computer. Instances are the basic "unit" of compute you will use within CUmulus. Once you have requested a CUmulus allocation, you will be provided with a "project" which contains the total resources you requested. Within your project, you can spin up a finite number of instances (determined by your allocation), each of which can be thought of as a computer. 
 
 ### Navigating to your Instances
 
@@ -93,7 +93,7 @@ Security Groups act as a virtual firewall for your instance to control inbound a
 > Enter file in which to save the key (/home/username/.ssh/id_ed25519):
 >	```
 >
-> Here you can specify the full path/name of the keypair files and even set a extra passwords. We'll press enter twice for the `no passphrase` option. Our new keypairs have been created at `/home/username/.ssh/` and are called `id_ed25519`  and `id_ed25519.pub.` The public key (.pub) can be transferred to other remote servers (this is the key we will import to our CUmulus instance) but the private key (no suffix) should never leave the host machine. 
+> Here, you can specify the full path/name of the keypair files and even set a extra passwords. We'll press enter twice for the `no passphrase` option. Our new keypairs have been created at `/home/username/.ssh/` and are called `id_ed25519`  and `id_ed25519.pub.` The public key (.pub) can be transferred to other remote servers (this is the key we will import to our CUmulus instance), but the private key (no suffix) should never leave the host machine. 
 
 ![](cumulus/instance_keypair.png)
 
@@ -105,16 +105,16 @@ Security Groups act as a virtual firewall for your instance to control inbound a
 ![](cumulus/instance_config.png)
 
 ##### Step 9: Launch the instance
-Your instance will take a few minutes to finish provisioning. Once it's finished yourinstance will be available from the "Instance" sub-tab.
+Your instance will take a few minutes to finish provisioning. Once it's finished, your instance will be available from the "Instance" sub-tab.
 
 
 ##### Step 10: (Optional) Associate Floating IP to instance
 * You can now associate a Floating IP to enable access to the instance from outside of the CU network.
-  * On the right hand side of the newly created instance choose `Associate Floating IP` under the `Actions` dropdown
+  * On the right hand side of the newly created instance, choose `Associate Floating IP` under the `Actions` dropdown
   
 ![](cumulus/instance_ip1.png)
 
-* Now select from available IP addresses if needed (e.g., if you'll be adding a web portal to your instance)
+* Now, select from available IP addresses if needed (e.g., if you'll be adding a web portal to your instance)
 * The _Select port to be associated_ option should already be pre-populated with the internal IP of your new instance. Click associate.
 
 ![](cumulus/instance_ip2.png)
@@ -126,10 +126,10 @@ Associate the IP Address to your instance
 
 ##### Step 11: Logging into your Instance
 
-At a minimum, you'll need to login to your instance via `ssh` to install the software you'll be using. Other reasons to login to the instance may be to stop or start services, associate a domain name with your IP, run your software, troubleshoot problems, etc. You are essentially the "system administrator" of your own instance.
+At a minimum, you'll need to login to your instance via `ssh` to install the software you'll be using. Other reasons to login to the instance include to stop or start services, associate a domain name with your IP, run your software, troubleshoot problems, etc. You are essentially the "system administrator" of your own instance.
 
-* To login to an instance via `ssh`, you _must_ be on CU VPN to connect (this is CURC restriction)
-* If you are not a CU Boulder user (and therefore do not have VPN access), please follow the instructions provided here <https://curc.readthedocs.io/en/latest/access/rmacc.html#shell-access-to-summit-compute-nodes> for running a terminal through Open OnDemand and then SSH from the provided terminal.
+* To login to an instance via `ssh`, you _must_ be on CU VPN to connect (this is CURC restriction).
+* If you are not a CU Boulder user (and therefore do not have VPN access), please follow the instructions provided [here](https://curc.readthedocs.io/en/latest/access/rmacc.html) to spawn a terminal through Open OnDemand. You can use this terminal to login to an instance via `ssh`.
 * Open up an ssh connection providing the identity (key) file that you associated with the instance in the _Key Pair_ step covered earlier:
 
 ```bash
@@ -144,7 +144,7 @@ $ ssh -i ~/.ssh/testkey ubuntu@123.456.789.123
 ```
 
 
-If desired, set a password on the root account to make troubleshooting easier via the recovery console if the instance loses network connectivity.
+If desired, set a password on the root account to simplify troubleshooting (via the recovery console) if the instance loses network connectivity.
 
 ```bash
 $ sudo su - 
@@ -153,7 +153,7 @@ $ passwd root
 
 #### Get the default DNS name (optional)
 
-1. All Floating IP's have a default A record, this can optionally be used in place of an IP address.
+1. All Floating IP's have a default A record. This can optionally be used in place of an IP address.
 2. Perform a reverse lookup:
 
 	![](cumulus/reverse_lookup.png)
