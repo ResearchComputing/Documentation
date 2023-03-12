@@ -70,7 +70,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 ![](OnDemand/core_launch.png)
 2. Click “Launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
 3. When your Remote Desktop is ready, you can click the "Launch Core Desktop" button. In most cases, the default compression and image quality will suffice. If you do have problems with image quality you can adjust these settings as necessary. 
-4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). Instructions on how to use graphical software can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software).
+4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). 
 
 **Notes**:
 * You can copy/paste into/out of the VNC desktop using the clipboard in the "hidden" tab on the left-hand-side of the virtual desktop.
@@ -85,7 +85,13 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 3. When your Matlab session is ready, you can click the “Launch MATLAB on Core- CURC”. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. An interactive Matlab session will be started in a new window.
 
 **_Notes:_** 
-* Matlab can also be opened in the Core Remote Desktop, once you’ve opened a Remote Desktop session instructions can be found at the [RC EnginFrame page](https://curc.readthedocs.io/en/latest/gateways/enginframe.html#step-3-use-graphical-software). Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience.
+* Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience. To do this, start a Remote Desktop session, open a terminal by clicking "Applications" -> "System Tools" --> "MATE Terminal", then load the MATLAB module. Finally, start MATLAB by typing
+
+```bash
+module load matlab/2019b
+matlab
+```
+
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
 ##### JupyterHub
