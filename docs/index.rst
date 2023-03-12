@@ -110,8 +110,7 @@ Use of University of Colorado Research Computing resources, including (but not l
 
    gateways/OnDemand
    gateways/jupyterhub
-   gateways/enginframe
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Cloud
