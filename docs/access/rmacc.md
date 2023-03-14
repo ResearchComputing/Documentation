@@ -11,7 +11,7 @@ one -- just go to step 2].
 
 <br>
 
-Step 2: Email us at [rc-help@colorado.edu](rc-help@colorado.edu), and request an account. Please include the following information:
+Step 2: Email us at <rc-help@colorado.edu>, and request an account. Please include the following information:
 
 - your ACCESS or XSEDE username
 - your institutional affiliation (e.g., "University of Awesome")
