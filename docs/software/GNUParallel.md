@@ -1,60 +1,63 @@
 ## GNU Parallel
 
-GNU Parallel is an effective tool for optimally using multiple cores and 
-nodes on CURC clusters to run lots of independent tasks without the need 
-to learn 
-OpenMP or MPI. This tutorial assumes user knowledge of Slurm jobs, shell scripting, and some Python.
+GNU Parallel is an effective tool for optimally using multiple cores and nodes (when paired with `srun`) on CURC clusters to run a large number of independent tasks, without the need to learn 
+OpenMP or MPI. It allows shell commands (for example, calls to serial programs) to be distributed amongst nodes and cores. For this reason, code can be written in any language that can be run from a Linux shell. 
 
 ### Why Use GNU Parallel?
 
-Suppose you have a very simple serial program that crops a photo, and you 
-need to apply it to crop several million photos. You could rewrite the 
-serial program into a parallel program that would use multiple processors 
-to more quickly run the program over the entire set of photos (compared to 
-doing one-at-a-time), but this would require knowledge of parallel 
-programming. If your code is in a language that has limited 
-parallelization capabilities then this may not even be an option. The 
-easiest solution to this problem is to use GNU Parallel.
+Suppose you have a very simple serial program that crops a photo, and you need to apply it to crop several million photos. You could rewrite the serial program into a parallel program that would use multiple processors to more quickly run the program over the entire set of photos (compared to doing them one-at-a-time), but this would require knowledge of parallel programming. If your code is in a language that has limited parallelization capabilities then this may not even be an option. The easiest solution to this problem is to use GNU Parallel.
 
-### Using GNU Parallel
+### Simple GNU Parallel Example
 
-GNU Parallel is provided as a software module on Alpine. It allows shell 
-commands (for example, calls to serial programs) to be distributed amongst nodes and cores. This means code doesn’t need to be explicitly parallelized for MPI or OpenMP. Additionally, code can be written in any language that can be run from a Linux shell.
+To begin, we will first create a simple serial program. We will call the script `my_host_and_proc.sh` and it will print the task number (provided by GNU parallel), the node being used, and the processor performing the work:
 
-Let’s create a simple ‘Hello World’ serial python script to demonstrate the GNU Parallel tool. We will call the script `hello_World.py` and it will print “Hello World from task: ” followed by a command line argument:
+```bash
+#!/bin/bash                                                                                                                    
 
-```python
-import sys
+# obtain the name of the node we are on                                                                 
+MYHOST=$(hostname)
 
-print “Hello World from task: ”, sys.argv[1]
+# obtain the processor being used on the node                                                               
+MYPROC=$(cat /proc/self/stat |gawk '{print $39}')
+
+# print the task, node, and processor ($1 is input being provided to the script)                                                            
+echo "task $1 is being ran on node $MYHOST and processor $MYPROC"
 ```
-
-Now create a job script called `run_hello.sh` that will use GNU Parallel 
-to run as many instances of your python script as you want. Before running GNU Parallel in our script, we need to load the python and GNU Parallel modules. Your job script should look something like this:
-
-> _Note: This example uses a custom python environment built with conda, 
-more infomation on using python or R with conda can be found 
-[here](./python.html)_
+Now we create a job script called `run_hello.sh` that is capable of using GNU Parallel to run as many instances of `my_host_and_proc.sh` as we want. Additionally, this job script will be capable of running across multiple nodes. 
 
 ```bash
 #!/bin/bash
+#SBATCH --time=00:20:00                                                    
+#SBATCH --partition=atesting                                               
+#SBATCH --qos=testing                                                      
+#SBATCH --ntasks=4                                                         
+#SBATCH --cpus-per-task=1                                                  
+#SBATCH --job-name=gnu_test                                                
+#SBATCH --output gnu_test.%j.out
 
-#SBATCH --time 00:02:00
-#SBATCH --partition atesting
-#SBATCH --qos testing
-#SBATCH --ntasks=4
-#SBATCH --job-name gpPythonDemo
-#SBATCH --output gnuparallel.out
 
-module purge
-module load anaconda 
-conda activate your_custom_env
-module load gnu_parallel
+echo "number of nodes: $SLURM_JOB_NUM_NODES"
+echo "number of tasks: $SLURM_NTASKS"
+echo "cpus per task: $SLURM_CPUS_PER_TASK"
+echo " "
 
-my_parallel="parallel --delay .2 -j $SLURM_NTASKS"
-my_srun="srun --export=all --exclusive -n1 --cpus-per-task=1 --cpu-bind=cores"
-$my_parallel "$my_srun python hello_World.py" ::: {1..20}
+# uses one task to create a slurm job step                                                                                     
+my_srun="srun --export=all --exclusive --nodes=1-$SLURM_JOB_NUM_NODES --ntasks=1 --cpus-per-task=$SLURM_CPUS_PER_TASK --cpu-bind=cores"
+
+# tells GNU parallel to run "ntasks" in parallel at one time                                                                   
+my_parallel="parallel -j $SLURM_NTASKS"
+
+# runs "my_srun" command in parallel with script "my_host_and_proc.sh" for 20 iterations                                       
+$my_parallel "$my_srun ./my_host_and_proc.sh" ::: {1..200}
 ```
+
+
+
+_Edit the below items!!!_
+
+
+
+
 
 Note the last three lines of the script. We customize the GNU Parallel 
 `parallel` command by creating a variable called `$my_parallel` that 
