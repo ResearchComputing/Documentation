@@ -68,7 +68,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [NCL](https://www.ncl.ucar.edu/Download/) | 6.3.0, 6.6.2 (D) | NCAR Command Language. An interpreted language designed for scientific data analysis and visualization. |
 | [Ncview](http://meteora.ucsd.edu/~pierce/ncview_home_page.html) | 2.1.7 | Ncview is a visual browser for netCDF format files. | 
 | [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | 4.8.1 | NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.  |
-| [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) (G)| 2022.229|The NVIDIA HPC Software Development Kit (SDK) includes the proven compilers, libraries and software tools essential to maximizing developer productivity and the performance and portability of HPC applications.| 
+| [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) (G)| 2022.229, 2023.233|The NVIDIA HPC Software Development Kit (SDK) includes the proven compilers, libraries and software tools essential to maximizing developer productivity and the performance and portability of HPC applications.| 
 | [OpenBLAS](https://www.openblas.net/) | 0.3.20 | OpenBLAS is an optimized Basic Linear Algebra Subprograms (BLAS) library based on GotoBLAS 21.13 BSD version. | 
 | [OpenJPEG](https://www.openjpeg.org/) | 2.2.0 | OpenJPEG is an open-source JPEG 2000 codec written in C language. | 
 | [Open MPI](https://www.open-mpi.org/) | 4.1.1, 4.1.4 | The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. | 
