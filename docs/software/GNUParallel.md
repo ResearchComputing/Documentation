@@ -5,7 +5,7 @@ OpenMP or MPI. It allows shell commands (for example, calls to serial programs) 
 
 ### Why Use GNU Parallel?
 
-Suppose you have a very simple serial program that crops a photo, and you need to apply it to crop several million photos. You could rewrite the serial program into a parallel program that would use multiple processors to more quickly run the program over the entire set of photos (compared to doing them one-at-a-time), but this would require knowledge of parallel programming. If your code is in a language that has limited parallelization capabilities then this may not even be an option. The easiest solution to this problem is to use GNU Parallel.
+Suppose you have a very simple serial program that crops a photo and you need to apply it to millions of photos. You could rewrite the serial program into a parallel program that would use multiple processors to more quickly run the program over the entire set of photos (compared to doing them one-at-a-time), but this would require knowledge of parallel programming. If your code is in a language that has limited parallelization capabilities then this may not even be an option. The easiest solution to this problem is to use GNU Parallel.
 
 ### Simple GNU Parallel Example
 
@@ -23,7 +23,7 @@ MYPROC=$(cat /proc/self/stat |gawk '{print $39}')
 # print the task, node, and processor ($1 is input being provided to the script)                                                            
 echo "task $1 is being ran on node $MYHOST and processor $MYPROC"
 ```
-Now we create a job script called `run_hello.sh` that is capable of using GNU Parallel to run as many instances of `my_host_and_proc.sh` as we want. Additionally, this job script will be capable of running across multiple nodes. 
+Now we create a job script called `run.sh` that is capable of using GNU Parallel to run as many instances of `my_host_and_proc.sh` as we want. Additionally, this job script will be capable of running across multiple nodes. 
 
 ```bash
 #!/bin/bash
@@ -35,27 +35,32 @@ Now we create a job script called `run_hello.sh` that is capable of using GNU Pa
 #SBATCH --job-name=gnu_test                                                
 #SBATCH --output gnu_test.%j.out
 
-
-echo "number of nodes: $SLURM_JOB_NUM_NODES"
-echo "number of tasks: $SLURM_NTASKS"
-echo "cpus per task: $SLURM_CPUS_PER_TASK"
-echo " "
-
-# uses one task to create a slurm job step                                                                                     
+# create a variable that assigns one task for each slurm job step                                                                                     
 my_srun="srun --export=all --exclusive --nodes=1-$SLURM_JOB_NUM_NODES --ntasks=1 --cpus-per-task=$SLURM_CPUS_PER_TASK --cpu-bind=cores"
 
 # tells GNU parallel to run "ntasks" in parallel at one time                                                                   
 my_parallel="parallel -j $SLURM_NTASKS"
 
 # runs "my_srun" command in parallel with script "my_host_and_proc.sh" for 20 iterations                                       
-$my_parallel "$my_srun ./my_host_and_proc.sh" ::: {1..200}
+$my_parallel "$my_srun ./my_host_and_proc.sh" ::: {1..20}
 ```
 
 
 
 _Edit the below items!!!_
 
-
+Breaking down the constructed lines: 
+- We customize the GNU Parallel 
+`parallel` command by creating a variable called `$my_parallel`
+    - `-j $SLURM_NTASKS` specifies that we will be running `$SLURM_NTASKS` in parallel at one time
+    - `$SLURM_NTASKS` is a environment variable set by Slurm at runtime and is equal to the values specified by `--ntasks`
+- The `my_srun="srun --export=all --exclusive --nodes=1-$SLURM_JOB_NUM_NODES --ntasks=1 --cpus-per-task=$SLURM_CPUS_PER_TASK --cpu-bind=cores"` allows for multi-node runs
+    - `--export=all` loads our environment for each `srun` call
+    - `--exclusive` ensures that the allocations requested will not be shared amongs the job steps 
+    - `--nodes=1-$SLURM_JOB_NUM_NODES` dictates that we can use 1 to `$SLURM_JOB_NUM_NODES` number of nodes
+    - `--ntasks=1` states that each `srun` will only use one task
+    - `--cpus-per-task=$SLURM_CPUS_PER_TASK` sets the number of CPU used for each task to the value provided by the `#SBATCH` directive `--cpus-per-task`
+    - `--cpu-bind=cores` 
 
 
 
