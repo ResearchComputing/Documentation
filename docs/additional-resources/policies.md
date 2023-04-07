@@ -5,6 +5,16 @@
 
 CURC issues an annual survey to all CURC users asking several questions about research grants, scholarly works, and student success that have been supported by CURC systems/services. These metrics are critical for fulfilling CURC's annual reporting requirements quantifying the Return on Investment of CURC resources for the University.  The survey will be open for responses for 10 weeks. To facilitate responses, this policy states that if a user does not respond to the survey by the deadline, CURC will temporarily remove their access to CURC systems until the survey is completed. CURC will not delete any data or remove any accounts. User access will be reinstated upon completion of the survey.
 
+<br>
+
+### Acceptable data storage and use
+
+CURC systems and services (Alpine, Blanca, OnDemand, Petalibrary, core storage, etc.) should not be used to store any data that is US government Classified, nor any Controlled Unclassified Information including, but not limited to, data subject to the US federal Health Insurance Portability and Accountability Act (HIPAA), the US federal Family Educational Rights and Privacy Act (FERPA), or the International Traffic in Arms Regulations (ITAR).
+ 
+For users requiring secure research computing environments to ensure compliance for sensitive data types such as those mentioned above, CURC offers secure research computing services. More information can be found at https://www.colorado.edu/rc/secure-research-computing-resources
+
+<br>
+
 ### Login nodes
 
 The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including both Blanca 

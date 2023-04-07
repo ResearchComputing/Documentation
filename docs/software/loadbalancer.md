@@ -37,7 +37,7 @@ followed by a command line argument:
 ```python
 import sys
 
-print “Hello World from process: ”, sys.argv[1]
+print ("Hello World from process: ", sys.argv[1])
 ```
 
 Now we will create a list of calls to the python script that will be
@@ -56,7 +56,7 @@ text:
 
 for i in {1..4}
 do
-  echo “python hello_World.py $i;” >> lb_cmd_file
+  echo "python hello_World.py $i;" >> lb_cmd_file
 done
 ```
 
@@ -67,19 +67,13 @@ file called `lb_cmd_file` that contains 4 calls to our
 `hello_World.py` script:
 
 ```bash
-python hello_World.py 1;
-python hello_World.py 2;
-python hello_World.py 3;
-python hello_World.py 4;
+python3 hello_World.py 1;
+python3 hello_World.py 2;
+python3 hello_World.py 3;
+python3 hello_World.py 4;
 ```
 
-Now create a job script called `run_hello.sh` that will run all
-instances of your python script in `lb_cmd_file` with the Load
-Balancer. Within the script, before using Load Balancer, we need to
-load the python module, and the Load Balancer utility itself. Your job 
-script should look something like this:
-
-> _Note: This example uses a custom python environment built with conda, more infomation on using python or R with conda can be found [here](./python.html)_
+Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python.html), in order to access whatever softare we will be running with the Load Balancer. Your job script should look something like this:
 
 ```bash
 #!/bin/bash
@@ -94,14 +88,18 @@ script should look something like this:
 
 module purge
 
-module load anaconda 
-conda activate custom_python_env
+# load any software modules you need, e.g.:
+# module load anaconda 
+# conda activate my_python_env
+
+# now load the Load Balancer
 module load loadbalance
 
+# now run your workflow! 
 mpirun lb lb_cmd_file
 ```
 
-Running this script via sbatch will run the commands we stored in
+Running this script via `sbatch run_hello.sh` will run the commands we stored in
 lb_cmd_file in parallel. A successful job will result in output that
 looks something like this:
 
@@ -112,6 +110,9 @@ Hello World from process: 4
 Hello World from process: 3
 ```
 
+> _Note1: The "loadbalance" module depends on the openmpi version of "mpirun" and therefore will not work directly with the Intel impi module.  If you need assistance running mpi-compiled applications with the Load Balancer, please contact rc-help@colorado.edu._
+
+> _Note2: The "loadbalance" module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores._
 
 ### Additional Resources
 
