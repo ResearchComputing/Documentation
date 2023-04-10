@@ -106,24 +106,24 @@ cp new_file /projects/user1234/job/new_file
 
 ### Monitoring Disk Usage
 
+#### The `curc-quota` command
 Disk usage may be checked using the `curc-quota` command. When run
-from an Alpine `compile node`, you will see output similar to:
+from a login node or Alpine `compile node`, you will see output similar to:
 
 ```
-[janedoe@c3cpu-a7-u26-3 ~]$ module load curc-quota
 [janedoe@c3cpu-a7-u26-3 ~]$ curc-quota
 ------------------------------------------------------------------------
                                        Used         Avail    Quota Limit
 ------------------------------------------------------------------------
 /home/janedoe                          1.7G          339M           2.0G
 /projects/janedoe                       67G          184G           250G
-/scratch/alpine                         29G        10211G         10240G
+/scratch/alpine1                        29G        10211G         10240G
 ```
 
-If the command is run from a `login node`, information concerning
-/scratch/alpine will be omitted.
+_note to Blanca users: the `curc-quota` command can be run on Blanca nodes if you "module load curc-quota" first._
 
-Note that the space occupied by a particular directory and its
+#### The `du` command
+The space occupied by a particular directory and its
 subdirectories can be obtained via the `du -h` command:
 
 ```
