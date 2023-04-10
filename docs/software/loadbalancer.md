@@ -88,15 +88,15 @@ Now create a job script called `run_hello.sh` that will run all instances of you
 
 module purge
 
-# load any software modules you need, e.g.:
+# Load the Load Balancer module *first*
+module load loadbalance/0.2
+
+# Now load any other software modules you need, e.g.:
 # module load anaconda 
 # conda activate my_python_env
 
-# now load the Load Balancer
-module load loadbalance
-
 # now run your workflow! 
-mpirun lb lb_cmd_file
+$CURC_LB_BIN/mpirun lb lb_cmd_file
 ```
 
 Running this script via `sbatch run_hello.sh` will run the commands we stored in
@@ -110,9 +110,11 @@ Hello World from process: 4
 Hello World from process: 3
 ```
 
-> _Note1: The "loadbalance" module depends on the openmpi version of "mpirun" and therefore will not work directly with the Intel impi module.  If you need assistance running mpi-compiled applications with the Load Balancer, please contact rc-help@colorado.edu._
+> __Note 1__: The user must ensure they load the `loadbalance` module _before_ loading any other modules.
 
-> _Note2: The "loadbalance" module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores._
+> __Note2__: The user should invoke loadbalance with `$CURC_LB_BIN/mpirun lb your-command-file` as shown in the example above.  
+
+> __Note3__: The `loadbalance` module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores.
 
 ### Additional Resources
 
