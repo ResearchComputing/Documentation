@@ -43,16 +43,16 @@ If you cannot authenticate your account (e.g. do not have your old device), cont
 
 ### How do I check how full my directories are?
 
-You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a compile node, type `curc-quota` as follows:
+You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
 
 ```
-[janedoe@c3cpu-a7-u26-3 ~]$ module load curc-quota
-[janedoe@c3cpu-a7-u26-3 ~]$ curc-quota
+[janedoe@login11 ~]$ curc-quota
 ------------------------------------------------------------------------
                                        Used         Avail    Quota Limit
 ------------------------------------------------------------------------
 /home/janedoe                          1.7G          339M           2.0G
 /projects/janedoe                       67G          184G           250G
+/scratch/alpine1                      1050G         8950G         10000G
 ```
 
 You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
