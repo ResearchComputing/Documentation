@@ -3,7 +3,7 @@
 ### Using Globus
 
 #### Step 1: Log into the Globus Web App
-Visit https://app.globus.org and log in with your Colorado.edu credentials
+Visit [https://app.globus.org](https://app.globus.org) and log in with your Colorado.edu credentials
 
 ![](Globus_Login.png)
 
@@ -72,7 +72,7 @@ On your local machine type:
 ```bash
 $ rclone ls onedrive_johndoe_cu
 ```
-If this step fails, your OneDrive remote is not configured properly. Try reconfiguring your OneDrive remote again or contact rc-help@colorado.edu for assistance.
+If this step fails, your OneDrive remote is not configured properly. Try reconfiguring your OneDrive remote again or contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for assistance.
 
 #### Step 3: Create your PetaLibrary remote configuration
 
