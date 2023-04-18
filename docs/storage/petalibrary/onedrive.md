@@ -10,8 +10,6 @@ Visit https://app.globus.org and log in with your Colorado.edu credentials
 #### Step 2: Open your OneDrive (right pane)
 In the Collection search (right pane) enter: OneDrive CU Boulder - this should show your OneDrive contents
 
-* If you'd like to transfer from Team Drives click the "Up One Directory" button and then select Team Drives
-
 ![Globus OneDrive](onedrivesearch.png)
 
 #### Step 3: Open CURC (left pane)
@@ -19,20 +17,20 @@ In the Collection search (left pane) enter: CU Boulder Research Computing
 
 * You'll be asked to log in using your CURC Credentials - after clicking Authenticate you should receive a Duo push on your Duo device which you will need to confirm
 
-![Globus CURC Authentication](CURCcollection.png)
+![](CURCcollection.png)
 
 * Once Authenticated you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select /pl
 
-![Globus CURC Collection](Globus_CURC_Collection.png)
+![](Globus_CURC_Collection.png)
 
 #### Step 4: Select files/folders from OneDrive to be transferred and initiate the transfer
 * In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job
 
-![Globus Initiate Transfer](Globus_Intitiate_Transfer.png)
+![](Globus_Intitiate_Transfer.png)
 
 * View progress of your transfer under the Activity tab in the Globus App
 
-![Globus Activity](Globus_Activity_GDrive.png)
+![](Globus_Activity_GDrive.png)
 
 ### Using RClone
 
@@ -85,4 +83,3 @@ See instructions for creating an [Rclone remote configuration for PetaLibrary](.
 * [CURC data transfer documentation](../../compute/data-transfer.html)
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
-
