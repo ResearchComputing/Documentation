@@ -5,12 +5,12 @@
 #### Step 1: Log into the Globus Web App
 Visit https://app.globus.org and log in with your Colorado.edu credentials
 
-![Globus Login](Globus_Login.png)
+![](Globus_Login.png)
 
 #### Step 2: Open your OneDrive (right pane)
 In the Collection search (right pane) enter: OneDrive CU Boulder - this should show your OneDrive contents
 
-![Globus OneDrive](onedrivesearch.png)
+![](onedrivesearch.png)
 
 #### Step 3: Open CURC (left pane)
 In the Collection search (left pane) enter: CU Boulder Research Computing
