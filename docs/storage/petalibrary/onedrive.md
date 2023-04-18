@@ -57,11 +57,11 @@ _Note: the steps below are also outlined in the [Rclone Documentation for OneDri
 * When prompted choose national cloud region for OneDrive, select the number of the option for "Microsoft Cloud Global (global)" (e.g., the number is "1" for _rclone_ v1.62.2)
 * When prompted for "Edit Advanced config?” choose "n" for no (default). 
 * When prompted for "Use Auto config?” choose "n" for no (default). 
-* You will then need to use your local machine terminal to run 
+* You will then need to use your local machine's terminal to run 
 	```
-	$ rclone authorize "onedrive".
+	$ rclone authorize "onedrive"
 	```
- This will open a window in your your browser, you may be asked to authenticate to your Microsoft account, and then you will be asked to allow Rclone to access the files in your `onedrive`. Complete this step to grant access.  If successful you'll receive a "success" message. 
+	This will open a window in your your browser, you may be asked to authenticate to your Microsoft account, and then you will be asked to allow Rclone to access the files in your `onedrive`. Complete this step to grant access.  If successful you'll receive a "success" message. 
 * When prompted for Type of connection. Choose the appropriate answer, most likely "OneDrive Personal or Business (onedrive)" (e.g., the number is "1" for _rclone_ v1.62.2)
 * When prompted for the drive you want to use. Choose the appropriate answer.
 * When prompted asking if that drive is OK, choose the appropriate answer.
