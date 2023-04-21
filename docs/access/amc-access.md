@@ -1,0 +1,107 @@
+## Login Instructions for Anschutz Medical Campus Users
+
+### *Prerequisites:*
+* If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
+* Sign and fill out UC Denver/AMC's Alpine form: https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake
+* You will receive an email from hpcsupport@cuanschutz.edu in approximately 1-2 weeks confirming your CURC account has been created.
+
+### *Step 1: Enroll in the RMACC CILogon Registry*
+
+Shortly after your CURC account is created (see bullet point above), you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. Follow the invitation URL and click the 'LOGIN' button.
+<br>
+
+![](./amc-access-images/email_invitation.png)
+
+
+Select 'ACCESS CI (XSEDE)' from the Identity Provider dropdown menu and click 'Log On'.
+<br>
+
+![](./amc-access-images/cilogon_identityprovider_access.png)
+
+Enter your ACCESS/XSEDE username and password and click 'Login'.
+<br>
+
+![](./amc-access-images/access_credentials.png)
+<br>
+
+Accept the Duo push from your device.
+
+### *Step 2: Generate an ssh key*
+
+Windows Users: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/
+
+Mac Users: https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
+
+Though one is not required to access CURC systems, you are strongly encouraged to set a passphrase for your key pair.
+
+### *Step 3: Upload your ssh key to [registry.cilogon.org](registry.cilogon.org)*
+
+After logging into [registry.cilogon.org](registry.cilogon.org) with your ACCESS credentials, click on the dropdown menu in the upper right hand corner by your name. Select 'Authenticators' from the list. 
+<br>
+
+![](./amc-access-images/menu_options.png)
+<br>
+
+Click 'Manage' in the SSHKeyAuthenticator row. 
+![](./amc-access-images/manage_sshkeyauthenticator.png)
+
+Select 'Add SSH Key'.
+![](./amc-access-images/add_sshkey.png)
+
+Click 'Choose File', locate your __public__ key (`<keyname>.pub`) on your local drive, then click 'UPLOAD'.
+![](./amc-access-images/upload_sshkey.png)
+<br>
+
+> **_TIP_** If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
+<br>
+
+<br>
+
+A green message box will notify you that your SSH key was successfully added to your account.
+![](./amc-access-images/sshkeyadded.png)
+
+After a few minutes you can proceed to Step 4.
+
+### *Step 4: Sign in from a terminal or terminal emulator*
+<br>
+
+> **_NOTE:_** You must be on the AMC, CU Denver, or CU Boulder VPN.
+
+SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
+```
+ssh -i <privatekey_file> <username>@xsede.org@login-ci.rc.colorado.edu
+```
+The `-i` flag is used to point to the location of your __private__ key on your local system. The private key must correspond to the public key you uploaded to your RMACC CILogon profile.
+For example, if I uploaded `id_rsa.pub` to my profile, I would login as such:
+```
+ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login-ci.rc.colorado.edu
+```
+
+You will be prompted to enter your passphrase if you set one during key generation.
+
+
+Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on regular basis.
+<br>
+
+![](./amc-access-images/loginprompt_motd.png)
+
+
+### Deleting or Replacing SSH Keys in RMACC CILogon Registry
+
+Log in at [registry.cilogon.org](registry.cilogon.org) and navigate to the 'Authenticators' section of your profile (see Step 3, above). Click 'Delete', then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
+
+
+### Troubleshooting
+
+* If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>.
+
+![](./amc-access-images/notregistered_error.png)
+<br>
+
+<br>
+
+<br>
+
+Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
+
+Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
