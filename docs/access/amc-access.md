@@ -36,7 +36,11 @@ Though one is not required to access CURC systems, you are strongly encouraged t
 
 ### *Step 3: Upload your ssh key to [registry.cilogon.org](registry.cilogon.org)*
 
-After logging into [registry.cilogon.org](registry.cilogon.org) with your ACCESS credentials, click on the dropdown menu in the upper right hand corner by your name. Select 'Authenticators' from the list. 
+After logging into [registry.cilogon.org](registry.cilogon.org) with your ACCESS 
+credentials, click on the dropdown menu in the upper right hand corner by your name. 
+Select 'MY PROFILE (RMACC)'.
+
+Select 'Authenticators' from the menu on the right. 
 <br>
 
 ![](./amc-access-images/menu_options.png)
