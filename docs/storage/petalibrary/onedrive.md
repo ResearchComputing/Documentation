@@ -1,4 +1,4 @@
-### Copy data from OneDrive to PetaLibrary
+### Data Transfer Between OneDrive and PetaLibrary
 
 ### Using Globus
 
