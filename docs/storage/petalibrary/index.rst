@@ -28,5 +28,6 @@ PetaLibrary access is subject to the `PetaLibrary Terms of Service <https://www.
     rclone
     mounting
     gdrive
+    onedrive
     synology
     ownership
