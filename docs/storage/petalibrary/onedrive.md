@@ -38,11 +38,11 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 
 * Login to Alpine
 * Load module Slurm, then start a compile job, then load module rclone
-```
-$ module load slurm
-$ acompile
-$ module load rclone
-```
+	```
+	$ module load slurm
+	$ acompile
+	$ module load rclone
+	```
 * To test, run `rclone --version` at your prompt; if the software is installed a version number will be reported back to you, similar to:
 
 	```
