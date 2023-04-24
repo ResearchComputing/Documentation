@@ -7,17 +7,17 @@ Visit [https://app.globus.org](https://app.globus.org) and log in with your Colo
 
 ![](Globus_Login.png)
 
-#### Step 2: Open your OneDrive (right pane)
-In the Collection search (right pane) enter: OneDrive CU Boulder - this should show your OneDrive contents
+#### Step 2: Open your OneDrive
+In the Collection search enter: OneDrive CU Boulder - this should show your OneDrive contents if you are logged in. You may need to authenticate with your OneDrive account.
 
 ![](onedrivesearch.png)
 
-#### Step 3: Open CURC (left pane)
-In the Collection search (left pane) enter: CU Boulder Research Computing
+#### Step 3: Open CURC (right pane)
+Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection search (right pane) enter: CU Boulder Research Computing
 
 * You'll be asked to log in using your CURC Credentials - after clicking Authenticate you should receive a Duo push on your Duo device which you will need to confirm
 
-![](CURCcollection.png)
+![](splitview.png)
 
 * Once Authenticated you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select /pl
 
@@ -34,15 +34,21 @@ In the Collection search (left pane) enter: CU Boulder Research Computing
 
 ### Using RClone
 
-#### Step 1: download/install rclone and make sure you can run it
+#### Step 1: Login to a compile node on Alpine
 
-* Download the latest version from [https://rclone.org/downloads/](https://rclone.org/downloads/) and install per the developer's documentation.
+* Login to Alpine
+* Load module Slurm, then start a compile job, then load module rclone
+```
+$ module load slurm
+$ acompile
+$ module load rclone
+```
 * To test, run `rclone --version` at your prompt; if the software is installed a version number will be reported back to you, similar to:
 
-```
-$ rclone --version
-rclone v1.62.2
-```
+	```
+	$ rclone --version
+	rclone v1.62.2
+	```
 
 #### Step 2: configure OneDrive remote configuration
 
@@ -70,7 +76,7 @@ _Note: the steps below are also outlined in the [Rclone Documentation for OneDri
 
 ##### Now test your OneDrive remote!
 
-On your local machine type:
+On the Alpine compile node type:
 ```bash
 $ rclone ls onedrive_johndoe_cu
 ```
