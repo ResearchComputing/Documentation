@@ -5,34 +5,34 @@
 #### Step 1: Log into the Globus Web App
 Visit https://app.globus.org and log in with your Colorado.edu credentials
 
-![Globus Login](Globus_Login.png)
+![](Globus_Login.png)
 
 #### Step 2: Open your Google Drive (left pane)
 In the Collection search (left pane) enter: Google Drive CU Boulder - this should show your Google Drive contents
 
 * If you'd like to transfer from Team Drives click the "Up One Directory" button and then select Team Drives
 
-![Globus Google Drive](Globus_Google_Drive.png)
+![](Globus_Google_Drive.png)
 
 #### Step 3: Open CURC (right pane)
 In the Collection search (right pane) enter: CU Boulder Research Computing
 
 * You'll be asked to log in using your CURC Credentials - after clicking Authenticate you should receive a Duo push on your Duo device which you will need to confirm
 
-![Globus CURC Authentication](Globus_CURC_Authentication.png)
+![](Globus_CURC_Authentication.png)
 
 * Once Authenticated you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select /pl
 
-![Globus CURC Collection](Globus_CURC_Collection.png)
+![](Globus_CURC_Collection.png)
 
 #### Step 4: Select files/folders from Google Drive to be transferred and initiate the transfer
 * In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job
 
-![Globus Initiate Transfer](Globus_Intitiate_Transfer.png)
+![](Globus_Intitiate_Transfer.png)
 
 * View progress of your transfer under the Activity tab in the Globus App
 
-![Globus Activity](Globus_Activity_GDrive.png)
+![](Globus_Activity_GDrive.png)
 
 ### Using RClone
 
@@ -67,10 +67,10 @@ _Note: the steps below are also outlined in the [Rclone Documentation for Google
 * When prompted for service_account_file, leave the field blank
 * When prompted to edit advanced config, choose "N" for no (default)
 * When prompted for "Use Auto config?” choose "N" for no (default). Rclone will print a command in the form of:
-```
-$ rclone authorize "drive" "<token>"
-```
-Copy this command and run it on your local machine (rclone must be installed). This will open your web browser to authenticate with your Google account.
+   ```
+   $ rclone authorize "drive" "<token>"
+   ```
+   Copy this command and run it on your local machine (rclone must be installed). This will open your web browser to authenticate with your Google account.
 * Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow Rclone to access the files in your `gdrive`. Complete this step to grant access.  If successful you'll receive a "success" message. 
 * On your local machine, rclone will print out a token. Copy everything between the arrows as directed and paste in the config_token field in your Alpine terminal
 * When prompted for whether you want to configure this as a Shared Drive (Team Drive). Choose the appropriate answer; if this is your personal Drive account then choose `no` (default)
