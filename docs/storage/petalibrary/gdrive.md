@@ -1,4 +1,4 @@
-### Copy data from Google Drive to PetaLibrary
+### Data Transfer between Google Drive and PetaLibrary
 
 ### Using Globus
 
