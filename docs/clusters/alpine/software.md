@@ -1,7 +1,6 @@
 # Alpine Software
 
 ## Software Installed on Alpine
-
 This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC Alpine. 
 
 Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modules.html) page for instructions on how to view and load software.
@@ -61,6 +60,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Load Balancer](https://curc.readthedocs.io/en/latest/software/loadbalancer.html?highlight=load%20balancer) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
+| [Mamba](https://mamba.readthedocs.io/) | 23.1.0-1 (D) | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)| 
 | [Mathematica](https://www.wolfram.com/mathematica/) | 9.0, 11.1.0 (D) | A software system with built-in libraries for several areas of technical computing. | 
 | [MATLAB](https://www.mathworks.com/products/matlab.html) | R2020b, R2021b (D), R2022b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/matlab.html)| 
 | [Maven](https://maven.apache.org/) | 3.8.1 | Apache Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. |
