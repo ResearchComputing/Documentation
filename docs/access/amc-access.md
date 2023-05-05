@@ -1,8 +1,8 @@
-## Login Instructions for Anschutz Medical Campus Users
+## Login Instructions for CU Anschutz
 
 ### *Prerequisites:*
 * If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
-* Sign and fill out UC Denver/AMC's Alpine form: https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake
+* Sign and fill out CU Anschutz's Alpine form: https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake
 * You will receive an email from hpcsupport@cuanschutz.edu in approximately 1-2 weeks confirming your CURC account has been created.
 
 ### *Step 1: Enroll in the RMACC CILogon Registry*
@@ -32,7 +32,7 @@ Windows Users: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-wind
 
 Mac Users: https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
 
-Though one is not required to access CURC systems, you are strongly encouraged to set a passphrase for your key pair.
+You are strongly encouraged to set a passphrase for your key pair.You will be prompted to enter the passphrase each time you log in.
 
 ### *Step 3: Upload your ssh key to [registry.cilogon.org](registry.cilogon.org)*
 
@@ -69,9 +69,13 @@ After a few minutes you can proceed to Step 4.
 ### *Step 4: Sign in from a terminal or terminal emulator*
 <br>
 
-> **_NOTE:_** You must be on the AMC, CU Denver, or CU Boulder VPN.
+> **_NOTE:_** You must be on the University of Colorado Anschutz Medical Campus VPN.
 
-SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
+a)  Login to the GlobalProtectVPN.
+
+* A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn. Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept to the Duo prompt.
+
+b)  SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
 ```
 ssh -i <privatekey_file> <username>@xsede.org@login-ci.rc.colorado.edu
 ```
@@ -84,7 +88,7 @@ ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login-ci.rc.colorado.edu
 You will be prompted to enter your passphrase if you set one during key generation.
 
 
-Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on regular basis.
+c) Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on regular basis.
 <br>
 
 ![](./amc-access-images/loginprompt_motd.png)
