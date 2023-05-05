@@ -73,7 +73,7 @@ After a few minutes you can proceed to Step 4.
 
 a)  Login to the GlobalProtectVPN.
 
-* A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn. Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept to the Duo prompt.
+* A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn. Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
 
 b)  SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
 ```
