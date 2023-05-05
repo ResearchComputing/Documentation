@@ -1,16 +1,10 @@
 # Python and R with Anaconda
 
-To support the diverse _python_ and _R_ workflows and high levels of 
-customization Research Computing users require, 
-[Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda 
-uses the _conda_ package manager to easily install software and associated 
-packages, and supports _python_, _R_, and many other applications. The 
-following documentation describes how to activate the CURC Anaconda 
-distribution and our default environments, as well as how to create and 
-activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section below. Additional documentation 
-on [CURC OpenOnDemand](../gateways/OnDemand.md) is available for users 
-desiring to 
-interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+To support diverse _Python_ and _R_ workflows, Research Computing users can utilize  
+[Anaconda](http://anaconda.com). Anaconda 
+provides the _conda_ package manager, which allows for easy installation of software and associated 
+packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. The 
+following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manger](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../gateways/OnDemand.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 
 ## Configuring conda with `.condarc`
@@ -201,7 +195,7 @@ Sometimes conda environments can "break" if two packages in the environment requ
 * Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces conda to attempt to resolve shared library conflicts. 
 * Create a new environment and reinstall the packages you need (preferably installing all with the same `conda install` command, rather than one-at-a-time, in order to resolve the conflicts).
 
-## Mamba
+## Mamba Package Manager
 
 [Mamba](https://mamba.readthedocs.io/) is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for _conda_. Utilizing Mamba can improve the speed and reliability of constructing an environment. To use Mamba on an Alpine or Blanca compute node, perform the following module load: 
 
@@ -215,13 +209,13 @@ The command above activates the base environment provided by Mamba, which includ
 (base) [johndoe@c3cpu-a7-u19-1 ~]$
 ```
 
-Once Mamba has been properly loaded, you can utilize almost all the same command and configuration options as _conda_ does. For commands, this can be done by replacing `conda` with `mamba`. For example:
+Once Mamba has been properly loaded, you can utilize almost all core command and configuration options available to _conda_. For commands, this can be done by replacing `conda` with `mamba`. For example:
 
 ```
 [johndoe@c3cpu-a7-u19-1 ~]$ mamba create -n mycustomenv
 ```
 
-> Note: If one specified a `.condarc` following the above actions, then Mamba will automatically use the instructions provided. 
+> _**Note:**_ If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided. 
 
 ---
 
