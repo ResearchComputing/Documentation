@@ -34,9 +34,9 @@ Mac Users: https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-ke
 
 You are strongly encouraged to set a passphrase for your key pair.You will be prompted to enter the passphrase each time you log in.
 
-### *Step 3: Upload your ssh key to [registry.cilogon.org](registry.cilogon.org)*
+### *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
 
-After logging into [registry.cilogon.org](registry.cilogon.org) with your ACCESS 
+After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your ACCESS 
 credentials, click on the dropdown menu in the upper right hand corner by your name. 
 Select 'MY PROFILE (RMACC)'.
 
@@ -96,7 +96,7 @@ c) Once you are logged in, you will see the CURC Message of the Day and your pro
 
 ### Deleting or Replacing SSH Keys in RMACC CILogon Registry
 
-Log in at [registry.cilogon.org](registry.cilogon.org) and navigate to the 'Authenticators' section of your profile (see Step 3, above). Click 'Delete', then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
+Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the 'Authenticators' section of your profile (see Step 3, above). Click 'Delete', then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
 
 
 ### Troubleshooting
