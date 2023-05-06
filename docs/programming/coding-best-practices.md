@@ -52,7 +52,7 @@ variable’s function. The Camelcase notation is used to delimit
 words.
 
 ```c++
-arrDistrubuteGroup  //Array called “Distribute Group”
+arrDistributeGroup  //Array called “Distribute Group”
 sUserName           //String called “User Name”
 iRandomSeed         //Integer called “Random Seed”
 ```
