@@ -40,6 +40,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [GEOS](https://libgeos.org/) | 3.9.1, 3.10.2 | GEOS is a C/C++ library for computational geometry with a focus on algorithms used in geographic information systems (GIS) software.|
 | [Ghostscript](https://ghostscript.com/index.html) | 9.56.0 |Ghostscript is an interpreter for the PostScript language and PDF files.| 
 | [Git](https://git-scm.com/downloads) | 2.31.0 | Git is a distributed version control system that tracks changes in any set of computer files.| 
+| [Git-LFS](https://git-lfs.com) | 3.1.2 | Git-LFS is a Git exention for versioning large files.| 
 | [Gmsh](https://gmsh.info/) | 2.16.0, 4.11.1 (D) | Gmsh is an open source 3D finite element mesh generator with a built-in CAD engine and post-processor.|
 | [GNU Parallel](https://www.gnu.org/software/parallel/) | 20160622, 20210322 (D) | GNU parallel is a shell tool for executing jobs in parallel using one or more computers. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/GNUParallel.html)| 
 | [gnuplot](http://www.gnuplot.info/) | 5.4.3 | gnuplot is a command-line and GUI program that can generate two- and three-dimensional plots of functions, data, and data fits.| 
