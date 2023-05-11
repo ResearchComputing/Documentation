@@ -30,6 +30,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the O/S.|
 | [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) | 3.4.0 | Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.|
 | [Emacs](https://www.gnu.org/software/emacs/) | 25.3, 27.2 (D) | An extensible, customizable, text editor.|
+| [EPW](https://docs.epw-code.org) | 6.0alpha | EPW is part of the Quantum ESPRESSO suite & calculates properties related to the electron-phonon interaction|
 | [Expat](https://libexpat.github.io/) | 2.1.1, 2.3.0 (D) | Stream-oriented XML parser library written in C.| 
 | [FFmpeg](https://ffmpeg.org/) | 4.4 | A complete, cross-platform solution to record, convert and stream audio and video.| 
 | [FFTW](https://www.fftw.org/) | 3.3.8, 3.3.9, 3.3.10 | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data.|
