@@ -4,16 +4,24 @@
 * If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
 * Sign and fill out CU Anschutz's Alpine form: https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake
 * You will receive an email from hpcsupport@cuanschutz.edu in approximately 1-2 weeks confirming your CURC account has been created.
+* You must be connected to a CU Anschutz network or the CU Anshutz VPN.
+
+.. note::
+A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn. 
+Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
 
 ### *Step 1: Enroll in the RMACC CILogon Registry*
 
-Shortly after your CURC account is created (see bullet point above), you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. Follow the invitation URL and click the 'LOGIN' button.
+Shortly after your CURC account is created (see bullet point above), you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
 
 ![](./amc-access-images/email_invitation.png)
 
+Follow the invitation URL and click 'Accept'.
 
-Select 'ACCESS CI (XSEDE)' from the Identity Provider dropdown menu and click 'Log On'.
+![](./amc-access-images/Screenshot 2023-05-23 at 9.02.06 AM.png)
+
+You will be automatically routed to the login page. Select 'ACCESS CI (XSEDE)' from the Identity Provider dropdown menu and click 'Log On'.
 <br>
 
 ![](./amc-access-images/cilogon_identityprovider_access.png)
@@ -26,13 +34,16 @@ Enter your ACCESS/XSEDE username and password and click 'Login'.
 
 Accept the Duo push from your device.
 
+> **_IMPORTANT:_** You can move on to Step 2, but please make sure 10 minutes have elapsed between completing Step 1 and beginning Step 3.
+
 ### *Step 2: Generate an ssh key*
 
-Windows Users: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/
+You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
 
-Mac Users: https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
+SSH Key Generation for Windows Users: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/
 
-You are strongly encouraged to set a passphrase for your key pair.You will be prompted to enter the passphrase each time you log in.
+SSH Key Generation for Mac Users: https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
+
 
 ### *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
 
@@ -52,12 +63,11 @@ Click 'Manage' in the SSHKeyAuthenticator row.
 Select 'Add SSH Key'.
 ![](./amc-access-images/add_sshkey.png)
 
-Click 'Choose File', locate your __public__ key (`<keyname>.pub`) on your local drive, then click 'UPLOAD'.
-![](./amc-access-images/upload_sshkey.png)
+Click 'Choose File'. If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
 <br>
 
-> **_TIP_** If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
-<br>
+Locate your __public__ key (`<keyname>.pub`) on your local drive, then click 'UPLOAD'.
+![](./amc-access-images/upload_sshkey.png)
 
 <br>
 
@@ -69,13 +79,9 @@ After a few minutes you can proceed to Step 4.
 ### *Step 4: Sign in from a terminal or terminal emulator*
 <br>
 
-> **_NOTE:_** You must be on the University of Colorado Anschutz Medical Campus VPN.
+> **_NOTE:_** You must be on the University of Colorado Anschutz Medical Campus VPN or network. See *Prerequisites* above.
 
-a)  Login to the GlobalProtectVPN.
-
-* A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn. Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
-
-b)  SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
+SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
 ```
 ssh -i <privatekey_file> <username>@xsede.org@login-ci.rc.colorado.edu
 ```
