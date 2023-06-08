@@ -19,7 +19,7 @@ Shortly after your CURC account is created (see bullet point above), you will re
 
 Follow the invitation URL and click 'Accept'.
 
-![](./amc-access-images/Screenshot 2023-05-23 at 9.02.06 AM.png)
+![](./amc-access-images/accept_invitation.png)
 
 You will be automatically routed to the login page. Select 'ACCESS CI (XSEDE)' from the Identity Provider dropdown menu and click 'Log On'.
 <br>
