@@ -72,6 +72,7 @@ Locate your __public__ key (`<keyname>.pub`) on your local drive, then click 'UP
 <br>
 
 A green message box will notify you that your SSH key was successfully added to your account.
+<br>
 ![](./amc-access-images/sshkeyadded.png)
 
 After a few minutes you can proceed to Step 4.
