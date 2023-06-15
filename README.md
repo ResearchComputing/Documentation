@@ -1,6 +1,4 @@
-For the Research Computing user guide, see the docs page, which renders at https://curc.readthedocs.io.
-
-Manage user guide builds at https://readthedocs.org/projects/curc/.
+This repo contains the source code for building the CU Research Computing user guide as found at https://curc.readthedocs.io. All user guide builds are available at https://readthedocs.org/projects/curc/.
 
 ## Research Computing User Tutorials
 
