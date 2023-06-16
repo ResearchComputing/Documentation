@@ -18,7 +18,7 @@
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
 * **Gres (General Resources):** Specifies the number of GPUs (*required if using a GPU node*)
 * **QOS (Quality of Service):** Constrains or modifies job characteristics
-* * **Partition:** Specifies node type
+* **Partition:** Specifies node type
 
 #### General Resources (gres)
 
@@ -66,7 +66,7 @@ Partitions available on Alpine:
 | amilan    | AMD Milan (default)          | 283        | 64         |   3.75        | 1              | 24H, 24H                 |
 | ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | tbd            | 24H, 24H                 |
 | aa100     | GPU-enabled (3x NVIDIA A100) | 12          | 64         |   3.75        | tbd            | 24H, 24H                 |
-| amem<sup>1</sup> | High-memory           | 12          | 48         |  20.83<sup>2</sup>        | tbd            |  4H,  7D                 |
+| amem<sup>1</sup> | High-memory           | 14          | 48         |  20.83<sup>2</sup>        | tbd            |  4H,  7D                 |
 | csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.75        | 1              | 24H, 24H                 |
 
 <sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
