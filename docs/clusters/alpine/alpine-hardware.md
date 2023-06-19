@@ -4,7 +4,7 @@
 
 | Count & Type          | Scheduler Partition | Processor        | Sockets | Cores (total) | Threads/Core | RAM/Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
 | --------------------- | ------------------- | ---------------- | ------- | ------------- | ------------ | ------------- | ------------- | ----------- | --------- | -------------------------- | -------------------------------------------- | -------- |
-| 184 Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| 192 Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | 12 Milan High-Memory   | amem                | x86_64 AMD Milan | 2       | 48            | 1            | 21.5          | tbd           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | 8 Milan AMD GPU       | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 8 Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
@@ -47,9 +47,9 @@ The available QoS's for Alpine are:
 
 | QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| normal      | Default                    | 1D              | tbd           | tbd                | n/a              | 0                    |
-| long        | Longer wall times          | 7D              | tbd           | tbd                | tbd              | 0                    |
-| mem         | High-memory jobs           | 7D              | tbd           | 12                 | amem only        | 0                    |
+| normal      | Default                    | 1D              | 1000          | 128                | amilan,aa100,ami100              | 0                    |
+| long        | Longer wall times          | 7D              | 200           | 20                 | amilan,aa100,ami100              | 0                    |
+| mem         | High-memory jobs           | 7D              | 1000          | 12                 | amem only        | 0                    |
 
 
 #### Partitions
@@ -61,19 +61,21 @@ The available QoS's for Alpine are:
 Partitions available on Alpine:
 
 
-| Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing weight | Default/Max Walltime     |
-| --------- | ---------------------------- | ---------- | ---------- | ------------- | -------------- | ------------------------ |
-| amilan    | AMD Milan (default)          | 283        | 64         |   3.75        | 1              | 24H, 24H                 |
-| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | tbd            | 24H, 24H                 |
-| aa100     | GPU-enabled (3x NVIDIA A100) | 12          | 64         |   3.75        | tbd            | 24H, 24H                 |
-| amem<sup>1</sup> | High-memory           | 14          | 48         |  20.83<sup>2</sup>        | tbd            |  4H,  7D                 |
-| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.75        | 1              | 24H, 24H                 |
+| Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | Default/Max Walltime     | Resource Limits |
+| --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- | ------------------------ | ----------------------|
+| amilan    | AMD Milan (default)          | 283        | 64         |   3.75        | 1                   | 24H, 24H                 | see qos table |
+| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | 6.1<sup>3</sup>     | 24H, 24H                 | 15 GPUs across all jobs |
+| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | 12          | 64         |   3.75       | 6.1<sup>3</sup>     | 24H, 24H     | 22 GPUs across all jobs |
+| amem<sup>1</sup> | High-memory           | 14          | 48         |  20.83<sup>2</sup> | 4.0           |  4H,  7D                 | 96 cores across all jobs |
+| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.75        | 1                   | 24H, 24H                 | see qos table |
 
 <sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
 
 <sup>2</sup>On the `amem` partition, if you request all 48 cores on a node without specifying the `--mem` flag, you will receive 1000 GB (1024000 MB) of RAM on the node.  Because of the way slurm handles units conversions, if you use the `--mem` flag, the maximum RAM you can request is 976.5 GB (1000000 MB) RAM.  
 
-> * Note: NVIDIA A100 GPUs only support CUDA versions >11.x
+<sup>3</sup>On the GPU partitions, `aa100` and `ami100`, the _billing_weight_ value of 6.1/core is an aggregate estimate. In practice, users are billed 1.0 for each core they request, and 108.2 for each GPU they request. For example, if a user requests all 64 cores and all three GPUs for one hour, they will be billed (1.0 * 64) + (108.2 * 3)=389 SUs.
+
+<sup>4</sup>NVIDIA A100 GPUs only support CUDA versions >11.x
 
 All users, regardless of institution, should specify partitions as follows:
 ```bash
@@ -113,7 +115,7 @@ sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
 ```
 _Request 1 MI100 GPU with 1 CPU core for one hour._
 ```
-sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=2 --time=60:00
+sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=1 --time=60:00
 ```
 
 
