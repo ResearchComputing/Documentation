@@ -24,6 +24,8 @@ Users accessing RC's resources will be connected to a login node. A login node i
 
 ### Getting an account
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3kdW3EJS-OE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
 
 A Research Computing account can be secured quickly and easily [by filling out the form 

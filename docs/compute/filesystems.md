@@ -1,5 +1,7 @@
 ## Filesystems
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xfeRDnZQrJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 All users are allocated space on the `/home` and `/projects`
 filesystems. In addition, separate `scratch` directories are visible
 from Alpine and Blanca. These scratch directories are hosted on

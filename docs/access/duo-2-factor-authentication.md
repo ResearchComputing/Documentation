@@ -7,6 +7,8 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 
 ### Setting up Duo
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/djn9bclMD3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Before you can use our large-scale resources, you will need to be enrolled in CU Boulder’s Duo two-factor authentication 
 service. If you are not presently enrolled, you can do so as follows: 
 
