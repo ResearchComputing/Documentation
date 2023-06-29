@@ -9,9 +9,9 @@ Azure billing is handled using SpeedType numbers. We support the following payme
 * One speedtype pays everything
 * Two or more speedtypes split the bill along percentages
 * Two or more speedtypes pay sequentially, with each paying up to a maximum amount before moving on to the next
-* Any mixed combination of the above (see complex example below)
+* Any mixed combination of the above
 
-Speedtypes will be charged during the next FBO bill processing cycle. Please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) with any billing disputes. 
+Speedtypes will be charged during the next FBO bill processing cycle. Please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) with any billing questions or concerns. 
 Billing details can be viewed in the emailed invoice and Azure billing portal.
 
 ## How to Login to Azure
@@ -23,8 +23,10 @@ Billing details can be viewed in the emailed invoice and Azure billing portal.
 
 ## How to Check your Bill in Azure
 
-1. When you log into the Azure Portal as instructed in the above section. It will directly navigate to 
+1. When you log into the Azure Portal as instructed in the above section. It will directly navigate to your dashboard.
 2. In the top search bar, search for "Cost Management + Billing" <br>
    <br>![](images/navigate.png) <br><br>
-3. Click on the Usage + Credits<br>
+3. Click on the Usage + charges<br>
    <br>![](images/view.png) <br><br>
+4. For more details click on "Cost Analysis"
+   <br>![](images/analysis.png) <br><br>

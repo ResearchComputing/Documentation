@@ -13,17 +13,14 @@ Login using your <a href="https://oit.colorado.edu/services/identity-access-mana
 
 ### What region has the lowest latency from CU Campus?
 **Answer:**
-The **West Central US** Azure region has the lowest latency from Colorado's Front Range region (CU Campuses).
+The **West US 2** Azure region is the preferred region.
 
 ---
 
-### Can I use the root user?
-**Answer:**
-No.
-The root user is owned by the **Research Computing Cloud Team**.
+### Who do I contact with questions about my Azure bill?
+Please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for any billing issues or questions.
 
 ---
-
 
 ### How do I close my Azure subscription?
 **Answer:**
