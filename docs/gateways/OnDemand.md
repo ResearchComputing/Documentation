@@ -1,6 +1,6 @@
 ## Open OnDemand _(Browser Based HPC Portal)_
 
-CURC Open OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing. CURC Open OnDemand provides a graphical interface to view, edit, download, and upload files; manage and create job templates for CURC's clusters; and access CURC interactive applications (Virtual Desktops, Matlab, and JupyterNotebooks). All of these actions are completed via a web browser and require only minimal knowledge of Linux and scheduler commands.
+CURC Open OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing. CURC Open OnDemand provides a graphical interface to view, edit, download, and upload files; manage and create job templates for CURC's clusters; and access CURC interactive applications (Virtual Desktops, Matlab, Jupyter Notebooks, and RStudio). All of these actions are completed via a web browser and require only minimal knowledge of Linux and scheduler commands.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cP6lfRWywk0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -98,11 +98,9 @@ matlab
 
 ##### JupyterHub
 
-1. When starting an interactive JupyterHub job, you may select `JupyterHub 1 (Presets)` or `JupyterHub 2 (Custom)` from the list of servers. The first server option offers preset configurations for convenience; you may select 1 core for 12 hours or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The `JupyterHub 1 (Presets)` server submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one Jupyter session__ (or any one job using the partition). `JupyterHub 2 (Custom)` allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
+1. When starting an interactive JupyterHub job, you may select `JupyterHub 1 (Presets)` or `JupyterHub 2 (Custom)` from the menu. The first server option offers preset configurations for convenience; you may select 1 core for 12 hours or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The `JupyterHub 1 (Presets)` server submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one Jupyter session__ (or any one job using the partition). `JupyterHub 2 (Custom)` allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
 
-2. Click “Launch” to submit the JupyterNotebook job to the queue. The wait time 
-depends on the number of cores and time requested.
-
+2. Click “Launch” to submit the JupyterNotebook job to the queue. The wait time depends on the number of cores and time requested. The preset options generally start within a few moments. 
 
 3. Once your Jupyter Notebook session is ready, you can click “Connect to Jupyter”. An interactive Jupyter Notebook session will be started in a new window.
 
@@ -113,6 +111,19 @@ depends on the number of cores and time requested.
 * When the server starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
 
 For more information on running Jupyter Notebooks, [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
+
+##### RStudio
+
+1. When starting an interactive Rstudio job, you may select `RStudio Server (Presets)` or `RStudio Server (Custom)` from the menu. The first server option offers preset configurations for convenience; you may select 1 core for 1 hour, 1 core for 12 hours, or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The `Rstudio Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one RStudio session__ (or any one job using the partition; for example if you have a Jupyter session that is also using the `ahub` partition, you will not be able to start an RStudio session using the preset options). `RStudio Servr (Custom)` allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
+
+2. Click “Launch” to submit the RStudio job to the queue. The wait time depends on the number of cores and time requested.  The preset options generally start within a few moments. 
+
+3. Once your RStudio session is ready, you can click “Connect to RStudio Server”. An interactive Rstudio session will be started in a new window.
+
+4. To shut down an Rstudio server, go to the "File" menu at the top and choose "Quit session". This will shut down the RStudio session and will give you the option to restart a server if desire. However, quitting the session will not cancel the job you are running on Alpine or Blanca, and closing the window will not terminate the job. To terminate the job, you can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
+
+**_Notes:_** 
+* We have designed the RSudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent vversion of the R module, and vise versa.  You will need to (re-)install the packages you need when using the equivalent module. 
 
 #### My Interactive Sessions
 
