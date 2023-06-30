@@ -127,18 +127,23 @@ For more information on running Jupyter Notebooks, [check out RC’s page on Jup
 
 ##### Running _Custom_ Interactive applications
 
-The Matlab, Jupyter and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
+The Matlab, Jupyter, and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
 
 * access to GPU nodes;
 * access to high-memory nodes;
 * large numbers of cores;
 * longer job durations.
 
-Please note that there is a _tradeoff_ when using the `Custom` menu: whereas the `Preset` menu for a given interactive application will typically provide near instant access to a limited number of resources because it uses a special partition on our system, jobs started through the `Custom` menu will typically use the partitions available on Alpine (e.g., `amilan`, `aa100`, etc.) or Blanca.  As such, these jobs will be scheduled into a Slurm job queue and it may be several hours (sometimes longer) until the jobs start. 
-
 To help you use the `Custom` menu for interactive appications, below is a table describing each field and possible options. 
 
-<brandon table here>
+| Input | Description |
+| --- | ----------- |
+| Cluster | Possible options are [Alpine](https://curc.readthedocs.io/en/latest/clusters/alpine/index.html) and [Blanca](https://curc.readthedocs.io/en/latest/clusters/blanca/blanca.html).  |
+| Account | The account you would like to use. If you do not have a project allocation, then CU Boulder users specify `ucb-general`; CSU users specify `csu-general`; RMACC users specify `rmacc-general`; and AMC users provide `amc-general`. If you have a project allocation you can use this allocation e.g. `ucbXXX_asc1`. |
+| Partition | Specifies a particular node type to use. For example, you can provide `ahub` for quicker access or utilize another [partition on Alpine](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#partitions).  Blanca users may use their group's partition. Please note that if you specify a partition other than `ahub`, it may take up to several hours for your session to start. |
+| Number of cores | The number of physical CPU cores for the job. |
+| Memory [GB] | The total amount of memory allocated for the Job. Memory in GB should be roughly the number of cores multiplied by 3.8 for standard Alpine `amilan` nodes. For specifications on memory for each Alpine partition, see [Alpine hardware](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html). |
+| QoS Name | Quality of Service (QoS) constrains or modifies certain job characteristics. For example, on Alpine you can specify `long` for long jobs of up to 7 days in duration. For default behavior, specify `normal` (jobs of up to 24 hours in duration).  For more information, see [Alpine QoS](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#quality-of-service-qos).|
 
 
 #### My Interactive Sessions
