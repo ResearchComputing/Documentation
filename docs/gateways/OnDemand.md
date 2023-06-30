@@ -123,7 +123,23 @@ For more information on running Jupyter Notebooks, [check out RC’s page on Jup
 4. To shut down an RStudio server, go to the "File" menu at the top and choose "Quit session...". If you have made changes to the workspace, then you will be asked if you would like to save them to `~/.RData`, this is not necessary, but can be helpful. Once completed, a prompt will notify you that your R session has ended and will give you the option to restart a server, if desired. However, it is important to note that quitting the session will not cancel the job you are running. Additionally, closing the window will not terminate the job. To terminate the job, you can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
 
 **_Notes:_** 
-* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa.  You will need to (re-)install the packages you need when using the equivalent module. 
+* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa.  You will need to (re-)install the packages you need when using the equivalent module.
+
+##### Running _Custom_ Interactive applications
+
+The Matlab, Jupyter and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
+
+* access to GPU nodes;
+* access to high-memory nodes;
+* large numbers of cores;
+* longer job durations.
+
+Please note that there is a _tradeoff_ when using the `Custom` menu: whereas the `Preset` menu for a given interactive application will typically provide near instant access to a limited number of resources because it uses a special partition on our system, jobs started through the `Custom` menu will typically use the partitions available on Alpine (e.g., `amilan`, `aa100`, etc.) or Blanca.  As such, these jobs will be scheduled into a Slurm job queue and it may be several hours (sometimes longer) until the jobs start. 
+
+To help you use the `Custom` menu for interactive appications, below is a table describing each field and possible options. 
+
+<brandon table here>
+
 
 #### My Interactive Sessions
 
