@@ -26,7 +26,7 @@ from RC compute, but can be accessed interactively on the RC login
 nodes. Historically the archive tier was tape-based, although recently
 is was changed to disk. An object limit of 10,000 files/directories per
 terabyte of space remains in place to preserve the option to move back
-to tape in the future, should the service grow to a point that tape a
+to tape in the future, should the service grow to a point where tape-based storage is more 
 fiscally viable.
 
 The archive feature list is similar to active, with the major differences
