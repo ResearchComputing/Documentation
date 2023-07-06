@@ -8,7 +8,7 @@ filesystem will outperform any PetaLibrary tier). The underlying hardware
 is configured to be suitable for direct compute access, and as such is
 accessible from all compute environments (Alpine, Blanca, Open OnDemand). All active allocations offer the following options:
 
- - interactive (NFS) access from RC login nodes and RC compute
+ - interactive (NFS) access from RC login and compute nodes
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
  - SMB access (not enabled by default, only accessible from UCB campus network)
  - no object (file/directory) limit
