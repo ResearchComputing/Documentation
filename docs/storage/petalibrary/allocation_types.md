@@ -33,7 +33,7 @@ being: no direct access from RC compute, no SMB access, file/directory
 count is limited, triple parity is used for data protection rather than
 double parity, and a different compression algorithm is used. In summary, all archive allocations offer the following features:
 
- - interactive (NFS) access from RC login nodes
+ - interactive (NFS) access from login nodes
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
  - 10,000 object (file/directory) per terabyte limit
  - triple parity (up to three simultaneous disk failures will not cause data loss)
