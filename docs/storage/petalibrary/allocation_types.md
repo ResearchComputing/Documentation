@@ -21,7 +21,7 @@ accessible from all compute environments (Alpine, Blanca, Open OnDemand). All ac
 
 PetaLibrary archive allocations are configured to maximize data integrity
 over performance. As such, archive allocations are not accessible
-from RC compute, but can be accessed interactively on the RC login
+from compute nodes, but can be accessed interactively on login
 nodes. Historically the archive tier was tape-based, although recently
 is was changed to disk. An object limit of 10,000 files/directories per
 terabyte of space remains in place to preserve the option to move back
