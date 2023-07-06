@@ -60,7 +60,7 @@ limit.
 
 Historically RC offered this service when the active and archive tiers
 were using different underlying storage systems, which made it difficult
-to do even daily replication. The service was not available to customers
+to do daily replication. The service was not available to customers
 for several years, but due to recent technical changes, we are able to
 not only bring back the service, but are also able to replicate data
 between the two tiers every fifteen minutes.
