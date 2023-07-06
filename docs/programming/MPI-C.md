@@ -138,7 +138,7 @@ int main(int argc, char** argv){
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_Rank);
 
-    printf("Hello World from process %d of %d\n", process_rank, size_Of_Cluster);
+    printf("Hello World from process %d of %d\n", process_Rank, size_Of_Cluster);
 
     MPI_Finalize();
     return 0;
