@@ -31,7 +31,7 @@ fiscally viable.
 The archive feature list is similar to active, with the major differences
 being: no direct access from RC compute, no SMB access, file/directory
 count is limited, triple parity is used for data protection rather than
-double parity, and a different compression algorithm is used.
+double parity, and a different compression algorithm is used. In summary, all archive allocations offer the following features:
 
  - interactive (NFS) access from RC login nodes
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
