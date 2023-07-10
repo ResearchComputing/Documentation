@@ -41,8 +41,8 @@ Accept the Duo push from your device.
 You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
 
 SSH Key Generation for Windows Users: 
-Using command prompt, PowerShell, or Windows Terminal: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/
-Using PuTTY: https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/
+- Using command prompt, PowerShell, or Windows Terminal: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/
+- Using PuTTY: https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/
 
 SSH Key Generation for Mac Users: 
 https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
