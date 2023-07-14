@@ -17,7 +17,7 @@ PetaLibrary active allocations are the most performant PetaLibrary tier (please 
 
 PetaLibrary archive allocations are configured to maximize data integrity over performance. As such, archive allocations are not accessible from compute nodes, but can be accessed interactively on login nodes. Historically the archive tier was tape-based, although recently is was changed to disk. An object limit of 10,000 files/directories per terabyte of space remains in place to preserve the option to move back to tape in the future, should the service grow to a point where tape-based storage is more fiscally viable.
 
-The archive feature list is similar to active, with the major differences being: no direct access from RC compute, no SMB access, file/directory count is limited, triple parity is used for data protection rather than double parity, and a different compression algorithm is used. In summary, all archive allocations offer the following features:
+The archive feature list is similar to active, with the major differences being: no direct access from RC compute nodes, no SMB access, file/directory count is limited, triple parity is used for data protection rather than double parity, and a different compression algorithm is used. In summary, all archive allocations offer the following features:
 
  - interactive (NFS) access from login nodes
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
