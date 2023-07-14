@@ -2,7 +2,7 @@
 
 #### Active
 
-PetaLibrary active allocations are the most performant PetaLibrary tier (please note that performant is a relative term -- our parallel scratch filesystem will outperform any PetaLibrary tier). The underlying hardware is configured to be suitable for direct compute access, and as such is accessible from all compute environments (Alpine, Blanca, Open OnDemand). All active allocations offer the following options:
+PetaLibrary active allocations are the most performant PetaLibrary tier (please note that performant is a relative term -- our parallel scratch filesystem will outperform any PetaLibrary tier). The underlying hardware is configured to be suitable for direct compute access, and as such is accessible from all compute environments (Alpine, Blanca, Open OnDemand). All active allocations offer the following features:
 
  - interactive (NFS) access from RC login and compute nodes
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
