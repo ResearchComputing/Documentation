@@ -9,7 +9,7 @@ PetaLibrary active allocations are the most performant PetaLibrary tier (please 
  - SMB access (not enabled by default, only accessible from UCB campus network)
  - no object (file/directory) limit
  - double parity (up to two simultaneous disk failures will not cause data loss)
- - snapshots (see documentation on [snapshots](ZFS_snapshots.md) for more information)
+ - snapshots (see documentation on [snapshots](zfs_snapshots.md) for more information)
  - full data checksumming, validated monthly (via ZFS scrub)
  - lz4 data compression
 
@@ -23,7 +23,7 @@ The archive feature list is similar to active, with the major differences being:
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
  - 10,000 object (file/directory) per terabyte limit
  - triple parity (up to three simultaneous disk failures will not cause data loss)
- - snapshots (see documentation on [snapshots](ZFS_snapshots.md) for more information)
+ - snapshots (see documentation on [snapshots](zfs_snapshots.md) for more information)
  - full data checksumming, validated monthly (via ZFS scrub)
  - zstd data compression
 
