@@ -6,7 +6,7 @@ CURC Open OnDemand is a browser based, integrated, single access point for all o
 
 ### Getting started with CURC Open OnDemand
  
-To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started.
+To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started. If you are an RMACC member, please follow our provided instructions on accessing [Alpine resources for RMACC members](../access/rmacc.html).
 
 ![](OnDemand/login_page.png)
 
@@ -30,7 +30,7 @@ Selecting one of the file spaces will open a separate browser window which will 
 
 > **_NOTE:_** _Please use 
 [Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers) 
-to transfer files to and from `/scratch/alpine` or `/rc_scratch`. Additionally, Globus should be used if you have more than 1 GB of data to transfer. OnDemand is not designed to handle large file transfers._
+to transfer files to and from `/scratch/alpine` or `/rc_scratch`. Additionally, Globus should be used if you have more than 1 GB of data to transfer. <span style="background-color: #FFF36D">Open OnDemand is not designed to handle large file transfers.</span>_
 
 ![](OnDemand/home_file.png)
 
@@ -64,36 +64,44 @@ slurm/<cluster>` with either Alpine or Blanca.
 
 #### Interactive Applications Menu
 
-The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs) for interactive use on CURC clusters. Current supported applications include a __remote desktop atop the core cluster__, __MATLAB__, and __JupyterHub__ .
+The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs) for interactive use on CURC clusters. Currently supported applications include a __remote desktop__, __MATLAB__, __Jupyter session__, and __RStudio session__.
 
-##### Core Desktop (Remote Desktop)
+##### Core Desktop (remote desktop)
 
-1. When starting a Remote Desktop session, you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job. The default will open a Remote Desktop with 1 node (2 cores) for 1 hour (no need to specify "Account").
-![](OnDemand/core_launch.png)
-2. Click “Launch” to submit the Remote Destop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller, shorter jobs may faciliate shorter wait times. 
-3. When your Remote Desktop is ready, you can click the "Launch Core Desktop" button. In most cases, the default compression and image quality will suffice. If you do have problems with image quality you can adjust these settings as necessary. 
-4. With the Remote Desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). 
+1. To start a remote desktop session, you can select either "Core Desktop" or "Core Desktop (Presets)" from the interactive applications menu. When starting a "Core Desktop" session, you may customize the runtime and number of cores for the session. If you select "Core Desktop (Presets)", you may select from standard configurations we provide.
+![](OnDemand/core_desktop_presets.png)
+2. Once either option is selected, click “Launch” to submit the remote desktop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller and shorter jobs may facilitate shorter wait times. 
+3. When your remote desktop is ready, you can click the "Launch Core Desktop" or "Launch Core Desktop (Presets)" button to bring up a web page with the remote desktop. In most cases, the default compression and image quality will suffice. If you do have problems with image quality you can adjust these settings as necessary. 
+![](OnDemand/core_desktop_presets_launch.png)
+4. With the remote desktop session running and open, you should be able to run standard Linux desktop applications that have a graphical user interface (GUI). 
 
 **Notes**:
+* <mark style="background-color: #FFF36D">
+  GPU based options are not meant for computationally intensive workflows. Additionally,
+  please keep in mind that these GPU based options are a shared
+  resource amongst all users. Thus, significant computation by one
+  user can affect other users of this service.
+  </mark>
 * You can copy/paste into/out of the VNC desktop using the clipboard in the "hidden" tab on the left-hand-side of the virtual desktop.
 ![](OnDemand/copypasta.png)
 * Closing the window will not terminate the job. You can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
 ##### MATLAB
 
-1. When starting an interactive MatLab job, you may customize the resources allocated to the session and other characteristics of the dispatched Slurm job, including the Matlab version. In most cases, the defaults will be adequate (i.e, no need to specify an account).
-![](OnDemand/matlab_launch.png)
-2. Click “Launch” to submit the MATLAB job to the queue. The wait time depends on the number of cores, nodes, and time requested.
-3. When your Matlab session is ready, you can click the “Launch MATLAB on Core- CURC”. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. An interactive Matlab session will be started in a new window.
+1. To start an interactive MATLAB session, select either "MATLAB (Custom)" or "MATLAB (Presets)" from the interactive applications menu. When starting a "MATLAB (Custom)" session, you may customize resources allocated to the session and other characteristics of the dispatched Slurm job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. If you select "MATLAB (Presets)", you may select from standard configurations we provide.
+![](OnDemand/matlab_custom.png)
+2. Once either option is selected, click “Launch” to submit the MATLAB job to the queue. The wait time depends on user provided options, such as the number of cores and time requested.
+3. When your Matlab session is ready, you can click the “Launch MATLAB (Custom)” or "Launch MATLAB (Presets)" button to bring up a web page with the MATLAB session. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the MATLAB session, you can adjust as necessary.
+![](OnDemand/matlab_custom_launch.png)
+4. Once launched, it may take a few minutes for MATLAB to begin. However, once started, you should be able to interact with MATLAB as you would on your own computer.  
 
 **_Notes:_** 
-* Some users find running Matlab in the Core Remote Desktop option provides an enhanced experience. To do this, start a Remote Desktop session, open a terminal by clicking "Applications" -> "System Tools" --> "MATE Terminal", then load the MATLAB module. Finally, start MATLAB by typing
-
-```bash
-module load matlab/2019b
-matlab
-```
-
+* <mark style="background-color: #FFF36D">
+  GPU based options are not meant for computationally intensive workflows. Additionally,
+  please keep in mind that these GPU based options are a shared
+  resource amongst all users. Thus, significant computation by one
+  user can affect other users of this service.
+  </mark>
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
 ##### JupyterHub
