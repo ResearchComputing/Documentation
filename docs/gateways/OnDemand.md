@@ -54,6 +54,10 @@ Jobs can be monitored, created, edited and scheduled with the job management too
 
 The _Clusters_ menu provides shell access to login nodes on CURC clusters. The shell terminal is similar to many other tools that provide terminal access.
 
+<br>
+
+![](OnDemand/shell_access.png)
+
 > Currently, Alpine shells log you into a basic login node. You can 
 load in either Alpine or Blanca slurm instances from here: `module load 
 slurm/<cluster>` with either Alpine or Blanca.
