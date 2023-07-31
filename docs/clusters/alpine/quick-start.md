@@ -2,9 +2,8 @@
 
 Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
 cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
-Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 317 compute nodes and a total of 18,080 cores.
-
-Alpine can be securely accessed anywhere, anytime using OpenOnDemand or ssh connectivity to the CURC system.
+Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 382 compute nodes and a total 
+of 22,180 cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
 
 ### Alpine Quick-Start
 
@@ -29,15 +28,15 @@ request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?hig
 ### Cluster Summary
 #### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 188 AMD Milan compute nodes (184 nodes with 64 cores/node, 4 nodes with 48 cores/node) with 256 GB RAM
+- **CPU nodes**: 347 AMD Milan compute nodes (270 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
 - **GPU nodes**:
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
-	- 8 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
+	- 12 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
 - **High-memory nodes**: 12 AMD Milan nodes with 1TB of memory
 
 Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
 - **Colorado State University**: 77 AMD Milan compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
-- **CU Anschutz Medical Campus**: 16 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, and 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan)
+- **CU Anschutz Medical Campus**: 14 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, and 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan)
 
 All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 
@@ -45,7 +44,7 @@ All nodes are available to all users. For full details about node access, please
 
 #### Interconnect
 The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
-- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric); available on most CPU nodes as of September 2022 and on most remaining CPU nodes pending hardware arrivals
+- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric); available on most CPU nodes as of July 2023 and on most remaining CPU nodes pending hardware arrivals
 - **GPU nodes**: 2x25 Gb Ethernet +RoCE
 - **High-memory nodes**: 2x25 Gb Ethernet +RoCE
 - **Scratch storage**: 25Gb Ethernet +RoCE

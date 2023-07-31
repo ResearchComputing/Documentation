@@ -4,7 +4,7 @@
 
 | Count & Type          | Scheduler Partition | Processor        | Sockets | Cores (total) | Threads/Core | RAM/Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
 | --------------------- | ------------------- | ---------------- | ------- | ------------- | ------------ | ------------- | ------------- | ----------- | --------- | -------------------------- | -------------------------------------------- | -------- |
-| 192 Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| 256 Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | 12 Milan High-Memory   | amem                | x86_64 AMD Milan | 2       | 48            | 1            | 21.5          | tbd           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | 8 Milan AMD GPU       | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 8 Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
@@ -63,7 +63,7 @@ Partitions available on Alpine:
 
 | Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | Default/Max Walltime     | Resource Limits |
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- | ------------------------ | ----------------------|
-| amilan    | AMD Milan (default)          | 283        | 64         |   3.75        | 1                   | 24H, 24H                 | see qos table |
+| amilan    | AMD Milan (default)          | 347        | 32 or 48 or 64 |   3.75        | 1                   | 24H, 24H                 | see qos table |
 | ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | 6.1<sup>3</sup>     | 24H, 24H                 | 15 GPUs across all jobs |
 | aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | 12          | 64         |   3.75       | 6.1<sup>3</sup>     | 24H, 24H     | 22 GPUs across all jobs |
 | amem<sup>1</sup> | High-memory           | 14          | 48         |  20.83<sup>2</sup> | 4.0           |  4H,  7D                 | 96 cores across all jobs |
