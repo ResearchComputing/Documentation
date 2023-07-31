@@ -68,7 +68,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ##### Core Desktop (remote desktop)
 
-1. To start a remote desktop session, you can select either "Core Desktop" or "Core Desktop (Presets)" from the interactive applications menu. When starting a "Core Desktop" session, you may customize the runtime and number of cores for the session. If you select "Core Desktop (Presets)", you may select from standard configurations we provide.
+1. To start a remote desktop session, you can select either `Core Desktop` or `Core Desktop (Presets)` from the interactive applications menu. When starting a `Core Desktop` session, you may customize the runtime and number of cores for the session. If you select `Core Desktop (Presets)`, you may select from standard configurations we provide.
 ![](OnDemand/core_desktop_presets.png)
 2. Once either option is selected, click “Launch” to submit the remote desktop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller and shorter jobs may facilitate shorter wait times. 
 3. When your remote desktop is ready, you can click the "Launch Core Desktop" or "Launch Core Desktop (Presets)" button to bring up a web page with the remote desktop. In most cases, the default compression and image quality will suffice. If you do have problems with image quality you can adjust these settings as necessary. 
@@ -88,7 +88,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ##### MATLAB
 
-1. To start an interactive MATLAB session, select either "MATLAB (Custom)" or "MATLAB (Presets)" from the interactive applications menu. When starting a "MATLAB (Custom)" session, you may customize resources allocated to the session and other characteristics of the dispatched Slurm job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. If you select "MATLAB (Presets)", you may select from standard configurations we provide.
+1. To start an interactive MATLAB session, select either `MATLAB (Custom)` or `MATLAB (Presets)` from the interactive applications menu. When starting a `MATLAB (Custom)` session, you may customize resources allocated to the session and other characteristics of the dispatched Slurm job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. If you select `MATLAB (Presets)`, you may select from standard configurations we provide.
 ![](OnDemand/matlab_custom.png)
 2. Once either option is selected, click “Launch” to submit the MATLAB job to the queue. The wait time depends on user provided options, such as the number of cores and time requested.
 3. When your Matlab session is ready, you can click the “Launch MATLAB (Custom)” or "Launch MATLAB (Presets)" button to bring up a web page with the MATLAB session. In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the MATLAB session, you can adjust as necessary.
@@ -104,21 +104,18 @@ The _Interactive Applications_ menu contains options to launch certain applicati
   </mark>
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
-##### JupyterHub
+##### Jupyter Session
 
-1. When starting an interactive JupyterHub job, you may select `JupyterHub 1 (Presets)` or `JupyterHub 2 (Custom)` from the menu. The first server option offers preset configurations for convenience; you may select 1 core for 12 hours or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The `JupyterHub 1 (Presets)` server submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one Jupyter session__ (or any one job using the partition). `JupyterHub 2 (Custom)` allows you to specify the cluster, account, partition, number of hours and cores, and QoS. 
-
-2. Click “Launch” to submit the JupyterNotebook job to the queue. The wait time depends on the number of cores and time requested. The preset options generally start within a few moments. 
-
-3. Once your Jupyter Notebook session is ready, you can click “Connect to Jupyter”. An interactive Jupyter Notebook session will be started in a new window.
-
-4. To shut down a Notebook server, go to the "File" menu at the top and choose "Shut Down". This will shut down the Jupyter notebook server and cancels the job you are running on Alpine or Blanca. You also have the option to restart a server if desired. Closing the window will not terminate the job. You can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
+1. When starting an interactive Jupyter session job, you may select `Jupyter Session (Custom)` or `Jupyter Session (Presets)` from the menu. The `Jupyter Session (Custom)` option allows you to modify the resources and Slurm configurations for the job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. If you select `Jupyter Session (Presets)`, you may select from standard configurations we provide.  Most use cases can be accommodated by one of the presets. The `Jupyter Session (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one Jupyter session__ (or any one job using the partition).
+![](OnDemand/jupyter_session_custom.png)
+2. Click “Launch” to submit the Jupyter session job to the queue. The wait time depends on the number of cores and time requested. The preset options generally start within a few moments. 
+3. Once your Jupyter Notebook session is ready, you can click “Connect to Jupyter”. An interactive Jupyter session will be started in a new window.
+![](OnDemand/jupyter_session_custom_launch.png)
 
 **_Notes:_** 
-* In most cases, the default compression and image quality will suffice. If you do have problems with image quality of the Remote Desktop, you can adjust as necessary. 
-* When the server starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
-
-For more information on running Jupyter Notebooks, [check out RC’s page on Jupyter](https://curc.readthedocs.io/en/latest/gateways/jupyterhub.html).
+* When the session starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
+* For more information on running Jupyter sessions, [check out RC’s page on Jupyter](./jupyterhub.html).
+* Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 
 ##### RStudio
 
