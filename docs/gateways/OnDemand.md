@@ -119,12 +119,11 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ##### RStudio
 
-1. To start an interactive RStudio job, select `RStudio Server (Presets)` from the menu. This provides preset configurations for your convenience; you may select 1 core for 1 hour, 1 core for 12 hours, or 4 cores for 4 hours. Most use cases can be accommodated by one of the presets. The `RStudio Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one RStudio session__ (or any one job using the partition; for example if you have a Jupyter session that is also using the `ahub` partition, you will not be able to start an RStudio session using the preset options).
-
+1. To start an interactive RStudio job, select `RStudio Server (Custom)` or `RStudio Server (Presets)` from the menu. The `RStudio Server (Custom)` option allows you to modify the resources and Slurm configurations for the job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. The `RStudio Server (Presets)` application provides configurations for your convenience. Most use cases can be accommodated by one of the presets. The `RStudio Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one RStudio Server session__ (or any one job using the partition; for example if you have a Jupyter session that is also using the `ahub` partition, you will not be able to start an RStudio Server session using the preset options).
+![](OnDemand/rstudio_session_custom.png)
 2. Click “Launch” to submit the RStudio job to the queue. The wait time depends on the number of cores and time requested.  The preset options provided generally start within a few moments. 
-
 3. Once your RStudio session is ready, you can click “Connect to RStudio Server”. An interactive RStudio session will be started in a new window.
-
+![](OnDemand/rstudio_session_custom_launch.png)
 4. To shut down an RStudio server, go to the "File" menu at the top and choose "Quit session...". If you have made changes to the workspace, then you will be asked if you would like to save them to `~/.RData`, this is not necessary, but can be helpful. Once completed, a prompt will notify you that your R session has ended and will give you the option to restart a server, if desired. However, it is important to note that quitting the session will not cancel the job you are running. Additionally, closing the window will not terminate the job. To terminate the job, you can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
 
 **_Notes:_** 
@@ -139,7 +138,7 @@ The Matlab, Jupyter, and RStudio interactive applications each have `Custom` men
 * large numbers of cores;
 * longer job durations.
 
-To help you use the `Custom` menu for interactive appications, below is a table describing each field and possible options. 
+To help you use the `Custom` menu for interactive applications, below is a table describing each field and possible options. 
 
 | Input | Description |
 | --- | ----------- |
