@@ -220,9 +220,7 @@ If you would like to set a custom snapshot schedule for your allocation, please 
 
 ### Why is my Jupyter session pending throwing 'QOSMaxSubmitJobPerUserLimit'?
 
-Our OnDemand servers allocate resources for JupyterHub sessions using a Slurm compute job under the cluster. The `JupyterHub 1 (Presets)` server submits jobs to Alpine's `ahub` partition. 
-This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). 
-In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current JupyterHub server or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
+Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications with "Presets" in their name will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
 
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
