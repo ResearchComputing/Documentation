@@ -1,15 +1,15 @@
 ## SSH Key-Based Authentication for Anschutz Medical Campus 
 
-#### Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact hpcsupport@cuanschutz.edu to initiate this process.
+Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact hpcsupport@cuanschutz.edu to initiate this process.
 
 ### *Prerequisites:*
-* If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
-* Sign and fill out CU Anschutz's Alpine form: https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake
-* You will receive an email from hpcsupport@cuanschutz.edu in approximately 1-2 weeks confirming your CURC account has been created.
+* If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (<https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30>).
+* Sign and fill out CU Anschutz's Alpine form: <https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake>
+* You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
 * You must be connected to a CU Anschutz network or the CU Anshutz VPN.
 
 > **_NOTE:_**
-A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn. 
+A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn>. 
 Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
 
 ### *Step 1: Enroll in the RMACC CILogon Registry*
