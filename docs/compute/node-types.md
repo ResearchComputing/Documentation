@@ -17,12 +17,12 @@ Users should refer to CURC
 
 
 
-### Compile nodes
+### Compile nodes (Alpine only)
 
 * Where you compile code, such as Fortran, C, C++
 * No heavy computation
 * Submit Jobs
-* Access these nodes by typing `ssh scompile` from a login node
+* Access these nodes by typing `acompile` from a login node
 
 
 ### Compute nodes

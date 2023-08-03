@@ -283,3 +283,30 @@ Grace period upon preemption: When jobs are preempted, a 120 second grace period
 The ‘blanca’ QoS: Note that as of 1 March, 2018, the “preemptable” qos replaces the previous low-priority QoS, “blanca”, which is no longer active.
 
 Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
+
+
+### FAQ
+
+ #### How would going from 480GB to 2TB SSD affect the price? 
+
+ Commonly, additional RAM will increase pricing substantially, whereas increased local SSD will do so only slightly (perhaps by a few hundred dollars). However, we recommend using RC’s dedicated storage resources rather than adding persistent storage local to a single node. This increases functionality, redundancy, and our capacity to recover data in the event of issues. 
+
+ #### Can you tell us more about the Service Level Agreement (SLA) this hardware comes with? 
+
+ The hardware comes with a 5-year warranty that covers all hardware-related issues during that period. No additional node-related costs will be incurred by the owner during this period.  After the 5-year period, if the owner wishes to continue using the nodes, and if RC can still support the hardware, the owner will be responsible for purchasing hardware if/when it fails (e.g., SSDs, RAM, etc.). 
+
+ #### Do you offer a percent uptime guarantee for the duration of the SLA? 
+
+ Individual nodes do not receive an uptime estimate due to wide variation in issues that may occur. 
+
+ #### Are backup and restore options available?
+
+ We do not offer backups as part of the Blanca service. Users wishing to use and store their own files with an option for backup are encouraged to purchase space on the RC maintained [PetaLibrary](../../storage/petalibrary/index.html). The SSDs on each node are reserved for temporary data storage during jobs (data on SSDs is deleted at the end of each job); therefore, backup is not offered for SSDs.  
+
+ #### Can you clarify how priority works? 
+
+ Blanca node owners (and their designated group members) are guaranteed priority on nodes they purchase. Each Blanca owner has their own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on their nodes. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (`preemptable`) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. Additional factors for determining job priority include the job’s age and the number of jobs recently run by the user/account. 
+
+ #### Can a priority tier system be implemented? 
+
+Often, users want to share resources with another faculty member potentially buying the same kind of node, this is defined as a priority tier system. In other words, two groups have priority on each other's resources when the other group is not using them and before other users on Blanca. Unfortunately, Blanca does not typically support tiers of priority, except to distinguish preemptable jobs from jobs submitted by node owners. However, a node owner may authorize another user or set of users to have equivalent priority access to their nodes, if they wish. 

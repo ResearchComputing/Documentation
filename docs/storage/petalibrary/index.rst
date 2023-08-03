@@ -20,6 +20,7 @@ PetaLibrary access is subject to the `PetaLibrary Terms of Service <https://www.
     :caption: PetaLibrary Table of Contents 
 
     petalibrary
+    allocation_types
     data_redundancy
     faq
     usage_statistics	
@@ -28,5 +29,6 @@ PetaLibrary access is subject to the `PetaLibrary Terms of Service <https://www.
     rclone
     mounting
     gdrive
+    onedrive
     synology
     ownership

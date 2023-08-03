@@ -18,11 +18,11 @@ Users accessing RC's resources will be connected to a login node. A login node i
 + **For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**  
 + **For RMACC users, pleaser refer to [RMACC Access to Alpine.](rmacc.html)**
 
-<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>  
-
 ---
 
 ### Getting an account
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3kdW3EJS-OE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
 
