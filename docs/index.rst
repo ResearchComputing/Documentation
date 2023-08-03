@@ -67,6 +67,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    access/duo-2-factor-authentication
    access/allocations
    access/rmacc
+   access/amc-access
 
 .. toctree::
    :maxdepth: 2
