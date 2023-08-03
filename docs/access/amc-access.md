@@ -1,4 +1,6 @@
-## Login Instructions for CU Anschutz
+## SSH Key-Based Authentication for Anschutz Medical Campus 
+
+### Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact hpcsupport@cuanschutz.edu to initiate this process.
 
 ### *Prerequisites:*
 * If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
@@ -12,12 +14,12 @@ Once the VPN is configured, a web login will require you to enter your CU Anschu
 
 ### *Step 1: Enroll in the RMACC CILogon Registry*
 
-Shortly after your CURC account is created (see bullet point above), you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
+You will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
 
 ![](./amc-access-images/email_invitation.png)
 
-Follow the invitation URL and click 'Accept'.
+Follow the invitation URL and click 'Accept'. __The invitation link becomes invalid once you click 'Accept', so complete all of Step 1 before closing your browser tab.__ 
 
 ![](./amc-access-images/accept_invitation.png)
 
@@ -111,6 +113,8 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 
 ### Troubleshooting
 
+* If you are able to get through Step 3 but are unable to ssh in from your terminal, check that the ssh key in your command is the same key you uploaded to the registry.
+* If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please contact <rc-help@colorado.edu>, as this indicates an issue with your CILogon enrollment.
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>.
 
 ![](./amc-access-images/notregistered_error.png)
