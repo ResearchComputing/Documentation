@@ -77,7 +77,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [OpenJPEG](https://www.openjpeg.org/) | 2.2.0 | OpenJPEG is an open-source JPEG 2000 codec written in C language. | 
 | [Open MPI](https://www.open-mpi.org/) | 4.1.1, 4.1.4 | The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. | 
 | [OpenSees](https://opensees.berkeley.edu) | 3.4 | OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes. |
-| [ORCA](https://orcaforum.kofo.mpg.de/app.php/portal) | 5.0.3, 5.0.4 (D) | ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods. | 
+| [ORCA](https://www.orcasoftware.de/tutorials_orca/) | 5.0.3, 5.0.4 (D) | ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods. | 
 | [PAPI](https://icl.utk.edu/papi/index.html)| 5.4.3, 5.5.1 (D) | A complete, cross-platform solution to record, convert and stream audio and video. |
 | [ParaView](https://www.paraview.org/) | 5.0.1, 5.6.0, 5.9.0, 5.10.0 (D) | ParaView is an open-source multiple-platform application for interactive, scientific visualization. | 
 | [PDT (Program Database Toolkit)](https://www.cs.uoregon.edu/research/pdt/home.php) | 3.22, 3.25.1 (D) | PDT is a framework for analyzing source code written in several programming languages and for making rich program knowledge accessible to developers of static and dynamic analysis tools. | 
