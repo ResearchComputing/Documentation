@@ -114,8 +114,8 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 ### Troubleshooting
 
 * If you are able to get through Step 3 but unable to ssh in from your terminal, check that the ssh key in your command is the same key you uploaded to the registry.
-* If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please contact <rc-help@colorado.edu>, as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last sign-in attempt.
-* If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>. Please include a screenshot of the error message and the date/time of your last sign-in attempt.
+* If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please contact <rc-help@colorado.edu>, as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt.
+* If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>. Please include a screenshot of the error message and the date/time of your last login attempt.
 
 ![](./amc-access-images/notregistered_error.png)
 <br>
