@@ -90,4 +90,3 @@ See instructions for creating an [Rclone remote configuration for PetaLibrary](.
 * [Rclone documentation](https://rclone.org/)
 * [CURC data transfer documentation](../../compute/data-transfer.html)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

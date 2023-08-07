@@ -229,4 +229,3 @@ Hello World from process 3
 CURC Matlab currently does not support parallelization across nodes,
 only across cores on one node.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

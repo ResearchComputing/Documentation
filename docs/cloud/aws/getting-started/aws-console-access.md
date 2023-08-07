@@ -24,4 +24,3 @@ If you have access to multiple AWS Accounts and/or Roles, you will be presented 
 ![](images/aws-console-access/select-region.png)
 Once logged in, you have a 60 minute session.  You will be asked to log back in and re-authenticate using MFA when your session expires.
 
-Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

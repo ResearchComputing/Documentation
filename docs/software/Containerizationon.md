@@ -437,4 +437,3 @@ Note that it is also possible to build intel/IMPI containers for use on
 Alpine. If you would like assistance building MPI-enabled containers 
 contact <rc-help@colorado.edu>.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

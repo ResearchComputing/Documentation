@@ -41,4 +41,3 @@ mpirun --mca pml ob1 --mca btl openib,self,vader --mca btl_openib_cpc_include rd
 ```
 
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

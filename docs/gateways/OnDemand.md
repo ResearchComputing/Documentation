@@ -162,4 +162,3 @@ The _My Interactive Sessions_ menu will let you view and manage all of your curr
 Closing the window an interactive application is opened in will not terminate the session. You will need to click the “Delete” button for the individual session.
 ![](OnDemand/my_interactive_sessions.png)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

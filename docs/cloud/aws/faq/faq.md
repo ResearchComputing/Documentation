@@ -54,4 +54,3 @@ Click on the drop down on the top right corner of the console page to expand you
 
 ---
 
-Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

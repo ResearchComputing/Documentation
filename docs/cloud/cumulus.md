@@ -86,4 +86,3 @@ Once we receive your request the allocation committee will review it. If the cas
 
 The CU Research Computing group would like to acknowledge support of this project from the National Science Foundation (OAC-1925766).
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
