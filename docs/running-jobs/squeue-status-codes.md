@@ -48,4 +48,3 @@ documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
 A full list of these Job Reason Codes can be found [in Slurm’s
 documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

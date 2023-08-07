@@ -122,4 +122,3 @@ Hello World from process: 3
 * [https://github.com/t-brown/lb](https://github.com/t-brown/lb)
 * [https://www.inspirenignite.com/load-balancing-in-parallel-computers/](https://www.inspirenignite.com/load-balancing-in-parallel-computers/)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

@@ -20,4 +20,3 @@ export USER2=$(echo $USER |  awk -F@ '{print "."$2"/"$1}')
 
 This will yield a `$USER2` value of (e.g.) .colostate.edu/janedoe such that `/home/$USER2` is equivalent to `/home/$USER`, `/projects/$USER2` is equivalent to `/projects/$USER`, an so on.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

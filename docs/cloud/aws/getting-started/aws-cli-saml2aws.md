@@ -186,4 +186,3 @@ You can run the `saml2aws exec` portion of the above command however you need.
 For example, you can execute a shell script.
 Again, MFA will need to be performed manually.
 
-Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

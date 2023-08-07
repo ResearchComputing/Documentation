@@ -170,4 +170,3 @@ $ passwd root
 
 ![](cumulus/int_vs_ext_ip.png)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

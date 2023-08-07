@@ -28,4 +28,3 @@ Send an email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and provide
 
 ---
 
-Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

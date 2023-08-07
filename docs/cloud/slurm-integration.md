@@ -134,4 +134,3 @@ You have now successfully connected your CUmulus instance to CURC HPC resources!
 
 The CU Research Computing group would like to acknowledge support of this project from the National Science Foundation (OAC-1925766).
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

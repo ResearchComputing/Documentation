@@ -116,4 +116,3 @@ If you need assistance creating or installing environments or Jupyter kernels, c
 * [JupyterLab homepage](https://jupyterlab.readthedocs.io)
 
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

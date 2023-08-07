@@ -50,4 +50,3 @@ allocation owners, so the only reason we track them separately is so that
 RC has a better chance of contacting the correct people for billing or
 technical issues.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

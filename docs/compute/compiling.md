@@ -168,4 +168,3 @@ $FC my_program.cpp  -m64 -I$CURC_MKL_INC -o my_program.out   -L$CURC_MKL_LIB -Wl
 
 Note that if your application uses FFTW, you will must use the FFTW include flag just as with the Intel compiler. See the link advisor or contact <rc-help@colorado.edu> if you have additional questions about how to link MKL to your application.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

@@ -59,4 +59,3 @@
 * JupyterHub Cluster notebooks now use lmod instead of virtualenv for
   software dependencies.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

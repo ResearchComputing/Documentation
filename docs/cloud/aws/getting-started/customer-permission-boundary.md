@@ -57,4 +57,3 @@ On Step 2 of the 'Create role' or 'Create user' wizard, search for and add the "
 
 ![](images/customer-permission-boundary/permission-boundary.jpeg)
 
-Couldn't find what you need? [Provide your feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

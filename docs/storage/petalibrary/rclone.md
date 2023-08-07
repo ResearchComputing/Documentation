@@ -316,4 +316,3 @@ Windows systems can set up scheduled tasks to run rclone automatically.
 
 **Windows:** Windows host users, if you do not have WSL2 installed use taskschd.msc (Task Scheduler) as Admin and run Action=>Create Basic Task
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

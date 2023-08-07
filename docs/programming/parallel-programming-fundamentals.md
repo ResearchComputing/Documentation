@@ -109,4 +109,3 @@ provides a user with the ability to maximize processing ability. MPI
 is a library standard, meaning there are several libraries based on
 MPI that you can use to develop parallel code. OpenMPI and Intel MPI are solutions available on most CURC systems.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

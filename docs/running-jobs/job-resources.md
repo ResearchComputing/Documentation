@@ -67,4 +67,3 @@ The available QoS's for Alpine are:
 | long        | Longer wall times          | 7D              | tbd           | tbd                | tbd              | 0                    |
 | mem         | High-memory jobs           | 7D              | tbd           | 12                 | amem only        | 0                    |
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
