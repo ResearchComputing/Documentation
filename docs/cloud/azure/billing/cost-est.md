@@ -13,7 +13,7 @@ This document gives some sample cost estimates for select network access methods
 ### Internet Gateway
 
 **Important**
-Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing.
+Always check [Microsoft documentation](https://azure.microsoft.com/en-us/pricing/details/bandwidth/) for current pricing.
  
 **Network costs**
 
@@ -26,23 +26,23 @@ Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) 
 2 Servers will download 100GB and upload 500GB in a month.
 
 	1) Download cost = $0
-	2) Upload cost = (100GB = $0) + ($0.09 x 400GB) = $36
+	2) Upload cost = (100GB = $0) + ($0.087 x 400GB) = $34.80
 
-	Total Network Cost = $36/month
+	Total Network Cost = $34.80/month
 
 ### NAT Gateway
 
 **Important**
-Always check [AWS documentation] (https://aws.amazon.com/vpc/pricing/) for current pricing.
+Always check [Microsoft documentation] (https://azure.microsoft.com/en-us/pricing/details/virtual-network/) for current pricing.
 
 **Network Costs**
 1) Downloads - $0.045/GB
 2) Uploads - $0.045/GB
-3) NAT Gatway - 0.045/hr
+3) NAT Gatway Resource - 0.045/hr
 
 **Sample Network Cost**
 
-2 Servers will download 100GB and upload 500GB in a month.  The NAT gateway will be on the entire month.
+2 Servers on the same subnet will download 100GB and upload 500GB in a month.  The NAT gateway will be on the entire month.
 
 	1) Download cost = $0.045 x 100 = $4.50
 	2) Upload cost = $0.045 x 500 = $22.50
@@ -50,23 +50,21 @@ Always check [AWS documentation] (https://aws.amazon.com/vpc/pricing/) for curre
 
 	Total Network Cost = $59.40/month
 
-### CFS Transit Gateway VPN
+### CFS VNET Peering (VPN)
 
 **Important**
-Always check [AWS documentation](https://aws.amazon.com/transit-gateway/pricing/) for current pricing.
+Always check [Microsoft documentation](https://azure.microsoft.com/en-us/pricing/details/virtual-network/) for current pricing.
 
 **Network Costs**
-1) Downloads - $0.02/GB
-2) Uploads - $0.02/GB
-3) Attachment - $0.05/hr
+1) Downloads - $0.01/GB
+2) Uploads - $0.01/GB
 
 **Sample Network Cost**
 
 2 Servers will download 100GB and upload 500GB in a month.  The VPC attachment will be on the entire month.
 
-	1) Download cost = $0.02 x 100 = $2
-	2) Upload cost = $0.02 x 500 = $10
-	3) Attachment cost = $0.05 x (24hr x 30day= 720hr) = $36
+	1) Download cost = $0.01 x 100 = $1
+	2) Upload cost = $0.01 x 500 = $5
 
 	Total Network Cost = $48/month
 
