@@ -16,13 +16,19 @@ This document gives some sample cost estimates for select network access methods
 [Always check AWS documentation for current pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
  
 **Network cost** 
+
 Downloads - no cost
+
 Uploads - first 100GB free, tiered cost per 1GB transferred after
 
 **Sample Network Cost**
+
 2 Servers will download 100GB and upload 500GB in a month.
+
 	1) Download cost = $0
+
 	2) Upload cost = (100GB = $0) + ($0.09 x 400GB) = $36
+
 	Total Network Cost = $36/month
 
 ### NAT Gateway
