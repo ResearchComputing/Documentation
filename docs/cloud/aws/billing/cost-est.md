@@ -25,7 +25,7 @@ Uploads - first 100GB free, tiered cost per 1GB transferred after
 	2) Upload cost = (100GB = $0) + ($0.09 x 400GB) = $36
 	Total Network Cost = $36/month
 
-###NAT Gateway
+### NAT Gateway
 
 **Important**
 [Always check AWS documentation for current pricing](https://aws.amazon.com/vpc/pricing/)
@@ -42,7 +42,7 @@ NAT Gatway - 0.045/HR
 	3) NAT Gateway Instance = $0.045 x (24hr x 30day= 720hr) = $32.40
 	Total Network Cost = $59.40/month
 
-###CFS Transit Gateway VPN
+### CFS Transit Gateway VPN
 
 **Important**
 [Always check AWS documentation for current pricing](https://aws.amazon.com/transit-gateway/pricing/)
