@@ -8,7 +8,7 @@ This document gives some sample cost estimates for select network access methods
 
 1) Internet Gateway - used with public IP
 2) NAT Gateway - used with private IP
-3) CFS Transit Gateway (VPN) - used with private IP address, VPN connects back to UC Boulder
+3) CFS Transit Gateway (VPN) - used with private IP address, VPN connects back to CU Boulder
 
 ### Internet Gateway
 
@@ -16,9 +16,7 @@ This document gives some sample cost estimates for select network access methods
 Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing
  
 **Network cost**  
-
 Downloads - no cost  
-
 Uploads - first 100GB free, tiered cost per 1GB transferred after  
 
 **Sample Network Cost**
