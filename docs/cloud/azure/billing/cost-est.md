@@ -33,7 +33,7 @@ Always check [Microsoft documentation](https://azure.microsoft.com/en-us/pricing
 ### NAT Gateway
 
 **Important**
-Always check [Microsoft documentation] (https://azure.microsoft.com/en-us/pricing/details/virtual-network/) for current pricing.
+Always check [Microsoft documentation](https://azure.microsoft.com/en-us/pricing/details/virtual-network/) for current pricing.
 
 **Network Costs**
 1) Downloads - $0.045/GB
