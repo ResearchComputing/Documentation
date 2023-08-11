@@ -27,7 +27,7 @@ Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) 
 
 	1) Download cost = $0
 	2) Upload cost = (100GB = $0) + ($0.09 x 400GB) = $36
-	Total Network Cost = $36/month
+	**Total Network Cost = $36/month**
 
 ### NAT Gateway
 
@@ -46,7 +46,7 @@ Always check [AWS documentation] (https://aws.amazon.com/vpc/pricing/) for curre
 	1) Download cost = $0.045 x 100 = $4.50
 	2) Upload cost = $0.045 x 500 = $22.50
 	3) NAT Gateway Instance = $0.045 x (24hr x 30day= 720hr) = $32.40
-	Total Network Cost = $59.40/month
+	**Total Network Cost = $59.40/month**
 
 ### CFS Transit Gateway VPN
 
@@ -65,5 +65,5 @@ Always check [AWS documentation](https://aws.amazon.com/transit-gateway/pricing/
 	1) Download cost = $0.02 x 100 = $2
 	2) Upload cost = $0.02 x 500 = $10
 	3) Attachment cost = $0.05 x (24hr x 30day= 720hr) = $36
-	Total Network Cost = $48/month
+	**Total Network Cost = $48/month**
 
