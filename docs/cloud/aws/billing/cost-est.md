@@ -33,7 +33,7 @@ Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) 
 ### NAT Gateway
 
 **Important**
-Always check [AWS documentation] (https://aws.amazon.com/vpc/pricing/) for current pricing.
+Always check [AWS documentation](https://aws.amazon.com/vpc/pricing/) for current pricing.
 
 **Network Costs**
 1) Downloads - $0.045/GB
