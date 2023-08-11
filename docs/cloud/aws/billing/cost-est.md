@@ -27,6 +27,7 @@ Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) 
 
 	1) Download cost = $0
 	2) Upload cost = (100GB = $0) + ($0.09 x 400GB) = $36
+	
 	**Total Network Cost = $36/month**
 
 ### NAT Gateway
