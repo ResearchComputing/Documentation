@@ -13,11 +13,11 @@ This document gives some sample cost estimates for select network access methods
 ### Internet Gateway
 
 **Important**
-Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing
+Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing.
  
-**Network cost**\
-Downloads - no cost\
-Uploads - first 100GB free, tiered cost per 1GB transferred after\
+**Network costs**
+1)Downloads - no cost
+2)Uploads - first 100GB free, tiered cost per 1GB transferred after
 
 **Sample Network Cost**
 
@@ -32,12 +32,12 @@ Uploads - first 100GB free, tiered cost per 1GB transferred after\
 ### NAT Gateway
 
 **Important**
-[Always check AWS documentation for current pricing](https://aws.amazon.com/vpc/pricing/)
+Always check [AWS documentation] (https://aws.amazon.com/vpc/pricing/) for current pricing.
 
-**Network Cost**
-Downloads - $0.045/GB
-Uploads - $0.045/GB
-NAT Gatway - 0.045/HR
+**Network Costs**
+1) Downloads - $0.045/GB
+2) Uploads - $0.045/GB
+3) NAT Gatway - 0.045/HR
 
 **Sample Network Cost**
 2 Servers will download 100GB and upload 500GB in a month.  The NAT gateway will be on the entire month.
@@ -49,12 +49,12 @@ NAT Gatway - 0.045/HR
 ### CFS Transit Gateway VPN
 
 **Important**
-[Always check AWS documentation for current pricing](https://aws.amazon.com/transit-gateway/pricing/)
+Always check [AWS documentation](https://aws.amazon.com/transit-gateway/pricing/) for current pricing.
 
-**Network Cost**
-Downloads - $0.02/GB
-Uploads - $0.02/GB
-Attachment - $0.05/hr
+**Network Costs**
+1) Downloads - $0.02/GB
+2) Uploads - $0.02/GB
+3) Attachment - $0.05/hr
 
 **Sample Network Cost**
 2 Servers will download 100GB and upload 500GB in a month.  The VPC attachment will be on the entire month.
