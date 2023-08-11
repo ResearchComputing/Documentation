@@ -15,3 +15,9 @@ Note: The data in the AWS Billing Console  doesn’t always match with the invoi
     :caption: Email Notifications
 
     alerts
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Network Cost Guide
+
+    cost-est
