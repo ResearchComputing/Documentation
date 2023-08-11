@@ -16,7 +16,9 @@ This document gives some sample cost estimates for select network access methods
 Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing.
  
 **Network costs**
+
 1)Downloads - no cost
+
 2)Uploads - first 100GB free, tiered cost per 1GB transferred after
 
 **Sample Network Cost**
