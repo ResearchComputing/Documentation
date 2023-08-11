@@ -17,18 +17,16 @@ Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) 
  
 **Network costs**
 
-1)Downloads - no cost
+1) Downloads - no cost
 
-2)Uploads - first 100GB free, tiered cost per 1GB transferred after
+2) Uploads - first 100GB free, tiered cost per 1GB transferred after
 
 **Sample Network Cost**
 
 2 Servers will download 100GB and upload 500GB in a month.
 
 	1) Download cost = $0
-
 	2) Upload cost = (100GB = $0) + ($0.09 x 400GB) = $36
-
 	Total Network Cost = $36/month
 
 ### NAT Gateway
@@ -42,7 +40,9 @@ Always check [AWS documentation] (https://aws.amazon.com/vpc/pricing/) for curre
 3) NAT Gatway - 0.045/HR
 
 **Sample Network Cost**
+
 2 Servers will download 100GB and upload 500GB in a month.  The NAT gateway will be on the entire month.
+
 	1) Download cost = $0.045 x 100 = $4.50
 	2) Upload cost = $0.045 x 500 = $22.50
 	3) NAT Gateway Instance = $0.045 x (24hr x 30day= 720hr) = $32.40
@@ -59,7 +59,9 @@ Always check [AWS documentation](https://aws.amazon.com/transit-gateway/pricing/
 3) Attachment - $0.05/hr
 
 **Sample Network Cost**
+
 2 Servers will download 100GB and upload 500GB in a month.  The VPC attachment will be on the entire month.
+
 	1) Download cost = $0.02 x 100 = $2
 	2) Upload cost = $0.02 x 500 = $10
 	3) Attachment cost = $0.05 x (24hr x 30day= 720hr) = $36
