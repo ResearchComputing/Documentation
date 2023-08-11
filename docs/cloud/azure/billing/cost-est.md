@@ -1,4 +1,4 @@
-# AWS - Network Cost Guide
+# Azure  - Network Cost Guide
 
 ## Document Purpose
 
