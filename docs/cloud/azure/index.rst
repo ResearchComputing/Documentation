@@ -15,5 +15,11 @@ For users who are using a **Research Computing Cloud Team** managed Azure accoun
     :maxdepth: 1
     :caption: Billing Documentation
 
+    billing/index
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Billing Documentation
+
     billing/billing
     
