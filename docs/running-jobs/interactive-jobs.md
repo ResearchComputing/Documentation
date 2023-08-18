@@ -83,7 +83,7 @@ Once you have logged into the system with X11 Forwarding enabled, you will be ab
 If you plan on running interactive job from a compile node, you must also enable x11 forwarding when you request a node using acompile:
 
 ```bash
-acompile
+acompile -X
 ```
 
 From here you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
