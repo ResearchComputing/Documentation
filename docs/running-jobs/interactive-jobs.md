@@ -31,9 +31,11 @@ To run an interactive GUI application on HPC Systems, we must install an X windo
 #### Windows setup
 
 On Windows we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
-this. [Download the Xming here](https://sourceforge.net/projects/xming/).
+this. [Download Xming here](https://sourceforge.net/projects/xming/).
 
-Next we must enable X11 forwarding on the PuTTY application. Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
+##### PuTTY
+
+Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-1.png)
 
@@ -42,6 +44,27 @@ Expand the SSH tab on the left side of the application and click X11.
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking open will open a terminal window where you can login.
+
+##### Command Prompt, Powershell
+
+This tutorial assumes that you are already set up with OpenSSH for Windows. [Here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) is a guide for setting up OpenSSH for Windows. 
+
+You can deploy Xming by running the Xlaunch application (or opening the Xlaunch shortcut on your desktop). When prompted to select display settings, select 'Multiple windows' and set the Display number to 0. From there, use the default selections until Xlaunch is finished.
+
+Now, you'll need to make a modification to your local ssh config file. By default, this file is located at ```C:/Users/<username>/.ssh/config```. Edit this file and add the following lines: 
+
+```
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+```
+
+Lastly, you can ssh to login.rc.colorado.edu as you normally would, except you'll include the "-X" flag:
+
+```bash
+ssh -X your_rc-username@login.rc.colorado.edu
+```
 
 #### macOS setup
 
