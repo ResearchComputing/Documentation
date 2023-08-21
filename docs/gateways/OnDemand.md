@@ -155,6 +155,17 @@ To help you use the `Custom` menu for interactive applications, below is a table
 | Time<sup>1</sup> | The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
 
 <sup>1</sup>Please note that jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the number of cores, memory and duration.
+
+###### GPU access for Jupyter Sessions
+
+When launching custom Jupyter sessions, one can access a single GPU on Alpine by specifying the correct partition and QoS name. However, only the testing partitions are valid on Jupyter sessions and they are limited to a run time of one hour. For GPU jobs that require more resources or more time, please submit a [batch job](../running-jobs/batch-jobs.html) using the standard `ami100` or `aa100` partitions. The table below provides the inputs needed to start a Jupyter session with a GPU:
+
+| Partition | QoS Name | Type of GPU |
+| --- | ----------- | --------------
+| atesting_a100 | testing |   NVIDIA A100 |
+| atesting_mi100 | testing |   AMD MI100 |
+
+
 #### My Interactive Sessions
 
 The _My Interactive Sessions_ menu will let you view and manage all of your current open Interactive applications. From this window, you can view the node/core count, status, as well as time remaining for current sessions. 
