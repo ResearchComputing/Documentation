@@ -158,7 +158,7 @@ To help you use the `Custom` menu for interactive applications, below is a table
 
 ###### GPU access for Jupyter Sessions
 
-When launching custom Jupyter sessions, one can access a single GPU on Alpine by specifying the correct Partition and QoS Name. However, only the testing partitions are valid on Jupyter sessions and they are limited to a run time of one hour. For GPU jobs that require more resources or more time, please submit a [batch job](../running-jobs/batch-jobs.html) using the standard `ami100` or `aa100` partitions. The table below provides the inputs needed to start a Jupyter session with a GPU:
+When launching custom Jupyter sessions, one can access a single GPU on Alpine by specifying the correct partition and QoS name. However, only the testing partitions are valid on Jupyter sessions and they are limited to a run time of one hour. For GPU jobs that require more resources or more time, please submit a [batch job](../running-jobs/batch-jobs.html) using the standard `ami100` or `aa100` partitions. The table below provides the inputs needed to start a Jupyter session with a GPU:
 
 | Partition | QoS Name | Type of GPU |
 | --- | ----------- | --------------
