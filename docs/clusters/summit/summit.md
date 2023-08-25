@@ -10,3 +10,5 @@ Users needing to acknowledge the Summit supercomputer in publications may use th
 
 "This work utilized the RMACC Summit supercomputer, which is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University. The Summit supercomputer is a joint effort of the University of Colorado Boulder and Colorado State University."
 
+- DOI: <https://doi.org/10.25811/8np0-je59>
+- Citation: University of Colorado Boulder Research Computing. (2021). RMACC Summit Supercomputer. University of Colorado Boulder. <https://doi.org/10.25811/8np0-je59>
