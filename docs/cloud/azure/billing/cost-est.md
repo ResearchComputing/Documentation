@@ -66,5 +66,5 @@ Always check [Microsoft documentation](https://azure.microsoft.com/en-us/pricing
 	1) Download cost = $0.01 x 100 = $1
 	2) Upload cost = $0.01 x 500 = $5
 
-	Total Network Cost = $48/month
+	Total Network Cost = $6/month
 
