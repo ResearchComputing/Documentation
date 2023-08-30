@@ -78,7 +78,7 @@ _Note: the steps below are also outlined in the [Rclone Documentation for OneDri
 
 On the Alpine compile node type:
 ```bash
-$ rclone ls onedrive_johndoe_cu
+$ rclone ls onedrive_johndoe_cu:
 ```
 If this step fails, your OneDrive remote is not configured properly. Try reconfiguring your OneDrive remote again or contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for assistance.
 
