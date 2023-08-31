@@ -51,6 +51,20 @@ This tutorial assumes that you are already set up with OpenSSH for Windows. [Her
 
 You can deploy Xming by running the Xlaunch application (or opening the Xlaunch shortcut on your desktop). When prompted to select display settings, select 'Multiple windows' and set the Display number to 0. From there, use the default selections until Xlaunch is finished.
 
+Next, you'll need to set your display value. Open the Command Prompt (or Powershell) and set the $DISPLAY variable as follows: 
+
+Command Prompt: 
+```
+cd ../../
+set DISPLAY=127.0.0.1:0.0
+```
+
+Powershell:
+```
+cd ../../
+$env:DISPLAY="127.0.0.1:0.0"
+``` 
+
 Now, you'll need to make a modification to your local ssh config file. By default, this file is located at ```C:/Users/<username>/.ssh/config```. Edit this file and add the following lines: 
 
 ```
