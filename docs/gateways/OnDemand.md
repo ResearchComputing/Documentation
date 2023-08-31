@@ -149,7 +149,7 @@ application (and installable), some extensions may be missing. Although this is 
 the application. Additionally, we provide a short description of these methods below the video.
 
 
-<iframe width="700" height="400" src="../_static/vs_code_extensions_install.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="700" height="400" src="https://www.youtube.com/embed/2kgZQmm5TF4?si=NUVzamnXYojcd79e" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 When attempting to install an extension, we suggest the following methods (listed in order of preference):
