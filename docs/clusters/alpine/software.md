@@ -75,6 +75,8 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
+| [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2 | Libxc is a library of exchange-correlation functionals for
+density-functional theory. |
 | [Load Balancer](https://curc.readthedocs.io/en/latest/software/loadbalancer.html?highlight=load%20balancer) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
 | [Mathematica](https://www.wolfram.com/mathematica/) | 9.0, 11.1.0 (D) | A software system with built-in libraries for several areas of technical computing. | 
 | [MATLAB](https://www.mathworks.com/products/matlab.html) | R2020b, R2021b (D), R2022b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/matlab.html)| 
