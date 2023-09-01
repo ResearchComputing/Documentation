@@ -68,7 +68,7 @@ slurm/<cluster>` with either Alpine or Blanca.
 
 #### Interactive Applications Menu
 
-The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs) for interactive use on CURC clusters. Currently supported applications include a __remote desktop__, __MATLAB__, __Jupyter session__, and __RStudio session__.
+The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs) for interactive use on CURC clusters. Currently supported applications include a __remote desktop__, __MATLAB__, __Jupyter session__, __RStudio session__, and __VS Code-Server__.
 
 ##### Core Desktop (remote desktop)
 
@@ -120,6 +120,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 * When the session starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
 * For more information on running Jupyter sessions, [check out RC’s page on Jupyter](./jupyterhub.html).
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
+* One can access a single GPU via the `Jupyter Session (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
 
 ##### RStudio
 
@@ -141,11 +142,14 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 3. Once your VS Code-Server session is ready, you can click “Connect to VS Code”. An interactive VS Code-Server session will be started in a new window.
 ![](OnDemand/vs_code_custom_launch.png)
 
+**_Notes:_** 
+* One can access a single GPU via the `VS Code-Server (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
+
 ###### Installing VS Code-Server Extensions
 
 The provided VS Code application is utilizing [VS Code-Server](https://coder.com/docs/code-server/latest). For this reason, some aspects of the application may differ from the 
 standard installation of VS Code. One of these differences is accessing and installing extensions. While a majority of extensions are available in the Marketplace within the 
-application (and installable), some extensions may be missing. Although this is the case, thankfully one can download extensions directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) and then install them within the application. Below we provide a video that provides three ways one can install extensions from within
+application (and installable), some extensions may be missing. Although this is the case, thankfully one can download extensions directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) and then install them within the application. Below we provide a video that demonstrates three ways one can install extensions from within
 the application. Additionally, we provide a short description of these methods below the video.
 
 
@@ -171,10 +175,9 @@ When attempting to install an extension, we suggest the following methods (liste
     3. Drag and drop the downloaded file into the **folder column** within the VS Code-Server application. 
     4. Right click the downloaded file and select `Install Extension VSIX`. 
 
-
 ##### Running _Custom_ Interactive applications
 
-The Matlab, Jupyter, and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
+The Matlab, Jupyter, VS Code-Server, and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
 
 * access to GPU nodes;
 * access to high-memory nodes;
