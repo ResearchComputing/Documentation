@@ -12,7 +12,7 @@ For users who are using a **Research Computing Cloud Team** managed AWS account.
     faq/faq
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Getting Started Documentation
 
     getting-started/index
