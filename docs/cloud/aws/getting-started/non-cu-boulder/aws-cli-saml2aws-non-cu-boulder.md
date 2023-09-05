@@ -160,16 +160,14 @@ Profiles can be added using the following template:
 
 ```
 [admin-<account_alias>]
-url                  = https://fedauth.colorado.edu/idp/profile/SAML2/SOAP/ECP
-username             = ralphie
-provider             = ShibbolethECP
+url                  = https://federation-proxy.rmacc.org/aws
+provider             = Browser
 mfa                  = auto
 skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
 aws_session_duration = 14400
 aws_profile          = <account_alias>
-role_arn             = arn:aws:iam::XXXXXXXXXXXX:role/Shibboleth-Customer-Admin
 ```
 
 Example command for establishing an interactive shell in a single command.
