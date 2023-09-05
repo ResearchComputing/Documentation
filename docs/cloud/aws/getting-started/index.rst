@@ -2,7 +2,7 @@ AWS - Getting Started
 ===============
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Getting Started Documentation
 
     aws-console-access
@@ -15,5 +15,5 @@ AWS - Getting Started
 .. toctree::
     :maxdepth: 1
     .. :caption: Getting Started Non-CU Boulder
-    .. non-cu-boulder/index
+    non-cu-boulder/index
     
