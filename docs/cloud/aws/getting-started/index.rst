@@ -12,3 +12,10 @@ AWS - Getting Started
     customer-permission-boundary
     managing-grouper-groups
     customer-support
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Getting Started Non-CU Boulder
+    
+    non-cu-boulder/index
+    

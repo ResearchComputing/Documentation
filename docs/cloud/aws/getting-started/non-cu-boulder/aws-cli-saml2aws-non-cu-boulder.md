@@ -1,4 +1,4 @@
-## Accessing the AWS CLI Using saml2aws
+## Accessing the AWS CLI Using saml2aws (Non-CU Boulder)
 
 The **saml2aws** CLI tool is used to login and retrieve AWS temporary credentials.
 

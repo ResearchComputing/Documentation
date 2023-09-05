@@ -1,4 +1,4 @@
-## Accessing the AWS Management Console with CILogon
+## Accessing the AWS Management Console with CILogon (Non-CU Boulder)
 
 ### Prerequisites
 This guide is only relevant if you are not a member of CU Boulder and require access to manage AWS resources owned by CU Boulder. If you are a member of CU Boulder, please see <a href="./aws-console-access.md" target="_blank">this guide</a> on signing in using your IdentiKey.
