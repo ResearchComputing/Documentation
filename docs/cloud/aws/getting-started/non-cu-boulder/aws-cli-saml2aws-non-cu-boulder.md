@@ -87,7 +87,7 @@ Log in using your regular institution credentials. You may be asked to authentic
 If you only have access to a single AWS Account and a single Role, you will be immediatly authenticated with SAML.
 
 If you have access to multiple AWS Accounts and/or Roles, you will be presented with a list of Accounts/Roles to select.  Select the Account and Role you wish to log in to.
-![](images/aws-console-access/select-role.png)
+![](images/aws-cli-saml2aws-non-cu-boulder/select-role.png)
 
 Your browser window should then close and your terminal should have a similar output to the following
 

@@ -16,7 +16,7 @@ Users access the <a href="https://federation-proxy.rmacc.org/aws" target="_blank
 ![](images/aws-console-access-non-cu-boulder/denver-anschutz-sso.png)
 5. If you only have access to a single AWS Account and a single Role, you will be logged straight in to the AWS Console.
 If you have access to multiple AWS Accounts and/or Roles, you will be presented with a list of Accounts/Roles to select.  Select the Account and Role you wish to log in to.
-![](images/aws-console-access/select-role.png)
+![](images/aws-console-access-non-cu-boulder/select-role.png)
 6. You will be logged in to the AWS Management Console.  Always be sure to verify you have the AWS Region you are working with selected after logging in.
-![](images/aws-console-access/select-region.png)
+![](images/aws-console-access-non-cu-boulder/select-region.png)
 Once logged in, you have a 60 minute session.  You will be asked to log back in and re-authenticate when your session expires.
