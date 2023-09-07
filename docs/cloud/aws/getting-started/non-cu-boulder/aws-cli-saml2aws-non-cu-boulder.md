@@ -27,7 +27,7 @@ Provide the following values for the configuration:
 
 ```buildoutcfg
 Provider:    Browser
-AWS Profile: default (just hit the enter key)
+AWS Profile: saml (default, just hit the enter key)
 URL:         https://federation-proxy.rmacc.org/aws
 Username:    leave blank (just hit the enter key)
 Password:    leave blank (just hit the enter key)
@@ -166,7 +166,7 @@ mfa                  = auto
 skip_verify          = false
 timeout              = 0
 aws_urn              = urn:amazon:webservices
-aws_session_duration = 14400
+aws_session_duration = 3600
 aws_profile          = <account_alias>
 ```
 
@@ -174,7 +174,7 @@ Example command for establishing an interactive shell in a single command.
 Note that you will have to manually accept the MFA request.
 
 ```shell
-$ saml2aws -a admin-<account_alias> login --skip-prompt --duo-mfa-option="Duo Push" --session-duration=14400 && saml2aws -a admin-<account_alias> exec -- $SHELL
+$ saml2aws -a admin-<account_alias> login --skip-prompt --duo-mfa-option="Duo Push" --session-duration=3600 && saml2aws -a admin-<account_alias> exec -- $SHELL
 ```
 
 You can run the `saml2aws exec` portion of the above command however you need.
