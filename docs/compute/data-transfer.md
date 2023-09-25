@@ -212,11 +212,9 @@ resources](#more-reading) or consult the sftp manual page.
 
 ### Automated scp and rsync
 
-Key-based transfers over the DTNs are only available to CU Boulder and CU Anschutz users. We do not permit key-based transfers over the login nodes.
+Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. We do not permit key-based transfers over the login nodes.
 
-*You must be on a campus network or [logged into the campus
- VPN](https://oit.colorado.edu/services/network-internet-services/vpn)
- to perform passwordless data transfers to CURC.*
+*You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.*
 
 The `scp` and `rsync` commands both allow a user to transfer files
 without needing to reenter a password. All that is required is a few
