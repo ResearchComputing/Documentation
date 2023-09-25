@@ -1,6 +1,6 @@
 # Spack
 
-[Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations of scientific software in environments. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available on the CURC software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
+[Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations of scientific software within environments. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available on the CURC software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
 
 ## Using Spack on CURC
 You can follow these steps from a Research Computing terminal session via a compile job (`acompile`) or within a batch or interactive job. *Currently, Spack is only available on Alpine*.
@@ -13,7 +13,7 @@ Run the following command to load the Spack module:
 [johndoe@c3cpu-c11-u17-2 ~]$ module load spack/0.20.1
 ```
 
-You can confirm that spack has been loaded and find a list of useful spack commands by running the spack command: 
+You can confirm that spack has been loaded and find a list of useful spack commands by running the `spack` command: 
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack
