@@ -212,7 +212,7 @@ resources](#more-reading) or consult the sftp manual page.
 
 ### Automated scp and rsync
 
-Key-based transfers are only supported via DTN. 
+Key-based transfers over the DTNs are only available to CU Boulder and CU Anschutz users. We do not permit key-based transfers over the login nodes.
 
 *You must be on a campus network or [logged into the campus
  VPN](https://oit.colorado.edu/services/network-internet-services/vpn)
@@ -238,7 +238,7 @@ is public, and can be shared with others (including Research
 Computing). `id_ed25519` is private and **should never leave the
 system that it was generated on.**
 
-2. Follow the instructions [here]() for requesting access to the CILogon Registry and uploading an ssh key.
+2. Follow the instructions [here](https://curc.readthedocs.io/en/latest/additional-resources/registrycilogon-instructions.html) for requesting access to the CILogon Registry and uploading an ssh key.
 
 3. Use `rsync` or `scp` to transfer files using an ssh key. 
 
