@@ -16,6 +16,8 @@ Follow the invitation URL and click 'Accept'. __The invitation link becomes inva
 You will be automatically routed to the login page. If you access CURC resources with a CU Boulder account, select 'University of Colorado at Boulder' from the Identity Provider dropdown menu and click 'Log On'. 
 If you access CURC resources with an ACCESS account, select 'ACCESS CI (XSEDE)' from the dropdown menu.
 <br>
+![](./registry-images/cu-boulder-dropdown.png)
+
 
 Enter your CU Boulder or ACCESS username and password and click 'Login'. Accept the Duo push from your device.
 
