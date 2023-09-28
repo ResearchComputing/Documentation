@@ -147,10 +147,10 @@ Once the compiler is added, you can install any subsequent packages using the co
 
 If an installation fails, there are several ways to troubleshoot the failure. Common issues with installations include: 
 
-*__Building with the wrong compiler:__ Double check if the compiler you are using is compatible with the software you are attempting to build. 
-*__Building with an incompatible variant set:__ Confirm that the configuration settings for the software are compatible and as expected. If not, try enabling or disabling variants that may be causing problems. 
-*__Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try insalling an older version. 
-*__Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
+* __Building with the wrong compiler:__ Double check if the compiler you are using is compatible with the software you are attempting to build. 
+* __Building with an incompatible variant set:__ Confirm that the configuration settings for the software are compatible and as expected. If not, try enabling or disabling variants that may be causing problems. 
+* __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try insalling an older version. 
+* __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
 
 Additionally, spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, instead use `spack -dv install`. 
 ---
