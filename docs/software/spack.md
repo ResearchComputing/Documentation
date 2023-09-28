@@ -30,7 +30,7 @@ You can create a Spack environment with the following command:
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env create <environment name>
 ```
 
-Note that, by default, environments are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
+Note that, by default, environment specs are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
 
 __2. Activate your Spack environment__
 You can activate your Spack environment with one of the following commands: 
@@ -82,13 +82,21 @@ Once you've confirmed that a piece of software is available, you can install it 
 ```
 >Note that the `--add` argument is required to add package specs to an environment. You can separately add specs without installing a package using the `spack add <software name>` command.
 
-This will install the specified software and all dependencies into your environment. The root of the installation tree is `/projects/$USER/software/spack/`.
+This will install the specified software and all dependencies into your environment.
 
 You can also modify the installation commands to meet your installation needs. You can specify which version you'd like installed using the `@` operator:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc@0.11.9
 ```
+
+#### Installation Locations and Specifics
+
+The root of the Spack installation tree is `/projects/$USER/software/spack`. From there, executables can be found in subdirectories depending on the OS and compiler used to install the software. Software will be installed here regardless of whether the software was installed in an environment. 
+
+Spack will always check the installation root prior to installing software, in an environment or otherwise. If the software is not found in the installation root, it will be installed there. If the software is found in the installation root, it will not be installed. When attempting to install in an environment, symbolic links to the installation root will be created in `/projects/$USER/spack/environments/<envname>/.spack-env/view`. This behavior means that once a piece of software is installed, it can be linked to any environment without having to perform the installation again. 
+
+The default cache is located at `/scratch/alpine/$USER/spack/cache`. This directory will contain any previously-installed tarballs and repositories, as well as any miscellaneous cache items.  
 
 ### Installing and Using Compilers with Spack
 
@@ -97,6 +105,7 @@ In addition to standard software packages, you can use Spack to install compiler
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add gcc@13.1.0
 ```
+
 Once the installation is complete, you can make it available to Spack with `spack compiler add`:
 
 ```
@@ -108,8 +117,17 @@ Once the installation is complete, you can make it available to Spack with `spac
 Once the compiler is added, you can install any subsequent packages using the compiler you've installed with the `%` operator. For example:
 
 ```
-[johndoe@c3cpu-c11-u17-2 ~]$ spack install fastqc%gcc@13.1.0
+[johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc%gcc@13.1.0
 ```
+
+### Key Spack Terms: 
+
+| Term | Definition |
+|---------|----------|
+| Spec | Description of the build requirements for an installation. This includes the software, version, compiler, and other variants. |
+| Variant | An option or feature that can be toggled for a specific package. These usually correspond to a configuration or compilation setting. |
+| Repo | A central location which stores packages. Repo locations can be configured. |
+| Environment | A collection of packages and dependencies that are available to a user. In Spack, environments do not interact. |
 
 ### Basic Spack commands:
 
@@ -125,4 +143,14 @@ Once the compiler is added, you can install any subsequent packages using the co
 | `spack compilers` | Lists available compilers |
 | `spack spec <software>` | Shows all dependencies and items that would be installed if `<software>` is installed > |
 
+### Troubleshooting Spack
+
+If an installation fails, there are several ways to troubleshoot the failure. Common issues with installations include: 
+
+*__Building with the wrong compiler:__ Double check if the compiler you are using is compatible with the software you are attempting to build. 
+*__Building with an incompatible variant set:__ Confirm that the configuration settings for the software are compatible and as expected. If not, try enabling or disabling variants that may be causing problems. 
+*__Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try insalling an older version. 
+*__Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
+
+Additionally, spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, instead use `spack -dv install`. 
 ---
