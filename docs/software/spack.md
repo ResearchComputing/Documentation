@@ -153,4 +153,5 @@ If an installation fails, there are several ways to troubleshoot the failure. Co
 * __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
 
 Additionally, spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, instead use `spack -dv install`. 
+
 ---
