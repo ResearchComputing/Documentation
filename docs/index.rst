@@ -171,11 +171,13 @@ Use of University of Colorado Research Computing resources, including (but not l
 
    additional-resources/policies
    additional-resources/CURC-cheatsheet
+   additional-resources/registrycilogon-instructions
    additional-resources/utah-videos
    additional-resources/blanca-MOU
    additional-resources/other
    additional-resources/biokem-facility
    additional-resources/csu-xsede-usernames
+
 
 .. toctree::
    :maxdepth: 2
