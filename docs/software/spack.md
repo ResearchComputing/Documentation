@@ -201,8 +201,10 @@ If an installation fails, there are several ways to troubleshoot the failure. Co
 * __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try insalling an older version. 
 * __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
 
-Additionally, spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, instead use `spack -dv install`. 
+Additionally, Spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, use `spack -dv install`. 
 
-Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) if you need additional assistance. This section references Spack documentation written by [NERSC](https://docs.nersc.gov/development/build-tools/spack/).
+__Need further help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) and we would be happy to help you with any further questions you may have. 
 
+
+Suggestions provided in the `Troubleshooting Spack` subsection were based off of Spack documentation written by [NERSC](https://docs.nersc.gov/development/build-tools/spack/).
 ---
