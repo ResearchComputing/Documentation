@@ -74,7 +74,9 @@ Once you've confirmed that a piece of software is available, you can install it 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc
 ```
->Note that the `--add` argument is required to add package specs to an environment. You can separately add specs without installing a package using the `spack add <software name>` command.
+>__Note:__
+>- The `--add` argument is required to add package specs to an environment. You can separately add specs >without installing a package using the `spack add <software name>` command.
+>- If no compiler is specified, then a default compiler will be installed and used within the environment.
 
 
 You can also modify the installation commands to meet your installation needs. You can specify which version you'd like installed using the `@` operator:
