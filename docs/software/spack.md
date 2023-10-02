@@ -84,6 +84,21 @@ You can also modify the installation commands to meet your installation needs. Y
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc@0.11.9
 ```
+Once you have installed a package, you can view what packages are installed in your environment using the `spack find` command. For example, 
+```code
+[johndoe@c3cpu-c11-u17-2 ~]$ spack find
+==> In environment my_test_environment
+==> Root specs
+fastqc@0.11.9
+
+==> Installed packages
+-- linux-rhel8-zen / gcc@8.5.0 ----------------------------------
+berkeley-db@18.1.40  fastqc@0.11.9  ncurses@6.4        pkgconf@1.9.5
+bzip2@1.0.8          gdbm@1.23      openjdk@11.0.17_8  readline@8.2
+diffutils@3.9        libiconv@1.17  perl@5.36.0        zlib@1.2.13
+==> 12 installed packages
+```code
+>Note that since we did not specify a compiler, the default compiler of `gcc@8.5.0` was used. Please also note that the default compiler may change. 
 
 #### Installation Locations and Specifics
 
