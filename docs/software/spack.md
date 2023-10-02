@@ -16,7 +16,7 @@ Run the following command to load the Spack module:
 You can confirm that spack has been loaded and find a list of useful spack commands by running the `spack` command: 
 
 ```
-[johndoe@c3cpu-c11-u17-2 ~]$ spack
+[johndoe@c3cpu-c11-u17-2 ~]$ spack help --all
 ```
 
 ### Using Spack Environments
