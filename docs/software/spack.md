@@ -10,7 +10,7 @@ You can follow these steps from a Research Computing terminal session via a comp
 Run the following command to load the Spack module:  
 
 ```
-[johndoe@c3cpu-c11-u17-2 ~]$ module load spack/0.20.1
+[johndoe@c3cpu-c11-u17-2 ~]$ module load spack
 ```
 
 You can confirm that spack has been loaded and find a list of useful spack commands by running the `spack` command: 
