@@ -76,7 +76,6 @@ Once you've confirmed that a piece of software is available, you can install it 
 ```
 >Note that the `--add` argument is required to add package specs to an environment. You can separately add specs without installing a package using the `spack add <software name>` command.
 
-This will install the specified software and all dependencies into your environment.
 
 You can also modify the installation commands to meet your installation needs. You can specify which version you'd like installed using the `@` operator:
 
