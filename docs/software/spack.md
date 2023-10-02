@@ -74,18 +74,20 @@ Once you've confirmed that a piece of software is available, you can install it 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc
 ```
+
 >__Note:__
 >- The `--add` argument is required to add package specs to an environment. You can separately add specs >without installing a package using the `spack add <software name>` command.
 >- If no compiler is specified, then a default compiler will be installed and used within the environment.
 
-
-You can also modify the installation commands to meet your installation needs. You can specify which version you'd like installed using the `@` operator:
+You can also modify the installation commands to meet your installation needs. You can specify which version you'd like to install using the `@` operator:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc@0.11.9
 ```
+
 Once you have installed a package, you can view what packages are installed in your environment using the `spack find` command. For example, 
-```code
+
+```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack find
 ==> In environment my_test_environment
 ==> Root specs
@@ -97,7 +99,8 @@ berkeley-db@18.1.40  fastqc@0.11.9  ncurses@6.4        pkgconf@1.9.5
 bzip2@1.0.8          gdbm@1.23      openjdk@11.0.17_8  readline@8.2
 diffutils@3.9        libiconv@1.17  perl@5.36.0        zlib@1.2.13
 ==> 12 installed packages
-```code
+```
+
 >Note that since we did not specify a compiler, the default compiler of `gcc@8.5.0` was used. Please also note that the default compiler may change. 
 
 #### Installation Locations and Specifics
@@ -110,35 +113,42 @@ The default cache is located at `/scratch/alpine/$USER/spack/cache`. This direct
 
 ### Installing and Using Compilers with Spack
 
-In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and use it as the compiler for your environment. 
+In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and set it as the default compiler for your environment. 
 
 1. Install the compiler outside of your environment (only needs to be done once):
-```code
+
+```
 spack install gcc@13.1.0
-```code
+```
 
 2. Obtain the location of the compiler install and save it into a local environmental variable:
-```code
+
+```
 gcc_location=$(spack location -i gcc@13.1.0)
-```code
+```
 
 3. Create and activate your environment:
-```code
+
+```
 spack env create my_test_env
 spack env activate my_test_env
-```code
+```
 
 4. Remove any compilers that are in the env right now:
-```code
+
+```
 spack compiler remove gcc -a
-```code
+```
+
 >Note that you can also remove intel compilers using `spack compiler remove intel -a`
 
 5. Add the compiler you installed outside of the environment and install the compiler into the environment:
-```code
+
+```
 spack compiler add $gcc_location
 spack install --add gcc@13.1.0
-```code
+```
+
 >Note that the install of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
 
 
@@ -158,7 +168,7 @@ You can also add any compilers to spack that are already available in the Alpine
 [johndoe@c3cpu-c11-u17-2 ~]$ module load aocc/3.2.0
 ```
 
-From there, you can add the compiler to spack. All compilers in the Alpine software stack can be located with the environment variable `CURC_<compiler>_BIN`. In the case of `aocc/3.2.0`:
+From there, you can add the compiler to Spack. All compilers in the Alpine software stack can be located with the environment variable `CURC_<compiler>_BIN`. In the case of `aocc/3.2.0`:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack compiler add $CURC_AOCC_BIN
@@ -203,8 +213,8 @@ If an installation fails, there are several ways to troubleshoot the failure. Co
 
 Additionally, Spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, use `spack -dv install`. 
 
-__Need further help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) and we would be happy to help you with any further questions you may have. 
-
+__Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are be happy to help with any questions you may have! 
 
 Suggestions provided in the `Troubleshooting Spack` subsection were based off of Spack documentation written by [NERSC](https://docs.nersc.gov/development/build-tools/spack/).
+
 ---
