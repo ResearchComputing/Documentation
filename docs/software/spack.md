@@ -141,13 +141,6 @@ spack install --add gcc@13.1.0
 ```code
 >Note that the install of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
 
-Once the installation is complete, you can make it available to Spack with `spack compiler add`:
-
-```
-[johndoe@c3cpu-c11-u17-2 ~]$ spack compiler add <path to compiler>
-```
-
->Note that, in this case, you can locate the path of the compiler with `spack location -i gcc@13.1.0`.
 
 Once the compiler is added, you can install any subsequent packages using the compiler you've installed with the `%` operator. For example:
 
