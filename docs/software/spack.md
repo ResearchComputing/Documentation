@@ -13,7 +13,7 @@ Run the following command to load the Spack module:
 [johndoe@c3cpu-c11-u17-2 ~]$ module load spack
 ```
 
-You can confirm that spack has been loaded and find a list of useful spack commands by running the `spack` command: 
+You can confirm that spack has been loaded and find a list of useful spack commands by running the `spack help` command: 
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack help --all
@@ -23,7 +23,7 @@ You can confirm that spack has been loaded and find a list of useful spack comma
 
 Now that you've loaded the Spack module, you'll need to create a spack environment in which you'll install software.
 
-__1. Create a Spack environment__
+__1. Create a Spack environment.__
 You can create a Spack environment with the following command: 
 
 ```
@@ -32,7 +32,7 @@ You can create a Spack environment with the following command:
 
 Note that, by default, environment specs are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
 
-__2. Activate your Spack environment__
+__2. Activate your Spack environment.__
 You can activate your Spack environment with one of the following commands: 
 
 ```
@@ -116,26 +116,22 @@ The default cache is located at `/scratch/alpine/$USER/spack/cache`. This direct
 In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and set it as the default compiler for your environment. 
 
 1. Install the compiler outside of your environment (only needs to be done once):
-
 ```
 spack install gcc@13.1.0
 ```
 
 2. Obtain the location of the compiler install and save it into a local environmental variable:
-
 ```
 gcc_location=$(spack location -i gcc@13.1.0)
 ```
 
 3. Create and activate your environment:
-
 ```
 spack env create my_test_env
 spack env activate my_test_env
 ```
 
-4. Remove any compilers that are in the env right now:
-
+4. Remove any compilers that are in the environment already:
 ```
 spack compiler remove gcc -a
 ```
@@ -143,7 +139,6 @@ spack compiler remove gcc -a
 >Note that you can also remove intel compilers using `spack compiler remove intel -a`
 
 5. Add the compiler you installed outside of the environment and install the compiler into the environment:
-
 ```
 spack compiler add $gcc_location
 spack install --add gcc@13.1.0
