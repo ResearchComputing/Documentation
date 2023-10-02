@@ -59,13 +59,7 @@ or
 
 ### Installing Software with Spack
 
-Once you've created and activated an environment, you can begin installing software using Spack. To see a list of *all* of the software available, you can use the spack list command: 
-
-```
-[johndoe@c3cpu-c11-u17-2 ~]$ spack list
-```
-
-The above command lists all 7000+ packages available for installation with Spack. As a result, this command may take some time to execute.  To search for a specific software by name, you can use `spack list <software name>`. For example: 
+Once you've created and activated an environment, you can begin installing software using Spack. To search for available software in Spack easily, you can use [Spack's provided search engine](https://packages.spack.io/). Additionally, you can use the Spack list command `spack list`, however, this command is slow as it lists all 7000+ packages available for installation with Spack. To search for a specific software by name, you can use `spack list <software name>`. For example: 
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack list fastqc
