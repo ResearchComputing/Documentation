@@ -146,6 +146,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    software/GNUParallel
    software/vasp
    software/Containerizationon
+   software/spack
 
 .. toctree::
    :maxdepth: 2
