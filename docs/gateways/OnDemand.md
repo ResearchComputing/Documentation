@@ -131,8 +131,35 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 ![](OnDemand/rstudio_session_custom_launch.png)
 4. To shut down an RStudio server, go to the "File" menu at the top and choose "Quit session...". If you have made changes to the workspace, then you will be asked if you would like to save them to `~/.RData`, this is not necessary, but can be helpful. Once completed, a prompt will notify you that your R session has ended and will give you the option to restart a server, if desired. However, it is important to note that quitting the session will not cancel the job you are running. Additionally, closing the window will not terminate the job. To terminate the job, you can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
 
-**_Notes:_** 
-* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa.  You will need to (re-)install the packages you need when using the equivalent module.
+**_Important Notes:_** 
+* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa.  You will need to (re-)install the packages you need when using the equivalent module. This is due to the fact that RStudio is ran from an Ubuntu [container](../Software/Containerizationon.html).
+
+###### Installing dependencies for RStudio
+
+As previously mentioned, the RStudio application is ran from an Ubuntu [container](../Software/Containerizationon.html). For this reason, when installing a library via `install.packages`, you may receive an error because the container does not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
+```
+install.packages("BiocManager")
+library(BiocManager)
+BiocManager::install("XVector")
+```
+When the above lines are executed, we will eventually reach a state in the install where we receive the following error (caused by the `XVector` install).
+![](OnDemand/xvector_install_error.png)
+
+This install failed because our container does not have `zlib` installed in it. To remedy this, we can install `zlib` using [Spack](../software/spack.html) and the RStudio terminal. Below are the steps you should take to install dependencies:
+1. In the upper left-hand side of RStudio, select the "Terminal" tab. If this tab is not available to you, you can also select "Tools" -> hover over "Terminal" -> select "New Terminal". 
+![](OnDemand/rstudio_terminal_tab.png)
+2. In the command line, perform a Spack install of `zlib` (for more information on Spack, please see our [documentation](../software/spack.html)):
+```
+spack install --add zlib
+```
+Once executed, the following output will be produced:
+![](OnDemand/rstudio_zlib_install.png)
+3. Once `zlib` has been successfully installed, you may now perform the `XVector` install again in the R command prompt.
+```
+BiocManager::install("XVector")
+```
+This time the install will go through since `zlib` has been installed. 
+![](OnDemand/rstudio_successful_zlib_install.png)
 
 ##### VS Code-Server
 
