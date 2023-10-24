@@ -122,6 +122,12 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 * One can access a single GPU via the `Jupyter Session (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
 
+###### Jupyter Session Conda Environment
+
+In Jupyter Session applications you have the option to launch a Jupyter session using an environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to correctly configure your environment so that it launches correctly, you need to ensure 
+
+Talk about opening a terminal and making sure the correct environment is being used. Talk about looking at the output.log. 
+
 ##### RStudio
 
 1. To start an interactive RStudio job, select `RStudio Server (Custom)` or `RStudio Server (Presets)` from the menu. The `RStudio Server (Custom)` option allows you to modify the resources and Slurm configurations for the job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. The `RStudio Server (Presets)` application provides configurations for your convenience. Most use cases can be accommodated by one of the presets. The `RStudio Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one RStudio Server session__ (or any one job using the partition; for example if you have a Jupyter session that is also using the `ahub` partition, you will not be able to start an RStudio Server session using the preset options).
