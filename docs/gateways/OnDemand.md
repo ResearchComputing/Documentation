@@ -158,7 +158,7 @@ Once executed, the following output will be produced:
 ```
 BiocManager::install("XVector")
 ```
-This time the install will go through since `zlib` has been installed. 
+This time, the installation will go through because `zlib` has been installed.
 ![](OnDemand/rstudio_successful_zlib_install.png)
 
 ##### VS Code-Server
