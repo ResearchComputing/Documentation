@@ -124,9 +124,48 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ###### Jupyter Session Conda Environment
 
-In Jupyter Session applications you have the option to launch a Jupyter session using an environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to correctly configure your environment so that it launches correctly, you need to ensure 
+In Jupyter Session applications you have the option to launch a Jupyter session using a Conda environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to correctly configure your environment so that it launches correctly, you need to ensure that the appropriate packages are installed in it. Below we provide the process needed to correctly create your environment using a Jupyter Session terminal. 
 
-Talk about opening a terminal and making sure the correct environment is being used. Talk about looking at the output.log. 
+1. Obtain a compute node by launching a Jupyter session using the Anaconda version of your choice and using the `base` environment
+
+    ![](OnDemand/jupyter_session_base_env.png)
+
+2. Once the Jupyter session has been launched, open up a terminal in Jupyter
+
+    ![](OnDemand/jupyter_session_open_terminal.png)
+
+2. In you terminal, create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ conda create -n my-conda-env python=3.10
+   ```
+3. Activate your conda environment
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ conda activate my-conda-env
+   ```
+4. Install JupyterLab (this will install )
+
+5. You can now install the rest of the packages in this environment. 
+
+
+Now that we have our environment correctly created, we can now launch a Jupyter session utilizing this environment. Additionally, one should ensure that this environment is being correctly launched. This can be done as follows: 
+1. Launch the Jupyter session using the environment you created:
+
+2. Open up a terminal application and determine what Python and Jupyter is being used.
+
+   picture 
+
+   - The provided output should be utilizing the environment you created, as seen in the above picture. 
+   - If your environment is not being used, this is usually due to one of two reasons:
+       - You have incorrectly provided the name of your Conda environment
+       - You have chosen an Anaconda version that is not the same as the one you used to install your Conda environment
+       In both of these scenarios, you can confirm this behavior by looking at the `output.log` for your job:
+       1. Select "My Interactive Sessions"
+      put picture 
+       2. Click the link next to the "Session ID"
+       put picture 
+       3. Open the file `output.log` by clicking it
+       4. If you see 
+       put picture 
 
 ##### RStudio
 
