@@ -124,7 +124,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 ###### Creating a Jupyter Session Conda Environment
 
-In Jupyter Session applications you have the option to launch a Jupyter session using a Conda environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to correctly configure your environment so that it launches correctly, you need to ensure that the appropriate packages are installed in it. Below we provide the process needed to correctly create your environment using a Jupyter Session terminal. 
+In Jupyter Session applications you have the option to launch a Jupyter session using a Conda environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to configure your environment so that it launches correctly, you need to ensure that the appropriate packages are installed in it. Below we provide the process needed to correctly create your environment using a Jupyter Session terminal. 
 
 1. Obtain a compute node by launching a Jupyter session using the Anaconda version of your choice and using the `base` environment
 
@@ -134,7 +134,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
     ![](OnDemand/jupyter_session_open_terminal.png)
 
-3. In you terminal, load the Anaconda version you wish to use e.g.
+3. In your terminal, load the Anaconda version you wish to use e.g.
    ```
    [user@c3cpu-a2-u3-4 ~]$ module load anaconda/2020.11
    ``` 
