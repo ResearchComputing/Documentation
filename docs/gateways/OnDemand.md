@@ -134,25 +134,42 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
     ![](OnDemand/jupyter_session_open_terminal.png)
 
-2. In you terminal, create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
+3. In you terminal, load the Anaconda version you wish to use e.g.
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ module load anaconda/2020.11
+   ``` 
+
+4. Create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
    ```
    [user@c3cpu-a2-u3-4 ~]$ conda create -n my-conda-env python=3.10
    ```
-3. Activate your conda environment
+5. Activate your conda environment
    ```
    [user@c3cpu-a2-u3-4 ~]$ conda activate my-conda-env
    ```
-4. Install JupyterLab (this will install )
+6. Install either JupyterLab **or** Jupyter Notebook (it is preferred that users install JupyterLab)
+   - If you would like to install JupyterLab:
+       ```
+       (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge jupyterlab
+       ```
+   - If you would like to install Jupyter Notebook (the classic version of Jupyter)
+      ```
+      (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge notebook
+      ```
+5. You can now install the rest of the packages you require in this environment. 
 
-5. You can now install the rest of the packages in this environment. 
 
-
-Now that we have our environment correctly created, we can now launch a Jupyter session utilizing this environment. Additionally, one should ensure that this environment is being correctly launched. This can be done as follows: 
+Now that we have our environment correctly created, we can launch a Jupyter session utilizing this environment. This can be done as follows: 
 1. Launch the Jupyter session using the environment you created:
 
-2. Open up a terminal application and determine what Python and Jupyter is being used.
 
-   picture 
+2. Once the session is launched, is is also important to ensure that your environment is being correctly utilized. To do this, open up a terminal application and determine what Python and Jupyter are being used:
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ which python
+   /projects/user/software/anaconda/envs/my-conda-env/bin/python
+   [user@c3cpu-a2-u3-4 ~]$ which jupyter
+   /projects/user/software/anaconda/envs/my-conda-env/bin/jupyter
+   ```
 
    - The provided output should be utilizing the environment you created, as seen in the above picture. 
    - If your environment is not being used, this is usually due to one of two reasons:
