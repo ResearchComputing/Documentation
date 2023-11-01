@@ -122,6 +122,70 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 * One can access a single GPU via the `Jupyter Session (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
 
+###### Creating a Jupyter Session Conda Environment
+
+In Jupyter Session applications you have the option to launch a Jupyter session using a Conda environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to configure your environment so that it launches correctly, you need to ensure that the appropriate packages are installed in it. Below we provide the process needed to correctly create your environment using a Jupyter Session terminal. 
+
+1. Obtain a compute node by launching a Jupyter session using the Anaconda version of your choice and using the `base` environment
+
+    ![](OnDemand/jupyter_session_base_env.png)
+
+2. Once the Jupyter session has been launched, open up a terminal in Jupyter
+
+    ![](OnDemand/jupyter_session_open_terminal.png)
+
+3. In your terminal, load the Anaconda version you wish to use e.g.
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ module load anaconda/2020.11
+   ``` 
+
+4. Create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ conda create -n my-conda-env python=3.10
+   ```
+5. Activate your conda environment
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ conda activate my-conda-env
+   ```
+6. Install either JupyterLab **or** Jupyter Notebook (it is preferred that users install JupyterLab)
+   - If you would like to install JupyterLab:
+       ```
+       (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge jupyterlab
+       ```
+   - If you would like to install Jupyter Notebook (the classic version of Jupyter)
+      ```
+      (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge notebook
+      ```
+7. You can now install the rest of the packages you require in this environment. 
+
+
+Now that we have our environment correctly created, we can launch a Jupyter session utilizing this environment. This can be done as follows: 
+1. Launch the Jupyter session using the environment you created:
+  ![](OnDemand/jupyter_session_use_env.png)
+2. Once the session is launched, it is also important to ensure that your environment is being correctly utilized. To do this, open up a terminal application and determine what Python and Jupyter are being used:
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ which python
+   /projects/user/software/anaconda/envs/my-conda-env/bin/python
+   [user@c3cpu-a2-u3-4 ~]$ which jupyter
+   /projects/user/software/anaconda/envs/my-conda-env/bin/jupyter
+   ```
+
+   - The provided output should be utilizing the environment you created, as seen by the output `anaconda/envs/my-conda-env`. 
+   - If your environment is not being used, this is usually due to one of two reasons:
+       - You have incorrectly provided the name of your Conda environment
+       - You have chosen an Anaconda version that is not the same as the one you used to install your Conda environment
+       
+  In both of these scenarios, you can confirm that your environment is not being used by looking at the `output.log` for your job:
+
+  1. Select "My Interactive Sessions"
+  ![](OnDemand/my_interactive_sess_tab.png)
+  2. Click the link next to the "Session ID" for your running job
+  ![](OnDemand/session_id_for_job.png)
+  3. Open the file `output.log` by clicking it
+  ![](OnDemand/output_log_file.png)
+  4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used
+  ![](OnDemand/env_not_found.png)
+
 ##### RStudio
 
 1. To start an interactive RStudio job, select `RStudio Server (Custom)` or `RStudio Server (Presets)` from the menu. The `RStudio Server (Custom)` option allows you to modify the resources and Slurm configurations for the job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. The `RStudio Server (Presets)` application provides configurations for your convenience. Most use cases can be accommodated by one of the presets. The `RStudio Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one RStudio Server session__ (or any one job using the partition; for example if you have a Jupyter session that is also using the `ahub` partition, you will not be able to start an RStudio Server session using the preset options).
