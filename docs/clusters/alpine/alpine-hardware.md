@@ -89,7 +89,7 @@ All users, regardless of institution, should specify partitions as follows:
 
 **Special-purpose partitions**
 
-`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (16 cores per node) for a maximum runtime of 3 hours (default 30 minutes). Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
+`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 3 hours (default 30 minutes) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
 
 `atesting` usage examples:
 
