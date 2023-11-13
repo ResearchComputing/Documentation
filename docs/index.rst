@@ -24,8 +24,6 @@ Courses using RC Resources
 Instructors who wish to lead a class using CURC resources must complete the `course intake form 
 <https://forms.office.com/r/3Bx0Dp0635>`_ at least 3 weeks prior to the beginning of the semester in which the course will be taught. Completing the intake form will ensure that CU Research Computing can determine whether adequate resources and support are available to meet your needs, and that resources are allocated appropriately.  Upon completion, a case will be automatically generated in CURC's case management system. A CURC team member will subsequently follow up with you in the case via email, to discuss details and begin provisioning resources as needed. 
 
-Course resources available include 
-
 Note that CU Research Computing conducts planned maintenance the first Wednesday of each month, which may impact resource availability between 7a-5p. Instructors should expect that resources will not be available during the first Wednesday of each month. The CU Research Computing help desk is staffed from 8:00a-5:00p M-F; support outside of these times should not be expected. 
 
 The following resources are available for course support:
