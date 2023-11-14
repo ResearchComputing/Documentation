@@ -75,5 +75,3 @@ cd /projects/$USER
 #run AlphaFold
 run_alphafold -d $CURC_AF_DBS -o . -f $CURC_AF_EXAMPLES/dummy.fasta -t 2020-05-14 -m "monomer" -g true
 ```
-### Using Precomputed MSA Option
-`-p true`
