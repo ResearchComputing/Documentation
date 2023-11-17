@@ -43,6 +43,9 @@ The following resources are available for course support:
    * Custom JupterHub hosted in the cloud (costs may be incurred)
    * Custom RStudio hosted in the cloud (costs may be incurred)
 
+* Lectures/training
+  * CURC staff can lecture on specified topics during the class meeting time (once per course per semester). 
+
 Students are welcome to use RC resources on their own for class projects and can request access as a regular UCB affiliate via the link off the RC homepage at: https://www.colorado.edu/rc. Students are not required to complete the course intake form noted above. To request help, contact rc-help@colorado.edu and please indicate that the work is for a class project and any deadlines.  
 
 Acknowledging RC
