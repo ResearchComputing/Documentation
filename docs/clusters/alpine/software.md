@@ -11,6 +11,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
 | [Allinea DDT](https://developer.nvidia.com/allinea-ddt) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
 | [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0,2.3.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structure.| 
+| [AltairFEKO](https://altair.com/feko) (L) | 2019.2 | FEKO is an electromagnetics software developed by Altair engineering for use in field calculations for bodies of arbitrary shapes. | 
 | [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11 (D), 2022.10, 2023.09 | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
 | [Arm Forge](https://developer.arm.com/Tools%20and%20Software/Arm%20Forge) | 19.1.3 | Arm Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
