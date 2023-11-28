@@ -199,7 +199,7 @@ Now that we have our environment correctly created, we can launch a Jupyter sess
 **_Important Notes:_** 
 * We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa. You will need to (re-)install the packages you need when using the equivalent module. This is due to the fact that RStudio is run from an Ubuntu [container](../Software/Containerizationon.html).
 
-###### Installing dependencies for RStudio (only available on Alpine)
+###### Installing dependencies for RStudio (currently available only on Alpine)
 
 As previously mentioned, the RStudio application is run from an Ubuntu [container](../Software/Containerizationon.html). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html) that is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
 ```
@@ -249,7 +249,7 @@ We should now see that the XVector install goes through!
 
 **_Important Notes:_** 
 - Currently, this functionality is only available on Alpine. Once we update the operating system on Blanca, we will enable this functionality. 
-- For users who want to utilize the command line version of R or run a script without RStudio this can be done using Apptainer. Below we provide two methods that can be used once a user has access to a compute node and loaded the Apptainer module:
+- For users who want to utilize the command line version of R or run a script without RStudio, this can be done using Apptainer. Below we provide two methods that can be used once a user has access to a compute node and loaded the Apptainer module:
     -  To utilize R in an interactive session you can execute the following command to start the container
     ```
     apptainer shell --bind /projects,/scratch/alpine,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
