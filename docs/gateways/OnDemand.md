@@ -209,7 +209,7 @@ BiocManager::install("XVector")
 ```
 - Please note that if you are ever provided the prompt "Update all/some/none? [a/s/n]:",  always choose "n". You will not be able to update the items because RStudio needs to be launched using a read only container, which cannot be modified. However, choosing the wrong option should not harm anything.
 
-When the above lines are executed, we will eventually reach a state in the install where we receive the following error (caused by the `XVector` install).
+When the above lines are executed, we will eventually reach a state in the `XVector` install where we receive the following error.
 
 ![](OnDemand/xvector_install_error.png)
 
