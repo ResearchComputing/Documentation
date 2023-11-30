@@ -221,11 +221,7 @@ Next, start an interactive session on a compute node.
 ```
 acompile --ntasks=4
 ```
-Once the session has started, we must then load the module for Apptainer.
-```
-module load apptainer
-```
-With this module loaded, we can now modify the overlay by launching the overlay using fakeroot.
+Once on a compute node, we can now modify the overlay by launching the overlay using fakeroot.
 ```
 apptainer shell --fakeroot --bind /projects,/scratch/alpine,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
 ```
