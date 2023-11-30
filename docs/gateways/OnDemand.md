@@ -245,7 +245,7 @@ We should now see that the XVector install goes through!
 
 **_Important Notes:_** 
 - Currently, this functionality is only available on Alpine. Once we update the operating system on Blanca, we will enable this functionality. 
-- For users who want to utilize the command line version of R or run a script without RStudio, this can be done using Apptainer. Below we provide two methods that can be used once a user has access to a compute node and loaded the Apptainer module:
+- For users who want to utilize the command line version of R or run a script without RStudio, this can be done using Apptainer. Below we provide two methods that can be used once a user has access to a Alpine compute node:
     -  To utilize R in an interactive session you can execute the following command to start the container
     ```
     apptainer shell --bind /projects,/scratch/alpine,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
