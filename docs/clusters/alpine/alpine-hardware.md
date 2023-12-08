@@ -116,7 +116,7 @@ sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
 ```
 _Request 1 MI100 GPU with 1 CPU core for one hour._
 ```
-sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=1 --time=60:00
+sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
 ```
 
 
