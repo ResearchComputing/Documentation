@@ -76,7 +76,7 @@ Host *
 
 Lastly, you can ssh to login.rc.colorado.edu as you normally would, except you'll include the "-X" flag:
 
-```bash
+```
 ssh -X your_rc-username@login.rc.colorado.edu
 ```
 
@@ -86,7 +86,7 @@ Using macOS, we will also need to install an X windows server application to all
 
 Opening the application will bring up a terminal window. In this window, you will ssh to login.rc.colorado.edu as you normally would except you'll include the "-X" flag:
 
-```bash
+```
 ssh -X your_rc-username@login.rc.colorado.edu
 ```
 
@@ -96,7 +96,7 @@ Once you have logged into the system with X11 Forwarding enabled, you will be ab
 
 If you plan on running interactive job from a compile node, you must also enable x11 forwarding when you request a node using acompile:
 
-```bash
+```
 acompile -X
 ```
 
