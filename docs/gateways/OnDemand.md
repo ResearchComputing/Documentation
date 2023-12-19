@@ -68,7 +68,7 @@ slurm/<cluster>` with either Alpine or Blanca.
 
 #### Interactive Applications Menu
 
-The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs) for interactive use on CURC clusters. Currently supported applications include a __remote desktop__, __MATLAB__, __Jupyter session__, and __RStudio session__.
+The _Interactive Applications_ menu contains options to launch certain applications that have graphical user interfaces (GUIs) for interactive use on CURC clusters. Currently supported applications include a __remote desktop__, __MATLAB__, __Jupyter session__, __RStudio session__, and __VS Code-Server__.
 
 ##### Core Desktop (remote desktop)
 
@@ -120,6 +120,71 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 * When the session starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
 * For more information on running Jupyter sessions, [check out RC’s page on Jupyter](./jupyterhub.html).
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
+* One can access a single GPU via the `Jupyter Session (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
+
+###### Creating a Jupyter Session Conda Environment
+
+In Jupyter Session applications you have the option to launch a Jupyter session using a Conda environment that you have created. This becomes extremely useful if you are using a package that requires extensions be installed in the environment that is launching the Jupyter session. In order to configure your environment so that it launches correctly, you need to ensure that the appropriate packages are installed in it. Below we provide the process needed to correctly create your environment using a Jupyter Session terminal. 
+
+1. Obtain a compute node by launching a Jupyter session using the Anaconda version of your choice and using the `base` environment
+
+    ![](OnDemand/jupyter_session_base_env.png)
+
+2. Once the Jupyter session has been launched, open up a terminal in Jupyter
+
+    ![](OnDemand/jupyter_session_open_terminal.png)
+
+3. In your terminal, load the Anaconda version you wish to use e.g.
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ module load anaconda/2020.11
+   ``` 
+
+4. Create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ conda create -n my-conda-env python=3.10
+   ```
+5. Activate your conda environment
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ conda activate my-conda-env
+   ```
+6. Install either JupyterLab **or** Jupyter Notebook (it is preferred that users install JupyterLab)
+   - If you would like to install JupyterLab:
+       ```
+       (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge jupyterlab
+       ```
+   - If you would like to install Jupyter Notebook (the classic version of Jupyter)
+      ```
+      (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge notebook
+      ```
+7. You can now install the rest of the packages you require in this environment. 
+
+
+Now that we have our environment correctly created, we can launch a Jupyter session utilizing this environment. This can be done as follows: 
+1. Launch the Jupyter session using the environment you created:
+  ![](OnDemand/jupyter_session_use_env.png)
+2. Once the session is launched, it is also important to ensure that your environment is being correctly utilized. To do this, open up a terminal application and determine what Python and Jupyter are being used:
+   ```
+   [user@c3cpu-a2-u3-4 ~]$ which python
+   /projects/user/software/anaconda/envs/my-conda-env/bin/python
+   [user@c3cpu-a2-u3-4 ~]$ which jupyter
+   /projects/user/software/anaconda/envs/my-conda-env/bin/jupyter
+   ```
+
+   - The provided output should be utilizing the environment you created, as seen by the output `anaconda/envs/my-conda-env`. 
+   - If your environment is not being used, this is usually due to one of two reasons:
+       - You have incorrectly provided the name of your Conda environment
+       - You have chosen an Anaconda version that is not the same as the one you used to install your Conda environment
+       
+  In both of these scenarios, you can confirm that your environment is not being used by looking at the `output.log` for your job:
+
+  1. Select "My Interactive Sessions"
+  ![](OnDemand/my_interactive_sess_tab.png)
+  2. Click the link next to the "Session ID" for your running job
+  ![](OnDemand/session_id_for_job.png)
+  3. Open the file `output.log` by clicking it
+  ![](OnDemand/output_log_file.png)
+  4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used
+  ![](OnDemand/env_not_found.png)
 
 ##### RStudio
 
@@ -128,14 +193,118 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 2. Click “Launch” to submit the RStudio job to the queue. The wait time depends on the number of cores and time requested.  The preset options provided generally start within a few moments. 
 3. Once your RStudio session is ready, you can click “Connect to RStudio Server”. An interactive RStudio session will be started in a new window.
 ![](OnDemand/rstudio_session_custom_launch.png)
+- Please note that the first time you launch the session it may take awhile before you can connect to the session. This is because we are creating a unique [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html) for you that can give you the ability to install dependencies. Subsequent launches will not take as long. 
 4. To shut down an RStudio server, go to the "File" menu at the top and choose "Quit session...". If you have made changes to the workspace, then you will be asked if you would like to save them to `~/.RData`, this is not necessary, but can be helpful. Once completed, a prompt will notify you that your R session has ended and will give you the option to restart a server, if desired. However, it is important to note that quitting the session will not cancel the job you are running. Additionally, closing the window will not terminate the job. To terminate the job, you can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
 
+**_Important Notes:_** 
+* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa. You will need to (re-)install the packages you need when using the equivalent module. This is due to the fact that RStudio is run from an Ubuntu [container](../software/Containerizationon.html).
+
+###### Installing dependencies for RStudio (currently available only on Alpine)
+
+As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/Containerizationon.html). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html) that is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
+```
+install.packages("BiocManager")
+library(BiocManager)
+BiocManager::install("XVector")
+```
+- Please note that if you are ever provided the prompt "Update all/some/none? [a/s/n]:",  always choose "n". You will not be able to update the items because RStudio needs to be launched using a read only container, which cannot be modified. However, choosing the wrong option should not harm anything.
+
+When the above lines are executed, we will eventually reach a state in the `XVector` install where we receive the following error.
+
+![](OnDemand/xvector_install_error.png)
+
+This install failed because our container and overlay do not have `zlib` installed. To remedy this, we can install `zlib` by modifying our overlay. To do this, we must first completely close the RStudio session __AND__ delete the job. This is necessary because our overlay cannot be changed if it is being used. Next, open up a terminal in Open OnDemand by selecting "Clusters" -> "Alpine Shell" from the top menu bar.
+
+![](OnDemand/alpine_shell_depiction.png)
+
+Next, start an interactive session on a compute node.
+```
+acompile --ntasks=4
+```
+Once on a compute node, we can now modify the overlay by launching the overlay using fakeroot.
+```
+apptainer shell --fakeroot --bind /projects,/scratch/alpine,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
+```
+You should now be in a terminal starting with `Apptainer>`. In this shell we can install anything using the standard Ubuntu package manager. Let's go ahead and install `zlib1g-dev`, which will give us `zlib.h`.
+```
+apt-get update 
+apt install zlib1g-dev
+```
+Once completed, the overlay will be updated and you can exit the shell and compute node by executing `exit` twice.
+```
+exit
+exit
+```
+Now, we can startup a new Rstudio session and attempt the XVector install.
+```
+BiocManager::install("XVector")
+```
+We should now see that the XVector install goes through!
+
+![](OnDemand/successful_x_vector_install_rstudio.png)
+
+**_Important Notes:_** 
+- Currently, this functionality is only available on Alpine. Once we update the operating system on Blanca, we will enable this functionality. 
+- For users who want to utilize the command line version of R or run a script without RStudio, this can be done using Apptainer. Below we provide two methods that can be used once a user has access to an Alpine compute node:
+    -  To utilize R in an interactive session, you can execute the following command to start the container.
+    ```
+    apptainer shell --bind /projects,/scratch/alpine,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
+    ```
+    You can then launch R and interact with it (you can also utilize `Rscript` here too).
+    ```
+    Apptainer> R
+    > library(XVector)
+    ```
+    - To execute the script "test_R.r" without an interactive session, you can execute the following command. 
+    ```
+    apptainer exec --bind /projects,/scratch/alpine,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif Rscript test_R.r
+    ```
+
+
+##### VS Code-Server
+
+1. To start an interactive [Visual Studio Code (VS Code)](https://code.visualstudio.com/) job, you may select `VS Code-Server (Custom)` or `VS Code-Server (Presets)` from the menu. The `VS Code-Server (Custom)` option allows you to modify the resources and Slurm configurations for the job. For more information on these options, please see the [Running Custom Interactive applications](#running-custom-interactive-applications) section below. If you select `VS Code-Server (Presets)`, you may select from standard configurations we provide.  Most use cases can be accommodated by one of the presets. The `VS Code-Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one VS Code-Server session__ (or any one job using the partition).
+![](OnDemand/vs_code_custom.png)
+2. Click “Launch” to submit the VS Code-Server job to the queue. The wait time depends on the number of cores and time requested. The preset options generally start within a few moments. 
+3. Once your VS Code-Server session is ready, you can click “Connect to VS Code”. An interactive VS Code-Server session will be started in a new window.
+![](OnDemand/vs_code_custom_launch.png)
+
 **_Notes:_** 
-* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa.  You will need to (re-)install the packages you need when using the equivalent module.
+* One can access a single GPU via the `VS Code-Server (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
+
+###### Installing VS Code-Server Extensions
+
+The provided VS Code application is utilizing [VS Code-Server](https://coder.com/docs/code-server/latest). For this reason, some aspects of the application may differ from the 
+standard installation of VS Code. One of these differences is accessing and installing extensions. While a majority of extensions are available in the Marketplace within the 
+application (and installable), some extensions may be missing. Although this is the case, thankfully one can download extensions directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) and then install them within the application. Below we provide a video that demonstrates three ways one can install extensions from within
+the application. Additionally, we provide a short description of these methods below the video.
+
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/2kgZQmm5TF4?si=NUVzamnXYojcd79e" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+When attempting to install an extension, we suggest the following methods (listed in order of preference):
+- If possible, install extensions using the Marketplace from within the application.
+    1. On the left-hand side of the screen select the `Extensions` button. 
+    2. Use the provided search bar to search for the application you want. 
+    3. Select the application and then click the `Install` button.
+![](OnDemand/vs_code_marketplace_install.png)
+- Install the application by dragging the downloaded file into the **extensions column** (for visual representation, please see above video).
+    1. Navigate to the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) in your browser.
+    2. Select the application you want and click `Download Extension` on the right-hand side. Some applications require that you chose the operating system. For 
+    these applications, select the drop-down menu next to `Download Extension` and then select `Linux x64`.
+    3. Drag and drop the downloaded file into the **extensions column** within the VS Code-Server application. 
+- Install the application by dragging the downloaded file into the **folder column** (for visual representation, please see above video).
+    - **Note:** This option is sometimes necessary if the extensions rely on dependencies located in the downloaded file.
+    1. Navigate to the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) in your browser.
+    2. Select the application you want and click `Download Extension` on the right-hand side. Some applications require that you chose the operating system. For 
+    these applications, select the drop-down menu next to `Download Extension` and then select `Linux x64`.
+    3. Drag and drop the downloaded file into the **folder column** within the VS Code-Server application. 
+    4. Right click the downloaded file and select `Install Extension VSIX`. 
 
 ##### Running _Custom_ Interactive applications
 
-The Matlab, Jupyter, and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
+The Matlab, Jupyter, VS Code-Server, and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
 
 * access to GPU nodes;
 * access to high-memory nodes;
@@ -155,6 +324,17 @@ To help you use the `Custom` menu for interactive applications, below is a table
 | Time<sup>1</sup> | The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
 
 <sup>1</sup>Please note that jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the number of cores, memory and duration.
+
+###### GPU access for Jupyter Sessions
+
+When launching custom Jupyter sessions, one can access a single GPU on Alpine by specifying the correct partition and QoS name. However, only the testing partitions are valid on Jupyter sessions and they are limited to a run time of one hour. For GPU jobs that require more resources or more time, please submit a [batch job](../running-jobs/batch-jobs.html) using the standard `ami100` or `aa100` partitions. The table below provides the inputs needed to start a Jupyter session with a GPU:
+
+| Partition | QoS Name | Type of GPU |
+| --- | ----------- | --------------
+| atesting_a100 | testing |   NVIDIA A100 |
+| atesting_mi100 | testing |   AMD MI100 |
+
+
 #### My Interactive Sessions
 
 The _My Interactive Sessions_ menu will let you view and manage all of your current open Interactive applications. From this window, you can view the node/core count, status, as well as time remaining for current sessions. 

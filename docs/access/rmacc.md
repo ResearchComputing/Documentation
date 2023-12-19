@@ -66,7 +66,7 @@ menu.
 
 Globus data transfers are supported for RMACC users who have current XSEDE.org or future access-ci.org credentials.  
 
-The Globus Collection for CURC resources is available at "CU Boulder Research Computing ACCESS" and will require login with credentials from one of those providers.
+The Globus Collection for CURC resources is available at "CU Boulder Research Computing" and will require login with credentials from one of those providers.
 
 Once connected Globus can be used to transfer data to:
 

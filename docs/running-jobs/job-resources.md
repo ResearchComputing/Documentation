@@ -43,11 +43,11 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 | Partition        | Description       | Max Nodes | Max cores | Billing wgt/core | Default/Max Walltime     |
 | ---------------- | ----------------- | --------- | --------- | ---------------- | ------------------------ |
-| atesting <sup>3</sup> | Testing      | Up to 2   | 32        | 0.25             | 0.5H, 3H                 |
+| atesting <sup>3</sup> | Testing      | Up to 2   | 16        | 0.25             | 0.5H, 3H                 |
 | acompile         | Compile           | 1         | 4         | 1.0              | 1H, 12H                  |
 | ainteractive     | Interactive Jobs  | 1         | 1         | 1.0              | 1H, 12H                  |
 
-> <sup>3</sup> The `atesting` partition is limited to 32 cores total. These cores can come from up to 2 nodes, but a user is limited to maximum of 32 cores per job.
+> <sup>3</sup> The `atesting` partition is limited to 16 cores total. These cores can come from up to 2 nodes, but a user is limited to maximum of 16 cores per job.
 
 To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitions, use the `long` QOS.
 
