@@ -100,7 +100,7 @@ If you plan on running interactive job from a compile node, you must also enable
 acompile -X
 ```
 
-From here you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
+From here, you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
 
 
 
