@@ -31,9 +31,11 @@ To run an interactive GUI application on HPC Systems, we must install an X windo
 #### Windows setup
 
 On Windows we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
-this. [Download the Xming here](https://sourceforge.net/projects/xming/).
+this. [Download Xming here](https://sourceforge.net/projects/xming/).
 
-Next we must enable X11 forwarding on the PuTTY application. Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
+##### For PuTTY users
+
+Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-1.png)
 
@@ -43,13 +45,48 @@ Expand the SSH tab on the left side of the application and click X11.
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking open will open a terminal window where you can login.
 
+##### For Command Prompt or Powershell users
+
+This tutorial assumes that you are already set up with OpenSSH for Windows. [Here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) is a guide for setting up OpenSSH for Windows. Note that OpenSSH Server does not have to be running for you to proceed.
+
+You can deploy Xming by running the Xlaunch application (or opening the Xlaunch shortcut on your desktop). When prompted to select display settings, select 'Multiple windows' and set the Display number to 0. From there, use the default selections until Xlaunch is finished.
+
+Next, you'll need to set your display value. Open the Command Prompt (or Powershell) and set the $DISPLAY variable as follows: 
+
+Command Prompt: 
+```
+cd C:\
+set DISPLAY=127.0.0.1:0.0
+```
+
+Powershell:
+```
+cd C:\
+$env:DISPLAY="127.0.0.1:0.0"
+``` 
+
+Now, you'll need to make a modification to your local ssh config file or create one if it doesn't already exist. By default, this file is located at ```C:/Users/<username>/.ssh/config```. Edit this file and add the following lines: 
+
+```
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+```
+
+Lastly, you can ssh to login.rc.colorado.edu as you normally would, except you'll include the "-X" flag:
+
+```
+ssh -X your_rc-username@login.rc.colorado.edu
+```
+
 #### macOS setup
 
 Using macOS, we will also need to install an X windows server application to allow the cluster to forward GUI information to your local system. For Mac, we will use an application called XQuartz to accomplish this. [Download and install XQuartz here](https://www.xquartz.org/).
 
 Opening the application will bring up a terminal window. In this window, you will ssh to login.rc.colorado.edu as you normally would except you'll include the "-X" flag:
 
-```bash
+```
 ssh -X your_rc-username@login.rc.colorado.edu
 ```
 
@@ -59,11 +96,11 @@ Once you have logged into the system with X11 Forwarding enabled, you will be ab
 
 If you plan on running interactive job from a compile node, you must also enable x11 forwarding when you request a node using acompile:
 
-```bash
-acompile
+```
+acompile -X
 ```
 
-From here you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
+From here, you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
 
 
 
