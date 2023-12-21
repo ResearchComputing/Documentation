@@ -1,17 +1,11 @@
 # Python and R with Anaconda
 
-To support the diverse _python_ and _R_ workflows and high levels of 
-customization Research Computing users require, 
-[Anaconda](http://anaconda.com) is installed on the CURC system. Anaconda 
-uses the _conda_ package manager to easily install software and associated 
-packages, and supports _python_, _R_, and many other applications. The 
-following documentation describes how to activate the CURC Anaconda 
-distribution and our default environments, as well as how to create and 
-activate your own custom Anaconda environments. Additional documentation 
-on [CURC OpenOnDemand](../gateways/OnDemand.md) is available for users 
-desiring to 
-interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+To support diverse _Python_ and _R_ workflows, Research Computing users can utilize [Anaconda](http://anaconda.com). Anaconda 
+provides the _conda_ package manager, which allows for easy installation of software and associated 
+packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
+CURC also supports [Mamba](https://mamba.readthedocs.io/), an alternative package manager that allows parallel downloading of repository data and package files using multi-threading.
 
+The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manger](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../gateways/OnDemand.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 ## Configuring conda with `.condarc`
 
@@ -23,7 +17,7 @@ Open your `.condarc` file in your favorite text editor (e.g., nano, vim):
 > _Note: this file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command_
 
 ```
-[johndoe@shas0137]$ nano ~/.condarc
+[johndoe@sc3cpu-a7-u19-1 ~]$ nano ~/.condarc
 ```
 
 ...and paste the following four lines:
@@ -50,7 +44,7 @@ Follow these steps from a Research Computing terminal session on an Alpine
 Run the following command to load the base Anaconda software:  
 
 ```
-[johndoe@shas0137 ~]$ module load anaconda
+[johndoe@c3cpu-a7-u19-1 ~]$ module load anaconda
 ```
 
 >___Note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)_. 
@@ -59,7 +53,7 @@ You will know that you have properly activated the environment because you
 should see `(base)` in front of your prompt. For example: 
 
 ```
-(base) [johndoe@shas0137 ~]$
+(base) [johndoe@c3cpu-a7-u19-1 ~]$
 ```
 
 ### Using Conda:
@@ -118,39 +112,39 @@ our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from w
 __1. Initialize Anaconda if you haven't already done so:__
  
 ```
-[johndoe@shas0137 ~]$ module load anaconda
-(base) [johndoe@shas0137 ~]$ 
+[johndoe@c3cpu-a7-u19-1 ~]$ module load anaconda
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ 
 ```
 
 __2. Create a custom environment:__
 
 Here we create a new environment called _mycustomenv_ (you can call it anything you want!)
 ```
-(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda create -n mycustomenv
 ```
 
 If you want a specific version of python or R, you can modify the above commmand as follows (e.g.):  
 
 _Python v2.7.16:_
 ```
-(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv python==2.7.16
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda create -n mycustomenv python==2.7.16
 ```
 
 _Python v3.6.8:_
 ```
-(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv python==3.6.8
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda create -n mycustomenv python==3.6.8
 ```
 
 _Latest version of R:_
 ```
-(base) [johndoe@shas0137 ~]$ conda create -n mycustomenv r-base
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda create -n mycustomenv r-base
 ```
 
 __3. Activate your new environment:__
 
 ```
-(base) [johndoe@shas0137 ~]$ conda activate mycustomenv
-(mycustomenv) [johndoe@shas0137 ~]$ 
+(base) [johndoe@c3cpu-a7-u19-1 ~]$ conda activate mycustomenv
+(mycustomenv) [johndoe@c3cpu-a7-u19-1 ~]$ 
 ```
 
 If successful, your prompt will now be preceded with `(mycustomenv)`.
@@ -162,14 +156,14 @@ need with one command, because it forces conda to resolve package
 conflicts. For example:
 
 ```
-(mycustomenv) [johndoe@shas0137 ~]$ conda install numpy scipy tensorflow
+(mycustomenv) [johndoe@c3cpu-a7-u19-1 ~]$ conda install numpy scipy tensorflow
 ```
 
 For R packages, it is easiest to start an R session and then install the 
 packages as you normally would with "install.packages". For example:
 
 ```
-(mycustomenv) [johndoe@shas0137 ~]$ R
+(mycustomenv) [johndoe@c3cpu-a7-u19-1 ~]$ R
 >install.packages("ggplot2")
 ```
 If you encounter a `--- Please select a CRAN mirror for use in this session ---` message, you can select a US mirror from the provided list or use the `repos` install flag:
@@ -193,7 +187,6 @@ For more information on managing conda enviornments, [check out Anaconda's docum
 | `conda remove --name <env> --all` | Removes an environment named `<env>` |
 | `conda deactivate` | Deactivates current enviornment |
 
-
 ### Troubleshooting
 
 If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current conda environment. Use `conda install <package>` to add a new package or `conda install <package==version>` for a specific verison; e.g., `conda install numpy=1.16.2`.
@@ -201,6 +194,28 @@ If you are having trouble loading a package, you can use `conda list` or `pip fr
 Sometimes conda environments can "break" if two packages in the environment require different versions of the same shared library. In these cases you try a couple of things.
 * Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces conda to attempt to resolve shared library conflicts. 
 * Create a new environment and reinstall the packages you need (preferably installing all with the same `conda install` command, rather than one-at-a-time, in order to resolve the conflicts).
+
+## Mamba Package Manager
+
+[Mamba](https://mamba.readthedocs.io/) is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for _conda_. Utilizing Mamba can improve the speed and reliability of constructing an environment. To use Mamba on an Alpine or Blanca compute node, perform the following module load: 
+
+```
+[johndoe@c3cpu-a7-u19-1 ~]$ module load mambaforge
+```
+
+The command above activates the base environment provided by Mamba. You will know that Mamba has been correctly loaded once you see `(base)` in front of your prompt. For example: 
+
+```
+(base) [johndoe@c3cpu-a7-u19-1 ~]$
+```
+
+Once Mamba has been properly loaded, you can utilize almost all core command and configuration options available to _conda_. For commands, this can be done by replacing `conda` with `mamba`. For example:
+
+```
+[johndoe@c3cpu-a7-u19-1 ~]$ mamba create -n mycustomenv
+```
+
+> _**Note:**_ If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided. 
 
 ---
 
