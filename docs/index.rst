@@ -164,6 +164,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    software/Containerizationon
    software/alphafold
    software/spack
+   software/sratoolkit
 
 .. toctree::
    :maxdepth: 2
