@@ -54,8 +54,8 @@ combat this is to apply for an allocation.
 
 In addition to the Trailhead auto-allocation (`ucb-general`) that all users are awarded automatically, CURC offers two 
 additional tiers to accommodate larger computing needs on Alpine. The **Ascent Allocation** tier provides users 
-with 250,000 SUs over a 12 month period. The **Peak Allocation** tier is 
-aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 
+with 350,000 SUs over a 12 month period. The **Peak Allocation** tier is 
+aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 
 12 month period. Users may apply for these tiers as described below.
 
 CURC's tiered allocations are structured in a way such that your jobs are 
@@ -85,7 +85,7 @@ use.
 #### Get a Peak Allocation 
 
 Step 1: Download and complete the [Peak Allocation Request Supplementary 
-Information](https://o365coloradoedu.sharepoint.com/:x:/s/RC-Team/EW-ZgyLKV8VNhDrYVwH_UvoBGLFgZcZVU2-W2_xjx1EoAg?e=EsOj4M) 
+Information](https://o365coloradoedu.sharepoint.com/:x:/s/RC-Team/EajdPBAejjpDru7kvEEA29QBI8CoO8lj7-kUjotBIIusEg?e=geLBBP) 
 document. You need to be logged into Office365 with your CU Boulder 
 account.
 
@@ -95,9 +95,17 @@ logged into Office365 with your CU Boulder account.
 The last question will ask you to upload your completed Peak Allocation 
 Request Supplementary Information document from step 1. 
 
-Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colordo.edu>). User Support will contact you when the proposal 
+Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the proposal 
 is received, during the initial 
 review stages, and when the allocation is ready to use.
+
+#### Renewing Your Allocation
+
+Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Allocations will automatically expire one year after they are provisioned. 
+
+Step 2: Fill out the [Alpine Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form. You need to be logged into Office365 with your CU Boulder account.
+
+Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the 
 National Science Foundation (award 2201538).
