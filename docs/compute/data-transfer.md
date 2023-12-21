@@ -3,9 +3,7 @@
 Research Computing supports several methods of file transfer. File
 transfers from a local system can be done through a web-based
 application called _Globus_ or through command-line tools such as
-secure copy (_scp_), secure ftp (_sftp_) and _rsync_. Some
-command-line tools may be unavailable on Windows, though alternative
-applications exist. (e.g., WinSCP, FileZilla)
+secure copy (_scp_), secure ftp (_sftp_) and _rsync_. 
 
 Data transfers using SSH protocols can be done via CURC login nodes or
 through the [CURC data transfer nodes](https://curc.readthedocs.io/en/latest/compute/node-types.html) (DTN). Transfers via the login
@@ -64,7 +62,7 @@ Using a Guest Collection (also known as a "Shared Endpoint"), You can share
 any file or folder that you have access to with anyone who
 has a Globus account. This is particularly useful for PetaLibrary users. PetaLibrary 
 allocation owners can nominate a technical contact that is able to create [Globus Guest
-Collections](https://docs.globus.org/how-to/share-files/). 
+Collections](https://docs.globus.org/how-to/share-files/) within their PetaLibrary allocation.
 
 Detailed information on creating Guest Collections is available [at
 docs.globus.org](https://docs.globus.org/how-to/share-files/).
@@ -93,7 +91,7 @@ RC Users also have the option of connecting to RC via _Filezilla_. _Filezilla_ i
       - Username: your-rc-username
       - Password: your-rc-password
     - _Data Transfer Node_
-      - Host: sftp://dtn.rc.int.colorado.edu
+      - Host: sftp://dtn23.rc.colorado.edu
       - Username: your-rc-username
       - Password: your-rc-password
 
@@ -120,14 +118,14 @@ would like to send the file to.
 # Copying files from a local workstation to Research Computing
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>    # using a login node
-scp <path-to-file> <username>@dtn.rc.int.colorado.edu:<target-path>  # using DTN while on campus network
+scp <path-to-file> <username>@dtn23.rc.colorado.edu:<target-path>    # using DTN while on campus network
 ```
 
 ```bash
 # Copying files from Research Computing to a local workstation
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>    # using a login node
-scp <username>@dtn.rc.int.colorado.edu:<path-to-file> <target-path>  # using DTN while on campus network
+scp <username>@dtn23.rc.colorado.edu:<path-to-file> <target-path>    # using DTN while on campus network
 ``` 
 
 Windows users can access scp through PowerShell or using a GUI
@@ -157,14 +155,14 @@ would like to send the file to.
 # Synchronizing from a local workstation to Research Computing
 
 rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>    # using a login node
-rsync -r <path-to-directory> <username>@dtn.rc.int.colorado.edu:<target-path>  # using DTN while on campus network
+rsync -r <path-to-directory> <username>@dtn23.rc.colorado.edu:<target-path>    # using DTN while on campus network
 ```
 
 ```bash
 # Synchronizing from Research Computing to a local workstation
 
 rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>    # using a login node
-rsync -r <username>@dtn.rc.int.colorado.edu:<path-to-directory> <target-path>  # using DTN while on campus network
+rsync -r <username>@dtn23.rc.colorado.edu:<path-to-directory> <target-path>    # using DTN while on campus network
 ```
 
 rsync is not available on Windows by default, but [may be installed
@@ -186,7 +184,7 @@ between a local system and Research Computing resources.
 
 ```bash
 sftp <username>@login.rc.colorado.edu    # using a login node
-sftp <username>@dtn.rc.int.colorado.edu  # using DTN while on campus network
+sftp <username>@dtn23.rc.colorado.edu    # using DTN while on campus network
 ```
 
 We can then use various commands to traverse and manipulate both local
@@ -214,24 +212,19 @@ resources](#more-reading) or consult the sftp manual page.
 
 ### Automated scp and rsync
 
+Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. We do not permit key-based transfers over the login nodes.
+
+*You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.*
+
 The `scp` and `rsync` commands both allow a user to transfer files
 without needing to reenter a password. All that is required is a few
-simple set up procedures to prepare your local machine.
+simple setup procedures to prepare your local machine.
   
 *These instructions only apply to local macOS and Linux
  systems. Automating file transfers from Windows is outside of the
  scope of this document.*
 
-*You must be on a campus network or [logged into the campus
- VPN](https://oit.colorado.edu/services/network-internet-services/vpn)
- to perform passwordless data transfers to CURC.*
-
-
-#### Generate a local ssh key pair
-
-You only need to perform this step once per local system.
-
-From a local terminal run:
+1. Generate a local ssh key pair. You will only need to perform this once per local system. From a local terminal run:
 
 ```bash
 ssh-keygen -t ed25519
@@ -243,41 +236,18 @@ is public, and can be shared with others (including Research
 Computing). `id_ed25519` is private and **should never leave the
 system that it was generated on.**
 
+2. Follow the instructions [here](https://curc.readthedocs.io/en/latest/additional-resources/registrycilogon-instructions.html) for requesting access to the CILogon Registry and uploading an ssh key.
 
-#### Copy the public key to CURC
+3. Use `rsync` or `scp` to transfer files using an ssh key. 
 
-You only need to perform this step once per local system.
-
-From a local terminal run:
-
-```bash
-cat ~/.ssh/id_ed25519.pub | ssh <your-username>@login.rc.colorado.edu -T "cat >> ~/.ssh/authorized_keys"
-```
-
-Substitute your Research Computing username for `<your-username>`.
-
-You will be required to enter your password and accept a Duo push in
-order to transfer the key.
-
-*If you have trouble running the command above, you can also just
- login to a CURC login node, open `~/.ssh/authorized_keys` and paste
- the text from `~/.ssh/id_ed25519.pub` that resides on your local
- machine.*
-
-
-#### Use `rsync` or `scp` to transfer files using an ssh key
-
-With an ssh key pair generated and configured in Research Computing,
-you are ready to transfer files. Key-based transfers are only
-supported via DTN. Make sure you are within the CU network and
-transfer with scp or rsync.
+With an ssh key pair generated and uploaded to <https://registry.cilogon.org>,
+you are ready to transfer files over the DTNs using `rsync` or `scp`. 
 
 ```bash
-rsync -av ./myfile.txt dtn.rc.int.colorado.edu:/projects/ralphie/myfile.txt  # using rsync
+rsync -av ./myfile.txt dtn23.rc.colorado.edu:/projects/ralphie/myfile.txt    # using rsync
 
-scp -v ./myfile.txt dtn.rc.int.colorado.edu:/pl/active/crdds/myfile.txt      # using scp
+scp -v ./myfile23.txt dtn23.rc.colorado.edu:/pl/active/crdds/myfile.txt      # using scp
 ```
-
 ---
 ### Rclone 
 
@@ -616,4 +586,3 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0Pp4D+GvSYfq0GB+dAEBQcKJTkeTkJ5bQlMPzkh1N
 * [Linuxize's Tutorial on Rsync](https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/)
 * [Ubuntu's Documentation on Rsync](https://help.ubuntu.com/community/rsync)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

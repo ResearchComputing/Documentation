@@ -152,15 +152,14 @@ export OMP_NUM_THREADS=4
 ./example_omp.exe
 ```
 
-Job script to run a 10 minute long, 2 node, 24 core C++ MPI Job:
+Job script to run a 10 minute long, 2 node, 16 core C++ MPI Job:
 
 ```bash
 #!/bin/bash
 
 #SBATCH --nodes=2
 #SBATCH --time=00:10:00
-#SBATCH --partition=atesting
-#SBATCH --ntasks=24
+#SBATCH --partition=atesting#SBATCH --ntasks=16
 #SBATCH --job-name=mpi-cpp-job
 #SBATCH --output=mpi-cpp-job.%j.out
 
@@ -168,7 +167,7 @@ module purge
 module load intel
 module load impi
 
-mpirun -np 24 ./example_mpi.exe
+mpirun -np 16 ./example_mpi.exe
 ```
 
 ### Job Flags
@@ -188,4 +187,3 @@ The `sbatch` command supports many optional flags. To review all the options, pl
 | Job Name               | Name your job so you can identify in queue          | --job-name=<jobname>       |
 
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

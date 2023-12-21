@@ -9,9 +9,11 @@ source_parsers = {
 }
 
 extensions = [
-    'sphinx_markdown_tables',
+    'sphinx_markdown_tables'
 ]
 
 source_suffix = ['.rst', '.md']
 
 html_theme = 'sphinx_rtd_theme'
+
+html_static_path = ['_static']

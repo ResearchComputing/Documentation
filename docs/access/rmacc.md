@@ -50,17 +50,9 @@ You will be redirected to CILogon.
 
 ## Shell Access to Compute Nodes  
 
-
-**The shells visible in the 'Clusters' dropdown menu are currently unavailable. Shell access is only available through the JupyterHub terminal.**
-
-- Select "Jupyter Notebook" from the drop-down list under _Interactive Apps_.
-- Accept the cluster (`Alpine`), partition (`ahub`), account (`rmacc-general`), QoS (`interactive`), number of hours (`1`), and cores (`1`). Leaving the account 
-field empty will default to `rmacc-general`. Anschutz users should instead use `amc-general`.  
-- Select "Launch".
-- Once the interactive session begins running, you can access the terminal in two ways:
-    1. click on the blue button next to **Host:**. This will launch a shell in a new browser tab. ![](rmacc/terminal_method1.png) 
-
-    2. select "Connect to Jupyter" to start a Notebook, then click "Terminal" in the launcher tab. You can open additional terminal tabs from the _File_ menu (_File_ -> _New Launcher_).![](rmacc/terminal_method2.png)
+- Currently, the suggested method for obtaining shell access for RMACC users is to use the Open OnDemand [shell access application](../gateways/OnDemand.html#clusters-shell-access).
+- RMACC users may also obtain ssh access into `login-ci.rc.colorado.edu` by requesting it via <rc-help@colorado.edu>. Please note that this form of access is currently on a trial basis.
+- If desired, a shell can also be accessed via Jupyter sessions by opening up a "Terminal" within the Jupyter session. 
 
 <br>
 
@@ -74,7 +66,7 @@ menu.
 
 Globus data transfers are supported for RMACC users who have current XSEDE.org or future access-ci.org credentials.  
 
-The Globus Collection for CURC resources is available at "CU Boulder Research Computing ACCESS" and will require login with credentials from one of those providers.
+The Globus Collection for CURC resources is available at "CU Boulder Research Computing" and will require login with credentials from one of those providers.
 
 Once connected Globus can be used to transfer data to:
 

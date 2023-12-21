@@ -54,7 +54,7 @@ the amount of memory your Slurm job has requested.
 
 Many G16 functions scale well to 8 or more cores on the same node. You
 can specify how many cores to use via the '-p' flag to g16
-(e.g. `-p=24`). This value should correspond to the number of cores
+(e.g. `-p=64`). This value should correspond to the number of cores
 that your Slurm job has requested. You should test your G16
 computations with several different core counts to see how well they
 scale, as there may be diminishing returns beyond a certain number of
@@ -83,7 +83,7 @@ export OMP_NUM_THREADS=1
 
 mkdir $GAUSS_SCRDIR  # only needed if using /scratch/alpine
 date  # put a date stamp in the output file for timing/scaling testing if desired
-g16 -m=50gb -p=24 my_input.com
+g16 -m=50gb -p=64 my_input.com
 date
 ```
 
@@ -148,7 +148,7 @@ export GAUSS_LFLAGS="-v"
 
 mkdir $GAUSS_SCRDIR  # only needed if using /scratch/alpine
 date  # put a date stamp in the output file for timing/scaling testing
-g16 -m=20gb -p=24 -w=`cat tsnet.nodes.$SLURM_JOBID` my_input.com
+g16 -m=20gb -p=64 -w=`cat tsnet.nodes.$SLURM_JOBID` my_input.com
 date
 rm tsnet.nodes.$SLURM_JOBID
 ```
@@ -195,4 +195,3 @@ Angle2 110.53
 CCH   117.81
 ```
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

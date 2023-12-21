@@ -44,4 +44,3 @@ This video provides information about the use of modules and the use of "sbatch"
 
 This video demonstrates how to run interactive jobs and provides advice on how to determine whether an interactive job best meets your needs.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

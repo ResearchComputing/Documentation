@@ -105,4 +105,3 @@ If you want your backups to occur at a specified time each day or week, please r
 * [Synology documentation](https://www.synology.com/en-us/support/documentation?query=&type=All&section=All&p=1)
 * [CURC data transfer documentation](../../compute/data-transfer.html)
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

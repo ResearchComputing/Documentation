@@ -29,4 +29,3 @@ Detailed instructions to add and remove members from your group can be found her
 
 The CU Research Computing group would like to acknowledge support of this project from the National Science Foundation (OAC-1925766).
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

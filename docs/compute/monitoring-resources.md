@@ -321,4 +321,3 @@ Let's say you want to see how many core hours you project account has used over 
 * You can change the time range of the x-axis by specifying the dates in the "Start" and "End" boxes near the top of the screen.
 
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

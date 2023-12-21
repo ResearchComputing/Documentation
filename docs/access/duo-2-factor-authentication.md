@@ -7,6 +7,8 @@ Research Computing utilizes a 2-factor authentication utility called **Duo** tha
 
 ### Setting up Duo
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/djn9bclMD3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Before you can use our large-scale resources, you will need to be enrolled in CU Boulder’s Duo two-factor authentication 
 service. If you are not presently enrolled, you can do so as follows: 
 
@@ -89,4 +91,3 @@ Clicking "Add a new device" will allow you to add a new smart phone, tablet, or 
 
 Selecting "My Settings & Devices" provides a more detailed list of all devices you have registered. From here you can also add a new device, set your default device, and change your default authentication method when you attempt to log in.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

@@ -72,7 +72,7 @@ Computing resources.
 
 ### Alpine scratch quota increases
 
-Each user is allocated 10 TB in `/alpine/scratch/`. Users requiring more than 10 TB may request a supplemental space allocation by 
+Each user is allocated 10 TB in `/scratch/alpine`. Users requiring more than 10 TB may request a supplemental space allocation by 
 submitting a brief (approximately one paragraph) justification. The justification should describe why a group's workflow requires 
 the requested amount.
 
@@ -108,4 +108,3 @@ the maintenance window as needed.
 
 <br>
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

@@ -17,12 +17,12 @@ Users should refer to CURC
 
 
 
-### Compile nodes
+### Compile nodes (Alpine only)
 
 * Where you compile code, such as Fortran, C, C++
 * No heavy computation
 * Submit Jobs
-* Access these nodes by typing `ssh scompile` from a login node
+* Access these nodes by typing `acompile` from a login node
 
 
 ### Compute nodes
@@ -37,4 +37,3 @@ This is where jobs are executed after being passed to the scheduler.
 * Data Transfer Nodes (DTNs) are nodes which support [data transfer](https://curc.readthedocs.io/en/latest/compute/data-transfer.html?highlight=dtn#data-transfer) on CURC systems. 
 * When transferring files using `scp`, `sftp`, or `ssh`, you can choose to host your transfers on a DTN.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

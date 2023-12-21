@@ -6,7 +6,7 @@ Users with Petalibrary allocations may access and transfer files to/from their l
 
 SMB (Secure Message Block) is a cross platform network sharing protocol that allows users to mount their Petalibrary allocations onto their local machines. SMB is supported on all major operating systems and all it takes to mount is a simple connection to CURC's network.
 
-**You must be on the CU Boulder internal network in order to access your allocation with SMB. Off-campus users can use VPN to login to the internal network.**
+**You must be on the CU Boulder VPN to establish an SMB mount, even if you are already on a campus network.**
 
 **Note:** SMB support for individual Petalibrary allocations is limited at the moment and requires additional setup from a system administrator. Please contact rc-help@colorado.edu if you’d like to set up SMB support with your Petalibrary Allocation.
 
@@ -90,4 +90,3 @@ Once this is done click the connect button. You will be prompted for a password.
 - The sshfs-win manager application may point to the incorrect sshfs binary by default. You can correct this in the "Settings" menu and adding the correct path to the application.
 - You may run into an issue where sshfs fails to wait for your Duo response. To correct this, open the "Settings" menu and increase the 'Process Timeout' field.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

@@ -1,5 +1,7 @@
 ## Filesystems
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xfeRDnZQrJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 All users are allocated space on the `/home` and `/projects`
 filesystems. In addition, separate `scratch` directories are visible
 from Alpine and Blanca. These scratch directories are hosted on
@@ -157,7 +159,7 @@ through the `.snapshot` hidden subdirectory. You will see a subdirectory
 associated with each snapshot of your `/home` or `/projects`
 directory, named using the time-stamp associated with the snapshot.
 
-> Note: The .snapshot directory is not visible to any utilities that list directory contents, so an ‘ls’ of the .snapshot directory will fail, although you can ‘cd’ to it.
+> Note: The `.snapshot` directory is not visible to any utilities that list directory contents, so an `ls -a` of the parent directory will not show `.snapshot`, although you can `cd` to it and list its contents with e.g. `ls -l $HOME/.snapshot`.
 
 ### File permissions, ownership, and group membership
 
@@ -315,4 +317,3 @@ you wish to share. If you make a mistake or change your mind, use the
 necessary if you want other users to be able to `cd` into your
 directory.
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)

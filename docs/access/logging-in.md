@@ -15,14 +15,14 @@ Users accessing RC's resources will be connected to a login node. A login node i
 
 > **Note:** the [login node policy](https://github.com/ResearchComputing/Documentation/edit/master/docs/compute/node-types.md#policy-for-use-of-login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
 
-+ **For CSU users, please refer to the [CSU login guide.](https://www.acns.colostate.edu/hpc/#remote-login)**  
-+ **For RMACC users, pleaser refer to [RMACC Access to Alpine.](rmacc.html)**
-
-<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/PCMy5qDw3Nw?autoplay=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>  
++ **For CSU users, please refer to the "Remote Login" section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page.**  
++ **For RMACC users, please refer to [RMACC Access to Alpine.](rmacc.html)**
 
 ---
 
 ### Getting an account
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3kdW3EJS-OE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
 
@@ -110,4 +110,3 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIqWL6qCI0y4MzZBgNyRrNX/Wd39/j1F/onx9tPMPos
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjjl4hOTvUCrfyIgFriFn+6ypLKxb7RQtWEmmmS0a8+icnocCiaZLpiS6lC7sMy7NYly6P6jnasTZvYUZ+6hcIm61YyOSDCCsMZCU+LQb66LIUPttz7ZF12KMgC/DDBAE8xj48hRmp9iZjFnYCEQi9eb4y1IN3VJz1k7nDfLa/Ae3DRBorGZVSKCoeBXfzjpTutCZwgoNUSHQUnZlLnwdut4WH9qq7GtnKRnstVJt+i72vOxLCFSuCgskCjBr5KP/aCEiXT5l93R01hceENIzKqN4zm0MhzULef6KXS7aZZDKb/zklOGUtxcHgdrQ9IeEQIESvn385yZU6IZIM+Hsb
 ```
 
-Couldn't find what you need? [Provide feedback on these docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
