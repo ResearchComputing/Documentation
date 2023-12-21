@@ -1,7 +1,6 @@
 # Python and R with Anaconda
 
-To support diverse _Python_ and _R_ workflows, Research Computing users can utilize  
- [Anaconda](http://anaconda.com). Anaconda 
+To support diverse _Python_ and _R_ workflows, Research Computing users can utilize [Anaconda](http://anaconda.com). Anaconda 
 provides the _conda_ package manager, which allows for easy installation of software and associated 
 packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
 CURC also supports [Mamba](https://mamba.readthedocs.io/), an alternative package manager that allows parallel downloading of repository data and package files using multi-threading.
