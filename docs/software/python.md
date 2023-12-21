@@ -1,7 +1,7 @@
 # Python and R with Anaconda
 
 To support diverse _Python_ and _R_ workflows, Research Computing users can utilize  
-[Anaconda](http://anaconda.com). Anaconda 
+ [Anaconda](http://anaconda.com). Anaconda 
 provides the _conda_ package manager, which allows for easy installation of software and associated 
 packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
 CURC also supports [Mamba](https://mamba.readthedocs.io/), an alternative package manager that allows parallel downloading of repository data and package files using multi-threading.
@@ -204,7 +204,7 @@ Sometimes conda environments can "break" if two packages in the environment requ
 [johndoe@c3cpu-a7-u19-1 ~]$ module load mambaforge
 ```
 
-The command above activates the base environment provided by Mamba, which includes Python version 3.9.16. You will know that Mamba has been correctly loaded once you see `(base)` in front of your prompt. For example: 
+The command above activates the base environment provided by Mamba. You will know that Mamba has been correctly loaded once you see `(base)` in front of your prompt. For example: 
 
 ```
 (base) [johndoe@c3cpu-a7-u19-1 ~]$
