@@ -103,7 +103,7 @@ review stages, and when the allocation is ready to use.
 
 Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
 
-Step 2: Fill out the [Alpine Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form. You need to be logged into Office365 with your CU Boulder account.
+Step 2: Fill out either the [Peak Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form, or the [Ascent Allocation Renewal](https://forms.office.com/r/1ymj7gxQF3) form. You need to be logged into Office365 with your CU Boulder account.
 
 Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
 
