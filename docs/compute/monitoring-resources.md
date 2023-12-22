@@ -41,6 +41,8 @@ You have sucessfully loaded slurmtools, a collection of functions
 
  'seff' (CPU and RAM efficiency for a specified job)
 
+ 'seff-array' (CPU, RAM, and time efficiency for a specified array job)
+
  'jobstats' (job statistics for all jobs run by a specified user over N days)
 
  'levelfs' (current fair share priority for a specified user)
@@ -252,6 +254,55 @@ This output tells us that:
 * 163.49 MB RAM was used of 113.62 GB RAM reserved (0.14%). This job is "cpu bound" so the memory inefficiency is not a major issue.
 
 This information is also sent to users who include the `--mail` directive in jobs.
+
+___How can I check the efficiency of array jobs?___
+
+Use the `seff-array` command with the help flag for a usage hint: 
+```
+$ seff-array -h
+```
+```
+usage: seff-array.py [-h] [-c CLUSTER] [--version] jobid
+
+positional arguments:
+  jobid
+
+options:
+  -h, --help            show this help message and exit
+  -c CLUSTER, --cluster CLUSTER
+  --version             show program's version number and exit
+```
+In order to check the efficiency of all jobs in job array 8636572, run the command: 
+```
+$ seff-array 8636572
+```
+This will display the status of all jobs in the array:
+```
+--------------------------------------------------------
+Job Status
+COMPLETED: 249
+FAILED: 4
+PENDING: 1
+RUNNING: 22
+TIMEOUT: 4
+--------------------------------------------------------
+```
+ Additionally, `seff-array` will display a histogram of the efficiency statistics all of the jobs in the array, separated into 10% increments. For example: 
+```
+CPU Efficiency (%)
+---------------------
++0.00e+00 - +1.00e+01  [  3]  ▌
++1.00e+01 - +2.00e+01  [244]  ████████████████████████████████████████
++2.00e+01 - +3.00e+01  [  8]  █▎
++3.00e+01 - +4.00e+01  [  2]  ▍
++4.00e+01 - +5.00e+01  [  0]
++5.00e+01 - +6.00e+01  [  0]
++6.00e+01 - +7.00e+01  [  0]
++7.00e+01 - +8.00e+01  [  0]
++8.00e+01 - +9.00e+01  [  0]
++9.00e+01 - +1.00e+02  [  0]
+```
+The above indicates that all of the jobs displayed less than 40% CPU efficiency, with the majority (244/256) demonstrating between 10% and 20% efficiency. This information will also be displayed for memory and time efficiency. 
 
 ### XDMoD 
  
