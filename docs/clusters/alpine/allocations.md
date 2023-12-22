@@ -101,7 +101,7 @@ review stages, and when the allocation is ready to use.
 
 #### Renewing Your Allocation
 
-Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Allocations will automatically expire one year after they are provisioned. 
+Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
 
 Step 2: Fill out the [Alpine Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form. You need to be logged into Office365 with your CU Boulder account.
 
