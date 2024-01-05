@@ -1,6 +1,6 @@
 ## AWS Programs for Research and Education
 
-Students, educators, and researchers are key drivers of technological innovation. AWS has two programs to enable customers to move their research or teaching endeavors to the cloud and innovate quickly and at lower cost.
+Amazon provides free credits to qualifying Students, educators, and researchers for research and education purposes. These credits can be used to access the cloud platform’s resources.
 
 ### <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/" target="_blank">AWS Cloud Credits for Research</a>
 
@@ -27,4 +27,4 @@ If you are awarded AWS Promotional Credit for no-cost usage of applicable AWS se
 
 Please make sure to account for the duration of the AWS Promotional Credit in your project timeline.
 
-For more information, please read our <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/faqs/" target="_blank">AWS Cloud Credit for Research FAQs.</a>
+For more information, please read AWS's <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/faqs/" target="_blank">AWS Cloud Credit for Research FAQs.</a>
