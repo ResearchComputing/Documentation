@@ -18,7 +18,7 @@ You can attach budget actions to an alert for either a cost budget or a usage bu
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/2.png)
 
-5.	Choose ‘Budget scope’ to ‘All AWS services’ and choose ‘Next’
+5.	Choose ‘Budget scope’ and select the services you would like in scope. For this example we will choose 'All AWS Services' and choose ‘Next’
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/3.png)
 
@@ -31,7 +31,7 @@ To configure a budget action on an existing cost or usage budget, first follow t
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/4.png)
 
-2.	Under Set **alert threshold**, for Threshold, enter the amount that needs to be reached for you to be notified. This can be either an absolute value or a percentage(choose using drop down). For example, say you have a budget of 200 dollars. To be notiﬁed at 160 dollars (80% of your budget), enter 160 for an absolute budget or 80 for a percentage budget.
+2.	Under Set **alert threshold**, for Threshold, enter the amount that needs to be reached for you to be notified. This can be either an absolute value or a percentage(choose using drop down). For example, say you have a budget of $200. To be notiﬁed at $160 (80% of your budget), enter 160 for an absolute budget or 80 for a percentage budget.
 
 Next to the amount, choose **Absolute value** to be notiﬁed when your costs exceed the threshold amount. Or, choose **% of budgeted amount** to be notiﬁed when your costs exceed the threshold percentage.
 
