@@ -31,6 +31,12 @@ For users who are using a **Research Computing Cloud Team** managed AWS account.
 
 .. toctree::
     :maxdepth: 1
+    :caption: Research Credits
+
+    AWS-Programs-for-Research-and-Education
+
+.. toctree::
+    :maxdepth: 1
     :caption: Troubleshooting Errors
 
     troubleshooting/troubleshooting

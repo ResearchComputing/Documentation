@@ -4,13 +4,13 @@
 
 Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
-![](cumulus/login.png)
+![](login.png)
 
 > __Note to XSEDE users__: The first attempt to login will automatically fail because you have not been assigned to any groups or roles. Once you have attempted to login please respond to your acceptance email that you have attempted to login and your username will be processed. 
 
 Once your username is processed you will be able to login. The landing page for CUmulus is the "Overview page" which provides you basic information about your project (compute, volume, and network usage). You can select a period of time to query usage below the main overview graphics as well as view all current vm instances.
 
-![](cumulus/overview.png)
+![](overview.png)
 
 To use your CUmulus resources, you must create an instances (or a virtual machine) which will each utilize portions of your main project's allocated reources. Visit our docs on [instance creation](./instance-creation.html)
 
@@ -21,7 +21,7 @@ Project access is managed through the Grouper application. Grouper is an enterpr
 To view your groups in Grouper navigate to [mygroups.colorado.edu](https://mygroups.colorado.edu/grouper/) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
 >_Note:_ If you do not see your group, please contact [rc-help@colorado.edu](rc-help@colorado.edu) to create a group with the correct permissions and connections to CUmulus (_do not create your own group_).
 
-![](cumulus/grouper.png)
+![](grouper.png)
 
 Detailed instructions to add and remove members from your group can be found here: [Add/Remove Members](https://oit.colorado.edu/tutorial/grouper-manage-members-email-enabled-groups).
 
