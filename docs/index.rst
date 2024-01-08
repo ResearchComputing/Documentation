@@ -146,10 +146,8 @@ Use of University of Colorado Research Computing resources, including (but not l
 
    cloud/aws/index
    cloud/azure/index
-   cloud/cumulus
-   cloud/project-management
-   cloud/instance-creation
-   cloud/slurm-integration
+   cloud/gcp/index
+   cloud/cumulus/cumulus
 
 .. toctree::
    :maxdepth: 2
