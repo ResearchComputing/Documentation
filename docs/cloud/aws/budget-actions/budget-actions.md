@@ -43,8 +43,6 @@ To configure a budget action on an existing cost or usage budget, first follow t
 6.	 You may choose to add more alert thresholds for various actual amounts or various % of budgeted amounts. For instance, one alert for 80% and another for 100% of budgeted amount. Once configured, Choose Next.
 
 7.	  For **Attach actions - Optional**, choose **Add Action.**
-    ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/6.png)
-
     a.	 For **Select IAM role**, choose an IAM role to allow AWS Budgets to perform an action on your behalf. It is recommended to use ‘Budget-role’ which has a Managed policy: AWSBudgetsActions_RolePolicyForResourceAdministrationWithSSM attached to it. 
 
     This managed policy is focused on specific actions that AWS Budgets takes on your behalf when completing a specific action. This policy gives permission to control AWS resources. For example, starts and stops Amazon EC2 or Amazon RDS instances by running AWS Systems Manager (SSM) scripts.
@@ -58,8 +56,10 @@ To configure a budget action on an existing cost or usage budget, first follow t
     d.	For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose No, then you run the action manually on the **Alert details page**. For instructions, see Reviewing and approving your budget action.
 
     e.	For **How do you want to be alerted when this action is run, choose Use the same alert settings when you defined this threshold** or **Use different alert settings**. To use different alert settings, complete the **Notification preferences** specific to this action.
-        ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/7.png)
+    ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/7.png)
+    ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/6.png)
 
+   
 8.	Choose **Next**.
 
 9.	Review your budget settings, and then choose **Create budget**.
