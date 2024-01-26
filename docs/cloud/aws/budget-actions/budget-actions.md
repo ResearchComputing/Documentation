@@ -45,13 +45,9 @@ To configure a budget action on an existing cost or usage budget, first follow t
 7.	  For **Attach actions - Optional**, choose **Add Action.**
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/7.png)
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/6.png)
-    7a.	 For **Select IAM role**, choose an IAM role to allow AWS Budgets to perform an action on your behalf. It is recommended to use ‘Budget-role’ which has a Managed policy: AWSBudgetsActions_RolePolicyForResourceAdministrationWithSSM attached to it. 
+    7a.	 For **Select IAM role**, choose an IAM role to allow AWS Budgets to perform an action on your behalf. It is recommended to use ‘Budget-role’ which has a Managed policy: AWSBudgetsActions_RolePolicyForResourceAdministrationWithSSM attached to it. This managed policy is focused on specific actions that AWS Budgets takes on your behalf when completing a specific action. This policy gives permission to control AWS resources. For example, starts and stops Amazon EC2 or Amazon RDS instances by running AWS Systems Manager (SSM) scripts.
 
-    This managed policy is focused on specific actions that AWS Budgets takes on your behalf when completing a specific action. This policy gives permission to control AWS resources. For example, starts and stops Amazon EC2 or Amazon RDS instances by running AWS Systems Manager (SSM) scripts.
-
-    7b.	For **Which action type should be applied when the budget threshold has been exceeded**, select the action that you want AWS Budgets to take on your behalf.
-
-    You can choose from applying an IAM policy, attaching a service control policy (SCP), or targeting speciﬁc Amazon EC2 or Amazon RDS instances. You can apply multiple budget actions to a single alert. Only a management account can apply SCPs.
+    7b.	For **Which action type should be applied when the budget threshold has been exceeded**, select the action that you want AWS Budgets to take on your behalf.You can choose from applying an IAM policy, attaching a service control policy (SCP), or targeting speciﬁc Amazon EC2 or Amazon RDS instances. You can apply multiple budget actions to a single alert. Only a management account can apply SCPs.
 
     7c.	If you want to choose ‘Automate instance to stop for EC2 or RDS’, choose related fields to select ‘region’ and ‘instances’ that you intend to stop.
 
