@@ -1,6 +1,6 @@
 ## Configuring Azure budget action
 
-Cost control is a critical component to maximizing the value of your investment in the cloud. To configure a Budget and Budget actions in Azure, you'll complete the following actions by using the steps provided in each section.
+Cost control is a critical component to maximizing the value of your investment in the cloud. To configure a Budget and Budget actions in Azure, you'll complete the following actions by using the steps provided in each section. This document specifically outlines an example of how to setup a budget action to shutdown virtual machine when it meets the configured alert condition.
 
 These actions included in this tutorial allow you to:
 
