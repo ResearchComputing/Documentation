@@ -55,7 +55,7 @@ To configure a budget action on an existing cost or usage budget, first follow t
 * For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose No, then you run the action manually on the **Alert details page**. For instructions, see Reviewing and approving your budget action.
 
 * For **How do you want to be alerted when this action is run, choose Use the same alert settings when you defined this threshold** or **Use different alert settings**. To use different alert settings, complete the **Notification preferences** specific to this action.
-    ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/7.png)
+![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/7.png)
 
 8.	Choose **Next**.
 
