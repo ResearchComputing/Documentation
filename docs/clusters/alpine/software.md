@@ -110,7 +110,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Qt](https://doc.qt.io/) | 4.8.5, 5.6.0, 5.9.1, 5.15 (D) |Qt ("cute") is cross-platform software for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.| 
 | [R](https://www.r-project.org/) | 3.6.3,4.2.2 (D)|R is a programming language for statistical computing and graphics.| 
 | [rclone](https://rclone.org/) | 1.58.0 |Rclone is a command-line program to manage files on cloud storage.| 
-| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
+| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2, 4.0.1-cu11.8 (D) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
 | [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3, 5.3.0, 5.5.0 (D) |ROCm is an AMD software stack for GPU programming.| 
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
