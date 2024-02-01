@@ -9,6 +9,19 @@ The CUmulus service includes access to a Virtual Private Cloud (VPC) which provi
 
 which can be used to host virtual machines and volumes to host workloads.
 
+#### Announcing the retirement of CUmulus 
+
+One year from now, in January 2025, CU Research Computing’s free-to-use on-premise cloud service, CUmulus OpenStack, will reach the end of its warranty and will be retired.  Numerous alternatives to CUmulus are available, including  
+
+* the National Science Foundation’s Jetstream2 service, which is freely available to any US-based researcher through an ACCESS allocation. 
+* commercial cloud options such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform which CURC’s Cloud Foundations Service can facilitate access to;  
+* transferring instances to CS Cloud OpenStack, which is freely available to any CU faculty/staff or student (with a faculty sponsor); 
+* other hosted services managed by the CU Office of Information technology, including the OIT Container Platform, and virtual or physical servers through the OIT Systems Engineering Team. 
+
+If you presently have a project that uses CUmulus and you wish to continue using cloud computing beyond the end of 2024, please contact rc-help@colorado.edu to discuss alternatives and receive assistance porting your workflow from CUmulus to another service.  If you wish to discontinue your CUmulus project, please send a message to rc-help@colorado.edu. 
+
+ 
+
 #### CUmulus Quick Start
 
 1. Request a CUmulus application by contacting the RC helpdesk at <rc-help@colorado.edu>
