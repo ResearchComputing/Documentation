@@ -9,6 +9,22 @@ The CUmulus service includes access to a Virtual Private Cloud (VPC) which provi
 
 which can be used to host virtual machines and volumes to host workloads.
 
+---
+**&#9432;** **Announcing the retirement of CUmulus** 
+
+In January 2025 CUmulus will reach the end of its warranty and will be retired.  Numerous alternatives to CUmulus are available, including:  
+
+* the National Science Foundation’s [Jetstream2](https://jetstream-cloud.org) service, which is freely available to any US-based researcher through an ACCESS allocation. 
+* commercial cloud options such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform, which CURC’s [Cloud Foundations Service](https://www.colorado.edu/rc/cloudfoundations) can facilitate access to;  
+* transferring instances to CS Cloud OpenStack, which is freely available to any CU [faculty/staff](https://www.colorado.edu/cs/facultystaff-resources/computing-resources-faculty-staff) or [student](https://www.colorado.edu/cs/students/computing-resources-students) (with a faculty sponsor); 
+* other hosted services managed by the CU Office of Information technology, including the [OIT Container Platform](https://oit.colorado.edu/services/consulting-professional-services/container-platform), and [virtual or physical servers](https://oit.colorado.edu/services/consulting-professional-services/systems-engineering/pricing) through the [OIT Systems Engineering Team](https://oit.colorado.edu/services/consulting-professional-services/systems-engineering). 
+
+If you presently have a project that uses CUmulus and you wish to continue using cloud computing beyond the end of 2024, please contact <rc-help@colorado.edu> to discuss alternatives and receive assistance porting your workflow from CUmulus to another service.  Likewise, if you wish to discontinue your CUmulus project, please send a message to <rc-help@colorado.edu>. 
+
+Would-be new users may still request a CUmulus project per the “Quick Start” documentation below. Any new projects will be valid through the end of 2024, after which users would need to port workflows to alternative systems or discontinue them.
+
+---
+
 #### CUmulus Quick Start
 
 1. Request a CUmulus application by contacting the RC helpdesk at <rc-help@colorado.edu>
