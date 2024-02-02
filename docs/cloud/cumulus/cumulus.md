@@ -15,7 +15,7 @@ which can be used to host virtual machines and volumes to host workloads.
 In January 2025 CUmulus will reach the end of its warranty and will be retired.  Numerous alternatives to CUmulus are available, including:  
 
 * the National Science Foundation’s [Jetstream2](https://jetstream-cloud.org) service, which is freely available to any US-based researcher through an ACCESS allocation. 
-* commercial cloud options such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform which CURC’s [Cloud Foundations Service](https://www.colorado.edu/rc/cloudfoundations) can facilitate access to;  
+* commercial cloud options such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform, which CURC’s [Cloud Foundations Service](https://www.colorado.edu/rc/cloudfoundations) can facilitate access to;  
 * transferring instances to CS Cloud OpenStack, which is freely available to any CU [faculty/staff](https://www.colorado.edu/cs/facultystaff-resources/computing-resources-faculty-staff) or [student](https://www.colorado.edu/cs/students/computing-resources-students) (with a faculty sponsor); 
 * other hosted services managed by the CU Office of Information technology, including the [OIT Container Platform](https://oit.colorado.edu/services/consulting-professional-services/container-platform), and [virtual or physical servers](https://oit.colorado.edu/services/consulting-professional-services/systems-engineering/pricing) through the [OIT Systems Engineering Team](https://oit.colorado.edu/services/consulting-professional-services/systems-engineering). 
 
