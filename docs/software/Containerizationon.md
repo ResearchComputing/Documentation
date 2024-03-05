@@ -1,19 +1,12 @@
 # Containerization 
 
-When installing software, you may come across applications that have 
-complex chains of dependencies that are challenging to compile and 
-install. Some software may require very specific versions of libraries 
-that may not be available on Alpine or conflict with libraries needed for 
-other applications. You may also need to move between several workstations or HPC platforms, which often requires reinstalling your software on each  system. Containers are a good way to tackle all of these issues and more.
+When installing software, you may come across applications that have complex chains of dependencies that are challenging to compile and install. Some software may require very specific versions of libraries that may not be available on Alpine or conflict with libraries needed for other applications. You may also need to move between several workstations or HPC platforms, which often requires reinstalling your software on each  system. Containers are a good way to tackle all of these issues and more.
 
 ## Containerization Fundamentals
 
-Containers build upon an idea that has long existed within computing: 
-hardware can be emulated through software. **Virtualization** simulates some or all components of computation through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale and contained within a system's kernel.
+Containers build upon an idea that has long existed within computing: hardware can be emulated through software. **Virtualization** simulates some or all components of computation through a software application. Virtual machines use this concept to generate an entire operating system as an application on a host system. Containers follow the same idea, but at a much smaller scale and contained within a system's kernel.
 
-**Containers** are portable compartmentalizations of an operating system, 
-software, libraries, data, and/or workflows. Containers offer portability 
-and reproducibility. 
+**Containers** are portable compartmentalizations of an operating system, software, libraries, data, and/or workflows. Containers offer portability and reproducibility. 
 
 - Portability: containers can run on any system equipped with its specified container manager.
 - Reproducibility: because containers are instances of prebuilt isolated software, software will always execute the same every time.
@@ -22,13 +15,10 @@ Containers distinguish themselves through their low computational overhead and t
 
 ## Docker
 
-Docker is by far the most popular container engine, and  can be used on 
-any system where you have administrative privileges. Because of this need 
-for administrative privileges, Docker containers cannot be built or run directly on Research Computing resources. **To utilize a Docker container on Research Computing resources, please build a Singularity image using a Docker image as a base.**
+Docker is by far the most popular container engine, and  can be used on any system where you have administrative privileges. **Because of this need for administrative privileges, Docker containers cannot be built or run directly on Research Computing resources. To utilize a Docker container on Research Computing resources, please build a Singularity image using a Docker image as a base.**
 
-See the documentation on Singularity (below) if you wish to run a Docker 
-container on Alpine or Blanca. 
-<!--
+See the documentation on Apptainer (formerly Singularity) below if you wish to run a Docker container on Alpine or Blanca. 
+
 Docker can be divided into 4 primary components:
 
 - The Docker application
@@ -46,11 +36,11 @@ A **Docker container** is an ephemeral instance of a Docker image. Docker images
 
 ### Running a Docker container
 
-**Note:** Docker containers cannot be run with Docker on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using a software called Singularity.  See the documentation on Singularity (below) if you wish to run a Docker container on Alpine or Blanca. 
+**Note:** Docker containers cannot be run with Docker on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using a software called Apptainer.  See the documentation on Apptainer below if you wish to run a Docker container on Alpine or Blanca. 
 
 To run a Docker container on your laptop or other system on which you have Docker installed, simply type the command:
 
-```bash
+```
 docker run <docker-image> 
 ```
 
@@ -116,8 +106,6 @@ CMD		echo “Default Command”
 
 WORKDIR /target
 ```
-
-
 
 The `FROM` tag indicates the source image you wish to build upon.
 
@@ -191,22 +179,19 @@ We can then push our image with the command:
 docker push <your-docker-username>/<repository>
 ```
 -->
-## Singularity
+## Apptainer (formerly Singularity)
 
-Singularity is a containerization software package that does not require 
-users to have administrative privileges when running containers, and can 
-thus be safely used on Research Computing resources such as Alpine and 
-Blanca. Singularity is preinstalled on Research Computing resources, so all that is needed to run Singularity containers is to load the Singularity module on a compute node:
+Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, Apptainer is not currently installed on Blanca nodes, so you will need to load the Apptainer module to run Apptainer commands on Blanca:
 
 ```
-module load singularity/3.6.4
+module load apptainer/1.1.0
 ```
 
-Much like Docker, Singularity is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of Singularity images which can be run as ephemeral Singularity containers. Unlike Docker, however, Singularity does not manage images, containers, or volumes through a central application. Instead, Singularity generates saved image files that can either be mutable or immutable based on compression.
+Much like Docker, Apptainer is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of Singularity (SIF) images which can be run as ephemeral containers. Unlike Docker, however, Apptainer does not manage images, containers, or volumes through a central application. Instead, Apptainer generates saved image files that can either be mutable or immutable based on compression.
 
 ### Singularity Hub
 
-Singularity Hub is a container registry that allows users to pull images from a server and into a system with Singularity installed. Singularity Hub uses Github to host image recipes, builds images in the cloud from these recipes, and places the resulting images in the Singularity Hub registry. .
+Singularity Hub is a container registry that allows users to pull images from a server and into a system with Apptainer installed. Singularity Hub uses Github to host image recipes, builds images in the cloud from these recipes, and places the resulting images in the Singularity Hub registry. .
 
 **Note:** You do not need an account with Github if you only wish to pull Singularity images. 
 
@@ -216,14 +201,14 @@ Singularity Hub has a variety of useful prebuilt images for different software p
 
 **Note:** As of 2019, there are presently two Singularity container registries. The former is Singularity Hub, described above, which is managed by Stanford University and Lawrence Berkeley National Laboratory.  The latter is the Sylabs Singularity Container Library, which was created in late 2018 when Singularity was spun off into the private company Sylabs.  Below we provide documentation on how to pull images from either repository, and on how to build images on Singularity Hub via Github, and in the Sylabs Singularity Container Library using their “Remote Builder” functionality.
 
-### Pulling Singularity Images
+### Pulling Images
 
-Because we cannot build our own Singularity images on HPC systems, we must instead bring our images over from another location. Pulling images from public repositories is often the easiest solution to this problem. 
+Because we cannot build our own Singularity images on HPC systems, we must instead bring our images over from another location. Pulling images from public repositories is often the easiest method of using a containerized application. 
 
-We can use the `singularity pull` command to remotely download our chosen image file. The command requires the container registry we would like to use, followed by the repository’s name:
+We can use the `apptainer pull` command to remotely download our chosen image file. The command requires the container registry we would like to use, followed by the repository’s name:
 
 ```
-singularity pull <container-registry>://<repository-name>
+apptainer pull <container-registry>://<repository-name>
 ```
 
 A container registry is simply a server that manages uploaded containers. Some examples of these container registries include Docker Hub, Singularity Hub, and the Singularity Container Library.
@@ -231,104 +216,77 @@ A container registry is simply a server that manages uploaded containers. Some e
 Pull from Docker Hub:
 
 ```
-singularity pull docker://another:example
+apptainer pull docker://another:example
 ```
 
 Pull from Singularity Hub:
 
 ```
-singularity pull shub://example:repo
+apptainer pull shub://example:repo
 ```
 
-Pull from Singularity Container Library (Singularity version 3.0 and greater):
+Pull from Singularity Container Library:
 
 ```
-singularity pull library://example:repo
+apptainer pull library://example:repo
 ```
 
-Lastly we can rename the Singularity image file pulled from a repository by utilizing the `-n/--name` flag.
+### Running a SIF image as a container
+
+SIF images can be run as containers much like Docker images. Apptainer commands, however, follow a bit more nuanced syntax depending on what you’d like to do. After pulling your image from either Docker Hub or Singularity Hub, you can run the image by using the `apptainer run` command. Type:
 
 ```
-singularity pull -n ExampleContainer.sif shub://example:tag
+apptainer run <image-name>
 ```
 
-Example: 
-
-Pulling the Docker image of the latest tag of ubuntu can be done with the following command:
+Running a Singularity container will execute the container’s default program that is specified in container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
 
 ```
-singularity pull docker://ubuntu:latest
+apptainer exec <image-name> <program>
 ```
 
-### Running a Singularity image as a container
-
-Singularity images can be run as containers much like Docker images. Singularity commands, however, follow a bit more nuanced syntax depending on what you’d like to do. After pulling your image from either Docker Hub or Singularity Hub, you can run the image by using the `singularity run` command. Type:
+Much like specifying an application in Docker, this will allow a user to execute any program that is installed within your container. Unlike Docker however, you do not need to specify a shell application to shell into the container. We can simply use the `apptainer shell` command:
 
 ```
-singularity run <image-name>
-```
-
-Running a Singularity container will execute the container’s default program that is specified in container definition file. To execute specific programs in your container, we can use the `singularity exec` command, and then specify the program:
-
-```
-singularity exec <image-name> <program>
-```
-
-Much like specifying an application in Docker, this will allow a user to execute any program that is installed within your container. Unlike Docker however, you do not need to specify a shell application to shell into the container. We can simply use the `singularity shell` command:
-
-```
-singularity shell <image-name>
+apptainer shell <image-name>
 ```
 
 *Example:*
 
-Say we have a Singularity image that contains python 3.7 as the default software, and we want to run python from the container. We can do this with the command:
+Say we have an image that contains python 3.7 as the default software, and we want to run python from the container. We can do this with the command:
 
 ```
-singularity run python-cont.img
+apptainer run python-cont.img
 ```
 
 If the default application for the image is not python we could run python as follows:
 
 ```
-singularity exec python-cont.img python
+apptainer exec python-cont.img python
 ```
 
 ### File Access
 
-By default most user-owned files and directories are available to any 
-container that is run on Alpine and Blanca (this includes files in 
-`/home/$USER`, `/projects/$USER`, `/scratch/alpine/$USER` and `/rc_scratch/$USER`). 
-This 
-means that normally a user will not need to bind any folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized. 
+By default, only `/home/$USER` is available within any given container. This means that a user will need to bind any other required folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized (`$PWD`). 
 
-Sometimes, however, certain folders that are not bound by default may be 
-necessary to run your application. To bind any additional folders or files 
-to your Singularity container, you can utilize the `-B` flag in your 
-singularity run, exec, and shell commands. To bind an additional folder to your Singularity container, type:
+To bind any additional folders or files to your container, you can utilize the `-B` flag in your Apptainer run, exec, and shell commands:
 
-```bash
-singularity run -B /source/directory:/target/directory sample-image.img
+```
+apptainer run -B /source/directory:/target/directory sample-image.img
 ```
 
-Additionally you can bind directories by utilizing the `SINGULARITY_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
+Additionally you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
 
-```bash
-export SINGULARITY_BINDPATH=/source/directory1:/target/directory1,\
+```
+export APPTAINER_BINDPATH=/source/directory1:/target/directory1,\
 /source/directory2:/target/directory2
 ```
 
 Then run, execute, or shell into the container as normal.
 
-### Building a Singularity image
+### Building a SIF image
 
-**Important: You cannot build Singularity images directly on Alpine. If 
-you cannot build an image on your local machine you will need to build it 
-on Singularity Hub or Sylabs Remote Builder.**
-
-#### Singularity Build
-
-Just like Docker, Singularity allows a user to build images using a *definition file*. The file is saved with the name “Singularity” and contains instructions on how to prepare a Singularity image file. Just like a Dockerfile, this file has a variety of directives that allow for the customization of your image. A sample image would look something like this: 
+In the event that a container is unavailable for a given application, you may need to build your own container from scratch. **You cannot build Singularity images directly on Alpine. If you cannot build an image on your local machine you will need to build it on Singularity Hub or Sylabs Remote Builder.** Apptainer allows a user to build images using a *definition file*. Just like a Dockerfile, this file has a variety of directives that allow for the customization of your image. A sample image would look something like this: 
 
 ```
 Bootstrap: shub
@@ -346,32 +304,31 @@ From: ubuntu
 	echo “hello! I am a container!”
 ```
 
-Once you have written your Singularity recipe, you can build the application either remotely (see below) or locally with the singularity build command. To build a Singularity image locally, type:
+#### Apptainer Build
+
+Once you have written your Apptainer recipe, you can build the application either remotely (see below) or locally with the `apptainer build` command. To build an image locally, type:
 
 ```
-sudo singularity build <img-name.img> <recipe-name.def>
+apptainer build <img-name.img> <recipe-name.def>
 ```
-
-**Again, it is important to note that if you build an image locally as described above, you must build your image on a computer that you have administrative privileges on. If you do not have administrative privileges you will not be able to build the container in this manner.  Fortunately, there are other ways to build containers remotely, which are discussed next.**
 
 #### Building Images Remotely with Singularity Hub
 
-To  build images with Singularity Hub, you must first create a Github account at [https://github.com/join](https://github.com/join) if you do not have one already. After completing this step log into your github account and create an empty repository. 
+To build images with Singularity Hub, you must first create a Github account at [https://github.com/join](https://github.com/join) if you do not have one already. After completing this step log into your github account and create an empty repository. 
 
-After creating your repository, upload a Singularity definition file named “Singularity” to the repository. This is all we need to generate our Singularity image.
+After creating your repository, upload a definition file named “Singularity” to the repository. This is all we need to generate our image.
 
 Now, log into Singularity Hub with your Github credentials and navigate to “My Container Collections” and click the link “Add a Collection.” From here a list of Github repositories you contribute to will be listed. Simply click the button on the repository you wish to add to Singularity Hub.
 
-Your container should build automatically if you have a recipe file named “Singularity” within your repository. By default Singularity Hub will attempt to build any time something is pushed to the github repository. This can be changed in the settings tab in the containers build page.  If the build fails the first time, revise the Singularity recipe and the build will initiate again.
+Your container should build automatically if you have a recipe file named “Singularity” within your repository. By default, Singularity Hub will attempt to build any time something is pushed to the github repository. This can be changed in the settings tab in the containers build page.  If the build fails the first time, revise the recipe and the build will initiate again.
 
 More on building containers: <https://www.sylabs.io/guides/3.0/user-guide/build_a_container.html>
 
+<!--
+
 #### Building Images Remotely with the Singularity Remote Builder
 
-With Singularity 3.0, users have the ability to build containers remotely 
-through the remote builder. The Singularity remote builder can be utilized 
-directly on the command line from Alpine or Blanca without needing to 
-upload to a repository.  
+Users have the ability to build containers remotely through the remote builder. The Singularity remote builder can be utilized directly on the command line from Alpine or Blanca without needing to upload to a repository.  
 
 To begin using Singularity Remote Builder, navigate to your home directory and run the commands:
 
@@ -380,13 +337,7 @@ mkdir .singularity
 cd .singularity 
 ```
 
-Now on your local machine, navigate to <https://cloud.sylabs.io> and log 
-into Sylabs with your Google, Github, Gitlab, or Microsoft account. Once 
-you have logged into Sylabs, select 'Access Tokens' from the dropdown menu 
-under your username or go to <https://cloud.sylabs.io./tokens>. Enter a 
-name for your token in the label field and then click “Create Access 
-Token”. This will generate a large string that will be read by Singularity on Alpine or 
-Blanca.
+Now on your local machine, navigate to <https://cloud.sylabs.io> and log into Sylabs with your Google, Github, Gitlab, or Microsoft account. Once you have logged into Sylabs, select 'Access Tokens' from the dropdown menu under your username or go to <https://cloud.sylabs.io./tokens>. Enter a name for your token in the label field and then click “Create Access Token”. This will generate a large string that will be read by Singularity on Alpine or Blanca.
 
 Now on Alpine or Blanca run the command:
 
@@ -394,46 +345,29 @@ Now on Alpine or Blanca run the command:
 echo “<your-token>” > ~/.singularity/sylabs-token
 ```
 
-After this you can now build containers through the Sylabs Remote Builder 
-on Alpine or Blanca. Simply load the Singularity module into your 
-environment and run 
-the command:
+After this you can now build containers through the Sylabs Remote Builder on Alpine or Blanca. Simply run the command:
 
 ```
-singularity build --remote <desired-image-name> <your-recipe>
+apptainer build --remote <desired-image-name> <your-recipe>
 ```
+-->
 
-### Building MPI-enabled Singularity images
-MPI-enabled Singularity containers can be deployed on Alpine with the 
-caveat that the MPI software within the container stays consistent with 
-MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
+### Building MPI-enabled images
+MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container stays consistent with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
 
-Here we provide an example of using a gcc compiler with OpenMPI. Alpine 
-uses an Infiniband interconnect. In order to use a Singularity 
-container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be 
-installed both inside and outside of the Singularity container. More 
-specifically, the _same_ version of OpenMPI needs to be installed inside 
-and outside (at least very similar, you can sometimes get away with two 
-different minor versions, e.g. 2.1 and 2.0). 
+Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
 
-CURC can provide users with a Singularity recipe that ensures the 
-appropriate version of OpenMPI is installed in the image. This recipe can 
-be used as a template to build your own MPI-enabled container images for Alpine.
+CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
 
-Once you’ve built the container with one of the methods outlined above, 
-you can place it on Alpine and run it on a compute node. The following is 
-an example of running a gcc/OpenMPI container with Singularity on Alpine. 
-The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
+Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is 
+an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
 
 ```
 ml gcc/11.2.0
 ml openmpi/4.1.1
-ml singularity/3.6.4
 
-mpirun -np 4 singularity exec openmpi.sif mpi_hello_world"
+mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
 ```
 
-Note that it is also possible to build intel/IMPI containers for use on 
-Alpine. If you would like assistance building MPI-enabled containers 
-contact <rc-help@colorado.edu>.
+Note that it is also possible to build intel/IMPI containers for use on Alpine. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
 
