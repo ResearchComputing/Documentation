@@ -15,13 +15,208 @@ Containers distinguish themselves through their low computational overhead and t
 
 ## Container engines
 
-[Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run on high-performance computing (HPC) platforms like Alpine because users do not have administrative privileges._
+[Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run directly on high-performance computing (HPC) platforms like Alpine because users do not have administrative privileges._
 
 [Apptainer](https://apptainer.org/) (formerly Singularity) is a container engine that does not require administrative priveleges to execute. Therefore, it is safe to run on HPC platforms like Alpine or Blanca.   
 
-Because Docker images are widely available for many software packages, a common use case on Alpine and Blanca is to use Apptainer to run Docker images.  Therefore, the following documentation first provides an overview of Docker, and then Apptainer.  If you are already familiar with Docker, or if you just want to understand the basics of running containers with Apptainer on Alpine and Blanca, you can skip to the [Apptainer Overview](#apptainer).
+## Apptainer
+
+Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, Apptainer is not currently installed on Blanca nodes. It is recommended that users running containers on Blanca load the newest Singularity module, rather than Apptainer: 
+
+```
+module spider singularity/3.7.4
+```
+
+**Note that users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation.** Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer. 
+
+Much like Docker, Apptainer is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of compressed images in the `.sif` format which can be run as ephemeral containers. Unlike Docker, however, Apptainer does not manage images, containers, or volumes through a central application. Instead, Apptainer generates saved image files that can either be mutable or immutable based on compression.
+
+### Pulling Images
+
+In the case that there is an existing container for an application, we can simply load the images from another location. Pulling images from public repositories is often the easiest method of using a containerized application. 
+
+We can use the `apptainer pull` command to remotely download our chosen image file and convert it to the Apptainer `.sif` format. The command requires the container registry we would like to use, followed by the repository’s name:
+
+```
+apptainer pull <localname>.sif <container-registry>://<repository-name>
+```
+
+Where `<localname>.sif` is the name you choose for the Apptainer image. 
+
+A container registry is simply a server that manages uploaded containers. Docker Hub is the most widely used register. To pull a container image from Docker Hub:
+
+```
+apptainer pull docker://another:example
+```
+
+### Running a SIF image as a container
+
+SIF images can be run as containers much like Docker images. Apptainer commands, however, follow a bit more nuanced syntax depending on what you’d like to do. After pulling your image from Docker Hub you can run the image by using the `apptainer run` command. Type:
+
+```
+apptainer run <image-name>
+```
+
+Running a container will execute the default program that the container developer will have specified in container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
+
+```
+apptainer exec <image-name> <program>
+```
+
+Much like specifying an application in Docker, this will allow a user to execute any program that is installed within your container. Unlike Docker however, you do not need to specify a shell application to shell into the container. We can simply use the `apptainer shell` command:
+
+```
+apptainer shell <image-name>
+```
+
+*Example:*
+
+Say we have an image that contains python 3.7 as the default software, and we want to run python from the container. We can do this with the command:
+
+```
+apptainer run python-cont.sif
+```
+
+If the default application for the image is not python we could run python as follows:
+
+```
+apptainer exec python-cont.sif python
+```
+
+#### Existing Images available on CURC Systems
+
+As of now, there are a number of pre-built containers available for use on Alpine. These images are available at `/curc/sw/containers`, and can be deployed by users directly. Available containers are as follows: 
+
+| Application | Image Name | Source |
+| `Alphafold/2.1.0` | alphafold_2.1.0_cuda.sif | https://hub.docker.com/r/dtrahan41/alphafold |
+| `Homebrew/4.1.20` | brew_4.1.20.sif | https://github.com/Homebrew/brew |
+| `cGENIE.muffin/1.0` | cgenie_muffin.sif | Built by CU Research Computing |
+| `cp2k/9.1` | cp2k_9.1.sif | https://hub.docker.com/r/cp2k/cp2k |
+| `cp2k/8.2` | cp2k_amdhub_8.2.sif | https://hub.docker.com/r/amdih/cp2k |
+| `BART/0.8.00` | debian_bart_v0.8.00.sif | Built by CU Research Computing |
+| `R/4.2.2` | debian_r_4_2_2.sif | https://github.com/rocker-org/rocker |
+| `EGSnrc/2023` | egsnrc_2021.sif | Built by CU Research Computing |
+| `Elmer/9.0` | elmer_alpine_20221014.sif | Built by [CSC](https://www.csc.fi/) |
+| `FEniCS/1.0` | fenics_stnb.sif | https://hub.docker.com/r/stnb/fenics |
+| `GMTSAR/6.2` | gmtsar_v6.2.sif | Built by CU Research Computing |
+| `GROMACS/2022.2` | gromacs_2022.2.sif | https://hub.docker.com/r/gromacs/gromacs |
+| `iSALE-Dellen/2022.2` | iSALE-dellen.sif | Built by CU Research Computing |
+| `ISCE2/2.6.0` | isce2_2.6.0.sif | Built by CU Research Computing |
+| `LROSE/1.0` | lrose.sif | Built by CU Research Computing |
+| `Mach3/1.0` | mach3_build.sif | REVIEW |
+| `MintPy/1.3.3` | mintpy_1.3.3.sif | Built by CU Research Computing |
+| `MSBAS/v3` | msbas_v3.sif | Built by CU Research Computing |
+| `NCL/6.3.0` | ncl_6.3.0.sif | https://hub.docker.com/r/dtcenter/ncl |
+| `Octopus/12.1` | octopus12.1.sif | https://hub.docker.com/r/fangohr/octopus |
+| `OpenFOAM/v2306` (Ubuntu 20.04) | open_foam_ubuntu_20.04.sif | Built by CU Research Computing |
+| `OpenFOAM/v2306` (Ubuntu 22.04) | open_foam_ubuntu_22.04.sif | Built by CU Research Computing |
+| `OpenMPI/4.1` | openmpi_ib_alpine_base.sif | Built by CU Research Computing |
+| `OpenPose/1.7.0` | openpose_cuda11.2_cudann8.sif | Built by CU Research Computing |
+| `OpenSees/3.4.0` | opensees_3.4.0_ubuntu_20.04.sif | REVIEW |
+| `QUESO/0.57.0` | queso_v0.57.1.sif | Built by CU Research Computing |
+| `RFDiffusion/v2` | rfdiffusion_v2.sif | Built by CU Research Computing |
+| `RStudio/4.0.0` | rstudio_4.0.0.sif | https://github.com/rocker-org/rocker-versioned2 |
+| `RStudio Server/4.2.2` | open_ondemand/rstudio-server-4.2.2.sif | https://hub.docker.com/r/rocker/rstudiorocker-versioned2 | 
+| `scuff-em/1.0` | scuff-em-jfeist.sif | https://hub.docker.com/r/jfeist/scuff-em |
+| `SETSM/4.3.12` | setsm_gnu_willis_4.3.12.sif | [Built by CU Research Computing](https://hub.docker.com/r/monaghaa/setsm_willis) |
+| `Seurat/4.1.0` | seurat_4.1.0.sif | https://hub.docker.com/r/satijalab/seurat |
+| `SimVascular/WCB-2018` | simvascular_wcb2018_alpine.sif | Built by CU Research Computing |
+| `VAPOR/3.9.1` | vapor_3.9.1_ubuntu22.sif | Built by CU Research Computing |
+
+### File Access
+
+By default, only `/home/$USER` is available within any given container. This means that a user will need to bind any other required folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized (`$PWD`). 
+
+To bind any additional folders or files to your container, you can utilize the `-B` flag in your Apptainer run, exec, and shell commands:
+
+```
+apptainer run -B /source/directory:/target/directory sample-image.sif
+```
+
+Additionally you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
+
+```
+export APPTAINER_BINDPATH=/source/directory1:/target/directory1,\
+/source/directory2:/target/directory2
+```
+
+Then run, execute, or shell into the container as normal.
+
+### Building a SIF image
+
+In the event that a container is unavailable for a given application, you may need to build your own container from scratch. Apptainer allows a user to build images using a *definition file*. This file has a variety of directives that allow for the customization of your image. A sample image would look something like this: 
+
+```
+Bootstrap: docker
+From: ubuntu:20.04
+
+%help
+	I am help text!
+
+%setup		
+	apt-get update
+	apt-get install nano
+	apt-get install gcc 
+
+%runscript
+	echo “hello! I am a container!”
+```
+
+#### Apptainer Build
+
+Once you have written your Apptainer definition file, you can build the application locally with the `apptainer build` command, as follows:
+
+```
+apptainer build <localname>.sif <recipe-name>.def
+```
+
+### Building MPI-enabled images
+MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
+
+Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
+
+CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
+
+Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
+
+```
+ml gcc/11.2.0
+ml openmpi/4.1.1
+
+mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
+```
+### Useful Apptainer Features
+
+When using/constructing containers using Apptainer, there are a number of tools that users can deploy to ensure desired functionality. Features of high-importance are as follows: 
+
+* **Fakeroot**: Fakeroot is a feature which allows a non-root user to obtain nearly-root-level administrative permissions **only within the requisite container**. This affords users the ability to perform high-level operations within a container, such as: 
+
+<ol>
+  <li>Package installation using `sudo`</li>
+  <li>Changing user/group identity</li>
+  <li>Permissions changes</li>
+</ol> 
+
+Note that any changes made within the container with Fakeroot are not reflected outside of the container. Users can deploy fakeroot by running any of `shell`, `exec`, `run`, or `build` with the `--fakeroot` flag. For example:
+```
+apptainer build --fakeroot test.sif test.def
+```
+
+* **Fix-Perms**: Performing a container operation with the fix-perms flag will ensure that the user has read, write, and execute permissions for all container content from Open Container Initiative and Docker sources. Users can deploy fix-perms by running `build` with the `--fix-perms` flag. For example:
+```
+apptainer build --fix-perms test.sif test.def
+```
+
+* **Sandbox**: Building containers can be a time-consuming process of trial-and-error. For this reason, you may want to perform operations within the container and have those operations reflected in your container image. For this purpose, you can use the sandbox option. Users can deploy a sandbox by running `shell` with the `--sandbox` flag. For example: 
+```
+apptainer build --sandbox test.sif
+```
+
+From there, you can install software and dependencies directly within the container and have those changes reflected in the container image. 
 
 ## Docker
+
+**Note:** Docker containers cannot be run *with Docker* on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using Apptainer.  See the documentation on Apptainer above if you wish to run a Docker container on Alpine or Blanca. 
 
 Docker can be divided into 4 primary components:
 
@@ -39,8 +234,6 @@ A **Docker image** is a saved instance of all the software, tools, and workflows
 A **Docker container** is an ephemeral instance of a Docker image. Docker images are mutable, but because they are killed on exit, and do not actually save any changes made to the container.
 
 ### Running a Docker container
-
-**Note:** Docker containers cannot be run with Docker on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using a software called Apptainer.  See the documentation on Apptainer below if you wish to run a Docker container on Alpine or Blanca. 
 
 To run a Docker container on your laptop or other system on which you have Docker installed, simply type the command:
 
@@ -183,130 +376,9 @@ We can then push our image with the command:
 docker push <your-docker-username>/<repository>
 ```
 -->
-## Apptainer
-
-Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, Apptainer is not currently installed on Blanca nodes, so you will need to load the Apptainer module to run Apptainer commands on Blanca:
-
-```
-module load apptainer/1.1.0
-```
-
-Much like Docker, Apptainer is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of compressed images in the `.sif` format which can be run as ephemeral containers. Unlike Docker, however, Apptainer does not manage images, containers, or volumes through a central application. Instead, Apptainer generates saved image files that can either be mutable or immutable based on compression.
-
-### Pulling Images
-
-Because we cannot build our own Apptainer images on HPC systems, we must instead bring our images over from another location. Pulling images from public repositories is often the easiest method of using a containerized application. 
-
-We can use the `apptainer pull` command to remotely download our chosen image file and convert it to the Apptainer `.sif` format. The command requires the container registry we would like to use, followed by the repository’s name:
-
-```
-apptainer pull <localname>.sif <container-registry>://<repository-name>
-```
-
-Where `<localname>.sif` is the name you choose for the Apptainer image. 
-
-A container registry is simply a server that manages uploaded containers. Docker Hub is the most widely used register. To pull a container image from Docker Hub:
-
-```
-apptainer pull docker://another:example
-```
-
-### Running a SIF image as a container
-
-SIF images can be run as containers much like Docker images. Apptainer commands, however, follow a bit more nuanced syntax depending on what you’d like to do. After pulling your image from Docker Hub you can run the image by using the `apptainer run` command. Type:
-
-```
-apptainer run <image-name>
-```
-
-Running a container will execute the default program that the container developer will have specified in container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
-
-```
-apptainer exec <image-name> <program>
-```
-
-Much like specifying an application in Docker, this will allow a user to execute any program that is installed within your container. Unlike Docker however, you do not need to specify a shell application to shell into the container. We can simply use the `apptainer shell` command:
-
-```
-apptainer shell <image-name>
-```
-
-*Example:*
-
-Say we have an image that contains python 3.7 as the default software, and we want to run python from the container. We can do this with the command:
-
-```
-apptainer run python-cont.sif
-```
-
-If the default application for the image is not python we could run python as follows:
-
-```
-apptainer exec python-cont.sif python
-```
-
-### File Access
-
-By default, only `/home/$USER` is available within any given container. This means that a user will need to bind any other required folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized (`$PWD`). 
-
-To bind any additional folders or files to your container, you can utilize the `-B` flag in your Apptainer run, exec, and shell commands:
-
-```
-apptainer run -B /source/directory:/target/directory sample-image.sif
-```
-
-Additionally you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
-
-```
-export APPTAINER_BINDPATH=/source/directory1:/target/directory1,\
-/source/directory2:/target/directory2
-```
-
-Then run, execute, or shell into the container as normal.
-
-### Building a SIF image
-
-In the event that a container is unavailable for a given application, you may need to build your own container from scratch. Apptainer allows a user to build images using a *definition file*. Just like a Dockerfile, this file has a variety of directives that allow for the customization of your image. A sample image would look something like this: 
-
-```
-Bootstrap: docker
-From: ubuntu:20.04
-
-%help
-	I am help text!
-
-%setup		
-	apt-get update
-	apt-get install nano
-	apt-get install gcc 
-
-%runscript
-	echo “hello! I am a container!”
-```
-
-#### Apptainer Build
-
-Once you have written your Apptainer definition file, you can build the application locally with the `apptainer build` command, as follows:
-
-```
-apptainer build <localname>.sif <recipe-name>.def
-```
-
-### Building MPI-enabled images
-MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
-
-Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
-
-CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
-
-Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
-
-```
-ml gcc/11.2.0
-ml openmpi/4.1.1
-
-mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
-```
 
 Note that it is also possible to build intel/IMPI containers for use on Alpine. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
 
+## Requesting a Container Installation
+
+Users can request that a container be installed on our system by filling out the [Software Request Form](https://www.colorado.edu/rc/userservices/software-request). Please note that all software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources. Additionally, please review the [Alpine Software Policy](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html#alpine-software-policy). 
