@@ -88,6 +88,7 @@ apptainer exec python-cont.sif python
 As of now, there are a number of pre-built containers available for use on Alpine. These images are available at `/curc/sw/containers`, and can be deployed by users directly. Available containers are as follows: 
 
 | Application | Image Name | Source |
+| :-------------------------- | :------------------------------------------------ | :------------------------------------------------------------------ |
 | `Alphafold/2.1.0` | alphafold_2.1.0_cuda.sif | https://hub.docker.com/r/dtrahan41/alphafold |
 | `Homebrew/4.1.20` | brew_4.1.20.sif | https://github.com/Homebrew/brew |
 | `cGENIE.muffin/1.0` | cgenie_muffin.sif | Built by CU Research Computing |
