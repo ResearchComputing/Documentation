@@ -165,7 +165,7 @@ From: ubuntu:20.04
 
 #### Apptainer Build
 
-Once you have written your Apptainer definition file, you can build the application locally with the `apptainer build` command, as follows:
+Once you have written your Apptainer definition file, you can build the application locally on **Alpine** with the `apptainer build` command, as follows:
 
 ```
 apptainer build <localname>.sif <recipe-name>.def
