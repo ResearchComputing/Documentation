@@ -213,7 +213,7 @@ apptainer build --fix-perms test.sif test.def
 apptainer build --sandbox test.sif
 ```
 
-From there, you can install software and dependencies directly within the container and have those changes reflected in the container image. 
+From there, you can install software and dependencies directly within the sandbox and have those changes reflected in the sandbox using `apptainer shell --writable <my.sif>`. **Important: a sandbox cannot be converted into a definition file. This means there is no record of what you installed in the sandbox. It is highly suggested that you add actions completed in the sandbox (e.g. software installs) to a definition file as you modify the sandbox. This will ensure that you can reproduce the sandbox at a later time.**
 
 ## Docker
 
