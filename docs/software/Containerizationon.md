@@ -57,7 +57,7 @@ SIF images can be run as containers much like Docker images. Apptainer commands,
 apptainer run <image-name>
 ```
 
-Running a container will execute the default program that the container developer will have specified in container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
+Running a container will execute the default program that the container developer will have specified in the container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
 
 ```
 apptainer exec <image-name> <program>
