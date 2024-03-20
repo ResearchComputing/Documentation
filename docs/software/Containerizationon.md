@@ -21,7 +21,7 @@ Containers distinguish themselves through their low computational overhead and t
 
 ## Apptainer
 
-Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, Apptainer is not currently installed on Blanca nodes. It is recommended that users running containers on Blanca load the newest Singularity module, rather than Apptainer: 
+Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, **Apptainer is not currently installed on Blanca nodes**. It is recommended that users running containers on Blanca load the newest Singularity module, rather than Apptainer: 
 
 ```
 module load singularity/3.7.4
