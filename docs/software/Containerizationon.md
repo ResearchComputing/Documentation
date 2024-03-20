@@ -71,7 +71,7 @@ apptainer shell <image-name>
 
 *Example:*
 
-Say we have an image that contains python 3.7 as the default software, and we want to run python from the container. We can do this with the command:
+Say we have an image that contains Python 3.7 as the default software, and we want to run Python from the container. We can do this with the command:
 
 ```
 apptainer run python-cont.sif
