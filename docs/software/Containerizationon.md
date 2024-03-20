@@ -203,7 +203,7 @@ Note that any changes made within the container with Fakeroot are not reflected 
 apptainer build --fakeroot test.sif test.def
 ```
 
-* **Fix-Perms**: Performing a container operation with the fix-perms flag will ensure that the user has read, write, and execute permissions for all container content from Open Container Initiative and Docker sources. Users can deploy fix-perms by running `build` with the `--fix-perms` flag. For example:
+* **Fix-Perms**: Performing a container operation with the fix-perms flag will ensure that the user has read, write, and execute permissions for all container content. This flag can often be needed for software installs (e.g. `apt install <program>`). For example, if you receive a error stating permission issues, this command often resolves those errors. Users can deploy fix-perms by running `build` with the `--fix-perms` flag. For example:
 ```
 apptainer build --fix-perms test.sif test.def
 ```
