@@ -84,48 +84,7 @@ If the default application for the image is not Python we could run Python as fo
 ```
 apptainer exec python-cont.sif python
 ```
-<!--
-#### Existing Images available on CURC Systems
 
-As of now, there are a number of pre-built containers available for use on Alpine. These images are available at `/curc/sw/containers`, and can be deployed by users directly. Available containers are as follows: 
-
-| Application | Image Name | Source |
-| :-------------------------- | :------------------------------------------------ | :------------------------------------------------------------------ |
-| `Alphafold/2.1.0` | alphafold_2.1.0_cuda.sif | https://hub.docker.com/r/dtrahan41/alphafold |
-| `Homebrew/4.1.20` | brew_4.1.20.sif | https://github.com/Homebrew/brew |
-| `cGENIE.muffin/1.0` | cgenie_muffin.sif | Built by CU Research Computing |
-| `cp2k/9.1` | cp2k_9.1.sif | https://hub.docker.com/r/cp2k/cp2k |
-| `cp2k/8.2` | cp2k_amdhub_8.2.sif | https://hub.docker.com/r/amdih/cp2k |
-| `BART/0.8.00` | debian_bart_v0.8.00.sif | Built by CU Research Computing |
-| `R/4.2.2` | debian_r_4_2_2.sif | https://github.com/rocker-org/rocker |
-| `EGSnrc/2023` | egsnrc_2021.sif | Built by CU Research Computing |
-| `Elmer/9.0` | elmer_alpine_20221014.sif | Built by [CSC](https://www.csc.fi/) |
-| `FEniCS/1.0` | fenics_stnb.sif | https://hub.docker.com/r/stnb/fenics |
-| `GMTSAR/6.2` | gmtsar_v6.2.sif | Built by CU Research Computing |
-| `GROMACS/2022.2` | gromacs_2022.2.sif | https://hub.docker.com/r/gromacs/gromacs |
-| `iSALE-Dellen/2022.2` | iSALE-dellen.sif | Built by CU Research Computing |
-| `ISCE2/2.6.0` | isce2_2.6.0.sif | Built by CU Research Computing |
-| `LROSE/1.0` | lrose.sif | Built by CU Research Computing |
-| `Mach3/1.0` | mach3_build.sif | REVIEW |
-| `MintPy/1.3.3` | mintpy_1.3.3.sif | Built by CU Research Computing |
-| `MSBAS/v3` | msbas_v3.sif | Built by CU Research Computing |
-| `NCL/6.3.0` | ncl_6.3.0.sif | https://hub.docker.com/r/dtcenter/ncl |
-| `Octopus/12.1` | octopus12.1.sif | https://hub.docker.com/r/fangohr/octopus |
-| `OpenFOAM/v2306` (Ubuntu 20.04) | open_foam_ubuntu_20.04.sif | Built by CU Research Computing |
-| `OpenFOAM/v2306` (Ubuntu 22.04) | open_foam_ubuntu_22.04.sif | Built by CU Research Computing |
-| `OpenMPI/4.1` | openmpi_ib_alpine_base.sif | Built by CU Research Computing |
-| `OpenPose/1.7.0` | openpose_cuda11.2_cudann8.sif | Built by CU Research Computing |
-| `OpenSees/3.4.0` | opensees_3.4.0_ubuntu_20.04.sif | REVIEW |
-| `QUESO/0.57.0` | queso_v0.57.1.sif | Built by CU Research Computing |
-| `RFDiffusion/v2` | rfdiffusion_v2.sif | Built by CU Research Computing |
-| `RStudio/4.0.0` | rstudio_4.0.0.sif | https://github.com/rocker-org/rocker-versioned2 |
-| `RStudio Server/4.2.2` | open_ondemand/rstudio-server-4.2.2.sif | https://hub.docker.com/r/rocker/rstudiorocker-versioned2 | 
-| `scuff-em/1.0` | scuff-em-jfeist.sif | https://hub.docker.com/r/jfeist/scuff-em |
-| `SETSM/4.3.12` | setsm_gnu_willis_4.3.12.sif | [Built by CU Research Computing](https://hub.docker.com/r/monaghaa/setsm_willis) |
-| `Seurat/4.1.0` | seurat_4.1.0.sif | https://hub.docker.com/r/satijalab/seurat |
-| `SimVascular/WCB-2018` | simvascular_wcb2018_alpine.sif | Built by CU Research Computing |
-| `VAPOR/3.9.1` | vapor_3.9.1_ubuntu22.sif | Built by CU Research Computing |
--->
 ### File Access
 
 By default, only `/home/$USER` is available within any given container. This means that a user will need to bind any other required folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized (`$PWD`). 
@@ -386,7 +345,6 @@ We can then push our image with the command:
 ```
 docker push <your-docker-username>/<repository>
 ```
--->
 
 Note that it is also possible to build intel/IMPI containers for use on Alpine. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
 
