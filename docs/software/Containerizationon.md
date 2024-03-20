@@ -77,7 +77,7 @@ Say we have an image that contains Python 3.7 as the default software, and we wa
 apptainer run python-cont.sif
 ```
 
-If the default application for the image is not python we could run python as follows:
+If the default application for the image is not Python we could run Python as follows:
 
 ```
 apptainer exec python-cont.sif python
