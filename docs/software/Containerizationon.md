@@ -171,6 +171,8 @@ Once you have written your Apptainer definition file, you can build the applicat
 apptainer build <localname>.sif <recipe-name>.def
 ```
 
+Although the above build command can be sufficient, for more complex container builds, it may be necessary to add the `--fix-perms` and `--fakeroot` options to `apptainer build`. Please see the "Useful Apptainer Features" section below.
+
 ### Building MPI-enabled images
 MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
 
