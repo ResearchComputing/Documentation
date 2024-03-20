@@ -178,26 +178,8 @@ Once you have written your Apptainer definition file, you can build the applicat
 apptainer build <localname>.sif <recipe-name>.def
 ```
 
-<<<<<<< HEAD
-=======
 Although the above build command can be sufficient, for more complex container builds, it may be necessary to add the `--fix-perms` and `--fakeroot` options to `apptainer build`. Please see the "Useful Apptainer Features" section below.
 
-### Building MPI-enabled images
-MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
-
-Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
-
-CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
-
-Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
-
-```
-ml gcc/11.2.0
-ml openmpi/4.1.1
-
-mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
-```
->>>>>>> 00288b8914db6ef913b05c1750f28173afc84a64
 ### Useful Apptainer Features
 
 When using/constructing containers using Apptainer, there are a number of tools that users can deploy to ensure desired functionality. Features of high-importance are as follows: 
