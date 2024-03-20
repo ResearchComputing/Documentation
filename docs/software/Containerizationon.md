@@ -386,7 +386,6 @@ We can then push our image with the command:
 ```
 docker push <your-docker-username>/<repository>
 ```
--->
 
 Note that it is also possible to build intel/IMPI containers for use on Alpine. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
 
