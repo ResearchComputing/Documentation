@@ -17,14 +17,14 @@ Containers distinguish themselves through their low computational overhead and t
 
 [Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run directly on high-performance computing (HPC) platforms like Alpine because users do not have administrative privileges._ CURC documentation on Docker can be found below. 
 
-[Apptainer](https://apptainer.org/) (formerly Singularity) is a container engine that does not require administrative priveleges to execute. Therefore, it is safe to run on HPC platforms like Alpine or Blanca.   
+[Apptainer](https://apptainer.org/) (formerly Singularity) is a container engine that does not require administrative privileges to execute. Therefore, it is safe to run on HPC platforms like Alpine or Blanca.   
 
 ## Apptainer
 
-Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, Apptainer is not currently installed on Blanca nodes. It is recommended that users running containers on Blanca load the newest Singularity module, rather than Apptainer: 
+Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, **Apptainer is not currently installed on Blanca nodes**. It is recommended that users running containers on Blanca load the newest Singularity module, rather than Apptainer: 
 
 ```
-module spider singularity/3.7.4
+module load singularity/3.7.4
 ```
 
 **Note that users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation.** Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer. 
@@ -57,7 +57,7 @@ SIF images can be run as containers much like Docker images. Apptainer commands,
 apptainer run <image-name>
 ```
 
-Running a container will execute the default program that the container developer will have specified in container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
+Running a container will execute the default program that the container developer will have specified in the container definition file. To execute specific programs in your container, we can use the `apptainer exec` command, and then specify the program:
 
 ```
 apptainer exec <image-name> <program>
@@ -73,13 +73,13 @@ Note that both `apptainer run` and `apptainer shell` will create an interactive 
 
 *Example:*
 
-Say we have an image that contains python 3.7 as the default software, and we want to run python from the container. We can do this with the command:
+Say we have an image that contains Python 3.7 as the default software, and we want to run Python from the container. We can do this with the command:
 
 ```
 apptainer run python-cont.sif
 ```
 
-If the default application for the image is not python we could run python as follows:
+If the default application for the image is not Python we could run Python as follows:
 
 ```
 apptainer exec python-cont.sif python
@@ -172,12 +172,32 @@ From: ubuntu:20.04
 
 #### Apptainer Build
 
-Once you have written your Apptainer definition file, you can build the application locally with the `apptainer build` command, as follows:
+Once you have written your Apptainer definition file, you can build the application locally on **Alpine** with the `apptainer build` command, as follows:
 
 ```
 apptainer build <localname>.sif <recipe-name>.def
 ```
 
+<<<<<<< HEAD
+=======
+Although the above build command can be sufficient, for more complex container builds, it may be necessary to add the `--fix-perms` and `--fakeroot` options to `apptainer build`. Please see the "Useful Apptainer Features" section below.
+
+### Building MPI-enabled images
+MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
+
+Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
+
+CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
+
+Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
+
+```
+ml gcc/11.2.0
+ml openmpi/4.1.1
+
+mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
+```
+>>>>>>> 00288b8914db6ef913b05c1750f28173afc84a64
 ### Useful Apptainer Features
 
 When using/constructing containers using Apptainer, there are a number of tools that users can deploy to ensure desired functionality. Features of high-importance are as follows: 
@@ -195,17 +215,17 @@ Note that any changes made within the container with Fakeroot are not reflected 
 apptainer build --fakeroot test.sif test.def
 ```
 
-* **Fix-Perms**: Performing a container operation with the fix-perms flag will ensure that the user has read, write, and execute permissions for all container content from Open Container Initiative and Docker sources. Users can deploy fix-perms by running `build` with the `--fix-perms` flag. For example:
+* **Fix-Perms**: Performing a container operation with the fix-perms flag will ensure that the user has read, write, and execute permissions for all container content. This flag can often be needed for software installs (e.g. `apt install <program>`). For example, if you receive a error stating permission issues, this command often resolves those errors. Users can deploy fix-perms by running `build` with the `--fix-perms` flag. For example:
 ```
 apptainer build --fix-perms test.sif test.def
 ```
 
-* **Sandbox**: Building containers can be a time-consuming process of trial-and-error. For this reason, you may want to perform operations within the container and have those operations reflected in your container image. For this purpose, you can use the sandbox option. Users can deploy a sandbox by running `shell` with the `--sandbox` flag. For example: 
+* **Sandbox**: Building containers can be a time-consuming process if building from the definition file. This is because you may have build errors that need to be resolved, which requires that you rebuild the container multiple times. For this reason, you may want to perform iterative installs within the container first to ensure compatibility, then transfer these commands to a definition file. For this purpose, you can use the sandbox option. Users can construct a sandbox by using the `--sandbox` flag. For example: 
 ```
 apptainer build --sandbox test.sif
 ```
 
-From there, you can install software and dependencies directly within the container and have those changes reflected in the container image. 
+From there, you can install software and dependencies directly within the sandbox and have those changes reflected in the sandbox using `apptainer shell --writable <my.sif>`. **Important: a sandbox cannot be converted into a definition file. This means there is no record of what you installed in the sandbox. It is highly suggested that you add actions completed in the sandbox (e.g. software installs) to a definition file as you modify the sandbox. This will ensure that you can reproduce the sandbox at a later time.**
 
 ### Building MPI-enabled images
 MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
