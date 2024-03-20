@@ -84,6 +84,7 @@ If the default application for the image is not Python we could run Python as fo
 ```
 apptainer exec python-cont.sif python
 ```
+
 <!--
 #### Existing Images available on CURC Systems
 
@@ -126,6 +127,7 @@ As of now, there are a number of pre-built containers available for use on Alpin
 | `SimVascular/WCB-2018` | simvascular_wcb2018_alpine.sif | Built by CU Research Computing |
 | `VAPOR/3.9.1` | vapor_3.9.1_ubuntu22.sif | Built by CU Research Computing |
 -->
+
 ### File Access
 
 By default, only `/home/$USER` is available within any given container. This means that a user will need to bind any other required folders to the container’s directory tree. Furthermore, a container will also have access to the files in the same folder where it was initialized (`$PWD`). 
