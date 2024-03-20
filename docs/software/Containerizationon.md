@@ -15,7 +15,7 @@ Containers distinguish themselves through their low computational overhead and t
 
 ## Container engines
 
-[Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run directly on high-performance computing (HPC) platforms like Alpine because users do not have administrative privileges._
+[Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run directly on high-performance computing (HPC) platforms like Alpine because users do not have administrative privileges._ CURC documentation on Docker can be found below. 
 
 [Apptainer](https://apptainer.org/) (formerly Singularity) is a container engine that does not require administrative priveleges to execute. Therefore, it is safe to run on HPC platforms like Alpine or Blanca.   
 
@@ -68,6 +68,8 @@ Much like specifying an application in Docker, this will allow a user to execute
 ```
 apptainer shell <image-name>
 ```
+
+Note that both `apptainer run` and `apptainer shell` will create an interactive terminal within the container, whereas `apptainer exec` will not. Rather, `apptainer exec` will execute the provided command and return the output. 
 
 *Example:*
 
@@ -134,14 +136,19 @@ To bind any additional folders or files to your container, you can utilize the `
 apptainer run -B /source/directory:/target/directory sample-image.sif
 ```
 
-Additionally you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
+Alternatively, users wishing to bind their entire CURC filesystem to a container do not necessarily need to specify the target directory in the container when using `run`, `shell`, and `exec` commands. Rather, you can run the container as follows: 
+```
+apptainer run -B /projects/$USER,/pl/active,/scratch/alpine/$USER sample-image.sif
+```
+
+Additionally, you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
 
 ```
 export APPTAINER_BINDPATH=/source/directory1:/target/directory1,\
 /source/directory2:/target/directory2
 ```
 
-Then run, execute, or shell into the container as normal.
+Then run, execute, or shell into the container as normal. 
 
 ### Building a SIF image
 
@@ -171,21 +178,6 @@ Once you have written your Apptainer definition file, you can build the applicat
 apptainer build <localname>.sif <recipe-name>.def
 ```
 
-### Building MPI-enabled images
-MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
-
-Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
-
-CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
-
-Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
-
-```
-ml gcc/11.2.0
-ml openmpi/4.1.1
-
-mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
-```
 ### Useful Apptainer Features
 
 When using/constructing containers using Apptainer, there are a number of tools that users can deploy to ensure desired functionality. Features of high-importance are as follows: 
@@ -214,6 +206,22 @@ apptainer build --sandbox test.sif
 ```
 
 From there, you can install software and dependencies directly within the container and have those changes reflected in the container image. 
+
+### Building MPI-enabled images
+MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
+
+Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
+
+CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
+
+Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
+
+```
+ml gcc/11.2.0
+ml openmpi/4.1.1
+
+mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
+```
 
 ## Docker
 
