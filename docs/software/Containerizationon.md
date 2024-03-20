@@ -208,7 +208,7 @@ apptainer build --fakeroot test.sif test.def
 apptainer build --fix-perms test.sif test.def
 ```
 
-* **Sandbox**: Building containers can be a time-consuming process of trial-and-error. For this reason, you may want to perform operations within the container and have those operations reflected in your container image. For this purpose, you can use the sandbox option. Users can deploy a sandbox by running `shell` with the `--sandbox` flag. For example: 
+* **Sandbox**: Building containers can be a time-consuming process if building from the definition file. This is because you may have build errors that need to be resolved, which requires that you rebuild the container multiple times. For this reason, you may want to perform iterative installs within the container first to ensure compatibility, then transfer these commands to a definition file. For this purpose, you can use the sandbox option. Users can construct a sandbox by using the `--sandbox` flag. For example: 
 ```
 apptainer build --sandbox test.sif
 ```
