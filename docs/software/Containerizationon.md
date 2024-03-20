@@ -363,7 +363,7 @@ Docker volumes are almost entirely managed by Docker so you will not be able to 
 
 ### Docker Hub
 
-Docker Hub is Docker’s solution for cloud storage of Docker images. Docker Hub is a repository system that allows users of docker to upload or download docker images from public or private repositories. Unlimited public repositories are available for free while users are limited to 1 private repository on free accounts. To pull an image from Docker Hub, simply type:
+Docker Hub is Docker’s solution for cloud storage of Docker images. Docker Hub is a repository system that allows users of docker to upload or download docker images from public or private repositories. Unlimited public repositories are available for free while users are limited to 1 private repository on free accounts. To pull an image from Docker Hub, use the command:
 
 ```
 docker pull <image-name>
