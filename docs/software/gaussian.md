@@ -19,15 +19,13 @@ are needed when running on Alpine.
 To set up your shell environment to use G16, load a Gaussian software
 module (e.g. `module load gaussian/16_avx2`). Nearly all necessary
 environment variables are configured for you via the module. You do
-not need to source g16.login or g16.profile if running single-node jobs, but if you are running multi-node parallel jobs you will need to add `source $g16root/g16/bsd/g16.login` (tcsh shell) or `source $g16root/g16/bsd/g16.profile` (bash shell) to your job script after you load the Gaussian module.
-
+not need to source g16.login or g16.profile if running single-node jobs.
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
 to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.html)
 (`/scratch/alpine/$USER` on Alpine or `rc_scratch/$USER` on Blanca.) If 
-`GAUSS_SCRDIR` is not set, then the
-scratch files will be created in whatever directory G16 is run from;
-if this directory is in `/projects` or `/home`, then your job's
-performance will be dramatically reduced.
+`GAUSS_SCRDIR` is not set, then the scratch files will be created in 
+whatever directory G16 is run from; if this directory is in `/projects` 
+or `/home`, then your job's performance will be dramatically reduced.
 
 
 ### Running G16
@@ -88,71 +86,13 @@ date
 ```
 
 
-#### Multi-node (Linda) parallelism
+#### Multi-node parallelism
 
-In order to run on more than 64 cores in the "amilan" partition on
-Alpine, your job will need to span multiple nodes using the Linda
-network parallel communication model. We advise using one Linda worker
-per node, with multiple SMP cores per node. For example, your g16
-flags might include
-
-```bash
--p=64 -s=ssh -w=c3cpu-a2-u1-2-opa,c3cpu-a2-u1-1-opa,c3cpu-a2-u1-4-opa
-```
-
-which tells G16 to use 64 cores on three Alpine nodes, and to
-set up the connections between nodes using ssh.
-
-Since you don't know in advance what nodes your job will be assigned
-to, you will have to determine the arguments for '-w' at runtime via
-commands in your Slurm batch script. See the batch script example
-below.
-
-Not all G16 computations scale efficiently beyond a single node!
-According to the G16 documentation: "HF, CIS=Direct, and DFT
-calculations are Linda parallel, including energies, optimizations,
-and frequencies. TDDFT energies and gradients and MP2 energies and
-gradients are also Linda parallel. Portions of MP2 frequency and CCSD
-calculations are Linda parallel." As with SMP parallelism, testing the
-scaling of your Linda parallel computation is very important.
-
-__Linda Parallel__
-
-```bash
-#!/bin/bash
-
-#SBATCH --job-name=g16-test
-#SBATCH --partition=amilan
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=64
-#SBATCH --time=00:50:00
-#SBATCH --output=g16-test.%j.out
-#SBATCH --constraint=ib
-
-module load gaussian/16_avx2
-source $g16root/g16/bsd/g16.profile
-
-for n in `scontrol show hostname | sort -u`; do
- echo ${n}-opa
-done | paste -s -d, > tsnet.nodes.$SLURM_JOBID
-
-# Always specify a scratch directory on a fast storage space (not /home or /projects!)
-export GAUSS_SCRDIR=/scratch/alpine/$USER/$SLURM_JOBID
-
-# the next line prevents OpenMP parallelism from conflicting with Gaussian's internal parallelization
-export OMP_NUM_THREADS=1
-
-# the next line increases the verbosity of Linda output messages
-export GAUSS_LFLAGS="-v"
-
-mkdir $GAUSS_SCRDIR  # only needed if using /scratch/alpine
-date  # put a date stamp in the output file for timing/scaling testing
-g16 -m=20gb -p=64 -w=`cat tsnet.nodes.$SLURM_JOBID` my_input.com
-date
-rm tsnet.nodes.$SLURM_JOBID
-```
-
+Currently, multi-node parallelism is not possible on Alpine. Parallelism is 
+only supported through SMP parallelism. If you are experiencing issues running 
+your Gaussian simulations due to memory constraints, it may be possible to run 
+your code on Alpine's `amem` nodes. These nodes provide a larger amount of memory 
+than `amilan` nodes. For more information on `amem` nodes, please see our [Partitions documentation](../clusters/alpine/alpine-hardware.html#partitions). 
 
 #### G16 on Alpine NVIDIA GPUs
 
@@ -166,8 +106,7 @@ G16 can not use the AMD MI100 GPUs in Alpine's "ami100" partition.
 
 ### Sample input file
 
-Here's an input file that can be used for both SMP and Linda parallel
-testing:
+Here's an input file that can be used for SMP parallel testing:
 
 ```
 #P b3lyp/6-31g* test stable=(opt,qconly)
