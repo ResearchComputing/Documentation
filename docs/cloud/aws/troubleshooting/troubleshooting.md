@@ -44,7 +44,7 @@ This error is not an AWS nor Terraform bug. This error is seen when AWS Customer
 
 When creating EKS cluster using terraform module from terraform registry, you must attach the "Customer_Admin_PermissionBoundary" Permission Boundary as an argument twice. First in the EKS module and second in the EKS Managed node groups submodule.
 
-
+```
 module "eks" {
   iam_role_permissions_boundary = "arn:aws:iam:<AWS account number>:policy/Customer_Admin_PermissionBoundary"
 
@@ -55,7 +55,7 @@ eks_managed_node_groups = {
     }
 }
 }
-
+```
 ---
 
 
@@ -75,11 +75,11 @@ This error is not an AWS nor Terraform bug. This error is seen when AWS Customer
 
 When creating EKS cluster using terraform resource from terraform registry, you must attach the "Customer_Admin_PermissionBoundary" Permission Boundary as an argument in AWS IAM role
 
-
+```
 resource "aws_iam_role" "example" {
 
   permissions_boundary = "arn:aws:iam::<AWS account number>:policy/Customer_Admin_PermissionBoundary"
 }
-
+```
 
 ---
