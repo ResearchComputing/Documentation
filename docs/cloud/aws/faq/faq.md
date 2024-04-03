@@ -51,6 +51,3 @@ Send an email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and provide
 **Answer:**
 Click on the drop down on the top right corner of the console page to expand your account information.
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/faq/images/AcctNum.png)
-
----
-

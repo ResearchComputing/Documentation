@@ -13,7 +13,7 @@ Projects are managed through the CUmulus Web Portal (Horizon) which is hosted at
 3) Select "Instances"
 4) Select "Launch Instance" (to create new instance)
 
-![](cumulus/navigate_to_instances.png)
+![](./navigate_to_instances.png)
 
 To create an instance you must first specify the resources you wish to allocate from your project.
 
@@ -28,7 +28,7 @@ Click on `Launch Instance` button on the top bar from the "Instances" page (step
 * Fill out the instance _name_ and _description_
 	> _Availability zone_ and _count_ can be left as default. This value is set to the availability zone given by the cloud provider (for example, us-west or apac-south).
 
-![](cumulus/instance_details.png)
+![](./instance_details.png)
 
 > _**Note:**_ if launching Windows Server, the hostname will be truncated if greater than 15 characters in the OS
 * click `Next` when done to go to the ___Source___ screen.
@@ -41,7 +41,7 @@ Select boot source.
 * Choose to have your storage volume deleted on Instance Deletion
   * If you select _No_ be aware “zombie” volumes will remain when the instance is deleted (you will need to remove them manually later!)
 
-![](cumulus/instance_source.png)
+![](./instance_source.png)
 
 * click `Next` when done to go to the ___Flavor___ screen.
 
@@ -54,7 +54,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 > Note: If you don't see a list of flavors contact rc-help@colorado.edu; instances are added based on your project needs.
 
-![](cumulus/instance_flavor.png)
+![](./instance_flavor.png)
 
 * click `Next` when done to go to the ___Networks___ screen.
 
@@ -64,7 +64,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
   * Ports provide extra communication channels to your instances. 
   * You can select ports instead of networks or a mix of both.
 
-![](cumulus/instance_networks.png)
+![](./instance_networks.png)
 
 * click `Next` when done to go to the ___Security Groups___ screen.
 
@@ -74,7 +74,7 @@ Security Groups act as a virtual firewall for your instance to control inbound a
 
 * Security groups act at the instance level and can be changed after instance creation.
 
-![](cumulus/instance_security_groups.png)
+![](./instance_security_groups.png)
 
 * click `Next` when done to go to the ___Key Pair___ screen.
 
@@ -95,14 +95,14 @@ Security Groups act as a virtual firewall for your instance to control inbound a
 >
 > Here, you can specify the full path/name of the keypair files and even set a extra passwords. We'll press enter twice for the `no passphrase` option. Our new keypairs have been created at `/home/username/.ssh/` and are called `id_ed25519`  and `id_ed25519.pub.` The public key (.pub) can be transferred to other remote servers (this is the key we will import to our CUmulus instance), but the private key (no suffix) should never leave the host machine. 
 
-![](cumulus/instance_keypair.png)
+![](./instance_keypair.png)
 
 * click `Next` when done to go to the ___Configuration___ screen.
 
 ##### Step 7: Configuration, Server Group, Scheduler Hints, and Metadata
 * For the remaining screens -- _Configuration_, _Server Group_, _Scheduler Hints_, and _Metadata_ -- leave these as defaults, as they are extra, optional configuration for the instances.
 
-![](cumulus/instance_config.png)
+![](./instance_config.png)
 
 ##### Step 9: Launch the instance
 Your instance will take a few minutes to finish provisioning. Once it's finished, your instance will be available from the "Instance" sub-tab.
@@ -112,12 +112,12 @@ Your instance will take a few minutes to finish provisioning. Once it's finished
 * You can now associate a Floating IP to enable access to the instance from outside of the CU network.
   * On the right hand side of the newly created instance, choose `Associate Floating IP` under the `Actions` dropdown
   
-![](cumulus/instance_ip1.png)
+![](./instance_ip1.png)
 
 * Now, select from available IP addresses if needed (e.g., if you'll be adding a web portal to your instance)
 * The _Select port to be associated_ option should already be pre-populated with the internal IP of your new instance. Click associate.
 
-![](cumulus/instance_ip2.png)
+![](./instance_ip2.png)
 
 Associate the IP Address to your instance
 
@@ -156,7 +156,7 @@ $ passwd root
 1. All Floating IP's have a default A record. This can optionally be used in place of an IP address.
 2. Perform a reverse lookup:
 
-	![](cumulus/reverse_lookup.png)
+	![](./reverse_lookup.png)
 
 3. If a specific record is desired, contact NEO via <oithelp@colorado.edu>.
 
@@ -164,9 +164,9 @@ $ passwd root
 #### Troubleshooting
 * If no available addresses are allocated to the project, you can allocate one by clicking the "+" button:
 
-![](cumulus/allocate_floating_ip.png)
+![](./allocate_floating_ip.png)
 
 * Depending on which network was selected in Step 4, allocate either an public/internet floating IP, (scinet-external) or a campus internal floating IP. (scinet-internal)
 
-![](cumulus/int_vs_ext_ip.png)
+![](./int_vs_ext_ip.png)
 
