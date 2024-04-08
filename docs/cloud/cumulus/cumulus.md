@@ -31,9 +31,9 @@ Would-be new users may still request a CUmulus project per the “Quick Start”
 2. Once your application has been accepted, manage your project at the [CUmulus Web Portal](https://cumulus.rc.colorado.edu/auth/login/?next=/).
 	- Documentation on [managing your CUmulus project](./project-management)
 3. Get started with your Cloud Instances by following our documentation on:
-	- [Creating a cloud instance](../../tutorials/cumulus1.html)
-	- [Integrating CUmulus with CURC HPC resources](../../tutorials/cumulus3.html)
-4. Visit all of our [CUmulus specific tutorials](../../tutorials/index.html) on the Research Computing GitHub for step-by-step examples.
+	- [Creating a cloud instance](../../tutorials/cumulus1)
+	- [Integrating CUmulus with CURC HPC resources](../../tutorials/cumulus3)
+4. Visit all of our [CUmulus specific tutorials](../../tutorials/index) on the Research Computing GitHub for step-by-step examples.
 
 #### Features
 - Virtual machine creation
@@ -83,7 +83,7 @@ CU Research Computing manages the resources and address systems-level issues as 
 
 ###  Requesting Access to CUmulus
 
-The application process for CUmulus requires users to submit an proposal for your use case, which can be requested by emailing [rc-help@colorado.edu](rc-help@colorado.edu). In this proposal you will:
+The application process for CUmulus requires users to submit an proposal for your use case, which can be requested by emailing <rc-help@colorado.edu>. In this proposal you will:
 - Describe your CUmulus workflow
 - Describe why this workflow is appropriate for CUmulus and cannot be accommodated by other CURC resources (Alpine or Blanca)
 - Estimate the resources you require (operating system, CPU cores, disk space, memory)
