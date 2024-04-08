@@ -6,7 +6,7 @@ CURC Open OnDemand is a browser based, integrated, single access point for all o
 
 ### Getting started with CURC Open OnDemand
  
-To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](https://curc.readthedocs.io/en/latest/access/logging-in.html) to get started. If you are an RMACC member, please follow our provided instructions on accessing [Alpine resources for RMACC members](../access/rmacc.html).
+To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](../access/logging-in) to get started. If you are an RMACC member, please follow our provided instructions on accessing [Alpine resources for RMACC members](../access/rmacc).
 
 ![](OnDemand/login_page.png)
 
@@ -29,7 +29,7 @@ The _File_ menu allows you to view and operate on files in different file spaces
 Selecting one of the file spaces will open a separate browser window which will allow you to navigate the space in a graphical setting similar to a file browser on a personal computer. From here you can download, upload, create, delete, and open files.
 
 > **_NOTE:_** _Please use 
-[Globus](https://curc.readthedocs.io/en/latest/compute/data-transfer.html#globus-transfers) 
+[Globus](../compute/data-transfer.html#globus-transfers) 
 to transfer files to and from `/scratch/alpine` or `/rc_scratch`. Additionally, Globus should be used if you have more than 1 GB of data to transfer. <span style="background-color: #FFF36D">Open OnDemand is not designed to handle large file transfers.</span>_
 
 ![](OnDemand/home_file.png)
@@ -118,7 +118,7 @@ The _Interactive Applications_ menu contains options to launch certain applicati
 
 **_Notes:_** 
 * When the session starts, the file navigator panel displays CURC root. You can navigate to one of your CURC spaces by selecting `home` or `projects` from the file panel on the left. Alternatively, you can go to "File" then "Open Path" and enter your path in the field (e.g. `/projects/<your username>`).
-* For more information on running Jupyter sessions, [check out RC’s page on Jupyter](./jupyterhub.html).
+* For more information on running Jupyter sessions, [check out RC’s page on Jupyter](./jupyterhub).
 * Closing the window will not terminate the job, you can use the “My Interactive Sessions” tab to view all open interactive sessions and terminate them.
 * One can access a single GPU via the `Jupyter Session (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](#gpu-access-for-jupyter-sessions) section below. 
 
@@ -197,11 +197,11 @@ Now that we have our environment correctly created, we can launch a Jupyter sess
 4. To shut down an RStudio server, go to the "File" menu at the top and choose "Quit session...". If you have made changes to the workspace, then you will be asked if you would like to save them to `~/.RData`, this is not necessary, but can be helpful. Once completed, a prompt will notify you that your R session has ended and will give you the option to restart a server, if desired. However, it is important to note that quitting the session will not cancel the job you are running. Additionally, closing the window will not terminate the job. To terminate the job, you can use the “My Interactive Sessions” tab in Open OnDemand to terminate running sessions.
 
 **_Important Notes:_** 
-* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa. You will need to (re-)install the packages you need when using the equivalent module. This is due to the fact that RStudio is run from an Ubuntu [container](../software/Containerizationon.html).
+* We have designed the RStudio app in Open OnDemand such that it employs versions of R that match the versions of R that are also available in the CURC module stack. This is done to facilitate moving between using RStudio for interactive work, and running larger R workflows as batch jobs on Alpine or Blanca. Due to system constraints, packages you install in a given version of R in RStudio will not be available if you load the equivalent version of the R module, and vice versa. You will need to (re-)install the packages you need when using the equivalent module. This is due to the fact that RStudio is run from an Ubuntu [container](../software/Containerizationon).
 
 ###### Installing dependencies for RStudio (currently available only on Alpine)
 
-As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/Containerizationon.html). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html) that is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
+As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/Containerizationon). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html) that is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
 ```
 install.packages("BiocManager")
 library(BiocManager)
@@ -315,19 +315,19 @@ To help you use the `Custom` menu for interactive applications, below is a table
 
 | Input | Description |
 | --- | ----------- |
-| Cluster | Possible options are [Alpine](https://curc.readthedocs.io/en/latest/clusters/alpine/index.html) and [Blanca](https://curc.readthedocs.io/en/latest/clusters/blanca/blanca.html).  |
+| Cluster | Possible options are [Alpine](../clusters/alpine/index) and [Blanca](../clusters/blanca/blanca).  |
 | Account | The account you would like to use. If you do not have a project allocation, then CU Boulder users specify `ucb-general`; CSU users specify `csu-general`; RMACC users specify `rmacc-general`; and AMC users provide `amc-general`. If you have a project allocation you can use this allocation e.g. `ucbXXX_asc1`. |
-| Partition | Specifies a particular node type to use. For example, you can provide `ahub` for quicker access or utilize another [partition on Alpine](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#partitions).  Blanca users may use their `blanca-<groupname>` partition.  |
+| Partition | Specifies a particular node type to use. For example, you can provide `ahub` for quicker access or utilize another [partition on Alpine](../clusters/alpine/alpine-hardware.html#partitions).  Blanca users may use their `blanca-<groupname>` partition.  |
 | Number of cores<sup>1</sup> | The number of physical CPU cores for the job. Jobs started on the OnDemand interactive apps may use up to 32 cores.  All jobs are limited to a single compute node. |
-| Memory [GB]<sup>1</sup> | The total amount of memory allocated for the Job. Memory in GB should be roughly the number of cores multiplied by 3.8 for standard Alpine `amilan` nodes. For specifications on memory for each Alpine partition, see [Alpine hardware](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html). |
-| QoS Name | Quality of Service (QoS) constrains or modifies certain job characteristics. On most Alpine partitions you can specify `normal` for jobs of up to 24 hours and `long` for jobs of up to 7 days in duration. For more information see [Alpine QoS](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#quality-of-service-qos). Blanca users should specify their `blanca-<groupname>` for QoS. |
+| Memory [GB]<sup>1</sup> | The total amount of memory allocated for the Job. Memory in GB should be roughly the number of cores multiplied by 3.8 for standard Alpine `amilan` nodes. For specifications on memory for each Alpine partition, see [Alpine hardware](../clusters/alpine/alpine-hardware). |
+| QoS Name | Quality of Service (QoS) constrains or modifies certain job characteristics. On most Alpine partitions you can specify `normal` for jobs of up to 24 hours and `long` for jobs of up to 7 days in duration. For more information see [Alpine QoS](../clusters/alpine/alpine-hardware.html#quality-of-service-qos). Blanca users should specify their `blanca-<groupname>` for QoS. |
 | Time<sup>1</sup> | The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
 
 <sup>1</sup>Please note that jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the number of cores, memory and duration.
 
 ###### GPU access for Jupyter Sessions
 
-When launching custom Jupyter sessions, one can access a single GPU on Alpine by specifying the correct partition and QoS name. However, only the testing partitions are valid on Jupyter sessions and they are limited to a run time of one hour. For GPU jobs that require more resources or more time, please submit a [batch job](../running-jobs/batch-jobs.html) using the standard `ami100` or `aa100` partitions. The table below provides the inputs needed to start a Jupyter session with a GPU:
+When launching custom Jupyter sessions, one can access a single GPU on Alpine by specifying the correct partition and QoS name. However, only the testing partitions are valid on Jupyter sessions and they are limited to a run time of one hour. For GPU jobs that require more resources or more time, please submit a [batch job](../running-jobs/batch-jobs) using the standard `ami100` or `aa100` partitions. The table below provides the inputs needed to start a Jupyter session with a GPU:
 
 | Partition | QoS Name | Type of GPU |
 | --- | ----------- | --------------
