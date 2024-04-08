@@ -66,7 +66,7 @@ _Note: You must have adminstrative priveleges on your laptop or lab server in or
 
 ### Configure rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](../../compute/data-transfer.html)
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](../../compute/data-transfer)
 
 
 In this example we use rclone to create an sftp endpoint with the following settings:
@@ -81,7 +81,7 @@ The rclone application is interactive and will prompt you for all of the above i
 
 ```$  rclone config```     
 
-**Windows:** From the Command Prompt, navagate to rclone file location and run:
+**Windows:** From the Command Prompt, navigate to rclone file location and run:
 ```$ .\rclone.exe config```
 
 ```
