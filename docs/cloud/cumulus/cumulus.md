@@ -29,7 +29,7 @@ Would-be new users may still request a CUmulus project per the “Quick Start”
 
 1. Request a CUmulus application by contacting the RC helpdesk at <rc-help@colorado.edu>
 2. Once your application has been accepted, manage your project at the [CUmulus Web Portal](https://cumulus.rc.colorado.edu/auth/login/?next=/).
-	- Documentation on [managing your CUmulus project](./project-management.html)
+	- Documentation on [managing your CUmulus project](./project-management)
 3. Get started with your Cloud Instances by following our documentation on:
 	- [Creating a cloud instance](../../tutorials/cumulus1.html)
 	- [Integrating CUmulus with CURC HPC resources](../../tutorials/cumulus3.html)
