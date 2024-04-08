@@ -20,7 +20,7 @@ All jobs are run through a batch/queue system.  Interactive jobs on compute node
 
 Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: `module load slurm/blanca`.
 
-More details about how to use Slurm can be found [here](../running-jobs/running-apps-with-jobs.html).
+More details about how to use Slurm can be found [here](../../running-jobs/running-apps-with-jobs).
 
 ### QoS
 
@@ -192,7 +192,7 @@ Note that the interactive job won't start until the resources that it needs are 
 
 ### Blanca Preemptable QOS
 
-Each partner group has its own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. To facilitate equitable access to preemptable resources, at any given time each user is limited to consuming a maximum of 2000 cores (roughly 25% of all resoures on Blanca) across all of their preemptable jobs. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
+Each partner group has its own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. To facilitate equitable access to preemptable resources, at any given time each user is limited to consuming a maximum of 2000 cores (roughly 25% of all resources on Blanca) across all of their preemptable jobs. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
 #### Usage
 To specify the preemptable QoS in a job script:
@@ -300,7 +300,7 @@ The ‘blanca’ QoS: Note that as of 1 March, 2018, the “preemptable” qos r
 
  #### Are backup and restore options available?
 
- We do not offer backups as part of the Blanca service. Users wishing to use and store their own files with an option for backup are encouraged to purchase space on the RC maintained [PetaLibrary](../../storage/petalibrary/index.html). The SSDs on each node are reserved for temporary data storage during jobs (data on SSDs is deleted at the end of each job); therefore, backup is not offered for SSDs.  
+ We do not offer backups as part of the Blanca service. Users wishing to use and store their own files with an option for backup are encouraged to purchase space on the RC maintained [PetaLibrary](../../storage/petalibrary/index). The SSDs on each node are reserved for temporary data storage during jobs (data on SSDs is deleted at the end of each job); therefore, backup is not offered for SSDs.  
 
  #### Can you clarify how priority works? 
 
