@@ -53,7 +53,7 @@ Open `hello_world_mpi.cpp` and begin by including the C standard
 library `<stdio.h>` and the MPI library `<mpi.h>` , and by
 constructing the main function of the C++ code:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -90,7 +90,7 @@ of the parallel processes and the number of processes running in the
 cluster respectively. We will also implement the `MPI_Init` function
 which will initialize the mpi communicator:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -108,7 +108,7 @@ print the information out for the user. We will use the functions
 `MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the count of
 processes and the rank of a process respectively:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -127,7 +127,7 @@ int main(int argc, char** argv){
 
 Lastly let's close the environment using `MPI_Finalize()`:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -238,7 +238,7 @@ are handled at certain points. `MPI_Barrier` is a process lock that
 holds each process at a certain line of code until all processes have
 reached that line in code. `MPI_Barrier` can be called as such:
 
-```c++
+```
 MPI_Barrier(MPI_Comm comm);
 ```
 
@@ -247,7 +247,7 @@ that it prints out each process in order of thread id. Starting with
 our "Hello World" code from the previous section, begin by nesting our
 print statement in a loop:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -270,7 +270,7 @@ int main(int argc, char** argv){
 Next, let’s implement a conditional statement in the loop to print
 only when the loop iteration matches the process rank.
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -294,7 +294,7 @@ int main(int argc, char** argv){
 Lastly, implement the barrier function in the loop. This will ensure
 that all processes are synchronized when passing through the loop.
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -337,7 +337,7 @@ processes.
 Message passing in MPI is handled by the corresponding functions and
 their arguments:
 
-```c++
+```
 MPI_Send(void* message, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm, communicator);
 MPI_Recv(void* data, int count, MPI_Datatype datatype, int from, int tag, MPI_Comm comm, MPI_Status* status);
 ```
@@ -345,7 +345,7 @@ MPI_Recv(void* data, int count, MPI_Datatype datatype, int from, int tag, MPI_Co
 The arguments are as follows:
 
 *MPI_Send*
-```c++
+```
 void* message;          //Address for the message you are sending.
 int count;              //Number of elements being sent through the address.
 MPI_Datatype datatype;  //The MPI specific data type being passed through the address.
@@ -355,7 +355,7 @@ MPI_Comm comm;          //The MPI Communicator handle.
 ```
 
 *MPI_Recv*
-```c++
+```
 void* message;          //Address to the message you are receiving.
 int count;              //Number of elements being sent through the address.
 MPI_Datatype datatype;  //The MPI specific data type being passed through the address.
@@ -374,7 +374,7 @@ one process to another.  We will use our “Hello World” program as a
 starting point for this program. Let’s begin by creating a variable to
 store some information.
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -395,7 +395,7 @@ process to call `MPI_Send()` and `MPI_Recv()` functions. In this
 example we want process 1 to send out a message containing the integer
 42 to process 2.
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 int main(int argc, char** argv){
@@ -419,7 +419,7 @@ int main(int argc, char** argv){
 
 Lastly we must call `MPI_Send()` and `MPI_Recv()`. We will pass the following parameters into the
 functions:
-```c++
+```
 MPI_Send(
     &message_Item,      //Address of the message we are sending.
     1,                  //Number of elements handled by that address.
@@ -442,7 +442,7 @@ MPI_Recv(
 
 Lets implement these functions in our code:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -486,7 +486,7 @@ process. These operators can eliminate the need for a surprising
 amount of boilerplate code via the use of two functions:
 
 __MPI_Scatter__:
-```c++
+```
 void* send_Var;         //Address of the variable that will be scattered.
 int send_Count;         //Number of elements that will be scattered.
 MPI_Datatype send_Type; //MPI Datatype of the data that is scattered.
@@ -498,7 +498,7 @@ MPI_Comm comm;          //The MPI_Communicator.
 ```
 
 __MPI_Gather__:
-```c++
+```
 void* send_Var;         //Address of the variable that will be sent.
 int send_Count;         //Number of data elements that will sent .
 MPI_Datatype send_Type; //MPI Datatype of the data that is sent.
@@ -524,7 +524,7 @@ of an array to four different processes. We will start with a basic
 C++ main function along with variables to store process rank and
 number of processes.
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -539,7 +539,7 @@ Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
 , `MPI_Comm_rank` , and
 
 `MPI_Finaize`:
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -559,7 +559,7 @@ Next let’s generate an array named `distro_Array` to store four
 numbers. We will also create a variable called `scattered_Data` that
 we shall scatter the data to.
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 
@@ -582,7 +582,7 @@ Now we will begin the use of group operators. We will use the operator
 scatter to distribute `distro_Array` into `scattered_Data` . Let’s
 take a look at the parameters we will use in this function:
 
-```c++
+```
 MPI_Scatter(
     &distro_Array,      //Address of array we are scattering from.
     1,                  //Number of items we are sending each processor
@@ -598,7 +598,7 @@ MPI_Scatter(
 Let’s see this implemented in code. We will also write a print
 statement following the scatter call:
 
-```c++
+```
 #include <stdio.h>
 #include <mpi.h>
 

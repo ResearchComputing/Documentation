@@ -32,7 +32,7 @@ nano parallel_hello_world.cpp
 We will begin with include statements we want running at the top of
 the program:
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 ```
@@ -47,7 +47,7 @@ program. We will use `omp_get_thread_num()` to obtain the thread id of
 the process. This will let us identify each of our threads using that
 unique id number.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -205,7 +205,7 @@ come in the forms of shared and private variable type classifiers.
 To indicate private or shared memory, declare the variable before your
 parallel section and annotate the pragma omp directive as such:
 
-```c++
+```
 #pragma omp shared(shar_Var1) private(priv_Var1, priv_Var2)
 ```
 
@@ -220,7 +220,7 @@ Let’s adapt our ‘Hello World’ code to utilize private variables as an
 example.  Starting with the code we left off with, let’s create a
 variable to store the thread id of each process.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -239,7 +239,7 @@ Now let’s define `thread_id` as a private variable. Because we want
 each task to have a unique thread id, using the `private(thread_id)`
 will create a separate instance of `thread_id` for each task.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -256,7 +256,7 @@ int main(int argc, char** argv){
 Lastly, let’s assign the thread id to our private variable and print
 out the variable instead of the `omp_get_thread_num()` function call:
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -288,13 +288,13 @@ Hello from process: 1
 OpenMP has a variety of tools for managing processes. One of the more
 prominent forms of control comes with the __barrier__:
 
-```c++
+```
 #pragma omp barrier
 ```
 
 ...and the __critical__ directives:
 
-```c++
+```
 #pragma omp critical { … }
 ```
 
@@ -316,7 +316,7 @@ thread count using the OpenMP function: `omp_get_max_threads()`
 
 Our ‘Hello World’ program will now look like:
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -342,7 +342,7 @@ Now that the loop has been created, let’s create a conditional that
 requires the loop to be on the proper iteration to print its thread
 number:
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -367,7 +367,7 @@ int main(int argc, char** argv){
 Lastly, to ensure one process doesn’t get ahead of another, we need to
 add a barrier directive in the code. Let’s implement one in our loop:
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -412,7 +412,7 @@ directive.
 The directive `omp for` divides a normally serial for loop into a
 parallel task. We can implement this directive as such:
 
-```c++
+```
 #pragma omp for { … }
 ```
 
@@ -422,7 +422,7 @@ parallel task. We can implement this directive as such:
 Let’s write a program to add all the numbers between 1 and 1000. Begin with a main function
 and the stdio and omp headers:
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -436,7 +436,7 @@ first create variables `partial_Sum` and `total_Sum` to hold each
 thread’s partial summation and to hold the total sum of all threads
 respectively.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -452,7 +452,7 @@ will also set `partial_Sum` to be a private variable and `total_Sum`
 to be a shared variable. We shall initialize each variable in the
 parallel section.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -473,7 +473,7 @@ omp for` to declare the loop as to be work sharing, followed by the
 actual C++ loop. Because we want to add all number from 1 to 1000, we
 will initialize our loop at one and end at 1000.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 
@@ -501,7 +501,7 @@ directive to create a thread safe section of code. We do this with
 `#pragma omp critical` directive. Lastly we add partial sum to total
 sum and print out the result outside the parallel section of code.
 
-```c++
+```
 #include <stdio.h>
 #include <omp.h>
 

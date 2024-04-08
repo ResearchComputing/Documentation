@@ -29,8 +29,7 @@ nano parallel_hello_world.f90
 ```
 We will begin with the program title and the use statement at the top of the program:
 
-```fortran
-
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 ```
@@ -43,7 +42,7 @@ program. We will use `OMP_GET_THREAD_NUM()` to obtain the thread id of
 the process. This will let us identify each of our threads using that
 unique id number.
 
-```fortran
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
@@ -119,7 +118,7 @@ parallel` !
 The `!$OMP PARALLEL` and `!$OMP END PARALLEL` directives creates a
 section of code that is run from all available threads.
 
-```fortran
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
@@ -216,7 +215,7 @@ example.  Starting with the code we left off with, let’s create a
 variable to store the thread id of each process. We will also change
 the name of the program as good coding practice.
 
-```fortran
+```
 PROGRAM Parallel_Stored_Hello
 USE OMP_LIB
 
@@ -235,7 +234,7 @@ Now let’s define `thread_id` as a private variable. Because we want
 each task to have a unique thread id, using the `private(thread_id)`
 will create a separate instance of `thread_id` for each task.
 
-```fortran
+```
 PROGRAM Parallel_Stored_Hello
 USE OMP_LIB
 
@@ -253,7 +252,7 @@ END
 Lastly, let’s assign the thread id to our private variable and print
 out the variable instead of the `OMP_GET_THREAD_NUM()` function call:
 
-```fortran
+```
 PROGRAM Parallel_Stored_Hello
 USE OMP_LIB
 
@@ -284,13 +283,13 @@ Hello from process: 1
 OpenMP has a variety of tools for managing processes. One of the more
 prominent forms of control comes with the __barrier__:
 
-```fortran
+```
 !$OMP BARRIER
 ```
 
 ...and the __critical__ directives:
 
-```fortran
+```
 !$OMP CRITICAL
 …
 !$OMP END CRITICAL
@@ -312,13 +311,13 @@ the previous section, let’s nest our print statement in a loop which
 will iterate from 0 to the max thread count. We will retrieve the max
 thread count using the OpenMP function:
 
-```fortran
+```
 OMP_GET_MAX_THREADS()
 ```
 
 Our ‘Hello World’ program will now look like:
 
-```fortran
+```
 PROGRAM Parallel_Ordered_Hello
 USE OMP_LIB
 
@@ -340,7 +339,7 @@ Now that the loop has been created, let’s create a conditional that
 will stop a process from printing its thread number until the loop
 iteration matches its thread number:
 
-```fortran
+```
 PROGRAM Parallel_Ordered_Hello
 USE OMP_LIB
 
@@ -363,7 +362,7 @@ END
 Lastly, to ensure one process doesn’t get ahead of another, we need to
 add a barrier directive in the code. Let’s implement one in our loop.
 
-```fortran
+```
 PROGRAM Parallel_Ordered_Hello
 USE OMP_LIB
 
@@ -386,7 +385,7 @@ END
 Compiling and running our code should order our print statements as
 such:
 
-```fortran
+```
 Hello from process: 0
 Hello from process: 1
 Hello from process: 2
@@ -403,7 +402,7 @@ code. In this section we will learn how to implement the `!$OMP DO` directive.
 The directive `!$OMP DO` divides a normally serial for loop into a
 parallel task. We can implement this directive as such:
 
-```fortran
+```
 !$OMP DO
 …
 !$OMP END DO
@@ -414,7 +413,7 @@ parallel task. We can implement this directive as such:
 Let’s write a program to add all the numbers between 1 and 1000. Begin
 with a program title and the `OMP_LIB` header:
 
-```fortran
+```
 PROGRAM Parallel_Do
 USE OMP_LIB
 
@@ -426,7 +425,7 @@ first create variables `partial_Sum` and `total_Sum` to hold each
 thread’s partial summation and to hold the total sum of all threads
 respectively.
 
-```fortran
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
@@ -440,7 +439,7 @@ also set `partial_Sum` to be a private variable and `total_Sum` to be
 a shared variable. We shall initialize each variable in the parallel
 section.
 
-```fortran
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
@@ -461,7 +460,7 @@ DO` to declare the loop to be work sharing, followed by the actual
 Fortran loop. Because we want to add all number from 1 to 1000, we
 will initialize out loop at one and end at 1000.
 
-```fortran
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
@@ -485,7 +484,7 @@ directive to create a thread safe section of code. We do this with the
 `!$OMP CRITICAL` directive. Lastly we add partial sum to total sum and
 print out the result outside the parallel section of code.
 
-```fortran
+```
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
