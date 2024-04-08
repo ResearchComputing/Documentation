@@ -10,7 +10,7 @@ Interactive jobs allow a user to interact with applications in real time within 
 
 To run an interactive job on Research Computing resources, request an interactive session by utilizing the `sinteractive` command.  The `sinteractive` command creates a job with parameters provided through flags run with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. 
 
-Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. [Check out this page for a list of Slurm directives that can be used with interactive jobs.](job-resources.html) 
+Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. [Check out this page for a list of Slurm directives that can be used with interactive jobs.](./job-resources) 
 
 The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
 
