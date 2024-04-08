@@ -42,7 +42,7 @@ as Matlab, a virtual desktop, and more.
 
 	For more information on launching
 	interactive jobs [check out our interactive jobs
-	tutorial](../running-jobs/interactive-jobs.html)
+	tutorial](../running-jobs/interactive-jobs)
 
 	Begin by launching an interactive job by loading slurm/alpine into
 	your environment and running the `sinteractive` command.
@@ -76,7 +76,7 @@ session, check out our [X11 forwarding tutorial.](../running-jobs/interactive-jo
 Here, we will learn how to run a Matlab script in a non-interactive
 batch job. For more general information on batch job scripts on
 Alpine, [please see our tutorial on batch 
-jobs](../running-jobs/batch-jobs.html)
+jobs](../running-jobs/batch-jobs)
 
 Let’s begin by constructing a small Matlab script that prints ‘hello
 world’ to the user.  The Matlab script we will use for the purposes of

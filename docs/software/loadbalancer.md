@@ -34,7 +34,7 @@ demonstrate the Load Balancer tool. We will call the script
 `hello_World.py` and it will print “Hello World from process: ”
 followed by a command line argument:
 
-```python
+```
 import sys
 
 print ("Hello World from process: ", sys.argv[1])
@@ -73,7 +73,7 @@ python3 hello_World.py 3;
 python3 hello_World.py 4;
 ```
 
-Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python.html), in order to access whatever softare we will be running with the Load Balancer. Your job script should look something like this:
+Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python), in order to access whatever softare we will be running with the Load Balancer. Your job script should look something like this:
 
 ```bash
 #!/bin/bash

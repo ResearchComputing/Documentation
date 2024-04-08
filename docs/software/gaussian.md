@@ -21,7 +21,7 @@ module (e.g. `module load gaussian/16_avx2`). Nearly all necessary
 environment variables are configured for you via the module. You do
 not need to source g16.login or g16.profile if running single-node jobs.
 However, it is important to specify `GAUSS_SCRDIR` to tell G16 where
-to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.html)
+to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems)
 (`/scratch/alpine/$USER` on Alpine or `rc_scratch/$USER` on Blanca.) If 
 `GAUSS_SCRDIR` is not set, then the scratch files will be created in 
 whatever directory G16 is run from; if this directory is in `/projects` 
