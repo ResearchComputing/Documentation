@@ -10,7 +10,7 @@ The following accounts are available for SSH remote login:
 
 _Note: You may need to use the _sudo_ command to gain administrative access._
 
-```bash
+```
 $ ssh mylabstorage.colorado.edu -l admin
 admin@mylabstorage.colorado.edu's password:
 
@@ -24,7 +24,7 @@ mylabstorage>
 
 #### Step 2: Run _ash_ to break out of restricted shell
 
-```bash
+```
 mylabstorage> ash
 
 
@@ -36,7 +36,7 @@ Enter 'help' for a list of built-in commands.
 
 #### Step 3: Use _telnet_ to verify that we can talk to the CURC DTN _ssh_ port
 
-```bash
+```
 /volume1/homes/admin $ telnet dtn.rc.int.colorado.edu 22
 
 _Note: if the above command does not yield an SSH banner (such as ‘SSH-2.0-OpenSSH_7.4’), ssh connectivity from the Synology to the DTN hosts is not working._
@@ -47,7 +47,7 @@ _Note: These instructions assume you are on a CU Boulder campus network._
 
 _(Note for below: Press return when prompted for a passphrase to select “empty”)._
 
-```bash
+```
 /volume1/homes/admin $ ssh-keygen -t rsa -b 4096 -C 'mylab synology'
 Generating public/private rsa key pair.
 Enter file in which to save the key (/var/services/homes/admin/.ssh/id_rsa):
@@ -66,7 +66,7 @@ Note that _ssh-keygen_ will create two “keys”, one that is _private_ and the
 
 On synology:
 
-```bash
+```
 $ cat .ssh/id_rsa.pub
 ```
 _This command will dump the contents of the public keys file to your screen. Now copy the new key to your clipboard._
@@ -79,7 +79,7 @@ Now open the file _~/.ssh/authorized_keys_ in your favorite Linux editor (e.g., 
 
 #### Step 6: test connectivity from Synology to DTN
 
-```bash
+```
 /volume1/homes/admin $ sftp RC_identikey@dtn.rc.int.colorado.edu
 ```
 
@@ -88,7 +88,7 @@ _Note: if the above command does not yield an `sftp>` prompt, ssh authentication
 #### Step 7: Transfer the data with _rsync_
 
 From synology:
-```bash
+```
 $ rsync --protocol=29 -Havx "/volume1/mylabstorage/mylabfiles/." RC_identikey@dtn.rc.int.colorado.edu:/pl/active/peta_test/.
 ```
 
@@ -103,5 +103,5 @@ If you want your backups to occur at a specified time each day or week, please r
 #### Useful links
 
 * [Synology documentation](https://www.synology.com/en-us/support/documentation?query=&type=All&section=All&p=1)
-* [CURC data transfer documentation](../../compute/data-transfer.html)
+* [CURC data transfer documentation](../../compute/data-transfer)
 

@@ -80,7 +80,7 @@ On the Alpine compile node type:
 ```bash
 $ rclone ls onedrive_johndoe_cu:
 ```
-If this step fails, your OneDrive remote is not configured properly. Try reconfiguring your OneDrive remote again or contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for assistance.
+If this step fails, your OneDrive remote is not configured properly. Try reconfiguring your OneDrive remote again or contact <rc-help@colorado.edu> for assistance.
 
 #### Step 3: Create your PetaLibrary remote configuration
 
@@ -88,5 +88,5 @@ See instructions for creating an [Rclone remote configuration for PetaLibrary](.
 
 
 * [Rclone documentation](https://rclone.org/)
-* [CURC data transfer documentation](../../compute/data-transfer.html)
+* [CURC data transfer documentation](../../compute/data-transfer)
 

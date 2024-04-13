@@ -16,10 +16,10 @@ To use your CUmulus resources, you must create an instances (or a virtual machin
 
 ### Adding Users to your Project
 
-Project access is managed through the Grouper application. Grouper is an enterprise access management system that empowers users to manage access, without the need for central IT. Group creation will be handled during project creation (if you don't see your group in "My Groups" in the Grouper application please email [rc-help@colorado.edu](rc-help@colorado.edu)).
+Project access is managed through the Grouper application. Grouper is an enterprise access management system that empowers users to manage access, without the need for central IT. Group creation will be handled during project creation (if you don't see your group in "My Groups" in the Grouper application please email <rc-help@colorado.edu>).
 
 To view your groups in Grouper navigate to [mygroups.colorado.edu](https://mygroups.colorado.edu/grouper/) and sign in using InCommon Federated Authentication (identikey & password). Find your group under the "Groups I Manage" section on the landing page (or click on the "My groups" button on the side bar).
->_Note:_ If you do not see your group, please contact [rc-help@colorado.edu](rc-help@colorado.edu) to create a group with the correct permissions and connections to CUmulus (_do not create your own group_).
+>_Note:_ If you do not see your group, please contact <rc-help@colorado.edu> to create a group with the correct permissions and connections to CUmulus (_do not create your own group_).
 
 ![](grouper.png)
 

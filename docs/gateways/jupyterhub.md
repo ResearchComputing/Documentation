@@ -1,6 +1,6 @@
 ## Jupyter Sessions
 
-[Jupyter Notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text, which provide an integrated environment to use, learn, and teach interactive data analysis. Users can obtain quick access to Jupyter sessions using [Open OnDemand](./OnDemand.html) and easily launch a JupyterLab interface. The JupyterLab interface is a fantastic tool that provides a highly customizable graphical user interface (GUI) that allows users to easily navigate multiple Jupyter Notebooks and the CURC filesystem. 
+[Jupyter Notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text, which provide an integrated environment to use, learn, and teach interactive data analysis. Users can obtain quick access to Jupyter sessions using [Open OnDemand](./OnDemand) and easily launch a JupyterLab interface. The JupyterLab interface is a fantastic tool that provides a highly customizable graphical user interface (GUI) that allows users to easily navigate multiple Jupyter Notebooks and the CURC filesystem. 
 
 ### Navigating the JupyterLab Interface
 
@@ -112,7 +112,7 @@ If you need assistance creating or installing environments or Jupyter kernels, c
 
 ### See Also
 
-* [CURC Anaconda distribution](../software/python.html)
+* [CURC Anaconda distribution](../software/python)
 * [JupyterLab homepage](https://jupyterlab.readthedocs.io)
 
 

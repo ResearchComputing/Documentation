@@ -25,6 +25,3 @@ Please email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for any billing
 ### How do I close my Azure subscription?
 **Answer:**
 Send an email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and provide the subscription number or account alias for the Azure Account you wish to close.
-
----
-

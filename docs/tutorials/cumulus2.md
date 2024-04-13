@@ -22,9 +22,8 @@ Our main objective in tutorial is to demonstrate potential workflows that could 
 
 Before we can get this application up and running in a CUmulus instance we have some house-keeping to take care of. Many of the steps below assume you have worked through [tutorial1](./cumulus1.md), which describes the instance creation process.
 
----
 ####  Part 1: Instance Setup
----
+
 We need a working CUmulus instance running Ubuntu with http port exposed (default 80) and a public floating IP. 
 * Adding a routable http port to an instance can be done within the instance creation launcher by adding the `http` security groups or after the instance has been created by editing the security groups of the individual instance.
 * Add a floating IP after the instance has been created.
@@ -34,9 +33,7 @@ We need a working CUmulus instance running Ubuntu with http port exposed (defaul
 		 $ sudo apt-get update && sudo apt-get upgrade -y
 		``` 
 
----
 ####  Part 2: Getting your Twitter API Credentials
----
 
  In order to query Twitter with the Twitter API V2 you must first obtain a Twitter Developer Account and get access to a number of secret API keys:
 *   go to the following website [https://developer.twitter.com/](https://developer.twitter.com/content/developer-twitter/en.html) and create an account.
@@ -44,9 +41,7 @@ We need a working CUmulus instance running Ubuntu with http port exposed (defaul
 * Fill in all the details about your app and then create your access token.
 * Make a note of your consumer key, consumer secret, OAuth access token and OAuth access token secret. These are needed to connect to the API.
 
----
 ####  Part 3: Getting the Source Code
----
 
 Download the source code into your home (`~`) directory, unzip it, and cd into it: 
 
@@ -57,9 +52,7 @@ $ unzip ~/app.zip
 $ cd ~/app
 ```
 
----
 ####  Part 4: Configuring your Environment
----
 
  Once you have your Twitter API keys, we can set up our config file which will allow for our applications to use the necessary passwords, ports, keys, etc. as environment variables.
 * Using a text editor of your choice create the file `~/app/.env` (*note the period in front of `.env`*) and paste the following lines in adding your web port (default 80 for http in CUmulus), your mysql password (you choose this), and your Twitter API keys. You can use the examples to format your environment variables.
@@ -89,9 +82,8 @@ ACCESS_TOKEN_SECRET=
 
 Okay, now we can get into the  real content of this Demo!
 
----
 ####  Part 5: Setting up Docker
----
+
 The next thing we'll need to do is install Docker. Docker is an open source containerization platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. For a great overview of Docker containerization visit https://docs.docker.com/get-started/overview/. In this tutorial we will use Docker to "pull" and "run" a mysql database image that we can store data (in this case tweets) into. A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments.  Instead of downloading mysql directly to the host machine (your instance) and having to deal with dependencies and uninstalling/fixing if anything goes wrong we can use the mysql image which we can easily create/remove a Docker container from.
 
 The python application will also be containerized when run, but in order to give you a platform to iterate and develop this application on your own going forward we are going to include the source code and Dockerfile which will allow you to tweak the application, build the container back up to use it, and even [publish the container](https://docs.docker.com/docker-hub/) if you'd like.
@@ -137,9 +129,8 @@ The python application will also be containerized when run, but in order to give
 	```
 Docker is setup!
 
----
 ####  Part 6: Setting  up Docker-Compose
----
+
 Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. Read more about docker compose here: https://docs.docker.com/compose/.
 
 ##### Installing and Testing
@@ -171,9 +162,8 @@ We define two images in our `docker-compose.yml` file, if you'd like you can tak
 ##### Persistent Data
 When a container runs, it uses the various layers from an image for its filesystem. Each container also gets its own “scratch space” to create/update/remove files. Any changes won’t be seen in another container, _even if_ they are using the same image. This means that anytime you stop a container from running, all of the data will vanish. There are a couple different ways of persisting data while using Docker (read more https://docs.docker.com/storage/volumes/) such as volumes and bind-mounts. Here we will be using volumes which we define at the bottom of the Compose file.
 
----
 ####  Part 7: Running the Application
----
+
 We're all set and ready to run our application and database! From the `~/app` directory run:
 ```
 $ sudo docker-compose up --build -d
@@ -182,9 +172,8 @@ This command brings up *all* of the images in the `docker-compose.yml` file (the
 
 If all went well, in a browser you can navigate to `<your floating IP>:80`, for example: 123.456.789.123:80 and find a web page which allows you query Twitter via a keyword and will return the last 10 tweets. On the back-end, those tweets are being stored in our mysql database. You can view the full database store via the browser as well by navigating to 123.456.789.123:80/tweets. This route just spits out all of the data we're collecting from the tweets, in this case just username and tweet contents. If you go back to the original tweet query page you can search for more tweets and see that those tweets will be populated in our database for later retrieval. 
 
----
 ####  Part 8: Finishing up
----
+
 Your application is up and running and accessible through the Public internet! Because this is a public facing page, I would suggest bringing down the application after playing around with it a bit in order to prevent others from finding and filling up the database. You can do that with the following command from  the `~/app` directory:
 ```
 $ docker-compose down

@@ -23,7 +23,7 @@ commands (for example, calls to serial programs) to be distributed amongst nodes
 
 Let’s create a simple ‘Hello World’ serial python script to demonstrate the GNU Parallel tool. We will call the script `hello_World.py` and it will print “Hello World from task: ” followed by a command line argument:
 
-```python
+```
 import sys
 
 print “Hello World from task: ”, sys.argv[1]
@@ -34,7 +34,7 @@ to run as many instances of your python script as you want. Before running GNU P
 
 > _Note: This example uses a custom python environment built with conda, 
 more infomation on using python or R with conda can be found 
-[here](./python.html)_
+[here](./python)_
 
 ```bash
 #!/bin/bash

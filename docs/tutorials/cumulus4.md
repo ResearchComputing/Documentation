@@ -15,8 +15,6 @@ Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This e
 
 Completing the steps below requires that you have first [logged into your VM](./cumulus1#part-3-logging-into-your-instance)
 
----
-
 ####  Part 1: Install `sshfs`
 
 The [sshfs](https://osxfuse.github.io) software package provides an open-source solution for mounting your Petalibrary allocation to your CUmulus VM. 
@@ -35,10 +33,7 @@ yum install fuse-sshfs
 
 ...or, if you are on a _Windows_ VM, see our documentation [here](https://curc.readthedocs.io/en/latest/storage/petalibrary/mounting.html?highlight=sshfs#sshfs-on-windows)
 
----
-
 ####  Part 2: Mount PetaLibrary with `sshfs`
-
 
 Create a folder on the VM where you would like to mount your PetaLibrary allocation.  For simplicity, we will create a folder called `mypetalibrary` in our home (`~`) directory, but you could place the directory anywhere and call it anything you want:
 
@@ -60,8 +55,6 @@ sshfs ralphie@dtn.rc.int.colorado.edu:/pl/active/rcops ~mypetalibrary
 
 You will be prompted for your password after execution. Type your password and accept the duo prompt.
 Your selected directory will now be mounted to your Petalibrary allocation.
-
----
 
 ####  Part 3: Test your mount
 
@@ -105,9 +98,7 @@ Should you need to remove your mount, type the following, for example:
 sshfs umount ~/mypetalibrary
 ```
 
----  
 ### Additional Information
----
 
   * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)

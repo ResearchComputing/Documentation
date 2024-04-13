@@ -93,7 +93,6 @@ Use of University of Colorado Research Computing resources, including (but not l
 
    access/logging-in
    access/duo-2-factor-authentication
-   access/allocations
    access/rmacc
    access/amc-access
 
@@ -147,7 +146,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    cloud/aws/index
    cloud/azure/index
    cloud/gcp/index
-   cloud/cumulus/cumulus
+   cloud/cumulus/index
 
 .. toctree::
    :maxdepth: 2
