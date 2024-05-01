@@ -11,7 +11,15 @@ CURC issues an annual survey to all CURC users asking several questions about re
 
 CURC systems and services (Alpine, Blanca, OnDemand, Petalibrary, core storage, etc.) should not be used to store any data that is US government Classified, nor any Controlled Unclassified Information including, but not limited to, data subject to the US federal Health Insurance Portability and Accountability Act (HIPAA), the US federal Family Educational Rights and Privacy Act (FERPA), or the International Traffic in Arms Regulations (ITAR).
  
-For users requiring secure research computing environments to ensure compliance for sensitive data types such as those mentioned above, CURC offers secure research computing services. More information can be found at https://www.colorado.edu/rc/secure-research-computing-resources
+For users requiring secure research computing environments to ensure compliance for sensitive data types such as those mentioned above, CURC offers [secure research computing services](https://www.colorado.edu/rc/secure-research-computing-resources). 
+
+<br>
+
+### Core storage data retention policy
+
+The data retention policy for CU Research Computing “core” storage (user data in `/home` and `/projects` spaces) is a period of six years beyond the user’s last login to a CU Research Computing service. This duration is in alignment with the [University’s data retention policy](https://www.cu.edu/sites/default/files/RecordRetentionUCB.pdf) for research records associated with grants and contracts. The policy will be enacted via a “5 + 1” approach: after a period of five years since the user’s last login, their data will be placed in an archival location, and a communication will be sent to the email address associated with the user’s account, and cc’d to persons belonging to the group associated with the user’s `/projects` space. The communication will note that data in their `/home` and `/projects` spaces will be purged after one additional year if no action is taken by the user or group members to retain the data. The user will be given the opportunity to copy the data to an alternate location during the final year.  If the user does not respond within the year, the data will be deleted upon reaching year six. 
+
+_Note: this policy does not apply to data stored in PetaLibrary.  Data in PetaLibrary are subject to the PetaLibrary [Terms of Service](https://www.colorado.edu/rc/resources/petalibrary/tos)._
 
 <br>
 
