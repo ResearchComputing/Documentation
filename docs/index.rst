@@ -40,8 +40,7 @@ The following resources are available for course support:
    * Assistance building software or conda environments to support the course
 
 * Cloud
-   * Custom JupterHub hosted in the cloud (costs may be incurred)
-   * Custom RStudio hosted in the cloud (costs may be incurred)
+  * CURC's Cloud Foundations Servoce can faciliate access add billing for commercial cloud services, for CU faculty, staff and students.  
 
 * Lectures/training
   * CURC staff can lecture on specified topics during the class meeting time (once per course per semester). 
