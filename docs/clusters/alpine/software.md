@@ -60,7 +60,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [GSL](https://www.gnu.org/software/gsl/doc/html/#) | 2.7 |The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.|
 | [HDF5](https://portal.hdfgroup.org/display/support/Documentation) | 1.10.1, 1.12.1 | HDF5 is a data model, library, and file format for storing and managing data.|
 | [HOMER](http://homer.ucsd.edu/homer/) | 4.11 | Software for motif discovery and next-gen sequencing analysis.|
-| [IDL](https://www.l3harrisgeospatial.com/Software-Technology/IDL) | 8.7 |IDL software is a scientific programming language used across disciplines to create visualizations out of complex numerical data.|
+| [IDL](https://www.nv5geospatialsoftware.com/Products/IDL) | 8.7 |IDL software is a scientific programming language used across disciplines to create visualizations out of complex numerical data.|
 | [ImageMagick](https://imagemagick.org/index.php) | 6.9.12 |ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files.| 
 | [Intel Advisor](https://www.intel.com/content/www/us/en/developer/tools/oneapi/advisor.html#gs.odmdiw) | 2022.0.0 | Intel Advisor is a design and analysis tool for developing performant code. The tool supports C, C++, Fortran, SYCL, OpenMP, OpenCL code, and Python.|  
 | Intel cluster tools | 17.3 | Intel cluster tools.| 
