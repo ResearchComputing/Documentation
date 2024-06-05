@@ -66,43 +66,81 @@ __Example SMP BASH script:__
 #SBATCH --job-name=g16-test
 #SBATCH --partition=amilan
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=64
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=64
 #SBATCH --time=00:50:00
 #SBATCH --output=g16-test.%j.out
 
-module load gaussian/16_avx2
+# load gaussian c.02
+module purge
+module load gaussian/g16_c.02
 
-# Always specify a scratch directory on a fast storage space (not /home or /projects!)
+# Always specify a scratch directory on a fast storage space
+# (not /home or /projects!)
 export GAUSS_SCRDIR=/scratch/alpine/$USER/$SLURM_JOBID
-# alternatively you can use the local SSD (max 400 GB available)
-# export GAUSS_SCRDIR=$SLURM_SCRATCH
-# the next line prevents OpenMP parallelism from conflicting with Gaussian's internal SMP parallelization
+mkdir $GAUSS_SCRDIR
+
+# the next line prevents OpenMP parallelism from conflicting
+# with Gaussian's internal parallelization
 export OMP_NUM_THREADS=1
 
-mkdir $GAUSS_SCRDIR  # only needed if using /scratch/alpine
-date  # put a date stamp in the output file for timing/scaling testing if desired
-g16 -m=50gb -p=64 my_input.com
-date
+# run gaussian!
+g16 -m=20gb -p=${SLURM_CPUS_PER_TASK} my_input.com
+
 ```
 
 
 #### Multi-node parallelism
 
-Currently, multi-node parallelism is not possible on Alpine. Parallelism is 
-only supported through SMP parallelism. If you are experiencing issues running 
-your Gaussian simulations due to memory constraints, it may be possible to run 
-your code on Alpine's `amem` nodes. These nodes provide a larger amount of memory 
-than `amilan` nodes. For more information on `amem` nodes, please see our [Partitions documentation](../clusters/alpine/alpine-hardware.html#partitions). 
+In order to run on more than 64 cores in the "amilan" partition on Alpine, your job will need to span multiple nodes using the Linda network parallel communication model. We advise using one Linda worker per node, with multiple (up to 64) SMP cores per node. The nodes on which `g16` will run will be determined once the job starts, before invoking `g16` The batch script example below demonstrates how to run `g16` across multiple nodes. 
+
+__Linda Parallel__
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=g16-test
+#SBATCH --partition=amilan
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=64
+#SBATCH --time=00:50:00
+#SBATCH --output=g16-test.%j.out
+
+# load gaussian c.02
+module purge
+module load gaussian/g16_c.02
+
+for n in `scontrol show hostname | sort -u`; do
+ echo ${n}
+done | paste -s -d, > tsnet.nodes.$SLURM_JOBID
+
+# Always specify a scratch directory on a fast storage space
+# (not /home or /projects!)
+export GAUSS_SCRDIR=/scratch/alpine/$USER/$SLURM_JOBID
+mkdir $GAUSS_SCRDIR
+
+# the next line prevents OpenMP parallelism from conflicting
+# with Gaussian's internal parallelization
+export OMP_NUM_THREADS=1
+
+# the next line increases the verbosity of Linda output messages
+export GAUSS_LFLAGS="-v"
+
+# run gaussian!
+g16 -m=20gb -p=${SLURM_CPUS_PER_TASK} -w=`cat tsnet.nodes.$SLURM_JOBID` my_input.com
+
+# remove nodefile 
+rm tsnet.nodes.$SLURM_JOBID
+```
+
+_Note:_ Not all G16 computations scale efficiently beyond a single node! According to the G16 documentation: "HF, CIS=Direct, and DFT calculations are Linda parallel, including energies, optimizations, and frequencies. TDDFT energies and gradients and MP2 energies and gradients are also Linda parallel. Portions of MP2 frequency and CCSD calculations are Linda parallel." As with SMP parallelism, testing the scaling of your Linda parallel computation is very important.
 
 #### G16 on Alpine NVIDIA GPUs
 
-Please read [http://gaussian.com/running/?tabid=5](http://gaussian.com/running/?tabid=5) carefully to
-determine whether the A100 GPUs in Alpine's "aa100" partition will be
-effective for your calculations. In many cases, SMP parallelization
-across all of the cores in an amilan node will provide better speedup
-than offloading computational work to a GPU.
+Please see the [Gaussian GPU documentation](https://gaussian.com/running/?tabid=5)] for information on how configure Gaussian input files to run on GPUs. CURC presently does not have example job scripts for running Gaussian on GPUs. The Gaussian GPU documentation will also enable you to determine whether the A100 GPUs in Alpine's "aa100" partition will be effective for your calculations. In many cases, SMP parallelization across all of the cores in an amilan node will provide better speedup than offloading computational work to a GPU.  
 
-G16 can not use the AMD MI100 GPUs in Alpine's "ami100" partition.
+_Note:_ G16 can not use the AMD MI100 GPUs in Alpine's "ami100" partition.
 
 ### Sample input file
 
