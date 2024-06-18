@@ -45,7 +45,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [FFmpeg](https://ffmpeg.org/) | 4.4 | A complete, cross-platform solution to record, convert and stream audio and video.| 
 | [FFTW](https://www.fftw.org/) | 3.3.8, 3.3.9, 3.3.10 | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data.|
 | [GATK](https://gatk.broadinstitute.org/hc/en-us) | 4.3.0.0 | GATK4 aims to bring together well-established tools from the GATK and Picard codebases under a streamlined framework.|
-| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | 16_avx2 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/gaussian.html)|
+| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/gaussian.html)|
 | [gcc](https://gcc.gnu.org/) |  10.3.0, 11.2.0 (D) |The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).| 
 | [GDAL](https://gdal.org/) | 3.4.2, 3.5.0 | GDAL is a translator library for raster and vector geospatial data formats.| 
 | [GDB](https://www.sourceware.org/gdb/) | 8.1, 10.1 (D) | GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed.|
@@ -104,14 +104,13 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [PLINK2](https://www.cog-genomics.org/plink/2.0/) | 2.00a2.3 | PLINK 2.0 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics.| 
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
-| [Q-Chem](https://www.q-chem.com/) | 4010 |Q-Chem is a comprehensive ab initio quantum chemistry software for accurate predictions of molecular structures, reactivities, and vibrational, electronic and NMR spectra.| 
 | [QIIME 2](https://qiime2.org/) | 2023.5 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
 | [Quantum ESPRESSO](https://www.quantum-espresso.org/) | 7.0 (D), 7.2 |An integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale.| 
 | [Qt](https://doc.qt.io/) | 4.8.5, 5.6.0, 5.9.1, 5.15 (D) |Qt ("cute") is cross-platform software for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.| 
 | [R](https://www.r-project.org/) | 3.6.3,4.2.2 (D)|R is a programming language for statistical computing and graphics.| 
 | [rclone](https://rclone.org/) | 1.58.0 |Rclone is a command-line program to manage files on cloud storage.| 
-| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G), 4.0.1-cu11.8 (G,D) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
-| [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3, 5.3.0, 5.5.0 (D) |ROCm is an AMD software stack for GPU programming.| 
+| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G), 4.0.1-cu11.8 (G,D) 5.0 (G) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
+| [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3, 5.3.0, 5.5.0, 5.6.0 (D) |ROCm is an AMD software stack for GPU programming.| 
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
