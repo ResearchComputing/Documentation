@@ -91,7 +91,7 @@ RC Users also have the option of connecting to RC via _Filezilla_. _Filezilla_ i
       - Username: your-rc-username
       - Password: your-rc-password
     - _Data Transfer Node_
-      - Host: sftp://dtn23.rc.colorado.edu
+      - Host: sftp://dtn.rc.colorado.edu
       - Username: your-rc-username
       - Password: your-rc-password
 
@@ -118,14 +118,14 @@ would like to send the file to.
 # Copying files from a local workstation to Research Computing
 
 scp <path-to-file> <username>@login.rc.colorado.edu:<target-path>    # using a login node
-scp <path-to-file> <username>@dtn23.rc.colorado.edu:<target-path>    # using DTN while on campus network
+scp <path-to-file> <username>@dtn.rc.colorado.edu:<target-path>    # using DTN while on campus network
 ```
 
 ```bash
 # Copying files from Research Computing to a local workstation
 
 scp <username>@login.rc.colorado.edu:<path-to-file> <target-path>    # using a login node
-scp <username>@dtn23.rc.colorado.edu:<path-to-file> <target-path>    # using DTN while on campus network
+scp <username>@dtn.rc.colorado.edu:<path-to-file> <target-path>    # using DTN while on campus network
 ``` 
 
 Windows users can access scp through PowerShell or using a GUI
@@ -155,14 +155,14 @@ would like to send the file to.
 # Synchronizing from a local workstation to Research Computing
 
 rsync -r <path-to-directory> <username>@login.rc.colorado.edu:<target-path>    # using a login node
-rsync -r <path-to-directory> <username>@dtn23.rc.colorado.edu:<target-path>    # using DTN while on campus network
+rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>    # using DTN while on campus network
 ```
 
 ```bash
 # Synchronizing from Research Computing to a local workstation
 
 rsync -r <username>@login.rc.colorado.edu:<path-to-directory> <target-path>    # using a login node
-rsync -r <username>@dtn23.rc.colorado.edu:<path-to-directory> <target-path>    # using DTN while on campus network
+rsync -r <username>@dtn.rc.colorado.edu:<path-to-directory> <target-path>    # using DTN while on campus network
 ```
 
 rsync is not available on Windows by default, but [may be installed
@@ -184,7 +184,7 @@ between a local system and Research Computing resources.
 
 ```bash
 sftp <username>@login.rc.colorado.edu    # using a login node
-sftp <username>@dtn23.rc.colorado.edu    # using DTN while on campus network
+sftp <username>@dtn.rc.colorado.edu    # using DTN while on campus network
 ```
 
 We can then use various commands to traverse and manipulate both local
@@ -244,9 +244,9 @@ With an ssh key pair generated and uploaded to <https://registry.cilogon.org>,
 you are ready to transfer files over the DTNs using `rsync` or `scp`. 
 
 ```bash
-rsync -av ./myfile.txt dtn23.rc.colorado.edu:/projects/ralphie/myfile.txt    # using rsync
+rsync -av ./myfile.txt dtn.rc.colorado.edu:/projects/ralphie/myfile.txt    # using rsync
 
-scp -v ./myfile23.txt dtn23.rc.colorado.edu:/pl/active/crdds/myfile.txt      # using scp
+scp -v ./myfile23.txt dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt      # using scp
 ```
 ---
 ### Rclone 
