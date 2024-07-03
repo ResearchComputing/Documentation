@@ -49,13 +49,13 @@ mkdir ~/mypetalibrary
 Now mount your PetaLibrary allocation to the directory.  The generic syntax is:
 
 ```bash
-sshfs <your-rc-username>@dtn.rc.int.colorado.edu:/pl/active/<your-pl-directory> <local-directory>
+sshfs <your-rc-username>@dtn.rc.colorado.edu:/pl/active/<your-pl-directory> <local-directory>
 ```
 
 For example if your CURC username is `ralphie` and you want to mount your PetaLibrary allocation called `rcops` to `~/mypetalibrary`: 
 
 ```bash
-sshfs ralphie@dtn.rc.int.colorado.edu:/pl/active/rcops ~mypetalibrary
+sshfs ralphie@dtn.rc.colorado.edu:/pl/active/rcops ~mypetalibrary
 ```
 
 You will be prompted for your password after execution. Type your password and accept the duo prompt.

@@ -37,7 +37,7 @@ Enter 'help' for a list of built-in commands.
 #### Step 3: Use _telnet_ to verify that we can talk to the CURC DTN _ssh_ port
 
 ```bash
-/volume1/homes/admin $ telnet dtn.rc.int.colorado.edu 22
+/volume1/homes/admin $ telnet dtn.rc.colorado.edu 22
 
 _Note: if the above command does not yield an SSH banner (such as ‘SSH-2.0-OpenSSH_7.4’), ssh connectivity from the Synology to the DTN hosts is not working._
 ```
@@ -80,7 +80,7 @@ Now open the file _~/.ssh/authorized_keys_ in your favorite Linux editor (e.g., 
 #### Step 6: test connectivity from Synology to DTN
 
 ```bash
-/volume1/homes/admin $ sftp RC_identikey@dtn.rc.int.colorado.edu
+/volume1/homes/admin $ sftp RC_identikey@dtn.rc.colorado.edu
 ```
 
 _Note: if the above command does not yield an `sftp>` prompt, ssh authentication from the Synology to the DTN hosts is not working._
@@ -89,7 +89,7 @@ _Note: if the above command does not yield an `sftp>` prompt, ssh authentication
 
 From synology:
 ```bash
-$ rsync --protocol=29 -Havx "/volume1/mylabstorage/mylabfiles/." RC_identikey@dtn.rc.int.colorado.edu:/pl/active/peta_test/.
+$ rsync --protocol=29 -Havx "/volume1/mylabstorage/mylabfiles/." RC_identikey@dtn.rc.colorado.edu:/pl/active/peta_test/.
 ```
 
 _Note: If _rsync_ does not produce any errors, log in to login.rc.colorado.edu and check that /pl/active/peta_test contains the files you wanted to copy._
