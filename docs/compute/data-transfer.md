@@ -197,17 +197,10 @@ resources](#more-reading) or consult the sftp manual page.
 
 ### Automated scp and rsync
 
-Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. We do not permit key-based transfers over the login nodes.
-
-*You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.*
-
-The `scp` and `rsync` commands both allow a user to transfer files
-without needing to reenter a password. All that is required is a few
+Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. *You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.* The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few
 simple setup procedures to prepare your local machine.
   
-*These instructions only apply to local macOS and Linux
- systems. Automating file transfers from Windows is outside of the
- scope of this document.*
+*Note: these instructions only apply to local macOS and Linux systems. Automating file transfers from Windows is outside of the scope of this document.*
 
 1. Generate a local ssh key pair. You will only need to perform this once per local system. From a local terminal run:
 
@@ -221,7 +214,7 @@ is public, and can be shared with others (including Research
 Computing). `id_ed25519` is private and **should never leave the
 system that it was generated on.**
 
-2. Follow the instructions [here](https://curc.readthedocs.io/en/latest/additional-resources/registrycilogon-instructions.html) for requesting access to the CILogon Registry and uploading an ssh key.
+2. Follow the instructions [here](../additional-resources/registrycilogon-instructions.html) for requesting access to the CILogon Registry and uploading an ssh key.
 
 3. Use `rsync` or `scp` to transfer files using an ssh key. 
 
