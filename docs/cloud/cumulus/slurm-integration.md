@@ -62,7 +62,7 @@ Now that we have SLURM installed we can start to configure our instance to make 
 	```
 	$ sudo mkdir -p /etc/slurm
 	$ cd /etc/slurm
-	$ sudo scp <RC_username>@login.rc.colorado.edu:/curc/slurm/blanca/etc/slurm.conf . 
+	$ sudo scp <RC_username>@dtn.rc.colorado.edu:/curc/slurm/blanca/etc/slurm.conf . 
 	```
 	to finish the copy from CURC HPC, type your CURC password and accept Duo push.
 
