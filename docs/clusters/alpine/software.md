@@ -13,6 +13,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 | FEKO is an electromagnetics software developed by Altair engineering for use in field calculations for bodies of arbitrary shapes. | 
 | [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11 (D), 2022.10, 2023.09 | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
+| [ANTLR](https://www.antlr.org/) | 4.13.1 | A parser generator for reading, processing, executing, or translating structured text or binary files. |
 | [Arm Forge](https://developer.arm.com/Tools%20and%20Software/Arm%20Forge) | 19.1.3 | Arm Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
 | [AOCC](https://www.amd.com/en/developer/aocc.html) | 3.1.0 (D), 3.2.0 |The AMD Optimizing C/C++ and Fortran Compilers (“AOCC”) are a set of production compilers optimized for software performance when running on AMD host processors using the AMD “Zen” core architecture.| 
 | [AOCL](https://www.amd.com/en/developer/aocl.html) | 3.2.0 |AOCL is a set of numerical libraries optimized for AMD processors based on the AMD “Zen” core architecture and generations.| 
@@ -72,7 +73,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Jasper](https://jasper-software.github.io/jasper/) | 4.0.0 (D) | JasPer is a software toolkit for the handling of image data. |
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
 | [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e | Open source JPEG Image Library.|
-| [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
+| [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.2 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
@@ -85,6 +86,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [MultiQC](https://multiqc.info/) | 1.14 | MultiQC is a reporting tool that parses results and statistics from bioinformatics tool outputs, such as log files and console outputs.|
 | [NAMD](http://www.ks.uiuc.edu/Research/namd/) | 2.14 | NAMD is a parallel molecular dynamics code for large biomolecular systems.| 
 | [NCL](https://www.ncl.ucar.edu/Download/) | 6.3.0 (D) | NCAR Command Language. An interpreted language designed for scientific data analysis and visualization. |
+| [NCO](https://nco.sourceforge.net/) | 4.8.1 | A toolkit that manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, HDF5, and, Zarr | 
 | [Ncview](http://meteora.ucsd.edu/~pierce/ncview_home_page.html) | 2.1.7 | Ncview is a visual browser for netCDF format files. | 
 | [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | 4.8.1 | NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.|
 | [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04 (D) | Nextflow is Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
@@ -109,7 +111,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Qt](https://doc.qt.io/) | 4.8.5, 5.6.0, 5.9.1, 5.15 (D) |Qt ("cute") is cross-platform software for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.| 
 | [R](https://www.r-project.org/) | 3.6.3,4.2.2 (D)|R is a programming language for statistical computing and graphics.| 
 | [rclone](https://rclone.org/) | 1.58.0 |Rclone is a command-line program to manage files on cloud storage.| 
-| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G), 4.0.1-cu11.8 (G,D) 5.0 (G) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
+| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G), 4.0.1-cu11.8 (G,D) 5.0 (G), 5.0-cu12.1 (G) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
 | [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3, 5.3.0, 5.5.0, 5.6.0 (D) |ROCm is an AMD software stack for GPU programming.| 
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 

@@ -2,58 +2,18 @@
 
 This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
-### Generate public/private keypair on login.rc.colorado.edu
+### Generate public/private keypair for CURC resources
 
-In this step you will login to an RC login node (`ssh login.rc.colorado.edu`) and generate an ssh keypair. You don't need to complete this step on a login node if you have ssh-keygen installed on your system. Be sure to generate a key in PEM format. Here is the command to generate a key in PEM format with a uniquename, after you have logged in:
-```
-$ ssh-keygen -f ~/.ssh/rclone_ssh_key -m PEM
-```
-You will be prompted to enter a passphrase to protect the key. For automated backups, you will either want a key with no passphrase, or to set a passphrase and use something like ssh-agent to hold the key in memory. The easiest option is to not set a passphrase. Here is sample output from running ssh-ksygen:
 
-```
-$ ssh-keygen -f ~/.ssh/rclone_ssh_key -m PEM
-Generating public/private rsa key pair.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /home/jesse/.ssh/rclone_ssh_key.
-Your public key has been saved in /home/jesse/.ssh/rclone_ssh_key.pub.
-The key fingerprint is:
-SHA256:ftryJYQ2LRnNQ/fSzm+iB0Tg8/LkePqVyeDky2z3JvA jesse@login10
-The key's randomart image is:
+In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.html) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
 
-+---[RSA 2048]----+
-|          o..    |
-|         = ..o   |
-|        . *.. o  |
-|         = +.+   |
-|        S +.= o  |
-|       o + Xoo + |
-|        . + B+* o|
-|        .+ B.+Eo.|
-|        .o+o*o +.|
-+----[SHA256]-----+
-```
-
-Your home directory should now have the files `~/.ssh/rclone_ssh_key` and `~/.ssh/rclone_ssh_key.pub`. The `rclone_ssh_key` is your private key, be careful with it as anyone with this key can access resources that trust the public key.
-
-### Copy public key to your authorized_keys file
-
-Copy the newly generated public key rclone_ssh_key.pub to your authorized_keys file:
-```
-$ cat ~/.ssh/rclone_ssh_key.pub >> ~/.ssh/authorized_keys
-```
-This will append the contents of `rclone_ssh_key.pub` to the file `authorized_keys` (authorized_keys will be created if it does not exist). Now anyone with your private key (`rclone_ssh_key`) can login to hosts that mount home directories from RC core storage.
-
-### Copy private key to the backup source host
-
-This next step can't be documented exactly as every client system will be different, but use a secure method (such as scp or sftp) to copy the private key in `~/.ssh/rclone_ssh_key` to the system that you want to back up to PetaLibrary (e.g., your laptop or lab server).
+Once the keypair has been generated, we now need to provide the private key to the client you want to backup data on. Although this next step can't be documented exactly, as every client system will be different, using a secure method (such as scp or sftp) to copy the private key in `~/.ssh/rclone_ssh_key` to the system that you want to back up to PetaLibrary (e.g., your laptop or lab server) is all that is needed.
 
 **Windows:** Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run:
 
-<!--
 ```$ .\rclone.exe config```
-...then select n) New Remote
--->
+
+then select `n) New Remote`.
 
 ### Install rclone on the backup source host
 
