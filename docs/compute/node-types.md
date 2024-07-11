@@ -13,9 +13,7 @@ type and its intended use below.
 * _Do not use for_: computation, compiling code, interactive jobs, or long running processes
 * _Use for_: editing scripts, moving files, scheduling jobs
 
-Users should refer to CURC
-
-
+Users should familiarize themselves with [CURC User Policies](../additional-resources/policies.html#login-nodes) regarding login nodes.
 
 ### Compile nodes (Alpine only)
 

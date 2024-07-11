@@ -10,9 +10,10 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
 | [Allinea DDT](https://developer.nvidia.com/allinea-ddt) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
 | [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0,2.3.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structure.| 
-| [AltairFEKO](https://altair.com/feko) (L) | 2019.2 | FEKO is an electromagnetics software developed by Altair engineering for use in field calculations for bodies of arbitrary shapes. | 
+| [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 | FEKO is an electromagnetics software developed by Altair engineering for use in field calculations for bodies of arbitrary shapes. | 
 | [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11 (D), 2022.10, 2023.09 | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
+| [ANTLR](https://www.antlr.org/) | 4.13.1 | A parser generator for reading, processing, executing, or translating structured text or binary files. |
 | [Arm Forge](https://developer.arm.com/Tools%20and%20Software/Arm%20Forge) | 19.1.3 | Arm Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
 | [AOCC](https://www.amd.com/en/developer/aocc.html) | 3.1.0 (D), 3.2.0 |The AMD Optimizing C/C++ and Fortran Compilers (“AOCC”) are a set of production compilers optimized for software performance when running on AMD host processors using the AMD “Zen” core architecture.| 
 | [AOCL](https://www.amd.com/en/developer/aocl.html) | 3.2.0 |AOCL is a set of numerical libraries optimized for AMD processors based on the AMD “Zen” core architecture and generations.| 
@@ -32,7 +33,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [CP2K](https://www.cp2k.org/) | 2023.1 | CP2K is a quantum chemistry and solid state physics software package that can perform atomistic simulations of solid state, liquid, molecular, periodic, material, crystal, and biological systems.|
 | [CST Studio Suite](https://www.3ds.com/products-services/simulia/products/cst-studio-suite/) (L) | 2021 | CST Studio Suite is a high-performance 3D EM analysis software package for designing, analyzing and optimizing electromagnetic (EM) components and systems. | 
 | [Cube](https://www.scalasca.org/scalasca/software/cube-4.x/download.html) | 3.4.3, 4.3.4 (D) | Cube, which is used as performance report explorer for Scalasca and Score-P, is a generic tool for displaying a multi-dimensional performance space. | 
-| [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (G) | 11.2, 11.3, 11.4, 11.8, 12.1.1 (D) | The NVIDIA CUDA Toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler, and a runtime library to deploy your application. | 
+| [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (G) | 11.2, 11.3, 11.4, 11.7, 11.8, 12.1.1 (D) | The NVIDIA CUDA Toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler, and a runtime library to deploy your application. | 
 | [cuDNN](https://developer.nvidia.com/cudnn) (G)| 8.1, 8.2 8.6 (D) | The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. | 
 | [curc-quota](https://curc.readthedocs.io/en/latest/compute/filesystems.html#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
 | [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.| 
@@ -45,7 +46,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [FFmpeg](https://ffmpeg.org/) | 4.4 | A complete, cross-platform solution to record, convert and stream audio and video.| 
 | [FFTW](https://www.fftw.org/) | 3.3.8, 3.3.9, 3.3.10 | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data.|
 | [GATK](https://gatk.broadinstitute.org/hc/en-us) | 4.3.0.0 | GATK4 aims to bring together well-established tools from the GATK and Picard codebases under a streamlined framework.|
-| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | 16_avx2 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/gaussian.html)|
+| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/gaussian.html)|
 | [gcc](https://gcc.gnu.org/) |  10.3.0, 11.2.0 (D) |The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).| 
 | [GDAL](https://gdal.org/) | 3.4.2, 3.5.0 | GDAL is a translator library for raster and vector geospatial data formats.| 
 | [GDB](https://www.sourceware.org/gdb/) | 8.1, 10.1 (D) | GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed.|
@@ -60,7 +61,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [GSL](https://www.gnu.org/software/gsl/doc/html/#) | 2.7 |The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.|
 | [HDF5](https://portal.hdfgroup.org/display/support/Documentation) | 1.10.1, 1.12.1 | HDF5 is a data model, library, and file format for storing and managing data.|
 | [HOMER](http://homer.ucsd.edu/homer/) | 4.11 | Software for motif discovery and next-gen sequencing analysis.|
-| [IDL](https://www.l3harrisgeospatial.com/Software-Technology/IDL) | 8.7 |IDL software is a scientific programming language used across disciplines to create visualizations out of complex numerical data.|
+| [IDL](https://www.nv5geospatialsoftware.com/Products/IDL) | 8.7 |IDL software is a scientific programming language used across disciplines to create visualizations out of complex numerical data.|
 | [ImageMagick](https://imagemagick.org/index.php) | 6.9.12 |ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files.| 
 | [Intel Advisor](https://www.intel.com/content/www/us/en/developer/tools/oneapi/advisor.html#gs.odmdiw) | 2022.0.0 | Intel Advisor is a design and analysis tool for developing performant code. The tool supports C, C++, Fortran, SYCL, OpenMP, OpenCL code, and Python.|  
 | Intel cluster tools | 17.3 | Intel cluster tools.| 
@@ -72,7 +73,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Jasper](https://jasper-software.github.io/jasper/) | 4.0.0 (D) | JasPer is a software toolkit for the handling of image data. |
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
 | [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e | Open source JPEG Image Library.|
-| [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
+| [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.2 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
@@ -85,6 +86,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [MultiQC](https://multiqc.info/) | 1.14 | MultiQC is a reporting tool that parses results and statistics from bioinformatics tool outputs, such as log files and console outputs.|
 | [NAMD](http://www.ks.uiuc.edu/Research/namd/) | 2.14 | NAMD is a parallel molecular dynamics code for large biomolecular systems.| 
 | [NCL](https://www.ncl.ucar.edu/Download/) | 6.3.0 (D) | NCAR Command Language. An interpreted language designed for scientific data analysis and visualization. |
+| [NCO](https://nco.sourceforge.net/) | 4.8.1 | A toolkit that manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, HDF5, and, Zarr | 
 | [Ncview](http://meteora.ucsd.edu/~pierce/ncview_home_page.html) | 2.1.7 | Ncview is a visual browser for netCDF format files. | 
 | [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | 4.8.1 | NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.|
 | [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04 (D) | Nextflow is Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
@@ -104,14 +106,13 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [PLINK2](https://www.cog-genomics.org/plink/2.0/) | 2.00a2.3 | PLINK 2.0 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics.| 
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
-| [Q-Chem](https://www.q-chem.com/) | 4010 |Q-Chem is a comprehensive ab initio quantum chemistry software for accurate predictions of molecular structures, reactivities, and vibrational, electronic and NMR spectra.| 
 | [QIIME 2](https://qiime2.org/) | 2023.5 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
 | [Quantum ESPRESSO](https://www.quantum-espresso.org/) | 7.0 (D), 7.2 |An integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale.| 
 | [Qt](https://doc.qt.io/) | 4.8.5, 5.6.0, 5.9.1, 5.15 (D) |Qt ("cute") is cross-platform software for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.| 
 | [R](https://www.r-project.org/) | 3.6.3,4.2.2 (D)|R is a programming language for statistical computing and graphics.| 
 | [rclone](https://rclone.org/) | 1.58.0 |Rclone is a command-line program to manage files on cloud storage.| 
-| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G), 4.0.1-cu11.8 (G,D) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
-| [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3, 5.3.0, 5.5.0 (D) |ROCm is an AMD software stack for GPU programming.| 
+| [RELION](https://relion.readthedocs.io/en/release-4.0/index.html) | 3.1.3_cpu, 4.0-beta-cu11.2 (G), 4.0.1-cu11.8 (G,D) 5.0 (G), 5.0-cu12.1 (G) |Relion (for **RE**gularised **LI**kelihood **O**ptimisatio**N**, pronounce rely-on) is a software package that employs an empirical Bayesian approach for electron cryo-microscopy (cryo-EM) structure determination.| 
+| [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm) (G)  | 5.2.3, 5.3.0, 5.5.0, 5.6.0 (D) |ROCm is an AMD software stack for GPU programming.| 
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
@@ -133,6 +134,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Valgrind](https://valgrind.org/) | 3.11.0, 3.17.0 (D) |Valgrind is an instrumentation framework containing tools that can automatically detect many memory management and threading bugs, and profile your programs in detail.| 
 | [VAPOR](https://github.com/NCAR/VAPOR) | 3.3.0, 3.4.0 (D) |VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers.|
 | [vtf3](https://www.paratools.com/otf/) | 1.43 |VTF3 trace generation package.|  
+| [Yambo](https://www.yambo-code.eu/wiki/index.php/Main_Page) | 5.2.2 |An ab initio tool for excited state calculations.|  
 | [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zipfiles.|
 | [zlib](https://www.zlib.net/) | 1.2.11 | Lossless data-compression library.|
 

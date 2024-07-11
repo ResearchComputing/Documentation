@@ -13,7 +13,7 @@ Users accessing RC's resources will be connected to a login node. A login node i
 + Running Jobs
 + Access storage resources  
 
-> **Note:** the [login node policy](../compute/node-types.html#login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
+> **Note:** the [login node policy](../additional-resources/policies.html#login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
 
 + **For CSU users, please refer to the "Remote Login" section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page.**  
 + **For RMACC users, please refer to [RMACC Access to Alpine.](./rmacc)**

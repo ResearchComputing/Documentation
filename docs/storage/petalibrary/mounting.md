@@ -65,7 +65,7 @@ Sshfs on Mac can easily be done with the installation of fuse and the sshfs pack
 After installing both simply open a terminal and navigate to your desired mount location. Create a directory to be your mountpoint and run the command 
 
 ```
-sshfs <your-rc-username>@dtn.rc.int.colorado.edu:/pl/active/<your-pl-directory> <local-directory>
+sshfs <your-rc-username>@dtn.rc.colorado.edu:/pl/active/<your-pl-directory> <local-directory>
 ```
 
 You will be prompted for your password after execution. Type your password and accept the duo prompt.
@@ -80,7 +80,7 @@ Once both applications are installed, run the application â€œsshfs-win managerâ€
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/sshfsmenu.PNG)
 
-Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to dtn.rc.int.colorado.edu. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
+Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to dtn.rc.colorado.edu. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/sshfs.PNG)
 

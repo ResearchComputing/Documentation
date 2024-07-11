@@ -25,7 +25,8 @@ Request PetaLibrary storage by filling out the application form at the [RC PetaL
 
 - **To access archive storage:** Archive storage is located at: `/pl/archive/<your_allocation_name>`
 
-Access via the login nodes is **not recommended** for frequent or large read/writes of archived data.
+Please use our Data Transfer nodes for frequent or large read/writes of archived data. Do not use login nodes for these purposes. For more information on transferring data, 
+please refer to our [Data Transfer](../../compute/data-transfer.html) documentation. 
 
 ### Service Classes
 
