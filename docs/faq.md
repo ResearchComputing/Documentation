@@ -1,6 +1,6 @@
 ## Frequently Asked Questions
 
-See our documentation [homepage](index.html) for information about our most common topics.
+See our documentation [homepage](index) for information about our most common topics.
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
 2. [How do I acknowledge use of CURC Resources?](https://curc.readthedocs.io/en/latest/index.html#acknowledging-rc)
@@ -71,13 +71,13 @@ squeue --user=your_rc-username --start
 ```
 Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
-For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](./running-jobs/slurm-commands) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
-Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](./compute/monitoring-resources.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](./compute/monitoring-resources) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
 
 ### How can I get metics about CURC systems such as how busy they are, wait times, and account usage?
 
-Visit the [CURC metrics portal](https://curc.readthedocs.io/en/latest/gateways/xdmod.html) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+Visit the [CURC metrics portal](./compute/monitoring-resources.html#xdmod) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
 
 ### How much memory did my job use?
 
@@ -93,9 +93,9 @@ If you'd like to monitor memory usage on jobs that are currently running, use th
 sstat --jobs=your_job-id --format=User,JobName,JobId,MaxRSS
 ```
 
-For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](running-jobs/slurm-commands.html) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
+For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](./running-jobs/slurm-commands) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
 
-You can also view information related to service unit (SU) usage and CPU & RAM efficiency by using [slurmtools](https://curc.readthedocs.io/en/latest/compute/monitoring-resources.html?highlight=slurmtools#slurmtools). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
+You can also view information related to service unit (SU) usage and CPU & RAM efficiency by using [slurmtools](./compute/monitoring-resources.html#slurmtools). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
 
 ### How can I see my current FairShare priority?
 
@@ -160,7 +160,7 @@ The slurm/alpine module environment cannot be loaded from compile or compute nod
 
 Although Research Computing provides commonly used Python libraries as module, you may need to install individual python libraries for your research. This is best handled by utilizing Research Computing's Anaconda installation to set up a local Conda enviornment.
 
-[Find out more about using Python with Anaconda here.](software/python.html)
+[Find out more about using Python with Anaconda here.](./software/python)
 
 
 <!-- 
@@ -211,7 +211,7 @@ One final item of note is a Python virtualenv. Virtualenvs allow you to keep mul
 
 ### Why does my allocation report less storage than I requested?
 
-Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. Read more about [ZFS Snapshots](./storage/petalibrary/zfs_snapshots.html) 
+Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. Read more about [ZFS Snapshots](./storage/petalibrary/zfs_snapshots) 
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
@@ -220,6 +220,6 @@ If you would like to set a custom snapshot schedule for your allocation, please 
 
 ### Why is my Jupyter session pending throwing 'QOSMaxSubmitJobPerUserLimit'?
 
-Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications with "Presets" in their name will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
+Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications with "Presets" in their name will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](./running-jobs/slurm-commands.html#stopping-jobs-with-scancel). 
 
 

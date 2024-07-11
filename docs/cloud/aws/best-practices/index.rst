@@ -1,5 +1,5 @@
 AWS - Best Practices
-===============
+====================
 
 .. toctree::
     :maxdepth: 1

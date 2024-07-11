@@ -81,5 +81,3 @@ resource "aws_iam_role" "example" {
   permissions_boundary = "arn:aws:iam::<AWS account number>:policy/Customer_Admin_PermissionBoundary"
 }
 ```
-
----

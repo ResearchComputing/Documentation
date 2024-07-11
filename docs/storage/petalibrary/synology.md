@@ -10,7 +10,7 @@ The following accounts are available for SSH remote login:
 
 _Note: You may need to use the _sudo_ command to gain administrative access._
 
-```bash
+```
 $ ssh mylabstorage.colorado.edu -l admin
 admin@mylabstorage.colorado.edu's password:
 
@@ -24,7 +24,7 @@ mylabstorage>
 
 #### Step 2: Run _ash_ to break out of restricted shell
 
-```bash
+```
 mylabstorage> ash
 
 
@@ -50,7 +50,7 @@ When following this documentation you should be generating the ssh key on the Sy
 
 _(Note for below: Press return when prompted for a passphrase to select “empty”)._
 
-```bash
+```
 /volume1/homes/admin $ ssh-keygen -t rsa -b 4096 -C 'mylab synology'
 ```
 
@@ -80,5 +80,5 @@ If you want your backups to occur at a specified time each day or week, please r
 #### Useful links
 
 * [Synology documentation](https://www.synology.com/en-us/support/documentation?query=&type=All&section=All&p=1)
-* [CURC data transfer documentation](../../compute/data-transfer.html)
+* [CURC data transfer documentation](../../compute/data-transfer)
 

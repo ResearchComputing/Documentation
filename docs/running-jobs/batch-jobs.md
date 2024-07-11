@@ -78,7 +78,7 @@ For example if you wanted to request 2 nodes with an sbatch directive, you would
 #SBATCH --nodes=2
 ```
 
-A list of some useful sbatch directives [can be found here.](job-resources.html) A full list of commands [can be found in Slurm's documentation for sbatch.](https://slurm.schedmd.com/sbatch.html)
+A list of some useful sbatch directives [can be found here.](./job-resources) A full list of commands [can be found in Slurm's documentation for sbatch.](https://slurm.schedmd.com/sbatch.html)
 
 #### 2. Software
 
@@ -94,7 +94,7 @@ Next, you can load whatever software you need by running the following command:
 module load <software>
 ```
 
-More information about [software modules can be found here.](../compute/modules.html)
+More information about [software modules can be found here.](../compute/modules)
 
 #### 3. User Scripting
 
@@ -177,12 +177,12 @@ The `sbatch` command supports many optional flags. To review all the options, pl
 | Type                   | Description                                         | Flag                       |
 | :--------------------- | :-------------------------------------------------- | :------------------------- |
 | Allocations            | Specify an allocation account if you have multiple  | --account=account_no       |
-| [Partitions](job-resources.html)         | Specify a partition                                 | --partition=partition_name |
+| [Partitions](./job-resources)         | Specify a partition                                 | --partition=partition_name |
 | Sending email          | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address          | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes        | The number of nodes needed to run the job           | --nodes=nodes              |
 | Number of tasks        | The total number of cores needed to run the job     | --ntasks=processes         |
-| [Quality of service](job-resources.html) | Specify a QOS                                       | --qos=qos                  |
+| [Quality of service](./job-resources) | Specify a QOS                                       | --qos=qos                  |
 | Wall time              | The max. amount of time your job will run for       | --time=wall time           |
 | Job Name               | Name your job so you can identify in queue          | --job-name=<jobname>       |
 

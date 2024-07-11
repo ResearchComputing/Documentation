@@ -1,2 +1,0 @@
-### alpine scratch
-
