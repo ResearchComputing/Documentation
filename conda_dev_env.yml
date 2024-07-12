@@ -4,7 +4,7 @@ channels:
 dependencies:
   - python==3.11.9
   - sphinx==7.3.7 
-  - myst-parser
+  - myst-parser==3.0.1
   - pip
   - pip:
     - sphinx-book-theme==1.1.3
