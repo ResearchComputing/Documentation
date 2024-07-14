@@ -26,7 +26,7 @@ Let’s create a simple ‘Hello World’ serial python script to demonstrate th
 ```python
 import sys
 
-print “Hello World from task: ”, sys.argv[1]
+print "Hello World from task: ", sys.argv[1]
 ```
 
 Now create a job script called `run_hello.sh` that will use GNU Parallel 
@@ -34,7 +34,7 @@ to run as many instances of your python script as you want. Before running GNU P
 
 > _Note: This example uses a custom python environment built with conda, 
 more infomation on using python or R with conda can be found 
-[here](./python.html)_
+[here](./python.html)
 
 ```bash
 #!/bin/bash

@@ -407,10 +407,10 @@ int main(int argc, char** argv){
 
     if(process_Rank == 0){
         message_Item = 42;
-        printf(“Sending message containing: %d\n”, message_Item)
+        printf("Sending message containing: %d\n", message_Item);
     }
     else if(process_Rank == 1){
-        printf(“Received message containing: %d\n”, message_Item)
+        printf("Received message containing: %d\n", message_Item);
     }
     MPI_Finalize();
     return 0;

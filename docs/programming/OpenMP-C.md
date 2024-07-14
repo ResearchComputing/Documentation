@@ -52,7 +52,8 @@ unique id number.
 #include <omp.h>
 
 int main(int argc, char** argv){
-    printf(“Hello from process: %d\n”, omp_get_thread_num());
+
+    printf("Hello from process: %d\n", omp_get_thread_num());
 
     return 0;
 }
@@ -229,7 +230,7 @@ int main(int argc, char** argv){
 
     #pragma omp parallel
     {
-        printf(“Hello from process: %d\n”, omp_get_thread_num());
+        printf("Hello from process: %d\n", omp_get_thread_num());
     }
     return 0;
 }
@@ -248,7 +249,7 @@ int main(int argc, char** argv){
 
     #pragma omp parallel private(thread_id)
     {
-        printf(“Hello from process: %d\n”, omp_get_thread_num());
+        printf("Hello from process: %d\n", omp_get_thread_num());
     }
 }
 ```
@@ -266,7 +267,7 @@ int main(int argc, char** argv){
     #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
-        printf(“Hello from process: %d\n”, thread_id );
+        printf("Hello from process: %d\n", thread_id );
     }
 
     return 0;
@@ -331,7 +332,7 @@ int main(int argc, char** argv){
 
         //create the loop to have each thread print hello.
         for(i = 0; i < omp_get_max_threads(); i++){
-            printf(“Hello from process: %d\n”, thread_id);
+            printf("Hello from process: %d\n", thread_id);
         }
     }
     return 0;
@@ -356,7 +357,7 @@ int main(int argc, char** argv){
 
         for(i = 0; i < omp_get_max_threads(); i++){
             if(i == thread_ID){
-                printf(“Hello from process: %d\n”, thread_id);
+                printf("Hello from process: %d\n", thread_id);
             }
         }
     }
@@ -381,7 +382,7 @@ int main(int argc, char** argv){
 
         for( int i = 0; i < omp_get_max_threads(); i++){
             if(i == omp_get_thread_num()){
-                printf(“Hello from process: %d\n”, thread_id);
+                printf("Hello from process: %d\n", thread_id);
             }
             #pragma omp barrier
         }
@@ -523,11 +524,11 @@ int main(int argc, char** argv){
         //Create thread safe region.
         #pragma omp critical
         {
-                //add each threads partial sum to the total sum
-                total_Sum += partial_Sum;
+            //add each threads partial sum to the total sum
+            total_Sum += partial_Sum;
         }
     }
-    printf(“Total Sum: %d\n”, total_Sum);
+    printf("Total Sum: %d\n", total_Sum);
     return 0;
 }
 ```

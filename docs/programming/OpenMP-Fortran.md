@@ -47,7 +47,7 @@ unique id number.
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
-PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 END
 ```
@@ -125,7 +125,7 @@ USE OMP_LIB
 
 !$OMP PARALLEL
 
-    PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+    PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 !$OMP END PARALLEL
 
@@ -224,7 +224,7 @@ INTEGER :: thread_id
 
 !$OMP PARALLEL
 
-    PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+    PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 !$OMP END PARALLEL
 
@@ -243,7 +243,7 @@ INTEGER :: thread_id
 
 !$OMP PARALLEL PRIVATE(thread_id)
 
-    PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+    PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 !$OMP END PARALLEL
 
@@ -262,7 +262,7 @@ INTEGER :: thread_id
 !$OMP PARALLEL PRIVATE(thread_id)
 
     thread_id = OMP_GET_THREAD_NUM()
-    PRINT *, “Hello from process: ”, thread_id
+    PRINT *, "Hello from process: ", thread_id
 
 !$OMP END PARALLEL
 
@@ -292,7 +292,7 @@ prominent forms of control comes with the __barrier__:
 
 ```fortran
 !$OMP CRITICAL
-…
+...
 !$OMP END CRITICAL
 ```
 
@@ -405,7 +405,7 @@ parallel task. We can implement this directive as such:
 
 ```fortran
 !$OMP DO
-…
+...
 !$OMP END DO
 ```
 
@@ -506,7 +506,7 @@ INTEGER :: partial_Sum, total_Sum
     !$OMP END CRITICAL
 
 !$OMP END PARALLEL
-PRINT *, “Total Sum: ”, total_Sum
+PRINT *, "Total Sum: ", total_Sum
 
 END
 ```
