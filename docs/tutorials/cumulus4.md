@@ -1,6 +1,5 @@
 # Mounting a remote filesystem from a CUmulus Virtual Machine
 
-
 ___Learning Objectives:___
 * [Install the software needed to remotely mount a CURC PetaLibrary allocation](https://github.com/ResearchComputing/CUmulus_tutorials/edit/main/tutorial4/README.md#part-1-install-sshfs)
 * [Establish the remote mount to PetaLibrary](https://github.com/ResearchComputing/CUmulus_tutorials/edit/main/tutorial4/README.md#part-2-mount-petalibrary-with-sshfs)
@@ -15,9 +14,7 @@ Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This e
 
 Completing the steps below requires that you have first [logged into your VM](./cumulus1#part-3-logging-into-your-instance)
 
----
-
-####  Part 1: Install `sshfs`
+###  Part 1: Install `sshfs`
 
 The [sshfs](https://osxfuse.github.io) software package provides an open-source solution for mounting your Petalibrary allocation to your CUmulus VM. 
 
@@ -35,9 +32,7 @@ yum install fuse-sshfs
 
 ...or, if you are on a _Windows_ VM, see our documentation [here](https://curc.readthedocs.io/en/latest/storage/petalibrary/mounting.html?highlight=sshfs#sshfs-on-windows)
 
----
-
-####  Part 2: Mount PetaLibrary with `sshfs`
+###  Part 2: Mount PetaLibrary with `sshfs`
 
 
 Create a folder on the VM where you would like to mount your PetaLibrary allocation.  For simplicity, we will create a folder called `mypetalibrary` in our home (`~`) directory, but you could place the directory anywhere and call it anything you want:
@@ -61,9 +56,7 @@ sshfs ralphie@dtn.rc.colorado.edu:/pl/active/rcops ~mypetalibrary
 You will be prompted for your password after execution. Type your password and accept the duo prompt.
 Your selected directory will now be mounted to your Petalibrary allocation.
 
----
-
-####  Part 3: Test your mount
+###  Part 3: Test your mount
 
 Can you _see_ the files in your PetaLibrary allocation? 
 
@@ -97,7 +90,7 @@ ubuntu@198.59.83.67:$ ls -l ~/mypetalibrary/newtestfile
 
 ...yes!  Note that the user and group IDs (UID/GID) don't map from CURC to CUmulus by default. so these will show up as numbers that correspond with the username under which you established the ssh mount (i.e., `122971` maps to `ralphie` in the example above).
 
-#### Part 4: Remove your mount
+### Part 4: Remove your mount
 
 Should you need to remove your mount, type the following, for example:
 
@@ -105,9 +98,7 @@ Should you need to remove your mount, type the following, for example:
 sshfs umount ~/mypetalibrary
 ```
 
----  
-### Additional Information
----
+## Additional Information
 
   * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)

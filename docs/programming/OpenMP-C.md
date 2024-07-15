@@ -1,4 +1,4 @@
-## Using OpenMP with C
+# Using OpenMP with C
 
 Because a cluster consists of many CPUs, the most effective way to utilize
 these resources involves parallel programming. Probably the simplest
@@ -18,7 +18,7 @@ Much more in depth OpenMP and MPI C++ tutorial:
 - [https://hpc-tutorials.llnl.gov/openmp/](https://hpc-tutorials.llnl.gov/openmp/)
 
 
-### Parallel “Hello, World” Program
+## Parallel “Hello, World” Program
 
 In this section we will learn how to make a simple parallel hello
 world program in C++. Let’s begin with the creation of a program
@@ -185,7 +185,7 @@ Note: Don’t worry about the order of processes that printed, the threads will
 print out at varying times.
 
 
-### Private vs. Shared Variables
+## Private vs. Shared Variables
 
 Memory management is a quintessential component of any parallel
 program that involves data manipulation. In this section, we will
@@ -215,7 +215,7 @@ of code will be inherently be private, and variables created outside
 of parallel sections will be inherently public.
 
 
-#### Example
+### Example
 
 Let’s adapt our ‘Hello World’ code to utilize private variables as an
 example.  Starting with the code we left off with, let’s create a
@@ -284,7 +284,7 @@ Hello from process: 2
 Hello from process: 1
 ```
 
-### Barrier and Critical Directives
+## Barrier and Critical Directives
 
 OpenMP has a variety of tools for managing processes. One of the more
 prominent forms of control comes with the __barrier__:
@@ -307,7 +307,7 @@ A critical directive ensures that a line of code is only run by one
 process at a time, ensuring thread safety in the body of code.
 
 
-#### Example
+### Example
 
 Let's implement an OpenMP barrier by making our ‘Hello World’ program
 print its processes in order. Beginning with the code we created in
@@ -402,7 +402,7 @@ Hello from process: 3
 ```
 
 
-### Work Sharing Directive: omp for
+## Work Sharing Directive: omp for
 
 OpenMP’s power comes from easily splitting a larger task into multiple
 smaller tasks.  Work-sharing directives allow for simple and effective
@@ -418,7 +418,7 @@ parallel task. We can implement this directive as such:
 ```
 
 
-#### Example
+### Example
 
 Let’s write a program to add all the numbers between 1 and 1000. Begin with a main function
 and the stdio and omp headers:

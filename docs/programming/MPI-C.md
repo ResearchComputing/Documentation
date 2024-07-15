@@ -1,4 +1,4 @@
-## Using MPI with C
+# Using MPI with C
 
 Parallel programs enable users to fully utilize the multi-node
 structure of supercomputing clusters. Message Passing Interface (MPI)
@@ -14,7 +14,7 @@ __Resources:__
 - [http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml)
 
 
-### Setup and “Hello, World”
+## Setup and “Hello, World”
 
 Begin by logging into the cluster and logging in to a compile
 node. This can be done by loading the Alpine scheduler and using the command:
@@ -230,7 +230,7 @@ Hello World from process 0 of 4
 Ref: [http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html)
 
 
-### MPI Barriers and Synchronization
+## MPI Barriers and Synchronization
 
 Like many other parallel programming utilities, synchronization is an
 essential tool in thread safety and ensuring certain sections of code
@@ -327,7 +327,7 @@ Hello World from process 3 of 4
 ```
 
 
-### Message Passing
+## Message Passing
 
 Message passing is the primary utility in the MPI application
 interface that allows for processes to communicate with each other. In
@@ -367,7 +367,7 @@ MPI_Status* status;     //Status object.
 
 Let’s implement message passing in an example:
 
-#### Example
+### Example
 
 We will create a two-process process that will pass the number 42 from
 one process to another.  We will use our “Hello World” program as a
@@ -477,7 +477,7 @@ Message Sent: 42
 Message Received: 42
 ```
 
-### Group Operators: Scatter and Gather
+## Group Operators: Scatter and Gather
 
 Group operators are very useful for MPI. They allow for swaths of data
 to be distributed from a root process to all other available
@@ -516,7 +516,7 @@ essentially the converse of the scatter function. Further examples
 which utilize the gather function can be found in the MPI tutorials
 listed as resources at the beginning of this document.
 
-#### Example
+### Example
 
 We will create a program that scatters one element of a data array to
 each process. Specifically, this code will scatter the four elements

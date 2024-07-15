@@ -1,4 +1,4 @@
-## Matlab
+# Matlab
 
 Research Computing (RC) provides a large suite of software on RC
 resources. In this tutorial we will learn how to run Matlab on these
@@ -22,7 +22,7 @@ debugging or in need of a GUI. Both ways to work with Matlab are
 below.
 
 
-### Running Matlab Interactive Jobs
+## Running Matlab Interactive Jobs
 
 Running Matlab interactive jobs on RC resources is both a simple and
 easy task to accomplish. In this section we will learn 2 ways to launch
@@ -71,7 +71,7 @@ as Matlab, a virtual desktop, and more.
 session, check out our [X11 forwarding tutorial.](../running-jobs/interactive-jobs.html#interactive-gui-applications)
 
 
-### Running Matlab Batch Jobs
+## Running Matlab Batch Jobs
 
 Here, we will learn how to run a Matlab script in a non-interactive
 batch job. For more general information on batch job scripts on
@@ -153,7 +153,7 @@ Once the job has run, the output of the Matlab script, "Hello world"
 will be shown in `Matlab_Hello_World.out`.
 
 
-### Parallel Matlab on Alpine
+## Parallel Matlab on Alpine
 
 To fully utilize the multi-core capabilities of Alpine to speed up
 jobs, most code must first be parallelized. Matlab has many built in

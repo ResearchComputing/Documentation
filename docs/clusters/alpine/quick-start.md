@@ -26,7 +26,7 @@ You can also submit a [software
 request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?highlight=software%20request#alpine-software) using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
 
 ## Cluster Summary
-#### Nodes
+### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
 - **CPU nodes**: 347 AMD Milan compute nodes (270 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
 - **GPU nodes**:

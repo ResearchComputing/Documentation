@@ -1,4 +1,4 @@
-## `squeue` status and reason codes
+# `squeue` status and reason codes
 
 The `squeue` command details a variety of information on an active
 job’s status with state and reason codes. *__Job state
@@ -9,7 +9,7 @@ in its current state.
 The following tables outline a variety of job state and reason codes you
 may encounter when using squeue to check on your jobs.
 
-### Job State Codes
+## Job State Codes
 
 | Status        | Code  | Explaination                                                           |
 | ------------- | :---: | ---------------------------------------------------------------------- |
@@ -26,7 +26,7 @@ A full list of these Job State codes can be found in [Slurm’s
 documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
 
 
-### Job Reason Codes
+## Job Reason Codes
 
 | Reason Code              | Explaination                                                                                |
 | ------------------------ | ------------------------------------------------------------------------------------------- |

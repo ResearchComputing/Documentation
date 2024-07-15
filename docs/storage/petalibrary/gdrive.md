@@ -1,20 +1,20 @@
-### Data Transfer between Google Drive and PetaLibrary
+# Data Transfer between Google Drive and PetaLibrary
 
-### Using Globus
+## Using Globus
 
-#### Step 1: Log into the Globus Web App
+### Step 1: Log into the Globus Web App
 Visit https://app.globus.org and log in with your Colorado.edu credentials
 
 ![](Globus_Login.png)
 
-#### Step 2: Open your Google Drive (left pane)
+### Step 2: Open your Google Drive (left pane)
 In the Collection search (left pane) enter: Google Drive CU Boulder - this should show your Google Drive contents
 
 * If you'd like to transfer from Team Drives click the "Up One Directory" button and then select Team Drives
 
 ![](Globus_Google_Drive.png)
 
-#### Step 3: Open CURC (right pane)
+### Step 3: Open CURC (right pane)
 In the Collection search (right pane) enter: CU Boulder Research Computing
 
 * You'll be asked to log in using your CURC Credentials - after clicking Authenticate you should receive a Duo push on your Duo device which you will need to confirm
@@ -25,7 +25,7 @@ In the Collection search (right pane) enter: CU Boulder Research Computing
 
 ![](Globus_CURC_Collection.png)
 
-#### Step 4: Select files/folders from Google Drive to be transferred and initiate the transfer
+### Step 4: Select files/folders from Google Drive to be transferred and initiate the transfer
 * In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job
 
 ![](Globus_Intitiate_Transfer.png)
@@ -34,9 +34,9 @@ In the Collection search (right pane) enter: CU Boulder Research Computing
 
 ![](Globus_Activity_GDrive.png)
 
-### Using RClone
+## Using RClone
 
-#### Step 1: Login to a compile node on Alpine
+### Step 1: Login to a compile node on Alpine
 
 * Login to Alpine
 * Load module Slurm, then start a compile job, then load module rclone
@@ -52,7 +52,7 @@ In the Collection search (right pane) enter: CU Boulder Research Computing
    rclone v1.58.0
    ```
 
-#### Step 2: configure google drive remote configuration
+### Step 2: configure google drive remote configuration
 
 _Note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/). We only list the critical steps. If a step is left out, assume you can select the default setting._
 
@@ -77,7 +77,7 @@ _Note: the steps below are also outlined in the [Rclone Documentation for Google
 * Finally, you will be prompted to review the configuration and confirm whether it is okay. If everything looks okay, choose `yes` (default)
 * Now type `q` to quit the configuration. 
 
-##### Now test your Google Drive remote!
+#### Now test your Google Drive remote!
 
 On your local machine type:
 ```bash
@@ -85,7 +85,7 @@ $ rclone ls gdrive_johndoe_cu
 ```
 If this step fails, your Google Drive remote is not configured properly. Try reconfiguring your Google Drive remote again or contact rc-help@colorado.edu for assistance.
 
-#### Step 3: Create your PetaLibrary remote configuration
+### Step 3: Create your PetaLibrary remote configuration
 
 See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.html#configure-rclone)
 

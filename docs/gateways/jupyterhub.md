@@ -1,8 +1,8 @@
-## Jupyter Sessions
+# Jupyter Sessions
 
 [Jupyter Notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text, which provide an integrated environment to use, learn, and teach interactive data analysis. Users can obtain quick access to Jupyter sessions using [Open OnDemand](./OnDemand.html) and easily launch a JupyterLab interface. The JupyterLab interface is a fantastic tool that provides a highly customizable graphical user interface (GUI) that allows users to easily navigate multiple Jupyter Notebooks and the CURC filesystem. 
 
-### Navigating the JupyterLab Interface
+## Navigating the JupyterLab Interface
 
 The following features are available in the [JupyterLab Interface](https://jupyterlab.readthedocs.io/en/stable/user/interface.html):
 
@@ -27,7 +27,7 @@ only).
 job is currently running on. 
 * See Jupyter's [documentation on the JupyterLab Interface for additional information.](https://jupyterlab.readthedocs.io/en/stable/user/interface.html)
 
-### Find packages available to you within a notebook
+## Find packages available to you within a notebook
 
 The ___Python 3 (idp)___ notebook kernels have many preinstalled packages. To query a list of available packages from a python notebook, you can use the following nomenclature:
 
@@ -38,17 +38,17 @@ pipmain(['freeze'])
 
 If the packages you need are not available, you can create your own custom environment and Jupyter kernel.
 
-### Creating your own custom Jupyter kernel
+## Creating your own custom Jupyter kernel
 
 [Anaconda](http://anaconda.com) is an open-source software that provides access to _python_ and _R_ distributions, and it includes the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use within a Jupyter Session. 
 
 Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
 
-#### 1.  Configure your conda settings
+### 1.  Configure your conda settings
 
 Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](../software/python.html#configure-your-conda-settings).
 
-#### 2. Activate the CURC Anaconda environment
+### 2. Activate the CURC Anaconda environment
 
 ```
 [johndoe@c3cpu-a5-u15-4 ~]$ module load anaconda
@@ -60,12 +60,12 @@ You will know that you have properly activated the environment because you shoul
 (base) [johndoe@c3cpu-a5-u15-4 ~]$
 ```
 
-#### 3. Create a new custom environment 
+### 3. Create a new custom environment 
 
 Follow our Anaconda documentation for [steps on creating your own custom conda environment](../software/python.html#create-your-own-custom-environment).
 
 
-#### 4. Activate your new environment
+### 4. Activate your new environment
 
 ```
 (base) [johndoe@c3cpu-a5-u15-4 ~]$ conda activate mycustomenv
@@ -73,7 +73,7 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 
 > Note: We assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!
 
-#### 5. Create your own custom kernel, which will enable you to use this environment in your Jupyter Session
+### 5. Create your own custom kernel, which will enable you to use this environment in your Jupyter Session
 
 __For a _python_ kernel__
 
@@ -96,7 +96,7 @@ __For an _R_ kernel__
 * The first command will install the _irkernel_ package if not installed already. 
 * The second command will start _R_. The third command, executed from within _R_, will create an _R_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note: that the name and display-name are not required to match the environment name -- call them anything you want). The kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you launch a Jupyter Session.
 
-#### Notes:
+### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
 ```
@@ -105,12 +105,12 @@ export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
 
 If you need assistance creating or installing environments or Jupyter kernels, contact us at <rc-help@colorado.edu>. 
 
-### Troubleshooting
+## Troubleshooting
 
 * If you are a CSU or ACCESS user and are having trouble with packages that employ PERL (due to the `@` symbol), visit our documentation on setting up a user variable that links to alternate paths without the `@` symbol in [CSU and XSEDE/ACCESS usernames](../additional-resources/csu-xsede-usernames.md)
 
 
-### See Also
+## See Also
 
 * [CURC Anaconda distribution](../software/python.html)
 * [JupyterLab homepage](https://jupyterlab.readthedocs.io)

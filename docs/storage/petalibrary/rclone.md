@@ -1,8 +1,8 @@
-## Backing up local data to PetaLibrary
+# Backing up local data to PetaLibrary
 
 This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
-### Generate public/private keypair for CURC resources
+## Generate public/private keypair for CURC resources
 
 
 In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.html) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
@@ -15,7 +15,7 @@ Once the keypair has been generated, we now need to provide the private key to t
 
 then select `n) New Remote`.
 
-### Install rclone on the backup source host
+## Install rclone on the backup source host
 
 The rclone application is available download here for a variety of architectures. [Download rclone here](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
 
@@ -24,7 +24,7 @@ _Note: You must have adminstrative priveleges on your laptop or lab server in or
 **Windows:** Download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
 
 
-### Configure rclone
+## Configure rclone
 
 The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](../../compute/data-transfer.html)
 
@@ -220,7 +220,7 @@ e/n/d/r/c/s/q>
 ```
 
 
-### Verify rclone config
+## Verify rclone config
 
 You can verify your settings by running 'rclone config show'. The results from the example above looked like this after running through the initial configuration:
 
@@ -242,7 +242,7 @@ sha1sum_command = none
 ```
 
 
-### Test rclone
+## Test rclone
 
 _Example_: The syntax for using rclone to synchronize a local directory `/tmp/local_backup_dir` to a directory `pl_backup_dir` in a PetaLibrary allocation named `pl_allocation`, the command (executed from your laptop or lab server) would be:
 
@@ -250,7 +250,7 @@ _Example_: The syntax for using rclone to synchronize a local directory `/tmp/lo
 
 This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`. 
 
-### Run rclone on a schedule
+## Run rclone on a schedule
 On Mac or Linux hosts, you can set up a cron job to run the rclone sync job regularly. To create a crontab entry type:
 
 ```$ crontab -e```

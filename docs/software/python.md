@@ -217,9 +217,8 @@ Once Mamba has been properly loaded, you can utilize almost all core command and
 
 > _**Note:**_ If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided. 
 
----
 
-#### Dbus Error
+## Dbus Error
 
 If you see a 'dbus' connection error when trying to connect via a virtual environment:
 

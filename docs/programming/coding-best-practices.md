@@ -1,4 +1,4 @@
-## Coding best practices
+# Coding best practices
 
 Programmers employ numerous tactics to ensure readable and organized
 code. These include:
@@ -9,14 +9,14 @@ code. These include:
 
 In this tutorial we will examine these concepts.
 
-### Variable Naming Conventions
+## Variable Naming Conventions
 
 Variable naming is an important aspect in making your code
 readable. Naming variables follow a simple idea: Create variables that
 describe their function and which follow a consistent theme throughout
 your code. Let’s take a look at some naming conventions.
 
-#### Multiword Delimited
+### Multiword Delimited
 
 This convention is to separate words in a variable name without the
 use of whitespace. Whitespace within variables is usually difficult
@@ -64,7 +64,7 @@ Regardless of how you choose to name your variables, always ensure
 that your naming conventions are consistent throughout the
 code. Consistency allows others to more easily understand your code.
 
-### Function and Class Naming conventions
+## Function and Class Naming conventions
 
 Much like variable naming conventions, functions and classes should
 also follow a similar structure of descriptive titles delimited with
@@ -77,7 +77,7 @@ classes, and variables with different naming conventions can greatly
 aid other users of your code, and can eliminate the need for large
 sections of comments that would otherwise be needed.
 
-### Whitespace and Tabbing
+## Whitespace and Tabbing
 
 Whitespace and tabbing are critical for organizing code. Whitespace is 
 any space in your code that is not taken up by physical characters.
@@ -119,7 +119,7 @@ utilized in various different styles and approaches. Just remember to
 use whitespace and tabbing in a consistent, readable style
 throughout your code.
 
-### Commenting your code
+## Commenting your code
 
 Commenting may be the most important way to organize and segment
 code. Comments are sections of code that the compiler ignores, 

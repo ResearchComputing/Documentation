@@ -1,6 +1,6 @@
-## PetaLibrary Billing
+# PetaLibrary Billing
 
-#### General information
+## General information
 
 PetaLibrary allocations are billed on a per-TB basis. Service begin
 and end dates are rounded to the nearest whole month.  Refunds are not
@@ -11,7 +11,7 @@ remaining allocation, and have one 10 TB allocation for the remaining
 six months.
 
 
-#### Services dates
+## Services dates
 
 The University of Colorado fiscal year begins on July 1 and ends on June
 30. Whenever possible, we will not bill for PetaLibrary services across
@@ -31,7 +31,7 @@ has to deal with, and that we will avoid doing so when possible.
 
 
 
-#### Invoicing
+## Invoicing
 
 When a PetaLibrary billable event occurs, such as a request for additional
 storage or a renewal being due, Research Computing will generate an
@@ -55,7 +55,7 @@ the owner.
 
 View a [sample invoice](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/storage/petalibrary/petalibrary_invoice.pdf)
 
-#### Retirement of old billing procedure
+## Retirement of old billing procedure
 
 Starting March 1 2022, Research Computing is changing the billing
 procedure for PetaLibrary allocations. Historically an email conversation

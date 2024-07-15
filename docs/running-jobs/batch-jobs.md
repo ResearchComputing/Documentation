@@ -1,18 +1,15 @@
-## Batch Jobs and Job Scripting
+# Batch Jobs and Job Scripting
 
 Batch jobs are, by far, the most common type of job on our HPC system. Batch jobs are resource provisions that run applications on compute nodes and do not require supervision or interaction. Batch jobs are commonly used for applications that run for long periods of time or require little to no user input. 
 
-### Job Scripts
+## Job Scripts
 
 Even though it is possible to run jobs completely from the command line, it is often overly tedious and unorganized to do so. Instead, Research Computing recommends constructing a job script for your batch jobs. A **job script** is set of Linux commands paired with a set of resource requirements that can be passed to the Slurm job scheduler. Slurm will then generate a job according to the parameters set in the job script. Any commands that are included with the job script will be run within the job.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sStJQKTa9zY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
----
 
-
-
-### Running a Job Script
+## Running a Job Script
 
 Running a job script can be done with the `sbatch` command:
 
@@ -28,7 +25,7 @@ sbatch --partition=amilan <your-job-script>
 
 Running this command would force your job to run on the amilan partition *no matter what your job script specified*.
 
-### Making a Job Script
+## Making a Job Script
 
 Although Research Computing provides a variety of different sample scripts users can utilize when running their own jobs, knowing how to draft a job script can be quite handy if you need to debug any errors in your jobs or you need to make substantial changes to a script.
 
@@ -56,7 +53,7 @@ echo "== End of Job =="
 
 Normally job scripts are divided into 3 primary parts: directives, loading software, and user scripting. Directives give the terminal and the Slurm daemon instructions on setting up the job. Loading software involves cleaning out the environment and loading specific pieces of software you need for your job. User scripting is simply the commands you wish to be executed in your job.  
 
-#### 1. Directives
+### 1. Directives
 
 A directive is a comment that is included at the top of a job script that tells the shell information about the script. 
 
@@ -80,7 +77,7 @@ For example if you wanted to request 2 nodes with an sbatch directive, you would
 
 A list of some useful sbatch directives [can be found here.](job-resources.html) A full list of commands [can be found in Slurm's documentation for sbatch.](https://slurm.schedmd.com/sbatch.html)
 
-#### 2. Software
+### 2. Software
 
 Because jobs run on different nodes, any shared software that is needed must be loaded via the job script. Software can be loaded in a job script just like it would be on the command line. First, we will purge all software that may be left behind from your working environment on a compile node by running the command:
 
@@ -96,7 +93,7 @@ module load <software>
 
 More information about [software modules can be found here.](../compute/modules.html)
 
-#### 3. User Scripting
+### 3. User Scripting
 
 The last part of a job script is the actual script. This includes all user commands that are needed to set up and execute the desired task. Any Linux command can be utilized in this step. Scripting can range from highly complex loops iterating over thousands of files to a simple call to an executable. Below is an simple example of some user scripting:
 
@@ -112,7 +109,7 @@ sleep 30
 echo "== End of Job =="
 ```
 
-### Examples
+## Examples
 
 Job script to run a 5 minute long, 1 node, 1 core C++ Job:
 
@@ -170,7 +167,7 @@ module load impi
 mpirun -np 16 ./example_mpi.exe
 ```
 
-### Job Flags
+## Job Flags
 
 The `sbatch` command supports many optional flags. To review all the options, please visit the Slurm [sbatch page](http://slurm.schedmd.com/sbatch.html). Below are a few flags you may want to consider when running your job via `sbatch`.
 

@@ -93,7 +93,6 @@ Use of University of Colorado Research Computing resources, including (but not l
 
    access/logging-in
    access/duo-2-factor-authentication
-   access/allocations
    access/rmacc
    access/amc-access
 

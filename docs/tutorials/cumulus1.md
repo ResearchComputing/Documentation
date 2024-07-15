@@ -1,28 +1,22 @@
 # Tutorial: Creating a CUmulus instance
 
----
-
-#### _Learning Objectives:_
+## _Learning Objectives:_
 
 * [Logging into CUmulus via Horizon](#part-1-logging-in-to-cumulus-via-horizon) (the CUmulus web portal)
 * [Creating your instance](#part-2-instance-creation) (i.e. virtual machine)
 * [Logging into your instance](#part-3-logging-into-your-instance) via `ssh` 
 
----
-###  Part 1: Logging in to CUmulus via Horizon
----
+##  Part 1: Logging in to CUmulus via Horizon
 
 _Horizon is the CUmulus web portal, hosted at https://cumulus.rc.colorado.edu. Let’s take a brief tour of Horizon_.
 
-#### _Log in with your institution’s credentials:_
+## _Log in with your institution’s credentials:_
 
 Navigate to https://cumulus.rc.colorado.edu and authenticate using your insitution's credentials (e.g., University of Colorado Boulder)
 
 ![](images/login.png)
 
----
-
-#### _Navigate Horizon_
+## _Navigate Horizon_
 
 * Choose your project (top left)
   * _Note: Generally users only have 1 project_
@@ -35,19 +29,16 @@ Navigate to https://cumulus.rc.colorado.edu and authenticate using your insituti
  
 ![](images/navigate_intro.png)
 
----
 
-#### _Navigate Horizon: Overview_
+## _Navigate Horizon: Overview_
 
 * Land on the Overview page under “Compute” to get a quick summary of your project
 
 ![](images/navigate_overview.png)
 
----
-### Part 2: Instance Creation
----
+## Part 2: Instance Creation
 
-#### _Instance creation: Launch a new instance_
+### _Instance creation: Launch a new instance_
 
 _Instances are virtual machines that run inside the cloud, more simply: an instance is just a digital version of a physical computer._
   * _Instances can perform almost all of the same functions as a computer, including running applications and operating systems._
@@ -60,7 +51,7 @@ Do the following:
 
 ![](images/navigate_to_instances.png)
 
-#### _Instance creation: Details_
+### _Instance creation: Details_
  
 The first instance creation screen is entiled ___Details___: 
 
@@ -69,10 +60,8 @@ The first instance creation screen is entiled ___Details___:
 * Fill out the instance _name_ and _description_
   * _availability zone_ and _count_ can be left as default. This value is set to the availability zone given by the cloud provider (for example, us-west or apac-south).
 * click `Next` when done to go to the ___Source___ screen.
- 
----
 
-#### _Instance creation: Source_
+### _Instance creation: Source_
 Next, we'll select our boot source. We're starting a new instance from scratch here so we'll boot from a source OS image.
 
 ![](images/instance_source.png)
@@ -85,9 +74,7 @@ Next, we'll select our boot source. We're starting a new instance from scratch h
   * If you select _No_ be aware “zombie” volumes will remain when the instance is deleted (you will need to remove them manually later!)
 * click `Next` when done to go to the ___Flavor___ screen.
 
----
-
-#### _Instance creation: Flavor_
+### _Instance creation: Flavor_
 A flavor defines the compute, memory, and storage capacity of our instance.
 
 ![](images/instance_flavor.png)
@@ -96,9 +83,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
   * _For this tutorial, select the smallest size_
 * click `Next` when done to go to the ___Networks___ screen.
 
----
-
-#### _Instance creation: Networks & Network Ports_
+### _Instance creation: Networks & Network Ports_
 
 ![](images/instance_networks.png)
 
@@ -109,9 +94,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
   * You can select ports instead of networks or a mix of both.
 * click `Next` when done to go to the ___Security Groups___ screen.
 
----
-
-#### _Instance creation: Security Groups_
+### _Instance creation: Security Groups_
 
 ![](images/instance_security_groups.png)
 
@@ -119,9 +102,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
   * Choose `ssh-restricted`, `http`, and `https` for this tutorial
 * click `Next` when done to go to the ___Key Pair___ screen.
 
----
-
-#### _Instance creation: Key Pair_
+### _Instance creation: Key Pair_
 
 ![](images/instance_keypair.png)
 
@@ -141,17 +122,13 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 >
 > Here you can specify the full path/name of the keypair files and even set a extra passwords. We'll press enter twice for the `no passphrase` option. Our new keypairs have been created at `/home/username/.ssh/` and are called `id_ed25519`  and `id_ed25519.pub.` The public key (.pub) can be transferred to other remote servers (this is the key we will import to our CUmulus instance) but the private key (no suffix) should never leave the host machine. 
 
----
-
-#### _Instance creation: Configuration, Server Group, Scheduler Hints, and Metadata_
+### _Instance creation: Configuration, Server Group, Scheduler Hints, and Metadata_
 
 ![](images/instance_config.png)
 
 * For the remaining screens -- _Configuration_, _Server Group_, _Scheduler Hints_, and _Metadata_ -- leave these as defaults, as they are extra, optional configuration for the instances.
 
----
-
-#### _Instance creation: Launch Instance and Associate IP_
+### _Instance creation: Launch Instance and Associate IP_
 
 * ___Finally___ you can click `Launch instance`! 
   * the instance will take a few minutes to finish provisioning.
@@ -167,9 +144,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 ![](images/instance_ip2.png)
 
----
-### Part 3: Logging into your Instance
----
+## Part 3: Logging into your Instance
 
 At a minimum, you'll need to login to your instance via `ssh` to install the software you'll be using. Other reasons to login to the instance may be to stop or start services, associate a domain name with your IP, run your software, troubleshoot problems, etc. You are essentially the "system administrator" of your own instance.
 
@@ -199,10 +174,8 @@ __Congratulations! You are now logged into your instance!__
 $ sudo su - root
 ```
   or run a command with the `sudo` prefix.
-
----  
-### Additional Information
----
+ 
+## Additional Information
 
   * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)

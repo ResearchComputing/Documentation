@@ -1,4 +1,4 @@
-## Using MPI with Fortran
+# Using MPI with Fortran
 
 Parallel programs enable users to fully utilize the multi-node
 structure of supercomputing clusters. Message Passing Interface (MPI)
@@ -14,7 +14,7 @@ __Helpful MPI tutorials:__
 - [https://computing.llnl.gov/tutorials/mpi/](https://computing.llnl.gov/tutorials/mpi/)   
 
 
-### Setup and “Hello World”
+## Setup and “Hello World”
 
 Begin by logging into the cluster and logging in to a
 compile node. This can be done by loading the Alpine module and using the command:
@@ -213,7 +213,7 @@ Hello World from process 0 of 4
 Ref: <http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html>
 
 
-### MPI Barriers and Synchronization
+## MPI Barriers and Synchronization
 
 Like many other parallel programming utilities, synchronization is an
 essential tool in thread safety and ensuring certain sections of code
@@ -307,7 +307,7 @@ Hello World from process 3 of 4
 ```
 
 
-### Message Passing
+## Message Passing
 
 Message passing is the primary utility in the MPI application
 interface that allows for processes to communicate with each
@@ -349,7 +349,7 @@ integer ierror          !An error handling variable.
 
 Let’s implement message passing in an example:
 
-### Example
+## Example
 
 We will pass the number 42 from one process to another. We will use our “Hello World” program
 as a starting point for this program. Let’s begin by renaming our program and creating a variable
@@ -454,7 +454,7 @@ Received message containing: 42
 ```
 
 
-### Group Operators: Scatter and Gather
+## Group Operators: Scatter and Gather
 
 Group operators are very useful for MPI. They allow for swaths of data
 to be distributed from a root process to all other available
@@ -495,7 +495,7 @@ essentially the converse of the scatter function. Further examples
 which utilize the gather function can be found in the MPI tutorials
 listed as resources at the beginning of this document.
 
-#### Example
+### Example
 
 We will create a new program that scatters one element of a data array
 to each process.  Specifically, this code will scatter the four

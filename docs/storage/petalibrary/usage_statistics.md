@@ -1,6 +1,6 @@
-## Allocation Statistics 
+# Allocation Statistics 
 
-### `alloc_stats`
+## `alloc_stats`
 Research Computing has implemented a background task called `alloc_stats` 
 on the PetaLibrary cluster hosts to allow a PetaLibrary allocation owner 
 and group members to view the usage statistics and the sizes of individual 
@@ -8,7 +8,7 @@ subdirectories in their allocation. This process collects this information
 hourly and deposits it in a file in the allocation base directory called 
 `.cstats`.
 
-### `.cstats`
+## `.cstats`
 The usage statistics file for an allocation contains the following 
 information:
 

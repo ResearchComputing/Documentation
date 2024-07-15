@@ -1,4 +1,4 @@
-## Running applications with Jobs
+# Running applications with Jobs
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dZLSEyYTiBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -8,7 +8,7 @@ In order to run a program on a cluster, you must request resources from Slurm to
 
 When you run a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](slurm-commands.html)
 
-### Batch Jobs
+## Batch Jobs
 
 The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for:
 
@@ -28,7 +28,7 @@ If no job script is provided then `sbatch` will take whatever commands follow as
 
 A detailed guide [on constructing and running Job scripts can be found here.](batch-jobs.html)
 
-### Interactive Jobs
+## Interactive Jobs
 
 Another method of running applications on Research Computing resources is through an interactive job. As the name would imply, an **interactive job** is a job that allows users to interact with requested resources in real time. Users can run applications, execute scripts, or run other commands directly on a compute node. Interactive jobs should be used for:
 

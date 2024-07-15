@@ -1,8 +1,8 @@
-## Slurm Flags, Partitions, and QoS
+# Slurm Flags, Partitions, and QoS
 
 Slurm allows the use of flags to specify resources needed for a job. Below is a table describing some of the most common Slurm resource flags, followed by tables describing available partitions and Quality of Service (QoS) options.
 
-### Slurm Resource Flags
+## Slurm Resource Flags
 
 Job scripts, the `sbatch` command, and the `sinteractive` command support many different resource requests in the form of flags. These flags are available to all forms of jobs. To review all possible flags for these commands, please visit the [Slurm page on sbatch](http://slurm.schedmd.com/sbatch.html). Below, we have listed some useful flags to consider when running your job script.
 
@@ -21,7 +21,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 | Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
 
 
-### Partitions
+## Partitions
 
 Nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using `--partition` in your job script in order for your job to run on the appropriate type of node.
 
@@ -53,7 +53,7 @@ To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitio
 
 More details about each type of node can be found [here](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html).
 
-### Quality of Service
+## Quality of Service
 
 Quality of Service (QoS) is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
 
