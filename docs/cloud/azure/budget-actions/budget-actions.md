@@ -1,4 +1,4 @@
-## Configuring Azure budget action
+# Configuring Azure budget action
 
 Cost control is a critical component to maximizing the value of your investment in the cloud. To configure a Budget and Budget actions in Azure, you'll complete the following actions by using the steps provided in each section. This document specifically outlines an example of how to setup a budget action to shutdown virtual machine when it meets the configured alert condition.
 
@@ -8,9 +8,8 @@ These actions included in this tutorial allow you to:
     2. If needed, Add role assignment to provide relevant access to the Automation account to perform operations on virtual machines.
     3. If haven't already,Create the budget with the wanted thresholds and wire it to the action group.
     4. Azure Monitor Action Group will be configured to trigger the Webhook when the budget threshold is met. This behaviour can be tested using 'Test action group'.
----
 
-### Creating Azure Automation Account
+## Creating Azure Automation Account
 
 1.	Sign in to the <a href="https://portal.azure.com/#home" target="_blank">Azure Management Console</a> and search for **Automation accounts** on the top search bar. Click **Create** and choose the subscription that you intent to manage, A Resource Group to place the Automation account, Name and Region to host Automation account.
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/1.png)
@@ -33,10 +32,7 @@ These actions included in this tutorial allow you to:
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/8.png)
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/9.png)
 
-
-
-
-### Add VM Contributor Role Assignment
+## Add VM Contributor Role Assignment
 
 1.	To check access level of the Automation account that you created, go to **Subscription** using top search bar and click on your subscription name. Then click on **Access control (IAM)** >> choose **check access** from top pane >> click on **check access**
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/9.1.png)
@@ -54,10 +50,7 @@ In **Role** >> **Job function roles** >> search for **virtual machine contributo
 4.	Choose **Managed Identity** radio button, click on **select members** to select your automation account. Once your clicked on **select**, click on **Review+Assign**.
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/9.6.png)
 
-
-
-
-### Create Budget and Action Group
+## Create Budget and Action Group
 
 1. To create budgets, choose **Budgets** in your subscription
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/10.png)
@@ -90,10 +83,7 @@ In **Role** >> **Job function roles** >> search for **virtual machine contributo
 8. On **Create Budget** pane, configure **alert conditions** as needed, I chose to not perform any action for 80% and enforce budget action when my budget hits 100% utilization, in this example. Make sure to select the action group which you have created in previous step. Click **Create** in the bottom, once you have filled all relevant fields as per below screenshot. In the next section, we will test this action group if it really works.
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/25.png)
 
-
-
-
-### Test Azure Monitor Action Group
+## Test Azure Monitor Action Group
 
 Don't test this if you have any production VMs running which you do not intend to stop. Create a new Resource Group with a couple of test VMs to test this. Make sure your webhook in Automation Runbook is set to take action at Resoruce Group level.
 

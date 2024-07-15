@@ -1,4 +1,4 @@
-## Admin Account Permission Exclusions
+# Admin Account Permission Exclusions
 
 Customers who wish to create new AWS Users or Roles are prevented from doing so unless they use the "Customer_Admin_PermissionBoundary" Permission Boundary.
 See below for more information.  In addition, there are Explicit Denials that apply to all AWS Users and Roles.  This is also described below.
@@ -23,7 +23,7 @@ Then, in the wizard, you need to pick the Role you created.
 </table>
 <br>
 
-### Standard Customer Administrator Role
+## Standard Customer Administrator Role
 
 The standard CU Boulder AWS Account Baseline sets up a powerful AWS Role for use by the administrators in the customer department.
 This Role will generally be used to set up new IAM Roles and to deploy basic infrastructure, but should be treated similarly to other administrative accounts (think root or Administrator accounts) and only used when it's privileges are needed.
@@ -41,7 +41,7 @@ All Users, including Customer Administrators, automatically have Explicit Denial
 * Creating or Deleting Account Aliases
 * Creating, Updating, or Deleting SAML Provider Settings
 
-### Permission Boundary (limits permissions of new users or roles created by Customer Admin)
+## Permission Boundary (limits permissions of new users or roles created by Customer Admin)
 
 Creation of new Users and Roles by a Customer Admin Role is only allowed if the Permission Boundary is attached at the creation of the User or Role.
 Permission Boundary is a policy created by **Research Computing Cloud Team** in your account named "Customer_Admin_PermissionBoundary".
@@ -49,7 +49,7 @@ Permission Boundary is a policy created by **Research Computing Cloud Team** in 
 New Users and Roles have the same restrictions as above, plus:
 * New Users/Roles are Explicitly Denied the ability to Create/Update any additional AWS Roles/Users
 
-### Attaching Permission Boundary
+## Attaching Permission Boundary
 
 When creating new AWS Roles or Users, you must set the Permission Boundary.
 

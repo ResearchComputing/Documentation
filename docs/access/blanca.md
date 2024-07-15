@@ -1,4 +1,4 @@
-## Blanca
+# Blanca
 
 CU Research Computing operates a shared “condo” compute cluster, named Blanca, which consists of nodes owned by individual research groups or departments.  Condo partners get significantly prioritized access on nodes that they own and can run jobs on any nodes that are not currently in use by other partners.
 
@@ -6,7 +6,7 @@ An allocation of CPU time is not needed in order to run on Blanca.
 
 If you would like to purchase a Blanca node, please visit the Research Computing [website](https://www.colorado.edu/rc/resources/blanca) for more details.
 
-### Blanca Quick-Start
+## Blanca Quick-Start
 
 1. If your group is a Blanca partner, ask your PI or PoC to send an email to <rc-help@colorado.edu> requesting access for you to their high-priority queue.
 2. From a login node, run "module load slurm/blanca" to access the Slurm job scheduler instance for Blanca.
@@ -14,7 +14,7 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 4. If needed, compile your application on the appropriate compute node type.
 
 
-### Job Scheduling
+## Job Scheduling
 
 All jobs are run through a batch/queue system.  Interactive jobs on compute nodes are allowed but these must be initiated through the scheduler.  Each partner group has its own high-priority QoS (analogous to a queue) for jobs that will run on nodes that it has purchased.  High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them.  High-priority jobs can run for a maximum wall time of 7 days.  All partners also have access to a low-priority preemptable QoS that can run on any Blanca nodes that are not already in use by their owners.  Low-priority jobs have a maximum wall time of 24 hours.
 
@@ -22,19 +22,19 @@ Blanca uses a separate instance of the Slurm scheduling system from the other RC
 
 More details about how to use Slurm can be found [here](../running-jobs/running-apps-with-jobs.html).
 
-### QoS
+## QoS
 
 Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `blanca-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `preemptable`.
 
 If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to <rc-help@colorado.edu>.  You are only allowed to use a high-priority QoS if you have been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
-### Node-QoS-Features
+## Node-QoS-Features
 
 Since not all Blanca nodes are identical, you can include node features in your job requests to help the scheduler determine which nodes are appropriate for your jobs to run on when you are using the preemptable QoS.
 
 To determine which nodes exist on the system, type `scontrol show nodes` to get a list.
 
-### Node Features
+## Node Features
 
 Blanca is a pervasively heterogeneous cluster. A variety of feature tags are applied to nodes deployed in Blanca to allow jobs to target specific CPU, GPU, network, and storage requirements.
 
@@ -50,7 +50,7 @@ The `sinfo` query may be further specified to look at the features available wit
 sinfo --format="%N | %f" --partition="blanca-curc"
 ```
 
-#### Description of features
+### Description of features
 
 - **westmere-ex**: Intel processor generation  
 - **sandybridge**: Intel processor generation  
@@ -73,7 +73,7 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 - **localraid**: large, fast RAID disk storage in node  
 - **rhel7**: RedHat Enterprise Linux version 7 operating system  
 
-#### Requesting GPUs in jobs
+### Requesting GPUs in jobs
 
 Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g., V100, A100) if desired.  The available Blanca GPU resources and configurations can be viewed as follows on a login node with the `slurm/blanca` module loaded:
 
@@ -116,7 +116,7 @@ __Notes__:
   * Examples of full job scripts for GPUs are shown in the next section.
   * If you will be running preemptable GPU jobs in `--qos=preemptable`, requesting `--gres=gpu` will give you the greatest number of GPU options (i.e., your job will run on _any_ Blanca node that has at least one GPU).  However, you can request specific GPUs as well (e.g,. `gpu:a100`), but your jobs will only run on the subset of GPU nodes that has that type.  
 
-### Examples
+## Examples
 
 Here are examples of Slurm directives that can be used in your batch scripts in order to meet certain job requirements.  Note that the "constraint" directive constrains a job to run only on nodes with the corresponding feature.
 
@@ -183,18 +183,18 @@ sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
 Note that the interactive job won't start until the resources that it needs are available, so you may not get a command prompt on your assigned compute node immediately.
 
 
-### Important notes
+## Important notes
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
 2. /home, /projects, and /pl/active (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as $SLURM_SCRATCH.  For more info on the different RC storage spaces, [please see our page on storage.](https://www.colorado.edu/rc/resources/filesystemstorage)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics like Blanca CCN or any node on Blanca HPC can run MPI application much more efficiently.
 
-### Blanca Preemptable QOS
+## Blanca Preemptable QOS
 
 *(effective 2018-03-01)* Each partner group has its own high-priority QoS (“blanca-<group identifier>”) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
-#### Usage
+### Usage
 To specify the preemptable QoS in a job script:
 
 ```bash
@@ -215,13 +215,13 @@ Batch jobs that are preempted will automatically requeue if the exit code is non
 
 Interactive jobs will not requeue if preempted.
 
-#### Best practices
+### Best practices
 
 Checkpointing: Given that preemptable jobs can request wall times up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is preempted, killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable QoS should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
 
 Requeuing: Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
 
-#### Example Job Scripts
+### Example Job Scripts
 
 Run a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).
 
@@ -276,7 +276,7 @@ module load python
 python myscript.py
 ```
 
-#### Other considerations
+### Other considerations
 
 Grace period upon preemption: When jobs are preempted, a 120 second grace period is available to enable users to save and exit their jobs should they have the ability to do so. The preempted job is immediately sent SIGCONT and SIGTERM signals by Slurm in order to provide notification of its imminent termination. This is followed by the SIGCONT, SIGTERM and SIGKILL signal sequence upon reaching the end of the 120 second grace period. Users wishing to do so can monitor the job for the SIGTERM signal and, when detected, take advantage of this 120 second grace period to save and exit their jobs.
 

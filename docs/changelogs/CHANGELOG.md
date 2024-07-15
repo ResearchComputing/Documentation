@@ -1,10 +1,10 @@
-## CHANGELOG
+# CHANGELOG
 
-### Thursday, 25 August 2022
+## Thursday, 25 August 2022
 
 * Updates for Globus access from XSEDE and ACCESS
 
-### Thursday, 13 January 2022
+## Thursday, 13 January 2022
 
 * 2022 Q1 Documentation Review
 > Major Changes:
@@ -12,39 +12,39 @@
 > - Source Anaconda: `source /curc/sw/anaconda3/latest` -> `module load anaconda`
 > - FAQ page added to PetaLibrary
 
-### Tuesday, 2 November 2021
+## Tuesday, 2 November 2021
 
 * Adding CUmulus documents for CUmulus beta release
 
-### Wednesday, 27 October 2021
+## Wednesday, 27 October 2021
 
 * Stable version of documents set: 1.0.0
 
-### Wednesday, 17 October 2018
+## Wednesday, 17 October 2018
 
 * Configured Slurm to reject invalid jobs during queueing, rather than accept and pend forever
 
-### Wednesday, 16 May 2018
+## Wednesday, 16 May 2018
 
 * [Shut down legacy login nodes](https://www.colorado.edu/rc/news/rcloginnodemigration)
 
-### Wednesday, 9 May 2018
+## Wednesday, 9 May 2018
 
 * [Moved login.rc.colorado.edu to a new set of login nodes](https://www.colorado.edu/rc/news/rcloginnodemigration)
 
-### Tuesday, 27 February 2018
+## Tuesday, 27 February 2018
 
 * [Reduced memory limits on Summit](https://www.rc.colorado.edu/node/1094)
 
-### Tuesday, 20 February 2018
+## Tuesday, 20 February 2018
 
 * Installed version control clients on Summit in response to a request for Mercurial
 
-### Monday, 19 February 2018
+## Monday, 19 February 2018
 
 * [Reduced default per-core memory requests on Summit](https://www.rc.colorado.edu/node/1094)
 
-### 25 September 2017
+## 25 September 2017
 
 * `/work/` mounts are now supported for JupyterHub Virtual Notebooks.
 

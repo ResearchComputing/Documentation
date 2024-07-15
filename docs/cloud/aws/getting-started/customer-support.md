@@ -1,4 +1,4 @@
-## AWS Support
+# AWS Support
 
 AWS Customer Support is managed by <a href="https://www.dlt.com/" target="_blank">DLT</a>.
 All AWS Support issues must be directed to <a href="https://www.dlt.com/" target="_blank">DLT</a>.

@@ -1,4 +1,4 @@
-## CSU and XSEDE usernames
+# CSU and XSEDE usernames
 
 Your CURC username, which is represented by the environment variable `$USER`, has an `@` symbol in it (for example, janedoe@colostate.edu or johndoe@xsede.org). 
 

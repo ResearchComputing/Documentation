@@ -1,4 +1,4 @@
-## CUmulus _(On-Premise Cloud)_
+# CUmulus _(On-Premise Cloud)_
 
 CU Research Computing hosts a free-to-use on-premise cloud service, called _CUmulus_, which supports cases not well-suited for HPC such as webservers, databases, and long-running services. 
 
@@ -9,7 +9,6 @@ The CUmulus service includes access to a Virtual Private Cloud (VPC) which provi
 
 which can be used to host virtual machines and volumes to host workloads.
 
----
 **&#9432;** **Announcing the retirement of CUmulus** 
 
 In January 2025 CUmulus will reach the end of its warranty and will be retired.  Numerous alternatives to CUmulus are available, including:  
@@ -23,9 +22,7 @@ If you presently have a project that uses CUmulus and you wish to continue using
 
 Would-be new users may still request a CUmulus project per the “Quick Start” documentation below. Any new projects will be valid through the end of 2024, after which users would need to port workflows to alternative systems or discontinue them.
 
----
-
-#### CUmulus Quick Start
+## CUmulus Quick Start
 
 1. Request a CUmulus application by contacting the RC helpdesk at <rc-help@colorado.edu>
 2. Once your application has been accepted, manage your project at the [CUmulus Web Portal](https://cumulus.rc.colorado.edu/auth/login/?next=/).
@@ -35,7 +32,7 @@ Would-be new users may still request a CUmulus project per the “Quick Start”
 	- [Integrating CUmulus with CURC HPC resources](../../tutorials/cumulus3.html)
 4. Visit all of our [CUmulus specific tutorials](../../tutorials/index.html) on the Research Computing GitHub for step-by-step examples.
 
-#### Features
+## Features
 - Virtual machine creation
 - Storage volume creation/snapshot
 - Basic Infrastructure monitoring
@@ -49,11 +46,11 @@ Would-be new users may still request a CUmulus project per the “Quick Start”
 > - 4GB RAM per CPU core
 > - 101.3TB of object-oriented storage
 
-#### Why use CUmulus?
+## Why use CUmulus?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bX1J641oqNc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-#### Eligibility
+## Eligibility
 
 CUmulus is a free-to-use cloud system where:
 - 80% of cycles: CU Boulder faculty, staff, students, and affiliates
@@ -61,18 +58,18 @@ CUmulus is a free-to-use cloud system where:
 
 > To ensure optimal usage, unused cycles are preemptively available to the Open Science Grid ([OSG](https://opensciencegrid.org/))
 
-#### Expectations
+## Expectations
 
 CU Research Computing manages the resources and address systems-level issues as they arise. Users will be expected to deploy and manage their cloud instances, including selecting security policies and networking protocols, installing and maintaining software, and running computational workflows. Users are essentially “system administrators” of their cloud instance. 
 
 > **_NOTE:_** _CU Research Computing does not support administration within CUmulus cloud instances._
 
-##### Appropriate use cases:
+### Appropriate use cases:
 - Workflow management software that monitors/schedules jobs on Alpine or Blanca
 - Running a research database/website application that queries data stored on CURC PetaLibrary 
 - Web-based research “Hubs” (JupyterHub, Shiny Apps)
 
-##### Inappropriate use cases: 
+### Inappropriate use cases: 
 - Running workflows that can more efficiently be run on Alpine or Blanca
 - Personal websites or websites unrelated to research
 - Serverless applications
@@ -81,7 +78,7 @@ CU Research Computing manages the resources and address systems-level issues as 
 > - Workflow that cannot be run on Alpine or Blanca and resource needs are too big for CUmulus
 > - Workflow that require access to very large datasets that are only hosted on AWS (e.g., some NASA satellite datasets)
 
-###  Requesting Access to CUmulus
+##  Requesting Access to CUmulus
 
 The application process for CUmulus requires users to submit an proposal for your use case, which can be requested by emailing [rc-help@colorado.edu](rc-help@colorado.edu). In this proposal you will:
 - Describe your CUmulus workflow

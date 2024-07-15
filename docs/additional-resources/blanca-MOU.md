@@ -1,4 +1,4 @@
-## Blanca: *Memorandum of Understanding*
+# Blanca: *Memorandum of Understanding*
 
 The “Blanca” compute cluster is a service provided by Research Computing at University of Colorado Boulder. Blanca aggregates compute nodes contributed by individual researchers into a heterogeneous compute cluster managed by Research Computing.
 

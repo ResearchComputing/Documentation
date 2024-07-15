@@ -1,6 +1,6 @@
-## Project Management
+# Project Management
 
-### CUmulus Web Portal (Horizon)
+## CUmulus Web Portal (Horizon)
 
 Once your application has been accepted you will be notified that a project has be created and cloud access is ready. Projects are managed through CUmulus's graphical management interface (Horizon) at: [cumulus.rc.colorado.edu/](https://cumulus.rc.colorado.edu/auth/login/?next=/). Project owners can access the CUmulus management interface with InCommon Federation (select the "InCommon Federation" from the authentication pull-down).
 
@@ -14,7 +14,7 @@ Once your username is processed you will be able to login. The landing page for 
 
 To use your CUmulus resources, you must create an instances (or a virtual machine) which will each utilize portions of your main project's allocated reources. Visit our docs on [instance creation](./instance-creation.html)
 
-### Adding Users to your Project
+## Adding Users to your Project
 
 Project access is managed through the Grouper application. Grouper is an enterprise access management system that empowers users to manage access, without the need for central IT. Group creation will be handled during project creation (if you don't see your group in "My Groups" in the Grouper application please email [rc-help@colorado.edu](rc-help@colorado.edu)).
 

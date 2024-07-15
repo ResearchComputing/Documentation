@@ -1,6 +1,6 @@
-## Alpine Hardware
+# Alpine Hardware
 
-### Hardware Summary
+## Hardware Summary
 
 | Count & Type          | Scheduler Partition | Processor        | Sockets | Cores (total) | Threads/Core | RAM/Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
 | --------------------- | ------------------- | ---------------- | ------- | ------------- | ------------ | ------------- | ------------- | ----------- | --------- | -------------------------- | -------------------------------------------- | -------- |
@@ -15,13 +15,13 @@
 | 2 Milan High-Memory   | amc,amem            | x86_64 AMD Milan | 2       | 64            | 1            | 21.5          | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 4 Milan NVIDIA GPU    | amc                 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | N/A         | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 
-### Requesting Hardware Resources
+## Requesting Hardware Resources
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
 * **Gres (General Resources):** Specifies the number of GPUs (*required if using a GPU node*)
 * **QOS (Quality of Service):** Constrains or modifies job characteristics
 * **Partition:** Specifies node type
 
-#### General Resources (gres)
+### General Resources (gres)
 
 **General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single gpu on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
 
@@ -40,7 +40,7 @@ _request multiple (in this case 3) GPU accelerators:_
 --gres=gpu:3
 ```
 
-#### Quality of Service (qos)
+### Quality of Service (qos)
 
 **Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
 
@@ -53,7 +53,7 @@ The available QoS's for Alpine are:
 | mem         | High-memory jobs           | 7D              | 1000          | 12                 | amem only        | 0                    |
 
 
-#### Partitions
+### Partitions
 
 **Nodes with the same hardware configuration are grouped into partitions**. You specify a partition using `--partition` SLURM directive in your job script (or at the command line when submitting an interactive job) in order for your job to run on the appropriate type of node. 
 

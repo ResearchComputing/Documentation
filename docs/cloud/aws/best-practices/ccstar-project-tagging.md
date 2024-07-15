@@ -1,13 +1,13 @@
-## Project Tagging Requirement for ucboitrccumulus
+# Project Tagging Requirement for ucboitrccumulus
 
-### Document Purpose
+## Document Purpose
 
 This document describes the requirements that are expected of end users when using the **CUmulus** AWS Account.
 The **CUmulus** AWS Account is a 'sandbox' like, shared AWS Account, that different Projects can use to consume an allocation of AWS Credits for prototyping and research activities.
 The **CUmulus** AWS Account is not intended for long term production workloads.
 In order to properly track the usage of your allocation, please be sure to follow the steps in this document to ensure that you are properly tagging your resources.
 
-### AWS Resource Tagging
+## AWS Resource Tagging
 
 AWS resource tagging is critical for tracking actual costs (ie. credits), as well as forecasted costs.
 As a user of the **CUmulus** environment, you are responsible for tagging all resources that are created in your Project.
@@ -15,7 +15,7 @@ The tag must be applied when (if possible), or immediately after, the resource i
 For more information about how tags work, it's worth reading the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html" target="_blank">AWS documentation describing Tags</a>.
 If you are unfamiliar with the terms "tag key" and "tag value", please read and understand the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html" target="_blank">AWS documentation describing Tags</a>.
 
-### Project Tag
+## Project Tag
 
 We are using the concept of a "Project" Tag to track different projects that will be using the shared **CUmulus** AWS Account.
 
@@ -52,7 +52,7 @@ There is no way to currently require the user to create the necessary Project ta
 This is a current limitation with AWS.
 This is why users need to be in the good habit of always adding the Project tag to all resources.
 
-### Tag Examples
+## Tag Examples
 
 <!---
 Info Table
@@ -77,7 +77,7 @@ The following examples show the Project Value = argovis.
 For the following examples, the tag value (or name of the Project) is "**argovis**" (all lower-case).
 Almost every resource that you create in the AWS Console will have a 'Tags' section as described in the following examples.
 
-#### Tag S3 Bucket in AWS Console
+### Tag S3 Bucket in AWS Console
 
 When creating a S3 Bucket, be sure to look for the 'Tags' section.
 Click the 'Add tag' button, then enter the Key = **Project** and the Value = **argovis**.
@@ -87,7 +87,7 @@ Click the 'Add tag' button, then enter the Key = **Project** and the Value = **a
 Note that the creation wizard for this example is a single form, which is common for many AWS services.
 Look for the Tags section.
 
-#### Tag EC2 Instance in AWS Console
+### Tag EC2 Instance in AWS Console
 
 On step 5 of the EC2 launch wizard, click the "Add tag" button, then enter Key = **Project** and the Value = **argovis**.
 
@@ -97,12 +97,12 @@ Note that the creation wizard for this example has more than one step, which is 
 Be sure to add your tag(s) when you get to the proper step.
 This can be easy to miss, so look carefully!
 
-#### Clustered Services
+### Clustered Services
 
 When creating clustered environments, especially when using autoscaling, be sure to set your template up to set the default tags so that when resources are spun up and down, the proper tag will get added for you automatically.
 See AWS documentation for the specific service to see how to set the default tags (ie. EKS for Kubernetes).
 
-#### Tags Block in a CloudFormation Template
+### Tags Block in a CloudFormation Template
 
 When using AWS CloudFormation to create resources, you will need to specify the 'Tags' block.
 See <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank">AWS CloudFormation Resource Tag Documentation</a> for more details.
@@ -130,7 +130,7 @@ Syntax can be different for each service, so always consult AWS docs as a best p
 The above example shows multiple tags in the block.
 You will need the Project tag at a minimum for each resource.
 
-#### Add Tag using AWS CLI
+### Add Tag using AWS CLI
 
 When using the AWS CLI to create resources, you may need to run one command to create the resource and another command to add the tag.
 This example shows how to create a S3 bucket and add the related tag.

@@ -1,4 +1,4 @@
-## Filesystems
+# Filesystems
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xfeRDnZQrJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -16,7 +16,7 @@ or `/projects` filesystems will have their jobs terminated and may
 have their accounts temporarily disabled.**
 
 
-### The Home Filesystem
+## The Home Filesystem
 
 Every user is allocated 2 GB of space on the `/home` filesystem in a
 subdirectory corresponding to their user name (e.g., `/home/janedoe`).
@@ -27,7 +27,7 @@ home directories with other users is strongly discouraged. Your
 programs, and job scripts.
 
 
-### The Projects Filesystem
+## The Projects Filesystem
 
 Each user has access to a 250 GB of space in their subdirectory of
 `/projects` (e.g., `/projects/janedoe`). As with the `/home` system,
@@ -36,7 +36,7 @@ are regularly backed up. The projects directory is intended to store
 software builds and smaller data sets.
 
 
-### Scratch Filesystems
+## Scratch Filesystems
 
 Alpine users are provided a subdirectory on `/scratch/alpine`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
@@ -57,7 +57,7 @@ space on the [PetaLibrary](../storage/petalibrary/index.html). Inappropriate use
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
-#### Local Scratch on Alpine and Blanca
+### Local Scratch on Alpine and Blanca
 All Alpine nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
 
 As an example of how to use `$SLURM_SCRATCH`, the following code copies a file to the temporary directory, operates on the file in some fashion creating a new file, then copies that new file back to the projects directory before the job ends.
@@ -68,9 +68,9 @@ cp /projects/user1234/job/tmp_file $SLURM_SCRATCH
 cp new_file /projects/user1234/job/new_file
 ```
 
-### Best practices for using CURC filesystems
+## Best practices for using CURC filesystems
 
-#### Storage spaces on CURC, ordered by preference/performance for doing data Input/Output (I/O) during jobs:
+### Storage spaces on CURC, ordered by preference/performance for doing data Input/Output (I/O) during jobs:
 
 1. `$SLURM_SCRATCH` (local SSD)
   * Approximately 300 GB/node
@@ -89,7 +89,7 @@ cp new_file /projects/user1234/job/new_file
   * Only use if you have a few small files to do I/O on. 
 
 
-#### How to increase I/O performance: 
+### How to increase I/O performance: 
 
 1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca) first.  
 
@@ -106,9 +106,9 @@ cp new_file /projects/user1234/job/new_file
 7. Complex codes such as conda environments may not run optimally out of `/pl/active`, although simple codes should be fine.  If you have code on PetaLibrary and suspect the performace is being impacted, make a copy on `/projects/$USER` and use that copy. 
 
 
-### Monitoring Disk Usage
+## Monitoring Disk Usage
 
-#### The `curc-quota` command
+### The `curc-quota` command
 Disk usage may be checked using the `curc-quota` command. When run
 from a login node or Alpine `compile node`, you will see output similar to:
 
@@ -124,7 +124,7 @@ from a login node or Alpine `compile node`, you will see output similar to:
 
 _note to Blanca users: the `curc-quota` command can be run on Blanca nodes if you "module load curc-quota" first._
 
-#### The `du` command
+### The `du` command
 The space occupied by a particular directory and its
 subdirectories can be obtained via the `du -h` command:
 
@@ -135,7 +135,7 @@ subdirectories can be obtained via the `du -h` command:
 ```
 
 
-### Backups
+## Backups
 
 Regular backups are performed for all `/home` and `/projects`
 directories and at a range of cadences. Low-cadence backups are
@@ -161,7 +161,7 @@ directory, named using the time-stamp associated with the snapshot.
 
 > Note: The `.snapshot` directory is not visible to any utilities that list directory contents, so an `ls -a` of the parent directory will not show `.snapshot`, although you can `cd` to it and list its contents with e.g. `ls -l $HOME/.snapshot`.
 
-### File permissions, ownership, and group membership
+## File permissions, ownership, and group membership
 
 In the Linux/Unix system, files are organized into hierarchical trees, similar to a filing cabinet. Files can have several different types, The most important for everyday use are directories and files, which can be data or executable files (programs).  Note that each file has an owner, a group, and a class of others (those not owners or group members). File permissions can be different for each of the above depending on the permissions specified for that file.
 
@@ -267,7 +267,7 @@ The destination file will have the same permissions as the source file unless th
 `rsync -var <source_file/directory>/ <destination_file/directory/`<br />  
 See our [Data Transfer](https://curc.readthedocs.io/en/latest/compute/data-transfer.html?highlight=rsync#rsync) page for more information about `rsync`.
 
-### Workspace Sharing
+## Workspace Sharing
 
 All users have complete control over their personal directory
 permissions. While we encourage you to share your `/projects` and

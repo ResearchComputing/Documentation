@@ -1,10 +1,10 @@
-## Configuring a budget action
+# Configuring a budget action
 
 You can attach budget actions to an alert for either a cost budget or a usage budget. To configure a budget action on a new budget, first follow the steps for <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">Creating a cost budget</a>
 
 ---
 
-### Creating a budget
+## Creating a budget
 
 1.	Sign in to the AWS Management Console and open the AWS Cost Management console at <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">https://console.aws.amazon.com/cost-management/home</a>
 
@@ -22,7 +22,7 @@ You can attach budget actions to an alert for either a cost budget or a usage bu
 To configure a budget action on an existing cost or usage budget, first follow the steps for <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">Editing a budget.</a> Then, after you reach the **Configure alerts** step of creating or editing the budget, use the following procedure.
 
 
-### To configure a budget action
+## To configure a budget action
 
 1.	To configure a budget action on a new alert, choose **Add an alert threshold**. To configure a budget action on an existing alert, skip to step 7.
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/4.png)

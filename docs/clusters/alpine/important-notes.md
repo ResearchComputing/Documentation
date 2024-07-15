@@ -1,4 +1,4 @@
-## Important Notes
+# Important Notes
 
 1. **Software**: To see what modules are available on Alpine, start an interactive or `acompile` on a compute node and use the `module avail` or `module spider` commands.
 2. **Filesystems**: `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are mounted on all Alpine nodes.

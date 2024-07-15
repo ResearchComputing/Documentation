@@ -1,10 +1,8 @@
-## AWS - Troubleshooting
+# AWS - Troubleshooting
 
 Troubleshooting AWS Errors
 
----
-
-### Failed to create role: not authorized to perform: iam:CreateRole
+## Failed to create role: not authorized to perform: iam:CreateRole
 
 **Error:**
 
@@ -15,9 +13,7 @@ Troubleshooting AWS Errors
 When creating AWS Roles, you must attach the "Customer_Admin_PermissionBoundary" Permission Boundary.
 See [Admin Account Permission Exclusions](../getting-started/customer-permission-boundary.md)
 
----
-
-### Unable to create user: not authorized to perform: iam:CreateUser
+## Unable to create user: not authorized to perform: iam:CreateUser
 
 **Error:**
 
@@ -28,9 +24,7 @@ See [Admin Account Permission Exclusions](../getting-started/customer-permission
 When creating AWS Users, you must attach the "Customer_Admin_PermissionBoundary" Permission Boundary.
 See [Admin Account Permission Exclusions](../getting-started/customer-permission-boundary.md)
 
----
-
-### AccessDenied: not authorized to perform: iam:CreateRole | Module Block
+## AccessDenied: not authorized to perform: iam:CreateRole | Module Block
 
 Below error occurs when creating **EKS Cluster** using <a href="https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest" target="_blank">Terraform module</a> from the Terraform registry. 
 
@@ -56,10 +50,9 @@ eks_managed_node_groups = {
 }
 }
 ```
----
 
 
-### AccessDenied: not authorized to perform: iam:CreateRole | Resource Block
+## AccessDenied: not authorized to perform: iam:CreateRole | Resource Block
 
 
 Below error occurs when creating **EKS Cluster** using <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster" target="_blank">Terraform resource block</a> from the Terraform registry documentation. 
@@ -81,5 +74,3 @@ resource "aws_iam_role" "example" {
   permissions_boundary = "arn:aws:iam::<AWS account number>:policy/Customer_Admin_PermissionBoundary"
 }
 ```
-
----

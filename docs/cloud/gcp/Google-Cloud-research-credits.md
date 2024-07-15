@@ -1,15 +1,15 @@
-## Apply for Google Cloud research credits
+# Apply for Google Cloud research credits
 
 Google Cloud research credits can advance your research by giving you access to computing power that will make the next big thing possible. Learn more about Google's <a href="https://cloud.google.com/edu/researchers?hl=en" target="_blank">programs for researchers.</a>
 
 ### <a href="https://services.google.com/fh/files/emails/kickstart_your_research_with_google_cloud_credits_tips_on_applying.pdf" target="_blank">Kickstart Your Research With Google Cloud Credits</a>
 ### <a href="https://support.google.com/google-cloud-higher-ed/answer/10723679?hl=en&ref_topic=10322294&sjid=6709602353601652929-NC" target="_blank">Program overview</a>
 
-### Academic Research Grants
+## Academic Research Grants
 
 Eligibility for research grants is limited to faculty, PhD students and postdoctoral researchers from accredited higher education institutions and eligible nonprofit research institutions in approved countries. 
 
-### Application guidelines
+## Application guidelines
 
 ### How do I apply to the GCP research credits program?
 

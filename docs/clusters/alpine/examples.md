@@ -1,4 +1,4 @@
-## Slurm Directives Examples
+# Slurm Directives Examples
 
 Below are some examples of SLURM directives that can be used in your batch scripts in order to meet certain job requirements.
 
@@ -45,7 +45,7 @@ Below are some examples of SLURM directives that can be used in your batch scrip
 #SBATCH --gres=gpu
 ```
 
-#### Full Example Job Script
+## Full Example Job Script
 
 Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos that runs a python script using a custom conda environment.
 

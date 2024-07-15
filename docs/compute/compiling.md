@@ -1,4 +1,4 @@
-## Compiling and Linking
+# Compiling and Linking
 
 Before compiling in the RC environment, begin a compile job by using the `acompile` command. Next, load the modules corresponding to the compiler, MPI version (if needed), and any third-party libraries required by your application. The load order should always be compiler first, MPI second, and third-party libraries last.
 
@@ -41,7 +41,7 @@ $FC my_program.f90 -I$CURC_HDF5_INC -L$CURC_HDF5_LIB -lhdf5_fortran -o my_progra
 > **Note:** Your run-time environment should reflect your compilation environment. Be sure to include the same sequence of `module` commands in your job script as that used at compile time.
 
 
-### Navigating the Software Stack
+## Navigating the Software Stack
 
 The RC module system is hierarchical in nature, and available software libraries become visible to the user only after the compiler and MPI implementations that they depend on have been loaded. As noted above, modules should be loaded in the order: compiler, MPI, third-party software.  At each stage of the load, executing `module avail` will reveal a list of newly available modules.  The `module purge` command can be used to unload all currently loaded modules (note that the software stack will be unavailable from login nodes).
 
@@ -127,12 +127,12 @@ Finally, to see which modules must be loaded to make your desired version availa
 ```
 
 
-### Compiler and Optimization Recommendations
+## Compiler and Optimization Recommendations
 
 The Alpine cluster runs on AMD-designed hardware, whereas the Blanca cluster runs on Intel-designed hardware. As such, we **strongly recommend** using the appropriate compiler and MPI library when compiling software.  For production, we
 suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on. More compiler options and flags can be found in [AMD's reference guide](https://developer.amd.com/wp-content/resources/Compiler%20Options%20Quick%20Ref%20Guide%20for%20AMD%20EPYC%207xx3%20Series%20Processors.pdf). 
 
-### Linking to the Math Kernel Library (MKL)
+## Linking to the Math Kernel Library (MKL)
 
 [The Intel Math Kernel Library
 (MKL)](https://software.intel.com/en-us/mkl/documentation) provides optimized routines for a number of common mathematical
