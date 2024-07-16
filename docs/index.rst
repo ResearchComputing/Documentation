@@ -194,11 +194,3 @@ Use of University of Colorado Research Computing resources, including (but not l
    additional-resources/other
    additional-resources/biokem-facility
    additional-resources/csu-xsede-usernames
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Maintenance
-
-   changelogs/CHANGELOG
-
