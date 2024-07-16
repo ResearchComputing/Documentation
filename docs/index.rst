@@ -125,6 +125,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/slurm-commands
    running-jobs/job-resources
    running-jobs/squeue-status-codes
+   running-jobs/roce-enabled
 
 .. toctree::
    :maxdepth: 1
@@ -146,7 +147,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    cloud/aws/index
    cloud/azure/index
    cloud/gcp/index
-   cloud/cumulus/cumulus
+   cloud/cumulus/index
 
 .. toctree::
    :maxdepth: 2
