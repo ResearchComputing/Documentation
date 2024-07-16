@@ -25,7 +25,7 @@ This only needs to be done one time:
 
 Provide the following values for the configuration:
 
-```buildoutcfg
+```
 Provider:    ShibbolethECP
 MFA:         push (preferred, though you can choose other options)
 AWS Profile: default (just hit the enter key)

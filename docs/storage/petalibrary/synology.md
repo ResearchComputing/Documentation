@@ -10,7 +10,7 @@ The following accounts are available for SSH remote login:
 
 _Note: You may need to use the _sudo_ command to gain administrative access._
 
-```bash
+```
 $ ssh mylabstorage.colorado.edu -l admin
 admin@mylabstorage.colorado.edu's password:
 

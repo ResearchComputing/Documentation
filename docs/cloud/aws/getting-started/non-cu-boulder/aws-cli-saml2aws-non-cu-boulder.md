@@ -25,7 +25,7 @@ This only needs to be done one time:
 
 Provide the following values for the configuration:
 
-```buildoutcfg
+```
 Provider:    Browser
 AWS Profile: saml (default, just hit the enter key)
 URL:         https://federation-proxy.rmacc.org/aws

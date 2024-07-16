@@ -9,7 +9,7 @@
 
 Note: For more information on `acompile` options use the command:
 
-```bash
+```
 $ acompile --help
 acompile: CURC utility to access a single alpine compute node for compiling software
 usage:
@@ -18,6 +18,7 @@ usage:
        -X | --x11                      : enable x11 support for the session (requires user to login w/ -X or -Y flag)
           | --test-only                : stop job submission and print submit command
        -h | --help                     : print this message
+
 ```
 
 

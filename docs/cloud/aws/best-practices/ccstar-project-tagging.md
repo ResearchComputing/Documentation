@@ -111,8 +111,6 @@ Syntax can be different for each service, so always consult AWS docs as a best p
 
 **CloudFormation Tags Snippet:**
 ```json
-...
-
 "Tags" : [
     {
         "Key" : "Project",
@@ -123,8 +121,6 @@ Syntax can be different for each service, so always consult AWS docs as a best p
         "Value" : "value2"
     }
 ]
-
-...
 ```
 
 The above example shows multiple tags in the block.
