@@ -11,5 +11,4 @@ sphinx:
 
 # Explicitly set the version of Python and its requirements
 conda:
-  install:
-    - requirements: conda_dev_env.yml
+  environment: conda_dev_env.yml
