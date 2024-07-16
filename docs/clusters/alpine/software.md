@@ -3,7 +3,7 @@
 ## Software Installed on Alpine
 This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC Alpine. 
 
-Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modules.html) page for instructions on how to view and load software.
+Refer to our [Modules System](../../compute/modules.md) page for instructions on how to view and load software.
 
 | Application           | Version(s)          | Description      |
 | --------------------- | ------------------- | ---------------- |
@@ -11,7 +11,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Allinea DDT](https://developer.nvidia.com/allinea-ddt) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
 | [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0,2.3.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structure.| 
 | [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 | FEKO is an electromagnetics software developed by Altair engineering for use in field calculations for bodies of arbitrary shapes. | 
-| [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11 (D), 2022.10, 2023.09 | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/python.html)| 
+| [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11 (D), 2022.10, 2023.09 | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](../../software/python.md)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
 | [ANTLR](https://www.antlr.org/) | 4.13.1 | A parser generator for reading, processing, executing, or translating structured text or binary files. |
 | [Arm Forge](https://developer.arm.com/Tools%20and%20Software/Arm%20Forge) | 19.1.3 | Arm Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
@@ -35,7 +35,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Cube](https://www.scalasca.org/scalasca/software/cube-4.x/download.html) | 3.4.3, 4.3.4 (D) | Cube, which is used as performance report explorer for Scalasca and Score-P, is a generic tool for displaying a multi-dimensional performance space. | 
 | [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (G) | 11.2, 11.3, 11.4, 11.7, 11.8, 12.1.1 (D) | The NVIDIA CUDA Toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler, and a runtime library to deploy your application. | 
 | [cuDNN](https://developer.nvidia.com/cudnn) (G)| 8.1, 8.2 8.6 (D) | The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. | 
-| [curc-quota](https://curc.readthedocs.io/en/latest/compute/filesystems.html#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
+| [curc-quota](../../compute/filesystems.md#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
 | [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.| 
 | [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the O/S.|
 | [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) | 3.4.0 | Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.|
@@ -46,7 +46,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [FFmpeg](https://ffmpeg.org/) | 4.4 | A complete, cross-platform solution to record, convert and stream audio and video.| 
 | [FFTW](https://www.fftw.org/) | 3.3.8, 3.3.9, 3.3.10 | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data.|
 | [GATK](https://gatk.broadinstitute.org/hc/en-us) | 4.3.0.0 | GATK4 aims to bring together well-established tools from the GATK and Picard codebases under a streamlined framework.|
-| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/gaussian.html)|
+| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](../../software/gaussian.md)|
 | [gcc](https://gcc.gnu.org/) |  10.3.0, 11.2.0 (D) |The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).| 
 | [GDAL](https://gdal.org/) | 3.4.2, 3.5.0 | GDAL is a translator library for raster and vector geospatial data formats.| 
 | [GDB](https://www.sourceware.org/gdb/) | 8.1, 10.1 (D) | GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed.|
@@ -55,7 +55,7 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Git](https://git-scm.com/downloads) | 2.31.0 | Git is a distributed version control system that tracks changes in any set of computer files.| 
 | [Git-LFS](https://git-lfs.com) | 3.1.2 | Git-LFS is a Git exention for versioning large files.| 
 | [Gmsh](https://gmsh.info/) | 2.16.0, 4.11.1 (D) | Gmsh is an open source 3D finite element mesh generator with a built-in CAD engine and post-processor.|
-| [GNU Parallel](https://www.gnu.org/software/parallel/) | 20160622, 20210322 (D) | GNU parallel is a shell tool for executing jobs in parallel using one or more computers. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/GNUParallel.html)| 
+| [GNU Parallel](https://www.gnu.org/software/parallel/) | 20160622, 20210322 (D) | GNU parallel is a shell tool for executing jobs in parallel using one or more computers. [CURC Usage Guide](../../software/GNUParallel.md)| 
 | [gnuplot](http://www.gnuplot.info/) | 5.4.3 | gnuplot is a command-line and GUI program that can generate two- and three-dimensional plots of functions, data, and data fits.| 
 | [GROMACS](https://www.gromacs.org/) (G) | 2022.4 | GROMACS is a molecular dynamics package mainly designed for simulations of proteins, lipids, and nucleic acids.| 
 | [GSL](https://www.gnu.org/software/gsl/doc/html/#) | 2.7 |The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.|
@@ -77,10 +77,10 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
-| [Load Balancer](https://curc.readthedocs.io/en/latest/software/loadbalancer.html?highlight=load%20balancer) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
-| [Mamba](https://mamba.readthedocs.io/) | 23.1.0-1 (D) | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. Please see our [Mamba Package Manager](../../software/python.html#mamba-package-manager) section for more details.| 
+| [Load Balancer](../../software/loadbalancer.md) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
+| [Mamba](https://mamba.readthedocs.io/) | 23.1.0-1 (D) | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. Please see our [Mamba Package Manager](../../software/python.md#mamba-package-manager) section for more details.| 
 | [Mathematica](https://www.wolfram.com/mathematica/) | 9.0, 11.1.0 (D) | A software system with built-in libraries for several areas of technical computing. | 
-| [MATLAB](https://www.mathworks.com/products/matlab.html) | R2020b, R2021b (D), R2022b, R2023b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/matlab.html)| 
+| [MATLAB](https://www.mathworks.com/products/matlab.html) | R2020b, R2021b (D), R2022b, R2023b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](../../software/matlab.md)| 
 | [Maven](https://maven.apache.org/) | 3.8.1 | Apache Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. |
 | [MKL](https://www.intel.com/content/www/us/en/develop/documentation/get-started-with-mkl-for-dpcpp/top.html) | 2021.4.0, 2022.0.2 |A library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.|
 | [MultiQC](https://multiqc.info/) | 1.14 | MultiQC is a reporting tool that parses results and statistics from bioinformatics tool outputs, such as log files and console outputs.|
@@ -116,8 +116,8 @@ Refer to our [Modules System](https://curc.readthedocs.io/en/latest/compute/modu
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
-| [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](https://curc.readthedocs.io/en/latest/software/Containerizationon.html#singularity)|
-| [Slurmtools](https://curc.readthedocs.io/en/latest/compute/monitoring-resources.html#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
+| [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](../../software/Containerizationon.md#apptainer)|
+| [Slurmtools](../../compute/monitoring-resources.md#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
 | [SQLite](https://sqlite.org/index.html) | 3.36.0, 3.38.01 |SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.| 
 | [SRA-Toolkit](https://hpc.nih.gov/apps/sratoolkit.html) | 3.0.0 | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.| 
 | [STAR](https://github.com/alexdobin/STAR/tree/master) | 2.7.10b | A tool to align RNA-seq data. The STAR algorithm uses suffix arrays, seed clustering, and stitching.| 

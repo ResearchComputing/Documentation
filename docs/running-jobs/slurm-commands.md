@@ -1,10 +1,10 @@
-## Useful Slurm commands
+# Useful Slurm commands
 
 Slurm provides a variety of tools that allow a user to manage and
 understand their jobs. This tutorial will introduce these tools, as
 well as provide details on how to use them.
 
-### Finding queuing information with `squeue`
+## Finding queuing information with `squeue`
 
 The `squeue` command is a tool we use to pull up information about the
 jobs in queue. By default, the squeue command will print out the
@@ -55,7 +55,7 @@ to the terminal.
 For more information on squeue, [visit the Slurm page on
 squeue](https://slurm.schedmd.com/squeue.html)
 
-### Stopping jobs with `scancel`
+## Stopping jobs with `scancel`
 
 Sometimes you may need to stop a job entirely while it’s running. The
 best way to accomplish this is with the `scancel` command. The scancel
@@ -74,7 +74,7 @@ $ scancel your_job-id1, your_job-id2, your_jobiid3
 
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
 
-### Analyzing currently running jobs with `sstat`
+## Analyzing currently running jobs with `sstat`
 
 The `sstat` command allows users to easily pull up status information
 about their currently running jobs. This includes information about *__CPU usage__*,
@@ -119,7 +119,7 @@ A full list of variables that specify data handled by sstat can be
 found with the `--helpformat` flag or by [visiting the slurm page on
 sstat](https://slurm.schedmd.com/sstat.html).
 
-### Analyzing past jobs with `sacct`
+## Analyzing past jobs with `sacct`
 
 The `sacct` command allows users to pull up status information about
 past jobs. This command is very similar to sstat, but is used on jobs
@@ -153,7 +153,7 @@ flag:
 $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD --long
 ```
 
-#### Formatting `sacct` output
+### Formatting `sacct` output
 
 Like `sstat`, the standard output of sacct may not provide the
 information we want. To remedy this, we can use the `--format` flag to
@@ -212,7 +212,7 @@ A full list of variables that specify data handled by sacct can be
 found with the `--helpformat` flag or by [visiting the slurm page on
 sacct](https://slurm.schedmd.com/sacct.html).
 
-### Controlling queued and running jobs using `scontrol`
+## Controlling queued and running jobs using `scontrol`
 
 The `scontrol` command provides users extended control of their jobs
 run through Slurm. This includes actions like suspending a job,

@@ -210,5 +210,3 @@ Additionally, Spack will oftentimes output troubleshooting suggestions. To incre
 __Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are be happy to help with any questions you may have! 
 
 Suggestions provided in the `Troubleshooting Spack` subsection were based off of Spack documentation written by [NERSC](https://docs.nersc.gov/development/build-tools/spack/).
-
----

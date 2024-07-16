@@ -93,7 +93,6 @@ Use of University of Colorado Research Computing resources, including (but not l
 
    access/logging-in
    access/duo-2-factor-authentication
-   access/allocations
    access/rmacc
    access/amc-access
 
@@ -126,6 +125,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    running-jobs/slurm-commands
    running-jobs/job-resources
    running-jobs/squeue-status-codes
+   running-jobs/roce-enabled
 
 .. toctree::
    :maxdepth: 1
@@ -147,7 +147,7 @@ Use of University of Colorado Research Computing resources, including (but not l
    cloud/aws/index
    cloud/azure/index
    cloud/gcp/index
-   cloud/cumulus/cumulus
+   cloud/cumulus/index
 
 .. toctree::
    :maxdepth: 2
@@ -194,11 +194,3 @@ Use of University of Colorado Research Computing resources, including (but not l
    additional-resources/other
    additional-resources/biokem-facility
    additional-resources/csu-xsede-usernames
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Maintenance
-
-   changelogs/CHANGELOG
-

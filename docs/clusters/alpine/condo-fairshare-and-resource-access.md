@@ -1,4 +1,4 @@
-## Alpine: condo FairShare and resource access 
+# Alpine: condo FairShare and resource access 
 
 This purpose of this document is to provide a detailed overview of 
 Alpine's FairShare and resource access policies. The intended audience is 
@@ -6,7 +6,7 @@ Alpine's insitutional-level condo contributors.
 
 Updated November 4, 2022 
 
-### Goals and philosophy 
+## Goals and philosophy 
 
 The Alpine supercomputer hosted at CU Boulder and administered by Research 
 Computing at CU Boulder (CURC) supports institutional condo purchases, the 
@@ -23,9 +23,9 @@ configuration. This document describes the initial policy, but changes to
 any or all of it are possible based on contributor feedback, user issues, 
 CURC’s own data-gathering and monitoring, and other factors. 
 
-### Node, partition, and FairShare policies 
+## Node, partition, and FairShare policies 
 
-#### Overview 
+### Overview 
 
 All nodes, whether contributed by CU Boulder or by another institution, 
 will be added to a shared partition to which all Alpine users will have 
@@ -52,7 +52,7 @@ account for total cores, clock speeds, cores on nodes with high memory
 (>=1TB), and GPUs. All resources will be billed back accordingly at the 
 time of job submission. 
 
-#### GPU calculations 
+### GPU calculations 
 
 To compute the GPU term in the FairShare equation, CURC will multiply 
 total contributed GPUs by an "acceleration factor". This factor is derived 
@@ -67,7 +67,7 @@ and 64 cores would be a factor of 5-6 higher than a 64-core CPU-only node.
 This figure and the choice of benchmarking software are subject to change 
 in the future based on new information. 
 
-#### Complete equation 
+### Complete equation 
 
 The exact score will be derived from the following equation: 
 
@@ -87,7 +87,7 @@ subaccount that will have 20% of the FairShare pool and a "projects"
 subaccount with 80%. The general/projects pattern is already in place on Alpine. Contributors wishing for a different accounting arrangement from "general/projects" should reach out to CURC with specific requests. This crediting and billing system is intended to balance contributions and 
 utilization. 
 
-#### Example and comment on FairShare and billing 
+### Example and comment on FairShare and billing 
 
 Suppose the lowest rated clock speed available on any Alpine node is 
 2.2GHz. Acme University contributes the following order: 
@@ -127,7 +127,7 @@ specific jobs if users abuse it – if, for example, a contributor purchases
 many GPU cores and uses their share of "credit" from those GPUs to exploit 
 another contributor’s CPU-only contributions. 
 
-### Reporting 
+## Reporting 
 
 CURC will provide regular reports to institutional Alpine partners to 
 demonstrate they are receiving appropriate value for their contributions. 
@@ -147,7 +147,7 @@ systems users, including `sinfo`, `sshare`, `sreport`, and `squeue`.
 Public-facing reports and dashboards are available online through RC’s 
 instance of XDMoD. 
 
-### Key details 
+## Key details 
 
 Please note the following about the way Slurm calculates priority: 
 

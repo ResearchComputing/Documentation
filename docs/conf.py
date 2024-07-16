@@ -1,19 +1,27 @@
-from recommonmark.parser import CommonMarkParser
-
 project = "Research Computing\nUniversity of Colorado Boulder"
 
 master_doc = 'index'
 
-source_parsers = {
-    '.md': CommonMarkParser,
+extensions = ['myst_parser']
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
 }
 
-extensions = [
-    'sphinx_markdown_tables'
-]
+html_theme = 'sphinx_book_theme'
 
-source_suffix = ['.rst', '.md']
-
-html_theme = 'sphinx_rtd_theme'
+myst_heading_anchors=6
 
 html_static_path = ['_static']
+html_css_files = ["custom.css"]
+
+html_theme_options = {
+   "logo": {
+      "image_light": "_static/Research_Computing_black_letters.png",
+      "image_dark": "_static/Research_Computing_white_letters.png",
+   }, 
+   "repository_url": "https://github.com/ResearchComputing/Documentation",
+   "use_repository_button": True,
+}

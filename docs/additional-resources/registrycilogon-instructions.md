@@ -1,8 +1,8 @@
-## Uploading an SSH Key to CILogon Registry  
+# Uploading an SSH Key to CILogon Registry  
 
 CU Boulder Research Computing uses [CILogon](https://cilogon.org) to manage key-based login (CU Anschutz users, only) and passwordless data transfers with `scp` and `rsync` (CU Boulder and AMC, only). Access to the [RMACC CILogon Registry](https://registry.cilogon.org/registry/) is available by invitation only.
 
-### *Step 1: Enroll in the RMACC CILogon Registry*
+## *Step 1: Enroll in the RMACC CILogon Registry*
 
 Request an invitation to the RMACC CILogon Registry by emailing <rc-help@colorado.edu> and explaining your intended use case (e.g., automated data transfers). After your case has been assigned, you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
@@ -23,7 +23,7 @@ Enter your CU Boulder or ACCESS username and password and click 'Login'. Accept 
 
 > **_IMPORTANT:_** You can move on to Step 2, but please make sure 10 minutes have elapsed between completing Step 1 and beginning Step 3.
 
-### *Step 2: Generate an ssh key*
+## *Step 2: Generate an ssh key*
 
 You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
 
@@ -35,7 +35,7 @@ SSH Key Generation for Mac Users:
 https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
 
 
-### *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
+## *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
 
 After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your ACCESS 
 credentials, click on the dropdown menu in the upper right hand corner by your name. 
@@ -65,11 +65,11 @@ A green message box will notify you that your SSH key was successfully added to 
 <br>
 ![](./registry-images/sshkeyadded.png)
 
-### Deleting or Replacing SSH Keys in RMACC CILogon Registry
+## Deleting or Replacing SSH Keys in RMACC CILogon Registry
 
 Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the 'Authenticators' section of your profile (see Step 3, above). Click 'Delete', then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
 
-### Troubleshooting
+## Troubleshooting
 
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>. Please include a screenshot of the error message and the date/time of your last login attempt.
 

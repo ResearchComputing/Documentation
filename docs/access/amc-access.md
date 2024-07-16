@@ -1,8 +1,8 @@
-## SSH Key-Based Authentication for Anschutz Medical Campus 
+# SSH Key-Based Authentication for Anschutz Medical Campus 
 
 Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact hpcsupport@cuanschutz.edu to initiate this process.
 
-### *Prerequisites:*
+## *Prerequisites:*
 * If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (<https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30>).
 * Sign and fill out CU Anschutz's Alpine form: <https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake>
 * You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
@@ -12,7 +12,7 @@ Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys
 A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn>. 
 Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
 
-### *Step 1: Enroll in the RMACC CILogon Registry*
+## *Step 1: Enroll in the RMACC CILogon Registry*
 
 You will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
@@ -38,7 +38,7 @@ Accept the Duo push from your device.
 
 > **_IMPORTANT:_** You can move on to Step 2, but please make sure 10 minutes have elapsed between completing Step 1 and beginning Step 3.
 
-### *Step 2: Generate an ssh key*
+## *Step 2: Generate an ssh key*
 
 You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
 
@@ -50,7 +50,7 @@ SSH Key Generation for Mac Users:
 https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
 
 
-### *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
+## *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
 
 After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your ACCESS 
 credentials, click on the dropdown menu in the upper right hand corner by your name. 
@@ -82,7 +82,7 @@ A green message box will notify you that your SSH key was successfully added to 
 
 After a few minutes you can proceed to Step 4.
 
-### *Step 4: Sign in from a terminal or terminal emulator*
+## *Step 4: Sign in from a terminal or terminal emulator*
 <br>
 
 > **_NOTE:_** You must be on the University of Colorado Anschutz Medical Campus VPN or network. See *Prerequisites* above.
@@ -106,12 +106,12 @@ c) Once you are logged in, you will see the CURC Message of the Day and your pro
 ![](./amc-access-images/loginprompt_motd.png)
 
 
-### Deleting or Replacing SSH Keys in RMACC CILogon Registry
+## Deleting or Replacing SSH Keys in RMACC CILogon Registry
 
 Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the 'Authenticators' section of your profile (see Step 3, above). Click 'Delete', then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
 
 
-### Troubleshooting
+## Troubleshooting
 
 * If you are able to get through Step 3 but unable to ssh in from your terminal, check that the ssh key in your command is the same key you uploaded to the registry.
 * If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please contact <rc-help@colorado.edu>, as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt.

@@ -1,11 +1,11 @@
-## GNU Parallel
+# GNU Parallel
 
 GNU Parallel is an effective tool for optimally using multiple cores and 
 nodes on CURC clusters to run lots of independent tasks without the need 
 to learn 
 OpenMP or MPI. This tutorial assumes user knowledge of Slurm jobs, shell scripting, and some Python.
 
-### Why Use GNU Parallel?
+## Why Use GNU Parallel?
 
 Suppose you have a very simple serial program that crops a photo, and you 
 need to apply it to crop several million photos. You could rewrite the 
@@ -16,7 +16,7 @@ programming. If your code is in a language that has limited
 parallelization capabilities then this may not even be an option. The 
 easiest solution to this problem is to use GNU Parallel.
 
-### Using GNU Parallel
+## Using GNU Parallel
 
 GNU Parallel is provided as a software module on Alpine. It allows shell 
 commands (for example, calls to serial programs) to be distributed amongst nodes and cores. This means code doesn’t need to be explicitly parallelized for MPI or OpenMP. Additionally, code can be written in any language that can be run from a Linux shell.
@@ -26,7 +26,7 @@ Let’s create a simple ‘Hello World’ serial python script to demonstrate th
 ```python
 import sys
 
-print “Hello World from task: ”, sys.argv[1]
+print "Hello World from task: ", sys.argv[1]
 ```
 
 Now create a job script called `run_hello.sh` that will use GNU Parallel 
@@ -34,7 +34,7 @@ to run as many instances of your python script as you want. Before running GNU P
 
 > _Note: This example uses a custom python environment built with conda, 
 more infomation on using python or R with conda can be found 
-[here](./python.html)_
+[here](./python.md)
 
 ```bash
 #!/bin/bash
@@ -89,7 +89,7 @@ In this example the 20 invocations of your python script will run across the 4 c
 
 Tip: For sufficiently-large workflows one can add the `--joblog` and `--resume` flags in `$my_srun`. These flags will enable GNU Parallel to keep track of tasks it has run successfully and, if needed, rerun tasks that failed or were not executed. Additional details can be found in the links below. 
 
-### **Additional Resources**
+## **Additional Resources**
 
 - [https://www.gnu.org/software/parallel/](https://www.gnu.org/software/parallel/)
 - [https://www.gnu.org/software/parallel/parallel_tutorial.html](https://www.gnu.org/software/parallel/parallel_tutorial.html)

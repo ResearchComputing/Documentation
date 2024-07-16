@@ -1,18 +1,18 @@
-### Data Transfer Between OneDrive and PetaLibrary
+# Data Transfer Between OneDrive and PetaLibrary
 
-### Using Globus
+## Using Globus
 
-#### Step 1: Log into the Globus Web App
+### Step 1: Log into the Globus Web App
 Visit [https://app.globus.org](https://app.globus.org) and log in with your Colorado.edu credentials
 
 ![](Globus_Login.png)
 
-#### Step 2: Open your OneDrive
+### Step 2: Open your OneDrive
 In the Collection Search, enter: OneDrive CU Boulder - this should show your OneDrive contents if you are logged in. You may need to authenticate with your OneDrive account.
 
 ![](onedrivesearch.png)
 
-#### Step 3: Open CURC (right pane)
+### Step 3: Open CURC (right pane)
 Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection Search (right pane), enter: CU Boulder Research Computing
 
 * You'll be asked to log in using your CURC Credentials - after clicking Authenticate, you should receive a Duo push on your Duo device which you will need to confirm
@@ -23,7 +23,7 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 
 ![](Globus_CURC_Collection.png)
 
-#### Step 4: Select files/folders from OneDrive to be transferred and initiate the transfer
+### Step 4: Select files/folders from OneDrive to be transferred and initiate the transfer
 * In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job
 
 ![](Globus_Intitiate_Transfer.png)
@@ -32,9 +32,9 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 
 ![](Globus_Activity_GDrive.png)
 
-### Using RClone
+## Using RClone
 
-#### Step 1: Login to a compile node on Alpine
+### Step 1: Login to a compile node on Alpine
 
 * Login to Alpine
 * Load module Slurm, then start a compile job, then load module rclone
@@ -50,7 +50,7 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 	rclone v1.58.0
 	```
 
-#### Step 2: configure OneDrive remote configuration
+### Step 2: configure OneDrive remote configuration
 
 _Note: the steps below are also outlined in the [Rclone Documentation for OneDrive](https://rclone.org/onedrive/). We only list the critical steps. If a step is left out, assume you can select the default setting._
 
@@ -74,7 +74,7 @@ _Note: the steps below are also outlined in the [Rclone Documentation for OneDri
 * Finally, you will be prompted to review the configuration and confirm whether it is okay. If everything looks okay, choose `yes` (default)
 * Now type, `q` to quit the configuration. 
 
-##### Now test your OneDrive remote!
+#### Now test your OneDrive remote!
 
 On the Alpine compile node type:
 ```bash
@@ -82,11 +82,11 @@ $ rclone ls onedrive_johndoe_cu:
 ```
 If this step fails, your OneDrive remote is not configured properly. Try reconfiguring your OneDrive remote again or contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for assistance.
 
-#### Step 3: Create your PetaLibrary remote configuration
+### Step 3: Create your PetaLibrary remote configuration
 
-See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.html#configure-rclone)
+See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md#configure-rclone)
 
 
 * [Rclone documentation](https://rclone.org/)
-* [CURC data transfer documentation](../../compute/data-transfer.html)
+* [CURC data transfer documentation](../../compute/data-transfer.md)
 

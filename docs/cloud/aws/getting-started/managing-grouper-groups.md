@@ -1,6 +1,6 @@
-## Managing User Access with Grouper
+# Managing User Access with Grouper
 
-### Adding Users
+## Adding Users
 
 AWS customers can add team members as Administrators to their AWS account.
 This is done using <a href="https://mygroups.colorado.edu/" target="_blank">CU's Grouper Tool</a>.
@@ -34,7 +34,7 @@ Note that changes can take up to 15 minutes to take effect.
 
    ![](images/managing-grouper-groups/verify-user.png)
 
-### Removing Users
+## Removing Users
 
 Users can be removed from accessing the AWS account by removing them from the Grouper Group.
 

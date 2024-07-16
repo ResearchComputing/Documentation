@@ -1,9 +1,9 @@
-## Logging In
+# Logging In
 
 Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources you need the following: 
 
 - [A Research Computing account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
-- [Duo 2 factor authentication](duo-2-factor-authentication.html)
+- [Duo 2 factor authentication](duo-2-factor-authentication.md)
 - [The PuTTY application](https://www.putty.org/) (if you are a Windows user)  
 
 Users accessing RC's resources will be connected to a login node. A login node is a outward facing node within the Research Computing environment that users can connect to from their local machines. Once on a login node, users can perform a limited number of tasks:
@@ -13,14 +13,14 @@ Users accessing RC's resources will be connected to a login node. A login node i
 + Running Jobs
 + Access storage resources  
 
-> **Note:** the [login node policy](../additional-resources/policies.html#login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
+> **Note:** the [login node policy](../additional-resources/policies.md#login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
 
 + **For CSU users, please refer to the "Remote Login" section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page.**  
-+ **For RMACC users, please refer to [RMACC Access to Alpine.](rmacc.html)**
++ **For RMACC users, please refer to [RMACC Access to Alpine.](rmacc.md)**
 
 ---
 
-### Getting an account
+## Getting an account
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3kdW3EJS-OE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -31,7 +31,7 @@ here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization
 account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
 mobile app to your phone (available via Apple App Store or Google Play Store), visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> to enroll. 
   
-### Logging in from a Windows Machine
+## Logging in from a Windows Machine
 
 Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application allows users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that allow Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
@@ -40,20 +40,20 @@ Logging in from a Windows machine requires the additional step of [installing th
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
     * Note that as a security feature, PuTTY does not display any text while you type your password
 
 
-### Logging in from a Mac
+## Logging in from a Mac
 
 Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
 
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
 
-### Logging in from Linux
+## Logging in from Linux
 
 Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
 
@@ -61,15 +61,15 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 
 2. Enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.html).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
 
-### SSH host keys
+## SSH host keys
 
 The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
 
 Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
 
-#### login.rc.colorado.edu
+### login.rc.colorado.edu
 
 ```
 # Fingerprint
@@ -89,7 +89,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPub4h8XLU3dXJBNZljS4PdPWOORXoBdSdaKnwFcMTxe
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWIqetVDUqKB2im3HyQZJ72PMYXFJUXR2Z+dzhGfOERABAV6m0fKcVcPrBjX9SYR4QYbxR+Yu2bIDDxpK+PZs2sAy/LU4po9mZUN8VAWBE0rwgcEvKfbQriwyhkdqdjEEzbEN5FTx05iYMN2o2vpshmi3dUpHaKMZPI0bhQKmwjM3bf77gpxXWNANsGIag0SdX4bmiWYQhR+CnzUJUis9DVOpVNfN+Jtw4IgnuJedehkZi/z/v7JKvV26jIxXmdq6+VkRCpoVnL3pJkoU5e4vaSc4V5kvgfI9G4tj6BEDGsRgHXAcZXk+hLtNp2nj2VsSocWcOVkn85obSfnVwV/f
 ```
 
-#### blogin01.rc.colorado.edu
+### blogin01.rc.colorado.edu
 A private login node owned by ICS
 
 ```

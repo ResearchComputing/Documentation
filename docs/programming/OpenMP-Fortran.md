@@ -1,4 +1,4 @@
-## Using OpenMP with Fortran
+# Using OpenMP with Fortran
 
 Because clusters are comprised of many CPUs, parallel programming is the most
 effective way to utilize these resources. Probably the simplest way to
@@ -17,7 +17,7 @@ Much more in depth OpenMP tutorial:
 - [https://hpc-tutorials.llnl.gov/openmp/](https://hpc-tutorials.llnl.gov/openmp/)
 
 
-### Parallel “Hello, World” Program
+## Parallel “Hello, World” Program
 
 In this section we will learn how to make a simple parallel hello
 world program in Fortran.  Let’s begin with creation of a program
@@ -47,7 +47,7 @@ unique id number.
 PROGRAM Parallel_Hello_World
 USE OMP_LIB
 
-PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 END
 ```
@@ -125,7 +125,7 @@ USE OMP_LIB
 
 !$OMP PARALLEL
 
-    PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+    PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 !$OMP END PARALLEL
 
@@ -180,7 +180,7 @@ Hello from process: 1
 (Note don’t worry about order of processes that printed, the threads
 will print out at varying times.)
 
-### Private vs. Shared Variables
+## Private vs. Shared Variables
 
 Memory management is a quintessential component of any parallel
 program that involves data manipulation. In this section, we will
@@ -209,7 +209,7 @@ Variables that are created and assigned inside of a parallel section
 of code will be inherently be private, and variables created outside
 of parallel sections will be inherently public.
 
-#### Example:
+### Example:
 
 Let’s adapt our ‘Hello World’ code to utilize private variables as an
 example.  Starting with the code we left off with, let’s create a
@@ -224,7 +224,7 @@ INTEGER :: thread_id
 
 !$OMP PARALLEL
 
-    PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+    PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 !$OMP END PARALLEL
 
@@ -243,7 +243,7 @@ INTEGER :: thread_id
 
 !$OMP PARALLEL PRIVATE(thread_id)
 
-    PRINT *, “Hello from process: ”, OMP_GET_THREAD_NUM()
+    PRINT *, "Hello from process: ", OMP_GET_THREAD_NUM()
 
 !$OMP END PARALLEL
 
@@ -262,7 +262,7 @@ INTEGER :: thread_id
 !$OMP PARALLEL PRIVATE(thread_id)
 
     thread_id = OMP_GET_THREAD_NUM()
-    PRINT *, “Hello from process: ”, thread_id
+    PRINT *, "Hello from process: ", thread_id
 
 !$OMP END PARALLEL
 
@@ -279,7 +279,7 @@ Hello from process: 2
 Hello from process: 1
 ```
 
-### Barrier and Critical Directives
+## Barrier and Critical Directives
 
 OpenMP has a variety of tools for managing processes. One of the more
 prominent forms of control comes with the __barrier__:
@@ -292,7 +292,7 @@ prominent forms of control comes with the __barrier__:
 
 ```fortran
 !$OMP CRITICAL
-…
+...
 !$OMP END CRITICAL
 ```
 
@@ -304,7 +304,7 @@ A critical directive ensures that a line of code is only run by one
 process at a time, ensuring thread safety in the body of code.
 
 
-#### Example
+### Example
 
 Let's implement an OpenMP barrier by making our ‘Hello World’ program
 print its processes in order. Beginning with the code we created in
@@ -394,7 +394,7 @@ Hello from process: 3
 ```
 
 
-### Work Sharing Directive: omp do
+## Work Sharing Directive: omp do
 
 OpenMP’s power comes from easily splitting a larger task into multiple
 smaller tasks.  Work-sharing directives allow for simple and effective
@@ -405,11 +405,11 @@ parallel task. We can implement this directive as such:
 
 ```fortran
 !$OMP DO
-…
+...
 !$OMP END DO
 ```
 
-#### Example
+### Example
 
 Let’s write a program to add all the numbers between 1 and 1000. Begin
 with a program title and the `OMP_LIB` header:
@@ -506,7 +506,7 @@ INTEGER :: partial_Sum, total_Sum
     !$OMP END CRITICAL
 
 !$OMP END PARALLEL
-PRINT *, “Total Sum: ”, total_Sum
+PRINT *, "Total Sum: ", total_Sum
 
 END
 ```

@@ -1,4 +1,4 @@
-## Load Balancer
+# Load Balancer
 
 The CU Research Computing Load Balancer is an effective tool for
 optimally utilizing multiple processors and nodes on the CURC HPC
@@ -7,7 +7,7 @@ assumes user knowledge of Slurm jobs, shell scripting, and
 some python.
 
 
-### Why Use the Load Balancer?
+## Why Use the Load Balancer?
 
 Suppose you have a very simple serial program that crops a photo, and
 you need to apply it to crop several million photos. You could rewrite
@@ -20,7 +20,7 @@ be an option. The easiest solution for this problem is to utilize the
 Load Balancer.
 
 
-### Using the Load Balancer
+## Using the Load Balancer
 
 The Load Balancer is a tool provided by CU Boulder Research Computing
 that allows shell commands (for example, calls to serial programs) to
@@ -73,7 +73,7 @@ python3 hello_World.py 3;
 python3 hello_World.py 4;
 ```
 
-Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python.html), in order to access whatever softare we will be running with the Load Balancer. Your job script should look something like this:
+Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python.md), in order to access whatever softare we will be running with the Load Balancer. Your job script should look something like this:
 
 ```bash
 #!/bin/bash
@@ -116,7 +116,7 @@ Hello World from process: 3
 
 > __Note3__: The `loadbalance` module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores.
 
-### Additional Resources
+## Additional Resources
 
 * [https://github.com/ResearchComputing/lb](https://github.com/ResearchComputing/lb)
 * [https://github.com/t-brown/lb](https://github.com/t-brown/lb)

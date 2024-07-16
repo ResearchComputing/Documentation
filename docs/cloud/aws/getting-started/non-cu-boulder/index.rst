@@ -1,5 +1,5 @@
 AWS - Getting Started (Non-CU Boulder)
-===============
+=======================================
 
 .. toctree::
     :maxdepth: 1

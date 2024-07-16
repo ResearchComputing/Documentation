@@ -2,14 +2,14 @@
 
 SRA Toolkit provides tools for downloading data, converting data into SRA format, and extracting SRA data into other data formats.
 
-### Loading the Module
+## Loading the Module
 
 From an Alpine compute node:
 ``` bash
 module load sra-toolkit
 ```
 
-### Configuring SRA Toolkit 
+## Configuring SRA Toolkit 
 
 Some SRA Toolkit commands, such as `fasterq-dump`, generate large temporary files that are approximately the size of the final output file(s). SRA Toolkit writes these 
 temporary, 
@@ -69,7 +69,7 @@ Tab to `[ exit ]` and press enter.
 
 SRA Toolkit is ready for use!
 
-### Common SRA Toolkit Issues
+## Common SRA Toolkit Issues
 
 - Download errors are common with commands like `prefetch`, `fasterq-dump`, and `hisat2`, as the NCBI SRA server can be overwhelmed. 
 
