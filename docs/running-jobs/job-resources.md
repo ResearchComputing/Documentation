@@ -8,7 +8,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocation](../access/allocations.html)    | Specify an allocation account  | --account=allocation       |
+| [Allocation](../clusters/alpine/allocations.md)  | Specify an allocation account  | --account=allocation       |
 | Partition          | Specify a partition ([see table below](#partitions)) | --partition=partition |
 | Sending email      | Receive email at beginning or end of job completion | --mail-type=type           |
 | Email address      | Email address to receive the email                  | --mail-user=user           |
@@ -51,7 +51,7 @@ In addition to these partitions, Research Computing also provides specialized pa
 
 To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitions, use the `long` QOS.
 
-More details about each type of node can be found [here](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html).
+More details about each type of node can be found [here](../clusters/alpine/alpine-hardware.md).
 
 ## Quality of Service
 

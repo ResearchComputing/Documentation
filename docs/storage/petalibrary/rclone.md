@@ -5,7 +5,7 @@ This guide details the process of making a backup for local data on your laptop 
 ## Generate public/private keypair for CURC resources
 
 
-In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.html) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
+In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
 
 Once the keypair has been generated, we now need to provide the private key to the client you want to backup data on. Although this next step can't be documented exactly, as every client system will be different, using a secure method (such as scp or sftp) to copy the private key in `~/.ssh/rclone_ssh_key` to the system that you want to back up to PetaLibrary (e.g., your laptop or lab server) is all that is needed.
 
@@ -26,7 +26,7 @@ _Note: You must have adminstrative priveleges on your laptop or lab server in or
 
 ## Configure rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](../../compute/data-transfer.html)
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](../../compute/data-transfer.md)
 
 
 In this example we use rclone to create an sftp endpoint with the following settings:

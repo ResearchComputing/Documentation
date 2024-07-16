@@ -84,9 +84,9 @@ If this step fails, your OneDrive remote is not configured properly. Try reconfi
 
 ### Step 3: Create your PetaLibrary remote configuration
 
-See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.html#configure-rclone)
+See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md#configure-rclone)
 
 
 * [Rclone documentation](https://rclone.org/)
-* [CURC data transfer documentation](../../compute/data-transfer.html)
+* [CURC data transfer documentation](../../compute/data-transfer.md)
 

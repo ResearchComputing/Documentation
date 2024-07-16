@@ -45,7 +45,7 @@ _Note: These instructions assume you are on a CU Boulder campus network._
 
 ## Step 4: Generate keypair for connecting to PetaLibrary 
 
-In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.html) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
+In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
 When following this documentation you should be generating the ssh key on the Synology server. For example, you could do the following:
 
 _(Note for below: Press return when prompted for a passphrase to select “empty”)._
@@ -80,5 +80,5 @@ If you want your backups to occur at a specified time each day or week, please r
 ## Useful links
 
 * [Synology documentation](https://www.synology.com/en-us/support/documentation?query=&type=All&section=All&p=1)
-* [CURC data transfer documentation](../../compute/data-transfer.html)
+* [CURC data transfer documentation](../../compute/data-transfer.md)
 

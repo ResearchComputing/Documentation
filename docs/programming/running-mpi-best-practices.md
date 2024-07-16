@@ -1,4 +1,4 @@
-##  Best practices for running parallel executables on RC Resources
+#  Best practices for running parallel executables on RC Resources
 
 Many scientific software packages are programmed such that they can parallelize tasks across multiple cores on one node (shared memory parallelization) or multiple cores across multiple nodes (distributed memory parallelization).  Either way, running the executable programs that result from compiling parallel-capable software packages requires the use of MPI ("message passing interface") libraries which coordinate the passing of information between the parallel tasks.
 
@@ -14,7 +14,7 @@ This documentation assumes you have already compiled your parallel software into
 
 
 
-### Running parallel executables
+## Running parallel executables
 
 Shared memory parallel codes (that run across multiple cores on a single node) can be run anywhere on Alpine or Blanca.  Distributed memory parallel codes (that run across multiple cores _and_ multiple nodes) can be run on any Alpine partition, as well as any Blanca-HPC partition (e.g.,`blanca-nso` and `blanca-topopt`) and the `blanca-ccn` partition. If you have very large MPI jobs that would span multiple chassis (i.e., roughly 1000 cores or more), please contact us for help with optimization for message passing, as cabling limitations between some chassis may pose challenges. If uncertain whether distributed memory parallel jobs can be run in a given Blanca partition, users can employ the `scontrol` command to query whether _fdr_ or _edr_ is an available feature for a random node in the partition-of-interest. For example, to check a node in the `blanca-ccn` partition: 
 ```
@@ -22,7 +22,7 @@ $ scontrol show node bnode0201 |grep AvailableFeatures
    AvailableFeatures=ivybridge,Quadro,K2000,avx,fdr,rhel7
    ```
 
-#### With Intel/IMPI
+### With Intel/IMPI
 
 __Step1:__
 Load the _intel_ and _impi_ modules. In this example _intel/17.4_ and _impi/17.3_ are loaded, but note that other options are also available and can be viewed with the `module avail` command.
@@ -54,7 +54,7 @@ mpiexec -n 48 ./myexecutable.exe
 
 In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with _Intel-MPI_ can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#intel_mpi). 
 
-#### With gcc/OpenMPI or aocc/OpenMPI
+### With gcc/OpenMPI or aocc/OpenMPI
 
 __Step1:__
 Load the _gcc_ or _aocc_ modules, then the _openmpi_ module. In this example _gcc/6.1.0_ and _openmpi/2.0.1_ are loaded), but note that other options are also available and can be viewed with the `module avail` command.
@@ -85,7 +85,7 @@ mpiexec -n 48 ./myexecutable.exe
 
 In practice, all three methods will provide nearly identical performance, so choosing one is often a matter of preference. Slurm recommends using the `srun` command because it is best integrated with the Slurm Workload Manager that is used on Blanca. Additional details on the use of `srun`, `mpirun` and `mpiexec` with _OpenMPI_ can be found in the [Slurm MPI and UPC User's Guide](https://slurm.schedmd.com/mpi_guide.html#open_mpi).
 
-### Example job script for running a parallel executable:
+## Example job script for running a parallel executable:
 
 ```bash
 #!/bin/bash
@@ -109,7 +109,7 @@ mpirun -n $SLURM_NTASKS /path/to/mycode.exe
 #Note: $SLURM_NTASKS has a value of the amount of cores you requested
 ```
 
-### Notes
+## Notes
 
 * When invoking _gcc/openmpi_-compiled softare via the `srun` command, make sure the code is compiled with _openmpi_ version 2.X or greater. 
 * Multiple MPI implementations may be available for a given compiler.  Once you've loaded a given compiler, type `module avail` to see the list of MPI modules available for that particular compiler. 

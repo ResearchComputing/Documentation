@@ -42,7 +42,7 @@ Alpine users are provided a subdirectory on `/scratch/alpine`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
 running on that system (e.g., `/scratch/alpine/janedoe`). By default,
 each user is limited to a quota of 10 TB worth of storage space and
-20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](https://curc.readthedocs.io/en/latest/additional-resources/policies.html#alpine-scratch-quota-increases). Blanca users should write to
+20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](../additional-resources/policies.md#alpine-scratch-quota-increases). Blanca users should write to
 `/rc_scratch/janedoe` instead of `/scratch/alpine`.
 
 Scratch space should be used for all compute jobs run on Alpine or
@@ -53,7 +53,7 @@ automatically removed 90 days after their initial creation.
 
 Users requiring longer-term retention of their files should perform
 regular backups to their local machine if they have not purchased
-space on the [PetaLibrary](../storage/petalibrary/index.html). Inappropriate use of scratch
+space on the [PetaLibrary](../storage/petalibrary/index.rst). Inappropriate use of scratch
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
@@ -265,7 +265,7 @@ A directory with the specified name is created having permissions defined by the
 The destination file will have the same permissions as the source file unless those are modified by the user’s `umask`. Note that more sophisticated copy programs can modify the destination permissions, again subject to the user’s `umask`.
 
 `rsync -var <source_file/directory>/ <destination_file/directory/`<br />  
-See our [Data Transfer](https://curc.readthedocs.io/en/latest/compute/data-transfer.html?highlight=rsync#rsync) page for more information about `rsync`.
+See our [Data Transfer](../compute/data-transfer.md#rsync) page for more information about `rsync`.
 
 ## Workspace Sharing
 

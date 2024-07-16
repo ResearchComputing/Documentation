@@ -12,7 +12,7 @@ Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This e
 
 ## Tutorial
 
-Completing the steps below requires that you have first [logged into your VM](./cumulus1#part-3-logging-into-your-instance)
+Completing the steps below requires that you have first [logged into your VM](./cumulus1.md#part-3-logging-into-your-instance)
 
 ###  Part 1: Install `sshfs`
 
@@ -100,9 +100,9 @@ sshfs umount ~/mypetalibrary
 
 ## Additional Information
 
-  * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
+  * [CUmulus documentation](../cloud/cumulus/cumulus.md)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)
-  * [PetaLibrary Documentation](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html)
+  * [PetaLibrary Documentation](../storage/petalibrary/index.rst)
 
 
 > This work has been funded in part by the National Science Foundation under grant OAC-1925766

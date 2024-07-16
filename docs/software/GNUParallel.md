@@ -34,7 +34,7 @@ to run as many instances of your python script as you want. Before running GNU P
 
 > _Note: This example uses a custom python environment built with conda, 
 more infomation on using python or R with conda can be found 
-[here](./python.html)
+[here](./python.md)
 
 ```bash
 #!/bin/bash

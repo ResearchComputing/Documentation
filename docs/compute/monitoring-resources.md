@@ -1,7 +1,7 @@
 # Monitoring Resources
 
 CU Research Computing has two main tools which can help users monitor their HPC resources:
-* [Slurmtools](#slurmtools): A [module](./modules.html) that loads a collection of functions to assess recent usage statistics
+* [Slurmtools](#slurmtools): A [module](./modules.md) that loads a collection of functions to assess recent usage statistics
 * [XDMoD](#xdmod): A web portal for viewing metrics at the system, partition, and user-levels.
 
 ## Slurmtools
@@ -13,7 +13,7 @@ Slurmtools is a collection of helper scripts for everyday use of the [SLURM](htt
 * How efficient are my jobs?
 
 ### __Step 1__: Log in
-If you have a CURC account, login as you [normally would](../access/logging-in.html) using your identikey and Duo from a terminal: 
+If you have a CURC account, login as you [normally would](../access/logging-in.md) using your identikey and Duo from a terminal: 
 
 ```bash
 $ ssh ralphie@login.rc.colorado.edu

@@ -1,6 +1,6 @@
 # Jupyter Sessions
 
-[Jupyter Notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text, which provide an integrated environment to use, learn, and teach interactive data analysis. Users can obtain quick access to Jupyter sessions using [Open OnDemand](./OnDemand.html) and easily launch a JupyterLab interface. The JupyterLab interface is a fantastic tool that provides a highly customizable graphical user interface (GUI) that allows users to easily navigate multiple Jupyter Notebooks and the CURC filesystem. 
+[Jupyter Notebooks](https://jupyter.org/) are an excellent resource for interactive development and data analysis using _Python_, _R_, and other languages. Jupyter notebooks can contain live code, equations, visualizations, and explanatory text, which provide an integrated environment to use, learn, and teach interactive data analysis. Users can obtain quick access to Jupyter sessions using [Open OnDemand](./OnDemand.md) and easily launch a JupyterLab interface. The JupyterLab interface is a fantastic tool that provides a highly customizable graphical user interface (GUI) that allows users to easily navigate multiple Jupyter Notebooks and the CURC filesystem. 
 
 ## Navigating the JupyterLab Interface
 
@@ -21,7 +21,7 @@ only).
       * __Python 3 (idp)__: Python3 notebook (Intel Python distribution)
       * __Bash__: BASH notebook
       * __R__: R notebook 
-      * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernels) on creating your own custom kernels)._
+      * ...and any other custom kernels you add on your own _(see the [section below](#creating-your-own-custom-jupyter-kernel) on creating your own custom kernels)._
    * Open a new console (command line) for any of the kernels.
    * Open other functions; the "Terminal" function is particularly useful as it enables you to access the command line on the Alpine or Blanca node your Jupyter Session
 job is currently running on. 
@@ -46,7 +46,7 @@ Follow these steps from a terminal session. You can get a new terminal session d
 
 ### 1.  Configure your conda settings
 
-Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](../software/python.html#configure-your-conda-settings).
+Follow our Anaconda documentation for [steps on configuring your conda settings via ~.condarc](../software/python.md#configuring-conda-with-condarc).
 
 ### 2. Activate the CURC Anaconda environment
 
@@ -62,7 +62,7 @@ You will know that you have properly activated the environment because you shoul
 
 ### 3. Create a new custom environment 
 
-Follow our Anaconda documentation for [steps on creating your own custom conda environment](../software/python.html#create-your-own-custom-environment).
+Follow our Anaconda documentation for [steps on creating your own custom conda environment](../software/python.md#create-your-own-custom-environment).
 
 
 ### 4. Activate your new environment
@@ -112,7 +112,7 @@ If you need assistance creating or installing environments or Jupyter kernels, c
 
 ## See Also
 
-* [CURC Anaconda distribution](../software/python.html)
+* [CURC Anaconda distribution](../software/python.md)
 * [JupyterLab homepage](https://jupyterlab.readthedocs.io)
 
 

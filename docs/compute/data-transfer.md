@@ -6,7 +6,7 @@ application called _Globus_ or through command-line tools such as
 secure copy (_scp_), secure ftp (_sftp_) and _rsync_. 
 
 Data transfers using SSH protocols can be done through the 
-[CURC data transfer nodes](https://curc.readthedocs.io/en/latest/compute/node-types.html) (DTN). 
+[CURC data transfer nodes](./node-types.md) (DTN). 
 Transfers via the DTNs support all types of transfers, including large and/or frequent file
 transfers and automated (passwordless) transfers.
 
@@ -64,7 +64,7 @@ docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 ## Globus to AWS S3 Bucket connection
 
-CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#Rclone)). For _both_ transfer methods it is assumed you already have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
+CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#rclone)). For _both_ transfer methods it is assumed you already have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
 
 1) Your CU IdentiKey and accept a Duo push
 2) Your AWS Credentials (access key and secret key)
@@ -211,7 +211,7 @@ is public, and can be shared with others (including Research
 Computing). `id_ed25519` is private and **should never leave the
 system that it was generated on.**
 
-2. Follow the instructions [here](../additional-resources/registrycilogon-instructions.html) for requesting access to the CILogon Registry and uploading an ssh key.
+2. Follow the instructions [here](../additional-resources/registrycilogon-instructions.md) for requesting access to the CILogon Registry and uploading an ssh key.
 
 3. Use `rsync` or `scp` to transfer files using an ssh key. 
 
@@ -299,7 +299,7 @@ acl = private
 
 **Using the rclone prompt to create the .conf file**
 
-Once rclone is available to use run the command `rclone config` to see the options to create the configuration file. This example outlines configuring a connection to an AWS S3 bucket from Research Computing. See our [Google Drive connection](../storage/petalibrary/gdrive.html) and [Local connection to RC](../storage/petalibrary/rclone.md) examples for guides on other rclone connection methods.
+Once rclone is available to use run the command `rclone config` to see the options to create the configuration file. This example outlines configuring a connection to an AWS S3 bucket from Research Computing. See our [Google Drive connection](../storage/petalibrary/gdrive.md) and [Local connection to RC](../storage/petalibrary/rclone.md) examples for guides on other rclone connection methods.
 
 > _**Note: This example assumes you have an S3 bucket already set up with AWS credentials.**_
 

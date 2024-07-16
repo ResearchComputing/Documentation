@@ -12,18 +12,18 @@ of 22,180 cores. Alpine can be securely accessed anywhere, anytime using Open On
    $ module load slurm/alpine
    ```
 
-2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](#requesting-resources) section and the [examples](#examples) section below to learn how to direct your jobs to the appropriate Alpine compute nodes.
+2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](./alpine-hardware.md#requesting-hardware-resources) section and the [examples](examples.md) section to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
-3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.html), which allows users choose software from our pre-installed software stack.
+3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.md), which allows users choose software from our pre-installed software stack.
 
 4. If you would like to use software that is not within our preinstalled stack your application 
 must be compiled using `acompile`. More information about the `acompile` function can be found under our 
-[partitions](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#partitions) 
+[partitions](./alpine-hardware.md#partitions)
 section.
 
 Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
 You can also submit a [software 
-request](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html?highlight=software%20request#alpine-software) using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
+request](./software.md#alpine-software) using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
 
 ## Cluster Summary
 ### Nodes

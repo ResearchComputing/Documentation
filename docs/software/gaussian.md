@@ -13,7 +13,7 @@ Good general instructions can be found [here](http://gaussian.com/running/); how
 _Software environment:_ To set up your environment to use G16, load the Gaussian software module (`module load gaussian/g16_c.02`). You do
 not need to source g16.login or g16.profile!
 
-_Scratch storage:_ It is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.html) (`/scratch/alpine/$USER` on Alpine or `rc_scratch/$USER` on Blanca). 
+_Scratch storage:_ It is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.md) (`/scratch/alpine/$USER` on Alpine or `rc_scratch/$USER` on Blanca). 
 
 _Memory:_ The default dynamic memory request in G16 is frequently too small to support the amount of memory that needs to be allocated to efficiently
 support computations on even modest-sized molecules. If too little memory is requested, the job can crash. Thus, use the '-m' flag in
@@ -109,7 +109,7 @@ _Note:_ G16 can not use the AMD MI100 GPUs in Alpine's "ami100" partition.
 
 ## Running GaussView
 
-Gaussview can be run within a [Core Desktop session in CURC OnDemand](https://curc.readthedocs.io/en/latest/gateways/OnDemand.html#core-desktop-remote-desktop).  Once you've spawned a Core Desktop session, do the following to invoke `GaussView`:
+Gaussview can be run within a [Core Desktop session in CURC OnDemand](../gateways/OnDemand.md#core-desktop-remote-desktop).  Once you've spawned a Core Desktop session, do the following to invoke `GaussView`:
 
 _Step 1:_ Open a terminal by selecting the "MATE Terminal" icon in the upper menu bar.
 

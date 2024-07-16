@@ -28,7 +28,7 @@ re-enroll by visiting <a href="https://duo.colorado.edu">https://duo.colorado.ed
 
 Issue 2: You have changed your mobile device (e.g., purchased a new phone). You can add a new device to your duo account by 
 following the instructions 
-[here](https://curc.readthedocs.io/en/latest/faq.html#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
+[here](https://curc.readthedocs.io/en/latest/faq.md#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
 
 If you need human assistance with Duo, contact the University helpdesk at <oithelp@colorado.edu> or call 303-735-4357. 
 
@@ -49,7 +49,7 @@ Duo offers a variety of methods to log into your account. Depending on what you 
   <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/duo2factor/duo_app1.png" /> 
 </p>
 
-**Note: Duo push is tied to your device so [so you will need to add or remove your device if you get a new phone.](#managing-duo-devices)**
+**Note: Duo push is tied to your device so [so you will need to add or remove your device if you get a new phone.](#managing-duo-devices)** 
 
 There is also an option to generate a temporary passcode from within the Duo app. This passcode can be used to log into <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
 
