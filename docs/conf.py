@@ -2,7 +2,7 @@ project = "Research Computing\nUniversity of Colorado Boulder"
 
 master_doc = 'index'
 
-extensions = ['myst_parser']
+extensions = ['myst_parser', 'sphinx_copybutton', 'sphinx_tabs.tabs']
 
 source_suffix = {
     '.rst': 'restructuredtext',

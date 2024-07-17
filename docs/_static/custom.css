@@ -14,3 +14,7 @@
 .bd-main .bd-content .bd-article-container {
     max-width: 100em;
 }
+
+.code-block-caption {
+    color: black;
+}

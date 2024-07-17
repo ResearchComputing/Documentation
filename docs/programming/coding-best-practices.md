@@ -24,38 +24,35 @@ for programming languages to interpret. Because of this variables
 must be delimited in some way. Here are several delimiting conventions
 commonly used in code:  
 
-__Snakecase:__ Words are delimited by an underscore.
+````{eval-rst}
+.. tabs::
 
-```
-variable_one
-variable_two
-```
+   .. code-tab:: bash Snakecase
+      :caption: Words are delimited by an underscore. 
 
-__Pascalcase:__ Words are delimited by capital letters.
+        variable_one
+        variable_two
 
-```
-VariableOne
-VariableTwo
-```
+   .. code-tab:: bash Pascalcase
+      :caption: Words are delimited by capital letters.
 
-__Camelcase:__ Words are delimited by capital letters, except the
-initial word.
+        VariableOne
+        VariableTwo
 
-```
-variableOne
-variableTwo
-```
+   .. code-tab:: bash Camelcase
+      :caption: Words are delimited by capital letters, except the initial word.
 
-__Hungarian Notation:__ This notation describes the variable type or purpose at the start of
-the variable name, followed by a descriptor that indicates the
-variable’s function. The Camelcase notation is used to delimit
-words.
+        variableOne
+        variableTwo
 
-```c++
-arrDistributeGroup  //Array called “Distribute Group”
-sUserName           //String called “User Name”
-iRandomSeed         //Integer called “Random Seed”
-```
+   .. code-tab:: c++ Hungarian Notation
+      :caption: This notation describes the variable type or purpose at the start of the variable name, followed by a descriptor that indicates the variable’s function. The Camelcase notation is used to delimit words.
+
+        arrDistributeGroup  //Array called “Distribute Group”
+        sUserName           //String called “User Name”
+        iRandomSeed         //Integer called “Random Seed”
+
+````
 
 These conventions are by no means binding, but instead examples of how
 many programmers format their code. Consistency and readability are
@@ -130,65 +127,64 @@ the compiler/interpretor to ignore that line, for example “#”, “!” or �
 on the programming language). Let’s look at some C++ code that uses no
 comments vs. comments.
 
-__No Comments:__
+````{eval-rst}
+.. tabs::
 
-```c++
+   .. code-tab:: c++ No comments 
+      :caption: This notation describes the variable type or purpose at the start of the variable name, followed by a descriptor that indicates the variable’s function. The Camelcase notation is used to delimit. [text with attributes]{.bg-warning}
 
-#include <stdio.h>
-#include <vector>
+        #include <stdio.h>
+        #include <vector>
 
-using namespace std;
+        using namespace std;
 
-int main(int argc, char** argv){
+        int main(int argc, char** argv){
 
-    vector<int> multiples;
+            vector<int> multiples;
 
-    for(int i = 0; i < 50; i++){
-        if(i % 5 == 0){
-            multiples.push_back(i);
+            for(int i = 0; i < 50; i++){
+                if(i % 5 == 0){
+                    multiples.push_back(i);
+                }
+            }
+
+            for(int i; i < multiples.size(); i++){
+                printf("%d is a multiple of 5\n", multiples[i]);
+            }
+
+            return 0;
         }
-    }
 
-    for(int i; i < multiples.size(); i++){
-        printf("%d is a multiple of 5\n", multiples[i]);
-    }
+   .. code-tab:: c++ Comments 
 
-    return 0;
-}
-```
+        #include <stdio.h>
+        #include <vector>
 
-__Comments:__
+        using namespace std;
 
-```c++
-#include <stdio.h>
-#include <vector>
+        int main(int argc, char** argv){
 
-using namespace std;
+            //Declare a vector to store values
+            vector<int> multiples;
 
-int main(int argc, char** argv){
+            //Iterate from 0 to 50
+            for(int i = 0; i <= 50; i++){
 
-    //Declare a vector to store values
-    vector<int> multiples;
+                //If iterator is a multiple of 5 add it to the vector
+                if(i % 5 == 0){
+                    multiples.push_back(i);
+                }
+            }
 
-    //Iterate from 0 to 50
-    for(int i = 0; i <= 50; i++){
-
-        //If iterator is a multiple of 5 add it to the vector
-        if(i % 5 == 0){
-            multiples.push_back(i);
+            //Print all items that are a multiple of 5
+            for(int i; i < multiples.size(); i++){
+                printf("%d is a multiple of 5\n", multiples[i]);
+            }
+            return 0;
         }
-    }
+````
 
-    //Print all items that are a multiple of 5
-    for(int i; i < multiples.size(); i++){
-        printf("%d is a multiple of 5\n", multiples[i]);
-    }
-    return 0;
-}
-```
-
-Note that it is entirely possible to “over comment” code. Code should
+> **Note:**  It is entirely possible to “over comment” code. Code should
 be designed in an efficient, consistent and intuitive manner such that
 comments enhance user understanding but are not needed to describe the
 entire code.
-
