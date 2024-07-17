@@ -1,9 +1,9 @@
 # Frequently Asked Questions
 
-See our documentation [homepage](index.rst) for information about our most common topics.
+See our documentation [homepage](index.md) for information about our most common topics.
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
-2. [How do I acknowledge use of CURC Resources?](./index.rst)
+2. [How do I acknowledge use of CURC Resources?](./index.md#acknowledging-rc)
 3. [How do I check how full my directories are?](#how-do-i-check-how-full-my-directories-are)  
 4. [When will my job start?](#when-will-my-job-start) 
 5. [How can I get system metrics?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
