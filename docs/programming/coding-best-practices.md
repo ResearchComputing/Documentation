@@ -85,31 +85,33 @@ consistently organized. Whitespace and tabbing are often used to clarify nested
 loops and logical statements. Let’s look at some examples of C code
 that demonstrate the effect of whitespace.
 
-__Minimal Whitespace:__
 
-```c++
-#include <stdio.h>
-int main(int argc, char const *argv[]) { int loop_Sum = 0; for(int i =
-0; i < 50; i++){ loop_Sum += 1;} printf("%d\n", loop_Sum); return 0; }
-```
+````{eval-rst}
+.. tabs::
 
-__Liberal use of Whitespace:__
+   .. code-tab:: c++ Minimal Whitespace
 
-```c++
-#include <stdio.h>
+        #include <stdio.h>
+        int main(int argc, char const *argv[]) { int loop_Sum = 0; for(int i =
+        0; i < 50; i++){ loop_Sum += 1;} printf("%d\n", loop_Sum); return 0; }
 
-int main(int argc, char** argv){
+   .. code-tab:: c++ Liberal use of Whitespace
 
-    int loop_Sum = 0;
+        #include <stdio.h>
 
-    for(int i = 0; i < 50; i++){
-        loop_Sum += 1;
-    }
-    printf("%d\n", loop_Sum);
+        int main(int argc, char** argv){
 
-    return 0;
-}
-```
+            int loop_Sum = 0;
+
+            for(int i = 0; i < 50; i++){
+                loop_Sum += 1;
+            }
+            printf("%d\n", loop_Sum);
+
+            return 0;
+        }
+
+````
 
 It is important to note that like variable naming, whitespace can be
 utilized in various different styles and approaches. Just remember to
