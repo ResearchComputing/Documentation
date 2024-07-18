@@ -133,7 +133,6 @@ comments vs. comments.
 .. tabs::
 
    .. code-tab:: c++ No comments 
-      :caption: This notation describes the variable type or purpose at the start of the variable name, followed by a descriptor that indicates the variable’s function. The Camelcase notation is used to delimit. [text with attributes]{.bg-warning}
 
         #include <stdio.h>
         #include <vector>
