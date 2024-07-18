@@ -30,7 +30,7 @@ Would-be new users may still request a CUmulus project per the “Quick Start”
 3. Get started with your Cloud Instances by following our documentation on:
 	- [Creating a cloud instance](../../tutorials/cumulus1.md)
 	- [Integrating CUmulus with CURC HPC resources](../../tutorials/cumulus3.md)
-4. Visit all of our [CUmulus specific tutorials](../../tutorials/index.rst) on the Research Computing GitHub for step-by-step examples.
+4. Visit all of our [CUmulus specific tutorials](../../tutorials/index.md) on the Research Computing GitHub for step-by-step examples.
 
 ## Features
 - Virtual machine creation

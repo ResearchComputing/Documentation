@@ -102,7 +102,7 @@ sshfs umount ~/mypetalibrary
 
   * [CUmulus documentation](../cloud/cumulus/cumulus.md)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)
-  * [PetaLibrary Documentation](../storage/petalibrary/index.rst)
+  * [PetaLibrary Documentation](../storage/petalibrary/index.md)
 
 
 > This work has been funded in part by the National Science Foundation under grant OAC-1925766
