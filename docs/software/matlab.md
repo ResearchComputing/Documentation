@@ -35,7 +35,7 @@ OnDemand. CURC OnDemand is a browser-based, integrated, single access
 point for HPC resources. It includes access to interactive apps such 
 as Matlab, a virtual desktop, and more. 
 
-	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../gateways/OnDemand.md#matlab). 
+	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../open_ondemand/matlab.md). 
 
 
 2. Interactive SLURM job:

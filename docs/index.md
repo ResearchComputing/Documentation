@@ -150,8 +150,7 @@ storage/petalibrary/index
 :maxdepth: 2
 :caption: Gateways & Portals
 
-gateways/OnDemand
-gateways/jupyterhub
+open_ondemand/index
 
 ```
    
