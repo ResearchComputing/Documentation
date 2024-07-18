@@ -300,7 +300,7 @@ The ‘blanca’ QoS: Note that as of 1 March, 2018, the “preemptable” qos r
 
  ### Are backup and restore options available?
 
- We do not offer backups as part of the Blanca service. Users wishing to use and store their own files with an option for backup are encouraged to purchase space on the RC maintained [PetaLibrary](../../storage/petalibrary/index.rst). The SSDs on each node are reserved for temporary data storage during jobs (data on SSDs is deleted at the end of each job); therefore, backup is not offered for SSDs.  
+ We do not offer backups as part of the Blanca service. Users wishing to use and store their own files with an option for backup are encouraged to purchase space on the RC maintained [PetaLibrary](../../storage/petalibrary/index.md). The SSDs on each node are reserved for temporary data storage during jobs (data on SSDs is deleted at the end of each job); therefore, backup is not offered for SSDs.  
 
  ### Can you clarify how priority works? 
 

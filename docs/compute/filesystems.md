@@ -53,7 +53,7 @@ automatically removed 90 days after their initial creation.
 
 Users requiring longer-term retention of their files should perform
 regular backups to their local machine if they have not purchased
-space on the [PetaLibrary](../storage/petalibrary/index.rst). Inappropriate use of scratch
+space on the [PetaLibrary](../storage/petalibrary/index.md). Inappropriate use of scratch
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
