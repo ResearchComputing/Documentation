@@ -159,7 +159,9 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
 Now that we have our environment correctly created, we can launch a Jupyter session utilizing this environment. This can be done as follows: 
 1. Launch the Jupyter session using the environment you created:
+
   ![](OnDemand/jupyter_session_use_env.png)
+
 2. Once the session is launched, it is also important to ensure that your environment is being correctly utilized. To do this, open up a terminal application and determine what Python and Jupyter are being used:
    ```
    [user@c3cpu-a2-u3-4 ~]$ which python
@@ -176,13 +178,20 @@ Now that we have our environment correctly created, we can launch a Jupyter sess
   In both of these scenarios, you can confirm that your environment is not being used by looking at the `output.log` for your job:
 
   1. Select "My Interactive Sessions"
-  ![](OnDemand/my_interactive_sess_tab.png)
+
+    ![](OnDemand/my_interactive_sess_tab.png)
+  
   2. Click the link next to the "Session ID" for your running job
-  ![](OnDemand/session_id_for_job.png)
+
+    ![](OnDemand/session_id_for_job.png)
+  
   3. Open the file `output.log` by clicking it
-  ![](OnDemand/output_log_file.png)
+  
+    ![](OnDemand/output_log_file.png)
+  
   4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used
-  ![](OnDemand/env_not_found.png)
+  
+    ![](OnDemand/env_not_found.png)
 
 ## GPU access for Jupyter Sessions
 
