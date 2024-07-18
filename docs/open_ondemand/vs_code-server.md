@@ -25,7 +25,9 @@ When attempting to install an extension, we suggest the following methods (liste
     1. On the left-hand side of the screen select the `Extensions` button. 
     2. Use the provided search bar to search for the application you want. 
     3. Select the application and then click the `Install` button.
-![](OnDemand/vs_code_marketplace_install.png)
+
+        ![](OnDemand/vs_code_marketplace_install.png)
+        
 - Install the application by dragging the downloaded file into the **extensions column** (for visual representation, please see above video).
     1. Navigate to the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) in your browser.
     2. Select the application you want and click `Download Extension` on the right-hand side. Some applications require that you chose the operating system. For 
