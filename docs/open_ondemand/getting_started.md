@@ -2,44 +2,43 @@
  
 To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/) if you are a CU Boulder user and [https://ondemand-rmacc.rc.colorado.edu](https://ondemand-rmacc.rc.colorado.edu/) otherwise. The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](../access/logging-in.md) to get started. If you are an RMACC member, please follow our provided instructions on accessing [Alpine resources for RMACC members](../access/rmacc.md).
 
-<!-- ````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. tab:: CU Boulder
-        
-        To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](../access/logging-in.md) to get started.
+````{tab} CU Boulder
 
-        ![](OnDemand/login_page.png)
-
-   .. tab:: CSU
-
-        Blah
-
-   .. tab:: RMACC (including AMC)
-
-        Blah 
-```` -->
-
-````{tabs}
-
-```{tab} CU Boulder
-
-To connect to CURC Open OnDemand, visit [https://ondemand.rc.colorado.edu](https://ondemand.rc.colorado.edu/). The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login. If you need a CU Research Computing account please visit [our account request page](../access/logging-in.md) to get started.
+To connect to CURC Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult [our account request page](../access/logging-in.md) to get started. Once you have a CU Research Computing account you can connect to Open OnDemand by visiting <https://ondemand.rc.colorado.edu>. The first page of CURC Open OnDemand will bring you to a login prompt. Use your CU Research Computing credentials and Duo 2-factor authentication to login.
 
 ![](OnDemand/login_page.png)
 
+````
+
+````{tab} CSU
+
+To connect to CURC Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation. Once you have obtained an account, you can connect to CURC Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under the "Select an Identity Provider" and select "Colorado State University". 
+```{eval-rst}
+.. figure:: ./OnDemand/csu_select_identity.png
+   :align: center
 ```
-```{tab} CSU
+This will bring you to a login prompt where you should use your CSU NetID and Duo 2-factor authentication to login. 
+```{eval-rst}
+.. figure:: ./OnDemand/csu_ood_login.png
+   :align: center
+```
+
+````
+
+````{tab} AMC
 
 Pears are green.
 
-```
-```{tab} RMACC (including AMC)
+````
+
+````{tab} RMACC
 
 Oranges are Oranges.
 
-```
 ````
+`````
 
 
 _**Notes on logging out:**_ 
