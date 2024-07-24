@@ -1,3 +1,7 @@
+:root {
+    --cu-boulder-gold: #CFB87C;
+  }
+
 /* -- .bd-container and .bd-container__inner both need to adjust ---------- */
 /* -- this so 'outer container' grows with browser (no L/R 'dead space') -- */
 .bd-container {
@@ -17,4 +21,72 @@
 
 .code-block-caption {
     color: black;
+}
+
+.sphinx-tabs-panel {
+    color: black;
+}
+
+html[data-theme="dark"] .sphinx-tabs-panel {
+    color: black;
+    filter: brightness(.8) contrast(1.2);
+}
+
+html[data-theme="dark"] .sphinx-tabs-panel img{
+    color: black;
+    filter: none;
+}
+
+html[data-theme="dark"] .sphinx-tabs-panel a.reference.internal {
+    color: #176de8;
+}
+
+html[data-theme="dark"] .sphinx-tabs-panel a.reference.external {
+    color: #176de8;
+}
+
+
+html[data-theme="dark"] .sphinx-tabs-tab {
+    color: var(--cu-boulder-gold);
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+}
+
+html[data-theme="dark"] .sphinx-tabs-tab[aria-selected="true"] {
+    color: black;
+    filter: brightness(.8) contrast(1.2);
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+}
+
+html[data-theme="light"] .sphinx-tabs-tab {
+    color: black;
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+}
+
+html[data-theme=dark] {
+    --pst-font-size-base: none;
+    --pst-color-secondary: var(--cu-boulder-gold);
+    --pst-color-primary: var(--cu-boulder-gold);
+}
+
+html[data-theme=light] {
+    --pst-font-size-base: none;
+    --pst-color-secondary: #176de8;
+    --pst-color-primary: #176de8;
+}
+
+html[data-theme=dark] .bd-header-article .btn {
+    align-items: center;
+    border: none;
+    color: var(--cu-boulder-gold);
+    display: flex;
+    font-size: 1.3rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+html[data-theme=dark] .bd-header-article .btn:hover {
+    filter: brightness(1) contrast(1.5);
 }
