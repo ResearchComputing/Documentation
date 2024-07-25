@@ -1,4 +1,4 @@
-name: rc-docs-new-theme
+name: rc-docs
 channels:
   - conda-forge
 dependencies:
