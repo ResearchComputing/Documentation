@@ -1,18 +1,28 @@
-# Configuring Applications
+# Configuring Open OnDemand interactive applications
 
-Open OnDemand contains applications that have different configuration options: 
+Within Open OnDemand, interactive applications contain different configuration options. These options vary by application and specify how you would like to run the application. For example, Jupyter sessions can specify what Anaconda version and Conda environment should be used to start the session. In addition to application specific configurations, for a select number of applications one can select **"Configuration type"**. This field allows one to specify either **"Preset configuration"** or **"Custom configuration"**. The **"Preset configuration"** option provides the **"Preset configuration"** field, which provides a select number of options for resources. The advantage of the **"Preset configuration"** field is that it automatically sets important Slurm directives for you. Although this works for most users, some users may want to have finer control of the resources they would like to run on. This can be accomplished by selecting **"Custom configuration"** in the **"Configuration type"** field. For more information on these custom configurations, consult the section [Custom configuration options](#custom-configuration-options) below. 
 
+```{eval-rst}
+.. figure:: ./OnDemand/preset_custom_configs.png
+   :align: center
+```
 
-## Running _Custom_ Interactive applications
+```{important}
 
-The Matlab, Jupyter, VS Code-Server, and RStudio interactive applications each have `Custom` menus available for starting sessions (jobs) in addition to `Preset` menus. The `Custom` menus are intended to provide the ability to start jobs that require unconventional resources that aren't available through the `Preset` menu, for example: 
+All applications that have a **"Configuration type"** option and start a job using the **"Preset configuration"** field are automatically submitted to the `ahub` partition. This partition provides quick access to resources with limitations (see [partitions on Alpine](../clusters/alpine/alpine-hardware.md#partitions)). One major stipulation of these resources is that only **1 job** can run on `ahub` at a time. 
 
-* access to GPU nodes;
-* access to high-memory nodes;
-* large numbers of cores;
-* longer job durations.
+```
 
-To help you use the `Custom` menu for interactive applications, below is a table describing each field and possible options. 
+## Custom configuration options
+
+Custom configuration options can be extremely useful, if you would like request resources that are not available through the **"Preset configuration"** option. Using this option one can gain access to unconventional resources such as the following. 
+
+* GPU nodes
+* High-memory nodes
+* A large numbers of cores
+* Longer job durations
+
+Unfortunately, specifying these options can be overwhelming! To help users make sense of these options, we have constructed the table below, which describes each field. 
 
 | Input | Description |
 | --- | ----------- |
@@ -20,11 +30,10 @@ To help you use the `Custom` menu for interactive applications, below is a table
 | Account | The account you would like to use. If you do not have a project allocation, then CU Boulder users specify `ucb-general`; CSU users specify `csu-general`; RMACC users specify `rmacc-general`; and AMC users provide `amc-general`. If you have a project allocation you can use this allocation e.g. `ucbXXX_asc1`. |
 | Partition | Specifies a particular node type to use. For example, you can provide `ahub` for quicker access or utilize another [partition on Alpine](../clusters/alpine/alpine-hardware.md#partitions).  Blanca users may use their `blanca-<groupname>` partition.  |
 | Number of cores<sup>1</sup> | The number of physical CPU cores for the job. Jobs started on the OnDemand interactive apps may use up to 32 cores.  All jobs are limited to a single compute node. |
-| Memory [GB]<sup>1</sup> | The total amount of memory allocated for the Job. Memory in GB should be roughly the number of cores multiplied by 3.8 for standard Alpine `amilan` nodes. For specifications on memory for each Alpine partition, see [Alpine hardware](../clusters/alpine/alpine-hardware.md). |
 | QoS Name | Quality of Service (QoS) constrains or modifies certain job characteristics. On most Alpine partitions you can specify `normal` for jobs of up to 24 hours and `long` for jobs of up to 7 days in duration. For more information see [Alpine QoS](../clusters/alpine/alpine-hardware.md#quality-of-service-qos). Blanca users should specify their `blanca-<groupname>` for QoS. |
-| Time<sup>1</sup> | The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
+| Time| The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
 
-<sup>1</sup>Please note that jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the number of cores, memory and duration.
-
-
+```{warning}
+Jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the hardware and duration selected.
+```
 
