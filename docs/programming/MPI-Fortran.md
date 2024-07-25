@@ -289,7 +289,7 @@ DO i = 0, 3, 1
     IF(i == process_Rank) THEN
         print *, 'Hello World from process: ', process_Rank, 'of ', size_Of_Cluster
     END IF
-    call MPI_BARRIER( MPI_COMM_WORLD, i_error)
+    call MPI_BARRIER( MPI_COMM_WORLD, ierror)
 END DO
 
 call MPI_FINALIZE(ierror)
