@@ -15,7 +15,7 @@ All applications that have a **"Configuration type"** option and start a job usi
 
 ## Custom configuration options
 
-Custom configuration options can be extremely useful, if you would like request resources that are not available through the **"Preset configuration"** option. Using this option one can gain access to unconventional resources such as the following. 
+Custom configuration options can be extremely useful, if you would like to request resources that are not available through the **"Preset configuration"** option. Using this option one can gain access to unconventional resources such as the following. 
 
 * GPU nodes
 * High-memory nodes
@@ -26,12 +26,14 @@ Unfortunately, specifying these options can be overwhelming! To help users make 
 
 | Input | Description |
 | --- | ----------- |
-| Cluster | Possible options are [Alpine](../clusters/alpine/index.md) and [Blanca](../clusters/blanca/blanca.md).  |
-| Account | The account you would like to use. If you do not have a project allocation, then CU Boulder users specify `ucb-general`; CSU users specify `csu-general`; RMACC users specify `rmacc-general`; and AMC users provide `amc-general`. If you have a project allocation you can use this allocation e.g. `ucbXXX_asc1`. |
-| Partition | Specifies a particular node type to use. For example, you can provide `ahub` for quicker access or utilize another [partition on Alpine](../clusters/alpine/alpine-hardware.md#partitions).  Blanca users may use their `blanca-<groupname>` partition.  |
-| Number of cores<sup>1</sup> | The number of physical CPU cores for the job. Jobs started on the OnDemand interactive apps may use up to 32 cores.  All jobs are limited to a single compute node. |
-| QoS Name | Quality of Service (QoS) constrains or modifies certain job characteristics. On most Alpine partitions you can specify `normal` for jobs of up to 24 hours and `long` for jobs of up to 7 days in duration. For more information see [Alpine QoS](../clusters/alpine/alpine-hardware.md#quality-of-service-qos). Blanca users should specify their `blanca-<groupname>` for QoS. |
+| Cluster | The HPC cluster you would like to run on. Possible options are [Alpine](../clusters/alpine/index.md) and [Blanca](../clusters/blanca/blanca.md).  |
+| Account | The account you would like to use. If you do not have a project allocation, then CU Boulder users specify `ucb-general`; CSU users specify `csu-general`; RMACC users specify `rmacc-general`; and AMC users provide `amc-general`. If you have a project allocation you can use this allocation e.g. `ucbXXX_asc1`. Blanca users should use their `blanca-<groupname>` partition name. |
+| Partition | Specifies a particular node type to use. For example, you can provide `ahub` for quicker access or utilize another [partition on Alpine](../clusters/alpine/alpine-hardware.md#partitions).  Blanca users should use their `blanca-<groupname>` partition.  |
+| QoS Name | Quality of Service (QoS) constrains or modifies certain job characteristics. On most Alpine partitions you can specify `normal` for jobs of up to 24 hours and `long` for jobs of up to 7 days in duration. For more information see [Alpine QoS](../clusters/alpine/alpine-hardware.md#quality-of-service-qos). Blanca users should specify their `blanca-<groupname>` partition name for QoS. |
 | Time| The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
+| Number of cores | The number of physical CPU cores for the job. Jobs started on the OnDemand interactive apps may use up to 32 cores.  All jobs are limited to a single compute node. |
+| Reservation | A reservation reserves resources for jobs being executed by select users and/or accounts. Reservations are rare on our system, but can sometimes be granted for courses utilizing HPC resources or the testing of specialty hardware. | 
+| gres options | General resources (gres) allows for fine-grain hardware specifications. This option is often used to request GPUs. For more information on gres, see [General Resources (gres)](../clusters/alpine/alpine-hardware.md#general-resources-gres).| 
 
 ```{warning}
 Jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the hardware and duration selected.

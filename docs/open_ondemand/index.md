@@ -88,13 +88,13 @@ All interactive applications can be accessed via the **"Interactive Apps"** drop
 :maxdepth: 1
 
 configuring_apps
-files_app
-jobs_app
-clusters_app
 core_desktop
 matlab
 jupyter_session
 rstudio
 vs_code-server
+files_app
+jobs_app
+clusters_app
 
 ```
