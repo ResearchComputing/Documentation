@@ -94,3 +94,12 @@ html[data-theme=dark] .bd-header-article .btn {
 html[data-theme=dark] .bd-header-article .btn:hover {
     filter: brightness(1) contrast(1.5);
 }
+
+
+html[data-theme=dark] .form-control:focus {
+    box-shadow: 0 0 0 .1875rem var(--cu-boulder-gold);
+}
+
+.bd-sidebar-primary li.has-children>details>summary .toctree-toggle {
+    justify-content: left;
+}
