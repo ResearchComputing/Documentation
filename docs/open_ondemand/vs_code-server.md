@@ -1,13 +1,32 @@
 # VS Code-Server
 
-1. To start an interactive [Visual Studio Code (VS Code)](https://code.visualstudio.com/) job, you may select `VS Code-Server (Custom)` or `VS Code-Server (Presets)` from the menu. The `VS Code-Server (Custom)` option allows you to modify the resources and Slurm configurations for the job. For more information on these options, please see the [Running Custom Interactive applications](./index.md#running-custom-interactive-applications) section. If you select `VS Code-Server (Presets)`, you may select from standard configurations we provide.  Most use cases can be accommodated by one of the presets. The `VS Code-Server (Presets)` option submits jobs to Alpine's `ahub` partition. This partition provides users with rapid start times, but __limits users to one VS Code-Server session__ (or any one job using the partition).
-![](OnDemand/vs_code_custom.png)
-2. Click “Launch” to submit the VS Code-Server job to the queue. The wait time depends on the number of cores and time requested. The preset options generally start within a few moments. 
-3. Once your VS Code-Server session is ready, you can click “Connect to VS Code”. An interactive VS Code-Server session will be started in a new window.
-![](OnDemand/vs_code_custom_launch.png)
+[Visual Studio Code (VS Code)](https://code.visualstudio.com/) is an extremely popular and powerful code editor. In Open OnDemand, we utilize [Code-Server](https://coder.com/docs/code-server/latest) to bring our users VS Code. Code-Server if a modified version of VS Code that allows VS Code to be accessed via a browser. Due to some modifications, certain VS Code features may not be available in VS Code-Server or may function differently. One feature that can function differently is installing extensions. For more information on installing extensions, see the section [Installing VS Code-Server Extensions](#installing-vs-code-server-extensions) below. 
 
-**_Notes:_** 
-* One can access a single GPU via the `VS Code-Server (Custom)` application by following the instructions provided in the [GPU access for Jupyter Sessions](./jupyter_session.md#gpu-access-for-jupyter-sessions) section. 
+```{eval-rst}
+.. figure:: ./OnDemand/vs_code_server_gui.png
+   :align: center
+```
+
+## Launching a VS Code-Server
+
+1. Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **VS Code-Server**. 
+
+2. Select the VS Code-Server version you would like to launch the application with.
+
+```{eval-rst}
+.. figure:: ./OnDemand/vs_code_server_config.png
+   :align: center
+```
+
+3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
+
+4. When your VS Code-Server session is ready, you can click the **"Connect to VS Code"** button to bring up a web page with the VS Code-Server editor. 
+
+```{eval-rst}
+.. figure:: ./OnDemand/vs_code_server_launch.png
+   :align: center
+   :scale: 50%
+```
 
 ## Installing VS Code-Server Extensions
 

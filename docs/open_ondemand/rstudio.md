@@ -7,7 +7,7 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
    :align: center
 ```
 
-## Launching an RStudio Server
+## Launching a RStudio Server
 
 1. Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **RStudio Server**. 
 
