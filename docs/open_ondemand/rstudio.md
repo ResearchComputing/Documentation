@@ -67,6 +67,10 @@ Next, start an interactive session on a compute node (here we start up an Alpine
 ```
 acompile --ntasks=4
 ```
+```{warning}
+If you do not install dependencies using the same cluster (Alpine or Blanca) that you initially launched the RStudio Server from, you may receive errors. 
+```
+
 Once on a compute node, we can now modify the overlay by launching the overlay using fakeroot.
 ```
 apptainer shell --fakeroot --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
