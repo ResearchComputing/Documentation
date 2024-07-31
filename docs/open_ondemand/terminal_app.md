@@ -1,4 +1,4 @@
-# Clusters (Shell Access) application
+# Terminal application
 
 The _Clusters_ menu provides shell access to login nodes on CURC clusters. The shell terminal is similar to many other tools that provide terminal access.
 

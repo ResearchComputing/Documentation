@@ -95,6 +95,6 @@ rstudio
 vs_code-server
 files_app
 jobs_app
-clusters_app
+terminal_app
 
 ```

@@ -50,7 +50,7 @@ You will be redirected to CILogon.
 
 ## Shell Access to Compute Nodes  
 
-- Currently, the suggested method for obtaining shell access for RMACC users is to use the Open OnDemand [shell access application](../open_ondemand/clusters_app.md).
+- Currently, the suggested method for obtaining shell access for RMACC users is to use the Open OnDemand [shell access application](../open_ondemand/terminal_app.md).
 - RMACC users may also obtain ssh access into `login-ci.rc.colorado.edu` by requesting it via <rc-help@colorado.edu>. Please note that this form of access is currently on a trial basis.
 - If desired, a shell can also be accessed via Jupyter sessions by opening up a "Terminal" within the Jupyter session. 
 

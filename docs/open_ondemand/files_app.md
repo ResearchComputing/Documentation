@@ -14,7 +14,7 @@ The **Files** application should not be used if you are downloading or uploading
 ## Files application features
 
 From the picture provided above, one can see that there are several convenient features provided in the **Files** application. These functionalities are as follows: 
-- `_> Open in Terminal` -- Opens up a [terminal application](./clusters_app.md) in the directory you are in, within the **Files** application.
+- `_> Open in Terminal` -- Opens up a [terminal application](./terminal_app.md) in the directory you are in, within the **Files** application.
 - `New File` -- Will open up a pop-up menu where a user can enter the file name they would like to create. This file will be placed in the current directory. 
 - `New Directory` -- Will open up a pop-up menu where a user can enter the directory name they would like to create. This directory will be placed in the current directory.
 - `Upload` -- Opens a pop-up menu where users can drag and drop or select a file on their system. Once an item is provided, this will automatically upload the file to the directory you are in, within the **Files** application. 
