@@ -1,13 +1,22 @@
 # Terminal application
 
-The _Clusters_ menu provides shell access to login nodes on CURC clusters. The shell terminal is similar to many other tools that provide terminal access.
+Individuals who are comfortable with the Linux command line may be interested in accessing a terminal. Through this terminal, individuals can navigate the filesystem, start interactive jobs, submit batch jobs, perform software installs, and much more. To access a terminal in Open OnDemand, select the **Clusters** tab and then select **Alpine Shell Access** (pictured left). Once selected, a new window will open and place the user in a terminal (pictured right) on a **login node** with the Slurm Alpine module loaded. 
 
-<br>
+```{eval-rst}
+.. figure:: ./OnDemand/cluster_terminal_app.png
+   :align: center
+```
 
-![](OnDemand/shell_access.png)
 
-* __Alpine:__ The Alpine tab will launch a terminal that RC users can use to manually access an RC Login node. After the tab opens, type your CURC password and accept the Duo push to your phone, which will complete the login to the terminal.
+````{important}
 
-> **NOTE:** Currently, Alpine shells log you into a basic login node. You can 
-load in either Alpine or Blanca slurm instances from here: `module load 
-slurm/<cluster>` with either Alpine or Blanca.
+- As stated above, the user will be placed on a login node, login nodes are not meant for running code. If you would like to run code, please use a compute node. For more information on different node types, please see our [node types](../compute/node-types.md) documentation. 
+
+- By default, the module `slurm/alpine` will be loaded (allowing you to submit jobs to Alpine). If you would like to submit a job to Blanca, please load the Blanca module: 
+    ```
+    module load slurm/blanca
+    ```
+
+- If prompted for a password, type your password and accept the Duo push sent to your phone.
+
+````

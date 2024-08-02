@@ -125,6 +125,14 @@ clusters/summit/summit
 ```
 
 ```{toctree}
+:maxdepth: 2
+:caption: Portals & Gateways
+
+open_ondemand/index
+
+```
+
+```{toctree}
 :maxdepth: 1
 :caption: Running Jobs
 
@@ -143,14 +151,6 @@ running-jobs/roce-enabled
 :caption: Storage
 
 storage/petalibrary/index
-
-```
-   
-```{toctree}
-:maxdepth: 2
-:caption: Gateways & Portals
-
-open_ondemand/index
 
 ```
    
