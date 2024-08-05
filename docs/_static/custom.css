@@ -59,6 +59,13 @@ html[data-theme="dark"] .sphinx-tabs-tab[aria-selected="true"] {
     font-family: Verdana, sans-serif;
 }
 
+html[data-theme="dark"] .sphinx-tabs-tab[aria-selected="false"] {
+    background-color: black;
+    border: 1px solid whitesmoke;
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+}
+
 html[data-theme="dark"] code.docutils.literal.notranslate {
     color: var(--cu-boulder-gold); 
 }
