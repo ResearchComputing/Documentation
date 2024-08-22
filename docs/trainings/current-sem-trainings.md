@@ -1,4 +1,4 @@
-# Current Semester Trainings: WARNING: Don't forget links!
+# Current Semester Trainings
 
 Click the name of a training to view more details and register!
 
@@ -59,6 +59,12 @@ Click the name of a training to view more details and register!
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 18th, 11am, Zoom**
 - [Introduction to the Commercial Cloud (an RC Primer)](https://colorado.libcal.com/calendar/events/cloud101) - **October 22nd, 11am, Norlin Library E206**
 ### **Intermediate**
+- [Git & GitHub In-Depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/githubsc) - **September 17th, 10am, Norlin Library E206**
+- [Debugging with VS Code (an RC Short Course)](https://colorado.libcal.com/calendar/events/vscode) - **September 26th, 11am, Norlin Library E206**
+- [Maximizing Efficiency Using Parallelization (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/parallel) - **October 10th, 12:30pm, Zoom**
+- [Incredibly Easy Parallelization: High Throughput Computing (an RC Primer)](https://colorado.libcal.com/calendar/events/hpcparallel) - **October 17th, 12pm, Zoom**
+- [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **November 4th, 3pm, Zoom**
+- [AlphaFold2 on Alpine (an RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold) - **November 11th, 10am, Norlin Library E206**
 ### **Advanced**
 
 ````
