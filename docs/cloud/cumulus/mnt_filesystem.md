@@ -8,11 +8,11 @@ ___Learning Objectives:___
 
 ## Introduction
 
-Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This enables access to large datasets that may not otherwise be practical to place on the CUmulus VM, where storage is more limited. This tutorial demonstrates this capability. As a prerequisite, it is assumed you have already "spun-up" a CUmulus VM, as covered in [Tutorial 1](./cumulus1.md).
+Remote filesystems on CURC can be mounted as filesystems on CUmulus VMs.  This enables access to large datasets that may not otherwise be practical to place on the CUmulus VM, where storage is more limited. This tutorial demonstrates this capability. As a prerequisite, it is assumed you have already "spun-up" a CUmulus VM, as covered in [Tutorial 1](./create_instance.md).
 
 ## Tutorial
 
-Completing the steps below requires that you have first [logged into your VM](./cumulus1.md#part-3-logging-into-your-instance)
+Completing the steps below requires that you have first [logged into your VM](./create_instance.md#part-3-logging-into-your-instance)
 
 ###  Part 1: Install `sshfs`
 
@@ -30,7 +30,7 @@ sudo apt-get install sshfs
 yum install fuse-sshfs
 ```
 
-...or, if you are on a _Windows_ VM, see our documentation [here](https://curc.readthedocs.io/en/latest/storage/petalibrary/mounting.html?highlight=sshfs#sshfs-on-windows)
+...or, if you are on a _Windows_ VM, see our documentation [here](../../storage/petalibrary/mounting.md#sshfs-on-windows)
 
 ###  Part 2: Mount PetaLibrary with `sshfs`
 
@@ -100,9 +100,9 @@ sshfs umount ~/mypetalibrary
 
 ## Additional Information
 
-  * [CUmulus documentation](../cloud/cumulus/cumulus.md)
+  * [CUmulus documentation](./cumulus.md)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)
-  * [PetaLibrary Documentation](../storage/petalibrary/index.md)
+  * [PetaLibrary Documentation](../../storage/petalibrary/index.md)
 
 
 > This work has been funded in part by the National Science Foundation under grant OAC-1925766

@@ -13,7 +13,7 @@ We have documented the process for an **Ubuntu 20.04 instance on CUmulus connect
 
 ###  Part 1 Create your CUmlus instance:
 
-The first thing we will need to do is create a Ubuntu 20.04 CUmulus instance. Log in to the [CUmlus portal](https://cumulus.rc.colorado.edu) and follow our [tutorial1](./cumulus1) to create a CUmulus instance with the following specifications: 
+The first thing we will need to do is create a Ubuntu 20.04 CUmulus instance. Log in to the [CUmlus portal](https://cumulus.rc.colorado.edu) and follow our [tutorial1](./create_instance.md) to create a CUmulus instance with the following specifications: 
 * Image: Ubuntu 20.04 
 * Flavor: 
 * Network: 

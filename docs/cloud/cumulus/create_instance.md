@@ -14,7 +14,7 @@ _Horizon is the CUmulus web portal, hosted at https://cumulus.rc.colorado.edu. L
 
 Navigate to https://cumulus.rc.colorado.edu and authenticate using your insitution's credentials (e.g., University of Colorado Boulder)
 
-![](images/login.png)
+![](./cumulus_tutorial_imgs/login.png)
 
 ## _Navigate Horizon_
 
@@ -27,14 +27,14 @@ Navigate to https://cumulus.rc.colorado.edu and authenticate using your insituti
   * `Networks`
   * `Orchestration`
  
-![](images/navigate_intro.png)
+![](./cumulus_tutorial_imgs/navigate_intro.png)
 
 
 ## _Navigate Horizon: Overview_
 
 * Land on the Overview page under “Compute” to get a quick summary of your project
 
-![](images/navigate_overview.png)
+![](./cumulus_tutorial_imgs/navigate_overview.png)
 
 ## Part 2: Instance Creation
 
@@ -49,13 +49,13 @@ Do the following:
 3. Select “Instances”
 4. click "Launch Instance" to begin creating your virtual machine.
 
-![](images/navigate_to_instances.png)
+![](./cumulus_tutorial_imgs/navigate_to_instances.png)
 
 ### _Instance creation: Details_
  
 The first instance creation screen is entiled ___Details___: 
 
-![](images/instance_details.png)
+![](./cumulus_tutorial_imgs/instance_details.png)
 
 * Fill out the instance _name_ and _description_
   * _availability zone_ and _count_ can be left as default. This value is set to the availability zone given by the cloud provider (for example, us-west or apac-south).
@@ -64,7 +64,7 @@ The first instance creation screen is entiled ___Details___:
 ### _Instance creation: Source_
 Next, we'll select our boot source. We're starting a new instance from scratch here so we'll boot from a source OS image.
 
-![](images/instance_source.png)
+![](./cumulus_tutorial_imgs/instance_source.png)
 
 * Choose an operating system from the list of images CURC provides (in this example we pick Ubuntu 18.04)
 * Choose a storage volume size 
@@ -77,7 +77,7 @@ Next, we'll select our boot source. We're starting a new instance from scratch h
 ### _Instance creation: Flavor_
 A flavor defines the compute, memory, and storage capacity of our instance.
 
-![](images/instance_flavor.png)
+![](./cumulus_tutorial_imgs/instance_flavor.png)
 
 * Choose the most appropriate sizing for your use case from a list of pre-selected resources
   * _For this tutorial, select the smallest size_
@@ -85,7 +85,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 ### _Instance creation: Networks & Network Ports_
 
-![](images/instance_networks.png)
+![](./cumulus_tutorial_imgs/instance_networks.png)
 
 * Select a project network, which determines routability of either a public/internet (26140) or campus/internal (1840) floating IP.
   * _For this tutorial we’ll choose an external network, 26140_
@@ -96,7 +96,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 ### _Instance creation: Security Groups_
 
-![](images/instance_security_groups.png)
+![](./cumulus_tutorial_imgs/instance_security_groups.png)
 
 * Security Groups act as a virtual firewall for your instance to control inbound and outbound traffic.
   * Choose `ssh-restricted`, `http`, and `https` for this tutorial
@@ -104,7 +104,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 ### _Instance creation: Key Pair_
 
-![](images/instance_keypair.png)
+![](./cumulus_tutorial_imgs/instance_keypair.png)
 
 * A key pair allows you to SSH into your new instance.
 * You may select an existing key pair, import a key pair, or generate a new key pair.
@@ -124,7 +124,7 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 
 ### _Instance creation: Configuration, Server Group, Scheduler Hints, and Metadata_
 
-![](images/instance_config.png)
+![](./cumulus_tutorial_imgs/instance_config.png)
 
 * For the remaining screens -- _Configuration_, _Server Group_, _Scheduler Hints_, and _Metadata_ -- leave these as defaults, as they are extra, optional configuration for the instances.
 
@@ -136,13 +136,13 @@ A flavor defines the compute, memory, and storage capacity of our instance.
 * You can now associate a Floating IP to enable access to the instance from outside of the CU network.
   * On the right hand side of the newly created instance choose `Associate Floating IP` under the `Actions` dropdown
   
-![](images/instance_ip1.png)
+![](./cumulus_tutorial_imgs/instance_ip1.png)
 
 
 * Now select from available IP addresses if needed (e.g., if you'll be adding a web portal to your instance)
 * The _Select port to be associated_ option should already be pre-populated with the internal IP of your new instance
 
-![](images/instance_ip2.png)
+![](./cumulus_tutorial_imgs/instance_ip2.png)
 
 ## Part 3: Logging into your Instance
 
@@ -177,7 +177,7 @@ $ sudo su - root
  
 ## Additional Information
 
-  * [CUmulus documentation](https://curc.readthedocs.io/en/latest/cloud/cumulus.html)
+  * [CUmulus documentation](./index.md)
   * [OpenStack User Documentation](https://docs.openstack.org/horizon/latest/user/index.html)
 
 

@@ -198,14 +198,6 @@ programming/OpenMP-Fortran
    
 ```{toctree}
 :maxdepth: 1
-:caption: Tutorials
-   
-tutorials/index
-
-```
-   
-```{toctree}
-:maxdepth: 1
 :caption: Additional resources
 
 additional-resources/policies

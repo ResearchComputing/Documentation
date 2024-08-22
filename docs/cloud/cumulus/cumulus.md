@@ -28,9 +28,8 @@ Would-be new users may still request a CUmulus project per the “Quick Start”
 2. Once your application has been accepted, manage your project at the [CUmulus Web Portal](https://cumulus.rc.colorado.edu/auth/login/?next=/).
 	- Documentation on [managing your CUmulus project](./project-management.md)
 3. Get started with your Cloud Instances by following our documentation on:
-	- [Creating a cloud instance](../../tutorials/cumulus1.md)
-	- [Integrating CUmulus with CURC HPC resources](../../tutorials/cumulus3.md)
-4. Visit all of our [CUmulus specific tutorials](../../tutorials/index.md) on the Research Computing GitHub for step-by-step examples.
+	- [Creating a cloud instance](./create_instance.md)
+	- [Integrating CUmulus with CURC HPC resources](./hpc_integration.md)
 
 ## Features
 - Virtual machine creation
