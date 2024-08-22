@@ -53,6 +53,11 @@ Click the name of a training to view more details and register!
 ````{tab} By Difficulty
 
 ### **Getting Started**
+- [Alpine New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/newuser) - **August 28th, 2pm, Norlin Library E206**
+- [Supercomputing Spin Up: Part 1--Working with Linux (an RC Short Course)](https://colorado.libcal.com/calendar/events/supercomputingpt1) - **September 3rd, 11am, Zoom**
+- [Supercomputing Spin Up: Part 2--Job Submission (an RC Short Course)](https://colorado.libcal.com/calendar/events/supercomputingpt2) - **September 5th, 11am, Norlin Library E206**
+- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 18th, 11am, Zoom**
+- [Introduction to the Commercial Cloud (an RC Primer)](https://colorado.libcal.com/calendar/events/cloud101) - **October 22nd, 11am, Norlin Library E206**
 ### **Intermediate**
 ### **Advanced**
 
