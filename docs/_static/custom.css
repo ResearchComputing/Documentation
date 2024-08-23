@@ -45,6 +45,9 @@ html[data-theme="dark"] .sphinx-tabs-panel a.reference.external {
     color: #176de8;
 }
 
+html[data-theme="dark"] .sphinx-tabs-panel h1, .sphinx-tabs-panel h2, .sphinx-tabs-panel h3, .sphinx-tabs-panel h4, .sphinx-tabs-panel h5, .sphinx-tabs-panel p.caption {
+    color: black;
+}
 
 html[data-theme="dark"] .sphinx-tabs-tab {
     color: var(--cu-boulder-gold);

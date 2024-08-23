@@ -92,6 +92,14 @@ faq
 
 ```{toctree}
 :maxdepth: 1
+:caption: Trainings
+
+trainings/current-sem-trainings
+
+```
+
+```{toctree}
+:maxdepth: 1
 :caption: Accessing RC Resources
 
 access/logging-in
