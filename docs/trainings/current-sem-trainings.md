@@ -16,7 +16,7 @@ Click the name of a training to view more details and register!
 - [An Introduction to Debugging Techniques (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **September 24th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Debugging with VS Code (an RC Short Course)](https://colorado.libcal.com/calendar/events/vscode) - **September 26th, 11am, Hybrid (Norlin Library E206/Zoom)**
 ### **October**
-- [Using Linaro DDT on Alpine to Debug Parallel Code (an RC Primer)](https://colorado.libcal.com/calendar/events/linaro) - **October 8th, 11am, Hybrid (Norlin Library E206/Zoom)*
+- [Using Linaro DDT on Alpine to Debug Parallel Code (an RC Primer)](https://colorado.libcal.com/calendar/events/linaro) - **October 8th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Maximizing Efficiency Using Parallelization (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/parallel) - **October 10th, 12:30pm, Zoom**
 - [Incredibly Easy Parallelization: High Throughput Computing (an RC Primer)](https://colorado.libcal.com/calendar/events/hpcparallel) - **October 17th, 12pm, Zoom**
 - [Introduction to the Commercial Cloud (an RC Primer)](https://colorado.libcal.com/calendar/events/cloud101) - **October 22nd, 11am, Hybrid (Norlin Library E206/Zoom)**
