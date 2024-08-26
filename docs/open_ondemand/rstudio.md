@@ -19,9 +19,6 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 ```
 
 3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
-    ```{important}
-    Please note that the first time you launch RStudio it may take 15 minutes or more to create a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html), if 1 core is used. Persistent overlays are the secret sauce that allow for highly customizable RStudio sessions. For this reason, we recommend using 4 cores or more during your first launch of an RStudio session. Subsequent sessions will not require the creation of the persistent overlay; therefore 1 core may be sufficient.
-    ```
 
 4. When your RStudio session is ready, you can click the **"Connect to RStudio Server"** button to bring up a web page with the RStudio IDE. 
 
