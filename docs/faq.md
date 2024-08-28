@@ -8,8 +8,8 @@ See our documentation [homepage](index.md) for information about our most common
 4. [When will my job start?](#when-will-my-job-start) 
 5. [How can I get metics about CURC systems such as how busy they are, wait times, and account usage?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
 6. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
-7. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
-8. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
+7. [How can I see my current FairShare priority?](#how-can-i-see-my-current-fairshare-priority)  
+8. [Why is my job pending with reason `ReqNodeNotAvail`?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
 9. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
     `sbatch: error: Batch job submission failed: Invalid partition name specified.`
 10. [Why do I get the following 'Invalid Partition' error when I run a Blanca job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-blanca-job) 
@@ -124,8 +124,11 @@ There are a couple ways you can check your FairShare priority:
 	```
 	$ module load slurmtools
 	```
-	> _Tip: slurmtools is packed with lots of great features and tools like suacct, suuser, jobstats, seff, etc._
-	
+
+	```{tip}
+	slurmtools is packed with lots of great features and tools like suacct, suuser, jobstats, seff, etc._
+	```
+
 	Then using `levelfs` on your username:
 	```
 	$ levelfs $USER
@@ -138,7 +141,7 @@ There are a couple ways you can check your FairShare priority:
 	```
 	sshare -U -l
 	```
-	The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The -U flag will specify the current user and the -l flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over-serviced accounts will have a LevelFS between 0 and 1. Under-serviced accounts will have a LevelFS greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
+	The `sshare` command will print out a table of information regarding your usage and priority on all allocations. The `-U` flag will specify the current user and the `-l` flag will print out more details in the table. The field we are looking for is the _LevelFS_. The LevelFS holds a number from 0 to infinity that describes the fair share of an association in relation to its other siblings in an account. Over-serviced accounts will have a LevelFS between 0 and 1. Under-serviced accounts will have a LevelFS greater than 1. Accounts that haven't run any jobs will have a LevelFS of infinity (inf).
 
 	For more information on fair share the `sshare` command, [take a look at Slurm's documentation on fair share](https://slurm.schedmd.com/fair_tree.html) Or [check out the Slurm reference page on sshare](https://slurm.schedmd.com/sshare.html)
 
@@ -148,16 +151,15 @@ There are a couple ways you can check your FairShare priority:
 
 ````{toggle} 
 
-The 'ReqNodeNotAvail' message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you run a job with a 72 hour wall clock request on the first Monday of the month, you will receive the 'ReqNodeNotAvail' error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
+The `ReqNodeNotAvail` message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you run a job with a 72 hour wall clock request on the first Monday of the month, you will receive the `ReqNodeNotAvail` error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
 
 If you receive this message, the following solutions are available: 
-1. Run a shorter job that does not intersect the maintenance window
-> You can update your current job's time so that it does not intersect with the maintenance window using the `scontrol` command:
-> ```bash
-> $ scontrol update jobid=<jobid> time=<time>
-> ```
-2. Wait until after maintenance window has finished, your job will resume automatically 
+1. Run a shorter job or modify your current job's time so that it does not intersect with the maintenance window. One can modify your current job's time by using the `scontrol` command:
 
+	```bash
+	$ scontrol update jobid=<jobid> time=<time>
+	```
+2. Wait until after maintenance window has finished. Once maintenance has completed, your job will resume automatically.
 ````
 
 ## Why do I get an `Invalid Partition` error when I try to run a job?
