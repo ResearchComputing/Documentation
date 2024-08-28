@@ -10,14 +10,13 @@ See our documentation [homepage](index.md) for information about our most common
 6. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
 7. [How can I see my current FairShare priority?](#how-can-i-see-my-current-fairshare-priority)  
 8. [Why is my job pending with reason `ReqNodeNotAvail`?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
-9. [Why do I get the following 'Invalid Partition' error when I run my job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job):   
-    `sbatch: error: Batch job submission failed: Invalid partition name specified.`
-10. [Why do I get the following 'Invalid Partition' error when I run a Blanca job?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-blanca-job) 
+9. [Why do I get an `Invalid Partition` error when I try to run a job on Alpine?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job-on-alpine)   
+10. [Why do I get an `Invalid Partition` error when I try to run a job on Blanca?](#why-do-i-get-an-invalid-partition-error-when-i-try-to-run-a-job-on-blanca) 
 11. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
-[Why do I get the following 'LMOD' error when I try to load a slurm module?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
-    `Lmod has detected the following error:  The following module(s) are unknown: "slurm/alpine"`
-12. [How do I install Python libraries?](#how-do-i-install-python-libraries)  
-13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
+12. [Why do I get an `LMOD` error when I try to load Slurm?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm)
+13. [How do I install Python libraries?](#how-do-i-install-python-libraries)  
+14. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
+15. [Why is my Jupyter session throwing a `QOSMaxSubmitJobPerUserLimit` error?](#why-is-my-jupyter-session-throwing-a-qosmaxsubmitjobperuserlimit-error)
 
 ## I have a new phone. How do I move my Duo onto it?
 ````{toggle} 
@@ -162,7 +161,7 @@ If you receive this message, the following solutions are available:
 2. Wait until after maintenance window has finished. Once maintenance has completed, your job will resume automatically.
 ````
 
-## Why do I get an `Invalid Partition` error when I try to run a job?
+## Why do I get an `Invalid Partition` error when I try to run a job on Alpine?
 
 ````{toggle}
 
@@ -170,7 +169,7 @@ This error usually means users do not have an allocation that would provide the 
 
 ````
 
-## Why do I get an `Invalid Partition` error when I try to run a Blanca job?
+## Why do I get an `Invalid Partition` error when I try to run a job on Blanca?
 
 ````{toggle} 
 
@@ -218,10 +217,10 @@ If you would like to set a custom snapshot schedule for your allocation, please 
 
 ````
 
-## Why is my Jupyter session pending throwing `QOSMaxSubmitJobPerUserLimit`?
+## Why is my Jupyter session throwing a `QOSMaxSubmitJobPerUserLimit` error?
 
 ````{toggle} 
 
-Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications with "Presets" in their name will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](./running-jobs/slurm-commands.md#stopping-jobs-with-scancel). 
+Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications utilizing the presets configurations will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](./running-jobs/slurm-commands.md#stopping-jobs-with-scancel). 
 
 ````
