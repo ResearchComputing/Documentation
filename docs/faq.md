@@ -16,7 +16,7 @@ See our documentation [homepage](index.md) for information about our most common
 11. [How can I check what allocations I belong to?](#how-can-i-check-what-allocations-i-belong-to)
 [Why do I get the following 'LMOD' error when I try to load a slurm module?](#why-do-i-get-an-lmod-error-when-i-try-to-load-slurm):  
     `Lmod has detected the following error:  The following module(s) are unknown: "slurm/alpine"`
-12. [How do I install my own python library?](#how-do-i-install-my-own-python-library)  
+12. [How do I install Python libraries?](#how-do-i-install-python-libraries)  
 13. [Why does my PetaLibrary allocation report less storage than I requested?](#why-does-my-allocation-report-less-storage-than-i-requested)
 
 ## I have a new phone. How do I move my Duo onto it?
@@ -198,13 +198,11 @@ The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from 
 
 ````
 
-## How do I install my own python library?
+## How do I install Python libraries?
 
 ````{toggle} 
 
-Although Research Computing provides commonly used Python libraries as module, you may need to install individual python libraries for your research. This is best handled by utilizing Research Computing's Anaconda installation to set up a local Conda environment.
-
-[Find out more about using Python with Anaconda here.](./software/python.md)
+For individuals that need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](./software/python.md) documentation page. 
 
 ````
 
@@ -212,11 +210,11 @@ Although Research Computing provides commonly used Python libraries as module, y
 
 ````{toggle} 
 
-Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. Read more about [ZFS Snapshots](./storage/petalibrary/zfs_snapshots.md) 
+Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. For more information on ZFS Snapshots, please refer to our [ZFS Snapshots](./storage/petalibrary/zfs_snapshots.md) documentation. 
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
-If you would like to set a custom snapshot schedule for your allocation, please contact rc-help@colorado.edu. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+If you would like to set a custom snapshot schedule for your allocation, please contact <rc-help@colorado.edu>. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 
 ````
 
