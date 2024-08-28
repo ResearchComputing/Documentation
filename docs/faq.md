@@ -194,7 +194,7 @@ This will print out an assortment of information including allocations and QoS a
 
 ````{toggle} 
 
-The slurm/alpine module environment cannot be loaded from compile or compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
+The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
 
 ````
 
