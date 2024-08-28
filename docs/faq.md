@@ -6,7 +6,7 @@ See our documentation [homepage](index.md) for information about our most common
 2. [How do I acknowledge use of CURC Resources?](./index.md#acknowledging-rc)
 3. [How do I check how full my directories are?](#how-do-i-check-how-full-my-directories-are)  
 4. [When will my job start?](#when-will-my-job-start) 
-5. [How can I get system metrics?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
+5. [How can I get metics about CURC systems such as how busy they are, wait times, and account usage?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
 6. [How much memory did my job use?](#how-much-memory-did-my-job-use)  
 7. [Where is my current fair share priority level at?](#how-can-i-see-my-current-fairshare-priority)  
 8. [Why is my job pending with reason 'ReqNodeNotAvail'?](#why-is-my-job-pending-with-reason-reqnodenotavail)  
@@ -87,8 +87,7 @@ Note that you can also see system level wait times and how they change through t
 
 ````{toggle} 
 
-Visit the [CURC metrics portal](./compute/monitoring-resources.md#xdmod) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
-
+Please refer to our [XDMoD](./compute/monitoring-resources.md#xdmod) documentation, which is a portal that allows users to easily see CURC system metrics. 
 ````
 
 ## How much memory did my job use?
