@@ -166,7 +166,7 @@ If you receive this message, the following solutions are available:
 
 ````{toggle}
 
-This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a 'ucb-general' allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  'ucb-general' allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation site](https://www.colorado.edu/rc/userservices/allocations).
+This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a `ucb-general` allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  `ucb-general` allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation documentation](./clusters/alpine/allocations.md).
 
 ````
 
@@ -174,7 +174,7 @@ This error usually means users do not have an allocation that would provide the 
 
 ````{toggle} 
 
-If you are getting an 'invalid patition' error on a Blanca job which you know you have access to or have had access to before, you may be in the slurm/alpine scheduler instance. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
+If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 
 ````
 
@@ -182,11 +182,11 @@ If you are getting an 'invalid patition' error on a Blanca job which you know yo
 
 ````{toggle} 
 
-You can check the allocations you belong to with the `sacctmgr` command. Simply type:
+You can check the allocations you belong to with the `sacctmgr` command. This can be done by typing the following from a login or compute node:
 ```bash
 sacctmgr -p show associations user=$USER
 ```
-...from a login or compile node. This will print out an assortment of information including allocations and QoS available to you. For more information on sacctmgr, [check out the Slurm's documentation](https://slurm.schedmd.com/sacctmgr.html)
+This will print out an assortment of information including allocations and QoS available to you. For more information on sacctmgr, please refer to [Slurm's documentation](https://slurm.schedmd.com/sacctmgr.html). 
 
 ````
 
