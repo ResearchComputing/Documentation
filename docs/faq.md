@@ -27,17 +27,17 @@ After a CU authorization page you will be directed to a Duo authentication page.
 
 ![](faq/duo_new_device1.png)
 
-Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notifcation...  
+Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notification...  
 
 ![](faq/duo_new_device2.png)
 
 ...and click on "Enter a Passcode", or "Call Me". 
-- If you select "Call Me" the simply recieve the call and press 1. 
-- If you select "Enter a passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
+- If you select "Call Me" the simply receive the call and press 1. 
+- If you select "Enter a Passcode" then click "Text me new codes" and you will be sent a list of one time passwords. Type in any one of the codes and you will be authenticated. 
 
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account (e.g. do not have your old device), contact rc-help@colorado.edu for further assistance.
+If you cannot authenticate your account (e.g. do not have your old device), contact <rc-help@colorado.edu> for further assistance.
 
 ````
 
