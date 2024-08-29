@@ -29,7 +29,7 @@ CURC will perform software installations for users of CURC resources in a global
 user’s work.
 - The user provides all of the relevant information including release, version, etc.
 - The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (i.e., Anaconda environments, Apptainer containers).
+- The installation is not better suited for a local install (e.g. Anaconda environments or Apptainer containers).
 
 Furthermore, licensed/proprietary software are subject to the following requirements:
 
@@ -58,8 +58,8 @@ Scratch space should be used for all compute jobs run on CURC systems. These hig
 up and are not appropriate for long-term storage. Files are automatically deleted 90 days from the date they were copied to or 
 created on the filesystem. However, data may be purged at shorter intervals subject to overall system needs. 
 
-Users requiring longer-term retention of their files should perform regular backups to their local machine if they have not 
-purchased space on the [PetaLibrary](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html). Inappropriate use of 
+Users requiring longer-term retention of their files should perform regular backups to a remote machine or
+a purchased storage, such as [PetaLibrary](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html). Inappropriate use of 
 scratch storage, including attempts to circumvent the automatic file purge policy, may result in loss of access to Research 
 Computing resources.
 
