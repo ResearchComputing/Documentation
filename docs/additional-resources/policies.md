@@ -12,7 +12,7 @@ For users requiring secure research computing environments to ensure compliance 
 
 ## Login nodes
 
-The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including both Blanca 
+The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources, such as Blanca 
 and Alpine. They are strictly intended for non-computational tasks including editing scripts, moving files, scheduling jobs to run 
 on CURC computing resources, and non-intensive workflow monitoring/management tasks. They are not intended for computational tasks 
 of any kind. CURC personnel regularly monitor processes on the login nodes and reserve the right to terminate processes in 
@@ -29,7 +29,7 @@ CURC will perform software installations for users of CURC resources in a global
 user’s work.
 - The user provides all of the relevant information including release, version, etc.
 - The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (i.e., Anaconda environments, Singularity containers).
+- The installation is not better suited for a local install (i.e., Anaconda environments, Apptainer containers).
 
 Furthermore, licensed/proprietary software are subject to the following requirements:
 
