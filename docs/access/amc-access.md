@@ -9,7 +9,7 @@ Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys
 * You must be connected to a CU Anschutz network or the CU Anshutz VPN.
 
 > **_NOTE:_**
-A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.ucdenver.edu/regression-testing/bootstrap-4-testing/tools-services/remote-access-vpn>. 
+A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.cuanschutz.edu/offices/office-of-information-technology/tools-services/remote-access-vpn>. 
 Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
 
 ## *Step 1: Enroll in the RMACC CILogon Registry*
@@ -43,11 +43,11 @@ Accept the Duo push from your device.
 You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
 
 SSH Key Generation for Windows Users: 
-- Using command prompt, PowerShell, or Windows Terminal: https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/
-- Using PuTTY: https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/
+- Using command prompt, PowerShell, or Windows Terminal: <https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/>
+- Using PuTTY: <https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/>
 
 SSH Key Generation for Mac Users: 
-https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x
+<https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x>
 
 
 ## *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*

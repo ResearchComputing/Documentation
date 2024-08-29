@@ -42,7 +42,7 @@ You can request an interactive job by using the `sinteractive` command. Unlike t
 sinteractive --time=00:10:00
 ```
 
-[A list of ainteractive parameters can be found here](../clusters/alpine/alpine-hardware.md)
+[A list of sinteractive parameters can be found here](job-resources.md)
 
 The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 

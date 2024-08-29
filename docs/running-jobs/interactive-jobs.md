@@ -27,7 +27,7 @@ To run an interactive GUI application on HPC Systems, we must install an X windo
 ### Windows setup
 
 On Windows we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
-this. [Download Xming here](https://sourceforge.net/projects/xming/).
+this. [Download Xming here](http://www.straightrunning.com/XmingNotes/).
 
 #### For PuTTY users
 

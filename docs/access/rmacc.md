@@ -83,4 +83,3 @@ Once connected Globus can be used to transfer data to:
 
 <br>
 
-Couldn’t find what you need? [Provide feedback on these docs!](https://docs.google.com/forms/d/e/1FAIpQLSeaoraGl8x_ubyGNEYe3WP2cw_wg6aZM7Dy0v4X5s2ND-06RA/viewform)
