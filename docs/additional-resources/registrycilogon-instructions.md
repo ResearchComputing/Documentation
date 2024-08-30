@@ -38,8 +38,7 @@ SSH Key Generation instructions for Mac Users: visit [Manually generating your S
 
 ## *Step 3: Upload your ssh key to registry.cilogon.org*
 
-After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your ACCESS 
-credentials, click on the dropdown menu in the upper right hand corner by your name. 
+After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your credentials, click on the dropdown menu in the upper right hand corner by your name. 
 Select "MY PROFILE (RMACC)".
 
 Select "Authenticators" from the menu on the right. 
@@ -54,8 +53,11 @@ Click "Manage" in the SSHKeyAuthenticator row.
 Select "Add SSH Key".
 ![](./registry-images/add_sshkey.png)
 
-Click "Choose File". If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
-<br>
+Click "Choose File". If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt:
+
+```
+cp ~/.ssh/id_rsa.pub ~/Desktop
+```
 
 Locate your __public__ key (`<keyname>.pub`) on your local drive, then click "UPLOAD".
 ![](./registry-images/upload_sshkey.png)
@@ -68,7 +70,7 @@ A green message box will notify you that your SSH key was successfully added to 
 
 ## Deleting or Replacing SSH Keys in RMACC CILogon Registry
 
-Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the "Authenticators" section of your profile (see Step 3, above). Click "Delete", then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
+Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the "Authenticators" section of your profile (see [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg), above). Click "Delete", then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
 
 ## Troubleshooting
 
