@@ -8,9 +8,7 @@ Intel Fortran Compiler, GCC, IntelMPI, and OpenMPI to create a
 multiprocessor programs in Fortran. This tutorial assumes the user
 has experience in both the Linux terminal and Fortran.
 
-__Helpful MPI tutorials:__
-- [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)   
-- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml)   
+__Helpful MPI tutorial:__ 
 - [https://computing.llnl.gov/tutorials/mpi/](https://computing.llnl.gov/tutorials/mpi/)   
 
 
@@ -210,7 +208,7 @@ Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
 
-Ref: <http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html>
+Ref (Dead Link): <http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html>
 
 
 ## MPI Barriers and Synchronization

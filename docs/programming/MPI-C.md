@@ -8,10 +8,8 @@ Intel C++ Compiler, GCC, IntelMPI, and OpenMPI to create a
 multiprocessor ‘hello world’ program in C++.  This tutorial assumes
 the user has experience in both the Linux terminal and C++.
 
-__Resources:__
-- [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)  
+__Resource:__
 - [http://mpitutorial.com/tutorials/](http://mpitutorial.com/tutorials/)  
-- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml)
 
 
 ## Setup and “Hello, World”
@@ -227,7 +225,7 @@ Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
 
-Ref: [http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html)
+Ref (Dead Link): [http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html)
 
 
 ## MPI Barriers and Synchronization
