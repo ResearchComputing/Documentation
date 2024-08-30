@@ -93,7 +93,7 @@ Tip: For sufficiently-large workflows one can add the `--joblog` and `--resume` 
 
 - [https://www.gnu.org/software/parallel/](https://www.gnu.org/software/parallel/)
 - [https://www.gnu.org/software/parallel/parallel_tutorial.html](https://www.gnu.org/software/parallel/parallel_tutorial.html)
-- [https://github.com/ResearchComputing/HTC_Short_Course_Spring_2019](https://github.com/ResearchComputing/HTC_Short_Course_Spring_2019)
-- [https://rcc.uchicago.edu/documentation/_build/html/running-jobs/srun-parallel/index.html](https://rcc.uchicago.edu/documentation/_build/html/running-jobs/srun-parallel/index.html)
+- [https://github.com/ResearchComputing/easy_parallelization_htc_primer](https://github.com/ResearchComputing/easy_parallelization_htc_primer)
+- [https://rcc-uchicago.github.io/user-guide/tutorials/kicp/#gnu-parallel](https://rcc-uchicago.github.io/user-guide/tutorials/kicp/#gnu-parallel)
 - [https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html](https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html)
 

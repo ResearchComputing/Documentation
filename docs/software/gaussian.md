@@ -13,7 +13,7 @@ Good general instructions can be found [here](http://gaussian.com/running/); how
 _Software environment:_ To set up your environment to use G16, load the Gaussian software module (`module load gaussian/g16_c.02`). You do
 not need to source g16.login or g16.profile!
 
-_Scratch storage:_ It is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.md) (`/scratch/alpine/$USER` on Alpine or `rc_scratch/$USER` on Blanca). 
+_Scratch storage:_ It is important to specify `GAUSS_SCRDIR` to tell G16 where to put its large scratch files. These should always be on a [scratch storage system](../compute/filesystems.md#scratch-filesystems) (`/scratch/alpine/$USER` on Alpine or `rc_scratch/$USER` on Blanca). 
 
 _Memory:_ The default dynamic memory request in G16 is frequently too small to support the amount of memory that needs to be allocated to efficiently
 support computations on even modest-sized molecules. If too little memory is requested, the job can crash. Thus, use the '-m' flag in

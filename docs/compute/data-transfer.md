@@ -6,7 +6,7 @@ application called _Globus_ or through command-line tools such as
 secure copy (_scp_), secure ftp (_sftp_) and _rsync_. 
 
 Data transfers using SSH protocols can be done through the 
-[CURC data transfer nodes](./node-types.md) (DTN). 
+[CURC data transfer nodes](./node-types.md#data-transfer-nodes) (DTN). 
 Transfers via the DTNs support all types of transfers, including large and/or frequent file
 transfers and automated (passwordless) transfers.
 
