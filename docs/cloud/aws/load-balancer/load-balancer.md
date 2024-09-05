@@ -2,6 +2,9 @@
 
 Setup a load balancer to publicly expose services running on the internal VPC. This is to be used when you have a service running on the internal campus network (CFS VPC private subnets) and want to expose it to the outside internet. To accomplish this we must put a load balancer in front of the VPC.
 
+## Notes
+There are many different ways to accomplish this goal. This is an example of one way that you can set this up. This example does not include setting up a domain name or certificates.
+
 ## Network Load Balancer Example
 
 In this example we assume the prerequisite of an EC2 instance using the CFS VPC on the private subnet. The EC2 instance is running nginx on port 443 and has a inbound security group rule allowing access to port 443 on the EC2 instance. We are going to expose it to the outside internet on port 443 using a network load balancer.
@@ -48,5 +51,4 @@ In this example we assume the prerequisite of an EC2 instance using the CFS VPC 
 15. You can now access your service via the load balancer DNS name.
 ![](images/load-balancer-dns.png)
 
-## Notes
 
