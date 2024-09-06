@@ -9,7 +9,7 @@ Ensure that you are creating resources in the same region as your EC2 instance.
 
 ## Network Load Balancer Example
 
-In this example we assume the prerequisite of an EC2 instance using the CFS VPC on the private subnet. The EC2 instance is running nginx on port 443 and has a inbound security group rule allowing access to port 443 on the EC2 instance. We are going to expose it to the outside internet on port 443 using a network load balancer.
+In this example we assume the prerequisite of an EC2 instance using the CFS VPC on the private subnet. The EC2 instance is running nginx on port 443 and has an inbound security group rule allowing access to port 443 on the EC2 instance. We are going to expose it to the outside internet on port 443 using a network load balancer.
 
 1. Navigate to Load Balancers by searching for "Load Balancers" in the main search box.
 ![](images/search.png)
@@ -26,7 +26,7 @@ In this example we assume the prerequisite of an EC2 instance using the CFS VPC 
 5. Under the Network mapping section, select "cfs-vpc". Then check the availability zones you would like to use. Make sure to select the public subnet.
 ![](images/select-subnet.png)
 
-6. Scroll down to the "Security groups" section. Click the link to "create a new security group". This will open a new a tab with the security group wizard.
+6. Scroll down to the "Security groups" section. Click the link to "create a new security group". This will open a new tab with the security group wizard.
 
 7. For this example we will allow inbound traffic on port 443 from anywhere. Give your security group a name and description. Then click add inbound rule, select "HTTPS" as type, and choose "anywhere" as source. Then click "Create security group". Now go back to the Load balancer wizard tab.
 ![](images/security-group-wizard.png)
