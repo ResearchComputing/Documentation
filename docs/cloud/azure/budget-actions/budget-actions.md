@@ -11,7 +11,7 @@ These actions included in this tutorial allow you to:
 
 ## Creating Azure Automation Account
 
-1.	Sign in to the <a href="https://portal.azure.com/#home" target="_blank">Azure Management Console</a> and search for **Automation accounts** on the top search bar. Click **Create** and choose the subscription that you intent to manage, A Resource Group to place the Automation account, Name and Region to host Automation account.
+1.	Sign in to the [Azure Management Console](https://portal.azure.com/#home) and search for **Automation accounts** on the top search bar. Click **Create** and choose the subscription that you intent to manage, A Resource Group to place the Automation account, Name and Region to host Automation account.
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/azure/budget-actions/images/1.png)
 
 2.	Leave all other parameters to default. You may optionally choose to configure **Tags** as per your compliance standards. Click **Review+Create** and then click on **Create**.

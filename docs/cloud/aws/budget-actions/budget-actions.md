@@ -1,12 +1,12 @@
 # Configuring a budget action
 
-You can attach budget actions to an alert for either a cost budget or a usage budget. To configure a budget action on a new budget, first follow the steps for <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">Creating a cost budget</a>
+You can attach budget actions to an alert for either a cost budget or a usage budget. To configure a budget action on a new budget, first follow the steps for [Creating a cost budget](https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html)
 
 ---
 
 ## Creating a budget
 
-1.	Sign in to the AWS Management Console and open the <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">AWS Cost Management console</a>
+1.	Sign in to the AWS Management Console and open the [AWS Cost Management console](https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html)
 
 2.	In the navigation pane, choose **Budgets**. (You may directly search for ‘budgets’ in top search bar)
 
@@ -19,7 +19,7 @@ You can attach budget actions to an alert for either a cost budget or a usage bu
 5.	Choose ‘Budget scope’ and select the services you would like in scope. For this example we will choose 'All AWS Services' and choose ‘Next’
     ![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/budget-actions/images/3.png)
 
-To configure a budget action on an existing cost or usage budget, first follow the steps for <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">Editing a budget.</a> Then, after you reach the **Configure alerts** step of creating or editing the budget, use the following procedure.
+To configure a budget action on an existing cost or usage budget, first follow the steps for [Editing a budget](https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html). Then, after you reach the **Configure alerts** step of creating or editing the budget, use the following procedure.
 
 
 ## To configure a budget action
@@ -36,7 +36,7 @@ To configure a budget action on an existing cost or usage budget, first follow t
 
 3.	(Optional) Under **Notification preferences - Optional**, for **Email recipients**, enter the email addresses that you want the alert to notify. Separate multiple email addresses with commas. A notification can have up to 10 email addresses.
 
-4.	(Optional) Under **Notification preferences - Optional**, for **Amazon SNS Alerts**, enter the Amazon Resource Name (ARN) for your Amazon SNS topic. For instructions on how to create a topic, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">Creating an Amazon SNS topic for budget notifications.</a>
+4.	(Optional) Under **Notification preferences - Optional**, for **Amazon SNS Alerts**, enter the Amazon Resource Name (ARN) for your Amazon SNS topic. For instructions on how to create a topic, see [Creating an Amazon SNS topic for budget notifications](https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html).
 
 5.	  (Optional) Under **Notification preferences - Optional**, for **AWS Chatbot Alerts**, you can configure AWS Chatbot to send budget alerts to an Amazon Chime or Slack chat room. You configure these alerts through the AWS Chatbot console.
 
