@@ -45,12 +45,10 @@ In this example we assume the prerequisite of an EC2 instance using the CFS VPC 
 12. Select your EC2 target(s) and then select "Include as pending below". Then select "Create target group" to complete the target group creation.
 ![](images/select-target-443.png)
 
-13. The target group is now created and the tab can be closed. Now go back to the Load balancer wizard.
-
-14. The target group is now created and the tab can be closed. Now go back to the Load balancer wizard, click the little refresh icon and then select the target group that was just created. Enter the load balancer listening port (443 in this example) and type of traffic (TCP in this example). Then scroll down and "Create load balancer" to complete the setup.
+13. The target group is now created and the tab can be closed. Now go back to the Load balancer wizard, click the little refresh icon and then select the target group that was just created. Enter the load balancer listening port (443 in this example) and type of traffic (TCP in this example). Then scroll down and "Create load balancer" to complete the setup.
 ![](images/listeners443.png)
 
-15. Once your load balancer state changes from provisioning to active you will be able to access your service at https:// followed by the load balancer DNS name. Please note there can be a few minute delay for the load balancer to be reachable.
+14. Once your load balancer state changes from provisioning to active you will be able to access your service at https:// followed by the load balancer DNS name. Please note there can be a few minute delay for the load balancer to be reachable.
 ![](images/load-balancer-dns.png)
 
 
