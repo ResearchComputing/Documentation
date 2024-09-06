@@ -55,16 +55,15 @@ This managed policy is focused on specific actions that AWS Budgets takes on you
 11. For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose No, then you run the action manually on the **Alert details page**. For instructions, see Reviewing and approving your budget action.
 
 12. For **How do you want to be alerted when this action is run, choose Use the same alert settings when you defined this threshold** or **Use different alert settings**. To use different alert settings, complete the **Notification preferences** specific to this action.
-    ![](images/7.png)
-
+![](images/7.png)
 
 13.	Choose **Next**.
 
 14.	Review your budget settings, and then choose **Create budget**.
-    ![](images/8.png)
+![](images/8.png)
 
     After you create an action, you can view its status from the AWS Budgets page on the **Actions** column. This column shows your configured actions count, actions waiting for your approval (**Requires approval**), and your successfully completed actions.
-        ![](images/9.png)
+    ![](images/9.png)
 
     Once a budget action is taken place, you get alerts based on the chosen notification preference. Below is a snippet of an email notification.
-        ![](images/10.png)
+    ![](images/10.png)
