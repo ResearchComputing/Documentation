@@ -6,7 +6,7 @@ You can attach budget actions to an alert for either a cost budget or a usage bu
 
 ## Creating a budget
 
-1.	Sign in to the AWS Management Console and open the AWS Cost Management console at <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">https://console.aws.amazon.com/cost-management/home</a>
+1.	Sign in to the AWS Management Console and open the <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html" target="_blank">AWS Cost Management console</a>
 
 2.	In the navigation pane, choose **Budgets**. (You may directly search for ‘budgets’ in top search bar)
 

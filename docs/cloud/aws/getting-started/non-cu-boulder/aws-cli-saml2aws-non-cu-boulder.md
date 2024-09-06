@@ -4,7 +4,7 @@ The **saml2aws** CLI tool is used to login and retrieve AWS temporary credential
 
 ## Prerequisites
 
-1. This guide is only relevant if you are not a member of CU Boulder and require access to manage AWS resources owned by CU Boulder. If you are a member of CU Boulder, please see <a href="./aws-console-access.md" target="_blank">this guide</a> on signing in using your IdentiKey.
+1. This guide is only relevant if you are not a member of CU Boulder and require access to manage AWS resources owned by CU Boulder. If you are a member of CU Boulder, please see <a href="../aws-cli-saml2aws.html" target="_blank">this guide</a> on signing in using your IdentiKey.
 
 2. You have a chromium based browser installed on your PC.
 

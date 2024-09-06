@@ -22,7 +22,7 @@ Microsoft Research offers fellowships and collaborative research opportunities a
 
 ## Receive Azure Quantum credits 
 
-Get $500 in credits per hardware provider and apply for up to $10,000 in credits for quantum research projects.  <a href="https://aqcreditsprogrampublic.blob.core.windows.net/public/Azure-Quantum-Credit-Program-Terms-2021-12-06.pdf" target="_blank"> Read the program terms</a> and then submit your application. Apply <a href="https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=acom" target="_blank">here</a>
+Get $500 in credits per hardware provider and apply for up to $10,000 in credits for quantum research projects.  <a href="https://quantum.microsoft.com/en-us/terms-of-use#azure-quantum-credit-program-terms-of-use" target="_blank"> Read the program terms</a> and then submit your application. Apply <a href="https://microsoft.qualtrics.com/jfe/form/SV_3fl9dfFrkC3g0aG?aq_source=acom" target="_blank">here</a>
 
 ## Build in the cloud free with Azure for Students 
 
