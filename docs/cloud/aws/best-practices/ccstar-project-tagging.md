@@ -12,8 +12,8 @@ In order to properly track the usage of your allocation, please be sure to follo
 AWS resource tagging is critical for tracking actual costs (ie. credits), as well as forecasted costs.
 As a user of the **CUmulus** environment, you are responsible for tagging all resources that are created in your Project.
 The tag must be applied when (if possible), or immediately after, the resource is created.
-For more information about how tags work, it's worth reading the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html" target="_blank">AWS documentation describing Tags</a>.
-If you are unfamiliar with the terms "tag key" and "tag value", please read and understand the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html" target="_blank">AWS documentation describing Tags</a>.
+For more information about how tags work, it's worth reading the [AWS documentation describing Tags](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html)
+If you are unfamiliar with the terms "tag key" and "tag value", please read and understand the [AWS documentation describing Tags](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html)
 
 ## Project Tag
 
@@ -21,7 +21,7 @@ We are using the concept of a "Project" Tag to track different projects that wil
 
 When tagging resources, <u>there is only one tag that we require you to provide</u>.
 This is the "**Project**" tag.
-You are free to add more tags, as there are several other benefits of tagging discussed in the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html" target="_blank">AWS documentation describing Tags</a>.
+You are free to add more tags, as there are several other benefits of tagging discussed in the [AWS documentation describing Tags](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html)
 
 <!---
 Info Table
@@ -105,7 +105,7 @@ See AWS documentation for the specific service to see how to set the default tag
 ### Tags Block in a CloudFormation Template
 
 When using AWS CloudFormation to create resources, you will need to specify the 'Tags' block.
-See <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank">AWS CloudFormation Resource Tag Documentation</a> for more details.
+See [AWS CloudFormation Resource Tag Documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) for more details.
 Each resource in the CloudFormation template will need to have the 'Tags' block added as specified in the AWS documentation for each resource block.
 Syntax can be different for each service, so always consult AWS docs as a best practice.
 
@@ -145,5 +145,5 @@ You will need the Project tag at a minimum.
 
 Always be sure to refer to the AWS CLI documentation.
 Each resource may have its own unique syntax for adding Tags.
-This example was created using this <a href="https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-tagging.html" target="_blank">AWS CLI Documentation</a>.
+This example was created using this [AWS CLI Documentation](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-tagging.html).
 

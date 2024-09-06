@@ -3,25 +3,13 @@
 Customers who wish to create new AWS Users or Roles are prevented from doing so unless they use the "Customer_Admin_PermissionBoundary" Permission Boundary.
 See below for more information.  In addition, there are Explicit Denials that apply to all AWS Users and Roles.  This is also described below.
 
-<!---
-Info Table
--->
-<table style="background-color: #dcdcdc; filter: alpha(opacity=40); opacity: 0.95;">
-<tr>
-<td>
-<b>( ! ) - IMPORTANT</b>
-</td>
-</tr>
-<tr>
-<td>
+
+```{important}
 Note that when using some AWS wizards to create services, the wizard will try to create a Role.
 Due to the limitations discussed below, the wizard will fail.
 When encountering this situation, you must manually create the Role with the proper permissions, and attach the permission boundary discussed below.
 Then, in the wizard, you need to pick the Role you created.
-</td>
-</tr>
-</table>
-<br>
+```
 
 ## Standard Customer Administrator Role
 

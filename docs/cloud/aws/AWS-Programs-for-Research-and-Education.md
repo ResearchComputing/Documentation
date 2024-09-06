@@ -2,14 +2,14 @@
 
 Amazon provides free credits to qualifying Students, educators, and researchers for research and education purposes. These credits can be used to access the cloud platform’s resources.
 
-## <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/" target="_blank">AWS Cloud Credits for Research</a>
+## [AWS Cloud Credits for Research](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/)
 
 The AWS Cloud Credits for Research program (formerly AWS Research Grants) supports researchers who seek to:
 1.	Build cloud-hosted publicly available science-as-a-service applications, software, or tools to facilitate their future research and the research of their community.
 2.	Perform proof of concept or benchmark tests evaluating the efficacy of moving research workloads or open data sets to the cloud.
 3.	Train a broader community on the usage of cloud for research workloads via workshops or tutorials.
 
-<a href="https://pages.awscloud.com/aws-cloud-credit-for-research.html" target="_blank">Apply Now</a>
+[Apply Now](https://pages.awscloud.com/aws-cloud-credit-for-research.html)
 
 ## Application process
 
@@ -27,4 +27,4 @@ If you are awarded AWS Promotional Credit for no-cost usage of applicable AWS se
 
 Please make sure to account for the duration of the AWS Promotional Credit in your project timeline.
 
-For more information, please read AWS's <a href="https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/faqs/" target="_blank">AWS Cloud Credit for Research FAQs.</a>
+For more information, please read AWS's [AWS Cloud Credit for Research FAQs](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/faqs/).
