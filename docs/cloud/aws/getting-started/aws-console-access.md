@@ -1,7 +1,7 @@
 # Accessing the AWS Management Console
 
 ## Prerequisites
-1. You are a member of CUBoulder. If you have access to CUBoulder AWS resources and are from another institution, please see [this guide](non-cu-boulder/aws-console-access-non-cu-boulder.html) on signing in using your institution's credentials.
+1. You are a member of CUBoulder. If you have access to CUBoulder AWS resources and are from another institution, please see [this guide](non-cu-boulder/aws-console-access-non-cu-boulder.md) on signing in using your institution's credentials.
 
 2. The [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access) (MFA) app is installed and enrolled.
 Visit OIT's [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access) documentation to install and enroll MFA.
