@@ -70,7 +70,9 @@ This managed policy is focused on specific actions that AWS Budgets takes on you
 ![](images/8.png)
 
     After you create an action, you can view its status from the AWS Budgets page on the **Actions** column. This column shows your configured actions count, actions waiting for your approval (**Requires approval**), and your successfully completed actions.
+    
     ![](images/9.png)
 
     Once a budget action is taken place, you get alerts based on the chosen notification preference. Below is a snippet of an email notification.
+    
     ![](images/10.png)
