@@ -9,8 +9,8 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | --------------------- | ------------------- | ---------------- |
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
 | [Linaro DDT](https://www.linaroforge.com/linaro-ddt/) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
-| [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0,2.3.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structure.| 
-| [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 | FEKO is an electromagnetics software developed by Altair engineering for use in field calculations for bodies of arbitrary shapes. | 
+| [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0,2.3.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structures.| 
+| [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 | FEKO is an electromagnetics software developed by Altair Engineering for use in field calculations for bodies of arbitrary shapes. | 
 | [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11 (D), 2022.10, 2023.09 | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](../../software/python.md)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
 | [ANTLR](https://www.antlr.org/) | 4.13.1 | A parser generator for reading, processing, executing, or translating structured text or binary files. |
@@ -21,11 +21,11 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [BamTools](https://github.com/pezmaster31/bamtools) | 2.5.2| BamTools provides both a programmer's API and an end-user's toolkit for handling BAM files.|
 | [BBTools](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide) | 39.01 | BBTools is a suite of fast, multithreaded bioinformatics tools designed for analysis of DNA and RNA sequence data.|
 | [BCFtools](https://samtools.github.io/bcftools/) | 1.16 | BCFtools is a set of utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. All commands work transparently with both VCFs and BCFs, both uncompressed and BGZF-compressed.|
-| [bedtools](https://bedtools.readthedocs.io/en/latest/) | 2.29.1 | Collectively, the bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks.|
+| [bedtools](https://bedtools.readthedocs.io/en/latest/) | 2.29.1 | Collectively, the bedtools utilities are a Swiss Army knife of tools for a wide-range of genomics analysis tasks.|
 | [boost](https://www.boost.org/) | 1.78.0 | Boost provides free peer-reviewed portable C++ source libraries.| 
 | [Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml) | 2.5.0 | Bowtie2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences.| 
 | [BWA](https://bio-bwa.sourceforge.net/) | 0.7.17 | BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome.| 
-| [CDO](https://code.mpimet.mpg.de/projects/cdo/) | 2.1.1 | CDO is a collection of command line Operators to manipulate and analyse Climate and NWP model Data.|
+| [CDO](https://code.mpimet.mpg.de/projects/cdo/) | 2.1.1 | CDO is a collection of command line operators to manipulate and analyze climate and NWP model data.|
 | [Cellranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) | 7.1.0 | Cellranger is a set of analysis pipelines that process Chromium single cell data to align reads, generate feature-barcode matrices, perform clustering and other secondary analysis, and more.|
 | [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) | 1.2.5 | A next-generation molecular visualization program. | 
 | [CMake](https://cmake.org/) | 3.5.2, 3.9.2, 3.14.1, 3.20.2, 3.25.0 (D) | CMake is an open-source, cross-platform family of tools designed to build, test and package software.| 
@@ -36,8 +36,8 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (G) | 11.2, 11.3, 11.4, 11.7, 11.8, 12.1.1 (D) | The NVIDIA CUDA Toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler, and a runtime library to deploy your application. | 
 | [cuDNN](https://developer.nvidia.com/cudnn) (G)| 8.1, 8.2 8.6 (D) | The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. | 
 | [curc-quota](../../compute/filesystems.md#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
-| [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads.| 
-| [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the O/S.|
+| [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequences from your high-throughput sequencing reads.| 
+| [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the OS.|
 | [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) | 3.4.0 | Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.|
 | [Emacs](https://www.gnu.org/software/emacs/) | 25.3, 27.2 (D) | An extensible, customizable, text editor.|
 | [EPW](https://docs.epw-code.org) | 6.0alpha | EPW is part of the Quantum ESPRESSO suite & calculates properties related to the electron-phonon interaction|
@@ -72,7 +72,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Intel VTune](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html#gs.nwdnjz) | 2022.0.0 | Intel VTune Profiler optimizes application performance, system performance, and system configuration for HPC, cloud, IoT, media, storage, and more.|
 | [Jasper](https://jasper-software.github.io/jasper/) | 4.0.0 (D) | JasPer is a software toolkit for the handling of image data. |
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
-| [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e | Open source JPEG Image Library.|
+| [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e | Open source JPEG image library.|
 | [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.2 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
@@ -89,14 +89,14 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [NCO](https://nco.sourceforge.net/) | 4.8.1 | A toolkit that manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, HDF5, and, Zarr | 
 | [Ncview](https://cirrus.ucsd.edu/ncview/) | 2.1.7 | Ncview is a visual browser for netCDF format files. | 
 | [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | 4.8.1 | NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.|
-| [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04 (D) | Nextflow is Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
+| [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04 (D) | Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
 | [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) (G)| 2022.229, 2023.233|The NVIDIA HPC Software Development Kit (SDK) includes the proven compilers, libraries and software tools essential to maximizing developer productivity and the performance and portability of HPC applications.| 
 | [OpenBLAS](https://www.openblas.net/) | 0.3.20 | OpenBLAS is an optimized Basic Linear Algebra Subprograms (BLAS) library based on GotoBLAS 21.13 BSD version. | 
-| [OpenJPEG](https://www.openjpeg.org/) | 2.2.0 | OpenJPEG is an open-source JPEG 2000 codec written in C language. | 
+| [OpenJPEG](https://www.openjpeg.org/) | 2.2.0 | OpenJPEG is an open-source JPEG 2000 codec written in the C language. | 
 | [Open MPI](https://www.open-mpi.org/) | 4.1.1, 4.1.4 | The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. | 
 | [OpenSees](https://opensees.berkeley.edu) | 3.4 | OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes. |
 | [ORCA](https://www.orcasoftware.de/tutorials_orca/) | 5.0.3, 5.0.4 (D) | ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods. | 
-| [PAPI](https://icl.utk.edu/papi/index.html)| 5.4.3, 5.5.1 (D) | A complete, cross-platform solution to record, convert and stream audio and video. |
+| [PAPI](https://icl.utk.edu/papi/index.html)| 5.4.3, 5.5.1 (D) | The Performance Application Programming Interface (PAPI) offers a universal interface and methodology for gathering performance counter information from diverse hardware and software components. |
 | [ParaView](https://www.paraview.org/) | 5.0.1, 5.6.0, 5.9.0, 5.10.0 (D) | ParaView is an open-source multiple-platform application for interactive, scientific visualization. | 
 | [PDT (Program Database Toolkit)](https://www.cs.uoregon.edu/research/pdt/home.php) | 3.22, 3.25.1 (D) | PDT is a framework for analyzing source code written in several programming languages and for making rich program knowledge accessible to developers of static and dynamic analysis tools. | 
 | [Perl](https://www.perl.org/) | 5.16.3, 5.24.0 (D), 5.28.1, 5.36.0 | Perl is a high-level, interpreted, general-purpose programming language originally developed for text manipulation.| 
@@ -128,21 +128,21 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [TIFF](http://www.simplesystems.org/libtiff/) | 4.3.0 |The LibTIFF software provides support for the Tag Image File Format (TIFF), a widely used format for storing image data.| 
 | [TotalView](https://totalview.io/) | 2016.06.21 |TotalView debugging software provides tools you need to debug, analyze, and scale high-performance computing (HPC) applications.| 
 | [Trelis](https://coreform.com/news/trelis-is-now-coreform-cubit/) (L) | 16.3.6 | Software that includes everything needed for streamlined progress from CAD to analysis, with full-featured capabilities for geometry preparation and mesh generation, analysis, and fine-tuning. Now known as Coreform Cubit. | 
-| [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) | 0.39 | Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single-ended data. |
+| [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) | 0.39 | Trimmomatic performs a variety of useful trimming tasks for Illumina paired-end and single-ended data. |
 | [UCX](https://openucx.org/) | 1.10.1, 1.12.1 (D) | A communication framework for data-centric and high-performance applications.| 
 | [UDUNITS](https://www.unidata.ucar.edu/software/udunits/) | 2.2.20, 2.2.24, 2.2.25, 2.2.28 (D) |The UDUNITS package supports units of physical quantities. Its C library provides for arithmetic manipulation of units and for conversion of numeric values between compatible units.|
 | [Valgrind](https://valgrind.org/) | 3.11.0, 3.17.0 (D) |Valgrind is an instrumentation framework containing tools that can automatically detect many memory management and threading bugs, and profile your programs in detail.| 
 | [VAPOR](https://github.com/NCAR/VAPOR) | 3.3.0, 3.4.0 (D) |VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers.|
 | [vtf3](https://www.paratools.com/otf/) | 1.43 |VTF3 trace generation package.|  
 | [Yambo](https://www.yambo-code.eu/wiki/index.php/Main_Page) | 5.2.2 |An ab initio tool for excited state calculations.|  
-| [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zipfiles.|
+| [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zip files.|
 | [zlib](https://www.zlib.net/) | 1.2.11 | Lossless data-compression library.|
 
 **(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
 
 ## Alpine Software Policy 
 
-Historically, software installations have been a sticking point for many users or CURC resources. Though we still encourage users to 
+Historically, software installations have been a sticking point for many users of CURC resources. Though we still encourage users to 
 install and manage their own packages locally, CURC has decided to move forward with the following software policy:
 
 CURC will perform software installations for users of CURC resources in a globally accessible module stack provided:
@@ -151,7 +151,7 @@ CURC will perform software installations for users of CURC resources in a global
 - A user requires a different version of a currently existing software which provides additional functionality required for the user’s work.
 - The user provides all of the relevant information including release, version, etc. 
 - The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (I.E. Anaconda Environments, Singularity Containers).
+- The installation is not better suited for a local install (i.e., Anaconda Environments, Singularity Containers).
 
 Furthermore, licensed/proprietary software are subject the following requirements:
 

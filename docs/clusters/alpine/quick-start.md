@@ -16,8 +16,8 @@ of 22,180 cores. Alpine can be securely accessed anywhere, anytime using Open On
 
 3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.md), which allows users choose software from our pre-installed software stack.
 
-4. If you would like to use software that is not within our preinstalled stack your application 
-must be compiled using `acompile`. More information about the `acompile` function can be found under our 
+4. If you would like to use software that is not within our preinstalled stack, your application 
+must be compiled using `acompile`. More information about the `acompile` command can be found under our 
 [partitions](./alpine-hardware.md#partitions)
 section.
 
@@ -54,14 +54,14 @@ The Alpine cluster features some heterogeneity. A variety of feature tags are ap
 
 Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
-> _**Note:**_ **Feature descriptions and finalized partitions names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
+> _**Note:**_ **Feature descriptions and finalized partition names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
 
 ```bash
 sinfo --format="%N | %f"
 ```
 
 ### Description of features
-- **Milan**: 64-core and dual-socket 32-core AMD Milan EPYC CPU
+- **Milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
 - **A100**: NVIDIA A100 GPU
 - **MI100**: AMD MI100 GPU
 - **storage**: large, fast RAID disk storage in node
@@ -69,14 +69,14 @@ sinfo --format="%N | %f"
 
 ## Job Scheduling
 
-All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed but these must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
+All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed; however, these jobs must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
 
 More details about how to use SLURM to run jobs can be found in our [running applications with jobs](../../running-jobs/running-apps-with-jobs.md) documentation.
 
 
 ## Allocations
 
-When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 250,000 SUs over a 12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 250,000 and 5,000,000 SUs in a 12 month period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.
+When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 350,000 SUs over a 12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 12 month period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 

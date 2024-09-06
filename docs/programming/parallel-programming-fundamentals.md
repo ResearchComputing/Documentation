@@ -16,7 +16,7 @@ weekend it takes you several weeks to finish the puzzle. Now assume
 you have a team of friends helping with the puzzle. It progresses much faster,
 and you are able to finish the puzzle within desired weekend. This
 principle is the central idea behind parallel computation. You can
-dramatically cut down on computation by splitting one large task into
+dramatically cut down on computation time by splitting one large task into
 smaller tasks that multiple processors can perform all at once. With
 parallel processes a task that would normally take several weeks can
 potentially be reduced to several hours.
@@ -48,7 +48,7 @@ different types of parallel computation.
 
 __Shared Memory Model:__
 
-In a shared memory model all processors to have access to a pool of
+In a shared memory model, all processors to have access to a pool of
 common memory that they can freely use.
 
 ![](https://hpc.llnl.gov/sites/default/files/shared_mem.gif "shared memory model")
@@ -57,7 +57,7 @@ common memory that they can freely use.
 
 __Distributed Memory Model:__
 
-In a distributed memory model a separate segment of memory is
+In a distributed memory model, a separate segment of memory is
 available to each processor.  Because memory isn’t shared inherently,
 information that must be shared between processes is sent over a
 network.
@@ -77,7 +77,7 @@ processors sharing a set of common memory is called a node.
 (Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch> )
 
 Alpine utilizes a hybrid distributed/shared model: there are 188 AMD Milan Compute
-nodes, 184 having 64 cores. 4 with 48 cores.
+nodes, 184 having 64 cores, 4 having 48 cores.
 
 ## Tools for Parallel Programming
 

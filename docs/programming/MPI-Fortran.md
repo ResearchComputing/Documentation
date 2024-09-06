@@ -78,9 +78,9 @@ These four directives are enough to get our parallel ‘hello world’
 program running. We will begin by creating three integer variables,
 `process_Rank` , `size_Of_Cluster` , and `ierror` to store an
 identifier for each of the parallel processes, store the number of
-processes running in the cluster, and handle error codes
+processes running in the cluster, and handle error codes,
 respectively. We will also implement the `MPI_Init` function which
-will initialize the mpi communicator:
+will initialize the MPI communicator:
 
 ```fortran
 PROGRAM hello_world_mpi
@@ -94,7 +94,7 @@ call MPI_INIT(ierror)
 Let's now obtain some information about our cluster of processors and
 print the information out for the user. We will use the functions
 `MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the count of
-processes and the rank of a given process respectively:
+processes and the rank of a given process, respectively:
 
 ```fortran
 PROGRAM hello_world_mpi
@@ -510,7 +510,7 @@ integer process_Rank, size_Of_Cluster, ierror, message_Item
 END PROGRAM
 ```
 
-Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
+Now let’s set up the MPI environment using `MPI_Init` , `MPI_Comm_size`
 , `MPI_Comm_rank` , and `MPI_Finaize`:
 
 ```fortran

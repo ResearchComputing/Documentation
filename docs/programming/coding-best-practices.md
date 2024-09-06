@@ -4,7 +4,7 @@ Programmers employ numerous tactics to ensure readable and organized
 code. These include:
 
 1. using naming conventions for variables;
-2. placing whitespaces, indentations and tabs within code;
+2. placing whitespace, indentations and tabs within code;
 3. adding comments throughout to aid in interpretation.
 
 In this tutorial we will examine these concepts.
@@ -77,7 +77,7 @@ sections of comments that would otherwise be needed.
 ## Whitespace and Tabbing
 
 Whitespace and tabbing are critical for organizing code. Whitespace is 
-any space in your code that is not taken up by physical characters.
+any space in your code that is not taken up by readable characters.
 Tabbing is one way to create whitespace in consistent units using the ‘tab’ key. 
 While some languages ignore whitespace and tabbing all together, others entirely rely on the concept.
 Because of this, it is important to ensure your code is
@@ -123,7 +123,7 @@ throughout your code.
 Commenting may be the most important way to organize and segment
 code. Comments are sections of code that the compiler ignores, 
 which are useful to label code and segment code. For example, one can label loops,
-scopes, functions, and other code snippets with the expected function of the code.
+scopes, functions, and other code snippets with the intended functionality of the code.
 Lines with comments in code are preceded by a symbol that tells 
 the compiler/interpretor to ignore that line, for example “#”, “!” or “;” (the symbol depends
 on the programming language). Let’s look at some C++ code that uses no

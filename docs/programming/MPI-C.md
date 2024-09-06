@@ -85,8 +85,8 @@ These four directives should be enough to get our parallel 'hello
 world' running. We will begin by creating two variables,
 `process_Rank`, and `size_Of_Cluster`, to store an identifier for each
 of the parallel processes and the number of processes running in the
-cluster respectively. We will also implement the `MPI_Init` function
-which will initialize the mpi communicator:
+cluster, respectively. We will also implement the `MPI_Init` function
+which will initialize the MPI communicator:
 
 ```c++
 #include <stdio.h>
@@ -104,7 +104,7 @@ int main(int argc, char** argv){
 Let's now obtain some information about our cluster of processors and
 print the information out for the user. We will use the functions
 `MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the count of
-processes and the rank of a process respectively:
+processes and the rank of a process, respectively:
 
 ```c++
 #include <stdio.h>
@@ -367,7 +367,7 @@ Let’s implement message passing in an example:
 
 ### Example
 
-We will create a two-process process that will pass the number 42 from
+We will create a two-process program that will pass the number 42 from
 one process to another.  We will use our “Hello World” program as a
 starting point for this program. Let’s begin by creating a variable to
 store some information.
@@ -533,7 +533,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
+Now let’s set up the MPI environment using `MPI_Init` , `MPI_Comm_size`
 , `MPI_Comm_rank` , and
 
 `MPI_Finaize`:

@@ -1,5 +1,5 @@
 # MPI Best practices
-MPI or Message Passing Interface is a powerful library standard that allows for the parallel execution of applications across multiple processors on a system. It differs from other parallel execution libraries like OpenMP by also allowing a user to run their applications across multiple nodes. Unfortunately it can sometimes be a bit tricky to run a compiled MPI application within an HPC resource. The following page outlines best practices in running your MPI applications across CURC resources.  
+MPI, or Message Passing Interface, is a powerful library standard that allows for the parallel execution of applications across multiple processors on a system. It differs from other parallel execution libraries like OpenMP by also allowing a user to run their applications across multiple nodes. Unfortunately it can sometimes be a bit tricky to run a compiled MPI application within an HPC resource. The following page outlines best practices in running your MPI applications across CURC resources.  
 
 Please note that this page *does not* go over compiling or optimization of MPI applications.  
 
@@ -7,7 +7,7 @@ Please note that this page *does not* go over compiling or optimization of MPI a
 
 ### Selecting your Compiler and MPI
 
-Several families of compilers are available to users: Intel, GCC, and AOCC _(Alpine only)_.  Intel compilers have Intel MPI available for messsage passing, and GCC and AOCC compilers have OpenMPI available for message passing. To load a compiler/MPI combo run one the following commands from a job script or compile node (note that you should subsitute the version you need for _<version>_ in the examples below; available compiler versions can be seen by typing `module avail`):
+Several families of compilers are available to users: Intel, GCC, and AOCC _(Alpine only)_.  Intel compilers have Intel MPI available for messsage passing, and GCC and AOCC compilers have OpenMPI available for message passing. To load a compiler/MPI combo run one the following commands from a job script or compile node (note that you should subsitute the version you need for `<version>` in the examples below; available compiler versions can be seen by typing `module avail`):
 
 **Intel**
 

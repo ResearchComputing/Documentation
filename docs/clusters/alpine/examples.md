@@ -1,4 +1,4 @@
-# Slurm Directives Examples
+# Slurm Directive Examples
 
 Below are some examples of SLURM directives that can be used in your batch scripts in order to meet certain job requirements.
 

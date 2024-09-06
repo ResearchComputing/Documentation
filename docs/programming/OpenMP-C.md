@@ -3,7 +3,7 @@
 Because a cluster consists of many CPUs, the most effective way to utilize
 these resources involves parallel programming. Probably the simplest
 way to begin parallel programming involves the utilization of
-OpenMP. OpenMP is a Compiler-side solution for creating code that runs
+OpenMP. OpenMP is a compiler-side solution for creating code that runs
 on multiple cores/threads. Because OpenMP is built into a compiler, no
 external libraries need to be installed in order to compile this
 code. These tutorials will provide basic instructions on utilizing
@@ -38,7 +38,7 @@ the program:
 ```
 
 These flags allow us to utilize the stdio and omp libraries in our
-program. The `<omp.h>` header file will provide openmp
+program. The `<omp.h>` header file will provide OpenMP
 functionality. The `<stdio.h>` header file will provide us with print
 functionality.
 
@@ -432,7 +432,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Now let’s go ahead and setup variables for our parallel code. Lets
+Now let’s go ahead and set up variables for our parallel code. Lets
 first create variables `partial_Sum` and `total_Sum` to hold each
 thread’s partial summation and to hold the total sum of all threads
 respectively.

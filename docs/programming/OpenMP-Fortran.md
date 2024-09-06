@@ -3,7 +3,7 @@
 Because clusters are comprised of many CPUs, parallel programming is the most
 effective way to utilize these resources. Probably the simplest way to
 begin parallel programming is utilization of OpenMP. OpenMP is a
-Compiler-side solution for creating code that runs on multiple
+compiler-side solution for creating code that runs on multiple
 cores/threads. Because OpenMP is built into a compiler, no external
 libraries need to be installed in order to compile this code. These
 tutorials provide basic instructions on utilizing OpenMP on both the
@@ -36,7 +36,7 @@ USE OMP_LIB
 ```
 
 These flags allow us to utilize the omp library in our program. The
-‘USE OMP_LIB’ line of code will provide openmp functionality.
+‘USE OMP_LIB’ line of code will provide OpenMP functionality.
 
 Let’s now begin our program by constructing the main body of the
 program. We will use `OMP_GET_THREAD_NUM()` to obtain the thread id of
@@ -421,7 +421,7 @@ USE OMP_LIB
 END
 ```
 
-Now let’s go ahead and setup variables for our parallel code. Let’s
+Now let’s go ahead and set up variables for our parallel code. Let’s
 first create variables `partial_Sum` and `total_Sum` to hold each
 thread’s partial summation and to hold the total sum of all threads
 respectively.
@@ -459,7 +459,7 @@ END
 Let’s now set up our work sharing directive. We will use the `!$OMP
 DO` to declare the loop to be work sharing, followed by the actual
 Fortran loop. Because we want to add all number from 1 to 1000, we
-will initialize out loop at one and end at 1000.
+will initialize our loop at one and end at 1000.
 
 ```fortran
 PROGRAM Parallel_Hello_World

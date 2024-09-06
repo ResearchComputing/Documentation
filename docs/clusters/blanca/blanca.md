@@ -24,7 +24,7 @@ More details about how to use Slurm can be found [here](../../running-jobs/runni
 
 ## QoS
 
-Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `blanca-<group identifier>` and can also use the condo-wide low-priority QoS, which is called `preemptable`.
+Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `blanca-<group identifier>` and can also use the cluster-wide low-priority QoS, which is called `preemptable`.
 
 If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to <rc-help@colorado.edu>.  You are only allowed to use a high-priority QoS if you have been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
@@ -75,7 +75,7 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 
 ### Requesting GPUs in jobs
 
-Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the gpu(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single gpu of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g., V100, A100) if desired.  The available Blanca GPU resources and configurations can be viewed as follows on a login node with the `slurm/blanca` module loaded:
+Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the GPU(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single GPU of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g., V100, A100) if desired.  The available Blanca GPU resources and configurations can be viewed as follows on a login node with the `slurm/blanca` module loaded:
 
 ```bash
 $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "blanca "
@@ -92,22 +92,22 @@ bgpu-papp1                    blanca-papp         gpu:v100:1
 
 __Examples of configurations one could request__:
 
-_request a single gpu of any type_
+_request a single GPU of any type_
 ```
 #SBATCH --gres=gpu
 ```
 
-_request multiple gpus of any type_
+_request multiple GPUs of any type_
 ```
 #SBATCH --gres=gpu:3
 ```
 
-_request a single gpu of type NVIDIA V100_
+_request a single GPU of type NVIDIA V100_
 ```
 #SBATCH --gres=gpu:v100:1
 ```
 
-_request two gpus of type NVIDIA A100_
+_request two GPUs of type NVIDIA A100_
 ```
 #SBATCH --gres=gpu:a100:2
 ```
@@ -137,7 +137,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --export=NONE
 ```
 
-3. To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three gpus:
+3. To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three GPUs:
 ```bash
 #SBATCH --qos=blanca-curc-gpu
 #SBATCH --nodes=1
@@ -187,7 +187,7 @@ Note that the interactive job won't start until the resources that it needs are 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
 2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to /rc_scratch, which should offer much better performance than /projects.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
-4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics like Blanca CCN or any node on Blanca HPC can run MPI application much more efficiently.
+4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics, like Blanca CCN, or any node on Blanca HPC can run MPI applications much more efficiently.
 
 ## Blanca Preemptable QOS
 
@@ -257,7 +257,7 @@ module load python
 python myscript.py
 ```
 
-Same as Example 1, but specify desired node features, in this case the avx2 instruction set and Redhat V7 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node).
+Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RedHat V7 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node).
 
 ```bash
 #!/bin/bash
