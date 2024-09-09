@@ -27,7 +27,7 @@ smb://<RC-provided-hostname>/<your-pl-allocation>
 ![](../../../Petalibrary/Mounting/smbmac2.png)
 
 
-You will be prompted for your RC Username and Password. Type in the required information and click Connect. Accept your Duo notification and you Petalibrary Allocation will be mounted. 
+You will be prompted for your RC Username and Password. Type in the required information and click `Connect`. Accept your Duo notification and you Petalibrary Allocation will be mounted. 
 
 
 
@@ -41,11 +41,11 @@ This will bring up a setup utility. Continue through the prompt, selecting `Choo
 ```
 \\<RC-provided-hostname>\<your-pl-allocation>
 ```
-And click next.
+And click `next`.
 
 ![](../../../Petalibrary/Mounting/smb2.PNG)
 
-Lastly you will be prompted to provide your credentials. Type your credentials as such:
+Lastly you will be prompted to provide your credentials. Type your credentials as follows:
 
 ```
 Username: AD\<your-rc-username>
@@ -57,10 +57,10 @@ Password: <your-rc-password>
 
 ## `sshfs` mounting to Petalibrary
 
-Sshfs provides another solution in mounting your Petalibrary allocation to a local machine. Like SMB you will need to be connected to CU's internal network to access this utility. Sshfs is primarily supported on Unix based operating systems but can be run on a Windows operating system with a bit more effort. 
+Use of `sshfs` provides an alternate solution for mounting your Petalibrary allocation to a local machine. Like SMB you will need to be connected to CU's internal network to access this utility. The `sshfs` utility is primarily supported on Unix-based operating systems, but can be run on a Windows operating system with a bit more effort. 
 
 ### `sshfs` on Mac
-Sshfs on Mac can easily be done with the installation of fuse and the sshfs package. To install the package simply download both [from the macFuse homepage and follow the provided install instructions.](https://osxfuse.github.io/)
+Enabling `sshfs` on Mac is done by installing the fuse and the sshfs packages. To install the packages simply download both [from the macFuse homepage and follow the provided install instructions.](https://osxfuse.github.io/)
 
 After installing both simply open a terminal and navigate to your desired mount location. Create a directory to be your mountpoint and run the command 
 
@@ -68,11 +68,10 @@ After installing both simply open a terminal and navigate to your desired mount 
 sshfs <your-rc-username>@dtn.rc.colorado.edu:/pl/active/<your-pl-directory> <local-directory>
 ```
 
-You will be prompted for your password after execution. Type your password and accept the duo prompt.
-Your selected directory will now be mounted to your Petalibrary allocation.
+You will be prompted for your password after execution. Type your password and accept the duo prompt. Your selected directory will now be mounted to your Petalibrary allocation.
 
 ### `sshfs` on Windows
-Sshfs on Windows comes from the installation of 2 applications. First install the application sshfs-win: Installation instructions and files [can be found here.](https://github.com/billziss-gh/sshfs-win)
+Enabling `sshfs` on Windows requires the installation of 2 applications. First install the application sshfs-win: Installation instructions and files [can be found here.](https://github.com/billziss-gh/sshfs-win)
 
 Next install the sshfs graphical user interface (GUI) frontend. Installation instructions and files [can be found here.](https://github.com/evsar3/sshfs-win-manager)
 
@@ -84,9 +83,9 @@ Click on `Add a connection`. This will bring up a menu outlining the parameters 
 
 ![](../../../Petalibrary/Mounting/sshfs.PNG)
 
-Once this is done click the connect button. You will be prompted for a password. Type in your password and accept your two-factor authentication to be mounted. You will now see your selected drive letter mounted to your Petalibrary allocation in “This PC.”
+Once this is done click the `connect` button. You will be prompted for a password. Type in your password and accept the Duo two-factor authentication to be mounted. You will now see your selected drive letter mounted to your Petalibrary allocation in “This PC.”
 
 #### Troubleshooting
-- The sshfs-win manager application may point to the incorrect sshfs binary by default. You can correct this in the "Settings" menu and adding the correct path to the application.
-- You may run into an issue where sshfs fails to wait for your Duo response. To correct this, open the "Settings" menu and increase the 'Process Timeout' field.
+- The sshfs-win manager application may point to the incorrect `sshfs` binary by default. You can correct this in the "Settings" menu and adding the correct path to the application.
+- You may run into an issue where `sshfs` fails to wait for your Duo response. To correct this, open the "Settings" menu and increase the 'Process Timeout' field.
 
