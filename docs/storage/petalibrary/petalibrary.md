@@ -6,6 +6,9 @@ Each person who accesses the PetaLibrary is required to have a Research Computin
 PetaLibrary storage is presented as a file system directory under either:
 ```
 /pl/active/<your_allocation_name>
+```
+or
+```
 /pl/archive/<your_allocation_name>
 ```
 
@@ -25,7 +28,7 @@ Request PetaLibrary storage by filling out the application form at the [RC PetaL
 
 - **To access archive storage:** Archive storage is located at: `/pl/archive/<your_allocation_name>`
 
-Please use our Data Transfer nodes for frequent or large read/writes of archived data. Do not use login nodes for these purposes. For more information on transferring data, 
+Please use our Data Transfer nodes for frequent or large transfers of archived data. Do not use login nodes for data transfers. For more information on transferring data, 
 please refer to our [Data Transfer](../../compute/data-transfer.md) documentation. 
 
 ## Service Classes
@@ -37,13 +40,14 @@ please refer to our [Data Transfer](../../compute/data-transfer.md) documentatio
 - Directly accessible (read+write) from Research Computing compute resources
 #### Archive
 - Appropriate for data that is infrequently accessed
-- Stores data on tapes in a robotic tape library, with all data written to at least two tapes
+- Stores data in a parity-protected RAID array, with the option to use tape storage in the future
+- a maximum of 10,000 objects may be stored per terabyte
 - Not accessible from Research Computing compute resources
 
 ## Performance
 PetaLibrary is a shared infrastructure and the instantaneous performance will vary depending on each individual workload and competing workloads from other clients.
 
-The PetaLibrary service is designed for file storage and retrieval, and is not an ideal backend for highly transactional workloads (e.g., relational databases).
+The PetaLibrary service is designed for file storage and retrieval, and is not an ideal service for highly transactional workloads (e.g., relational databases).
 
 ## More information
 
