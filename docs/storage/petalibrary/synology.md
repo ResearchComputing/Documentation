@@ -41,11 +41,11 @@ Enter 'help' for a list of built-in commands.
 
 _Note: if the above command does not yield an SSH banner (such as ‘SSH-2.0-OpenSSH_7.4’), ssh connectivity from the Synology to the DTN hosts is not working._
 ```
-_Note: These instructions assume you are on a CU Boulder campus network._
+_Note: These instructions assume you are on a CU System campus network._
 
 ## Step 4: Generate keypair for connecting to PetaLibrary 
 
-In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
+In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system (_note: passwordless data transfers are presently only available to CU System users_). This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the documentation noted above. 
 When following this documentation you should be generating the ssh key on the Synology server. For example, you could do the following:
 
 _(Note for below: Press return when prompted for a passphrase to select “empty”)._
