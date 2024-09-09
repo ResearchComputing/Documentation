@@ -2,24 +2,29 @@
 
 This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
-## Generate public/private keypair for CURC resources (if you wish to not enter a password each time you transfer files)
+## Generate public/private keypair for CURC resources 
 
-In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system (_note: presently passwordless access is only available to users affiliated with the CU system_). This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work -- you must follow the documentation noted above. 
+```{note}
+Presently passwordless access is only available to users affiliated with the CU system.
+```
 
-**Windows:** Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run:
+In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on CURC resources will not work -- you must follow the documentation linked above. 
 
-```$ .\rclone.exe config```
-
-then select `n) New Remote`.
+```{important}
+Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run `.\rclone.exe config`, then select `n) New Remote`.
+```
 
 ## Install rclone on the backup source host
 
 The rclone application is available for a variety of architectures. [Download rclone](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
 
-_Note: You must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
+```{important}
+You must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
+```
 
-**Windows:** Download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
-
+```{note}
+If you use Windows, download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
+```
 
 ## Configure rclone
 

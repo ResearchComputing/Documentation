@@ -10,9 +10,11 @@ time the snapshot is taken.
 
 Snapshots are accessible in the root of the filesystem. If, for example,
 your allocation is located in `/pl/active/rcops`, your snapshots are
-accessible in `/pl/active/rcops/.zfs/snapshot`. Note that the `.zfs` directory
-is not visible to any utilities that list directory contents, so an 'ls'
-of the `.zfs` directory will fail, although you can 'cd' to it.
+accessible in `/pl/active/rcops/.zfs/snapshot`. 
+
+```{note}
+The `.zfs` directory is not visible to any utilities that list directory contents, so an 'ls' of the `.zfs` directory will fail, although you can 'cd' to it.
+```
 
 Snapshot times are in UTC, which is not affected by daylight savings
 time. To convert from UTC to MDT, subtract six hours. To convert
@@ -42,7 +44,9 @@ The default snapshot schedule is as follows:
  - take snapshots every day, save more recent 8 snapshots (one week worth)
 
 If you would like to set a custom snapshot schedule for your allocation,
-please contact rc-help@colorado.edu. Note that the longer you retain
-snapshots, the longer it will take to free up space by deleting files
-from your allocation.
+please contact rc-help@colorado.edu. 
+
+```{note}
+The longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+```
 

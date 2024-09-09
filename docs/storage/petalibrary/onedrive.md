@@ -52,7 +52,9 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 
 ### Step 2: configure OneDrive remote configuration
 
-_Note: the steps below are also outlined in the [Rclone Documentation for OneDrive](https://rclone.org/onedrive/). We only list the critical steps. If a step is left out, assume you can select the default setting._
+```{note}
+The steps below are also outlined in the [Rclone Documentation for OneDrive](https://rclone.org/onedrive/). We only list the critical steps. If a step is left out, assume you can select the default setting.
+```
 
 * Type `rclone config` to create a new profile for transferring files between OneDrive and PetaLibrary
 * When prompted for whether to configure a “new” or “existing” profile, type `n` for "new remote"

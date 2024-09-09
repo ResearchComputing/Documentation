@@ -8,7 +8,9 @@ SMB (Secure Message Block) is a cross platform network sharing protocol that all
 
 **You must be on the CU Boulder VPN to establish an SMB mount, even if you are already on a campus network.**
 
-**Note:** SMB support for individual Petalibrary allocations is limited at the moment and requires additional setup from a system administrator. Please contact rc-help@colorado.edu if you’d like to set up SMB support with your Petalibrary Allocation.
+```{note}
+SMB support for individual Petalibrary allocations is limited at the moment and requires additional setup from a system administrator. Please contact rc-help@colorado.edu if you’d like to set up SMB support with your Petalibrary Allocation.
+```
 
 ### Mounting with SMB on Mac
 

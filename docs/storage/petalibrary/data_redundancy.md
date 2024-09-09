@@ -31,7 +31,7 @@ PetaLibrary does have some forms of redundancy, such as RAID (whereby your copy 
         - You incur additional cost
 - Microsoft OneDrive:  
     - _Access details:_  
-        - CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus](./gdrive.md#using-globus) or [rclone](./gdrive.md#using-rclone) to copy data between PetaLibrary and OneDrive.  
+        - CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus](./onedrive.md#using-globus) or [rclone](./onedrive.md#using-rclone) to copy data between PetaLibrary and OneDrive.  
     - _Pros:_ 
         - Free up to 5 TB using OneDrive 
         - Copy of data is off-campus 

@@ -24,7 +24,9 @@ _This capability is no longer available._
 
 ### Step 2: configure google drive remote configuration
 
-_Note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/). We only list the critical steps. If a step is left out, assume you can select the default setting._
+```{note}
+The steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/). We only list the critical steps. If a step is left out, assume you can select the default setting_
+```
 
 * Type `rclone config` to create a new profile for transferring files between Google Drive and PetaLibrary
 * When prompted for whether to configure a “new” or “existing” profile type `n` for "new remote"
