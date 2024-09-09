@@ -8,18 +8,18 @@ Visit [https://app.globus.org](https://app.globus.org) and log in with your Colo
 ![](Globus_Login.png)
 
 ### Step 2: Open your OneDrive
-In the Collection Search, enter: OneDrive CU Boulder - this should show your OneDrive contents if you are logged in. You may need to authenticate with your OneDrive account.
+In the Collection Search, enter: "OneDrive CU Boulder" - this should show your OneDrive contents if you are logged in. You may need to authenticate with your OneDrive account.
 
 ![](onedrivesearch.png)
 
 ### Step 3: Open CURC (right pane)
-Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection Search (right pane), enter: CU Boulder Research Computing
+Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection Search (right pane), enter: "CU Boulder Research Computing"
 
-* You'll be asked to log in using your CURC Credentials - after clicking Authenticate, you should receive a Duo push on your Duo device which you will need to confirm
+* You'll be asked to log in using your CURC Credentials - after clicking `Authenticate`, you should receive a Duo push on your Duo device which you will need to confirm
 
 ![](splitview.png)
 
-* Once authenticated, you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select /pl
+* Once authenticated, you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select `/pl` and proceed to your allocaiton. 
 
 ![](Globus_CURC_Collection.png)
 
@@ -86,6 +86,7 @@ If this step fails, your OneDrive remote is not configured properly. Try reconfi
 
 See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md#configure-rclone)
 
+### Useful links
 
 * [Rclone documentation](https://rclone.org/)
 * [CURC data transfer documentation](../../compute/data-transfer.md)
