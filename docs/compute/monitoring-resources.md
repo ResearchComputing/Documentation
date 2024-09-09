@@ -37,7 +37,7 @@ You have sucessfully loaded slurmtools, a collection of functions
 
  'suacct' (SU usage for each user of a specified account over N days)
 
- 'suuser' (SU usage for a specfied user over N days)
+ 'suuser' (SU usage for a specified user over N days)
 
  'seff' (CPU and RAM efficiency for a specified job)
 
@@ -342,7 +342,7 @@ The following tabs will be available, depending on whether you are logged in
 _** - only available to users who are logged in._
 
 > _Notes on XDMoD Syntax_
->	* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multipled by how long the job runs)
+>	* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multiplied by how long the job runs)
 >	* a "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`)
 
 ### Step 4: Become a pro!
@@ -351,10 +351,10 @@ XDMoD can query a seemingly endless number of metrics, more than could ever be d
 
 ### Example use case
 
-Let's say you want to see how many core hours you project account has used over time, including the usage by user.  
+Let's say you want to see how many core hours your project account has used over time, including the usage by user.  
 
 * Go to the _Usage_ tab.
-* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period. In XDMoD syntax a "CPU Hour" refers to a "core hour" (for a single job, this would be the number of `ntasks` a user chooses in their job script multipled by how long the job runs).  
+* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period. In XDMoD syntax a "CPU Hour" refers to a "core hour" (for a single job, this would be the number of `ntasks` a user chooses in their job script multiplied by how long the job runs).  
 * Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
 
 ![](xdmod/xdmod_cpuhrs_total.png)

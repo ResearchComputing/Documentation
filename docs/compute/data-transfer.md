@@ -53,7 +53,7 @@ GUI.
 
 ## Guest Collections (Globus Shared Endpoints)
 
-Using a Guest Collection (also known as a "Shared Endpoint"), You can share
+Using a Guest Collection (also known as a "Shared Endpoint"), you can share
 any file or folder that you have access to with anyone who
 has a Globus account. This is particularly useful for PetaLibrary users. PetaLibrary 
 allocation owners can nominate a technical contact that is able to create [Globus Guest
@@ -64,7 +64,7 @@ docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 ## Globus to AWS S3 Bucket connection
 
-CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#rclone)). For _both_ transfer methods it is assumed you already have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
+CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#rclone)). For _both_ transfer methods it is assumed you have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
 
 1) Your CU IdentiKey and accept a Duo push
 2) Your AWS Credentials (access key and secret key)

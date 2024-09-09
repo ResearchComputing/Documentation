@@ -15,7 +15,7 @@ module load hdf5
 
 Supporting library-modules will be loaded as needed, and your
 environment will be updated so that the appropriate library
-directories are prepended to your `$PATH` and `$LD_LIBRARY_PATH`. The standard compiler variables `FC`, `CC` and `CXX` are set as appropriate for your compiler/MPI combination. These environment variables reference to the Fortran, C, and C++ compilers respectively
+directories are prepended to your `$PATH` and `$LD_LIBRARY_PATH`. The standard compiler variables `FC`, `CC` and `CXX` are set as appropriate for your compiler/MPI combination. These environment variables reference the Fortran, C, and C++ compilers respectively
 
 In addition, several environment variables are set that may be useful during the compilation process.  These variables are prefixed by `CURC` and may easily be found by searching your environment for `CURC` via `env | grep CURC`. This will yield output similar to:
 

@@ -100,7 +100,7 @@ Alternatively, users wishing to bind their entire CURC filesystem to a container
 apptainer run -B /projects/$USER,/pl/active,/scratch/alpine/$USER sample-image.sif
 ```
 
-Additionally, you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
+Additionally, you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to your container:
 
 ```
 export APPTAINER_BINDPATH=/source/directory1:/target/directory1,\

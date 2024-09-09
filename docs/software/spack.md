@@ -143,7 +143,7 @@ In addition to standard software packages, you can use Spack to install compiler
     spack install --add gcc@13.1.0
     ```
 
->Note that the install of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
+>Note that the installation of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
 
 
 Once the compiler is added, you can install any subsequent packages using the compiler you've installed with the `%` operator. For example:
@@ -202,11 +202,11 @@ If an installation fails, there are several ways to troubleshoot the failure. Co
 * __Building with the wrong compiler:__ Double check if the compiler you are using is compatible with the software you are attempting to build. 
 * __Building with an incompatible variant set:__ Confirm that the configuration settings for the software are compatible and as expected. If not, try enabling or disabling variants that may be causing problems. 
     * One can easily see variants and possible conflicts by searching the package using [Spack's provided search engine](https://packages.spack.io/) and viewing the "Variants" and "Conflicts" section of the documentation. Additionally, one can view `package.py` in the "Build System" section to directly view the code that defines variants and conflicts.
-* __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try insalling an older version. 
+* __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try installing an older version. 
 * __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
 
 Additionally, Spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, use `spack -dv install`. 
 
-__Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are be happy to help with any questions you may have! 
+__Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are happy to help with any questions you may have! 
 
 Suggestions provided in the `Troubleshooting Spack` subsection were based off of Spack documentation written by [NERSC](https://docs.nersc.gov/development/build-tools/spack/).

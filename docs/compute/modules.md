@@ -88,7 +88,7 @@ Command                 | Shortened Command            | Description  | Example 
 ## Loading Modules in a Job Script
 
 Loading a module will enable access to the modules 
-described software package. Additionally, modules 
+described in the software package. Additionally, modules 
 will set or modify a user’s environment
 variables.
 

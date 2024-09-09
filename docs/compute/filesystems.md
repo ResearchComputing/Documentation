@@ -29,7 +29,7 @@ programs, and job scripts.
 
 ## The Projects Filesystem
 
-Each user has access to a 250 GB of space in their subdirectory of
+Each user has access to 250 GB of space in their subdirectory of
 `/projects` (e.g., `/projects/janedoe`). As with the `/home` system,
 these directories are visible from all Research Computing nodes and
 are regularly backed up. The projects directory is intended to store
@@ -103,7 +103,7 @@ cp new_file /projects/user1234/job/new_file
 
 6.  If you reuse data within code, try to read it in once and keep it stored as a variable in memory, rather than repeatedly opening the same file each time you need the data (i.e., move file reads outside of “do loops”)
 
-7. Complex codes such as conda environments may not run optimally out of `/pl/active`, although simple codes should be fine.  If you have code on PetaLibrary and suspect the performace is being impacted, make a copy on `/projects/$USER` and use that copy. 
+7. Complex codes such as conda environments may not run optimally out of `/pl/active`, although simple codes should be fine.  If you have code on PetaLibrary and suspect the performance is being impacted, make a copy on `/projects/$USER` and use that copy. 
 
 
 ## Monitoring Disk Usage
@@ -163,7 +163,7 @@ directory, named using the time-stamp associated with the snapshot.
 
 ## File permissions, ownership, and group membership
 
-In the Linux/Unix system, files are organized into hierarchical trees, similar to a filing cabinet. Files can have several different types, The most important for everyday use are directories and files, which can be data or executable files (programs).  Note that each file has an owner, a group, and a class of others (those not owners or group members). File permissions can be different for each of the above depending on the permissions specified for that file.
+In the Linux/Unix system, files are organized into hierarchical trees, similar to a filing cabinet. Files can have several different types. The most important for everyday use are directories and files, which can be data or executable files (programs).  Note that each file has an owner, a group, and a class of others (those not owners or group members). File permissions can be different for each of the above depending on the permissions specified for that file.
 
 Using the `ls -l` command will list the most important attributes of the files in a directory:  
   
@@ -202,13 +202,13 @@ In the above listing:
 
 The file permissions flags are arranged in four groups, the first character of the string, followed by 3 groups of 3 characters each:
 
-·     the first character can be either  a ’-’ or a ‘d’. the ‘-’ indicates the entry is a file. The  ‘d’ indicates the entry is a directory (which can contain other files and/or directories). The ‘l’ indicate the file entry is a symbolic link to another file.
+·     the first character can be either  a ’-’ or a ‘d’. the ‘-’ indicates the entry is a file. The  ‘d’ indicates the entry is a directory (which can contain other files and/or directories). The ‘l’ indicates the file entry is a symbolic link to another file.
 
 ·      In each of the following three groups of three characters, ‘r’ indicates the file/directory is readable, ‘w’ indicates the file/directory is writable, and the ‘x’ indicates a file that is executable, or a directory that permits programs to execute within itself. These letters are also referred to as permission “bits” for historical reasons.
 
 ·      The three groups of permissions condition the actions of three different groups of users. The first (or left-most) group is the file/directory owner’s permissions, the next group (middle) is the permissions granted to members of the group associated with the file, and the last group (right-most) is permissions granted to all others (not owners or group members).
 
-Note: For files, the owner and group execute flags(bits) can occasionally be replaced with an ‘s’. In the owner’s permissions bits, an ‘x’ replaced with an ‘s’ indicates the file is executable but will execute with an effective user ID of the file owner. The ‘S’ replacing the ‘x’ in the group permission bits indicates the file can execute but with effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the “other” execute bit if set to ‘t’ or ‘T’, indicates that files in this directory can only be moved or deleted by the owner of the file.
+Note: For files, the owner and group execute flags(bits) can occasionally be replaced with an ‘s’. In the owner’s permissions bits, an ‘x’ replaced with an ‘s’ indicates the file is executable but will execute with an effective user ID of the file owner. The ‘S’ replacing the ‘x’ in the group permission bits indicates the file can execute but with an effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the “other” execute bit if set to ‘t’ or ‘T’, indicates that files in this directory can only be moved or deleted by the owner of the file.
 
 For a more comprehensive and detailed exposition of the UNIX file system permissions, see the Traditional Unix permissions section of [https://en.wikipedia.org/wiki/File-system_permissions](https://en.wikipedia.org/wiki/File-system_permissions).
 
@@ -300,7 +300,7 @@ is read-only:
 [janedoe@c3cpu-a2-u32-4 ~]$ chmod a+rx world_read
 ```
 
-For our collaborators, we may want a writeable directory in addition
+For our collaborators, we may want a writable directory in addition
 to a read-only directory:
 
 ```
