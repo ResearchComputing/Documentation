@@ -9,7 +9,7 @@ PetaLibrary does have some forms of redundancy, such as RAID (whereby your copy 
 - Replicated PetaLibrary `active+archive` allocation:  
     - _Access details:_
         - You purchase an active allocation, and we replicate it to the archive tier for you.
-        - [Description](./allocation_types.md#active-archive)
+        - [Description](./allocation_types.md#activearchive)
     - Pros:
         - Convenient
         - No data volume or object limits
@@ -21,7 +21,7 @@ PetaLibrary does have some forms of redundancy, such as RAID (whereby your copy 
 - PetaLibrary `archive+DR` (Disaster Recovery) allocation:  
     - _Access details:_
         - You purchase an archive allocation, and we back it up monthly to an offsite location for you.
-        - [Description](./allocation_types.md#archive-dr)
+        - [Description](./allocation_types.md#archive--dr-disaster-recovery)
     - Pros:
         - Convenient
         - No data volume limit
