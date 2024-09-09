@@ -16,7 +16,7 @@ Mounting on Mac is a relatively simple procedure and can be accomplished in a fe
 First, navigate to Finder and click “Connect to Server” under the “Go” menu:
 
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smbmac1.png)
+![](../../../Petalibrary/Mounting/smbmac1.png)
 
 
 In the 'Server Address' field, provide the hostname to a RC's internal server appended wity your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
@@ -24,7 +24,7 @@ In the 'Server Address' field, provide the hostname to a RC's internal server ap
 smb://<RC-provided-hostname>/<your-pl-allocation>
 ```
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smbmac2.png)
+![](../../../Petalibrary/Mounting/smbmac2.png)
 
 
 You will be prompted for your RC Username and Password. Type in the required information and click Connect. Accept your Duo notification and you Petalibrary Allocation will be mounted. 
@@ -35,7 +35,7 @@ You will be prompted for your RC Username and Password. Type in the required inf
 
 Mounting on Windows is a little more involved then on a Mac or Linux counterpart. First ensure you are connected to the CU VPN. Navigate to `This PC` and click on `Computer` -> `Add a network location`.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smb1.PNG)
+![](../../../Petalibrary/Mounting/smb1.PNG)
 
 This will bring up a setup utility. Continue through the prompt, selecting `Choose a custom network location` when prompted. This will bring up a text field asking for an Internet or Network Address. Provide the hostname to a RC's internal server appended with your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
 ```
@@ -43,7 +43,7 @@ This will bring up a setup utility. Continue through the prompt, selecting `Choo
 ```
 And click next.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smb2.PNG)
+![](../../../Petalibrary/Mounting/smb2.PNG)
 
 Lastly you will be prompted to provide your credentials. Type your credentials as such:
 
@@ -52,7 +52,7 @@ Username: AD\<your-rc-username>
 Password: <your-rc-password>
 ```
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/smb3.PNG)
+![](../../../Petalibrary/Mounting/smb3.PNG)
 
 
 ## `sshfs` mounting to Petalibrary
@@ -78,11 +78,11 @@ Next install the sshfs graphical user interface (GUI) frontend. Installation ins
 
 Once both applications are installed, run the application “sshfs-win manager”. A window will pop up showing you a list of all sshfs connections you have saved. 
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/sshfsmenu.PNG)
+![](../../../Petalibrary/Mounting/sshfsmenu.PNG)
 
 Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to dtn.rc.colorado.edu. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/Petalibrary/Mounting/sshfs.PNG)
+![](../../../Petalibrary/Mounting/sshfs.PNG)
 
 Once this is done click the connect button. You will be prompted for a password. Type in your password and accept your two-factor authentication to be mounted. You will now see your selected drive letter mounted to your Petalibrary allocation in “This PC.”
 
