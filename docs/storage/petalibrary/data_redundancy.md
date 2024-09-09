@@ -9,7 +9,7 @@ PetaLibrary does have some forms of redundancy, such as RAID (whereby your copy 
 - Replicated PetaLibrary `active+archive` allocation:  
     - _Access details:_
         - You purchase an active allocation, and we replicate it to the archive tier for you.
-        - [Description](./allocation_types.md#activearchive)
+        - For more information see our [Active + Archive](./allocation_types.md#activearchive) description
     - Pros:
         - Convenient
         - No data volume or object limits
