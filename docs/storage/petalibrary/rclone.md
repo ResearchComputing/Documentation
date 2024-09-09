@@ -2,12 +2,9 @@
 
 This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
-## Generate public/private keypair for CURC resources
+## Generate public/private keypair for CURC resources (if you wish to not enter a password each time you transfer files)
 
-
-In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the provided documentation. 
-
-Once the keypair has been generated, we now need to provide the private key to the client you want to backup data on. Although this next step can't be documented exactly, as every client system will be different, using a secure method (such as scp or sftp) to copy the private key in `~/.ssh/rclone_ssh_key` to the system that you want to back up to PetaLibrary (e.g., your laptop or lab server) is all that is needed.
+In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system (_note: presently passwordless access is only available to users affiliated with the CU system_). This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work -- you must follow the documentation noted above. 
 
 **Windows:** Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run:
 
@@ -17,7 +14,7 @@ then select `n) New Remote`.
 
 ## Install rclone on the backup source host
 
-The rclone application is available download here for a variety of architectures. [Download rclone here](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
+The rclone application is available for a variety of architectures. [Download rclone](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
 
 _Note: You must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
 
@@ -26,15 +23,14 @@ _Note: You must have adminstrative priveleges on your laptop or lab server in or
 
 ## Configure rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTN nodes, [check out our documentation on data transfers.](../../compute/data-transfer.md)
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTNs, [check out our documentation on data transfers.](../../compute/data-transfer.md)
 
 
 In this example we use rclone to create an sftp endpoint with the following settings:
 ```
 name: cu_rc_dtn
 type: sftp
-host: dtn-data.rc.int.colorado.edu
-key_file = /Users/jesse/.ssh/rclone_ssh_key
+host: dtn.rc.colorado.edu
 user = jesse
 ```
 The rclone application is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
@@ -135,7 +131,7 @@ Enter a string value. Press Enter for the default ("").
 Choose a number from below, or type in your own value
  1 / Connect to example.com
    \ "example.com"
-host> dtn-data.rc.int.colorado.edu
+host> dtn.rc.colorado.edu
 SSH username, leave blank for current username, jesse
 Enter a string value. Press Enter for the default ("").
 user> 
@@ -149,41 +145,7 @@ n) No leave this optional password blank (default)
 y/g/n> 
 Path to PEM-encoded private key file, leave blank or set key-use-agent to use ssh-agent.
 Enter a string value. Press Enter for the default ("").
-key_file> /Users/jesse/.ssh/rclone_ssh_key
-The passphrase to decrypt the PEM-encoded private key file.
-
-Only PEM encrypted key files (old OpenSSH format) are supported. Encrypted keys
-in the new OpenSSH format can't be used.
-y) Yes type in my own password
-g) Generate random password
-n) No leave this optional password blank (default)
-y/g/n> 
-When set forces the usage of the ssh-agent.
-
-When key-file is also set, the ".pub" file of the specified key-file is read and only the associated key is
-requested from the ssh-agent. This allows to avoid `Too many authentication failures for *username*` errors
-when the ssh-agent contains many keys.
-Enter a boolean value (true or false). Press Enter for the default ("false").
-key_use_agent> 
-Enable the use of insecure ciphers and key exchange methods. 
-
-This enables the use of the the following insecure ciphers and key exchange methods:
-
-- aes128-cbc
-- aes192-cbc
-- aes256-cbc
-- 3des-cbc
-- diffie-hellman-group-exchange-sha256
-- diffie-hellman-group-exchange-sha1
-
-Those algorithms are insecure and may allow plaintext data to be recovered by an attacker.
-Enter a boolean value (true or false). Press Enter for the default ("false").
-Choose a number from below, or type in your own value
- 1 / Use default Cipher list.
-   \ "false"
- 2 / Enables the use of the aes128-cbc cipher and diffie-hellman-group-exchange-sha256, diffie-hellman-group-exchange-sha1 key exchange.
-   \ "true"
-use_insecure_cipher> 
+key_file> 
 Disable the execution of SSH commands to determine if remote file hashing is available.
 Leave blank or set to false to enable hashing (recommended), set to true to disable hashing.
 Enter a boolean value (true or false). Press Enter for the default ("false").
@@ -196,8 +158,7 @@ Remote config
 --------------------
 [cu_rc_dtn]
 type = sftp
-host = dtn-data.rc.int.colorado.edu
-key_file = /Users/jesse/.ssh/rclone_ssh_key
+host = dtn.rc.colorado.edu
 --------------------
 y) Yes this is OK (default)
 e) Edit this remote
@@ -234,8 +195,7 @@ $ rclone config show
 ```
 [cu_rc_dtn]
 type = sftp
-host = dtn-data.rc.int.colorado.edu
-key_file = /Users/jesse/.ssh/rclone_ssh_key
+host = dtn.rc.colorado.edu
 user = jesse
 md5sum_command = none
 sha1sum_command = none
@@ -251,7 +211,7 @@ _Example_: The syntax for using rclone to synchronize a local directory `/tmp/lo
 This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`. 
 
 ## Run rclone on a schedule
-On Mac or Linux hosts, you can set up a cron job to run the rclone sync job regularly. To create a crontab entry type:
+On Mac or Linux hosts, you can set up a cron job to run the rclone sync job regularly (this step assumes you have set up an ssh key for passwordless transfers). To create a crontab entry type:
 
 ```$ crontab -e```
 
