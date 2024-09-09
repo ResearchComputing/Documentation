@@ -21,7 +21,7 @@ PetaLibrary does have some forms of redundancy, such as RAID (whereby your copy 
 - PetaLibrary `archive+DR` (Disaster Recovery) allocation:  
     - _Access details:_
         - You purchase an archive allocation, and we back it up monthly to an offsite location for you.
-        - [Description](./allocation_types.md#archive--dr-disaster-recovery)
+        - For more information see our [Archive + DR](./allocation_types.md#archive--dr-disaster-recovery) description
     - Pros:
         - Convenient
         - No data volume limit
