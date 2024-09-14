@@ -7,7 +7,7 @@ Computing Cluster. Phase 2 was released in September 2022. Phase 3 was released 
 
 Alpine is the University of Colorado Boulder Research Computing’s third-generation high performance computing (HPC) cluster. 
 Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado Boulder, Colorado 
-State University, and Anschutz Medical Campus. Alpine currently offers 389 compute nodes and a total of 22,688 cores. Alpine can 
+State University, and Anschutz Medical Campus. Alpine currently offers 421 compute nodes and a total of 24,762 cores. Alpine can 
 be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system. All nodes are available to all 
 users. For full details about node access, please refer to the Alpine Node Access and FairShare policy.
 
