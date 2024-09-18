@@ -26,7 +26,7 @@ Let’s create a simple ‘Hello World’ serial python script to demonstrate th
 ```python
 import sys
 
-print "Hello World from task: ", sys.argv[1]
+print ("Hello World from task: ", sys.argv[1])
 ```
 
 Now create a job script called `run_hello.sh` that will use GNU Parallel 
