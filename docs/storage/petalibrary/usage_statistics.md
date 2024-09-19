@@ -64,6 +64,6 @@ User Statistics:
 ```
 
 ```{note}
-The `.cstats` file is the most comprehensive and accurate means of assessing usage in a given PetaLibrary allocation. However, if your `.cstats` file becomes empty, it is likely your allocation is full (because there is no space available to populate the file). You can confirm whether the allocation is full if the "Use" is 100% according to the output of the command `df -H /pl/active/<allocation_name>`. If the allocation becomes full, please reach out to rc-help@colorado.edu to discuss options. 
+The `.cstats` file is the most comprehensive and accurate means of assessing usage in a given PetaLibrary allocation. However, if your `.cstats` file becomes empty, it is likely your allocation is full (because there is no space available to populate the file). You can confirm whether the allocation is full if the "Use" is 100% according to the output of the command `df -H /pl/active/<allocation_name>`. If the allocation becomes full, please reach out to <rc-help@colorado.edu> to discuss options. 
 ```
 
