@@ -55,7 +55,11 @@ the owner.
 
 ### Sample Invoice
 
-![](./petalibrary_invoice.png)
+```{eval-rst}
+.. figure:: ./petalibrary_invoice.png
+   :align: center
+   :scale: 80%
+```
 
 
 
