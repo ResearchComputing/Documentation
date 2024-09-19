@@ -81,7 +81,7 @@ Once both applications are installed, run the application `sshfs-win manager`. A
 
 ![](../../../Petalibrary/Mounting/sshfsmenu.PNG)
 
-Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to dtn.rc.colorado.edu. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
+Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to `dtn.rc.colorado.edu`. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
 
 ![](../../../Petalibrary/Mounting/sshfs.PNG)
 
