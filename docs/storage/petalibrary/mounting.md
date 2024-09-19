@@ -21,7 +21,7 @@ First, navigate to Finder and click “Connect to Server” under the “Go” m
 ![](../../../Petalibrary/Mounting/smbmac1.png)
 
 
-In the 'Server Address' field, provide the hostname to a RC's internal server appended wity your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
+In the `Server Address` field, provide the hostname to a RC's internal server appended wity your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
 ```
 smb://<RC-provided-hostname>/<your-pl-allocation>
 ```
@@ -77,7 +77,7 @@ Enabling `sshfs` on Windows requires the installation of 2 applications. First i
 
 Next install the sshfs graphical user interface (GUI) frontend. Installation instructions and files [can be found here.](https://github.com/evsar3/sshfs-win-manager)
 
-Once both applications are installed, run the application “sshfs-win manager”. A window will pop up showing you a list of all sshfs connections you have saved. 
+Once both applications are installed, run the application `sshfs-win manager`. A window will pop up showing you a list of all sshfs connections you have saved. 
 
 ![](../../../Petalibrary/Mounting/sshfsmenu.PNG)
 
@@ -85,9 +85,9 @@ Click on `Add a connection`. This will bring up a menu outlining the parameters 
 
 ![](../../../Petalibrary/Mounting/sshfs.PNG)
 
-Once this is done click the `connect` button. You will be prompted for a password. Type in your password and accept the Duo two-factor authentication to be mounted. You will now see your selected drive letter mounted to your Petalibrary allocation in “This PC.”
+Once this is done click the `connect` button. You will be prompted for a password. Type in your password and accept the Duo two-factor authentication to be mounted. You will now see your selected drive letter mounted to your Petalibrary allocation in `This PC`.
 
 #### Troubleshooting
 - The sshfs-win manager application may point to the incorrect `sshfs` binary by default. You can correct this in the "Settings" menu and adding the correct path to the application.
-- You may run into an issue where `sshfs` fails to wait for your Duo response. To correct this, open the "Settings" menu and increase the 'Process Timeout' field.
+- You may run into an issue where `sshfs` fails to wait for your Duo response. To correct this, open the `Settings` menu and increase the `Process Timeout` field.
 
