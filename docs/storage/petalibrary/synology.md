@@ -51,10 +51,6 @@ These instructions assume you are on a CU System campus network.
 
 ## Step 4: Generate keypair for connecting to PetaLibrary 
 
-```{note}
-Passwordless data transfers are presently only available to CU System users.
-```
-
 In order to allow for passwordless access to the system, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on our resources will not work, you must follow the documentation linked above. 
 When following this documentation you should be generating the ssh key on the Synology server. For example, you could do the following:
 
@@ -64,6 +60,9 @@ When following this documentation you should be generating the ssh key on the Sy
 ```
 ```{note}
 Press return when prompted for a passphrase to select “empty”).
+```
+```{note}
+Passwordless data transfers are presently only available to CU System users.
 ```
 
 ## Step 5: test connectivity from Synology to DTN
