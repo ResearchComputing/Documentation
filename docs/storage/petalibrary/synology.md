@@ -83,7 +83,7 @@ $ rsync --protocol=29 -Havx "/volume1/mylabstorage/mylabfiles/." RC_identikey@dt
 ```
 
 ```{note}
-If _rsync_ does not produce any errors, log in to login.rc.colorado.edu and check that /pl/active/peta_test contains the files you wanted to copy.
+If _rsync_ does not produce any errors, log in to `login.rc.colorado.edu` and check that `/pl/active/peta_test` contains the files you wanted to copy.
 ```
 
 Adjust the source and destination directories as appropriate. In the above example, any files in `/volume1/mylabstorage/mylabfiles` on the Synology will be copied to `/pl/active/peta_test` on the DTNs. You can add the `--delete` argument to the _rsync_ command, which will remove any files from /pl/active/peta_test that are not present in /volume1/mylabstorage/mylabfiles.
