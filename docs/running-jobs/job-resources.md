@@ -10,7 +10,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 | :----------------- | :-------------------------------------------------- | :------------------------- |
 | [Allocation](../clusters/alpine/allocations.md)  | Specify an allocation account  | --account=allocation       |
 | Partition          | Specify a partition ([see table below](#partitions)) | --partition=partition |
-| Sending email      | Receive email at beginning or end of job completion | --mail-type=type           |
+| Sending email      | Receive an email at the beginning or the end of a job | --mail-type=type           |
 | Email address      | Email address to receive the email                  | --mail-user=user           |
 | Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
 | Number of tasks    | The ***total*** number of processes needed to run the job | --ntasks=processes   |
@@ -35,9 +35,10 @@ These are the partitions available on Alpine.
 | amem<sup>1</sup> | High-memory           | 22          | 48 or 64  |   16          | ~4.0            |  4H,  7D                 |
 | csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | ~1.1            | 24H, 24H                
 
-> <sup>1</sup> The `amem` partition is limited to 96 cores across *all running amem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact <rc-help@colorado.edu>.
-> > <sup>2</sup> Approximate billing weight per core on a given resource. This will vary depending on the quantity of CPUs, RAM and (if applicable) GPUs requested.  For example, on an `amem` node, requesting 1 CPU for one hour will result in 4.0 SUs being charged. 
-> 
+> <sup>1</sup> The `amem` partition is limited to 96 cores across *all running amem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact <rc-help@colorado.edu>.  
+
+> <sup>2</sup> Approximate billing weight per core on a given resource. This will vary depending on the quantity of CPUs, RAM and (if applicable) GPUs requested.  For example, on an `amem` node, requesting 1 CPU for one hour will result in 4.0 SUs being charged. 
+
 
 In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs, as well as compilation. These partitions allow quick access to a reserved set of cores provided for testing and interactive use. 
 
@@ -47,7 +48,7 @@ In addition to these partitions, Research Computing also provides specialized pa
 | acompile         | Compile           | 1         | 4         | 1.0              | 1H, 12H                  |
 | ainteractive     | Interactive Jobs  | 1         | 1         | 1.0              | 1H, 12H                  |
 
-> <sup>3</sup> The `atesting` partition is limited to 16 cores total. These cores can come from up to 2 nodes, but a user is limited to maximum of 16 cores per job.
+> <sup>3</sup> The `atesting` partition is limited to 16 cores total. These cores can come from up to 2 nodes, but a user is limited to a maximum of 16 cores per job.
 
 To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitions, use the `long` QOS.
 

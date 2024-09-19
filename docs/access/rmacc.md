@@ -1,13 +1,11 @@
 # RMACC Access to Alpine 
 
-_Note to existing account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are 
-unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources._
+_Note to existing account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources._
 
 
 ## Requesting an RMACC Account on CURC Resources
 
-Step 1: Create an [ACCESS-CI](https://access-ci.org/) account in the ACCESS user portal [Note: If you already have an XSEDE or ACCESS account, please do not create another 
-one -- just go to step 2].
+Step 1: Create an [ACCESS-CI](https://access-ci.org/) account in the ACCESS user portal [Note: If you already have an XSEDE or ACCESS account, please do not create another one -- just go to step 2].
 
 <br>
 
@@ -22,14 +20,13 @@ Step 2: Email us at <rc-help@colorado.edu>, and request an account. Please inclu
 
 <br>
 
-Step 3: Our team will provision your account and we  will follow up with a confirmation email 
+Step 3: Our team will provision your account and we will follow up with a confirmation email. 
 
 <br>
 
-Step 4: Login to the [RMACC OnDemand](#logging-in-to-open-ondemand) portal to access CURC 
-resources! The first time you login you will be prompted to set up two-factor authentication.
+Step 4: Login to the [RMACC OnDemand](#logging-in-to-open-ondemand) portal to access CURC resources! The first time you log in you will be prompted to set up two-factor authentication.
  
-## Logging in to Open OnDemand
+## Logging into Open OnDemand
 
 - Visit [https://ondemand-rmacc.rc.colorado.edu](https://ondemand-rmacc.rc.colorado.edu).
 You will be redirected to CILogon.
@@ -51,7 +48,6 @@ You will be redirected to CILogon.
 ## Shell Access to Compute Nodes  
 
 - Currently, the suggested method for obtaining shell access for RMACC users is to use the Open OnDemand [shell access application](../open_ondemand/terminal_app.md).
-- RMACC users may also obtain ssh access into `login-ci.rc.colorado.edu` by requesting it via <rc-help@colorado.edu>. Please note that this form of access is currently on a trial basis.
 - If desired, a shell can also be accessed via Jupyter sessions by opening up a "Terminal" within the Jupyter session. 
 
 <br>
@@ -77,8 +73,8 @@ Once connected Globus can be used to transfer data to:
 
 
 **_Notes on data transfer_**:
-  - `scp` is currently unavailable to RMACC users
-  - File transfer using Open OnDemand's _Files_ menu is  limited to < 10 GB per file
+  - `scp` is currently unavailable to RMACC users.
+  - File transfer using Open OnDemand's _Files_ menu is limited to < 10 GB per file.
 
 
 <br>

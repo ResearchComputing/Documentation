@@ -1,6 +1,6 @@
 # Interactive jobs
 
-Interactive jobs allow a user to interact with applications in real time within an HPC environment. With interactive jobs, users request time and resources to work on a compute node directly. Users can then run graphical user interface (GUI) applications, execute scripts, or run other commands directly on a compute node.  Common reasons for running interactive jobs include debugging, designing workflows, or preference in using the GUI interface of an application.
+Interactive jobs allow a user to interact with applications in real-time within an HPC environment. With interactive jobs, users request time and resources to work on a compute node directly. Users can then run graphical user interface (GUI) applications, execute scripts, or run other commands directly on a compute node.  Common reasons for running interactive jobs include debugging, designing workflows, or preference in using the GUI interface of an application.
 
 ## General Interactive Jobs
 
@@ -26,7 +26,7 @@ To run an interactive GUI application on HPC Systems, we must install an X windo
 
 ### Windows setup
 
-On Windows we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
+On Windows, we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
 this. [Download Xming here](http://www.straightrunning.com/XmingNotes/).
 
 #### For PuTTY users
@@ -39,7 +39,7 @@ Expand the SSH tab on the left side of the application and click X11.
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
 
-In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking open will open a terminal window where you can login.
+In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking "Open" will open a terminal window where you can login.
 
 #### For Command Prompt or Powershell users
 

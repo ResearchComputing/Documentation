@@ -7,10 +7,10 @@ well as provide details on how to use them.
 ## Finding queuing information with `squeue`
 
 The `squeue` command is a tool we use to pull up information about the
-jobs in queue. By default, the squeue command will print out the
+jobs currently in the Slurm queue. By default, the squeue command will print out the
 *__job ID__*, *__partition__*, *__username__*, *__job status__*,
 *__number of nodes__*, and *__name of nodes__* for all jobs queued or
-running within Slurm. Usually you wouldn't need information for all
+running within Slurm. Usually, you wouldn't need information for all
 jobs that were queued in the system, so we can specify jobs that only
 you are running with the `--user` flag:
 
@@ -87,20 +87,20 @@ $ sstat --jobs=your_job-id
 ```
 
 By default, sstat will pull up significantly more information than
-what would be needed in the commands default output. To remedy this,
+what would be needed in the command's default output. To remedy this,
 we can use the `--format` flag to choose what we want in our
-output. The format flag takes a list of comma separated variables
-which specify output data:
+output. The format flag takes a list of comma-separated variables
+that specify output data:
 
 ```bash
 $ sstat --jobs=your_job-id --format=var_1,var_2, ... , var_N
 ```
 
-A chart of some these variables are listed in the table below:
+A chart of some of these variables is listed in the table below:
 
 Variable    | Description
 ------------|------------
-avecpu      | Average CPU time of all tasks in job.
+avecpu      | Average CPU time of all tasks in a job.
 averss      | Average resident set size of all tasks.
 avevmsize   | Average virtual memory of all tasks in a job.
 jobid       | The id of the Job.
@@ -108,8 +108,8 @@ maxrss      | Maximum number of bytes read by all tasks in the job.
 maxvsize    | Maximum number of bytes written by all tasks in the job.
 ntasks      | Number of tasks in a job.
 
-For an example, let's print out a job's average job id, cpu time, max
-rss, and number of tasks. We can do this by typing out the command:
+As an example, let's print out a job's average job id, cpu time, max
+rss, and a number of tasks. We can do this by typing out the command:
 
 ```bash
 sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
@@ -158,22 +158,22 @@ $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD --long
 Like `sstat`, the standard output of sacct may not provide the
 information we want. To remedy this, we can use the `--format` flag to
 choose what we want in our output. Similarly, the format flag is
-handled by a list of comma separated variables which specify output
+handled by a list of comma-separated variables that specify output
 data:
 
 ```bash
 $ sacct --user=your_rc-username --format=var_1,var_2, ... ,var_N
 ```
 
-A chart of some variables is provided below:
+A chart of some of these variables is provided below:
 
 Variable    | Description
 ------------|------------
 account     | Account the job ran under.
-avecpu      | Average CPU time of all tasks in job.
+avecpu      | Average CPU time of all tasks in the job.
 averss      | Average resident set size of all tasks in the job.
 cputime     | Formatted (Elapsed time * CPU) count used by a job or step.
-elapsed     | Jobs elapsed time formated as DD-HH:MM:SS.
+elapsed     | Jobs elapsed time formatted as DD-HH:MM:SS.
 exitcode    | The exit code returned by the job script or salloc.
 jobid       | The id of the Job.
 jobname     | The name of the Job.
@@ -251,7 +251,7 @@ $ scontrol release job_id
 ```
 
 `scontrol` can also provide information on jobs using the `show job`
-command. The information provided from this command is quite extensive
+command. The information provided by this command is quite extensive
 and detailed, so be sure to either clear your terminal window, grep
 certain information from the command, or pipe the output to a separate
 text file:
@@ -268,8 +268,8 @@ $ scontrol show job job_id | grep Time
 ```
 
 For a full primer on grep and regular expressions, [visit GNU's page
-on Grep](https://www.gnu.org/software/grep/manual/grep.html)
+on Grep](https://www.gnu.org/software/grep/manual/grep.html).
 
 For more information on scontrol, [visit the Slurm page on
-scontrol](https://slurm.schedmd.com/scontrol.html)
+scontrol](https://slurm.schedmd.com/scontrol.html).
 

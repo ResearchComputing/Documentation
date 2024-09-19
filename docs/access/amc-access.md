@@ -43,7 +43,7 @@ Accept the Duo push from your device.
 You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
 
 SSH Key Generation for Windows Users: 
-- Using command prompt, PowerShell, or Windows Terminal: <https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/>
+- Using the command prompt, PowerShell, or Windows Terminal: <https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/>
 - Using PuTTY: <https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/>
 
 SSH Key Generation for Mac Users: 
@@ -53,7 +53,7 @@ SSH Key Generation for Mac Users:
 ## *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
 
 After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your ACCESS 
-credentials, click on the dropdown menu in the upper right hand corner by your name. 
+credentials, click on the dropdown menu in the upper right-hand corner by your name. 
 Select 'MY PROFILE (RMACC)'.
 
 Select 'Authenticators' from the menu on the right. 
@@ -76,11 +76,11 @@ Locate your __public__ key (`<keyname>.pub`) on your local drive, then click 'UP
 
 <br>
 
-A green message box will notify you that your SSH key was successfully added to your account.
+A green message box will notify you that your SSH key has been successfully added to your account.
 <br>
 ![](./amc-access-images/sshkeyadded.png)
 
-After a few minutes you can proceed to Step 4.
+After a few minutes, you can proceed to Step 4.
 
 ## *Step 4: Sign in from a terminal or terminal emulator*
 <br>
@@ -92,7 +92,7 @@ SSH into the CURC CI login node by entering the following in your terminal or te
 ssh -i <privatekey_file> <username>@xsede.org@login-ci.rc.colorado.edu
 ```
 The `-i` flag is used to point to the location of your __private__ key on your local system. The private key must correspond to the public key you uploaded to your RMACC CILogon profile.
-For example, if I uploaded `id_rsa.pub` to my profile, I would login as such:
+For example, if I uploaded `id_rsa.pub` to my profile, I would log in as such:
 ```
 ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login-ci.rc.colorado.edu
 ```
@@ -100,7 +100,7 @@ ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login-ci.rc.colorado.edu
 You will be prompted to enter your passphrase if you set one during key generation.
 
 
-c) Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on regular basis.
+c) Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
 ![](./amc-access-images/loginprompt_motd.png)

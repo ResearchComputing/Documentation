@@ -17,10 +17,10 @@ service. If you are not presently enrolled, you can do so as follows:
 
 ### Common Issues
 
-If you are having issues logging in to CURC services with Duo, you can enroll, re-enroll, change devices, and manage your 
+If you are having issues logging into CURC services with Duo, you can enroll, re-enroll, change devices, and manage your 
 Duo account by visiting the CU Duo self-service portal at <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.  
 
-If you are not receiving a Duo prompt when attempting to login to CURC services, the following are possible issues and 
+If you are not receiving a Duo prompt when attempting to log into CURC services, the following are possible issues and 
 solutions: 
 
 Issue 1: Your Duo account may have expired. The university purges Duo accounts after six months of non-use.  You can 
@@ -40,7 +40,7 @@ Duo offers a variety of methods to log into your account. Depending on what you 
 
 **Duo Mobile Push is Research Computing's recommended method of 2-factor authentication.** Because Duo Push is tied to your physical smart device instead of a phone number or account, Duo Push is provides a more secure method of 2-factor authentication than either SMS or phone call.
 
-1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
+1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
 2. Enter your identikey password when prompted. 
 3. Wait for a push to your phone.  
 
@@ -49,7 +49,7 @@ Duo offers a variety of methods to log into your account. Depending on what you 
   <img src="https://raw.githubusercontent.com/ResearchComputing/Documentation/dev/duo2factor/duo_app1.png" /> 
 </p>
 
-**Note: Duo push is tied to your device so [so you will need to add or remove your device if you get a new phone.](#managing-duo-devices)** 
+**Note: Duo push is tied to your device so [you will need to add or remove your device if you get a new phone.](#managing-duo-devices)** 
 
 There is also an option to generate a temporary passcode from within the Duo app. This passcode can be used to log into <https://duo.colorado.edu>.
 
@@ -57,8 +57,8 @@ There is also an option to generate a temporary passcode from within the Duo app
 
 If you prefer to not use the Duo app or if you don't have a smart device, then Duo offers an SMS method of 2-factor authentication:
 
-1. `ssh username@login.rc.colorado.edu` . For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
-2. Enter your password when prompted, as `mypassword,sms`. For example, if my password is Ih3artdu0 I would type: `Ih3artdu0,sms`
+1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
+2. Enter your password when prompted, as `mypassword,sms`. For example, if my password is Ih3artdu0 I would type: `Ih3artdu0,sms`.
 3. A list of one-time-passwords (OTPs) will be texted to you via SMS. Another login prompt will appear on your screen. Using the first OTP in the list, login with your password as `mypassword,OTP`. For example, if my password is Ih3artdu0 and my OTP is 330456 I would type (without quotes): `Ih3artdu0,330456`.
 4. Note that the next time you login, you can either request a new list of OTPs using Step 2 and then enter the first OTP via Step 3, or you can just use the next OTP in the list, and skip directly to Step 3.
 
@@ -66,20 +66,20 @@ If you prefer to not use the Duo app or if you don't have a smart device, then D
 
 Duo also provides a phone call solution for 2-factor authorization if you only have a land line, or prefer to not use Push or SMS:
 
-1. Type `ssh username@login.rc.colorado.edu` into the command line . For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
-2. Enter your password when prompted, as `mypassword,phone`. For example, if my password is Ih3artdu0 I would type: `Ih3artdu0,phone`
+1. Type: `ssh username@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
+2. Enter your password when prompted, as `mypassword,phone`. For example, if my password is Ih3artdu0 I would type: `Ih3artdu0,phone`.
 3. Wait for a phone call. Answer the call, select option #1, and you will automatically be logged in.
 
 ### Using the Duo Token
 
-If you prefer a physical device, similar to the Vasco OTP.  You have to arrange with RC staff to acquire a token. There is a small fee for this device.  Email rc-help@colorado.edu for assistance.
+If you prefer a physical device, similar to the Vasco OTP, you will need to arrange with RC staff to acquire a token. There is a small fee for this device.  Email rc-help@colorado.edu for assistance.
 
-1. `ssh username@login.rc.colorado.edu` . For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`
-2. Enter your password when prompted, as `mypassword,6-digit-number`. The 6-digit number is given to you on the Duo token.  For example, if my password is Ih3artdu0, and I press the button on the token and it is 123456, I would type: `Ih3artdu0,123456` 
+1. Type: `ssh username@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
+2. Enter your password when prompted, as `mypassword,6-digit-number`. The 6-digit number is given to you on the Duo token.  For example, if my password is Ih3artdu0, and I press the button on the token and it is 123456, I would type: `Ih3artdu0,123456`.
 
 ## Managing Duo Devices
 
-Users can manage their own Duo devices by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. This can allow users to add or remove activated devices at their discretion.
+Users can manage their own Duo devices by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>. This enables users to add or remove activated devices at their discretion.
 
 After a CU authorization page, you will be directed to a Duo authentication page. Do not respond to the Push notification and instead click the "Settings" button: 
 
@@ -87,7 +87,6 @@ After a CU authorization page, you will be directed to a Duo authentication page
 
 This will bring up a menu that provides several options on device management and general help. 
 
-Clicking "Add a new device" will allow you to add a new smart phone, tablet, or land-line. Simply select the option you wish to add and follow the steps provided by Duo complete setting up your new device. 
+Clicking "Add a new device" will allow you to add a new smart phone, tablet, or land-line. Simply select the option you wish to add and follow the steps provided by Duo to complete setting up your new device. 
 
 Selecting "My Settings & Devices" provides a more detailed list of all devices you have registered. From here you can also add a new device, set your default device, and change your default authentication method when you attempt to log in.
-
