@@ -188,7 +188,7 @@ e/n/d/r/c/s/q>
 
 ## Verify rclone config
 
-You can verify your settings by running 'rclone config show'. The results from the example above looked like this after running through the initial configuration:
+You can verify your settings by running `rclone config show`. The results from the example above looked like this after running through the initial configuration:
 
 ```
 $ rclone config show
