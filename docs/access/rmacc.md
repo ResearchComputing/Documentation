@@ -26,7 +26,7 @@ Step 3: Our team will provision your account and we  will follow up with a confi
 
 <br>
 
-Step 4: Login to the [RMACC OnDemand](https://curc.readthedocs.io/en/latest/access/rmacc.md#logging-in-to-open-ondemand) portal to access CURC 
+Step 4: Login to the [RMACC OnDemand](#logging-in-to-open-ondemand) portal to access CURC 
 resources! The first time you login you will be prompted to set up two-factor authentication.
  
 ## Logging in to Open OnDemand
@@ -50,7 +50,7 @@ You will be redirected to CILogon.
 
 ## Shell Access to Compute Nodes  
 
-- Currently, the suggested method for obtaining shell access for RMACC users is to use the Open OnDemand [shell access application](../gateways/OnDemand.md#clusters-shell-access).
+- Currently, the suggested method for obtaining shell access for RMACC users is to use the Open OnDemand [shell access application](../open_ondemand/terminal_app.md).
 - RMACC users may also obtain ssh access into `login-ci.rc.colorado.edu` by requesting it via <rc-help@colorado.edu>. Please note that this form of access is currently on a trial basis.
 - If desired, a shell can also be accessed via Jupyter sessions by opening up a "Terminal" within the Jupyter session. 
 
@@ -58,8 +58,7 @@ You will be redirected to CILogon.
 
 ## Other Features and Tools
 
-Additional features and tools in RMACC Open OnDemand are under active development. Please see [CURC Open OnDemand documentation](../gateways/OnDemand.md) for information about monitoring, creating, and editing jobs using the _Jobs_
-menu. 
+Additional features and tools in RMACC Open OnDemand are under active development. Please see [CURC Open OnDemand documentation](../open_ondemand/index.md) for information about the latest features of Open OnDemand. 
 
 
 ## Globus Data Transfers

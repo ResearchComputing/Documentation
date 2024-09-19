@@ -5,7 +5,7 @@ provides the _conda_ package manager, which allows for easy installation of soft
 packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
 CURC also supports [Mamba](https://mamba.readthedocs.io/), an alternative package manager that allows parallel downloading of repository data and package files using multi-threading.
 
-The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manager](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../gateways/OnDemand.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manger](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../open_ondemand/jupyter_session.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 ## Configuring conda with `.condarc`
 

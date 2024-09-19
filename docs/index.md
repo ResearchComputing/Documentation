@@ -92,6 +92,14 @@ faq
 
 ```{toctree}
 :maxdepth: 1
+:caption: Trainings
+
+trainings/current-sem-trainings
+
+```
+
+```{toctree}
+:maxdepth: 1
 :caption: Accessing RC Resources
 
 access/logging-in
@@ -125,6 +133,14 @@ clusters/summit/summit
 ```
 
 ```{toctree}
+:maxdepth: 2
+:caption: Portals & Gateways
+
+open_ondemand/index
+
+```
+
+```{toctree}
 :maxdepth: 1
 :caption: Running Jobs
 
@@ -143,15 +159,6 @@ running-jobs/roce-enabled
 :caption: Storage
 
 storage/petalibrary/index
-
-```
-   
-```{toctree}
-:maxdepth: 2
-:caption: Gateways & Portals
-
-gateways/OnDemand
-gateways/jupyterhub
 
 ```
    
@@ -199,14 +206,6 @@ programming/OpenMP-Fortran
    
 ```{toctree}
 :maxdepth: 1
-:caption: Tutorials
-   
-tutorials/index
-
-```
-   
-```{toctree}
-:maxdepth: 1
 :caption: Additional resources
 
 additional-resources/policies
@@ -214,7 +213,7 @@ additional-resources/CURC-cheatsheet
 additional-resources/registrycilogon-instructions
 additional-resources/utah-videos
 additional-resources/blanca-MOU
-additional-resources/other
+additional-resources/facilities_equip_other
 additional-resources/biokem-facility
 additional-resources/csu-xsede-usernames
 

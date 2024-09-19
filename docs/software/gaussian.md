@@ -109,7 +109,7 @@ _Note:_ G16 can not use the AMD MI100 GPUs in Alpine's "ami100" partition.
 
 ## Running GaussView
 
-Gaussview can be run within a [Core Desktop session in CURC OnDemand](../gateways/OnDemand.md#core-desktop-remote-desktop).  Once you've spawned a Core Desktop session, do the following to invoke `GaussView`:
+Gaussview can be run within a [Core Desktop session in CURC OnDemand](../open_ondemand/core_desktop.md).  Once you've spawned a Core Desktop session, do the following to invoke `GaussView`:
 
 _Step 1:_ Open a terminal by selecting the "MATE Terminal" icon in the upper menu bar.
 

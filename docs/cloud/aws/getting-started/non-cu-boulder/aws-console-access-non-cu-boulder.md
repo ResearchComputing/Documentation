@@ -1,13 +1,13 @@
 # Accessing the AWS Management Console with CILogon (Non-CU Boulder)
 
 ## Prerequisites
-This guide is only relevant if you are not a member of CU Boulder and require access to manage AWS resources owned by CU Boulder. If you are a member of CU Boulder, please see <a href="./aws-console-access.md" target="_blank">this guide</a> on signing in using your IdentiKey.
+This guide is only relevant if you are not a member of CU Boulder and require access to manage AWS resources owned by CU Boulder. If you are a member of CU Boulder, please see [this guide](../aws-console-access.md) on signing in using your IdentiKey.
 
 ## CILogon
 
-Users access the <a href="https://federation-proxy.rmacc.org/aws" target="_blank">CILogon page</a> and log in using their campus credentials. They will then need to select the account with which they wish to log in if they have access to more than one account, otherwise they will be redirected to the AWS management console 
+Users access the [CILogon page](https://federation-proxy.rmacc.org/aws) and log in using their campus credentials. They will then need to select the account with which they wish to log in if they have access to more than one account, otherwise they will be redirected to the AWS management console 
 
-1. Launch <a href="https://federation-proxy.rmacc.org/aws" target="_blank">CILogon</a>.
+1. Launch [CILogon](https://federation-proxy.rmacc.org/aws).
 2. Select your institution from the drop-down list
 ![](images/aws-console-access-non-cu-boulder/cilogon-selection.png)
 3. Tick "Remember this selection" and click Log On.
