@@ -24,7 +24,7 @@ Step 3: Our team will provision your account and we will follow up with a confir
 
 <br>
 
-Step 4: Login to the [RMACC OnDemand](#logging-in-to-open-ondemand) portal to access CURC resources! The first time you log in you will be prompted to set up two-factor authentication.
+Step 4: Login to the [RMACC OnDemand](#logging-into-open-ondemand) portal to access CURC resources! The first time you log in you will be prompted to set up two-factor authentication.
  
 ## Logging into Open OnDemand
 
