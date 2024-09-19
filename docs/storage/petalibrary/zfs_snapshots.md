@@ -10,15 +10,13 @@ time the snapshot is taken.
 
 Snapshots are accessible in the root of the filesystem. If, for example,
 your allocation is located in `/pl/active/rcops`, your snapshots are
-accessible in `/pl/active/rcops/.zfs/snapshot`. 
+accessible in `/pl/active/rcops/.zfs/snapshot`. Snapshot times are in UTC, which is not affected by daylight savings time. To convert from UTC to MDT, subtract six hours. To convert from UTC to MST, subtract seven hours.
 
 ```{note}
 The `.zfs` directory is not visible to any utilities that list directory contents, so an `ls` of the `.zfs` directory will fail, although you can `cd` to it.
 ```
 
-Snapshot times are in UTC, which is not affected by daylight savings
-time. To convert from UTC to MDT, subtract six hours. To convert
-from UTC to MST, subtract seven hours.
+
 
 ## How snapshots affect free space in your allocation
 
