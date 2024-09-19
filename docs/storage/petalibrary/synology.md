@@ -8,10 +8,6 @@ The following accounts are available for SSH remote login:
 * DSM 6.0 and later: anyone in the administrators group
 * DSM 5.2 and earlier/SRM: admin or root
 
-```{note}
-You may need to use the _sudo_ command to gain administrative access.
-```
-
 ```
 $ ssh mylabstorage.colorado.edu -l admin
 admin@mylabstorage.colorado.edu's password:
@@ -23,6 +19,9 @@ Enter 'help' for a list of built-in commands.
 mylabstorage>
 ```
 
+```{note}
+You may need to use the _sudo_ command to gain administrative access.
+```
 
 ## Step 2: Run _ash_ to break out of restricted shell
 
