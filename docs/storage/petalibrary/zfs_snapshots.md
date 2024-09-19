@@ -13,7 +13,7 @@ your allocation is located in `/pl/active/rcops`, your snapshots are
 accessible in `/pl/active/rcops/.zfs/snapshot`. 
 
 ```{note}
-The `.zfs` directory is not visible to any utilities that list directory contents, so an 'ls' of the `.zfs` directory will fail, although you can 'cd' to it.
+The `.zfs` directory is not visible to any utilities that list directory contents, so an `ls` of the `.zfs` directory will fail, although you can `cd` to it.
 ```
 
 Snapshot times are in UTC, which is not affected by daylight savings
