@@ -6,7 +6,7 @@ We will also assess two parallel programming solutions that utilize the multipro
 
 __Useful Links:__
 
-[https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis)
+[LLNL Introduction to Parallel Computing Tutorial](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis)
 
 ## Why Parallel?
 
@@ -53,7 +53,7 @@ common memory that they can freely use.
 
 ![](https://hpc.llnl.gov/sites/default/files/shared_mem.gif "shared memory model")
 
-(Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
+(Image courtesy of [LLNL](https://computing.llnl.gov/tutorials/parallel_comp/))
 
 __Distributed Memory Model:__
 
@@ -64,7 +64,7 @@ network.
 
 ![](https://hpc.llnl.gov/sites/default/files/distributed_mem.gif "distributed memory model")
 
-(Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch>)
+(Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 
 __Distributed/Shared Model:__
 
@@ -74,7 +74,7 @@ processors sharing a set of common memory is called a node.
 
 ![](https://hpc.llnl.gov/sites/default/files/hybrid_mem2.gif "hybrid_model")
 
-(Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch> )
+(Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 
 Alpine utilizes a hybrid distributed/shared model: there are 188 AMD Milan Compute
 nodes, 184 having 64 cores, 4 having 48 cores.

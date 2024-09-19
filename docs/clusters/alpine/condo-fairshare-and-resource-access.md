@@ -4,7 +4,6 @@ This purpose of this document is to provide a detailed overview of
 Alpine's FairShare and resource access policies. The intended audience is 
 Alpine's insitutional-level condo contributors.
 
-Updated November 4, 2022 
 
 ## Goals and philosophy 
 

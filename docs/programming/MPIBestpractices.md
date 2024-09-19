@@ -1,7 +1,9 @@
 # MPI Best practices
 MPI, or Message Passing Interface, is a powerful library standard that allows for the parallel execution of applications across multiple processors on a system. It differs from other parallel execution libraries like OpenMP by also allowing a user to run their applications across multiple nodes. Unfortunately it can sometimes be a bit tricky to run a compiled MPI application within an HPC resource. The following page outlines best practices in running your MPI applications across CURC resources.  
 
-Please note that this page *does not* go over compiling or optimization of MPI applications.  
+```{attention}
+Please note that this page *does not* cover compiling or optimization of MPI applications.  
+```
 
 ## MPI Compatible Compilers and Libraries
 

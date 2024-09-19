@@ -208,7 +208,7 @@ Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
 
-Ref (Dead Link): <http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html>
+Source: Dartmouth College Intro to MPI Guide
 
 
 ## MPI Barriers and Synchronization

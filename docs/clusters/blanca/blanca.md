@@ -71,7 +71,7 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 - **V100**: NVIDIA V100 GPU  
 - **A100**: NVIDIA A100 GPU  
 - **localraid**: large, fast RAID disk storage in node  
-- **rhel7**: RedHat Enterprise Linux version 7 operating system  
+- **rh8**: RedHat Enterprise Linux version 8 operating system  
 
 ### Requesting GPUs in jobs
 
@@ -146,14 +146,14 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 #SBATCH --gres=gpu:3
 ```
 
-4. To run an 8-core job in the low-priority QoS on any node that has broadwell processors and uses the RHEL 7 operating system:
+4. To run an 8-core job in the low-priority QoS on any node that has broadwell processors and uses the RHEL 8 operating system:
 ```bash
 #SBATCH --qos=preemptable
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=8
 #SBATCH --time=4:00:00
 #SBATCH --export=NONE
-#SBATCH --constraint="broadwell&rhel7"
+#SBATCH --constraint="broadwell&rh7"
 ```
 
 5. To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:
@@ -257,13 +257,13 @@ module load python
 python myscript.py
 ```
 
-Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RedHat V7 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node).
+Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RHEL 8 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node).
 
 ```bash
 #!/bin/bash
 #SBATCH --time=06:00:00
 #SBATCH --qos=preemptable
-#SBATCH --constraint="avx2&rhel7"
+#SBATCH --constraint="avx2&rh8"
 #SBATCH --job-name=test
 #SBATCH --nodes=2
 #SBATCH --ntasks=32
@@ -279,7 +279,6 @@ python myscript.py
 
 Grace period upon preemption: When jobs are preempted, a 120 second grace period is available to enable users to save and exit their jobs should they have the ability to do so. The preempted job is immediately sent SIGCONT and SIGTERM signals by Slurm in order to provide notification of its imminent termination. This is followed by the SIGCONT, SIGTERM and SIGKILL signal sequence upon reaching the end of the 120 second grace period. Users wishing to do so can monitor the job for the SIGTERM signal and, when detected, take advantage of this 120 second grace period to save and exit their jobs.
 
-The ‘blanca’ QoS: Note that as of 1 March, 2018, the “preemptable” qos replaces the previous low-priority QoS, “blanca”, which is no longer active.
 
 
 

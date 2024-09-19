@@ -7,7 +7,7 @@ of 24,762 cores. Alpine can be securely accessed anywhere, anytime using Open On
 
 ## Alpine Quick-Start
 
-1. From a *login node* load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
+1. From a *login node*, load the `slurm/alpine` module to access the SLURM job scheduler instance for Alpine:
    ```bash
    $ module load slurm/alpine
    ```
@@ -40,7 +40,9 @@ Alpine also includes nodes contributed by partner institutions. Contributors wit
 
 All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 
-> For a full list of nodes on Alpine use the command:  `scontrol show nodes`. Get single node details with the `scontrol show nodes <node name>` command.
+```{tip}
+For a full list of nodes on Alpine use the command:  `scontrol show nodes`. Get single node details with the `scontrol show nodes <node name>` command.
+```
 
 ### Interconnect
 The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
@@ -54,7 +56,9 @@ The Alpine cluster features some heterogeneity. A variety of feature tags are ap
 
 Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
-> _**Note:**_ **Feature descriptions and finalized partition names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
+```{note}
+**Feature descriptions and finalized partition names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
+```
 
 ```bash
 sinfo --format="%N | %f"
