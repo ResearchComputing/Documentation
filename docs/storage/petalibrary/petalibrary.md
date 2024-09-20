@@ -3,14 +3,7 @@
 ## General Access
 Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. 
 
-PetaLibrary storage is presented as a file system directory under either:
-```
-/pl/active/<your_allocation_name>
-```
-or
-```
-/pl/archive/<your_allocation_name>
-```
+PetaLibrary storage is presented as a file system directory under either `/pl/active/<your_allocation_name>` (active & active+archive allocations) or `/pl/archive/<your_allocation_name>` (archive & archive+DR allocations)
 
 Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group by requesting that the allocation owner or delegate contact to the RC help desk at <rc-help@colorado.edu> to request their RC account be added to the group.
 
