@@ -21,7 +21,7 @@ contact may speak on behalf of the owner of an allocation, making any
 change that an owner would, except designating a new owner.
 
 If RC has a billing question about an allocation, and billing contacts
-are present, we will send email to the billing contact(s) and cc: the
+are present, we will email the billing contact(s) and "cc" the
 allocation owner. If no billing contacts are specified, we will email
 the allocation owner.
 
@@ -32,8 +32,8 @@ contacts. Technical contacts are largely identical to billing contacts,
 in that they may speak on behalf of the owner of an allocation, short
 of designating a new owner.
 
-RC will email technical contacts, if present, of an allocation regarding
-technical issues, and cc: the owner. In the absense of technical contacts,
+RC will email technical contacts, if designated, regarding
+technical issues for an allocation, and "cc" the owner. In the absense of technical contacts,
 RC will email the allocation owner.
 
 ## Recommended owner/contacts
@@ -46,7 +46,7 @@ that fund 30 speedtype charges can be associated with names on grants
 associated with a fund 30 speedtype.
 
 Billing and technical contacts can both make decisions on behalf of
-allocation owners, so the only reason we track them separately is so that
-RC has a better chance of contacting the correct people for billing or
+allocation owners. The reason we track them separately is so that
+RC has a better chance of contacting the correct people for billing versus
 technical issues.
 
