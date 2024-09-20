@@ -10,10 +10,10 @@ Users accessing RC's resources will be connected to a login node. A login node i
 
 + Edit files
 + Transfer data
-+ Running jobs
++ Submit jobs
 + Access storage resources  
 
-```{note}  
+```{important}  
 The [login node policy](../additional-resources/policies.md#login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
 ```
 
@@ -26,14 +26,19 @@ The [login node policy](../additional-resources/policies.md#login-nodes) states 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3kdW3EJS-OE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. Please note that **Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.**
+```{important}
+Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.
+```
 
-A Research Computing account can be secured quickly and easily [by filling out the form 
-here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). Once you've received a computing 
-account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
-mobile app to your phone (available via Apple App Store or Google Play Store), visit <a href="https://duo.colorado.edu">https://duo.colorado.edu</a> to enroll. 
-  
-## Logging in from a Windows Machine
+Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. A Research Computing account can be secured quickly and easily [by filling out the form here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). 
+
+Once you've received a computing account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
+mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
+
+## Logging in from a ____ machine
+`````{tabs}
+
+````{tab} Windows 
 
 Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application enables users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that enable Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
@@ -43,10 +48,12 @@ Logging in from a Windows machine requires the additional step of [installing th
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
-    * Note that as a security feature, PuTTY does not display any text while you type your password
+    ```{note}
+    As a security feature, PuTTY does not display any text while you type your password
+    ```
+````
 
-
-## Logging in from a Mac
+````{tab} Mac
 
 Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
 
@@ -54,8 +61,9 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 2. Enter your password:
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
+````
 
-## Logging in from Linux
+````{tab} Linux
 
 Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
 
@@ -65,11 +73,15 @@ Much like with Macs, Linux machines require no additional setup to access Resear
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
 
+````
+`````
 ## SSH host keys
 
 The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
 
-Note that each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
+```{note}
+Each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
+```
 
 ### login.rc.colorado.edu
 

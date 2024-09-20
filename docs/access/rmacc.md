@@ -1,15 +1,21 @@
 # RMACC Access to Alpine 
 
-_Note to existing account holders: As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources._
+```{note} 
+As of September 1, 2022, Rocky Mountain Advanced Computing Consortium (RMACC) members are unable to use the XSEDE SSO Hub to log in to CURC systems. Users will instead use Open OnDemand to access RMACC resources.
+```
 
 
 ## Requesting an RMACC Account on CURC Resources
 
-Step 1: Create an [ACCESS-CI](https://access-ci.org/) account in the ACCESS user portal [Note: If you already have an XSEDE or ACCESS account, please do not create another one -- just go to step 2].
+**Step 1:** Create an [ACCESS-CI](https://access-ci.org/) account in the ACCESS user portal 
+
+```{important} 
+If you already have an XSEDE or ACCESS account, please do not create another one -- just go to step 2.
+```
 
 <br>
 
-Step 2: Email us at <rc-help@colorado.edu>, and request an account. Please include the following information:
+**Step 2:** Email us at <rc-help@colorado.edu>, and request an account. Please include the following information:
 
 - your ACCESS or XSEDE username
 - your institutional affiliation (e.g., "University of Awesome")
@@ -20,11 +26,11 @@ Step 2: Email us at <rc-help@colorado.edu>, and request an account. Please inclu
 
 <br>
 
-Step 3: Our team will provision your account and we will follow up with a confirmation email. 
+**Step 3:** Our team will provision your account and we will follow up with a confirmation email. 
 
 <br>
 
-Step 4: Login to the [RMACC OnDemand](#logging-into-open-ondemand) portal to access CURC resources! The first time you log in you will be prompted to set up two-factor authentication.
+**Step 4:** Login to the [RMACC OnDemand](#logging-into-open-ondemand) portal to access CURC resources! The first time you log in you will be prompted to set up two-factor authentication.
  
 ## Logging into Open OnDemand
 
@@ -63,19 +69,16 @@ Globus data transfers are supported for RMACC users who have current XSEDE.org o
 
 The Globus Collection for CURC resources is available at "CU Boulder Research Computing" and will require login with credentials from one of those providers.
 
-Once connected Globus can be used to transfer data to:
-
-<br>
+Once connected Globus can be used to transfer data to:  
 
 - `/home`
 - `/projects`
 - `/pl`
 
-
-**_Notes on data transfer_**:
+```{warning} 
   - `scp` is currently unavailable to RMACC users.
   - File transfer using Open OnDemand's _Files_ menu is limited to < 10 GB per file.
-
+```
 
 <br>
 

@@ -8,9 +8,9 @@ Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys
 * You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
 * You must be connected to a CU Anschutz network or the CU Anshutz VPN.
 
-> **_NOTE:_**
-A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.cuanschutz.edu/offices/office-of-information-technology/tools-services/remote-access-vpn>. 
-Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
+```{note}
+A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.cuanschutz.edu/offices/office-of-information-technology/tools-services/remote-access-vpn>. Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.
+```
 
 ## *Step 1: Enroll in the RMACC CILogon Registry*
 
@@ -36,8 +36,9 @@ Enter your ACCESS/XSEDE username and password and click 'Login'.
 
 Accept the Duo push from your device.
 
-> **_IMPORTANT:_** You can move on to Step 2, but please make sure 10 minutes have elapsed between completing Step 1 and beginning Step 3.
-
+```{important}
+You can move on to Step 2, but please make sure 10 minutes have elapsed between completing Step 1 and beginning Step 3.
+```
 ## *Step 2: Generate an ssh key*
 
 You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
@@ -83,9 +84,10 @@ A green message box will notify you that your SSH key has been successfully adde
 After a few minutes, you can proceed to Step 4.
 
 ## *Step 4: Sign in from a terminal or terminal emulator*
-<br>
 
-> **_NOTE:_** You must be on the University of Colorado Anschutz Medical Campus VPN or network. See *Prerequisites* above.
+```{warning}
+You must be on the University of Colorado Anschutz Medical Campus VPN or network. See [prerequisites](#prerequisites) above.
+```
 
 SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
 ```

@@ -8,57 +8,34 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 | Type               | Description                                         | Flag                       |
 | :----------------- | :-------------------------------------------------- | :------------------------- |
-| [Allocation](../clusters/alpine/allocations.md)  | Specify an allocation account  | --account=allocation       |
-| Partition          | Specify a partition ([see table below](#partitions)) | --partition=partition |
-| Sending email      | Receive an email at the beginning or the end of a job | --mail-type=type           |
-| Email address      | Email address to receive the email                  | --mail-user=user           |
-| Number of nodes    | The number of nodes needed to run the job           | --nodes=nodes              |
-| Number of tasks    | The ***total*** number of processes needed to run the job | --ntasks=processes   |
-| Tasks per node     | The number of processes you wish to assign to each node | --ntasks-per-node=processes |
-| Total memory       | The total memory (per node requested) required for the job. <br> Using --mem does not alter the number of cores allocated <br> to the job, but you will be charged for the number of cores <br> corresponding to the proportion of total memory requested. <br> Units of --mem can be specified with the suffixes: K,M,G,T (default M)| --mem=memory |
-| Quality of service | Specify a QoS ([see table below](#quality-of-service)) | --qos=qos               |
-| Wall time          | The max amount of time your job will run for        | --time=wall time           |
-| Job Name           | Name your job so you can identify it in the queue   | --job-name=jobname         |
+| [Allocation](../clusters/alpine/allocations.md)  | Specify an allocation account  | `--account=allocation`       |
+| Partition          | Specify a partition ([see table below](#partitions)) | `--partition=partition` |
+| Sending email      | Receive an email at the beginning or the end of a job | `--mail-type=type`           |
+| Email address      | Email address to receive the email                  | `--mail-user=user`           |
+| Number of nodes    | The number of nodes needed to run the job           | `--nodes=nodes`              |
+| Number of tasks    | The ***total*** number of processes needed to run the job | `--ntasks=processes`   |
+| Tasks per node     | The number of processes you wish to assign to each node | `--ntasks-per-node=processes` |
+| Total memory       | The total memory (per node requested) required for the job. <br> Using --mem does not alter the number of cores allocated <br> to the job, but you will be charged for the number of cores <br> corresponding to the proportion of total memory requested. <br> Units of --mem can be specified with the suffixes: K,M,G,T (default M)| `--mem=memory` |
+| Quality of service | Specify a QoS ([see table below](#quality-of-service)) | `--qos=qos`               |
+| Wall time          | The max amount of time your job will run for        | `--time=wall time`           |
+| Job Name           | Name your job so you can identify it in the queue   | `--job-name=jobname`         |
 
 
 ## Partitions
 
-Nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using `--partition` in your job script in order for your job to run on the appropriate type of node.
+Nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using `--partition` in your job script in order for your job to run on the appropriate type of node. A list of partitions available on Alpine can be found [here](../clusters/alpine/alpine-hardware.md#partitions). 
 
-These are the partitions available on Alpine.
-
-| Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing wgt/core<sup>2</sup>| Default/Max Walltime     |
-| --------- | ---------------------------- | ---------- | ---------- | ------------- | --------------- | ------------------------ |
-| amilan    | AMD Milan (default)          | 347        | 32,48,64   |   3.74        | ~1.0            | 24H, 24H                 |
-| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.74        | ~6.0            | 24H, 24H                 |
-| aa100     | GPU-enabled (3x NVIDIA A100) | 12          | 64        |   3.74        | ~6.0            | 24H, 24H                 |
-| amem<sup>1</sup> | High-memory           | 22          | 48 or 64  |   16          | ~4.0            |  4H,  7D                 |
-| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.74        | ~1.1            | 24H, 24H                
-
-> <sup>1</sup> The `amem` partition is limited to 96 cores across *all running amem jobs.* For example, you can run one 96-core job or up to two 48-core jobs, four 24-core jobs, ninty-six 1-core jobs, etc.  If you need more memory or cores, please contact <rc-help@colorado.edu>.  
-
-> <sup>2</sup> Approximate billing weight per core on a given resource. This will vary depending on the quantity of CPUs, RAM and (if applicable) GPUs requested.  For example, on an `amem` node, requesting 1 CPU for one hour will result in 4.0 SUs being charged. 
-
-
-In addition to these partitions, Research Computing also provides specialized partitions for interactive and test jobs, as well as compilation. These partitions allow quick access to a reserved set of cores provided for testing and interactive use. 
-
-| Partition        | Description       | Max Nodes | Max cores | Billing wgt/core | Default/Max Walltime     |
-| ---------------- | ----------------- | --------- | --------- | ---------------- | ------------------------ |
-| atesting <sup>3</sup> | Testing      | Up to 2   | 16        | 0.25             | 0.5H, 3H                 |
-| acompile         | Compile           | 1         | 4         | 1.0              | 1H, 12H                  |
-| ainteractive     | Interactive Jobs  | 1         | 1         | 1.0              | 1H, 12H                  |
-
-> <sup>3</sup> The `atesting` partition is limited to 16 cores total. These cores can come from up to 2 nodes, but a user is limited to a maximum of 16 cores per job.
-
-To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitions, use the `long` QOS.
-
-More details about each type of node can be found [here](../clusters/alpine/alpine-hardware.md).
+***{note}
+To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitions, use the `long` [QOS](#quality-of-service).
+***
 
 ## Quality of Service
 
 Quality of Service (QoS) is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
 
-**Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or condo job.**
+```{note}
+Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or condo (Blanca) job.
+```
 
 The available QoS's for Alpine are:
 

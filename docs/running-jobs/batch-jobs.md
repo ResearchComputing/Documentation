@@ -75,7 +75,9 @@ For example, if you wanted to request 2 nodes with an sbatch directive, you woul
 #SBATCH --nodes=2
 ```
 
+```{seealso}
 A list of some useful sbatch directives [can be found here.](job-resources.md) A full list of commands [can be found in Slurm's documentation for sbatch.](https://slurm.schedmd.com/sbatch.html)
+```
 
 ### 2. Software
 
@@ -91,7 +93,9 @@ Next, you can load whatever software you need by running the following command:
 module load <software>
 ```
 
+```{seealso}
 More information about [software modules can be found here.](../compute/modules.md)
+```
 
 ### 3. User Scripting
 

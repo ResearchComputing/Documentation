@@ -5,9 +5,11 @@ enabled switches to enable users to run MPI jobs over the 10G interfaces. While 
 10G network is not as performant with regards to latency as Infiniband or Omnipath,
 you can still get line speed for bandwidth.
 
+```{warning}
 In order to take advantage of RoCE on these nodes, you will need to compile your code with an
 MPI compiler that was built with support for Unified Communication X (UCX). Without UCX, a job
 submitted to these nodes will fail.
+```
 
 ## Using pre-built modules
 
@@ -32,12 +34,13 @@ and are using the most recent version for OpenMPI.
 After successfully building the MPI, you can then compile your code against it and start running jobs.
 You do not need to worry about passing any flags or arguments into the MPI command for your job script.
 
-## Tips
+
+```{tip}
 
 If you still have issues trying to run your code you can try passing some flags to MPI
 
 ```bash
 mpirun --mca pml ob1 --mca btl openib,self,vader --mca btl_openib_cpc_include rdmacm --mca btl_openib_rroce_enable 1 <command>
 ```
-
+```
 

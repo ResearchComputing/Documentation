@@ -22,9 +22,10 @@ may encounter when using squeue to check on your jobs.
 | SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
+```{seealso}
 A full list of these Job State codes can be found in [Slurm’s
 documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
-
+```
 
 ## Job Reason Codes
 
@@ -45,6 +46,7 @@ documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
 | `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association have been met; the job will run eventually.   |
 | `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
 
+```{seealso}
 A full list of these Job Reason Codes can be found [in Slurm’s
 documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
-
+```

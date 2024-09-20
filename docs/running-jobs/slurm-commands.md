@@ -30,10 +30,14 @@ The squeue command also provides users with a means to calculate a
 job's estimated start time by adding the `--start` flag to our
 command. This will append Slurm's estimated start time for each job in
 our output information. 
-> Note: The start time provided by this command
+
+```{note}
+The start time provided by this command
 can be inaccurate. This is because the time calculated is based on
 jobs queued or running in the system. If a job with a higher priority
 is queued after the command is run, your job may be delayed.
+```
+
 
 ```bash
 $ squeue --user=your_rc-username --start
@@ -52,8 +56,10 @@ $ squeue --user=your_rc-username --start --iterate=n_seconds
 Press `ctrl`-`c` to stop the command from looping and bring you back
 to the terminal.
 
+```{seealso}
 For more information on squeue, [visit the Slurm page on
 squeue](https://slurm.schedmd.com/squeue.html)
+```
 
 ## Stopping jobs with `scancel`
 
@@ -72,7 +78,9 @@ To cancel multiple jobs, you can use a comma-separated list of job IDs:
 $ scancel your_job-id1, your_job-id2, your_jobiid3
 ```
 
+```{seealso}
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
+```
 
 ## Analyzing currently running jobs with `sstat`
 
@@ -115,9 +123,11 @@ rss, and a number of tasks. We can do this by typing out the command:
 sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
 ```
 
+```{seealso}
 A full list of variables that specify data handled by sstat can be
 found with the `--helpformat` flag or by [visiting the slurm page on
 sstat](https://slurm.schedmd.com/sstat.html).
+```
 
 ## Analyzing past jobs with `sacct`
 
@@ -173,7 +183,7 @@ account     | Account the job ran under.
 avecpu      | Average CPU time of all tasks in the job.
 averss      | Average resident set size of all tasks in the job.
 cputime     | Formatted (Elapsed time * CPU) count used by a job or step.
-elapsed     | Jobs elapsed time formatted as DD-HH:MM:SS.
+elapsed     | Jobs elapsed time formatted as `DD-HH:MM:SS.`
 exitcode    | The exit code returned by the job script or salloc.
 jobid       | The id of the Job.
 jobname     | The name of the Job.
@@ -190,27 +200,29 @@ reqmem      | Required amount of memory for a job.
 user        | Username of the person who ran the job.
 
 As an example, suppose you want to find information about jobs that
-were run on March 12, 2018. You want to show information regarding the
+were run on March 12, 2024. You want to show information regarding the
 job name, the number of nodes used in the job, the number of cpus, the
 maxrss, and the elapsed time. Your command would look like this:
 
 ```bash
-$ sacct --jobs=your_job-id --starttime=2018-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
+$ sacct --jobs=your_job-id --starttime=2024-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
 ```
 
 As another example, suppose you would like to pull up information on
-jobs that were run on February 21, 2018. You would like information on
+jobs that were run on February 21, 2024. You would like information on
 job ID, job name, QoS, Number of Nodes used, Number of CPUs used,
 Maximum RSS, CPU time, Average CPU time, and elapsed time. Your
 command would look like this:
 
 ```bash
-$ sacct –-jobs=your_job-id –-starttime=2018-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
+$ sacct –-jobs=your_job-id –-starttime=2024-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
 
+```{seealso}
 A full list of variables that specify data handled by sacct can be
 found with the `--helpformat` flag or by [visiting the slurm page on
 sacct](https://slurm.schedmd.com/sacct.html).
+```
 
 ## Controlling queued and running jobs using `scontrol`
 
@@ -267,9 +279,10 @@ $ scontrol show job job_id > outputfile.txt
 $ scontrol show job job_id | grep Time
 ```
 
+```{seealso}
 For a full primer on grep and regular expressions, [visit GNU's page
 on Grep](https://www.gnu.org/software/grep/manual/grep.html).
 
 For more information on scontrol, [visit the Slurm page on
 scontrol](https://slurm.schedmd.com/scontrol.html).
-
+```

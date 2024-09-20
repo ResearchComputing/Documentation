@@ -6,7 +6,11 @@ Because our HPC system is shared among many researchers, Research Computing mana
 
 In order to run a program on a cluster, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide your commands depends on whether you are running a [batch job](batch-jobs.md) or an [interactive job](interactive-jobs.md).
 
-When you run a batch job or an interactive job, it will be placed in a queue until resources are available. [A detailed guide on the Slurm queue and accounting tools can be found here.](slurm-commands.md)
+When you run a batch job or an interactive job, it will be placed in a queue until resources are available. 
+
+```{seealso}
+A detailed guide on the Slurm queue and accounting tools can be found [here.](slurm-commands.md)
+```
 
 ## Batch Jobs
 
@@ -26,7 +30,9 @@ sbatch <your-jobscript-name>
 
 If no job script is provided then `sbatch` will take whatever commands follow as standard input.
 
-A detailed guide [on constructing and running Job scripts can be found here.](batch-jobs.md)
+```{seealso}
+A detailed guide on constructing and running Job scripts can be found [here](batch-jobs.md).
+```
 
 ## Interactive Jobs
 
@@ -42,9 +48,8 @@ You can request an interactive job by using the `sinteractive` command. Unlike t
 sinteractive --time=00:10:00
 ```
 
-[A list of sinteractive parameters can be found here](job-resources.md)
-
 The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
-More details [on running Interactive Jobs can be found here.](interactive-jobs.md)
-
+```{seealso}
+More details on sinteractive parameters can be found [here](job-resources.md) and on running Interactive Jobs [here](interactive-jobs.md).
+``
