@@ -42,7 +42,7 @@ The default snapshot schedule is as follows:
  - take snapshots every day, save more recent 8 snapshots (one week worth)
 
 If you would like to set a custom snapshot schedule for your allocation,
-please contact rc-help@colorado.edu. 
+please contact <rc-help@colorado.edu>. 
 
 ```{note}
 The longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
