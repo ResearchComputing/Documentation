@@ -8,6 +8,9 @@ In order to allow for passwordless access to CURC, which will enable you to seam
 
 ```{important}
 Presently passwordless access is only available to users affiliated with the CU system.
+```
+
+```{note}
 Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run `.\rclone.exe config`, then select `n) New Remote`.
 ```
 
@@ -17,6 +20,7 @@ The rclone application is available for a variety of architectures. [Download rc
 
 ```{important}
 You must have administrative privileges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator. Additionally, if you use Windows, download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
+```
 
 ## Configure rclone
 
