@@ -4,14 +4,13 @@ This guide details the process of making a backup for local data on your laptop 
 
 ## Generate public/private keypair for CURC resources 
 
-```{note}
-Presently passwordless access is only available to users affiliated with the CU system.
-```
+
 
 In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on CURC resources will not work -- you must follow the documentation linked above. 
 
 ```{important}
-Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run `.\rclone.exe config`, then select `n) New Remote`.
+* Presently passwordless access is only available to users affiliated with the CU system.
+* Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run `.\rclone.exe config`, then select `n) New Remote`.
 ```
 
 ## Install rclone on the backup source host
