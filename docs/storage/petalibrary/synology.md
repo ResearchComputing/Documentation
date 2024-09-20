@@ -41,12 +41,9 @@ Enter 'help' for a list of built-in commands.
 /volume1/homes/admin $ telnet dtn.rc.colorado.edu 22
 ```
 
-```{note}
-If the above command does not yield an SSH banner (such as ‘SSH-2.0-OpenSSH_7.4’), ssh connectivity from the Synology to the DTN hosts is not working.
-```
-
 ```{important}
-These instructions assume you are on a CU System campus network.
+* If the above command does not yield an SSH banner (such as ‘SSH-2.0-OpenSSH_7.4’), ssh connectivity from the Synology to the DTN hosts is not working.
+* These instructions assume you are on a CU System campus network.
 ```
 
 ## Step 4: Generate keypair for connecting to PetaLibrary 
@@ -59,10 +56,8 @@ When following this documentation you should be generating the ssh key on the Sy
 /volume1/homes/admin $ ssh-keygen -t rsa -b 4096 -C 'mylab synology'
 ```
 ```{note}
-Press return when prompted for a passphrase to select “empty”).
-```
-```{note}
-Passwordless data transfers are presently only available to CU System users.
+* Press return when prompted for a passphrase to select “empty”).
+* Passwordless data transfers are presently only available to CU System users.
 ```
 
 ## Step 5: test connectivity from Synology to DTN
