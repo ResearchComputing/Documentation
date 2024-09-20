@@ -1,12 +1,8 @@
 # ZFS Snapshots
 
-## Overview
-
-Every PetaLibrary allocation has snapshots enabled by default.
-ZFS snapshots are read-only representations of a ZFS filesystem at the
-time the snapshot is taken. 
-
 ## How to access snapshots
+
+Every PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. 
 
 Snapshots are accessible in the root of the filesystem. If, for example,
 your allocation is located in `/pl/active/rcops`, your snapshots are
