@@ -19,12 +19,7 @@ Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Chan
 The rclone application is available for a variety of architectures. [Download rclone](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
 
 ```{important}
-You must have adminstrative priveleges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator._
-```
-
-```{note}
-If you use Windows, download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
-```
+You must have administrative privileges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator. Additionally, if you use Windows, download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
 
 ## Configure rclone
 
