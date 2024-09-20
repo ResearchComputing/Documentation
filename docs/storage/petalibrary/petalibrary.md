@@ -8,14 +8,16 @@ PetaLibrary storage is presented as a file system directory with the following p
 ````{eval-rst}
 .. tabs::
 
-   .. code-tab:: bash Active Allocation
+   .. code-tab:: bash Active
+      :caption: If you have an Active or Active+Archive allocation. 
 
-/pl/active/<your_allocation_name>
+        /pl/active/<your_allocation_name>
 
-   .. code-tab:: bash Archive Allocation
+   .. code-tab:: bash Archive
+      :caption: If you have an Archive or Archive+DR allocation.
 
-/pl/archive/<your_allocation_name>
-
+        /pl/archive/<your_allocation_name>
+     
 ````
 
 Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group by requesting that the allocation owner or delegate contact to the RC help desk at <rc-help@colorado.edu> to request their RC account be added to the group.
