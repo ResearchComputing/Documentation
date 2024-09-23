@@ -111,7 +111,7 @@ Please note that this does not ensure high speed communications in message passi
 
 
 ### Blanca HPC
-Blanca HPC comes equipped with Infiniband high speed interconnects that would allow for high speed communication between nodes. These nodes supoort the Intel and Intel MPI compiler/MPI combo, as well as the gcc/openmpi_ucx modules _(note: bve sure to use the *ucx* version of the OpenMPI module)_. 
+Blanca HPC comes equipped with Infiniband high speed interconnects that would allow for high speed communication between nodes. These nodes supoort the Intel and Intel MPI compiler/MPI combo, as well as the `gcc`/`openmpi_ucx` modules _(note: bve sure to use the *ucx* version of the OpenMPI module)_. 
 
 Blanca HPC nodes can easily be distinguished from other Blanca nodes with the node's name in the cluster. Nodes will clearly be distinguished with the `bhpc` prefix.  They also will have the `edr` feature in their feature list if you query them with `scontrol show node`. If you are using OpenMPI, jobs on  Blanca HPC nodes can be run using `mpirun` without any special arguments, although be sure to `export SLURM_EXPORT_ENV=ALL` prior to invoking `mpirun`.  If you are using IMPI, select the `ofa` (Open Fabrics Alliance) option to enable Infiniband-based message passing, the fastest interconnect availble on the `bhpc` nodes. You can do this with the following flag: 
 

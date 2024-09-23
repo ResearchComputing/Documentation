@@ -67,14 +67,14 @@ functions from the MPI library:
 >the commsize, and an error handling variable.
 
 *MPI_COMM_RANK()* :
->This function returns the process id of the process that called the
+>This function returns the process ID of the process that called the
 >function. The function takes in the MPI environment, an integer to hold the comm rank,
 >and an error handling variable.
 
 *MPI_FINALIZE()* :
 >This function cleans up the MPI environment and ends MPI communications.
 
-These four directives are enough to get our parallel ‘hello world’
+These four directives are enough to get our parallel ‘Hello World’
 program running. We will begin by creating three integer variables,
 `process_Rank` , `size_Of_Cluster` , and `ierror` to store an
 identifier for each of the parallel processes, store the number of
@@ -148,7 +148,7 @@ order to execute MPI compiled code, a special command must be used:
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-The flag `-np` specifies the number of processor that are to be utilized
+The flag `-np` specifies the number of processors that are to be utilized
 in execution of the program.  In your job script, load the
 same compiler and OpenMPI choices you used above to create and compile
 the program, and run the job to execute the application. Your
@@ -194,7 +194,7 @@ module load impi
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-It is important to note that on Alpine, there are 64 cores per
+It is important to note that on Alpine, there are at most 64 cores per
 node. For applications that require more than 64 processes, you will
 need to request multiple nodes in your job (i.e. modify the value for `-N`).
 
@@ -490,8 +490,8 @@ In order to get a better grasp on these functions, let’s go ahead and
 create a program that will utilize the scatter function. Note that the
 gather function (not shown in the example) works similarly, and is
 essentially the converse of the scatter function. Further examples
-which utilize the gather function can be found in the MPI tutorials
-listed as resources at the beginning of this document.
+which utilize the gather function can be found in the MPI tutorial
+linked at the beginning of this document.
 
 ### Example
 
@@ -527,7 +527,7 @@ call MPI_FINALIZE(ierror)
 END PROGRAM
 ```
 
-Next let’s generate an array named distro_Array to store four
+Next let’s generate an array named `distro_Array` to store four
 numbers. We will also create a variable called `scattered_Data` to
 which we will scatter the data.
 

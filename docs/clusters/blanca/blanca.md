@@ -8,7 +8,7 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 
 ## Blanca Quick-Start
 
-1. If your group is a Blanca partner, ask your PI or PoC to send an email to <rc-help@colorado.edu> requesting access for you to their high-priority queue. Please include the blanca group identifier and user identikey (e.g. user1234 requesting access to blanca-curc)
+1. If your group is a Blanca partner, ask your PI or PoC to send an email to <rc-help@colorado.edu> requesting access for you to their high-priority queue. Please include the Blanca group identifier and user IdentiKey (e.g. user1234 requesting access to blanca-curc)
 2. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca.
 3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
@@ -277,7 +277,7 @@ python myscript.py
 
 ### Other considerations
 
-Grace period upon preemption: When jobs are preempted, a 120 second grace period is available to enable users to save and exit their jobs should they have the ability to do so. The preempted job is immediately sent SIGCONT and SIGTERM signals by Slurm in order to provide notification of its imminent termination. This is followed by the SIGCONT, SIGTERM and SIGKILL signal sequence upon reaching the end of the 120 second grace period. Users wishing to do so can monitor the job for the SIGTERM signal and, when detected, take advantage of this 120 second grace period to save and exit their jobs.
+Grace period upon preemption: When jobs are preempted, a 120 second grace period is available to enable users to save and exit their jobs should they have the ability to do so. The preempted job is immediately sent `SIGCONT` and `SIGTERM` signals by Slurm in order to provide notification of its imminent termination. This is followed by the `SIGCONT`, `SIGTERM` and `SIGKILL` signal sequence upon reaching the end of the 120 second grace period. Users wishing to do so can monitor the job for the SIGTERM signal and, when detected, take advantage of this 120 second grace period to save and exit their jobs.
 
 
 

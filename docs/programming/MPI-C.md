@@ -8,7 +8,7 @@ Intel C++ Compiler, GCC, IntelMPI, and OpenMPI to create a
 multiprocessor ‘hello world’ program in C++.  This tutorial assumes
 the user has experience in both the Linux terminal and C++.
 
-__Resource:__
+__Helpful MPI Tutorial:__
 - [http://mpitutorial.com/tutorials/](http://mpitutorial.com/tutorials/)  
 
 
@@ -66,7 +66,7 @@ directives:
 
 *MPI_Init():*
 > This function initializes the MPI environment. It takes in the addresses of the C++
-> command line arguments argc and argv.
+> command line arguments `argc` and `argv`.
 
 *MPI_Comm_size():*
 > This function returns the total size of the environment via quantity of
@@ -74,15 +74,15 @@ directives:
 > integer variable.
 
 *MPI_Comm_rank():*
-> This function returns the process id of the processor that called the
+> This function returns the process ID of the processor that called the
 > function. The function takes in the MPI environment, and the memory address of an
 > integer variable.
 
 *MPI_Finalize():*
 > This function cleans up the MPI environment and ends MPI communications.
 
-These four directives should be enough to get our parallel 'hello
-world' running. We will begin by creating two variables,
+These four directives should be enough to get our parallel 'Hello
+World' program running. We will begin by creating two variables,
 `process_Rank`, and `size_Of_Cluster`, to store an identifier for each
 of the parallel processes and the number of processes running in the
 cluster, respectively. We will also implement the `MPI_Init` function
@@ -145,7 +145,7 @@ int main(int argc, char** argv){
 
 Now the code is complete and ready to be compiled. Because this is an
 MPI program, we have to use a specialized compiler. Be sure to use the
-correct command based off of what compiler you have loaded.
+correct command based on which compiler you have loaded.
 
 __OpenMPI__
 
@@ -166,7 +166,7 @@ order to execute MPI compiled code, a special command must be used:
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-The flag `-np` specifies the number of processor that are to be utilized
+The flag `-np` specifies the number of processors that are to be utilized
 in execution of the program.
 
 In your job script, load the same compiler and OpenMPI
@@ -213,7 +213,7 @@ module load impi
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-It is important to note that on Alpine, there is a total of 64 cores
+It is important to note that on Alpine, there are at most 64 cores
 per node. For applications that require more than 64 processes, you
 will need to request multiple nodes in your job. Our
 output file should look something like this:
@@ -241,7 +241,7 @@ MPI_Barrier(MPI_Comm comm);
 ```
 
 To get a handle on barriers, let’s modify our "Hello World" program so
-that it prints out each process in order of thread id. Starting with
+that it prints out each process in order of thread ID. Starting with
 our "Hello World" code from the previous section, begin by nesting our
 print statement in a loop:
 
@@ -511,8 +511,8 @@ In order to get a better grasp on these functions, let’s go ahead and
 create a program that will utilize the scatter function. Note that the
 gather function (not shown in the example) works similarly, and is
 essentially the converse of the scatter function. Further examples
-which utilize the gather function can be found in the MPI tutorials
-listed as resources at the beginning of this document.
+which utilize the gather function can be found in the MPI tutorial
+linked at the beginning of this document.
 
 ### Example
 

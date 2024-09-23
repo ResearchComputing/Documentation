@@ -69,7 +69,7 @@ sinfo --format="%N | %f"
 - **A100**: NVIDIA A100 GPU
 - **MI100**: AMD MI100 GPU
 - **storage**: large, fast RAID disk storage in node
-- **rhel8**: RedHat Enterprise Linux version 8 operating system
+- **rh8**: RedHat Enterprise Linux version 8 operating system
 
 ## Job Scheduling
 

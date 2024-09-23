@@ -4,7 +4,7 @@ Parallel commputation can often be a bit more complex compared to
 standard serial applications. This page will explore these differences and describe how parallel programs work in general.
 We will also assess two parallel programming solutions that utilize the multiprocessor environment of a supercomputer.
 
-__Useful Links:__
+__Useful Link:__
 
 [LLNL Introduction to Parallel Computing Tutorial](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis)
 
