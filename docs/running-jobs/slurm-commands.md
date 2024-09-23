@@ -1,4 +1,4 @@
-# Useful Slurm commands
+# Useful Slurm Commands
 
 Slurm provides a variety of tools that allow a user to manage and
 understand their jobs. This tutorial will introduce these tools, as
@@ -131,26 +131,19 @@ sstat](https://slurm.schedmd.com/sstat.html).
 
 ## Analyzing past jobs with `sacct`
 
-The `sacct` command allows users to pull up status information about
-past jobs. This command is very similar to sstat, but is used on jobs
-that have been previously run on the system instead of currently
-running jobs. We can use a job's id...
+The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously run on the system instead of currently running jobs. We can pull up accounting information on jobs based on the:
 
+**Job ID:**  
 ```bash
 $ sacct --jobs=your_job-id
 ```
 
-...or your Research Computing username...
-
+**Research Computing Username:**
 ```bash
 $ sacct --user=your_rc-username
 ```
 
-...to pull up accounting information on jobs run at an earlier time.
-
-By default, sacct will only pull up jobs that were run on the current
-day. We can use the `--starttime` flag to tell the command to look
-beyond its short-term cache of jobs.
+By default, sacct will only pull up jobs that were run on the current day. We can use the `--starttime` flag to tell the command to look beyond its short-term cache of jobs.
 
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD

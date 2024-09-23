@@ -30,7 +30,11 @@ If you already have an XSEDE or ACCESS account, please do not create another one
 
 <br>
 
-**Step 4:** Login to the [RMACC OnDemand](#logging-into-open-ondemand) portal to access CURC resources! The first time you log in you will be prompted to set up two-factor authentication.
+**Step 4:** Login to the [RMACC OnDemand](#logging-into-open-ondemand) portal to access CURC resources!
+
+```{important}
+The first time you log in you will be prompted to set up two-factor authentication.
+```
  
 ## Logging into Open OnDemand
 

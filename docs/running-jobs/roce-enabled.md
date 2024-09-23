@@ -1,4 +1,4 @@
-# Running jobs on RoCE enabled Nodes
+# Running Jobs on RoCE Enabled Nodes
 
 We have some nodes in Blanca that are equipped with Mellanox 10G cards and RoCE v2
 enabled switches to enable users to run MPI jobs over the 10G interfaces. While the 

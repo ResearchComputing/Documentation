@@ -1,4 +1,4 @@
-# `squeue` status and reason codes
+# `squeue` Status and Reason Codes
 
 The `squeue` command details a variety of information on an active
 job’s status with state and reason codes. *__Job state

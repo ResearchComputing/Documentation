@@ -6,9 +6,6 @@ Batch jobs are, by far, the most common type of job on our HPC system. Batch job
 
 Even though it is possible to run jobs completely from the command line, it is often overly tedious and unorganized to do so. Instead, Research Computing recommends constructing a job script for your batch jobs. A **job script** is a set of Linux commands paired with a set of resource requirements that can be passed to the Slurm job scheduler. Slurm will then generate a job according to the parameters set in the job script. Any commands that are included with the job script will be run within the job.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sStJQKTa9zY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
 ## Running a Job Script
 
 Running a job script can be done with the `sbatch` command:
@@ -76,7 +73,7 @@ For example, if you wanted to request 2 nodes with an sbatch directive, you woul
 ```
 
 ```{seealso}
-A list of some useful sbatch directives [can be found here.](job-resources.md) A full list of commands [can be found in Slurm's documentation for sbatch.](https://slurm.schedmd.com/sbatch.html)
+A list of some useful sbatch directives can be found [here](job-resources.md). A full list of commands can be found in Slurm's [documentation for sbatch](https://slurm.schedmd.com/sbatch.html).
 ```
 
 ### 2. Software
@@ -94,7 +91,7 @@ module load <software>
 ```
 
 ```{seealso}
-More information about [software modules can be found here.](../compute/modules.md)
+More information about software modules can be found [here](../compute/modules.md).
 ```
 
 ### 3. User Scripting
@@ -115,7 +112,11 @@ echo "== End of Job =="
 
 ## Examples
 
-Job script to run a 5 minute long, 1 node, 1 core C++ Job:
+`````{tabs}
+
+````{tab} Example 1 
+
+5 minutes, 1 node, 1 core C++ Job:
 
 ```bash
 #!/bin/bash
@@ -133,7 +134,10 @@ module load gcc
 ./example_cpp.exe
 ```
 
-Job script to run a 7 minute long, 1 node, 4 core C++ OpenMP Job:
+````
+````{tab} Example 2
+
+7 minutes, 1 node, 4 cores C++ OpenMP Job:
 
 ```bash
 #!/bin/bash
@@ -153,7 +157,10 @@ export OMP_NUM_THREADS=4
 ./example_omp.exe
 ```
 
-Job script to run a 10 minute long, 2 node, 16 core C++ MPI Job:
+````
+````{tab} Example 3
+
+10 minutes, 2 nodes, 16 cores C++ MPI Job:
 
 ```bash
 #!/bin/bash
@@ -171,6 +178,8 @@ module load impi
 
 mpirun -np 16 ./example_mpi.exe
 ```
+````
+`````
 
 ## Job Flags
 
@@ -178,14 +187,14 @@ The `sbatch` command supports many optional flags. To review all the options, pl
 
 | Type                   | Description                                         | Flag                       |
 | :--------------------- | :-------------------------------------------------- | :------------------------- |
-| Allocations            | Specify an allocation account if you have multiple  | --account=account_no       |
-| [Partitions](job-resources.md)         | Specify a partition                                 | --partition=partition_name |
-| Sending email          | Receive email at beginning or end of job completion | --mail-type=type           |
-| Email address          | Email address to receive the email                  | --mail-user=user           |
-| Number of nodes        | The number of nodes needed to run the job           | --nodes=nodes              |
-| Number of tasks        | The total number of cores needed to run the job     | --ntasks=processes         |
-| [Quality of service](job-resources.md) | Specify a QOS                                       | --qos=qos                  |
-| Wall time              | The max. amount of time your job will run for       | --time=wall time           |
-| Job Name               | Name your job so you can identify in queue          | --job-name=<jobname>       |
+| Allocations            | Specify an allocation account if you have multiple  | `--account=account_no`       |
+| [Partitions](job-resources.md#partitions)         | Specify a partition                                 | `--partition=partition_name` |
+| Sending email          | Receive email at beginning or end of job completion | `--mail-type=type`           |
+| Email address          | Email address to receive the email                  | `--mail-user=user`           |
+| Number of nodes        | The number of nodes needed to run the job           | `--nodes=nodes`              |
+| Number of tasks        | The total number of cores needed to run the job     | `--ntasks=processes`         |
+| [Quality of service](job-resources.md#quality-of-service) | Specify a QOS    | `--qos=qos`                  |
+| Wall time              | The max. amount of time your job will run for       | `--time=wall time`           |
+| Job Name               | Name your job so you can identify in queue          | `--job-name=<jobname>`       |
 
 

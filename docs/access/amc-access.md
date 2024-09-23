@@ -19,16 +19,16 @@ You will receive an email from <registry@cilogon.org> inviting you to enroll in 
 
 ![](./amc-access-images/email_invitation.png)
 
-Follow the invitation URL and click 'Accept'. __The invitation link becomes invalid once you click 'Accept', so complete all of Step 1 before closing your browser tab.__ 
+Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so complete all of [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry) before closing your browser tab.__ 
 
 ![](./amc-access-images/accept_invitation.png)
 
-You will be automatically routed to the login page. Select 'ACCESS CI (XSEDE)' from the Identity Provider dropdown menu and click 'Log On'.
+You will be automatically routed to the login page. Select "ACCESS CI (XSEDE)" from the Identity Provider dropdown menu and click "Log On".
 <br>
 
 ![](./amc-access-images/cilogon_identityprovider_access.png)
 
-Enter your ACCESS/XSEDE username and password and click 'Login'.
+Enter your ACCESS/XSEDE username and password and click "Login".
 <br>
 
 ![](./amc-access-images/access_credentials.png)
@@ -37,7 +37,7 @@ Enter your ACCESS/XSEDE username and password and click 'Login'.
 Accept the Duo push from your device.
 
 ```{important}
-You can move on to Step 2, but please make sure 10 minutes have elapsed between completing Step 1 and beginning Step 3.
+You can move on to [Step 2](#step-2-generate-an-ssh-key), but please make sure 10 minutes have elapsed between completing [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry) and beginning [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg).
 ```
 ## *Step 2: Generate an ssh key*
 
@@ -55,24 +55,24 @@ SSH Key Generation for Mac Users:
 
 After logging into [registry.cilogon.org](https://registry.cilogon.org/registry/) with your ACCESS 
 credentials, click on the dropdown menu in the upper right-hand corner by your name. 
-Select 'MY PROFILE (RMACC)'.
+Select "MY PROFILE (RMACC)".
 
-Select 'Authenticators' from the menu on the right. 
+Select "Authenticators" from the menu on the right. 
 <br>
 
 ![](./amc-access-images/menu_options.png)
 <br>
 
-Click 'Manage' in the SSHKeyAuthenticator row. 
+Click "Manage" in the SSHKeyAuthenticator row. 
 ![](./amc-access-images/manage_sshkeyauthenticator.png)
 
-Select 'Add SSH Key'.
+Select "Add SSH Key".
 ![](./amc-access-images/add_sshkey.png)
 
-Click 'Choose File'. If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
+Click "Choose File". If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
 <br>
 
-Locate your __public__ key (`<keyname>.pub`) on your local drive, then click 'UPLOAD'.
+Locate your __public__ key (`<keyname>.pub`) on your local drive, then click "UPLOAD".
 ![](./amc-access-images/upload_sshkey.png)
 
 <br>
@@ -81,7 +81,7 @@ A green message box will notify you that your SSH key has been successfully adde
 <br>
 ![](./amc-access-images/sshkeyadded.png)
 
-After a few minutes, you can proceed to Step 4.
+After a few minutes, you can proceed to [Step 4](#step-4-sign-in-from-a-terminal-or-terminal-emulator).
 
 ## *Step 4: Sign in from a terminal or terminal emulator*
 
@@ -102,7 +102,7 @@ ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login-ci.rc.colorado.edu
 You will be prompted to enter your passphrase if you set one during key generation.
 
 
-c) Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
+Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
 ![](./amc-access-images/loginprompt_motd.png)
@@ -110,12 +110,12 @@ c) Once you are logged in, you will see the CURC Message of the Day and your pro
 
 ## Deleting or Replacing SSH Keys in RMACC CILogon Registry
 
-Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the 'Authenticators' section of your profile (see Step 3, above). Click 'Delete', then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
+Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and navigate to the "Authenticators" section of your profile (see [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg), above). Click "Delete", then repeat the process for adding a new key. It will take a few minutes before you can log in with your new key.
 
 
 ## Troubleshooting
 
-* If you are able to get through Step 3 but unable to ssh in from your terminal, check that the ssh key in your command is the same key you uploaded to the registry.
+* If you are able to get through [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) but unable to ssh in from your terminal, check that the ssh key in your command is the same key you uploaded to the registry.
 * If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please contact <rc-help@colorado.edu>, as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt.
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>. Please include a screenshot of the error message and the date/time of your last login attempt.
 

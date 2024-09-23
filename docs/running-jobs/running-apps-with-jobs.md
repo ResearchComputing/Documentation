@@ -1,4 +1,4 @@
-# Running applications with Jobs
+# Running Applications with Jobs
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dZLSEyYTiBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -9,7 +9,7 @@ In order to run a program on a cluster, you must request resources from Slurm to
 When you run a batch job or an interactive job, it will be placed in a queue until resources are available. 
 
 ```{seealso}
-A detailed guide on the Slurm queue and accounting tools can be found [here.](slurm-commands.md)
+A detailed guide on the Slurm queue and accounting tools can be found in the [Useful Slurm Commands](slurm-commands.md) page.
 ```
 
 ## Batch Jobs
@@ -31,7 +31,7 @@ sbatch <your-jobscript-name>
 If no job script is provided then `sbatch` will take whatever commands follow as standard input.
 
 ```{seealso}
-A detailed guide on constructing and running Job scripts can be found [here](batch-jobs.md).
+A detailed guide on constructing and running Job scripts can be found in the [Batch Jobs and Job Scripting](batch-jobs.md) page.
 ```
 
 ## Interactive Jobs
@@ -51,5 +51,5 @@ sinteractive --time=00:10:00
 The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 ```{seealso}
-More details on sinteractive parameters can be found [here](job-resources.md) and on running Interactive Jobs [here](interactive-jobs.md).
+More details on sinteractive parameters can be found in the [Slurm Flags, Partitions, and QoS](job-resources.md) page and in the [Interactive Jobs(interactive-jobs.md) page.
 ``

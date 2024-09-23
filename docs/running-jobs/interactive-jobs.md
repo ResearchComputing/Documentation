@@ -1,4 +1,4 @@
-# Interactive jobs
+# Interactive Jobs
 
 Interactive jobs allow a user to interact with applications in real-time within an HPC environment. With interactive jobs, users request time and resources to work on a compute node directly. Users can then run graphical user interface (GUI) applications, execute scripts, or run other commands directly on a compute node.  Common reasons for running interactive jobs include debugging, designing workflows, or preference in using the GUI interface of an application.
 
@@ -30,8 +30,9 @@ To run an interactive GUI application on HPC Systems, we must install an X windo
 
 On Windows, we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
 this. [Download Xming here](http://www.straightrunning.com/XmingNotes/).
+`````{tabs}
 
-#### For PuTTY users
+````{tab} For PuTTY users
 
 Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
@@ -42,11 +43,12 @@ Expand the SSH tab on the left side of the application and click X11.
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking "Open" will open a terminal window where you can login.
+````
 
-#### For Command Prompt or Powershell users
+````{tab} For Command Prompt or Powershell users
 
 ```{seealso}
-This tutorial assumes that you are already set up with OpenSSH for Windows. [Here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) is a guide for setting up OpenSSH for Windows. Note that OpenSSH Server does not have to be running for you to proceed.
+This tutorial assumes that you are already set up with OpenSSH for Windows. Here is a [guide](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) for setting up OpenSSH for Windows. Note that OpenSSH Server does not have to be running for you to proceed.
 ```
 
 You can deploy Xming by running the Xlaunch application (or opening the Xlaunch shortcut on your desktop). When prompted to select display settings, select 'Multiple windows' and set the Display number to 0. From there, use the default selections until Xlaunch is finished.
@@ -74,17 +76,20 @@ Host *
     ForwardX11Trusted yes
 ```
 
-Lastly, you can ssh to login.rc.colorado.edu as you normally would, except you'll include the "-X" flag:
+Lastly, you can ssh to login.rc.colorado.edu as you normally would, except you'll include the `-X` flag:
 
 ```
 ssh -X your_rc-username@login.rc.colorado.edu
 ```
 
+````
+`````
+
 ### macOS setup
 
 Using macOS, we will also need to install an X windows server application to allow the cluster to forward GUI information to your local system. For Mac, we will use an application called XQuartz to accomplish this. [Download and install XQuartz here](https://www.xquartz.org/).
 
-Opening the application will bring up a terminal window. In this window, you will ssh to login.rc.colorado.edu as you normally would except you'll include the "-X" flag:
+Opening the application will bring up a terminal window. In this window, you will ssh to login.rc.colorado.edu as you normally would except you'll include the `-X` flag:
 
 ```
 ssh -X your_rc-username@login.rc.colorado.edu

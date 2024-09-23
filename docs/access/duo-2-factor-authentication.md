@@ -18,7 +18,7 @@ service. If you are not presently enrolled, you can do so as follows:
 ### Common Issues
 
 If you are having issues logging into CURC services with Duo, you can enroll, re-enroll, change devices, and manage your 
-Duo account by visiting the CU Duo self-service portal at[https://duo.colorado.edu](https://duo.colorado.edu).  
+Duo account by visiting the CU Duo self-service portal at [https://duo.colorado.edu](https://duo.colorado.edu).  
 
 If you are not receiving a Duo prompt when attempting to log into CURC services, the following are possible issues and 
 solutions: 
@@ -27,8 +27,8 @@ solutions:
 re-enroll by visiting [https://duo.colorado.edu](https://duo.colorado.edu).
 
 **Issue 2:** You have changed your mobile device (e.g., purchased a new phone). You can add a new device to your duo account by 
-following the instructions 
-[here](../faq.md#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
+following the instructions listed in the
+[FAQ page](../faq.md#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
 
 If you need human assistance with Duo, contact the University helpdesk at <oithelp@colorado.edu> or call 303-735-4357. 
 
