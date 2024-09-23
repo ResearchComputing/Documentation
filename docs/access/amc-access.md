@@ -3,7 +3,7 @@
 Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact hpcsupport@cuanschutz.edu to initiate this process.
 
 ## *Prerequisites:*
-* If you do not already have an XSEDE/ACCESS account, follow the instructions [here]( https://identity.access-ci.org/new-user) for new user registration. Please direct any questions about new accounts to the ACCESS ticketing system (<https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30>).
+* If you do not already have an XSEDE/ACCESS account, follow the [instructions for new user registration](https://identity.access-ci.org/new-user). Please direct any questions about new accounts to the ACCESS ticketing system (<https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30>).
 * Sign and fill out CU Anschutz's Alpine form: <https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake>
 * You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
 * You must be connected to a CU Anschutz network or the CU Anshutz VPN.

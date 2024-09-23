@@ -47,7 +47,7 @@ Logging in from a Windows machine requires the additional step of [installing th
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
     ```{note}
     As a security feature, PuTTY does not display any text while you type your password
     ```
@@ -60,7 +60,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
 ````
 
 ````{tab} Linux
@@ -71,7 +71,7 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 
 2. Enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be [found here](duo-2-factor-authentication.md).
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
 
 ````
 `````
