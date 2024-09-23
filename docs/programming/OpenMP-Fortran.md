@@ -19,7 +19,7 @@ __Helpful OpenMP Tutorial:__
 
 In this section we will learn how to make a simple parallel hello
 world program in Fortran.  Let’s begin with creation of a program
-titled: parallel_hello_world.f90. From the command line, run the
+titled `parallel_hello_world.f90`. From the command line, run the
 command:
 
 ```bash
@@ -144,7 +144,7 @@ export OMP_NUM_THREADS=4
 
 ```{important}
 This environment variable will need to be set
-every time you exit your shell.__ If you would like to make this
+every time you exit your shell. If you would like to make this
 change permanent you will need to add these lines to your
 `.bash_profile` file in your home directory:
 

@@ -23,7 +23,7 @@ __Helpful OpenMP Tutorial:__
 
 In this section we will learn how to make a simple parallel "Hello
 World" program in C++. Let’s begin with the creation of a program
-titled: parallel_hello_world.cpp. From the command line, run the
+titled `parallel_hello_world.cpp`. From the command line, run the
 command:
 
 ```bash
