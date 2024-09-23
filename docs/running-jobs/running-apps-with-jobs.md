@@ -51,5 +51,5 @@ sinteractive --time=00:10:00
 The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 ```{seealso}
-More details on sinteractive parameters can be found in the [Slurm Flags, Partitions, and QoS](job-resources.md) page and in the [Interactive Jobs(interactive-jobs.md) page.
-``
+More details on sinteractive parameters can be found in the [Slurm Flags, Partitions, and QoS](job-resources.md) page and in the [Interactive Jobs](interactive-jobs.md) page.
+````

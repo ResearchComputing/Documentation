@@ -35,7 +35,7 @@ Although Research Computing resources are free and available to the CU Boulder r
 Once you've received a computing account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
 mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
 
-## Logging in from a ____ machine
+## Logging in from different operating systems
 `````{tabs}
 
 ````{tab} Windows 

@@ -35,12 +35,13 @@ After successfully building the MPI, you can then compile your code against it a
 You do not need to worry about passing any flags or arguments into the MPI command for your job script.
 
 
-```{tip}
+````{tip}
 
 If you still have issues trying to run your code you can try passing some flags to MPI
 
 ```bash
 mpirun --mca pml ob1 --mca btl openib,self,vader --mca btl_openib_cpc_include rdmacm --mca btl_openib_rroce_enable 1 <command>
 ```
-```
+
+````
 

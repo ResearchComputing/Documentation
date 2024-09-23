@@ -23,11 +23,7 @@ Job scripts, the `sbatch` command, and the `sinteractive` command support many d
 
 ## Partitions
 
-Nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using `--partition` in your job script in order for your job to run on the appropriate type of node. A list of partitions available on Alpine can be found [here](../clusters/alpine/alpine-hardware.md#partitions). 
-
-```{note}
-To run a job longer than 24 hours on the `amilan`, `ami100`, or `aa100` partitions, use the `long` [QOS](#quality-of-service).
-```
+Nodes with the same hardware configuration are grouped into partitions. You will need to specify a partition using `--partition` in your job script in order for your job to run on the appropriate type of node. A list of partitions available on Alpine can be found in our page on [Alpine Hardware](../clusters/alpine/alpine-hardware.md#partitions). 
 
 ## Quality of Service
 

@@ -273,9 +273,9 @@ $ scontrol show job job_id | grep Time
 ```
 
 ```{seealso}
-For a full primer on grep and regular expressions, [visit GNU's page
+ - For a full primer on grep and regular expressions, [visit GNU's page
 on Grep](https://www.gnu.org/software/grep/manual/grep.html).
 
-For more information on scontrol, [visit the Slurm page on
+ - For more information on scontrol, [visit the Slurm page on
 scontrol](https://slurm.schedmd.com/scontrol.html).
 ```

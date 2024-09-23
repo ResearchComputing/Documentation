@@ -73,7 +73,7 @@ For example, if you wanted to request 2 nodes with an sbatch directive, you woul
 ```
 
 ```{seealso}
-A list of some useful sbatch directives can be found [here](job-resources.md). A full list of commands can be found in Slurm's [documentation for sbatch](https://slurm.schedmd.com/sbatch.html).
+A list of some useful sbatch directives can be found on the [Slurm Flags, Partitions, and QoS](job-resources.md) page. A full list of commands can be found in Slurm's [documentation for sbatch](https://slurm.schedmd.com/sbatch.html).
 ```
 
 ### 2. Software
@@ -91,7 +91,7 @@ module load <software>
 ```
 
 ```{seealso}
-More information about software modules can be found [here](../compute/modules.md).
+More information about software modules can be found in the [Modules System](../compute/modules.md) page.
 ```
 
 ### 3. User Scripting
