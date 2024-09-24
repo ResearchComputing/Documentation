@@ -32,12 +32,3 @@ Quality of Service (QoS) is used to constrain or modify the characteristics that
 ```{note}
 Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or condo (Blanca) job.
 ```
-
-The available QoS's for Alpine are:
-
-| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
-| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| normal      | Default                    | 1D              | tbd           | tbd                | n/a                 | 0                    |
-| long        | Longer wall times          | 7D              | tbd           | tbd                | amilan,aa100,ami100 | 0                    |
-| mem         | High-memory jobs           | 7D              | tbd           | 12                 | amem only           | 0                    |
-
