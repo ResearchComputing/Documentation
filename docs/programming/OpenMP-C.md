@@ -328,7 +328,7 @@ int main(int argc, char** argv){
     int i;
     int thread_id;
 
-    #pragma omp parallel
+    #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
 
@@ -353,7 +353,7 @@ int main(int argc, char** argv){
     int i;
     int thread_id;
 
-    #pragma omp parallel
+    #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
 
@@ -378,7 +378,7 @@ int main(int argc, char** argv){
     int i;
     int thread_id;
 
-    #pragma omp parallel
+    #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
 
@@ -489,11 +489,10 @@ int main(int argc, char** argv){
         total_Sum = 0;
 
         #pragma omp for
-        {
-            for(int i = 1; i <= 1000; i++){
-                partial_Sum += i;
-            }
+        for(int i = 1; i <= 1000; i++){
+            partial_Sum += i;
         }
+
     }
     return 0;
 }
@@ -517,10 +516,8 @@ int main(int argc, char** argv){
         total_Sum = 0;
 
         #pragma omp for
-        {
-            for(int i = 1; i <= 1000; i++){
-                partial_Sum += i;
-            }
+        for(int i = 1; i <= 1000; i++){
+            partial_Sum += i;
         }
 
         //Create thread safe region.
