@@ -27,7 +27,7 @@ Apptainer is a containerization software package that does not require users to 
 module load singularity/3.7.4
 ```
 
-**Note that users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation.** Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer. 
+> Note: Users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation. Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer. 
 
 Much like Docker, Apptainer is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of compressed images in the `.sif` format which can be run as ephemeral containers. Unlike Docker, however, Apptainer does not manage images, containers, or volumes through a central application. Instead, Apptainer generates saved image files that can either be mutable or immutable based on compression.
 
@@ -186,7 +186,7 @@ mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
 
 ## Docker
 
-**Note:** Docker containers cannot be run *with Docker* on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using Apptainer.  See the documentation on Apptainer above if you wish to run a Docker container on Alpine or Blanca. 
+> Note: Docker containers cannot be run *with Docker* on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using Apptainer.  See the documentation on Apptainer above if you wish to run a Docker container on Alpine or Blanca. 
 
 Docker can be divided into 4 primary components:
 

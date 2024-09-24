@@ -53,7 +53,7 @@ You have sucessfully loaded slurmtools, a collection of functions
 
 ### __Step 4__: Get some metrics!
 
-___How many Service Units (core hours) have I used?___
+## How many Service Units (core hours) have I used?
 
 Type the command name for usage hint:
 ```bash
@@ -85,7 +85,7 @@ This output tells us that:
 * Ralphie's usage by account varied from 3,812 SUs to 15,987 SUs
 
 
-___Who is using all of the SUs on my groups' account?___
+## Who is using all of the SUs on my groups' account?
 
 Type the command name for usage hint:
 ```bash
@@ -164,7 +164,7 @@ This output tells me that:
 * The elapsed times ranged from 0 hours to 1 hour and 48 minutes
 
 
-___What is my priority?___
+## What is my priority?
 
 Type the command name for usage hint:
 ```bash
@@ -199,19 +199,17 @@ This output tells me:
 * Ralphie has used `ucb-general` but not much. Priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
 
 
-___NOTE___
+> NOTE: 
+> What is "Priority"?  
+> * Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
+> * Your priority is computed each time a job is scheduled and reflects the following factors:
+>	* Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
+>	* Your job size (slightly larger jobs have higher priority)
+>	* Your time spent in the queue (jobs gain priority the longer they wait)
+>	* The partition and qos you choose (this is a minor consideration on CURC systems)
+> * Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
 
-What is "Priority"?  
-
-* Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
-* Your priority is computed each time a job is scheduled and reflects the following factors:
-	* Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
-	* Your job size (slightly larger jobs have higher priority)
-	* Your time spent in the queue (jobs gain priority the longer they wait)
-	* The partition and qos you choose (this is a minor consideration on CURC systems)
-* Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
-
-___How efficient are my jobs?___
+## How efficient are my jobs?
 
 Type the command name for usage hint:
 ```bash
@@ -249,7 +247,7 @@ This output tells us that:
 
 This information is also sent to users who include the `--mail` directive in jobs.
 
-___How can I check the efficiency of array jobs?___
+## How can I check the efficiency of array jobs?
 
 Use the `seff-array` command with the help flag for a usage hint: 
 ```

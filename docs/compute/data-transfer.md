@@ -174,16 +174,16 @@ and remote file systems.
 
 Command | Function | Example
 --------|--------------------------------------------------------------------|----------
-cd      | Changes the directory of the remote computer                       | cd remote_directory
-lcd     | Changes the directory of the local computer                        | lcd local_directory
-ls      | Lists the contents of the remote directory                         | ls
-lls     | Lists the contents of the local directory                          | lls
-pwd     | Prints working directory of the remote computer                    | pwd
-lpwd    | Prints working directory of the local computer                     | lpwd
-get     | Copies a file from the remote directory to the local directory     | get remote_file
-put     | Copies a file from the local directory to the remote directory     | put local_file
-exit    | Closes the connection to the remote computer and exits the program | exit
-help    | Displays application information on using commands                 | help
+`cd`      | Changes the directory of the remote computer                       | `cd remote_directory`
+`lcd`     | Changes the directory of the local computer                        | `lcd local_directory`
+`ls`      | Lists the contents of the remote directory                         | `ls`
+`lls`     | Lists the contents of the local directory                          | `lls`
+`pwd`     | Prints working directory of the remote computer                    | `pwd`
+`lpwd`    | Prints working directory of the local computer                     | `lpwd`
+`get`     | Copies a file from the remote directory to the local directory     | `get remote_file`
+`put`     | Copies a file from the local directory to the remote directory     | `put local_file`
+`exit`    | Closes the connection to the remote computer and exits the program | `exit`
+`help`    | Displays application information on using commands                 | `help`
 
 Windows users can access sftp through PowerShell or using a GUI
 application like [WinSCP](https://winscp.net/eng/docs/protocols).
@@ -197,7 +197,7 @@ resources](#more-reading) or consult the sftp manual page.
 Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. *You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.* The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few
 simple setup procedures to prepare your local machine.
   
-*Note: these instructions only apply to local macOS and Linux systems. Automating file transfers from Windows is outside of the scope of this document.*
+> Note: these instructions only apply to local macOS and Linux systems. Automating file transfers from Windows is outside of the scope of this document.*
 
 1. Generate a local ssh key pair. You will only need to perform this once per local system. From a local terminal run:
 

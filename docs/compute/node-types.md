@@ -28,7 +28,7 @@ Users should familiarize themselves with [CURC User Policies](../additional-reso
 This is where jobs are executed after being passed to the scheduler.
 
 * Intended for heavy computation
-* When running an [interactive job](../running-jobs/interactive-jobs.md), you will be
+* When running an [interactive job](../running-jobs/interactive-jobs.md) you will be
   performing tasks directly on the compute nodes
 
 ## Data Transfer Nodes

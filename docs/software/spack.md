@@ -1,6 +1,6 @@
 # Spack
 
-*Currently, Spack is only available on Alpine.* [Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available in the Alpine software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
+Spack is available on Alpine and Blanca. [Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available in the Alpine software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
 
 ## Using Spack on CURC
 You can follow these steps from a Research Computing terminal session via a compile job (`acompile`) or within a batch or interactive job.
@@ -35,27 +35,42 @@ Note that, by default, environment specs are stored in `/projects/$USER/spack/en
 __2. Activate your Spack environment.__
 You can activate your Spack environment with one of the following commands: 
 
+`````{tabs}
+
+````{tab} Activate with Spacktivate
+
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spacktivate <environment name>
 ```
 
-or
+````
+
+````{tab} Activate with Spack Env
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env activate <environment name>
 ```
+````
+`````
 
 To deactivate your environment, you can use one of the following commands: 
+`````{tabs}
+
+````{tab} Deactivate with despacktivate
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ despacktivate
 ```
 
-or
+````
+
+````{tab} Deactivate with Spack Env
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env deactivate
 ```
+````
+`````
 
 ### Installing Software with Spack
 

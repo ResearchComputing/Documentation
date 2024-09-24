@@ -32,7 +32,7 @@ print ("Hello World from task: ", sys.argv[1])
 Now create a job script called `run_hello.sh` that will use GNU Parallel 
 to run as many instances of your python script as you want. Before running GNU Parallel in our script, we need to load the python and GNU Parallel modules. Your job script should look something like this:
 
-> _Note: This example uses a custom python environment built with conda, 
+> Note: This example uses a custom python environment built with conda, 
 more information on using python or R with conda can be found 
 [here](./python.md)
 
