@@ -63,35 +63,33 @@ int main(int argc, char** argv){
 Let’s compile our code and see what happens. We must first load the
 compiler module we want into our environment. We can do so as such:
 
-__GCC__:
+````{eval-rst}
+.. tabs::
 
-```bash
-module load gcc
-```
+   .. code-tab:: bash GCC
 
-Or
+        module load gcc
 
-__Intel__:
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-module load intel
-```
+        module load intel
+
+````
 
 From the command line, where your code is located, run the command:
 
-__GCC__:
+````{eval-rst}
+.. tabs::
 
-```bash
-g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
-```
+   .. code-tab:: bash GCC
 
-Or
+        g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
 
-__Intel__:
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
-```
+        icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+
+````
 
 This will give us an executable we can submit as a job to our cluster.
 Simply submit the job to Slurm, running the
@@ -162,19 +160,18 @@ export OMP_NUM_THREADS
 
 Now let’s re-compile the code and run it to see what happens:
 
-__GCC__
+````{eval-rst}
+.. tabs::
 
-```bash
-g++ parallel_hello_world.cpp -o parrallel_hello_world.exe -fopenmp
-```
+   .. code-tab:: bash GCC
 
-Or
+        g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
 
-__Intel__
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-icc parallel_hello_world.cpp -o parrallel_hello_world.exe -qopenmp
-```
+        icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+
+````
 
 Running our job script, we should end with an output file similar to this one:
 
