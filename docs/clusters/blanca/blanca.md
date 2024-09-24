@@ -93,30 +93,49 @@ bgpu-papp1                    blanca-papp         gpu:v100:1
 
 **Examples of configurations one could request:**
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: Request a single GPU of any type. 
+   ````{tab} Example 1
 
-        #SBATCH --gres=gpu
+      **Request a single GPU of any type.**
 
-   .. code-tab:: bash Example 2
-      :caption: Request multiple GPUs of any type.
+      ```bash
+      #SBATCH --gres=gpu
+      ```
 
-        #SBATCH --gres=gpu:3
+   ````
 
-   .. code-tab:: bash Example 3
-      :caption: Request a single GPU of type NVIDIA V100.
+   ```` {tab} Example 2
 
-        #SBATCH --gres=gpu:v100:1
+      **Request multiple GPUs of any type.**
 
-   .. code-tab:: bash Example 4
-      :caption: Request two GPUs of type NVIDIA A100.
+      ```bash
+      #SBATCH --gres=gpu:3
+      ```
 
-        #SBATCH --gres=gpu:a100:2
+   ````
 
-````
+   ```` {tab} Example 3
+
+      **Request a single GPU of type NVIDIA V100.**
+
+      ```bash
+      #SBATCH --gres=gpu:v100:1
+      ```
+
+   ````
+
+   ```` {tab} Example 4
+
+      **Request two GPUs of type NVIDIA A100.**
+
+      ```bash
+      #SBATCH --gres=gpu:a100:2
+      ```
+
+   ````
+
+`````
 
 ```{note}
   * Examples of full job scripts for GPUs are shown in the next section.
@@ -127,77 +146,105 @@ bgpu-papp1                    blanca-papp         gpu:v100:1
 
 Here are examples of Slurm directives that can be used in your batch scripts in order to meet certain job requirements.  Note that the "constraint" directive constrains a job to run only on nodes with the corresponding feature.
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: To run a 32-core job for 36 hours on a single blanca-ics node: 
+   ````{tab} Example 1
 
-        #SBATCH --qos=blanca-ics
-        #SBATCH --nodes=1
-        #SBATCH --ntasks-per-node=32
-        #SBATCH --time=36:00:00
+      **To run a 32-core job for 36 hours on a single blanca-ics node:**
 
-   .. code-tab:: bash Example 2
-      :caption: To run a 56-core job across two blanca-sha nodes for seven days:
+      ```bash
+      #SBATCH --qos=blanca-ics
+      #SBATCH --nodes=1
+      #SBATCH --ntasks-per-node=32
+      #SBATCH --time=36:00:00
+      ```
 
-        #SBATCH --qos=blanca-sha
-        #SBATCH --nodes=2
-        #SBATCH --ntasks-per-node=28
-        #SBATCH --time=7-00:00:00
-        #SBATCH --export=NONE
+   ````
 
-   .. code-tab:: bash Example 3
-      :caption: To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three GPUs:
+   ```` {tab} Example 2
 
-        #SBATCH --qos=blanca-curc-gpu
-        #SBATCH --nodes=1
-        #SBATCH --ntasks-per-node=16
-        #SBATCH --time=36:00:00
-        #SBATCH --gres=gpu:3
+      **To run a 56-core job across two blanca-sha nodes for seven days:**
 
-   .. code-tab:: bash Example 4
-      :caption: To run an 8-core job in the low-priority QoS on any node that has Broadwell processors and uses the RHEL 8 operating system:
+      ```bash
+      #SBATCH --qos=blanca-sha
+      #SBATCH --nodes=2
+      #SBATCH --ntasks-per-node=28
+      #SBATCH --time=7-00:00:00
+      #SBATCH --export=NONE
+      ```
 
-        #SBATCH --qos=preemptable
-        #SBATCH --nodes=1
-        #SBATCH --ntasks-per-node=8
-        #SBATCH --time=4:00:00
-        #SBATCH --export=NONE
-        #SBATCH --constraint="broadwell&rh8"
+   ````
 
-````
+   ```` {tab} Example 3
 
-````{eval-rst}
-.. tabs::
+      **To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three GPUs:**
 
-   .. code-tab:: bash Example 5
-      :caption: To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:
+      ```bash
+      #SBATCH --qos=blanca-curc-gpu
+      #SBATCH --nodes=1
+      #SBATCH --ntasks-per-node=16
+      #SBATCH --time=36:00:00
+      #SBATCH --gres=gpu:3
+      ```
 
-        #SBATCH --qos=preemptable
-        #SBATCH --nodes=1
-        #SBATCH --ntasks-per-node=8
-        #SBATCH --time=4:00:00
-        #SBATCH --export=NONE
-        #SBATCH --constraint="avx|avx2"
+   ````
 
-   .. code-tab:: bash Example 6
-      :caption: To run an 8-core job in the low-priority QoS on any node that has at least 1 GPU:
+   ```` {tab} Example 4
 
-        #SBATCH --qos=preemptable
-        #SBATCH --nodes=1
-        #SBATCH --ntasks-per-node=8
-        #SBATCH --time=4:00:00
-        #SBATCH --export=NONE
-        #SBATCH --gres=gpu
+      **To run an 8-core job in the low-priority QoS on any node that has Broadwell processors and uses the RHEL 8 operating system:**
 
-   .. code-tab:: bash Example 7
-      :caption: To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:
+      ```bash
+      #SBATCH --qos=preemptable
+      #SBATCH --nodes=1
+      #SBATCH --ntasks-per-node=8
+      #SBATCH --time=4:00:00
+      #SBATCH --export=NONE
+      #SBATCH --constraint="broadwell&rh8"
+      ```
 
-        sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
+   ````
 
-````
+   ````{tab} Example 5
 
+      **To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:**
+
+      ```bash
+      #SBATCH --qos=preemptable
+      #SBATCH --nodes=1
+      #SBATCH --ntasks-per-node=8
+      #SBATCH --time=4:00:00
+      #SBATCH --export=NONE
+      #SBATCH --constraint="avx|avx2"
+      ```
+
+   ````
+
+   ```` {tab} Example 6
+
+      **To run an 8-core job in the low-priority QoS on any node that has at least 1 GPU:**
+
+      ```bash
+      #SBATCH --qos=preemptable
+      #SBATCH --nodes=1
+      #SBATCH --ntasks-per-node=8
+      #SBATCH --time=4:00:00
+      #SBATCH --export=NONE
+      #SBATCH --gres=gpu
+      ```
+
+   ````
+
+   ```` {tab} Example 7
+
+      **To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:**
+
+      ```bash
+      sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
+      ```
+
+   ````
+
+`````
 
 
 ```{note}
@@ -217,20 +264,29 @@ Each partner group has its own high-priority QoS (`blanca-<group identifier>`) f
 
 ### Usage
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: To specify the preemptable QoS in a job script: 
+   ````{tab} Example 1
 
-        #SBATCH --QoS=preemptable
+      **To specify the preemptable QoS in a job script:**
 
-   .. code-tab:: bash Example 2
-      :caption: To specify the preemptable QoS for an interactive job:
+      ```bash
+      #SBATCH --QoS=preemptable
+      ```
 
-        $ sinteractive --qos=preemptable <other_arguments>
+   ````
 
-````
+   ```` {tab} Example 2
+
+      **To specify the preemptable QoS for an interactive job:**
+
+      ```bash
+      $ sinteractive --qos=preemptable <other_arguments>
+      ```
+
+   ````
+
+`````
 
 Batch jobs that are preempted will automatically requeue if the exit code is non-zero. (It will be non-zero in most cases.) If you would prefer that jobs not requeue, specify:
 
@@ -248,60 +304,74 @@ Requeuing: Users running jobs that do not require requeuing if preempted should 
 
 ### Example Job Scripts
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: Run a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).
+   ````{tab} Example 1
 
-        #!/bin/bash
-        #SBATCH --time=06:00:00
-        #SBATCH --qos=preemptable
-        #SBATCH --job-name=test
-        #SBATCH --nodes=2
-        #SBATCH --ntasks=32
-        #SBATCH --output=test.%j.out
+      **Run a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).**
 
-        module purge
-        module load python
+      ```bash
+      #!/bin/bash
+      #SBATCH --time=06:00:00
+      #SBATCH --qos=preemptable
+      #SBATCH --job-name=test
+      #SBATCH --nodes=2
+      #SBATCH --ntasks=32
+      #SBATCH --output=test.%j.out
 
-        python myscript.py
+      module purge
+      module load python
 
-   .. code-tab:: bash Example 2
-      :caption: Same as Example 1, but specify a specific partition (‘blanca-ccn’) (job will only run on blanca-ccn nodes).
+      python myscript.py
+      ```
 
-        #!/bin/bash
-        #SBATCH --time=06:00:00
-        #SBATCH --qos=preemptable
-        #SBATCH --partition=blanca-ccn
-        #SBATCH --job-name=test
-        #SBATCH --nodes=2
-        #SBATCH --ntasks=32
-        #SBATCH --output=test.%j.out
+   ````
 
-        module purge
-        module load python
+   ```` {tab} Example 2
 
-        python myscript.py
+      **Same as Example 1, but specify a specific partition (‘blanca-ccn’) (job will only run on blanca-ccn nodes).**
 
-   .. code-tab:: bash Example 3
-      :caption: Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RHEL 8 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node).
+      ```bash
+      #!/bin/bash
+      #SBATCH --time=06:00:00
+      #SBATCH --qos=preemptable
+      #SBATCH --partition=blanca-ccn
+      #SBATCH --job-name=test
+      #SBATCH --nodes=2
+      #SBATCH --ntasks=32
+      #SBATCH --output=test.%j.out
 
-        #!/bin/bash
-        #SBATCH --time=06:00:00
-        #SBATCH --qos=preemptable
-        #SBATCH --constraint="avx2&rh8"
-        #SBATCH --job-name=test
-        #SBATCH --nodes=2
-        #SBATCH --ntasks=32
-        #SBATCH --output=test.%j.out
+      module purge
+      module load python
 
-        module purge
-        module load python
+      python myscript.py
+      ```
 
-        python myscript.py
-        
-````
+   ````
+
+   ```` {tab} Example 3
+   
+   **Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RHEL 8 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node)**
+
+   ```bash
+   #!/bin/bash
+   #SBATCH --time=06:00:00
+   #SBATCH --qos=preemptable
+   #SBATCH --constraint="avx2&rh8"
+   #SBATCH --job-name=test
+   #SBATCH --nodes=2
+   #SBATCH --ntasks=32
+   #SBATCH --output=test.%j.out
+
+   module purge
+   module load python
+
+   python myscript.py
+   ```
+
+   ````
+
+`````
 
 ### Other considerations
 

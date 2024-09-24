@@ -25,21 +25,20 @@ Next we must load MPI into our environment. Begin by loading in the
 Fortran compiler and OpenMPI. Use the following commands if using the
 GNU Fortran compiler:
 
-__GNU Fortran Compiler__
+````{eval-rst}
+.. tabs::
 
-```shell
-module load gcc
-module load openmpi
-```
+   .. code-tab:: bash GNU Fortran Compiler
 
-Or, use the following commands if you prefer to use the Intel Fortran compiler:
+        module load gcc
+        module load openmpi
 
-__Intel Fortran Compiler__
+   .. code-tab:: bash Intel Fortran Compiler
 
-```shell
-module load intel
-module load impi
-```
+        module load intel
+        module load impi
+
+````
 
 This should prepare your environment with all the necessary tools to
 compile and run your MPI code. Let’s now begin to construct our
@@ -58,21 +57,38 @@ Now let’s set up several MPI directives to parallelize our code. In
 this ‘Hello World’ tutorial we will be calling the following four
 functions from the MPI library:
 
-*MPI_INIT()* :
-> This function initializes the MPI environment. It takes in the an error handling variable.
+````{tabs}
 
-*MPI_COMM_SIZE()* :
->This function returns the total size of the environment in terms of the
->quantity of processes. The function takes in the MPI environment, an integer to hold
->the commsize, and an error handling variable.
+```{tab} *MPI_INIT()*
 
-*MPI_COMM_RANK()* :
->This function returns the process ID of the process that called the
->function. The function takes in the MPI environment, an integer to hold the comm rank,
->and an error handling variable.
+The `MPI_INIT()` function initializes the MPI environment. It takes in the an error handling variable.
 
-*MPI_FINALIZE()* :
->This function cleans up the MPI environment and ends MPI communications.
+```
+
+```{tab} *MPI_COMM_SIZE()*
+
+The `MPI_COMM_SIZE()` function returns the total size of the environment in terms of the
+quantity of processes. The function takes in the MPI environment, an integer to hold
+the commsize, and an error handling variable.
+
+```
+
+```{tab} *MPI_COMM_RANK()*
+
+The `MPI_COMM_RANK()` function returns the process ID of the process that called the
+function. The function takes in the MPI environment, an integer to hold the comm rank,
+and an error handling variable.
+
+```
+
+```{tab} *MPI_FINALIZE()*
+
+The `MPI_FINALIZE()` function cleans up the MPI environment and ends MPI communications.
+
+```
+
+````
+
 
 These four directives are enough to get our parallel ‘Hello World’
 program running. We will begin by creating three integer variables,
@@ -131,15 +147,18 @@ Now the code is complete and ready to be compiled. Because this is an
 MPI program, we have to use a specialized compiler. The compilation
 command will be one of the following:
 
-__GNU Fortran Compiler__
-```shell
-mpif90 hello_world_mpi.f90 -o hello_world_mpi.exe
-```
+````{eval-rst}
+.. tabs::
 
-__Intel Fortran Compiler__
-```shell
-mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
-```
+   .. code-tab:: bash GNU Fortran Compiler
+
+        mpif90 hello_world_mpi.f90 -o hello_world_mpi.exe
+
+   .. code-tab:: bash Intel Fortran Compiler
+
+        mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
+
+````
 
 This will produce an executable we can pass to our prefered HPC system (e.g. Alpine or Blanca) as a job.  In
 order to execute MPI compiled code, a special command must be used:
@@ -154,59 +173,62 @@ same compiler and OpenMPI choices you used above to create and compile
 the program, and run the job to execute the application. Your
 job script should look something like this:
 
-__GNU Fortran Compiler__
+````{eval-rst}
+.. tabs::
 
-```shell
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --constraint ib
-#SBATCH --time 0:01:00
-#SBATCH --output parallel_hello_world.out
+   .. code-tab:: bash GNU Fortran Compiler
 
-module purge
+        #!/bin/bash
+        #SBATCH -N 1
+        #SBATCH --ntasks 4
+        #SBATCH --job-name parallel_hello
+        #SBATCH --partition atesting
+        #SBATCH --constraint ib
+        #SBATCH --time 0:01:00
+        #SBATCH --output parallel_hello_world.out
 
-module load gcc
-module load openmpi
+        module purge
 
-mpirun -np 4 ./hello_world_mpi.exe
-```
+        module load gcc
+        module load openmpi
 
-__Intel Fortran Compiler__
+        mpirun -np 4 ./hello_world_mpi.exe
 
-```shell
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --constraint ib
-#SBATCH --time 0:01:00
-#SBATCH --output parallel_hello_world.out
+   .. code-tab:: bash Intel Fortran Compiler
 
-module purge
+        #!/bin/bash
+        #SBATCH -N 1
+        #SBATCH --ntasks 4
+        #SBATCH --job-name parallel_hello
+        #SBATCH --partition atesting
+        #SBATCH --constraint ib
+        #SBATCH --time 0:01:00
+        #SBATCH --output parallel_hello_world.out
 
-module load intel
-module load impi
+        module purge
 
-mpirun -np 4 ./hello_world_mpi.exe
-```
+        module load intel
+        module load impi
 
-It is important to note that on Alpine, there are at most 64 cores per
+        mpirun -np 4 ./hello_world_mpi.exe
+
+````
+
+```{note}
+On Alpine, there are at most 64 cores per
 node. For applications that require more than 64 processes, you will
 need to request multiple nodes in your job (i.e. modify the value for `-N`).
 
 Our output file should look something like this (note the order of
 ranks isn’t necessarily sequential):
 
-```
+```bash
 Hello World from process 3 of 4
 Hello World from process 2 of 4
 Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
+
 
 Source: Dartmouth College Intro to MPI Guide
 

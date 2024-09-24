@@ -31,19 +31,29 @@ $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100|a100"
 
 __Examples of GPU configurations/requests__:
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Single GPU
-      :caption: Request a single GPU accelerator. 
+   ````{tab} Single GPU
 
-        --gres=gpu
+      **Request a single GPU accelerator.**
 
-   .. code-tab:: bash Multiple GPUs
-      :caption: Request multiple (in this case 3) GPU accelerators.
+      ```bash
+      --gres=gpu
+      ```
 
-        --gres=gpu:3
-````
+   ````
+
+   ```` {tab} Multiple GPUs
+
+      **Request multiple (in this case 3) GPU accelerators.**
+
+      ```bash
+      --gres=gpu:3
+      ```
+
+   ````
+
+`````
 
 ### Quality of Service (qos)
 
@@ -98,63 +108,96 @@ All users, regardless of institution, should specify partitions as follows:
 
 **`atesting` usage examples:**
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: Request one core per node for 10 minutes. 
+   ````{tab} Example 1
 
-        sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
+      **Request one core per node for 10 minutes.**
 
-   .. code-tab:: bash Example 2
-      :caption: Request 4 cores for the default time of 30 minutes.
+      ```bash
+      sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
+      ```
 
-        sinteractive --partition=atesting --ntasks=4
-        
-   .. code-tab:: bash Example 3
-      :caption: Request 2 cores each from 2 nodes for testing MPI.
+   ````
 
-        sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
-````
+   ```` {tab} Example 2
+
+      **Request 4 cores for the default time of 30 minutes.**
+
+      ```bash
+      sinteractive --partition=atesting --ntasks=4
+      ```
+
+   ````
+
+   ```` {tab} Example 3
+
+      **Request 2 cores each from 2 nodes for testing MPI.**
+
+      ```bash
+      sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
+      ```
+
+   ````
+
+
+`````
 
 `atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour (default one hour).
 
 **Usage examples:**
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: Request 2 A100 GPUs with 40 CPU cores for 30 minutes. 
+   ````{tab} Example 1
 
-        sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
+      **Request 2 A100 GPUs with 40 CPU cores for 30 minutes.**
 
-   .. code-tab:: bash Example 2
-      :caption: Request 1 MI100 GPU with 1 CPU core for one hour.
+      ```bash
+      sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
+      ```
 
-        sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
+   ````
 
-````
+   ```` {tab} Example 2
 
+      **Request 1 MI100 GPU with 1 CPU core for one hour.**
+
+      ```bash
+      sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
+      ```
+
+   ````
+
+`````
 
 `acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
 **`acompile` usage examples:**
 
-````{eval-rst}
-.. tabs::
+`````{tabs}
 
-   .. code-tab:: bash Example 1
-      :caption: Get usage information for `acompile`. 
+   ````{tab} Example 1
 
-        acompile --help
+      **Get usage information for `acompile`.**
 
-   .. code-tab:: bash Example 2
-      :caption: Request 2 CPU cores for 2 hours.
+      ```bash
+      acompile --help
+      ```
 
-        acompile --ntasks=2 --time=02:00:00
+   ````
 
-````
+   ```` {tab} Example 2
+
+      **Request 2 CPU cores for 2 hours.**
+
+      ```bash
+      acompile --ntasks=2 --time=02:00:00
+      ```
+
+   ````
+
+`````
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 

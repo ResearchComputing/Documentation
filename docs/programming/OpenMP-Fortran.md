@@ -57,11 +57,11 @@ compiler module we want into our environment. We can do so as such:
 ````{eval-rst}
 .. tabs::
 
-   .. code-tab:: bash GNU Fortran
+   .. code-tab:: bash GNU Fortran Compiler
 
         module load gcc
 
-   .. code-tab:: bash Intel Fortran
+   .. code-tab:: bash Intel Fortran Compiler
 
         module load intel
 
@@ -73,11 +73,11 @@ From the command line, where your code is located, run the command:
 ````{eval-rst}
 .. tabs::
 
-   .. code-tab:: bash GNU Fortran
+   .. code-tab:: bash GNU Fortran Compiler
 
         gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
 
-   .. code-tab:: bash Intel Fortran
+   .. code-tab:: bash Intel Fortran Compiler
 
         ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
 
@@ -159,11 +159,11 @@ Now let’s re-compile the code and run it to see what happens:
 ````{eval-rst}
 .. tabs::
 
-   .. code-tab:: bash GNU Fortran
+   .. code-tab:: bash GNU Fortran Compiler
 
         gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
 
-   .. code-tab:: bash Intel Fortran
+   .. code-tab:: bash Intel Fortran Compiler
 
         ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
 
