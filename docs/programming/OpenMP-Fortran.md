@@ -53,35 +53,36 @@ END
 Let’s compile our code and see what happens. We must first load the
 compiler module we want into our environment. We can do so as such:
 
-__GNU Fortran__
 
-```bash
-module load gcc
-```
+````{eval-rst}
+.. tabs::
 
-Or
+   .. code-tab:: bash GNU Fortran
 
-__Intel Fortran__
+        module load gcc
 
-```bash
-module load intel
-```
+   .. code-tab:: bash Intel Fortran
+
+        module load intel
+
+````
 
 From the command line, where your code is located, run the command:
 
-__GNU Fortran__
 
-```bash
-gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
-```
+````{eval-rst}
+.. tabs::
 
-Or
+   .. code-tab:: bash GNU Fortran
 
-__Intel Fortran__
+        gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
 
-```bash
-ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
-```
+   .. code-tab:: bash Intel Fortran
+
+        ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
+
+````
+
 
 This will give us an executable we can run as a job on
 a cluster. Simply run the job, telling Slurm to run the
@@ -155,18 +156,18 @@ export OMP_NUM_THREADS
 
 Now let’s re-compile the code and run it to see what happens:
 
-__GNU Fortran__
+````{eval-rst}
+.. tabs::
 
-```bash
-gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
-```
-Or
+   .. code-tab:: bash GNU Fortran
 
-__Intel Fortran__
+        gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
 
-```bash
-ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
-```
+   .. code-tab:: bash Intel Fortran
+
+        ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
+
+````
 
 Running our job script and we should end with an output file similar
 to this one:
