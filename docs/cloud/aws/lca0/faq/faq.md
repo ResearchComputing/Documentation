@@ -7,7 +7,7 @@ If you are looking for help with specific errors, please visit the [Troubleshoot
 
 ## What is the URL for the Single Sign-On Console?
 **Answer:**
-Login using your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> here: <a href="http://bit.ly/OIT-AWS" target="_blank">http://bit.ly/OIT-AWS </a>.
+Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) [here:](http://bit.ly/OIT-AWS).
 
 
 ## Why can't I see the AWS resources I created?

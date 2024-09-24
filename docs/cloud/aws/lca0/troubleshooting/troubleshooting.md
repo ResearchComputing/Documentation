@@ -26,7 +26,7 @@ See [Admin Account Permission Exclusions](../getting-started/customer-permission
 
 ## AccessDenied: not authorized to perform: iam:CreateRole | Module Block
 
-Below error occurs when creating **EKS Cluster** using <a href="https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest" target="_blank">Terraform module</a> from the Terraform registry. 
+Below error occurs when creating **EKS Cluster** using [Terraform module](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest) from the Terraform registry. 
 
 This error is not an AWS nor Terraform bug. This error is seen when AWS Customers at CU Boulder uses their customer admin IAM role to create an EKS cluster.
 
@@ -55,7 +55,7 @@ eks_managed_node_groups = {
 ## AccessDenied: not authorized to perform: iam:CreateRole | Resource Block
 
 
-Below error occurs when creating **EKS Cluster** using <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster" target="_blank">Terraform resource block</a> from the Terraform registry documentation. 
+Below error occurs when creating **EKS Cluster** using [Terraform resource block](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster) from the Terraform registry documentation. 
 
 This error is not an AWS nor Terraform bug. This error is seen when AWS Customers at CU Boulder uses their customer admin IAM role to create an EKS cluster.
 
