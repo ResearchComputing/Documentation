@@ -31,14 +31,19 @@ $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100|a100"
 
 __Examples of GPU configurations/requests__:
 
-_request a single GPU accelerator:_
-```
---gres=gpu
-```
-_request multiple (in this case 3) GPU accelerators:_
-```
---gres=gpu:3
-```
+````{eval-rst}
+.. tabs::
+
+   .. code-tab:: bash Single GPU
+      :caption: Request a single GPU accelerator. 
+
+        --gres=gpu
+
+   .. code-tab:: bash Multiple GPUs
+      :caption: Request multiple (in this case 3) GPU accelerators.
+
+        --gres=gpu:3
+````
 
 ### Quality of Service (qos)
 
@@ -91,48 +96,65 @@ All users, regardless of institution, should specify partitions as follows:
 
 `atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 3 hours (default 30 minutes) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
 
-`atesting` usage examples:
+**`atesting` usage examples:**
 
-_Request one core per node for 10 minutes_
-```
-sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
-```
-_Request 4 cores for the default time of 30 minutes_
-```
-sinteractive --partition=atesting --ntasks=4  
-```
-_Request 2 cores each from 2 nodes for testing MPI_
-```
-sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting 
-```
+````{eval-rst}
+.. tabs::
+
+   .. code-tab:: bash Example 1
+      :caption: Request one core per node for 10 minutes. 
+
+        sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
+
+   .. code-tab:: bash Example 2
+      :caption: Request 4 cores for the default time of 30 minutes.
+
+        sinteractive --partition=atesting --ntasks=4
+        
+   .. code-tab:: bash Example 3
+      :caption: Request 2 cores each from 2 nodes for testing MPI.
+
+        sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
+````
 
 `atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour (default one hour).
 
-Usage examples:
+**Usage examples:**
 
-_Request 2 A100 GPUs with 40 CPU cores for 30 minutes._
-```
-sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
-```
-_Request 1 MI100 GPU with 1 CPU core for one hour._
-```
-sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
-```
+````{eval-rst}
+.. tabs::
+
+   .. code-tab:: bash Example 1
+      :caption: Request 2 A100 GPUs with 40 CPU cores for 30 minutes. 
+
+        sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
+
+   .. code-tab:: bash Example 2
+      :caption: Request 1 MI100 GPU with 1 CPU core for one hour.
+
+        sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
+
+````
 
 
 `acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
-`acompile` usage examples:
+**`acompile` usage examples:**
 
-_Get usage information for_ `acompile`
-```
-acompile --help
-```
-_Request 2 CPU cores for 2 hours_
-```
-acompile --ntasks=2 --time=02:00:00
-```
+````{eval-rst}
+.. tabs::
 
+   .. code-tab:: bash Example 1
+      :caption: Get usage information for `acompile`. 
+
+        acompile --help
+
+   .. code-tab:: bash Example 2
+      :caption: Request 2 CPU cores for 2 hours.
+
+        acompile --ntasks=2 --time=02:00:00
+
+````
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
