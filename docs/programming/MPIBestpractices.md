@@ -11,57 +11,63 @@ Please note that this page *does not* cover compiling or optimization of MPI app
 
 Several families of compilers are available to users: Intel, GCC, and AOCC _(Alpine only)_.  Intel compilers have Intel MPI available for messsage passing, and GCC and AOCC compilers have OpenMPI available for message passing. To load a compiler/MPI combo run one the following commands from a job script or compile node (note that you should subsitute the version you need for `<version>` in the examples below; available compiler versions can be seen by typing `module avail`):
 
-**Intel**
+````{eval-rst}
+.. tabs::
 
-```
-module load intel/<version> impi
-```
-or...
+   .. code-tab:: bash Intel
 
-**GCC**
+        module load intel/<version> impi
 
-```
-module load gcc/<version> openmpi
+   .. code-tab:: bash GCC
 
-# Uncomment this additional line when adding this command to a JobScript!
-# SLURM_EXPORT_ENV=ALL
-```
+        module load gcc/<version> openmpi
 
-**AOCC**
+        # Uncomment this additional line when adding this command to a JobScript!
+        # SLURM_EXPORT_ENV=ALL
 
-```
-module load aocc/<version> openmpi
+   .. code-tab:: bash AOCC
 
-# Uncomment this additional line when adding this command to a JobScript!
-# SLURM_EXPORT_ENV=ALL
-```
+        module load aocc/<version> openmpi
 
+        # Uncomment this additional line when adding this command to a JobScript!
+        # SLURM_EXPORT_ENV=ALL
+
+````
+
+```{important}
 It is important to note that use of OpenMPI should be paired with the `SLURM_EXPORT_ENV=ALL` environment variable to ensure the job can function when scheduled from a login node!
+```
 
+```{note}
 On Blanca, in most situations you will want to try to compile and run your applications utilizing the Intel set of compilers and MPI libraries. Most CPUs on Blanca are of Intel architecture, so utilizing Intel will ensure the highest level of optimization comes from your compiler. GCC should only be utilized when your application cannot be compiled on intel software or if compiler specific optimizations exist within your code. We do not yet have compiler/MPI recommendations for Alpine, which has AMD CPUs. 
+```
 
 ## Commands to Run MPI Applications
-Regardless of compiler or MPI distribution, there are 3 “wrapper” commands that will run MPI applications: `mpirun`, `mpiexec`, and `srun`. These “wrapper” commands should be used after loading in your desired compiler and MPI distribution and simply prepend whatever application you wish to run. Each command offers their own pros and cons alongside nuance as to how they function.  
+Regardless of compiler or MPI distribution, there are 3 “wrapper” commands that will run MPI applications: `mpirun`, `mpiexec`, and `srun`. These “wrapper” commands should be used after loading in your desired compiler and MPI distribution and simply prepend whatever application you wish to run. Each command offers their own pros and cons alongside nuance as to how they function.
 
-`mpirun` is probably the most direct method to run MPI applications with the command being tied to the distribution. This means distribution dependent flags can be passed directly through the command.  
+````{eval-rst}
+.. tabs::
 
-```
-mpirun -np <core-count> ./<your-application>
-```
+   .. code-tab:: bash `mpirun`
+      :caption: `mpirun` is probably the most direct method to run MPI applications with the command being tied to the distribution. This means distribution dependent flags can be passed directly through the command.   
 
-`mpiexec` is a standardized MPI command execution command that allows for more general MPI flags to be passed. This means that commands are universal accross all distributions.  
+        mpirun -np <core-count> ./<your-application>
 
-```
-mpiexec -np <core-count> ./<your-application>
-```
+   .. code-tab:: bash `mpiexec`
+      :caption: `mpiexec` is a standardized MPI command execution command that allows for more general MPI flags to be passed. This means that commands are universal accross all distributions.
 
-The final command `srun` is probably the most abstracted away from a specific implementation. This command lets Slurm figure out specific MPI features that are available in your environment and handles running the process as a job. This command is usually a little less efficient and may have some issues with reliability.  
+        mpiexec -np <core-count> ./<your-application>
 
-```
-srun -n <core-count> ./<your-application>
-```
+   .. code-tab:: bash `srun`
+      :caption: The final command `srun` is probably the most abstracted away from a specific implementation. This command lets Slurm figure out specific MPI features that are available in your environment and handles running the process as a job. This command is usually a little less efficient and may have some issues with reliability. 
 
+        srun -n <core-count> ./<your-application>
+
+````
+
+```{note}
 RC usually recommends `mpirun` and `mpiexec` for simplicity and reliability when running MPI applications. `srun` should be used sparingly to avoid issues with execution.
+```
 
 ## Running MPI on Alpine
 
@@ -98,22 +104,27 @@ Blanca is often a bit more complicated due to the variety of nodes available. In
 ### General Blanca Nodes
 General Blanca nodes are not intended to run multi-node processes but this can still be achieved through the manipulation of some network fabric settings. In order to achieve cross node parallelism we must force MPI to utilize ethernet instead of our normal high speed network fabric. We can enforce this with various `mpirun` flags for each respective compiler.
 
-**Intel**
-```
-mpirun -genv I_MPI_FABRICS shm:tcp <other arguments>
-```
-**OpenMPI** 
-```
-mpirun --mca btl tcp <other arguments> 
-```
+````{eval-rst}
+.. tabs::
 
-Please note that this does not ensure high speed communications in message passing, but it will allow for basic parallelization across nodes.
+   .. code-tab:: bash Intel
 
+        mpirun -genv I_MPI_FABRICS shm:tcp <other arguments>
+
+   .. code-tab:: bash Open MPI
+
+        mpirun --mca btl tcp <other arguments>
+
+````
+
+```{note}
+This does not ensure high speed communications in message passing, but it will allow for basic parallelization across nodes.
+```
 
 ### Blanca HPC
 Blanca HPC comes equipped with Infiniband high speed interconnects that would allow for high speed communication between nodes. These nodes supoort the Intel and Intel MPI compiler/MPI combo, as well as the `gcc`/`openmpi_ucx` modules _(note: bve sure to use the *ucx* version of the OpenMPI module)_. 
 
-Blanca HPC nodes can easily be distinguished from other Blanca nodes with the node's name in the cluster. Nodes will clearly be distinguished with the `bhpc` prefix.  They also will have the `edr` feature in their feature list if you query them with `scontrol show node`. If you are using OpenMPI, jobs on  Blanca HPC nodes can be run using `mpirun` without any special arguments, although be sure to `export SLURM_EXPORT_ENV=ALL` prior to invoking `mpirun`.  If you are using IMPI, select the `ofa` (Open Fabrics Alliance) option to enable Infiniband-based message passing, the fastest interconnect availble on the `bhpc` nodes. You can do this with the following flag: 
+Blanca HPC nodes can easily be distinguished from other Blanca nodes with the node's name in the cluster. Nodes will clearly be distinguished with the `bhpc` prefix.  They also will have the `edr` feature in their feature list if you query them with `scontrol show node`. If you are using Open MPI, jobs on  Blanca HPC nodes can be run using `mpirun` without any special arguments, although be sure to `export SLURM_EXPORT_ENV=ALL` prior to invoking `mpirun`.  If you are using IMPI, select the `ofa` (Open Fabrics Alliance) option to enable Infiniband-based message passing, the fastest interconnect availble on the `bhpc` nodes. You can do this with the following flag: 
 
 ```
 mpirun -genv I_MPI_FABRICS shm:ofa <other arguments>
