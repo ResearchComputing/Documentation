@@ -8,12 +8,9 @@ from Alpine and Blanca. These scratch directories are hosted on
 separate, high-performance filesystems designed to support intensive,
 parallel I/O operations.
 
-Please note that the use of `/home` or `/projects` for
-high-performance I/O may negatively affect the environment for all
-users. As a result, all compute jobs should write to the appropriate
-`scratch` filesystem. **Users performing intensive I/O on the `/home`
-or `/projects` filesystems will have their jobs terminated and may
-have their accounts temporarily disabled.**
+```{important}
+Use of `/home` or `/projects` for high-performance I/O may negatively affect the environment for all users. As a result, all compute jobs should write to the appropriate `scratch` filesystem. **Users performing intensive I/O on the `/home` or `/projects` filesystems will have their jobs terminated and may have their accounts temporarily disabled.**
+```
 
 
 ## The Home Filesystem
@@ -126,8 +123,9 @@ from a login node or Alpine `compile node`, you will see output similar to:
 /scratch/alpine1                        29G        10211G         10240G
 ```
 
-> Note to Blanca users: the `curc-quota` command can be run on Blanca nodes if you "module load curc-quota" first.
-
+```{note}
+Blanca users: the `curc-quota` command can be run on Blanca nodes if you "module load curc-quota" first.
+```
 
 ````
 
@@ -170,7 +168,9 @@ through the `.snapshot` hidden subdirectory. You will see a subdirectory
 associated with each snapshot of your `/home` or `/projects`
 directory, named using the time-stamp associated with the snapshot.
 
-> Note: The `.snapshot` directory is not visible to any utilities that list directory contents, so an `ls -a` of the parent directory will not show `.snapshot`, although you can `cd` to it and list its contents with e.g. `ls -l $HOME/.snapshot`.
+```{note}
+The `.snapshot` directory is not visible to any utilities that list directory contents, so an `ls -a` of the parent directory will not show `.snapshot`, although you can `cd` to it and list its contents with e.g. `ls -l $HOME/.snapshot`.
+```
 
 ## File permissions, ownership, and group membership
 
@@ -215,7 +215,9 @@ The file permissions flags are arranged in four groups, the first character of t
 
 + The three groups of permissions condition the actions of three different groups of users. The first (or left-most) group is the file/directory owner’s permissions, the next group (middle) is the permissions granted to members of the group associated with the file, and the last group (right-most) is permissions granted to all others (not owners or group members).
 
-> Note: For files, the owner and group execute flags(bits) can occasionally be replaced with an `s`. In the owner’s permissions bits, an `x` replaced with an `s` indicates the file is executable but will execute with an effective user ID of the file owner. The `S` replacing the `x` in the group permission bits indicates the file can execute but with an effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the "other" execute bit if set to `t` or `T`, indicates that files in this directory can only be moved or deleted by the owner of the file.
+```{tip}
+For files, the owner and group execute flags(bits) can occasionally be replaced with an `s`. In the owner’s permissions bits, an `x` replaced with an `s` indicates the file is executable but will execute with an effective user ID of the file owner. The `S` replacing the `x` in the group permission bits indicates the file can execute but with an effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the "other" execute bit if set to `t` or `T`, indicates that files in this directory can only be moved or deleted by the owner of the file.
+```
 
 For a more comprehensive and detailed exposition of the UNIX file system permissions, see the wikipedia [Traditional Unix permissions section](https://en.wikipedia.org/wiki/File-system_permissions).
 

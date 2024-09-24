@@ -110,11 +110,11 @@ Hello World from process: 4
 Hello World from process: 3
 ```
 
-> __Note 1__: The user must ensure they load the `loadbalance` module _before_ loading any other modules.
-
-> __Note2__: The user should invoke loadbalance with `$CURC_LB_BIN/mpirun lb your-command-file` as shown in the example above.  
-
-> __Note3__: The `loadbalance` module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores.
+```{note}
+* The user must ensure they load the `loadbalance` module _before_ loading any other modules.
+* The user should invoke loadbalance with `$CURC_LB_BIN/mpirun lb your-command-file` as shown in the example above.
+* The `loadbalance` module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores.
+``` 
 
 ## Additional Resources
 

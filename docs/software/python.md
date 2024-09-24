@@ -14,7 +14,9 @@ The conda package manager allows modification of default settings to be done thr
 Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configuration file to change the default locations for packages and environments to your larger `/projects/$USER` directory.
 
 Open your `.condarc` file in your favorite text editor (e.g., nano, vim):  
-> _Note: this file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command_
+```{note}
+This file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command:
+```
 
 ```
 [johndoe@sc3cpu-a7-u19-1 ~]$ nano ~/.condarc
@@ -28,8 +30,10 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
-> _**Note:**_ CSU and XSEDE/ACCESS users may need to use a custom `$USER` 
+```{important}
+CSU and XSEDE/ACCESS users may need to use a custom `$USER` 
 variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
+```
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
 
@@ -47,7 +51,9 @@ Run the following command to load the base Anaconda software:
 [johndoe@c3cpu-a7-u19-1 ~]$ module load anaconda
 ```
 
->___Note__: The command above activates the base environment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)_. 
+```{note}
+The command above activates the base environment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)
+```
 
 You will know that you have properly activated the environment because you 
 should see `(base)` in front of your prompt. For example: 
@@ -107,7 +113,9 @@ our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from w
 
 #### Create your own custom environment:
 
-> Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your `.condarc file`. Environments can be installed in any user-writable location the user chooses; just add the path to `~/.condarc`.
+```{tip}
+In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your `.condarc file`. Environments can be installed in any user-writable location the user chooses; just add the path to `~/.condarc`.
+```
 
 __1. Initialize Anaconda if you haven't already done so:__
  
@@ -215,7 +223,9 @@ Once Mamba has been properly loaded, you can utilize almost all core command and
 [johndoe@c3cpu-a7-u19-1 ~]$ mamba create -n mycustomenv
 ```
 
-> _**Note:**_ If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided. 
+```{note}
+If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided.
+``` 
 
 
 ## Dbus Error
@@ -227,7 +237,9 @@ Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRf
 ```
 This is likely due to your `~/.bashrc` configuration file auto-activating a conda environment with a problematic dbus package. You can resolve this issue by opening your `~/.bashrc` with a text editor (ex. vim, nano) and commenting out the following lines (or any lines that add a conda environment to your `$PATH`):
 
-> Note: Commenting lines out instead of removing them will allow you to add them back in later if needed. These lines have been commented out using `#` preceding each line.
+```{tip}
+Commenting lines out instead of removing them will allow you to add them back in later if needed. These lines have been commented out using `#` preceding each line.
+```
 
 ```
 # >>> conda initialize >>>

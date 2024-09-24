@@ -100,7 +100,9 @@ Hint: suacct ucb-general 15
 ```
 
 Check `admin` account usage over past 180 days:
-> Note: Most user accounts follow the naming convention `ucbXXX_ascX`, in this example we show the `admin` account.
+```{tip}
+Most user accounts follow the naming convention `ucbXXX_ascX`, in this example we show the `admin` account.
+```
 ```bash
 $ suacct admin 180
 ```
@@ -199,15 +201,16 @@ This output tells me:
 * Ralphie has used `ucb-general` but not much. Priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
 
 
-> NOTE: 
-> What is "Priority"?  
-> * Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
-> * Your priority is computed each time a job is scheduled and reflects the following factors:
->	* Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
->	* Your job size (slightly larger jobs have higher priority)
->	* Your time spent in the queue (jobs gain priority the longer they wait)
->	* The partition and qos you choose (this is a minor consideration on CURC systems)
-> * Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
+```{important}
+What is "Priority"?
+* Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
+* Your priority is computed each time a job is scheduled and reflects the following factors:
+* Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
+* Your job size (slightly larger jobs have higher priority)
+* Your time spent in the queue (jobs gain priority the longer they wait)
+* The partition and qos you choose (this is a minor consideration on CURC systems)
+* Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
+```
 
 ## How efficient are my jobs?
 
@@ -339,9 +342,11 @@ The following tabs will be available, depending on whether you are logged in
 
 _** - only available to users who are logged in._
 
-> _Notes on XDMoD Syntax_
->	* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multiplied by how long the job runs)
->	* a "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`)
+```{important}
+_XDMoD Syntax_
+* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multiplied by how long the job runs)
+* a "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`)
+```
 
 ### Step 4: Become a pro!
 

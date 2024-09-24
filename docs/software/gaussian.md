@@ -1,6 +1,8 @@
 # Gaussian
 
-__Important:__ Gaussian is available on Alpine and Blanca, only to members of universities that have purchased Gaussian licenses. It cannot be run by other users. Please note and abide by the licensing rights, and citation information shown at the top of your Gaussian output files.
+```{important}
+Gaussian is available on Alpine and Blanca, only to members of universities that have purchased Gaussian licenses. It cannot be run by other users. Please note and abide by the licensing rights, and citation information shown at the top of your Gaussian output files.
+```
 
 This document describes how to run G16 jobs efficiently on Alpine. It does not attempt to teach how to use Gaussian for solving science/engineering questions.
 
@@ -99,13 +101,17 @@ g16 -m=20gb -p=${SLURM_CPUS_PER_TASK} -w=`cat tsnet.nodes.$SLURM_JOBID` my_input
 rm tsnet.nodes.$SLURM_JOBID
 ```
 
-> Note: Not all G16 computations scale efficiently beyond a single node! According to the G16 documentation: "HF, CIS=Direct, and DFT calculations are Linda parallel, including energies, optimizations, and frequencies. TDDFT energies and gradients and MP2 energies and gradients are also Linda parallel. Portions of MP2 frequency and CCSD calculations are Linda parallel." As with SMP parallelism, testing the scaling of your Linda parallel computation is very important.
+```{important}
+Not all G16 computations scale efficiently beyond a single node! According to the G16 documentation: "HF, CIS=Direct, and DFT calculations are Linda parallel, including energies, optimizations, and frequencies. TDDFT energies and gradients and MP2 energies and gradients are also Linda parallel. Portions of MP2 frequency and CCSD calculations are Linda parallel." As with SMP parallelism, testing the scaling of your Linda parallel computation is very important.
+```
 
 ### G16 on Alpine NVIDIA GPUs
 
 Please see the [Gaussian GPU documentation](https://gaussian.com/running/?tabid=5)] for information on how configure Gaussian input files to run on GPUs. CURC presently does not have example job scripts for running Gaussian on GPUs. The Gaussian GPU documentation will also enable you to determine whether the A100 GPUs in Alpine's `aa100` partition will be effective for your calculations. In many cases, SMP parallelization across all of the cores in an amilan node will provide better speedup than offloading computational work to a GPU.  
 
-> Note: G16 can not use the AMD MI100 GPUs in Alpine's `ami100` partition.
+```{warning}
+G16 can not use the AMD MI100 GPUs in Alpine's `ami100` partition.
+```
 
 ## Running GaussView
 

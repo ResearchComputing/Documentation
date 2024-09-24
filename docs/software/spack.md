@@ -30,7 +30,9 @@ You can create a Spack environment with the following command:
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env create <environment name>
 ```
 
-Note that, by default, environment specs are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
+```{note}
+By default, environment specs are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
+```
 
 __2. Activate your Spack environment.__
 You can activate your Spack environment with one of the following commands: 
@@ -82,7 +84,9 @@ fastqc
 ==> 1 packages
 ```
 
->For additional information about a specific piece of software (available versions, variants, and dependencies), you can use the `spack info <software name>` command. Note that the 'preferred version' is the default version which will be installed if no alternative version is specified. 
+```{tip}
+For additional information about a specific piece of software (available versions, variants, and dependencies), you can use the `spack info <software name>` command. Note that the 'preferred version' is the default version which will be installed if no alternative version is specified.
+``` 
 
 Once you've confirmed that a piece of software is available, you can install it in the active environment using the `spack install --add` command:
 
@@ -90,9 +94,10 @@ Once you've confirmed that a piece of software is available, you can install it 
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc
 ```
 
->__Note:__
->- The `--add` argument is required to add package specs to an environment. You can separately add specs >without installing a package using the `spack add <software name>` command.
->- If no compiler is specified, then a default compiler will be installed and used within the environment.
+```{note}
+* The `--add` argument is required to add package specs to an environment. You can separately add specs >without installing a package using the `spack add <software name>` command.
+* *If no compiler is specified, then a default compiler will be installed and used within the environment.
+```
 
 You can also modify the installation commands to meet your installation needs. You can specify which version you'd like to install using the `@` operator:
 
@@ -116,7 +121,9 @@ diffutils@3.9        libiconv@1.17  perl@5.36.0        zlib@1.2.13
 ==> 12 installed packages
 ```
 
->Note that since we did not specify a compiler, the default compiler of `gcc@8.5.0` was used. Please also note that the default compiler may change. 
+```{note}
+Since we did not specify a compiler, the default compiler of `gcc@8.5.0` was used. Please also note that the default compiler may change.
+```
 
 #### Installation Locations and Specifics
 
@@ -150,7 +157,9 @@ In addition to standard software packages, you can use Spack to install compiler
     ```
     spack compiler remove gcc -a
     ```
-    >Note that you can also remove intel compilers using `spack compiler remove intel -a`
+    ```{tip}
+    You can also remove intel compilers using `spack compiler remove intel -a`
+    ```
 
 5. Add the compiler you installed outside of the environment and install the compiler into the environment:
     ```
@@ -158,7 +167,9 @@ In addition to standard software packages, you can use Spack to install compiler
     spack install --add gcc@13.1.0
     ```
 
->Note that the installation of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
+```{important}
+The installation of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
+```
 
 
 Once the compiler is added, you can install any subsequent packages using the compiler you've installed with the `%` operator. For example:
