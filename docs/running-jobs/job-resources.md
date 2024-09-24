@@ -27,7 +27,7 @@ Nodes with the same hardware configuration are grouped into partitions. You will
 
 ## Quality of Service
 
-Quality of Service (QoS) is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. 
+Quality of Service (QoS) is used to constrain or modify the characteristics that a job can have. This could come in the form of specifying a QoS to request for a longer run time or a high priority queue for condo owned nodes. For example, by selecting the `long` QoS, a user can place the job in a lower priority queue with a max wall time increased from 24 hours to 7 days. A list of QOS codes available on Alpine can be found in our page on [Alpine Hardware](../clusters/alpine/alpine-hardware.md#quality-of-service-qos). 
 
 ```{note}
 Normally, this slurm directive does not need to be set for most jobs. Only set a QoS when requesting a long or condo (Blanca) job.
