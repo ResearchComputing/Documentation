@@ -80,11 +80,11 @@ Partitions available on Alpine:
 
 | Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | Default/Max Walltime     | Resource Limits |
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- | ------------------------ | ----------------------|
-| amilan    | AMD Milan (default)          | 347        | 32 or 48 or 64 |   3.75        | 1                   | 24H, 24H                 | see qos table |
-| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | 6.1<sup>3</sup>     | 24H, 24H                 | 15 GPUs across all jobs |
-| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | 12          | 64         |   3.75       | 6.1<sup>3</sup>     | 24H, 24H     | 22 GPUs across all jobs |
-| amem<sup>1</sup> | High-memory           | 14          | 48 or 64      |  16<sup>2</sup> | 4.0           |  4H,  7D                 | 96 cores across all jobs |
-| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.75        | 1                   | 24H, 24H                 | see qos table |
+| amilan    | AMD Milan (default)          | 376        | 32 or 48 or 64 |   3.75        | 1                   | 24H, 7D                 | see qos table |
+| ami100    | GPU-enabled (3x AMD MI100)   | 8          | 64         |   3.75        | 6.1<sup>3</sup>     | 24H, 7D                 | 15 GPUs across all jobs |
+| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | 12          | 64         |   3.75       | 6.1<sup>3</sup>     | 24H, 7D     | 22 GPUs across all jobs |
+| amem<sup>1</sup> | High-memory           | 24          | 48 or 64      |  16<sup>2</sup> | 4.0           |  4H,  7D                 | 96 cores across all jobs |
+| csu       | Nodes contributed by CSU     | 77         | 32 or 48   |   3.75        | 1                   | 24H, 7D                 | see qos table |
 
 <sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 96 cores or fewer. For example, you can run one 96-core job or up to two 48-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
 
