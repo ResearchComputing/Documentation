@@ -76,8 +76,8 @@ processors sharing a set of common memory is called a node.
 
 (Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 
-Alpine utilizes a hybrid distributed/shared model: there are 188 AMD Milan Compute
-nodes, 184 having 64 cores, 4 having 48 cores.
+Alpine utilizes a hybrid distributed/shared model: of the 376 general AMD Milan compute nodes, 
+nodes, 299 have 64 cores, 28 have 48 cores, and 49 have 32 cores.
 
 ## Tools for Parallel Programming
 
