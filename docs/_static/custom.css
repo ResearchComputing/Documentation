@@ -49,6 +49,18 @@ html[data-theme="dark"] .sphinx-tabs-panel h1, .sphinx-tabs-panel h2, .sphinx-ta
     color: black;
 }
 
+html[data-theme="dark"] .sphinx-tabs-panel div.admonition {
+    background-color: white;
+}
+
+html[data-theme="dark"] .sphinx-tabs-panel p.admonition-title:before {
+    backdrop-filter:  brightness(2) contrast(1);
+}
+
+html[data-theme="dark"] .sphinx-tabs-panel p.admonition-title{
+    color:white;
+}
+
 html[data-theme="dark"] .sphinx-tabs-tab {
     color: var(--cu-boulder-gold);
     font-size: 18px;
