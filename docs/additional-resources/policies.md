@@ -1,23 +1,18 @@
 # CURC User Policies
-<br>
-
-## CURC Annual Survey
-
-CURC issues an annual survey to all CURC users asking several questions about research grants, scholarly works, and student success that have been supported by CURC systems/services. These metrics are critical for fulfilling CURC's annual reporting requirements quantifying the Return on Investment of CURC resources for the University.  The survey will be open for responses for 10 weeks. To facilitate responses, this policy states that if a user does not respond to the survey by the deadline, CURC will temporarily remove their access to CURC systems until the survey is completed. CURC will not delete any data or remove any accounts. User access will be reinstated upon completion of the survey.
 
 <br>
 
 ## Acceptable data storage and use
 
-CURC systems and services (Alpine, Blanca, OnDemand, Petalibrary, core storage, etc.) should not be used to store any data that is US government Classified, nor any Controlled Unclassified Information including, but not limited to, data subject to the US federal Health Insurance Portability and Accountability Act (HIPAA), the US federal Family Educational Rights and Privacy Act (FERPA), or the International Traffic in Arms Regulations (ITAR).
+CURC systems and services (Alpine, Blanca, Open OnDemand, Petalibrary, core storage, etc.) should not be used to store any data that is US government Classified, nor any Controlled Unclassified Information including, but not limited to, data subject to the US federal Health Insurance Portability and Accountability Act (HIPAA), the US federal Family Educational Rights and Privacy Act (FERPA), or the International Traffic in Arms Regulations (ITAR).
  
-For users requiring secure research computing environments to ensure compliance for sensitive data types such as those mentioned above, CURC offers secure research computing services. More information can be found at https://www.colorado.edu/rc/secure-research-computing-resources
+For users requiring secure research computing environments to ensure compliance for sensitive data types such as those mentioned above, CURC offers secure research computing services. More information can be found on the [Secure Research Computing Resources](https://www.colorado.edu/rc/secure-research-computing-resources) webpage.
 
 <br>
 
 ## Login nodes
 
-The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources including both Blanca 
+The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources, such as Blanca 
 and Alpine. They are strictly intended for non-computational tasks including editing scripts, moving files, scheduling jobs to run 
 on CURC computing resources, and non-intensive workflow monitoring/management tasks. They are not intended for computational tasks 
 of any kind. CURC personnel regularly monitor processes on the login nodes and reserve the right to terminate processes in 
@@ -34,7 +29,7 @@ CURC will perform software installations for users of CURC resources in a global
 user’s work.
 - The user provides all of the relevant information including release, version, etc.
 - The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (i.e., Anaconda environments, Singularity containers).
+- The installation is not better suited for a local install (e.g. Anaconda environments or Apptainer containers).
 
 Furthermore, licensed/proprietary software are subject to the following requirements:
 
@@ -63,8 +58,8 @@ Scratch space should be used for all compute jobs run on CURC systems. These hig
 up and are not appropriate for long-term storage. Files are automatically deleted 90 days from the date they were copied to or 
 created on the filesystem. However, data may be purged at shorter intervals subject to overall system needs. 
 
-Users requiring longer-term retention of their files should perform regular backups to their local machine if they have not 
-purchased space on the [PetaLibrary](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html). Inappropriate use of 
+Users requiring longer-term retention of their files should perform regular backups to a remote machine or
+a purchased storage, such as [PetaLibrary](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html). Inappropriate use of 
 scratch storage, including attempts to circumvent the automatic file purge policy, may result in loss of access to Research 
 Computing resources.
 

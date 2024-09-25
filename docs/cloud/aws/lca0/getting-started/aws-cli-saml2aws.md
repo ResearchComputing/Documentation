@@ -4,13 +4,13 @@ The **saml2aws** CLI tool is used to login and retrieve AWS temporary credential
 
 ## Prerequisite
 
-The <a href="https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access" target="_blank">DUO Multi-Factor Remote Access</a> (MFA) app is installed and enrolled.
-Visit OIT's <a href="https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access" target="_blank">DUO Multi-Factor Remote Access</a> documentation to install and enroll MFA.
+The [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access) (MFA) app is installed and enrolled.
+Visit OIT's [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access) documentation to install and enroll MFA.
 
 ## Install saml2aws
 
-You use your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> to authenticate from CU's Shibboleth Identity Provider.
-To install **saml2aws** (MacOS, Windows, Linux), visit the online documentation: <a href="https://github.com/Versent/saml2aws#install" target="_blank">saml2aws installation instructions</a>
+You use your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) to authenticate from CU's Shibboleth Identity Provider.
+To install **saml2aws** (MacOS, Windows, Linux), visit the online documentation: [saml2aws installation instructions](https://github.com/Versent/saml2aws#install)
 
 Verify **saml2aws** is installed by running the following command (output should show the installed version):
 
@@ -66,7 +66,7 @@ account {
 
 ### Updating Configuration
 
-When your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> **password changes**, you must reconfigure.
+When your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) **password changes**, you must reconfigure.
 
 `$ saml2aws configure`
 
@@ -86,7 +86,7 @@ Log in using the following command:
 `$ saml2aws login`
 
 When prompted for the Username and Password, just hit the ENTER key to accept the defaults you configured earlier.
-Alternatively, you could log in with a different <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> if needed.
+Alternatively, you could log in with a different [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) if needed.
 
 Next, choose the AWS Account and Role to log in to.
 

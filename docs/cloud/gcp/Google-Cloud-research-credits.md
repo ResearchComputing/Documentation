@@ -1,9 +1,9 @@
 # Apply for Google Cloud research credits
 
-Google Cloud research credits can advance your research by giving you access to computing power that will make the next big thing possible. Learn more about Google's <a href="https://cloud.google.com/edu/researchers?hl=en" target="_blank">programs for researchers.</a>
+Google Cloud research credits can advance your research by giving you access to computing power that will make the next big thing possible. Learn more about Google's [programs for researchers](https://cloud.google.com/edu/researchers?hl=en).
 
-## <a href="https://services.google.com/fh/files/emails/kickstart_your_research_with_google_cloud_credits_tips_on_applying.pdf" target="_blank">Kickstart Your Research With Google Cloud Credits</a>
-## <a href="https://support.google.com/google-cloud-higher-ed/answer/10723679?hl=en&ref_topic=10322294&sjid=6709602353601652929-NC" target="_blank">Program overview</a>
+## [Kickstart Your Research With Google Cloud Credits](https://services.google.com/fh/files/emails/kickstart_your_research_with_google_cloud_credits_tips_on_applying.pdf)
+## [Program overview](https://support.google.com/google-cloud-higher-ed/answer/10723679?hl=en&ref_topic=10322294&sjid=6709602353601652929-NC)
 
 ## Academic Research Grants
 
@@ -13,7 +13,7 @@ Eligibility for research grants is limited to faculty, PhD students and postdoct
 
 ### How do I apply to the GCP research credits program?
 
-Academic researchers can apply using Google's <a href="https://edu.google.com/programs/credits/research/?modal_active=none" target="_blank">online application form.</a>
+Academic researchers can apply using Google's [online application form](https://edu.google.com/programs/credits/research/?modal_active=none).
 
 ### Is there a deadline to apply?
 
@@ -21,7 +21,7 @@ Google accepts applications on an ongoing basis.
 
 ### What information do I need to submit before I apply?
 
-You will need to submit a research proposal outlining how you plan to use Google Cloud credits. You will also need to submit an estimate on expected costs using GCP pricing calculator. Finally, please make sure that you create a Google Cloud billing account before you apply to the program. For more information, check out  <a href="https://cloudonair.withgoogle.com/events/virtual_faculty_summit_2020/watch?talk=track1_session8_kickstart_your_research_with_gc_credits" target="_blank">this video.</a>
+You will need to submit a research proposal outlining how you plan to use Google Cloud credits. You will also need to submit an estimate on expected costs using GCP pricing calculator. Finally, please make sure that you create a Google Cloud billing account before you apply to the program. For more information, check out [this video](https://cloudonair.withgoogle.com/events/virtual_faculty_summit_2020/watch?talk=track1_session8_kickstart_your_research_with_gc_credits).
 
 
 ### How long will it take for my application to be reviewed and approved?
@@ -52,4 +52,4 @@ Please note that credits are awarded at Google’s discretion and not all applic
 
 ### Who should I contact if I have any questions?
 
-For any additional questions, please contact <gcpresearchcredits@google.com>. Please check your spam folder and <a href="https://support.google.com/mail/answer/1366858?co=GENIE.Platform%3DDesktop&hl=en" target="_blank">enable</a> access from Google's email alias through your email settings if you do not receive a confirmation email for your application within 24 hours (i.e. unmark email address from spam list). This ensures all notifications and program updates are communicated to each applicant.
+For any additional questions, please contact <gcpresearchcredits@google.com>. Please check your spam folder and [enable](https://support.google.com/mail/answer/1366858?co=GENIE.Platform%3DDesktop&hl=en) access from Google's email alias through your email settings if you do not receive a confirmation email for your application within 24 hours (i.e. unmark email address from spam list). This ensures all notifications and program updates are communicated to each applicant.

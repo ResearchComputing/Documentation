@@ -12,11 +12,3 @@ managing-grouper-groups
 customer-support
 
 ```
-
-```{toctree}
-:maxdepth: 1
-    
-non-cu-boulder/index
-
-```
-    

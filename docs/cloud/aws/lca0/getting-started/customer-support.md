@@ -1,16 +1,16 @@
 # AWS Support
 
-AWS Customer Support is managed by <a href="https://www.dlt.com/" target="_blank">DLT</a>.
-All AWS Support issues must be directed to <a href="https://www.dlt.com/" target="_blank">DLT</a>.
+AWS Customer Support is managed by [DLT](https://www.dlt.com/).
+All AWS Support issues must be directed to [DLT](https://www.dlt.com/).
 It is recommended that you send an email to **support@dlt.com**.
-Alternatively, you can call <a href="https://www.dlt.com/" target="_blank">DLT</a>.
+Alternatively, you can call [DLT](https://www.dlt.com/).
 Calling is also the preferred escalation path: `800-262-4DLT (4358)`.
 It is required that you provide the AWS Account Number when requesting support.
 See below on how to obtain your AWS Account Number.
 
 **How to Get your AWS Account Number and Current Support Plan**
 
-1. The AWS Account Number and Support Plan can be found by logging in to the AWS Console using your <a href="https://oit.colorado.edu/services/identity-access-management/identikey" target="_blank">CU IdentiKey</a> here: <a href="http://bit.ly/OIT-AWS" target="_blank">http://bit.ly/OIT-AWS </a>.
+1. The AWS Account Number and Support Plan can be found by logging in to the AWS Console using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) here: [http://bit.ly/OIT-AWS](http://bit.ly/OIT-AWS).
 2. Navigate to the [AWS Support Center](https://console.aws.amazon.com/support). In the upper left corner, the Account Number and Support Plan is shown.  **NOTE:** It is expected that you will see the error shown in the screen capture below.
 ![](images/customer-support/support-level.jpeg)
 

@@ -1,4 +1,4 @@
-# `squeue` status and reason codes
+# `squeue` Status and Reason Codes
 
 The `squeue` command details a variety of information on an active
 job’s status with state and reason codes. *__Job state
@@ -22,29 +22,31 @@ may encounter when using squeue to check on your jobs.
 | SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
+```{seealso}
 A full list of these Job State codes can be found in [Slurm’s
 documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
-
+```
 
 ## Job Reason Codes
 
-| Reason Code              | Explaination                                                                                |
+| Reason Code              | Explanation                                                                                |
 | ------------------------ | ------------------------------------------------------------------------------------------- |
 | `Priority`	           | One or more higher priority jobs is in queue for running. Your job will eventually run.     |
-| `Dependency`	           | This job is waiting for a dependent job to complete and will run afterwards.                |
+| `Dependency`	           | This job is waiting for a dependent job to complete and will run afterward.                |
 | `Resources`	           | The job is waiting for resources to become available and will eventually run.               |
-| `InvalidAccount`	   | The job’s account is invalid. Cancel the job and rerun with correct account.             |
-| `InvaldQoS`              | The job’s QoS is invalid. Cancel the job and rerun with correct account.                 |
-| `QOSGrpCpuLimit` 	   | All CPUs assigned to your job’s specified QoS are in use; job will run eventually.          |
-| `QOSGrpMaxJobsLimit`	   | Maximum number of jobs for your job’s QoS have been met; job will run eventually.           |
-| `QOSGrpNodeLimit`	   | All nodes assigned to your job’s specified QoS are in use; job will run eventually.         |
-| `PartitionCpuLimit`	   | All CPUs assigned to your job’s specified partition are in use; job will run eventually.    |
-| `PartitionMaxJobsLimit`  | Maximum number of jobs for your job’s partition have been met; job will run eventually.     |
-| `PartitionNodeLimit`	   | All nodes assigned to your job’s specified partition are in use; job will run eventually.   |
-| `AssociationCpuLimit`	   | All CPUs assigned to your job’s specified association are in use; job will run eventually.  |
-| `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association have been met; job will run eventually.   |
-| `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; job will run eventually. |
+| `InvalidAccount`	   | The job’s account is invalid. Cancel the job and rerun with the correct account.             |
+| `InvaldQoS`              | The job’s QoS is invalid. Cancel the job and rerun with the correct account.                 |
+| `QOSGrpCpuLimit` 	   | All CPUs assigned to your job’s specified QoS are in use; the job will run eventually.          |
+| `QOSGrpMaxJobsLimit`	   | Maximum number of jobs for your job’s QoS have been met; the job will run eventually.           |
+| `QOSGrpNodeLimit`	   | All nodes assigned to your job’s specified QoS are in use; the job will run eventually.         |
+| `PartitionCpuLimit`	   | All CPUs assigned to your job’s specified partition are in use; the job will run eventually.    |
+| `PartitionMaxJobsLimit`  | Maximum number of jobs for your job’s partition have been met; the job will run eventually.     |
+| `PartitionNodeLimit`	   | All nodes assigned to your job’s specified partition are in use; the job will run eventually.   |
+| `AssociationCpuLimit`	   | All CPUs assigned to your job’s specified association are in use; the job will run eventually.  |
+| `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association have been met; the job will run eventually.   |
+| `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
 
+```{seealso}
 A full list of these Job Reason Codes can be found [in Slurm’s
 documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
-
+```

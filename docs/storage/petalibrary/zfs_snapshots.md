@@ -1,24 +1,18 @@
 # ZFS Snapshots
 
-## Overview
-
-Every ZFS-based PetaLibrary allocation has snapshots enabled by default.
-ZFS snapshots are read-only representations of a ZFS filesystem at the
-time the snapshot is taken. Many allocations still reside in BeeGFS where
-snapshots are not available; we expect to complete migrations from BeeGFS
-to ZFS by the end of 2021.
+Every PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. 
 
 ## How to access snapshots
 
 Snapshots are accessible in the root of the filesystem. If, for example,
 your allocation is located in `/pl/active/rcops`, your snapshots are
-accessible in `/pl/active/rcops/.zfs/snapshot`. Note that the `.zfs` directory
-is not visible to any utilities that list directory contents, so an 'ls'
-of the `.zfs` directory will fail, although you can 'cd' to it.
+accessible in `/pl/active/rcops/.zfs/snapshot`. Snapshot times are in UTC, which is not affected by daylight savings time. To convert from UTC to MDT, subtract six hours. To convert from UTC to MST, subtract seven hours.
 
-Snapshots times are in UTC, which is not affected by daylight savings
-time. To convert from UTC to MDT, subtract six hours, and to convert
-from UTC to MST, subtract seven hours.
+```{note}
+The `.zfs` directory is not visible to any utilities that list directory contents, so an `ls` of the `.zfs` directory will fail, although you can `cd` to it.
+```
+
+
 
 ## How snapshots affect free space in your allocation
 
@@ -44,7 +38,9 @@ The default snapshot schedule is as follows:
  - take snapshots every day, save more recent 8 snapshots (one week worth)
 
 If you would like to set a custom snapshot schedule for your allocation,
-please contact rc-help@colorado.edu. Note that the longer you retain
-snapshots, the longer it will take to free up space by deleting files
-from your allocation.
+please contact <rc-help@colorado.edu>. 
+
+```{note}
+The longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+```
 
