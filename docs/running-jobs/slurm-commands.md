@@ -1,4 +1,4 @@
-# Useful Slurm commands
+# Useful Slurm Commands
 
 Slurm provides a variety of tools that allow a user to manage and
 understand their jobs. This tutorial will introduce these tools, as
@@ -7,10 +7,10 @@ well as provide details on how to use them.
 ## Finding queuing information with `squeue`
 
 The `squeue` command is a tool we use to pull up information about the
-jobs in queue. By default, the squeue command will print out the
+jobs currently in the Slurm queue. By default, the squeue command will print out the
 *__job ID__*, *__partition__*, *__username__*, *__job status__*,
 *__number of nodes__*, and *__name of nodes__* for all jobs queued or
-running within Slurm. Usually you wouldn't need information for all
+running within Slurm. Usually, you wouldn't need information for all
 jobs that were queued in the system, so we can specify jobs that only
 you are running with the `--user` flag:
 
@@ -30,10 +30,14 @@ The squeue command also provides users with a means to calculate a
 job's estimated start time by adding the `--start` flag to our
 command. This will append Slurm's estimated start time for each job in
 our output information. 
-> Note: The start time provided by this command
+
+```{note}
+The start time provided by this command
 can be inaccurate. This is because the time calculated is based on
 jobs queued or running in the system. If a job with a higher priority
 is queued after the command is run, your job may be delayed.
+```
+
 
 ```bash
 $ squeue --user=your_rc-username --start
@@ -52,8 +56,10 @@ $ squeue --user=your_rc-username --start --iterate=n_seconds
 Press `ctrl`-`c` to stop the command from looping and bring you back
 to the terminal.
 
+```{seealso}
 For more information on squeue, [visit the Slurm page on
 squeue](https://slurm.schedmd.com/squeue.html)
+```
 
 ## Stopping jobs with `scancel`
 
@@ -72,7 +78,9 @@ To cancel multiple jobs, you can use a comma-separated list of job IDs:
 $ scancel your_job-id1, your_job-id2, your_jobiid3
 ```
 
+```{seealso}
 For more information, [visit the Slurm manual on scancel](https://slurm.schedmd.com/scancel.html)
+```
 
 ## Analyzing currently running jobs with `sstat`
 
@@ -87,20 +95,20 @@ $ sstat --jobs=your_job-id
 ```
 
 By default, sstat will pull up significantly more information than
-what would be needed in the commands default output. To remedy this,
+what would be needed in the command's default output. To remedy this,
 we can use the `--format` flag to choose what we want in our
-output. The format flag takes a list of comma separated variables
-which specify output data:
+output. The format flag takes a list of comma-separated variables
+that specify output data:
 
 ```bash
 $ sstat --jobs=your_job-id --format=var_1,var_2, ... , var_N
 ```
 
-A chart of some these variables are listed in the table below:
+A chart of some of these variables is listed in the table below:
 
 Variable    | Description
 ------------|------------
-avecpu      | Average CPU time of all tasks in job.
+avecpu      | Average CPU time of all tasks in a job.
 averss      | Average resident set size of all tasks.
 avevmsize   | Average virtual memory of all tasks in a job.
 jobid       | The id of the Job.
@@ -108,39 +116,34 @@ maxrss      | Maximum number of bytes read by all tasks in the job.
 maxvsize    | Maximum number of bytes written by all tasks in the job.
 ntasks      | Number of tasks in a job.
 
-For an example, let's print out a job's average job id, cpu time, max
-rss, and number of tasks. We can do this by typing out the command:
+As an example, let's print out a job's average job id, cpu time, max
+rss, and a number of tasks. We can do this by typing out the command:
 
 ```bash
 sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
 ```
 
+```{seealso}
 A full list of variables that specify data handled by sstat can be
 found with the `--helpformat` flag or by [visiting the slurm page on
 sstat](https://slurm.schedmd.com/sstat.html).
+```
 
 ## Analyzing past jobs with `sacct`
 
-The `sacct` command allows users to pull up status information about
-past jobs. This command is very similar to sstat, but is used on jobs
-that have been previously run on the system instead of currently
-running jobs. We can use a job's id...
+The `sacct` command allows users to pull up status information about past jobs. This command is very similar to sstat, but is used on jobs that have been previously run on the system instead of currently running jobs. We can pull up accounting information on jobs based on the:
 
+**Job ID:**  
 ```bash
 $ sacct --jobs=your_job-id
 ```
 
-...or your Research Computing username...
-
+**Research Computing Username:**
 ```bash
 $ sacct --user=your_rc-username
 ```
 
-...to pull up accounting information on jobs run at an earlier time.
-
-By default, sacct will only pull up jobs that were run on the current
-day. We can use the `--starttime` flag to tell the command to look
-beyond its short-term cache of jobs.
+By default, sacct will only pull up jobs that were run on the current day. We can use the `--starttime` flag to tell the command to look beyond its short-term cache of jobs.
 
 ```bash
 $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD
@@ -158,22 +161,22 @@ $ sacct –-jobs=your_job-id –-starttime=YYYY-MM-DD --long
 Like `sstat`, the standard output of sacct may not provide the
 information we want. To remedy this, we can use the `--format` flag to
 choose what we want in our output. Similarly, the format flag is
-handled by a list of comma separated variables which specify output
+handled by a list of comma-separated variables that specify output
 data:
 
 ```bash
 $ sacct --user=your_rc-username --format=var_1,var_2, ... ,var_N
 ```
 
-A chart of some variables is provided below:
+A chart of some of these variables is provided below:
 
 Variable    | Description
 ------------|------------
 account     | Account the job ran under.
-avecpu      | Average CPU time of all tasks in job.
+avecpu      | Average CPU time of all tasks in the job.
 averss      | Average resident set size of all tasks in the job.
 cputime     | Formatted (Elapsed time * CPU) count used by a job or step.
-elapsed     | Jobs elapsed time formated as DD-HH:MM:SS.
+elapsed     | Jobs elapsed time formatted as `DD-HH:MM:SS.`
 exitcode    | The exit code returned by the job script or salloc.
 jobid       | The id of the Job.
 jobname     | The name of the Job.
@@ -190,27 +193,29 @@ reqmem      | Required amount of memory for a job.
 user        | Username of the person who ran the job.
 
 As an example, suppose you want to find information about jobs that
-were run on March 12, 2018. You want to show information regarding the
+were run on March 12, 2024. You want to show information regarding the
 job name, the number of nodes used in the job, the number of cpus, the
 maxrss, and the elapsed time. Your command would look like this:
 
 ```bash
-$ sacct --jobs=your_job-id --starttime=2018-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
+$ sacct --jobs=your_job-id --starttime=2024-03-12 --format=jobname,nnodes,ncpus,maxrss,elapsed
 ```
 
 As another example, suppose you would like to pull up information on
-jobs that were run on February 21, 2018. You would like information on
+jobs that were run on February 21, 2024. You would like information on
 job ID, job name, QoS, Number of Nodes used, Number of CPUs used,
 Maximum RSS, CPU time, Average CPU time, and elapsed time. Your
 command would look like this:
 
 ```bash
-$ sacct –-jobs=your_job-id –-starttime=2018-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
+$ sacct –-jobs=your_job-id –-starttime=2024-02-21 --format=jobid,jobname,qos,nnodes,ncpu,maxrss,cputime,avecpu,elapsed
 ```
 
+```{seealso}
 A full list of variables that specify data handled by sacct can be
 found with the `--helpformat` flag or by [visiting the slurm page on
 sacct](https://slurm.schedmd.com/sacct.html).
+```
 
 ## Controlling queued and running jobs using `scontrol`
 
@@ -251,7 +256,7 @@ $ scontrol release job_id
 ```
 
 `scontrol` can also provide information on jobs using the `show job`
-command. The information provided from this command is quite extensive
+command. The information provided by this command is quite extensive
 and detailed, so be sure to either clear your terminal window, grep
 certain information from the command, or pipe the output to a separate
 text file:
@@ -267,9 +272,10 @@ $ scontrol show job job_id > outputfile.txt
 $ scontrol show job job_id | grep Time
 ```
 
-For a full primer on grep and regular expressions, [visit GNU's page
-on Grep](https://www.gnu.org/software/grep/manual/grep.html)
+```{seealso}
+ - For a full primer on grep and regular expressions, [visit GNU's page
+on Grep](https://www.gnu.org/software/grep/manual/grep.html).
 
-For more information on scontrol, [visit the Slurm page on
-scontrol](https://slurm.schedmd.com/scontrol.html)
-
+ - For more information on scontrol, [visit the Slurm page on
+scontrol](https://slurm.schedmd.com/scontrol.html).
+```

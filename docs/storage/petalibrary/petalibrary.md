@@ -3,11 +3,22 @@
 ## General Access
 Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. 
 
-PetaLibrary storage is presented as a file system directory under either:
-```
-/pl/active/<your_allocation_name>
-/pl/archive/<your_allocation_name>
-```
+PetaLibrary storage is presented as a file system directory with the following path, based on the type of allocation: 
+
+````{eval-rst}
+.. tabs::
+
+   .. code-tab:: bash Active
+      :caption: If you have an Active or Active+Archive allocation. 
+
+        /pl/active/<your_allocation_name>
+
+   .. code-tab:: bash Archive
+      :caption: If you have an Archive or Archive+DR allocation.
+
+        /pl/archive/<your_allocation_name>
+     
+````
 
 Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group by requesting that the allocation owner or delegate contact to the RC help desk at <rc-help@colorado.edu> to request their RC account be added to the group.
 
@@ -15,8 +26,9 @@ Access to a PetaLibrary allocation is granted using an access group. This group 
 
 Request PetaLibrary storage by filling out the application form at the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary), under the "Request a new PetaLibrary allocation" link.  
 
-> Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](./ownership.md). 
-
+```{important}
+Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](./ownership.md). 
+```
 
  When a new allocation is created the path to it is defined and provisioned based on a name selected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
 
@@ -25,7 +37,7 @@ Request PetaLibrary storage by filling out the application form at the [RC PetaL
 
 - **To access archive storage:** Archive storage is located at: `/pl/archive/<your_allocation_name>`
 
-Please use our Data Transfer nodes for frequent or large read/writes of archived data. Do not use login nodes for these purposes. For more information on transferring data, 
+Please use our Data Transfer nodes for frequent or large transfers of archived data. Do not use login nodes for data transfers. For more information on transferring data, 
 please refer to our [Data Transfer](../../compute/data-transfer.md) documentation. 
 
 ## Service Classes
@@ -37,13 +49,14 @@ please refer to our [Data Transfer](../../compute/data-transfer.md) documentatio
 - Directly accessible (read+write) from Research Computing compute resources
 #### Archive
 - Appropriate for data that is infrequently accessed
-- Stores data on tapes in a robotic tape library, with all data written to at least two tapes
+- Stores data in a parity-protected RAID array, with the option to use tape storage in the future
+- a maximum of 10,000 objects may be stored per terabyte
 - Not accessible from Research Computing compute resources
 
 ## Performance
 PetaLibrary is a shared infrastructure and the instantaneous performance will vary depending on each individual workload and competing workloads from other clients.
 
-The PetaLibrary service is designed for file storage and retrieval, and is not an ideal backend for highly transactional workloads (e.g., relational databases).
+The PetaLibrary service is designed for file storage and retrieval, and is not an ideal service for highly transactional workloads (e.g., relational databases).
 
 ## More information
 

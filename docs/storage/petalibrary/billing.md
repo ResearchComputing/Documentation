@@ -22,12 +22,12 @@ not line up with the university fiscal year, we will break up the time
 period based on the begin and end dates of the fiscal year, and handle
 billing in two transactions, each within the appropriate fiscal year.
 
-If you have grant constraints that demand that we will across multiple
+If you have grant constraints that demand that billing will occur across multiple
 fiscal years, such as a multi-year grant that may be depleted of funds
 near the end of the grant period, we will find a way to make things
-work. This is only to inform you that billing across fiscal years
+work. However, because billing across fiscal years
 increases the complexity that our Finance, Planning & Procurement office
-has to deal with, and that we will avoid doing so when possible.
+has to deal with, we will avoid this practice when at all possible.
 
 
 
@@ -35,7 +35,7 @@ has to deal with, and that we will avoid doing so when possible.
 
 When a PetaLibrary billable event occurs, such as a request for additional
 storage or a renewal being due, Research Computing will generate an
-invoice. The invoice details the services being billed for, and include
+invoice. The invoice details the services being billed for, and includes
 a speedtype. For new allocations, the speedtype will be the one provided
 on the new allocation request form. For renewals or additional space,
 the speedtype will be the last one used for the allocation in question. A
@@ -53,20 +53,13 @@ invoices are emailed to the billing contacts, and copied to the allocation
 owner. If no billing contacts are defined, invoices are emailed to
 the owner.
 
-View a [sample invoice](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/storage/petalibrary/petalibrary_invoice.pdf)
+### Sample Invoice
 
-## Retirement of old billing procedure
-
-Starting March 1 2022, Research Computing is changing the billing
-procedure for PetaLibrary allocations. Historically an email conversation
-for each billing transaction would take place, confirming the service
-dates, speedtype(s) to use, and amounts. Once the transaction went
-through, handled by OIT Finance, Planning & Procurement office, a receipt
-would be generated and delivered to the customer.
-
-As the number of PetaLibrary allocations has increased, it isn't practical
-to have an email conversation for each transaction.
-
+```{eval-rst}
+.. figure:: ./petalibrary_invoice.png
+   :align: center
+   :scale: 80%
+```
 
 
 
