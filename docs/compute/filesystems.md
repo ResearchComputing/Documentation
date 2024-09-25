@@ -124,7 +124,7 @@ from a login node or Alpine `compile node`, you will see output similar to:
 ```
 
 ```{note}
-Blanca users: the `curc-quota` command can be run on Blanca nodes if you "module load curc-quota" first.
+Blanca users: the `curc-quota` command can be run on Blanca nodes if you `module load curc-quota` first.
 ```
 
 ````
