@@ -1,6 +1,6 @@
 # Spack
 
-Spack is available on Alpine and Blanca. [Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available in the Alpine software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
+Spack is available on Alpine and Blanca. [Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available in the Alpine or Blanca software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
 
 ## Using Spack on CURC
 You can follow these steps from a Research Computing terminal session via a compile job (`acompile`) or within a batch or interactive job.
@@ -135,7 +135,7 @@ The default cache is located at `/scratch/alpine/$USER/spack/cache`. This direct
 
 ### Installing and Using Compilers with Spack
 
-In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and set it as the default compiler for your environment. 
+In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine or Blanca software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and set it as the default compiler for your environment. 
 
 1. Install the compiler outside of your environment (only needs to be done once):
     ```
@@ -178,17 +178,19 @@ Once the compiler is added, you can install any subsequent packages using the co
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc%gcc@13.1.0
 ```
 
->Installing compilers can take a long time, so make sure you request enough time with `acompile` using the `--time` directive. Additionally, build times can be reduced by specifying more cores with `acompile -n 4` (or even more cores with sinteractive jobs) in conjunction with `spack install --add -j 4`.
+```{tip}
+Installing compilers can take a long time, so make sure you request enough time with `acompile` using the `--time` directive. Additionally, build times can be reduced by specifying more cores with `acompile -n 4` (or even more cores with sinteractive jobs) in conjunction with `spack install --add -j 4`.
+```
 
 #### Adding a compiler from the CURC stack
 
-You can also add any compilers to spack that are already available in the Alpine software stack. To accomplish this, simply load the module associated with your preferred compiler:
+You can also add any compilers to spack that are already available in the Alpine or Blanca software stack. To accomplish this, simply load the module associated with your preferred compiler:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ module load aocc/3.2.0
 ```
 
-From there, you can add the compiler to Spack. All compilers in the Alpine software stack can be located with the environment variable `CURC_<compiler>_BIN`. In the case of `aocc/3.2.0`:
+From there, you can add the compiler to Spack. All compilers in the software stack can be located with the environment variable `CURC_<compiler>_BIN`. In the case of `aocc/3.2.0`:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack compiler add $CURC_AOCC_BIN

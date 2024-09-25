@@ -33,7 +33,7 @@ To load your chosen modules into the environment type:
 ```bash
 module load some_module
 
-# example: "module load python"
+# example: "module load anaconda"
 ```
 
 You can specify the version of the software by appending a `/` with
@@ -42,7 +42,7 @@ the version number:
 ```bash
 module load some_module/version 
 
-# example: "module load anaconda"
+# example: "module load anaconda/2023.09"
 ```
 
 The Lmod hierarchical module system provides five layers to support
@@ -94,7 +94,7 @@ variables.
 
 Modules in a job script can be loaded after your `#SBATCH` directives
 and before your actual executable is called. A sample job script that
-loads Python into the environment is provided below:
+loads Anaconda into the environment is provided below:
 
 ```bash
 #!bin/bash
@@ -107,6 +107,6 @@ loads Python into the environment is provided below:
 module purge
 module load anaconda
 
-python3 test-program.py
+python test-program.py
 ```
 

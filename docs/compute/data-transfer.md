@@ -30,7 +30,7 @@ selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
 ```{important}
-** For non-CU Boulder users:_** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
+**For non-CU Boulder users:** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
 ``` 
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)

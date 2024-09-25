@@ -21,14 +21,14 @@ In addition, several environment variables are set that may be useful during the
 
 ```
 [johndoe@@c3cpu-a5-u17-2 ~]$ env | grep CURC
-CURC_INTEL_BIN=/curc/sw/intel/17.4/bin
-CURC_INTEL_INC=/curc/sw/intel/17.4/include
-CURC_INTEL_ROOT=/curc/sw/intel/17.4
-CURC_INTEL_LIB=/curc/sw/intel/17.4/lib
-CURC_HDF5_ROOT=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4
-CURC_HDF5_INC=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/include
-CURC_HDF5_BIN=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/bin
-CURC_HDF5_LIB=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/lib
+CURC_INTEL_BIN=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux/bin
+CURC_INTEL_INC=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux/include
+CURC_INTEL_ROOT=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux
+CURC_INTEL_LIB=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux/lib
+CURC_HDF5_ROOT=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2
+CURC_HDF5_INC=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2/include
+CURC_HDF5_BIN=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2/bin
+CURC_HDF5_LIB=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2/lib
 [...]
 ```
 
