@@ -1,5 +1,7 @@
 This repo contains the source code for building the CU Research Computing user guide as found at https://curc.readthedocs.io. All user guide builds are available at https://readthedocs.org/projects/curc/.
 
+This is the new documentation for the NMT computer cluster system.
+
 ## Research Computing User Tutorials
 
 This repository houses general user tutorials created by CU Boulder Research Computing.  
