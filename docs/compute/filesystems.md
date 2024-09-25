@@ -241,7 +241,7 @@ See the man page for `chmod` for a complete exposition of controlling the permis
 
 The `umask` environment variable will override indicated permission bits. That is, if a bit is set in the `umask`, the corresponding permissions bit is stripped from default permissions a file or directory would otherwise be created with. This latter default permission set is known as the _mode creation mask_, a parameter each process in the Unix/Linux OS has.
  
-The `umask` is usually represented by a string of octal numbers. So, for example, a `umask` of `007` will turn off the 3 permission bits for “other” in a file or directory created. `070` likewise would turn off the group permissions. The octal numbers correspond directly with the permission bits described above, so <br />
+The `umask` is usually represented by a string of octal numbers. So, for example, a `umask` of `007` will turn off the 3 permission bits for “other” in a file or directory created. `070` likewise would turn off the group permissions. The octal numbers correspond directly with the permission bits described above. A table of the relationship between octal numbers and permission bits is described in the table below.
 
 | Umask Value | Permission Bits | 
 | ----------- | --------------- |
