@@ -26,15 +26,17 @@ Let’s create a simple ‘Hello World’ serial python script to demonstrate th
 ```python
 import sys
 
-print "Hello World from task: ", sys.argv[1]
+print ("Hello World from task: ", sys.argv[1])
 ```
 
 Now create a job script called `run_hello.sh` that will use GNU Parallel 
 to run as many instances of your python script as you want. Before running GNU Parallel in our script, we need to load the python and GNU Parallel modules. Your job script should look something like this:
 
-> _Note: This example uses a custom python environment built with conda, 
-more infomation on using python or R with conda can be found 
+```{tip}
+This example uses a custom python environment built with conda, 
+more information on using python or R with conda can be found 
 [here](./python.md)
+```
 
 ```bash
 #!/bin/bash
@@ -59,7 +61,7 @@ $my_parallel "$my_srun python hello_World.py" ::: {1..20}
 Note the last three lines of the script. We customize the GNU Parallel 
 `parallel` command by creating a variable called `$my_parallel` that 
 delays the execution of each task by 0.2 seconds (`--delay 0.2`) to 
-mitigates bottlenecks for tasks that have heavy I/O, and which specifies 
+mitigate bottlenecks for tasks that have heavy I/O, and which specifies 
 the number of tasks to run simultaneously (`-j $SLURM_NTASKS`). The environment variable `$SLURM_NTASKS` is set by Slurm at runtime and contains the number of `—ntasks` (cores) requested in the `#SBATCH` directives. We then customize the `srun` command so that it properly allocates the GNU parallel tasks to the allocated cores (`--export=all --exclusive -N1 -n1 --cpus-per-task=1 --cpu-bind=cores`). Note that the use of `srun` will also ensure that GNU parallel runs properly for cases where we request cores across multiple nodes (e.g., if we request `--ntasks=100`). Finally, we invoke GNU Parallel to run our python script 20 times using the customized `parallel` and `srun` commands we just created, `$my_parallel` and `$my_srun` respectively. Running this script via `sbatch` will run the commands. A successful job will result in output that looks something like this:
 
 ```
@@ -93,7 +95,7 @@ Tip: For sufficiently-large workflows one can add the `--joblog` and `--resume` 
 
 - [https://www.gnu.org/software/parallel/](https://www.gnu.org/software/parallel/)
 - [https://www.gnu.org/software/parallel/parallel_tutorial.html](https://www.gnu.org/software/parallel/parallel_tutorial.html)
-- [https://github.com/ResearchComputing/HTC_Short_Course_Spring_2019](https://github.com/ResearchComputing/HTC_Short_Course_Spring_2019)
-- [https://rcc.uchicago.edu/documentation/_build/html/running-jobs/srun-parallel/index.html](https://rcc.uchicago.edu/documentation/_build/html/running-jobs/srun-parallel/index.html)
+- [https://github.com/ResearchComputing/easy_parallelization_htc_primer](https://github.com/ResearchComputing/easy_parallelization_htc_primer)
+- [https://rcc-uchicago.github.io/user-guide/tutorials/kicp/#gnu-parallel](https://rcc-uchicago.github.io/user-guide/tutorials/kicp/#gnu-parallel)
 - [https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html](https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html)
 

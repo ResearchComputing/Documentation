@@ -73,7 +73,7 @@ python3 hello_World.py 3;
 python3 hello_World.py 4;
 ```
 
-Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python.md), in order to access whatever softare we will be running with the Load Balancer. Your job script should look something like this:
+Now create a job script called `run_hello.sh` that will run all instances of your python script in `lb_cmd_file` with the Load Balancer. Within the script, in addition to specifying the `loadbalance` module, we may need to load other software modules or an [anaconda environment we previously built](./python.md), in order to access whatever software we will be running with the Load Balancer. Your job script should look something like this:
 
 ```bash
 #!/bin/bash
@@ -110,15 +110,13 @@ Hello World from process: 4
 Hello World from process: 3
 ```
 
-> __Note 1__: The user must ensure they load the `loadbalance` module _before_ loading any other modules.
-
-> __Note2__: The user should invoke loadbalance with `$CURC_LB_BIN/mpirun lb your-command-file` as shown in the example above.  
-
-> __Note3__: The `loadbalance` module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores.
+```{note}
+* The user must ensure they load the `loadbalance` module _before_ loading any other modules.
+* The user should invoke loadbalance with `$CURC_LB_BIN/mpirun lb your-command-file` as shown in the example above.
+* The `loadbalance` module uses 1 core as a workflow manager.  Therefore, if you request, e.g., 8 cores, the Load Balancer will employ 1 core to manage your workflow tasks across 7 cores.
+``` 
 
 ## Additional Resources
 
-* [https://github.com/ResearchComputing/lb](https://github.com/ResearchComputing/lb)
-* [https://github.com/t-brown/lb](https://github.com/t-brown/lb)
 * [https://www.inspirenignite.com/load-balancing-in-parallel-computers/](https://www.inspirenignite.com/load-balancing-in-parallel-computers/)
 

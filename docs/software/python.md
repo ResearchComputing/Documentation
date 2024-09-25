@@ -5,16 +5,18 @@ provides the _conda_ package manager, which allows for easy installation of soft
 packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
 CURC also supports [Mamba](https://mamba.readthedocs.io/), an alternative package manager that allows parallel downloading of repository data and package files using multi-threading.
 
-The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manger](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../open_ondemand/jupyter_session.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
+The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manager](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../open_ondemand/jupyter_session.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
 ## Configuring conda with `.condarc`
 
 The conda package manager allows modification of default settings to be done through a text file known as the `.condarc`. This file exists within a user's `/home/$USER/` directory and can be quickly be accessed using the file's full path at `~/.condarc`.
 
-Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configration file to change the default locations for packages and environments to your larger `/projects/$USER` directory.
+Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configuration file to change the default locations for packages and environments to your larger `/projects/$USER` directory.
 
 Open your `.condarc` file in your favorite text editor (e.g., nano, vim):  
-> _Note: this file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command_
+```{note}
+This file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command:
+```
 
 ```
 [johndoe@sc3cpu-a7-u19-1 ~]$ nano ~/.condarc
@@ -28,8 +30,10 @@ envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
 
-> _**Note:**_ CSU and XSEDE/ACCESS users may need to use a custom `$USER` 
+```{important}
+CSU and XSEDE/ACCESS users may need to use a custom `$USER` 
 variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
+```
 
 ...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
 
@@ -47,7 +51,9 @@ Run the following command to load the base Anaconda software:
 [johndoe@c3cpu-a7-u19-1 ~]$ module load anaconda
 ```
 
->___Note__: The command above activates the base envioronment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)_. 
+```{note}
+The command above activates the base environment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)
+```
 
 You will know that you have properly activated the environment because you 
 should see `(base)` in front of your prompt. For example: 
@@ -72,7 +78,7 @@ __2. Create your own custom environment(s).__
 
 Both options are discussed below.
 
-#### Using one of CURC's pre-installed enviroments:
+#### Using one of CURC's pre-installed environment:
 
 To use the CURC environment with OpenMP, run the following command with 
 Anaconda initialized:
@@ -107,7 +113,9 @@ our system with X11-forwarding (`ssh -X`) and initiate an rstudio session from w
 
 #### Create your own custom environment:
 
-> Note: In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your `.condarc file`. Environments can be installed in any user-writable location the user chooses; just add the path to `~/.condarc`.
+```{tip}
+In the examples below the environment is created in `/projects/$USER/software/anaconda/envs`, which is specified under `envs_dirs` in your `.condarc file`. Environments can be installed in any user-writable location the user chooses; just add the path to `~/.condarc`.
+```
 
 __1. Initialize Anaconda if you haven't already done so:__
  
@@ -123,7 +131,7 @@ Here we create a new environment called _mycustomenv_ (you can call it anything 
 (base) [johndoe@c3cpu-a7-u19-1 ~]$ conda create -n mycustomenv
 ```
 
-If you want a specific version of python or R, you can modify the above commmand as follows (e.g.):  
+If you want a specific version of python or R, you can modify the above command as follows (e.g.):  
 
 _Python v2.7.16:_
 ```
@@ -171,7 +179,7 @@ If you encounter a `--- Please select a CRAN mirror for use in this session ---`
 >install.packages('RMySQL', repos='http://cran.us.r-project.org')
 ```
 
-For more information on managing conda enviornments, [check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+For more information on managing conda environments, [check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
 
 ### Basic conda commands to get you started:
@@ -183,13 +191,13 @@ For more information on managing conda enviornments, [check out Anaconda's docum
 | `conda install <package>` | Installs a package named `<package>` to your currently loaded environment |
 | `conda uninstall <package>` | Uninstalls a package named `<package>` from your currently loaded environment |
 | `conda env list` | List the conda environments currently available |
-| `conda create <env>` | Creates a new anaconda enviornment named `<env>` |
+| `conda create <env>` | Creates a new anaconda environment named `<env>` |
 | `conda remove --name <env> --all` | Removes an environment named `<env>` |
-| `conda deactivate` | Deactivates current enviornment |
+| `conda deactivate` | Deactivates current environment |
 
 ### Troubleshooting
 
-If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current conda environment. Use `conda install <package>` to add a new package or `conda install <package==version>` for a specific verison; e.g., `conda install numpy=1.16.2`.
+If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current conda environment. Use `conda install <package>` to add a new package or `conda install <package==version>` for a specific version; e.g., `conda install numpy=1.16.2`.
 
 Sometimes conda environments can "break" if two packages in the environment require different versions of the same shared library. In these cases you try a couple of things.
 * Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces conda to attempt to resolve shared library conflicts. 
@@ -215,7 +223,9 @@ Once Mamba has been properly loaded, you can utilize almost all core command and
 [johndoe@c3cpu-a7-u19-1 ~]$ mamba create -n mycustomenv
 ```
 
-> _**Note:**_ If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided. 
+```{note}
+If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided.
+``` 
 
 
 ## Dbus Error
@@ -227,7 +237,9 @@ Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRf
 ```
 This is likely due to your `~/.bashrc` configuration file auto-activating a conda environment with a problematic dbus package. You can resolve this issue by opening your `~/.bashrc` with a text editor (ex. vim, nano) and commenting out the following lines (or any lines that add a conda environment to your `$PATH`):
 
-> Note: Commenting lines out instead of removing them will allow you to add them back in later if needed. These lines have been commented out using `#` preceeding each line.
+```{tip}
+Commenting lines out instead of removing them will allow you to add them back in later if needed. These lines have been commented out using `#` preceding each line.
+```
 
 ```
 # >>> conda initialize >>>
@@ -247,6 +259,6 @@ This is likely due to your `~/.bashrc` configuration file auto-activating a cond
 
 ```
 
-Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda envioronment with `module load anaconda` to activate the base environment.
+Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda environment with `module load anaconda` to activate the base environment.
 
 

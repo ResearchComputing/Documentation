@@ -15,20 +15,20 @@ module load hdf5
 
 Supporting library-modules will be loaded as needed, and your
 environment will be updated so that the appropriate library
-directories are prepended to your `$PATH` and `$LD_LIBRARY_PATH`. The standard compiler variables `FC`, `CC` and `CXX` are set as appropriate for your compiler/MPI combination. These environment variables reference to the Fortran, C, and C++ compilers respectively
+directories are prepended to your `$PATH` and `$LD_LIBRARY_PATH`. The standard compiler variables `FC`, `CC` and `CXX` are set as appropriate for your compiler/MPI combination. These environment variables reference the Fortran, C, and C++ compilers respectively
 
 In addition, several environment variables are set that may be useful during the compilation process.  These variables are prefixed by `CURC` and may easily be found by searching your environment for `CURC` via `env | grep CURC`. This will yield output similar to:
 
 ```
 [johndoe@@c3cpu-a5-u17-2 ~]$ env | grep CURC
-CURC_INTEL_BIN=/curc/sw/intel/17.4/bin
-CURC_INTEL_INC=/curc/sw/intel/17.4/include
-CURC_INTEL_ROOT=/curc/sw/intel/17.4
-CURC_INTEL_LIB=/curc/sw/intel/17.4/lib
-CURC_HDF5_ROOT=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4
-CURC_HDF5_INC=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/include
-CURC_HDF5_BIN=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/bin
-CURC_HDF5_LIB=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/lib
+CURC_INTEL_BIN=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux/bin
+CURC_INTEL_INC=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux/include
+CURC_INTEL_ROOT=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux
+CURC_INTEL_LIB=/curc/sw/install/intel/2022.1.2/compiler/2022.0.2/linux/lib
+CURC_HDF5_ROOT=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2
+CURC_HDF5_INC=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2/include
+CURC_HDF5_BIN=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2/bin
+CURC_HDF5_LIB=/curc/sw/install/hdf5/1.12.1/impi/2021.5.0/intel/2022.1.2/lib
 [...]
 ```
 
@@ -38,7 +38,9 @@ Once the relevant modules are loaded, you are ready to compile. For our HDF5 exa
 $FC my_program.f90 -I$CURC_HDF5_INC -L$CURC_HDF5_LIB -lhdf5_fortran -o my_program
 ```
 
-> **Note:** Your run-time environment should reflect your compilation environment. Be sure to include the same sequence of `module` commands in your job script as that used at compile time.
+```{caution}
+Your run-time environment should reflect your compilation environment. Be sure to include the same sequence of `module` commands in your job script as that used at compile time.
+```
 
 
 ## Navigating the Software Stack
@@ -56,7 +58,8 @@ This will yield output similar to
 
 ```
 ----------------------------------- Compilers --------------------------------------
-   gcc/6.1.0    intel/16.0.3 (m)    intel/17.0.0 (m)    intel/17.4 (m,D)    pgi/16.5 ,
+   aocc/3.1.0 (D)    gcc/10.3.0        gcc/13.2.0            nvhpc_sdk/2021.213    nvhpc_sdk/2023.233 (D)
+   aocc/3.2.0        gcc/11.2.0 (D)    intel/2022.1.2 (m)    nvhpc_sdk/2022.229
 ```
 
 Several compiler-independent modules will also be displayed. Those modules (e.g., the Julia module) can be loaded at any time, irrespective of the compiler or MPI version in use.
@@ -65,7 +68,7 @@ If multiple versions of a package are available, a `D` is used to indicate the d
 
 ```[janedoe@c3cpu-a5-u17-2 ~]$ module load intel ```
 
-```[janedoe@c3cpu-a5-u17-2 ~]$ module load intel/17.4 ```
+```[janedoe@c3cpu-a5-u17-2 ~]$ module load intel/2022.1.2 ```
 
 Once the compiler is loaded, MPI-implementations and third-party
 serial libraries that depend on that compiler appear in the available module list until `MPI Implementations` and `Compiler Dependent Applications`:
@@ -74,10 +77,12 @@ serial libraries that depend on that compiler appear in the available module lis
 [janedoe@c3cpu-a5-u17-2 ~]$ module load intel
 [janedoe@c3cpu-a5-u17-2 ~]$ module avail
 ----------------------------------- MPI Implementations --------------------------------------
-   impi/17.3
+   impi/2021.5.0
 ---------------------------------- Compiler Dependent Applications ---------------------------
-   antlr/2.7.7    gdal/2.2.1    gsl/2.4        hdf5/1.10.1              (D)    jasper/1.900.1    mkl/17.3  (m)    ncview/2.1.7      openjpeg/2.2.0    szip/2.1.1
-   fftw/3.3.4     geos/3.6.2    hdf5/1.8.18    intel_cluster_tools/17.3        jpeg/9b           nco/4.6.0        netcdf/4.4.1.1    proj/4.9.2        zlib/1.2.11
+    advisor/2022.0.0    gdal/3.4.2         hdf5/1.10.1                     jasper/4.0.0        nco/5.1.4       (D)    openjpeg/2.2.0        szip/2.1.1
+   boost/1.78.0        gdal/3.5.0  (D)    hdf5/1.12.1              (D)    jpeg/9e             ncview/2.1.7           proj/6.0.0            tiff/4.3.0
+   cdo/2.1.1           geos/3.10.2        intel_debugger/2021.5.0         libxc/5.2.2         netcdf/4.8.1           proj/8.2.1     (D)    vtune/2022.0.0
+   fftw/3.3.10         gsl/2.7            intel_inspector/2022.0.0        mkl/2022.0.2 (m)    openblas/0.3.20        sqlite/3.38.01        zlib/1.2.11
 ```
 
 Choosing an MPI implementation will similarly reveal MPI-dependent software under the header `MPI Dependent Applications`:
@@ -86,9 +91,9 @@ Choosing an MPI implementation will similarly reveal MPI-dependent software unde
 [janedoe@c3cpu-a5-u17-2 ~]$ module load impi
 [janedoe@c3cpu-a5-u17-2 ~]$ module avail
  ---------------------------------- MPI Dependent Applications -------------------
-   boost/1.64.0        hdf5/1.8.18        lammps/31Mar17        perfsuite/1.1.4
-   fftw/3.3.4   (D)    hdf5/1.10.1 (D)    netcdf/4.4.1.1 (D)    petsc/3.8.0
-
+   QE/7.0       (D)    epw/6.0alpha        hdf5/1.10.1          lammps/29Sep21                      netcdf/4.8.1 (D)    pnetcdf/1.12.2
+   QE/7.2              fftw/3.3.8          hdf5/1.12.1   (D)    lammps/29Sep2021_update3            opensees/3.4        yambo/5.2.2
+   boost/1.78.0 (D)    fftw/3.3.10  (D)    lammps/2Aug23        lammps/29Sep2021_update3.1.1 (D)    petsc/3.18.3
 ```
 
 You may search for a particular software package using the `module spider` command. This is typically a two-stage process. First search on the general software name without including any version information. If the software exists on our system, a list of available versions will appear:
@@ -102,10 +107,8 @@ You may search for a particular software package using the `module spider` comma
       HDF5 Tools and Library
 
      Versions:
-        hdf5/1.8.15
-        hdf5/1.8.18
-        hdf5/1.10.0
         hdf5/1.10.1
+        hdf5/1.12.1
 ```
 
 Finally, to see which modules must be loaded to make your desired version available, run the `module spider` command again with the version information included:
@@ -121,8 +124,8 @@ Finally, to see which modules must be loaded to make your desired version availa
     You will need to load all module(s) on any one of the lines below before
     the "hdf5/1.10.1" module is available to load.
 
-      intel/17.4
-      intel/17.4  impi/17.3
+      intel/2022.1.2
+      intel/2022.1.2  impi/2021.5.0
 [...]
 ```
 
