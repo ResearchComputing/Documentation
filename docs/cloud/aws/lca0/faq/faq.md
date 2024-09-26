@@ -42,4 +42,6 @@ Send an email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and provide
 ## How do I find my Account ID and Alias?
 **Answer:**
 Click on the drop down on the top right corner of the console page to expand your account information.
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/master/docs/cloud/aws/faq/images/AcctNum.png)
+```{image} images/AcctNum.png
+:alt: AWS console home page with account information drop-down highlighted
+```
