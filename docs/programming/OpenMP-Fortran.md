@@ -484,7 +484,7 @@ END
 
 Now we must join our threads. To do this we must use a critical
 directive to create a thread safe section of code. We do this with the
-`!$OMP CRITICAL` directive. Lastly we add partial_Sum to total_Sum and
+`!$OMP CRITICAL` directive. Lastly we add `partial_Sum` to `total_Sum` and
 print out the result outside the parallel section of code.
 
 ```fortran
