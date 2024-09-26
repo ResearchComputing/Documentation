@@ -37,7 +37,7 @@ You have sucessfully loaded slurmtools, a collection of functions
 
  'suacct' (SU usage for each user of a specified account over N days)
 
- 'suuser' (SU usage for a specfied user over N days)
+ 'suuser' (SU usage for a specified user over N days)
 
  'seff' (CPU and RAM efficiency for a specified job)
 
@@ -53,7 +53,7 @@ You have sucessfully loaded slurmtools, a collection of functions
 
 ### __Step 4__: Get some metrics!
 
-___How many Service Units (core hours) have I used?___
+#### How many Service Units (core hours) have I used?
 
 Type the command name for usage hint:
 ```bash
@@ -85,7 +85,7 @@ This output tells us that:
 * Ralphie's usage by account varied from 3,812 SUs to 15,987 SUs
 
 
-___Who is using all of the SUs on my groups' account?___
+#### Who is using all of the SUs on my groups' account?
 
 Type the command name for usage hint:
 ```bash
@@ -100,7 +100,9 @@ Hint: suacct ucb-general 15
 ```
 
 Check `admin` account usage over past 180 days:
-> Note: Most user accounts follow the naming convention `ucbXXX_ascX`, in this example we show the `admin` account.
+```{tip}
+Most user accounts follow the naming convention `ucbXXX_ascX`, in this example we show the `admin` account.
+```
 ```bash
 $ suacct admin 180
 ```
@@ -119,7 +121,7 @@ This output tells us that:
 * Five users used the account in the past 180 days.
 * Their usage ranged from 24 SUs to 84,216 SUs
 
-___What jobs have I run over the past few days?___
+#### What jobs have I run over the past few days?
 
 Type the command name for usage hint:
 ```bash
@@ -164,7 +166,7 @@ This output tells me that:
 * The elapsed times ranged from 0 hours to 1 hour and 48 minutes
 
 
-___What is my priority?___
+#### What is my priority?
 
 Type the command name for usage hint:
 ```bash
@@ -199,19 +201,18 @@ This output tells me:
 * Ralphie has used `ucb-general` but not much. Priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
 
 
-___NOTE___
-
-What is "Priority"?  
-
+```{important}
+What is "Priority"?
 * Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
 * Your priority is computed each time a job is scheduled and reflects the following factors:
-	* Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
-	* Your job size (slightly larger jobs have higher priority)
-	* Your time spent in the queue (jobs gain priority the longer they wait)
-	* The partition and qos you choose (this is a minor consideration on CURC systems)
+  * Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
+  * Your job size (slightly larger jobs have higher priority)
+  * Your time spent in the queue (jobs gain priority the longer they wait)
+  * The partition and qos you choose (this is a minor consideration on CURC systems)
 * Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
+```
 
-___How efficient are my jobs?___
+#### How efficient are my jobs?
 
 Type the command name for usage hint:
 ```bash
@@ -249,7 +250,7 @@ This output tells us that:
 
 This information is also sent to users who include the `--mail` directive in jobs.
 
-___How can I check the efficiency of array jobs?___
+#### How can I check the efficiency of array jobs?
 
 Use the `seff-array` command with the help flag for a usage hint: 
 ```
@@ -341,9 +342,11 @@ The following tabs will be available, depending on whether you are logged in
 
 _** - only available to users who are logged in._
 
-> _Notes on XDMoD Syntax_
->	* a "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multipled by how long the job runs)
->	* a "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`)
+```{important}
+_XDMoD Syntax_
+* A "CPU Hour" is a "core hour" (e.g., for a single job, this would be the number of `ntasks` a user specifies in their job script multiplied by how long the job runs)
+* A "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`)
+```
 
 ### Step 4: Become a pro!
 
@@ -351,10 +354,10 @@ XDMoD can query a seemingly endless number of metrics, more than could ever be d
 
 ### Example use case
 
-Let's say you want to see how many core hours you project account has used over time, including the usage by user.  
+Let's say you want to see how many core hours your project account has used over time, including the usage by user.  
 
 * Go to the _Usage_ tab.
-* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period. In XDMoD syntax a "CPU Hour" refers to a "core hour" (for a single job, this would be the number of `ntasks` a user chooses in their job script multipled by how long the job runs).  
+* In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period. In XDMoD syntax a "CPU Hour" refers to a "core hour" (for a single job, this would be the number of `ntasks` a user chooses in their job script multiplied by how long the job runs).  
 * Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
 
 ![](xdmod/xdmod_cpuhrs_total.png)

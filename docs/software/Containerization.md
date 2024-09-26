@@ -27,7 +27,9 @@ Apptainer is a containerization software package that does not require users to 
 module load singularity/3.7.4
 ```
 
-**Note that users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation.** Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer. 
+```{warning}
+Users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation. Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer.
+``` 
 
 Much like Docker, Apptainer is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of compressed images in the `.sif` format which can be run as ephemeral containers. Unlike Docker, however, Apptainer does not manage images, containers, or volumes through a central application. Instead, Apptainer generates saved image files that can either be mutable or immutable based on compression.
 
@@ -69,7 +71,9 @@ Much like specifying an application in Docker, this will allow a user to execute
 apptainer shell <image-name>
 ```
 
-Note that both `apptainer run` and `apptainer shell` will create an interactive terminal within the container, whereas `apptainer exec` will not. Rather, `apptainer exec` will execute the provided command and return the output. 
+```{note}
+Both `apptainer run` and `apptainer shell` will create an interactive terminal within the container, whereas `apptainer exec` will not. Rather, `apptainer exec` will execute the provided command and return the output. 
+```
 
 *Example:*
 
@@ -100,7 +104,7 @@ Alternatively, users wishing to bind their entire CURC filesystem to a container
 apptainer run -B /projects/$USER,/pl/active,/scratch/alpine/$USER sample-image.sif
 ```
 
-Additionally, you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to the your container:
+Additionally, you can bind directories by utilizing the `APPTAINER_BINDPATH` environment variable. Simply export a list of directory pairs you would like to bind to your container:
 
 ```
 export APPTAINER_BINDPATH=/source/directory1:/target/directory1,\
@@ -186,7 +190,9 @@ mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
 
 ## Docker
 
-**Note:** Docker containers cannot be run *with Docker* on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using Apptainer.  See the documentation on Apptainer above if you wish to run a Docker container on Alpine or Blanca. 
+```{caution}
+Docker containers cannot be run *with Docker* on Alpine or Blanca, because the Docker software is not HPC-safe. Instead, Docker containers are run using Apptainer.  See the documentation on Apptainer above if you wish to run a Docker container on Alpine or Blanca. 
+```
 
 Docker can be divided into 4 primary components:
 
@@ -239,7 +245,9 @@ docker run -it <docker-image> bash
 
 Shelling into a container interactively will take you into the root directory of the container. From here you can run applications or tools that have been built into the container. By default, Docker containers will have very few tools available for users. If you need generic Linux tools, you will want to include a base Linux distribution.
 
-**It is important to note that when you run a Docker image you are actually running an instance of that image called a container. Because of this, any changes you may make to the container will be lost on exiting that process.**
+```{important}
+**When you run a Docker image you are actually running an instance of that image called a container. Because of this, any changes you may make to the container will be lost on exiting that process.**
+```
 
 Example:
 

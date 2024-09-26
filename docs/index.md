@@ -183,7 +183,7 @@ software/matlab
 software/python
 software/GNUParallel
 software/vasp
-software/Containerizationon
+software/Containerization
 software/alphafold
 software/spack
 software/sratoolkit
