@@ -28,11 +28,11 @@ request](./software.md#alpine-software) using our [Software Request Form](https:
 ## Cluster Summary
 ### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 347 AMD Milan compute nodes (270 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
+- **CPU nodes**: 376 AMD Milan compute nodes (299 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
 - **GPU nodes**:
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	- 12 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
-- **High-memory nodes**: 12 AMD Milan nodes with 1TB of memory
+- **High-memory nodes**: 24 AMD Milan nodes with 1TB of memory
 
 Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
 - **Colorado State University**: 77 AMD Milan compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
@@ -56,12 +56,12 @@ The Alpine cluster features some heterogeneity. A variety of feature tags are ap
 
 Use the `sinfo` command to determine the features that are available on any node in the cluster.
 
-```{note}
-**Feature descriptions and finalized partition names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
-```
-
 ```bash
 sinfo --format="%N | %f"
+```
+
+```{note}
+**Feature descriptions and finalized partition names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
 ```
 
 ### Description of features
