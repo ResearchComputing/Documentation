@@ -73,7 +73,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e | Open source JPEG image library.|
 | [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.2 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
-| [LFTP](https://lftp.yar.ru) | 4.8.4 | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
+| [LFTP](https://lftp.yar.ru) | 4.8.4, 4.9.2 (D) | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
 | [Linaro DDT (formerly Allinea DDT)](https://www.linaroforge.com/linaro-ddt/) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
 | [Linaro Forge (formerly Arm Forge)](https://www.linaroforge.com/) | 19.1.3 | Linaro Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
