@@ -57,7 +57,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
    [user@c3cpu-a2-u3-4 ~]$ module load anaconda/2020.11
    ``` 
 
-4. Follow our documentation: [steps on configuring your conda settings via ~.condarc](../software/python.md#configuring-conda-with-condarc).
+4. Follow our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
 
 5. Create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
    ```
@@ -128,11 +128,11 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
 ## Creating your own custom Jupyter kernel
 
-[Anaconda](http://anaconda.com) is an open-source software that provides access to _Python_ and _R_ distributions, and it includes the _conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _Python_ and _R_ can also be installed using _conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use within a Jupyter Session. 
+[Anaconda](http://anaconda.com) is an open-source software that provides access to _Python_ and _R_ distributions, and it includes the _Conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _Python_ and _R_ can also be installed using _Conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use within a Jupyter Session. 
 
 Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
 
-1.  Configure your conda settings by following our documentation: [steps on configuring your conda settings via ~.condarc](../software/python.md#configuring-conda-with-condarc).
+1.  Configure your Conda settings by following our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
 
 2. Activate the CURC Anaconda environment
 
@@ -148,7 +148,7 @@ You will know that you have properly activated the environment because you shoul
 
 3. Create a new custom environment 
 
-Follow our documentation: [steps on creating your own custom conda environment](../software/python.md#create-your-own-custom-environment) and [Creating a Jupyter Session Conda Environment](#creating-a-jupyter-session-conda-environment).
+Follow our documentation: [steps on creating your own custom Conda environment](../software/python.md#create-your-own-custom-environment) and [Creating a Jupyter Session Conda Environment](#creating-a-jupyter-session-conda-environment).
 
 4. Activate your new environment
 
