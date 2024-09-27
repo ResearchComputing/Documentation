@@ -18,5 +18,5 @@ An easy way to use these alternate usernames is to set a `$USER2` environment va
 export USER2=$(echo $USER |  awk -F@ '{print "."$2"/"$1}')
 ```
 
-This will yield a `$USER2` value of, for example, `.colostate.edu/janedoe`. This means that a path such as `/projects/$USER2` is equivalent to `/projects/$USER`. Thus, if you are having issues with a conda installation because of the `@` symbol, you can simply utilize `/projects/$USER2` in your `.condarc`. For more information on `.condarc` see our [Configuring conda with .condarc](../software/python.md#configuring-conda-with-condarc) section.
+This will yield a `$USER2` value of, for example, `.colostate.edu/janedoe`. This means that a path such as `/projects/$USER2` is equivalent to `/projects/$USER`. Thus, if you are having issues with a conda installation because of the `@` symbol, you can simply utilize `/projects/$USER2` in your `.condarc`. For more information on `.condarc` see our [Configuring Conda and Mamba with .condarc](../software/python.md#configuring-conda-and-mamba-with-condarc) section.
 

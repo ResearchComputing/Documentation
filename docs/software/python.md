@@ -1,43 +1,39 @@
 # Python and R with Anaconda
 
 To support diverse _Python_ and _R_ workflows, Research Computing users can utilize [Anaconda](http://anaconda.com). Anaconda 
-provides the _conda_ package manager, which allows for easy installation of software and associated 
-packages. The _conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
+provides the _Conda_ package manager, which allows for easy installation of software and associated 
+packages. The _Conda_ package manager provides support for _Python_, _R_, and many other application stacks. 
 CURC also supports [Mamba](https://mamba.readthedocs.io/), an alternative package manager that allows parallel downloading of repository data and package files using multi-threading.
 
 The following documentation describes how to activate the CURC Anaconda distribution and our default environments, as well as how to create and activate your own custom Anaconda environments. For more information on utilizing [Mamba](https://mamba.readthedocs.io/) (an alternative package manager) please see the section [Mamba Package Manager](#mamba-package-manager) below. Additional documentation on [CURC OpenOnDemand](../open_ondemand/jupyter_session.md) is available for users desiring to interact with their custom environments via [Jupyter notebooks](https://jupyter.org). 
 
-## Configuring conda with `.condarc`
+## Configuring Conda and Mamba with `.condarc`
 
-The conda package manager allows modification of default settings to be done through a text file known as the `.condarc`. This file exists within a user's `/home/$USER/` directory and can be quickly be accessed using the file's full path at `~/.condarc`.
+The Conda and Mamba package managers allow modification of default settings. These settings are specified in a text file called `.condarc`. For possible configuration options, please see [Using the .condarc conda configuration file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#using-the-condarc-conda-configuration-file). The `.condarc` file should exist within a user's `/home/$USER` directory and can be quickly accessed using the file's full path at `~/.condarc`. A `.condarc` file is important because by default Conda and Mamba will put all package source code and environments in your `/home/$USER` directory. This quickly becomes an issue because your `/home/$USER` directory has limited storage capacity (see [The Home Filesystem](../compute/filesystems.md#the-home-filesystem) section). For this reason, it is highly suggested that user's redirect material to `/projects/$USER`.
 
-Your `/home/$USER` directory is small -- only 2 GB. By default, conda puts all package source code and environments in your `/home/$USER` directory , and it will quickly become full. The steps here modify the conda configuration file to change the default locations for packages and environments to your larger `/projects/$USER` directory.
+````{important}
+When loading the Anaconda or Mamba modules, a `.condarc` file will be created for you in your `/home/$USER` directory, if the file does not exist. If the file is created for you, it will contain the following content, which places Conda and Mamba items in your `/projects/$USER` directory:
 
-Open your `.condarc` file in your favorite text editor (e.g., nano, vim):  
-```{note}
-This file may not exist yet -- if not, just create a new file with this name; you can open or create file with the following command:
-```
-
-```
-[johndoe@sc3cpu-a7-u19-1 ~]$ nano ~/.condarc
-```
-
-...and paste the following four lines:
-```
+```bash
 pkgs_dirs:
   - /projects/$USER/.conda_pkgs
 envs_dirs:
   - /projects/$USER/software/anaconda/envs
 ```
+````
+
+Although we will automatically create this file for you when you load the associated modules, you may want to modify `.condarc`. This can be done by opening your `.condarc` file in your favorite text editor (e.g., nano, vim) and modifying it.
+
+```
+[johndoe@sc3cpu-a7-u19-1 ~]$ nano ~/.condarc
+```
+
+After making changes, save and exit the file. Any modifications made and saved will be permanent unless you modify `.condarc` later.
 
 ```{important}
 CSU and XSEDE/ACCESS users may need to use a custom `$USER` 
-variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found at our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
+variable because the `@` symbol in the usernames can occasionally be misinterpreted by environments that employ PERL. Directions to set up a custom user variable can be found under our [CSU and XSEDE username documentation](../additional-resources/csu-xsede-usernames.md).
 ```
-
-...then save and exit the file. You won't need to perform this step again -- it's permanent unless you modify `.condarc` later.
-
-The `.condarc` file provides a variety of settings that can be detailed to speed up your workflows. For more information on `.condarc`, [check out the Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html).
 
 ## Using the CURC Anaconda environment
 Follow these steps from a Research Computing terminal session on an Alpine 
@@ -52,7 +48,7 @@ Run the following command to load the base Anaconda software:
 ```
 
 ```{note}
-The command above activates the base environment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)
+The command above activates the base environment for python3, which as of 2020 is the only supported python standard. For users requiring legacy python2, you can still use Conda to create a custom environment with the python2.X version of your choice (we provide an example of how to do this below)
 ```
 
 You will know that you have properly activated the environment because you 
@@ -64,7 +60,7 @@ should see `(base)` in front of your prompt. For example:
 
 ### Using Conda:
 
-Now that you have activated the base conda environment, you can use conda for python and R! There are two ways forward, depending on your needs. You can:
+Now that you have activated the base Conda environment, you can use Conda for Python and R! There are two ways forward, depending on your needs. You can:
 
 __1. Use one of CURC's pre-installed environments.__
 * Pros: You can begin using one of these immediately, and they contain mainy of the most widely used python and R packages. 
@@ -182,7 +178,7 @@ If you encounter a `--- Please select a CRAN mirror for use in this session ---`
 For more information on managing conda environments, [check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
 
-### Basic conda commands to get you started:
+### Basic Conda commands to get you started:
 
 | Command | Function |
 |---------|----------|
@@ -190,22 +186,22 @@ For more information on managing conda environments, [check out Anaconda's docum
 | `conda search <package>` | Searches the Anaconda package channel for a package named `<pakage>` |
 | `conda install <package>` | Installs a package named `<package>` to your currently loaded environment |
 | `conda uninstall <package>` | Uninstalls a package named `<package>` from your currently loaded environment |
-| `conda env list` | List the conda environments currently available |
+| `conda env list` | List the Conda environments currently available |
 | `conda create <env>` | Creates a new anaconda environment named `<env>` |
 | `conda remove --name <env> --all` | Removes an environment named `<env>` |
 | `conda deactivate` | Deactivates current environment |
 
 ### Troubleshooting
 
-If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current conda environment. Use `conda install <package>` to add a new package or `conda install <package==version>` for a specific version; e.g., `conda install numpy=1.16.2`.
+If you are having trouble loading a package, you can use `conda list` or `pip freeze` to list the available packages and their version numbers in your current Conda environment. Use `conda install <package>` to add a new package or `conda install <package==version>` for a specific version; e.g., `conda install numpy=1.16.2`.
 
-Sometimes conda environments can "break" if two packages in the environment require different versions of the same shared library. In these cases you try a couple of things.
-* Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces conda to attempt to resolve shared library conflicts. 
+Sometimes Conda environments can "break" if two packages in the environment require different versions of the same shared library. In these cases you try a couple of things.
+* Reinstall the packages all within the same install command (e.g., `conda install <package1> <package2>`). This forces Conda to attempt to resolve shared library conflicts. 
 * Create a new environment and reinstall the packages you need (preferably installing all with the same `conda install` command, rather than one-at-a-time, in order to resolve the conflicts).
 
 ## Mamba Package Manager
 
-[Mamba](https://mamba.readthedocs.io/) is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for _conda_. Utilizing Mamba can improve the speed and reliability of constructing an environment. To use Mamba on an Alpine or Blanca compute node, perform the following module load: 
+[Mamba](https://mamba.readthedocs.io/) is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for _Conda_. Utilizing Mamba can improve the speed and reliability of constructing an environment. To use Mamba on an Alpine or Blanca compute node, perform the following module load: 
 
 ```
 [johndoe@c3cpu-a7-u19-1 ~]$ module load mambaforge
@@ -217,14 +213,14 @@ The command above activates the base environment provided by Mamba. You will kno
 (base) [johndoe@c3cpu-a7-u19-1 ~]$
 ```
 
-Once Mamba has been properly loaded, you can utilize almost all core command and configuration options available to _conda_. For commands, this can be done by replacing `conda` with `mamba`. For example:
+Once Mamba has been properly loaded, you can utilize almost all core command and configuration options available to _Conda_. For commands, this can be done by replacing `conda` with `mamba`. For example:
 
 ```
 [johndoe@c3cpu-a7-u19-1 ~]$ mamba create -n mycustomenv
 ```
 
 ```{note}
-If one specified a `.condarc` following the instructions in the section [Configuring conda with .condarc](#configuring-conda-with-condarc) above, then Mamba will automatically use the instructions provided.
+Mamba will utilize configurations specified in `.condarc`. For more information on the `.condarc` file, see [Configuring Conda and Mamba with .condarc](#configuring-conda-and-mamba-with-condarc) above.
 ``` 
 
 
@@ -235,7 +231,7 @@ If you see a 'dbus' connection error when trying to connect via a virtual enviro
 ```
 Could not connect to session bus: Failed to connect to socket /tmp/dbus-oBg2HbRfLi: Connection refused.
 ```
-This is likely due to your `~/.bashrc` configuration file auto-activating a conda environment with a problematic dbus package. You can resolve this issue by opening your `~/.bashrc` with a text editor (ex. vim, nano) and commenting out the following lines (or any lines that add a conda environment to your `$PATH`):
+This is likely due to your `~/.bashrc` configuration file auto-activating a Conda environment with a problematic dbus package. You can resolve this issue by opening your `~/.bashrc` with a text editor (ex. vim, nano) and commenting out the following lines (or any lines that add a Conda environment to your `$PATH`):
 
 ```{tip}
 Commenting lines out instead of removing them will allow you to add them back in later if needed. These lines have been commented out using `#` preceding each line.
@@ -259,6 +255,6 @@ Commenting lines out instead of removing them will allow you to add them back in
 
 ```
 
-Keep in mind that doing this means conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base conda environment with `module load anaconda` to activate the base environment.
+Keep in mind that doing this means Conda is not automatically sourced by your `~/.bashrc` so you will have to manually source the base Conda environment with `module load anaconda` to activate the base environment.
 
 
