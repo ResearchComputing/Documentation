@@ -8,9 +8,7 @@ Intel Fortran Compiler, GCC, IntelMPI, and OpenMPI to create a
 multiprocessor programs in Fortran. This tutorial assumes the user
 has experience in both the Linux terminal and Fortran.
 
-__Helpful MPI tutorials:__
-- [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)   
-- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml)   
+__Helpful MPI tutorial:__ 
 - [https://computing.llnl.gov/tutorials/mpi/](https://computing.llnl.gov/tutorials/mpi/)   
 
 
@@ -27,21 +25,20 @@ Next we must load MPI into our environment. Begin by loading in the
 Fortran compiler and OpenMPI. Use the following commands if using the
 GNU Fortran compiler:
 
-__GNU Fortran Compiler__
+````{eval-rst}
+.. tabs::
 
-```shell
-module load gcc
-module load openmpi
-```
+   .. code-tab:: bash GNU Fortran Compiler
 
-Or, use the following commands if you prefer to use the Intel Fortran compiler:
+        module load gcc
+        module load openmpi
 
-__Intel Fortran Compiler__
+   .. code-tab:: bash Intel Fortran Compiler
 
-```shell
-module load intel
-module load impi
-```
+        module load intel
+        module load impi
+
+````
 
 This should prepare your environment with all the necessary tools to
 compile and run your MPI code. Let’s now begin to construct our
@@ -60,29 +57,46 @@ Now let’s set up several MPI directives to parallelize our code. In
 this ‘Hello World’ tutorial we will be calling the following four
 functions from the MPI library:
 
-*MPI_INIT()* :
-> This function initializes the MPI environment. It takes in the an error handling variable.
+````{tabs}
 
-*MPI_COMM_SIZE()* :
->This function returns the total size of the environment in terms of the
->quantity of processes. The function takes in the MPI environment, an integer to hold
->the commsize, and an error handling variable.
+```{tab} *MPI_INIT()*
 
-*MPI_COMM_RANK()* :
->This function returns the process id of the process that called the
->function. The function takes in the MPI environment, an integer to hold the comm rank,
->and an error handling variable.
+The `MPI_INIT()` function initializes the MPI environment. It takes in the an error handling variable.
 
-*MPI_FINALIZE()* :
->This function cleans up the MPI environment and ends MPI communications.
+```
 
-These four directives are enough to get our parallel ‘hello world’
+```{tab} *MPI_COMM_SIZE()*
+
+The `MPI_COMM_SIZE()` function returns the total size of the environment in terms of the
+quantity of processes. The function takes in the MPI environment, an integer to hold
+the commsize, and an error handling variable.
+
+```
+
+```{tab} *MPI_COMM_RANK()*
+
+The `MPI_COMM_RANK()` function returns the process ID of the process that called the
+function. The function takes in the MPI environment, an integer to hold the comm rank,
+and an error handling variable.
+
+```
+
+```{tab} *MPI_FINALIZE()*
+
+The `MPI_FINALIZE()` function cleans up the MPI environment and ends MPI communications.
+
+```
+
+````
+
+
+These four directives are enough to get our parallel ‘Hello World’
 program running. We will begin by creating three integer variables,
 `process_Rank` , `size_Of_Cluster` , and `ierror` to store an
 identifier for each of the parallel processes, store the number of
-processes running in the cluster, and handle error codes
+processes running in the cluster, and handle error codes,
 respectively. We will also implement the `MPI_Init` function which
-will initialize the mpi communicator:
+will initialize the MPI communicator:
 
 ```fortran
 PROGRAM hello_world_mpi
@@ -96,7 +110,7 @@ call MPI_INIT(ierror)
 Let's now obtain some information about our cluster of processors and
 print the information out for the user. We will use the functions
 `MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the count of
-processes and the rank of a given process respectively:
+processes and the rank of a given process, respectively:
 
 ```fortran
 PROGRAM hello_world_mpi
@@ -133,15 +147,18 @@ Now the code is complete and ready to be compiled. Because this is an
 MPI program, we have to use a specialized compiler. The compilation
 command will be one of the following:
 
-__GNU Fortran Compiler__
-```shell
-mpif90 hello_world_mpi.f90 -o hello_world_mpi.exe
-```
+````{eval-rst}
+.. tabs::
 
-__Intel Fortran Compiler__
-```shell
-mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
-```
+   .. code-tab:: bash GNU Fortran Compiler
+
+        mpif90 hello_world_mpi.f90 -o hello_world_mpi.exe
+
+   .. code-tab:: bash Intel Fortran Compiler
+
+        mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
+
+````
 
 This will produce an executable we can pass to our prefered HPC system (e.g. Alpine or Blanca) as a job.  In
 order to execute MPI compiled code, a special command must be used:
@@ -150,67 +167,70 @@ order to execute MPI compiled code, a special command must be used:
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-The flag `-np` specifies the number of processor that are to be utilized
+The flag `-np` specifies the number of processors that are to be utilized
 in execution of the program.  In your job script, load the
 same compiler and OpenMPI choices you used above to create and compile
 the program, and run the job to execute the application. Your
 job script should look something like this:
 
-__GNU Fortran Compiler__
+````{eval-rst}
+.. tabs::
 
-```shell
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --constraint ib
-#SBATCH --time 0:01:00
-#SBATCH --output parallel_hello_world.out
+   .. code-tab:: bash GNU Fortran Compiler
 
-module purge
+        #!/bin/bash
+        #SBATCH -N 1
+        #SBATCH --ntasks 4
+        #SBATCH --job-name parallel_hello
+        #SBATCH --partition atesting
+        #SBATCH --constraint ib
+        #SBATCH --time 0:01:00
+        #SBATCH --output parallel_hello_world.out
 
-module load gcc
-module load openmpi
+        module purge
 
-mpirun -np 4 ./hello_world_mpi.exe
-```
+        module load gcc
+        module load openmpi
 
-__Intel Fortran Compiler__
+        mpirun -np 4 ./hello_world_mpi.exe
 
-```shell
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --constraint ib
-#SBATCH --time 0:01:00
-#SBATCH --output parallel_hello_world.out
+   .. code-tab:: bash Intel Fortran Compiler
 
-module purge
+        #!/bin/bash
+        #SBATCH -N 1
+        #SBATCH --ntasks 4
+        #SBATCH --job-name parallel_hello
+        #SBATCH --partition atesting
+        #SBATCH --constraint ib
+        #SBATCH --time 0:01:00
+        #SBATCH --output parallel_hello_world.out
 
-module load intel
-module load impi
+        module purge
 
-mpirun -np 4 ./hello_world_mpi.exe
-```
+        module load intel
+        module load impi
 
-It is important to note that on Alpine, there are 64 cores per
+        mpirun -np 4 ./hello_world_mpi.exe
+
+````
+
+```{note}
+On Alpine, there are at most 64 cores per
 node. For applications that require more than 64 processes, you will
 need to request multiple nodes in your job (i.e. modify the value for `-N`).
 
 Our output file should look something like this (note the order of
 ranks isn’t necessarily sequential):
 
-```
+```bash
 Hello World from process 3 of 4
 Hello World from process 2 of 4
 Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
 
-Ref: <http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html>
+
+Source: Dartmouth College Intro to MPI Guide
 
 
 ## MPI Barriers and Synchronization
@@ -492,8 +512,8 @@ In order to get a better grasp on these functions, let’s go ahead and
 create a program that will utilize the scatter function. Note that the
 gather function (not shown in the example) works similarly, and is
 essentially the converse of the scatter function. Further examples
-which utilize the gather function can be found in the MPI tutorials
-listed as resources at the beginning of this document.
+which utilize the gather function can be found in the MPI tutorial
+linked at the beginning of this document.
 
 ### Example
 
@@ -512,7 +532,7 @@ integer process_Rank, size_Of_Cluster, ierror, message_Item
 END PROGRAM
 ```
 
-Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
+Now let’s set up the MPI environment using `MPI_Init` , `MPI_Comm_size`
 , `MPI_Comm_rank` , and `MPI_Finaize`:
 
 ```fortran
@@ -529,7 +549,7 @@ call MPI_FINALIZE(ierror)
 END PROGRAM
 ```
 
-Next let’s generate an array named distro_Array to store four
+Next let’s generate an array named `distro_Array` to store four
 numbers. We will also create a variable called `scattered_Data` to
 which we will scatter the data.
 

@@ -4,9 +4,9 @@ Parallel commputation can often be a bit more complex compared to
 standard serial applications. This page will explore these differences and describe how parallel programs work in general.
 We will also assess two parallel programming solutions that utilize the multiprocessor environment of a supercomputer.
 
-__Useful Links:__
+__Useful Link:__
 
-[https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis)
+[LLNL Introduction to Parallel Computing Tutorial](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##Whatis)
 
 ## Why Parallel?
 
@@ -16,7 +16,7 @@ weekend it takes you several weeks to finish the puzzle. Now assume
 you have a team of friends helping with the puzzle. It progresses much faster,
 and you are able to finish the puzzle within desired weekend. This
 principle is the central idea behind parallel computation. You can
-dramatically cut down on computation by splitting one large task into
+dramatically cut down on computation time by splitting one large task into
 smaller tasks that multiple processors can perform all at once. With
 parallel processes a task that would normally take several weeks can
 potentially be reduced to several hours.
@@ -48,23 +48,23 @@ different types of parallel computation.
 
 __Shared Memory Model:__
 
-In a shared memory model all processors to have access to a pool of
+In a shared memory model, all processors to have access to a pool of
 common memory that they can freely use.
 
 ![](https://hpc.llnl.gov/sites/default/files/shared_mem.gif "shared memory model")
 
-(Image courtesy of LLNL <https://computing.llnl.gov/tutorials/parallel_comp/> )
+(Image courtesy of [LLNL](https://computing.llnl.gov/tutorials/parallel_comp/))
 
 __Distributed Memory Model:__
 
-In a distributed memory model a separate segment of memory is
+In a distributed memory model, a separate segment of memory is
 available to each processor.  Because memory isn’t shared inherently,
 information that must be shared between processes is sent over a
 network.
 
 ![](https://hpc.llnl.gov/sites/default/files/distributed_mem.gif "distributed memory model")
 
-(Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch>)
+(Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 
 __Distributed/Shared Model:__
 
@@ -74,10 +74,9 @@ processors sharing a set of common memory is called a node.
 
 ![](https://hpc.llnl.gov/sites/default/files/hybrid_mem2.gif "hybrid_model")
 
-(Image courtesy of LLNL <https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch> )
+(Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 
-Alpine utilizes a hybrid distributed/shared model: there are 188 AMD Milan Compute
-nodes, 184 having 64 cores. 4 with 48 cores.
+Alpine utilizes a hybrid distributed/shared model. For more information about Alpine's hardware, see our [hardware](../clusters/alpine/alpine-hardware.md) page.
 
 ## Tools for Parallel Programming
 

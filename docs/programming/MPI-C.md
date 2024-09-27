@@ -8,10 +8,8 @@ Intel C++ Compiler, GCC, IntelMPI, and OpenMPI to create a
 multiprocessor ‘hello world’ program in C++.  This tutorial assumes
 the user has experience in both the Linux terminal and C++.
 
-__Resources:__
-- [http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/intro_mpi_overview.html)  
+__Helpful MPI Tutorial:__
 - [http://mpitutorial.com/tutorials/](http://mpitutorial.com/tutorials/)  
-- [http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml](http://condor.cc.ku.edu/~grobe/docs/intro-MPI-C.shtml)
 
 
 ## Setup and “Hello, World”
@@ -27,22 +25,21 @@ Next we must load MPI into our environment. Begin by loading in your
 choice of C++ compiler and its corresponding MPI library. Use the
 following commands if using the GNU C++ compiler:
 
-__GNU C++ Compiler__
+````{eval-rst}
+.. tabs::
 
-```bash
-module load gcc
-module load openmpi
-```
+   .. code-tab:: bash GNU C++ Compiler
 
-Or, use the following commands if you prefer to use the Intel C++
-compiler:
+        module load gcc
+        module load openmpi
 
-__Intel C++ Compiler__
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-module load intel
-module load impi
-```
+        module load intel
+        module load impi
+
+````
+
 
 This should prepare your environment with all the necessary tools to
 compile and run your MPI code. Let’s now begin to construct our C++
@@ -66,29 +63,40 @@ Now let’s set up several MPI directives to parallelize our code. In
 this ‘Hello World’ tutorial we’ll be utilizing the following four
 directives:
 
-*MPI_Init():*
-> This function initializes the MPI environment. It takes in the addresses of the C++
-> command line arguments argc and argv.
+````{tabs}
 
-*MPI_Comm_size():*
-> This function returns the total size of the environment via quantity of
-> processes. The function takes in the MPI environment, and the memory address of an
-> integer variable.
+```{tab} *MPI_Init()*
 
-*MPI_Comm_rank():*
-> This function returns the process id of the processor that called the
-> function. The function takes in the MPI environment, and the memory address of an
-> integer variable.
+The `MPI_Init()` function initializes the MPI environment. It takes in the addresses of the C++ command line arguments `argc` and `argv`.
 
-*MPI_Finalize():*
-> This function cleans up the MPI environment and ends MPI communications.
+```
 
-These four directives should be enough to get our parallel 'hello
-world' running. We will begin by creating two variables,
+```{tab} *MPI_Comm_size()*
+
+The `MPI_Comm_size()` function returns the total size of the environment via quantity of processes. The function takes in the MPI environment, and the memory address of an integer variable.
+
+```
+
+```{tab} *MPI_Comm_rank()*
+
+The `MPI_Comm_rank()` function returns the process ID of the processor that called the function. The function takes in the MPI environment, and the memory address of an integer variable.
+
+```
+
+```{tab} *MPI_Finalize()*
+
+The `MPI_Finalize()` function cleans up the MPI environment and ends MPI communications.
+
+```
+
+````
+
+These four directives should be enough to get our parallel 'Hello
+World' program running. We will begin by creating two variables,
 `process_Rank`, and `size_Of_Cluster`, to store an identifier for each
 of the parallel processes and the number of processes running in the
-cluster respectively. We will also implement the `MPI_Init` function
-which will initialize the mpi communicator:
+cluster, respectively. We will also implement the `MPI_Init` function
+which will initialize the MPI communicator:
 
 ```c++
 #include <stdio.h>
@@ -106,7 +114,7 @@ int main(int argc, char** argv){
 Let's now obtain some information about our cluster of processors and
 print the information out for the user. We will use the functions
 `MPI_Comm_size()` and `MPI_Comm_rank()` to obtain the count of
-processes and the rank of a process respectively:
+processes and the rank of a process, respectively:
 
 ```c++
 #include <stdio.h>
@@ -147,19 +155,21 @@ int main(int argc, char** argv){
 
 Now the code is complete and ready to be compiled. Because this is an
 MPI program, we have to use a specialized compiler. Be sure to use the
-correct command based off of what compiler you have loaded.
+correct command based on which compiler you have loaded.
 
-__OpenMPI__
+````{eval-rst}
+.. tabs::
 
-```bash
-mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
-```
+   .. code-tab:: bash Open MPI
 
-__Intel MPI__
+        mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
 
-```bash
-mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
-```
+   .. code-tab:: bash Intel MPI
+
+        mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
+
+````
+
 
 This will produce an executable we can pass to the cluster as a job. In
 order to execute MPI compiled code, a special command must be used:
@@ -168,7 +178,7 @@ order to execute MPI compiled code, a special command must be used:
 mpirun -np 4 ./hello_world_mpi.exe
 ```
 
-The flag `-np` specifies the number of processor that are to be utilized
+The flag `-np` specifies the number of processors that are to be utilized
 in execution of the program.
 
 In your job script, load the same compiler and OpenMPI
@@ -176,58 +186,60 @@ choices you used above to compile the program, and run the job with
 Slurm to execute the application. Your job script should look
 something like this:
 
-__OpenMPI__
+````{eval-rst}
+.. tabs::
 
-```bash
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --constraint ib
-#SBATCH --partition atesting
-#SBATCH --time 0:01:00
-#SBATCH --output parallel_hello_world.out
+   .. code-tab:: bash Open MPI
 
-module purge
+        #!/bin/bash
+        #SBATCH -N 1
+        #SBATCH --ntasks 4
+        #SBATCH --job-name parallel_hello
+        #SBATCH --constraint ib
+        #SBATCH --partition atesting
+        #SBATCH --time 0:01:00
+        #SBATCH --output parallel_hello_world.out
 
-module load gcc
-module load openmpi
+        module purge
 
-mpirun -np 4 ./hello_world_mpi.exe
-```
+        module load gcc
+        module load openmpi
 
-__Intel MPI__
+        mpirun -np 4 ./hello_world_mpi.exe
 
-```bash
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition shas-testing
-#SBATCH --time 0:01:00
-#SBATCH --output parallel_hello_world.out
+   .. code-tab:: bash Intel MPI
 
-module purge
+        #!/bin/bash
+        #SBATCH -N 1
+        #SBATCH --ntasks 4
+        #SBATCH --job-name parallel_hello
+        #SBATCH --partition shas-testing
+        #SBATCH --time 0:01:00
+        #SBATCH --output parallel_hello_world.out
 
-module load intel
-module load impi
+        module purge
 
-mpirun -np 4 ./hello_world_mpi.exe
-```
+        module load intel
+        module load impi
 
-It is important to note that on Alpine, there is a total of 64 cores
+        mpirun -np 4 ./hello_world_mpi.exe
+
+````
+
+```{note}
+On Alpine, there are at most 64 cores
 per node. For applications that require more than 64 processes, you
 will need to request multiple nodes in your job. Our
 output file should look something like this:
 
-```
+```bash
 Hello World from process 3 of 4
 Hello World from process 2 of 4
 Hello World from process 1 of 4
 Hello World from process 0 of 4
 ```
 
-Ref: [http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/hello_world_ex.html)
+Source: Dartmouth College Intro to MPI Guide
 
 
 ## MPI Barriers and Synchronization
@@ -243,7 +255,7 @@ MPI_Barrier(MPI_Comm comm);
 ```
 
 To get a handle on barriers, let’s modify our "Hello World" program so
-that it prints out each process in order of thread id. Starting with
+that it prints out each process in order of thread ID. Starting with
 our "Hello World" code from the previous section, begin by nesting our
 print statement in a loop:
 
@@ -369,7 +381,7 @@ Let’s implement message passing in an example:
 
 ### Example
 
-We will create a two-process process that will pass the number 42 from
+We will create a two-process program that will pass the number 42 from
 one process to another.  We will use our “Hello World” program as a
 starting point for this program. Let’s begin by creating a variable to
 store some information.
@@ -513,8 +525,8 @@ In order to get a better grasp on these functions, let’s go ahead and
 create a program that will utilize the scatter function. Note that the
 gather function (not shown in the example) works similarly, and is
 essentially the converse of the scatter function. Further examples
-which utilize the gather function can be found in the MPI tutorials
-listed as resources at the beginning of this document.
+which utilize the gather function can be found in the MPI tutorial
+linked at the beginning of this document.
 
 ### Example
 
@@ -535,7 +547,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Now let’s setup the MPI environment using `MPI_Init` , `MPI_Comm_size`
+Now let’s set up the MPI environment using `MPI_Init` , `MPI_Comm_size`
 , `MPI_Comm_rank` , and
 
 `MPI_Finaize`:
