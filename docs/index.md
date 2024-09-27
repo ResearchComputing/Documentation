@@ -45,6 +45,10 @@ The following resources are available for course support:
 
 Students are welcome to use RC resources on their own for class projects and can request access as a regular UCB affiliate via the link off the RC homepage at: https://www.colorado.edu/rc. Students are not required to complete the course intake form noted above. To request help, contact rc-help@colorado.edu and please indicate that the work is for a class project and any deadlines.  
 
+## Meet the RC User Support Team!
+
+![The RC User Support team](_static/MeetTheUserSupportTeam.png)
+
 ## Acknowledging RC
 
 Use of University of Colorado Research Computing resources, including (but not limited to) the Janus, Summit, and Alpine supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
