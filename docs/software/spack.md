@@ -1,6 +1,6 @@
 # Spack
 
-*Currently, Spack is only available on Alpine.* [Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available in the Alpine software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
+Spack is available on Alpine and Blanca. [Spack](https://spack.readthedocs.io/en/latest/) is a package manager designed for installing multiple configurations. Spack is designed for Supercomputing clusters, making it easy to install and configure software that may not currently be available in the Alpine or Blanca software stack. The following documentation demonstrates how to activate & use the CURC Spack module and utilize your own Spack environments to install packages and compilers.
 
 ## Using Spack on CURC
 You can follow these steps from a Research Computing terminal session via a compile job (`acompile`) or within a batch or interactive job.
@@ -30,32 +30,49 @@ You can create a Spack environment with the following command:
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env create <environment name>
 ```
 
-Note that, by default, environment specs are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
+```{note}
+By default, environment specs are stored in `/projects/$USER/spack/environments/`. This location can be changed by modifying the `environments_root` variable within `~/.spack/config.yaml`.
+```
 
 __2. Activate your Spack environment.__
 You can activate your Spack environment with one of the following commands: 
+
+`````{tabs}
+
+````{tab} Activate with Spacktivate
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spacktivate <environment name>
 ```
 
-or
+````
+
+````{tab} Activate with Spack Env
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env activate <environment name>
 ```
+````
+`````
 
 To deactivate your environment, you can use one of the following commands: 
+`````{tabs}
+
+````{tab} Deactivate with despacktivate
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ despacktivate
 ```
 
-or
+````
+
+````{tab} Deactivate with Spack Env
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env deactivate
 ```
+````
+`````
 
 ### Installing Software with Spack
 
@@ -67,7 +84,9 @@ fastqc
 ==> 1 packages
 ```
 
->For additional information about a specific piece of software (available versions, variants, and dependencies), you can use the `spack info <software name>` command. Note that the 'preferred version' is the default version which will be installed if no alternative version is specified. 
+```{tip}
+For additional information about a specific piece of software (available versions, variants, and dependencies), you can use the `spack info <software name>` command. Note that the 'preferred version' is the default version which will be installed if no alternative version is specified.
+``` 
 
 Once you've confirmed that a piece of software is available, you can install it in the active environment using the `spack install --add` command:
 
@@ -75,9 +94,10 @@ Once you've confirmed that a piece of software is available, you can install it 
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc
 ```
 
->__Note:__
->- The `--add` argument is required to add package specs to an environment. You can separately add specs >without installing a package using the `spack add <software name>` command.
->- If no compiler is specified, then a default compiler will be installed and used within the environment.
+```{note}
+* The `--add` argument is required to add package specs to an environment. You can separately add specs >without installing a package using the `spack add <software name>` command.
+* *If no compiler is specified, then a default compiler will be installed and used within the environment.
+```
 
 You can also modify the installation commands to meet your installation needs. You can specify which version you'd like to install using the `@` operator:
 
@@ -101,7 +121,9 @@ diffutils@3.9        libiconv@1.17  perl@5.36.0        zlib@1.2.13
 ==> 12 installed packages
 ```
 
->Note that since we did not specify a compiler, the default compiler of `gcc@8.5.0` was used. Please also note that the default compiler may change. 
+```{note}
+Since we did not specify a compiler, the default compiler of `gcc@8.5.0` was used. Please also note that the default compiler may change.
+```
 
 #### Installation Locations and Specifics
 
@@ -113,7 +135,7 @@ The default cache is located at `/scratch/alpine/$USER/spack/cache`. This direct
 
 ### Installing and Using Compilers with Spack
 
-In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and set it as the default compiler for your environment. 
+In addition to standard software packages, you can use Spack to install compilers which are not currently available in the Alpine or Blanca software stack. It is highly recommended to __NOT__ install compilers directly within the environment. Instead, we suggest that you first install the compiler outside of the environment. If it is installed directly within an environment, then it will depend on the default compiler within the environment. The following is our recommended way to install a new compiler and set it as the default compiler for your environment. 
 
 1. Install the compiler outside of your environment (only needs to be done once):
     ```
@@ -135,7 +157,9 @@ In addition to standard software packages, you can use Spack to install compiler
     ```
     spack compiler remove gcc -a
     ```
-    >Note that you can also remove intel compilers using `spack compiler remove intel -a`
+    ```{tip}
+    You can also remove intel compilers using `spack compiler remove intel -a`
+    ```
 
 5. Add the compiler you installed outside of the environment and install the compiler into the environment:
     ```
@@ -143,7 +167,9 @@ In addition to standard software packages, you can use Spack to install compiler
     spack install --add gcc@13.1.0
     ```
 
->Note that the install of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
+```{important}
+The installation of the compiler within the environment is necessary as it will install all dependencies needed for the compiler. 
+```
 
 
 Once the compiler is added, you can install any subsequent packages using the compiler you've installed with the `%` operator. For example:
@@ -152,17 +178,19 @@ Once the compiler is added, you can install any subsequent packages using the co
 [johndoe@c3cpu-c11-u17-2 ~]$ spack install --add fastqc%gcc@13.1.0
 ```
 
->Installing compilers can take a long time, so make sure you request enough time with `acompile` using the `--time` directive. Additionally, build times can be reduced by specifying more cores with `acompile -n 4` (or even more cores with sinteractive jobs) in conjunction with `spack install --add -j 4`.
+```{tip}
+Installing compilers can take a long time, so make sure you request enough time with `acompile` using the `--time` directive. Additionally, build times can be reduced by specifying more cores with `acompile -n 4` (or even more cores with sinteractive jobs) in conjunction with `spack install --add -j 4`.
+```
 
 #### Adding a compiler from the CURC stack
 
-You can also add any compilers to spack that are already available in the Alpine software stack. To accomplish this, simply load the module associated with your preferred compiler:
+You can also add any compilers to spack that are already available in the Alpine or Blanca software stack. To accomplish this, simply load the module associated with your preferred compiler:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ module load aocc/3.2.0
 ```
 
-From there, you can add the compiler to Spack. All compilers in the Alpine software stack can be located with the environment variable `CURC_<compiler>_BIN`. In the case of `aocc/3.2.0`:
+From there, you can add the compiler to Spack. All compilers in the software stack can be located with the environment variable `CURC_<compiler>_BIN`. In the case of `aocc/3.2.0`:
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack compiler add $CURC_AOCC_BIN
@@ -202,11 +230,11 @@ If an installation fails, there are several ways to troubleshoot the failure. Co
 * __Building with the wrong compiler:__ Double check if the compiler you are using is compatible with the software you are attempting to build. 
 * __Building with an incompatible variant set:__ Confirm that the configuration settings for the software are compatible and as expected. If not, try enabling or disabling variants that may be causing problems. 
     * One can easily see variants and possible conflicts by searching the package using [Spack's provided search engine](https://packages.spack.io/) and viewing the "Variants" and "Conflicts" section of the documentation. Additionally, one can view `package.py` in the "Build System" section to directly view the code that defines variants and conflicts.
-* __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try insalling an older version. 
+* __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try installing an older version. 
 * __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
 
 Additionally, Spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, use `spack -dv install`. 
 
-__Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are be happy to help with any questions you may have! 
+__Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are happy to help with any questions you may have! 
 
 Suggestions provided in the `Troubleshooting Spack` subsection were based off of Spack documentation written by [NERSC](https://docs.nersc.gov/development/build-tools/spack/).

@@ -4,10 +4,13 @@
 2. **Filesystems**: `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are mounted on all Alpine nodes.
 3. **Scratch Space**: `/scratch/alpine/$USER` will offer much better performance than doing I/O from `/projects`.
 4. **Node-local scratch**: Most Alpine nodes also have at least 400 GB of scratch space on a local SSD disk, which will offer the fastest I/O possible.
-	> This job specific directory is available within jobs as `$SLURM_SCRATCH`. Note that this storage is only available during jobs and is deleted after jobs, so be sure to copy new data you want to keep off of it at the end of your job script. For more info on the different RC storage spaces, please see our page on [storage](../../compute/filesystems.md).
-4. **Head-nodes**: There are no dedicated Alpine "head nodes". Instead, `acompile` jobs have been implemented with the `acompile` command (note the lack of `ssh`). To build software that will run on Alpine, start an interactive or an `acompile` job on Alpine and compile your software there. _**Do not compile on the login nodes!**_
+	```{hint}
+   This job specific directory is available within jobs as `$SLURM_SCRATCH`. Note that this storage is only available during jobs and is deleted after jobs, so be sure to copy new data you want to keep off of it at the end of your job script. For more info on the different RC storage spaces, please see our page on [storage](../../compute/filesystems.md).
+   ```
+5. **Head-nodes**: There are no dedicated Alpine "head nodes". Instead, `acompile` jobs have been implemented with the `acompile` command (note the lack of `ssh`). To build software that will run on Alpine, start an interactive or an `acompile` job on Alpine and compile your software there. _**Do not compile on the login nodes!**_
 
-Note: For more information on `acompile` options use the command:
+````{note}
+For more information on `acompile` options use the command:
 
 ```
 $ acompile --help
@@ -20,7 +23,7 @@ usage:
        -h | --help                     : print this message
 
 ```
-
+````
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 

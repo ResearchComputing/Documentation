@@ -1,9 +1,9 @@
 # Using OpenMP with C
 
 Because a cluster consists of many CPUs, the most effective way to utilize
-these resources involves parallel programming. Probably the simplest
-way to begin parallel programming involves the utilization of
-OpenMP. OpenMP is a Compiler-side solution for creating code that runs
+these resources involves parallel programming. Perhaps the simplest
+way to begin parallel programming is through the use of
+OpenMP. OpenMP is a compiler-side solution for creating code that runs
 on multiple cores/threads. Because OpenMP is built into a compiler, no
 external libraries need to be installed in order to compile this
 code. These tutorials will provide basic instructions on utilizing
@@ -14,15 +14,16 @@ the C++ Language.
 
 Resources:
 
-Much more in depth OpenMP and MPI C++ tutorial:
+__Helpful OpenMP Tutorial:__
+
 - [https://hpc-tutorials.llnl.gov/openmp/](https://hpc-tutorials.llnl.gov/openmp/)
 
 
 ## Parallel “Hello, World” Program
 
-In this section we will learn how to make a simple parallel hello
-world program in C++. Let’s begin with the creation of a program
-titled: parallel_hello_world.cpp. From the command line run the
+In this section we will learn how to make a simple parallel "Hello
+World" program in C++. Let’s begin with the creation of a program
+titled `parallel_hello_world.cpp`. From the command line, run the
 command:
 
 ```bash
@@ -37,15 +38,15 @@ the program:
 #include <omp.h>
 ```
 
-These flags allow us to utilize the stdio and omp libraries in our
-program. The `<omp.h>` header file will provide openmp
+These flags allow us to utilize the `stdio` and `omp` libraries in our
+program. The `<omp.h>` header file will provide OpenMP
 functionality. The `<stdio.h>` header file will provide us with print
 functionality.
 
 Let’s now begin our program by constructing the main function of the
-program. We will use `omp_get_thread_num()` to obtain the thread id of
+program. We will use `omp_get_thread_num()` to obtain the thread ID of
 the process. This will let us identify each of our threads using that
-unique id number.
+unique ID number.
 
 ```c++
 #include <stdio.h>
@@ -62,35 +63,33 @@ int main(int argc, char** argv){
 Let’s compile our code and see what happens. We must first load the
 compiler module we want into our environment. We can do so as such:
 
-__GCC__:
+````{eval-rst}
+.. tabs::
 
-```bash
-module load gcc
-```
+   .. code-tab:: bash GCC
 
-Or
+        module load gcc
 
-__Intel__:
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-module load intel
-```
+        module load intel
+
+````
 
 From the command line, where your code is located, run the command:
 
-__GCC__:
+````{eval-rst}
+.. tabs::
 
-```bash
-g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
-```
+   .. code-tab:: bash GCC
 
-Or
+        g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
 
-__Intel__:
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
-```
+        icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+
+````
 
 This will give us an executable we can submit as a job to our cluster.
 Simply submit the job to Slurm, running the
@@ -121,34 +120,35 @@ it with `pragma` !  The `#pragma omp parallel { … }` directive creates
 a section of code that will be run in parallel by multiple
 threads. Let’s implement it in our code:
 
-```bash
+```c++
 #include <stdio.h>
 #include <omp.h>
 
 int main(int argc, char** argv){
     #pragma omp parallel
     {
-        printf(“Hello from process: %d\n”, omp_get_thread_num());
+        printf("Hello from process: %d\n", omp_get_thread_num());
     }
     return 0;
 }
 ```
 
 We must do one more thing before achieving parallelization. To set the
-amount of threads we want OpenMP to run on, we must set an Linux
+amount of threads we want OpenMP to run, we must set a Linux
 environment variable to be specify how many threads we wish to
-use. The environment variable: `OMP_NUM_THREADS` will store this
+use. The environment variable `OMP_NUM_THREADS` will store this
 information.  Changing this variable does not require recompilation of
-the the program, so this command can be placed in either the command
+the program, so this command can be placed in either the command
 line or on your job script:
 
 ```bash
 export OMP_NUM_THREADS=4
 ```
 
-__Important to note: this environment variable will need to be set
+```{important}
+This environment variable will need to be set
 every time you exit your shell.__ If you would like to make this
-change permanent you will need to add these lines to your
+change permanent, you will need to add these lines to your
 `.bash_profile` file in your home directory:
 
 ```bash
@@ -156,23 +156,24 @@ OMP_NUM_THREADS=4;
 export OMP_NUM_THREADS
 ```
 
+
+
 Now let’s re-compile the code and run it to see what happens:
 
-__GCC__
+````{eval-rst}
+.. tabs::
 
-```bash
-g++ parallel_hello_world.cpp -o parrallel_hello_world.exe -fopenmp
-```
+   .. code-tab:: bash GCC
 
-Or
+        g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
 
-__Intel__
+   .. code-tab:: bash Intel C/C++ Compiler
 
-```bash
-icc parallel_hello_world.cpp -o parrallel_hello_world.exe -qopenmp
-```
+        icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
 
-Running our job script and we should end with an output file similar to this one:
+````
+
+Running our job script, we should end with an output file similar to this one:
 
 ```
 Hello from process: 3
@@ -181,15 +182,16 @@ Hello from process: 2
 Hello from process: 1
 ```
 
-Note: Don’t worry about the order of processes that printed, the threads will
+```{note}
+Don’t worry about the order of processes that printed, the threads will
 print out at varying times.
-
+```
 
 ## Private vs. Shared Variables
 
-Memory management is a quintessential component of any parallel
+Memory management is an essential component of any parallel
 program that involves data manipulation. In this section, we will
-learn about the different variable types in OpenMP as well as a simple
+learn about the different variable types in OpenMP, as well as a simple
 implementation of these types into the program we made in the previous
 section.
 
@@ -204,7 +206,7 @@ come in the forms of shared and private variable type classifiers.
   share.
 
 To indicate private or shared memory, declare the variable before your
-parallel section and annotate the pragma omp directive as such:
+parallel section and annotate the `pragma omp` directive as such:
 
 ```c++
 #pragma omp shared(shar_Var1) private(priv_Var1, priv_Var2)
@@ -219,7 +221,7 @@ of parallel sections will be inherently public.
 
 Let’s adapt our ‘Hello World’ code to utilize private variables as an
 example.  Starting with the code we left off with, let’s create a
-variable to store the thread id of each process.
+variable to store the thread ID of each process.
 
 ```c++
 #include <stdio.h>
@@ -237,7 +239,7 @@ int main(int argc, char** argv){
 ```
 
 Now let’s define `thread_id` as a private variable. Because we want
-each task to have a unique thread id, using the `private(thread_id)`
+each task to have a unique thread ID, using the `private(thread_id)`
 will create a separate instance of `thread_id` for each task.
 
 ```c++
@@ -274,8 +276,8 @@ int main(int argc, char** argv){
 }
 ```
 
-Compiling and running our code will result in a similar result to
-our original hello world:
+Compiling and running our code will result in similar output to
+our original Hello World:
 
 ```
 Hello from process: 3
@@ -287,23 +289,23 @@ Hello from process: 1
 ## Barrier and Critical Directives
 
 OpenMP has a variety of tools for managing processes. One of the more
-prominent forms of control comes with the __barrier__:
+prominent forms of control comes with the `barrier`:
 
 ```c++
 #pragma omp barrier
 ```
 
-...and the __critical__ directives:
+...and the `critical` directives:
 
 ```c++
 #pragma omp critical { … }
 ```
 
-The barrier directive stops all processes for proceeding to the next
+The `barrier` directive stops all processes for proceeding to the next
 line of code until all processes have reached the barrier. This allows
 a programmer to synchronize sequences in the parallel process.
 
-A critical directive ensures that a line of code is only run by one
+A `critical` directive ensures that a line of code is only run by one
 process at a time, ensuring thread safety in the body of code.
 
 
@@ -326,7 +328,7 @@ int main(int argc, char** argv){
     int i;
     int thread_id;
 
-    #pragma omp parallel
+    #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
 
@@ -351,7 +353,7 @@ int main(int argc, char** argv){
     int i;
     int thread_id;
 
-    #pragma omp parallel
+    #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
 
@@ -376,7 +378,7 @@ int main(int argc, char** argv){
     int i;
     int thread_id;
 
-    #pragma omp parallel
+    #pragma omp parallel private(thread_id)
     {
         thread_id = omp_get_thread_num();
 
@@ -402,12 +404,12 @@ Hello from process: 3
 ```
 
 
-## Work Sharing Directive: omp for
+## Work Sharing Directive: `omp for`
 
 OpenMP’s power comes from easily splitting a larger task into multiple
 smaller tasks.  Work-sharing directives allow for simple and effective
 splitting of normally serial tasks into fast parallel sections of
-code. In this section we will learn how to implement omp for
+code. In this section we will learn how to implement the `omp for`
 directive.
 
 The directive `omp for` divides a normally serial for loop into a
@@ -420,8 +422,8 @@ parallel task. We can implement this directive as such:
 
 ### Example
 
-Let’s write a program to add all the numbers between 1 and 1000. Begin with a main function
-and the stdio and omp headers:
+Let’s write a program to add all the numbers between 1 and 1000. Begin with a `main` function
+and the `stdio` and `omp` headers:
 
 ```c++
 #include <stdio.h>
@@ -432,7 +434,7 @@ int main(int argc, char** argv){
 }
 ```
 
-Now let’s go ahead and setup variables for our parallel code. Lets
+Now let’s go ahead and set up variables for our parallel code. Lets
 first create variables `partial_Sum` and `total_Sum` to hold each
 thread’s partial summation and to hold the total sum of all threads
 respectively.
@@ -471,7 +473,7 @@ int main(int argc, char** argv){
 
 Let’s now set up our work sharing directive. We will use the `#pragma
 omp for` to declare the loop as to be work sharing, followed by the
-actual C++ loop. Because we want to add all number from 1 to 1000, we
+actual C++ loop. Because we want to add all numbers from 1 to 1000, we
 will initialize our loop at one and end at 1000.
 
 ```c++
@@ -487,20 +489,19 @@ int main(int argc, char** argv){
         total_Sum = 0;
 
         #pragma omp for
-        {
-            for(int i = 1; i <= 1000; i++){
-                partial_Sum += i;
-            }
+        for(int i = 1; i <= 1000; i++){
+            partial_Sum += i;
         }
+
     }
     return 0;
 }
 ```
 
-Now we must join our threads. To do this we must use a critical
+Now we must join our threads. To do this, we must use a critical
 directive to create a thread safe section of code. We do this with
-`#pragma omp critical` directive. Lastly we add partial sum to total
-sum and print out the result outside the parallel section of code.
+`#pragma omp critical` directive. Lastly, we add `partial_Sum` to `total_Sum`
+ and print out the result outside the parallel section of code.
 
 ```c++
 #include <stdio.h>
@@ -515,10 +516,8 @@ int main(int argc, char** argv){
         total_Sum = 0;
 
         #pragma omp for
-        {
-            for(int i = 1; i <= 1000; i++){
-                partial_Sum += i;
-            }
+        for(int i = 1; i <= 1000; i++){
+            partial_Sum += i;
         }
 
         //Create thread safe region.

@@ -25,7 +25,7 @@ people who have overutilized their allocated resources get lower priority.
 
 ### Level Fairshare
 A Level Fairshare (`LevelFS`) is a value calculated by [Slurm's Fairshare 
-Algorithm](https://slurm.schedmd.com/fair_tree.md#algorithm). A user's 
+Algorithm](https://slurm.schedmd.com/fair_tree.html). A user's 
 assigned shares (determined by their allocation) and usage (based on their 
 job history) contribute to their `LevelFS` value. Information on how to 
 check your `LevelFS` score can be found 

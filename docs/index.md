@@ -183,7 +183,7 @@ software/matlab
 software/python
 software/GNUParallel
 software/vasp
-software/Containerizationon
+software/Containerization
 software/alphafold
 software/spack
 software/sratoolkit
@@ -213,7 +213,7 @@ additional-resources/CURC-cheatsheet
 additional-resources/registrycilogon-instructions
 additional-resources/utah-videos
 additional-resources/blanca-MOU
-additional-resources/other
+additional-resources/facilities_equip_other
 additional-resources/biokem-facility
 additional-resources/csu-xsede-usernames
 

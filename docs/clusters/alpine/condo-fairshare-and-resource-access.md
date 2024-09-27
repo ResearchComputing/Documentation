@@ -2,15 +2,14 @@
 
 This purpose of this document is to provide a detailed overview of 
 Alpine's FairShare and resource access policies. The intended audience is 
-Alpine's insitutional-level condo contributors.
+Alpine's institutional-level condo contributors.
 
-Updated November 4, 2022 
 
 ## Goals and philosophy 
 
 The Alpine supercomputer hosted at CU Boulder and administered by Research 
 Computing at CU Boulder (CURC) supports institutional condo purchases, the 
-first two of which come online in the fall of 2022. This document outlines 
+first two of which came online in the fall of 2022. This document outlines 
 how jobs affiliated with condo contributors will be assigned priority and 
 billing weight on the system. It does not aim to address FairShare scoring 
 for individual users and allocations, as these involve more detail and 
@@ -143,7 +142,7 @@ or, if applicable, to the condo buyer within the institution (for example,
 a PI or department). 
 
 Note that some Slurm usage querying tools are also available for general 
-systems users, including `sinfo`, `sshare`, `sreport`, and `squeue`. 
+system users, including `sinfo`, `sshare`, `sreport`, and `squeue`. 
 Public-facing reports and dashboards are available online through RC’s 
 instance of XDMoD. 
 

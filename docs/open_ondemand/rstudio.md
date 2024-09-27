@@ -1,6 +1,6 @@
 # RStudio Server
 
-RStudio is an integrated development environment (IDE) for R. It can be an extremely useful tool when developing and running R code. It allows users to navigate the filesystem, edit and run code, view plots, and much more all in the same place. In Open OnDemand we allow users to easily access this functionality using the **RStudio Server** application. Furthermore, each RStudio session is launched from a [container](../software/Containerizationon.md), which allows users to customize it to their needs. For more information on customizing your container, see [Installing dependencies for RStudio Server](#installing-dependencies-for-rstudio-server) below. 
+RStudio is an integrated development environment (IDE) for R. It can be an extremely useful tool when developing and running R code. It allows users to navigate the filesystem, edit and run code, view plots, and much more all in the same place. In Open OnDemand we allow users to easily access this functionality using the **RStudio Server** application. Furthermore, each RStudio session is launched from a [container](../software/Containerization.md), which allows users to customize it to their needs. For more information on customizing your container, see [Installing dependencies for RStudio Server](#installing-dependencies-for-rstudio-server) below. 
 
 ```{eval-rst}
 .. figure:: ./OnDemand/rstudio_gui.png
@@ -19,9 +19,6 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 ```
 
 3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
-    ```{important}
-    Please note that the first time you launch RStudio it may take 15 minutes or more to create a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html), if 1 core is used. Persistent overlays are the secret sauce that allow for highly customizable RStudio sessions. For this reason, we recommend using 4 cores or more during your first launch of an RStudio session. Subsequent sessions will not require the creation of the persistent overlay; therefore 1 core may be sufficient.
-    ```
 
 4. When your RStudio session is ready, you can click the **"Connect to RStudio Server"** button to bring up a web page with the RStudio IDE. 
 
@@ -44,7 +41,7 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 
 ## Installing dependencies for RStudio Server
 
-As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/Containerizationon.md). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html), which is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
+As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/Containerization.md). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html), which is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
 ```r
 install.packages("BiocManager")
 library(BiocManager)
@@ -71,9 +68,13 @@ acompile --ntasks=4
 If you do not install dependencies using the same cluster (Alpine or Blanca) that you initially launched the RStudio Server from, you may receive errors. 
 ```
 
-Once on a compute node, we can now modify the overlay by launching the overlay using fakeroot.
+Once on a compute node, you can then modify the overlay by launching the overlay using fakeroot. To do this, first specify the version of R that you are using (here we use R version 4.4.1).
 ```
-apptainer shell --fakeroot --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
+export r_app_version="4.4.1"
+```
+With the environment variable set, you can then utilize the below command to launch the container and associated overlay. 
+```
+apptainer shell --fakeroot --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-${r_app_version}/rstudio-server-${r_app_version}_overlay.img $CURC_CONTAINER_DIR_OOD/rstudio-server-${r_app_version}.sif
 ```
 You should now be in a terminal starting with `Apptainer>`. In this shell we can install anything using the standard Ubuntu package manager. Let's go ahead and install `zlib1g-dev`, which will give us `zlib.h`.
 ```
@@ -97,21 +98,25 @@ We should now see that the XVector install goes through!
 
 As mentioned above, the **RStudio Server** application is held within a container. This means code utilizing packages installed within the container or custom container configurations may only work if the code is ran inside the container. Thus, users who want to run code developed in the **RStudio Server** application from the command line need to do this using Apptainer. Below we provide two methods that can be used once a user has access to a compute node:
 
--  To utilize R in an interactive session, you can execute the following command to start the container.
-
+-  To utilize R in an interactive session, first specify the version of R that you are using (here we use R version 4.4.1).
     ```
-    apptainer shell --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif
+    export r_app_version="4.4.1"
     ```
-    
+    With the environment variable set, you can execute the following command to start the container.
+    ```
+    apptainer shell --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-${r_app_version}/rstudio-server-${r_app_version}_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-${r_app_version}.sif
+    ```
     You can then launch R and interact with it (you can also utilize `Rscript` here too).
-
     ```
     Apptainer> R
     > library(XVector)
     ```
 
-- To execute the script `test_R.r` without an interactive session, you can execute the following command. 
-
+- To execute the script `test_R.r` without an interactive session, first specify the version of R that you are using (here we use R version 4.4.1).
     ```
-    apptainer exec --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-server-4.2.2_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-4.2.2.sif Rscript test_R.r
+    export r_app_version="4.4.1"
+    ```
+    With the environment variable set, you can then execute the following command. 
+    ```
+    apptainer exec --bind /projects,$SCRATCHDIR,$CURC_CONTAINER_DIR_OOD --overlay /projects/$USER/.rstudioserver/rstudio-${r_app_version}/rstudio-server-${r_app_version}_overlay.img:ro $CURC_CONTAINER_DIR_OOD/rstudio-server-${r_app_version}.sif Rscript test_R.r
     ```

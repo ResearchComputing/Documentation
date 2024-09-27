@@ -6,7 +6,7 @@ application called _Globus_ or through command-line tools such as
 secure copy (_scp_), secure ftp (_sftp_) and _rsync_. 
 
 Data transfers using SSH protocols can be done through the 
-[CURC data transfer nodes](./node-types.md) (DTN). 
+[CURC data transfer nodes](./node-types.md#data-transfer-nodes) (DTN). 
 Transfers via the DTNs support all types of transfers, including large and/or frequent file
 transfers and automated (passwordless) transfers.
 
@@ -29,7 +29,9 @@ is RC's recommended way of transferring data.
 selecting "University of Colorado at Boulder" from the dropdown menu
 and by logging in using your CU IdentiKey and password.
 
-> **_Note for non-CU Boulder users:_** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
+```{important}
+**For non-CU Boulder users:** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
+``` 
 
 ![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
 
@@ -53,7 +55,7 @@ GUI.
 
 ## Guest Collections (Globus Shared Endpoints)
 
-Using a Guest Collection (also known as a "Shared Endpoint"), You can share
+Using a Guest Collection (also known as a "Shared Endpoint"), you can share
 any file or folder that you have access to with anyone who
 has a Globus account. This is particularly useful for PetaLibrary users. PetaLibrary 
 allocation owners can nominate a technical contact that is able to create [Globus Guest
@@ -64,14 +66,16 @@ docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 ## Globus to AWS S3 Bucket connection
 
-CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#rclone)). For _both_ transfer methods it is assumed you already have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
+CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#rclone)). For _both_ transfer methods it is assumed you have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
 
 1) Your CU IdentiKey and accept a Duo push
 2) Your AWS Credentials (access key and secret key)
 
 Once you have signed in one time, your AWS credentials will be stored on your individual Globus account. You will now be able to explore the file structure like you would any other Globus endpoint. 
 
-> Note: Transfer speeds from S3 buckets to CURC resources are roughly 20-30 times higher than the opposite direction. We are currently investigating this asymmetry, but if you are in need of fast transfer speeds from CURC resources to your S3 bucket we recommend using rclone.
+```{tip}
+Transfer speeds from S3 buckets to CURC resources are roughly 20-30 times higher than the opposite direction. We are currently investigating this asymmetry, but if you are in need of fast transfer speeds from CURC resources to your S3 bucket we recommend using rclone.
+```
 
 
 
@@ -174,16 +178,16 @@ and remote file systems.
 
 Command | Function | Example
 --------|--------------------------------------------------------------------|----------
-cd      | Changes the directory of the remote computer                       | cd remote_directory
-lcd     | Changes the directory of the local computer                        | lcd local_directory
-ls      | Lists the contents of the remote directory                         | ls
-lls     | Lists the contents of the local directory                          | lls
-pwd     | Prints working directory of the remote computer                    | pwd
-lpwd    | Prints working directory of the local computer                     | lpwd
-get     | Copies a file from the remote directory to the local directory     | get remote_file
-put     | Copies a file from the local directory to the remote directory     | put local_file
-exit    | Closes the connection to the remote computer and exits the program | exit
-help    | Displays application information on using commands                 | help
+`cd`      | Changes the directory of the remote computer                       | `cd remote_directory`
+`lcd`     | Changes the directory of the local computer                        | `lcd local_directory`
+`ls`      | Lists the contents of the remote directory                         | `ls`
+`lls`     | Lists the contents of the local directory                          | `lls`
+`pwd`     | Prints working directory of the remote computer                    | `pwd`
+`lpwd`    | Prints working directory of the local computer                     | `lpwd`
+`get`     | Copies a file from the remote directory to the local directory     | `get remote_file`
+`put`     | Copies a file from the local directory to the remote directory     | `put local_file`
+`exit`    | Closes the connection to the remote computer and exits the program | `exit`
+`help`    | Displays application information on using commands                 | `help`
 
 Windows users can access sftp through PowerShell or using a GUI
 application like [WinSCP](https://winscp.net/eng/docs/protocols).
@@ -197,7 +201,9 @@ resources](#more-reading) or consult the sftp manual page.
 Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. *You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.* The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few
 simple setup procedures to prepare your local machine.
   
-*Note: these instructions only apply to local macOS and Linux systems. Automating file transfers from Windows is outside of the scope of this document.*
+```{important}
+These instructions only apply to local macOS and Linux systems. Automating file transfers from Windows is outside of the scope of this document.
+```
 
 1. Generate a local ssh key pair. You will only need to perform this once per local system. From a local terminal run:
 
@@ -301,7 +307,9 @@ acl = private
 
 Once rclone is available to use run the command `rclone config` to see the options to create the configuration file. This example outlines configuring a connection to an AWS S3 bucket from Research Computing. See our [Google Drive connection](../storage/petalibrary/gdrive.md) and [Local connection to RC](../storage/petalibrary/rclone.md) examples for guides on other rclone connection methods.
 
-> _**Note: This example assumes you have an S3 bucket already set up with AWS credentials.**_
+```{note}
+_**This example assumes you have an S3 bucket already set up with AWS credentials.**_
+``` 
 
 - Enter the value you wish to start with. For the purposes of this example, we are going to start with a new remote connection. So the value we will enter is 'n' and we will give a name to remote we are going to create.
 ```

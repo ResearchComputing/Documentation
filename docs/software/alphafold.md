@@ -28,7 +28,7 @@ Loading the AlphaFold module does the following:
         ```
 - activates the AlphaFold conda environment
 
-- sets `CURC_AF_DBS` and `CURC_AF_EXAMPLES` environment variables (see 'AlphaFold Databases' and 'AlphaFold Examples' sections, below`)
+- sets `CURC_AF_DBS` and `CURC_AF_EXAMPLES` environment variables (see "AlphaFold Databases" and "AlphaFold Examples" sections, below)
 
 - creates a shortcut to the AlphaFold script so you can run the program with `run_alphafold`
 
