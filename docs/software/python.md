@@ -9,7 +9,7 @@ The following documentation describes how to activate the CURC Anaconda distribu
 
 ## Configuring Conda and Mamba with `.condarc`
 
-The Conda and Mamba package managers allow modification of default settings. These settings are specified in a text file called `.condarc`. For possible configuration options, please see [Using the .condarc conda configuration file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#using-the-condarc-conda-configuration-file). The `.condarc` file should exist within a user's `/home/$USER` directory and can be quickly accessed using the file's full path at `~/.condarc`. A `.condarc` file is important because by default Conda and Mamba will put all package source code and environments in your `/home/$USER` directory. This quickly becomes an issue because your `/home/$USER` directory only has a capacity of 2 GB and packages can be several gigabytes in size.
+The Conda and Mamba package managers allow modification of default settings. These settings are specified in a text file called `.condarc`. For possible configuration options, please see [Using the .condarc conda configuration file](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#using-the-condarc-conda-configuration-file). The `.condarc` file should exist within a user's `/home/$USER` directory and can be quickly accessed using the file's full path at `~/.condarc`. A `.condarc` file is important because by default Conda and Mamba will put all package source code and environments in your `/home/$USER` directory. This quickly becomes an issue because your `/home/$USER` directory has limited storage capacity (see [The Home Filesystem](../compute/filesystems.md#the-home-filesystem) section). For this reason, it is highly suggested that user's redirect material to `/projects/$USER`.
 
 ````{important}
 When loading the Anaconda or Mamba modules, a `.condarc` file will be created for you in your `/home/$USER` directory, if the file does not exist. If the file is created for you, it will contain the following content, which places Conda and Mamba items in your `/projects/$USER` directory:
@@ -23,7 +23,7 @@ envs_dirs:
 ````
 
 Although we will automatically create this file for you when you load the associated modules, you may want to modify `.condarc`. This can be done by opening your `.condarc` file in your favorite text editor (e.g., nano, vim) and modifying it.
-  
+
 ```
 [johndoe@sc3cpu-a7-u19-1 ~]$ nano ~/.condarc
 ```
