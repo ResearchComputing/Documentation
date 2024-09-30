@@ -8,6 +8,32 @@ The Cloud Foundations (CFS) team extends the shared responsibility model by prov
 :alt: The AWS shared responsibility model with CFS added between AWS and the customer
 ```
 
+## Security
+
+The shared responsibility model means that AWS, CFS, and customers collectively share responsibility for the security of the entire stack. That doesn't mean they all share every item in the stack (e.g., CFS doesn't help AWS secure its global infrastructure).
+
+```{important}
+**Each team is responsible for the security of the components for which they are accountable (in the RACI matrix).** Resources provisioned by customers are their responsibility to secure.
+```
+
+```{note}
+Here's a quick way to think about security:
+
+* AWS manages security **of** the cloud.
+* CFS manages security of **integrating** the cloud with CU.
+* Customers manage security **in** the cloud.
+```
+
+### Security Plans
+
+Each party involved in securing an AWS account is expected to produce and maintain their own System Security Plan (SSP). CFS can help customers get started with their SSP, target the appropriate standards, and contribute pre-configured resources to reduce time to compliance.
+
+Please contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for further information.
+
+### Acceptable Use
+
+All usage of AWS cloud accounts must comply with [CU Information Technology Polices](https://www.colorado.edu/information-technology/policy) and [Acceptable Use](https://www.colorado.edu/compliance/policies/acceptable-use-cu-boulders-it-resources).
+
 ## RACI Matrix
 
 A [RACI matrix](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix) outlines the roles and responsibilities associated with managing a set of items.
@@ -65,13 +91,9 @@ The [RACI matrix](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix
   - RA
   - C
   -
-* - Security Assistance
-  - CI
+* - Customer Workload Security
   - RA
-  -
-* - Security Framework
-  - CI
-  - RA
+  - C
   -
 * - Border Network Protection
   - CI
@@ -114,33 +136,6 @@ The [RACI matrix](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix
   -
   - RA
 ```
-
-
-## Security
-
-The shared responsibility model means that AWS, CFS, and customers collectively share responsibility for the security of the entire stack. That doesn't mean they all share every item in the stack (e.g., CFS doesn't help AWS secure its global infrastructure).
-
-```{important}
-**Each team is responsible for the security of the components for which they are accountable (in the RACI matrix).**
-```
-
-```{note}
-Here's a quick way to think about security:
-
-* AWS manages security **of** the cloud.
-* CFS manages security of **integrating** the cloud with CU.
-* Customers manage security **in** the cloud.
-```
-
-### Security Plans
-
-Each party involved in securing an AWS account is expected to produce and maintain their own System Security Plan (SSP). CFS can help customers get started with their SSP, target the appropriate standards, and contribute pre-configured resources to reduce time to compliance.
-
-Please contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu) for further information.
-
-### Acceptable Use
-
-All usage of AWS cloud accounts must comply with [CU Information Technology Polices](https://www.colorado.edu/information-technology/policy) and [Acceptable Use](https://www.colorado.edu/compliance/policies/acceptable-use-cu-boulders-it-resources).
 
 ## Identifying CFS-Managed Resources
 
