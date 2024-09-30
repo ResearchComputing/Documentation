@@ -11,7 +11,7 @@ Here are some quick links to documentation to get you started.
 - [The Module System](compute/modules.md)
 - [Frequently Asked Questions (FAQ)](faq.md)
 
-[Can't find what you need? Provide feedback on the CURC docs!](https://forms.gle/bSQEeFrdvyeQWPtW9)
+Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues). If you would like to provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
 
 More information is available at https://www.colorado.edu/rc.
 
