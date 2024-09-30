@@ -213,6 +213,7 @@ programming/OpenMP-Fortran
 :caption: Additional resources
 
 additional-resources/policies
+additional-resources/feedback
 additional-resources/CURC-cheatsheet
 additional-resources/registrycilogon-instructions
 additional-resources/utah-videos
