@@ -120,7 +120,7 @@ The [RACI matrix](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix
 
 The shared responsibility model means that AWS, CFS, and customers collectively share responsibility for the security of the entire stack. That doesn't mean they all share every item in the stack (e.g., CFS doesn't help AWS secure its global infrastructure).
 
-```{warning}
+```{important}
 **Each team is responsible for the security of the components for which they are accountable (in the RACI matrix).**
 ```
 
@@ -147,10 +147,11 @@ All usage of AWS cloud accounts must comply with [CU Information Technology Poli
 Where feasible, CFS labels all resources under its management by naming convention and/or tag and crafts policy to prevent modification of those resources by customers. However, CFS also chooses to give customers broad permissions so they may effectively self-manage their cloud environments and applications. At times customers may have the unintended ability to modify resources under CFS management. If this occurs, CFS reserves the right to correct configuration of these resources at any time without notice. Customers are encouraged to avoid modifying resources they did not create or those with the names/tags listed below.
 
 ```{note}
-CFS-managed resources may be identified by:
+CFS-managed resources may be identified by one or more of the following:
 
 * Tag: `oit-cld:management:central = true`
 * Naming Prefix: `oitcld`
+* Naming Prefix: `oit-cld-lza`
 ```
 
 If there are any questions about resource ownership, please contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
