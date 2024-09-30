@@ -30,8 +30,10 @@ Internet and Private Subnets can also utilize [AWS Security Groups](https://docs
 ## VPN
 Connectivity to CU Boulder networks, including DNS, is through redundant VPN tunnels.  These tunnels use advanced ecryption alogrithms to secure connections between the LCA1 Private subnet and the CU Boulder campus.
 
-###### NOTE ######
+```{note}
 The LCA1 Internet subnet does not route through the VPN tunnel and internet connections to the CU Boulder campus will need to permitted by the campus Border Firewall.
+```
+
 
 ## FAQS
 - Can I use both the managed firewall and security groups
