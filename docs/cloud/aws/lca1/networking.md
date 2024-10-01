@@ -34,7 +34,7 @@ LCA1 has 2 networks in 2 Availability Zones (az1 or az2) for customer use.
   - Not for customer deployments. Infrastructure network.   
 * - 
   - oit-cld-lza-fw-private-az2
-  - Infrastructure network.  Not for customer deployments.
+  - Not for customer deployments. Infrastructure network.
 * - 
   - oit-cld-lza-tgw-az1
   - Not for customer deployments. Infrastructure network.   
