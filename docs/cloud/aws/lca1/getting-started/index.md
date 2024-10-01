@@ -8,4 +8,5 @@ shared-responsibility-model
 aws-console-access
 aws-cli-access
 managing-grouper-groups
+customer-permission-boundary
 ```
