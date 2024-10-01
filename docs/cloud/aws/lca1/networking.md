@@ -16,20 +16,38 @@ LCA1 has 2 networks in 2 Availability Zones (az1 or az2) for customer use.
   - Deployments with direct inbound/outbound internet access.
 * - Internet
   - oit-cld-lza-internet-az2
-  - Deployments with direct inbound/outbout internet access.
+  - Deployments with direct inbound/outbound internet access.
 * - Private
   - oit-cld-lza-private-az1
   - Deployments that need direct access to campus resources or that should not be exposed to the internet directly.
 * - Private
   - oit-cld-lza-private-az2
   - Deployments that need direct access to campus resources or that should not be exposed to the internet directly.
-
+* - 
+  - oit-cld-lza-fw-internet-az1
+  - Not for customer deployments. Infrastructure network.   
+* - 
+  - oit-cld-lza-fw-internet-az2
+  - Not for customer deployments. Infrastructure network.   
+* - 
+  - oit-cld-lza-fw-private-az1
+  - Not for customer deployments. Infrastructure network.   
+* - 
+  - oit-cld-lza-fw-private-az2
+  - Infrastructure network.  Not for customer deployments.
+* - 
+  - oit-cld-lza-tgw-az1
+  - Not for customer deployments. Infrastructure network.   
+* - 
+  - oit-cld-lza-tgw-az2
+  - Not for customer deployments. Infrastructure network.   
 ```
+
 ## Network Protection
 
 ### OIT Managed Firewall
 
-Both the Internet network and Private network route through an OIT firewall.  The OIT firewall allows select, well known, applications inbound to the Internet network by default.  Connections to/from campus to the Private network are generally allowed by default with exceptions listed below.  The OIT firewall protects deployments by preventing connections from:
+Both the Internet network and Private network route through an OIT firewall.  The OIT firewall allows select, well known, applications inbound to the Internet network by default.  Connections to/from campus to the Private network are generally allowed by default with some exceptions.  The OIT firewall protects deployments by preventing connections from:
 
 #### Internet network
 - Curated list of known bad actors 
@@ -42,41 +60,34 @@ Both the Internet network and Private network route through an OIT firewall.  Th
 - CU Boulder UCB Wireless
 - CU Boulder Guest Wireless
 
-
 ### Customer Managed Security Groups
 
-The Internet and Private networks can also utilize [AWS Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) for granular controls.  Security Groups use IP Source/Destination addresses and TCP/UDP Source/Destination Ports for filtering.
+The Internet and Private networks should also utilize [AWS Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) for granular controls.  Security Groups use IP Source/Destination addresses and TCP/UDP Source/Destination Ports for filtering.
 
-Security Groups are within the customer's span of control.  This means you can deployed, or modify, Security Groups quickly with your security requirements without engaging an external group.   
+### Security Groups vs OIT Firewall
+
+The OIT firewall is application-aware which means it can identify an application based off of network behavior instead of just port and protocol.  As an example, it can prevent a SQL packet from using a 22/TCP exception that was intended to allow SSH.  Changes to OIT firewall policy require a ticket to [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
+
+Security Groups are within the customer's span of control.  This means they can modify Security Groups quickly to meet security requirements without engaging an external group.  Security Groups can dynamically reference AWS resources but are not able to identify traffic by network behavior.
+
+## Network Routing
 
 ### VPN
-Connectivity to CU Boulder networks is through redundant VPN tunnels.  These tunnels use advanced ecryption alogrithms to secure connections between the Private network and the CU Boulder campus.  These tunnels will carry campus:
-- public Networks
-- private Networks
-- DNS lookups for public/private namespace
+Connectivity to CU Boulder networks is through redundant VPN tunnels.  These tunnels use advanced encryption algorithms to secure connections between the Private network and the CU Boulder campus.  These tunnels will carry:
+- CU Boulder Public Networks
+- CU Boulder Private Networks
+- CU Boulder DNS lookups for public/private domain names
+
+#### Private network
+- **Internet:**  Routes to internet via Network Address Translation (NAT), no inbound from internet.
+- **Campus:**  Routes through the VPN to and from campus 
+- **Intra VPC:**  Routes directly to other VPC networks in the same account
+
+#### Internet network 
+- **Internet:**  Routes directly to and from the internet
+- **Campus:**  Routes through public internet
+- **Intra VPC:**  Routes directly to other VPC networks in the same account
 
 ```{note}
 The Internet network does not route through the VPN tunnel.  Customer deployments in the Internet network may require a firewall exception(s) at the campus Border Firewall in order to access some CU Boulder resources.
 ```
-
-
-### FAQS
-
-```{list-table} Frequently Asked Questions
-:widths: 30 70
-:header-rows: 1
-
-* - Question
-  - Answer
-* - Can I use both the managed firewall and security groups
-  - YES!  All traffic is routed through the managed firewall so you can work with OIT to identify and permit/block applications.  The managed firewall is application aware so there may be use cases that leverage this awarness.  An example, preventing a SQL packet from using a TCP 22 allowance that was intended to allow SSH.
-* - Can I only have AWS Security Groups
-  - YES!  The managed firwall items listed above will always be allowed/denied respectively but after that AWS Security Groups can be the customer's exclusive method to control access.
-* - Can the Private network be reached from the Public network
-  - YES!  The Private network is accessible from the Public network through deployments of Application Load Balancers (ALB) or Network Address Translation Gateways (NAT Gateway) in the Public network.
-```
-
-```{toctree}
-:maxdepth: 2
-:caption: LCA1-Network
-```  
