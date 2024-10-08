@@ -10,6 +10,10 @@ Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-acces
 **Answer:**
 The **us-west-2** AWS region has the lowest latency from Colorado's Front Range region (CU Campuses) and is the only region supported for VPN connectivity to the Boulder campus.
 
+## Why do I get errors using non-US regions?
+**Answer:**
+By default, access is restricted to US regions only for confidential workloads.  You will see API errors trying to access non-US regions.  If you need access to a non-US region, reach out to rc-help@colorado.edu and we can evaluate the possibility to operate in non-US regions.
+
 ## Why can't I see the AWS resources I created?
 **Answer:**
 Be sure that you have selected the correct AWS region. Many AWS services are region specific. Also make sure you are logged in to the correct AWS account with the correct Role.

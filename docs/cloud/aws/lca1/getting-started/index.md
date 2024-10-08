@@ -9,4 +9,5 @@ aws-console-access
 aws-cli-access
 managing-grouper-groups
 customer-permission-boundary
+aws-restricted-regions
 ```
