@@ -14,7 +14,7 @@ The **us-west-2** AWS region has the lowest latency from Colorado's Front Range 
 **Answer:**
 By default, access is restricted to US regions only for confidential workloads.
 You will see API errors trying to access Non-US regions.
-If you need access to a non-US region, reach out to rc-help@colorado.edu,
+If you need access to a Non-US region, reach out to <rc-help@colorado.edu>,
 and we can evaluate the possibility to operate in Non-US regions.
 See [AWS Restricted Regions](../getting-started/aws-restricted-regions.md).
 
