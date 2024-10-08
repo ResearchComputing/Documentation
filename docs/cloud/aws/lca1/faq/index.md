@@ -16,7 +16,7 @@ By default, access is restricted to US regions only for confidential workloads.
 You will see API errors trying to access Non-US regions.
 If you need access to a non-US region, reach out to rc-help@colorado.edu,
 and we can evaluate the possibility to operate in Non-US regions.
-See [Admin Account Permission Exclusions](../getting-started/aws-restricted-regions.md).
+See [AWS Restricted Regions](../getting-started/aws-restricted-regions.md).
 
 ## Why can't I see the AWS resources I created?
 **Answer:**
