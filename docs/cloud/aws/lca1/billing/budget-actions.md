@@ -8,19 +8,19 @@ You can attach budget actions to an alert for either a cost budget or a usage bu
 
 2. In the navigation pane, choose **Budgets**. (You may directly search for "budgets" in top search bar)
 
-3. Click on "create budget", choose Budget setup as "Customize(advanced)" and Budget type as "Cost budget"
+3. Click on **Create budget**, choose Budget setup as **Customize (advanced)** and Budget type as **Cost budget**.
 
    ```{image} images/1.png
    :alt: AWS Budget creation wizard, selecting a budget type
    ```
 
-4. Choose "Budget name" of choice and "set budget amount" to monthly with "Budget renewal type" as "Recurring budget". Choose "Start month" and "Budgeting method" as "Fixed". And finally "Enter your budgeted amount".
+4. Choose **Budget name** of choice and **Set budget amount** to monthly with **Budget renewal type** as **Recurring budget**. Choose **Start month** and **Budgeting method** as **Fixed**. And finally **Enter your budgeted amount**.
 
    ```{image} images/2.png
    :alt: AWS Budget creation wizard, specifying budget details
    ```
 
-5. Choose "Budget scope" and select the services you would like in scope. For this example we will choose "All AWS Services" and choose "Next"
+5. Choose **Budget scope** and select the services you would like in scope. For this example we will choose **All AWS Services** and choose **Next**
 
    ```{image} images/3.png
    :alt: AWS Budget creation wizard, setting budget scope
@@ -37,11 +37,11 @@ To configure a budget action on an existing cost or usage budget, first follow t
    :alt: AWS Budget creation wizard, configuring alerts
    ```
 
-2. Under Set **alert threshold**, for Threshold, enter the amount that needs to be reached for you to be notified. This can be either an absolute value or a percentage(choose using drop down). For example, say you have a budget of $200. To be notiﬁed at $160 (80% of your budget), enter 160 for an absolute budget or 80 for a percentage budget.
+2. Under **Set alert threshold**, for **Threshold**, enter the amount that needs to be reached for you to be notified. This can be either an absolute value or a percentage (choose using drop down). For example, say you have a budget of $200. To be notiﬁed at $160 (80% of your budget), enter 160 for an absolute budget or 80 for a percentage budget.
 
     Next to the amount, choose **Absolute value** to be notiﬁed when your costs exceed the threshold amount. Or, choose **% of budgeted amount** to be notiﬁed when your costs exceed the threshold percentage.
 
-    Next to the threshold, choose **Actual** to create an alert for actual spend "Trigger". Or, choose **Forecasted** to create an alert for forecasted spend.
+    Next to the threshold, choose **Actual** to create an alert for actual spend trigger. Or, choose **Forecasted** to create an alert for forecasted spend.
 
    ```{image} images/5.png
    :alt: AWS Budget creation wizard, setting alert notifications
@@ -65,11 +65,11 @@ To configure a budget action on an existing cost or usage budget, first follow t
 
 9. For **Which action type should be applied when the budget threshold has been exceeded**, select the action that you want AWS Budgets to take on your behalf. You can choose from applying an IAM policy or targeting specific Amazon resources. You can apply multiple budget actions to a single alert.
 
-10. If you want to choose "Automate instance to stop for EC2 or RDS", choose related fields to select "region" and "instances" that you intend to stop.
+10. If you want to choose **Automate instance to stop for EC2 or RDS**, choose related fields to select **region** and **instances** that you intend to stop.
 
-11. For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose No, then you run the action manually on the **Alert details page**. For instructions, see [Reviewing and approving your budget action](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-action-review.html).
+11. For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose **No**, then you run the action manually on the **Alert details page**. For instructions, see [Reviewing and approving your budget action](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-action-review.html).
 
-12. For **How do you want to be alerted when this action is run, choose Use the same alert settings when you defined this threshold** or **Use different alert settings**. To use different alert settings, complete the **Notification preferences** specific to this action.
+12. For **How do you want to be alerted when this action is run**, choose **Use the same alert settings when you defined this threshold** or **Use different alert settings**. To use different alert settings, complete the **Notification preferences** specific to this action.
 
     ```{image} images/7.png
     :alt: AWS Budget creation wizard, configuring action 1
