@@ -10,6 +10,14 @@ The necessary groups will be created for you as part of your AWS onboarding, and
 
 All access groups live in `Root -> Services -> Cloud Broker -> AWSLZA -> customer-access-groups`.
 
+## User Types
+
+Every person at CU has an [Identikey](https://oit.colorado.edu/services/identity-access-management/identikey) user that is used for daily work, like checking email and logging into campus portals. When a person has duties that require increased privileges, they are usually provisioned with a "super user" (SU) account that is separate from their Identikey. This supports the security best practice of separating privileged administrative activities from unprivileged work. SU accounts are preferred for all AWS cloud administration.
+
+```{important}
+We recommend all AWS cloud administration be done using SU accounts. When adding users to AWS access groups in Grouper, choose the SU accounts of your team members instead of their regular Identikeys. If any team members need a new SU account, they may request one [here](https://oit.colorado.edu/accounts/secondary-accounts).
+```
+
 ## Adding Users
 
 AWS customers can add team members as Administrators to their AWS account. This is done using [CU's Grouper Tool](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management). Note that changes can take up to 15 minutes to take effect.
