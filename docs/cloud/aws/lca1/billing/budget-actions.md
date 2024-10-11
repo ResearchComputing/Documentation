@@ -67,7 +67,7 @@ To configure a budget action on an existing cost or usage budget, first follow t
 
 10. If you want to choose "Automate instance to stop for EC2 or RDS", choose related fields to select "region" and "instances" that you intend to stop.
 
-11. For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose No, then you run the action manually on the **Alert details page**. For instructions, see Reviewing and approving your budget action.
+11. For **Do you want to automatically run this action when this threshold is exceeded**, choose **Yes** or **No**. If you choose No, then you run the action manually on the **Alert details page**. For instructions, see [Reviewing and approving your budget action](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-action-review.html).
 
 12. For **How do you want to be alerted when this action is run, choose Use the same alert settings when you defined this threshold** or **Use different alert settings**. To use different alert settings, complete the **Notification preferences** specific to this action.
 
