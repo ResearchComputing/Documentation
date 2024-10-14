@@ -41,3 +41,11 @@ data-classification
 networking
 
 ```
+
+```{toctree}
+:maxdepth: 2
+:caption: Incident Response
+
+incident-response
+
+```
