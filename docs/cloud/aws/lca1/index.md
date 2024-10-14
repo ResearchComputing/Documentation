@@ -28,6 +28,14 @@ billing/index
 
 ```{toctree}
 :maxdepth: 2
+:caption: Data Classification
+
+data-classification
+
+```
+
+```{toctree}
+:maxdepth: 2
 :caption: Network Information
 
 networking
