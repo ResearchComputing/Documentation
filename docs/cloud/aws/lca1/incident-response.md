@@ -13,11 +13,12 @@ If you become aware of, or suspect, a security incident has occurred in your AWS
 Please provide the following information when reporting an incident (as specified on [Reporting an Incident](https://www.cu.edu/security/reporting-incident)):
 
 1. Contact information
-2. College or department involved
-3. Brief description of what happened
-4. General description of the type of information involved. Was it sensitive university information? Was it shared with or accessed by unauthorized people?
-5. General description of the impact of the incident, if known
-6. Any other known resources affected
+2. AWS account alias
+3. College or department involved
+4. Brief description of what happened
+5. General description of the type of information involved. Was it sensitive university information? Was it shared with or accessed by unauthorized people?
+6. General description of the impact of the incident, if known
+7. Any other known resources affected
 
 ## Operational Incidents
 
