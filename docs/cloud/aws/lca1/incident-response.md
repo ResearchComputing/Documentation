@@ -2,11 +2,22 @@
 
 ## Security Incidents
 
-All security incidents and *suspected* security incidents that occur in your AWS account must be [reported](https://www.cu.edu/security/reporting-incident).
+All security incidents and *suspected* security incidents that occur in your AWS account **must be reported to both [OIT Security](https://www.cu.edu/security/reporting-incident) and [Cloud Foundations](mailto:rc-help@colorado.edu)**.
 
 ```{important}
-If you become aware of, or suspect, a security incident has occurred in your AWS account, please report it immediately to [rc-help@colorado.edu](mailto:rc-help@colorado.edu). We will assist you with triage, analysis, and [reporting it to OIT Security](https://www.cu.edu/security/reporting-incident).
+If you become aware of, or suspect, a security incident has occurred in your AWS account, please [report it immediately](https://www.cu.edu/security/reporting-incident) directly to the CU Boulder OIT Security office **and** by emailing Cloud Foundations at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 ```
+
+### Information to include in the incident report
+
+Please provide the following information when reporting an incident (as specified on [Reporting an Incident](https://www.cu.edu/security/reporting-incident)):
+
+1. Contact information
+2. College or department involved
+3. Brief description of what happened
+4. General description of the type of information involved. Was it sensitive university information? Was it shared with or accessed by unauthorized people?
+5. General description of the impact of the incident, if known
+6. Any other known resources affected
 
 ## Operational Incidents
 
