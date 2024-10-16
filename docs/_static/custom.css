@@ -125,3 +125,11 @@ html[data-theme=dark] .form-control:focus {
 .bd-sidebar-primary li.has-children>details>summary .toctree-toggle {
     justify-content: left;
 }
+
+html[data-theme=dark] object.graphviz.hpc-flow {
+    background: #121212;
+}
+
+html[data-theme=light] object.graphviz.hpc-flow {
+    background: yellow;
+}
