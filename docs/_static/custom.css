@@ -126,22 +126,10 @@ html[data-theme=dark] .form-control:focus {
     justify-content: left;
 }
 
-html[data-theme=dark] object.graphviz.hpc-flow {
-    background: #121212;
+.graph.gs-hpc-flowchart .node:hover ellipse {
+    fill: blue; 
 }
 
-html[data-theme=dark] object.graphviz {
-    background: #121212;
-    color: blue; 
-    fill: blue;
-}
-
-html[data-theme=dark] img.graphviz {
-    background-color: #121212;
-    color: #121212;
-    fill: #121212;
-}
-
-html[data-theme=light] object.graphviz.hpc-flow {
-    background: transparent;
+.graph.gs-hpc-flowchart .node:hover text {
+    fill: green; 
 }
