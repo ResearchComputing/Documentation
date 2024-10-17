@@ -9,7 +9,6 @@ HPC /documentation can be overwhelming
     :name: "Getting started HPC flowchart"
     :caption: Getting started on CURC resources flowchart 
     :align: center
-    :class: hpc-flow
 
      digraph " " {
          bgcolor="transparent"
@@ -68,13 +67,9 @@ HPC /documentation can be overwhelming
 
 ## Cloud computing 
 
-<!-- ```{eval-rst}
-.. graphviz::
-    :name: "Getting started Cloud flowchart"
-    :caption: Getting started on Cloud resources flowchart 
-    :align: center
+```{graphviz}
 
-     digraph "" {
+     digraph "bb" {
          bgcolor="transparent";
          ranksep="0.5 equally";
          node [fontname="Verdana", fontsize="12", color="#CFB87C", style="filled", fillcolor="black", penwidth="2", fontcolor="white"];
@@ -91,4 +86,4 @@ HPC /documentation can be overwhelming
          cloud -> gcp 
          cloud -> cumulus
      }
-``` -->
+```
