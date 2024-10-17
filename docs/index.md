@@ -90,6 +90,7 @@ Use of University of Colorado Research Computing resources, including (but not l
 ```{toctree}
 :maxdepth: 1
 
+getting_started
 faq
 
 ```
