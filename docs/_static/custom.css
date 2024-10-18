@@ -126,10 +126,31 @@ html[data-theme=dark] .form-control:focus {
     justify-content: left;
 }
 
-.graph.gs-hpc-flowchart .node:hover ellipse {
-    fill: blue; 
+
+.graph#gs-flowchart .node text {
+    font-weight: bold;
 }
 
-.graph.gs-hpc-flowchart .node:hover text {
-    fill: green; 
+html[data-theme=dark] .graph#gs-flowchart #clickable.node:hover ellipse {
+    fill: white; 
+}
+
+html[data-theme=dark] .graph#gs-flowchart #clickable.node:hover text {
+    fill: black;
+}
+
+html[data-theme=light] .graph#gs-flowchart #clickable.node:hover ellipse {
+    fill: black; 
+}
+
+html[data-theme=light] .graph#gs-flowchart #clickable.node:hover text {
+    fill: var(--cu-boulder-gold); 
+}
+
+html[data-theme=light] .graph#gs-flowchart .node ellipse {
+    fill: white; 
+}
+
+html[data-theme=light] .graph#gs-flowchart .node text {
+    fill: black; 
 }
