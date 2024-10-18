@@ -125,3 +125,32 @@ html[data-theme=dark] .form-control:focus {
 .bd-sidebar-primary li.has-children>details>summary .toctree-toggle {
     justify-content: left;
 }
+
+
+.graph#gs-flowchart .node text {
+    font-weight: bold;
+}
+
+html[data-theme=dark] .graph#gs-flowchart #clickable.node:hover ellipse {
+    fill: white; 
+}
+
+html[data-theme=dark] .graph#gs-flowchart #clickable.node:hover text {
+    fill: black;
+}
+
+html[data-theme=light] .graph#gs-flowchart #clickable.node:hover ellipse {
+    fill: black; 
+}
+
+html[data-theme=light] .graph#gs-flowchart #clickable.node:hover text {
+    fill: var(--cu-boulder-gold); 
+}
+
+html[data-theme=light] .graph#gs-flowchart .node ellipse {
+    fill: white; 
+}
+
+html[data-theme=light] .graph#gs-flowchart .node text {
+    fill: black; 
+}

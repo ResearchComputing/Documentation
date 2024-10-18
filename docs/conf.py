@@ -2,7 +2,8 @@ project = "Research Computing\nUniversity of Colorado Boulder"
 
 master_doc = 'index'
 
-extensions = ['myst_parser', 'sphinx_copybutton', 'sphinx_tabs.tabs', 'sphinx_togglebutton']
+extensions = ['myst_parser', 'sphinx_copybutton', 'sphinx_tabs.tabs', 'sphinx_togglebutton', 'sphinx.ext.graphviz']
+graphviz_output_format = 'svg'
 
 source_suffix = {
     '.txt': 'markdown',
