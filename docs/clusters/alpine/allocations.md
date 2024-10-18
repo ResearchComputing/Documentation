@@ -43,23 +43,25 @@ resources requested, job size, and QOS.
 ### Allocations
 When you receive a Research Computing account you are automatically 
 assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
-of `ucb-general`. The Trailhead is a great allocation for smaller jobs or 
+of `ucb-general`. RMACC users are granted a fixed share of `rmacc-general`. 
+The Trailhead is a great allocation for smaller jobs or 
 testing and benchmarking your code. However, if you consume more than your 
-fixed share of `ucb-general`,  your `LevelFS` will decrease, causing your 
+fixed share of `ucb-general` (or `rmacc-general`),  your `LevelFS` will decrease, causing your 
 priority score to decrease. The end result is that your jobs will sit 
 lower (read: longer) in the queue relative to other jobs. One way to 
 combat this is to apply for an allocation.
 
 ## Alpine Allocation Tiers
 
-In addition to the Trailhead auto-allocation (`ucb-general`) that all users are awarded automatically, CURC offers two 
+In addition to the Trailhead auto-allocation (`ucb-general` or `rmacc-general`) that all users are awarded automatically, CURC offers two 
 additional tiers to accommodate larger computing needs on Alpine. The **Ascent Allocation** tier provides users 
 with 350,000 SUs over a 12 month period. The **Peak Allocation** tier is 
 aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 
 12 month period. Users may apply for these tiers as described below.
+RMACC users are not eligible for Ascent or Peak allocations, but may apply for an **RMACC Allocation**, which provides users with 100,000 SUs over a 12 month period.
 
 CURC's tiered allocations are structured in a way such that your jobs are 
-likely to have a higher priority if they are running in Ascent or Peak 
+likely to have a higher priority if they are running in Ascent, Peak, or RMACC 
 Allocations than if they are running in a Trailhead 
 Auto-Allocation.
 
@@ -79,8 +81,7 @@ Step 1: Fill out the [Ascent Allocation
 Request](https://forms.office.com/r/eAA15b8Gsg) form. You need to be 
 logged in to Office365 with your CU Boulder account.
 
-Step 2: Look out for an email message from the CURC ticketing system (<rc-help@colorado.edu>) indicating when your allocation is ready to 
-use.
+Step 2: Look out for an email message from the CURC ticketing system (<rc-help@colorado.edu>) indicating when your allocation is ready to use.
 
 ### Get a Peak Allocation 
 
@@ -99,11 +100,19 @@ Step 3: Look out for email messages from the CURC ticketing system (<rc-help@col
 is received, during the initial 
 review stages, and when the allocation is ready to use.
 
+### Get an RMACC Allocation
+
+Step 1: Fill out the [RMACC Allocation 
+Request](https://forms.office.com/Pages/ResponsePage.aspx?id=G4vtPQ0HKUaC5MCwGfRgVxVuc407_5dMhLp4SuO1aoJUODlNNThXTTRUNklTQk02TlFKV1gxUUZTWCQlQCN0PWcu) form. You need to be 
+logged in to Office 365 with your CU Boulder account.
+
+Step 2: Look out for an email message from the CURC ticketing system (<rc-help@colorado.edu>) indicating when your allocation is ready to use.
+
 ### Renewing Your Allocation
 
 Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
 
-Step 2: Fill out either the [Peak Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form, or the [Ascent Allocation Renewal](https://forms.office.com/r/1ymj7gxQF3) form. You need to be logged into Office365 with your CU Boulder account.
+Step 2: Fill out either the [Peak Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form, or the [Ascent Allocation Renewal](https://forms.office.com/r/1ymj7gxQF3) form. You need to be logged into Office365 with your CU Boulder account. ***If you are renewing an RMACC allocation, please send an email to <rc-help@colorado.edu> requesting the renewal of your allocation. Be sure to provide your CURC username, the name of your allocation, and the CURC usernames of any of your collaborators.***
 
 Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
 
