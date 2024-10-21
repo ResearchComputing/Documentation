@@ -1,12 +1,77 @@
 # Logging In
 
-Research Computing offers a variety of resources for researchers to use in their own projects. To get started with Research Computing resources you need the following: 
+## Getting a CURC account
 
-- [A Research Computing account](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization)
-- [Duo 2 factor authentication](duo-2-factor-authentication.md)
-- [The PuTTY application](https://www.putty.org/) (if you are a Windows user)  
+All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca) and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
 
-Users accessing RC's resources will be connected to a login node. A login node is an outward-facing node within the Research Computing environment that users can connect to from their local machines. Once on a login node, users can perform a limited number of tasks:
+`````{tabs}
+
+````{tab} CU Boulder
+
+The process for obtaining a CURC account for CU Boulder users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"University of Colorado Boulder"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
+
+```{important}
+- Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.
+- Once your account is provisioned, please wait 15 minutes before signing in. 
+```
+
+````
+
+````{tab} CSU
+
+The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation.  
+
+```{important}
+- Once your account is provisioned, please wait 15 minutes before signing in. 
+```
+
+````
+
+````{tab} AMC
+
+Currently, AMC users must go through various steps to create a CURC account. These steps are outlined below: 
+
+1. If you do not already have an XSEDE/ACCESS account, follow the [instructions for new user registration](https://identity.access-ci.org/new-user). Please direct any questions about new accounts to the [ACCESS ticketing system](https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
+2. Sign and fill out [CU Anschutz's Alpine form](https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake)
+3. You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
+
+```{important}
+- For assistance filling out the Alpine form or updates on the account provisioning process, please email <hpcsupport@cuanschutz.edu>
+- Once your account is provisioned, please wait 15 minutes before signing in. 
+```
+
+````
+
+````{tab} RMACC
+
+RMACC members can obtain a CURC account by completing the following steps
+
+1. Create an [ACCESS-CI](https://access-ci.org/) account in the ACCESS user portal 
+    ```{important} 
+    If you already have an XSEDE or ACCESS account, please do not create another one and instead proceed to step 2.
+    ```
+
+2. Email CURC user support at <rc-help@colorado.edu> stating that you are requesting a CURC account. In this email, please include the following information:
+    - your ACCESS or XSEDE username
+    - your institutional affiliation (e.g., "University of Awesome")
+    - your role (undergraduate graduate student, postdoc, staff, instructor, faculty or affiliated faculty)
+    - your department
+    - your first and last name
+    - your preferred email address for communication
+
+3. Wait for user support to respond to your email and provision your account
+
+```{important}
+- Once your account is provisioned, please wait 15 minutes before signing in. 
+- The first time you log in you will be prompted to set up two-factor authentication.
+```
+
+````
+`````
+
+## Getting access to CURC resources 
+
+Once you have obtained a CURC account, you can proceed to logging in to CURC resources. Users accessing CURC resources will be connected to a login node. A login node is an outward-facing node within the Research Computing environment that users can connect to from their local machines. Once on a login node, users can perform a limited number of tasks:
 
 + Edit files
 + Transfer data
@@ -17,25 +82,45 @@ Users accessing RC's resources will be connected to a login node. A login node i
 The [login node policy](../additional-resources/policies.md#login-nodes) states that login nodes should not be used for resource-intensive tasks such as running code. For all other tasks, users should run batch jobs, interactive jobs, or use the compile nodes. 
 ```
 
+Similar to obtaining an account, the process of logging in to CURC resources can vary based on the institution you are affiliated with. In the tab sections below we provide details on how each institution can gain access to our login nodes.
+
+`````{tabs}
+
+````{tab} CU Boulder
+
+The process for obtaining a CURC account for CU Boulder users 
+
+````
+
+````{tab} CSU
+
+The process for obtaining a CURC account for CSU users 
+
 + **For CSU users, please refer to the "Remote Login" section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page.**  
+
+````
+
+````{tab} AMC
+
+Currently, AMC users 
+
+````
+
+````{tab} RMACC
+
+RMACC members can obtain 
+
 + **For RMACC users, please refer to [RMACC Access to Alpine.](rmacc.md)**
 
----
+````
+`````
 
-## Getting an account
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3kdW3EJS-OE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### Terminal access for different operating systems
 
 ```{important}
-Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.
+Not all users have the ability to access CURC resources from their personal machine via a terminal. Please consult the appropriate tabbed item in the previous section [Getting access to CURC resources](#getting-access-to-curc-resources) before proceeding. 
 ```
 
-Although Research Computing resources are free and available to the CU Boulder research community, they are also managed resources with large value and high demand. Therefore, Research Computing mandates that each user obtain a Research Computing account. A Research Computing account can be secured quickly and easily [by filling out the form here](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization). 
-
-Once you've received a computing account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo 
-mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
-
-## Logging in from different operating systems
 `````{tabs}
 
 ````{tab} Windows 
@@ -75,7 +160,8 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 
 ````
 `````
-## SSH host keys
+
+### SSH host keys
 
 The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
 
@@ -83,7 +169,7 @@ The first time you log into an RC login node you will be asked to verify the hos
 Each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
 ```
 
-### login.rc.colorado.edu
+#### login.rc.colorado.edu
 
 ```
 # Fingerprint
