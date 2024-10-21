@@ -144,7 +144,7 @@ html[data-theme=light] .graph#gs-flowchart #clickable.node:hover ellipse {
 }
 
 html[data-theme=light] .graph#gs-flowchart #clickable.node:hover text {
-    fill: var(--cu-boulder-gold); 
+    fill: white; 
 }
 
 html[data-theme=light] .graph#gs-flowchart .node ellipse {
