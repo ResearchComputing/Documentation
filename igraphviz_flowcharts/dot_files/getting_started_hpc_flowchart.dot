@@ -5,9 +5,11 @@ digraph "" {
          node [fontname="Verdana", fontsize="12", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white"];
          edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5"];
 
-         logging_in [label="Get an account", href="./access/logging-in.html", target="_blank", id="clickable"];
          policies [label="CURC Policies", href="./additional-resources/policies.html", target="_blank", id="clickable"];
-         duo [label="DUO Authentication", href="./access/duo-2-factor-authentication.html", target="_blank", id="clickable"];
+         get_an_account [label="Get an account", href="./access/logging-in.html", target="_blank", id="clickable"];
+         logging_in [label="Logging In", href="./access/logging-in.html", target="_blank", id="clickable"];
+         training [label="Trainings", href="./access/logging-in.html", target="_blank", id="clickable"];
+         faq [label="FAQs", href="./access/logging-in.html", target="_blank", id="clickable"];
          compute_env [label="What does the HPC system look like?", style="filled,dashed", penwidth="3"];
          running_jobs [label="How do I run a job?", style="filled,dashed", penwidth="3"];
          clusters [label="What clusters are available?", style="filled,dashed", penwidth="3"];
@@ -27,14 +29,15 @@ digraph "" {
          spack [label="Spack", href="./software/spack.html", target="_blank", id="clickable"];
          conda [label="Conda environments", href="./software/python.html", target="_blank", id="clickable"];
 
-         logging_in -> policies;
-         logging_in -> duo;
-         logging_in -> compute_env;
+         policies -> get_an_account; 
+         get_an_account -> logging_in;
+         get_an_account -> training;
+         get_an_account -> faq;
+         get_an_account -> compute_env;
          compute_env -> node_type;
          compute_env -> filesystem;
          filesystem -> data_transfer;
          filesystem -> petalibrary;
-         filesystem -> clusters;
          node_type -> clusters;
          clusters -> alpine;
          clusters -> blanca;
