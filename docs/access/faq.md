@@ -1,9 +1,9 @@
 # Frequently Asked Questions
 
-See our documentation [homepage](index.md) for information about our most common topics.
+See our [Getting Started](./getting_started.md) page for information on core areas of our documentation each user should become familiar with.
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
-2. [How do I acknowledge use of CURC Resources?](./index.md#acknowledging-rc)
+2. [How do I acknowledge use of CURC Resources?](../index.md#acknowledging-rc)
 3. [How do I check how full my directories are?](#how-do-i-check-how-full-my-directories-are)  
 4. [When will my job start?](#when-will-my-job-start) 
 5. [How can I get metics about CURC systems such as how busy they are, wait times, and account usage?](#how-can-i-get-metics-about-curc-systems-such-as-how-busy-they-are-wait-times-and-account-usage) 
@@ -24,11 +24,11 @@ See our documentation [homepage](index.md) for information about our most common
 You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
 After a CU authorization page you will be directed to a Duo authentication page. **Ignore the Duo Push prompt and instead click "Add a new device":** 
 
-![](faq/duo_new_device1.png)
+![](faq_images/duo_new_device1.png)
 
 Duo will then try to authenticate your account by push notification to verify your identity. Cancel this push notification...  
 
-![](faq/duo_new_device2.png)
+![](faq_images/duo_new_device2.png)
 
 ...and click on "Enter a Passcode", or "Call Me". 
 - If you select "Call Me" the simply receive the call and press 1. 
@@ -76,9 +76,9 @@ squeue --user=your_rc-username --start
 ```
 Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
 
-For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](./running-jobs/slurm-commands.md) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](../running-jobs/slurm-commands.md) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
 
-Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](./compute/monitoring-resources.md) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](../compute/monitoring-resources.md) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
 
 ````
 
@@ -86,7 +86,7 @@ Note that you can also see system level wait times and how they change through t
 
 ````{toggle} 
 
-Please refer to our [XDMoD](./compute/monitoring-resources.md#xdmod) documentation, which is a portal that allows users to easily see CURC system metrics. 
+Please refer to our [XDMoD](../compute/monitoring-resources.md#xdmod) documentation, which is a portal that allows users to easily see CURC system metrics. 
 ````
 
 ## How much memory did my job use?
@@ -105,9 +105,9 @@ If you'd like to monitor memory usage on jobs that are currently running, use th
 sstat --jobs=your_job_id --format=User,JobName,JobId,MaxRSS
 ```
 
-For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](./running-jobs/slurm-commands.md) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
+For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](../running-jobs/slurm-commands.md) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
 
-You can also view information related to service unit (SU) usage and CPU & RAM efficiency by using [slurmtools](./compute/monitoring-resources.md#slurmtools). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
+You can also view information related to service unit (SU) usage and CPU & RAM efficiency by using [slurmtools](../compute/monitoring-resources.md#slurmtools). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
 
 ````
 
@@ -165,7 +165,7 @@ If you receive this message, the following solutions are available:
 
 ````{toggle}
 
-This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a `ucb-general` allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  `ucb-general` allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation documentation](./clusters/alpine/allocations.md).
+This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a `ucb-general` allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  `ucb-general` allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation documentation](../clusters/alpine/allocations.md).
 
 ````
 
@@ -201,7 +201,7 @@ The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from 
 
 ````{toggle} 
 
-For individuals that need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](./software/python.md) documentation page. 
+For individuals that need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
 
 ````
 
@@ -209,7 +209,7 @@ For individuals that need to install Python libraries not included in our base P
 
 ````{toggle} 
 
-Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. For more information on ZFS Snapshots, please refer to our [ZFS Snapshots](./storage/petalibrary/zfs_snapshots.md) documentation. 
+Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. For more information on ZFS Snapshots, please refer to our [ZFS Snapshots](../storage/petalibrary/zfs_snapshots.md) documentation. 
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
@@ -221,6 +221,6 @@ If you would like to set a custom snapshot schedule for your allocation, please 
 
 ````{toggle} 
 
-Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications utilizing the presets configurations will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](./running-jobs/slurm-commands.md#stopping-jobs-with-scancel). 
+Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications utilizing the presets configurations will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](../running-jobs/slurm-commands.md#stopping-jobs-with-scancel). 
 
 ````

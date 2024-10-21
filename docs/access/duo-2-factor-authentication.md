@@ -28,7 +28,7 @@ re-enroll by visiting [https://duo.colorado.edu](https://duo.colorado.edu).
 
 **Issue 2:** You have changed your mobile device (e.g., purchased a new phone). You can add a new device to your duo account by 
 following the instructions listed in the
-[FAQ page](../faq.md#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
+[FAQ page](./faq.md#i-have-a-new-phone-how-do-i-move-my-duo-onto-it).
 
 If you need human assistance with Duo, contact the University helpdesk at <oithelp@colorado.edu> or call 303-735-4357. 
 

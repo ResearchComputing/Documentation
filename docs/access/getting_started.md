@@ -12,7 +12,7 @@ At CURC we host two HPC clusters, Alpine and Blanca, in addition to storage solu
 
 ```{eval-rst}
 .. raw:: html
-    :file: ../igraphviz_flowcharts/generated_images/getting_started_hpc_flowchart.svg
+    :file: ../../igraphviz_flowcharts/generated_images/getting_started_hpc_flowchart.svg
 ```
 
 ## Cloud Computing Flowchart
@@ -21,5 +21,5 @@ Dylan/Mohal should provided content here and modify flowchart to fit their needs
 
 ```{eval-rst}
 .. raw:: html
-    :file: ../igraphviz_flowcharts/generated_images/getting_started_cloud_flowchart.svg
+    :file: ../../igraphviz_flowcharts/generated_images/getting_started_cloud_flowchart.svg
 ```

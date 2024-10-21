@@ -9,7 +9,7 @@ Here are some quick links to documentation to get you started.
 - [Compiling Software](compute/compiling.md)
 - [Batch Jobs](running-jobs/batch-jobs.md)
 - [The Module System](compute/modules.md)
-- [Frequently Asked Questions (FAQ)](faq.md)
+- [Frequently Asked Questions (FAQ)](access/faq.md)
 
 Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues). If you would like to provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
 
@@ -89,9 +89,14 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 ```{toctree}
 :maxdepth: 1
+:caption: Accessing RC Resources
 
-getting_started
-faq
+access/getting_started
+access/faq
+access/logging-in
+access/duo-2-factor-authentication
+access/rmacc
+access/amc-access
 
 ```
 
@@ -100,17 +105,6 @@ faq
 :caption: Trainings
 
 trainings/current-sem-trainings
-
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Accessing RC Resources
-
-access/logging-in
-access/duo-2-factor-authentication
-access/rmacc
-access/amc-access
 
 ```
 
