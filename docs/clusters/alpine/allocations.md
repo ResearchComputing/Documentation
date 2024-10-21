@@ -48,7 +48,7 @@ The Trailhead is a great allocation for smaller jobs or
 testing and benchmarking your code. However, if you consume more than your 
 fixed share of `ucb-general` (or `rmacc-general`),  your `LevelFS` will decrease, causing your 
 priority score to decrease. The end result is that your jobs will sit 
-lower (read: longer) in the queue relative to other jobs. One way to 
+lower in the queue relative to other jobs. One way to 
 combat this is to apply for an allocation.
 
 ## Alpine Allocation Tiers
