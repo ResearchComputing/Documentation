@@ -7,7 +7,7 @@ digraph "" {
 
          policies [label="CURC Policies", href="../additional-resources/policies.html", target="_blank", id="clickable"];
          logging_in [label="Logging In", href="../access/logging-in.html", target="_blank", id="clickable"];
-         duo [label="Duo Authentication", href="../access/duo-2-factor-authentication.html", target="_blank", id="clickable"];
+         ack [label="Acknowledging CURC", href="../access/duo-2-factor-authentication.html", target="_blank", id="clickable"];
          training [label="Trainings", href="../access/logging-in.html", target="_blank", id="clickable"];
          faq [label="FAQs", href="../access/logging-in.html", target="_blank", id="clickable"];
          compute_env [label="What does the HPC system look like?", style="filled,dashed", penwidth="3"];
@@ -30,7 +30,7 @@ digraph "" {
          conda [label="Conda environments", href="../software/python.html", target="_blank", id="clickable"];
 
          policies -> logging_in; 
-         logging_in -> duo; 
+         logging_in -> ack; 
          logging_in -> training;
          logging_in -> faq;
          logging_in -> compute_env;

@@ -1,5 +1,9 @@
 # Logging In
 
+```{tip}
+Do you need help navigating our documentation? For new and experienced users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts on core areas of our documentation that all users should be aware of. 
+```
+
 ## Getting a CURC account
 
 All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca) and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
@@ -88,29 +92,58 @@ Similar to obtaining an account, the process of logging in to CURC resources can
 
 ````{tab} CU Boulder
 
-The process for obtaining a CURC account for CU Boulder users 
-
+For CU Boulder users, the following methods are available for logging in to CURC resources:
+- Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
+    - For more information, on how to do this, see [Terminal access for different operating systems](#terminal-access-for-different-operating-systems) below
+- Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
+    - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
 ````
 
 ````{tab} CSU
 
-The process for obtaining a CURC account for CSU users 
+For CSU users, the following methods are available for logging in to CURC resources:
+- Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
+    - For more information, on how to do this, see [Terminal access for different operating systems](#terminal-access-for-different-operating-systems) below
+    - For CSU specific guides for this process, please refer to the **"Remote Login"** section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page
+- Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
+    - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
 
-+ **For CSU users, please refer to the "Remote Login" section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page.**  
+```{tip}
+CSU users have an `@` symbol in their CURC username. It is important to keep in mind that this can cause issues when running certain software. For more information on this topic please consult our [CSU and ACCESS (XSEDE) usernames](../additional-resources/csu-xsede-usernames.md) page.
+```
 
 ````
 
 ````{tab} AMC
 
-Currently, AMC users 
+For AMC users, the following methods are available for logging in to CURC resources:
+- Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
+    - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
+- Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
+    ```{important}
+    SSH access is only available for individuals who have completed the steps outlined in our [SSH Key-Based Authentication for Anschutz Medical Campus](amc-access.md) page.
+    ```
+
+```{tip}
+AMC users have an `@` symbol in their CURC username. It is important to keep in mind that this can cause issues when running certain software. For more information on this topic please consult our [CSU and ACCESS (XSEDE) usernames](../additional-resources/csu-xsede-usernames.md) page.
+```
 
 ````
 
 ````{tab} RMACC
 
-RMACC members can obtain 
-
+Currently, RMACC users can obtain access to a terminal or launch interactive jobs using Open OnDemand 
+- See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
+    
 + **For RMACC users, please refer to [RMACC Access to Alpine.](rmacc.md)**
+
+```{important}
+Due to security issues, RMACC users do not have access to SSH. We apologize for this inconvenience. 
+```
+
+```{tip}
+RMACC users have an `@` symbol in their CURC username. It is important to keep in mind that this can cause issues when running certain software. For more information on this topic please consult our [CSU and ACCESS (XSEDE) usernames](../additional-resources/csu-xsede-usernames.md) page.
+```
 
 ````
 `````
@@ -118,7 +151,7 @@ RMACC members can obtain
 ### Terminal access for different operating systems
 
 ```{important}
-Not all users have the ability to access CURC resources from their personal machine via a terminal. Please consult the appropriate tabbed item in the previous section [Getting access to CURC resources](#getting-access-to-curc-resources) before proceeding. 
+Not all users have the ability to access CURC resources using a terminal. Please consult the appropriate tabbed item in the previous section [Getting access to CURC resources](#getting-access-to-curc-resources) before proceeding. 
 ```
 
 `````{tabs}
@@ -161,7 +194,7 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 ````
 `````
 
-### SSH host keys
+#### SSH host keys
 
 The first time you log into an RC login node you will be asked to verify the host key. You can refer to the keys published here to confirm that you are connecting to a valid RC login node.
 
@@ -169,7 +202,7 @@ The first time you log into an RC login node you will be asked to verify the hos
 Each login node may support more than one type of key, but only one is used (or displayed) by your client at any given time.
 ```
 
-#### login.rc.colorado.edu
+#### login.rc.colorado.edu keys
 
 ```
 # Fingerprint

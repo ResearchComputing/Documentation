@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-See our [Getting Started](./getting_started.md) page for information on core areas of our documentation each user should become familiar with.
+See our [Navigating CURC Documentation](./navigating_docs) page for information on core areas of our documentation each user should become familiar with.
 
 1. [I have a new phone. How do I move my Duo onto it?](#i-have-a-new-phone-how-do-i-move-my-duo-onto-it) 
 2. [How do I acknowledge use of CURC Resources?](../index.md#acknowledging-rc)

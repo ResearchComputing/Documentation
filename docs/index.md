@@ -89,23 +89,15 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 ```{toctree}
 :maxdepth: 1
-:caption: Accessing RC Resources
+:caption: Getting Started
 
-access/getting_started
-access/faq
+access/navigating_docs
 access/logging-in
+access/faq
+trainings/current-sem-trainings
 access/duo-2-factor-authentication
 access/rmacc
 access/amc-access
-
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Trainings
-
-trainings/current-sem-trainings
-
 ```
 
 ```{toctree}
