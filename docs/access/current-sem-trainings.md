@@ -1,10 +1,15 @@
 # Current Semester Trainings
 
+```{tip}
 Click the name of a training to view more details and register!
+```
 
-`````{tabs}
+(tabset-ref-cur-sem-train)=
+`````{tab-set}
+:sync-group: tabset-cur-sem-train
 
-````{tab} By Month
+````{tab-item} By Month
+:sync: cur-sem-train-by-month
 
 ### **August**
 - [Alpine New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/newuser) - **August 28th, 2pm, Hybrid (Norlin Library E206/Zoom)**
@@ -26,7 +31,8 @@ Click the name of a training to view more details and register!
 
 ````
 
-````{tab} By Topic
+````{tab-item} By Topic
+:sync: cur-sem-train-by-topic
 
 ### **CU Research Computing Fundamentals**
 - [Alpine New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/newuser) - **August 28th, 2pm, Hybrid (Norlin Library E206/Zoom)**
@@ -50,7 +56,8 @@ Click the name of a training to view more details and register!
 - [AlphaFold2 on Alpine (an RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold) - **November 11th, 10am, Hybrid (Norlin Library E206/Zoom)**
 ````
 
-````{tab} By Difficulty
+````{tab-item} By Difficulty
+:sync: cur-sem-train-by-diff
 
 ### **Getting Started**
 - [Alpine New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/newuser) - **August 28th, 2pm, Hybrid (Norlin Library E206/Zoom)**
@@ -70,7 +77,8 @@ Click the name of a training to view more details and register!
 - [Using Linaro DDT on Alpine to Debug Parallel Code (an RC Primer)](https://colorado.libcal.com/calendar/events/linaro) - **October 8th, 11am, Hybrid (Norlin Library E206/Zoom)**
 ````
 
-````{tab} Office Hours
+````{tab-item} Office Hours
+:sync: cur-sem-train-office-hours
 
 We offer office hours **every Tuesday** (hybrid, Norlin Library E206 or Zoom) and **Thursday** (on Zoom) thoughout the academic year! Please see the following link for more information: [RC/CRDDS Office Hours](https://www.colorado.edu/crdds/events#drop_in_consultations-89).
 
