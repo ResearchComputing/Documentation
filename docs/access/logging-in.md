@@ -132,7 +132,7 @@ For AMC users, the following methods are available for logging in to CURC resour
     - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
     ```{important}
-    SSH access is only available for individuals who have completed the steps outlined in our [SSH Key-Based Authentication for Anschutz Medical Campus](amc-access.md) page.
+    SSH access is only available for individuals who have completed the steps outlined in our [SSH Key-Based Authentication for Anschutz Medical Campus](../additional-resources/amc_ssh_auth.md) page.
     ```
 
 ```{tip}

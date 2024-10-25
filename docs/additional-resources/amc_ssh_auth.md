@@ -1,6 +1,6 @@
 # SSH Key-Based Authentication for Anschutz Medical Campus 
 
-Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact hpcsupport@cuanschutz.edu to initiate this process.
+Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact <hpcsupport@cuanschutz.edu> to initiate this process.
 
 ## *Prerequisites:*
 * If you do not already have an XSEDE/ACCESS account, follow the [instructions for new user registration](https://identity.access-ci.org/new-user). Please direct any questions about new accounts to the ACCESS ticketing system (<https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30>).
@@ -17,21 +17,21 @@ A download link for GlobalProtect VPN and setup instructions for CU Anschutz aff
 You will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
 
-![](./amc-access-images/email_invitation.png)
+![](./amc_ssh_images/email_invitation.png)
 
 Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so complete all of [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry) before closing your browser tab.__ 
 
-![](./amc-access-images/accept_invitation.png)
+![](./amc_ssh_images/accept_invitation.png)
 
 You will be automatically routed to the login page. Select "ACCESS CI (XSEDE)" from the Identity Provider dropdown menu and click "Log On".
 <br>
 
-![](./amc-access-images/cilogon_identityprovider_access.png)
+![](./amc_ssh_images/cilogon_identityprovider_access.png)
 
 Enter your ACCESS/XSEDE username and password and click "Login".
 <br>
 
-![](./amc-access-images/access_credentials.png)
+![](./amc_ssh_images/access_credentials.png)
 <br>
 
 Accept the Duo push from your device.
@@ -60,26 +60,26 @@ Select "MY PROFILE (RMACC)".
 Select "Authenticators" from the menu on the right. 
 <br>
 
-![](./amc-access-images/menu_options.png)
+![](./amc_ssh_images/menu_options.png)
 <br>
 
 Click "Manage" in the SSHKeyAuthenticator row. 
-![](./amc-access-images/manage_sshkeyauthenticator.png)
+![](./amc_ssh_images/manage_sshkeyauthenticator.png)
 
 Select "Add SSH Key".
-![](./amc-access-images/add_sshkey.png)
+![](./amc_ssh_images/add_sshkey.png)
 
 Click "Choose File". If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_rsa.pub ~/Desktop`
 <br>
 
 Locate your __public__ key (`<keyname>.pub`) on your local drive, then click "UPLOAD".
-![](./amc-access-images/upload_sshkey.png)
+![](./amc_ssh_images/upload_sshkey.png)
 
 <br>
 
 A green message box will notify you that your SSH key has been successfully added to your account.
 <br>
-![](./amc-access-images/sshkeyadded.png)
+![](./amc_ssh_images/sshkeyadded.png)
 
 After a few minutes, you can proceed to [Step 4](#step-4-sign-in-from-a-terminal-or-terminal-emulator).
 
@@ -105,7 +105,7 @@ You will be prompted to enter your passphrase if you set one during key generati
 Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
-![](./amc-access-images/loginprompt_motd.png)
+![](./amc_ssh_images/loginprompt_motd.png)
 
 
 ## Deleting or Replacing SSH Keys in RMACC CILogon Registry
@@ -119,7 +119,7 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 * If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please contact <rc-help@colorado.edu>, as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt.
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>. Please include a screenshot of the error message and the date/time of your last login attempt.
 
-![](./amc-access-images/notregistered_error.png)
+![](./amc_ssh_images/notregistered_error.png)
 <br>
 
 <br>

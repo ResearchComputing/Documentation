@@ -96,7 +96,6 @@ access/logging-in
 access/faq
 access/current-sem-trainings
 access/duo-2-factor-authentication
-access/amc-access
 ```
 
 ```{toctree}
@@ -201,6 +200,7 @@ programming/OpenMP-Fortran
 additional-resources/policies
 additional-resources/feedback
 additional-resources/CURC-cheatsheet
+additional-resources/amc_ssh_auth
 additional-resources/registrycilogon-instructions
 additional-resources/utah-videos
 additional-resources/blanca-MOU
