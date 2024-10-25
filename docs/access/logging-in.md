@@ -9,22 +9,22 @@ Do you need help navigating our documentation? For new and experienced users, we
 All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca) and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
 
 (tabset-ref-get-account)=
-`````{tab-set}
+``````{tab-set}
 :sync-group: tabset-get-account
 
-````{tab-item} CU Boulder
+`````{tab-item} CU Boulder
 :sync: get-account-ucb
 
 The process for obtaining a CURC account for CU Boulder users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"University of Colorado Boulder"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
 
-```{important}
+````{important}
 - Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.
 - Once your account is provisioned, please wait 15 minutes before signing in. 
-```
-
 ````
 
-````{tab-item} CSU
+`````
+
+`````{tab-item} CSU
 :sync: get-account-csu
 
 The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation.  
@@ -33,9 +33,9 @@ The process for obtaining a CURC account for CSU users is straightforward. Simpl
 - Once your account is provisioned, please wait 15 minutes before signing in. 
 ```
 
-````
+`````
 
-````{tab-item} AMC
+`````{tab-item} AMC
 :sync: get-account-amc
 
 Currently, AMC users must go through various steps to create a CURC account. These steps are outlined below: 
@@ -49,9 +49,9 @@ Currently, AMC users must go through various steps to create a CURC account. The
 - Once your account is provisioned, please wait 15 minutes before signing in. 
 ```
 
-````
+`````
 
-````{tab-item} RMACC
+`````{tab-item} RMACC
 :sync: get-account-rmacc
 
 RMACC members can obtain a CURC account by completing the following steps
@@ -76,8 +76,8 @@ RMACC members can obtain a CURC account by completing the following steps
 - The first time you log in you will be prompted to set up two-factor authentication.
 ```
 
-````
 `````
+``````
 
 ## Getting access to CURC resources 
 
