@@ -47,7 +47,7 @@ Students are welcome to use RC resources on their own for class projects and can
 
 ## Meet the RC User Support Team!
 
-![The RC User Support team](_static/MeetTheUserSupportTeam.png)
+![The RC User Support team](./landing_page_images/MeetTheUserSupportTeam.png)
 
 ## Acknowledging RC
 
@@ -94,7 +94,7 @@ Use of University of Colorado Research Computing resources, including (but not l
 access/navigating_docs
 access/logging-in
 access/faq
-trainings/current-sem-trainings
+access/current-sem-trainings
 access/duo-2-factor-authentication
 access/amc-access
 ```
