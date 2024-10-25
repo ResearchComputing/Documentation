@@ -8,9 +8,12 @@ Do you need help navigating our documentation? For new and experienced users, we
 
 All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca) and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
 
-`````{tabs}
+(tabset-ref-get-account)=
+`````{tab-set}
+:sync-group: tabset-get-account
 
-````{tab} CU Boulder
+````{tab-item} CU Boulder
+:sync: get-account-ucb
 
 The process for obtaining a CURC account for CU Boulder users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"University of Colorado Boulder"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
 
@@ -21,7 +24,8 @@ The process for obtaining a CURC account for CU Boulder users is straightforward
 
 ````
 
-````{tab} CSU
+````{tab-item} CSU
+:sync: get-account-csu
 
 The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation.  
 
@@ -31,7 +35,8 @@ The process for obtaining a CURC account for CSU users is straightforward. Simpl
 
 ````
 
-````{tab} AMC
+````{tab-item} AMC
+:sync: get-account-amc
 
 Currently, AMC users must go through various steps to create a CURC account. These steps are outlined below: 
 
@@ -46,7 +51,8 @@ Currently, AMC users must go through various steps to create a CURC account. The
 
 ````
 
-````{tab} RMACC
+````{tab-item} RMACC
+:sync: get-account-rmacc
 
 RMACC members can obtain a CURC account by completing the following steps
 
@@ -88,9 +94,12 @@ The [login node policy](../additional-resources/policies.md#login-nodes) states 
 
 Similar to obtaining an account, the process of logging in to CURC resources can vary based on the institution you are affiliated with. In the tab sections below we provide details on how each institution can gain access to our login nodes.
 
-`````{tabs}
+(tabset-ref-get-access)=
+`````{tab-set}
+:sync-group: tabset-get-access
 
-````{tab} CU Boulder
+````{tab-item} CU Boulder
+:sync: get-access-ucb
 
 For CU Boulder users, the following methods are available for logging in to CURC resources:
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
@@ -99,7 +108,8 @@ For CU Boulder users, the following methods are available for logging in to CURC
     - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
 ````
 
-````{tab} CSU
+````{tab-item} CSU
+:sync: get-access-csu
 
 For CSU users, the following methods are available for logging in to CURC resources:
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
@@ -114,7 +124,8 @@ CSU users have an `@` symbol in their CURC username. It is important to keep in 
 
 ````
 
-````{tab} AMC
+````{tab-item} AMC
+:sync: get-access-amc
 
 For AMC users, the following methods are available for logging in to CURC resources:
 - Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
@@ -130,16 +141,20 @@ AMC users have an `@` symbol in their CURC username. It is important to keep in 
 
 ````
 
-````{tab} RMACC
+````{tab-item} RMACC
+:sync: get-access-rmacc
 
 Currently, RMACC users can obtain access to a terminal or launch interactive jobs using Open OnDemand 
 - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
     
-+ **For RMACC users, please refer to [RMACC Access to Alpine.](rmacc.md)**
-
 ```{important}
 Due to security issues, RMACC users do not have access to SSH. We apologize for this inconvenience. 
 ```
+
+RMACC users can transfer data using the following methods: 
+- For data transfers that are 1GB or less, the Open OnDemand [Files application](../open_ondemand/files_app.md) can be used
+- Globus, an intuitive interactive Graphical User Interface, can be used for all data transfers regardless of data size
+    - For more information on Globus, please refer to our [Globus transfers](../compute/data-transfer.md#globus-transfers) documentation 
 
 ```{tip}
 RMACC users have an `@` symbol in their CURC username. It is important to keep in mind that this can cause issues when running certain software. For more information on this topic please consult our [CSU and ACCESS (XSEDE) usernames](../additional-resources/csu-xsede-usernames.md) page.
@@ -154,9 +169,12 @@ RMACC users have an `@` symbol in their CURC username. It is important to keep i
 Not all users have the ability to access CURC resources using a terminal. Please consult the appropriate tabbed item in the previous section [Getting access to CURC resources](#getting-access-to-curc-resources) before proceeding. 
 ```
 
-`````{tabs}
+(tabset-ref-terminal-access)=
+`````{tab-set}
+:sync-group: tabset-terminal-access
 
-````{tab} Windows 
+````{tab-item} Windows 
+:sync: terminal-access-windows
 
 Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application enables users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that enable Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
@@ -171,7 +189,8 @@ Logging in from a Windows machine requires the additional step of [installing th
     ```
 ````
 
-````{tab} Mac
+````{tab-item} Mac
+:sync: terminal-access-mac
 
 Logging in with a Mac requires no extra installation on your local machine. Simply utilize the terminal application that is pre-installed with your operating system to access Research Computing resources. 
 
@@ -181,7 +200,8 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
 ````
 
-````{tab} Linux
+````{tab-item} Linux
+:sync: terminal-access-linux
 
 Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
 

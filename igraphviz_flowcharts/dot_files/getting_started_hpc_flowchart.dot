@@ -44,9 +44,9 @@ digraph "" {
          alpine -> running_jobs;
          blanca -> running_jobs;
          running_jobs -> slurm;
+         running_jobs -> ood; 
          slurm -> interactive;
          slurm -> batch;
-         slurm -> ood;
          interactive -> using_software;
          batch -> using_software;
          ood -> using_software;

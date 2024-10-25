@@ -46,7 +46,7 @@ This will bring you to a login prompt where you should use your XSEDE/ACCESS acc
 
 ````{tab} RMACC
 
-To connect to Open OnDemand, you must first have a CU Research Computing account. For more information on creating a CU Research Computing account, please see [Requesting an RMACC Account on CURC Resources](../access/rmacc.md#requesting-an-rmacc-account-on-curc-resources). Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"ACCESS CI (XSEDE)"**. 
+To connect to Open OnDemand, you must first have a CU Research Computing account. For more information on creating a CU Research Computing account, please see [Requesting an RMACC Account on CURC Resources](../access/logging-in.html?tabset-get-account=get-account-rmacc#tabset-ref-get-account){.external}. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"ACCESS CI (XSEDE)"**. 
 ```{eval-rst}
 .. figure:: ./OnDemand/access_select_identity.png
    :align: center

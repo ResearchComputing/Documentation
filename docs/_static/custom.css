@@ -154,3 +154,7 @@ html[data-theme=light] .graph#gs-flowchart .node ellipse {
 html[data-theme=light] .graph#gs-flowchart .node text {
     fill: black; 
 }
+
+.bd-content .sd-tab-set .sd-tab-content {
+    padding: 1.5rem;
+}

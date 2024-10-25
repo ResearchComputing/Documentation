@@ -96,7 +96,6 @@ access/logging-in
 access/faq
 trainings/current-sem-trainings
 access/duo-2-factor-authentication
-access/rmacc
 access/amc-access
 ```
 

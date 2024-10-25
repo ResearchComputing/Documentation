@@ -106,15 +106,28 @@
 <!-- slurm -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../running-jobs/job-resources.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="430.47" cy="-234" rx="34.6" ry="18"/>
-<text text-anchor="middle" x="430.47" y="-230.47" font-family="Verdana" font-size="12.00" fill="white">Slurm</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="364.47" cy="-234" rx="34.6" ry="18"/>
+<text text-anchor="middle" x="364.47" y="-230.47" font-family="Verdana" font-size="12.00" fill="white">Slurm</text>
 </a>
 </g>
 </g>
 <!-- running_jobs&#45;&gt;slurm -->
 <g id="gs-flowchart_edge15" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M430.47,-286.61C430.47,-279.86 430.47,-272.04 430.47,-264.56"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="433.97,-264.82 430.47,-254.82 426.97,-264.82 433.97,-264.82"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M413.48,-286.97C405.65,-278.68 396.25,-268.7 387.78,-259.71"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="390.36,-257.35 380.95,-252.47 385.26,-262.15 390.36,-257.35"/>
+</g>
+<!-- ood -->
+<g id="clickable" class="node">
+<g id="a_clickable"><a xlink:href="../open_ondemand/index.html" target="_blank">
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="497.47" cy="-234" rx="80.5" ry="18"/>
+<text text-anchor="middle" x="497.47" y="-230.47" font-family="Verdana" font-size="12.00" fill="white">Open OnDemand</text>
+</a>
+</g>
+</g>
+<!-- running_jobs&#45;&gt;ood -->
+<g id="gs-flowchart_edge16" class="edge">
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M447.73,-286.97C455.33,-279.04 464.39,-269.56 472.69,-260.89"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="475.02,-263.53 479.4,-253.88 469.96,-258.69 475.02,-263.53"/>
 </g>
 <!-- clusters -->
 <g id="gs-flowchart_node8" class="node">
@@ -191,113 +204,100 @@
 <!-- interactive -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../running-jobs/interactive-jobs.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="286.47" cy="-162" rx="73.02" ry="18"/>
-<text text-anchor="middle" x="286.47" y="-158.47" font-family="Verdana" font-size="12.00" fill="white">Interactive jobs</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="272.47" cy="-162" rx="73.02" ry="18"/>
+<text text-anchor="middle" x="272.47" y="-158.47" font-family="Verdana" font-size="12.00" fill="white">Interactive jobs</text>
 </a>
 </g>
 </g>
 <!-- slurm&#45;&gt;interactive -->
-<g id="gs-flowchart_edge16" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M405.39,-220.81C384.71,-210.75 354.87,-196.25 330.26,-184.29"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="331.94,-181.21 321.42,-179.99 328.88,-187.51 331.94,-181.21"/>
+<g id="gs-flowchart_edge17" class="edge">
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M344.96,-218.15C333.16,-209.18 317.84,-197.52 304.32,-187.23"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="306.75,-184.68 296.68,-181.41 302.52,-190.26 306.75,-184.68"/>
 </g>
 <!-- batch -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../running-jobs/batch-jobs.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="430.47" cy="-162" rx="53.06" ry="18"/>
-<text text-anchor="middle" x="430.47" y="-158.47" font-family="Verdana" font-size="12.00" fill="white">Batch jobs</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="416.47" cy="-162" rx="53.06" ry="18"/>
+<text text-anchor="middle" x="416.47" y="-158.47" font-family="Verdana" font-size="12.00" fill="white">Batch jobs</text>
 </a>
 </g>
 </g>
 <!-- slurm&#45;&gt;batch -->
-<g id="gs-flowchart_edge17" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M430.47,-215.34C430.47,-208.59 430.47,-200.69 430.47,-193.11"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="433.97,-193.17 430.47,-183.17 426.97,-193.17 433.97,-193.17"/>
-</g>
-<!-- ood -->
-<g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="../open_ondemand/index.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="582.47" cy="-162" rx="80.5" ry="18"/>
-<text text-anchor="middle" x="582.47" y="-158.47" font-family="Verdana" font-size="12.00" fill="white">Open OnDemand</text>
-</a>
-</g>
-</g>
-<!-- slurm&#45;&gt;ood -->
 <g id="gs-flowchart_edge18" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M456.26,-221.13C478.2,-211.02 510.24,-196.27 536.55,-184.15"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="537.74,-187.45 545.36,-180.09 534.81,-181.1 537.74,-187.45"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M376.8,-216.41C382.73,-208.42 390,-198.64 396.68,-189.64"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="399.37,-191.89 402.52,-181.78 393.75,-187.72 399.37,-191.89"/>
 </g>
 <!-- using_software -->
 <g id="gs-flowchart_node19" class="node">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="3" stroke-dasharray="5,2" cx="430.47" cy="-90" rx="106.45" ry="18"/>
-<text text-anchor="middle" x="430.47" y="-86.47" font-family="Verdana" font-size="12.00" fill="white">How do I run software?</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="3" stroke-dasharray="5,2" cx="416.47" cy="-90" rx="106.45" ry="18"/>
+<text text-anchor="middle" x="416.47" y="-86.47" font-family="Verdana" font-size="12.00" fill="white">How do I run software?</text>
 </g>
 <!-- interactive&#45;&gt;using_software -->
 <g id="gs-flowchart_edge19" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M319.15,-145.12C338.28,-135.82 362.76,-123.92 383.89,-113.65"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="385.4,-116.8 392.86,-109.28 382.34,-110.51 385.4,-116.8"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M305.15,-145.12C324.28,-135.82 348.76,-123.92 369.89,-113.65"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="371.4,-116.8 378.86,-109.28 368.34,-110.51 371.4,-116.8"/>
 </g>
 <!-- batch&#45;&gt;using_software -->
 <g id="gs-flowchart_edge20" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M430.47,-143.34C430.47,-136.69 430.47,-128.94 430.47,-121.46"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="433.97,-121.66 430.47,-111.66 426.97,-121.66 433.97,-121.66"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M416.47,-143.34C416.47,-136.69 416.47,-128.94 416.47,-121.46"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="419.97,-121.66 416.47,-111.66 412.97,-121.66 419.97,-121.66"/>
 </g>
 <!-- ood&#45;&gt;using_software -->
 <g id="gs-flowchart_edge21" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M547.6,-144.94C527.21,-135.55 501.16,-123.55 478.81,-113.26"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="480.45,-110.16 469.9,-109.16 477.52,-116.52 480.45,-110.16"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M496.99,-215.06C495.75,-196.16 491.65,-166.13 478.47,-144 472.29,-133.61 463.34,-124.26 454.15,-116.41"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="456.38,-113.7 446.38,-110.2 452.01,-119.18 456.38,-113.7"/>
 </g>
 <!-- modules -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../compute/modules.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="182.47" cy="-18" rx="89.99" ry="18"/>
-<text text-anchor="middle" x="182.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">The module system</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="168.47" cy="-18" rx="89.99" ry="18"/>
+<text text-anchor="middle" x="168.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">The module system</text>
 </a>
 </g>
 </g>
 <!-- using_software&#45;&gt;modules -->
 <g id="gs-flowchart_edge22" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M375.13,-73.38C336.88,-62.58 285.91,-48.19 246,-36.93"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="247.02,-33.58 236.45,-34.23 245.12,-40.32 247.02,-33.58"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M361.13,-73.38C322.88,-62.58 271.91,-48.19 232,-36.93"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="233.02,-33.58 222.45,-34.23 231.12,-40.32 233.02,-33.58"/>
 </g>
 <!-- container -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../software/containerization.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="366.47" cy="-18" rx="75.51" ry="18"/>
-<text text-anchor="middle" x="366.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Containerization</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="352.47" cy="-18" rx="75.51" ry="18"/>
+<text text-anchor="middle" x="352.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Containerization</text>
 </a>
 </g>
 </g>
 <!-- using_software&#45;&gt;container -->
 <g id="gs-flowchart_edge23" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M413.99,-70.97C406.81,-63.12 398.26,-53.76 390.4,-45.16"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="393.1,-42.94 383.77,-37.92 387.93,-47.66 393.1,-42.94"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M399.99,-70.97C392.81,-63.12 384.26,-53.76 376.4,-45.16"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="379.1,-42.94 369.77,-37.92 373.93,-47.66 379.1,-42.94"/>
 </g>
 <!-- spack -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../software/spack.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="494.47" cy="-18" rx="34.6" ry="18"/>
-<text text-anchor="middle" x="494.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Spack</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="480.47" cy="-18" rx="34.6" ry="18"/>
+<text text-anchor="middle" x="480.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Spack</text>
 </a>
 </g>
 </g>
 <!-- using_software&#45;&gt;spack -->
 <g id="gs-flowchart_edge24" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M446.96,-70.97C454.54,-62.68 463.67,-52.7 471.88,-43.71"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="474.31,-46.24 478.48,-36.5 469.15,-41.52 474.31,-46.24"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M432.96,-70.97C440.54,-62.68 449.67,-52.7 457.88,-43.71"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="460.31,-46.24 464.48,-36.5 455.15,-41.52 460.31,-46.24"/>
 </g>
 <!-- conda -->
 <g id="clickable" class="node">
 <g id="a_clickable"><a xlink:href="../software/python.html" target="_blank">
-<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="641.47" cy="-18" rx="93.98" ry="18"/>
-<text text-anchor="middle" x="641.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Conda environments</text>
+<ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="627.47" cy="-18" rx="93.98" ry="18"/>
+<text text-anchor="middle" x="627.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Conda environments</text>
 </a>
 </g>
 </g>
 <!-- using_software&#45;&gt;conda -->
 <g id="gs-flowchart_edge25" class="edge">
-<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M479.68,-72.68C510.59,-62.42 550.62,-49.14 583.12,-38.36"/>
-<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="584.19,-41.69 592.58,-35.22 581.98,-35.05 584.19,-41.69"/>
+<path fill="none" stroke="#cfb87c" stroke-width="1.5" d="M465.68,-72.68C496.59,-62.42 536.62,-49.14 569.12,-38.36"/>
+<polygon fill="#121212" stroke="#cfb87c" stroke-width="1.5" points="570.19,-41.69 578.58,-35.22 567.98,-35.05 570.19,-41.69"/>
 </g>
 </g>
 </svg>
