@@ -36,11 +36,11 @@ this. [Download Xming here](http://www.straightrunning.com/XmingNotes/).
 
 Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-1.png)
+![](./interactive_jobs_images/putty-1.png)
 
 Expand the SSH tab on the left side of the application and click X11.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
+![](./interactive_jobs_images/putty-2.png)
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking "Open" will open a terminal window where you can login.
 ````
