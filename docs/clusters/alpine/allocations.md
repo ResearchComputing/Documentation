@@ -29,7 +29,7 @@ Algorithm](https://slurm.schedmd.com/fair_tree.html). A user's
 assigned shares (determined by their allocation) and usage (based on their 
 job history) contribute to their `LevelFS` value. Information on how to 
 check your `LevelFS` score can be found 
-[here](../../access/faq.md#how-can-i-see-my-current-fairshare-priority).
+[here](../../getting_started/faq.md#how-can-i-see-my-current-fairshare-priority).
 
 Note that if there are no other pending jobs and enough resources are 
 available then your job will run regardless of your previous usage.

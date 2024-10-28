@@ -4,12 +4,12 @@ Documentation covering the use of Research Computing resources.
 
 Here are some quick links to documentation to get you started.
 
-- [Logging In](access/logging-in.md)
+- [Logging In](getting_started/logging-in.md)
 - [Research Computing Filesystems](compute/filesystems.md)
 - [Compiling Software](compute/compiling.md)
 - [Batch Jobs](running-jobs/batch-jobs.md)
 - [The Module System](compute/modules.md)
-- [Frequently Asked Questions (FAQ)](access/faq.md)
+- [Frequently Asked Questions (FAQ)](getting_started/faq.md)
 
 Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues). If you would like to provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
 
@@ -27,11 +27,11 @@ If you have any questions, please contact <rc-help@colorado.edu>.
 :maxdepth: 1
 :caption: Getting Started
 
-access/navigating_docs
-access/logging-in
-access/faq
-access/current-sem-trainings
-access/acknowledge_curc_resources
+getting_started/navigating_docs
+getting_started/logging-in
+getting_started/faq
+getting_started/current-sem-trainings
+getting_started/acknowledge_curc_resources
 ```
 
 ```{toctree}
