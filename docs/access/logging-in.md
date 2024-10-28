@@ -1,7 +1,7 @@
 # Logging In
 
 ```{tip}
-Do you need help navigating our documentation? For new and experienced users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts on core areas of our documentation that all users should be aware of. 
+Do you need help navigating our documentation? For new and experienced users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts for core areas of our documentation that all users should be aware of. 
 ```
 
 ## Getting a CURC account
@@ -246,5 +246,5 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWIqetVDUqKB2im3HyQZJ72PMYXFJUXR2Z+dzhGfO
 ```
 
 ```{tip}
-I have logged in, what should I do next? For new users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts on core areas of our documentation that all users should be aware of. 
+I have logged in, what should I do next? For new users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts for core areas of our documentation that all users should be aware of. 
 ```
