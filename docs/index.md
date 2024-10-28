@@ -60,7 +60,6 @@ access/logging-in
 access/faq
 access/current-sem-trainings
 access/acknowledge_curc_resources
-access/duo-2-factor-authentication
 ```
 
 ```{toctree}

@@ -24,9 +24,12 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 	``````{toggle} 
 	Duo offers a variety of methods to log into your account. Depending on what you select when setting up your Duo account, you should have several different methods of 2-factor authentication when logging into RC Resources. 
 
+	(tabset-ref-ucb-duo-login-methods)=
 	`````{tab-set}
+	:sync-group: tabset-ucb-duo-login-methods
 
 	````{tab-item} Duo Mobile Push
+	:sync: ucb-duo-login-methods-push
 
 	**Duo Mobile Push is Research Computing's recommended method of 2-factor authentication.** Because Duo Push is tied to your physical smart device instead of a phone number or account, Duo Push is provides a more secure method of 2-factor authentication than either SMS or phone call.
 
@@ -45,6 +48,7 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 	````
 
 	````{tab-item} Duo SMS
+	:sync: ucb-duo-login-methods-sms
 
 	If you prefer to not use the Duo app or if you don't have a smart device, then Duo offers an SMS method of 2-factor authentication:
 
@@ -56,6 +60,7 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 	````
 
 	````{tab-item} Duo Phone Call
+	:sync: ucb-duo-login-methods-call
 
 	Duo also provides a phone call solution for 2-factor authorization if you only have a land line, or prefer to not use Push or SMS:
 
@@ -66,6 +71,7 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 	````
 
 	````{tab-item} Duo Token
+	:sync: ucb-duo-login-methods-token
 
 	If you prefer a physical device, similar to the Vasco OTP, you will need to arrange with RC staff to acquire a token. There is a small fee for this device.  Email <rc-help@colorado.edu> for assistance.
 
@@ -113,6 +119,13 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 	Clicking "Add a new device" will allow you to add a new smart phone, tablet, or land-line. Simply select the option you wish to add and follow the steps provided by Duo to complete setting up your new device. 
 
 	Selecting "My Settings & Devices" provides a more detailed list of all devices you have registered. From here you can also add a new device, set your default device, and change your default authentication method when you attempt to log in.
+	````
+
+- ### None of the FAQs for Duo resolved my issue, how do I proceed as a CU Boulder user? 
+	````{toggle}
+	If none of the above resolved the issues you were experiencing, then your Duo account may have expired. The university purges Duo accounts after six months of non-use. You can
+	re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your issue, then we suggest contacting the University helpdesk at <oithelp@colorado.edu> or calling
+	303-735-4357.
 	````
 
 ## General High Performance Computing

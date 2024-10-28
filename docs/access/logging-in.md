@@ -19,7 +19,8 @@ The process for obtaining a CURC account for CU Boulder users is straightforward
 
 ````{important}
 - Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.
-- Once your account is provisioned, please wait 15 minutes before signing in. 
+- Once your account is provisioned, please wait 15 minutes before signing in
+- If you are having issues with DUO, please consult our [Duo Frequently Asked Questions](./faq.md#duo-multi-factor-authentication) section
 ````
 
 `````
@@ -46,6 +47,7 @@ Currently, AMC users must go through various steps to create a CURC account. The
 
 ```{important}
 - For assistance filling out the Alpine form or updates on the account provisioning process, please email <hpcsupport@cuanschutz.edu>
+- For assistance with Duo, please see [Duo's documentation on 2-factor authentication](https://guide.duo.com/)
 - Once your account is provisioned, please wait 15 minutes before signing in. 
 ```
 
@@ -72,8 +74,9 @@ RMACC members can obtain a CURC account by completing the following steps
 3. Wait for user support to respond to your email and provision your account
 
 ```{important}
-- Once your account is provisioned, please wait 15 minutes before signing in. 
-- The first time you log in you will be prompted to set up two-factor authentication.
+- Once your account is provisioned, please wait 15 minutes before signing in
+- The first time you log in you will be prompted to set up Duo two-factor authentication
+- For assistance with Duo, please see [Duo's documentation on 2-factor authentication](https://guide.duo.com/)
 ```
 
 `````
@@ -183,7 +186,7 @@ Logging in from a Windows machine requires the additional step of [installing th
 2. Enter your Identikey in response to the “login as” prompt
 3. When prompted to enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request from the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be found under the [As a CU Boulder user, how can I login with Duo?](./faq.md#as-a-cu-boulder-user-how-can-i-login-with-duo) FAQ section.
     ```{note}
     As a security feature, PuTTY does not display any text while you type your password
     ```
@@ -197,7 +200,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 1. Under “File”, open a new finder window. Navigate to the “Applications” folder, then the “Utilities” folder. Open a terminal window and type `ssh username@login.rc.colorado.edu`, where `username` is your assigned username. Press enter.
 2. Enter your password:
     * If you are logging in using Duo Push, type your Identikey password.  You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be found under the [As a CU Boulder user, how can I login with Duo?](./faq.md#as-a-cu-boulder-user-how-can-i-login-with-duo) FAQ section.
 ````
 
 ````{tab-item} Linux
@@ -209,7 +212,7 @@ Much like with Macs, Linux machines require no additional setup to access Resear
 
 2. Enter your password:
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
-    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be on the [Duo 2 Factor Authorization](duo-2-factor-authentication.md) page.
+    * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be found under the [As a CU Boulder user, how can I login with Duo?](./faq.md#as-a-cu-boulder-user-how-can-i-login-with-duo) FAQ section.
 
 ````
 `````
@@ -240,4 +243,8 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPub4h8XLU3dXJBNZljS4PdPWOORXoBdSdaKnwFcMTxe
 # Fingerprint
 # 2048 SHA256:xZ9xXWtJwBWYqm3ZSvqq2Q7Vq0qnhnImGfTyanytrEk no comment (RSA)
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWIqetVDUqKB2im3HyQZJ72PMYXFJUXR2Z+dzhGfOERABAV6m0fKcVcPrBjX9SYR4QYbxR+Yu2bIDDxpK+PZs2sAy/LU4po9mZUN8VAWBE0rwgcEvKfbQriwyhkdqdjEEzbEN5FTx05iYMN2o2vpshmi3dUpHaKMZPI0bhQKmwjM3bf77gpxXWNANsGIag0SdX4bmiWYQhR+CnzUJUis9DVOpVNfN+Jtw4IgnuJedehkZi/z/v7JKvV26jIxXmdq6+VkRCpoVnL3pJkoU5e4vaSc4V5kvgfI9G4tj6BEDGsRgHXAcZXk+hLtNp2nj2VsSocWcOVkn85obSfnVwV/f
+```
+
+```{tip}
+I have logged in, what should I do next? For new users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts on core areas of our documentation that all users should be aware of. 
 ```
