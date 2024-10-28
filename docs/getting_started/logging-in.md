@@ -26,7 +26,7 @@ The process for obtaining a CURC account for CU Boulder users is straightforward
 `````
 
 `````{tab-item} CSU
-:sync: get-account-csu
+:sync: get-account-cs
 
 The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation.  
 
