@@ -21,4 +21,5 @@ html:
 	dot -Tsvg $(IGRAPH_PATH)/dot_files/getting_started_hpc_flowchart.dot > $(IGRAPH_PATH)/generated_images/getting_started_hpc_flowchart.svg
 	dot -Tsvg $(IGRAPH_PATH)/dot_files/getting_started_cloud_flowchart.dot > $(IGRAPH_PATH)/generated_images/getting_started_cloud_flowchart.svg
 	python $(IGRAPH_PATH)/remove_tooltip.py
+	python check_tab_ref.py 
 	$(SPHINXBUILD) -b html -d $(BUILDDIR)/doctrees -D language=en $(SOURCEDIR) $(BUILDDIR)/html
