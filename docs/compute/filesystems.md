@@ -105,9 +105,12 @@ cp new_file /projects/user1234/job/new_file
 
 ## Monitoring Disk Usage
 
-`````{tabs}
+(tabset-ref-monitor-disk-usage)=
+`````{tab-set}
+:sync-group: tabset-monitor-disk-usage
 
-````{tab} curc-quota
+````{tab-item} curc-quota
+:sync: monitor-disk-usage-curc-quota
 
 ### The `curc-quota` command
 Disk usage may be checked using the `curc-quota` command. When run
@@ -129,7 +132,8 @@ Blanca users: the `curc-quota` command can be run on Blanca nodes if you `module
 
 ````
 
-````{tab} du
+````{tab-item} du
+:sync: monitor-disk-usage-du
 
 ### The `du` command
 The space occupied by a particular directory and its

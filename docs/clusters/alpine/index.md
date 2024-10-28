@@ -16,7 +16,7 @@ users. For full details about node access, please refer to the Alpine Node Acces
 :caption: Alpine Table of Contents 
 quick-start
 alpine-hardware
-examples
+slurm_directive_ex
 software
 allocations
 moving-from-summit
