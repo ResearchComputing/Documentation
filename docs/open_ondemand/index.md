@@ -4,9 +4,12 @@ Open OnDemand is a browser based, integrated, single access point for all of you
 
 ## Getting started with Open OnDemand
 
-`````{tabs}
+(tabset-ref-ood-gs)=
+`````{tab-set}
+:sync-group: tabset-ood-gs
 
-````{tab} CU Boulder
+````{tab-item} CU Boulder
+:sync: ood-gs-ucb
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult [our account request page](../getting_started/logging-in.md) to get started. Once you have a CU Research Computing account you can connect to Open OnDemand by visiting <https://ondemand.rc.colorado.edu>. This link will bring you to a login page for Open OnDemand. Use your CU Research Computing credentials and Duo 2-factor authentication to login.
 
@@ -14,7 +17,9 @@ To connect to Open OnDemand, you must first have a CU Research Computing account
 
 ````
 
-````{tab} CSU
+````{tab-item} CSU
+:sync: ood-gs-csu
+
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult our [getting a CURC account for CSU users](../getting_started/logging-in.html?tabset-get-account=get-account-csu#tabset-ref-get-account){.external} documentation. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"Colorado State University"**. 
 ```{eval-rst}
@@ -29,7 +34,8 @@ This will bring you to a login prompt where you should use your CSU NetID and Du
 
 ````
 
-````{tab} AMC
+````{tab-item} AMC
+:sync: ood-gs-amc
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult our [getting a CURC account for AMC users](../getting_started/logging-in.html?tabset-get-account=get-account-amc#tabset-ref-get-account){.external} documentation. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"ACCESS CI (XSEDE)"**. 
 ```{eval-rst}
@@ -44,7 +50,8 @@ This will bring you to a login prompt where you should use your XSEDE/ACCESS acc
 
 ````
 
-````{tab} RMACC
+````{tab-item} RMACC
+:sync: ood-gs-rmacc
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. For more information on creating a CU Research Computing account, please see our [getting a CURC account for RMACC users](../getting_started/logging-in.html?tabset-get-account=get-account-rmacc#tabset-ref-get-account){.external} documentation. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"ACCESS CI (XSEDE)"**. 
 ```{eval-rst}
