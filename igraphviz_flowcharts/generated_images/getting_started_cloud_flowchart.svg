@@ -9,7 +9,7 @@
 </g>
 <!-- aws -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="./cloud/aws/index.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../cloud/aws/index.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="99.47" cy="-18" rx="99.47" ry="18"/>
 <text text-anchor="middle" x="99.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Amazon Web Services</text>
 </a>
@@ -22,7 +22,7 @@
 </g>
 <!-- azure -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="./cloud/azure/index.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../cloud/azure/index.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="289.47" cy="-18" rx="72.52" ry="18"/>
 <text text-anchor="middle" x="289.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Microsoft Azure</text>
 </a>
@@ -35,7 +35,7 @@
 </g>
 <!-- gcp -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="./cloud/gcp/index.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../cloud/gcp/index.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="481.47" cy="-18" rx="101.46" ry="18"/>
 <text text-anchor="middle" x="481.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Google Cloud Platform</text>
 </a>
@@ -48,7 +48,7 @@
 </g>
 <!-- cumulus -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="./cloud/cumulus/index.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../cloud/cumulus/index.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="729.47" cy="-18" rx="128.91" ry="18"/>
 <text text-anchor="middle" x="729.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">CUmulus (On-Premise Cloud)</text>
 </a>

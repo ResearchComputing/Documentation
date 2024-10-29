@@ -1,21 +1,14 @@
-# Research Computing User Guide
+# CU Research Computing User Guide
 
-Documentation covering the use of Research Computing resources.
+Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of services encompassing High Performance Computing (HPC), cloud computing assistance, and storage solutions. Many of these services are available to users associated with CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). 
 
-Here are some quick links to documentation to get you started.
-
-- [Logging In](getting_started/logging-in.md)
-- [Research Computing Filesystems](compute/filesystems.md)
-- [Compiling Software](compute/compiling.md)
-- [Batch Jobs](running-jobs/batch-jobs.md)
-- [The Module System](compute/modules.md)
-- [Frequently Asked Questions (FAQ)](getting_started/faq.md)
-
-Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues). If you would like to provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
-
-More information is available at https://www.colorado.edu/rc.
-
-If you have any questions, please contact <rc-help@colorado.edu>.
+```{tip}
+- Documentation can be overwhelming. If you would like guidance on navigating CURC documentation, please see our [Navigating CURC Documentation](./getting_started/navigating_docs.md) page.
+- Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues).
+- To provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
+- For more information on the CU Research Computing group, please see <https://www.colorado.edu/rc>.
+- If you have any questions on documentation or CURC services, please feel free to contact our user support team at <rc-help@colorado.edu>.
+```
 
 ## Meet the RC User Support Team!
 

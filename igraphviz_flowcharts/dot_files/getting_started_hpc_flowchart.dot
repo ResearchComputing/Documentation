@@ -6,10 +6,10 @@ digraph "" {
          edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5"];
 
          policies [label="CURC Policies", href="../additional-resources/policies.html", target="_blank", id="clickable"];
-         logging_in [label="Logging In", href="../access/logging-in.html", target="_blank", id="clickable"];
-         ack [label="Acknowledging CURC", href="../access/duo-2-factor-authentication.html", target="_blank", id="clickable"];
-         training [label="Trainings", href="../access/logging-in.html", target="_blank", id="clickable"];
-         faq [label="FAQs", href="../access/logging-in.html", target="_blank", id="clickable"];
+         logging_in [label="Logging In", href="../getting_started/logging-in.html", target="_blank", id="clickable"];
+         ack [label="Acknowledging CURC", href="../getting_started/acknowledge_curc_resources.html", target="_blank", id="clickable"];
+         training [label="Trainings", href="../getting_started/current-sem-trainings.html", target="_blank", id="clickable"];
+         faq [label="FAQs", href="../getting_started/faq.html", target="_blank", id="clickable"];
          compute_env [label="What does the HPC system look like?", style="filled,dashed", penwidth="3"];
          running_jobs [label="How do I run a job?", style="filled,dashed", penwidth="3"];
          clusters [label="What clusters are available?", style="filled,dashed", penwidth="3"];
