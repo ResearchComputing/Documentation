@@ -17,7 +17,7 @@ In the flowchart presented below, you can easily navigate to the corresponding d
 
 ## Cloud Computing Flowchart
 
-Dylan/Mohal should provided content here and modify flowchart to fit their needs. 
+The Cloud Foundations Service (CFS) at CURC provides an additional layer of support between the cloud provider and the customer. The purpose of CFS is to manage the integration of the cloud with CU standards. Specifically, CFS provides assistance with the provisioning of public cloud accounts (AWS, Azure, GCP), cost estimation, billing against CU funds, CU internal network connection, consulting, and high-level architectural guidance. It should be noted that CFS customers are expected to manage their applications, data, and use of cloud services. Below we provide a flowchart that we believe identifies the key areas users of these services should read. 
 
 ```{tip}
 In the flowchart presented below, you can easily navigate to the corresponding documentation page by clicking on the associated graph node. All nodes that change color when hovered over are clickable. 
