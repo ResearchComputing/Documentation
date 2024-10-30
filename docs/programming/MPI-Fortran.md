@@ -165,10 +165,10 @@ command will be one of the following:
 
 (tabset-ref-mpi-f-compile)=
 `````{tab-set}
-:sync-group: tabset-mpi-f-compile
+:sync-group: tabset-mpi-f
 
 ````{tab-item} GNU Fortran Compiler
-:sync: mpi-f-compile-openmpi
+:sync: mpi-f-openmpi
 
 ```bash
 mpif90 hello_world_mpi.f90 -o hello_world_mpi.exe
@@ -177,7 +177,7 @@ mpif90 hello_world_mpi.f90 -o hello_world_mpi.exe
 ````
 
 ````{tab-item} Intel Fortran Compiler
-:sync: mpi-f-compile-intelmpi
+:sync: mpi-f-intelmpi
 
 ```bash
 mpiifort hello_world_mpi.f90 -o hello_world_mpi.exe
@@ -202,10 +202,10 @@ job script should look something like this:
 
 (tabset-ref-mpi-f-batch)=
 `````{tab-set}
-:sync-group: tabset-mpi-f-batch
+:sync-group: tabset-mpi-f
 
 ````{tab-item} GNU Fortran Compiler
-:sync: mpi-f-batch-openmpi
+:sync: mpi-f-openmpi
 
 ```bash
 #!/bin/bash
@@ -228,7 +228,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 ````
 
 ````{tab-item} Intel Fortran Compiler
-:sync: mpi-f-batch-intelmpi
+:sync: mpi-f-intelmpi
 
 ```bash
 #!/bin/bash

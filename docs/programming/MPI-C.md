@@ -174,10 +174,10 @@ correct command based on which compiler you have loaded.
 
 (tabset-ref-mpi-c-compile)=
 `````{tab-set}
-:sync-group: tabset-mpi-c-compile
+:sync-group: tabset-mpi-c
 
 ````{tab-item} Open MPI
-:sync: mpi-c-compile-openmpi
+:sync: mpi-c-openmpi
 
 ```bash
 mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
@@ -186,7 +186,7 @@ mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
 ````
 
 ````{tab-item} Intel MPI
-:sync: mpi-c-compile-intelmpi
+:sync: mpi-c-intelmpi
 
 ```bash
 mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
@@ -212,10 +212,10 @@ something like this:
 
 (tabset-ref-mpi-c-batch)=
 `````{tab-set}
-:sync-group: tabset-mpi-c-batch
+:sync-group: tabset-mpi-c
 
 ````{tab-item} Open MPI
-:sync: mpi-c-batch-openmpi
+:sync: mpi-c-openmpi
 
 ```bash
 #!/bin/bash
@@ -238,7 +238,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 ````
 
 ````{tab-item} Intel MPI
-:sync: mpi-c-batch-intelmpi
+:sync: mpi-c-intelmpi
 
 ```bash
 #!/bin/bash
