@@ -37,9 +37,12 @@ By default, environment specs are stored in `/projects/$USER/spack/environments/
 __2. Activate your Spack environment.__
 You can activate your Spack environment with one of the following commands: 
 
-`````{tabs}
+(tabset-ref-activate-spack)=
+`````{tab-set}
+:sync-group: tabset-activate-spack
 
-````{tab} Activate with Spacktivate
+````{tab-item} Activate with Spacktivate
+:sync: activate-spack-spacktivate
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spacktivate <environment name>
@@ -47,7 +50,8 @@ You can activate your Spack environment with one of the following commands:
 
 ````
 
-````{tab} Activate with Spack Env
+````{tab-item} Activate with Spack Env
+:sync: activate-spack-env
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env activate <environment name>
@@ -56,9 +60,13 @@ You can activate your Spack environment with one of the following commands:
 `````
 
 To deactivate your environment, you can use one of the following commands: 
-`````{tabs}
 
-````{tab} Deactivate with despacktivate
+(tabset-ref-deactivate-spack)=
+`````{tab-set}
+:sync-group: tabset-deactivate-spack
+
+````{tab-item} Deactivate with despacktivate
+:sync: deactivate-spack-despacktivate
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ despacktivate
@@ -66,7 +74,8 @@ To deactivate your environment, you can use one of the following commands:
 
 ````
 
-````{tab} Deactivate with Spack Env
+````{tab-item} Deactivate with Spack Env
+:sync: deactivate-spack-env
 
 ```
 [johndoe@c3cpu-c11-u17-2 ~]$ spack env deactivate
