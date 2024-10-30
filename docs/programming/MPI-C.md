@@ -25,21 +25,30 @@ Next we must load MPI into our environment. Begin by loading in your
 choice of C++ compiler and its corresponding MPI library. Use the
 following commands if using the GNU C++ compiler:
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-mpi-c-comp)=
+`````{tab-set}
+:sync-group: tabset-mpi-c-comp
 
-   .. code-tab:: bash GNU C++ Compiler
+````{tab-item} GNU C++ Compiler
+:sync: mpi-c-comp-gnu
 
-        module load gcc
-        module load openmpi
-
-   .. code-tab:: bash Intel C/C++ Compiler
-
-        module load intel
-        module load impi
+```bash
+module load gcc
+module load openmpi
+```
 
 ````
 
+````{tab-item} Intel C/C++ Compiler
+:sync: mpi-c-comp-gnu-intel
+
+```bash
+module load intel
+module load impi
+```
+
+````
+`````
 
 This should prepare your environment with all the necessary tools to
 compile and run your MPI code. Let’s now begin to construct our C++
@@ -63,27 +72,33 @@ Now let’s set up several MPI directives to parallelize our code. In
 this ‘Hello World’ tutorial we’ll be utilizing the following four
 directives:
 
-````{tabs}
+(tabset-ref-mpi-c-func)=
+````{tab-set}
+:sync-group: tabset-mpi-c-func
 
-```{tab} *MPI_Init()*
+```{tab-item} MPI_Init()
+:sync: mpi-c-func-init
 
 The `MPI_Init()` function initializes the MPI environment. It takes in the addresses of the C++ command line arguments `argc` and `argv`.
 
 ```
 
-```{tab} *MPI_Comm_size()*
+```{tab-item} MPI_Comm_size()
+:sync: mpi-c-func-comm-size
 
 The `MPI_Comm_size()` function returns the total size of the environment via quantity of processes. The function takes in the MPI environment, and the memory address of an integer variable.
 
 ```
 
-```{tab} *MPI_Comm_rank()*
+```{tab-item} MPI_Comm_rank()
+:sync: mpi-c-func-comm-rank
 
 The `MPI_Comm_rank()` function returns the process ID of the processor that called the function. The function takes in the MPI environment, and the memory address of an integer variable.
 
 ```
 
-```{tab} *MPI_Finalize()*
+```{tab-item} MPI_Finalize()
+:sync: mpi-c-func-finalize
 
 The `MPI_Finalize()` function cleans up the MPI environment and ends MPI communications.
 
@@ -157,19 +172,28 @@ Now the code is complete and ready to be compiled. Because this is an
 MPI program, we have to use a specialized compiler. Be sure to use the
 correct command based on which compiler you have loaded.
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-mpi-c-compile)=
+`````{tab-set}
+:sync-group: tabset-mpi-c-compile
 
-   .. code-tab:: bash Open MPI
+````{tab-item} Open MPI
+:sync: mpi-c-compile-openmpi
 
-        mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
-
-   .. code-tab:: bash Intel MPI
-
-        mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
+```bash
+mpic++ hello_world_mpi.cpp -o hello_world_mpi.exe
+```
 
 ````
 
+````{tab-item} Intel MPI
+:sync: mpi-c-compile-intelmpi
+
+```bash
+mpiicc hello_world_mpi.cpp -o hello_world_mpi.exe
+```
+
+````
+`````
 
 This will produce an executable we can pass to the cluster as a job. In
 order to execute MPI compiled code, a special command must be used:
@@ -186,45 +210,56 @@ choices you used above to compile the program, and run the job with
 Slurm to execute the application. Your job script should look
 something like this:
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-mpi-c-batch)=
+`````{tab-set}
+:sync-group: tabset-mpi-c-batch
 
-   .. code-tab:: bash Open MPI
+````{tab-item} Open MPI
+:sync: mpi-c-batch-openmpi
 
-        #!/bin/bash
-        #SBATCH -N 1
-        #SBATCH --ntasks 4
-        #SBATCH --job-name parallel_hello
-        #SBATCH --constraint ib
-        #SBATCH --partition atesting
-        #SBATCH --time 0:01:00
-        #SBATCH --output parallel_hello_world.out
+```bash
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --ntasks 4
+#SBATCH --job-name parallel_hello
+#SBATCH --partition atesting
+#SBATCH --constraint ib
+#SBATCH --time 0:01:00
+#SBATCH --output parallel_hello_world.out
 
-        module purge
+module purge
 
-        module load gcc
-        module load openmpi
+module load gcc
+module load openmpi
 
-        mpirun -np 4 ./hello_world_mpi.exe
-
-   .. code-tab:: bash Intel MPI
-
-        #!/bin/bash
-        #SBATCH -N 1
-        #SBATCH --ntasks 4
-        #SBATCH --job-name parallel_hello
-        #SBATCH --partition shas-testing
-        #SBATCH --time 0:01:00
-        #SBATCH --output parallel_hello_world.out
-
-        module purge
-
-        module load intel
-        module load impi
-
-        mpirun -np 4 ./hello_world_mpi.exe
+mpirun -np 4 ./hello_world_mpi.exe
+```
 
 ````
+
+````{tab-item} Intel MPI
+:sync: mpi-c-batch-intelmpi
+
+```bash
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --ntasks 4
+#SBATCH --job-name parallel_hello
+#SBATCH --partition atesting
+#SBATCH --constraint ib
+#SBATCH --time 0:01:00
+#SBATCH --output parallel_hello_world.out
+
+module purge
+
+module load intel
+module load impi
+
+mpirun -np 4 ./hello_world_mpi.exe
+```
+
+````
+`````
 
 ```{note}
 On Alpine, there are at most 64 cores
