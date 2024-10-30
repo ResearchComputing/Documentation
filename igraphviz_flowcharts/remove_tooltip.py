@@ -33,16 +33,6 @@ def remove_xlink_title_replace(svg_file):
     for title in root.xpath('//svg:title', namespaces=ns['svg']):
         title.getparent().remove(title)
 
-    # # Create a new <div> element
-    # div_element = etree.Element("div")
-
-    # # Append the SVG root element to the <div>
-    # div_element.append(root)
-
-    # # Save modified SVG wrapped in a <div>
-    # with open(svg_file, 'wb') as f:
-    #     f.write(etree.tostring(div_element, pretty_print=True, xml_declaration=True, encoding='UTF-8'))
-
     # Save modified SVG
     tree.write(svg_file)
 
