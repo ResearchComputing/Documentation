@@ -62,12 +62,12 @@ open_ondemand/index
 :maxdepth: 1
 :caption: Running Jobs
 
+running-jobs/job-resources
+running-jobs/slurm-commands
+running-jobs/squeue-status-codes
 running-jobs/running-apps-with-jobs
 running-jobs/batch-jobs
 running-jobs/interactive-jobs
-running-jobs/slurm-commands
-running-jobs/job-resources
-running-jobs/squeue-status-codes
 running-jobs/roce-enabled
 
 ```
