@@ -23,72 +23,8 @@
     color: black;
 }
 
-.sphinx-tabs-panel {
-    color: black;
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel {
-    color: black;
-    filter: brightness(.8) contrast(1.2);
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel img{
-    color: black;
-    filter: none;
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel a.reference.internal {
-    color: #176de8;
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel a.reference.external {
-    color: #176de8;
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel h1, .sphinx-tabs-panel h2, .sphinx-tabs-panel h3, .sphinx-tabs-panel h4, .sphinx-tabs-panel h5, .sphinx-tabs-panel p.caption {
-    color: black;
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel div.admonition {
-    background-color: white;
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel p.admonition-title:before {
-    backdrop-filter:  brightness(2) contrast(1);
-}
-
-html[data-theme="dark"] .sphinx-tabs-panel p.admonition-title{
-    color:white;
-}
-
-html[data-theme="dark"] .sphinx-tabs-tab {
-    color: var(--cu-boulder-gold);
-    font-size: 18px;
-    font-family: Verdana, sans-serif;
-}
-
-html[data-theme="dark"] .sphinx-tabs-tab[aria-selected="true"] {
-    color: black;
-    filter: brightness(.8) contrast(1.2);
-    font-size: 18px;
-    font-family: Verdana, sans-serif;
-}
-
-html[data-theme="dark"] .sphinx-tabs-tab[aria-selected="false"] {
-    background-color: black;
-    border: 1px solid whitesmoke;
-    font-size: 18px;
-    font-family: Verdana, sans-serif;
-}
-
 html[data-theme="dark"] code.docutils.literal.notranslate {
     color: var(--cu-boulder-gold); 
-}
-
-html[data-theme="light"] .sphinx-tabs-tab {
-    color: black;
-    font-size: 18px;
-    font-family: Verdana, sans-serif;
 }
 
 html[data-theme=dark] {
