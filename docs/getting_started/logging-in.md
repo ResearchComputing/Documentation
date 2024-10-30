@@ -10,10 +10,10 @@ All individuals who would like to access CU Research Computing (CURC) HPC system
 
 (tabset-ref-get-account)=
 ``````{tab-set}
-:sync-group: tabset-get-account
+:sync-group: tabset-logging-in
 
 `````{tab-item} CU Boulder
-:sync: get-account-ucb
+:sync: logging-in-ucb
 
 The process for obtaining a CURC account for CU Boulder users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"University of Colorado Boulder"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
 
@@ -26,7 +26,7 @@ The process for obtaining a CURC account for CU Boulder users is straightforward
 `````
 
 `````{tab-item} CSU
-:sync: get-account-csu
+:sync: logging-in-csu
 
 The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation.  
 
@@ -37,7 +37,7 @@ The process for obtaining a CURC account for CSU users is straightforward. Simpl
 `````
 
 `````{tab-item} AMC
-:sync: get-account-amc
+:sync: logging-in-amc
 
 Currently, AMC users must go through various steps to create a CURC account. These steps are outlined below: 
 
@@ -54,7 +54,7 @@ Currently, AMC users must go through various steps to create a CURC account. The
 `````
 
 `````{tab-item} RMACC
-:sync: get-account-rmacc
+:sync: logging-in-rmacc
 
 RMACC members can obtain a CURC account by completing the following steps
 
@@ -99,10 +99,10 @@ Similar to obtaining an account, the process of logging in to CURC resources can
 
 (tabset-ref-get-access)=
 `````{tab-set}
-:sync-group: tabset-get-access
+:sync-group: tabset-logging-in
 
 ````{tab-item} CU Boulder
-:sync: get-access-ucb
+:sync: logging-in-ucb
 
 For CU Boulder users, the following methods are available for logging in to CURC resources:
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
@@ -112,7 +112,7 @@ For CU Boulder users, the following methods are available for logging in to CURC
 ````
 
 ````{tab-item} CSU
-:sync: get-access-csu
+:sync: logging-in-csu
 
 For CSU users, the following methods are available for logging in to CURC resources:
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
@@ -128,7 +128,7 @@ CSU users have an `@` symbol in their CURC username. It is important to keep in 
 ````
 
 ````{tab-item} AMC
-:sync: get-access-amc
+:sync: logging-in-amc
 
 For AMC users, the following methods are available for logging in to CURC resources:
 - Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
@@ -145,7 +145,7 @@ AMC users have an `@` symbol in their CURC username. It is important to keep in 
 ````
 
 ````{tab-item} RMACC
-:sync: get-access-rmacc
+:sync: logging-in-rmacc
 
 Currently, RMACC users can obtain access to a terminal or launch interactive jobs using Open OnDemand 
 - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
