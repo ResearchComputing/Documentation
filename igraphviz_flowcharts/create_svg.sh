@@ -11,8 +11,7 @@ find "$DIRECTORY" -type f -name "*.$EXTENSION" | while read -r file_path; do
 
     # get file name so we can generate SVG
     file_name=$(basename "$file_path" .dot) 
-    echo "Processing file: $file_path"
-    echo "$file_name"
 
+    echo "Processing file: $file_path"
     dot -Tsvg $file_path > ./igraphviz_flowcharts/generated_images/${file_name}.svg
 done
