@@ -1,3 +1,10 @@
+# Although sphinx-design allows you to reference tabs, the format it 
+# requires is not checkable by our normal workflow. For this reason, 
+# we needed to create this script. This script finds all Markdown 
+# references that contain "?tabset-". For these references, it then 
+# ensures that all of these references are referring to existing 
+# labels provided by tabbed content. 
+
 import re
 import os 
 import pathlib
