@@ -6,8 +6,7 @@ build:
     python: "mambaforge-latest"
   jobs:
     pre_build:
-      - dot -Tsvg ./igraphviz_flowcharts/dot_files/getting_started_hpc_flowchart.dot > ./igraphviz_flowcharts/generated_images/getting_started_hpc_flowchart.svg
-      - dot -Tsvg ./igraphviz_flowcharts/dot_files/getting_started_cloud_flowchart.dot > ./igraphviz_flowcharts/generated_images/getting_started_cloud_flowchart.svg
+      - source "./igraphviz_flowcharts/create_svg.sh"
       - python ./igraphviz_flowcharts/remove_tooltip.py
       - python check_tab_ref.py 
 
