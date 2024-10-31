@@ -23,6 +23,8 @@ Click the name of a training to view more details and register!
 ### **November**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **November 4th, 3pm, Zoom**
 - [AlphaFold2 on Alpine (an RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold) - **November 11th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Build Chatbots with Amazon Bedrock Knowledge Bases and Agents (an RC Workshop with AWS)](https://colorado.libcal.com/calendar/events/chatbots) - **November 12th, 10am, Zoom**
+- [Building with Generative AI Apps on AWS (an RC Workshop with AWS)](https://colorado.libcal.com/calendar/events/aiapps) - **November 19th, 10am, Zoom**
 
 ````
 
@@ -46,6 +48,8 @@ Click the name of a training to view more details and register!
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **November 4th, 3pm, Zoom**
 ### **Cloud Computing**
 - [Introduction to the Commercial Cloud (an RC Primer)](https://colorado.libcal.com/calendar/events/cloud101) - **October 22nd, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Build Chatbots with Amazon Bedrock Knowledge Bases and Agents (an RC Workshop with AWS)](https://colorado.libcal.com/calendar/events/chatbots) - **November 12th, 10am, Zoom**
+- [Building with Generative AI Apps on AWS (an RC Workshop with AWS)](https://colorado.libcal.com/calendar/events/aiapps) - **November 19th, 10am, Zoom**
 ### **Biology/Bioinformatics**
 - [AlphaFold2 on Alpine (an RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold) - **November 11th, 10am, Hybrid (Norlin Library E206/Zoom)**
 ````
@@ -66,6 +70,8 @@ Click the name of a training to view more details and register!
 - [Incredibly Easy Parallelization: High Throughput Computing (an RC Primer)](https://colorado.libcal.com/calendar/events/hpcparallel) - **October 17th, 12pm, Zoom**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **November 4th, 3pm, Zoom**
 - [AlphaFold2 on Alpine (an RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold) - **November 11th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Build Chatbots with Amazon Bedrock Knowledge Bases and Agents (an RC Workshop with AWS)](https://colorado.libcal.com/calendar/events/chatbots) - **November 12th, 10am, Zoom**
+- [Building with Generative AI Apps on AWS (an RC Workshop with AWS)](https://colorado.libcal.com/calendar/events/aiapps) - **November 19th, 10am, Zoom**
 ### **Advanced**
 - [Using Linaro DDT on Alpine to Debug Parallel Code (an RC Primer)](https://colorado.libcal.com/calendar/events/linaro) - **October 8th, 11am, Hybrid (Norlin Library E206/Zoom)**
 ````
