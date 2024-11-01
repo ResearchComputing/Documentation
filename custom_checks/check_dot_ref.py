@@ -88,6 +88,7 @@ if __name__ == "__main__":
                 print(file_referencing)
                 print(xlink_hrefs)
                 path_exists = [check_file_exists(Path(file_referencing).parent / ref) for ref in xlink_hrefs]
+                print(path_exists)
 
                 false_ind = get_false_indices(path_exists)
 
