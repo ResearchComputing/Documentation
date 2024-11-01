@@ -6,7 +6,7 @@ digraph "" {
          edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5"];
 
          cloud [label="Cloud computing assistance", style="filled,dashed", penwidth="3"];
-         aws [label="Amazon Web Services", href="../cloud/aws/index.html", target="_blank", id="clickable"];
+         aws [label="Amazon Web Services", href="../cloud/awws/index.html", target="_blank", id="clickable"];
          azure [label="Microsoft Azure", href="../cloud/azure/index.html", target="_blank", id="clickable"];
          gcp [label="Google Cloud Platform", href="../cloud/gcp/index.html", target="_blank", id="clickable"];
          cumulus [label="CUmulus (On-Premise Cloud)", href="../cloud/cumulus/index.html", target="_blank", id="clickable"];

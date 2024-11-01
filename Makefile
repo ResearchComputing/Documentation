@@ -20,5 +20,6 @@ clean:
 html:
 	source "${IGRAPH_PATH}/create_svg.sh"
 	python $(IGRAPH_PATH)/remove_tooltip.py
+	python custom_checks/check_dot_ref.py
 	python custom_checks/check_tab_ref.py 
 	$(SPHINXBUILD) -b html -d $(BUILDDIR)/doctrees -D language=en $(SOURCEDIR) $(BUILDDIR)/html

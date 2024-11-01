@@ -9,7 +9,7 @@
 </g>
 <!-- aws -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="../cloud/aws/index.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../cloud/awws/index.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="99.47" cy="-18" rx="99.47" ry="18"/>
 <text text-anchor="middle" x="99.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Amazon Web Services</text>
 </a>

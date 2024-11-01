@@ -72,9 +72,11 @@ def check_tab_reference(md_path):
 def find_markdown_files(dir):
     return list(pathlib.Path(dir).rglob('*.md'))
 
-# get all markdown files in docs and check them for correct tab references 
-current_directory = pathlib.Path.cwd()
-markdown_files = find_markdown_files(current_directory)
+if __name__ == "__main__":
 
-for md_file_path in markdown_files:
-    check_tab_reference(md_file_path)
+    # get all markdown files in docs and check them for correct tab references 
+    current_directory = pathlib.Path.cwd()
+    markdown_files = find_markdown_files(current_directory)
+
+    for md_file_path in markdown_files:
+        check_tab_reference(md_file_path)
