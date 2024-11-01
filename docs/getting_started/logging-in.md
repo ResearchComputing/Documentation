@@ -6,7 +6,7 @@ Do you need help navigating our documentation? For new and experienced users, we
 
 ## Getting a CURC account
 
-All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca) and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
+All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca), Open OnDemand, and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
 
 (tabset-ref-get-account)=
 ``````{tab-set}
@@ -84,7 +84,7 @@ RMACC members can obtain a CURC account by completing the following steps
 
 ## Getting access to CURC resources 
 
-Once you have obtained a CURC account, you can proceed to logging in to CURC resources. Users accessing CURC resources will be connected to a login node. A login node is an outward-facing node within the Research Computing environment that users can connect to from their local machines. Once on a login node, users can perform a limited number of tasks:
+Once you have obtained a CURC account, you can proceed to logging in to CURC resources. Users accessing CURC resources will be connected to a login node. A login node is an outward-facing node within the research computing environment that users can connect to from their local machines. Once on a login node, users can perform a limited number of tasks:
 
 + Edit files
 + Transfer data

@@ -1,6 +1,8 @@
 # Frequently Asked Questions
 
+```{tip}
 See our [Navigating CURC Documentation](./navigating_docs) page for information on core areas of our documentation each user should become familiar with.
+```
 
 ## How do I acknowledge use of CURC Resources?
 ````{toggle} 
