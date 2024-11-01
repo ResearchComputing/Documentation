@@ -85,6 +85,8 @@ if __name__ == "__main__":
 
             for file_referencing in files_w_svg_ref:
 
+                print(file_referencing)
+                print(xlink_hrefs)
                 path_exists = [check_file_exists(Path(file_referencing).parent / ref) for ref in xlink_hrefs]
 
                 false_ind = get_false_indices(path_exists)
