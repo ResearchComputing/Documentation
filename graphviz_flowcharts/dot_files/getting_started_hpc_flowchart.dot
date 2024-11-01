@@ -1,7 +1,7 @@
 digraph "" {
          bgcolor="transparent";
          ranksep="0.5 equally";
-         graph [id="gs-flowchart"];
+         graph [id="doc-flowchart"];
          node [fontname="Verdana", fontsize="12", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white"];
          edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5"];
 
