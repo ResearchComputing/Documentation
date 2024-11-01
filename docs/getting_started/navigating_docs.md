@@ -12,7 +12,7 @@ In the flowchart presented below, you can easily navigate to the corresponding d
 
 ```{eval-rst}
 .. raw:: html
-    :file: ../../igraphviz_flowcharts/generated_images/getting_started_hpc_flowchart.svg
+    :file: ../../graphviz_flowcharts/generated_images/getting_started_hpc_flowchart.svg
 ```
 
 ## Cloud Computing Flowchart
@@ -25,5 +25,5 @@ In the flowchart presented below, you can easily navigate to the corresponding d
 
 ```{eval-rst}
 .. raw:: html
-    :file: ../../igraphviz_flowcharts/generated_images/getting_started_cloud_flowchart.svg
+    :file: ../../graphviz_flowcharts/generated_images/getting_started_cloud_flowchart.svg
 ```

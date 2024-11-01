@@ -4,7 +4,7 @@
 SPHINXBUILD   = python -m sphinx -T -E
 BUILDDIR      = build
 SOURCEDIR     = docs
-IGRAPH_PATH   = ./igraphviz_flowcharts
+GRAPH_PATH   = ./graphviz_flowcharts
 .PHONY: default clean view html
 
 default: html
@@ -18,8 +18,8 @@ clean:
 	-rm -r $(BUILDDIR)
 
 html:
-	source "${IGRAPH_PATH}/create_svg.sh"
-	python $(IGRAPH_PATH)/remove_tooltip.py
+	source "${GRAPH_PATH}/create_svg.sh"
+	python $(GRAPH_PATH)/remove_tooltip.py
 	python custom_checks/check_dot_ref.py
 	python custom_checks/check_tab_ref.py 
 	$(SPHINXBUILD) -b html -d $(BUILDDIR)/doctrees -D language=en $(SOURCEDIR) $(BUILDDIR)/html

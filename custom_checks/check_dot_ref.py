@@ -72,7 +72,7 @@ if __name__ == "__main__":
     main_directory = "./docs"
 
     # directory containing dot files 
-    dot_directory = "./igraphviz_flowcharts/dot_files"
+    dot_directory = "./graphviz_flowcharts/dot_files"
 
     # get list of all dot files in the dot_directory
     dot_file_names = get_all_dot_files(dot_directory)
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     for file_name in dot_file_names:
 
         # svg reference to look for in docs
-        svg_ref = "igraphviz_flowcharts/generated_images/" + file_name + ".svg"
+        svg_ref = "graphviz_flowcharts/generated_images/" + file_name + ".svg"
 
         xlink_hrefs = get_xlink_hrefs(svg_ref)
 
@@ -98,5 +98,5 @@ if __name__ == "__main__":
                 nonexistent_paths = [xlink_hrefs[ind] for ind in false_ind]
 
                 if nonexistent_paths:
-                    dot_file = 'igraphviz_flowcharts/generated_images/' + file_name + '.dot'
+                    dot_file = 'graphviz_flowcharts/generated_images/' + file_name + '.dot'
                     raise RuntimeError(f"The following hrefs in {dot_file} DO NOT EXIST: {nonexistent_paths}")

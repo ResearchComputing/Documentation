@@ -6,8 +6,8 @@ build:
     python: "mambaforge-latest"
   jobs:
     pre_build:
-      - /bin/sh "./igraphviz_flowcharts/create_svg.sh"
-      - python ./igraphviz_flowcharts/remove_tooltip.py
+      - /bin/sh "./graphviz_flowcharts/create_svg.sh"
+      - python ./graphviz_flowcharts/remove_tooltip.py
       - python custom_checks/check_dot_ref.py
       - python custom_checks/check_tab_ref.py 
 
