@@ -31,9 +31,9 @@ would add a node `policies` with the following format.
 ```
 policies [label="CURC Policies", href="../additional-resources/policies.html", target="_blank", id="clickable"];
 ```
-    - Note that the provided `href` MUST BE a relative path from the file you are referencing the SVG from AND you must 
-    use `.html` NOT `.md`.
-    - The `href` must be in this style so that our custom check can ensure that a reference exists. 
+- Note that the provided `href` MUST BE a relative path from the file you are referencing the SVG from AND you must 
+use `.html` NOT `.md`.
+- The `href` must be in this style so that our custom check can ensure that a reference exists. 
 
 5. So that styling of the flowcharts is consistent with all other documentation, we suggest the following be included in 
 your dot file:
