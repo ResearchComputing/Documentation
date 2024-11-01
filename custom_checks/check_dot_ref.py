@@ -1,3 +1,9 @@
+# When creating our dot files for the flowcharts, we have to use html
+# references. This is unfortunate because our normal Markdown checks 
+# will not catch these references. In this script we create a custom 
+# check that will make sure all references in a dot file and associated
+# svg file exist. 
+
 import subprocess
 import os 
 import xml.etree.ElementTree as ET
@@ -85,10 +91,7 @@ if __name__ == "__main__":
 
             for file_referencing in files_w_svg_ref:
 
-                print(file_referencing)
-                print(xlink_hrefs)
                 path_exists = [check_file_exists(Path(file_referencing).parent / ref) for ref in xlink_hrefs]
-                print(path_exists)
 
                 false_ind = get_false_indices(path_exists)
 
@@ -97,4 +100,3 @@ if __name__ == "__main__":
                 if nonexistent_paths:
                     dot_file = 'igraphviz_flowcharts/generated_images/' + file_name + '.dot'
                     raise RuntimeError(f"The following hrefs in {dot_file} DO NOT EXIST: {nonexistent_paths}")
-
