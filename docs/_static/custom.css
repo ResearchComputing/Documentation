@@ -31,6 +31,7 @@ html[data-theme=dark] {
     --pst-font-size-base: none;
     --pst-color-secondary: var(--cu-boulder-gold);
     --pst-color-primary: var(--cu-boulder-gold);
+    --pst-color-accent: var(--cu-boulder-gold);
 }
 
 html[data-theme=light] {
