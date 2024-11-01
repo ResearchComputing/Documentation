@@ -101,7 +101,7 @@ software/matlab
 software/python
 software/GNUParallel
 software/vasp
-software/Containerization
+software/containerization
 software/alphafold
 software/spack
 software/sratoolkit
