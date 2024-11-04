@@ -1,6 +1,6 @@
 # CU Research Computing User Guide
 
-Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of services encompassing High Performance Computing (HPC), cloud computing assistance, and storage solutions. Many of these services are available to users associated with CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). 
+Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of services encompassing High Performance Computing (HPC), cloud computing assistance, and storage solutions. Many of these services are available to users associated with CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions that are members of the Rocky Mountain Advanced Computing Consortium (RMACC). 
 
 ```{tip}
 - Documentation can be overwhelming. If you would like guidance on navigating CURC documentation, please see our [Navigating CURC Documentation](./getting_started/navigating_docs.md) page.

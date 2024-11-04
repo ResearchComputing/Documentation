@@ -1,12 +1,12 @@
 # Logging In
 
 ```{tip}
-Do you need help navigating our documentation? For new and experienced users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts for core areas of our documentation that all users should be aware of. 
+Need help navigating our documentation? Whether you're new or experienced, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page. It includes flowcharts covering the core areas all users should be aware of.
 ```
 
 ## Getting a CURC account
 
-All individuals who would like to access CU Research Computing (CURC) HPC systems (Alpine and Blanca), Open OnDemand, and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions who are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
+All individuals wanting to access CU Research Computing (CURC) HPC systems (Alpine and Blanca), Open OnDemand, and storage solutions must have an associated CURC account. CURC systems are utilized by a variety of institutions including CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions that are members of the Rocky Mountain Advanced Computing Consortium (RMACC). Given that CURC systems host a variety of institutions, each institution has its own method for creating a CURC account. To simplify this process, below we provide tabs that specify instructions on getting a CURC account based on the institution you are affiliated with. 
 
 (tabset-ref-get-account)=
 ``````{tab-set}
@@ -39,7 +39,7 @@ The process for obtaining a CURC account for CSU users is straightforward. Simpl
 `````{tab-item} AMC
 :sync: logging-in-amc
 
-Currently, AMC users must go through various steps to create a CURC account. These steps are outlined below: 
+Currently, AMC users must go through the following steps to create a CURC account: 
 
 1. If you do not already have an XSEDE/ACCESS account, follow the [instructions for new user registration](https://identity.access-ci.org/new-user). Please direct any questions about new accounts to the [ACCESS ticketing system](https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
 2. Sign and fill out [CU Anschutz's Alpine form](https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake)
@@ -246,5 +246,5 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWIqetVDUqKB2im3HyQZJ72PMYXFJUXR2Z+dzhGfO
 ```
 
 ```{tip}
-I have logged in, what should I do next? For new users, we recommend reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts for core areas of our documentation that all users should be aware of. 
+Not sure what to do next? Try reviewing our [Navigating CURC Documentation](./navigating_docs.md) page, which includes flowcharts that can help you find key areas of our documentation - like how and where to store your files or how to start a job on the HPC cluster. 
 ```
