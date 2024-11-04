@@ -28,7 +28,7 @@ The process for obtaining a CURC account for CU Boulder users is straightforward
 `````{tab-item} CSU
 :sync: logging-in-csu
 
-The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/) documentation.  
+The process for obtaining a CURC account for CSU users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"Colorado State University"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in Duo two-factor authentication service. For more information on setting up Duo, please visit CSU's [Duo Two Factor Authentication](https://it.colostate.edu/duo-two-factor-authentication/) page. For additional information on using CURC resources as a CSU user, please consult [CSU's Getting Started with Alpine](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/get-started-with-alpine/) documentation.  
 
 ```{important}
 - Once your account is provisioned, please wait 15 minutes before signing in. 
@@ -117,7 +117,7 @@ For CU Boulder users, the following methods are available for logging in to CURC
 For CSU users, the following methods are available for logging in to CURC resources:
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
     - For more information, on how to do this, see [Terminal access for different operating systems](#terminal-access-for-different-operating-systems) below
-    - For CSU specific guides for this process, please refer to the **"Remote Login"** section of CSU's [Get Started with Alpine](https://it.colostate.edu/research-computing-and-cyberinfrastructure/compute/get-started-with-alpine/#) page
+    - For CSU specific guides for this process, please refer to the **"Remote Login"** section of CSU's [Get Started with Alpine](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/get-started-with-alpine/) page
 - Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
     - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
 
