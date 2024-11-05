@@ -5,7 +5,8 @@ master_doc = 'index'
 extensions = ['myst_parser', 'sphinx_copybutton', 'sphinx_togglebutton', 'sphinx.ext.graphviz', 'sphinx_design', 'sphinx.ext.extlinks']
 graphviz_output_format = 'svg'
 
-myst_enable_extensions = ["colon_fence", "attrs_inline", "attrs_block"]
+myst_enable_extensions = ["colon_fence", "attrs_inline", "attrs_block", "tasklist"]
+myst_enable_checkboxes = True
 
 source_suffix = {
     '.txt': 'markdown',

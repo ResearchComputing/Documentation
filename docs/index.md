@@ -129,6 +129,7 @@ programming/OpenMP-Fortran
 additional-resources/policies
 additional-resources/courses_using_curc_resources
 additional-resources/feedback
+additional-resources/contrib_curc_docs
 additional-resources/CURC-cheatsheet
 additional-resources/amc_ssh_auth
 additional-resources/registrycilogon-instructions
