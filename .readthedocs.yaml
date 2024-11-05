@@ -4,6 +4,12 @@ build:
   os: "ubuntu-20.04"
   tools:
     python: "mambaforge-latest"
+  jobs:
+    pre_build:
+      - /bin/sh "./graphviz_flowcharts/create_svg.sh"
+      - python ./graphviz_flowcharts/remove_tooltip.py
+      - python custom_checks/check_dot_ref.py
+      - python custom_checks/check_tab_ref.py 
 
 # Build from the docs/ directory with Sphinx
 sphinx:

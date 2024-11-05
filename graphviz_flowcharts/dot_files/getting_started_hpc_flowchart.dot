@@ -1,0 +1,57 @@
+digraph "" {
+         bgcolor="transparent";
+         ranksep="0.5 equally";
+         graph [id="doc-flowchart"];
+         node [fontname="Verdana", fontsize="12", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white"];
+         edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5"];
+
+         policies [label="CURC Policies", href="../additional-resources/policies.html", target="_blank", id="clickable"];
+         logging_in [label="Logging In", href="../getting_started/logging-in.html", target="_blank", id="clickable"];
+         ack [label="Acknowledging CURC", href="../getting_started/acknowledge_curc_resources.html", target="_blank", id="clickable"];
+         training [label="Trainings", href="../getting_started/current-sem-trainings.html", target="_blank", id="clickable"];
+         faq [label="FAQs", href="../getting_started/faq.html", target="_blank", id="clickable"];
+         compute_env [label="What does the HPC system look like?", style="filled,dashed", penwidth="3"];
+         running_jobs [label="How do I run a job?", style="filled,dashed", penwidth="3"];
+         clusters [label="What clusters are available?", style="filled,dashed", penwidth="3"];
+         node_type [label="Node types", href="../compute/node-types.html", target="_blank", id="clickable"];
+         filesystem [label="CURC filesystem", href="../compute/filesystems.html", target="_blank", id="clickable"];
+         data_transfer [label="Transferring data", href="../compute/data-transfer.html", target="_blank", id="clickable"];
+         petalibrary [label="PetaLibrary", href="../storage/petalibrary/index.html", target="_blank", id="clickable"];
+         alpine [label="Alpine", href="../clusters/alpine/index.html", target="_blank", id="clickable"];
+         blanca [label="Blanca", href="../clusters/blanca/blanca.html", target="_blank", id="clickable"];
+         slurm [label="Slurm", href="../running-jobs/job-resources.html", target="_blank", id="clickable"];
+         interactive [label="Interactive jobs", href="../running-jobs/interactive-jobs.html", target="_blank", id="clickable"];
+         batch [label="Batch jobs", href="../running-jobs/batch-jobs.html", target="_blank", id="clickable"];
+         ood [label="Open OnDemand", href="../open_ondemand/index.html", target="_blank", id="clickable"];
+         using_software [label="How do I run software?", style="filled,dashed", penwidth="3"];
+         modules [label="The module system", href="../compute/modules.html", target="_blank", id="clickable"];
+         container [label="Containerization", href="../software/containerization.html", target="_blank", id="clickable"];
+         spack [label="Spack", href="../software/spack.html", target="_blank", id="clickable"];
+         conda [label="Conda environments", href="../software/python.html", target="_blank", id="clickable"];
+
+         policies -> logging_in; 
+         logging_in -> ack; 
+         logging_in -> training;
+         logging_in -> faq;
+         logging_in -> compute_env;
+         compute_env -> node_type;
+         compute_env -> filesystem;
+         filesystem -> data_transfer;
+         filesystem -> petalibrary;
+         node_type -> clusters;
+         clusters -> alpine;
+         clusters -> blanca;
+         alpine -> running_jobs;
+         blanca -> running_jobs;
+         running_jobs -> slurm;
+         running_jobs -> ood; 
+         slurm -> interactive;
+         slurm -> batch;
+         interactive -> using_software;
+         batch -> using_software;
+         ood -> using_software;
+         using_software -> modules;
+         using_software -> container;
+         using_software -> spack;
+         using_software -> conda;
+     }

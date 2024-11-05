@@ -54,35 +54,54 @@ Let’s compile our code and see what happens. We must first load the
 compiler module we want into our environment. We can do so as such:
 
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-openmp-f-module)=
+`````{tab-set}
+:sync-group: tabset-openmp-f
 
-   .. code-tab:: bash GNU Fortran Compiler
+````{tab-item} GNU Fortran Compiler
+:sync: openmp-f-openmpi
 
-        module load gcc
-
-   .. code-tab:: bash Intel Fortran Compiler
-
-        module load intel
+```bash
+module load gcc
+```
 
 ````
+
+````{tab-item} Intel Fortran Compiler
+:sync: openmp-f-intelmpi
+
+```bash
+module load intel
+```
+
+````
+`````
 
 From the command line, where your code is located, run the command:
 
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-openmp-f-compile)=
+`````{tab-set}
+:sync-group: tabset-openmp-f
 
-   .. code-tab:: bash GNU Fortran Compiler
+````{tab-item} GNU Fortran Compiler
+:sync: openmp-f-openmpi
 
-        gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
-
-   .. code-tab:: bash Intel Fortran Compiler
-
-        ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
+```bash
+gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
+```
 
 ````
 
+````{tab-item} Intel Fortran Compiler
+:sync: openmp-f-intelmpi
+
+```bash
+ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
+```
+
+````
+`````
 
 This will give us an executable we can run as a job on
 a cluster. Simply run the job, telling Slurm to run the
@@ -156,18 +175,28 @@ export OMP_NUM_THREADS
 
 Now let’s re-compile the code and run it to see what happens:
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-openmp-f-recompile)=
+`````{tab-set}
+:sync-group: tabset-openmp-f
 
-   .. code-tab:: bash GNU Fortran Compiler
+````{tab-item} GNU Fortran Compiler
+:sync: openmp-f-openmpi
 
-        gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
-
-   .. code-tab:: bash Intel Fortran Compiler
-
-        ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
+```bash
+gfortran parallel_hello_world.f90 -o parallel_hello_world.exe -fopenmp
+```
 
 ````
+
+````{tab-item} Intel Fortran Compiler
+:sync: openmp-f-intelmpi
+
+```bash
+ifort parallel_hello_world.f90 -o parallel_hello_world.exe -qopenmp
+```
+
+````
+`````
 
 Running our job script and we should end with an output file similar
 to this one:

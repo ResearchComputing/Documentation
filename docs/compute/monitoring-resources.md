@@ -13,7 +13,7 @@ Slurmtools is a collection of helper scripts for everyday use of the [SLURM](htt
 * How efficient are my jobs?
 
 ### __Step 1__: Log in
-If you have a CURC account, login as you [normally would](../access/logging-in.md) using your identikey and Duo from a terminal: 
+If you have a CURC account, login as you [normally would](../getting_started/logging-in.md) using your identikey and Duo from a terminal: 
 
 ```bash
 $ ssh ralphie@login.rc.colorado.edu

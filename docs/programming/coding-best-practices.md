@@ -24,35 +24,59 @@ for programming languages to interpret. Because of this variables
 must be delimited in some way. Here are several delimiting conventions
 commonly used in code:  
 
-````{eval-rst}
-.. tabs::
 
-   .. code-tab:: bash Snakecase
-      :caption: Words are delimited by an underscore. 
+(tabset-ref-coding-multiword)=
+`````{tab-set}
+:sync-group: tabset-coding-multiword
 
-        variable_one
-        variable_two
+````{tab-item} Snakecase
+:sync: coding-multiword-snakecase
 
-   .. code-tab:: bash Pascalcase
-      :caption: Words are delimited by capital letters.
+Words are delimited by an underscore. 
 
-        VariableOne
-        VariableTwo
-
-   .. code-tab:: bash Camelcase
-      :caption: Words are delimited by capital letters, except the initial word.
-
-        variableOne
-        variableTwo
-
-   .. code-tab:: c++ Hungarian Notation
-      :caption: This notation describes the variable type or purpose at the start of the variable name, followed by a descriptor that indicates the variable’s function. The Camelcase notation is used to delimit words.
-
-        arrDistributeGroup  //Array called “Distribute Group”
-        sUserName           //String called “User Name”
-        iRandomSeed         //Integer called “Random Seed”
+```bash
+variable_one
+variable_two
+```
 
 ````
+
+````{tab-item} Pascalcase
+:sync: coding-multiword-pascalcase
+
+Words are delimited by capital letters.
+
+```bash
+VariableOne
+VariableTwo
+```
+````
+
+````{tab-item} Camelcase
+:sync: coding-multiword-camelcase
+
+Words are delimited by capital letters, except the initial word.
+
+```bash
+variableOne
+variableTwo
+```
+
+````
+
+````{tab-item} Hungarian Notation
+:sync: coding-multiword-hungarian
+
+This notation describes the variable type or purpose at the start of the variable name, followed by a descriptor that indicates the variable’s function. The Camelcase notation is used to delimit words.
+
+```bash
+arrDistributeGroup  //Array called “Distribute Group”
+sUserName           //String called “User Name”
+iRandomSeed         //Integer called “Random Seed”
+```
+
+````
+`````
 
 These conventions are by no means binding, but instead examples of how
 many programmers format their code. Consistency and readability are
@@ -85,33 +109,42 @@ consistently organized. Whitespace and tabbing are often used to clarify nested
 loops and logical statements. Let’s look at some examples of C code
 that demonstrate the effect of whitespace.
 
+(tabset-ref-coding-whitespace)=
+`````{tab-set}
+:sync-group: tabset-coding-whitespace
 
-````{eval-rst}
-.. tabs::
+````{tab-item} Minimal Whitespace
+:sync: coding-whitespace-minimal
 
-   .. code-tab:: c++ Minimal Whitespace
-
-        #include <stdio.h>
-        int main(int argc, char const *argv[]) { int loop_Sum = 0; for(int i =
-        0; i < 50; i++){ loop_Sum += 1;} printf("%d\n", loop_Sum); return 0; }
-
-   .. code-tab:: c++ Liberal use of Whitespace
-
-        #include <stdio.h>
-
-        int main(int argc, char** argv){
-
-            int loop_Sum = 0;
-
-            for(int i = 0; i < 50; i++){
-                loop_Sum += 1;
-            }
-            printf("%d\n", loop_Sum);
-
-            return 0;
-        }
+```c++
+#include <stdio.h>
+int main(int argc, char const *argv[]) { int loop_Sum = 0; for(int i =
+0; i < 50; i++){ loop_Sum += 1;} printf("%d\n", loop_Sum); return 0; }
+```
 
 ````
+
+````{tab-item} Liberal use of Whitespace
+:sync: coding-whitespace-liberal
+
+```c++
+#include <stdio.h>
+
+int main(int argc, char** argv){
+
+    int loop_Sum = 0;
+
+    for(int i = 0; i < 50; i++){
+        loop_Sum += 1;
+    }
+    printf("%d\n", loop_Sum);
+
+    return 0;
+}
+```
+
+````
+`````
 
 It is important to note that like variable naming, whitespace can be
 utilized in various different styles and approaches. Just remember to
@@ -129,61 +162,72 @@ the compiler/interpretor to ignore that line, for example “#”, “!” or �
 on the programming language). Let’s look at some C++ code that uses no
 comments vs. comments.
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-coding-commenting)=
+`````{tab-set}
+:sync-group: tabset-coding-commenting
 
-   .. code-tab:: c++ No comments 
+````{tab-item} No comments 
+:sync: coding-commenting-no-comments
 
-        #include <stdio.h>
-        #include <vector>
 
-        using namespace std;
+```c++
+#include <stdio.h>
+#include <vector>
 
-        int main(int argc, char** argv){
+using namespace std;
 
-            vector<int> multiples;
+int main(int argc, char** argv){
 
-            for(int i = 0; i < 50; i++){
-                if(i % 5 == 0){
-                    multiples.push_back(i);
-                }
-            }
+    vector<int> multiples;
 
-            for(int i; i < multiples.size(); i++){
-                printf("%d is a multiple of 5\n", multiples[i]);
-            }
-
-            return 0;
+    for(int i = 0; i < 50; i++){
+        if(i % 5 == 0){
+            multiples.push_back(i);
         }
+    }
 
-   .. code-tab:: c++ Comments 
+    for(int i; i < multiples.size(); i++){
+        printf("%d is a multiple of 5\n", multiples[i]);
+    }
 
-        #include <stdio.h>
-        #include <vector>
+    return 0;
+}
+```
 
-        using namespace std;
-
-        int main(int argc, char** argv){
-
-            //Declare a vector to store values
-            vector<int> multiples;
-
-            //Iterate from 0 to 50
-            for(int i = 0; i <= 50; i++){
-
-                //If iterator is a multiple of 5 add it to the vector
-                if(i % 5 == 0){
-                    multiples.push_back(i);
-                }
-            }
-
-            //Print all items that are a multiple of 5
-            for(int i; i < multiples.size(); i++){
-                printf("%d is a multiple of 5\n", multiples[i]);
-            }
-            return 0;
-        }
 ````
+
+````{tab-item} Comments
+:sync: coding-commenting-comments
+
+```c++
+#include <stdio.h>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, char** argv){
+
+    //Declare a vector to store values
+    vector<int> multiples;
+
+    //Iterate from 0 to 50
+    for(int i = 0; i <= 50; i++){
+
+        //If iterator is a multiple of 5 add it to the vector
+        if(i % 5 == 0){
+            multiples.push_back(i);
+        }
+    }
+
+    //Print all items that are a multiple of 5
+    for(int i; i < multiples.size(); i++){
+        printf("%d is a multiple of 5\n", multiples[i]);
+    }
+    return 0;
+}
+```
+````
+`````
 
 ```{note}
 It is entirely possible to “over comment” code. Code should

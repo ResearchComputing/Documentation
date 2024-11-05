@@ -32,27 +32,31 @@ $ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "mi100|a100"
 
 __Examples of GPU configurations/requests__:
 
-`````{tabs}
+(tabset-ref-ex-gpu-conf-req)=
+`````{tab-set}
+:sync-group: tabset-ex-gpu-conf-req
 
-   ````{tab} Single GPU
+````{tab-item} Single GPU
+:sync: ex-gpu-conf-req-single-gpu
 
-      **Request a single GPU accelerator.**
+**Request a single GPU accelerator.**
 
-      ```bash
-      --gres=gpu
-      ```
+```bash
+--gres=gpu
+```
 
-   ````
+````
 
-   ```` {tab} Multiple GPUs
+```` {tab-item} Multiple GPUs
+:sync: ex-gpu-conf-req-multiple-gpu
 
-      **Request multiple (in this case 3) GPU accelerators.**
+**Request multiple (in this case 3) GPU accelerators.**
 
-      ```bash
-      --gres=gpu:3
-      ```
+```bash
+--gres=gpu:3
+```
 
-   ````
+````
 
 `````
 
@@ -111,66 +115,73 @@ All users, regardless of institution, should specify partitions as follows:
 
 ##### `atesting` usage examples:
 
-`````{tabs}
+(tabset-ref-atesting-use)=
+`````{tab-set}
+:sync-group: tabset-atesting-use
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: atesting-use-ex1
 
-      **Request one core per node for 10 minutes.**
+**Request one core per node for 10 minutes.**
 
-      ```bash
-      sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
-      ```
+```bash
+sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+```` {tab-item} Example 2
+:sync: atesting-use-ex2
 
-      **Request 4 cores for the default time of 30 minutes.**
+**Request 4 cores for the default time of 30 minutes.**
 
-      ```bash
-      sinteractive --partition=atesting --ntasks=4
-      ```
+```bash
+sinteractive --partition=atesting --ntasks=4
+```
 
-   ````
+````
 
-   ```` {tab} Example 3
+```` {tab-item} Example 3
+:sync: atesting-use-ex3
 
-      **Request 2 cores each from 2 nodes for testing MPI.**
+**Request 2 cores each from 2 nodes for testing MPI.**
 
-      ```bash
-      sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
-      ```
+```bash
+sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
+```
 
-   ````
-
-
+````
 `````
 
 `atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour (default one hour).
 
-##### Interactive `atesting` usage examples:
+##### GPU `atesting` usage examples:
 
-`````{tabs}
+(tabset-ref-gpu-atesting-use)=
+`````{tab-set}
+:sync-group: tabset-gpu-atesting-use
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: gpu-atesting-use-ex1
 
-      **Request 2 A100 GPUs with 40 CPU cores for 30 minutes.**
+**Request 2 A100 GPUs with 40 CPU cores for 30 minutes.**
 
-      ```bash
-      sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
-      ```
+```bash
+sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+```` {tab-item} Example 2
+:sync: gpu-atesting-use-ex2
 
-      **Request 1 MI100 GPU with 1 CPU core for one hour.**
+**Request 1 MI100 GPU with 1 CPU core for one hour.**
 
-      ```bash
-      sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
-      ```
+```bash
+sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
+```
 
-   ````
+````
 
 `````
 
@@ -178,27 +189,31 @@ All users, regardless of institution, should specify partitions as follows:
 
 ##### `acompile` usage examples:
 
-`````{tabs}
+(tabset-ref-acompile-use)=
+`````{tab-set}
+:sync-group: tabset-acompile-use
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: acompile-use-ex1
 
-      **Get usage information for `acompile`.**
+**Get usage information for `acompile`.**
 
-      ```bash
-      acompile --help
-      ```
+```bash
+acompile --help
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+```` {tab-item} Example 2
+:sync: acompile-use-ex2
 
-      **Request 2 CPU cores for 2 hours.**
+**Request 2 CPU cores for 2 hours.**
 
-      ```bash
-      acompile --ntasks=2 --time=02:00:00
-      ```
+```bash
+acompile --ntasks=2 --time=02:00:00
+```
 
-   ````
+````
 
 `````
 

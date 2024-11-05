@@ -1,6 +1,6 @@
 # RStudio Server
 
-RStudio is an integrated development environment (IDE) for R. It can be an extremely useful tool when developing and running R code. It allows users to navigate the filesystem, edit and run code, view plots, and much more all in the same place. In Open OnDemand we allow users to easily access this functionality using the **RStudio Server** application. Furthermore, each RStudio session is launched from a [container](../software/Containerization.md), which allows users to customize it to their needs. For more information on customizing your container, see [Installing dependencies for RStudio Server](#installing-dependencies-for-rstudio-server) below. 
+RStudio is an integrated development environment (IDE) for R. It can be an extremely useful tool when developing and running R code. It allows users to navigate the filesystem, edit and run code, view plots, and much more all in the same place. In Open OnDemand we allow users to easily access this functionality using the **RStudio Server** application. Furthermore, each RStudio session is launched from a [container](../software/containerization.md), which allows users to customize it to their needs. For more information on customizing your container, see [Installing dependencies for RStudio Server](#installing-dependencies-for-rstudio-server) below. 
 
 ```{eval-rst}
 .. figure:: ./OnDemand/rstudio_gui.png
@@ -41,7 +41,7 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 
 ## Installing dependencies for RStudio Server
 
-As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/Containerization.md). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html), which is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
+As previously mentioned, the RStudio application is run from an Ubuntu [container](../software/containerization.md). More specifically, the application uses an Ubuntu container paired with a [persistent overlay](https://apptainer.org/docs/user/main/persistent_overlays.html), which is unique to each user. For this reason, when installing a library via `install.packages`, you may receive an error because the container and overlay do not have a dependency required by the library. For example, let's try to install the library `XVector` using the Bioconductor package manager `BiocManager`, using the below commands in the R command prompt.
 ```r
 install.packages("BiocManager")
 library(BiocManager)

@@ -30,22 +30,27 @@ To run an interactive GUI application on HPC Systems, we must install an X windo
 
 On Windows, we must first install an X windows server application to allow the cluster to forward the GUI information to your local system. For Windows, we will use an application called Xming to accomplish
 this. [Download Xming here](http://www.straightrunning.com/XmingNotes/).
-`````{tabs}
 
-````{tab} For PuTTY users
+(tabset-ref-interactive-windows)=
+`````{tab-set}
+:sync-group: tabset-interactive-windows
+
+````{tab-item} For PuTTY users
+:sync: interactive-windows-putty
 
 Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-1.png)
+![](./interactive_jobs_images/putty-1.png)
 
 Expand the SSH tab on the left side of the application and click X11.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/Interactive-Jobs/putty-2.png)
+![](./interactive_jobs_images/putty-2.png)
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking "Open" will open a terminal window where you can login.
 ````
 
-````{tab} For Command Prompt or Powershell users
+````{tab-item} For Command Prompt or Powershell users
+:sync: interactive-windows-command-prompt
 
 ```{seealso}
 This tutorial assumes that you are already set up with OpenSSH for Windows. Here is a [guide](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) for setting up OpenSSH for Windows. Note that OpenSSH Server does not have to be running for you to proceed.
