@@ -4,7 +4,7 @@ CU Research Computing (CURC) offers a variety of services encompassing High Perf
 
 ## High Performance Computing Flowchart
 
-At CURC we host two HPC clusters, Alpine and Blanca, in addition to storage solutions. To utilize these resources there are several items that are important to be aware of. Although our documentation covers a variety of other topics, below we provide a flowchart that we believe identifies the key areas users of these services should read. 
+At CURC, we host two HPC clusters, Alpine and Blanca, along with various storage solutions. Before you utilize these resources, there are several items that you should take into consideration. To guide users, we've included a flowchart below that highlights the key areas users should focus on.
 
 ```{tip}
 In the flowchart below, you can easily navigate to the corresponding documentation page by clicking on the relevant node. Nodes that change color when hovered over are clickable.
