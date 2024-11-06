@@ -54,6 +54,6 @@ incident-response
 :maxdepth: 2
 :caption: System Security Plan (SSP) Information
 
-customer-ssp
+customer-ssp/index
 
 ```
