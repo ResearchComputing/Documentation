@@ -70,7 +70,7 @@ RMACC members can obtain a CURC account by completing the following steps
     - your department
     - your first and last name
     - your preferred email address for communication
-    - your NSF discipline (refer to the list of disciplines [here](https://osp.unm.edu/pi-resources/nsf-research-classifications.html))
+    - your NSF discipline (refer to the [list of disciplines](https://osp.unm.edu/pi-resources/nsf-research-classifications.html))
 
 3. Wait for user support to respond to your email and provision your account
 
