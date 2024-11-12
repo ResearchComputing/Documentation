@@ -10,6 +10,18 @@ For users requiring secure research computing environments to ensure compliance 
 
 <br>
 
+## Core storage data retention
+
+The data retention policy for CU Research Computing “core” storage (user data in `/home` and `/projects` spaces) is a period of six years beyond the user’s last login to a CU Research Computing service. This duration is in alignment with the University’s data retention policy for research records associated with grants and contracts. The policy will be enacted via a “5 + 1” approach: after a period of five years since the user’s last login, a communication will be sent to the email address associated with the user’s account, and cc’d (as a courtesy) to persons belonging to the group associated with the user’s `/projects` space. The communication will note that data in their `/home` and `/projects` spaces will be archived after one additional month and purged after one additional year if no action is taken by the user or group members to retain the data. The user will be given the opportunity to request that the data not be deleted if still needed on CURC systems.  If no longer needed on CURC systems, the user may (if they wish to keep the data) copy the data to an alternate offsite location during the final year prior to deletion from core storage.  If the user (and only the user) does not respond within the year, the data will be deleted upon reaching year six. 
+
+```{note}
+* This policy does not apply to data stored in PetaLibrary.  Data in PetaLibrary are subject to the PetaLibrary Terms of Service. 
+
+* This policy only applies to CU Boulder users at this time. 
+```
+
+<br>
+
 ## Login nodes
 
 The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources, such as Blanca 
