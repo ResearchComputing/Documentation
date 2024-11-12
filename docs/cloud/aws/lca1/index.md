@@ -52,7 +52,7 @@ incident-response
 
 ```{toctree}
 :maxdepth: 2
-:caption: System Security Plan (SSP) Information
+:caption: System Security Plan
 
 customer-ssp/index
 
