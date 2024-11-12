@@ -71,11 +71,11 @@ RC User Support also provides support services to help give advice and troublesh
 RC User Support can also help with billing and cost optimization.
 
 Not sure where to start with your cloud journey?  RC User Support is here to guide and assist!
-Reach out to us at [rc-help@colorado.edu](rc-help@colorado.edu).
+Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 
 ### SSP Quickstart Process
 1. Determine your [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification)
-2. Reach out to [rc-help@colorado.edu](rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
+2. Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
 3. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md)
 4. Work with [OIT IT Security](https://oit.colorado.edu/services/it-security) to get your SSP approved.
-5. Once approved, request your CFS **LCA1** accounts.  We recommend a separate account for each environment (Prod, Dev, Test, etc.).  Simply email [rc-help@colorado.edu](rc-help@colorado.edu) and we are happy to assist.
+5. Once approved, request your CFS **LCA1** accounts.  We recommend a separate account for each environment (Prod, Dev, Test, etc.).  Simply email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and we are happy to assist.
