@@ -33,7 +33,9 @@ Duo offers a variety of methods to log into your account. Depending on what you 
 ````{tab-item} Duo Mobile Push
 :sync: ucb-duo-login-methods-push
 
-**Duo Mobile Push is Research Computing's recommended method of 2-factor authentication.** Because Duo Push is tied to your physical smart device instead of a phone number or account, Duo Push is provides a more secure method of 2-factor authentication than either SMS or phone call.
+
+**Duo Mobile Push is Research Computing's recommended method of 2-factor authentication.** Because Duo Push is tied to your physical smart device instead of a phone number or account, Duo Push provides a more secure method of 2-factor authentication than either SMS or phone call.
+
 
 1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
 2. Enter your identikey password when prompted. 
@@ -203,8 +205,39 @@ There are a couple ways you can check your FairShare priority:
 	$ module load slurmtools
 	```
 
-	```{tip}
-	slurmtools is packed with lots of great features and tools like suacct, suuser, jobstats, seff, etc._
+	You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
+
+	```
+	[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
+	698M	WRF/run
+	698M	WRF
+	```
+	````
+
+- ### When will my job start?
+	````{toggle} 
+	You can pull up information on your job's start time using the `squeue` command: 
+	```
+	squeue --user=your_rc-username --start
+	```
+	Note that Slurm's estimated start time can be a bit inaccurate. This is because Slurm calculates this estimation off the jobs that are currently running or queued in the system. Any job that is added in later with a higher priority may delay your job.
+
+	For more information on the `squeue` command, [take a look at our Useful Slurm Commands tutorial.](../running-jobs/slurm-commands.md) Or visit the Slurm page on [squeue](https://slurm.schedmd.com/squeue.html)
+
+	Note that you can also see system level wait times and how they change through time by visiting the [CURC metrics portal](../compute/monitoring-resources.md) at [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu)
+	````
+
+- ### How can I get metrics about CURC systems such as how busy they are, wait times, and account usage?
+	````{toggle} 	
+	Please refer to our [XDMoD](../compute/monitoring-resources.md#xdmod) documentation, which is a portal that allows users to easily see CURC system metrics. 
+	````
+
+- ### How much memory did my job use?
+	````{toggle} 
+	You can check how much memory your job utilized by using the `sacct` command and refering to the `MaxRSS` metric. This is done as follows where you can replace `YYYY-MM-DD` with the date you ran the job and specify your JobID:
+
+	```
+	sacct --starttime=YYYY-MM-DD --jobs=your_job_id --format=User,JobName,JobId,MaxRSS
 	```
 
 	Then using `levelfs` on your username:
@@ -267,9 +300,9 @@ If you are getting an `Invalid Partition` error on a Blanca job which you know y
 
 ## Software 
 
-### How do I install Python libraries?
+- ### How do I install Python libraries?
 ````{toggle} 
-For individuals that need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
 ````
 
 ## PetaLibrary 
