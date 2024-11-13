@@ -21,9 +21,9 @@ The rest of this document will discuss how the CFS service can help you meet som
 We also have a quickstart guide to help you get started on your SSP journey.
 
 ## Contents
-* Shared Responsibility Model
-* CFS **LCA1** Features
-* SSP Quickstart Process
+* [Shared Responsibility Model](#shared-responsibility-model)
+* [CFS **LCA1** Features](#cfs-lca1-features)
+* [SSP Quickstart Process](#ssp-quickstart-process)
 
 ### Shared Responsibility Model
 Start with understanding the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
@@ -35,6 +35,10 @@ The OIT Research Computing [Cloud Foundations Service](https://www.colorado.edu/
 specifically designed to enable support of the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
 control set.  By using the CFS **LCA1** service, we help you meet some of your security controls.
 Below is a list of features we offer that can help you with your SSP.
+
+```{important}
+Using the CFS **LCA1** service does not automatically make your system compliant.  Our system is a foundation that enables you to be compliant.
+```
 
 **Federated Identity and Access Management (IAM)**
 
