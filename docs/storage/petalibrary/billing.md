@@ -29,8 +29,6 @@ work. However, because billing across fiscal years
 increases the complexity that our Finance, Planning & Procurement office
 has to deal with, we will avoid this practice when at all possible.
 
-
-
 ## Invoicing
 
 When a PetaLibrary billable event occurs, such as a request for additional
@@ -46,7 +44,7 @@ The invoice specifies a time frame for you to contact us to make
 changes. If anything on the invoice is incorrect, please notify us right
 away, and we will issue a new invoice. If we do not hear from you within
 the specified time frame, we will proceed with the charges outlined in
-the invoice.
+the invoice. Please take note of the PetaLibrary [policy for non-payment](../../additional-resources/policies.md#petalibrary-non-payment).
 
 If a PetaLibrary allocation has one or more billing contacts defined,
 invoices are emailed to the billing contacts, and copied to the allocation
