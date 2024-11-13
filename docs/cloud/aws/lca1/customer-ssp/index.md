@@ -76,7 +76,7 @@ When using the CFS managed [AWS VPC](https://docs.aws.amazon.com/vpc/latest/user
 you have a secure encrypted private subnet connecting back to CU Boulder campus.
 You also get a internet subnet that we manage.  Both subnets are inspected by a firewall.
 Both inbound and outbound traffic are inspected.
-The firewall and campus connection are managed with a partnership with
+The firewall and campus connection are managed by a partnership with
 [OIT Network and Internet Services](https://oit.colorado.edu/services/network-internet-services).
 
 **Training and Support**
