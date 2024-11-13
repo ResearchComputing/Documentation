@@ -62,13 +62,13 @@ used for very rare cases.  For a list of things that only the root user can do,
 In the rare event that any of these actions are needed, [rc-support@colorado.edu](mailto:rc-support@colorado)
 can assist with submitting a ticket with the CFS team.
 
-**Central Logging**
+**Centralized Audit Logging**
 
 When using the CFS **LCA1** landing zone all user, role and service actions are centrally recorded
 and stored with the proper data retention and audit policies.
 This includes actions in the AWS Console, the AWS CLI, and AWS SDKs and APIs.
 For more information, see [AWS CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html) documentation.
-This feature allows you to focus on your application logging without the need to build and maintain an extra logging layer.
+This feature allows you to focus on your application logging without the need to build and maintain an extra audit logging layer.
 
 **Managed Network and Firewall**
 
