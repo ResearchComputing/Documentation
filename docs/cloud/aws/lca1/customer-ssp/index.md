@@ -5,7 +5,7 @@ Systems that fall under the [CU Data Classification](https://www.cu.edu/data-gov
 An SSP is a document that outlines how an organization protects the security of a system.
 An SSP is a critical document that helps organizations meet compliance requirements.
 
-The [OIT IT Security](https://oit.colorado.edu/services/it-security) group is responsible for guiding, evaluating and approving your SSP.
+The [OIT IT Security](https://oit.colorado.edu/services/it-security) group is responsible for guiding and evaluating your SSP.
 [OIT IT Security](https://oit.colorado.edu/services/it-security) prescribes the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
 control set as the official standard to meet compliance requirements for **Confidential Information** and **Highly Confidential Information**.
 
@@ -31,13 +31,13 @@ It is important to know that the cloud provider, our service and you as the clou
 ### CFS **LCA1** Features
 The OIT Research Computing [Cloud Foundations Service](https://www.colorado.edu/rc/cloudfoundations)
 (CFS) team owns and manages an [AWS Landing Zone](https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-aws-environment/understanding-landing-zones.html)
-specifically designed to support the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
+specifically designed to enable support of the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
 control set.  By using the CFS **LCA1** service, we help you meet some of your security controls.
 Below is a list of features we offer that can help you with your SSP.
 
 **Federated Identity and Access Management (IAM)**
 
-When using the CSF **LCA1** landing zone, role access is integrated with the CU Boulder
+When using the CFS **LCA1** landing zone, role access is integrated with the CU Boulder
 [OIT Identity and Access Management](https://oit.colorado.edu/services/identity-access-management)
 (IAM) offering.  This offering gives you:
 * Single Sign On (SSO) using your [CU Boulder IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey)
@@ -45,6 +45,17 @@ When using the CSF **LCA1** landing zone, role access is integrated with the CU 
 * Access management via [Enterprise Access Management (Grouper)](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management)
 
 You have full control of who can access your systems.
+
+**AWS Root Account User Protection**
+
+CFS secures the [AWS Root Account User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)
+for all your **LCA1** accounts. We add MFA to the Root User.  We securely store and rotate the password.
+We have alarms set up to detect any usage of this important and powerful admin user.  Our internal
+procedures ensure that the root user is only used for approved use, requires approval, and is only
+used for very rare cases.  For a list of things that only the root user can do,
+[see this page](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#root-user-tasks).
+In the rare event that any of these actions are needed, [rc-support@colorado.edu](mailto:rc-support@colorado)
+can assist with submitting a ticket with the CFS team.
 
 **Central Logging**
 
@@ -57,11 +68,11 @@ This feature allows you to focus on your application logging without the need to
 **Managed Network and Firewall**
 
 When using the CFS managed [AWS VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html),
-you have a secure encrypted connection to the Internet with the ability to connection back to CU Boulder campus.
-All traffic using the CFS managed AWS VPC is routed to a firewall to inspect both inbound and outbound traffic.
+you have a secure encrypted private subnet connecting back to CU Boulder campus.
+You also get a internet subnet that we manage.  Both subnets are inspected by a firewall.
+Both inbound and outbound traffic are inspected.
 The firewall and campus connection are managed with a partnership with
 [OIT Network and Internet Services](https://oit.colorado.edu/services/network-internet-services).
-
 
 **Training and Support**
 
@@ -74,8 +85,8 @@ Not sure where to start with your cloud journey?  RC User Support is here to gui
 Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 
 ### SSP Quickstart Process
-1. Determine your [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification)
+1. Determine your [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification).
 2. Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
-3. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md)
-4. Work with [OIT IT Security](https://oit.colorado.edu/services/it-security) to get your SSP approved.
+3. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
+4. Work with [OIT IT Security](https://oit.colorado.edu/services/it-security) to get your SSP submitted and reviewed.
 5. Once approved, request your CFS **LCA1** accounts.  We recommend a separate account for each environment (Prod, Dev, Test, etc.).  Simply email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and we are happy to assist.
