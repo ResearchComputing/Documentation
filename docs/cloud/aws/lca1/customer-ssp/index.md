@@ -14,7 +14,8 @@ The good news is that by using the OIT Research Computing [Cloud Foundations Ser
 **LCA1** solution, some of your security burden is handled by our service.
 
 The CFS **LCA1** solution is an [AWS Landing Zone](https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-aws-environment/understanding-landing-zones.html)
-that is certified to support both **Confidential Information** and **Highly Confidential Information**.
+that is approved to support **Confidential Information**.  Support for **Highly Confidential Information**
+is on the horizon.
 
 The rest of this document will discuss how the CFS service can help you meet some of your security requirements.
 We also have a quickstart guide to help you get started on your SSP journey.
