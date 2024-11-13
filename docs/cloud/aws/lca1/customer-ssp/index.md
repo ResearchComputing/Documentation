@@ -90,4 +90,4 @@ Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 2. Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
 3. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
 4. Work with [OIT IT Security](https://oit.colorado.edu/services/it-security) to get your SSP submitted and reviewed.
-5. Once approved, request your CFS **LCA1** accounts.  We recommend a separate account for each environment (Prod, Dev, Test, etc.).  Simply email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and we are happy to assist.
+5. After our SSP is reviewed by OIT IT Security and approved by the Product Owner, request your CFS **LCA1** accounts.  We recommend a separate account for each environment (Prod, Dev, Test, etc.).  Simply email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and we are happy to create your workload accounts.
