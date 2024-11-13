@@ -45,7 +45,7 @@ When using the CFS **LCA1** landing zone, role access is integrated with the CU 
 * [Duo Multi-factor Authentication](https://oit.colorado.edu/services/identity-access-management/duo-multi-factor-authentication)
 * Access management via [Enterprise Access Management (Grouper)](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management)
 
-You have full control of who can access your systems.
+You have full control over who can access your AWS accounts.
 
 **AWS Root Account User Protection**
 
