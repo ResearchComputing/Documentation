@@ -16,6 +16,9 @@ Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of
 
 ----
 
+::::{dropdown} Click to show the full index for all documentation
+:icon: list-unordered
+
 ```{toctree}
 :maxdepth: 1
 :caption: Getting Started
@@ -140,3 +143,5 @@ additional-resources/biokem-facility
 additional-resources/csu-xsede-usernames
 
 ```
+
+::::

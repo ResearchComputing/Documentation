@@ -115,3 +115,7 @@ html[data-theme=dark] details.sd-dropdown summary.sd-card-header+div.sd-summary-
 html[data-theme=dark]  details.sd-dropdown:hover{
     background-color: rgb(204 204 204 / 13%);
 }
+
+html[data-theme=light] details.sd-dropdown summary.sd-card-header {
+    border-left: .2rem solid var(--pst-color-primary) !important;
+}

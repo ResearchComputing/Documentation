@@ -122,7 +122,7 @@ To ensure that our documentation is uniform and is easily digestible for users, 
 
 ```{tip}
 - These guidelines are always evolving, please refer to them each time you add documentation. 
-- Click the boxes below to add a check mark.
+- Click the boxes below to add or remove a check mark.
 ```
 
 - [ ] Ensure that formatting and styling look good in both light and dark mode, in addition to, widescreen and mobile views of the documentation. 
