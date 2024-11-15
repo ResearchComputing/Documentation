@@ -140,9 +140,9 @@ To ensure that our documentation is uniform and is easily digestible for users, 
     ::::
 - [ ] Define any acronyms when they are first introduced.
 - [ ] If there is a related topic in our documentation, link to it.
-- [ ] Avoid links such as `[here]()` instead of using `here` provide a title. 
+- [ ] Avoid links such as `[here]()` instead of using `here`, provide a title. 
 - [ ] For each new topic, provide at least a small introduction to the topic. The focus is on informing the user in a complete and clear way, not just stating information. 
-- [ ] When adding images create a folder for common images and make it have the suffix `_images`. Additionally, make sure that each image is clearly labelled. 
+- [ ] When adding images, create a folder for common images and make it have the suffix `_images`. Additionally, make sure that each image is clearly labelled. 
 - [ ] No file in the documentation should have spaces in the file name. Instead of using spaces `_` should be used. 
 - [ ] Put all FAQs on the main FAQ page (`docs/getting_started/faq.md`). Please put the question under the appropriate section and create a section, if necessary. 
 - [ ] Any reference to code filepaths or directories should be highlighted using the code syntax i.e. the back ticks.
@@ -175,7 +175,7 @@ To ensure that our documentation is uniform and is easily digestible for users, 
         ```
         ````
 
-    - [ ] You can make graph nodes clickable and once clicked, navigate to a page. However, this must be in a specific format. 
+    - [ ] You can make graph nodes clickable and once clicked, they will navigate to a page. However, this must be in a specific format. 
     For example, to create a node with label `CURC Policies` that opens a new page that links to our internal documentation, you 
     would add a node `policies` with the following format. 
         ```
@@ -198,70 +198,94 @@ To ensure that our documentation is uniform and is easily digestible for users, 
     ::::: 
 
 
-- [ ] Use tabs where appropriate, tabs can be really powerful and separating information so that it is more digestible for the user. All tabs should fit a particular structure. For more information on this structure, click the drop-down box below. 
+- [ ] Use tabs where appropriate. Tabs can be really powerful at separating information so that it is more digestible for the user. All tabs should fit a particular structure. For more information on this structure, click the drop-down box below. 
     :::::::{dropdown} Click to show how to format tabs
     :icon: note
 
-    For our tabs we use [sphinx-design tabs](https://sphinx-design.readthedocs.io/en/furo-theme/tabs.html). These tabs look better than normal tabs and they also allow you to reference tabs throughout our documentation. To allow these tabs to be referenced, it is best if all tabs are in a specific format. Below we provide what format these tabs should be in and an example of tabs 
+    For our tabs we use [sphinx-design tabs](https://sphinx-design.readthedocs.io/en/furo-theme/tabs.html). These tabs look better than normal tabs and they also allow you to reference tabs throughout our documentation. To allow these tabs to be referenced, it is best if all tabs are in a specific format. Below we provide what format these tabs should be in, an example of tabs, and how to reference these tabs. 
 
-    - [ ] check 1 
-    - [ ] check 2
+    - [ ] A reference to the tabset should be included e.g. `(tabset-ref-<descriptive-name>)=`.
+    - [ ] The `:sync-group:` should be included and start with `tabset` followed by the descriptive name you choose e.g. `:sync-group: tabset-<descriptive-name>`.
+    - [ ] Each tab should include a `:sync:` and begin with the descriptive name followed by a way to reference the tab e.g. `:sync: <descriptive-name>-<tab-name>`
 
-    ``````
-    (tabset-ref-curc-contrib)=
-    `````{tab-set}
-    :sync-group: tabset-curc-contrib
+        **Example tab syntax:**
+        ``````
+        (tabset-ref-curc-contrib)=
+        `````{tab-set}
+        :sync-group: tabset-curc-contrib
 
-    ````{tab-item} CU Boulder
-    :sync: curc-contrib-ucb
+        ````{tab-item} CU Boulder
+        :sync: curc-contrib-ucb
 
-    CU Boulder specific items
+        CU Boulder specific items
 
-    ````
+        ````
 
-    ````{tab-item} RMACC
-    :sync: curc-contrib-rmacc
+        ````{tab-item} RMACC
+        :sync: curc-contrib-rmacc
 
-    RMACC specific items
+        RMACC specific items
 
-    ```{tip}
-    You can use admonition and code blocks within tabs!
-    ```
+        ```{tip}
+        You can use admonition and code blocks within tabs!
+        ```
 
-    ````
-    `````
-    ``````
+        ````
+        `````
+        ``````
 
-    Rendered version: 
+        **Rendered example tabs:**
 
-    (tabset-ref-curc-contrib)=
-    `````{tab-set}
-    :sync-group: tabset-curc-contrib
+        (tabset-ref-curc-contrib)=
+        `````{tab-set}
+        :sync-group: tabset-curc-contrib
 
-    ````{tab-item} CU Boulder
-    :sync: curc-contrib-ucb
+        ````{tab-item} CU Boulder
+        :sync: curc-contrib-ucb
 
-    CU Boulder specific items
+        CU Boulder specific items
 
-    ````
+        ````
 
-    ````{tab-item} RMACC
-    :sync: curc-contrib-rmacc
+        ````{tab-item} RMACC
+        :sync: curc-contrib-rmacc
 
-    RMACC specific items
+        RMACC specific items
 
-    ```{tip}
-    You can use admonition and code blocks within tabs!
-    ```
+        ```{tip}
+        You can use admonition and code blocks within tabs!
+        ```
 
-    ````
-    `````
+        ````
+        `````
 
-    Referencing tabs: 
+        **Referencing tabs:**
+
+        Using the above format, we can now reference tabs. We have an automatic routine that checks tab references exist. For this code to work as intended, the references must be in a specific format. 
+
+        - To reference tabs within the same page, utilize the following in the markdown reference followed by `{.external}`:
+            ````
+            ?tabset-<descriptive-name>=<descriptive-name>-<tab-name>#tabset-ref-<descriptive-name>
+            ````
+            For example, we can reference our example tabs using 
+            ```
+            [example RMACC tab](?tabset-curc-contrib=curc-contrib-rmacc#tabset-ref-curc-contrib){.external}
+            ```
+            Providing the rendered version: [example RMACC tab](?tabset-curc-contrib=curc-contrib-rmacc#tabset-ref-curc-contrib){.external}. 
+        - To reference tabs on another page, utilize the following in the markdown reference followed by `{.external}`: 
+            ````
+            ./relative/path/to/page.html?tabset-<descriptive-name>=<descriptive-name>-<tab-name>#tabset-ref-<descriptive-name>
+            ````
+            For example, we can reference the tabs in the logging in page using
+            ````
+            [getting a CURC account for CSU users](../getting_started/logging-in.html?tabset-logging-in=logging-in-csu#tabset-ref-get-account){.external}
+            ````
+            Providing the rendered version: [getting a CURC account for CSU users](../getting_started/logging-in.html?tabset-logging-in=logging-in-csu#tabset-ref-get-account){.external}. 
 
     :::::::
 
 - [ ] admonitions 
 - [ ] Use double quotes, it is best to bold this using `**<content>**`
 - [ ] Inserting an image 
+- [ ] Using a drop-down box. 
 
