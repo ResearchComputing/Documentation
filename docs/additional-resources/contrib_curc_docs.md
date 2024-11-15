@@ -55,31 +55,31 @@ Before creating a pull request please review all guidelines provided in the [CUR
     :::
 
 3. **Make changes/additions** to your feature branch:
-    - Try to keep changes/additions small. This will help keep things manageable especially if there are multiple folks working on docs.
+    - Try to keep changes/additions small. This will help keep things manageable, especially if there are multiple folks working on docs.
     - If you are working locally, you will need to perform a `git add`
 
 4. **Commit any changes** with relevant commit messages
 
-5. **Push commits**, if you are working on your local version and not on GitHub. On GitHub, once you commit the changes will be automatically **"pushed"**
+5. **Push commits**, if you are working on your local version and not on GitHub. On GitHub, once you commit, the changes will be automatically **"pushed"**
 
 6. **Create a pull request:** By creating a pull request, this allows others the chance to review or comment on your additions. Additionally, once a pull request is created the documentation will also be generated.
 
     **Opening a pull request** from GitHub can be done in one of two ways:
-    - If you have just committed and pushed you will see the following message in your forked repo (**this will disappear after some time**), click on **"Compare & pull request"**
+    - If you have just committed and pushed, you will see the following message in your forked repo (**this will disappear after some time**). To create a pull request from here, click on **"Compare & pull request"**.
 
         ![](./contributing_to_docs_images/open_pr_method_1.png)
 
-    - If the above message has disappeared, you can also open a pull request by selecting your branch clicking the drop-down **"Contribute"** menu and then clicking on **"Open pull request"**
+    - If the above message has disappeared, you can also open a pull request by selecting your branch, clicking the drop-down **"Contribute"** menu, and then clicking on **"Open pull request"**
 
         ![](./contributing_to_docs_images/open_pr_method_2.png)
 
-    **Creating the pull request** from GitHub can be done once you have opened up the pull request and have added a descriptive title and description by selecting the **"Create pull request"** button
+    **Creating the pull request** from GitHub can be done once you have opened up the pull request and have added a descriptive title and description by selecting the **"Create pull request"** button.
 
     ![](./contributing_to_docs_images/filling_in_pr_info.png)
 
     :::{important}
-    - Make sure that you are merging into the **"main"** branch of the official repository
-    - If the changes you have made are not done, you can also choose to create a draft pull request. This notifies others that the pull request is in progress. To do this select **"Create draft pull request"** from the green drop-down
+    - Make sure that you are merging into the **"main"** branch of the official repository.
+    - If the changes you have made are not done, you can also choose to create a draft pull request. This notifies others that the pull request is in progress. To do this, select **"Create draft pull request"** from the green drop-down.
 
         ![](./contributing_to_docs_images/set_type_of_pr.png)
 
@@ -142,7 +142,7 @@ To ensure that our documentation is uniform and is easily digestible for users, 
 - [ ] If there is a related topic in our documentation, link to it.
 - [ ] Avoid links such as `[here]()` instead of using `here`, provide a title. 
 - [ ] For each new topic, provide at least a small introduction to the topic. The focus is on informing the user in a complete and clear way, not just stating information. 
-- [ ] When adding images, create a folder for common images and make it have the suffix `_images`. Additionally, make sure that each image is clearly labelled. 
+- [ ] When adding images, create a folder for common images and make it have the suffix `_images`. This folder should reside in the section subdirectory where you will use the images. Additionally, make sure that each image is clearly labelled. 
 - [ ] No file in the documentation should have spaces in the file name. Instead of using spaces `_` should be used. 
 - [ ] Put all FAQs on the main FAQ page (`docs/getting_started/faq.md`). Please put the question under the appropriate section and create a section, if necessary. 
 - [ ] Any reference to code filepaths or directories should be highlighted using the code syntax i.e. the back ticks.
@@ -312,5 +312,27 @@ To ensure that our documentation is uniform and is easily digestible for users, 
     ```  
     :::::
 
-- [ ] Using a drop-down box. 
+- [ ] Use drop-down boxes where appropriate to improve readability. For more information on using drop-down boxes, click the drop-down box below. 
+    :::::{dropdown} Click to show how to use drop-down boxes
+    :icon: note
 
+    Drop-down boxes are a great way to include content, but hide it until the reader needs to view it. They are great at reducing the content of the page so that the full content does not overwhelm the reader. In our documentation we utilize [sphinx-design dropdowns](https://sphinx-design.readthedocs.io/en/furo-theme/dropdowns.html) because they look better and they allow for more customization, such as adding a title and icon. Icons can be a great way to add a personal touch to the drop-down boxes, see [sphinx-design's Octicon Icons](https://sphinx-design.readthedocs.io/en/furo-theme/badges_buttons.html#octicon-icons) section for a list of these icons. Below we provide an example of a drop-down box. 
+
+    **Drop-down box with custom title and zap icon syntax:**
+    ````
+    :::{dropdown} My custom title
+    :icon: zap
+
+    Really good content. 
+
+    :::
+    ````
+    **Rendered drop-down box with custom title and zap icon:**
+    :::{dropdown} My custom title
+    :icon: zap
+
+    Really good content. 
+
+    :::
+
+    :::::
