@@ -22,6 +22,25 @@ The data retention policy for CU Research Computing “core” storage (user dat
 
 <br>
 
+## PetaLibrary non-payment
+
+_Effective July 1, 2024_
+
+In the event of non-payment, CURC will act to ensure optimal system use and storage availability. This includes restricting access and eventual data deletion. 
+
+The timetable will be as follows: 
+
+* After 30 days, CURC will revoke access to your data. The data will not be deleted. 
+* After 90 days, data and allocation(s) are subject to deletion. 
+
+Time is measured in full days, including weekends and holidays, starting the day after the first billing due date where the allocation owner or a representative does not make a payment. For existing allocations not up to date on payments as of the effective date of this policy, the clock will start on the effective date, July 1, 2024. 
+
+Users may request in writing extended time to secure payment if contracting and procurement are in process but not yet complete in the stated window. The owner or a representative may make the request by emailing <rc-help@colorado.edu>. Exceptions are subject to approval CURC. Users should not expect approval by CURC until confirmed in writing. 
+
+_This policy subject to change at any time._ 
+
+<br>
+
 ## Login nodes
 
 The RC login nodes are lightweight virtual machines that serve as gateways to CURC computing resources, such as Blanca 
