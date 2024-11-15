@@ -284,8 +284,33 @@ To ensure that our documentation is uniform and is easily digestible for users, 
 
     :::::::
 
-- [ ] admonitions 
-- [ ] Use double quotes, it is best to bold this using `**<content>**`
-- [ ] Inserting an image 
+- [ ] Use admonitions when wanting to note, warn, or draw attention to a specific detail. Please do not use adhoc admonitions and instead use official admonitions. For more information on using admonitions, click the drop-down box below:
+    :::::{dropdown} Click to show how to use admonitions
+    :icon: note
+
+    Admonitions are a great way to draw attention to a specific detail that is important for the reader. For a reference of all possible admonitions, see the [MyST Admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html) page. Below we provide a few examples of admonitions. 
+
+    **Note admonition syntax:**
+    ````
+    ```{note}
+    Note admonition content 
+    ```    
+    ````
+    **Rendered note admonition:**
+    ```{note}
+    Note admonition content 
+    ```  
+    **Note admonition syntax:**
+    ````
+    ```{tip}
+    Tip admonition content 
+    ```    
+    ````
+    **Rendered tip admonition:**
+    ```{tip}
+    Tip admonition content 
+    ```  
+    :::::
+
 - [ ] Using a drop-down box. 
 
