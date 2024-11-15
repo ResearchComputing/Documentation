@@ -5,8 +5,10 @@ Systems that fall under the [CU Data Classification](https://www.cu.edu/data-gov
 An SSP is a document that outlines how an organization protects the security of a system.
 An SSP is a critical document that helps organizations meet compliance requirements.
 
-The [OIT IT Security](https://oit.colorado.edu/services/it-security) group is responsible for guiding and evaluating your SSP.
-[OIT IT Security](https://oit.colorado.edu/services/it-security) prescribes the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
+Look here for more information about [Data Classification](../data-classification.md).
+
+OIT's [IT Security](https://oit.colorado.edu/services/it-security) group is responsible for guiding and evaluating your SSP.
+[IT Security](https://oit.colorado.edu/services/it-security) prescribes the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
 control set as the official standard to meet compliance requirements for **Confidential Information** and **Highly Confidential Information**.
 
 Getting your SSP completed and approved is not only necessary, but can be a rigorous process.
@@ -39,15 +41,18 @@ Below is a list of features we offer that can help you with your SSP.
 ```{important}
 Using the CFS **LCA1** service does not automatically make your system compliant.  Our system is a foundation that enables you to be compliant.
 ```
+```{note}
+As a best practice, we recommend a separate **LCA1** account for each workload environment (prod, dev, test, etc.)
+```
 
 **Federated Identity and Access Management (IAM)**
 
 When using the CFS **LCA1** landing zone, role access is integrated with the CU Boulder
 [OIT Identity and Access Management](https://oit.colorado.edu/services/identity-access-management)
 (IAM) offering.  This offering gives you:
-* Single Sign On (SSO) using your [CU Boulder IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey)
-* [Duo Multi-factor Authentication](https://oit.colorado.edu/services/identity-access-management/duo-multi-factor-authentication)
-* Access management via [Enterprise Access Management (Grouper)](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management)
+* Single Sign On (SSO) using your [CU Boulder IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).  The role we provide you is set up with temporary short-term credentials to help you meet compliance and best practices.
+* [Duo Multi-factor Authentication](https://oit.colorado.edu/services/identity-access-management/duo-multi-factor-authentication).
+* Access management via [Enterprise Access Management (Grouper)](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management).  Audit logging for federated access is handled by the Grouper service.
 
 You have full control over who can access your AWS accounts.
 
@@ -73,11 +78,13 @@ This feature allows you to focus on your application logging without the need to
 **Managed Network and Firewall**
 
 When using the CFS managed [AWS VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html),
-you have a secure encrypted private subnet connecting back to CU Boulder campus.
+you have a private subnet with an encrypted connection to the CU Boulder campus.
 You also get a internet subnet that we manage.  Both subnets are inspected by a firewall.
 Both inbound and outbound traffic are inspected.
 The firewall and campus connection are managed by a partnership with
 [OIT Network and Internet Services](https://oit.colorado.edu/services/network-internet-services).
+
+For more information about this feature, see the **LCA1** [Network Information](../networking.md) page.
 
 **Training and Support**
 
@@ -90,8 +97,9 @@ Not sure where to start with your cloud journey?  RC User Support is here to gui
 Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 
 ### SSP Quickstart Process
-1. Determine your [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification).
-2. Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
-3. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
-4. Work with [OIT IT Security](https://oit.colorado.edu/services/it-security) to get your SSP submitted and reviewed.
-5. After our SSP is reviewed by OIT IT Security and approved by the Product Owner, request your CFS **LCA1** accounts.  We recommend a separate account for each environment (Prod, Dev, Test, etc.).  Simply email [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and we are happy to create your workload accounts.
+
+1. Determine the [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification).
+2. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
+3. Get an account on **LCA1**.  Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
+4. Secure your workload and create the SSP.  Work with [IT Security](https://oit.colorado.edu/services/it-security) to get the SSP submitted and reviewed.
+5. After OIT Security review and Product Owner approval, start operating your secure workload.
