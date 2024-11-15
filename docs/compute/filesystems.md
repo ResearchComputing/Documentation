@@ -3,13 +3,14 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xfeRDnZQrJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 All users are allocated space on the `/home` and `/projects`
-filesystems. In addition, separate `scratch` directories are visible
-from Alpine and Blanca. These scratch directories are hosted on
-separate, high-performance filesystems designed to support intensive,
+filesystems. In addition, a separate `/scratch/alpine` directory is visible
+from both Alpine and Blanca. This scratch directory is hosted on
+a separate, high-performance, filesystem designed to support intensive,
 parallel I/O operations.
 
 ```{important}
-Use of `/home` or `/projects` for high-performance I/O may negatively affect the environment for all users. As a result, all compute jobs should write to the `scratch` filesystem. **Users performing intensive I/O on the `/home` or `/projects` filesystems will have their jobs terminated and may have their accounts temporarily disabled.**
+* `/scratch/alpine` has replaced `/rc_scratch` on Blanca and is now the main scratch filesystem for both Alpine and Blanca.
+* Use of `/home` or `/projects` for high-performance I/O may negatively affect the environment for all users. As a result, all compute jobs should write to the `/scratch/alpine` filesystem. **Users performing intensive I/O on the `/home` or `/projects` filesystems will have their jobs terminated and may have their accounts temporarily disabled.**
 ```
 
 
@@ -37,13 +38,13 @@ software builds and smaller data sets.
 
 Alpine and Blanca users are provided a subdirectory on `/scratch/alpine`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
-running on those system (e.g., `/scratch/alpine/janedoe`). By default,
+running on those systems (e.g., `/scratch/alpine/janedoe`). By default,
 each user is limited to a quota of 10 TB worth of storage space and
 20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](../additional-resources/policies.md#alpine-scratch-quota-increases).
 
 Scratch space should be used for all compute jobs run on Alpine or
-Blanca. These high-performance scratch directories are **not backed
-up**, and are not appropriate for long-term storage. Data may be
+Blanca. This high-performance scratch directory is **not backed
+up**, and is not appropriate for long-term storage. Data may be
 purged at any time subject to overall system needs. Files are
 automatically removed 90 days after their initial creation.
 
