@@ -146,10 +146,121 @@ To ensure that our documentation is uniform and is easily digestible for users, 
 - [ ] No file in the documentation should have spaces in the file name. Instead of using spaces `_` should be used. 
 - [ ] Put all FAQs on the main FAQ page (`docs/getting_started/faq.md`). Please put the question under the appropriate section and create a section, if necessary. 
 - [ ] Any reference to code filepaths or directories should be highlighted using the code syntax i.e. the back ticks.
+- [ ] Ensure all flowcharts are integrated into the documentation correctly. Items to consider when integrating flowcharts into the documentation can be viewed in the drop-down box below. 
+    :::::{dropdown} Click to show how to include flowcharts
+    :icon: note
+
+    Although there exists a Graphviz extension for Sphinx, it is not adequate. For example, it does not allow 
+    you to easily modify the background color of the graphs or make them transparent. Additionally, removing 
+    built-in functionality like tooltips is not possible. To make these flowcharts as customizable as possible, 
+    we build all flowcharts using `dot`, the main software used for standard Graphviz graphs. The software `dot`
+    will then generate an SVG image that is highly customizable. The major drawback to this is that we have to 
+    create these flowcharts according to a specific structure. Below we provide key items that must be completed 
+    when integrating a flowchart into the documentation. 
+
+    - [ ] All flowcharts (graphs) should be created from a `.dot` file. For more information on creating `.dot` files, 
+    please see [Graphviz's documentation](https://graphviz.org/doc/info/lang.html). 
+
+    - [ ] All `.dot` files must be put in the path `graphviz_flowcharts/dot_files` and must have an extension of `.dot`.
+        - This is incredibly important because there are automatic routines that will generate an SVG for you and put it 
+        in the directory `graphviz_flowcharts/generated_images`.
+
+    - [ ] To reference a flowchart you have created within the documentation, you should point to the file under 
+    `graphviz_flowcharts/generated_images` (using a relative path) and import it as a raw file using rst. For example, 
+    in `docs/getting_started/navigating_docs.md` we reference the HPC flowchart as follows: 
+        ````
+        ```{eval-rst}
+        .. raw:: html
+            :file: ../../graphviz_flowcharts/generated_images/getting_started_hpc_flowchart.svg
+        ```
+        ````
+
+    - [ ] You can make graph nodes clickable and once clicked, navigate to a page. However, this must be in a specific format. 
+    For example, to create a node with label `CURC Policies` that opens a new page that links to our internal documentation, you 
+    would add a node `policies` with the following format. 
+        ```
+        policies [label="CURC Policies", href="../additional-resources/policies.html", target="_blank", id="clickable"];
+        ```
+        - Note that the provided `href` MUST BE a relative path from the file you are referencing the SVG from AND you must 
+        use `.html` NOT `.md`.
+        - The `href` must be in this style so that our custom check can ensure that a reference exists. 
+
+    - [ ] So that styling of the flowcharts is consistent with all other documentation, we suggest the following be included in 
+    your dot file:
+        ```
+        bgcolor="transparent";
+        ranksep="0.5 equally";
+        graph [id="doc-flowchart"];
+        node [fontname="Verdana", fontsize="12", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white"];
+        edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5"];
+        ```
+
+    ::::: 
 
 
-- [ ] Use tabs where appropriate, tabs can be really powerful and separating information so that it is more digestible for the user
-- [ ] flowchart 
+- [ ] Use tabs where appropriate, tabs can be really powerful and separating information so that it is more digestible for the user. All tabs should fit a particular structure. For more information on this structure, click the drop-down box below. 
+    :::::::{dropdown} Click to show how to format tabs
+    :icon: note
+
+    For our tabs we use [sphinx-design tabs](https://sphinx-design.readthedocs.io/en/furo-theme/tabs.html). These tabs look better than normal tabs and they also allow you to reference tabs throughout our documentation. To allow these tabs to be referenced, it is best if all tabs are in a specific format. Below we provide what format these tabs should be in and an example of tabs 
+
+    - [ ] check 1 
+    - [ ] check 2
+
+    ``````
+    (tabset-ref-curc-contrib)=
+    `````{tab-set}
+    :sync-group: tabset-curc-contrib
+
+    ````{tab-item} CU Boulder
+    :sync: curc-contrib-ucb
+
+    CU Boulder specific items
+
+    ````
+
+    ````{tab-item} RMACC
+    :sync: curc-contrib-rmacc
+
+    RMACC specific items
+
+    ```{tip}
+    You can use admonition and code blocks within tabs!
+    ```
+
+    ````
+    `````
+    ``````
+
+    Rendered version: 
+
+    (tabset-ref-curc-contrib)=
+    `````{tab-set}
+    :sync-group: tabset-curc-contrib
+
+    ````{tab-item} CU Boulder
+    :sync: curc-contrib-ucb
+
+    CU Boulder specific items
+
+    ````
+
+    ````{tab-item} RMACC
+    :sync: curc-contrib-rmacc
+
+    RMACC specific items
+
+    ```{tip}
+    You can use admonition and code blocks within tabs!
+    ```
+
+    ````
+    `````
+
+    Referencing tabs: 
+
+    :::::::
+
 - [ ] admonitions 
 - [ ] Use double quotes, it is best to bold this using `**<content>**`
 - [ ] Inserting an image 
