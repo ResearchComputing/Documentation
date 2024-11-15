@@ -75,6 +75,11 @@ This includes actions in the AWS Console, the AWS CLI, and AWS SDKs and APIs.
 For more information, see [AWS CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html) documentation.
 This feature allows you to focus on your application logging without the need to build and maintain an extra audit logging layer.
 
+As an added bonus, any [CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html)
+you create will be centrally logged with the proper data retention and audit policies.
+See the AWS [Centralized Logging](https://docs.aws.amazon.com/solutions/latest/landing-zone-accelerator-on-aws/centralized-logging.html)
+documentation for more details.
+
 **Managed Network and Firewall**
 
 When using the CFS managed [AWS VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html),
