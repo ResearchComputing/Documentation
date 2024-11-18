@@ -136,7 +136,6 @@ additional-resources/contrib_curc_docs
 additional-resources/CURC-cheatsheet
 additional-resources/amc_ssh_auth
 additional-resources/registrycilogon-instructions
-additional-resources/utah-videos
 additional-resources/blanca-MOU
 additional-resources/facilities_equip_other
 additional-resources/biokem-facility
