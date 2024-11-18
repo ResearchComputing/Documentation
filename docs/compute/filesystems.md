@@ -3,13 +3,14 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xfeRDnZQrJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 All users are allocated space on the `/home` and `/projects`
-filesystems. In addition, separate `scratch` directories are visible
-from Alpine and Blanca. These scratch directories are hosted on
-separate, high-performance filesystems designed to support intensive,
+filesystems. In addition, a separate `/scratch/alpine` directory is visible
+from both Alpine and Blanca. This scratch directory is hosted on
+a separate, high-performance filesystem designed to support intensive,
 parallel I/O operations.
 
 ```{important}
-Use of `/home` or `/projects` for high-performance I/O may negatively affect the environment for all users. As a result, all compute jobs should write to the appropriate `scratch` filesystem. **Users performing intensive I/O on the `/home` or `/projects` filesystems will have their jobs terminated and may have their accounts temporarily disabled.**
+* `/scratch/alpine` has replaced `/rc_scratch` on Blanca and is now the main scratch filesystem for both Alpine and Blanca.
+* Use of `/home` or `/projects` for high-performance I/O may negatively affect the environment for all users. As a result, all compute jobs should write to the `/scratch/alpine` filesystem. **Users performing intensive I/O on the `/home` or `/projects` filesystems will have their jobs terminated and may have their accounts temporarily disabled.**
 ```
 
 
@@ -35,16 +36,15 @@ software builds and smaller data sets.
 
 ## Scratch Filesystems
 
-Alpine users are provided a subdirectory on `/scratch/alpine`, the
+Alpine and Blanca users are provided a subdirectory on `/scratch/alpine`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
-running on that system (e.g., `/scratch/alpine/janedoe`). By default,
+running on those systems (e.g., `/scratch/alpine/janedoe`). By default,
 each user is limited to a quota of 10 TB worth of storage space and
-20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](../additional-resources/policies.md#alpine-scratch-quota-increases). Blanca users should write to
-`/rc_scratch/janedoe` instead of `/scratch/alpine`.
+20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](../additional-resources/policies.md#alpine-scratch-quota-increases).
 
 Scratch space should be used for all compute jobs run on Alpine or
-Blanca. These high-performance scratch directories are **not backed
-up**, and are not appropriate for long-term storage. Data may be
+Blanca. This high-performance scratch directory is **not backed
+up**, and is not appropriate for long-term storage. Data may be
 purged at any time subject to overall system needs. Files are
 automatically removed 90 days after their initial creation.
 
@@ -74,8 +74,8 @@ cp new_file /projects/user1234/job/new_file
   * Lowest contention of all RC storage resources (only shared with other jobs on the same node)
   * Deleted when job terminates
 
-2. `/scratch/alpine/$USER` (Alpine only) or `/rc_scratch/$USER` (Blanca only)
-  * 10 TB/user (Alpine) or ~2 TB/user (Blanca)
+2. `/scratch/alpine/$USER` (both Alpine and Blanca)
+  * 10 TB/user
   * Data purged after 90 days
 
 3. `/pl/active/<group>`
@@ -88,15 +88,15 @@ cp new_file /projects/user1234/job/new_file
 
 ### How to increase I/O performance: 
 
-1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca) first.  
+1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/alpine/$USER` first.  
 
-2. If you need to read data from `/pl/active` more than once during a job, copy it to `$SLURM_SCRATCH` at the beginning of the job and read it from there. Or. if the dataset is too big for `$SLURM_SCRATCH`, copy it to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca) and read it from there. 
+2. If you need to read data from `/pl/active` more than once during a job, copy it to `$SLURM_SCRATCH` at the beginning of the job and read it from there. Or. if the dataset is too big for `$SLURM_SCRATCH`, copy it to `/scratch/alpine/$USER` and read it from there. 
 
-3. If output files from one job need to be read by other compute jobs, write to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca). 
+3. If output files from one job need to be read by other compute jobs, write to `/scratch/alpine/$USER`. 
 
 4. All filesystems struggle to be performant with small file I/O. If you can choose between one file and 100 files for storing the same amount of data, you will see far better performance from the single large file.
 
-5. PetaLibrary (`/pl/active`) is backed by ZFS, which is a Copy on Write filesystem. This means that ZFS does not ever modify a block in place. If you make a small change to a file, ZFS doesn’t change the underlying block, it copies the entire block and makes your change to the new block. Over time this leads to fragmentation and poor performance. When possible, copy data from `/pl/active` to `/scratch/alpine/$USER` (Alpine) or `/rc_scratch/$USER` (Blanca), compute against it, and copy data back to `/pl/active`. This helps to avoid fragmentation and write amplification.
+5. PetaLibrary (`/pl/active`) is backed by ZFS, which is a Copy on Write filesystem. This means that ZFS does not ever modify a block in place. If you make a small change to a file, ZFS doesn’t change the underlying block, it copies the entire block and makes your change to the new block. Over time this leads to fragmentation and poor performance. When possible, copy data from `/pl/active` to `/scratch/alpine/$USER`, compute against it, and copy data back to `/pl/active`. This helps to avoid fragmentation and write amplification.
 
 6.  If you reuse data within code, try to read it in once and keep it stored as a variable in memory, rather than repeatedly opening the same file each time you need the data (i.e., move file reads outside of “do loops”)
 
@@ -163,8 +163,7 @@ summary of the backup schedule is provided in the table below.
 | `/projects`   | 6 hr          |    25 hr |
 | `/projects`   | 1 d           |    8 d |
 | `/projects`   | 1 wk          |   15 d |
-| `/scratch`    | **no backups** | N/A |
-| `/rc_scratch` | **no backups** | N/A |
+| `/scratch/alpine`    | **no backups** | N/A |
 
 If disaster strikes and you need access to a previous version of your
 `/home` or `/projects` directories, change to that directory and look
@@ -274,7 +273,7 @@ See our [Data Transfer](../compute/data-transfer.md#rsync) page for more informa
 
 All users have complete control over their personal directory
 permissions. While we encourage you to share your `/projects` and
-`/scratch` directories with collaborators as appropriate, we strongly
+`/scratch/alpine` directories with collaborators as appropriate, we strongly
 discourage sharing of your `/home` directory due to the limited space
 and potentially sensitive information stored there.
 
