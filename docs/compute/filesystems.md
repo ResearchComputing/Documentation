@@ -5,7 +5,7 @@
 All users are allocated space on the `/home` and `/projects`
 filesystems. In addition, a separate `/scratch/alpine` directory is visible
 from both Alpine and Blanca. This scratch directory is hosted on
-a separate, high-performance, filesystem designed to support intensive,
+a separate, high-performance filesystem designed to support intensive,
 parallel I/O operations.
 
 ```{important}
