@@ -6,7 +6,7 @@ See our [Navigating CURC Documentation](./navigating_docs) page for information 
 
 ## How do I acknowledge use of CURC Resources?
 
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we provide material on how to acknowledge CURC resources. 
@@ -16,7 +16,7 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 ## Duo Multi-Factor Authentication 
 
 ### How do I setup Duo?
-:::{dropdown} Click to reveal the answer 
+:::{dropdown} Show 
 :icon: note 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/djn9bclMD3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -29,7 +29,7 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 :::
 
 ### As a CU Boulder user, how can I login with Duo? 
-::::::{dropdown} Click to reveal the answer 
+::::::{dropdown} Show 
 :icon: note
 
 Duo offers a variety of methods to log into your account. Depending on what you select when setting up your Duo account, you should have several different methods of 2-factor authentication when logging into RC Resources. 
@@ -95,7 +95,7 @@ If you prefer a physical device, similar to the Vasco OTP, you will need to arra
 ::::::
 
 ### I have a new phone. As a CU Boulder user, how do I move my Duo onto it?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 You can add a new device to your duo account by visiting <a href="https://duo.colorado.edu">https://duo.colorado.edu</a>.
@@ -118,7 +118,7 @@ If you cannot authenticate your account (e.g. do not have your old device), cont
 ::::
 
 ### As a CU Boulder user, how can I manage my Duo devices? 
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 Users can manage their own Duo devices by visiting <https://duo.colorado.edu>. This enables users to add or remove activated devices at their discretion.
@@ -135,7 +135,7 @@ Selecting "My Settings & Devices" provides a more detailed list of all devices y
 ::::
 
 ### None of the FAQs for Duo resolved my issue, how do I proceed as a CU Boulder user? 
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 If none of the above resolved the issues you were experiencing, then your Duo account may have expired. The university purges Duo accounts after six months of non-use. You can
@@ -146,7 +146,7 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 ## General High Performance Computing
 
 ### How do I check how full my directories are?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
@@ -171,7 +171,7 @@ You can also check the amount of space being used by any directory with the `du 
 ::::
 
 ### When will my job start?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 You can pull up information on your job's start time using the `squeue` command: 
@@ -186,14 +186,14 @@ Note that you can also see system level wait times and how they change through t
 ::::
 
 ### How can I get metrics about CURC systems such as how busy they are, wait times, and account usage?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 Please refer to our [XDMoD](../compute/monitoring-resources.md#xdmod) documentation, which is a portal that allows users to easily see CURC system metrics. 
 ::::
 
 ### How much memory did my job use?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 You can check how much memory your job utilized by using the `sacct` command and refering to the `MaxRSS` metric. This is done as follows where you can replace `YYYY-MM-DD` with the date you ran the job and specify your JobID:
@@ -214,7 +214,7 @@ You can also view information related to service unit (SU) usage and CPU & RAM e
 ::::
 
 ### How can I see my current FairShare priority?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 There are a couple ways you can check your FairShare priority:
@@ -248,7 +248,7 @@ There are a couple ways you can check your FairShare priority:
 ::::
 
 ### Why is my job pending with reason `ReqNodeNotAvail`?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 The `ReqNodeNotAvail` message usually means that your node has been reserved for maintenance during the period you have requested within your job script. This message often occurs in the days leading up to our regularly scheduled maintenance, which is performed the first Wednesday of every month. So, for example, if you run a job with a 72 hour wall clock request on the first Monday of the month, you will receive the `ReqNodeNotAvail` error because the node is reserved for maintenance within that 72-hour window. You can confirm whether the requested node has a reservation by typing `scontrol show reservation` to list all active reservations. 
@@ -263,7 +263,7 @@ If you receive this message, the following solutions are available:
 ::::
 
 ### How can I check what accounts (allocations) I belong to?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 You can check the allocations you belong to with the `sacctmgr` command. This can be done by typing the following from a login or compute node:
@@ -274,7 +274,7 @@ This will print out an assortment of information including allocations and QoS a
 ::::
 
 ### Why do I get an `LMOD` error when I try to load Slurm?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
 ::::
@@ -282,7 +282,7 @@ The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from 
 ## Alpine 
 
 ### Why do I get an `Invalid Partition` error when running an Alpine job?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 This error usually means users do not have an allocation that would provide the service units (SUs) required to run a job.  This can occur if a user has no valid allocation, specifies an invalid allocation, or specifies an invalid partition.  Think of SUs as "HPC currency": you need an allocation of SUs to use the system. Allocations are free. New CU users should automatically get added to a `ucb-general` allocation upon account creation which will provide a modest allocation of SUs for running small jobs and testing/benchmarking codes. However, if this allocation expires and you do not have a new one you will see this error.  `ucb-general` allocations are intended for benchmarking and testing and it is expected that users will move to a project allocation.  To request a Project and apply for a Project Allocation visit our [allocation documentation](../clusters/alpine/allocations.md).
@@ -291,7 +291,7 @@ This error usually means users do not have an allocation that would provide the 
 ## Blanca 
 
 ### Why do I get an `Invalid Partition` error when running a Blanca job?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
@@ -300,7 +300,7 @@ If you are getting an `Invalid Partition` error on a Blanca job which you know y
 ## Software 
 
 ### How do I install Python libraries?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
@@ -309,7 +309,7 @@ For individuals who need to install Python libraries not included in our base Py
 ## PetaLibrary 
 
 ### Why does my PetaLibrary allocation report less storage than I requested?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. For more information on ZFS Snapshots, please refer to our [ZFS Snapshots](../storage/petalibrary/zfs_snapshots.md) documentation. 
@@ -322,7 +322,7 @@ If you would like to set a custom snapshot schedule for your allocation, please 
 ## Open OnDemand
 	
 ### Why is my Jupyter session throwing a `QOSMaxSubmitJobPerUserLimit` error?
-::::{dropdown} Click to reveal the answer 
+::::{dropdown} Show 
 :icon: note
 
 Some of our Open OnDemand applications allocate resources, which can be limited to one session. All Open OnDemand applications that submit jobs to Alpine's `ahub` partition have this limitation. Currently, all applications utilizing the presets configurations will be submitted to the `ahub` partition. This partition provides users with rapid start times, but limits users to one Jupyter session (or any one job using the partition). In order to spawn another Jupyter session, you first need to close the current job. You can do so by shutting down your current Jupyter session or by [canceling your job manually](../running-jobs/slurm-commands.md#stopping-jobs-with-scancel). 
