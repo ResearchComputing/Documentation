@@ -4,7 +4,7 @@ Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of
 
 ```{tip}
 - Documentation can be overwhelming. If you would like guidance on navigating CURC documentation, please see our [Navigating CURC Documentation](./getting_started/navigating_docs.md) page.
-- Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues).
+- Can't find what you need or want to contribute to our documentation? Please see our [Contributing to CURC Documentation](./additional-resources/contrib_curc_docs.md) page.   
 - To provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
 - For more information on the CU Research Computing group, please see <https://www.colorado.edu/rc>.
 - If you have any questions on documentation or CURC services, please feel free to contact our user support team at <rc-help@colorado.edu>.
@@ -15,6 +15,9 @@ Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of
 ![The RC User Support team](./landing_page_images/MeetTheUserSupportTeam.png)
 
 ----
+
+::::{dropdown} Click to show the full index for all documentation
+:icon: list-unordered
 
 ```{toctree}
 :maxdepth: 1
@@ -129,6 +132,7 @@ programming/OpenMP-Fortran
 additional-resources/policies
 additional-resources/courses_using_curc_resources
 additional-resources/feedback
+additional-resources/contrib_curc_docs
 additional-resources/CURC-cheatsheet
 additional-resources/amc_ssh_auth
 additional-resources/registrycilogon-instructions
@@ -139,3 +143,5 @@ additional-resources/biokem-facility
 additional-resources/csu-xsede-usernames
 
 ```
+
+::::
