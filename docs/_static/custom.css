@@ -95,3 +95,27 @@ html[data-theme=light] .graph#doc-flowchart .node text {
 .bd-content .sd-tab-set .sd-tab-content {
     padding: 1.5rem;
 }
+
+html[data-theme=dark] details.sd-dropdown summary.sd-card-header {
+    --pst-sd-dropdown-color: var(--pst-gray-500);
+    --pst-sd-dropdown-bg-color: var(--pst-color-surface);
+    background-color: rgb(204 204 204 / 10%) !important;
+    border-left: .2rem solid var(--pst-color-primary) !important;
+}
+
+html[data-theme=dark] details.sd-dropdown summary.sd-card-header+div.sd-summary-content {
+    background-color: var(--pst-color-background);
+    border-bottom-left-radius: calc(.25rem - 1px);
+    border-bottom-right-radius: calc(.25rem - 1px);
+    border-left: .2rem solid rgb(204 204 204 / 10%) !important;
+    border-right: .2rem solid rgb(204 204 204 / 10%) !important;
+    border-bottom: .2rem solid rgb(204 204 204 / 10%) !important;
+}
+
+html[data-theme=dark]  details.sd-dropdown:hover{
+    background-color: rgb(204 204 204 / 13%);
+}
+
+html[data-theme=light] details.sd-dropdown summary.sd-card-header {
+    border-left: .2rem solid var(--pst-color-primary) !important;
+}
