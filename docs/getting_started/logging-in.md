@@ -71,27 +71,27 @@ RMACC members can obtain a CURC account by completing the following steps
     - your first and last name
     - your preferred email address for communication
     - your NSF discipline (refer to the list of disciplines below)
-    ::::{dropdown} List of Disciplines
-    :icon: note
-    - Computer & Information Services
-    - Engineering
-    - Geosciences, Atmospheric Sciences & Ocean Sciences
-    - Life Sciences
-    - Mathematics and Statistics
-    - Physical Sciences
-    - Psychology
-    - Social Sciences
-    - Other Sciences (not elsewhere classified)
-    - Education
-    - Law
-    - Humanities
-    - Visual & Performing Arts
-    - Business Management and Business Administration
-    - Communications, Communications Technologies, Journalism (Library Science is considered 'Other Non-Science & Engineering Fields')
-    - Social Work
-    - Other Non-Science & Engineering Fields
+        ::::{dropdown} Show list of disciplines
+        :icon: note
+        - Computer & Information Services
+        - Engineering
+        - Geosciences, Atmospheric Sciences & Ocean Sciences
+        - Life Sciences
+        - Mathematics and Statistics
+        - Physical Sciences
+        - Psychology
+        - Social Sciences
+        - Other Sciences (not elsewhere classified)
+        - Education
+        - Law
+        - Humanities
+        - Visual & Performing Arts
+        - Business Management and Business Administration
+        - Communications, Communications Technologies, Journalism (Library Science is considered "Other Non-Science & Engineering Fields")
+        - Social Work
+        - Other Non-Science & Engineering Fields
 
-    ::::
+        ::::
 
 
 3. Wait for user support to respond to your email and provision your account
