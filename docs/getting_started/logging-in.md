@@ -63,36 +63,7 @@ RMACC members can obtain a CURC account by completing the following steps
     If you already have an XSEDE or ACCESS account, please do not create another one and instead proceed to step 2.
     ```
 
-2. Email CURC user support at <rc-help@colorado.edu> stating that you are requesting a CURC account. In this email, please include the following information:
-    - your ACCESS or XSEDE username
-    - your institutional affiliation (e.g., "University of Awesome")
-    - your role (undergraduate graduate student, postdoc, staff, instructor, faculty or affiliated faculty)
-    - your department
-    - your first and last name
-    - your preferred email address for communication
-    - your NSF discipline (refer to the list of disciplines below)
-        ::::{dropdown} Show list of disciplines
-        :icon: note
-        - Computer & Information Services
-        - Engineering
-        - Geosciences, Atmospheric Sciences & Ocean Sciences
-        - Life Sciences
-        - Mathematics and Statistics
-        - Physical Sciences
-        - Psychology
-        - Social Sciences
-        - Other Sciences (not elsewhere classified)
-        - Education
-        - Law
-        - Humanities
-        - Visual & Performing Arts
-        - Business Management and Business Administration
-        - Communications, Communications Technologies, Journalism (Library Science is considered "Other Non-Science & Engineering Fields")
-        - Social Work
-        - Other Non-Science & Engineering Fields
-
-        ::::
-
+2. Fill out and submit the [CURC Account Request Form for RMACC Members](https://forms.office.com/r/0sUWeydsiH).
 
 3. Wait for user support to respond to your email and provision your account
 
