@@ -63,7 +63,7 @@ RMACC members can obtain a CURC account by completing the following steps
     If you already have an XSEDE or ACCESS account, please do not create another one and instead proceed to step 2.
     ```
 
-2. Fill out the [Account Request Form](https://forms.office.com/r/0sUWeydsiH).
+2. Fill out and submit the [CURC Account Request Form for RMACC Members](https://forms.office.com/r/0sUWeydsiH).
 
 3. Wait for user support to respond to your email and provision your account
 
