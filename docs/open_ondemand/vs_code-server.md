@@ -1,6 +1,6 @@
 # VS Code-Server
 
-[Visual Studio Code (VS Code)](https://code.visualstudio.com/) is an extremely popular and powerful code editor. In Open OnDemand, we utilize [Code-Server](https://coder.com/docs/code-server/latest) to bring our users VS Code. Code-Server if a modified version of VS Code that allows VS Code to be accessed via a browser. Due to some modifications, certain VS Code features may not be available in VS Code-Server or may function differently. One feature that can function differently is installing extensions. For more information on installing extensions, see the section [Installing VS Code-Server Extensions](#installing-vs-code-server-extensions) below. 
+[Visual Studio Code (VS Code)](https://code.visualstudio.com/) is an extremely popular and powerful code editor. In Open OnDemand, we utilize [Code-Server](https://coder.com/docs/code-server/latest) to bring our users VS Code. Code-Server is a modified version of VS Code that allows VS Code to be accessed via a browser. Due to some modifications, certain VS Code features may not be available in VS Code-Server or may function differently. One feature that can function differently is installing extensions. For more information on installing extensions, see the section [Installing VS Code-Server Extensions](#installing-vs-code-server-extensions) below. 
 
 ```{eval-rst}
 .. figure:: ./OnDemand/vs_code_server_gui.png
