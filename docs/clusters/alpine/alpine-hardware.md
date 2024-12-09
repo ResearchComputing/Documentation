@@ -111,9 +111,15 @@ All users, regardless of institution, should specify partitions as follows:
 
 #### Special-Purpose Partitions
 
-`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 3 hours (default 30 minutes) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
+To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These testing partitions allow users to gain access to resources more quickly than the other partitions. This access allows users the ability to test or compile code on CPU and GPU compute nodes. To ensure equal access to these resources, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
+
+```{important}
+All compile and testing partitions are not meant to run non-testing workflows. Please utilize the appropriate partitions when running code. 
+```
 
 ##### `atesting` usage examples:
+
+`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 3 hours (default 30 minutes) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
 
 (tabset-ref-atesting-use)=
 `````{tab-set}
@@ -153,9 +159,9 @@ sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
 ````
 `````
 
-`atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour (default one hour).
-
 ##### GPU `atesting` usage examples:
+
+`atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour (default one hour).
 
 (tabset-ref-gpu-atesting-use)=
 `````{tab-set}
@@ -185,9 +191,9 @@ sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
 
 `````
 
-`acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
-
 ##### `acompile` usage examples:
+
+`acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
 (tabset-ref-acompile-use)=
 `````{tab-set}
