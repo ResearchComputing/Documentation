@@ -161,7 +161,12 @@ sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
 
 ##### GPU `atesting` usage examples:
 
-`atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour (default one hour).
+`atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. For the `atesting_mi100` partition, users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour. Due to limitations with MIG (see below), we limit users to 1 GPU (with 20 GB of VRAM) and at most 10 CPU cores on the `atesting_a100` partition.
+
+```{important}
+
+The `atesting_a100` partition utilizes NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature. MIG is fantastic because it allows us to slice our GPUs into multiple instances, thus providing more usable GPUs on our system. Although MIG has tremendous advantages on our `atesting_a100` partition, there are certain limitations to MIG. One important limitation is that MIG does not allow for multiple MIG slices to communicate with each other. This is the reason we limit users to just 1 GPU on the `atesting_a100` partition. For more information on limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#application-considerations) documentation. 
+```
 
 (tabset-ref-gpu-atesting-use)=
 `````{tab-set}
@@ -170,10 +175,10 @@ sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
 ````{tab-item} Example 1
 :sync: gpu-atesting-use-ex1
 
-**Request 2 A100 GPUs with 40 CPU cores for 30 minutes.**
+**Request 1 A100 MIG slice with 10 CPU cores for 30 minutes.**
 
 ```bash
-sinteractive --partition=atesting_a100 --gres=gpu:2 --ntasks=40 --time=30:00
+sinteractive --partition=atesting_a100 --gres=gpu --ntasks=10 --time=30:00
 ```
 
 ````
