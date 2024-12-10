@@ -111,7 +111,7 @@ All users, regardless of institution, should specify partitions as follows:
 
 #### Special-Purpose Partitions
 
-To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These testing partitions enable users to more quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these testing partitions, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
+To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These partitions enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these special-purpose partitions, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
 
 ```{important}
 Compiling and testing partitions are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate partitions when running code. 
