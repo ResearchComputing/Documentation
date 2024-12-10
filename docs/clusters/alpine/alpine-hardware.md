@@ -111,10 +111,10 @@ All users, regardless of institution, should specify partitions as follows:
 
 #### Special-Purpose Partitions
 
-To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These testing partitions allow users to gain access to resources more quickly than the other partitions. This access allows users the ability to test or compile code on CPU and GPU compute nodes. To ensure equal access to these resources, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
+To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These testing partitions enable users to more quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these testing partitions, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
 
 ```{important}
-All compile and testing partitions are not meant to run non-testing workflows. Please utilize the appropriate partitions when running code. 
+Compiling and testing partitions are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate partitions when running code. 
 ```
 
 ##### `atesting` usage examples:
@@ -165,7 +165,7 @@ sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
 
 ```{important}
 
-The `atesting_a100` partition utilizes NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature. MIG is fantastic because it allows us to slice our GPUs into multiple instances, thus providing more usable GPUs on our system. Although MIG has tremendous advantages on our `atesting_a100` partition, there are certain limitations to MIG. One important limitation is that MIG does not allow for multiple MIG slices to communicate with each other. This is the reason we limit users to just 1 GPU on the `atesting_a100` partition. For more information on limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#application-considerations) documentation. 
+The `atesting_a100` partition utilizes NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature which can "slice" GPUs into multiple instances. The MIG "slices" allows more users to share access of the GPUs on our system. But the increase in GPU access provided by MIG does come with certain limitations. One important limitation is that MIG does not allow for multiple MIG slices to communicate with each other. This is the reason we limit users to just 1 GPU on the `atesting_a100` partition. For more information on limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#application-considerations) documentation. 
 ```
 
 (tabset-ref-gpu-atesting-use)=
