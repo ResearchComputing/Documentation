@@ -112,9 +112,12 @@ echo "== End of Job =="
 
 ## Examples
 
-`````{tabs}
+(tabset-ref-batch-scripting)=
+`````{tab-set}
+:sync-group: tabset-batch-scripting
 
-````{tab} Example 1 
+````{tab-item} Example 1 
+:sync: batch-scripting-ex1
 
 5 minutes, 1 node, 1 core C++ Job:
 
@@ -135,7 +138,8 @@ module load gcc
 ```
 
 ````
-````{tab} Example 2
+````{tab-item} Example 2
+:sync: batch-scripting-ex2
 
 7 minutes, 1 node, 4 cores C++ OpenMP Job:
 
@@ -158,7 +162,9 @@ export OMP_NUM_THREADS=4
 ```
 
 ````
-````{tab} Example 3
+
+````{tab-item} Example 3
+:sync: batch-scripting-ex3
 
 10 minutes, 2 nodes, 16 cores C++ MPI Job:
 

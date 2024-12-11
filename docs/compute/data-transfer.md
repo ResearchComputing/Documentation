@@ -33,7 +33,7 @@ and by logging in using your CU IdentiKey and password.
 **For non-CU Boulder users:** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
 ``` 
 
-![](https://raw.githubusercontent.com/ResearchComputing/Research-Computing-User-Tutorials/master/File-Transfers/globus-image-1.png)
+![](./globus_images/globus-image-1.png)
 
 Research Computing storage resources are available via multiple Globus
 "endpoints." You can connect to an RC endpoint using the "collections"
@@ -50,7 +50,7 @@ Using the web app, connect your local workstation endpoint with the
 Research Computing endpoint and transfer files easily using the Globus
 GUI.
 
-![](https://raw.githubusercontent.com/ResearchComputing/Documentation/4597b5079815b791944251a1645ae91180e22d59/File-Transfers/globus-image-2new.PNG)
+![](./globus_images/globus-image-2.png)
 
 
 ## Guest Collections (Globus Shared Endpoints)

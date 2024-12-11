@@ -11,28 +11,45 @@ Please note that this page *does not* cover compiling or optimization of MPI app
 
 Several families of compilers are available to users: Intel, GCC, and AOCC _(Alpine only)_.  Intel compilers have Intel MPI available for messsage passing, and GCC and AOCC compilers have OpenMPI available for message passing. To load a compiler/MPI combo run one the following commands from a job script or compile node (note that you should subsitute the version you need for `<version>` in the examples below; available compiler versions can be seen by typing `module avail`):
 
-````{eval-rst}
-.. tabs::
 
-   .. code-tab:: bash Intel
+(tabset-ref-mpi-best-compiler)=
+`````{tab-set}
+:sync-group: tabset-mpi-best-compiler
 
-        module load intel/<version> impi
+````{tab-item} Intel
+:sync: mpi-best-compiler-intel
 
-   .. code-tab:: bash GCC
-
-        module load gcc/<version> openmpi
-
-        # Uncomment this additional line when adding this command to a JobScript!
-        # SLURM_EXPORT_ENV=ALL
-
-   .. code-tab:: bash AOCC
-
-        module load aocc/<version> openmpi
-
-        # Uncomment this additional line when adding this command to a JobScript!
-        # SLURM_EXPORT_ENV=ALL
+```bash
+module load intel/<version> impi
+```
 
 ````
+
+````{tab-item} GCC
+:sync: mpi-best-compiler-gcc
+
+```bash
+module load gcc/<version> openmpi
+
+# Uncomment this additional line when adding this command to a JobScript!
+# SLURM_EXPORT_ENV=ALL
+```
+
+````
+
+````{tab-item} AOCC
+:sync: mpi-best-compiler-aocc
+
+```bash
+module load aocc/<version> openmpi
+
+# Uncomment this additional line when adding this command to a JobScript!
+# SLURM_EXPORT_ENV=ALL
+```
+
+````
+
+`````
 
 ```{important}
 It is important to note that use of OpenMPI should be paired with the `SLURM_EXPORT_ENV=ALL` environment variable to ensure the job can function when scheduled from a login node!
@@ -45,25 +62,44 @@ On Blanca, in most situations you will want to try to compile and run your appli
 ## Commands to Run MPI Applications
 Regardless of compiler or MPI distribution, there are 3 “wrapper” commands that will run MPI applications: `mpirun`, `mpiexec`, and `srun`. These “wrapper” commands should be used after loading in your desired compiler and MPI distribution and simply prepend whatever application you wish to run. Each command offers their own pros and cons alongside nuance as to how they function.
 
-````{eval-rst}
-.. tabs::
 
-   .. code-tab:: bash `mpirun`
-      :caption: `mpirun` is probably the most direct method to run MPI applications with the command being tied to the distribution. This means distribution dependent flags can be passed directly through the command.   
+(tabset-ref-mpi-best-prac-run)=
+`````{tab-set}
+:sync-group: tabset-mpi-best-prac-run
 
-        mpirun -np <core-count> ./<your-application>
+````{tab-item} mpirun
+:sync: mpi-best-prac-run-mpirun
 
-   .. code-tab:: bash `mpiexec`
-      :caption: `mpiexec` is a standardized MPI command execution command that allows for more general MPI flags to be passed. This means that commands are universal accross all distributions.
+`mpirun` is probably the most direct method to run MPI applications with the command being tied to the distribution. This means distribution dependent flags can be passed directly through the command.   
 
-        mpiexec -np <core-count> ./<your-application>
-
-   .. code-tab:: bash `srun`
-      :caption: The final command `srun` is probably the most abstracted away from a specific implementation. This command lets Slurm figure out specific MPI features that are available in your environment and handles running the process as a job. This command is usually a little less efficient and may have some issues with reliability. 
-
-        srun -n <core-count> ./<your-application>
+```bash
+mpirun -np <core-count> ./<your-application>
+```
 
 ````
+
+````{tab-item} mpiexec
+:sync: mpi-best-prac-run-mpiexec
+
+`mpiexec` is a standardized MPI command execution command that allows for more general MPI flags to be passed. This means that commands are universal across all distributions.
+
+```bash
+mpiexec -np <core-count> ./<your-application>
+```
+
+````
+
+````{tab-item} srun
+:sync: mpi-best-prac-run-srun
+
+The final command `srun` is probably the most abstracted away from a specific implementation. This command lets Slurm figure out specific MPI features that are available in your environment and handles running the process as a job. This command is usually a little less efficient and may have some issues with reliability. 
+
+```bash
+srun -n <core-count> ./<your-application>
+```
+
+````
+`````
 
 ```{note}
 RC usually recommends `mpirun` and `mpiexec` for simplicity and reliability when running MPI applications. `srun` should be used sparingly to avoid issues with execution.
@@ -104,23 +140,41 @@ Blanca is often a bit more complicated due to the variety of nodes available. In
 ### General Blanca Nodes
 General Blanca nodes are not intended to run multi-node processes but this can still be achieved through the manipulation of some network fabric settings. In order to achieve cross node parallelism we must force MPI to utilize ethernet instead of our normal high speed network fabric. We can enforce this with various `mpirun` flags for each respective compiler.
 
-````{eval-rst}
-.. tabs::
 
-   .. code-tab:: bash Intel Single-Node Jobs
+(tabset-ref-mpi-best-prac-blanca)=
+`````{tab-set}
+:sync-group: tabset-mpi-best-prac-blanca
 
-        mpirun -genv I_MPI_FABRICS=shm
+````{tab-item} Intel Single-Node Jobs
+:sync: mpi-best-prac-blanca-intel-sing
 
-   .. code-tab:: bash Intel Multi-Node Jobs
-     :caption: Constrain Jobs to EDR IB (InfiniBand)
+```bash
+mpirun -genv I_MPI_FABRICS=shm
+```
+````
 
-        mpirun -genv I_MPI_FABRICS=edr
+````{tab-item} Intel Multi-Node Jobs
+:sync: mpi-best-prac-blanca-intel-mult
 
-   .. code-tab:: bash Open MPI
+Constrain Jobs to EDR IB (InfiniBand)
 
-        mpirun --mca btl tcp <other arguments>
+```bash
+mpirun -genv I_MPI_FABRICS=edr
+```
 
 ````
+
+````{tab-item} Open MPI
+:sync: mpi-best-prac-blanca-openmpi
+
+```bash
+mpirun --mca btl tcp <other arguments>
+```
+
+````
+
+
+`````
 
 ```{note}
 This does not ensure high speed communications in message passing, but it will allow for basic parallelization across nodes.

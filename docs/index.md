@@ -1,116 +1,33 @@
-# Research Computing User Guide
+# CU Research Computing User Guide
 
-Documentation covering the use of Research Computing resources.
+Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of services encompassing High Performance Computing (HPC), cloud computing assistance, and storage solutions. Many of these services are available to users associated with CU Boulder, Anschutz Medical Campus (AMC), Colorado State University (CSU), and institutions that are members of the Rocky Mountain Advanced Computing Consortium (RMACC). 
 
-Here are some quick links to documentation to get you started.
-
-- [Logging In](access/logging-in.md)
-- [Research Computing Filesystems](compute/filesystems.md)
-- [Compiling Software](compute/compiling.md)
-- [Batch Jobs](running-jobs/batch-jobs.md)
-- [The Module System](compute/modules.md)
-- [Frequently Asked Questions (FAQ)](faq.md)
-
-Can't find what you need? We appreciate feedback on our documentation via Issues on our [GitHub page](https://github.com/ResearchComputing/Documentation/issues). If you would like to provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
-
-More information is available at https://www.colorado.edu/rc.
-
-If you have any questions, please contact <rc-help@colorado.edu>.
-
-## Courses using RC Resources
-
-Instructors who wish to lead a class using CURC resources must complete the [course intake form](https://forms.office.com/r/3Bx0Dp0635) at least 3 weeks prior to the beginning of the semester in which the course will be taught. Completing the intake form will ensure that CU Research Computing can determine whether adequate resources and support are available to meet your needs, and that resources are allocated appropriately.  Upon completion, a case will be automatically generated in CURC's case management system. A CURC team member will subsequently follow up with you in the case via email, to discuss details and begin provisioning resources as needed. 
-
-Note that CU Research Computing conducts planned maintenance the first Wednesday of each month, which may impact resource availability between 7a-5p. Instructors should expect that resources will not be available during the first Wednesday of each month. The CU Research Computing help desk is staffed from 8:00a-5:00p M-F; support outside of these times should not be expected. 
-
-The following resources are available for course support:
-
-* Alpine
-   * Batch or Interactive Compute on Alpine
-   * JupterHub in Open OnDemand (Alpine)
-   * RStudio in Open OnDemand (Alpine)
-   * MatLab in Open OnDemand (Alpine)
-   * Remote Desktop in Open OnDemand
-   * Shared storage space for students (up to 1 TB)
-   * Standing reservation for Alpine resources during class meeting times
-   * Compute allocations if student needs exceed their `ucb-general` account
-   * Assistance building software or conda environments to support the course
-
-* Cloud
-   * Custom JupyterHub hosted in the cloud (costs may be incurred)
-   * Custom RStudio hosted in the cloud (costs may be incurred)
-
-* Lectures/training
-  * CURC staff can lecture on specified topics during the class meeting time (once per course per semester). 
-
-Students are welcome to use RC resources on their own for class projects and can request access as a regular UCB affiliate via the link off the RC homepage at: https://www.colorado.edu/rc. Students are not required to complete the course intake form noted above. To request help, contact rc-help@colorado.edu and please indicate that the work is for a class project and any deadlines.  
+```{tip}
+- Documentation can be overwhelming. If you would like guidance on navigating CURC documentation, please see our [Navigating CURC Documentation](./getting_started/navigating_docs.md) page.
+- Can't find what you need or want to contribute to our documentation? Please see our [Contributing to CURC Documentation](./additional-resources/contrib_curc_docs.md) page.   
+- To provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
+- For more information on the CU Research Computing group, please see <https://www.colorado.edu/rc>.
+- If you have any questions on documentation or CURC services, please feel free to contact our user support team at <rc-help@colorado.edu>.
+```
 
 ## Meet the RC User Support Team!
 
-![The RC User Support team](_static/MeetTheUserSupportTeam.png)
-
-## Acknowledging RC
-
-Use of University of Colorado Research Computing resources, including (but not limited to) the Janus, Summit, and Alpine supercomputers, the Blanca Condo Cluster, and the PetaLibrary data storage service must be acknowledged in any and all publications.
-
-### Acknowledging Alpine
-
-“This work utilized the Alpine high performance computing resource at the University of Colorado Boulder. Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).”
-
-- DOI: https://doi.org/10.25811/k3w6-pk81 
-- Citation: University of Colorado Boulder Research Computing. (2023). Alpine. University of Colorado Boulder. https://doi.org/10.25811/k3w6-pk81
-
-### Acknowledging Cumulus 
-
-"This work utilized the CUmulus on-premise cloud service at the University of Colorado Boulder. CUmulus is jointly funded by the National Science Foundation (award OAC-1925766) and the University of Colorado Boulder."
-
-### Acknowledging Summit 
-
-"This work utilized the Summit supercomputer, which is supported by the National Science Foundation (awards ACI-1532235 and ACI-1532236), the University of Colorado Boulder, and Colorado State University. The Summit supercomputer is a joint effort of the University of Colorado Boulder and Colorado State University."
-
-- DOI: https://doi.org/10.25811/8np0-je59
-- Citation: University of Colorado Boulder Research Computing. (2021). RMACC Summit Supercomputer. University of Colorado Boulder. https://doi.org/10.25811/8np0-je59
-
-### Acknowledging Blanca
-
-"This work utilized the Blanca condo computing resource at the University of Colorado Boulder. Blanca is jointly funded by computing users and the University of Colorado Boulder."
-
-- DOI: https://doi.org/10.25811/v32c-gy42
-- Citation: University of Colorado Boulder Research Computing. (2021). Blanca Condo Cluster. University of Colorado Boulder. https://doi.org/10.25811/v32c-gy42
-
-### Acknowledging PetaLibrary 
-
-"Data storage supported by the University of Colorado Boulder 'PetaLibrary'"
-
-- DOI: https://doi.org/10.25811/81nc-wv41
-- Citation: University of Colorado Boulder Research Computing. (2021). PetaLibrary. University of Colorado Boulder. https://doi.org/10.25811/81nc-wv41
+![The RC User Support team](./landing_page_images/MeetTheUserSupportTeam.png)
 
 ----
 
-```{toctree}
-:maxdepth: 1
-
-faq
-
-```
+::::{dropdown} Click to show the full index for all documentation
+:icon: list-unordered
 
 ```{toctree}
 :maxdepth: 1
-:caption: Trainings
+:caption: Getting Started
 
-trainings/current-sem-trainings
-
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Accessing RC Resources
-
-access/logging-in
-access/duo-2-factor-authentication
-access/rmacc
-access/amc-access
-
+getting_started/navigating_docs
+getting_started/logging-in
+getting_started/faq
+getting_started/current-sem-trainings
+getting_started/acknowledge_curc_resources
 ```
 
 ```{toctree}
@@ -148,12 +65,12 @@ open_ondemand/index
 :maxdepth: 1
 :caption: Running Jobs
 
+running-jobs/job-resources
+running-jobs/slurm-commands
+running-jobs/squeue-status-codes
 running-jobs/running-apps-with-jobs
 running-jobs/batch-jobs
 running-jobs/interactive-jobs
-running-jobs/slurm-commands
-running-jobs/job-resources
-running-jobs/squeue-status-codes
 running-jobs/roce-enabled
 
 ```
@@ -187,7 +104,7 @@ software/matlab
 software/python
 software/GNUParallel
 software/vasp
-software/Containerization
+software/containerization
 software/alphafold
 software/spack
 software/sratoolkit
@@ -213,13 +130,17 @@ programming/OpenMP-Fortran
 :caption: Additional resources
 
 additional-resources/policies
+additional-resources/courses_using_curc_resources
 additional-resources/feedback
+additional-resources/contrib_curc_docs
 additional-resources/CURC-cheatsheet
+additional-resources/amc_ssh_auth
 additional-resources/registrycilogon-instructions
-additional-resources/utah-videos
 additional-resources/blanca-MOU
 additional-resources/facilities_equip_other
 additional-resources/biokem-facility
 additional-resources/csu-xsede-usernames
 
 ```
+
+::::

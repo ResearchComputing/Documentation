@@ -93,47 +93,54 @@ bgpu-papp1                    blanca-papp         gpu:v100:1
 
 **Examples of configurations one could request:**
 
-`````{tabs}
+(tabset-ref-blanca-conf)=
+`````{tab-set}
+:sync-group: tabset-blanca-conf
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: blanca-conf-ex1
 
-      **Request a single GPU of any type.**
+**Request a single GPU of any type.**
 
-      ```bash
-      #SBATCH --gres=gpu
-      ```
+```bash
+#SBATCH --gres=gpu
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+````{tab-item} Example 2
+:sync: blanca-conf-ex2
 
-      **Request multiple GPUs of any type.**
+**Request multiple GPUs of any type.**
 
-      ```bash
-      #SBATCH --gres=gpu:3
-      ```
+```bash
+#SBATCH --gres=gpu:3
+```
 
-   ````
+````
 
-   ```` {tab} Example 3
+````{tab-item} Example 3
+:sync: blanca-conf-ex3
 
-      **Request a single GPU of type NVIDIA V100.**
+**Request a single GPU of type NVIDIA V100.**
 
-      ```bash
-      #SBATCH --gres=gpu:v100:1
-      ```
+```bash
+#SBATCH --gres=gpu:v100:1
+```
 
-   ````
+````
 
-   ```` {tab} Example 4
+````{tab-item} Example 4
+:sync: blanca-conf-ex4
 
-      **Request two GPUs of type NVIDIA A100.**
 
-      ```bash
-      #SBATCH --gres=gpu:a100:2
-      ```
+**Request two GPUs of type NVIDIA A100.**
 
-   ````
+```bash
+#SBATCH --gres=gpu:a100:2
+```
+
+````
 
 `````
 
@@ -146,103 +153,112 @@ bgpu-papp1                    blanca-papp         gpu:v100:1
 
 Here are examples of Slurm directives that can be used in your batch scripts in order to meet certain job requirements.  Note that the "constraint" directive constrains a job to run only on nodes with the corresponding feature.
 
-`````{tabs}
+(tabset-ref-blanca-slurm-dir)=
+`````{tab-set}
+:sync-group: tabset-blanca-slurm-dir
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: blanca-slurm-dir-ex1
 
-      **To run a 32-core job for 36 hours on a single blanca-ics node:**
+**To run a 32-core job for 36 hours on a single blanca-ics node:**
 
-      ```bash
-      #SBATCH --qos=blanca-ics
-      #SBATCH --nodes=1
-      #SBATCH --ntasks-per-node=32
-      #SBATCH --time=36:00:00
-      ```
+```bash
+#SBATCH --qos=blanca-ics
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+#SBATCH --time=36:00:00
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+````{tab-item} Example 2
+:sync: blanca-slurm-dir-ex2
 
-      **To run a 56-core job across two blanca-sha nodes for seven days:**
+**To run a 56-core job across two blanca-sha nodes for seven days:**
 
-      ```bash
-      #SBATCH --qos=blanca-sha
-      #SBATCH --nodes=2
-      #SBATCH --ntasks-per-node=28
-      #SBATCH --time=7-00:00:00
-      #SBATCH --export=NONE
-      ```
+```bash
+#SBATCH --qos=blanca-sha
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=28
+#SBATCH --time=7-00:00:00
+#SBATCH --export=NONE
+```
 
-   ````
+````
 
-   ```` {tab} Example 3
+````{tab-item} Example 3
+:sync: blanca-slurm-dir-ex3
 
-      **To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three GPUs:**
+**To run a 16-core job for 36 hours on a single blanca-curc-gpu node, using all three GPUs:**
 
-      ```bash
-      #SBATCH --qos=blanca-curc-gpu
-      #SBATCH --nodes=1
-      #SBATCH --ntasks-per-node=16
-      #SBATCH --time=36:00:00
-      #SBATCH --gres=gpu:3
-      ```
+```bash
+#SBATCH --qos=blanca-curc-gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --time=36:00:00
+#SBATCH --gres=gpu:3
+```
 
-   ````
+````
 
-   ```` {tab} Example 4
+````{tab-item} Example 4
+:sync: blanca-slurm-dir-ex4
 
-      **To run an 8-core job in the low-priority QoS on any node that has Broadwell processors and uses the RHEL 8 operating system:**
+**To run an 8-core job in the low-priority QoS on any node that has Broadwell processors and uses the RHEL 8 operating system:**
 
-      ```bash
-      #SBATCH --qos=preemptable
-      #SBATCH --nodes=1
-      #SBATCH --ntasks-per-node=8
-      #SBATCH --time=4:00:00
-      #SBATCH --export=NONE
-      #SBATCH --constraint="broadwell&rh8"
-      ```
+```bash
+#SBATCH --qos=preemptable
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --time=4:00:00
+#SBATCH --export=NONE
+#SBATCH --constraint="broadwell&rh8"
+```
 
-   ````
+````
 
-   ````{tab} Example 5
+````{tab-item} Example 5
+:sync: blanca-slurm-dir-ex5
 
-      **To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:**
+**To run an 8-core job in the low-priority QoS on any node that has either the AVX or AVX2 instruction set:**
 
-      ```bash
-      #SBATCH --qos=preemptable
-      #SBATCH --nodes=1
-      #SBATCH --ntasks-per-node=8
-      #SBATCH --time=4:00:00
-      #SBATCH --export=NONE
-      #SBATCH --constraint="avx|avx2"
-      ```
+```bash
+#SBATCH --qos=preemptable
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --time=4:00:00
+#SBATCH --export=NONE
+#SBATCH --constraint="avx|avx2"
+```
 
-   ````
+````
 
-   ```` {tab} Example 6
+````{tab-item} Example 6
+:sync: blanca-slurm-dir-ex6
 
-      **To run an 8-core job in the low-priority QoS on any node that has at least 1 GPU:**
+**To run an 8-core job in the low-priority QoS on any node that has at least 1 GPU:**
 
-      ```bash
-      #SBATCH --qos=preemptable
-      #SBATCH --nodes=1
-      #SBATCH --ntasks-per-node=8
-      #SBATCH --time=4:00:00
-      #SBATCH --export=NONE
-      #SBATCH --gres=gpu
-      ```
+```bash
+#SBATCH --qos=preemptable
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --time=4:00:00
+#SBATCH --export=NONE
+#SBATCH --gres=gpu
+```
 
-   ````
+````
 
-   ```` {tab} Example 7
+````{tab-item} Example 7
+:sync: blanca-slurm-dir-ex7
 
-      **To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:**
+**To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:**
 
-      ```bash
-      sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
-      ```
+```bash
+sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
+```
 
-   ````
+````
 
 `````
 
@@ -254,7 +270,7 @@ The interactive job won't start until the resources that it needs are available,
 ## Important notes
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/rc_scratch`, which should offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
+2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/scratch/alpine`, which should offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics, like Blanca CCN, or any node on Blanca HPC can run MPI applications much more efficiently.
 
@@ -264,27 +280,31 @@ Each partner group has its own high-priority QoS (`blanca-<group identifier>`) f
 
 ### Usage
 
-`````{tabs}
+(tabset-ref-blanca-preemptable)=
+`````{tab-set}
+:sync-group: tabset-blanca-preemptable
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: blanca-preemptable-ex1
 
-      **To specify the preemptable QoS in a job script:**
+**To specify the preemptable QoS in a job script:**
 
-      ```bash
-      #SBATCH --QoS=preemptable
-      ```
+```bash
+#SBATCH --qos=preemptable
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+````{tab-item} Example 2
+:sync: blanca-preemptable-ex2
 
-      **To specify the preemptable QoS for an interactive job:**
+**To specify the preemptable QoS for an interactive job:**
 
-      ```bash
-      $ sinteractive --qos=preemptable <other_arguments>
-      ```
+```bash
+$ sinteractive --qos=preemptable <other_arguments>
+```
 
-   ````
+````
 
 `````
 
@@ -304,72 +324,77 @@ Requeuing: Users running jobs that do not require requeuing if preempted should 
 
 ### Example Job Scripts
 
-`````{tabs}
+(tabset-ref-blanca-job-scripts)=
+`````{tab-set}
+:sync-group: tabset-blanca-job-scripts
 
-   ````{tab} Example 1
+````{tab-item} Example 1
+:sync: blanca-job-scripts-ex1
 
-      **Run a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).**
+**Run a 6-hour preemptable python job on 32 cores without specifying a partition (job will run on any available compute partitions on Blanca, regardless of features, so long as they have at least 16 cores each).**
 
-      ```bash
-      #!/bin/bash
-      #SBATCH --time=06:00:00
-      #SBATCH --qos=preemptable
-      #SBATCH --job-name=test
-      #SBATCH --nodes=2
-      #SBATCH --ntasks=32
-      #SBATCH --output=test.%j.out
+```bash
+#!/bin/bash
+#SBATCH --time=06:00:00
+#SBATCH --qos=preemptable
+#SBATCH --job-name=test
+#SBATCH --nodes=2
+#SBATCH --ntasks=32
+#SBATCH --output=test.%j.out
 
-      module purge
-      module load python
+module purge
+module load python
 
-      python myscript.py
-      ```
+python myscript.py
+```
 
-   ````
+````
 
-   ```` {tab} Example 2
+````{tab-item} Example 2
+:sync: blanca-job-scripts-ex2
 
-      **Same as Example 1, but specify a specific partition (‘blanca-ccn’) (job will only run on blanca-ccn nodes).**
+**Same as Example 1, but specify a specific partition (‘blanca-ccn’) (job will only run on blanca-ccn nodes).**
 
-      ```bash
-      #!/bin/bash
-      #SBATCH --time=06:00:00
-      #SBATCH --qos=preemptable
-      #SBATCH --partition=blanca-ccn
-      #SBATCH --job-name=test
-      #SBATCH --nodes=2
-      #SBATCH --ntasks=32
-      #SBATCH --output=test.%j.out
+```bash
+#!/bin/bash
+#SBATCH --time=06:00:00
+#SBATCH --qos=preemptable
+#SBATCH --partition=blanca-ccn
+#SBATCH --job-name=test
+#SBATCH --nodes=2
+#SBATCH --ntasks=32
+#SBATCH --output=test.%j.out
 
-      module purge
-      module load python
+module purge
+module load python
 
-      python myscript.py
-      ```
+python myscript.py
+```
 
-   ````
+````
 
-   ```` {tab} Example 3
-   
-   **Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RHEL 8 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node)**
+````{tab-item} Example 3
+:sync: blanca-job-scripts-ex3
 
-   ```bash
-   #!/bin/bash
-   #SBATCH --time=06:00:00
-   #SBATCH --qos=preemptable
-   #SBATCH --constraint="avx2&rh8"
-   #SBATCH --job-name=test
-   #SBATCH --nodes=2
-   #SBATCH --ntasks=32
-   #SBATCH --output=test.%j.out
+**Same as Example 1, but specify desired node features, in this case the avx2 instruction set and RHEL 8 OS (job will run on any node meeting these feature requirements, and which has at least 16 cores per node)**
 
-   module purge
-   module load python
+```bash
+#!/bin/bash
+#SBATCH --time=06:00:00
+#SBATCH --qos=preemptable
+#SBATCH --constraint="avx2&rh8"
+#SBATCH --job-name=test
+#SBATCH --nodes=2
+#SBATCH --ntasks=32
+#SBATCH --output=test.%j.out
 
-   python myscript.py
-   ```
+module purge
+module load python
 
-   ````
+python myscript.py
+```
+
+````
 
 `````
 

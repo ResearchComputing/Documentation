@@ -12,7 +12,7 @@ of 24,736 cores. Alpine can be securely accessed anywhere, anytime using Open On
    $ module load slurm/alpine
    ```
 
-2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](./alpine-hardware.md#requesting-hardware-resources) section and the [examples](examples.md) section to learn how to direct your jobs to the appropriate Alpine compute nodes.
+2. Once the Alpine Slurm job scheduler has been loaded you can submit and start jobs on the Alpine cluster. Consult the [requesting resources](./alpine-hardware.md#requesting-hardware-resources) section and the [examples](slurm_directive_ex.md) section to learn how to direct your jobs to the appropriate Alpine compute nodes.
 
 3. Software can be loaded into the Alpine compute environment via the LMOD [module system](../../compute/modules.md), which allows users choose software from our pre-installed software stack.
 

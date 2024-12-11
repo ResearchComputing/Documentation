@@ -63,33 +63,53 @@ int main(int argc, char** argv){
 Let’s compile our code and see what happens. We must first load the
 compiler module we want into our environment. We can do so as such:
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-openmp-c-module)=
+`````{tab-set}
+:sync-group: tabset-openmp-c
 
-   .. code-tab:: bash GCC
+````{tab-item} GCC
+:sync: openmp-c-openmpi
 
-        module load gcc
-
-   .. code-tab:: bash Intel C/C++ Compiler
-
-        module load intel
+```bash
+module load gcc
+```
 
 ````
+
+````{tab-item} Intel C/C++ Compiler
+:sync: openmp-c-intelmpi
+
+```bash
+module load intel
+```
+
+````
+`````
 
 From the command line, where your code is located, run the command:
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-openmp-c-compile)=
+`````{tab-set}
+:sync-group: tabset-openmp-c
 
-   .. code-tab:: bash GCC
+````{tab-item} GCC
+:sync: openmp-c-openmpi
 
-        g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
-
-   .. code-tab:: bash Intel C/C++ Compiler
-
-        icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+```bash
+g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
+```
 
 ````
+
+````{tab-item} Intel C/C++ Compiler
+:sync: openmp-c-intelmpi
+
+```bash
+icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+```
+
+````
+`````
 
 This will give us an executable we can submit as a job to our cluster.
 Simply submit the job to Slurm, running the
@@ -160,18 +180,28 @@ export OMP_NUM_THREADS
 
 Now let’s re-compile the code and run it to see what happens:
 
-````{eval-rst}
-.. tabs::
+(tabset-ref-openmp-c-recompile)=
+`````{tab-set}
+:sync-group: tabset-openmp-c
 
-   .. code-tab:: bash GCC
+````{tab-item} GCC
+:sync: openmp-c-openmpi
 
-        g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
-
-   .. code-tab:: bash Intel C/C++ Compiler
-
-        icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+```bash
+g++ parallel_hello_world.cpp -o parallel_hello_world.exe -fopenmp
+```
 
 ````
+
+````{tab-item} Intel C/C++ Compiler
+:sync: openmp-c-intelmpi
+
+```bash
+icc parallel_hello_world.cpp -o parallel_hello_world.exe -qopenmp
+```
+
+````
+`````
 
 Running our job script, we should end with an output file similar to this one:
 

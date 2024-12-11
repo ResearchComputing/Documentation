@@ -18,7 +18,7 @@ Mounting on Mac is a relatively simple procedure and can be accomplished in a fe
 First, navigate to Finder and click “Connect to Server” under the “Go” menu:
 
 
-![](../../../Petalibrary/Mounting/smbmac1.png)
+![](./mounting_images/smbmac1.png)
 
 
 In the `Server Address` field, provide the hostname to a RC's internal server appended wity your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
@@ -26,7 +26,7 @@ In the `Server Address` field, provide the hostname to a RC's internal server ap
 smb://<RC-provided-hostname>/<your-pl-allocation>
 ```
 
-![](../../../Petalibrary/Mounting/smbmac2.png)
+![](./mounting_images/smbmac2.png)
 
 
 You will be prompted for your RC Username and Password. Type in the required information and click `Connect`. Accept your Duo notification and you Petalibrary Allocation will be mounted. 
@@ -37,7 +37,7 @@ You will be prompted for your RC Username and Password. Type in the required inf
 
 Mounting on Windows is a little more involved then on a Mac or Linux counterpart. First ensure you are connected to the CU VPN. Navigate to `This PC` and click on `Computer` -> `Add a network location`.
 
-![](../../../Petalibrary/Mounting/smb1.PNG)
+![](./mounting_images/smb1.png)
 
 This will bring up a setup utility. Continue through the prompt, selecting `Choose a custom network location` when prompted. This will bring up a text field asking for an Internet or Network Address. Provide the hostname to a RC's internal server appended with your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
 ```
@@ -45,7 +45,7 @@ This will bring up a setup utility. Continue through the prompt, selecting `Choo
 ```
 And click `next`.
 
-![](../../../Petalibrary/Mounting/smb2.PNG)
+![](./mounting_images/smb2.png)
 
 Lastly you will be prompted to provide your credentials. Type your credentials as follows:
 
@@ -54,7 +54,7 @@ Username: AD\<your-rc-username>
 Password: <your-rc-password>
 ```
 
-![](../../../Petalibrary/Mounting/smb3.PNG)
+![](./mounting_images/smb3.png)
 
 
 ## `sshfs` mounting to Petalibrary
@@ -79,11 +79,11 @@ Next install the sshfs graphical user interface (GUI) frontend. Installation ins
 
 Once both applications are installed, run the application `sshfs-win manager`. A window will pop up showing you a list of all sshfs connections you have saved. 
 
-![](../../../Petalibrary/Mounting/sshfsmenu.PNG)
+![](./mounting_images/sshfsmenu.png)
 
 Click on `Add a connection`. This will bring up a menu outlining the parameters for your mount. Give the connection a name and set the `IP/Host` to `dtn.rc.colorado.edu`. Add your RC username for `User` field and click the dropdown menu on `Password` and select: *Password (ask on connect)*. Lastly set `PATH` to `/pl/active/<your-petalibrary-space>` and select a drive letter.
 
-![](../../../Petalibrary/Mounting/sshfs.PNG)
+![](./mounting_images/sshfs.png)
 
 Once this is done click the `connect` button. You will be prompted for a password. Type in your password and accept the Duo two-factor authentication to be mounted. You will now see your selected drive letter mounted to your Petalibrary allocation in `This PC`.
 
