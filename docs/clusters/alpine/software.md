@@ -65,7 +65,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | Intel cluster tools | 17.3 | Intel cluster tools.| 
 | Intel debugger | 17.3, 2021.5.0, 2024.2.1 |Intel debugging tools.|
 | [Intel Inspector](https://www.intel.com/content/www/us/en/developer/tools/oneapi/inspector.html#gs.nwibbc) | 2022.0.0 | Intel Inspector is a memory and thread checking and debugging tool to increase the reliability, security, and accuracy of C/C++ and Fortran applications. |
-| [Intel MPI (impi)](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.nwdbyx) | 2021.4.0, 2021.5.0, 2021.13 (D) |Intel MPI Library is a multifabric message-passing library that implements the open source MPICH specification.| 
+| [Intel MPI (impi)](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.nwdbyx) | 2021.4.0, 2021.5.0, 2021.13 | The Intel MPI Library is a multifabric message-passing library that implements the open source MPICH specification.| 
 | [Intel oneAPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html#gs.nwk0f3) | 2022.1.2, 2024.2.1 (D) | Intel compilers, libraries, and development tools.|
 | [Intel VTune](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html#gs.nwdnjz) | 2022.0.0, 2024.2 | Intel VTune Profiler optimizes application performance, system performance, and system configuration for HPC, cloud, IoT, media, storage, and more.|
 | [Jasper](https://jasper-software.github.io/jasper/) | 4.0.0, 4.2.4 | JasPer is a software toolkit for the handling of image data. |
@@ -95,7 +95,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [OpenJPEG](https://www.openjpeg.org/) | 2.2.0, 2.5.2 | OpenJPEG is an open-source JPEG 2000 codec written in the C language. | 
 | [Open MPI](https://www.open-mpi.org/) | 4.1.1, 4.1.4, 5.0.6 | The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. | 
 | [OpenSees](https://opensees.berkeley.edu) | 3.4 | OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes. |
-| [ORCA](https://www.orcasoftware.de/tutorials_orca/) | 5.0.3, 5.0.4 (D) | ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods. | 
+| [ORCA](https://www.orcasoftware.de/tutorials_orca/) | 5.0.3, 5.0.4 | ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods. | 
 | [PAPI](https://icl.utk.edu/papi/index.html)| 5.4.3, 5.5.1 (D) | The Performance Application Programming Interface (PAPI) offers a universal interface and methodology for gathering performance counter information from diverse hardware and software components. |
 | [ParaView](https://www.paraview.org/) | 5.0.1, 5.6.0, 5.9.0, 5.10.0 (D) | ParaView is an open-source multiple-platform application for interactive, scientific visualization. | 
 | [PDT (Program Database Toolkit)](https://www.cs.uoregon.edu/research/pdt/home.php) | 3.22, 3.25.1 (D) | PDT is a framework for analyzing source code written in several programming languages and for making rich program knowledge accessible to developers of static and dynamic analysis tools. | 
