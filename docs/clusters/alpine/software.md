@@ -20,7 +20,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [BBTools](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide) | 39.01 | BBTools is a suite of fast, multithreaded bioinformatics tools designed for analysis of DNA and RNA sequence data.|
 | [BCFtools](https://samtools.github.io/bcftools/) | 1.16 | BCFtools is a set of utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. All commands work transparently with both VCFs and BCFs, both uncompressed and BGZF-compressed.|
 | [bedtools](https://bedtools.readthedocs.io/en/latest/) | 2.29.1 | Collectively, the bedtools utilities are a Swiss Army knife of tools for a wide-range of genomics analysis tasks.|
-| [boost](https://www.boost.org/) | 1.86.0 | Boost provides free peer-reviewed portable C++ source libraries.| 
+| [boost](https://www.boost.org/) | 1.78.0, 1.86.0 | Boost provides free peer-reviewed portable C++ source libraries.| 
 | [Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml) | 2.5.0 | Bowtie2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences.| 
 | [BWA](https://bio-bwa.sourceforge.net/) | 0.7.17 | BWA is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome.| 
 | [CDO](https://code.mpimet.mpg.de/projects/cdo/) | 2.1.1, 2.4.4 | CDO is a collection of command line operators to manipulate and analyze climate and NWP model data.|
@@ -32,7 +32,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [CST Studio Suite](https://www.3ds.com/products-services/simulia/products/cst-studio-suite/) (L) | 2021 | CST Studio Suite is a high-performance 3D EM analysis software package for designing, analyzing and optimizing electromagnetic (EM) components and systems. | 
 | [Cube](https://www.scalasca.org/scalasca/software/cube-4.x/download.html) | 3.4.3, 4.3.4 (D) | Cube, which is used as performance report explorer for Scalasca and Score-P, is a generic tool for displaying a multi-dimensional performance space. | 
 | [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (G) | 11.2, 11.3, 11.4, 11.7, 11.8, 12.1.1 (D) | The NVIDIA CUDA Toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler, and a runtime library to deploy your application. | 
-| [cuDNN](https://developer.nvidia.com/cudnn) (G)| 8.1, 8.2 8.6 (D) | The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. | 
+| [cuDNN](https://developer.nvidia.com/cudnn) (G)| 8.1, 8.2, 8.6 (D) | The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. | 
 | [curc-quota](../../compute/filesystems.md#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
 | [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequences from your high-throughput sequencing reads.| 
 | [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the OS.|
@@ -45,7 +45,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [FFTW](https://www.fftw.org/) | 3.3.8, 3.3.9, 3.3.10 | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data.|
 | [GATK](https://gatk.broadinstitute.org/hc/en-us) | 4.3.0.0 | GATK4 aims to bring together well-established tools from the GATK and Picard codebases under a streamlined framework.|
 | [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](../../software/gaussian.md)|
-| [gcc](https://gcc.gnu.org/) |  10.3.0, 11.2.0 (D), 14.2.0 |The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).| 
+| [gcc](https://gcc.gnu.org/) |  10.3.0, 11.2.0 , 14.2.0 (D) |The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).| 
 | [GDAL](https://gdal.org/) | 3.4.2, 3.5.0, 3.10.0 | GDAL is a translator library for raster and vector geospatial data formats.| 
 | [GDB](https://www.sourceware.org/gdb/) | 8.1, 10.1 (D) | GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed.|
 | [GEOS](https://libgeos.org/) | 3.9.1, 3.10.2, 3.13.0 | GEOS is a C/C++ library for computational geometry with a focus on algorithms used in geographic information systems (GIS) software.|
@@ -65,8 +65,8 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | Intel cluster tools | 17.3 | Intel cluster tools.| 
 | Intel debugger | 17.3, 2021.5.0, 2024.2.1 |Intel debugging tools.|
 | [Intel Inspector](https://www.intel.com/content/www/us/en/developer/tools/oneapi/inspector.html#gs.nwibbc) | 2022.0.0 | Intel Inspector is a memory and thread checking and debugging tool to increase the reliability, security, and accuracy of C/C++ and Fortran applications. |
-| [Intel MPI (impi)](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.nwdbyx) | 2021.4.0, 2021.5.0, 2021.13 |Intel MPI Library is a multifabric message-passing library that implements the open source MPICH specification.| 
-| [Intel oneAPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html#gs.nwk0f3) | 2022.1.2, 2024.2.1 | Intel compilers, libraries, and development tools.|
+| [Intel MPI (impi)](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.nwdbyx) | 2021.4.0, 2021.5.0, 2021.13 (D) |Intel MPI Library is a multifabric message-passing library that implements the open source MPICH specification.| 
+| [Intel oneAPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html#gs.nwk0f3) | 2022.1.2, 2024.2.1 (D) | Intel compilers, libraries, and development tools.|
 | [Intel VTune](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html#gs.nwdnjz) | 2022.0.0, 2024.2 | Intel VTune Profiler optimizes application performance, system performance, and system configuration for HPC, cloud, IoT, media, storage, and more.|
 | [Jasper](https://jasper-software.github.io/jasper/) | 4.0.0, 4.2.4 | JasPer is a software toolkit for the handling of image data. |
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
