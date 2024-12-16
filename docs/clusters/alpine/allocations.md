@@ -41,6 +41,17 @@ multiple factors, including (but not limited to) FairShare score, job age,
 resources requested, job size, and QOS. 
 
 ### Allocations
+
+
+## Alpine Allocation Tiers for CU Boulder and RMACC Users
+
+(tabset-ref-alpine-alloc-tiers)=
+`````{tab-set}
+:sync-group: tabset-alpine-alloc-tiers
+
+````{tab-item} Trailhead
+:sync: alpine-trailhead-alloc
+
 When you receive a Research Computing account you are automatically 
 assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
 of `ucb-general`. RMACC users are similarly granted a fixed share of `rmacc-general`. 
@@ -50,7 +61,20 @@ priority score to decrease. The end result is that your jobs will sit
 lower (i.e., longer) in the queue relative to other jobs. One way to 
 combat this is to apply for an allocation.
 
-## Alpine Allocation Tiers
+````
+
+````{tab-item} Ascent
+:sync: alpine-ascent-alloc
+
+
+````
+
+````{tab-item} Peak
+:sync: alpine-peak-alloc
+
+````
+
+`````
 
 In addition to the Trailhead auto-allocation (`ucb-general` or `rmacc-general`) that all users are awarded automatically, CURC offers two 
 additional tiers to accommodate larger computing needs on Alpine. The **Ascent Allocation** tier provides users 
