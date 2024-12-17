@@ -106,7 +106,16 @@ process, and renewal requirements for each tier.
 Individual and group size limits for new and renewed allocations will be 
 reviewed on an annual basis.
 
-#### Get an Ascent Allocation 
+#### Get an Allocation
+
+(tabset-ref-alpine-alloc-procs)=
+`````{tab-set}
+:sync-group: tabset-alpine-alloc-procs
+
+````{tab-item} CU Boulder
+:sync: alpine-cub-inst
+
+**Ascent:**
 
 Step 1: Fill out the [Ascent Allocation 
 Request](https://forms.office.com/r/eAA15b8Gsg) form. You need to be 
@@ -114,7 +123,7 @@ logged in to Office365 with your CU Boulder account.
 
 Step 2: Look out for an email message from the CURC ticketing system (<rc-help@colorado.edu>) indicating when your allocation is ready to use.
 
-#### Get a Peak Allocation 
+**Peak:**
 
 Step 1: Download and complete the [Peak Allocation Request Supplementary 
 Information](https://o365coloradoedu.sharepoint.com/:x:/s/RC-Team/EajdPBAejjpDru7kvEEA29QBI8CoO8lj7-kUjotBIIusEg?e=geLBBP) 
@@ -131,13 +140,35 @@ Step 3: Look out for email messages from the CURC ticketing system (<rc-help@col
 is received, during the initial 
 review stages, and when the allocation is ready to use.
 
-#### Get an RMACC Ascent Allocation
+
+````
+
+````{tab-item} RMACC
+:sync: alpine-rmacc-inst
+
+**Ascent:**
 
 Step 1: Fill out the [RMACC Ascent Allocation 
 Request](https://forms.office.com/Pages/ResponsePage.aspx?id=G4vtPQ0HKUaC5MCwGfRgVxVuc407_5dMhLp4SuO1aoJUODlNNThXTTRUNklTQk02TlFKV1gxUUZTWCQlQCN0PWcu) form. You need to be 
 logged in to Office 365 with your CU Boulder account.
 
 Step 2: Look out for an email message from the CURC ticketing system (<rc-help@colorado.edu>) indicating when your allocation is ready to use.
+
+**Peak:**
+
+At this time, RMACC users are not eligible for Peak allocations. However, if you are an RMACC user with additional resource needs beyond the RMACC Ascent allocation, please contact us at (<rc-help@colorado.edu>).
+
+````
+
+````{tab-item} CSU & AMC
+:sync: alpine-other-inst
+
+**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
+
+````
+
+`````
+
 
 #### Renewing Your Allocation
 
