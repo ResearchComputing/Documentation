@@ -28,11 +28,13 @@ A Level Fairshare (`LevelFS`) is a value calculated by [Slurm's Fairshare
 Algorithm](https://slurm.schedmd.com/fair_tree.html). A user's 
 assigned shares (determined by their allocation) and usage (based on their 
 job history) contribute to their `LevelFS` value. Information on how to 
-check your `LevelFS` score can be found 
-[here](../../getting_started/faq.md#how-can-i-see-my-current-fairshare-priority).
+check your `LevelFS` score can be found on the 
+["How can I see my current FairShare priority?"](../../getting_started/faq.md#how-can-i-see-my-current-fairshare-priority) section of our FAQ page.
 
-Note that if there are no other pending jobs and enough resources are 
-available then your job will run regardless of your previous usage.
+```{note}
+If there are no other pending jobs, and enough resources are 
+available, then your job will run regardless of your previous usage.
+```
 
 ### Priority Score
 When you request resources on Alpine, your job's priority determines its 
