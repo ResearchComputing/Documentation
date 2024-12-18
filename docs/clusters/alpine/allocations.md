@@ -44,80 +44,139 @@ resources requested, job size, and QOS.
 
 ### Allocations
 
+```{warning}
+**Allocations for CSU and AMC are managed by those institutions.** Please see the **CSU & AMC** tab in each section below for more information.
+```
 
-#### Alpine Allocation Tiers for CU Boulder and RMACC Users
+
+#### Alpine Allocation Tiers
 
 (tabset-ref-alpine-alloc-tiers)=
 `````{tab-set}
-:sync-group: tabset-alpine-alloc-tiers
+:sync-group: tabset-alpine-allocs
 
-````{tab-item} Trailhead
-:sync: alpine-trailhead-alloc
+````{tab-item} CU Boulder
+:sync: alpine-cub-inst
+
+**Trailhead:**
 
 When you receive a Research Computing account, you are automatically 
 assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
-of `ucb-general`. RMACC users are similarly granted a fixed share of `rmacc-general`.
+of `ucb-general`.
 
 The Trailhead is a great allocation for smaller jobs or 
-testing and benchmarking your code. However, if you consume more than your allocated share of `ucb-general` (or `rmacc-general`),  your `LevelFS` will decrease, causing your 
+testing and benchmarking your code. However, if you consume more than your allocated share of `ucb-general`,  your `LevelFS` will decrease, causing your 
 priority score to decrease. The end result is that your jobs will sit 
 lower (i.e., longer) in the queue relative to other jobs.
 
-One way to combat this is to apply for an allocation. In addition to the Trailhead auto-allocation (`ucb-general` or `rmacc-general`) that all users are awarded automatically, CURC offers two 
-additional tiers to accommodate larger computing needs on Alpine, called Ascent and Peak.
+One way to combat this is to apply for an allocation. In addition to the Trailhead auto-allocation (`ucb-general`) that all users are awarded automatically, CURC offers two 
+additional tiers to accommodate larger computing needs on Alpine, called **Ascent** and **Peak**.
 
-````
+**Ascent:**
 
-````{tab-item} Ascent
-:sync: alpine-ascent-alloc
+The **Ascent** allocation tier provides CU Boulder users 
+with 350,000 SUs over a 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
 
-The **Ascent Allocation** tier provides CU Boulder users 
-with 350,000 SUs over a 12 month period. RMACC users may apply for an **RMACC Ascent Allocation**, which provides users with 100,000 SUs over a 12 month period.
-
-````
-
-````{tab-item} Peak
-:sync: alpine-peak-alloc
+**Peak:**
 
 The **Peak Allocation** tier is 
 aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 
-12 month period. Users may apply for these tiers as described below.
+12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
+
+**Comparison of Allocation Tiers:**
+
+::::{dropdown} Show 
+:icon: note
+
+The following table summarizes the required information, size, approval 
+process, and renewal requirements for each tier.
+
+|                          | **Trailhead Auto-Allocation**                                                | **Ascent Allocation**                                                                                                                                                                                                                      | **Peak Allocation**                                                                                                                                                                                                                                                                                                              |
+|--------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Required information** | - None                                                                       | - Title and project description<br>- Funding information<br>- Field of study/research area<br>- PI and role<br>- IdentiKeys of collaborators<br>- Slurm partitions to be used<br>- Acknowledgement of CURC User Polices                    | - All information required by Ascent allocation<br>- Example jobs<br>- List of software the project utilizes and how they will install each application                                                                                                                                                                          |
+| **Size**                 | - Approximately 2,000 SUs per month                                          | - Equivalent to 0.25% of the system (currently 350K SUs) for one year<br>- Total SU limit equal to 1% of the system (currently 1.4M SUs) per research group/PI<br>    - Group members may divide this among as many allocations as desired | - Variable (based on user's request), but must not exceed the number of SUs equivalent to 5% of the system (currently 6M SUs) over a one-year period<br>- Members of research group may divide the maximum amount of SUs among as many or as few allocations as they desire                                                      |
+| **Approval process**     | - Automatically granted when users register for a Research Computing account | - Approved quickly and without review by the Allocations Committee<br>- User Support will include summary information about Ascent allocations from the previous month in the monthly Allocations Committee meeting                        | - Peak allocation proposals will be initially reviewed by a member of CURC User Support<br>    - Users may be asked to improve the memory efficiency and CPU efficiency of their jobs<br>- Once the team member is satisfied with the proposal, it will be reviewed by the Allocations Committee during the next monthly meeting |
+| **Renewal requirements** | - None; Trailhead allocations do not expire                                  | - Sign their acknowledgement of CURC User Policies<br>- There is no limit to the number of renewals                                                                                                                                        | - Same as Ascent allocation renewal requirements, but users may be asked to justify the size of their allocation based on the previous year's usage                                                                                                                                                                              |
+
+Individual and group size limits for new and renewed allocations will be 
+reviewed on an annual basis.
+
+::::
+
+
+````
+
+````{tab-item} RMACC
+:sync: alpine-rmacc-inst
+
+**Trailhead:**
+
+When you receive a Research Computing account, you are automatically 
+assigned a **Trailhead Auto-Allocation**, which grants you a fixed share 
+of `rmacc-general`.
+
+The Trailhead is a great allocation for smaller jobs or 
+testing and benchmarking your code. However, if you consume more than your allocated share of `rmacc-general`,  your `LevelFS` will decrease, causing your 
+priority score to decrease. The end result is that your jobs will sit 
+lower (i.e., longer) in the queue relative to other jobs.
+
+One way to combat this is to apply for an allocation. In addition to the Trailhead auto-allocation (`rmacc-general`) that all users are awarded automatically, CURC offers RMACC users an 
+additional tier to accommodate larger computing needs on Alpine, called RMACC Ascent.
+
+**Ascent:**
+
+The RMACC Ascent tier provides users with 100,000 SUs over a 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
+
+**Peak:**
+
 At this time, RMACC users are not eligible for Peak allocations. However, if you are an RMACC user with additional resource needs beyond the RMACC Ascent allocation, please contact us at (<rc-help@colorado.edu>).
+
+**Comparison of Allocation Tiers:**
+
+::::{dropdown} Show 
+:icon: note
+
+The following table summarizes the required information, size, approval 
+process, and renewal requirements for each tier.
+
+|                          | **Trailhead Auto-Allocation**                                                | **RMACC Ascent Allocation**                                                                                                                                                                                                                                        |
+|--------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Required information** | - None                                                                       | - Title and project description<br>- Funding information<br>- Field of study/research area<br>- Institutional affiliation<br>- PI and role<br>- ACCESS/XSEDE usernames of collaborators<br>- Slurm partitions to be used<br>- Acknowledgement of CURC User Polices |
+| **Size**                 | - Approximately 2,000 SUs per month                                          | - Currently 100,000 SUs                                                                                                                                                                                                                                            |
+| **Approval process**     | - Automatically granted when users register for a Research Computing account | - Approved quickly and without review by the Allocations Committee                                                                                                                                                                                                 |
+| **Renewal requirements** | - None; Trailhead allocations do not expire                                  | - Handled on a case-by-case basis; please contact us  
+
+Individual and group size limits for new and renewed allocations will be 
+reviewed on an annual basis.
+
+::::
+
+
+````
+
+````{tab-item} CSU & AMC
+:sync: alpine-other-inst
+
+**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
+
 
 ````
 
 `````
 
+
+```{note}
 CURC's tiered allocations are structured in a way such that your jobs are 
 likely to have a higher priority if they are running in Ascent, Peak, or RMACC Ascent 
 Allocations than if they are running in a Trailhead 
 Auto-Allocation.
-
-
-```{note}
-**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
 ```
-
-#### Comparing Trailhead Auto-Allocation, Ascent Allocation, and Peak Allocation Tiers
-
-The following table summarizes the required information, size, approval 
-process, and renewal requirements for each tier.
-
-|                          | **Trailhead Auto-Allocation**                                                | **Ascent Allocation**                                                                                                                                                                                                                      | **Peak Allocation**                                                                                                                                                                                                                                                                                                              | **RMACC Ascent Allocation**                                                                                                                                                                                                                                        |
-|--------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Required information** | - None                                                                       | - Title and project description<br>- Funding information<br>- Field of study/research area<br>- PI and role<br>- IdentiKeys of collaborators<br>- Slurm partitions to be used<br>- Acknowledgement of CURC User Polices                    | - All information required by Ascent allocation<br>- Example jobs<br>- List of software the project utilizes and how they will install each application                                                                                                                                                                          | - Title and project description<br>- Funding information<br>- Field of study/research area<br>- Institutional affiliation<br>- PI and role<br>- ACCESS/XSEDE usernames of collaborators<br>- Slurm partitions to be used<br>- Acknowledgement of CURC User Polices |
-| **Size**                 | - Approximately 2,000 SUs per month                                          | - Equivalent to 0.25% of the system (currently 350K SUs) for one year<br>- Total SU limit equal to 1% of the system (currently 1.4M SUs) per research group/PI<br>    - Group members may divide this among as many allocations as desired | - Variable (based on user's request), but must not exceed the number of SUs equivalent to 5% of the system (currently 6M SUs) over a one-year period<br>- Members of research group may divide the maximum amount of SUs among as many or as few allocations as they desire                                                      | - Currently 100,000 SUs                                                                                                                                                                                                                                            |
-| **Approval process**     | - Automatically granted when users register for a Research Computing account | - Approved quickly and without review by the Allocations Committee<br>- User Support will include summary information about Ascent allocations from the previous month in the monthly Allocations Committee meeting                        | - Peak allocation proposals will be initially reviewed by a member of CURC User Support<br>    - Users may be asked to improve the memory efficiency and CPU efficiency of their jobs<br>- Once the team member is satisfied with the proposal, it will be reviewed by the Allocations Committee during the next monthly meeting | - Approved quickly and without review by the Allocations Committee                                                                                                                                                                                                 |
-| **Renewal requirements** | - None; Trailhead allocations do not expire                                  | - Sign their acknowledgement of CURC User Policies<br>- There is no limit to the number of renewals                                                                                                                                        | - Same as Ascent allocation renewal requirements, but users may be asked to justify the size of their allocation based on the previous year's usage                                                                                                                                                                              | - Handled on a case-by-case basis; please contact us                                                                                                                                                                                                               |
-
-Individual and group size limits for new and renewed allocations will be 
-reviewed on an annual basis.
 
 #### Get an Allocation
 
 (tabset-ref-alpine-alloc-procs)=
 `````{tab-set}
-:sync-group: tabset-alpine-alloc-procs
+:sync-group: tabset-alpine-allocs
 
 ````{tab-item} CU Boulder
 :sync: alpine-cub-inst
@@ -126,7 +185,7 @@ reviewed on an annual basis.
 
 Step 1: Fill out the [Ascent Allocation 
 Request](https://forms.office.com/r/eAA15b8Gsg) form. You need to be 
-logged in to Office365 with your CU Boulder account.
+logged in to Office 365 with your CU Boulder account.
 
 Step 2: Look out for an email message from the CURC ticketing system (<rc-help@colorado.edu>) indicating when your allocation is ready to use.
 
@@ -134,12 +193,12 @@ Step 2: Look out for an email message from the CURC ticketing system (<rc-help@c
 
 Step 1: Download and complete the [Peak Allocation Request Supplementary 
 Information](https://o365coloradoedu.sharepoint.com/:x:/s/RC-Team/EajdPBAejjpDru7kvEEA29QBI8CoO8lj7-kUjotBIIusEg?e=geLBBP) 
-document. You need to be logged into Office365 with your CU Boulder 
+document. You need to be logged into Office 365 with your CU Boulder 
 account.
 
 Step 2: Fill out the [Peak Allocation 
 Request](https://forms.office.com/r/5VtLpiCh01) form. You need to be 
-logged into Office365 with your CU Boulder account.
+logged into Office 365 with your CU Boulder account.
 The last question will ask you to upload your completed Peak Allocation 
 Request Supplementary Information document from step 1. 
 
@@ -176,14 +235,60 @@ At this time, RMACC users are not eligible for Peak allocations. However, if you
 
 `````
 
-
 #### Renewing Your Allocation
+
+```{note}
+**Trailhead** Auto-Allocations do not expire.
+```
+
+(tabset-ref-alpine-alloc-renew)=
+`````{tab-set}
+:sync-group: tabset-alpine-allocs
+
+````{tab-item} CU Boulder
+:sync: alpine-cub-inst
+
+**Ascent:**
 
 Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
 
-Step 2: Fill out either the [Peak Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form, or the [Ascent Allocation Renewal](https://forms.office.com/r/1ymj7gxQF3) form. You need to be logged into Office365 with your CU Boulder account. ***If you are renewing an RMACC Ascent Allocation, please send an email to <rc-help@colorado.edu> requesting the renewal of your allocation. Be sure to provide your CURC username, the name of your allocation, and the CURC usernames of any of your collaborators.***
+Step 2: Fill out the [Ascent Allocation Renewal](https://forms.office.com/r/1ymj7gxQF3) form. You need to be logged into Office 365 with your CU Boulder account.
 
 Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
+
+**Peak:**
+
+Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
+
+Step 2: Fill out the [Peak Allocation Renewal](https://forms.office.com/r/wimT1SCsWz) form. You need to be logged into Office 365 with your CU Boulder account.
+
+Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
+
+
+````
+
+````{tab-item} RMACC
+:sync: alpine-rmacc-inst
+
+**Ascent:**
+
+Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
+
+Step 2: Please send an email to <rc-help@colorado.edu> requesting the renewal of your allocation. Be sure to provide your CURC username, the name of your allocation, and the CURC usernames of any of your collaborators.
+
+Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
+
+````
+
+````{tab-item} CSU & AMC
+:sync: alpine-other-inst
+
+**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
+
+
+````
+
+`````
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the 
 National Science Foundation (award 2201538).
