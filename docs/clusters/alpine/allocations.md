@@ -45,7 +45,7 @@ resources requested, job size, and QOS.
 ### Allocations
 
 ```{warning}
-**Allocations for CSU and AMC are managed by those institutions.** Please see the **CSU & AMC** tab in each section below for more information.
+**Allocations for CSU and AMC are managed by those institutions.** Please see the **CSU** and **AMC** tabs in each section below for more information.
 ```
 
 
@@ -154,11 +154,17 @@ reviewed on an annual basis.
 
 ````
 
-````{tab-item} CSU & AMC
-:sync: alpine-other-inst
+````{tab-item} CSU
+:sync: alpine-csu-inst
 
-**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
+**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should email (<rc-help@colorado.edu>).
 
+````
+
+````{tab-item} AMC
+:sync: alpine-amc-inst
+
+**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should email (<hpcsupport@cuanschutz.edu>).
 
 ````
 
@@ -226,10 +232,17 @@ At this time, RMACC users are not eligible for Peak allocations. However, if you
 
 ````
 
-````{tab-item} CSU & AMC
-:sync: alpine-other-inst
+````{tab-item} CSU
+:sync: alpine-csu-inst
 
-**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
+**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should email (<rc-help@colorado.edu>).
+
+````
+
+````{tab-item} AMC
+:sync: alpine-amc-inst
+
+**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should email (<hpcsupport@cuanschutz.edu>).
 
 ````
 
@@ -280,11 +293,17 @@ Step 3: Look out for email messages from the CURC ticketing system (<rc-help@col
 
 ````
 
-````{tab-item} CSU & AMC
-:sync: alpine-other-inst
+````{tab-item} CSU
+:sync: alpine-csu-inst
 
-**Allocations for CSU and AMC are managed by those institutions.** CSU and AMC users who are interested in learning about their institution's Alpine allocations processes should message (<rc-help@colorado.edu>) and (<hpcsupport@cuanschutz.edu>), respectively.
+**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should email (<rc-help@colorado.edu>).
 
+````
+
+````{tab-item} AMC
+:sync: alpine-amc-inst
+
+**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should email (<hpcsupport@cuanschutz.edu>).
 
 ````
 
