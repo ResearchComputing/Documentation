@@ -1,3 +1,13 @@
+---
+myst:
+    substitutions:
+        trailhead_SUs: "2,000"
+        boulder_ascent_SUs: "350,000"
+        boulder_ascent_SU_group_limit: "1.4 M"
+        boulder_peak_SUs: "6,000,000"
+        rmacc_ascent_SUs: "100,000"
+---
+
 # Alpine Allocations
 
 ## What are allocations and why do I need one?
@@ -75,12 +85,12 @@ additional tiers to accommodate larger computing needs on Alpine, called **Ascen
 **Ascent:**
 
 The **Ascent** allocation tier provides CU Boulder users 
-with 350,000 SUs over a 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
+with {{ boulder_ascent_SUs }} SUs over a 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
 
 **Peak:**
 
 The **Peak Allocation** tier is 
-aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 
+aimed at projects that will consume between {{ boulder_ascent_SUs }} and {{ boulder_peak_SUs }} SUs in a 
 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
 
 **Comparison of Allocation Tiers:**
@@ -94,7 +104,7 @@ process, and renewal requirements for each tier.
 |                          | **Trailhead Auto-Allocation**                                                | **Ascent Allocation**                                                                                                                                                                                                                      | **Peak Allocation**                                                                                                                                                                                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Required information** | - None                                                                       | - Title and project description<br>- Funding information<br>- Field of study/research area<br>- PI and role<br>- IdentiKeys of collaborators<br>- Slurm partitions to be used<br>- Acknowledgement of CURC User Polices                    | - All information required by Ascent allocation<br>- Example jobs<br>- List of software the project utilizes and how they will install each application                                                                                                                                                                          |
-| **Size**                 | - Approximately 2,000 SUs per month                                          | - Equivalent to 0.25% of the system (currently 350K SUs) for one year<br>- Total SU limit equal to 1% of the system (currently 1.4M SUs) per research group/PI<br>    - Group members may divide this among as many allocations as desired | - Variable (based on user's request), but must not exceed the number of SUs equivalent to 5% of the system (currently 6M SUs) over a one-year period<br>- Members of research group may divide the maximum amount of SUs among as many or as few allocations as they desire                                                      |
+| **Size**                 | - Approximately {{ trailhead_SUs }} SUs per month                                          | - Equivalent to 0.25% of the system (currently {{ boulder_ascent_SUs }} SUs) for one year<br>- Total SU limit equal to 1% of the system (currently {{ boulder_ascent_SU_group_limit }} SUs) per research group/PI<br>    - Group members may divide this among as many allocations as desired | - Variable (based on user's request), but must not exceed the number of SUs equivalent to 5% of the system (currently {{ boulder_peak_SUs }} SUs) over a one-year period<br>- Members of research group may divide the maximum amount of SUs among as many or as few allocations as they desire                                                      |
 | **Approval process**     | - Automatically granted when users register for a Research Computing account | - Approved quickly and without review by the Allocations Committee<br>- User Support will include summary information about Ascent allocations from the previous month in the monthly Allocations Committee meeting                        | - Peak allocation proposals will be initially reviewed by a member of CURC User Support<br>    - Users may be asked to improve the memory efficiency and CPU efficiency of their jobs<br>- Once the team member is satisfied with the proposal, it will be reviewed by the Allocations Committee during the next monthly meeting |
 | **Renewal requirements** | - None; Trailhead allocations do not expire                                  | - Sign their acknowledgement of CURC User Policies<br>- There is no limit to the number of renewals                                                                                                                                        | - Same as Ascent allocation renewal requirements, but users may be asked to justify the size of their allocation based on the previous year's usage                                                                                                                                                                              |
 
@@ -125,7 +135,7 @@ additional tier to accommodate larger computing needs on Alpine, called RMACC As
 
 **Ascent:**
 
-The RMACC Ascent tier provides users with 100,000 SUs over a 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
+The RMACC Ascent tier provides users with {{ rmacc_ascent_SUs }} SUs over a 12 month period. Please see the table below for a comparison with other allocation tiers; application instructions are in the next section.
 
 **Peak:**
 
@@ -142,7 +152,7 @@ process, and renewal requirements for each tier.
 |                          | **Trailhead Auto-Allocation**                                                | **RMACC Ascent Allocation**                                                                                                                                                                                                                                        |
 |--------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Required information** | - None                                                                       | - Title and project description<br>- Funding information<br>- Field of study/research area<br>- Institutional affiliation<br>- PI and role<br>- ACCESS/XSEDE usernames of collaborators<br>- Slurm partitions to be used<br>- Acknowledgement of CURC User Polices |
-| **Size**                 | - Approximately 2,000 SUs per month                                          | - Currently 100,000 SUs                                                                                                                                                                                                                                            |
+| **Size**                 | - Approximately {{ trailhead_SUs }} SUs per month                                          | - Currently {{ rmacc_ascent_SUs }} SUs                                                                                                                                                                                                                                            |
 | **Approval process**     | - Automatically granted when users register for a Research Computing account | - Approved quickly and without review by the Allocations Committee                                                                                                                                                                                                 |
 | **Renewal requirements** | - None; Trailhead allocations do not expire                                  | - Handled on a case-by-case basis; please contact us  
 
