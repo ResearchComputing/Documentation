@@ -5,7 +5,7 @@ master_doc = 'index'
 extensions = ['myst_parser', 'sphinx_copybutton', 'sphinx.ext.graphviz', 'sphinx_design', 'sphinx.ext.extlinks']
 graphviz_output_format = 'svg'
 
-myst_enable_extensions = ["colon_fence", "attrs_inline", "attrs_block", "tasklist"]
+myst_enable_extensions = ["colon_fence", "attrs_inline", "attrs_block", "tasklist", "substitution"]
 myst_enable_checkboxes = True
 
 source_suffix = {
