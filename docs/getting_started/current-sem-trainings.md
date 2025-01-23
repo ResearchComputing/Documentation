@@ -40,7 +40,7 @@ Click the name of a training to view more details and register!
 - [Scheduling Jobs on a SuperComputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **January 31st, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Research Storage Simplified (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/storage) - **March 19th, 11am, Virtual (Zoom)**
 ### **Installing Software**
-- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 5th, 10am, Virtual (Zoom)**
+- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 7th, 10am, Virtual (Zoom)**
 ### **Version Control & Debugging**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/github) - **February 18th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [An Introduction to Debugging Techniques (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **February 26th, 2pm, Hybrid (Norlin Library E206/Zoom)**
