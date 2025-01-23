@@ -62,7 +62,7 @@ Click the name of a training to view more details and register!
 - [Alpine New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/alpine_new) - **January 22nd, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Working with Linux on HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/linux) - **January 29th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Scheduling Jobs on a SuperComputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **January 31st, 11am, Hybrid (Norlin Library E206/Zoom)**
-- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 5th, 10am, Virtual (Zoom)**
+- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 7th, 10am, Virtual (Zoom)**
 - [Research Storage Simplified (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/storage) - **March 19th, 11am, Virtual (Zoom)**
 
 ### **Intermediate**
