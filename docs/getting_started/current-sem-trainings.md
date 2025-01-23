@@ -16,7 +16,7 @@ Click the name of a training to view more details and register!
 - [Working with Linux on HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/linux) - **January 29th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Scheduling Jobs on a SuperComputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **January 31st, 11am, Hybrid (Norlin Library E206/Zoom)**
 ### **February**
-- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 5th, 10am, Virtual (Zoom)**
+- [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 7th, 10am, Virtual (Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/github) - **February 18th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [An Introduction to Debugging Techniques (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **February 26th, 2pm, Hybrid (Norlin Library E206/Zoom)**
 - [Introducing Research Computing’s new NVIDIA Grace Hopper Superchip (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/hopper) - **February 27th, 12pm, Virtual (Zoom)**
