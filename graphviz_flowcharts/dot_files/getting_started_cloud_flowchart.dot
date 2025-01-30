@@ -9,10 +9,8 @@ digraph "" {
          aws [label="Amazon Web Services", href="../cloud/aws/index.html", target="_blank", id="clickable"];
          azure [label="Microsoft Azure", href="../cloud/azure/index.html", target="_blank", id="clickable"];
          gcp [label="Google Cloud Platform", href="../cloud/gcp/index.html", target="_blank", id="clickable"];
-         cumulus [label="CUmulus (On-Premise Cloud)", href="../cloud/cumulus/index.html", target="_blank", id="clickable"];
 
          cloud -> aws;
          cloud -> azure;
          cloud -> gcp;
-         cloud -> cumulus;
      }

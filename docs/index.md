@@ -90,7 +90,7 @@ storage/petalibrary/index
 cloud/aws/index
 cloud/azure/index
 cloud/gcp/index
-cloud/cumulus/index
+cloud/cumulus/cumulus
 
 ```
 
