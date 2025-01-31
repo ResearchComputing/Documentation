@@ -20,15 +20,6 @@ getting-started/index
 
 ```{toctree}
 :maxdepth: 1
-:caption: Best Practices Documentation
-
-best-practices/index
-
-```
-
-
-```{toctree}
-:maxdepth: 1
 :caption: Billing Documentation
 
 billing/index
