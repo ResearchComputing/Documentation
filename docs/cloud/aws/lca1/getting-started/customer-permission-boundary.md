@@ -47,7 +47,7 @@ When using some AWS wizards to configure services, the wizard will try to create
 
 When creating new AWS Roles or Users, customers must set the permissions boundary.
 
-On Step 2 of the "Create role" or "Create user" wizard, search for and add the `CustomerRolesPermissionBoundary` policy to the "Set permissions boundary" section.
+On Step 2 of the "Create role" or "Create user" wizard, search for and add the `oitcld-customer-roles-permission-boundary` policy to the "Set permissions boundary" section.
 
 ```{image} images/customer-permission-boundary/permissions-boundary.png
 :alt: Attaching a permissions boundary to a new role in the AWS console
