@@ -14,7 +14,7 @@
 | 26 Milan General CPU  | amc, amilan         | x86_64 AMD Milan | 1       | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 2 Milan High-Memory   | amc, amem           | x86_64 AMD Milan | 1       | 64            | 1            |  16           | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 2 Milan High-Memory   | amc, amem           | x86_64 AMD Milan | 2       | 128           | 1            |  16           | 32            | N/A         | 0         |  70G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
-| 4 Milan NVIDIA GPU    | amc, a100           | x86_64 AMD Milan | 1       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| 4 Milan NVIDIA GPU    | amc, aa100          | x86_64 AMD Milan | 1       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | 3 Milan NVIDIA GPU    | amc, al40           | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA L40  | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 
 ## Requesting Hardware Resources
