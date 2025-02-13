@@ -58,7 +58,7 @@ total contributed GPUs by an "acceleration factor". This factor is derived
 from the MATLAB GPU benchmark series, which CURC has used to measure 
 computational performance on a variety of tasks on a representative GPU 
 against the equivalent on a CPU. 
-As of November 2022, the acceleration factor of an NVIDIA A100 or AMD 
+As of February 2025, the acceleration factor of an NVIDIA A100, NVIDIA L40, or AMD 
 MI100 GPU will be 108.6, meaning that our benchmarks indicate a GPU will 
 provide 108.6x speedup (on average) over a CPU. Scaling this to a typical 
 Alpine node, the number of SUs allocated for a 64-core node with 3 GPUs 
@@ -118,6 +118,7 @@ any of the following resource billing weights:
 ```
 TRESBillingWeights="CPU=1.0,GRES/gpu:a100=108.6" 
 TRESBillingWeights="CPU=1.0,GRES/gpu:mi100=108.6" 
+TRESBillingWeights="CPU=1.0,GRES/gpu:l40=108.6"
 TRESBillingWeights="CPU=1.0,Mem=4.0" 
 ```
 

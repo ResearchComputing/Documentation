@@ -70,6 +70,7 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 - **P100**: NVIDIA P100 GPU  
 - **V100**: NVIDIA V100 GPU  
 - **A100**: NVIDIA A100 GPU  
+- **L40**: NVIDIA L40 GPU
 - **localraid**: large, fast RAID disk storage in node  
 - **rh8**: RedHat Enterprise Linux version 8 operating system  
 
@@ -78,16 +79,23 @@ sinfo --format="%N | %f" --partition="blanca-curc"
 Using GPUs in jobs requires one to use the General Resource ("Gres") functionality of Slurm to request the GPU(s).  At a minimum, one would specify `#SBATCH --gres=gpu` in their job script to specify that they would like to use a single GPU of any type.  One can also request multiple GPUs on nodes that have more than one, and a specific type of GPU (e.g., V100, A100) if desired.  The available Blanca GPU resources and configurations can be viewed as follows on a login node with the `slurm/blanca` module loaded:
 
 ```bash
-$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v "blanca "
-NODELIST                      PARTITION           GRES
+$ sinfo --Format NodeList:30,Partition,Gres |grep gpu |grep -v blanca\\*
 bgpu-bortz1                   blanca-bortz        gpu:t4:1
 bgpu-casa1                    blanca-casa         gpu:v100:1
-bnode[0201-0236]              blanca-ccn          gpu:k2000:1
+bgpu-g4-u[20,22,24]           blanca-chbe-rdi     gpu:l40:3
+bgpu-chbe-rdi[1-2]            blanca-chbe-rdi     gpu:a40:3
 bgpu-curc[1-4]                blanca-curc-gpu     gpu:a100:3
 bgpu-dhl1                     blanca-dhl          gpu:p100:2
 bgpu-kann1                    blanca-kann         gpu:v100:4
 bgpu-mktg1                    blanca-mktg         gpu:p100:1
 bgpu-papp1                    blanca-papp         gpu:v100:1
+bgpu-biokem1                  blanca-biokem       gpu:rtx6000:4
+bgpu-biokem2                  blanca-biokem       gpu:a100:2
+bgpu-biokem3                  blanca-biokem       gpu:rtx6000:3
+bgpu-ivc                      blanca-ivc          gpu:v100:4
+bgpu-ivc2                     blanca-ivc          gpu:a100:4
+bgpu-shirts[1-3]              blanca-shirts       gpu:a40:4
+bgpu-g4-18                    blanca-clearlab1    gpu:l40:3
 ...      
 ```
 
@@ -270,9 +278,9 @@ The interactive job won't start until the resources that it needs are available,
 ## Important notes
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/scratch/alpine`, which should offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
+2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/scratch/alpine`, which will offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
-4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics, like Blanca CCN, or any node on Blanca HPC can run MPI applications much more efficiently.
+4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics, such as any node on Blanca HPC can run MPI applications much more efficiently.
 
 ## Blanca Preemptable QOS
 

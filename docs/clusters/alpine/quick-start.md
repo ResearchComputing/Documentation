@@ -2,8 +2,8 @@
 
 Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
 cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
-Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 421 compute nodes and a total 
-of 24,736 cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
+Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 439 compute nodes and a total 
+of 26,032 cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
 
 ## Alpine Quick-Start
 
@@ -28,15 +28,18 @@ request](./software.md#alpine-software) using our [Software Request Form](https:
 ## Cluster Summary
 ### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 376 AMD Milan compute nodes (299 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
+- **CPU nodes**: 386 AMD Milan compute nodes (309 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
 - **GPU nodes**:
 	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
 	- 12 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
-- **High-memory nodes**: 24 AMD Milan nodes with 1TB of memory
+ 	- 3 GPU-enabled (3x NVIDIA L40) atop AMD Milan CPU
+- **High-memory nodes**:
+	- 22 AMD Milan (64-core) nodes with 1TB of memory
+  	- 2 AMD Milan (128-core) nodes with 2TB of memory
 
 Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
 - **Colorado State University**: 77 AMD Milan compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
-- **CU Anschutz Medical Campus**: 14 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, and 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan)
+- **CU Anschutz Medical Campus**: 26 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, 2 AMD Milan nodes with 2TB of RAM, 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan), and 2 GPU-enabled (3x NVIDIA L40 atop AMD Milan)
 
 All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 
@@ -68,6 +71,7 @@ sinfo --format="%N | %f"
 - **Milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
 - **A100**: NVIDIA A100 GPU
 - **MI100**: AMD MI100 GPU
+- **l40**: NVIDIA L40 GPU
 - **storage**: large, fast RAID disk storage in node
 - **rh8**: RedHat Enterprise Linux version 8 operating system
 
