@@ -32,7 +32,7 @@ The `Customeradmin` role should be treated similarly to other administrative acc
 
 Creation of new users and roles is permitted with a few caveats:
 
-* Users and roles must be assigned the `CustomerRolesPermissionBoundary` permissions boundary during creation.
+* Users and roles must be assigned the `oitcld-customer-roles-permission-boundary` permissions boundary during creation.
 * Customers take on the responsibility for managing and rotating any static credentials associated with AWS IAM users they create.
 
 ```{note}
