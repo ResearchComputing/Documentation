@@ -19,9 +19,9 @@ Click the name of a training to view more details and register!
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 7th, 10am, Virtual (Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/github) - **February 18th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [An Introduction to Debugging Techniques (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **February 26th, 2pm, Hybrid (Norlin Library E206/Zoom)**
-- [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **February 27th, 9am, Virtual (Zoom)**
 - [Introducing Research Computing’s new NVIDIA Grace Hopper Superchip (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/hopper) - **February 27th, 12pm, Virtual (Zoom)**
 ### **March**
+- [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **March 3rd, 9am, Virtual (Zoom)**
 - [Using Linaro DDT on Alpine to Debug Parallel Code (an RC Primer)](https://colorado.libcal.com/calendar/events/linaro) - **March 3rd, 12pm, Hybrid (Norlin Library E206/Zoom)**
 - [Maximizing Efficiency Using Parallelization (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/parallel) - **March 5th, 2pm, Virtual (Zoom)**
 - [Incredibly Easy Parallelization: High Throughput Computing (an RC Primer)](https://colorado.libcal.com/calendar/events/hpcparallel) - **March 7th, 10am, Virtual (Zoom)**
@@ -52,7 +52,7 @@ Click the name of a training to view more details and register!
 - [Incredibly Easy Parallelization: High Throughput Computing (an RC Primer)](https://colorado.libcal.com/calendar/events/hpcparallel) - **March 7th, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **April 4th, 10am, Hybrid (Norlin Library E206/Zoom)**
 ### **Cloud Computing**
-- [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **February 27th, 9am, Virtual (Zoom)**
+- [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **March 3rd, 9am, Virtual (Zoom)**
 - [Introduction to the Commercial Cloud (an RC Primer)](https://colorado.libcal.com/calendar/events/cloud) - **March 12th, 2pm, Hybrid (Norlin Library E206/Zoom)**
 
 ````
@@ -65,7 +65,7 @@ Click the name of a training to view more details and register!
 - [Working with Linux on HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/linux) - **January 29th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Scheduling Jobs on a SuperComputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **January 31st, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 7th, 10am, Virtual (Zoom)**
-- [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **February 27th, 9am, Virtual (Zoom)**
+- [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **March 3rd, 9am, Virtual (Zoom)**
 - [Research Storage Simplified (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/storage) - **March 19th, 11am, Virtual (Zoom)**
 
 ### **Intermediate**
