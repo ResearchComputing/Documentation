@@ -8,11 +8,11 @@ Visit OIT's [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/i
 
 ## Single Sign-On
 
-Users access the [AWS Management Console](http://bit.ly/OIT-AWS) using their [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
-The Single Sign-On (SSO) URL is [http://bit.ly/OIT-AWS](http://bit.ly/OIT-AWS).
+Users access the [AWS Management Console](https://buff.link/aws) using their [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
+The Single Sign-On (SSO) URL is [https://buff.link/aws](https://buff.link/aws).
 You can access your AWS Account from anywhere with internet access.  You do not need to have a VPN connection to campus.
 
-1. Launch the [AWS Management Console (SSO URL)](http://bit.ly/OIT-AWS).
+1. Launch the [AWS Management Console (SSO URL)](https://buff.link/aws).
 2. Provide your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) credentials.
 ![](images/aws-console-access/login.png)
 3. Choose a method for authentication.  We recommend you select "Send Me a Push".  **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
