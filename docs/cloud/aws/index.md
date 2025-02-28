@@ -14,7 +14,7 @@ The Cloud Foundations team currently supports two landing zones, **LCA0** and **
 
 You received a url to log into your AWS account as part of your onboarding.
 
-If you login via [http://bit.ly/OIT-AWS](http://bit.ly/OIT-AWS) or [https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=urn:amazon:webservices](https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=urn:amazon:webservices), your are using **LCA0**.
+If you login via [https://buff.link/aws](https://buff.link/aws) or [https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=urn:amazon:webservices](https://fedauth.colorado.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=urn:amazon:webservices), your are using **LCA0**.
 
 If you login via [https://aws.colorado.edu/](https://aws.colorado.edu/), you are using **LCA1**.
 
