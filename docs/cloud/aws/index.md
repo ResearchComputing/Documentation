@@ -4,6 +4,10 @@ Amazon Web Services (AWS) Documentation
 
 This applies to customers who are using a **Research Computing Cloud Foundations** managed AWS account.
 
+```{important}
+Research Computing Cloud Foundations managed AWS accounts can be provisioned only for direct affiliates (students, faculty, staff) of the University of Colorado. Access to the account can be shared beyond that scope at the discretion of the account holder.
+```
+
 ## Landing Zones
 
 Each managed AWS account is associated with exactly one landing zone. A landing zone is a consistent group of account configuration, networking, and security controls that are applied to all associated accounts.
