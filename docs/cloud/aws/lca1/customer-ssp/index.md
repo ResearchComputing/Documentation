@@ -108,10 +108,10 @@ Beginning your SSP can be intimidating, but there are strategies your can take t
 Before you begin, make sure you have the necessary technical infrastructure and social processes defined to act as a consistent, coordinated team.
 
 1. **Identify a service owner.** Your service needs a single person to be accountable for implementing and operating the service. This person will ensure security work is actually implemented and make the final decision about when to move forward after IT Security review.
-2. **Define your service.** You need to nail down exactly what you will be securing. What are all of its features? Who consumes it? What other services does it integrate with? You need to detail precisely what the services does so you can secure each of those aspects.
+2. **Define your service.** You need to nail down exactly what you will be securing. What are all of its features? Who consumes it? What other services does it integrate with? You need to detail precisely what the service does so you can secure each of those aspects.
 3. **Determine the [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification) for your service.** This informs what security controls will apply to your SSP.
 4. **Select an internal documentation platform.** You will need to generate lots of process documentation that IT Security can review, and that your team will use for securely operating your service. Make sure this is in one standardized location.
-5. **Select an external documentation platform.** You will need to publish documentation for your customers about how to securely use your service and what's expected of them.
+5. **Select an external documentation platform.** You will need to publish documentation for your users about how to securely use your service and what's expected of them.
 6. **Select a work tracking system.** You will need to coordinate on numerous tasks as a team and be able to reliably complete recurring work.
 7. **Select a monitoring and alerting system.** You will need to make sure your service is operating as intended in an ongoing manner and scan it against standard security baselines. Make sure your alerting is flexible enough to handle different tiers of alerts and different sets of recipients.
 8. **Select an events management system.** Alerts from your monitoring system need to end up somewhere that the entire team can see but enforces accountability for dealing with them. Make sure the team has a process for selecting who handles notifications and how that is tracked.
