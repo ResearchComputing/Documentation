@@ -20,12 +20,12 @@ that is approved to support **Confidential Information**.  Support for **Highly 
 is on the horizon.
 
 The rest of this document will discuss how the CFS service can help you meet some of your security requirements.
-We also have a quickstart guide to help you get started on your SSP journey.
+We also have a guide to help you get started on your SSP journey.
 
 ## Contents
 * [Shared Responsibility Model](#shared-responsibility-model)
 * [CFS **LCA1** Features](#cfs-lca1-features)
-* [SSP Quickstart Process](#ssp-quickstart-process)
+* [Getting Started](#getting-started)
 
 ### Shared Responsibility Model
 Start with understanding the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
@@ -101,10 +101,80 @@ RC User Support can also help with billing and cost optimization.
 Not sure where to start with your cloud journey?  RC User Support is here to guide and assist!
 Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 
-### SSP Quickstart Process
+### Getting Started
+Beginning your SSP can be intimidating, but there are strategies your can take to set yourself up for success and streamline the process. These are the steps we recommend for working through your SSP.
 
-1. Determine the [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification).
-2. Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
-3. Get an account on **LCA1**.  Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload.  This will include your data classification.  We can assist with your data classification if you are unsure.
-4. Secure your workload and create the SSP.  Work with [IT Security](https://oit.colorado.edu/services/it-security) to get the SSP submitted and reviewed.
-5. After OIT Security review and Product Owner approval, start operating your secure workload.
+#### Prepare for the SSP
+Before you begin, make sure you have the necessary technical infrastructure and social processes defined to act as a consistent, coordinated team.
+
+1. **Identify a service owner.** Your service needs a single person to be accountable for implementing and operating the service. This person will ensure security work is actually implemented and make the final decision about when to move forward after IT Security review.
+2. **Define your service.** You need to nail down exactly what you will be securing. What are all of its features? Who consumes it? What other services does it integrate with? You need to detail precisely what the service does so you can secure each of those aspects.
+3. **Determine the [Data Classification](https://www.cu.edu/data-governance/resources-support/data-classification) for your service.** This informs what security controls will apply to your SSP.
+4. **Select an internal documentation platform.** You will need to generate lots of process documentation that IT Security can review, and that your team will use for securely operating your service. Make sure this is in one standardized location.
+5. **Select an external documentation platform.** You will need to publish documentation for your users about how to securely use your service and what's expected of them.
+6. **Select a work tracking system.** You will need to coordinate on numerous tasks as a team and be able to reliably complete recurring work.
+7. **Select a monitoring and alerting system.** You will need to make sure your service is operating as intended in an ongoing manner and scan it against standard security baselines. Make sure your alerting is flexible enough to handle different tiers of alerts and different sets of recipients.
+8. **Select an events management system.** Alerts from your monitoring system need to end up somewhere that the entire team can see but enforces accountability for dealing with them. Make sure the team has a process for selecting who handles notifications and how that is tracked.
+9. **Select a configuration management system.** Reviewers of your SSP will want to see evidence of how all aspects of your system are configured. If you can manage changes and tracking in a central configuration system, it will be much easier than trying to document and enforce manual processes.
+10. **Select a change management system.** Establish practices as a team for how you will track changes to your service and the infrastructure that supports it. You will need to ensure changes can be audited and rationalized.
+11. **Select a system for tracking your SSP.** You'll need to keep track of each control and how that is met by your team. The SSP will need to be updated periodically as part of ongoing reviews and service changes. Choose something that supports sorting and filtering, not a Word document.
+
+```{note}
+##### Example Preparation Tools
+Here are some tools you might consider for implementing the systems above. Think about what your team already owns or has access to. Think about what data you plan to store in each tool and make sure that follows the appropriate security guidelines. **These are examples, not endorsements.**
+
+* **Internal documentation platform:**
+  * [Markdown in GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
+  * [Confluence](https://www.atlassian.com/software/confluence)
+  * [Microsoft Teams Files](https://support.microsoft.com/en-us/office/file-storage-in-microsoft-teams-df5cc0a5-d1bb-414c-8870-46c6eb76686a)
+* **External documentation platform:**
+  * [GitHub Pages](https://pages.github.com/)
+  * [Read the Docs](https://about.readthedocs.com/)
+  * Your existing public website
+* **Work tracking system:**
+  * [Jira](https://www.atlassian.com/software/jira)
+  * [Microsoft Planner](https://www.microsoft.com/en-us/microsoft-365/planner/microsoft-planner)
+  * [Trello](https://trello.com/)
+* **Monitoring and Alerting system:**
+  * [AWS CloudWatch](https://aws.amazon.com/cloudwatch/)
+  * [Prometheus](https://prometheus.io/)
+  * [Icinga](https://icinga.com/)
+  * [Zabbix](https://www.zabbix.com/)
+  * [Naemon](https://www.naemon.io/)
+* **Events management system:**
+  * [Opsgenie](https://www.atlassian.com/software/opsgenie)
+  * [ServiceNow](https://www.servicenow.com/products/event-management.html)
+  * [GitHub Issues](https://github.com/features/issues)
+  * A shared email inbox with manual accountability processes
+* **Configuration management system:**
+  * [Terraform](https://www.terraform.io/)
+  * [OpenTofu](https://opentofu.org/)
+  * [Ansible](https://www.redhat.com/en/ansible-collaborative)
+  * [Pulumi](https://www.pulumi.com/)
+* **Change management system:**
+  * [GitHub Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/about-collaborative-development-models)
+  * [ServiceNow](https://www.servicenow.com/products/change-management.html)
+  * A manual change log with an established process
+* **System for tracking your SSP:**
+  * A spreadsheet
+  * A database
+  * [Airtable](https://www.airtable.com/)
+```
+#### Implement the SSP
+The next step is to stand up your service, creating the necessary security control implementations and documentation.
+
+1. **Get the latest controls.** Reach out to [IT Security](https://oit.colorado.edu/services/it-security) to get the latest official list of required controls. Import this into your SSP tracking system. Confirm which subset of the controls apply to your service (usually based on data classification and service criticality).
+2. **Learn about shared responsibility.** Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
+3. **Stand up your service.** Get an account on **LCA1**. Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload. Build out your service on AWS, but _do not put any non-public data in yet._
+4. **Secure your service.** Implement each of the required security controls by appropriately configuring your infrastructure, establishing team processes, and documenting everything. Ensure your documentation provides enough detail an auditor can use for evidence of proper implementation. Consider using references to your configuration management system and screenshots where appropriate.
+
+#### Review the SSP
+Finally, review your SSP implementation with IT Security. After they have reviewed, the service owner can decide if it's appropriate for non-public data to be introduced to the service.
+
+1. **Review.** Request an SSP review from [IT Security](https://oit.colorado.edu/services/it-security). Work with them to fix any gaps in the plan. If there are gaps that can't be addressed, work with IT Security to draft a [Plan of Action and Milestones (POA&M)](https://csrc.nist.gov/glossary/term/POAM) for those items or document the additional risk that gap creates.
+2. **Approve.** After IT Security has reviewed the SSP, they will make a recommendation to the service owner. At that time, the service owner should weigh the SSP status with the outstanding risks to decide if the service should proceed with hosting non-public data.
+3. **Operate.** Once the service owner has approved the SSP, the service can begin operating with non-public data. Regular tasks, as outlined by the SSP, should be integrated into ongoing service operations.
+
+```{important}
+A POA&M is essentially a promise to address a security gap in the future. It must have a plan and a **due date**. IT Security should be notified about completed POA&Ms, and they should be updated in your SSP.
+```
