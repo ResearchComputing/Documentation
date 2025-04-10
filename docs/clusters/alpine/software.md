@@ -107,7 +107,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
 | [QIIME 2](https://qiime2.org/) | 2023.5 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
-| [Quantum ESPRESSO](https://www.quantum-espresso.org/) | 7.0 (D), 7.2 |An integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale.| 
+| [Quantum ESPRESSO](https://www.quantum-espresso.org/) | 7.0, 7.2, 7.4.1 |An integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale.| 
 | [Qt](https://doc.qt.io/) | 4.8.5, 5.6.0, 5.9.1, 5.15 (D) |Qt ("cute") is cross-platform software for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.| 
 | [R](https://www.r-project.org/) | 3.6.3,4.2.2 (D)|R is a programming language for statistical computing and graphics.| 
 | [rclone](https://rclone.org/) | 1.58.0 |Rclone is a command-line program to manage files on cloud storage.| 
