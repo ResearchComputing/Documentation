@@ -98,6 +98,14 @@ is eager and ready to assist with training for you and your team in public cloud
 RC User Support also provides support services to help give advice and troubleshoot various cloud services.
 RC User Support can also help with billing and cost optimization.
 
+```{note}
+We maintain a **Cloud Foundations NIST 800-171 Customer Guide** that provides more information about how our service features map to security controls and recommendations for addressing those controls in your SSP.
+
+Our service features can supplement your work to address each security control, but they do not automatically ensure compliance. Full compliance is dependent upon the details of your application and review from OIT Security.
+
+Please contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access to the guide.
+```
+
 Not sure where to start with your cloud journey?  RC User Support is here to guide and assist!
 Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 
