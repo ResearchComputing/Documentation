@@ -1,13 +1,3 @@
----
-myst:
-    substitutions:
-        trailhead_SUs: "2,000"
-        boulder_ascent_SUs: "350,000"
-        boulder_ascent_SU_group_limit: "1.4 M"
-        boulder_peak_SUs: "6,000,000"
-        rmacc_ascent_SUs: "100,000"
----
-
 # Alpine Allocations
 
 ## What are allocations and why do I need one?
