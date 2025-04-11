@@ -2,8 +2,8 @@
 
 Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
 cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
-Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 439 compute nodes and a total 
-of 26,032 cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
+Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers {{ alpine_total_compute_nodes }} compute nodes and a total 
+of {{ alpine_total_cores }} cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
 
 ## Alpine Quick-Start
 
@@ -28,14 +28,14 @@ request](./software.md#alpine-software) using our [Software Request Form](https:
 ## Cluster Summary
 ### Nodes
 The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 386 AMD Milan compute nodes (309 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
+- **CPU nodes**: {{ alpine_total_cpu_nodes }} AMD Milan compute nodes ({{ alpine_total_128_core_cpu_nodes }} nodes with 128 cores/node, {{ alpine_total_64_core_cpu_nodes }} nodes with 64 cores/node, {{ alpine_total_48_core_cpu_nodes }} nodes with 48 cores/node, {{ alpine_total_32_core_cpu_nodes }} nodes with 32 cores/node) with 256 GB RAM
 - **GPU nodes**:
-	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
-	- 12 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
- 	- 3 GPU-enabled (3x NVIDIA L40) atop AMD Milan CPU
+	- {{ alpine_total_mi100_gpu_nodes }} GPU-enabled (3x AMD MI100) atop AMD Milan CPU
+	- {{ alpine_total_a100_gpu_nodes }} GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
+ 	- {{ alpine_total_l40_gpu_nodes }} GPU-enabled (3x NVIDIA L40) atop AMD Milan CPU
 - **High-memory nodes**:
-	- 22 AMD Milan (64-core) nodes with 1TB of memory
-  	- 2 AMD Milan (128-core) nodes with 2TB of memory
+	- {{ alpine_total_himem_1TB_cpu_nodes }} AMD Milan (64-core) nodes with 1TB of memory
+  	- {{ alpine_total_himem_2TB_cpu_nodes }} AMD Milan (128-core) nodes with 2TB of memory
 
 Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
 - **Colorado State University**: 77 AMD Milan compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
@@ -84,7 +84,7 @@ More details about how to use SLURM to run jobs can be found in our [running app
 
 ## Allocations
 
-When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 350,000 SUs over a 12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 12 month period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.
+When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with {{ boulder_ascent_SUs }} SUs over a 12 month period. The **Peak Allocation** tier is aimed at projects that will consume between {{ boulder_ascent_SUs }} and {{ boulder_peak_SUs }} SUs in a 12 month period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 

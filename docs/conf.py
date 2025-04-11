@@ -13,7 +13,21 @@ myst_substitutions = {
     'boulder_ascent_SUs': '350,000', 
     'boulder_ascent_SU_group_limit': '1.4 M', 
     'boulder_peak_SUs': '6,000,000', 
-    'rmacc_ascent_SUs': '100,000'
+    'rmacc_ascent_SUs': '100,000',
+    'alpine_total_compute_nodes': '455', 
+    'alpine_total_cores': '28,080',
+    'alpine_total_cpu_nodes': '402',
+    'alpine_total_128_core_cpu_nodes': '16',
+    'alpine_total_64_core_cpu_nodes': '309',
+    'alpine_total_48_core_cpu_nodes': '28',
+    'alpine_total_32_core_cpu_nodes': '49',
+    'alpine_total_mi100_gpu_nodes': '8',
+    'alpine_total_a100_gpu_nodes': '12',
+    'alpine_total_l40_gpu_nodes': '3',
+    'alpine_total_himem_1TB_cpu_nodes': '22',
+    'alpine_total_himem_2TB_cpu_nodes': '2',
+
+
 }
 
 source_suffix = {
