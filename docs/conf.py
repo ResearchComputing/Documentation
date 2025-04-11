@@ -9,11 +9,15 @@ myst_enable_extensions = ["colon_fence", "attrs_inline", "attrs_block", "tasklis
 myst_enable_checkboxes = True
 
 myst_substitutions = {
+
+   # Allocation specific substitutions 
     'trailhead_SUs': '2,000',
     'boulder_ascent_SUs': '350,000', 
     'boulder_ascent_SU_group_limit': '1.4 M', 
     'boulder_peak_SUs': '6,000,000', 
     'rmacc_ascent_SUs': '100,000',
+
+    # Cluster Summary substitutions
     'alpine_total_compute_nodes': '455', 
     'alpine_total_cores': '28,080',
     'alpine_total_cpu_nodes': '402',
