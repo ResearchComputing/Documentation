@@ -29,8 +29,11 @@ myst_substitutions = {
     'alpine_csu_total_compute_nodes': '77',
     'alpine_csu_total_48_core_compute_nodes': '28',
     'alpine_csu_total_32_core_compute_nodes': '49',
-
-
+    'alpine_amc_total_reg_64_core_nodes': '26', 
+    'alpine_amc_total_himem_1TB_cpu_nodes': '2',  
+    'alpine_amc_total_himem_2TB_cpu_nodes': '2',  
+    'alpine_amc_total_a100_gpu_nodes': '4',  
+    'alpine_amc_total_l40_gpu_nodes': '2'
 }
 
 source_suffix = {

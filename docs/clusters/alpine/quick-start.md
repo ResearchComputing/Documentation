@@ -39,7 +39,7 @@ The Alpine cluster is made up of different types of nodes outlined below:
 
 Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
 - **Colorado State University**: {{ alpine_csu_total_compute_nodes }} AMD Milan compute nodes ({{ alpine_csu_total_48_core_compute_nodes }} nodes with 48 cores/node, {{ alpine_csu_total_32_core_compute_nodes }} nodes with 32 cores/node)
-- **CU Anschutz Medical Campus**: 26 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, 2 AMD Milan nodes with 2TB of RAM, 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan), and 2 GPU-enabled (3x NVIDIA L40 atop AMD Milan)
+- **CU Anschutz Medical Campus**: {{ alpine_amc_total_reg_64_core_nodes }} AMD Milan compute nodes (64 cores/node), {{ alpine_amc_total_himem_1TB_cpu_nodes }} AMD Milan nodes with 1TB of RAM, {{ alpine_amc_total_himem_2TB_cpu_nodes }} AMD Milan nodes with 2TB of RAM, {{ alpine_amc_total_a100_gpu_nodes }} GPU-enabled (3x NVIDIA A100 atop AMD Milan), and {{ alpine_amc_total_l40_gpu_nodes }} GPU-enabled (3x NVIDIA L40 atop AMD Milan)
 
 All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 
