@@ -19,19 +19,6 @@
 
 :::
 
-### Colorado State University contribution
-
-:::{table}
-:width: 95%
-:widths: auto
-:align: left
-
-| Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
-| --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- | -------- |
-| 28 Milan General CPU  | csu, amilan         | x86_64 AMD Milan | 2       | 48            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
-| 49 Milan General CPU  | csu, amilan         | x86_64 AMD Milan | 2       | 32            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-:::
-
 ### CU Anschutz Medical Campus contribution
 
 :::{table}
@@ -48,6 +35,20 @@
 | 3 Milan NVIDIA GPU    | amc, al40           | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA L40  | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 
 :::
+
+### Colorado State University contribution
+
+:::{table}
+:width: 95%
+:widths: auto
+:align: left
+
+| Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
+| --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- | -------- |
+| 28 Milan General CPU  | csu, amilan         | x86_64 AMD Milan | 2       | 48            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| 49 Milan General CPU  | csu, amilan         | x86_64 AMD Milan | 2       | 32            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+:::
+
 
 ## Requesting Hardware Resources
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):

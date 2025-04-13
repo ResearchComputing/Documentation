@@ -27,24 +27,19 @@ request](./software.md#alpine-software) using our [Software Request Form](https:
 
 ## Cluster Summary
 ### Nodes
-The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: {{ alpine_total_cpu_nodes }} AMD Milan compute nodes ({{ alpine_total_128_core_cpu_nodes }} nodes with 128 cores/node, {{ alpine_total_64_core_cpu_nodes }} nodes with 64 cores/node, {{ alpine_total_48_core_cpu_nodes }} nodes with 48 cores/node, {{ alpine_total_32_core_cpu_nodes }} nodes with 32 cores/node) with 256 GB RAM
-- **GPU nodes**:
-	- {{ alpine_total_mi100_gpu_nodes }} GPU-enabled (3x AMD MI100) atop AMD Milan CPU
-	- {{ alpine_total_a100_gpu_nodes }} GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
- 	- {{ alpine_total_l40_gpu_nodes }} GPU-enabled (3x NVIDIA L40) atop AMD Milan CPU
-- **High-memory nodes**:
-	- {{ alpine_total_himem_1TB_cpu_nodes }} AMD Milan (64-core) nodes with 1TB of memory
-  	- {{ alpine_total_himem_2TB_cpu_nodes }} AMD Milan (128-core) nodes with 2TB of memory
+The Alpine cluster is made up of different types of nodes. A general overview of these nodes is as follows: 
+- **CPU nodes**: {{ alpine_total_256_GB_cpu_nodes }} AMD Milan compute nodes with 256 GB RAM
+- **GPU nodes**: a mixture of {{ alpine_total_gpu_nodes }} NVIDIA and AMD GPUs
+- **High-memory nodes**: {{ alpine_total_hi_mem_cpu_nodes }} high-memory nodes with 1 TB of memory or more
 
-Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
-- **Colorado State University**: {{ alpine_csu_total_compute_nodes }} AMD Milan compute nodes ({{ alpine_csu_total_48_core_compute_nodes }} nodes with 48 cores/node, {{ alpine_csu_total_32_core_compute_nodes }} nodes with 32 cores/node)
-- **CU Anschutz Medical Campus**: {{ alpine_amc_total_reg_64_core_nodes }} AMD Milan compute nodes (64 cores/node), {{ alpine_amc_total_himem_1TB_cpu_nodes }} AMD Milan nodes with 1TB of RAM, {{ alpine_amc_total_himem_2TB_cpu_nodes }} AMD Milan nodes with 2TB of RAM, {{ alpine_amc_total_a100_gpu_nodes }} GPU-enabled (3x NVIDIA A100 atop AMD Milan), and {{ alpine_amc_total_l40_gpu_nodes }} GPU-enabled (3x NVIDIA L40 atop AMD Milan)
+Alpine is made possible due to its contributors. Below we provide each contributor, along with the number of nodes they have provided:
+- **University of Colorado Boulder**: {{ ucb_alpine_total_nodes }}
+- **Colorado State University**: {{ csu_alpine_total_nodes }}
+- **CU Anschutz Medical Campus**: {{ amc_alpine_total_nodes }} 
 
-All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
-
-```{tip}
-For a full list of nodes on Alpine use the command:  `scontrol show nodes`. Get single node details with the `scontrol show nodes <node name>` command.
+```{note}
+- For specific details on node types and a breakdown of contributions made to Alpine, please see the [Hardware Summary](./alpine-hardware.md#hardware-summary) section of our Alpine Hardware page. 
+- All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 ```
 
 ### Interconnect
