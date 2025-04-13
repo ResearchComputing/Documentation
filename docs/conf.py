@@ -29,7 +29,7 @@ myst_substitutions = {
    'amc_alpine_total_nodes': '37',
    'csu_alpine_total_nodes': '77',
 
-   # Alpine hardware summary page substitutions
+   # Alpine hardware page, hardware summary section substitutions
    ## UCB contributions 
    'alpine_ucb_total_128_core_256GB_cpu_nodes': '16',
    'alpine_ucb_total_64_core_256GB_cpu_nodes': '287',
@@ -40,14 +40,15 @@ myst_substitutions = {
    'alpine_ucb_total_gh200_gpu_nodes': '2',
    ## AMC contributions
    'alpine_amc_total_64_core_256GB_cpu_nodes': '26', 
-   'alpine_amc_total_himem_1TB_cpu_nodes': '2',  
-   'alpine_amc_total_himem_2TB_cpu_nodes': '2',  
+   'alpine_amc_total_64_core_1TB_cpu_nodes': '2',  
+   'alpine_amc_total_128_core_2TB_cpu_nodes': '2',  
    'alpine_amc_total_a100_gpu_nodes': '4',  
    'alpine_amc_total_l40_gpu_nodes': '2',
    ## CSU contributions
-   'alpine_csu_total_compute_nodes': '77',
-   'alpine_csu_total_48_core_compute_nodes': '28',
-   'alpine_csu_total_32_core_compute_nodes': '49'
+   'alpine_csu_total_48_core_256GB_cpu_nodes': '28',
+   'alpine_csu_total_32_core_256GB_cpu_nodes': '49'
+
+   # Alpine hardware page, partition section substitutions
 }
 
 source_suffix = {
