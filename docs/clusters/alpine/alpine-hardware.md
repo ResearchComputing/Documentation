@@ -3,7 +3,7 @@
 ## Hardware Summary
 
 ```{important}
-All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
+All Alpine nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 ```
 
 ### University of Colorado Boulder contribution
@@ -16,6 +16,7 @@ All nodes are available to all users. For full details about node access, please
 | Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
 | --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- | -------- |
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes }} Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| {{ alpine_ucb_total_128_core_256GB_cpu_nodes }} Milan CPU | amilan128c             | x86_64 AMD Milan | 2  | 128            | 1            |  2         | 32            | N/A         | 0         |                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.8 |
 | {{ alpine_ucb_total_48_core_1TB_cpu_nodes }} Milan High-Memory  | amem                | x86_64 AMD Milan | 2       | 48            | 1            | 21.5          | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_64_core_1TB_cpu_nodes }} Milan High-Memory   | amem                | x86_64 AMD Milan | 1       | 64            | 1            |  16           | 32            | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_mi100_gpu_nodes }} Milan AMD GPU | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
@@ -107,8 +108,8 @@ The available QoS's for Alpine are:
 
 | QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| normal      | Default                    | 1D              | 1000          | 128                | amilan,aa100,ami100              | 0                    |
-| long        | Longer wall times          | 7D              | 200           | 20                 | amilan,aa100,ami100              | 0                    |
+| normal      | Default                    | 1D              | 1000          | 128                | amilan,amilan128c,aa100,ami100              | 0                    |
+| long        | Longer wall times          | 7D              | 200           | 20                 | amilan,amilan128c,aa100,ami100              | 0                    |
 | mem         | High-memory jobs           | 7D              | 1000          | 12                 | amem only        | 0                    |
 
 
@@ -126,12 +127,14 @@ Partitions available on Alpine:
 | Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | Default/Max Walltime     | Resource Limits |
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- | ------------------------ | ----------------------|
 | amilan    | AMD Milan (default)          | {{ alpine_total_amilan_nodes }}        | 32 or 48 or 64 |   3.75        | 1                   | 24H, 7D                 | see qos table |
+| amilan128c    | AMD Milan        | {{ alpine_total_amilan128c_nodes }}        | 128 |   2        | 1                   | 24H, 7D      | see qos table |
 | ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   3.75        | 6.1<sup>3</sup>     | 24H, 7D                 | 15 GPUs across all jobs |
 | aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | {{ alpine_total_aa100_nodes }}          | 64         |   3.75       | 6.1<sup>3</sup>     | 24H, 7D     | 21 GPUs across all jobs |
 | al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   3.75       | 6.1<sup>3</sup>     | 24H, 7D     | 6 GPUs across all jobs |
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |  4H,  7D                 | 128 cores across all jobs |
 | csu       | Nodes contributed by CSU     | {{ alpine_total_csu_nodes }}         | 32 or 48   |   3.75        | 1                   | 24H, 7D                 | see qos table |
 | amc       | Nodes contributed by AMC     | {{ alpine_total_amc_nodes }}        | 32 or 48   |   3.75        | 1                   | 24H, 7D                 | see qos table |
+
 
 <sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 128 cores or fewer. For example, you can run one 128-core job or up to two 64-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
 
@@ -144,6 +147,7 @@ Partitions available on Alpine:
 All users, regardless of institution, should specify partitions as follows:
 ```bash
 --partition=amilan
+--partition=amilan128c
 --partition=aa100
 --partition=ami100
 --partition=al40

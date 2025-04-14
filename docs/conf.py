@@ -50,6 +50,7 @@ myst_substitutions = {
 
    # Alpine hardware page, partition section substitutions
    'alpine_total_amilan_nodes': '386',
+   'alpine_total_amilan128c_nodes': '16',
    'alpine_total_ami100_nodes': '8',
    'alpine_total_aa100_nodes': '11',
    'alpine_total_al40_nodes': '3',

@@ -33,9 +33,9 @@ The Alpine cluster is made up of different types of nodes. A general overview of
 - **High-memory nodes**: {{ alpine_total_hi_mem_cpu_nodes }} high-memory nodes with 1 TB of memory or more
 
 Alpine is made possible due to its contributors. Below we provide each contributor, along with the number of nodes they have provided:
-- **University of Colorado Boulder**: {{ ucb_alpine_total_nodes }}
-- **Colorado State University**: {{ csu_alpine_total_nodes }}
-- **CU Anschutz Medical Campus**: {{ amc_alpine_total_nodes }} 
+- **University of Colorado Boulder**: {{ ucb_alpine_total_nodes }} nodes
+- **Colorado State University**: {{ csu_alpine_total_nodes }} nodes
+- **CU Anschutz Medical Campus**: {{ amc_alpine_total_nodes }} nodes
 
 ```{note}
 - For specific details on node types and a breakdown of contributions made to Alpine, please see the [Hardware Summary](./alpine-hardware.md#hardware-summary) section of our Alpine Hardware page. 
