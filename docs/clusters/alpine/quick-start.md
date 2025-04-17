@@ -63,9 +63,10 @@ sinfo --format="%N | %f"
 ```
 
 ### Description of features
-- **Milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
-- **A100**: NVIDIA A100 GPU
-- **MI100**: AMD MI100 GPU
+- **milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
+- **milan128c**: dual-socket 128-core AMD EPYC Milan CPU
+- **a100**: NVIDIA A100 GPU
+- **mi100**: AMD MI100 GPU
 - **l40**: NVIDIA L40 GPU
 - **storage**: large, fast RAID disk storage in node
 - **rh8**: RedHat Enterprise Linux version 8 operating system
