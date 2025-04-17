@@ -18,14 +18,14 @@ myst_substitutions = {
    'rmacc_ascent_SUs': '100,000',
 
    # Alpine compute total counts substitutions 
-   'alpine_total_compute_nodes': '439', 
-   'alpine_total_cores': '26,032',
+   'alpine_total_compute_nodes': '455', 
+   'alpine_total_cores': '28,080',
 
    # Alpine cluster summary substitutions
-   'alpine_total_256GB_cpu_nodes': '390',
+   'alpine_total_256GB_cpu_nodes': '406',
    'alpine_total_gpu_nodes': '25',
    'alpine_total_hi_mem_cpu_nodes': '24',
-   'ucb_alpine_total_nodes': '325',
+   'ucb_alpine_total_nodes': '341',
    'amc_alpine_total_nodes': '37',
    'csu_alpine_total_nodes': '77',
 
