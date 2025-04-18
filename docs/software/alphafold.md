@@ -75,3 +75,96 @@ cd /projects/$USER
 #run AlphaFold
 run_alphafold -d $CURC_AF_DBS -o . -f $CURC_AF_EXAMPLES/dummy.fasta -t 2020-05-14 -m "monomer" -g true
 ```
+
+## AlphaFold 3
+
+Alphafold 3 has a substantially updated diffusion-based architecture that is capable of predicting the joint structure of complexes including proteins, nucleic acids, small molecules, ions and modified residues. That neccessitates a different kind of input than the fasta input in Alphafold 2.
+
+On CURC’s Alpine system, AlphaFold 3 is available as a containerized module. It uses Apptainer/Singularity under the hood and is fully self-contained except for the separately downloaded model parameters (required).
+
+```{important}
+Due to license restrictions for AlphaFold 3 model weights, you must read and comply with the [Model Parameters](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md) and [Outputs](https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md) Terms of Use. In short, only non-profit activity is allowed, unethical use of the outputs is disallowed and make sure to cite the Alphafold 3 paper in any publication. To gain access to Alphafold 3 at CURC, request access to the weights by filling out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfWZAgo1aYk0O4MuAXZj8xRQ8DafeFJnldNOnh_13qAx2ceZw/viewform). You will receive two e-mails. First is acknowledgement of receipt of the request form. The second, in a day or so, is the approval with a link to download the model parameters. Once you have downloaded them, put them in a filesystem you have access to on Alpine.
+```
+Please contact rc-help@colorado.edu if you would like to run AlphaFold 3 on Blanca or need assistance setting up model weights.
+
+### Running AlphaFold 3
+
+Load AlphaFold 3 module:
+```
+module load alphafold/3.0.0
+```
+
+View run options:
+```
+run_alphafold --help
+```
+### AlphaFold 3 Module
+
+Loading the AlphaFold 3 module does the following:
+- sets environment variables used by the wrapper script:
+    - `AF3_IMAGE`, `AF3_CODE_DIR`, `AF3_DATABASES_DIR`, and `AF3_RESOURCES_DIR`
+
+- redirects temporary files to `/scratch/alpine/$USER`
+    - you can override this path by resetting TMPDIR *after* you load the module:
+        ```
+        module load alphafold/3.0.0
+        export TMPDIR=<path/of/your/choosing>
+        ```
+- creates a shortcut to the AlphaFold 3 script so you can run the program with `run_alphafold`
+
+### AlphaFold 3 Input Formats
+AlphaFold 3 uses JSON input files instead of FASTA.
+You can either:
+- Provide a single JSON file via `--json_path=<path of input>`
+- Or a directory of JSONs via `--input_dir=<path of input>`
+
+### AlphaFold 3 Databases
+Databases used by AlphaFold 3 are pre-installed and accessible via:
+`/gpfs/alpine1/datasets/bioinformatics/alphafold3`. This path is passed into the container and made available at runtime. Note that this directory is not visible from a login node. Loading the AlphaFold 3 module stores this path in `AF3_DATABASES_DIR`.
+
+### AlphaFold 3 Examples
+Some example input files and scripts are located in `/curc/sw/install/bio/alphafold/3.0.0/examples`. Loading the AlphaFold module stores this path in `AF3_EXAMPLES`:
+
+```
+ls $AF3_EXAMPLES
+alphafold3_alpine_cpu.sh  alphafold3_alpine_gpu.sh  alphafold3_alpine.sh  fold_protein_2PV7
+```
+
+### Example Job Script
+
+This example job script below is saved in `/curc/sw/install/bio/alphafold/3.0.0/alphafold3_alpine.sh`. You can copy it to any space you have write permissions and make the desired changes:
+```bash
+cd /projects/$USER
+cp -R /curc/sw/install/bio/alphafold/3.0.0/examples .
+cd examples
+```
+
+``` bash
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --time=30:00:00
+#SBATCH --partition=al40
+#SBATCH --qos=normal
+#SBATCH --gres=gpu:1
+#SBATCH --job-name=af3_test
+#SBATCH --output=af3_test_%j.out
+#SBATCH --ntasks=8
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=<your email address>
+
+# Load the AlphaFold 3 module
+module purge
+module load alphafold/3.0.0
+
+# Set input JSON, output directory, and model parameter path
+export INPUT_FILE=/path/to/input/json
+export OUTPUT_DIR=/path/to/output
+export AF3_MODEL_PARAMETERS_DIR=/path/to/alphafold3/params
+
+# Run AlphaFold 3
+run_alphafold --json_path=$INPUT_FILE --output_dir=$OUTPUT_DIR --model_dir=$AF3_MODEL_PARAMETERS_DIR
+```
+Make sure:
+- to replace the paths to match your own $USER scratch locations.
+- that the input JSON file and model parameters exist and are accessible.
