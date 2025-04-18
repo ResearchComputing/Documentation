@@ -82,10 +82,7 @@ Alphafold 3 has a substantially updated diffusion-based architecture that is cap
 
 On CURC’s Alpine system, AlphaFold 3 is available as a containerized module. It uses Apptainer/Singularity under the hood and is fully self-contained except for the separately downloaded model parameters (required).
 
-```{important}
-Due to license restrictions for AlphaFold 3 model weights, you must read and comply with the [Model Parameters](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md) and [Outputs](https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md) Terms of Use. In short, only non-profit activity is allowed, unethical use of the outputs is disallowed and make sure to cite the Alphafold 3 paper in any publication. To gain access to Alphafold 3 at CURC, request access to the weights by filling out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfWZAgo1aYk0O4MuAXZj8xRQ8DafeFJnldNOnh_13qAx2ceZw/viewform). You will receive two e-mails. First is acknowledgement of receipt of the request form. The second, in a day or so, is the approval with a link to download the model parameters. Once you have downloaded them, put them in a filesystem you have access to on Alpine.
-```
-Please contact rc-help@colorado.edu if you would like to run AlphaFold 3 on Blanca or need assistance setting up model weights.
+Please contact rc-help@colorado.edu if you would like to run AlphaFold 3 on Blanca.
 
 ### Running AlphaFold 3
 
@@ -102,7 +99,9 @@ run_alphafold --help
 
 Loading the AlphaFold 3 module does the following:
 - sets environment variables used by the wrapper script:
-    - `AF3_IMAGE`, `AF3_CODE_DIR`, `AF3_DATABASES_DIR`, and `AF3_RESOURCES_DIR`
+    - `AF3_IMAGE`: Path to the AlphaFold3 container image used for running jobs 
+    - `AF3_CODE_DIR`: Directory containing the AlphaFold3 codebase
+    - `AF3_DATABASES_DIR`: Location of the required AlphaFold3 reference databases
 
 - redirects temporary files to `/scratch/alpine/$USER`
     - you can override this path by resetting TMPDIR *after* you load the module:
@@ -112,6 +111,12 @@ Loading the AlphaFold 3 module does the following:
         ```
 - creates a shortcut to the AlphaFold 3 script so you can run the program with `run_alphafold`
 
+### AlphaFold 3 Model Weights
+
+```{important}
+Due to license restrictions for AlphaFold 3 model weights, you must read and comply with the [Model Parameters](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md) and [Outputs](https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md) Terms of Use. In short, only non-profit activity is allowed, unethical use of the outputs is disallowed and make sure to cite the Alphafold 3 paper in any publication. To gain access to Alphafold 3 at CURC, request access to the weights by filling out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfWZAgo1aYk0O4MuAXZj8xRQ8DafeFJnldNOnh_13qAx2ceZw/viewform). You will receive two e-mails. First is acknowledgement of receipt of the request form. The second, in a day or so, is the approval with a link to download the weights. Once you have downloaded them, put them in a filesystem you have access to on Alpine.
+```
+
 ### AlphaFold 3 Input Formats
 AlphaFold 3 uses JSON input files instead of FASTA.
 You can either:
@@ -120,7 +125,17 @@ You can either:
 
 ### AlphaFold 3 Databases
 Databases used by AlphaFold 3 are pre-installed and accessible via:
-`/gpfs/alpine1/datasets/bioinformatics/alphafold3`. This path is passed into the container and made available at runtime. Note that this directory is not visible from a login node. Loading the AlphaFold 3 module stores this path in `AF3_DATABASES_DIR`.
+`/gpfs/alpine1/datasets/bioinformatics/alphafold3`. Note that this directory is not visible from a login node. Loading the AlphaFold 3 module stores this path in `AF3_DATABASES_DIR`.
+
+### AlphaFold 3 Workflow Overview
+AlphaFold 3 runs in two stages:
+Stage 1 (MSA Search): CPU and I/O-intensive; uses jackhmmer and hhmsearch.
+
+Stage 2 (Inference): GPU-intensive; performs structure prediction.
+
+To better utilize limited GPU resources, these stages can be split using flags:
+ - `--norun_inference` → Run only the MSA/data pipeline (Stage 1)
+ - `--norun_data_pipeline` → Run only the inference step (Stage 2)
 
 ### AlphaFold 3 Examples
 Some example input files and scripts are located in `/curc/sw/install/bio/alphafold/3.0.0/examples`. Loading the AlphaFold module stores this path in `AF3_EXAMPLES`:
@@ -129,21 +144,23 @@ Some example input files and scripts are located in `/curc/sw/install/bio/alphaf
 ls $AF3_EXAMPLES
 alphafold3_alpine_cpu.sh  alphafold3_alpine_gpu.sh  alphafold3_alpine.sh  fold_protein_2PV7
 ```
+You can copy the examples folder to a location where you have write permissions and customize the scripts:
 
-### Example Job Script
-
-This example job script below is saved in `/curc/sw/install/bio/alphafold/3.0.0/alphafold3_alpine.sh`. You can copy it to any space you have write permissions and make the desired changes:
 ```bash
 cd /projects/$USER
 cp -R /curc/sw/install/bio/alphafold/3.0.0/examples .
 cd examples
 ```
 
+### Example Job Script
+
+Path of the script: $AF3_EXAMPLES/alphafold3_alpine.sh
+
 ``` bash
 #!/bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --time=30:00:00
+#SBATCH --time=30:00
 #SBATCH --partition=al40
 #SBATCH --qos=normal
 #SBATCH --gres=gpu:1
@@ -158,13 +175,10 @@ module purge
 module load alphafold/3.0.0
 
 # Set input JSON, output directory, and model parameter path
-export INPUT_FILE=/path/to/input/json
+export INPUT_FILE=$AF3_EXAMPLES/fold_protein_2PV7/alphafold_input.json
 export OUTPUT_DIR=/path/to/output
 export AF3_MODEL_PARAMETERS_DIR=/path/to/alphafold3/params
 
 # Run AlphaFold 3
 run_alphafold --json_path=$INPUT_FILE --output_dir=$OUTPUT_DIR --model_dir=$AF3_MODEL_PARAMETERS_DIR
 ```
-Make sure:
-- to replace the paths to match your own $USER scratch locations.
-- that the input JSON file and model parameters exist and are accessible.
