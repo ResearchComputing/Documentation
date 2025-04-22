@@ -2,8 +2,8 @@
 
 Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
 cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
-Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers 439 compute nodes and a total 
-of 26,032 cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
+Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers {{ alpine_total_compute_nodes }} compute nodes and a total 
+of {{ alpine_total_cores }} cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
 
 ## Alpine Quick-Start
 
@@ -27,24 +27,19 @@ request](./software.md#alpine-software) using our [Software Request Form](https:
 
 ## Cluster Summary
 ### Nodes
-The Alpine cluster is made up of different types of nodes outlined below:
-- **CPU nodes**: 386 AMD Milan compute nodes (309 nodes with 64 cores/node, 28 nodes with 48 cores/node, 49 nodes with 32 cores/node) with 256 GB RAM
-- **GPU nodes**:
-	- 8 GPU-enabled (3x AMD MI100) atop AMD Milan CPU
-	- 12 GPU-enabled (3x NVIDIA A100) atop AMD Milan CPU
- 	- 3 GPU-enabled (3x NVIDIA L40) atop AMD Milan CPU
-- **High-memory nodes**:
-	- 22 AMD Milan (64-core) nodes with 1TB of memory
-  	- 2 AMD Milan (128-core) nodes with 2TB of memory
+The Alpine cluster is made up of different types of nodes. A general overview of these nodes is as follows: 
+- **CPU nodes**: {{ alpine_total_256GB_cpu_nodes }} AMD Milan compute nodes with 256 GB RAM
+- **GPU nodes**: a mixture of {{ alpine_total_gpu_nodes }} NVIDIA and AMD GPUs
+- **High-memory nodes**: {{ alpine_total_hi_mem_cpu_nodes }} high-memory nodes with 1 TB of memory or more
 
-Alpine also includes nodes contributed by partner institutions. Contributors with nodes in either deployment or production are:
-- **Colorado State University**: 77 AMD Milan compute nodes (28 nodes with 48 cores/node, 49 nodes with 32 cores/node)
-- **CU Anschutz Medical Campus**: 26 AMD Milan compute nodes (64 cores/node), 2 AMD Milan nodes with 1TB of RAM, 2 AMD Milan nodes with 2TB of RAM, 4 GPU-enabled (3x NVIDIA A100 atop AMD Milan), and 2 GPU-enabled (3x NVIDIA L40 atop AMD Milan)
+Alpine is made possible due to its contributors. Below we provide each contributor, along with the number of nodes they have provided:
+- **University of Colorado Boulder**: {{ ucb_alpine_total_nodes }} nodes
+- **Colorado State University**: {{ csu_alpine_total_nodes }} nodes
+- **CU Anschutz Medical Campus**: {{ amc_alpine_total_nodes }} nodes
 
-All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
-
-```{tip}
-For a full list of nodes on Alpine use the command:  `scontrol show nodes`. Get single node details with the `scontrol show nodes <node name>` command.
+```{note}
+- For specific details on node types and a breakdown of contributions made to Alpine, please see the [Hardware Summary](./alpine-hardware.md#hardware-summary) section of our Alpine Hardware page. 
+- All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
 ```
 
 ### Interconnect
@@ -68,9 +63,10 @@ sinfo --format="%N | %f"
 ```
 
 ### Description of features
-- **Milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
-- **A100**: NVIDIA A100 GPU
-- **MI100**: AMD MI100 GPU
+- **milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
+- **milan128c**: dual-socket 128-core AMD EPYC Milan CPU
+- **a100**: NVIDIA A100 GPU
+- **mi100**: AMD MI100 GPU
 - **l40**: NVIDIA L40 GPU
 - **storage**: large, fast RAID disk storage in node
 - **rh8**: RedHat Enterprise Linux version 8 operating system
@@ -84,7 +80,7 @@ More details about how to use SLURM to run jobs can be found in our [running app
 
 ## Allocations
 
-When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with 350,000 SUs over a 12 month period. The **Peak Allocation** tier is aimed at projects that will consume between 350,000 and 6,000,000 SUs in a 12 month period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.
+When you receive a Research Computing account you are automatically assigned a **Trailhead Auto-Allocation**, which grants you a fixed share of `ucb-general`. The Trailhead is a great allocation for smaller jobs or testing and benchmarking your code. To accommodate a variety of allocation sizes on Alpine, CURC offers two application-based tiers. The **Ascent Allocation** tier provides users with {{ boulder_ascent_SUs }} SUs over a 12 month period. The **Peak Allocation** tier is aimed at projects that will consume between {{ boulder_ascent_SUs }} and {{ boulder_peak_SUs }} SUs in a 12 month period. Please see our [Allocations page](allocations.md) for a comparison of tiers and instructions to apply.
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
