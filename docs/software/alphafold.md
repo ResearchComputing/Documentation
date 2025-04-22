@@ -1,7 +1,7 @@
 # AlphaFold
 
 ## AlphaFold Overview
-AlphaFold is a program that predicts the three-dimensional structure of proteins from their amino acid sequences. It is currently available as module on CURC Alpine. Please contact <rc-help@colorado.edu> if you would like to run AlphaFold on Blanca.
+AlphaFold is a program that predicts the three-dimensional structure of proteins from their amino acid sequences. It is currently available as module on CURC Alpine.
 
 (tabset-ref-batch-scripting)=
 `````{tab-set}
@@ -111,6 +111,8 @@ Loading the AlphaFold 3 module does the following:
 #### AlphaFold 3 Model Weights
 ```{important}
 Due to license restrictions for AlphaFold 3 model weights, you must read and comply with the [Model Parameters](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md) and [Outputs](https://github.com/google-deepmind/alphafold3/blob/main/OUTPUT_TERMS_OF_USE.md) Terms of Use. In short, only non-profit activity is allowed, unethical use of the outputs is disallowed and make sure to cite the AlphaFold 3 paper in any publication. To gain access to AlphaFold 3 at CURC, request access to the weights by filling out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfWZAgo1aYk0O4MuAXZj8xRQ8DafeFJnldNOnh_13qAx2ceZw/viewform). You will receive two e-mails. First is acknowledgement of receipt of the request form. The second, in a day or so, is the approval with a link to download the weights. Once you have downloaded them, put them in a filesystem you have access to on Alpine.
+You will need to specify the path to the directory where you save the model weights using the `--model_dir=<path to weights>`.
+
 ```
 
 #### AlphaFold 3 Input
