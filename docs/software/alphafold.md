@@ -1,7 +1,7 @@
 # AlphaFold
 
 ## AlphaFold Overview
-AlphaFold is a program that predicts the three-dimensional structure of proteins from their amino acid sequences. It is currently available as module on CURC Alpine.
+AlphaFold is a program that predicts the three-dimensional structure of proteins from their amino acid sequences. AlphaFold 2 and AlphaFold 3 are available as modules on both Alpine and Blanca. For detailed instructions on running each version, please select the relevant tab below.
 
 (tabset-ref-batch-scripting)=
 `````{tab-set}
