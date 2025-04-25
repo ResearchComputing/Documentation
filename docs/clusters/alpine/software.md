@@ -134,6 +134,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Valgrind](https://valgrind.org/) | 3.11.0, 3.17.0 (D) |Valgrind is an instrumentation framework containing tools that can automatically detect many memory management and threading bugs, and profile your programs in detail.| 
 | [VAPOR](https://github.com/NCAR/VAPOR) | 3.3.0, 3.4.0 (D) |VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers.|
 | [vtf3](https://www.paratools.com/otf/) | 1.43 |VTF3 trace generation package.|  
+| xlibs | rhel8 (D) |Provides libraries associated with Xlib, an X Window System protocol client library. These libraries are often needed for visualization software and libraries.|  
 | [Yambo](https://www.yambo-code.eu/wiki/index.php/Main_Page) | 5.2.2 |An ab initio tool for excited state calculations.|  
 | [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zip files.|
 | [zlib](https://www.zlib.net/) | 1.2.11, 1.3.1 | Lossless data-compression library.|
