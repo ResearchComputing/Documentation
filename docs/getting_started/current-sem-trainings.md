@@ -29,7 +29,8 @@ Click the name of a training to view more details and register!
 - [Research Storage Simplified (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/storage) - **March 19th, 11am, Virtual (Zoom)**
 ### **April**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **April 4th, 10am, Hybrid (Norlin Library E206/Zoom)**
-
+### **May**
+- [Build GenAI Chatbots with Amazon Bedrock: Multi-Agent Systems Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/genai) - **May 12th, 9am, Virtual (Zoom)**
 ````
 
 ````{tab-item} By Topic
@@ -54,6 +55,7 @@ Click the name of a training to view more details and register!
 ### **Cloud Computing**
 - [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **March 3rd, 9am, Virtual (Zoom)**
 - [Introduction to the Commercial Cloud (an RC Primer)](https://colorado.libcal.com/calendar/events/cloud) - **March 12th, 2pm, Hybrid (Norlin Library E206/Zoom)**
+- [Build GenAI Chatbots with Amazon Bedrock: Multi-Agent Systems Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/genai) - **May 12th, 9am, Virtual (Zoom)**
 
 ````
 
@@ -67,6 +69,7 @@ Click the name of a training to view more details and register!
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **February 7th, 10am, Virtual (Zoom)**
 - [AWS SageMaker Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/sagemaker) - **March 3rd, 9am, Virtual (Zoom)**
 - [Research Storage Simplified (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/storage) - **March 19th, 11am, Virtual (Zoom)**
+- [Build GenAI Chatbots with Amazon Bedrock: Multi-Agent Systems Immersion Day (an RC Workshop)](https://colorado.libcal.com/calendar/events/genai) - **May 12th, 9am, Virtual (Zoom)**
 
 ### **Intermediate**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/github) - **February 18th, 10am, Hybrid (Norlin Library E206/Zoom)**
