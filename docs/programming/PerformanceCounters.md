@@ -91,7 +91,7 @@ Sensor and Resource Usage Metrics:
 
 ## Nsight Compute (ncu)
 
-NVIDIA Nsight Compute (ncu) is a command-line CUDA kernel profiler that provides detailed performance metrics for GPU kernels, helping users identify and resolve bottlenecks in CUDA applications. It is particularly well-suited for low-level kernel analysis and optimization.
+NVIDIA Nsight Compute is a command-line CUDA kernel profiler that provides detailed performance metrics for GPU kernels, helping users identify and resolve bottlenecks in CUDA applications. It is particularly well-suited for low-level kernel analysis and optimization.
 
 Key Features:
 - Collects performance data on SM utilization, memory throughput, warp execution efficiency, and more.
@@ -422,7 +422,7 @@ This section tells you how your kernel was launched and whether that configurati
 | # SMs | Number of Streaming Multiprocessors (compute units)   | Helps evaluate if enough blocks are used |
 | Waves Per SM  | Full sets of warps scheduled per SM   | Indicates how much parallel work is scheduled per compute unit. 0.00 means most SMs are idle | 
 
-Here’s a simplified snippet from an ncu run on vectorAdd  
+Here’s a simplified snippet from an ```ncu``` run on vectorAdd  
 ```
 [rc_user@c3gpu-c2-u7 ]$ ncu --set full --target-processes all ./vectorAdd
 ==PROF== Connected to process 3921697
@@ -504,7 +504,7 @@ This updated configuration allows the GPU to schedule multiple waves of work acr
 
 ## Nsight Systems (nsys)
 
-```nsys```  is a system-wide profiler that traces the interactions between CPU and GPU, memory transfers, and OS-level activity. It’s useful for understanding:
+Nsight Systems  is a system-wide profiler that traces the interactions between CPU and GPU, memory transfers, and OS-level activity. It’s useful for understanding:
 
 - Launch latency of GPU kernels.
 
