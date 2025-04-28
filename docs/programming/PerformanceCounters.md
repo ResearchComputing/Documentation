@@ -105,12 +105,12 @@ Key Features:
 To use ```ncu```, first load the appropriate CUDA module:
 
 ```
-module load cuda
+$ module load cuda
 ```
 After compiling your CUDA code (```nvcc -o sample_code sample_code.cu```), you can invoke ```ncu``` by prefixing it to your CUDA application:
 
 ```
-ncu --set full --target-processes all ./sample_code
+$ ncu --set full --target-processes all ./sample_code
 ```
 - ```--set full```: Collects a comprehensive set of performance metrics.
 
@@ -160,8 +160,8 @@ int main() {
 ```
 ::::{dropdown} Click here to view full ```ncu``` report
 :icon: note
-
-==PROF== Connected to process 3921697 (/projects/mokh8410/ncu_test/new_test/vectorAdd)
+```
+==PROF== Connected to process 3921697 
 ==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 49 passes
 ==PROF== Disconnected from process 3921697
 [3921697] vectorAdd@127.0.0.1
@@ -396,7 +396,7 @@ For example:
 ```
 
 ```{caution}
-Collecting performance data using ```ncu``` can incur significant runtime overhead. For production runs, disable profiling. See Nsight Compute Overhead[https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead] for more details.
+Collecting performance data using ```ncu``` can incur significant runtime overhead. For production runs, disable profiling. See [Nsight Compute Overhead](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead) for more details.
 ```
 When profiling a CUDA application using ```ncu```, two sections in the output, GPU Speed Of Light Throughput and Launch Statistics, as they provide essential insights into how well your code is utilizing the GPU's hardware. Understanding these metrics helps identify performance bottlenecks and underutilization.
 
@@ -517,8 +517,8 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 To use ```nsys```, load the appropriate CUDA module and invoke ```nsys``` by prefixing it to your CUA application:
 
 ```
-module load cuda
-nsys profile --trace=cuda,osrt ./vectorAdd
+$ module load cuda
+$ nsys profile --trace=cuda,osrt ./vectorAdd
 ```
 - ```--trace=cuda```: Capture CUDA kernel launches and memory transfers.
 
@@ -530,7 +530,7 @@ This generates a report file in binary format:
 ```
 To view a quick CLI summary of the captured data:
 ```
-nsys stats report.nsys-rep
+$ nsys stats report.nsys-rep
 ```
 
 ::::{dropdown} Click here to view full output 
