@@ -2,23 +2,24 @@
 
 The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. This is especially important for optimizing workloads on Alpine’s A100 GPU nodes, where GPU time is a valuable and shared resource.
 
-Available Tools
 The following tools are available for interacting with performance counters:
 
-- nvidia-smi: For basic monitoring of GPU resource usage.
+- ```nvidia-smi```: For basic monitoring of GPU resource usage.
 
-- Nsight Compute (ncu): For detailed GPU kernel performance analysis.
+- ```Nsight Compute (ncu)```: For detailed GPU kernel performance analysis.
+
+- ```Nsight Systems (nsys)```: For system-wide GPU and CPU performance tracing.
 
 ## nvidia-smi
 
 ```nvidia-smi``` (System Management Interface) is a command-line utility that provides real-time information about GPU utilization, memory usage, temperature, and running processes.
 
-Usage:
+### Getting Started
 
 ```
-nvidia-smi
+$ nvidia-smi
 ```
-Example output of ```nvidia-smi``` on NVIDIA's ```aa100```
+Example output of ```nvidia-smi``` on ```aa100``` patition
 ```
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
@@ -41,14 +42,13 @@ Example output of ```nvidia-smi``` on NVIDIA's ```aa100```
 +-----------------------------------------------------------------------------------------+
 
 ```
-The output of nvidia-smi is divided into two major sections:
+The output of ```nvidia-smi``` is divided into two major sections:
 
 - GPU Hardware Overview Table
 
 - Process Table (running processes using the GPU)
 
-1. GPU Hardware Overview
-This section provides real-time information about the GPU(s) installed in the system, including utilization, memory usage, temperature, power, and other performance-related statistics.
+#### GPU Hardware Overview
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -72,8 +72,7 @@ Sensor and Resource Usage Metrics:
 | Compute M. | Compute mode status. Default means any user with permission can use the GPU. Other modes include Exclusive Process and Prohibited.| 
 | MIG M. | MIG (Multi-Instance GPU) mode status. Here it is Disabled, meaning the GPU is operating in full-capacity mode, not subdivided.| 
 
-2. Processes Table
-This section lists all processes currently using the GPU, along with how much memory each is using.
+#### Processes Table
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -85,7 +84,7 @@ This section lists all processes currently using the GPU, along with how much me
 | GPU Memory Usage	| Amount of GPU memory the process is using.| 
 
 ```{note}
-- Run nvidia-smi inside your allocated job session (e.g., after using sinteractive) to check whether your job is using the GPU.
+- Run ```nvidia-smi``` inside your allocated job session (e.g., after using ```sinteractive```) to check whether your job is using the GPU.
 - If no processes appear in the list but you expect your application to be running, it likely means the GPU is not being utilized. Please verify that your code is GPU-enabled and that CUDA is properly initialized.
 
 ```
@@ -97,18 +96,18 @@ NVIDIA Nsight Compute (ncu) is a command-line CUDA kernel profiler that provides
 Key Features:
 - Collects performance data on SM utilization, memory throughput, warp execution efficiency, and more.
 
-- Offers optimization guidance through diagnostic messages.
+- Offers optimization guidance via diagnostic messages.
 
-- Allows deep inspection into stall reasons, occupancy, and instruction efficiency
+- Enables deep inspection of stalls, occupancy, and instruction efficiency.
 
 ### Getting Started
 
-To use ncu, first load the appropriate CUDA module:
+To use ```ncu```, first load the appropriate CUDA module:
 
 ```
 module load cuda
 ```
-You can then invoke ncu by prefixing it to your CUDA application:
+After compiling your CUDA code (```nvcc -o sample_code sample_code.cu```), you can invoke ```ncu``` by prefixing it to your CUDA application:
 
 ```
 ncu --set full --target-processes all ./sample_code
@@ -118,11 +117,11 @@ ncu --set full --target-processes all ./sample_code
 - ```--target-processes all```: Profiles all child processes (useful for multi-threaded applications).
 
 ```{note}
-```ncu``` does not work on MIG-enabled nodes.
+```ncu``` will not work on MIG-enabled GPU nodes. Make sure you run on full A100 GPUs.
 ```
 
-### Example CUDA code: Vector Addition
-Here’s a simple CUDA program that adds two vectors of floats, compiled as vectorAdd.
+### Sample CUDA code: Vector Addition
+Here’s a simple CUDA program ```vectorAdd.cu``` that adds two vectors of floats, compiled as ```vectorAdd```.
 ```
 #include <iostream>
 #include <cuda_runtime.h>
@@ -159,31 +158,269 @@ int main() {
     return 0;
 }
 ```
+::::{dropdown} Click here to view full ```ncu``` report
+:icon: note
 
-Depending on the nature of the application, some CUDA kernels may be launched multiple times during a run (for example, a kernel called within a loop). For each kernel launch, the name of the kernel function (e.g., vectorAdd in the example above) and the progress of data collection is shown in the standard output (STDOUT). To collect all requested profile information for the many metrics that are included for profiling, you might need to replay the kernels multiple times. When the collection is completed, it will also show the number of replay passes of that kernel. For example:
+==PROF== Connected to process 3921697 (/projects/mokh8410/ncu_test/new_test/vectorAdd)
+==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 49 passes
+==PROF== Disconnected from process 3921697
+[3921697] vectorAdd@127.0.0.1
+  vectorAdd(float *, float *, float *) (4, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 8.0
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         1.20
+    SM Frequency                    Mhz       756.09
+    Elapsed Cycles                cycle        3,726
+    Memory Throughput                 %         0.48
+    DRAM Throughput                   %         0.14
+    Duration                         us         4.93
+    L1/TEX Cache Throughput           %        10.77
+    L2 Cache Throughput               %         0.48
+    SM Active Cycles              cycle        55.69
+    Compute (SM) Throughput           %         0.04
+    ----------------------- ----------- ------------
 
-``` 
+    OPT   This kernel grid is too small to fill the available resources on this device, resulting in only 0.0 full
+          waves across all SMs. Look at Launch Statistics for more details.
+
+    Section: GPU Speed Of Light Roofline Chart
+    INF   The ratio of peak float (fp32) to double (fp64) performance on this device is 2:1. The workload achieved
+          close to 0% of this device's fp32 peak performance and 0% of its fp64 peak performance. See the Kernel
+          Profiling Guide (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline) for more details
+          on roofline analysis.
+
+    Section: PM Sampling
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Maximum Buffer Size             Kbyte       786.43
+    Dropped Samples                sample            0
+    Maximum Sampling Interval       cycle       20,000
+    # Pass Groups                                    4
+    ------------------------- ----------- ------------
+
+    WRN   Sampling interval is 5.4x of the workload duration, which likely results in no or very few collected samples.
+
+    Section: Compute Workload Analysis
+    -------------------- ----------- ------------
+    Metric Name          Metric Unit Metric Value
+    -------------------- ----------- ------------
+    Executed Ipc Active   inst/cycle         0.09
+    Executed Ipc Elapsed  inst/cycle         0.00
+    Issue Slots Busy               %         2.79
+    Issued Ipc Active     inst/cycle         0.11
+    SM Busy                        %         2.79
+    -------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 98.67%
+          All compute pipelines are under-utilized. Either this workload is very small or it doesn't issue enough warps
+          per scheduler. Check the Launch Statistics and Scheduler Statistics sections for further details.
+
+    Section: Memory Workload Analysis
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    Memory Throughput                Gbyte/s         2.21
+    Mem Busy                               %         0.48
+    Max Bandwidth                          %         0.41
+    L1/TEX Hit Rate                        %            0
+    L2 Compression Success Rate            %            0
+    L2 Compression Ratio                                0
+    L2 Compression Input Sectors      sector            0
+    L2 Hit Rate                            %        86.18
+    Mem Pipes Busy                         %         0.03
+    ---------------------------- ----------- ------------
+
+    Section: Scheduler Statistics
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    One or More Eligible                   %         2.86
+    Issued Warp Per Scheduler                        0.03
+    No Eligible                            %        97.14
+    Active Warps Per Scheduler          warp         1.98
+    Eligible Warps Per Scheduler        warp         0.03
+    ---------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 97.14%
+          Every scheduler is capable of issuing one instruction per cycle, but for this workload each scheduler only
+          issues an instruction every 34.9 cycles. This might leave hardware resources underutilized and may lead to
+          less optimal performance. Out of the maximum of 16 warps per scheduler, this workload allocates an average
+          of 1.98 active warps per scheduler, but only an average of 0.03 warps were eligible per cycle. Eligible
+          warps are the subset of active warps that are ready to issue their next instruction. Every cycle with no
+          eligible warp results in no instruction being issued and the issue slot remains unused. To increase the
+          number of eligible warps, reduce the time the active warps are stalled by inspecting the top stall reasons
+          on the Warp State Statistics and Source Counters sections.
+
+    Section: Warp State Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Warp Cycles Per Issued Instruction             cycle        69.32
+    Warp Cycles Per Executed Instruction           cycle        90.98
+    Avg. Active Threads Per Warp                                   32
+    Avg. Not Predicated Off Threads Per Warp                    30.00
+    ---------------------------------------- ----------- ------------
+
+    OPT   Est. Speedup: 49.63%
+          On average, each warp of this workload spends 34.4 cycles being stalled waiting for an immediate constant
+          cache (IMC) miss. A read from constant memory costs one memory read from device memory only on a cache miss;
+          otherwise, it just costs one read from the constant cache. Immediate constants are encoded into the SASS
+          instruction as 'c[bank][offset]'. Accesses to different addresses by threads within a warp are serialized,
+          thus the cost scales linearly with the number of unique addresses read by all threads within a warp. As
+          such, the constant cache is best when threads in the same warp access only a few distinct locations. If all
+          threads of a warp access the same location, then constant memory can be as fast as a register access. This
+          stall type represents about 49.6% of the total average of 69.3 cycles between issuing two instructions.
+    ----- --------------------------------------------------------------------------------------------------------------
+    OPT   Est. Speedup: 34.4%
+          On average, each warp of this workload spends 23.8 cycles being stalled waiting for a scoreboard dependency
+          on a L1TEX (local, global, surface, texture) operation. Find the instruction producing the data being waited
+          upon to identify the culprit. To reduce the number of cycles waiting on L1TEX data accesses verify the
+          memory access patterns are optimal for the target architecture, attempt to increase cache hit rates by
+          increasing data locality (coalescing), or by changing the cache configuration. Consider moving frequently
+          used data to shared memory. This stall type represents about 34.4% of the total average of 69.3 cycles
+          between issuing two instructions.
+    ----- --------------------------------------------------------------------------------------------------------------
+    INF   Check the Warp Stall Sampling (All Samples) table for the top stall locations in your source based on
+          sampling data. The Kernel Profiling Guide
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-reference) provides more details
+          on each stall reason.
+
+    Section: Instruction Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Avg. Executed Instructions Per Scheduler        inst         1.19
+    Executed Instructions                           inst          512
+    Avg. Issued Instructions Per Scheduler          inst         1.56
+    Issued Instructions                             inst          672
+    ---------------------------------------- ----------- ------------
+
+    OPT   Est. Speedup: 0.665%
+          This kernel executes 0 fused and 32 non-fused FP32 instructions. By converting pairs of non-fused
+          instructions to their fused (https://docs.nvidia.com/cuda/floating-point/#cuda-and-floating-point),
+          higher-throughput equivalent, the achieved FP32 performance could be increased by up to 50% (relative to its
+          current performance). Check the Source page to identify where this kernel executes FP32 instructions.
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                      4
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    # SMs                                         SM             108
+    Stack Size                                                 1,024
+    Threads                                   thread           1,024
+    # TPCs                                                        54
+    Enabled TPC IDs                                              all
+    Uses Green Context                                             0
+    Waves Per SM                                                0.00
+    -------------------------------- --------------- ---------------
+
+    OPT   Est. Speedup: 96.3%
+          The grid for this launch is configured to execute only 4 blocks, which is less than the GPU's 108
+          multiprocessors. This can underutilize some multiprocessors. If you do not intend to execute this kernel
+          concurrently with other workloads, consider reducing the block size to have at least one block per
+          multiprocessor or increase the size of the grid to fully utilize the available hardware resources. See the
+          Hardware Model (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model)
+          description for more details on launch configurations.
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           32
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block           32
+    Block Limit Warps                     block            8
+    Theoretical Active Warps per SM        warp           64
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        12.48
+    Achieved Active Warps Per SM           warp         7.99
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Speedup: 87.52%
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (12.5%) can be the
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on
+          optimizing occupancy.
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle         8.50
+    Total DRAM Elapsed Cycles        cycle      236,928
+    Average L1 Active Cycles         cycle        55.69
+    Total L1 Elapsed Cycles          cycle      402,408
+    Average L2 Active Cycles         cycle       306.19
+    Total L2 Elapsed Cycles          cycle      286,320
+    Average SM Active Cycles         cycle        55.69
+    Total SM Elapsed Cycles          cycle      402,408
+    Average SMSP Active Cycles       cycle        54.32
+    Total SMSP Elapsed Cycles        cycle    1,609,632
+    -------------------------- ----------- ------------
+
+    OPT   Est. Speedup: 6.458%
+          One or more L2 Slices have a much higher number of active cycles than the average number of active cycles.
+          Additionally, other L2 Slices have a much lower number of active cycles than the average number of active
+          cycles. Maximum instance value is 75.49% above the average, while the minimum instance value is 75.51% below
+          the average.
+
+    Section: Source Counters
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Branch Instructions Ratio           %         0.12
+    Branch Instructions              inst           64
+    Branch Efficiency                   %            0
+    Avg. Divergent Branches                          0
+    ------------------------- ----------- ------------
+
+::::
+
+Depending on the nature of the application, some CUDA kernels may be launched multiple times during a run (for example, a kernel called within a loop). For each kernel launch, the name of the kernel function (e.g., vectorAdd in the example above) and the progress of data collection is shown in the standard output (STDOUT). To collect all requested profile information for the many metrics that are included for profiling, you might need to replay the kernels multiple times. When the collection is completed, it will also show the number of replay passes of that kernel. 
+
+```
+For example:
 ==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 49 passes
 ```
 
-```{!WARNING}
-Collecting performance data using ncu can incur significant runtime overhead on the application, as discussed here[https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead].
+```{caution}
+Collecting performance data using ```ncu``` can incur significant runtime overhead. For production runs, disable profiling. See Nsight Compute Overhead[https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead] for more details.
 ```
-When profiling a CUDA application using ncu, two sections in the output—GPU Speed Of Light Throughput and Launch Statistics, as they provide essential insights into how well your code is utilizing the GPU's hardware. Understanding these metrics helps identify performance bottlenecks and underutilization.
+When profiling a CUDA application using ```ncu```, two sections in the output, GPU Speed Of Light Throughput and Launch Statistics, as they provide essential insights into how well your code is utilizing the GPU's hardware. Understanding these metrics helps identify performance bottlenecks and underutilization.
 
-Why These Metrics Matter
+Why These Metrics Matter?
 
-Modern GPUs, such as the NVIDIA AA100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
+Modern GPUs, such as the NVIDIA A100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
 
-Key metrics to pay attention to include:
-
-| Metric               | What It Measures                           | What It Matters                           | 
+### GPU Speed Of Light Throughput
+This section tells you how much of the GPU’s peak performance you’re using.
+| Metric               | Description                          | What to Look For                           | 
 | :----------------- | :------------------------------------------- |:-------------------------------------------------- |
-| Block Size	| Threads per block	| Affects occupancy and granularity of parallelism |
-| Grid Size	| Number of thread blocks	| Determines how many parallel blocks run; too few leads to idle SMs | 
-| # SMs	| Number of Streaming Multiprocessors	| Shows total compute resources available
-| Waves Per SM	| How many full waves of warps per SM	| Indicates how much parallel work is scheduled per compute unit | 
-| Compute (SM) Throughput	| Percentage of peak compute capacity used	| Helps assess if the kernel is efficiently using the GPU's computational power | 
+| SM Frequency	| Clock speed of compute cores	| Informational
+| Compute (SM) Throughput	| % of max compute power used	| If low (<10%), GPU is underused
+| Memory Throughput	| DRAM bandwidth usage	| Very low = memory underutilized
+| SM Active Cycles	| Time SMs were actively executing	| Correlates with GPU load
+
+### Launch Statistics
+This section tells you how your kernel was launched and whether that configuration is effective.
+| Metric               | Description                        | Why It Matters                           | 
+| :----------------- | :------------------------------------------- |:-------------------------------------------------- |
+| Block Size    | Number of threads per block   | Affects occupancy and granularity of parallelism |
+| Grid Size | Number of thread blocks launched  | Determines how many parallel blocks run; too few leads to idle SMs | 
+| # SMs | Number of Streaming Multiprocessors (compute units)   | Helps evaluate if enough blocks are used |
+| Waves Per SM  | Full sets of warps scheduled per SM   | Indicates how much parallel work is scheduled per compute unit. 0.00 means most SMs are idle | 
 
 Here’s a simplified snippet from an ncu run on vectorAdd  
 ```
@@ -238,7 +475,7 @@ Here’s a simplified snippet from an ncu run on vectorAdd
 From the output we can see:
 
 - Block Size (256) × Grid Size (4) = 1024 total threads. This is the total parallel workload for the  kernel.
-- 108 SMs: AA100 GPU has 108 compute units available.
+- 108 SMs: A100 GPU has 108 compute units available.
 - Waves Per SM = 0.00: Each SM received less than one full wave of work, which is not enough to keep it busy.
 - Compute Throughput = 0.04%: The GPU was virtually idle during the kernel execution.
 
@@ -250,17 +487,209 @@ These numbers clearly show that the kernel is too small to utilize the hardware 
 | SM throughput is very low (< 10%)	| GPU is mostly idle	| Optimize workload or parallelism granularity |
 | Waves Per SM is 0	| Too little parallel work	| Increase N or restructure the launch configuration |
 
-In the original kernel:
+In the original kernel, the launch configuration was:
 ```
 #define N 1024
 dim3 block(256);
 dim3 grid((N + block.x - 1) / block.x);  // → grid.x = 4 blocks
 ```
 This launches just 4 blocks, causing underutilization.
-To improve utilization:
+To improve utilization, update the launch configuration to the following:
 ```
 #define N (1 << 20)  // 1,048,576 elements
 dim3 block(256);
 dim3 grid((N + block.x - 1) / block.x);  // → grid.x = 4096 blocks
 ```
 This updated configuration allows the GPU to schedule multiple waves of work across all SMs, leading to much better throughput and performance.
+
+## Nsight Systems (nsys)
+
+```nsys```  is a system-wide profiler that traces the interactions between CPU and GPU, memory transfers, and OS-level activity. It’s useful for understanding:
+
+- Launch latency of GPU kernels.
+
+- Investigate host-device memory transfers.
+
+- Identify CPU-side inefficiencies (e.g., blocking, thread stalls)
+
+### Getting Started
+
+To use ```nsys```, load the appropriate CUDA module and invoke ```nsys``` by prefixing it to your CUA application:
+
+```
+module load cuda
+nsys profile --trace=cuda,osrt ./vectorAdd
+```
+- ```--trace=cuda```: Capture CUDA kernel launches and memory transfers.
+
+- ```--trace=osrt```: Trace OS runtime activity (threads, processes, etc.).
+
+This generates a report file in binary format:
+```
+./report.nsys-rep
+```
+To view a quick CLI summary of the captured data:
+```
+nsys stats report.nsys-rep
+```
+
+::::{dropdown} Click here to view full output 
+:icon: note
+
+Generating SQLite file report.sqlite from report.nsys-rep
+Exporting 3120 events: [===================================================100%]
+
+Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/host-linux-x64/reports/osrt_sum.py]...
+
+ ** OS Runtime Summary (osrt_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)     Med (ns)    Min (ns)   Max (ns)    StdDev (ns)            Name
+ --------  ---------------  ---------  ------------  -----------  --------  -----------  ------------  ----------------------
+     69.6      312,204,830         13  24,015,756.2  9,067,644.0     2,204  195,597,594  53,573,691.5  poll
+     28.3      126,874,612        538     235,826.4     60,013.5       381   17,163,639     899,555.3  ioctl
+      0.7        3,131,716         34      92,109.3      3,592.0       992    1,132,714     280,648.1  fopen
+      0.5        2,302,570         65      35,424.2        411.0       161    1,484,407     206,847.3  fcntl
+      0.3        1,383,989         10     138,398.9     19,297.0    10,229      854,150     277,116.1  sem_timedwait
+      0.2          973,462         29      33,567.7      6,502.0     5,280      611,632     111,986.5  mmap64
+      0.1          586,906          4     146,726.5    127,264.5    70,573      261,804      81,418.8  pthread_create
+      0.1          464,767          7      66,395.3      4,860.0       100      437,154     163,564.5  fread
+      0.1          267,273         56       4,772.7      3,677.0       661       22,081       3,837.3  open64
+      0.0           95,541         13       7,349.3      3,677.0     1,283       32,712       8,725.4  mmap
+      0.0           72,785         48       1,516.4         60.0        50       69,741      10,056.9  fgets
+      0.0           47,535         28       1,697.7      1,177.0       601        7,244       1,481.4  fclose
+      0.0           38,743          7       5,534.7      5,050.0     1,132       10,109       3,475.0  open
+      0.0           36,150         12       3,012.5      2,585.0       702        6,853       1,977.1  write
+      0.0           16,752          2       8,376.0      8,376.0     2,295       14,457       8,599.8  socket
+      0.0           16,611          3       5,537.0      6,943.0     1,924        7,744       3,154.5  pipe2
+      0.0           16,554         15       1,103.6        691.0       261        4,038       1,221.6  read
+      0.0           11,190          3       3,730.0      3,566.0     3,226        4,398         603.0  munmap
+      0.0           11,181          1      11,181.0     11,181.0    11,181       11,181           0.0  connect
+      0.0            5,510         64          86.1         50.0        40          461          68.4  pthread_mutex_trylock
+      0.0            5,481          2       2,740.5      2,740.5     1,102        4,379       2,317.2  fwrite
+      0.0            3,176          2       1,588.0      1,588.0     1,072        2,104         729.7  pthread_cond_broadcast
+      0.0            3,148          8         393.5        290.5       191          832         267.2  dup
+      0.0            2,244          1       2,244.0      2,244.0     2,244        2,244           0.0  bind
+      0.0              751          1         751.0        751.0       751          751           0.0  listen
+      0.0              441          6          73.5         50.0        50          181          52.8  fflush
+
+Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/host-linux-x64/reports/cuda_api_sum.py]...
+
+ ** CUDA API Summary (cuda_api_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)     Med (ns)    Min (ns)    Max (ns)    StdDev (ns)            Name
+ --------  ---------------  ---------  ------------  -----------  ---------  -----------  ------------  ----------------------
+     96.4      139,706,807          3  46,568,935.7      3,817.0      3,035  139,699,955  80,653,828.6  cudaMalloc
+      3.5        5,038,894          1   5,038,894.0  5,038,894.0  5,038,894    5,038,894           0.0  cudaLaunchKernel
+      0.1          160,483          3      53,494.3      7,274.0      2,966      150,243      83,814.5  cudaFree
+      0.0           65,401          3      21,800.3     25,317.0      8,315       31,769      12,116.0  cudaMemcpy
+      0.0            1,333          1       1,333.0      1,333.0      1,333        1,333           0.0  cuModuleGetLoadingMode
+
+Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/host-linux-x64/reports/cuda_gpu_kern_sum.py]...
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)                  Name
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  ------------------------------------
+    100.0            2,112          1   2,112.0   2,112.0     2,112     2,112          0.0  vectorAdd(float *, float *, float *)
+
+Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]...
+
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)      Operation
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ------------------
+     52.2            2,656      2   1,328.0   1,328.0     1,216     1,440        158.4  [CUDA memcpy HtoD]
+     47.8            2,432      1   2,432.0   2,432.0     2,432     2,432          0.0  [CUDA memcpy DtoH]
+
+Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/host-linux-x64/reports/cuda_gpu_mem_size_sum.py]...
+
+ ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)      Operation
+ ----------  -----  --------  --------  --------  --------  -----------  ------------------
+      0.008      2     0.004     0.004     0.004     0.004        0.000  [CUDA memcpy HtoD]
+      0.004      1     0.004     0.004     0.004     0.004        0.000  [CUDA memcpy DtoH]
+ 
+
+::::
+
+### Interpreting Key Outputs
+
+####  CUDA API Summary (```cuda_api_sum```)
+Shows how much time was spent in each CUDA API function.
+
+```
+ ** CUDA API Summary (cuda_api_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)     Med (ns)    Min (ns)    Max (ns)    StdDev (ns)            Name
+ --------  ---------------  ---------  ------------  -----------  ---------  -----------  ------------  ----------------------
+     96.4      139,706,807          3  46,568,935.7      3,817.0      3,035  139,699,955  80,653,828.6  cudaMalloc
+      3.5        5,038,894          1   5,038,894.0  5,038,894.0  5,038,894    5,038,894           0.0  cudaLaunchKernel
+      0.1          160,483          3      53,494.3      7,274.0      2,966      150,243      83,814.5  cudaFree
+      0.0           65,401          3      21,800.3     25,317.0      8,315       31,769      12,116.0  cudaMemcpy
+      0.0            1,333          1       1,333.0      1,333.0      1,333        1,333           0.0  cuModuleGetLoadingMode
+
+```
+| Function               | 	Time %                          | What It Means                           | 
+| :----------------- | :------------------------------------------- |:-------------------------------------------------- |
+| ```cudaMalloc```	  | 96.4% | 	This indicates that most runtime is spent allocating device memory instead of performing computations. If you're calling ```cudaMalloc``` inside loops or repeatedly, this adds significant overhead. The solution to this is to allocate once and reuse memory across iterations. |
+| ```cudaLaunchKernel```	 | 	3.5% | The kernel itself is extremely fast, but that may not be a good thing. A very short kernel runtime often means underutilization of GPU resources. |
+| ```cudaMemcpy```  | <0.1% | While it didn’t take long, combined with small memory size, this indicates the data being copied is too small to be efficient. |
+
+####  CUDA GPU Kernel Summary (```cuda_gpu_kern_sum```)
+This summarizes execution of GPU kernels.
+
+```
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)                  Name
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  ------------------------------------
+    100.0            2,112          1   2,112.0   2,112.0     2,112     2,112          0.0  vectorAdd(float *, float *, float *)
+
+```
+The output shows that the kernel only ran once and took ~2 microseconds. That’s extremely fast, which may sound good, but for a powerful GPU, this often means underutilization. 
+
+Solution: Increase the problem size (e.g., 1 million elements instead of 1,000) to give the GPU enough work to justify the overhead.
+
+####  CUDA GPU MemOps Summary (by Time) (```cuda_gpu_mem_time_sum```)
+
+```
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)      Operation
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ------------------
+     52.2            2,656      2   1,328.0   1,328.0     1,216     1,440        158.4  [CUDA memcpy HtoD]
+     47.8            2,432      1   2,432.0   2,432.0     2,432     2,432          0.0  [CUDA memcpy DtoH]
+
+```
+| Memory Operation               | 	Time %                          | What It Means                           | 
+| :----------------- | :------------------------------------------- |:-------------------------------------------------- |
+| ```HtoD (Host to Device)```	  | 52.2% | Over half of your execution time is just moving data to the GPU. This is very inefficient for such a small computation. |
+| ```DtoH (Device to Host)```	 | 	47.8% | Combined with the HtoD, this suggests that nearly all the runtime is overhead, not actual GPU compute. |
+
+Therefore, when working with small kernels, where data transfer overhead often outweighs compute time, it’s recommended to use asynchronous memory copies or unified memory to reduce latency and improve overlap.
+
+####  CUDA GPU MemOps Summary (by Size) (```cuda_gpu_mem_size_sum```)
+
+```
+ ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)      Operation
+ ----------  -----  --------  --------  --------  --------  -----------  ------------------
+      0.008      2     0.004     0.004     0.004     0.004        0.000  [CUDA memcpy HtoD]
+      0.004      1     0.004     0.004     0.004     0.004        0.000  [CUDA memcpy DtoH]
+```
+
+The output shows that only ~12 KB of data moved to/from the GPU. This confirms the workload is too small to justify the overhead of GPU execution.
+
+#### OS Runtime Summary:
+```
+** OS Runtime Summary:
+
+Time (%)  Total Time (ns)  Num Calls    Name
+--------  ---------------  ---------  ----------------------
+  69.6      312,204,830         13    poll
+  28.3      126,874,612        538    ioctl
+```
+
+This output means that most of the runtime was spent in system calls like ```poll``` and ```ioctl```, which are unrelated to the kernel execution. This suggests the application is not compute-bound, and system overhead is prominent due to the small workload.
