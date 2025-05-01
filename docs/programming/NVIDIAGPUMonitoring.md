@@ -169,7 +169,7 @@ $ module load cuda
 Compile the CUDA application using: 
 
 ```
-nvcc -o vectorAdd vectorAdd.cu
+$ nvcc -o vectorAdd vectorAdd.cu
 ```
 
 Next to invoke ```ncu```, prefix it to your compiled CUDA application:
@@ -422,7 +422,7 @@ For example:
 ==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 49 passes
 ```
 
-When profiling a CUDA application using ```ncu```, two sections in the output, GPU Speed Of Light Throughput and Launch Statistics, as they provide essential insights into how well your code is utilizing the GPU's hardware. Understanding these metrics helps identify performance bottlenecks and underutilization.
+When profiling a CUDA application using ```ncu```, two sections in the output are very important to pay attention to, GPU Speed Of Light Throughput and Launch Statistics. These sections provide essential insights into how well your code is utilizing the GPU's hardware. Thus, understanding these metrics helps identify performance bottlenecks and underutilization.
 
 ### GPU Speed Of Light Throughput
 
@@ -538,10 +538,11 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 
 ### Getting Started
 
-To use ```nsys```, load the appropriate CUDA module and invoke ```nsys``` by prefixing it to your CUDA application:
+To use ```nsys```, load the appropriate CUDA module, compile and invoke ```nsys``` by prefixing it to your CUDA application:
 
 ```
 $ module load cuda
+$ nvcc -o vectorAdd vectorAdd.cu
 $ nsys profile --trace=cuda,osrt ./vectorAdd
 ```
 - ```--trace=cuda```: Capture CUDA kernel launches and memory transfers.
