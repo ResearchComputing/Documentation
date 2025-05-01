@@ -76,7 +76,7 @@ The following steps will make available to VS Code-Server any [conda environment
 ```
 /curc/sw/install/miniforge3/24.11.3-0/bin/conda
 ```
-6. Now navigate back to the main `Extension: Python` window and select `disable`, then `reload required` and then `enable`.
+6. Now navigate back to the main `Extension: Python` window and select `disable`, then `reload required`. In the sidebar, select the `Python` extension again, and then select `enable`.
 
 7. You should now be able to find and load any of your conda environments when selecting your python interpreter for a given session (it may take a few moments to display them all the first time).
 
