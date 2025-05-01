@@ -1,4 +1,4 @@
-# NVIDIA Performance Counters
+# NVIDIA GPU Monitoring Tools
 
 The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. This is especially important for optimizing workloads on Alpine’s A100 GPU nodes, where GPU time is a valuable and shared resource.
 
@@ -9,6 +9,48 @@ The following tools are available for interacting with performance counters:
 - ```Nsight Compute (ncu)```: For detailed GPU kernel performance analysis.
 
 - ```Nsight Systems (nsys)```: For system-wide GPU and CPU performance tracing.
+
+## Sample CUDA Code: Vector Addition
+This code example will be used throughout this guide to demonstrate how to use each NVIDIA profiling and monitoring tool.
+
+Here’s a simple CUDA program ```vectorAdd.cu``` that adds two vectors of floats.
+
+```
+#include <iostream>
+#include <cuda_runtime.h>
+
+#define N 1024  // Size of the vectors
+
+__global__ void vectorAdd(float *A, float *B, float *C) {
+    int idx = threadIdx.x + blockIdx.x * blockDim.x;
+    if (idx < N) {
+        C[idx] = A[idx] + B[idx];
+    }
+}
+
+int main() {
+    float *A = new float[N], *B = new float[N], *C = new float[N];
+    for (int i = 0; i < N; i++) {
+        A[i] = static_cast<float>(rand()) / RAND_MAX;
+        B[i] = static_cast<float>(rand()) / RAND_MAX;
+    }
+
+    float *d_A, *d_B, *d_C;
+    size_t size = N * sizeof(float);
+    cudaMalloc(&d_A, size); cudaMalloc(&d_B, size); cudaMalloc(&d_C, size);
+    cudaMemcpy(d_A, A, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, B, size, cudaMemcpyHostToDevice);
+
+    dim3 block(256);
+    dim3 grid((N + block.x - 1) / block.x);
+    vectorAdd<<<grid, block>>>(d_A, d_B, d_C);
+    cudaMemcpy(C, d_C, size, cudaMemcpyDeviceToHost);
+
+    delete[] A; delete[] B; delete[] C;
+    cudaFree(d_A); cudaFree(d_B); cudaFree(d_C);
+    return 0;
+}
+```
 
 ## nvidia-smi
 
@@ -48,6 +90,14 @@ The output of ```nvidia-smi``` is divided into two major sections:
 
 - Process Table (running processes using the GPU)
 
+#### Header Information
+
+| Column               | Description                                         | 
+| :----------------- | :-------------------------------------------------- | 
+| ```NVIDIA-SMI 570.124.06``` | The version of the nvidia-smi utility installed  |
+| ```Driver Version: 570.124.06``` | The installed NVIDIA driver version. Must be compatible with the GPU and CUDA version. |
+| ```CUDA Version: 12.8``` | The highest version of the CUDA Toolkit supported by the driver. This does not indicate the version of CUDA your code is using unless explicitly set. |
+
 #### GPU Hardware Overview
 
 | Column               | Description                                         | 
@@ -59,7 +109,7 @@ The output of ```nvidia-smi``` is divided into two major sections:
 | Disp.A | Whether the GPU is attached to a display (usually Off on HPC systems). |
 | Volatile Uncorr. ECC |	Reports single-bit error corrections that could indicate hardware instability (shows 0 here, which is good). |
 
-Sensor and Resource Usage Metrics:
+#### Sensor and Resource Usage Metrics:
 
 | Metric               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -91,14 +141,23 @@ Sensor and Resource Usage Metrics:
 
 ## Nsight Compute (ncu)
 
-NVIDIA Nsight Compute is a command-line CUDA kernel profiler that provides detailed performance metrics for GPU kernels, helping users identify and resolve bottlenecks in CUDA applications. It is particularly well-suited for low-level kernel analysis and optimization.
+NVIDIA Nsight Compute is a command-line CUDA kernel profiler that provides detailed performance metrics for GPU kernels, helping users identify, and resolve bottlenecks in CUDA applications. It is particularly well-suited for low-level kernel analysis and optimization.
+
+### Why These Metrics Matter?
+
+Modern GPUs, such as the NVIDIA A100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
 
 Key Features:
+
 - Collects performance data on SM utilization, memory throughput, warp execution efficiency, and more.
 
 - Offers optimization guidance via diagnostic messages.
 
 - Enables deep inspection of stalls, occupancy, and instruction efficiency.
+
+```{caution}
+Collecting performance data using ```ncu``` can incur significant runtime overhead. For production runs, disable profiling. See [Nsight Compute Overhead](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead) for more details.
+```
 
 ### Getting Started
 
@@ -107,57 +166,25 @@ To use ```ncu```, first load the appropriate CUDA module:
 ```
 $ module load cuda
 ```
-After compiling your CUDA code (```nvcc -o sample_code sample_code.cu```), you can invoke ```ncu``` by prefixing it to your CUDA application:
+Compile the CUDA application using: 
 
 ```
-$ ncu --set full --target-processes all ./sample_code
+nvcc -o vectorAdd vectorAdd.cu
+```
+
+Next to invoke ```ncu```, prefix it to your compiled CUDA application:
+
+```
+$ ncu --set full --target-processes all ./vectorAdd
 ```
 - ```--set full```: Collects a comprehensive set of performance metrics.
 
 - ```--target-processes all```: Profiles all child processes (useful for multi-threaded applications).
 
 ```{note}
-```ncu``` will not work on MIG-enabled GPU nodes. Make sure you run on full A100 GPUs.
+```ncu``` is not compatible with MIG-enabled GPUs. Ensure you run ```ncu``` only on A100 nodes without MIG.
 ```
 
-### Sample CUDA code: Vector Addition
-Here’s a simple CUDA program ```vectorAdd.cu``` that adds two vectors of floats, compiled as ```vectorAdd```.
-```
-#include <iostream>
-#include <cuda_runtime.h>
-
-#define N 1024  // Size of the vectors
-
-__global__ void vectorAdd(float *A, float *B, float *C) {
-    int idx = threadIdx.x + blockIdx.x * blockDim.x;
-    if (idx < N) {
-        C[idx] = A[idx] + B[idx];
-    }
-}
-
-int main() {
-    float *A = new float[N], *B = new float[N], *C = new float[N];
-    for (int i = 0; i < N; i++) {
-        A[i] = static_cast<float>(rand()) / RAND_MAX;
-        B[i] = static_cast<float>(rand()) / RAND_MAX;
-    }
-
-    float *d_A, *d_B, *d_C;
-    size_t size = N * sizeof(float);
-    cudaMalloc(&d_A, size); cudaMalloc(&d_B, size); cudaMalloc(&d_C, size);
-    cudaMemcpy(d_A, A, size, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_B, B, size, cudaMemcpyHostToDevice);
-
-    dim3 block(256);
-    dim3 grid((N + block.x - 1) / block.x);
-    vectorAdd<<<grid, block>>>(d_A, d_B, d_C);
-    cudaMemcpy(C, d_C, size, cudaMemcpyDeviceToHost);
-
-    delete[] A; delete[] B; delete[] C;
-    cudaFree(d_A); cudaFree(d_B); cudaFree(d_C);
-    return 0;
-}
-```
 ::::{dropdown} Click here to view full ```ncu``` report
 :icon: note
 ```
@@ -395,16 +422,10 @@ For example:
 ==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 49 passes
 ```
 
-```{caution}
-Collecting performance data using ```ncu``` can incur significant runtime overhead. For production runs, disable profiling. See [Nsight Compute Overhead](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead) for more details.
-```
 When profiling a CUDA application using ```ncu```, two sections in the output, GPU Speed Of Light Throughput and Launch Statistics, as they provide essential insights into how well your code is utilizing the GPU's hardware. Understanding these metrics helps identify performance bottlenecks and underutilization.
 
-Why These Metrics Matter?
-
-Modern GPUs, such as the NVIDIA A100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
-
 ### GPU Speed Of Light Throughput
+
 This section tells you how much of the GPU’s peak performance you’re using.
 | Metric               | Description                          | What to Look For                           | 
 | :----------------- | :------------------------------------------- |:-------------------------------------------------- |
@@ -422,7 +443,7 @@ This section tells you how your kernel was launched and whether that configurati
 | # SMs | Number of Streaming Multiprocessors (compute units)   | Helps evaluate if enough blocks are used |
 | Waves Per SM  | Full sets of warps scheduled per SM   | Indicates how much parallel work is scheduled per compute unit. 0.00 means most SMs are idle | 
 
-Here’s a simplified snippet from an ```ncu``` run on vectorAdd  
+Here’s a simplified snippet from an ```ncu``` run on ```vectorAdd``` 
 ```
 [rc_user@c3gpu-c2-u7 ]$ ncu --set full --target-processes all ./vectorAdd
 ==PROF== Connected to process 3921697
@@ -481,11 +502,14 @@ From the output we can see:
 
 These numbers clearly show that the kernel is too small to utilize the hardware effectively.
 
+```{tip}
+
 | Symptom               | Likely Cause                          | Recommended Fix                           | 
 | :----------------- | :------------------------------------------- |:-------------------------------------------------- |
 | Grid size is smaller than #SMs	| Not enough blocks to occupy all compute units	| Increase the number of blocks by enlarging the problem size |
 | SM throughput is very low (< 10%)	| GPU is mostly idle	| Optimize workload or parallelism granularity |
 | Waves Per SM is 0	| Too little parallel work	| Increase N or restructure the launch configuration |
+```
 
 In the original kernel, the launch configuration was:
 ```
@@ -514,7 +538,7 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 
 ### Getting Started
 
-To use ```nsys```, load the appropriate CUDA module and invoke ```nsys``` by prefixing it to your CUA application:
+To use ```nsys```, load the appropriate CUDA module and invoke ```nsys``` by prefixing it to your CUDA application:
 
 ```
 $ module load cuda
@@ -535,7 +559,7 @@ $ nsys stats report.nsys-rep
 
 ::::{dropdown} Click here to view full output 
 :icon: note
-
+```
 Generating SQLite file report.sqlite from report.nsys-rep
 Exporting 3120 events: [===================================================100%]
 
@@ -610,12 +634,12 @@ Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/ho
       0.008      2     0.004     0.004     0.004     0.004        0.000  [CUDA memcpy HtoD]
       0.004      1     0.004     0.004     0.004     0.004        0.000  [CUDA memcpy DtoH]
  
-
+```
 ::::
 
 ### Interpreting Key Outputs
 
-####  CUDA API Summary (```cuda_api_sum```)
+####  CUDA API Summary
 Shows how much time was spent in each CUDA API function.
 
 ```
@@ -636,7 +660,7 @@ Shows how much time was spent in each CUDA API function.
 | ```cudaLaunchKernel```	 | 	3.5% | The kernel itself is extremely fast, but that may not be a good thing. A very short kernel runtime often means underutilization of GPU resources. |
 | ```cudaMemcpy```  | <0.1% | While it didn’t take long, combined with small memory size, this indicates the data being copied is too small to be efficient. |
 
-####  CUDA GPU Kernel Summary (```cuda_gpu_kern_sum```)
+####  CUDA GPU Kernel Summary
 This summarizes execution of GPU kernels.
 
 ```
@@ -649,9 +673,9 @@ This summarizes execution of GPU kernels.
 ```
 The output shows that the kernel only ran once and took ~2 microseconds. That’s extremely fast, which may sound good, but for a powerful GPU, this often means underutilization. 
 
-Solution: Increase the problem size (e.g., 1 million elements instead of 1,000) to give the GPU enough work to justify the overhead.
+**Solution**: Increase the problem size (e.g., 1 million elements instead of 1,000) to give the GPU enough work to justify the overhead.
 
-####  CUDA GPU MemOps Summary (by Time) (```cuda_gpu_mem_time_sum```)
+####  CUDA GPU MemOps Summary (by Time)
 
 ```
  ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
@@ -669,7 +693,7 @@ Solution: Increase the problem size (e.g., 1 million elements instead of 1,000) 
 
 Therefore, when working with small kernels, where data transfer overhead often outweighs compute time, it’s recommended to use asynchronous memory copies or unified memory to reduce latency and improve overlap.
 
-####  CUDA GPU MemOps Summary (by Size) (```cuda_gpu_mem_size_sum```)
+####  CUDA GPU MemOps Summary (by Size)
 
 ```
  ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
@@ -682,7 +706,7 @@ Therefore, when working with small kernels, where data transfer overhead often o
 
 The output shows that only ~12 KB of data moved to/from the GPU. This confirms the workload is too small to justify the overhead of GPU execution.
 
-#### OS Runtime Summary:
+#### OS Runtime Summary
 ```
 ** OS Runtime Summary:
 

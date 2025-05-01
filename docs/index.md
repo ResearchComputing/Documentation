@@ -122,7 +122,7 @@ programming/MPI-C
 programming/MPI-Fortran
 programming/OpenMP-C
 programming/OpenMP-Fortran
-programming/PerformanceCounters
+programming/NVIDIAGPUMonitoring
 
 ```
    
