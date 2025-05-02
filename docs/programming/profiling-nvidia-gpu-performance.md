@@ -84,11 +84,6 @@ Example output of ```nvidia-smi``` on ```aa100``` patition
 +-----------------------------------------------------------------------------------------+
 
 ```
-The output of ```nvidia-smi``` is divided into two major sections:
-
-- GPU Hardware Overview Table
-
-- Process Table (running processes using the GPU)
 
 #### Header Information
 
@@ -138,6 +133,120 @@ The output of ```nvidia-smi``` is divided into two major sections:
 - If no processes appear in the list but you expect your application to be running, it likely means the GPU is not being utilized. Please verify that your code is GPU-enabled and that CUDA is properly initialized.
 
 ```
+
+### ```nvidia-smi``` on MIG-Enabled GPUs
+
+Some A100 GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, ```nvidia-smi``` shows a different output format, displaying information for both full GPUs and individual MIG instances.
+
+Here's an example output from a MIG-enabled A100 node:
+```
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------|
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:21:00.0 Off |                   On |
+| N/A   28C    P0             32W /  250W |     213MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-PCIE-40GB          On  |   00000000:81:00.0 Off |                   On |
+| N/A   27C    P0             33W /  250W |     213MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-PCIE-40GB          On  |   00000000:E2:00.0 Off |                   On |
+| N/A   28C    P0             34W /  250W |     213MiB /  40960MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    1   0   0  |             107MiB / 20096MiB    | 42      0 |  3   0    2    0    0 |
+|                  |                 0MiB / 32767MiB  |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+```
+#### What’s Different with MIG?
+
+- **MIG Mode:** You'll see ```MIG M.: Enabled``` in the main GPU listing.
+
+- **GPU Utilization:** The parent GPU will often show ```N/A``` for ```GPU-Util```; usage is tracked per MIG instance instead.
+
+- **MIG Devices Section:** This shows each available MIG instance, how much memory and compute it has, and its usage stats.
+
+- **Process Table:** When jobs are running, this table will show which process is attached to which MIG slice.
+
+### Monitoring GPU Usage While a Job is Running
+
+To check performance while your job is active:
+
+1. Submit or start your GPU job
+
+ - You can run your GPU job either interactively (e.g. using ```sinteractive```) or via a batch script submitted with ```sbatch```
+
+2. Identify the node where your job is running
+
+ - When the job is running, use the squeue command to find which compute node it's on:
+
+      ``` 
+      $ squeue -u $USER 
+      ```
+
+ - Look for the NODELIST(REASON) column, this shows the name of the compute node assigned to your job (e.g. ```c3gpu-c2-u13```).
+
+3. ```ssh``` into the compute node
+
+ - Once you have the node name, ```ssh``` into it directly:
+
+      ```
+      $ ssh <node-name>
+      # Example:
+      $ ssh c3gpu-c2-u13
+      ```
+
+      ```{note} 
+      You can only ```ssh``` into a compute node if you have an active job running on it. 
+      ```
+
+4. Run ```nvidia-smi``` 
+
+- Once logged into the node, use ```nvidia-smi``` command to monitor GPU usage.
+
+### Real-Time Monitoring of GPU Usage
+
+To actively monitor GPU performance during a running job, you can use either the ```watch``` command or the built-in looping functionality of ```nvidia-smi```.
+
+**Option 1:** Using the ```watch``` repeatedly executes ```nvidia-smi``` at regular intervals and highlights changes in output, making it easier to spot fluctuations in GPU load or memory usage.
+
+```
+$ watch -n 2 nvidia-smi
+```
+Here, ```-n 2``` sets the refresh interval to every 2 seconds (you can increase or decrease this number as needed).
+
+```{note}
+Each refresh with ```watch``` creates a new process, which can add some system overhead over time.
+```
+
+**Option 2**: A more efficient alternative is to use the ```-l``` (loop) option built into ```nvidia-smi```. This avoids spawning new processes by refreshing internally. 
+```
+$ nvidia-smi -l 2
+```
+The ```-l 2``` flag will refresh the output every 2 seconds. You can change the interval by adjusting the number (```-l 5``` for every 5 seconds). Press ```Ctrl+C``` to stop the loop.
+
 
 ## Nsight Compute (ncu)
 
