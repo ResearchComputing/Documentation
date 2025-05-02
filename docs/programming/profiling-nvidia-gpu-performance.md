@@ -1,4 +1,4 @@
-# NVIDIA GPU Monitoring Tools
+# Profiling NVIDIA GPU Performance
 
 The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. This is especially important for optimizing workloads on Alpine’s A100 GPU nodes, where GPU time is a valuable and shared resource.
 
@@ -109,7 +109,7 @@ The output of ```nvidia-smi``` is divided into two major sections:
 | Disp.A | Whether the GPU is attached to a display (usually Off on HPC systems). |
 | Volatile Uncorr. ECC |	Reports single-bit error corrections that could indicate hardware instability (shows 0 here, which is good). |
 
-#### Sensor and Resource Usage Metrics:
+#### Sensor and Resource Usage Metrics
 
 | Metric               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -514,6 +514,7 @@ These numbers clearly show that the kernel is too small to utilize the hardware 
 In the original kernel, the launch configuration was:
 ```
 #define N 1024
+
 dim3 block(256);
 dim3 grid((N + block.x - 1) / block.x);  // → grid.x = 4 blocks
 ```
@@ -521,10 +522,190 @@ This launches just 4 blocks, causing underutilization.
 To improve utilization, update the launch configuration to the following:
 ```
 #define N (1 << 20)  // 1,048,576 elements
+
 dim3 block(256);
 dim3 grid((N + block.x - 1) / block.x);  // → grid.x = 4096 blocks
 ```
 This updated configuration allows the GPU to schedule multiple waves of work across all SMs, leading to much better throughput and performance.
+
+::::{dropdown} Click here to view ```ncu``` report for updated configuration
+:icon: note
+```
+==PROF== Connected to process 4073944
+==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 43 passes
+==PROF== Disconnected from process 4073944
+[4073944] vect@127.0.0.1
+  vectorAdd(float *, float *, float *) (4096, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 8.0
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         1.48
+    SM Frequency            cycle/nsecond         1.01
+    Elapsed Cycles                  cycle       10,295
+    Memory Throughput                   %        43.61
+    DRAM Throughput                     %        43.61
+    Duration                      usecond        10.14
+    L1/TEX Cache Throughput             %        21.78
+    L2 Cache Throughput                 %        59.93
+    SM Active Cycles                cycle     7,497.79
+    Compute (SM) Throughput             %        12.38
+    ----------------------- ------------- ------------
+
+    WRN   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance
+          of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate
+          latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.
+
+    Section: GPU Speed Of Light Roofline Chart
+    INF   The ratio of peak float (fp32) to double (fp64) performance on this device is 2:1. The kernel achieved  close
+          to 1% of this device's fp32 peak performance and 0% of its fp64 peak performance. See the Kernel Profiling
+          Guide (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline) for more details on
+          roofline analysis.
+
+    Section: Compute Workload Analysis
+    -------------------- ----------- ------------
+    Metric Name          Metric Unit Metric Value
+    -------------------- ----------- ------------
+    Executed Ipc Active   inst/cycle         0.65
+    Executed Ipc Elapsed  inst/cycle         0.47
+    Issue Slots Busy               %        16.95
+    Issued Ipc Active     inst/cycle         0.68
+    SM Busy                        %        16.95
+    -------------------- ----------- ------------
+
+    WRN   All compute pipelines are under-utilized. Either this kernel is very small or it doesn't issue enough warps
+          per scheduler. Check the Launch Statistics and Scheduler Statistics sections for further details.
+
+    Section: Memory Workload Analysis
+    --------------------------- ------------ ------------
+    Metric Name                  Metric Unit Metric Value
+    --------------------------- ------------ ------------
+    Memory Throughput           Gbyte/second       826.98
+    Mem Busy                               %        30.78
+    Max Bandwidth                          %        43.61
+    L1/TEX Hit Rate                        %            0
+    L2 Compression Success Rate            %            0
+    L2 Compression Ratio                                0
+    L2 Hit Rate                            %        36.55
+    Mem Pipes Busy                         %        11.82
+    --------------------------- ------------ ------------
+
+    Section: Scheduler Statistics
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    One or More Eligible                   %        17.03
+    Issued Warp Per Scheduler                        0.17
+    No Eligible                            %        82.97
+    Active Warps Per Scheduler          warp        11.67
+    Eligible Warps Per Scheduler        warp         0.31
+    ---------------------------- ----------- ------------
+
+    WRN   Every scheduler is capable of issuing one instruction per cycle, but for this kernel each scheduler only
+          issues an instruction every 5.9 cycles. This might leave hardware resources underutilized and may lead to
+          less optimal performance. Out of the maximum of 16 warps per scheduler, this kernel allocates an average of
+          11.67 active warps per scheduler, but only an average of 0.31 warps were eligible per cycle. Eligible warps
+          are the subset of active warps that are ready to issue their next instruction. Every cycle with no eligible
+          warp results in no instruction being issued and the issue slot remains unused. To increase the number of
+          eligible warps, reduce the time the active warps are stalled by inspecting the top stall reasons on the Warp
+          State Statistics and Source Counters sections.
+
+    Section: Warp State Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Warp Cycles Per Issued Instruction             cycle        68.53
+    Warp Cycles Per Executed Instruction           cycle        71.78
+    Avg. Active Threads Per Warp                                   32
+    Avg. Not Predicated Off Threads Per Warp                    30.00
+    ---------------------------------------- ----------- ------------
+
+    WRN   On average, each warp of this kernel spends 52.5 cycles being stalled waiting for a scoreboard dependency on
+          a L1TEX (local, global, surface, texture) operation. Find the instruction producing the data being waited
+          upon to identify the culprit. To reduce the number of cycles waiting on L1TEX data accesses verify the
+          memory access patterns are optimal for the target architecture, attempt to increase cache hit rates by
+          increasing data locality (coalescing), or by changing the cache configuration. Consider moving frequently
+          used data to shared memory.. This stall type represents about 76.6% of the total average of 68.5 cycles
+          between issuing two instructions.
+    ----- --------------------------------------------------------------------------------------------------------------
+    INF   Check the Warp Stall Sampling (All Cycles) table for the top stall locations in your source based on sampling
+          data. The Kernel Profiling Guide
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-reference) provides more details
+          on each stall reason.
+
+    Section: Instruction Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Avg. Executed Instructions Per Scheduler        inst     1,213.63
+    Executed Instructions                           inst      524,288
+    Avg. Issued Instructions Per Scheduler          inst     1,271.12
+    Issued Instructions                             inst      549,123
+    ---------------------------------------- ----------- ------------
+
+    WRN   This kernel executes 0 fused and 32768 non-fused FP32 instructions. By converting pairs of non-fused
+          instructions to their fused (https://docs.nvidia.com/cuda/floating-point/#cuda-and-floating-point),
+          higher-throughput equivalent, the achieved FP32 performance could be increased by up to 50% (relative to its
+          current performance). Check the Source page to identify where this kernel executes FP32 instructions.
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  4,096
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread       1,048,576
+    Waves Per SM                                                4.74
+    -------------------------------- --------------- ---------------
+
+    WRN   A wave of thread blocks is defined as the maximum number of blocks that can be executed in parallel on the
+          target GPU. The number of blocks in a wave depends on the number of multiprocessors and the theoretical
+          occupancy of the kernel. This kernel launch results in 4 full waves and a partial wave of 639 thread blocks.
+          Under the assumption of a uniform execution duration of all thread blocks, the partial wave may account for
+          up to 20.0% of the total kernel runtime with a lower occupancy of 26.5%. Try launching a grid with no
+          partial wave. The overall impact of this tail effect also lessens with the number of full waves executed for
+          a grid. See the Hardware Model
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model) description for more
+          details on launch configurations.
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           32
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block           32
+    Block Limit Warps                     block            8
+    Theoretical Active Warps per SM        warp           64
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        73.45
+    Achieved Active Warps Per SM           warp        47.01
+    ------------------------------- ----------- ------------
+
+    WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated
+          theoretical (100.0%) and measured achieved occupancy (73.5%) can be the result of warp scheduling overheads
+          or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block
+          as well as across blocks of the same kernel. See the CUDA Best Practices Guide
+          (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on
+          optimizing occupancy.
+
+    Section: Source Counters
+    ------------------------- ----------- ------------
+    Metric Name               Metric Unit Metric Value
+    ------------------------- ----------- ------------
+    Branch Instructions Ratio           %         0.12
+    Branch Instructions              inst       65,536
+    Branch Efficiency                   %            0
+    Avg. Divergent Branches                          0
+    ------------------------- ----------- ------------
+
+::::
 
 ## Nsight Systems (nsys)
 
