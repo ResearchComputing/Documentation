@@ -58,4 +58,25 @@ When attempting to install an extension, we suggest the following methods (liste
     2. Select the application you want and click `Download Extension` on the right-hand side. Some applications require that you chose the operating system. For 
     these applications, select the drop-down menu next to `Download Extension` and then select `Linux x64`.
     3. Drag and drop the downloaded file into the **folder column** within the VS Code-Server application. 
-    4. Right click the downloaded file and select `Install Extension VSIX`. 
+    4. Right click the downloaded file and select `Install Extension VSIX`.
+
+ ## Using conda environments in VS Code-Server
+
+The following steps will make available to VS Code-Server any [conda environments you previously installed on CU Research Computing resources](../software/python.md).
+
+1. Navigate to `Extensions` and install the basic `Python` extension.
+
+2. While still in `Extensions` select the Python extension you just installed.
+
+3. In the `Extension: Python` window, select the settings icon that is next to the blue `Disable` and `Uninstall` buttons, and choose `Extension Settings` in the drop-down menu.
+
+4. In the `Settings` window select the `Remote [ondemand.rc.colorado.edu]` tab.
+
+5. In the "Remote" window, add the following conda path to the `Python: Conda Path` category:
+```
+/curc/sw/install/miniforge3/24.11.3-0/bin/conda
+```
+6. Now navigate back to the main `Extension: Python` window and select `disable`, then `reload required`. In the sidebar, select the `Python` extension again, and then select `enable`.
+
+7. You should now be able to find and load any of your conda environments when selecting your python interpreter for a given session (it may take a few moments to display them all the first time).
+
