@@ -646,7 +646,7 @@ dim3 grid((N + block.x - 1) / block.x);  // → grid.x = 4096 blocks
 ```
 This updated configuration allows the GPU to schedule multiple waves of work across all SMs, leading to much better throughput and performance.
 
-::::{dropdown} Click here to view ```ncu``` report for updated configuration
+::::{dropdown} Click here to view the `ncu` report for the updated configuration
 :icon: note
 ```
 ==PROF== Connected to process 4073944
