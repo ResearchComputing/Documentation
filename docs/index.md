@@ -113,7 +113,7 @@ software/sratoolkit
 
 ```{toctree}
 :maxdepth: 2
-:caption: Programming, Profiling and Parallelization
+:caption: Programming, Profiling, and Parallelization
    
 programming/coding-best-practices
 programming/parallel-programming-fundamentals
