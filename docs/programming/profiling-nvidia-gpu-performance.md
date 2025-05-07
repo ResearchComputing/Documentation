@@ -303,7 +303,7 @@ $ ncu --set full --target-processes all ./vectorAdd
 ```ncu``` is not compatible with MIG-enabled GPUs. Ensure you run ```ncu``` only on A100 nodes without MIG.
 ```
 
-::::{dropdown} Click here to view full ```ncu``` report
+::::{dropdown} Click here to view the full `ncu` report
 :icon: note
 ```
 ==PROF== Connected to process 3921697 
