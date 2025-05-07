@@ -857,7 +857,7 @@ To view a quick CLI summary of the captured data:
 $ nsys stats report.nsys-rep
 ```
 
-::::{dropdown} Click here to view full output 
+::::{dropdown} Click here to view the full output 
 :icon: note
 ```
 Generating SQLite file report.sqlite from report.nsys-rep
