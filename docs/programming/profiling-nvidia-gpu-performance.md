@@ -190,7 +190,7 @@ Here's an example output from a MIG-enabled A100 node:
 
 - **Process Table:** When jobs are running, this table will show which process is attached to which MIG slice.
 
-### Monitoring GPU Usage While a Job is Running
+### Manually Monitoring GPU Usage While a Job is Running
 
 To check performance while your job is active:
 
