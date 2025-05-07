@@ -210,7 +210,7 @@ To check performance while your job is active:
 
 3. ```ssh``` into the compute node
 
- - Once you have the node name, ```ssh``` into it directly:
+     - Once you have the node name, `ssh` into it directly:
 
       ```
       $ ssh <node-name>
