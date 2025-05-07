@@ -200,7 +200,7 @@ To check performance while your job is active:
 
 2. Identify the node where your job is running
 
- - When the job is running, use the squeue command to find which compute node it's on:
+     - When the job is running, use the squeue command to find which compute node it's on:
 
       ``` 
       $ squeue -u $USER 
