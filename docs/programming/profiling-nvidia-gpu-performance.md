@@ -224,7 +224,12 @@ To check performance while your job is active:
 
 4. Run ```nvidia-smi``` 
 
-- Once logged into the node, use ```nvidia-smi``` command to monitor GPU usage.
+    - Once logged into the node, you can use the `nvidia-smi` command to monitor GPU usage. 
+    - You can alternatively use:
+    ```
+    $ nvidia-smi -l 2
+    ```
+   where `-l 2` is a flag that will refresh the output every 2 seconds. You can change the interval by adjusting the number (`-l 5` for every 5 seconds). Press `Ctrl+C` to stop the loop.
 
 ### Real-Time Monitoring of GPU Usage
 
