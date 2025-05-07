@@ -231,26 +231,30 @@ To check performance while your job is active:
     ```
    where `-l 2` is a flag that will refresh the output every 2 seconds. You can change the interval by adjusting the number (`-l 5` for every 5 seconds). Press `Ctrl+C` to stop the loop.
 
-### Real-Time Monitoring of GPU Usage
+### Monitoring GPU Usage within a Job Script
 
-To actively monitor GPU performance during a running job, you can use either the ```watch``` command or the built-in looping functionality of ```nvidia-smi```.
-
-**Option 1:** Using the ```watch``` repeatedly executes ```nvidia-smi``` at regular intervals and highlights changes in output, making it easier to spot fluctuations in GPU load or memory usage.
+To actively monitor GPU performance within a job script, you can run `nvidia-smi` as a background process and redirect its output. Below we provide an example script that redirects the `nvidia-smi` output to the output file `gpu_usage-jobid-${SLURM_JOB_ID}.log` every 60 seconds, where `${SLURM_JOB_ID}` is an environment variable specifying the Job ID. 
 
 ```
-$ watch -n 2 nvidia-smi
-```
-Here, ```-n 2``` sets the refresh interval to every 2 seconds (you can increase or decrease this number as needed).
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=10
+#SBATCH --gres=gpu
+#SBATCH --partition=atesting_a100 
+#SBATCH --qos=testing
+#SBATCH --time=00:10:00
 
-```{note}
-Each refresh with ```watch``` creates a new process, which can add some system overhead over time.
-```
+# Start GPU monitoring in the background
+nvidia-smi -l 60 >> gpu_usage-jobid-${SLURM_JOB_ID}.log &
+MONITOR_PID=$!
 
-**Option 2**: A more efficient alternative is to use the ```-l``` (loop) option built into ```nvidia-smi```. This avoids spawning new processes by refreshing internally. 
+# Replace the sleep command with your own command e.g. "python my_script.py"
+# Here we just sleep for 100 seconds
+sleep 100
+
+# Stop monitoring after job finishes
+kill $MONITOR_PID
 ```
-$ nvidia-smi -l 2
-```
-The ```-l 2``` flag will refresh the output every 2 seconds. You can change the interval by adjusting the number (```-l 5``` for every 5 seconds). Press ```Ctrl+C``` to stop the loop.
 
 
 ## Nsight Compute (ncu)
