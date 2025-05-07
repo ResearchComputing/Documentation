@@ -61,7 +61,7 @@ int main() {
 ```
 $ nvidia-smi
 ```
-Example output of ```nvidia-smi``` on ```aa100``` patition
+Example output of `nvidia-smi` on the `aa100` patition
 ```
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
