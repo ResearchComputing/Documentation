@@ -206,7 +206,7 @@ To check performance while your job is active:
       $ squeue -u $USER 
       ```
 
- - Look for the NODELIST(REASON) column, this shows the name of the compute node assigned to your job (e.g. ```c3gpu-c2-u13```).
+     - Look for the NODELIST(REASON) column, this shows the name of the compute node assigned to your job (e.g. `c3gpu-c2-u13`).
 
 3. ```ssh``` into the compute node
 
