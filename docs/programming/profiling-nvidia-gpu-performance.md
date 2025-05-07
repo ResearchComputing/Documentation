@@ -196,7 +196,7 @@ To check performance while your job is active:
 
 1. Submit or start your GPU job
 
- - You can run your GPU job either interactively (e.g. using ```sinteractive```) or via a batch script submitted with ```sbatch```
+     - You can run your GPU job either interactively (e.g. using `sinteractive`) or via a batch script submitted with `sbatch`
 
 2. Identify the node where your job is running
 
