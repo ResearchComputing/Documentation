@@ -91,7 +91,7 @@ Example output of ```nvidia-smi``` on ```aa100``` patition
 | :----------------- | :-------------------------------------------------- | 
 | ```NVIDIA-SMI 570.124.06``` | The version of the nvidia-smi utility installed  |
 | ```Driver Version: 570.124.06``` | The installed NVIDIA driver version. Any CUDA version used, must be compatible with this driver version. |
-| ```CUDA Version: 12.8``` | The highest version of the CUDA Toolkit supported by the driver. This does not indicate the version of CUDA your code is using unless explicitly set. |
+| ```CUDA Version: 12.8``` | The highest version of the CUDA Toolkit supported by the driver. |
 
 #### GPU Hardware Overview
 
