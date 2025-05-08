@@ -319,7 +319,7 @@ To use `ncu`, first load the appropriate CUDA module:
 ```
 $ module load cuda
 ```
-Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA Code: Vector Addition](../programming/profiling-nvidia-gpu-performance.md#sample-cuda-code-vector-addition) section, using `nvcc` compiler:
+Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA Code: Vector Addition](../programming/profiling-nvidia-gpu-performance.md#sample-cuda-code-vector-addition) section, using the `nvcc` compiler:
 
 ```
 $ nvcc -o vectorAdd vectorAdd.cu
