@@ -214,11 +214,9 @@ To check performance while your job is active:
 
 3. ```ssh``` into the compute node
 
-     - Once you have the node name, `ssh` into it directly:
+     - Once you have the node name, `ssh` into it directly. For example, if your GPU job was running on `c3gpu-c2-u13`, you would do the following:
 
       ```
-      $ ssh <node-name>
-      # Example:
       $ ssh c3gpu-c2-u13
       ```
 
