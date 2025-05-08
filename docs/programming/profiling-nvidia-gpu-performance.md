@@ -4,16 +4,16 @@ The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling
 
 The following tools are available for interacting with performance counters:
 
-- ```nvidia-smi```: For basic monitoring of GPU resource usage.
+- `nvidia-smi`: For basic monitoring of GPU resource usage.
 
-- ```Nsight Compute (ncu)```: For detailed GPU kernel performance analysis.
+- `Nsight Compute (ncu)`: For detailed GPU kernel performance analysis.
 
-- ```Nsight Systems (nsys)```: For system-wide GPU and CPU performance tracing.
+- `Nsight Systems (nsys)`: For system-wide GPU and CPU performance tracing.
 
 ## Sample CUDA Code: Vector Addition
 This code example will be used throughout this guide to demonstrate how to use each NVIDIA profiling and monitoring tool.
 
-Here’s a simple CUDA program ```vectorAdd.cu``` that adds two vectors of floats.
+Here’s a simple CUDA program `vectorAdd.cu` that adds two vectors of floats.
 
 ```
 #include <iostream>
@@ -54,7 +54,7 @@ int main() {
 
 ## nvidia-smi
 
-```nvidia-smi``` (System Management Interface) is a command-line utility that provides real-time information about GPU utilization, memory usage, temperature, and running processes.
+`nvidia-smi` (System Management Interface) is a command-line utility that provides real-time information about GPU utilization, memory usage, temperature, and running processes.
 
 ### Getting Started
 
@@ -89,9 +89,9 @@ Example output of `nvidia-smi` on the `aa100` patition
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
-| ```NVIDIA-SMI 570.124.06``` | The version of the nvidia-smi utility installed  |
-| ```Driver Version: 570.124.06``` | The installed NVIDIA driver version. Any CUDA version used, must be compatible with this driver version. |
-| ```CUDA Version: 12.8``` | The highest version of the CUDA Toolkit supported by the driver. |
+| `NVIDIA-SMI 570.124.06` | The version of the nvidia-smi utility installed  |
+| `Driver Version: 570.124.06` | The installed NVIDIA driver version. Any CUDA version used, must be compatible with this driver version. |
+| `CUDA Version: 12.8` | The highest version of the CUDA Toolkit supported by the driver. |
 
 #### GPU Hardware Overview
 
@@ -129,14 +129,14 @@ Example output of `nvidia-smi` on the `aa100` patition
 | GPU Memory Usage	| Amount of GPU memory the process is using.| 
 
 ```{note}
-- Run ```nvidia-smi``` inside your allocated job session (e.g., after using ```sinteractive```) to check whether your job is using the GPU.
+- Run `nvidia-smi` inside your allocated job session (e.g., after using `sinteractive`) to check whether your job is using the GPU.
 - If no processes appear in the list but you expect your application to be running, it likely means the GPU is not being utilized. Please verify that your code is GPU-enabled and that CUDA is properly initialized.
 
 ```
 
-### ```nvidia-smi``` on MIG-Enabled GPUs
+### `nvidia-smi` on MIG-Enabled GPUs
 
-Some A100 GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, ```nvidia-smi``` shows a different output format, displaying information for both full GPUs and individual MIG instances.
+Some A100 GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, `nvidia-smi` shows a different output format, displaying information for both full GPUs and individual MIG instances.
 
 Here's an example output from a MIG-enabled A100 node:
 ```
@@ -182,13 +182,17 @@ Here's an example output from a MIG-enabled A100 node:
 ```
 #### What’s Different with MIG?
 
-- **MIG Mode:** You'll see ```MIG M.: Enabled``` in the main GPU listing.
+- **MIG Mode:** You'll see `MIG M.: Enabled` in the main GPU listing.
 
-- **GPU Utilization:** The parent GPU will often show ```N/A``` for ```GPU-Util```; usage is tracked per MIG instance instead.
+- **GPU Utilization:** The parent GPU will often show `N/A` for `GPU-Util`; usage is tracked per MIG instance instead.
 
 - **MIG Devices Section:** This shows each available MIG instance, how much memory and compute it has, and its usage stats.
 
 - **Process Table:** When jobs are running, this table will show which process is attached to which MIG slice.
+
+```{note}
+When using MIG-enabled GPUs, refer to the MIG devices section for information about individual MIG slices. Do not rely on the main GPU table for MIG-specific details.
+```
 
 ### Manually Monitoring GPU Usage While a Job is Running
 
@@ -219,10 +223,10 @@ To check performance while your job is active:
       ```
 
       ```{note} 
-      You can only ```ssh``` into a compute node if you have an active job running on it. 
+      You can only `ssh` into a compute node if you have an active job running on it. 
       ```
 
-4. Run ```nvidia-smi``` 
+4. Run `nvidia-smi` 
 
     - Once logged into the node, you can use the `nvidia-smi` command to monitor GPU usage. 
     - You can alternatively use:
@@ -230,6 +234,39 @@ To check performance while your job is active:
     $ nvidia-smi -l 2
     ```
    where `-l 2` is a flag that will refresh the output every 2 seconds. You can change the interval by adjusting the number (`-l 5` for every 5 seconds). Press `Ctrl+C` to stop the loop.
+
+When you run `nvidia-smi` while an application is executing, the output will display the current processes utilizing the GPU as such:
+
+```
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:21:00.0 Off |                    0 |
+| N/A   33C    P0             40W /  250W |       1MiB /  40960MiB |     12%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0    0    0           110318      C    ./vectorAdd                            34MiB  |
++-----------------------------------------------------------------------------------------+
+
+```
+| Column               | Value                                         | 
+| :----------------- | :-------------------------------------------------- | 
+| GPU | In this case, the GPU being used is GPU 0. | 
+| GI/CI	| 0 / 0 — Since MIG (Multi-Instance GPU) is not in use here, both are listed as 0. | 
+| PID	| 110318 — This is the unique Process ID of the application using the GPU. | 
+| Type	| C — This indicates that the process is a Compute process, meaning the GPU is being used for calculations or data processing.| 
+| Process Name	| ./vectorAdd — This is the name of the executable using the GPU. | 
+| GPU Memory Usage	| 34MiB — This shows that the process is using 34 MiB of memory.| 
 
 ### Monitoring GPU Usage within a Job Script
 
@@ -274,33 +311,33 @@ Key Features:
 - Enables deep inspection of stalls, occupancy, and instruction efficiency.
 
 ```{caution}
-Collecting performance data using ```ncu``` can incur significant runtime overhead. For production runs, disable profiling. See [Nsight Compute Overhead](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead) for more details.
+Collecting performance data using `ncu` can incur significant runtime overhead. For production runs, disable profiling. See [Nsight Compute Overhead](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#overhead) for more details.
 ```
 
 ### Getting Started
 
-To use ```ncu```, first load the appropriate CUDA module:
+To use `ncu`, first load the appropriate CUDA module:
 
 ```
 $ module load cuda
 ```
-Compile the CUDA application using: 
+Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA Code: Vector Addition](../programming/profiling-nvidia-gpu-performance.md#sample-cuda-code-vector-addition) section, using `nvcc` compiler:
 
 ```
 $ nvcc -o vectorAdd vectorAdd.cu
 ```
 
-Next to invoke ```ncu```, prefix it to your compiled CUDA application:
+Next to invoke `ncu`, prefix it to your compiled CUDA application:
 
 ```
 $ ncu --set full --target-processes all ./vectorAdd
 ```
-- ```--set full```: Collects a comprehensive set of performance metrics.
+- `--set full`: Collects a comprehensive set of performance metrics.
 
-- ```--target-processes all```: Profiles all child processes (useful for multi-threaded applications).
+- `--target-processes all`: Profiles all child processes (useful for multi-threaded applications).
 
 ```{note}
-```ncu``` is not compatible with MIG-enabled GPUs. Ensure you run ```ncu``` only on A100 nodes without MIG.
+`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on A100 nodes without MIG.
 ```
 
 ::::{dropdown} Click here to view the full `ncu` report
@@ -540,7 +577,7 @@ For example:
 ==PROF== Profiling "vectorAdd" - 0: 0%....50%....100% - 49 passes
 ```
 
-When profiling a CUDA application using ```ncu```, two sections in the output are very important to pay attention to, GPU Speed Of Light Throughput and Launch Statistics. These sections provide essential insights into how well your code is utilizing the GPU's hardware. Thus, understanding these metrics helps identify performance bottlenecks and underutilization.
+When profiling a CUDA application using `ncu`, two sections in the output are very important to pay attention to, GPU Speed Of Light Throughput and Launch Statistics. These sections provide essential insights into how well your code is utilizing the GPU's hardware. Thus, understanding these metrics helps identify performance bottlenecks and underutilization.
 
 ### GPU Speed Of Light Throughput
 
@@ -561,7 +598,7 @@ This section tells you how your kernel was launched and whether that configurati
 | # SMs | Number of Streaming Multiprocessors (compute units)   | Helps evaluate if enough blocks are used |
 | Waves Per SM  | Full sets of warps scheduled per SM   | Indicates how much parallel work is scheduled per compute unit. 0.00 means most SMs are idle | 
 
-Here’s a simplified snippet from an ```ncu``` run on ```vectorAdd``` 
+Here’s a simplified snippet from an `ncu` run on `vectorAdd` 
 ```
 [rc_user@c3gpu-c2-u7 ]$ ncu --set full --target-processes all ./vectorAdd
 ==PROF== Connected to process 3921697
@@ -837,16 +874,16 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 
 ### Getting Started
 
-To use ```nsys```, load the appropriate CUDA module, compile and invoke ```nsys``` by prefixing it to your CUDA application:
+To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code (`vectorAdd.cu`), available in the [Sample CUDA Code: Vector Addition](../programming/profiling-nvidia-gpu-performance.md#sample-cuda-code-vector-addition) section, using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
 
 ```
 $ module load cuda
 $ nvcc -o vectorAdd vectorAdd.cu
 $ nsys profile --trace=cuda,osrt ./vectorAdd
 ```
-- ```--trace=cuda```: Capture CUDA kernel launches and memory transfers.
+- `--trace=cuda`: Capture CUDA kernel launches and memory transfers.
 
-- ```--trace=osrt```: Trace OS runtime activity (threads, processes, etc.).
+- `--trace=osrt`: Trace OS runtime activity (threads, processes, etc.).
 
 This generates a report file in binary format:
 ```
@@ -956,9 +993,9 @@ Shows how much time was spent in each CUDA API function.
 ```
 | Function               | 	Time %                          | What It Means                           | 
 | :----------------- | :------------------------------------------- |:-------------------------------------------------- |
-| ```cudaMalloc```	  | 96.4% | 	This indicates that most runtime is spent allocating device memory instead of performing computations. If you're calling ```cudaMalloc``` inside loops or repeatedly, this adds significant overhead. The solution to this is to allocate once and reuse memory across iterations. |
-| ```cudaLaunchKernel```	 | 	3.5% | The kernel itself is extremely fast, but that may not be a good thing. A very short kernel runtime often means underutilization of GPU resources. |
-| ```cudaMemcpy```  | <0.1% | While it didn’t take long, combined with small memory size, this indicates the data being copied is too small to be efficient. |
+| `cudaMalloc`	  | 96.4% | 	This indicates that most runtime is spent allocating device memory instead of performing computations. If you're calling `cudaMalloc` inside loops or repeatedly, this adds significant overhead. The solution to this is to allocate once and reuse memory across iterations. |
+| `cudaLaunchKernel`	 | 	3.5% | The kernel itself is extremely fast, but that may not be a good thing. A very short kernel runtime often means underutilization of GPU resources. |
+| `cudaMemcpy`  | <0.1% | While it didn’t take long, combined with small memory size, this indicates the data being copied is too small to be efficient. |
 
 ####  CUDA GPU Kernel Summary
 This summarizes execution of GPU kernels.
@@ -988,8 +1025,8 @@ The output shows that the kernel only ran once and took ~2 microseconds. That’
 ```
 | Memory Operation               | 	Time %                          | What It Means                           | 
 | :----------------- | :------------------------------------------- |:-------------------------------------------------- |
-| ```HtoD (Host to Device)```	  | 52.2% | Over half of your execution time is just moving data to the GPU. This is very inefficient for such a small computation. |
-| ```DtoH (Device to Host)```	 | 	47.8% | Combined with the HtoD, this suggests that nearly all the runtime is overhead, not actual GPU compute. |
+| `HtoD (Host to Device)`	  | 52.2% | Over half of your execution time is just moving data to the GPU. This is very inefficient for such a small computation. |
+| `DtoH (Device to Host)`	 | 	47.8% | Combined with the HtoD, this suggests that nearly all the runtime is overhead, not actual GPU compute. |
 
 Therefore, when working with small kernels, where data transfer overhead often outweighs compute time, it’s recommended to use asynchronous memory copies or unified memory to reduce latency and improve overlap.
 
@@ -1016,4 +1053,4 @@ Time (%)  Total Time (ns)  Num Calls    Name
   28.3      126,874,612        538    ioctl
 ```
 
-This output means that most of the runtime was spent in system calls like ```poll``` and ```ioctl```, which are unrelated to the kernel execution. This suggests the application is not compute-bound, and system overhead is prominent due to the small workload.
+This output means that most of the runtime was spent in system calls like `poll` and `ioctl`, which are unrelated to the kernel execution. This suggests the application is not compute-bound, and system overhead is prominent due to the small workload.
