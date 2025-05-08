@@ -80,7 +80,7 @@ Example output of `nvidia-smi` on the `aa100` partition
 |  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
 |        ID   ID                                                               Usage      |
 |=========================================================================================|
-|  No running processes found                                                             |
+|    0    0    0           110318      C    ./vectorAdd                            34MiB  |
 +-----------------------------------------------------------------------------------------+
 
 ```
@@ -121,12 +121,12 @@ Example output of `nvidia-smi` on the `aa100` partition
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
-| GPU | Index of the GPU the process is using.| 
-| GI/CI	| GPU Instance / Compute Instance — used only when MIG mode is enabled (both N/A here).| 
-| PID	| Process ID of the application using the GPU.| 
-| Type	| Type of process: C (Compute), G (Graphics), etc.| 
-| Process Name	| Name of the executable or command using the GPU.| 
-| GPU Memory Usage	| Amount of GPU memory the process is using.| 
+| GPU | Index of the GPU the process is using. In this case, the GPU being used is GPU 0. | 
+| GI/CI	| GPU Instance (GI) / Compute Instance (CI). Used only when MIG mode is enabled. Since MIG mode is disabled here, both values are set to 0. | 
+| PID	| Unique Process ID (PID) of the application utilizing the GPU. Example: 110318. | 
+| Type	| Type of process using the GPU. Possible values include C (Compute), G (Graphics), etc. In this instance, C indicates a Compute process, meaning the GPU is being used for calculations or data processing. | 
+| Process Name	| Name of the executable or command utilizing the GPU. In this case, `./vectorAdd` is the name of the executable. | 
+| GPU Memory Usage	| Amount of GPU memory the process is using. This process is using 34 MiB of memory. | 
 
 ```{note}
 - Run `nvidia-smi` inside your allocated job session (e.g., after using `sinteractive`) to check whether your job is using the GPU.
@@ -134,7 +134,7 @@ Example output of `nvidia-smi` on the `aa100` partition
 
 ```
 
-### `nvidia-smi` on MIG-Enabled GPUs
+### nvidia-smi on MIG-Enabled GPUs
 
 Some A100 GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, `nvidia-smi` shows a different output format, displaying information for both full GPUs and individual MIG instances.
 
@@ -232,39 +232,6 @@ To check performance while your job is active:
     $ nvidia-smi -l 2
     ```
    where `-l 2` is a flag that will refresh the output every 2 seconds. You can change the interval by adjusting the number (`-l 5` for every 5 seconds). Press `Ctrl+C` to stop the loop.
-
-When you run `nvidia-smi` while an application is executing, the output will display the current processes utilizing the GPU as such:
-
-```
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
-|-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:21:00.0 Off |                    0 |
-| N/A   33C    P0             40W /  250W |       1MiB /  40960MiB |     12%      Default |
-|                                         |                        |             Disabled |
-+-----------------------------------------+------------------------+----------------------+
-
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|    0    0    0           110318      C    ./vectorAdd                            34MiB  |
-+-----------------------------------------------------------------------------------------+
-
-```
-| Column               | Value                                         | 
-| :----------------- | :-------------------------------------------------- | 
-| GPU | In this case, the GPU being used is GPU 0. | 
-| GI/CI	| 0 / 0 — Since MIG (Multi-Instance GPU) is not in use here, both are listed as 0. | 
-| PID	| 110318 — This is the unique Process ID of the application using the GPU. | 
-| Type	| C — This indicates that the process is a Compute process, meaning the GPU is being used for calculations or data processing.| 
-| Process Name	| ./vectorAdd — This is the name of the executable using the GPU. | 
-| GPU Memory Usage	| 34MiB — This shows that the process is using 34 MiB of memory.| 
 
 ### Monitoring GPU Usage within a Job Script
 
