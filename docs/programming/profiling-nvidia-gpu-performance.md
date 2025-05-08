@@ -325,7 +325,7 @@ Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA Code: Vector Ad
 $ nvcc -o vectorAdd vectorAdd.cu
 ```
 
-Next to invoke `ncu`, prefix it to your compiled CUDA application:
+Next, to invoke `ncu`, prefix it to your compiled CUDA application:
 
 ```
 $ ncu --set full --target-processes all ./vectorAdd
