@@ -12,7 +12,7 @@ The following tools are available for interacting with performance counters:
 
 ## Sample CUDA Code
 
-In this guide, we will demonstrate how to use each NVIDIA profiling and monitoring tools on two different CUDA programs:
+To demonstrate how to use NVIDIA profiling and monitoring tools, we will use two different CUDA programs:
 
 1. Vector Addition (`vectorAdd.cu`): A simpler operation that serves as a quick example for profiling.
 
