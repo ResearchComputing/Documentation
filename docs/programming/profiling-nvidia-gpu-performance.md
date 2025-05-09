@@ -10,10 +10,89 @@ The following tools are available for interacting with performance counters:
 
 - `Nsight Systems (nsys)`: For system-wide GPU and CPU performance tracing.
 
-## Sample CUDA Code: Vector Addition
-This code example will be used throughout this guide to demonstrate how to use each NVIDIA profiling and monitoring tool.
+## Sample CUDA Code
 
-Here’s a simple CUDA program `vectorAdd.cu` that adds two vectors of floats.
+In this guide, we will demonstrate how to use each NVIDIA profiling and monitoring tools on two different CUDA programs:
+
+1. Matrix Multiplication (complex operation to highlight GPU load during a more compute-intensive task)
+
+2. Vector Addition (simple operation for quick profiling examples)
+
+
+### CUDA code for Matrix Multiplication
+
+Here’s a CUDA program `matrixMultiply.cu`, that performs matrix multiplication on two large matrices (12288 x 12288) with float elements.
+
+```
+#include <iostream>
+#include <cuda_runtime.h>
+#include <chrono>
+
+#define N 12288  
+
+__global__ void matrixMul(float *A, float *B, float *C) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (row < N && col < N) {
+        float sum = 0.0f;
+        for (int k = 0; k < N; k++) {
+            sum += A[row * N + k] * B[k * N + col];
+        }
+        C[row * N + col] = sum;
+    }
+}
+
+int main() {
+    size_t size = N * N * sizeof(float);
+    
+    float *A = new float[N * N];
+    float *B = new float[N * N];
+    float *C = new float[N * N];
+
+    for (int i = 0; i < N * N; i++) {
+        A[i] = static_cast<float>(rand()) / RAND_MAX;
+        B[i] = static_cast<float>(rand()) / RAND_MAX;
+    }
+
+    float *d_A, *d_B, *d_C;
+    cudaMalloc(&d_A, size);
+    cudaMalloc(&d_B, size);
+    cudaMalloc(&d_C, size);
+
+    cudaMemcpy(d_A, A, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, B, size, cudaMemcpyHostToDevice);
+
+    dim3 block(16, 16);
+    dim3 grid((N + block.x - 1) / block.x, (N + block.y - 1) / block.y);
+
+    auto start = std::chrono::high_resolution_clock::now();
+
+    matrixMul<<<grid, block>>>(d_A, d_B, d_C);
+    cudaDeviceSynchronize();
+
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::minutes>(end - start);
+
+    cudaMemcpy(C, d_C, size, cudaMemcpyDeviceToHost);
+
+    std::cout << "Execution time: " << duration.count() << " minutes" << std::endl;
+
+    delete[] A;
+    delete[] B;
+    delete[] C;
+    cudaFree(d_A);
+    cudaFree(d_B);
+    cudaFree(d_C);
+
+    return 0;
+}
+
+```
+
+### CUDA code for Vector Addition
+
+Here’s a CUDA program `vectorAdd.cu`, that adds two vectors of floats.
 
 ```
 #include <iostream>
@@ -54,14 +133,14 @@ int main() {
 
 ## nvidia-smi
 
-`nvidia-smi` (System Management Interface) is a command-line utility that provides real-time information about GPU utilization, memory usage, temperature, and running processes.
+`nvidia-smi` (System Management Interface) is a command-line utility that provides real-time information about GPU utilization, memory usage, temperature, and running processes. 
 
 ### Getting Started
 
 ```
 $ nvidia-smi
 ```
-Example output of `nvidia-smi` on the `aa100` partition
+Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplication](../programming/profiling-nvidia-gpu-performance.md#cuda-code-for-matrix-multiplication) code 
 ```
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
@@ -70,17 +149,17 @@ Example output of `nvidia-smi` on the `aa100` partition
 | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
-|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:21:00.0 Off |                    0 |
-| N/A   33C    P0             40W /  250W |       1MiB /  40960MiB |      2%      Default |
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:E2:00.0 Off |                    0 |
+| N/A   58C    P0            287W /  300W |    2151MiB /  81920MiB |     64%      Default |
 |                                         |                        |             Disabled |
 +-----------------------------------------+------------------------+----------------------+
 
 +-----------------------------------------------------------------------------------------+
 | Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|  GPU   GI   CI              PID   Type       Process name                    GPU Memory |
 |        ID   ID                                                               Usage      |
 |=========================================================================================|
-|    0    0    0           110318      C    ./vectorAdd                            34MiB  |
+|    0   N/A  N/A         1238090      C   ./matrixMultiply                       2142MiB |
 +-----------------------------------------------------------------------------------------+
 
 ```
@@ -98,7 +177,7 @@ Example output of `nvidia-smi` on the `aa100` partition
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
 | GPU |	The GPU index (starting from 0). In this case, GPU 0 is being shown. |
-| Name | Full name of the GPU model. Here, it's NVIDIA A100-PCIE-40GB. |
+| Name | Full name of the GPU model. Here, it's NVIDIA A100 80GB PCIe. |
 | Persistence-M	| Shows whether Persistence Mode is enabled (helps reduce driver load time). It is Off here. |
 | Bus-Id |	PCIe Bus ID of the GPU. Useful for identifying GPUs in multi-GPU systems. |
 | Disp.A | Whether the GPU is attached to a display (usually Off on HPC systems). |
@@ -109,11 +188,11 @@ Example output of `nvidia-smi` on the `aa100` partition
 | Metric               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
 | Fan | GPU fan speed percentage. Often N/A on datacenter GPUs like A100.| 
-| Temp	| Current temperature of the GPU in Celsius (e.g., 33C).| 
+| Temp	| Current temperature of the GPU in Celsius (e.g., 58C).| 
 | Perf	| Performance state of the GPU, ranging from P0 (maximum performance) to P12 (minimum).| 
-| Pwr:Usage/Cap	| Current power draw and the maximum power cap of the GPU (40W / 250W).| 
-| Memory-Usage	| GPU memory in use vs total available. Only 1 MiB out of 40960 MiB is in use, indicating an idle GPU.| 
-| GPU-Util	| Percentage of time over the last few seconds that the GPU was busy. Low values (like 2%) indicate little to no workload.| 
+| Pwr:Usage/Cap	| Current power draw and the maximum power cap of the GPU (287W/300W).| 
+| Memory-Usage	| GPU memory in use vs total available. Only 2151MiB out of 81920MiB is in use.| 
+| GPU-Util	| Percentage of time over the last few seconds that the GPU was busy, like 64% here. Low values indicate little to no workload.| 
 | Compute M. | Compute mode status. Default means any user with permission can use the GPU. Other modes include Exclusive Process and Prohibited.| 
 | MIG M. | MIG (Multi-Instance GPU) mode status. Here it is Disabled, meaning the GPU is operating in full-capacity mode, not subdivided.| 
 
@@ -122,11 +201,11 @@ Example output of `nvidia-smi` on the `aa100` partition
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
 | GPU | Index of the GPU the process is using. In this case, the GPU being used is GPU 0. | 
-| GI/CI	| GPU Instance (GI) / Compute Instance (CI). Used only when MIG mode is enabled. Since MIG mode is disabled here, both values are set to 0. | 
-| PID	| Unique Process ID (PID) of the application utilizing the GPU. Example: 110318. | 
+| GI/CI	| GPU Instance (GI) / Compute Instance (CI). Used only when MIG mode is enabled. Since MIG mode is disabled here, both values are N/A. | 
+| PID	| Unique Process ID (PID) of the application utilizing the GPU. Example: 1238090. | 
 | Type	| Type of process using the GPU. Possible values include C (Compute), G (Graphics), etc. In this instance, C indicates a Compute process, meaning the GPU is being used for calculations or data processing. | 
-| Process Name	| Name of the executable or command utilizing the GPU. In this case, `./vectorAdd` is the name of the executable. | 
-| GPU Memory Usage	| Amount of GPU memory the process is using. This process is using 34 MiB of memory. | 
+| Process Name	| Name of the executable or command utilizing the GPU. In this case, `./matrixMultiply` is the name of the executable. | 
+| GPU Memory Usage	| Amount of GPU memory the process is using. This process is using 2142MiB of memory. | 
 
 ```{note}
 - Run `nvidia-smi` inside your allocated job session (e.g., after using `sinteractive`) to check whether your job is using the GPU.
@@ -286,7 +365,7 @@ To use `ncu`, first load the appropriate CUDA module:
 ```
 $ module load cuda
 ```
-Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA Code: Vector Addition](../programming/profiling-nvidia-gpu-performance.md#sample-cuda-code-vector-addition) section, using the `nvcc` compiler:
+Compile the CUDA code (`vectorAdd.cu`), provided in [CUDA Code for Vector Addition](../programming/profiling-nvidia-gpu-performance.md#cuda-code-for-vector-addition) section, using the `nvcc` compiler:
 
 ```
 $ nvcc -o vectorAdd vectorAdd.cu
@@ -839,7 +918,7 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 
 ### Getting Started
 
-To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code (`vectorAdd.cu`), available in the [Sample CUDA Code: Vector Addition](../programming/profiling-nvidia-gpu-performance.md#sample-cuda-code-vector-addition) section, using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
+To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code (`vectorAdd.cu`), available in the [CUDA Code for Vector Addition](../programming/profiling-nvidia-gpu-performance.md#cuda-code-for-vector-addition) section, using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
 
 ```
 $ module load cuda
