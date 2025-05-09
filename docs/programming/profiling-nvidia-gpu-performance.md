@@ -285,7 +285,7 @@ Here's an example output from a MIG-enabled A100 node:
 +-----------------------------------------------------------------------------------------+
 
 ```
-#### What’s Different with MIG?
+#### What’s different with MIG?
 
 - **MIG Mode:** You'll see `MIG M.: Enabled` in the main GPU listing.
 
