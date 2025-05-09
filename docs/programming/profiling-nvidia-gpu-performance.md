@@ -149,7 +149,7 @@ int main() {
 ```
 $ nvidia-smi
 ```
-Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplication](?tabset-cuda-code=cuda-matrix-multiply#tabset-ref-cuda-code){.external} code 
+Example output of `nvidia-smi` on the `aa100` partition using [matrixMultiply.cu](?tabset-cuda-code=cuda-matrix-multiply#tabset-ref-cuda-code){.external}:
 
 ```
 +-----------------------------------------------------------------------------------------+
