@@ -1056,7 +1056,7 @@ Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/ho
 ```
 ::::
 
-### Interpreting Key Outputs
+The provided nsys report contains key output that can help you optimize your code. For more information on these key output sections and interpreting the output, please review the tabs below.
 
 (tabset-ref-nsys)=
 `````{tab-set}
