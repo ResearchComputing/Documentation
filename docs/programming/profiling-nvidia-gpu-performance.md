@@ -391,7 +391,7 @@ To use `ncu`, first load the appropriate CUDA module:
 ```
 $ module load cuda
 ```
-Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA code](?tabset-cuda-code=cuda-vector-add#tabset-ref-cuda-code){.external} section, using the `nvcc` compiler:
+Compile the CUDA code [vectorAdd.cu](?tabset-cuda-code=cuda-vector-add#tabset-ref-cuda-code){.external}, using the `nvcc` compiler:
 
 ```
 $ nvcc -o vectorAdd vectorAdd.cu
