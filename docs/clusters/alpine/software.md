@@ -84,7 +84,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Maven](https://maven.apache.org/) | 3.8.1 | Apache Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. |
 | [MKL](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html#gs.ecsytg) | 2021.4.0, 2022.0.2, 2024.2 |A library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.|
 | [MultiQC](https://multiqc.info/) | 1.14 | MultiQC is a reporting tool that parses results and statistics from bioinformatics tool outputs, such as log files and console outputs.|
-| [NAMD](http://www.ks.uiuc.edu/Research/namd/) | 2.14 | NAMD is a parallel molecular dynamics code for large biomolecular systems.| 
+| [NAMD](http://www.ks.uiuc.edu/Research/namd/) | 2.14, 3.0.1 | NAMD is a parallel molecular dynamics code for large biomolecular systems.| 
 | [NCL](https://www.ncl.ucar.edu/Download/) | 6.3.0 (D) | NCAR Command Language. An interpreted language designed for scientific data analysis and visualization. |
 | [NCO](https://nco.sourceforge.net/) | 4.8.1, 5.1.4, 5.2.9 | A toolkit that manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, HDF5, and, Zarr | 
 | [Ncview](https://cirrus.ucsd.edu/ncview/) | 2.1.7 | Ncview is a visual browser for netCDF format files. | 
