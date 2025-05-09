@@ -368,7 +368,7 @@ kill $MONITOR_PID
 
 NVIDIA Nsight Compute is a command-line CUDA kernel profiler that provides detailed performance metrics for GPU kernels, helping users identify, and resolve bottlenecks in CUDA applications. It is particularly well-suited for low-level kernel analysis and optimization.
 
-### Why These Metrics Matter?
+### Why do these metrics matter?
 
 Modern GPUs, such as the NVIDIA A100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
 
