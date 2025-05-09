@@ -956,7 +956,7 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 
 ### Getting Started
 
-To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code (`vectorAdd.cu`), available in the [Sample CUDA code](?tabset-cuda-code=cuda-vector-add#tabset-ref-cuda-code){.external} section, using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
+To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code [vectorAdd.cu](?tabset-cuda-code=cuda-vector-add#tabset-ref-cuda-code){.external} using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
 
 ```
 $ module load cuda
