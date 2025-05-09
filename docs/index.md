@@ -113,7 +113,7 @@ software/sratoolkit
 
 ```{toctree}
 :maxdepth: 2
-:caption: Programming and Parallelization
+:caption: Programming, Profiling, and Parallelization
    
 programming/coding-best-practices
 programming/parallel-programming-fundamentals
@@ -122,6 +122,7 @@ programming/MPI-C
 programming/MPI-Fortran
 programming/OpenMP-C
 programming/OpenMP-Fortran
+programming/profiling-nvidia-gpu-performance
 
 ```
    
