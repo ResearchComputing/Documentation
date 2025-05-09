@@ -14,12 +14,60 @@ The following tools are available for interacting with performance counters:
 
 In this guide, we will demonstrate how to use each NVIDIA profiling and monitoring tools on two different CUDA programs:
 
-1. Matrix Multiplication (complex operation to highlight GPU load during a more compute-intensive task)
+1. Vector Addition (`vectorAdd.cu`): A simpler operation that serves as a quick example for profiling.
 
-2. Vector Addition (simple operation for quick profiling examples)
+2. Matrix Multiplication (`matrixMultiply.cu`): A compute-intensive task designed to showcase GPU load during complex operations.
+
+(tabset-ref-cuda-code)=
+`````{tab-set}
+:sync-group: tabset-cuda-code
+
+````{tab-item} vectorAdd.cu 
+:sync: cuda-vector-add
+
+Here’s a CUDA program `vectorAdd.cu`, that adds two vectors of floats.
+
+```
+#include <iostream>
+#include <cuda_runtime.h>
+
+#define N 1024  // Size of the vectors
+
+__global__ void vectorAdd(float *A, float *B, float *C) {
+    int idx = threadIdx.x + blockIdx.x * blockDim.x;
+    if (idx < N) {
+        C[idx] = A[idx] + B[idx];
+    }
+}
+
+int main() {
+    float *A = new float[N], *B = new float[N], *C = new float[N];
+    for (int i = 0; i < N; i++) {
+        A[i] = static_cast<float>(rand()) / RAND_MAX;
+        B[i] = static_cast<float>(rand()) / RAND_MAX;
+    }
+
+    float *d_A, *d_B, *d_C;
+    size_t size = N * sizeof(float);
+    cudaMalloc(&d_A, size); cudaMalloc(&d_B, size); cudaMalloc(&d_C, size);
+    cudaMemcpy(d_A, A, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, B, size, cudaMemcpyHostToDevice);
+
+    dim3 block(256);
+    dim3 grid((N + block.x - 1) / block.x);
+    vectorAdd<<<grid, block>>>(d_A, d_B, d_C);
+    cudaMemcpy(C, d_C, size, cudaMemcpyDeviceToHost);
+
+    delete[] A; delete[] B; delete[] C;
+    cudaFree(d_A); cudaFree(d_B); cudaFree(d_C);
+    return 0;
+}
+```
 
 
-### CUDA code for Matrix Multiplication
+````
+````{tab-item} matrixMultiply.cu
+:sync: cuda-matrix-multiply
 
 Here’s a CUDA program `matrixMultiply.cu`, that performs matrix multiplication on two large matrices (12288 x 12288) with float elements.
 
@@ -89,47 +137,8 @@ int main() {
 }
 
 ```
-
-### CUDA code for Vector Addition
-
-Here’s a CUDA program `vectorAdd.cu`, that adds two vectors of floats.
-
-```
-#include <iostream>
-#include <cuda_runtime.h>
-
-#define N 1024  // Size of the vectors
-
-__global__ void vectorAdd(float *A, float *B, float *C) {
-    int idx = threadIdx.x + blockIdx.x * blockDim.x;
-    if (idx < N) {
-        C[idx] = A[idx] + B[idx];
-    }
-}
-
-int main() {
-    float *A = new float[N], *B = new float[N], *C = new float[N];
-    for (int i = 0; i < N; i++) {
-        A[i] = static_cast<float>(rand()) / RAND_MAX;
-        B[i] = static_cast<float>(rand()) / RAND_MAX;
-    }
-
-    float *d_A, *d_B, *d_C;
-    size_t size = N * sizeof(float);
-    cudaMalloc(&d_A, size); cudaMalloc(&d_B, size); cudaMalloc(&d_C, size);
-    cudaMemcpy(d_A, A, size, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_B, B, size, cudaMemcpyHostToDevice);
-
-    dim3 block(256);
-    dim3 grid((N + block.x - 1) / block.x);
-    vectorAdd<<<grid, block>>>(d_A, d_B, d_C);
-    cudaMemcpy(C, d_C, size, cudaMemcpyDeviceToHost);
-
-    delete[] A; delete[] B; delete[] C;
-    cudaFree(d_A); cudaFree(d_B); cudaFree(d_C);
-    return 0;
-}
-```
+````
+`````
 
 ## nvidia-smi
 
@@ -140,7 +149,8 @@ int main() {
 ```
 $ nvidia-smi
 ```
-Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplication](../programming/profiling-nvidia-gpu-performance.md#cuda-code-for-matrix-multiplication) code 
+Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplication](?tabset-cuda-code=cuda-matrix-multiply#tabset-ref-cuda-code){.external} code 
+
 ```
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
@@ -164,7 +174,12 @@ Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplicati
 
 ```
 
-#### Header Information
+(tabset-ref-nvidia-smi)=
+`````{tab-set}
+:sync-group: tabset-nvidia-smi
+
+````{tab-item} Header 
+:sync: nvidia-smi-header
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -172,7 +187,10 @@ Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplicati
 | `Driver Version: 570.124.06` | The installed NVIDIA driver version. Any CUDA version used, must be compatible with this driver version. |
 | `CUDA Version: 12.8` | The highest version of the CUDA Toolkit supported by the driver. |
 
-#### GPU Hardware Overview
+
+````
+````{tab-item} GPU Hardware
+:sync: nvidia-smi-gpu-hardware
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -183,7 +201,9 @@ Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplicati
 | Disp.A | Whether the GPU is attached to a display (usually Off on HPC systems). |
 | Volatile Uncorr. ECC |	Reports single-bit error corrections that could indicate hardware instability (shows 0 here, which is good). |
 
-#### Sensor and Resource Usage Metrics
+````
+````{tab-item} Sensor and Resource Usage
+:sync: nvidia-smi-sensor-resource-usage
 
 | Metric               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -196,7 +216,10 @@ Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplicati
 | Compute M. | Compute mode status. Default means any user with permission can use the GPU. Other modes include Exclusive Process and Prohibited.| 
 | MIG M. | MIG (Multi-Instance GPU) mode status. Here it is Disabled, meaning the GPU is operating in full-capacity mode, not subdivided.| 
 
-#### Processes Table
+
+````
+````{tab-item} Processes
+:sync: nvidia-smi-processes
 
 | Column               | Description                                         | 
 | :----------------- | :-------------------------------------------------- | 
@@ -206,6 +229,9 @@ Example output of `nvidia-smi` on the `aa100` partition for [Matrix Multiplicati
 | Type	| Type of process using the GPU. Possible values include C (Compute), G (Graphics), etc. In this instance, C indicates a Compute process, meaning the GPU is being used for calculations or data processing. | 
 | Process Name	| Name of the executable or command utilizing the GPU. In this case, `./matrixMultiply` is the name of the executable. | 
 | GPU Memory Usage	| Amount of GPU memory the process is using. This process is using 2142MiB of memory. | 
+
+````
+`````
 
 ```{note}
 - Run `nvidia-smi` inside your allocated job session (e.g., after using `sinteractive`) to check whether your job is using the GPU.
@@ -365,7 +391,7 @@ To use `ncu`, first load the appropriate CUDA module:
 ```
 $ module load cuda
 ```
-Compile the CUDA code (`vectorAdd.cu`), provided in [CUDA Code for Vector Addition](../programming/profiling-nvidia-gpu-performance.md#cuda-code-for-vector-addition) section, using the `nvcc` compiler:
+Compile the CUDA code (`vectorAdd.cu`), provided in [Sample CUDA code](?tabset-cuda-code=cuda-vector-add#tabset-ref-cuda-code){.external} section, using the `nvcc` compiler:
 
 ```
 $ nvcc -o vectorAdd vectorAdd.cu
@@ -623,7 +649,12 @@ For example:
 
 When profiling a CUDA application using `ncu`, two sections in the output are very important to pay attention to, GPU Speed Of Light Throughput and Launch Statistics. These sections provide essential insights into how well your code is utilizing the GPU's hardware. Thus, understanding these metrics helps identify performance bottlenecks and underutilization.
 
-### GPU Speed Of Light Throughput
+(tabset-ref-ncu-table)=
+`````{tab-set}
+:sync-group: tabset-ncu-table
+
+````{tab-item} GPU Speed Of Light Throughput 
+:sync: gpu-speed-of-light-throughput
 
 This section tells you how much of the GPU’s peak performance you’re using.
 | Metric               | Description                          | What to Look For                           | 
@@ -633,7 +664,11 @@ This section tells you how much of the GPU’s peak performance you’re using.
 | Memory Throughput	| DRAM bandwidth usage	| Very low = memory underutilized
 | SM Active Cycles	| Time SMs were actively executing	| Correlates with GPU load
 
-### Launch Statistics
+
+````
+````{tab-item} Launch Statistics
+:sync: launch-statistics
+
 This section tells you how your kernel was launched and whether that configuration is effective.
 | Metric               | Description                        | Why It Matters                           | 
 | :----------------- | :------------------------------------------- |:-------------------------------------------------- |
@@ -641,6 +676,9 @@ This section tells you how your kernel was launched and whether that configurati
 | Grid Size | Number of thread blocks launched  | Determines how many parallel blocks run; too few leads to idle SMs | 
 | # SMs | Number of Streaming Multiprocessors (compute units)   | Helps evaluate if enough blocks are used |
 | Waves Per SM  | Full sets of warps scheduled per SM   | Indicates how much parallel work is scheduled per compute unit. 0.00 means most SMs are idle | 
+
+````
+`````
 
 Here’s a simplified snippet from an `ncu` run on `vectorAdd` 
 ```
@@ -918,7 +956,7 @@ Nsight Systems  is a system-wide profiler that traces the interactions between C
 
 ### Getting Started
 
-To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code (`vectorAdd.cu`), available in the [CUDA Code for Vector Addition](../programming/profiling-nvidia-gpu-performance.md#cuda-code-for-vector-addition) section, using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
+To use `nsys`, first load the appropriate CUDA module. Then compile the CUDA code (`vectorAdd.cu`), available in the [Sample CUDA code](?tabset-cuda-code=cuda-vector-add#tabset-ref-cuda-code){.external} section, using the `nvcc` compiler. Finally, run `nsys` by prefixing it to your compiled application.
 
 ```
 $ module load cuda
@@ -1020,8 +1058,13 @@ Processing [report.sqlite] with [/curc/sw/cuda/12.1.1/nsight-systems-2023.1.2/ho
 
 ### Interpreting Key Outputs
 
-####  CUDA API Summary
-Shows how much time was spent in each CUDA API function.
+(tabset-ref-nsys)=
+`````{tab-set}
+:sync-group: tabset-nsys
+
+````{tab-item}  API 
+:sync:  cuda-api-summary
+This shows how much time was spent in each CUDA API function.
 
 ```
  ** CUDA API Summary (cuda_api_sum):
@@ -1041,7 +1084,11 @@ Shows how much time was spent in each CUDA API function.
 | `cudaLaunchKernel`	 | 	3.5% | The kernel itself is extremely fast, but that may not be a good thing. A very short kernel runtime often means underutilization of GPU resources. |
 | `cudaMemcpy`  | <0.1% | While it didn’t take long, combined with small memory size, this indicates the data being copied is too small to be efficient. |
 
-####  CUDA GPU Kernel Summary
+
+````
+````{tab-item} GPU Kernel
+:sync: gpu-kernel-summary
+
 This summarizes execution of GPU kernels.
 
 ```
@@ -1056,7 +1103,9 @@ The output shows that the kernel only ran once and took ~2 microseconds. That’
 
 **Solution**: Increase the problem size (e.g., 1 million elements instead of 1,000) to give the GPU enough work to justify the overhead.
 
-####  CUDA GPU MemOps Summary (by Time)
+````
+````{tab-item} MemOps (by Time)
+:sync: gpu-memops-time-summary
 
 ```
  ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
@@ -1074,7 +1123,9 @@ The output shows that the kernel only ran once and took ~2 microseconds. That’
 
 Therefore, when working with small kernels, where data transfer overhead often outweighs compute time, it’s recommended to use asynchronous memory copies or unified memory to reduce latency and improve overlap.
 
-####  CUDA GPU MemOps Summary (by Size)
+````
+````{tab-item} MemOps (by Size)
+:sync: gpu-memops-size-summary
 
 ```
  ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
@@ -1087,7 +1138,10 @@ Therefore, when working with small kernels, where data transfer overhead often o
 
 The output shows that only ~12 KB of data moved to/from the GPU. This confirms the workload is too small to justify the overhead of GPU execution.
 
-#### OS Runtime Summary
+````
+````{tab-item} OS Runtime
+:sync: os-runtime-summary
+
 ```
 ** OS Runtime Summary:
 
@@ -1098,3 +1152,6 @@ Time (%)  Total Time (ns)  Num Calls    Name
 ```
 
 This output means that most of the runtime was spent in system calls like `poll` and `ioctl`, which are unrelated to the kernel execution. This suggests the application is not compute-bound, and system overhead is prominent due to the small workload.
+
+````
+`````
