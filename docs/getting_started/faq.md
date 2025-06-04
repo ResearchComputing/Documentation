@@ -279,6 +279,124 @@ This will print out an assortment of information including allocations and QoS a
 The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
 ::::
 
+## Job Submission Errors/Codes
+
+### Error 1
+::::{dropdown} Show 
+:icon: note
+
+**Error 1: A list of *``gres``* options is not permitted.**:
+
+You have provided a comma-separated list of options after the *``--gres``* flag, which is not supported. Please select only one *``gres``* option at a time.
+
+::::
+
+### Error 2
+::::{dropdown} Show 
+:icon: note
+
+**Error 2: When using GPU partitions, the directive *``ntasks``* must be provided.**:
+
+You must specify a number of CPU cores using the *``--ntasks=n``* directive (where _n_ is the number of CPU cores) for jobs utilizing GPUs.
+
+::::
+
+### Error 3
+::::{dropdown} Show 
+:icon: note
+
+**Error 3: You are requesting _x_ tasks, which exceeds the maximum allowed of _y_ tasks for _z_ GPU(s)**.:
+
+You have requested _x_ CPU cores, which is greater than the maximum number _y_ of cores allowed for the number (_z_) of GPUs requested. Please request fewer CPU cores (*``ntasks``*).
+
+::::
+
+### Error 4
+::::{dropdown} Show 
+:icon: note
+
+**Error 4: GPU node users are required to request GPUs. Please reschedule your job using *``--gres=gpu:n``*.**:
+
+You have requested use of a GPU partition, but you have not requested any GPUs. Please try again using the *``--gres=gpu:n``* flag, where _n_ is the number of requested GPUs.
+
+::::
+
+### Error 5
+::::{dropdown} Show 
+:icon: note
+
+**Error 5: For the partition _p_, users can only request _z_ GPU(s).**:
+
+For the listed partition (_p_) you can only request a maximum number (_z_) GPUs. Please reduce the number of requested GPUs in your *``--gres=gpu:z``* flag.
+
+::::
+
+### Error 6
+::::{dropdown} Show 
+:icon: note
+
+**Error 6: You must specify the type of AMC node you want.**:
+
+You have specifically requested a node owned by the Anschutz Medical Campus (AMC), but you have not specified a node type. You must specify one of the following node types:
+
+- a standard CPU node using *``--constraint=cpu``*,
+- a GPU node using **both** *``--constraint=gpu``* and *``--gres=gpu:n``* (where _n_ is the number of GPUs requested), or
+- a high-memory node using **both** *``--constraint=himem``* and *``--mem=n``* (where _n_ is memory in megabytes, up to 1018880 MB).
+
+::::
+
+### Error 7
+::::{dropdown} Show 
+:icon: note
+
+**Error 7: High memory (amem/himem) node users are required to specify memory required for their job.**:
+
+You have requested a high-memory node (amem/himem), but you have not requested a specific amount of memory (RAM). High-memory node users are required to request a specific amount of memory. Please reschedule your job using *``--mem=n``* (where _n_ is memory in megabytes, up to 1018880 MB).
+
+::::
+
+### Error 8
+::::{dropdown} Show 
+:icon: note
+
+**Note (Error 8): The _long_ QoS is not needed for time < 24h; changing to _normal_.**:
+
+You have submitted a job using the _long_ QoS and have requested less 24 hours or less of time. We have automatically changed your QoS to _normal_; the _long_ QoS is intended only for jobs running longer than 24 hours.
+
+::::
+
+### Error 9
+::::{dropdown} Show 
+:icon: note
+
+**Error 9: The _normal_ QoS has a maximum wall time limit of 24 hours. Please adjust your requested time or choose an appropriate QoS.**:
+
+You have requested more than 24 hours of time for this job. However, you have also selected the _normal_ QoS, which only supports jobs up to 24 hours in length. Please resubmit the job with either a shorter time request or a different QoS, such as _long_.
+
+::::
+
+### Error 10
+::::{dropdown} Show 
+:icon: note
+
+**Note (Error 10): Users are limited to using a maximum of 16, 15, and 6 total GPUs on the "aa100", "ami100", and "al40" partitions, respectively, across all of their running jobs. A maximum of 22 total GPUs per user is allowed simultaneously across all types of GPUs.**:
+
+You have requested more than the allowed number of GPUs. Please reduce the number of requested GPUs in your *``--gres=gpu:z``* flag, where _z_ is the number of GPUs.
+
+Users are limited to using a maximum of 16, 15, and 6 total GPUs on the "aa100", "ami100", and "al40" partitions, respectively, across all of their running jobs. A maximum of 22 total GPUs per user is allowed simultaneously across all types of GPUs. Additional jobs will remain queued. The GPUs are heavily used, and it is not uncommon for wait times to exceed 24 hours during peak periods. Please be aware that "squeue" shows the temporal order that jobs were scheduled, and is not an accurate indicator of the position of your job(s) in the queue. The wait time for any job is a function of the recent usage by the user and their institution, the specified size and duration of the job, the QoS, and the age of the job.
+
+::::
+
+### Error 11
+::::{dropdown} Show 
+:icon: note
+
+**Note (Error 11): Users are required to request GPUs on this partition. Please reschedule job using *``--gres=gpu:n``*.**:
+
+You have requested use of a GPU partition, but you have not requested any GPUs. Please try again using the *``--gres=gpu:n``* flag, where _n_ is the number of requested GPUs.
+
+::::
+
 ## Alpine 
 
 ### Why do I get an `Invalid Partition` error when running an Alpine job?
