@@ -102,15 +102,47 @@ __Examples of GPU configurations/requests__:
 
 ### Quality of Service (qos)
 
-**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
 
-The available QoS's for Alpine are:
+The available QoS for Alpine:
 
-| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
-| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| normal      | Default                    | 1D              | 1000          | 128                | amilan,amilan128c,aa100,ami100              | 0                    |
-| long        | Longer wall times          | 7D              | 200           | 20                 | amilan,amilan128c,aa100,ami100              | 0                    |
-| mem         | High-memory jobs           | 7D              | 1000          | 12                 | amem only        | 0                    |
+| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Valid Partitions | 
+| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
+| normal      | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128                | amilan,amilan128c,aa100,ami100  |
+| long        | Longer wall times          | 7 days              | 200           | 20                | amilan,amilan128c,aa100,ami100              | 
+| mem         | High-memory jobs           | 7 days              | 1000          | 12                 | amem only        | 
+| testing         | Used for all testing partitions   | 1 hour              | 5          |  2       | atesting,atesting_a100,atesting_mi100     | 
+| compile       | Used for acompile jobs  | 12 hours              |    -      |   1      | acompile   | 
+| amc       | QoS for nodes contributed by AMC    | 24 hours              | -         |  -       | amc  | 
+| csu       | QoS for nodes contributed by CSU    | 24 hours              |  -        |  -       | csu  | 
+| rmacc       | QoS for nodes contributed by RMACC    | 24 hours              |    -      |   -      | rmacc  | 
+| gh200       | Used for GH200 jobs (available only through request)   | 7 days             |   1       |   1      | gh200  | 
+
+__QoS examples__:
+
+(tabset-ref-ex-qos-req)=
+`````{tab-set}
+:sync-group: tabset-ex-qos-req
+
+````{tab-item} Requesting the normal partition 
+:sync: ex-qos-req-normal-partition
+
+```bash
+--qos=normal
+```
+
+````
+
+```` {tab-item} Requesting the long partition
+:sync: ex-qos-req-long-partition
+
+```bash
+--qos=long
+```
+
+````
+
+`````
 
 
 ### Partitions
