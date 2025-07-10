@@ -281,7 +281,7 @@ sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
 
 ##### `acompile` usage examples:
 
-`acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
+`acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack, verifying non-MPI jobs, and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
 (tabset-ref-acompile-use)=
 `````{tab-set}
