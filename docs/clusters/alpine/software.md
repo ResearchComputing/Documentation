@@ -37,7 +37,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequences from your high-throughput sequencing reads.| 
 | [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the OS.|
 | [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) | 3.4.0 | Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.|
-| [Emacs](https://www.gnu.org/software/emacs/) | 25.3, 27.2 (D) | An extensible, customizable, text editor.|
+| [Emacs](https://www.gnu.org/software/emacs/) | 25.3, 27.2, 30.1 (D) | An extensible, customizable, text editor.|
 | [EPW](https://docs.epw-code.org) | 6.0alpha | EPW is part of the Quantum ESPRESSO suite & calculates properties related to the electron-phonon interaction|
 | [Expat](https://libexpat.github.io/) | 2.1.1, 2.3.0 (D) | Stream-oriented XML parser library written in C.| 
 | [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) | 0.11.9 | A quality control tool for high throughput sequence data.|
