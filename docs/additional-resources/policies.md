@@ -4,7 +4,7 @@
 
 ## Acceptable use of CURC resources
 
-Use of CU Research Computing resources is subject to the [CU Boulder OIT Acceptable Use Policy](https://www.colorado.edu/compliance/policies/acceptable-use-cu-boulders-it-resources) and as well as the policies noted below.  CU Research Computing resources may not be used for non-research purposes or for personal financial gain and/or commercial purposes, whether for-profit or nonprofit..
+Use of CU Research Computing resources is subject to the [CU Boulder OIT Acceptable Use Policy](https://www.colorado.edu/compliance/policies/acceptable-use-cu-boulders-it-resources) and as well as the policies noted below.  CU Research Computing resources may not be used for non-research purposes or for personal financial gain and/or commercial purposes, whether for-profit or nonprofit.
 
 <br>
 
