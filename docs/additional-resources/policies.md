@@ -2,7 +2,13 @@
 
 <br>
 
-## Acceptable data storage and use
+## Acceptable use of CURC resources
+
+Use of CU Research Computing resources is subject to the [CU Boulder OIT Acceptable Use Policy](https://www.colorado.edu/compliance/policies/acceptable-use-cu-boulders-it-resources) and as well as the policies noted below.  CU Research Computing resources may not be used for non-research purposes or for personal financial gain.
+
+<br>
+
+## Acceptable data storage and use on CURC resources
 
 CURC systems and services (Alpine, Blanca, Open OnDemand, Petalibrary, core storage, etc.) should not be used to store any data that is US government Classified, nor any Controlled Unclassified Information including, but not limited to, data subject to the US federal Health Insurance Portability and Accountability Act (HIPAA), the US federal Family Educational Rights and Privacy Act (FERPA), or the International Traffic in Arms Regulations (ITAR).
  
