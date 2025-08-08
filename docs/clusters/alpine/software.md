@@ -71,7 +71,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Jasper](https://jasper-software.github.io/jasper/) | 4.0.0, 4.2.4 | JasPer is a software toolkit for the handling of image data. |
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
 | [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e | Open source JPEG image library.|
-| [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.2 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
+| [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.2, 1.11.6 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4, 4.9.2 (D) | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
