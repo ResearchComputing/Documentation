@@ -8,10 +8,14 @@ The [AWS Pricing Calculator](https://docs.aws.amazon.com/pricing-calculator/late
 
 ## Viewing Costs
 
-Costs can be viewed directly in the [AWS Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html). If you are migrating from the previous landing zone (LCA0), you should no longer look at costs in CloudCheckr.
+Costs can be viewed directly in the [AWS Cost Explorer](./viewbilling). You should no longer look at costs in CloudCheckr.
 
-```{important}
-Costs shown in the AWS Billing Console will be slightly higher than the actual invoices you receive. Our AWS reseller provides a small discount that is applied during the invoicing process.
+```{toctree}
+:maxdepth: 1
+:caption: View Billing
+
+viewbilling
+
 ```
 
 ## Payment
