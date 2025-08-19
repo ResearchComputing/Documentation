@@ -44,16 +44,8 @@ troubleshooting/troubleshooting
 
 ```{toctree}
 :maxdepth: 1
-:caption: Budget Actions
-    
-budget-actions/budget-actions
-
-```
-
-```{toctree}
-:maxdepth: 1
 :caption: Load Balancer Setup
-    
+
 load-balancer/load-balancer
 
 ```
