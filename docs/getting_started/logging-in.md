@@ -173,7 +173,7 @@ Not all users have the ability to access CURC resources using a terminal. Please
 ````{tab-item} Windows 
 :sync: terminal-access-windows
 
-Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.putty.org/) onto your local machine. This application enables users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that enable Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
+Logging in from a Windows machine requires the additional step of [installing the PuTTY ssh client](https://www.chiark.greenend.org.uk/~sgtatham/putty/) onto your local machine. This application enables users to connect to remote servers with the ssh protocol. Note that there are other ssh clients that enable Windows machines to connect to remote ssh servers; Research Computing recommends PuTTY for reliability and simplicity.
 
 1. Open the PuTTY application on your computer
     * Under “Host Name (or IP address)”, enter `login.rc.colorado.edu`. Select “SSH” as the connection type. Click on “Open”.
