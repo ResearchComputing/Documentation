@@ -1,7 +1,5 @@
 # Running Applications with Jobs
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dZLSEyYTiBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 Because our HPC system is shared among many researchers, Research Computing manages system usage through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
 In order to run a program on a cluster, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide your commands depends on whether you are running a [batch job](batch-jobs.md) or an [interactive job](interactive-jobs.md).
@@ -14,7 +12,7 @@ A detailed guide on the Slurm queue and accounting tools can be found in the [Us
 
 ## Batch Jobs
 
-The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for:
+The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for: 
 
 - Any computationally expensive application that could take hours or days to run
 - Any application that requires little or no user input
@@ -42,13 +40,17 @@ Another method of running applications on Research Computing resources is throug
 - Any application that requires user input at runtime
 - Any application with a GUI (Graphical User Interface)
 
-You can request an interactive job by using the `sinteractive` command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `time` directive to avoid long queue times. 
+You can request an interactive job by using the `sinteractive` command. Like the `sbatch`, resources must be requested via the command line through the use of flags. You will need to, at a minimum, include the `--partition`, `--qos`, and `--time` flags. We encourage using the `--ntasks` and `--nodes` as well, otherwise the jbo will default to 1 ntask and 1 node.  
 
 ```bash
-sinteractive --time=00:10:00
+sinteractive --partition=amilan --qos=normal --time=00:10:00 --ntasks=4 --nodes=1
 ```
 
-The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+The example above will run an interactive job that will run a terminal session on the amilan partition with 4 cores on one node with the normal quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+
+```{important}
+Be careful when setting `--ntasks` and ensure you also set `--nodes`. If `--nodes` is not set, Slurm may allocate your job to multiple nodes. Also, be aware that GPU-based interactive jobs must set `--nodes=1` and cannot currently run across multiple nodes.
+```
 
 ```{seealso}
 More details on sinteractive parameters can be found in the [Slurm Flags, Partitions, and QoS](job-resources.md) page and in the [Interactive Jobs](interactive-jobs.md) page.
