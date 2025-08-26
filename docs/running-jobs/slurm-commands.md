@@ -101,8 +101,7 @@ command as such:
 $ sstat --jobs=your_job-id
 ```
 
-By default, sstat will pull up significantly more information than
-what would be needed in the command's default output. To remedy this,
+The default output from `sstat` may not include all the information you need. To remedy this,
 we can use the `--format` flag to choose what we want in our
 output. The format flag takes a list of comma-separated variables
 that specify output data:
@@ -123,8 +122,8 @@ maxrss      | Maximum number of bytes read by all tasks in the job.
 maxvsize    | Maximum number of bytes written by all tasks in the job.
 ntasks      | Number of tasks in a job.
 
-As an example, let's print out a job's average job id, cpu time, max
-rss, and a number of tasks. We can do this by typing out the command:
+As an example, let's print out a job's id, average cpu time, max
+rss, and the number of tasks. We can do this by typing out the command:
 
 ```bash
 sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
