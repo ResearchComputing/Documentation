@@ -4,8 +4,6 @@ Interactive jobs allow a user to interact with applications in real-time within 
 
 ## General Interactive Jobs
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s53sjDubBpo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 To run an interactive job on Research Computing resources, request an interactive session by utilizing the `sinteractive` command.  The `sinteractive` command creates a job with parameters provided through flags run with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. 
 
 The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
@@ -21,8 +19,6 @@ Check out this [page](job-resources.md) for a list of Slurm directives that can 
 ```
 
 ## Interactive GUI Applications
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DFnHsMxPC5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 To run an interactive GUI application on HPC Systems, we must install an X windows server application and enable X11 forwarding on our personal computer.
 
