@@ -49,7 +49,7 @@ sinteractive --partition=amilan --qos=normal --time=00:10:00 --ntasks=4 --nodes=
 The example above will run an interactive job that will run a terminal session on the amilan partition with 4 cores on one node with the normal quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
 
 ```{important}
-Be careful when setting `--ntasks` and ensure you also set `--nodes`. If `--nodes` is not set, Slurm may allocate your job to multiple nodes. Also, be aware that GPU-based interactive jobs must set `--nodes=1` and cannot currently run across multiple nodes.
+Be careful when setting `--ntasks` and ensure you also set `--nodes`. If `--nodes` is not set, Slurm may spread your job across multiple nodes. Also, be aware that GPU-based interactive jobs must set `--nodes=1` and cannot currently run across multiple nodes.
 ```
 
 ```{seealso}
