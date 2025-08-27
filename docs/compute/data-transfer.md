@@ -224,6 +224,32 @@ system that it was generated on.**
 With an ssh key pair generated and uploaded to <https://registry.cilogon.org>,
 you are ready to transfer files over the DTNs using `rsync` or `scp`. 
 
+### Managing public keys
+
+Depending on how you manage your public keys, you may need to explicitly specify the public key 
+for authentication. To inform `rsync` or `scp` which public key to use for authentication,
+you can include the key's path within the command:
+
+```bash
+# using rsync
+rsync -av -e "ssh -i ~/.ssh/id_ed25529" ./myfile.txt dtn.rc.colorado.edu:/projects/ralphie/myfile.txt
+
+# using scp
+scp -i ~/.ssh/id_ed25529 -v ./myfile23.txt dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt
+```
+
+For improved convenience, you can add an entry to your `~/.ssh/config` file.
+This tells your SSH clients to automatically associate your public key with the specified hostname.
+
+Add the following block to your `~/.ssh/config` file:
+
+```ssh
+Host dtn.rc.colorado.edu
+    IdentityFile ~/.ssh/id_ed25529
+```
+
+Once configured, you can simplify your `rsync` and `scp` calls as follows:
+
 ```bash
 rsync -av ./myfile.txt dtn.rc.colorado.edu:/projects/ralphie/myfile.txt    # using rsync
 
