@@ -238,12 +238,10 @@ rsync -av -e "ssh -i ~/.ssh/id_ed25529" ./myfile.txt dtn.rc.colorado.edu:/projec
 scp -i ~/.ssh/id_ed25529 -v ./myfile23.txt dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt
 ```
 
-For improved convenience, you can add an entry to your `~/.ssh/config` file.
-This tells your SSH clients to automatically associate your public key with the specified hostname.
+For improved convenience, you can tell your SSH clients to automatically associate your public key with the specified hostname
+by adding the following entry to your `~/.ssh/config` file:
 
-Add the following block to your `~/.ssh/config` file:
-
-```ssh
+```ssh-config
 Host dtn.rc.colorado.edu
     IdentityFile ~/.ssh/id_ed25529
 ```
