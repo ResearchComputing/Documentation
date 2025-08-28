@@ -232,17 +232,18 @@ you can include the key's path within the command:
 
 ```bash
 # using rsync
-rsync -av -e "ssh -i ~/.ssh/id_ed25529" ./myfile.txt dtn.rc.colorado.edu:/projects/ralphie/myfile.txt
+rsync -av -e "ssh -i ~/.ssh/id_ed25529" ./myfile.txt <username>@dtn.rc.colorado.edu:/projects/ralphie/myfile.txt
 
 # using scp
-scp -i ~/.ssh/id_ed25529 -v ./myfile23.txt dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt
+scp -i ~/.ssh/id_ed25529 -v ./myfile23.txt <username>@dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt
 ```
 
-For improved convenience, you can tell your SSH clients to automatically associate your public key with the specified hostname
+For improved convenience, you can tell your SSH clients to automatically associate your public key and username with the specified hostname
 by adding the following entry to your `~/.ssh/config` file:
 
 ```ssh-config
 Host dtn.rc.colorado.edu
+	User <username>
     IdentityFile ~/.ssh/id_ed25529
 ```
 
