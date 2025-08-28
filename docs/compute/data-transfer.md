@@ -241,7 +241,7 @@ scp -i ~/.ssh/id_ed25529 -v ./myfile23.txt <username>@dtn.rc.colorado.edu:/pl/ac
 For improved convenience, you can tell your SSH clients to automatically associate your public key and username with the specified hostname
 by adding the following entry to your `~/.ssh/config` file:
 
-```ssh-config
+```bash
 Host dtn.rc.colorado.edu
 	User <username>
     IdentityFile ~/.ssh/id_ed25529
