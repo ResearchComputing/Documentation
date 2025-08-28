@@ -559,5 +559,3 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0Pp4D+GvSYfq0GB+dAEBQcKJTkeTkJ5bQlMPzkh1N
 * [A Cloud Guru's Tutorial on SSH and SCP](https://acloudguru.com/blog/engineering/ssh-and-scp-howto-tips-tricks)
 * [ssh.com's Tutorial on SCP and SFTP](https://www.ssh.com/ssh/sftp/)
 * [Linuxize's Tutorial on Rsync](https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/)
-* [Ubuntu's Documentation on Rsync](https://help.ubuntu.com/community/rsync)
-
