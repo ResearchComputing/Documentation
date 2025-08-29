@@ -120,6 +120,7 @@ executable. Your job script should look something like this:
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
 #SBATCH --partition=atesting
+#SBATCH --qos=testing
 #SBATCH --constraint=ib
 #SBATCH --ntasks=4
 #SBATCH --job-name=CPP_Hello_World
