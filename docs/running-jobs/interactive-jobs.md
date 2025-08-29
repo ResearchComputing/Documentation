@@ -22,6 +22,8 @@ Check out this [page](job-resources.md) for a list of Slurm directives that can 
 
 ## Interactive GUI Applications
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DFnHsMxPC5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 To run an interactive GUI application on HPC Systems, we must install an X windows server application and enable X11 forwarding on our personal computer.
 
 ### Windows setup
