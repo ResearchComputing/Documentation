@@ -56,12 +56,12 @@ $ squeue --user=your_rc-username --start --iterate=n_seconds
 Press `ctrl`-`c` to stop the command from looping and bring you back
 to the terminal.
 
-```{important}
+````{important}
   Do not use an `--iterate=` value less than 60 (i.e. 1 minute). Shorter iterations can overwhelm the Slurm controller and lead to the suspension of RC accounts. 
   ```bash
   $ squeue --user=your_rc-username --start --iterate=60
   ```
-```
+````
 
 ```{seealso}
 For more information on squeue, [visit the Slurm page on
