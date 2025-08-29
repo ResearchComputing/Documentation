@@ -191,23 +191,6 @@ mpirun -np 16 ./example_mpi.exe
 ````
 `````
 
-## Job Flags
-
-The `sbatch` command supports many optional flags. To review all the options, please visit the Slurm [sbatch page](http://slurm.schedmd.com/sbatch.html). Below are a few flags you may want to consider when running your job via `sbatch`.
-
-| Type                    | Description                                    | Flag                       |
-| :---------------------- | :--------------------------------------------- | :------------------------- |
-| [Allocation](../clusters/alpine/allocations.md)  | Specify an allocation account  | `--account=<allocation_name>` <br> `--account=ucb###_asc1` <br>    |
-| [Partitions](../clusters/alpine/alpine-hardware.md#partitions)        | Specify a partition  | `--partition=<partition_name>` <br> `--partition=amilan` <br>  |
-| Sending email      | Receive an email at the beginning or the end of a job | `--mail-type=<type>` <br> `--mail-type=BEGIN,END` <br>     |
-| Email address      | Email address to receive the email                  | `--mail-user=<email_address>`  <br> `--mail-user=ralphie@colorado.edu` <br>    |
-| Number of nodes    | The number of nodes needed to run the job           | `--nodes=<#>` <br>  `--nodes=1` <br>   |
-| Number of tasks    | The ***total*** number of processes needed to run the job | `--ntasks=<#>` <br>  `--ntasks=4`  <br>  |
-| Tasks per node     | The number of processes you wish to assign to each node (only needed for multi-node jobs) | `--ntasks-per-node=<#>` <br> `--ntasks-per-node=4` <br>  |
-| Total memory       | The total memory (per node requested) required for the job. <br> Using `--mem` does not alter the number of cores allocated to the job, but you will be charged for the number of cores corresponding to the proportion of total memory requested. <br> Units of `--mem` can be specified with the suffixes: K,M,G,T (default M)| `--mem=<#><unit (optional)>` <br> `--mem=25G` <br>  |
-| [Quality of service](../clusters/alpine/alpine-hardware.md#quality-of-service-qos)  | Specify a QoS | `--qos=<qos_name>` <br>  `--qos=normal`   <br>   |
-| Wall time          | The max amount of time your job will run for        | `--time=<D-HH:MM:SS>`  <br> `--time=03:00:00` <br>   |
-| Job Name           | Name your job so you can identify it in the queue   | `--job-name=<job_name>` <br> `--job-name=Census-Data-Analysis` <br>   |
 
 
 
