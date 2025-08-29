@@ -118,7 +118,7 @@ executable. Your job script should look something like this:
 ```bash
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --time=0:01:00
+#SBATCH --time=00:01:00
 #SBATCH --partition=atesting
 #SBATCH --qos=testing
 #SBATCH --constraint=ib
