@@ -42,7 +42,7 @@ Another method of running applications on Research Computing resources is throug
 - Any application that requires user input at runtime
 - Any application with a GUI (Graphical User Interface)
 
-You can request an interactive job by using the `sinteractive` command. Like the `sbatch`, resources must be requested via the command line through the use of flags. You will need to, at a minimum, include the `--partition`, `--qos`, and `--time` flags. We encourage using the `--ntasks` and `--nodes` as well, otherwise the jbo will default to 1 ntask and 1 node.  
+You can request an interactive job by using the `sinteractive` command. Similar to `sbatch`, resources must be requested. With `sinteractive`, this is done via the command line through the use of flags. You will need to, at a minimum, include the `--partition`, `--qos`, and `--time` flags. We encourage using the `--ntasks` and `--nodes` as well, otherwise the job will default to 1 task and 1 node.  
 
 ```bash
 sinteractive --partition=amilan --qos=normal --time=00:10:00 --ntasks=4 --nodes=1
