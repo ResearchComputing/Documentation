@@ -113,7 +113,7 @@ module purge
 
 module load matlab
 
-matlab -nodesktop -nodisplay -r ‘clear; hello_world;’
+matlab -nodesktop -nodisplay -r 'clear; hello_world;'
 ```
 
 This file has a few basic parts:
