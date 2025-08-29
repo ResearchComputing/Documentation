@@ -122,15 +122,16 @@ Bootstrap: docker
 From: ubuntu:20.04
 
 %help
-	I am help text!
+        I am help text!
 
-%setup		
-	apt-get update
-	apt-get install nano
-	apt-get install gcc 
+%post
+        apt-get update
+        apt-get install -y nano
+        apt-get install -y gcc
 
 %runscript
-	echo “hello! I am a container!”
+        echo "hello! I am a container!"
+
 ```
 
 #### Apptainer Build
@@ -182,8 +183,8 @@ CURC can provide users with a recipe that ensures the appropriate version of Ope
 Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
 
 ```
-ml gcc/11.2.0
-ml openmpi/4.1.1
+ml gcc/14.2.0
+ml openmpi/5.0.6
 
 mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
 ```
