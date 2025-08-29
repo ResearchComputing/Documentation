@@ -32,12 +32,15 @@ myst_substitutions = {
    # Alpine hardware page, hardware summary section substitutions
    ## UCB contributions 
    'alpine_ucb_total_128_core_256GB_cpu_nodes': '16',
-   'alpine_ucb_total_64_core_256GB_cpu_nodes': '287',
+   'alpine_ucb_total_64_core_256GB_cpu_nodes': '283',
    'alpine_ucb_total_64_core_1TB_cpu_nodes': '8',
    'alpine_ucb_total_48_core_1TB_cpu_nodes': '12',
-   'alpine_ucb_total_a100_gpu_nodes': '8',
+   'alpine_ucb_total_a100_gpu_nodes': '7',
    'alpine_ucb_total_mi100_gpu_nodes': '8',
    'alpine_ucb_total_gh200_gpu_nodes': '2',
+   'alpine_ucb_total_64_core_256GB_cpu_nodes_atesting': '4',
+   'alpine_ucb_total_atesting_a100_gpu_nodes': '1',
+   'alpine_ucb_total_atesting_mi100_gpu_nodes': '8',
    ## AMC contributions
    'alpine_amc_total_64_core_256GB_cpu_nodes': '26', 
    'alpine_amc_total_64_core_1TB_cpu_nodes': '2',  
@@ -56,7 +59,10 @@ myst_substitutions = {
    'alpine_total_al40_nodes': '3',
    'alpine_total_amem_nodes': '24',
    'alpine_total_csu_nodes': '77',
-   'alpine_total_amc_nodes': '37'
+   'alpine_total_amc_nodes': '37',
+   'alpine_total_atesting_nodes': '4',
+   'alpine_total_atesting_a100_nodes': '1',
+   'alpine_total_atesting_mi100_nodes': '8'
 }
 
 source_suffix = {
