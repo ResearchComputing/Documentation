@@ -243,8 +243,8 @@ by adding the following entry to your `~/.ssh/config` file:
 
 ```bash
 Host dtn.rc.colorado.edu
-	User <username>
-    IdentityFile ~/.ssh/id_ed25529
+User <username>
+IdentityFile ~/.ssh/id_ed25529
 ```
 
 Once configured, you can simplify your `rsync` and `scp` calls as follows:
