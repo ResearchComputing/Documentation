@@ -172,6 +172,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 ```bash
 #SBATCH --qos=blanca-ics
+#SBATCH --account=blanca-ics
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=36:00:00
@@ -186,6 +187,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 ```bash
 #SBATCH --qos=blanca-sha
+#SBATCH --account=blanca-sha
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 #SBATCH --time=7-00:00:00
@@ -201,6 +203,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 ```bash
 #SBATCH --qos=blanca-curc-gpu
+#SBATCH --account=blanca-curc
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=36:00:00
@@ -263,7 +266,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 **To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:**
 
 ```bash
-sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
+sinteractive --qos=blanca-ceae --account=blanca-ceae --export=NONE --time=02:00:00
 ```
 
 ````
@@ -367,7 +370,7 @@ python myscript.py
 #!/bin/bash
 #SBATCH --time=06:00:00
 #SBATCH --qos=preemptable
-#SBATCH --partition=blanca-ccn
+#SBATCH --partition=blanca-bortz
 #SBATCH --job-name=test
 #SBATCH --nodes=2
 #SBATCH --ntasks=32

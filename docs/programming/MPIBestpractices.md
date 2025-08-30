@@ -116,6 +116,7 @@ Simply select the Compiler and MPI wrapper you wish to use and place it in a job
 #SBATCH --nodes=2
 #SBATCH --time=04:00:00
 #SBATCH --partition=amilan
+#SBATCH --qos=normal
 #SBATCH --constraint=ib
 #SBATCH --ntasks=128
 #SBATCH --job-name=mpi-job
@@ -200,4 +201,5 @@ scontrol show node <your-bnode>
 ```
 
 You will be presented a block information that details all the nodes features. The key feature you should look for is `fdr`. If your Blanca node lacks this feature then it is not ROCE Enabled.  Jobs on RoCE nodes can be run using `mpirun` without any special arguments, although be sure to `export SLURM_EXPORT_ENV=ALL` prior to invoking `mpirun`. 
+
 
