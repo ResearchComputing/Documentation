@@ -14,7 +14,7 @@ A detailed guide on the Slurm queue and accounting tools can be found in the [Us
 
 ## Batch Jobs
 
-The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for:
+The primary method of running applications on Research Computing resources is through a batch job. A **batch job** is a job that runs on a compute node with little or no interaction with the users. You should use batch jobs for: 
 
 - Any computationally expensive application that could take hours or days to run
 - Any application that requires little or no user input
@@ -42,13 +42,17 @@ Another method of running applications on Research Computing resources is throug
 - Any application that requires user input at runtime
 - Any application with a GUI (Graphical User Interface)
 
-You can request an interactive job by using the `sinteractive` command. Unlike the `sbatch`, resources must be requested via the command line through the use of flags. Though running sinteractive without any flags is possible, this will result in default values being used for your jobs. Research Computing highly recommends you provide a `time` directive to avoid long queue times. 
+You can request an interactive job by using the `sinteractive` command. Similar to `sbatch`, resources must be requested. With `sinteractive`, this is done via the command line through the use of flags. You will need to, at a minimum, include the `--partition`, `--qos`, and `--time` flags. We encourage using the `--ntasks` and `--nodes` as well, otherwise the job will default to 1 task and 1 node.  
 
 ```bash
-sinteractive --time=00:10:00
+sinteractive --partition=amilan --qos=normal --time=00:10:00 --ntasks=4 --nodes=1
 ```
 
-The example above will run an interactive job that will run a terminal session on one core of one node with the interactive quality of service (QoS) for ten minutes. Once the interactive session has started you can run any interactive terminal application you may need on the command line. 
+The example above will submit an interactive job requesting the `amilan` partition with 4 cores on one node with the `normal` quality of service (QoS) for ten minutes. Once the interactive session has started, you will be provided a terminal session on a compute node. Within this session, you can run any interactive terminal application you may need from the command line. 
+
+```{important}
+Be careful when setting `--ntasks` and ensure you also set `--nodes`. If `--nodes` is not set, Slurm may spread your job across multiple nodes. Also, be aware that GPU-based interactive jobs must set `--nodes=1` and cannot currently run across multiple nodes.
+```
 
 ```{seealso}
 More details on sinteractive parameters can be found in the [Slurm Flags, Partitions, and QoS](job-resources.md) page and in the [Interactive Jobs](interactive-jobs.md) page.
