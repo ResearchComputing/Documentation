@@ -17,7 +17,7 @@ Click the name of a training to view more details and register!
 - [RMACC New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/rmaccnus) - **August 28th, 11am, Virtual (Zoom)**
 - [Working with Linux (an RC Short Course)](https://colorado.libcal.com/calendar/events/linux) - **August 29th, 11am, Virtual (Zoom)**
 ### **September**
-- [Research Computing Workflow Workbench](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
+- [Research Computing Workflow Workbench - Working with Slurm](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
 - [Scheduling Jobs on a Supercomputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **September 12th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 19th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/llm) - **September 26th, 11am, Virtual (Zoom)**
@@ -40,6 +40,7 @@ Click the name of a training to view more details and register!
 - [Alpine New Users Seminar (An RC Primer)](https://colorado.libcal.com/calendar/events/newuser) - **August 27th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 - [RMACC New User Seminar (an RC Primer)](https://colorado.libcal.com/calendar/events/rmaccnus) - **August 28th, 11am, Virtual (Zoom)**
 - [Working with Linux (an RC Short Course)](https://colorado.libcal.com/calendar/events/linux) - **August 29th, 11am, Virtual (Zoom)**
+- [Research Computing Workflow Workbench - Working with Slurm](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
 - [Scheduling Jobs on a Supercomputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **September 12th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 ### **Software**
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 19th, 11am, Hybrid (Norlin Library E206/Zoom)**
@@ -70,6 +71,7 @@ Click the name of a training to view more details and register!
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
 
 ### **Intermediate**
+- [Research Computing Workflow Workbench - Working with Slurm](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/llm) - **September 26th, 11am, Virtual (Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
