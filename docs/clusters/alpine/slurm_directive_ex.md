@@ -68,22 +68,6 @@ To run a 50-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 GPU
 ```
 
 ````
-
-````{tab-item} Example 5
-:sync: slurm-dir-exs-5
-
-To run an 8-core job for 4 hours on any node that has at least 1 GPU:
-
-```bash
-#SBATCH --nodes=1
-#SBATCH --qos=normal
-#SBATCH --ntasks=8
-#SBATCH --time=4:00:00
-#SBATCH --gres=gpu
-```
-
-````
-
 `````     
 
 ## Full Example Job Script
