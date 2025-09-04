@@ -62,7 +62,7 @@ To run a 50-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 GPU
 #SBATCH --partition=aa100
 #SBATCH --qos=normal
 #SBATCH --nodes=1
-#SBATCH --ntasks=50
+#SBATCH --ntasks=42
 #SBATCH --time=02:00:00
 #SBATCH --gres=gpu:2
 ```
