@@ -223,8 +223,9 @@ something like this:
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
 #SBATCH --partition atesting
+#SBATCH --qos testing
 #SBATCH --constraint ib
-#SBATCH --time 0:01:00
+#SBATCH --time 00:01:00
 #SBATCH --output parallel_hello_world.out
 
 module purge
@@ -246,8 +247,9 @@ mpirun -np 4 ./hello_world_mpi.exe
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
 #SBATCH --partition atesting
+#SBATCH --qos testing
 #SBATCH --constraint ib
-#SBATCH --time 0:01:00
+#SBATCH --time 00:01:00
 #SBATCH --output parallel_hello_world.out
 
 module purge
