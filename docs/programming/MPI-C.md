@@ -247,7 +247,7 @@ mpirun -np 4 ./hello_world_mpi.exe
 #SBATCH --ntasks 4
 #SBATCH --job-name parallel_hello
 #SBATCH --partition atesting
-#SBATCH --qos=testing
+#SBATCH --qos testing
 #SBATCH --constraint ib
 #SBATCH --time 00:01:00
 #SBATCH --output parallel_hello_world.out
