@@ -6,11 +6,27 @@ Large Language Models (LLMs) have become extremely popular. Although LLMs such a
 Before running or working with LLMs on CURC resources, please be sure that you are adhering to all [CURC User Policies](https://curc.readthedocs.io/en/latest/additional-resources/policies.html) and CU's policies and guidance around Artificial Intelligence outlined in the pages [Artificial Intelligence at CU Boulder](https://www.colorado.edu/information-technology/artificial-intelligence-cu-boulder) and [Resources & Guidance](https://www.colorado.edu/information-technology/ai-cu-boulder/resources-guidance#accordion-1981143711-1). 
 ```
 
-## Ollama 
+## Accessing stored LLMs on CURC
+
+Where 
+
+Why this is important 
+
+## Using LLM Frameworks
+
+(tabset-ref-llm-frameworks)=
+`````{tab-set}
+:sync-group: tabset-llm-frameworks
+
+````{tab-item} Ollama
+:sync: llm-frameworks-ollama
 
 [Ollama](https://ollama.com/) is an open-source, lightweight, and extremely beginner friendly tool that enables users to run LLMs locally and retrieve models that are compatible with the system they are running on. Given Ollama is in rapid development, functionality is constantly changing. Additionally, the newest models often require the newest version of Ollama to properly function. For this reason, at the moment, CURC is not providing an Ollama module. Instead, we provide detailed instructions below for installing the version of Ollama that works for your use case. 
 
-### Installing Ollama 
+# Installation
+
+::::{dropdown} Show 
+:icon: note
 
 Here is how I grabbed ollama's precompiled binaries:
 ```
@@ -27,7 +43,12 @@ Make binary executable
 ```
 chmod +x ollama
 ```
+::::
 
+# Running an LLM 
+
+::::{dropdown} Show 
+:icon: note
 Now, you can start up an ollama serve on your Blanca node:
 
 1. Start up an interactive job on your Blanca node
@@ -51,6 +72,11 @@ mkdir -p $OLLAMA_MODELS
 nohup ollama serve > /dev/null 2>&1 &
 ```
 4. Run ollama!
+
+```{tip}
+Before installing a model, see if CURC already provides this model! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
+```
+
 ```
 ollama run llama3:8b
 ```
@@ -62,4 +88,33 @@ hostname -I
 Using this IP, you can then connect to the serve using the following (assuming the Blanca node IP is "10.123.45.67")
 
 http://10.123.45.67:9999
+::::
 
+````
+
+````{tab-item} Transformers by Hugging Face
+:sync: llm-frameworks-huggingface
+
+Add introduction to Transformers 
+
+# Installation
+
+::::{dropdown} Show 
+:icon: note
+
+::::
+
+# Running an LLM 
+
+::::{dropdown} Show 
+:icon: note
+
+```{tip}
+Before installing a model, see if CURC already provides this model! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
+```
+
+::::
+
+````
+
+`````
