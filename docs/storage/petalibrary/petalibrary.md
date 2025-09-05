@@ -1,76 +1,45 @@
-# Accessing PetaLibrary
+# Introduction
 
-## General Access
-Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. PetaLibrary storage is presented as a file system directory based on the type of allocation: 
+## Overview
+The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs) at an internal cost rate. It is available at an external cost rate to researchers from other RMACC institutions.  
 
-(tabset-ref-access-pl)=
-`````{tab-set}
-:sync-group: tabset-access-pl
+Additional general information can be found below. Other pages in this section contain detailed information on: 
+* [Allocation tiers](./allocation_types.md)
+* [Roles and Responsibilities](./ownership.md)
+* [Billing](./billing.md)
+* [Transferring data to/from PetaLibrary](./data_transfer.md)
+* [Monitoring allocation use](./usage_statistics.md)
+* [Data recovery](./snapshots.md)
 
-````{tab-item} Active
-:sync: access-pl-active
+## Requesting a PetaLibrary allocation
 
-If you have an Active or Active+Archive allocation, it can be accessed at the following path:
+Request PetaLibrary storage by selecting "Request a new PetaLibrary allocation" on the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary). 
 
-```bash
-/pl/active/<your_allocation_name>
+```{note}
+* Minimum allocation size: 1 TB
+* Maximum _initial_ allocation size for new customers, pending availability:
+ * 200 TB in Active storage
+ * 100 TB in Archive storage (includes "Active+Archive" and "Archive+DR")
 ```
 
-````
+## Requirements
 
-````{tab-item} Archive
-:sync: access-pl-active
-
-If you have an Archive or Archive+DR allocation, it can be accessed at the following path:
-
-```bash
-/pl/archive/<your_allocation_name>
-```
-
-````
-
-`````
-
-Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. Allocation users are made members of this access group by requesting that the allocation owner or delegate contact to the RC help desk at <rc-help@colorado.edu> to request their RC account be added to the group.
-
-## Request a PetaLibrary allocation
-
-Request PetaLibrary storage by filling out the application form at the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary), under the "Request a new PetaLibrary allocation" link.  
-
-```{important}
+### Ownership
 Each PetaLibrary allocation *must* define an allocation owner, read more about PetaLibrary [owners and contacts and their individual roles/responsibilities](./ownership.md). 
-```
 
- When a new allocation is created the path to it is defined and provisioned based on a name selected by you. For example, Jane Doe might name her lab's allocation `jdoe_lab`. 
+### CURC Account
 
-- **To access active storage:** Log in to a Research Computing via login.rc.colorado.edu
-    and navigate to: `/pl/active/<your_allocation_name>` (e.g., `/pl/active/jdoe_lab`)
+Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. PetaLibrary storage is presented as a file system directory based on the type of allocation
 
-- **To access archive storage:** Archive storage is located at: `/pl/archive/<your_allocation_name>`
+### Access
+Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. 
 
-Please use our Data Transfer nodes for frequent or large transfers of archived data. Do not use login nodes for data transfers. For more information on transferring data, 
-please refer to our [Data Transfer](../../compute/data-transfer.md) documentation. 
-
-## Service Classes
-
-### Two primary classes of storage are available:
-#### Active
-- Appropriate for data that is frequently written or read
-- Stores data in a parity-protected RAID array or similar
-- Directly accessible (read+write) from Research Computing compute resources
-#### Archive
-- Appropriate for data that is infrequently accessed
-- Stores data in a parity-protected RAID array, with the option to use tape storage in the future
-- a maximum of 10,000 objects may be stored per terabyte
-- Not accessible from Research Computing compute resources
+To add new users to the allocation, the allocation owner or their authorized techical contact can email the RC help desk at <rc-help@colorado.edu> at any time to request that the users be added to the access group. 
 
 ## Performance
 PetaLibrary is a shared infrastructure and the instantaneous performance will vary depending on each individual workload and competing workloads from other clients.
 
 The PetaLibrary service is designed for file storage and retrieval, and is not an ideal service for highly transactional workloads (e.g., relational databases).
 
-## More information
-
-* [https://www.colorado.edu/rc/resources/petalibrary](https://www.colorado.edu/rc/resources/petalibrary)
 
 
