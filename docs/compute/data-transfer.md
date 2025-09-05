@@ -55,13 +55,7 @@ GUI.
 
 ## Guest Collections (Globus Shared Endpoints)
 
-Using a Guest Collection (also known as a "Shared Endpoint"), you can share
-any file or folder that you have access to with anyone who
-has a Globus account. This is particularly useful for PetaLibrary users. PetaLibrary 
-allocation owners can nominate a technical contact that is able to create [Globus Guest
-Collections](https://docs.globus.org/how-to/share-files/) within their PetaLibrary allocation.
-
-Detailed information on creating Guest Collections is available [at
+Guest Collections (also known as "Shared Endpoints") enable PetaLibrary customers to share a given folder in a PetaLibrary allocation with anyone who has a Globus account (both at CU and outside of CU). Detailed information on creating Guest Collections is available [at
 docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 ## Globus to AWS S3 Bucket connection

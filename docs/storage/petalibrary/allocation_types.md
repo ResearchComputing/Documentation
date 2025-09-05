@@ -6,7 +6,7 @@ PetaLibrary active allocations are the most performant PetaLibrary tier (please 
 
  - interactive (NFS) access from RC login and compute nodes
  - accessible using Globus/rsync/sftp via the data transfer node (DTN) hosts
- - SMB access (not enabled by default, only accessible from UCB campus network)
+ - SMB access (not enabled by default, only accessible to UCB customers from UCB campus network)
  - no object (file/directory) limit
  - double parity (up to two simultaneous disk failures will not cause data loss)
  - snapshots (see documentation on [snapshots](zfs_snapshots.md) for more information)
