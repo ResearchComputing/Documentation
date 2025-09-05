@@ -264,7 +264,7 @@ docker run -it example-python python
 
 To build your own custom Docker images that can then be run as containers, you will need to first create a Dockerfile. As stated above, a Dockerfile is essentially a recipe that specifies a source image to build upon, along with a set of instructions Docker will run when building the new image. The Dockerfile will also contain a set of instructions that Docker can run by default when the image is executed as a container instance.
 
-Just like a Makefile, a Dockerfile must be named `Dockerfile and will look something like this:
+Just like a Makefile, a Dockerfile must be named `Dockerfile` and will look something like this:
 
 ```dockerfile
 FROM 	ubuntu:18.04
