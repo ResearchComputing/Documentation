@@ -98,6 +98,7 @@ cloud/cumulus
 :maxdepth: 2
 :caption: Software
 
+software/llms
 software/loadbalancer
 software/gaussian
 software/matlab
