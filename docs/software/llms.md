@@ -14,6 +14,8 @@ Why this is important
 
 ## Using LLM Frameworks
 
+Given most LLM frameworks are in rapid development, functionality is constantly changing. Additionally, the newest models often require the newest version of the framework to properly function. For this reason, at the moment, CURC is not providing modules for these LLM frameworks. Instead, we provide detailed instructions below for installing the version of the framework that works for your use case and common ways to use this framework. 
+
 (tabset-ref-llm-frameworks)=
 `````{tab-set}
 :sync-group: tabset-llm-frameworks
@@ -21,7 +23,7 @@ Why this is important
 ````{tab-item} Ollama
 :sync: llm-frameworks-ollama
 
-[Ollama](https://ollama.com/) is an open-source, lightweight, and extremely beginner friendly tool that enables users to run LLMs locally and retrieve models that are compatible with the system they are running on. Given Ollama is in rapid development, functionality is constantly changing. Additionally, the newest models often require the newest version of Ollama to properly function. For this reason, at the moment, CURC is not providing an Ollama module. Instead, we provide detailed instructions below for installing the version of Ollama that works for your use case. 
+[Ollama](https://ollama.com/) is an open-source, lightweight, and extremely beginner friendly tool that enables users to run LLMs locally and retrieve models that are compatible with the system they are running on. 
 
 # Installation
 
