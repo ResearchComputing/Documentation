@@ -16,6 +16,10 @@ Why this is important
 
 Given most LLM frameworks are in rapid development, functionality is constantly changing. Additionally, the newest models often require the newest version of the framework to properly function. For this reason, at the moment, CURC is not providing modules for these LLM frameworks. Instead, we provide detailed instructions below for installing the version of the framework that works for your use case and common ways to use this framework. 
 
+```{note}
+Current instructions are only available for NVIDIA GPUs.
+```
+
 (tabset-ref-llm-frameworks)=
 `````{tab-set}
 :sync-group: tabset-llm-frameworks
@@ -30,66 +34,98 @@ Given most LLM frameworks are in rapid development, functionality is constantly 
 ::::{dropdown} Show 
 :icon: note
 
-Here is how I grabbed ollama's precompiled binaries:
+To begin, let's create a directory specifically for the version of Ollama that we want to install (here we choose version `v0.11.10`):
 ```
-export ollama_v="v0.2.1"
-mkdir -p /projects/$USER/$ollama_v
-cd /projects/$USER/$ollama_v
+export ollama_v="v0.11.10"
+mkdir -p /projects/$USER/ollama/$ollama_v
+cd /projects/$USER/ollama/$ollama_v
 ```
-Grab ollama binary version
+```{tip}
+For available versions, consult [Ollama's release page](https://github.com/ollama/ollama/releases).
 ```
-curl -L https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64 -o ollama
+Now, we grab the Ollama binary for this version:
 ```
-
-Make binary executable
+curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64.tgz 
+tar -xzf ollama-linux-amd64.tgz
 ```
-chmod +x ollama
-```
+After execution, this command should create a `bin` and `lib` directory containing our Ollama binary and associated libraries, respectively.
 ::::
 
-# Running an LLM 
+# Running an LLM from the command line
 
 ::::{dropdown} Show 
 :icon: note
-Now, you can start up an ollama serve on your Blanca node:
+Now that we have Ollama installed, we will startup an Ollama serve on a GPU compute node and interact with the LLM from the command line.
 
-1. Start up an interactive job on your Blanca node
-2. Export the following variables (feel free to change):
-```
-export PATH=$PATH:/projects/$USER/$ollama_v
-export OLLAMA_TMPDIR=$SCRATCHDIR/$USER/ollama_temp
-export OLLAMA_HOST=0.0.0.0:9999
-export OLLAMA_MODELS=/projects/$USER/my_ollama_models
-export OLLAMA_NUM_PARALLEL=1
-export OLLAMA_MAX_LOADED_MODELS=1
-```
+1. Start up an interactive job on a GPU node. For testing purposes, we will use our A100 testing partition:
+    ```
+    sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+    ```
+    ```{important}
+    For non-testing workflows, users should request NVIDIA GPUs using the `aa100` partition. 
+    ```
+2. Now that we have a session started, we will export important environment variables using the `ollama_v` variable we established in the previous section. 
+    ```
+    export PATH=/projects/$USER/ollama/$ollama_v/bin:$PATH
+    export LD_LIBRARY_PATH=/projects/$USER/ollama/$ollama_v/lib:$LD_LIBRARY_PATH
+    export OLLAMA_TMPDIR=$SCRATCHDIR/$USER/ollama_temp
+    export OLLAMA_NUM_PARALLEL=1
+    export OLLAMA_MAX_LOADED_MODELS=1
+    ```
+3. When starting an Ollama serve, it is important to pick a host port that is not used by others. You can use the following code to set this port:
+    ```
+    while true; do
+    rand=$(( (RANDOM << 15) | RANDOM ))
+    port=$((rand % (9999 - 9000 + 1) + 9000))
+    if ! lsof -i :$port &>/dev/null; then
+        export OLLAMA_HOST=0.0.0.0:$port
+        break
+    fi
+    done
+    ```
+4. Now, we select the directory where our Ollama models are stored.
+    ```
+    export OLLAMA_MODELS=/projects/$USER/my_ollama_models
+    ```
+    ```{note}
+    Before setting this variable, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
+    ```
+5. Ensure that the proper directories exist
+    ```
+    mkdir -p $OLLAMA_TMPDIR
+    mkdir -p $OLLAMA_MODELS
+    ```
+6. Now, we can start an Ollama serve in the background
+    ```
+    nohup ollama serve > /dev/null 2>&1 &
+    ```
+7. At this point, Ollama is up and running. We can now run Ollama from the command line! Let's run a very simple model. 
+    ```{important}
+    The following command will install the model, if you do not have it. Before executing this command, see if CURC already provides the model you want to run! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
+    ```
+    ```
+    ollama run llama3.1:8b
+    ```
+9. After running the model, a prompt will appear where you can ask your question.
+    ```
+    >>> In one sentence, how cool is CU Research Computing?
+    CU Research Computing is pretty cool because it provides a robust suite of services and expert 
+    support to help researchers tackle complex computational challenges and accelerate their work.
+    ```
+10. To get out of the prompt:
+    ```
+    >>> /bye
+    ```
+::::
 
-3. Make your directories, just in case they do not exist
-```
-mkdir -p $OLLAMA_TMPDIR
-mkdir -p $OLLAMA_MODELS
-```
-4. Now start an ollama server in the background
-```
-nohup ollama serve > /dev/null 2>&1 &
-```
-4. Run ollama!
+# Running an LLM from a Python script
 
-```{tip}
-Before installing a model, see if CURC already provides this model! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
-```
+::::{dropdown} Show 
+:icon: note
 
-```
-ollama run llama3:8b
-```
+Alternatively, one can run Ollama from within a Python script. 
 
-When you do this, you can access it from the terminal. Additionally, when you start the ollama serve you can connect to this from any RC resource using the IP. You can get the IP of your Blanca node by running the command:
-```
-hostname -I
-```
-Using this IP, you can then connect to the serve using the following (assuming the Blanca node IP is "10.123.45.67")
 
-http://10.123.45.67:9999
 ::::
 
 ````
