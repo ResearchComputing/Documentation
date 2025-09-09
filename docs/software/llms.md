@@ -125,6 +125,47 @@ Now that we have Ollama installed, we will startup an Ollama serve on a GPU comp
 
 Alternatively, one can run Ollama from within a Python script. 
 
+Refer to steps on creating an Ollama serve 
+
+To get access to our Ollama install in Python, we need to install Ollama's Python API. We will do this by creating a mamba environment and installing the necessary packages in that environment. 
+
+Link to conda docs 
+
+Create a mamba environment specifically for this package: 
+```
+module load miniforge
+mamba create -n ollama_api python=3.12
+mamba activate ollama_api
+pip install ollama
+```
+
+Start up the serve 
+
+```python
+from ollama import chat
+from ollama import ChatResponse
+
+response: ChatResponse = chat(model='llama3.1:8b', messages=[
+  {
+    'role': 'user',
+    'content': 'In one sentence, how cool is CU Research Computing?',
+  },
+])
+print(response['message']['content'])
+# or access fields directly from the response object
+print(response.message.content)
+```
+
+```
+python test.py 
+CU Research Computing is an exceptionally cool and powerful resource that provides researchers with access to high-performance computing clusters, advanced data storage systems, and expert support to facilitate cutting-edge research and innovation.
+```
+
+
+
+For more tutorials and usages of the API, see https://github.com/ollama/ollama-python
+
+
 
 ::::
 
