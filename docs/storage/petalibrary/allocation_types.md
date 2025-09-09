@@ -1,4 +1,4 @@
-# Allocation Types
+# Allocation Tiers
 
 ## Overview of PetaLibrary Tiers
 
