@@ -123,6 +123,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [SRA-Toolkit](https://hpc.nih.gov/apps/sratoolkit.html) | 3.0.0 | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.| 
 | [STAR](https://github.com/alexdobin/STAR/tree/master) | 2.7.10b | A tool to align RNA-seq data. The STAR algorithm uses suffix arrays, seed clustering, and stitching.| 
 | [Subversion](https://subversion.apache.org/) | 1.8.16, 1.10.2, 1.14.1 (D) |Apache Subversion is a software versioning and revision control system.| 
+| [Szip](http://www.compressconsult.com/szip/) | 2.1.1 | Szip is a freeware portable general purpose lossless compression program. |
 | [Tcl/Tk](https://www.tcl.tk/about/) | 8.6.5, 8.6.11, 9.0.1 (D) |Tcl is a high-level, general-purpose, interpreted, dynamic programming language.| 
 | [tDOM](http://tdom.org/index.html/dir?ci=release) | 0.8.3, 0.9.2 |tDOM is a Tcl extension for parsing XML.| 
 | [TeX Live](https://www.tug.org/texlive/) | 2021 |TeX Live is a cross-platform, free software distribution for the TeX typesetting system that includes major TeX-related programs, macro packages, and fonts.| 
