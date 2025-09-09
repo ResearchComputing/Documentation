@@ -1,4 +1,4 @@
-# Allocation Statistics 
+# Monitoring Allocation Use
 
 ## `alloc_stats`
 Research Computing has implemented a background task called `alloc_stats` 
