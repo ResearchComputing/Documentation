@@ -5,7 +5,7 @@ The PetaLibrary is a University of Colorado Boulder Research Computing service t
 
 Additional general information can be found below. Other pages in this section contain detailed information on: 
 * [Allocation tiers](./allocation_types.md)
-* [Roles and Responsibilities](./ownership.md)
+* [Roles and responsibilities](./ownership.md)
 * [Billing](./billing.md)
 * [Transferring data to/from PetaLibrary](./data_transfer.md)
 * [Monitoring allocation use](./usage_statistics.md)
