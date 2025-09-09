@@ -1,5 +1,17 @@
-# PetaLibrary Allocation Types
+# Allocation Types
 
+## Overview of PetaLibrary Tiers
+
+```{eval-rst}
+.. figure:: ./pl_feature_comparison_chart.png
+   :align: center
+   :scale: 100%
+```
+*Click [here](#data-integrety-terminology) for Data Integrity terminology.
+
+**SMB is only available to CU Boulder customers
+
+## In-depth information on PetaLibrary Tiers
 
 (tabset-ref-ucb-pl-tier-types)=
 `````{tab-set}
@@ -43,9 +55,9 @@ The archive feature list is similar to active, with the major differences being:
 
 The PetaLibrary active+archive is a means of automatically replicating your data across our active and archive PetaLibrary tiers. Rather than purchase an active and archive allocation and synchronizing data between the two, you can purchase the active+archive tier, and we will manage the replication for you. With this type of allocation, you have full access to the active tier only, and we manage replicating data to the archive tier for you.
 
-The biggest benefit of purchasing an active+archive allocation over purchasing your own active and archive allocations is that a standalone archive allocation is subject to the 10,000 object (file/directory) limit. Since active allocations do not have an object limit, the archive component of an active+archive allocation also does not have an object limit.
-
-Historically RC offered this service when the active and archive tiers were using different underlying storage systems, which made it difficult to do daily replication. The service was not available to customers for several years, but due to recent technical changes, we are able to not only bring back the service, but are also able to replicate data between the two tiers every fifteen minutes.
+The benefits of purchasing an active+archive allocation over purchasing your own active and archive allocations:
+* _No object limit_: a standalone archive allocation is subject to the 10,000 object (file/directory) limit. Since active allocations do not have an object limit, the archive component of an active+archive allocation also does not have an object limit.
+* _Automatic replication_: We replicate the data between the two tiers for you, every fifteen minutes.
 
 The means of replication between the active and archive tiers uses ZFS snapshots. The replication process copies any snapshots that exist on the active tier but do not exist on the archive tier, and likewise removes any snapshots that exist on the archive tier but are not present on the active tier. Therefore, if you ask us to prune ZFS snapshots aggressively on your active+archive allocation, this reduces the snapshot count on both the active and the archive tier. The active+archive tier is not an incremental backup, it is a time-delayed mirror of the ZFS snapshots of your active allocation. Snapshots are the best way to preserve your historical data in incremental steps, and replication ensures that your snapshots exist in two physical buildings. Physical isolation is important for events like fire and water damage that could damage one copy of your data beyond hope of recovery.
 
@@ -61,37 +73,22 @@ The PetaLibrary Archive tier is configured to maximize data integrity over perfo
 `````
 
 
-## PetaLibrary and data redundancy 
+## Data Integrety Terminology
 
-A PetaLibrary `active` or `archive` allocation is a single copy of your data that is not backed up. You may be familiar with the 3-2-1 backup strategy, which recommends having three copies of your data, using two different types of media, and having one copy at a different location. An active or archive PetaLibrary allocation is a **single** copy of your data on one type of media in a single location, so PetaLibrary can be a component of a good backup strategy, but for data that cannot be replaced, an active or archive PetaLibrary should not be the only copy. 
+A PetaLibrary `active` or `archive` allocation is a single copy of your data that is not backed up. PetaLibrary can be a component of a good backup strategy, but for data that cannot be replaced, an active or archive PetaLibrary should not be the only copy. The PetaLibrary `active+archive` and `archive+DR` (DR=disaster recovery) tiers provide additional redundancy for your data.  Common terms used to describe data redundancy and integrety are defined below. 
 
-PetaLibrary does have some forms of redundancy, such as RAID (whereby your copy of data is written to multiple disks on our system) to minimize service outages caused by disk failures, and snapshots which can be useful if files are accidentally damaged or removed. Neither RAID nor snapshots are an effective backup strategy to protect against other causes of data loss such as hardware and software failures, or user and administrative errors. The only way to mitigate the risk to your data is to not rely on a single active or archive PetaLibrary allocation to be the sole copy. 
+* `Snapshots` are read-only representations of your PetaLibrary allocation on the "active" or "archive" tier at the time the snapshot was taken. Snapshots enable users to recover data that they have unintentially deleted, during a specified retention period (default is seven days; custom retention periods available on request). Snapshots are not "backups" in the strict sense because they are not static, and because they reside on the same storage device as the primary data copy. 
+  
+* `Replication` in the case of PetaLibrary refers specifically to the "active+archive" tier, and is the process whereby the snapshots from your "active" allocation are mirrored the "archive" tier in a separate data center on the CU Campus.  This process provides an additioal layer of disaster recovery protection compared to `snapshots` (the default for "active" allocations).
+  
+* `Backup` in the case of PetaLibrary refers specifically to the "active+DR" tier, and is the process whereby a monthly backup copy of the "archive" allocation is made to an offsite data center.  This process provides an additional layer of disaster recovery protection compared to `snapshots` (the default for "archive" allocations).
+  
+* `RAID Parity` is the process whereby your copy of data on a given PetaLibrary tier is written to multiple disks.  The PetaLibrary "active" tier employs double parity (up to two simultaneous disk failures will not cause data loss), and the "archive" tier employs triple parity (up to three simultaneous disk failures will not cause data loss).  
+  
+* `Checksumming` is the process whereby a value that is derived from a data object is repeatedly checked over time to confirm that the data has not unnecessarily changed.  Checksumming is a way to detect and mitigate data corruption over time. 
+     
+## Alternative non-PetaLibrary backup options
 
-### Options for backing up your data
-
-- Replicated PetaLibrary `active+archive` allocation:  
-    - _Access details:_
-        - You purchase an active allocation, and we replicate it to the archive tier for you.
-        - For more information see our [Active + Archive](./allocation_types.md#activearchive) description
-    - Pros:
-        - Convenient
-        - No data volume or object limits
-        - Likely lower cost compared to AWS option (see below)
-    - Cons:
-        - You are required to obtain an equivalent amount of archive space as active space
-        - On-campus backup facility, so not a completely disaster-proof
-        - You incur additional cost
-- PetaLibrary `archive+DR` (Disaster Recovery) allocation:  
-    - _Access details:_
-        - You purchase an archive allocation, and we back it up monthly to an offsite location for you.
-        - For more information see our [Archive + DR](./allocation_types.md#archive--dr-disaster-recovery) description
-    - Pros:
-        - Convenient
-        - No data volume limit
-        - Likely lower cost compared to AWS option (see below)
-    - Cons:
-        - limit of 10,000 objects per TB of data
-        - You incur additional cost
 - Microsoft OneDrive:  
     - _Access details:_  
         - CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus](./onedrive.md#using-globus) or [rclone](./onedrive.md#using-rclone) to copy data between PetaLibrary and OneDrive.  
