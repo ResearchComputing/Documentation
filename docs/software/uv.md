@@ -3,8 +3,7 @@
 To support fast and reproducible Python workflows, CURC now provides [UV](https://docs.astral.sh/uv/), a modern Python package and environment manager developed by Astral. UV is implemented in Rust and designed for speed, reliability, and Python-native workflows using `venv`.
 
 ```{note}
-**UV is a new and actively developed tool.**  
-Because it is still evolving, new versions and features are released frequently. CURC will aim to keep this tool updated, but we cannot guarantee that the module will always reflect the absolute latest release.
+**UV is a new and actively developed tool.**  Because it is still evolving, new versions and features are released frequently. CURC will aim to keep this tool updated, but we cannot guarantee that the module will always reflect the absolute latest release.
 
 ```
 
@@ -20,16 +19,16 @@ module load uv/0.8.15
 
 ```{important}
 Loading the `uv` module sets a key environment variable `$UV_ENVS`. This environment variable specifies the default directory where `uv` will create virtual environments. This path is set to:
-``` 
-/projects/$USER/software/uv/envs
+`/projects/$USER/software/uv/envs`
+
 ```
 
-```{info}
-- What Is venv?
+```{note}
+**What Is venv?**
 
-`venv` is the standard tool in Python for creating lightweight, isolated environments. Each environment created with venv has its own directory with a Python interpreter and a separate set of installed packages. This helps avoid conflicts between different projects or dependencies.
+`venv` is the standard tool in Python for creating lightweight, isolated environments. Each environment created with venv has its own directory with a Python interpreter and a separate set of installed packages. This helps avoid conflicts between different projects or dependencies. 
 
-`UV` builds on top of `venv`, offering a faster and more user-friendly experience, especially for managing packages and Python versions.
+UV builds on top of `venv`, offering a faster and more user-friendly experience, especially for managing packages and Python versions.
 
 ```
 
@@ -61,7 +60,7 @@ Once the uv module is loaded, you can create a new Python virtual environment by
 $ uv venv $UV_ENVS/mycustomenv
 ```
 
-This will create a virtual environment named `mycustomenv` in the directory specified by the $UV_ENVS environment variable.
+This will create a virtual environment named `mycustomenv` in the directory specified by the `$UV_ENVS` environment variable.
 
 ### Specifying Python Versions with `uv`
 
@@ -123,6 +122,6 @@ python myscript.py
 
 ### Additional Resources
 
--  `uv` Documentation: https://astral.sh/blog/uv/
+-  `uv` Documentation: [https://astral.sh/blog/uv/](https://astral.sh/blog/uv/)
 
-- Python Virtual Environment Documentation: https://docs.python.org/3/library/venv.html
+- Python Virtual Environment Documentation: [https://docs.python.org/3/library/venv.html](https://astral.sh/blog/uv/)
