@@ -65,6 +65,9 @@ Now that we have Ollama installed, we will startup an Ollama serve on a GPU comp
     For non-testing workflows, users should request NVIDIA GPUs using the `aa100` partition. 
     ```
 2. Now that we have a session started, we will export important environment variables using the `ollama_v` variable we established in the previous section. 
+    ```{warning}
+    Maybe put this stuff in the .bashrc
+    ```
     ```
     export PATH=/projects/$USER/ollama/$ollama_v/bin:$PATH
     export LD_LIBRARY_PATH=/projects/$USER/ollama/$ollama_v/lib:$LD_LIBRARY_PATH
@@ -181,6 +184,64 @@ Add introduction to Transformers
 ::::{dropdown} Show 
 :icon: note
 
+1. Create a hugging face account: https://huggingface.co/join
+
+2. Generate a token for our system using https://huggingface.co/settings/tokens
+Do read permissions for simplicity and copy the token 
+
+3. Start up an interactive job on a GPU node. For testing purposes, we will use our A100 testing partition:
+    ```
+    sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+    ```
+
+module load miniforge 
+mamba create -n hf-transformers-env 
+mamba activate hf-transformers-env
+mamba install conda-forge::transformers
+
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
+pip install datasets evaluate accelerate timm
+pip install huggingface_hub[cli]
+
+```{note}
+Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. 
+```
+
+```{warning} 
+put in .bashrc or create script maybe? 
+```
+export HF_HOME=/projects/$USER/hf_transformers
+export HF_HUB_CACHE=/projects/$USER/hf_transformers/.cache
+
+mkdir -p $ HF_HUB_CACHE
+
+4. Do auth login on our system 
+```
+hf auth login
+```
+When prompted for the token, provide the one you gave above.
+Add token as git credential? (Y/n) n 
+
+5. While logged in go to the Hugging Face model card that you want to run and accept the terms of use (if it has them).
+
+```{note}
+Depending on the model, it can take 30 minutes or more to get access to the model. 
+```
+
+6. Once you have received the email that you have access to your model (if it is a gated model), you can then proceed to use the model: 
+```
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B", dtype="auto", device_map="auto")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B")
+
+model_inputs = tokenizer(["The secret to baking a good cake is "], return_tensors="pt").to(model.device)
+
+generated_ids = model.generate(**model_inputs, max_length=30)
+print(tokenizer.batch_decode(generated_ids)[0])
+```
+
+
 ::::
 
 # Running an LLM 
@@ -191,6 +252,10 @@ Add introduction to Transformers
 ```{tip}
 Before installing a model, see if CURC already provides this model! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
 ```
+
+https://huggingface.co/docs/transformers/installation
+
+https://huggingface.co/models
 
 ::::
 
