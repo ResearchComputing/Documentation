@@ -20,6 +20,7 @@ module load uv/0.8.15
 ```{important}
 Loading the `uv` module sets a key environment variable `$UV_ENVS`. This environment variable specifies the default directory where `uv` will create virtual environments. This path is set to:
 `/projects/$USER/software/uv/envs`
+This directory gets created for you the first time you load `uv`. You do not need to manually create it.
 
 ```
 
@@ -34,7 +35,7 @@ UV builds on top of `venv`, offering a faster and more user-friendly experience,
 
 ### View run options
 
-To view a list of all available commands and options for uv, run:
+To view a list of all available commands and options for `uv`, run:
 
 ```
 uv --help
@@ -81,6 +82,13 @@ To activate the environment, use the command:
 ```
 $ source $UV_ENVS/mycustomenv/bin/activate
 ```
+### Deactivate the virtual environment
+
+To deactivate the environment, use the command:
+
+```
+$ deactivate
+```
 
 ### Using Python with `uv`
 
@@ -124,4 +132,4 @@ python myscript.py
 
 -  `uv` Documentation: [https://astral.sh/blog/uv/](https://astral.sh/blog/uv/)
 
-- Python Virtual Environment Documentation: [https://docs.python.org/3/library/venv.html](https://astral.sh/blog/uv/)
+- Python `venv` Documentation: [https://docs.python.org/3/library/venv.html](https://astral.sh/blog/uv/)
