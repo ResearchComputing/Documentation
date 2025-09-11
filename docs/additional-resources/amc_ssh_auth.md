@@ -8,7 +8,9 @@ Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys
 * ssh on-boarding meetings are hosted monthly. You will not be able to get ssh access until you attend this meeting. You can notify the team you are interested in attending the next on-boarding session by emailing us at hpcsupport@cuanschutz.edu. Also feel free to reach out should you have any questions!
 * You must be connected to the CU Anschutz Wi-Fi network or the CU Anschutz VPN for Alpine ssh access to work.
 
-Steps 1-4 below should be completed during an on-boarding zoom session with a team member present
+```{important}
+Steps 1-4 below should be completed during an on-boarding Zoom session with a CU Anschutz support member present.
+```
 
 
 ```{note}
