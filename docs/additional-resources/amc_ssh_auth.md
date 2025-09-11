@@ -3,7 +3,7 @@
 Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact <hpcsupport@cuanschutz.edu> to initiate this process.
 
 ## *Prerequisites:*
-* You must have a valid Alpine (ACCESS/XSEDE) account. You can follow the instructions for new user registration [here, under "AMC"](https://curc.readthedocs.io/en/latest/getting_started/logging-in.html).
+* You must have a valid CURC account to access Alpine. For instructions on obtaining a CURC account, please follow our [Getting a CURC account](../getting_started/logging-in.html?tabset-logging-in=logging-in-amc#tabset-ref-get-account){.external} documentation under the AMC tab.
 * Make sure to fill out the Alpine Anschutz ssh request form: : <https://ucdenverdata.formstack.com/forms/Alpine_ssh_request_form>
 * Ssh on-boarding meetings are hosted monthly. You will not be able to get ssh access until you attend this meeting. You can notify the team you are interested in attending the next on-boarding session by emailing us at hpcsupport@cuanschutz.edu. Also feel free to reach out should you have any questions!
 * You must be connected to the CU Anschutz Wi-Fi network or the CU Anschutz VPN for Alpine ssh to work.
