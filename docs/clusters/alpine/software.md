@@ -103,7 +103,9 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [PETSc](https://petsc.org/) | 3.18.3, 3.22.1 | PETSc is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations.| 
 | [pigz](https://zlib.net/pigz/) | 2.7 (D) | Pigz is a parallel implementation of gzip.| 
 | [Picard](https://broadinstitute.github.io/picard/) | 2.27.5 | Picard is a set of command line tools for manipulating high-throughput sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF.| 
-| [PLINK2](https://www.cog-genomics.org/plink/2.0/) | 2.00a2.3 | PLINK 2.0 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics.| 
+| [PLINK2](https://www.cog-genomics.org/plink/2.0/) | 2.00a2.3 | PLINK 2.0 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics.|
+| [PnetCDF](https://parallel-netcdf.github.io) | 1.12.2, 1.13.0 | PnetCDF is a high-performance parallel I/O library for accessing Unidata's NetCDF, files in classic formats, specifically the formats of CDF-1, 2, and 5. |
+| [PROJ](https://proj.org/en/stable/) | 6.0.0, 8.1.1, 8.2.1, 9.5.0 | PROJ is a generic coordinate transformation software that transforms geospatial coordinates from one coordinate reference system (CRS) to another. This includes cartographic projections as well as geodetic transformations. |
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
 | [QIIME 2](https://qiime2.org/) | 2023.5, Amplicon 2024.2, Amplicon 2024.10 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
@@ -122,6 +124,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [SRA-Toolkit](https://hpc.nih.gov/apps/sratoolkit.html) | 3.0.0 | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.| 
 | [STAR](https://github.com/alexdobin/STAR/tree/master) | 2.7.10b | A tool to align RNA-seq data. The STAR algorithm uses suffix arrays, seed clustering, and stitching.| 
 | [Subversion](https://subversion.apache.org/) | 1.8.16, 1.10.2, 1.14.1 (D) |Apache Subversion is a software versioning and revision control system.| 
+| [Szip](http://www.compressconsult.com/szip/) | 2.1.1 | Szip is a freeware portable general purpose lossless compression program. |
 | [Tcl/Tk](https://www.tcl.tk/about/) | 8.6.5, 8.6.11, 9.0.1 (D) |Tcl is a high-level, general-purpose, interpreted, dynamic programming language.| 
 | [tDOM](http://tdom.org/index.html/dir?ci=release) | 0.8.3, 0.9.2 |tDOM is a Tcl extension for parsing XML.| 
 | [TeX Live](https://www.tug.org/texlive/) | 2021 |TeX Live is a cross-platform, free software distribution for the TeX typesetting system that includes major TeX-related programs, macro packages, and fonts.| 
