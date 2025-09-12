@@ -108,6 +108,7 @@ software/containerization
 software/alphafold
 software/spack
 software/sratoolkit
+software/uv
 
 ```
 
