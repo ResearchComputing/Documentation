@@ -20,14 +20,61 @@ Given most LLM frameworks are in rapid development, functionality is constantly 
 Current instructions are only available for NVIDIA GPUs.
 ```
 
-(tabset-ref-llm-frameworks)=
-`````{tab-set}
-:sync-group: tabset-llm-frameworks
-
-````{tab-item} Ollama
-:sync: llm-frameworks-ollama
+### Ollama 
 
 [Ollama](https://ollama.com/) is an open-source, lightweight, and extremely beginner friendly tool that enables users to run LLMs locally and retrieve models that are compatible with the system they are running on. 
+
+(tabset-ref-ollama)=
+`````{tab-set}
+:sync-group: tabset-ollama
+
+````{tab-item} Quickstart
+:sync: ollama-quickstart
+
+In this tab, we provide instructions for using our system installed Ollama. Although these instructions greatly simplify the steps needed to use Ollama, the system installed Ollama or provided API may not fit your needs. If you need to install a different version of Ollama or need to customize the provided conda environment, you will need to follow the instructions in the [In-depth instructions tab](?tabset-ollama=ollama-indepth#tabset-ref-ollama){.external}. 
+
+To begin, we first need to jump on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition.
+```
+sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+```
+Once the session has successfully started, 
+
+
+
+::::{dropdown} Show how to use a different model path
+:icon: note 
+
+In cases where you want to use a model that is different from CURC installed models, you will need to 
+
+
+First, set the different module path and make sure it exists e.g. 
+```
+export OLLAMA_MODELS=/projects/$USER/my_ollama_models
+mkdir -p $OLLAMA_MODELS
+```
+You will then need to restart the serve. To do this, we first need to stop the current session by killing the Ollama process. You can find this process using the following:
+```
+[user1@c3gpu-c2-u13 ~]$ ps -u $USER | grep ollama 
+2210854 pts/0    00:00:00 ollama
+```
+The number at the beginning of this output is the Ollama process (e.g. `2210854`). You then need to kill this process e.g. 
+```
+kill 2210854
+``` 
+Once the process has been successfully killed, you can then restart the Ollama serve: 
+```
+nohup ollama serve > /dev/null 2>&1 &
+```
+You can now install any compatible model you want by pulling the model down and running it. For more information on this topic, see the [Ollama README.md](https://github.com/ollama/ollama/blob/main/README.md). 
+
+::::
+
+
+````
+
+````{tab-item} In-depth instructions
+:sync: ollama-indepth
+
 
 # Installation
 
@@ -47,6 +94,7 @@ Now, we grab the Ollama binary for this version:
 ```
 curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64.tgz 
 tar -xzf ollama-linux-amd64.tgz
+rm ollama-linux-amd64.tgz
 ```
 After execution, this command should create a `bin` and `lib` directory containing our Ollama binary and associated libraries, respectively.
 ::::
@@ -154,8 +202,7 @@ response: ChatResponse = chat(model='llama3.1:8b', messages=[
     'content': 'In one sentence, how cool is CU Research Computing?',
   },
 ])
-print(response['message']['content'])
-# or access fields directly from the response object
+
 print(response.message.content)
 ```
 
@@ -164,20 +211,32 @@ python test.py
 CU Research Computing is an exceptionally cool and powerful resource that provides researchers with access to high-performance computing clusters, advanced data storage systems, and expert support to facilitate cutting-edge research and innovation.
 ```
 
-
-
 For more tutorials and usages of the API, see https://github.com/ollama/ollama-python
-
-
 
 ::::
 
 ````
 
-````{tab-item} Transformers by Hugging Face
-:sync: llm-frameworks-huggingface
+`````
+
+### Transformers by Hugging Face 
 
 Add introduction to Transformers 
+
+(tabset-ref-hf-transformers)=
+`````{tab-set}
+:sync-group: tabset-hf-transformers
+
+````{tab-item} Quickstart
+:sync: hf-transformers-ollama
+
+Quick start
+
+````
+
+````{tab-item} In-depth instructions 
+:sync: hf-transformers-indepth
+
 
 # Installation
 
