@@ -1,4 +1,4 @@
-# PetaLibrary Ownership and Contacts
+# Roles and responsibilities
 
 ## PetaLibrary Owners
 
