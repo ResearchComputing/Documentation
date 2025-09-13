@@ -1,6 +1,12 @@
 # Data Transfer Between OneDrive and PetaLibrary
 
-## Using Globus
+
+(tabset-ref-ucb-pl-onedrive-types)=
+`````{tab-set}
+:sync-group: tabset-ucb-pl-onedrive-types
+
+````{tab-item} Globus
+:sync: tabset-ucb-pl-onedrive-types-globus
 
 ### Step 1: Log into the Globus Web App
 Visit [https://app.globus.org](https://app.globus.org) and log in with your Colorado.edu credentials
@@ -32,7 +38,10 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 
 ![](Globus_Activity_GDrive.png)
 
-## Using RClone
+````
+
+````{tab-item} rclone
+:sync: tabset-ucb-pl-onedrive-types-rclone
 
 ### Step 1: Login to a compile node on Alpine
 
@@ -86,8 +95,6 @@ If this step fails, your OneDrive remote is not configured properly. Try reconfi
 
 See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md#configure-rclone)
 
-### Useful links:
+````
 
-* [Rclone documentation](https://rclone.org/)
-* [CURC data transfer documentation](../../compute/data-transfer.md)
-
+`````
