@@ -77,9 +77,15 @@ running-jobs/roce-enabled
 
 ```{toctree}
 :maxdepth: 1
-:caption: Storage
+:caption: PetaLibrary
 
-storage/petalibrary/index
+storage/petalibrary/petalibrary
+storage/petalibrary/allocation_types
+storage/petalibrary/ownership
+storage/petalibrary/billing
+storage/petalibrary/data_transfer
+storage/petalibrary/usage_statistics
+storage/petalibrary/snapshots
 
 ```
    

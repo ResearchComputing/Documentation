@@ -1,4 +1,4 @@
-# PetaLibrary Billing
+# Billing
 
 ## General information
 

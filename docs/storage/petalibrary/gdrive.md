@@ -1,10 +1,18 @@
 # Data Transfer between Google Drive and PetaLibrary
 
-## Using Globus
+(tabset-ref-ucb-pl-gdrive-types)=
+`````{tab-set}
+:sync-group: tabset-ucb-pl-gdrive-types
 
-_This capability is no longer available._
+````{tab-item} Globus
+:sync: tabset-ucb-pl-gdrive-types-globus
 
-## Using RClone
+Globus is no longer an opton for Google Drive data transfers to PetaLibrary.
+
+````
+
+````{tab-item} rclone
+:sync: tabset-ucb-pl-gdrive-types-rclone
 
 ### Step 1: Login to a compile node on Alpine
 
@@ -59,8 +67,5 @@ If this step fails, your Google Drive remote is not configured properly. Try rec
 
 See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md#configure-rclone)
 
-### Useful links: 
-
-* [Rclone documentation](https://rclone.org/)
-* [CURC data transfer documentation](../../compute/data-transfer.md)
-
+````
+`````

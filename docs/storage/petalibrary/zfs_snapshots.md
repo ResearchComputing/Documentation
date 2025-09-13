@@ -1,6 +1,6 @@
-# ZFS Snapshots
+# Snapshots
 
-Every PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. 
+ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. Snapshots enable users to recover data that they have unintentially deleted, during a specified [retention period](#default-snapshot-schedule). Every PetaLibrary allocation has snapshots enabled by default. 
 
 ## How to access snapshots
 
