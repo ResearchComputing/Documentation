@@ -2,14 +2,14 @@
 
 There are numerous to transfer data to/from PetaLibrary. Select the option below that best serves your needs. 
 
-* [General data transfer methods](../../compute/data_transfer.md)
+* [General data transfer methods](../../compute/data-transfer.md)
   * Documentation on common command line utilities such as `rsync`, `scp`, and `sftp`.
   * Documentation on `Globus`, a user-friendly browser-based file transfer tool.
 * [Mounting PetaLibrary as a volume on a local machine](./mounting.md)
   * Documentation on use of `SMB` for mounting PetaLibrary as a local volume.
   * Documentation on use of `sshfs` for mounting PetaLibrary as a local volume.
-* [Transferring data to PetaLibrary with rclone](./rclone.html)
-  * Documentation on using `rclone`, a great tool for unique endpoint types.
+* [Transferring data to PetaLibrary with rclone](./rclone.md)
+  * Documentation on using `rclone` to backup local data.
   * Additional documentation on scheduling recurring backups to PetaLibrary.
 * [Transferring data to PetaLibrary from Google Drive](./gdrive.md)
   * Specific documentation on using `rclone` to transfer data from Google Drive to PetaLibrary.
