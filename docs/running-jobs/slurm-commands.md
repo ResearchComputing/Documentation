@@ -118,15 +118,19 @@ avecpu      | Average CPU time of all tasks in a job.
 averss      | Average resident set size of all tasks.
 avevmsize   | Average virtual memory of all tasks in a job.
 jobid       | The id of the Job.
-maxrss      | Maximum number of bytes read by all tasks in the job.
-maxvsize    | Maximum number of bytes written by all tasks in the job.
+maxrss      | Maximum resident set size (peak physical memory usage) across all tasks in the job.
+maxvmsize    | Maximum virtual memory size (peak memory allocated, including malloc'ed memory) across all tasks.
 ntasks      | Number of tasks in a job.
+
+```{note}
+`sstat` requires either a full job step ID (e.g., `123456.0`) or the `-a` flag to return results. Supplying only the job ID (e.g., `123456`) may result in no output.
+```
 
 As an example, let's print out a job's id, average cpu time, max
 rss, and the number of tasks. We can do this by typing out the command:
 
 ```bash
-sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
+sstat --jobs=your_job-id -a --format=jobid,avecpu,maxrss,ntasks
 ```
 
 ```{seealso}
