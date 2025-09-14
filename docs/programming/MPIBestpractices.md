@@ -134,6 +134,15 @@ mpirun -np $SLURM_NTASKS /path/to/mycode.exe
 ```
 When running MPI jobs on Alpine, you can use the `--constraint=ib` flag to force the job onto an Alpine node that has Infiniband, the networking fabric used by MPI.
 
+```{important}
+To ensure optimal MPI performance and proper task placement, always explicitly specify the number of nodes with the `--nodes` flag. For example:
+- Use `--nodes=1` if you're using up to 64 cores (one full node).
+- Use `--nodes=2` and `--ntasks=128` for 128-core jobs.
+Continue scaling by full nodes to maintain efficient communication (e.g., nodes=4 for 256 tasks, etc.).
+
+This ensures that tasks are evenly distributed across nodes and avoids suboptimal communication layouts that can degrade MPI performance.
+```
+
 ## Running MPI on Blanca
 
 Blanca is often a bit more complicated due to the variety of nodes available. In general, there are 3 types of nodes on Blanca that can all run single node multi-core MPI processes that may require additional flags and parameters to achieve cross node parallelism.  
@@ -179,6 +188,9 @@ mpirun --mca btl tcp <other arguments>
 
 ```{note}
 This does not ensure high speed communications in message passing, but it will allow for basic parallelization across nodes.
+```
+```{important}
+As with Alpine, it's recommended to explicitly specify the number of nodes using `nodes` along with `ntasks`, especially for multi-node MPI jobs. Blanca nodes may have different core counts depending on the hardware configuration, so be sure to match your `ntasks` to the number of cores available per node. You can check a node's core count using `scontrol show node <node-name>`.
 ```
 
 ### Blanca HPC
