@@ -1,4 +1,4 @@
-# Configuring a budget action
+# AWS - Budget Actions
 
 You can attach budget actions to an alert for either a cost budget or a usage budget. To configure a budget action on a new budget, first follow the steps for [Creating a cost budget](https://docs.aws.amazon.com/cost-management/latest/userguide/create-cost-budget.html)
 

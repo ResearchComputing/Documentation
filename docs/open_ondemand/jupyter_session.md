@@ -72,6 +72,12 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
        ```
        (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge jupyterlab
        ```
+       ````{important}
+       If you are experiencing issues with JupyterLab functionality e.g. trouble deleting notebooks from within the GUI, inconsistent behavior in the terminal within the GUI, etc., we have traced these issues down to incompatibilities with JupyterLab versions. In this scenario, we recommend rebuilding the environment and installing version 3.4.0 of JupyterLab:
+       ```
+       conda install -c conda-forge jupyterlab=3.4.0
+       ```
+       ````
    - If you would like to install **Jupyter Notebook** (the classic version of Jupyter)
       ```
       (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge notebook

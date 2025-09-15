@@ -83,7 +83,7 @@ Duo also provides a phone call solution for 2-factor authorization if you only h
 ````{tab-item} Duo Token
 :sync: ucb-duo-login-methods-token
 
-If you prefer a physical device, similar to the Vasco OTP, you will need to arrange with RC staff to acquire a token. There is a small fee for this device.  Email <rc-help@colorado.edu> for assistance.
+This documentation is for customers who have [registered a Yubikey with CU Boulder](https://oit.colorado.edu/tutorial/register-yubikey-otp).
 
 1. Type: `ssh username@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
 2. Enter your password when prompted, as `mypassword,6-digit-number`. The 6-digit number is given to you on the Duo token.  For example, if my password is Ih3artdu0, and I press the button on the token and it is 123456, I would type: `Ih3artdu0,123456`.

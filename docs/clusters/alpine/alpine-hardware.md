@@ -13,6 +13,7 @@ All Alpine nodes are available to all users. For full details about node access,
 :widths: auto
 :align: left
 
+
 | Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | L3 Cache (MB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       | OS       |
 | --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- | -------- |
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes }} Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
@@ -22,6 +23,10 @@ All Alpine nodes are available to all users. For full details about node access,
 | {{ alpine_ucb_total_mi100_gpu_nodes }} Milan AMD GPU | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_a100_gpu_nodes }} Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | currently in beta testing              | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | 119.5            | NVIDIA Hopper GPU | 1         | 1.8 T SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 9.5 |
+| {{ alpine_ucb_total_acompile_nodes }} Milan CPU compile nodes | acompile | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} Milan CPU test nodes; pulls from CU amilan pool | atesting | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | 32            | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
+| {{ alpine_ucb_total_atesting_a100_gpu_nodes }} Milan NVIDIA GPU testing node | atesting_a100 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| {{ alpine_ucb_total_atesting_mi100_gpu_nodes }} Milan AMD GPU testing nodes; pulls from ami100 pool | atesting_mi100 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | 32            | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 
 :::
 
@@ -102,15 +107,47 @@ __Examples of GPU configurations/requests__:
 
 ### Quality of Service (qos)
 
-**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** This could come in the form of specifying a QoS to request for a longer run time. For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
 
-The available QoS's for Alpine are:
+The available QoS for Alpine:
 
-| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Partition limits | Priority Adjustment  |
-| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- | ---------------------|
-| normal      | Default                    | 1D              | 1000          | 128                | amilan,amilan128c,aa100,ami100              | 0                    |
-| long        | Longer wall times          | 7D              | 200           | 20                 | amilan,amilan128c,aa100,ami100              | 0                    |
-| mem         | High-memory jobs           | 7D              | 1000          | 12                 | amem only        | 0                    |
+| QOS name    | Description                | Max walltime    | Max jobs/user | Node limits        | Valid Partitions | 
+| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
+| normal      | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128                | amilan,amilan128c,aa100,ami100  |
+| long        | Longer wall times          | 7 days              | 200           | 20                | amilan,amilan128c,aa100,ami100              | 
+| mem         | High-memory jobs           | 7 days              | 1000          | 12                 | amem only        | 
+| testing         | Used for all testing partitions   | 1 hour              | 5          |  2       | atesting,atesting_a100,atesting_mi100     | 
+| compile       | Used for acompile jobs  | 12 hours              |    -      |   1      | acompile   | 
+| amc       | QoS for nodes contributed by AMC    | 24 hours              | -         |  -       | amc  | 
+| csu       | QoS for nodes contributed by CSU    | 24 hours              |  -        |  -       | csu  | 
+| rmacc       | QoS for nodes contributed by RMACC    | 24 hours              |    -      |   -      | rmacc  | 
+| gh200       | Used for GH200 jobs (available only through request)   | 7 days             |   1       |   1      | gh200  | 
+
+__QoS examples__:
+
+(tabset-ref-ex-qos-req)=
+`````{tab-set}
+:sync-group: tabset-ex-qos-req
+
+````{tab-item} Requesting the normal partition 
+:sync: ex-qos-req-normal-partition
+
+```bash
+--qos=normal
+```
+
+````
+
+```` {tab-item} Requesting the long partition
+:sync: ex-qos-req-long-partition
+
+```bash
+--qos=long
+```
+
+````
+
+`````
 
 
 ### Partitions
@@ -134,6 +171,10 @@ Partitions available on Alpine:
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |  4H,  7D                 | 128 cores across all jobs |
 | csu       | Nodes contributed by CSU     | {{ alpine_total_csu_nodes }}         | 32 or 48   |   3.75        | 1                   | 24H, 7D                 | see qos table |
 | amc       | Nodes contributed by AMC     | {{ alpine_total_amc_nodes }}        | 32 or 48   |   3.75        | 1                   | 24H, 7D                 | see qos table |
+| acompile | AMD Milan compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   3.75        | N/A                   | see [acompile section](./alpine-hardware.md#acompile-usage-examples) below                 | see [acompile section](./alpine-hardware.md#atesting-usage-examples) below |
+| atesting | AMD Milan test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU amilan pool | 64 |   3.75        | 0.025                   | see [atesting section](./alpine-hardware.md#atesting-usage-examples) below                 | see [atesting section](./alpine-hardware.md#atesting-usage-examples) below |
+| atesting_a100 | GPU-enabled testing node (3x NVIDIA A100 split w/ MIG) | {{ alpine_total_atesting_a100_nodes }} | 64         |   3.75       | 0.025     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below |
+| atesting_mi100 | GPU-enabled testing nodes (3x AMD MI100) | {{ alpine_total_atesting_mi100_nodes }} | 64         |   3.75       | 0.025     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below |
 
 ```{important}
 **Partition table footnotes:** 
@@ -170,7 +211,7 @@ Compiling and testing partitions are, as their name implies, only meant for comp
 
 ##### `atesting` usage examples:
 
-`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 3 hours (default 30 minutes) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
+`atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour (default  1 hour) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
 
 (tabset-ref-atesting-use)=
 `````{tab-set}
@@ -249,7 +290,7 @@ sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
 
 ##### `acompile` usage examples:
 
-`acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
+`acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack, verifying non-MPI jobs, and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
 (tabset-ref-acompile-use)=
 `````{tab-set}
