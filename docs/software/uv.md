@@ -1,20 +1,20 @@
-# UV
+# uv Package Manager
 
-To support fast and reproducible Python workflows, CURC now provides [UV](https://docs.astral.sh/uv/), a modern Python package and environment manager developed by Astral. UV is implemented in Rust and designed for speed, reliability, and Python-native workflows using `venv`.
+To support fast and reproducible Python workflows, CURC now provides [uv](https://docs.astral.sh/uv/), a modern Python package and environment manager developed by Astral. `uv` is implemented in Rust and designed for speed, reliability, and Python-native workflows using `venv`.
 
 ```{note}
-**UV is a new and actively developed tool.**  Because it is still evolving, new versions and features are released frequently. CURC will aim to keep this tool updated, but we cannot guarantee that the module will always reflect the absolute latest release.
+**uv is a new and actively developed tool.**  Because it is still evolving, new versions and features are released frequently. CURC will aim to keep this tool updated, but we cannot guarantee that the module will always reflect the absolute latest release.
 
 ```
 
-## Using UV on CURC
+## Using `uv` on CURC
 
-### Loading the uv Module
+### Loading the `uv` Module
 
 To start using `uv`, you must first load the relevant module in your interactive session:
 
 ```
-module load uv/0.8.15
+module load uv
 ```
 
 ```{important}
@@ -29,7 +29,7 @@ This directory gets created for you the first time you load `uv`. You do not nee
 
 `venv` is the standard tool in Python for creating lightweight, isolated environments. Each environment created with venv has its own directory with a Python interpreter and a separate set of installed packages. This helps avoid conflicts between different projects or dependencies. 
 
-UV builds on top of `venv`, offering a faster and more user-friendly experience, especially for managing packages and Python versions.
+`uv` builds on top of `venv`, offering a faster and more user-friendly experience, especially for managing packages and Python versions.
 
 ```
 
@@ -53,9 +53,9 @@ For example, to get detailed help for creating a virtual environment with `uv ve
 uv venv --help
 ```
 
-### Creating a Virtual Environment with uv
+### Creating a Virtual Environment with `uv`
 
-Once the uv module is loaded, you can create a new Python virtual environment by running:
+Once the `uv` module is loaded, you can create a new Python virtual environment by running:
 
 ```
 $ uv venv $UV_ENVS/mycustomenv
@@ -101,9 +101,37 @@ After activating the virtual environment, you can install Python packages using 
 This will install the `numpy` package in the active virtual environment.
 
 ```{tip}
-To manage disk usage, you can clear unused or outdated files from uv's cache directory using: `uv cache clean`. This command removes cached Python builds, packages, and temporary files. This is useful if you regularly install new packages or Python versions.
+To manage disk usage, you can clear unused or outdated files from `uv's` cache directory using: `uv cache clean`. This command removes cached Python builds, packages, and temporary files. This is useful if you regularly install new packages or Python versions.
 ```
 
+### Installing Additional Packages to existing `uv` Environments
+
+You can easily add new packages to your existing `uv` virtual environment using the `uv add` command. This is a convenient way to install Python packages without having to manually use `pip`.
+
+```
+(mycustomenv) $ uv add requests
+```
+This will install `requests` in the active virtual environment, similar to how `pip install` works, but integrated with `uv's` environment management.
+
+### Removing Packages from existing `uv` Environments
+
+To remove packages from your existing `uv` virtual environment use the `uv remove` command. This allows you to uninstall a package without having to manually run `pip uninstall`.
+
+```
+(mycustomenv) $ uv remove numpy
+```
+This will remove `numpy` from the active environment.
+
+### Removing a `uv` Environment
+
+If you want to remove a `uv` environment, run:
+```
+$ rm -rf $UV_ENVS/mycustomenv
+```
+
+```{warning}
+Be very careful when using the `rm -rf` command. This command will permanently delete the specified directory and all of its contents, with no confirmation prompt. Make sure you are deleting the correct environment and that you don't need any of its files before running this command.
+```
 
 ## Example Job Script
 
@@ -123,7 +151,7 @@ Here’s an example Slurm job script for running a Python task within a `uv` vir
 #SBATCH --mail-user=<your email address>
 
 module purge
-module load uv/0.8.15
+module load uv
 
 # Activate the virtual environment
 source $UV_ENVS/mycustomenv/bin/activate
