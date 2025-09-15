@@ -1,4 +1,4 @@
-# uv Package Manager
+# uv
 
 To support fast and reproducible Python workflows, CURC now provides [uv](https://docs.astral.sh/uv/), a modern Python package and environment manager developed by Astral. `uv` is implemented in Rust and designed for speed, reliability, and Python-native workflows using `venv`.
 
@@ -103,24 +103,6 @@ This will install the `numpy` package in the active virtual environment.
 ```{tip}
 To manage disk usage, you can clear unused or outdated files from `uv's` cache directory using: `uv cache clean`. This command removes cached Python builds, packages, and temporary files. This is useful if you regularly install new packages or Python versions.
 ```
-
-### Installing Additional Packages to existing `uv` Environments
-
-You can easily add new packages to your existing `uv` virtual environment using the `uv add` command. This is a convenient way to install Python packages without having to manually use `pip`.
-
-```
-(mycustomenv) $ uv add requests
-```
-This will install `requests` in the active virtual environment, similar to how `pip install` works, but integrated with `uv's` environment management.
-
-### Removing Packages from existing `uv` Environments
-
-To remove packages from your existing `uv` virtual environment use the `uv remove` command. This allows you to uninstall a package without having to manually run `pip uninstall`.
-
-```
-(mycustomenv) $ uv remove numpy
-```
-This will remove `numpy` from the active environment.
 
 ### Removing a `uv` Environment
 
