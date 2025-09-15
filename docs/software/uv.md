@@ -21,15 +21,6 @@ $ module load uv
 Loading the `uv` module sets a key environment variable `$UV_ENVS`. This environment variable specifies the default directory where you should create virtual environments. This variable is set to: `/projects/$USER/software/uv/envs` and is created when the `uv` module is loaded. 
 ```
 
-```{note}
-**What Is venv?**
-
-`venv` is the standard tool in Python for creating lightweight, isolated environments. Each environment created with venv has its own directory with a Python interpreter and a separate set of installed packages. This helps avoid conflicts between different projects or dependencies. 
-
-`uv` builds on top of `venv`, offering a faster and more user-friendly experience, especially for managing packages and Python versions.
-
-```
-
 ### View run options
 
 To view a list of all available commands and options for `uv`, run:
