@@ -1,6 +1,6 @@
 # Running Large Language Models
 
-Large Language Models (LLMs) have become extremely popular. Although LLMs such as ChatGPT and Google's Gemini are extremely useful, there are two primary downsides to using such a service: data privacy and cost. Additionally, it is often the case that more specialized LLMs are needed (rather than large general models) or researchers want to train models to fit their specialized case. The current solution to these issues is to run local open-source LLMs. In this section, we provide several approaches for setting up and running open-source LLMs on Alpine and Blanca using popular frameworks. 
+Large Language Models (LLMs) have become extremely popular. Although LLMs such as ChatGPT and Google's Gemini are extremely useful, there are two primary downsides to using such a service: data privacy and cost. Additionally, it is often the case that more specialized LLMs are needed (rather than large general models) or researchers want to train models to fit their specialized case. To address these cases, users can run local open-source LLMs. In this section, we provide several approaches for setting up and running open-source LLMs on Alpine and Blanca using popular frameworks. 
 
 ```{warning}
 Before running or working with LLMs on CURC resources, please be sure that you are adhering to all [CURC User Policies](https://curc.readthedocs.io/en/latest/additional-resources/policies.html) and CU's policies and guidance around Artificial Intelligence outlined in the pages [Artificial Intelligence at CU Boulder](https://www.colorado.edu/information-technology/artificial-intelligence-cu-boulder) and [Resources & Guidance](https://www.colorado.edu/information-technology/ai-cu-boulder/resources-guidance#accordion-1981143711-1). 
@@ -8,16 +8,49 @@ Before running or working with LLMs on CURC resources, please be sure that you a
 
 ## Accessing stored LLMs on CURC
 
-Where 
+To streamline access and reduce redundant storage of LLMs, CURC has created a shared space for common LLMs. This is a CURC managed space, as such, users cannot install models themselves in this space. However, if you believe a model should be available in this directory, please reach out to <rc-help@colorado.edu>. To access these models, users should utilize the environment variable `CURC_LLM_DIR` followed by their framework of choice. For more information about what models and frameworks are provided, please consult the tabs below. 
+```{important}
+The path specified by `CURC_LLM_DIR` is only available on compute nodes.  
+```
 
-Why this is important 
+(tabset-ref-curc-llms)=
+`````{tab-set}
+:sync-group: tabset-curc-llms
+
+````{tab-item} Ollama
+:sync: curc-llms-ollama
+
+For the Ollama framework, we provide the following models: 
+- `gpt-oss:20b`
+- `gemma3:12b`
+- `llama3.1:8b`
+
+If you are using your own installation of Ollama, you should set the Ollama model path as follows:
+```
+export OLLAMA_MODELS=$CURC_LLM_DIR/ollama
+```
+```{note}
+If you are loading our Ollama module e.g. `module load ollama`, we automatically set the model path to this directory for you. 
+```
+
+````
+
+````{tab-item} Transformers by Hugging Face
+:sync: curc-llms-hf-transformers
+
+Add content here 
+
+````
+
+
+`````
 
 ## Using LLM Frameworks
 
-Given most LLM frameworks are in rapid development, functionality is constantly changing. Additionally, the newest models often require the newest version of the framework to properly function. For this reason, at the moment, CURC is not providing modules for these LLM frameworks. Instead, we provide detailed instructions below for installing the version of the framework that works for your use case and common ways to use this framework. 
-
-```{note}
-Current instructions are only available for NVIDIA GPUs.
+In this section, we provide instructions for obtaining access to common LLM frameworks. Additionally, we provide simple examples that demonstrate how to use these LLM frameworks. 
+```{important}
+- Due to the rapid pace of development in most LLM frameworks, CURC will provide only the most up-to-date version for the provided framework modules. These versions will be updated during our regular monthly planned maintenance. If you need older or newer versions of these frameworks, we provide detailed instructions below for installing the version of the framework that works for your use case and common ways to use this framework. 
+- Current instructions and modules are only available for NVIDIA GPUs.
 ```
 
 ### Ollama 
@@ -31,7 +64,7 @@ Current instructions are only available for NVIDIA GPUs.
 ````{tab-item} Quickstart
 :sync: ollama-quickstart
 
-In this tab, we provide instructions for using our system installed Ollama. Although these instructions greatly simplify the steps needed to use Ollama, the system installed Ollama or provided API may not fit your needs. If you need to install a different version of Ollama or need to customize the provided conda environment, you will need to follow the instructions in the [In-depth instructions tab](?tabset-ollama=ollama-indepth#tabset-ref-ollama){.external}. 
+In this tab, we provide instructions for using our system installed Ollama. Although these instructions greatly simplify the steps needed to use Ollama, the system installed Ollama or provided API may not fit your needs. If you need to install a different version of Ollama or need to customize the provided environment, you will need to follow the instructions in the [In-depth instructions tab](?tabset-ollama=ollama-indepth#tabset-ref-ollama){.external}. 
 
 To begin, we first need to jump on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition.
 ```
