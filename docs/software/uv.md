@@ -51,7 +51,7 @@ $ uv venv $UV_ENVS/mycustomenv
 
 This will create a virtual environment named `mycustomenv` in the directory specified by the `$UV_ENVS` environment variable.
 
-You will know that you have properly activated the environment because you should see `(mycustomenv)` in front of your prompt. For example:
+You will know that you have properly activated the environment when you see `(mycustomenv)` in front of your prompt e.g.
 ```
 (mycustomenv) [johndoe@c3cpu-a7-u19-1 ~]$
 ```
