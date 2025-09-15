@@ -51,6 +51,11 @@ $ uv venv $UV_ENVS/mycustomenv
 
 This will create a virtual environment named `mycustomenv` in the directory specified by the `$UV_ENVS` environment variable.
 
+You will know that you have properly activated the environment because you should see `(mycustomenv)` in front of your prompt. For example:
+```
+(mycustomenv) [johndoe@c3cpu-a7-u19-1 ~]$
+```
+
 ### Specifying Python Versions with `uv`
 
 You can create virtual environments with specific Python versions using the `--python` flag.
