@@ -14,14 +14,11 @@ To support fast and reproducible Python workflows, CURC now provides [uv](https:
 To start using `uv`, you must first load the relevant module in your interactive session:
 
 ```
-module load uv
+$ module load uv
 ```
 
 ```{important}
-Loading the `uv` module sets a key environment variable `$UV_ENVS`. This environment variable specifies the default directory where `uv` will create virtual environments. This path is set to:
-`/projects/$USER/software/uv/envs`
-This directory gets created for you the first time you load `uv`. You do not need to manually create it.
-
+Loading the `uv` module sets a key environment variable `$UV_ENVS`. This environment variable specifies the default directory where you should create virtual environments. This variable is set to: `/projects/$USER/software/uv/envs` and is created when the `uv` module is loaded. 
 ```
 
 ```{note}
@@ -38,19 +35,19 @@ This directory gets created for you the first time you load `uv`. You do not nee
 To view a list of all available commands and options for `uv`, run:
 
 ```
-uv --help
+$ uv --help
 ```
 
 You can also see additional help for each command by running:
 
 ```
-uv <command> --help
+$ uv <command> --help
 ```
 
 For example, to get detailed help for creating a virtual environment with `uv venv`, run:
 
 ```
-uv venv --help
+$ uv venv --help
 ```
 
 ### Creating a Virtual Environment with `uv`
@@ -82,26 +79,27 @@ To activate the environment, use the command:
 ```
 $ source $UV_ENVS/mycustomenv/bin/activate
 ```
-### Deactivate the virtual environment
 
-To deactivate the environment, use the command:
-
-```
-$ deactivate
-```
-
-### Using Python with `uv`
+### Installing Python packages with `uv`
 
 After activating the virtual environment, you can install Python packages using `uv`'s `pip` interface. For example, to install a package named `numpy`, run:
 
 ```
-(mycustomenv) $ uv pip install numpy
+$ uv pip install numpy
 ```
 
 This will install the `numpy` package in the active virtual environment `mycustomenv`.
 
 ```{tip}
 To manage disk usage, you can clear unused or outdated files from `uv's` cache directory using: `uv cache clean`. This command removes cached Python builds, packages, and temporary files. This is useful if you regularly install new packages or Python versions.
+```
+
+### Deactivate the virtual environment
+
+To deactivate the environment, use the command:
+
+```
+$ deactivate
 ```
 
 ### Removing a `uv` Environment
