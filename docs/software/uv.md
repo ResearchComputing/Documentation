@@ -1,6 +1,6 @@
 # uv
 
-To support fast and reproducible Python workflows, CURC now provides [uv](https://docs.astral.sh/uv/), a modern Python package and environment manager developed by Astral. `uv` is implemented in Rust and designed for speed, reliability, and Python-native workflows using `venv`.
+To support fast and reproducible Python workflows, CURC now provides [uv](https://docs.astral.sh/uv/), a modern Python package and environment manager developed by Astral. `uv` is implemented in Rust and is designed for speed, reliability, and Python-native workflows using `venv`. `venv` is the standard tool in Python for creating lightweight, isolated environments. Each environment created with `venv` has its own directory with a Python interpreter and a separate set of installed packages. 
 
 ```{note}
 **uv is a new and actively developed tool.**  Because it is still evolving, new versions and features are released frequently. CURC will aim to keep this tool updated, but we cannot guarantee that the module will always reflect the absolute latest release.
