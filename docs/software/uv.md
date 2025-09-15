@@ -79,7 +79,7 @@ After activating the virtual environment, you can install Python packages using 
 $ uv pip install numpy
 ```
 
-This will install the `numpy` package in the active virtual environment `mycustomenv`.
+This will install the `numpy` package in the active virtual environment.
 
 ```{tip}
 To manage disk usage, you can clear unused or outdated files from `uv's` cache directory using: `uv cache clean`. This command removes cached Python builds, packages, and temporary files. This is useful if you regularly install new packages or Python versions.
