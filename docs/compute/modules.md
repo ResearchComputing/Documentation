@@ -8,6 +8,9 @@ between different versions.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/csgl4czhD_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+```{warning}
+The above video is outdated and shows loading modules on our old HPC system. For this reason, some content is outdated. However, the general ideas presented are helpful. We will be replacing this content soon, we apologize for the inconvenience.  
+```
 
 ## The `module` Command
 
@@ -19,14 +22,17 @@ or a compile node.
 
 To see what modules are available to load, ssh into a compile node by
 typing `acompile` from a login node, and type:
-
 ```
 module avail
 ```
-
 This will return a list of modules available to load into the
-environment. **_Please note if you run this command on a login node
-you will not receive a list of modules present on the system._** It is also important to note that if a module has dependencies, you may not see the module listed until dependencies are loaded.  
+environment.
+```{important} 
+If you run this command on a login node, you will not receive a list of modules present on the system. You must be on a compute node to see the full software stack. Additionally, if a module has dependencies, you may not see the module listed until dependencies are loaded.  
+```
+```{tip}
+If you would prefer a table detailing all modules, consult the [CURC Software Stack](../software/curc_software_stack.md) page. 
+```
 
 To load your chosen modules into the environment type:
 

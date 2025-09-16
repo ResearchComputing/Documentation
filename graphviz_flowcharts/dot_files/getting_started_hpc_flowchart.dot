@@ -28,6 +28,7 @@ digraph "" {
          container [label="Containerization", href="../software/containerization.html", target="_blank", id="clickable"];
          spack [label="Spack", href="../software/spack.html", target="_blank", id="clickable"];
          conda [label="Conda environments", href="../software/python.html", target="_blank", id="clickable"];
+         curc_software_stack [label="Available software", href="../software/curc_software_stack.html", target="_blank", id="clickable"];
 
          policies -> logging_in; 
          logging_in -> ack; 
@@ -54,4 +55,5 @@ digraph "" {
          using_software -> container;
          using_software -> spack;
          using_software -> conda;
+         modules -> curc_software_stack; 
      }
