@@ -258,7 +258,7 @@ The `umask` is usually represented by a string of octal numbers. So, for example
 
 To change the `umask`, simply type `umask` followed by the three digit value desired. For example, `umask 002`. You can also add this line to your `.bashrc` file to make the change persist between logins.
 
-The man page (run `man umask` from a terminal) for `umask` explains the details of this parameter.
+The man page (run `umask --help` from a terminal) for `umask` explains the details of this parameter.
 
 ## Creating and copying directories and files
 
