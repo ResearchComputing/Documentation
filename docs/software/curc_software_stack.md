@@ -2,6 +2,16 @@
 
 The following page provides a list of all software that is included in CURC's software stack. This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC. These modules are accessible on both Alpine and Blanca. For more information on viewing and using modules, please refer to our [Modules System](../compute/modules.md) page. 
 
+```{important}
+Before requesting a software installation, please review our [Software installations](../additional-resources/policies.md#software-installations) policy. This should be done before each request, as the policy is subject to change. If you have any questions about this policy, please feel free to reach out to us at <rc-help@colorado.edu>. 
+```
+
+:::{admonition} Legend for software table
+:class: tip
+
+**(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
+:::
+
 | Application           | Version(s)          | Description      |
 | --------------------- | ------------------- | ---------------- |
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
@@ -138,37 +148,3 @@ The following page provides a list of all software that is included in CURC's so
 | [Yambo](https://www.yambo-code.eu/wiki/index.php/Main_Page) | 5.2.2 |An ab initio tool for excited state calculations.|  
 | [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zip files.|
 | [zlib](https://www.zlib.net/) | 1.2.11, 1.3.1 | Lossless data-compression library.|
-
-**(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
-
-## Alpine Software Policy 
-
-Historically, software installations have been a sticking point for many users of CURC resources. Though we still encourage users to 
-install and manage their own packages locally, CURC has decided to move forward with the following software policy:
-
-CURC will perform software installations for users of CURC resources in a globally accessible module stack provided:
-
-- A user requires a specified software that is unavailable on the current stack.
-- A user requires a different version of a currently existing software which provides additional functionality required for the user’s work.
-- The user provides all of the relevant information including release, version, etc. 
-- The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (i.e., Anaconda Environments, Singularity Containers).
-
-Furthermore, licensed/proprietary software are subject the following requirements:
-
-- The user has access to an appropriate license for cluster usage.
-- The license can be installed or accessed on the cluster. 
-
-Software accepted for installation will be given an estimated installation time based on capacity of the team and urgency of the request. Note that this time is an estimation and not a strict deadline. Installed software will be available to load with a module in the ‘User Software’ category in the software stack. Unused modules will be pruned after 12 months without usage. Any pruned module may be restored by user request.
-
-Core software such as compilers, MPIs, and relevant libraries will be updated at a semesterly interval. A different version of these core softwares can be requested at any point, but installation may be performed in accordance to that timeline.
-
-All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources.
-
-To request a software installation please fill out the [Software Request Form](https://www.colorado.edu/rc/userservices/software-request)
-
-_Please note that this software policy is subject to change. Please review the software policy before submitting a request._
-
-
-Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
-
