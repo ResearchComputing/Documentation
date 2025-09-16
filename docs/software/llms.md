@@ -77,11 +77,11 @@ module load ollama
 :::{tip}
 If you would like to point to your own directory for the Ollama models, you can do this as you load the module e.g.: 
 ```
-export OLLAMA_MODELS=/projects/$USER/my_ollama_models; ml ollama/.latest
+export OLLAMA_MODELS=/projects/$USER/my_ollama_models; module load ollama
 ```
 :::
 
-At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided uv environment:
+At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided [uv](./uv.md#uv) environment:
 ```
 module load uv 
 source $CURC_UV_ENV_DIR/ollama-python-api-env/bin/activate
@@ -166,7 +166,7 @@ This will enable us to use Ollama from the command line.
 
 ## Installing the Ollama Python API 
 
-In the previous section, we setup the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv]:
+In the previous section, we setup the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](./uv.md#uv):
 ```
 module load uv
 uv venv $UV_ENVS/ollama-python-api-env
@@ -175,33 +175,30 @@ uv pip install ollama
 ```
 ::::
 
-
-
 ````
-
 `````
 #### Running Ollama from the command line 
 
 ::::{dropdown} Show 
 :icon: note
 
-7. At this point, Ollama is up and running. We can now run Ollama from the command line! Let's run a very simple model. 
-    ```{important}
-    The following command will install the model, if you do not have it. Before executing this command, see if CURC already provides the model you want to run! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
-    ```
-    ```
-    ollama run llama3.1:8b
-    ```
-9. After running the model, a prompt will appear where you can ask your question.
-    ```
-    >>> In one sentence, how cool is CU Research Computing?
-    CU Research Computing is pretty cool because it provides a robust suite of services and expert 
-    support to help researchers tackle complex computational challenges and accelerate their work.
-    ```
-10. To get out of the prompt:
-    ```
-    >>> /bye
-    ```
+Before proceeding with these instructions, be sure that the Ollama server is up and running. Once the Ollama server is up and running, we can interact with an LLM from the command line! Let's run a very simple model, say the 8 billion parameter Llama 3.1 model:
+```
+ollama run llama3.1:8b
+```
+```{note}
+If you are pointing to your own model directory, this command will install the model, if you do not have it. Depending on the model, this install can take awhile to complete. 
+```
+After running the model, Ollama will begin loading the model into memory. Note that this can take several minutes to do, depending on the model. Once the model has been loaded into memory, a prompt will appear where you can ask your question:
+```text
+>>> In one sentence, how cool is CU Research Computing?
+CU Research Computing is pretty cool because it provides a robust suite of services and expert 
+support to help researchers tackle complex computational challenges and accelerate their work.
+```
+To get out of the prompt perform the following action:
+```
+>>> /bye
+```
 ::::
 
 #### Using Ollama in a Python script
@@ -209,12 +206,7 @@ uv pip install ollama
 ::::{dropdown} Show 
 :icon: note
 
-Alternatively, one can run Ollama from within a Python script. 
-
-Refer to steps on creating an Ollama serve 
-
-To get access to our Ollama install in Python, we need to install Ollama's Python API. We will do this by creating a mamba environment and installing the necessary packages in that environment. 
-
+Before proceeding with these instructions, be sure that the Ollama server is up and running and the Ollama Python API is available. To begin, we need to create a Python script that specifies the model we want to use and input we want to provide to that model. Let's create a script called `llama_query.py` with the following content:
 ```python
 from ollama import chat
 from ollama import ChatResponse
@@ -228,13 +220,19 @@ response: ChatResponse = chat(model='llama3.1:8b', messages=[
 
 print(response.message.content)
 ```
+In this script we tell Ollama to use the `llama3.1:8b` model, provide it the query `In one sentence, how cool is CU Research Computing?`, and then print the response of the LLM.
 
+To run the model, all we need to do is run this script: 
 ```
-python test.py 
-CU Research Computing is an exceptionally cool and powerful resource that provides researchers with access to high-performance computing clusters, advanced data storage systems, and expert support to facilitate cutting-edge research and innovation.
+python llama_query.py
 ```
-
-For more tutorials and usages of the API, see https://github.com/ollama/ollama-python
+At the time of running this model, we obtain the following output:
+```text
+CU Research Computing is an exceptionally cool and powerful resource that provides researchers 
+with access to high-performance computing clusters, advanced data storage systems, and expert 
+support to facilitate cutting-edge research and innovation.
+```
+This of course is just a simple example showing how one can query Ollama models from within a Python script. This functionality opens the door for more complex queries and scripts. This example also touches on just one aspect of the Python API. For more tutorials and documentation of the API, see the `examples` directory and `README.md` file in the official [ollama-python](https://github.com/ollama/ollama-python) GitHub repository. 
 ::::
 
 ### Transformers by Hugging Face 
