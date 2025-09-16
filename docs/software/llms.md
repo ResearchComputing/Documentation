@@ -49,7 +49,7 @@ Add content here
 
 In this section, we provide instructions for obtaining access to common LLM frameworks. Additionally, we provide simple examples that demonstrate how to use these LLM frameworks. 
 ```{important}
-- Due to the rapid pace of development in most LLM frameworks, CURC will provide only the most up-to-date version for the provided framework modules. These versions will be updated during our regular monthly planned maintenance. If you need older or newer versions of these frameworks, we provide detailed instructions below for installing the version of the framework that works for your use case and common ways to use this framework. 
+- Due to the rapid pace of development in most LLM frameworks, CURC will provide only the most up-to-date version for the provided framework modules. These versions will be updated during our regular monthly planned maintenance. If you need older or newer versions of these frameworks, we provide detailed instructions below for installing specific versions of the frameworks. 
 - Current instructions and modules are only available for NVIDIA GPUs.
 ```
 
@@ -61,58 +61,40 @@ In this section, we provide instructions for obtaining access to common LLM fram
 `````{tab-set}
 :sync-group: tabset-ollama
 
-````{tab-item} Quickstart
+````{tab-item} CURC provided install
 :sync: ollama-quickstart
 
-In this tab, we provide instructions for using our system installed Ollama. Although these instructions greatly simplify the steps needed to use Ollama, the system installed Ollama or provided API may not fit your needs. If you need to install a different version of Ollama or need to customize the provided environment, you will need to follow the instructions in the [In-depth instructions tab](?tabset-ollama=ollama-indepth#tabset-ref-ollama){.external}. 
+In this tab, we provide instructions for using our system installed Ollama. Although these instructions greatly simplify the steps needed to use Ollama, the system installed Ollama or provided API may not fit your needs. If you need to install a different version of Ollama or need to customize the provided environment, you will need to follow the instructions in the [Self-install instructions tab](?tabset-ollama=ollama-indepth#tabset-ref-ollama){.external}. 
 
 To begin, we first need to jump on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition.
 ```
 sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
 ```
-Once the session has successfully started, 
-
-
-
-::::{dropdown} Show how to use a different model path
-:icon: note 
-
-In cases where you want to use a model that is different from CURC installed models, you will need to 
-
-
-First, set the different module path and make sure it exists e.g. 
+Once the session has successfully started, we can startup an Ollama server and set default environment variables by loading the Ollama module:
 ```
-export OLLAMA_MODELS=/projects/$USER/my_ollama_models
-mkdir -p $OLLAMA_MODELS
+module load ollama
 ```
-You will then need to restart the serve. To do this, we first need to stop the current session by killing the Ollama process. You can find this process using the following:
+:::{tip}
+If you would like to point to your own directory for the Ollama models, you can do this as you load the module e.g.: 
 ```
-[user1@c3gpu-c2-u13 ~]$ ps -u $USER | grep ollama 
-2210854 pts/0    00:00:00 ollama
+export OLLAMA_MODELS=/projects/$USER/my_ollama_models; ml ollama/.latest
 ```
-The number at the beginning of this output is the Ollama process (e.g. `2210854`). You then need to kill this process e.g. 
+:::
+
+At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided uv environment:
 ```
-kill 2210854
+module load uv 
+source $CURC_UV_ENV_DIR/ollama-python-api-env/bin/activate
 ``` 
-Once the process has been successfully killed, you can then restart the Ollama serve: 
-```
-nohup ollama serve > /dev/null 2>&1 &
-```
-You can now install any compatible model you want by pulling the model down and running it. For more information on this topic, see the [Ollama README.md](https://github.com/ollama/ollama/blob/main/README.md). 
-
-::::
-
 
 ````
 
-````{tab-item} In-depth instructions
+````{tab-item} Self-install instructions
 :sync: ollama-indepth
 
+Below we provide detailed instructions for users who want to install their own version of Ollama and compatible Python API. 
 
-# Installation
-
-::::{dropdown} Show 
-:icon: note
+## Ollama install 
 
 To begin, let's create a directory specifically for the version of Ollama that we want to install (here we choose version `v0.11.10`):
 ```
@@ -129,60 +111,80 @@ curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-l
 tar -xzf ollama-linux-amd64.tgz
 rm ollama-linux-amd64.tgz
 ```
-After execution, this command should create a `bin` and `lib` directory containing our Ollama binary and associated libraries, respectively.
+After execution, these commands should create a `bin` and `lib` directory containing our Ollama binary and associated libraries, respectively.
+
+## Setting up the Ollama install 
+
+Now that we have Ollama installed, we need to startup an Ollama server on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). We will then be able to interact with Ollama and our LLMs from the command line. For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition:
+```
+sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+```
+```{important}
+For non-testing workflows, users should request NVIDIA GPUs using the `aa100` partition. 
+```
+
+Now that we have a session started, we will export important environment variables using the `ollama_v` variable we established in the previous section. 
+```
+export PATH=/projects/$USER/ollama/$ollama_v/bin:$PATH
+export LD_LIBRARY_PATH=/projects/$USER/ollama/$ollama_v/lib:$LD_LIBRARY_PATH
+export OLLAMA_TMPDIR=$SCRATCHDIR/$USER/ollama_temp
+export OLLAMA_NUM_PARALLEL=1
+export OLLAMA_MAX_LOADED_MODELS=1
+```
+When starting an Ollama server, it is important to pick a host port that is not used by others. You can use the following code to set this port:
+```
+while true; do
+rand=$(( (RANDOM << 15) | RANDOM ))
+port=$((rand % (9999 - 9000 + 1) + 9000))
+if ! lsof -i :$port &>/dev/null; then
+    export OLLAMA_HOST=0.0.0.0:$port
+    break
+fi
+done
+```
+We can now set the directory where our Ollama models are stored.
+```
+export OLLAMA_MODELS=/projects/$USER/my_ollama_models
+```
+```{note}
+Before setting this variable, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
+```
+```{important}
+All environment variables that have been set so far need to be set every time you want to use your install of Ollama. 
+```
+
+Ensure that the proper directories exist.
+```
+mkdir -p $OLLAMA_TMPDIR
+mkdir -p $OLLAMA_MODELS
+```
+Finally, we can start an Ollama server in the background
+```
+nohup ollama serve > /dev/null 2>&1 &
+```
+This will enable us to use Ollama from the command line.
+
+## Installing the Ollama Python API 
+
+In the previous section, we setup the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv]:
+```
+module load uv
+uv venv $UV_ENVS/ollama-python-api-env
+source $UV_ENVS/ollama-python-api-env/bin/activate
+uv pip install ollama
+```
 ::::
 
-# Running an LLM from the command line
+
+
+````
+
+`````
+#### Running Ollama from the command line 
 
 ::::{dropdown} Show 
 :icon: note
-Now that we have Ollama installed, we will startup an Ollama serve on a GPU compute node and interact with the LLM from the command line.
 
-1. Start up an interactive job on a GPU node. For testing purposes, we will use our A100 testing partition:
-    ```
-    sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
-    ```
-    ```{important}
-    For non-testing workflows, users should request NVIDIA GPUs using the `aa100` partition. 
-    ```
-2. Now that we have a session started, we will export important environment variables using the `ollama_v` variable we established in the previous section. 
-    ```{warning}
-    Maybe put this stuff in the .bashrc
-    ```
-    ```
-    export PATH=/projects/$USER/ollama/$ollama_v/bin:$PATH
-    export LD_LIBRARY_PATH=/projects/$USER/ollama/$ollama_v/lib:$LD_LIBRARY_PATH
-    export OLLAMA_TMPDIR=$SCRATCHDIR/$USER/ollama_temp
-    export OLLAMA_NUM_PARALLEL=1
-    export OLLAMA_MAX_LOADED_MODELS=1
-    ```
-3. When starting an Ollama serve, it is important to pick a host port that is not used by others. You can use the following code to set this port:
-    ```
-    while true; do
-    rand=$(( (RANDOM << 15) | RANDOM ))
-    port=$((rand % (9999 - 9000 + 1) + 9000))
-    if ! lsof -i :$port &>/dev/null; then
-        export OLLAMA_HOST=0.0.0.0:$port
-        break
-    fi
-    done
-    ```
-4. Now, we select the directory where our Ollama models are stored.
-    ```
-    export OLLAMA_MODELS=/projects/$USER/my_ollama_models
-    ```
-    ```{note}
-    Before setting this variable, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
-    ```
-5. Ensure that the proper directories exist
-    ```
-    mkdir -p $OLLAMA_TMPDIR
-    mkdir -p $OLLAMA_MODELS
-    ```
-6. Now, we can start an Ollama serve in the background
-    ```
-    nohup ollama serve > /dev/null 2>&1 &
-    ```
 7. At this point, Ollama is up and running. We can now run Ollama from the command line! Let's run a very simple model. 
     ```{important}
     The following command will install the model, if you do not have it. Before executing this command, see if CURC already provides the model you want to run! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
@@ -202,7 +204,7 @@ Now that we have Ollama installed, we will startup an Ollama serve on a GPU comp
     ```
 ::::
 
-# Running an LLM from a Python script
+#### Using Ollama in a Python script
 
 ::::{dropdown} Show 
 :icon: note
@@ -212,18 +214,6 @@ Alternatively, one can run Ollama from within a Python script.
 Refer to steps on creating an Ollama serve 
 
 To get access to our Ollama install in Python, we need to install Ollama's Python API. We will do this by creating a mamba environment and installing the necessary packages in that environment. 
-
-Link to conda docs 
-
-Create a mamba environment specifically for this package: 
-```
-module load miniforge
-mamba create -n ollama_api python=3.12
-mamba activate ollama_api
-pip install ollama
-```
-
-Start up the serve 
 
 ```python
 from ollama import chat
@@ -245,12 +235,7 @@ CU Research Computing is an exceptionally cool and powerful resource that provid
 ```
 
 For more tutorials and usages of the API, see https://github.com/ollama/ollama-python
-
 ::::
-
-````
-
-`````
 
 ### Transformers by Hugging Face 
 
@@ -267,7 +252,7 @@ Quick start
 
 ````
 
-````{tab-item} In-depth instructions 
+````{tab-item} Self-install instructions
 :sync: hf-transformers-indepth
 
 
