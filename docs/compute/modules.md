@@ -28,7 +28,7 @@ module avail
 This will return a list of modules available to load into the
 environment.
 ```{important} 
-If you run `module avail` from a login node, you will not see a full list of available software modules on the system. You must be on a compute node to see the full software stack. Additionally, if a module has dependencies, you may not see it listed until its dependencies have been loaded.  
+If you run `module avail` from a login node, you will not see a full list of available software modules on the system. You must be on a compute node to see the full software stack. Additionally, if a module has dependencies, you may not see them listed until those dependencies have been loaded.  
 ```
 ```{tip}
 If you would prefer a table detailing all modules, consult our [CURC-Provided Software](../software/curc_provided_software.md) page. 
