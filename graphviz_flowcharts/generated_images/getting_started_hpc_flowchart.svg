@@ -301,7 +301,7 @@
 </g>
 <!-- curc_software_stack -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="../software/curc_software_stack.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../software/curc_provided_software.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="168.47" cy="-18" rx="84" ry="18"/>
 <text text-anchor="middle" x="168.47" y="-14.47" font-family="Verdana" font-size="12.00" fill="white">Available software</text>
 </a>

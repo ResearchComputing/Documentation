@@ -1,4 +1,4 @@
-# CURC Software Stack
+# CURC-Provided Software
 
 The following page provides a list of all software that is included in CURC's software stack. This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC. These modules are accessible on both Alpine and Blanca. For more information on viewing and using modules, please refer to our [Modules System](../compute/modules.md) page. 
 
@@ -141,6 +141,7 @@ Before requesting a software installation, please review our [Software installat
 | [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) | 0.39 | Trimmomatic performs a variety of useful trimming tasks for Illumina paired-end and single-ended data. |
 | [UCX](https://openucx.org/) | 1.10.1, 1.12.1 (D) | A communication framework for data-centric and high-performance applications.| 
 | [UDUNITS](https://www.unidata.ucar.edu/software/udunits/) | 2.2.20, 2.2.24, 2.2.25, 2.2.28 (D) |The UDUNITS package supports units of physical quantities. Its C library provides for arithmetic manipulation of units and for conversion of numeric values between compatible units.|
+| [uv](https://docs.astral.sh/uv/) | 0.8.15 (D) | uv is a Python package manager designed for fast, reproducible workflows. Built with Rust, uv uses the venv tool to create isolated Python environments, making it easy to manage dependencies and ensure consistency across different projects. For more information on using uv, see [CURC's uv usage guide](./uv.md)| 
 | [Valgrind](https://valgrind.org/) | 3.11.0, 3.17.0 (D) |Valgrind is an instrumentation framework containing tools that can automatically detect many memory management and threading bugs, and profile your programs in detail.| 
 | [VAPOR](https://github.com/NCAR/VAPOR) | 3.9.1 |VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers.|
 | [vtf3](https://www.paratools.com/otf/) | 1.43 |VTF3 trace generation package.|  

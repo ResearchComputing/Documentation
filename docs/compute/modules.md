@@ -31,7 +31,7 @@ environment.
 If you run this command on a login node, you will not receive a list of modules present on the system. You must be on a compute node to see the full software stack. Additionally, if a module has dependencies, you may not see the module listed until dependencies are loaded.  
 ```
 ```{tip}
-If you would prefer a table detailing all modules, consult the [CURC Software Stack](../software/curc_software_stack.md) page. 
+If you would prefer a table detailing all modules, consult our [CURC-Provided Software](../software/curc_provided_software.md) page. 
 ```
 
 To load your chosen modules into the environment type:
