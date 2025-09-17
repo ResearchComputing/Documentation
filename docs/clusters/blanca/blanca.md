@@ -13,6 +13,11 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
 
+```{hint}
+- For a list of CURC provided software, see our [CURC-Provided Software](../../software/curc_provided_software.md) page.
+  - Users can also submit a software request using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request). Please review our [CURC-Provided Software](../../software/curc_provided_software.md) page before doing so.
+- Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
+```
 
 ## Job Scheduling
 

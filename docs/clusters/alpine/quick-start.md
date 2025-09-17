@@ -21,9 +21,11 @@ must be compiled using `acompile`. More information about the `acompile` command
 [partitions](./alpine-hardware.md#partitions)
 section.
 
-Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
-You can also submit a [software 
-request](./software.md#alpine-software) using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request).
+```{hint}
+- For a list of CURC provided software, see our [CURC-Provided Software](../../software/curc_provided_software.md) page.
+  - Users can also submit a software request using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request). Please review our [CURC-Provided Software](../../software/curc_provided_software.md) page before doing so.
+- Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
+```
 
 ## Cluster Summary
 ### Nodes
