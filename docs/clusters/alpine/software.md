@@ -8,7 +8,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | Application           | Version(s)          | Description      |
 | --------------------- | ------------------- | ---------------- |
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
-| [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0, 2.3.1, 3.0.0 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structures.| 
+| [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0, 2.3.1, 3.0.0, 3.0.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structures.| 
 | [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 (D) | FEKO is an electromagnetics software developed by Altair Engineering for use in field calculations for bodies of arbitrary shapes. | 
 | [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11, 2022.10, 2023.09 (D) | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](../../software/python.md)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 (D), EM23.1 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
@@ -72,7 +72,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
 | [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e, 9f | Open source JPEG image library.|
 | [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.0, 1.10.2, 1.11.6 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
-| [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3, 29Sept21, 29Sept2021_update3.1.1 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
+| [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 22July25, 2Aug23, 29Sept21, 29Sept2021_update3, 29Sept21, 29Sept2021_update3.1.1 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4, 4.9.2 (D) | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2, 7.0.0 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
 | [Linaro DDT (formerly Allinea DDT)](https://www.linaroforge.com/linaro-ddt/) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 

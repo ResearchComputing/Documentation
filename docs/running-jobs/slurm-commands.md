@@ -119,7 +119,7 @@ averss      | Average resident set size of all tasks.
 avevmsize   | Average virtual memory of all tasks in a job.
 jobid       | The id of the Job.
 maxrss      | Maximum resident set size (peak physical memory usage) across all tasks in the job.
-maxvmsize    | Maximum virtual memory size (peak memory allocated, including malloc'ed memory) across all tasks.
+maxvmsize    | Maximum virtual memory size (peak memory allocated, including malloced memory) across all tasks.
 ntasks      | Number of tasks in a job.
 
 ```{note}
