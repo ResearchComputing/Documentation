@@ -98,6 +98,7 @@ cloud/cumulus
 :maxdepth: 2
 :caption: Software
 
+software/curc_provided_software
 software/llms
 software/loadbalancer
 software/gaussian

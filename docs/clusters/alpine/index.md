@@ -17,7 +17,6 @@ users. For full details about node access, please refer to the Alpine Node Acces
 quick-start
 alpine-hardware
 slurm_directive_ex
-software
 allocations
 moving-from-summit
 important-notes
