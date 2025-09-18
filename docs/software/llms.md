@@ -237,7 +237,7 @@ This of course is just a simple example showing how one can query Ollama models 
 
 ### Transformers by Hugging Face 
 
-Add introduction to Transformers 
+[Transformers](https://huggingface.co/docs/transformers/en/index#transformers) is Hugging Face's LLM framework. It should be noted that Transformers and Ollama are not exactly comparable, as Transformers includes additional functionality. However, it does provide a framework for accessing and running LLMs.  
 
 (tabset-ref-hf-transformers)=
 `````{tab-set}
@@ -254,41 +254,40 @@ Quick start
 :sync: hf-transformers-indepth
 
 
-# Installation
+## Setup a Hugging Face Account
 
-::::{dropdown} Show 
-:icon: note
+In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
-1. Create a hugging face account: https://huggingface.co/join
+## Installing Transformers
 
-2. Generate a token for our system using https://huggingface.co/settings/tokens
-Do read permissions for simplicity and copy the token 
+In this section, we describe how to setup a minimal [uv](./uv.md) environment that provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
+```
+sinteractive --ntasks=4 --partition=acompile --qos=compile --nodes=1 --time=01:00:00
+```
 
-3. Start up an interactive job on a GPU node. For testing purposes, we will use our A100 testing partition:
-    ```
-    sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
-    ```
-
-module load miniforge 
-mamba create -n hf-transformers-env 
-mamba activate hf-transformers-env
-mamba install conda-forge::transformers
-
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
-pip install datasets evaluate accelerate timm
-pip install huggingface_hub[cli]
-
+Once a session has been established, we now need to create an environment that will allow us to work with the Transformers library and dependencies needed by the LLMs we would like to use. For this example, we will create a virtual environment called `hf-transformers-env`, use Python 3.12, and assume that only PyTorch is needed for our LLMs. First we create our environment:
+```
+module load uv 
+uv venv $UV_ENVS/hf-transformers-env --python 3.12
+```
+Now, we activate the environment and install all of our dependencies: 
+```
+source $UV_ENVS/hf-transformers-env/bin/activate
+uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
+uv pip install huggingface_hub[cli]
+uv pip install -U transformers datasets evaluate accelerate timm kernels
+```
 ```{note}
 Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. 
 ```
-
-```{warning} 
-put in .bashrc or create script maybe? 
+At this point, all libraries needed to run our LLM examples have been installed. However, it is very important to set the following environment variables and makes sure the the associated directories exist (this will ensure that your home directory does not fill up):
 ```
 export HF_HOME=/projects/$USER/hf_transformers
 export HF_HUB_CACHE=/projects/$USER/hf_transformers/.cache
-
 mkdir -p $ HF_HUB_CACHE
+```
+
+## Dowloading models 
 
 4. Do auth login on our system 
 ```
@@ -297,10 +296,14 @@ hf auth login
 When prompted for the token, provide the one you gave above.
 Add token as git credential? (Y/n) n 
 
-5. While logged in go to the Hugging Face model card that you want to run and accept the terms of use (if it has them).
+5. While logged in go to the Hugging Face model card that you want to run and accept the terms of use (if it has them). For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
 
 ```{note}
 Depending on the model, it can take 30 minutes or more to get access to the model. 
+```
+
+```
+huggingface-cli download openai/gpt-oss-20b --include "original/*" --local-dir gpt-oss-20b/
 ```
 
 6. Once you have received the email that you have access to your model (if it is a gated model), you can then proceed to use the model: 
@@ -315,9 +318,6 @@ model_inputs = tokenizer(["The secret to baking a good cake is "], return_tensor
 generated_ids = model.generate(**model_inputs, max_length=30)
 print(tokenizer.batch_decode(generated_ids)[0])
 ```
-
-
-::::
 
 # Running an LLM 
 
