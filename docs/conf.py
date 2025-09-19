@@ -64,7 +64,10 @@ myst_substitutions = {
    'alpine_total_acompile_nodes': '2',
    'alpine_total_atesting_cpu_nodes': '4',
    'alpine_total_atesting_a100_nodes': '1',
-   'alpine_total_atesting_mi100_nodes': '1'
+   'alpine_total_atesting_mi100_nodes': '1',
+
+   # Alpine Array Jobs
+   'alpine_max_number_array_jobs' : '1,000'
 }
 
 source_suffix = {
