@@ -61,7 +61,7 @@ In order for SLURM to treat a batch script as a Job Array, it must include the `
 ```
 
 ```{important}
-The tasks in a job array are not guaranteed to run simultaneously or in any specific order. Therefore, it is crucial that you write your batch script so that each task in your job array can run independently. If your tasks must execute in a particular sequence, you will need to include the `--dependency` directive [TODO ADD LINK TO DEPENDENCY SECTION]
+The tasks in a job array are not guaranteed to run simultaneously or in any specific order. Therefore, it is crucial that you write your batch script so that each task in your job array can run independently. If your tasks must execute in a particular sequence, you will need to include the `--dependency` directive. Further information on the `--dependency` directive can be found in [SLURM's documentation](https://slurm.schedmd.com/job_array.html#dependencies).
 ```
 
 ## Setting the Job Array Indexes
