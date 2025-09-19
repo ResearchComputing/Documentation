@@ -11,7 +11,7 @@ To run an interactive job on Research Computing resources, request an interactiv
 The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
 
 ```bash
-sinteractive --partition=amilan --time=00:10:00 --ntasks=1
+sinteractive --partition=amilan --time=00:10:00 --ntasks=1 --nodes=1 --qos=normal
 ```
 
 This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the amilan partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
