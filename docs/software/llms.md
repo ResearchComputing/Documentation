@@ -260,7 +260,7 @@ In order to install models from Hugging Face, you will need to create an account
 
 ## Installing Transformers
 
-In this section, we describe how to setup a minimal [uv](./uv.md) environment that provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
+In this section, we describe how to setup a minimal [uv](./uv.md) environment, which provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
 ```
 sinteractive --ntasks=4 --partition=acompile --qos=compile --nodes=1 --time=01:00:00
 ```
@@ -284,10 +284,24 @@ At this point, all libraries needed to run our LLM examples have been installed.
 ```
 export HF_HOME=/projects/$USER/hf_transformers
 export HF_HUB_CACHE=/projects/$USER/hf_transformers/.cache
+export HF_HUB_DISABLE_TELEMETRY=True
 mkdir -p $ HF_HUB_CACHE
 ```
 
-## Dowloading models 
+````
+
+`````
+
+#### Dowloading models 
+
+::::{dropdown} Show 
+
+At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environmenmt. We can now proceed with installing the LLMs we would like to run. If you are using our Transformers model, your model path automatically points to CURC's models (see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) for more information). If you would like to install your own models, be sure to 
+
+For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). In particular, see the [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete). 
+
+
+`hf env`
 
 4. Do auth login on our system 
 ```
@@ -318,8 +332,9 @@ model_inputs = tokenizer(["The secret to baking a good cake is "], return_tensor
 generated_ids = model.generate(**model_inputs, max_length=30)
 print(tokenizer.batch_decode(generated_ids)[0])
 ```
+::::
 
-# Running an LLM 
+#### Running an LLM 
 
 ::::{dropdown} Show 
 :icon: note
@@ -333,7 +348,3 @@ https://huggingface.co/docs/transformers/installation
 https://huggingface.co/models
 
 ::::
-
-````
-
-`````
