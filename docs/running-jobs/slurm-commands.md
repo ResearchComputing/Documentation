@@ -56,6 +56,13 @@ $ squeue --user=your_rc-username --start --iterate=n_seconds
 Press `ctrl`-`c` to stop the command from looping and bring you back
 to the terminal.
 
+````{important}
+  Do not use an `--iterate=` value less than 60 (i.e. 1 minute). Shorter iterations can overwhelm the Slurm controller and lead to the suspension of RC accounts. 
+  ```bash
+  $ squeue --user=your_rc-username --start --iterate=60
+  ```
+````
+
 ```{seealso}
 For more information on squeue, [visit the Slurm page on
 squeue](https://slurm.schedmd.com/squeue.html)
@@ -94,8 +101,7 @@ command as such:
 $ sstat --jobs=your_job-id
 ```
 
-By default, sstat will pull up significantly more information than
-what would be needed in the command's default output. To remedy this,
+The default output from `sstat` may not include all the information you need. To remedy this,
 we can use the `--format` flag to choose what we want in our
 output. The format flag takes a list of comma-separated variables
 that specify output data:
@@ -112,15 +118,19 @@ avecpu      | Average CPU time of all tasks in a job.
 averss      | Average resident set size of all tasks.
 avevmsize   | Average virtual memory of all tasks in a job.
 jobid       | The id of the Job.
-maxrss      | Maximum number of bytes read by all tasks in the job.
-maxvsize    | Maximum number of bytes written by all tasks in the job.
+maxrss      | Maximum resident set size (peak physical memory usage) across all tasks in the job.
+maxvmsize    | Maximum virtual memory size (peak memory allocated, including malloced memory) across all tasks.
 ntasks      | Number of tasks in a job.
 
-As an example, let's print out a job's average job id, cpu time, max
-rss, and a number of tasks. We can do this by typing out the command:
+```{note}
+`sstat` requires either a full job step ID (e.g., `123456.0`) or the `-a` flag to return results. Supplying only the job ID (e.g., `123456`) may result in no output.
+```
+
+As an example, let's print out a job's id, average cpu time, max
+rss, and the number of tasks. We can do this by typing out the command:
 
 ```bash
-sstat --jobs=your_job-id --format=jobid,cputime,maxrss,ntasks
+sstat --jobs=your_job-id -a --format=jobid,avecpu,maxrss,ntasks
 ```
 
 ```{seealso}

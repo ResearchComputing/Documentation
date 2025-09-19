@@ -98,6 +98,7 @@ cloud/cumulus
 :maxdepth: 2
 :caption: Software
 
+software/curc_provided_software
 software/loadbalancer
 software/gaussian
 software/matlab
@@ -108,6 +109,7 @@ software/containerization
 software/alphafold
 software/spack
 software/sratoolkit
+software/uv
 
 ```
 

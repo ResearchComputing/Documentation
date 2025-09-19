@@ -13,6 +13,11 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
 
+```{hint}
+- For a list of CURC provided software, see our [CURC-Provided Software](../../software/curc_provided_software.md) page.
+  - Users can also submit a software request using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request). Please review our [CURC-Provided Software](../../software/curc_provided_software.md) page before doing so.
+- Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
+```
 
 ## Job Scheduling
 
@@ -172,6 +177,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 ```bash
 #SBATCH --qos=blanca-ics
+#SBATCH --account=blanca-ics
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=36:00:00
@@ -186,6 +192,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 ```bash
 #SBATCH --qos=blanca-sha
+#SBATCH --account=blanca-sha
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 #SBATCH --time=7-00:00:00
@@ -201,6 +208,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 
 ```bash
 #SBATCH --qos=blanca-curc-gpu
+#SBATCH --account=blanca-curc
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --time=36:00:00
@@ -263,7 +271,7 @@ Here are examples of Slurm directives that can be used in your batch scripts in 
 **To start a 2-hr interactive job on one core on a blanca-ceae node, run this at the command line:**
 
 ```bash
-sinteractive --qos=blanca-ceae --export=NONE --time=02:00:00
+sinteractive --qos=blanca-ceae --account=blanca-ceae --export=NONE --time=02:00:00
 ```
 
 ````
@@ -367,7 +375,7 @@ python myscript.py
 #!/bin/bash
 #SBATCH --time=06:00:00
 #SBATCH --qos=preemptable
-#SBATCH --partition=blanca-ccn
+#SBATCH --partition=blanca-bortz
 #SBATCH --job-name=test
 #SBATCH --nodes=2
 #SBATCH --ntasks=32

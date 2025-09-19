@@ -1,7 +1,8 @@
 # AWS - Billing
 
-Note: The data in the AWS Billing Console  doesn’t always match with the invoices received (this is due to our reseller managing their billing to help pay for our discounts). To check for the actual billing, CloudCheckr is the right source to look at. Below is the complete document to view the billing in the CloudCheckr and to set Email Notifications.
-
+```{note}
+The data in AWS Cost Explorer does not directly map to the charges in the invoices you receive. See the links below to learn how to accurately calculate your charges in AWS Cost Explorer and set budget alerts.
+```
 
 ```{toctree}
 :maxdepth: 1
@@ -13,9 +14,9 @@ viewbilling
 
 ```{toctree}
 :maxdepth: 1
-:caption: Email Notifications
+:caption: Budget Actions
 
-alerts
+budget-actions
 
 ```
 

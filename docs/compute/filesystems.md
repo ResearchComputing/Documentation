@@ -256,7 +256,9 @@ The `umask` is usually represented by a string of octal numbers. So, for example
 | 2           | -w-             | 
 | 1           | --x             |
 
-The man page for `umask` explains the details of this parameter.
+To change the `umask`, simply type `umask` followed by the three digit value desired. For example, to remove "write" permissions for other users you would run `umask 002`. You can also add this line to your `.bashrc` file to make the change persist between logins.
+
+The man page (run `umask --help` from a terminal) for `umask` explains the details of this parameter.
 
 ## Creating and copying directories and files
 

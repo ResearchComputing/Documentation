@@ -21,15 +21,11 @@ Containers distinguish themselves through their low computational overhead and t
 
 ## Apptainer
 
-Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine compute nodes, so there is no need to load any module to run Apptainer commands on Alpine. However, **Apptainer is not currently installed on Blanca nodes**. It is recommended that users running containers on Blanca load the newest Singularity module, rather than Apptainer: 
+Apptainer is a containerization software package that does not require users to have administrative privileges when running containers, and can thus be safely used on Research Computing resources. Apptainer is installed directly on all Alpine and Blanca compute nodes, so there is no need to load any module to run Apptainer commands. 
 
+```{note}
+Modules for Singularity -- the predecessor to Apptainer -- are still available on Alpine and Blanca for legacy reasons. Singularity does not have all of the functionality illustrated in this documentation. CURC recommends only using Singularity when absolutely necessary.   
 ```
-module load singularity/3.7.4
-```
-
-```{warning}
-Users who use Singularity instead of Apptainer will not be able to deploy all of the functionality illustrated in this documentation. Most notably, users will be unable to deploy `build` functionality when using Singularity instead of Apptainer.
-``` 
 
 Much like Docker, Apptainer is a containerization software designed around compartmentalization of applications, libraries, and workflows. This is done through the creation of compressed images in the `.sif` format which can be run as ephemeral containers. Unlike Docker, however, Apptainer does not manage images, containers, or volumes through a central application. Instead, Apptainer generates saved image files that can either be mutable or immutable based on compression.
 
@@ -122,15 +118,16 @@ Bootstrap: docker
 From: ubuntu:20.04
 
 %help
-	I am help text!
+        I am help text!
 
-%setup		
-	apt-get update
-	apt-get install nano
-	apt-get install gcc 
+%post
+        apt-get update
+        apt-get install -y nano
+        apt-get install -y gcc
 
 %runscript
-	echo “hello! I am a container!”
+        echo "hello! I am a container!"
+
 ```
 
 #### Apptainer Build
@@ -175,15 +172,15 @@ From there, you can install software and dependencies directly within the sandbo
 ### Building MPI-enabled images
 MPI-enabled Apptainer containers can be deployed on Alpine with the caveat that the MPI software within the container has a similar (not necessarily exact) version with MPI software available on the system. This requirement diminishes the portability of MPI-enabled containers, as they may not run on other systems without compatible MPI software. Regardless, MPI-enabled containers can still be a very useful option in many cases. 
 
-Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Singularity container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
+Here we provide an example of using a gcc compiler with OpenMPI. Alpine uses an Infiniband interconnect. In order to use a Apptainer container with OpenMPI (or any MPI) on Alpine, OpenMPI needs to be installed both inside and outside of the container. More specifically, the _same_ version of OpenMPI needs to be installed inside and outside (at least very similar, you can sometimes get away with two different minor versions, e.g. 2.1 and 2.0). 
 
 CURC can provide users with a recipe that ensures the appropriate version of OpenMPI is installed in the image. This recipe can be used as a template to build your own MPI-enabled container images for Alpine.
 
-Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of a Singularity image are run. The following example runs `mpi_hello_world` with MPI from a container.
+Once you’ve built the container with one of the methods outlined above, you can place it on Alpine and run it on a compute node. The following is an example of running a gcc/OpenMPI container with Apptainer on Alpine. The syntax is a normal MPI run where multiple instances of an Apptainer image are run. The following example runs `mpi_hello_world` with MPI from a container.
 
 ```
-ml gcc/11.2.0
-ml openmpi/4.1.1
+ml gcc/14.2.0
+ml openmpi/5.0.6
 
 mpirun -np 4 apptainer exec openmpi.sif mpi_hello_world"
 ```
@@ -267,7 +264,7 @@ docker run -it example-python python
 
 To build your own custom Docker images that can then be run as containers, you will need to first create a Dockerfile. As stated above, a Dockerfile is essentially a recipe that specifies a source image to build upon, along with a set of instructions Docker will run when building the new image. The Dockerfile will also contain a set of instructions that Docker can run by default when the image is executed as a container instance.
 
-Just like a Makefile, a Dockerfile must be named `Dockerfile and will look something like this:
+Just like a Makefile, a Dockerfile must be named `Dockerfile` and will look something like this:
 
 ```dockerfile
 FROM 	ubuntu:18.04

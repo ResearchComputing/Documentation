@@ -55,13 +55,7 @@ GUI.
 
 ## Guest Collections (Globus Shared Endpoints)
 
-Using a Guest Collection (also known as a "Shared Endpoint"), you can share
-any file or folder that you have access to with anyone who
-has a Globus account. This is particularly useful for PetaLibrary users. PetaLibrary 
-allocation owners can nominate a technical contact that is able to create [Globus Guest
-Collections](https://docs.globus.org/how-to/share-files/) within their PetaLibrary allocation.
-
-Detailed information on creating Guest Collections is available [at
+Guest Collections (also known as "Shared Endpoints") enable PetaLibrary customers to share a given folder in a PetaLibrary allocation with anyone who has a Globus account (both at CU and outside of CU). Detailed information on creating Guest Collections is available [at
 docs.globus.org](https://docs.globus.org/how-to/share-files/).
 
 ## Globus to AWS S3 Bucket connection
@@ -223,6 +217,31 @@ system that it was generated on.**
 
 With an ssh key pair generated and uploaded to <https://registry.cilogon.org>,
 you are ready to transfer files over the DTNs using `rsync` or `scp`. 
+
+### Managing public keys
+
+Depending on how you manage your public keys, you may need to explicitly specify the public key 
+for authentication. To inform `rsync` or `scp` which public key to use for authentication,
+you can include the key's path within the command:
+
+```bash
+# using rsync
+rsync -av -e "ssh -i ~/.ssh/id_ed25529" ./myfile.txt <username>@dtn.rc.colorado.edu:/projects/ralphie/myfile.txt
+
+# using scp
+scp -i ~/.ssh/id_ed25529 -v ./myfile23.txt <username>@dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt
+```
+
+For improved convenience, you can tell your SSH clients to automatically associate your public key and username with the specified hostname
+by adding the following entry to your `~/.ssh/config` file:
+
+```bash
+Host dtn.rc.colorado.edu
+User <username>
+IdentityFile ~/.ssh/id_ed25529
+```
+
+Once configured, you can simplify your `rsync` and `scp` calls as follows:
 
 ```bash
 rsync -av ./myfile.txt dtn.rc.colorado.edu:/projects/ralphie/myfile.txt    # using rsync
@@ -559,5 +578,3 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0Pp4D+GvSYfq0GB+dAEBQcKJTkeTkJ5bQlMPzkh1N
 * [A Cloud Guru's Tutorial on SSH and SCP](https://acloudguru.com/blog/engineering/ssh-and-scp-howto-tips-tricks)
 * [ssh.com's Tutorial on SCP and SFTP](https://www.ssh.com/ssh/sftp/)
 * [Linuxize's Tutorial on Rsync](https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/)
-* [Ubuntu's Documentation on Rsync](https://help.ubuntu.com/community/rsync)
-

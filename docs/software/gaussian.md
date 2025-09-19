@@ -32,6 +32,7 @@ __Example SMP job script:__
 
 #SBATCH --job-name=g16-test
 #SBATCH --partition=amilan
+#SBATCH --qos=normal
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=64
@@ -68,6 +69,7 @@ __Example Linda Parallel job script__
 
 #SBATCH --job-name=g16-test
 #SBATCH --partition=amilan
+#SBATCH --qos=normal
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=64
