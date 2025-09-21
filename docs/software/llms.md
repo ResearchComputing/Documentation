@@ -334,7 +334,7 @@ All environment variables that have been set need to be set every time you want 
 
 In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
-At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environmenmt. We can now proceed with installing the LLMs we would like to run. If you are using our Transformers model, your model path automatically points to CURC's models (see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) for more information). If you would like to install your own models, be sure to 
+At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environment. We can now proceed with installing the LLMs we would like to run. If you are using our Transformers model, your model path automatically points to CURC's models (see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) for more information). If you would like to install your own models, be sure to 
 
 For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). In particular, see the [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete). 
 
@@ -405,5 +405,50 @@ Before installing a model, see if CURC already provides this model! This will sa
 https://huggingface.co/docs/transformers/installation
 
 https://huggingface.co/models
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+import torch 
+
+path_to_model="/gpfs/alpine1/llms/hf-transformers/Llama-3.1-8B-Instruct"
+path_to_model="/gpfs/alpine1/llms/hf-transformers/gemma-3-12b-it"
+path_to_model="/gpfs/alpine1/llms/hf-transformers/gpt-oss-20b"
+
+# Use QLoRA or 4-bit quantization 
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",            
+    bnb_4bit_use_double_quant=True,        
+    bnb_4bit_compute_dtype=torch.bfloat16      # Optional: better numerics on A100
+)
+
+
+tokenizer = AutoTokenizer.from_pretrained(path_to_model)
+
+model = AutoModelForCausalLM.from_pretrained(path_to_model, device_map="cuda", quantization_config=bnb_config, dtype=torch.bfloat16)
+
+# No quantization 
+# model = AutoModelForCausalLM.from_pretrained(path_to_model, device_map="cuda")
+
+messages = [{"role": "user", "content": "Write a paragraph about cookies."}]
+inputs = tokenizer.apply_chat_template(
+	messages,
+	add_generation_prompt=True,
+	tokenize=True,
+	return_dict=True,
+	return_tensors="pt",
+).to(model.device)
+
+
+# To use this in a script do not stream: 
+outputs = model.generate(**inputs, max_new_tokens=200)
+print(tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:]))
+
+# To stream from the command line: 
+from transformers import TextStreamer
+streamer = TextStreamer(tokenizer)
+output = model.generate(**inputs, max_new_tokens=200, streamer=streamer)
+```
+
 
 ::::
