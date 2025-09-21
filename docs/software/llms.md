@@ -284,7 +284,7 @@ Once you are on the GPU compute node, you can load the Transformers module, whic
 ```
 module load hf-transformers
 ```
-Once this module has been loaded, you will be within the `uv` envrionment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
+Once this module has been loaded, you will be within the `uv` environment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
 
 ````
 
@@ -339,15 +339,15 @@ After you have your account setup, you can search models using the [Hugging Face
 Depending on the model, it can take 30 minutes or more to get access to the model once you have accepted the terms of use. 
 ```
 
-At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environment and we can begin downloading the LLMs we would like to run. If you are using our Transformers module, `HF_HOME` and `HF_HUB_CACHE` will point to your project's directory, ensuring that your home directory does not fill up. If you are not using our module, be sure these vairables are appropriately set before proceeding. There are several ways to install a model, however, we often suggest that you use the `huggingface-cli`. For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). The [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete) sections are particularly useful for managing models.
+At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environment and we can begin downloading the LLMs we would like to run. If you are using our Transformers module, `HF_HOME` and `HF_HUB_CACHE` will point to your project's directory, ensuring that your home directory does not fill up. If you are not using our module, be sure these variables are appropriately set before proceeding. There are several ways to install a model, however, we often suggest that you use the `huggingface-cli`. For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). The [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete) sections are particularly useful for managing models.
 
-Once the `huggingface-cli` is available, you can setup your token assocaited with our system using the following
+Once the `huggingface-cli` is available, you can setup your token associated with our system using the following
 ```
 hf auth login
 ```
 When prompted for the token, provide the one you generated at the beginning of this section. When asked if you would like to "Add token as git credential?" you may type "n", if you do not intend to use the token as a git credential. For new users, "n" is usually preferred for simplicity. 
 :::{important}
-To protect your tokens, it is suggested that you remove system-wide read privelages:
+To protect your tokens, it is suggested that you remove system-wide read privileges:
 ```
 chmod o-r /projects/$USER/hf_transformers/stored_tokens
 chmod o-r /projects/$USER/hf_transformers/token
@@ -371,33 +371,39 @@ After this installation completes, you will then have access to your installed m
 ::::{dropdown} Show 
 :icon: note
 
-In this section, we assume that you have installed all necessary libraries and the model you would like to run. 
+In this section, we assume that you have installed all necessary libraries and the model you would like to run (or are using our module and provided models). Additionally, we assume you are on an NVIDIA GPU compute node. Please note that the below instructions are just one possible way to run an LLM using Transformers. There are also other methods, such as [Pipelines](https://huggingface.co/docs/transformers/en/main_classes/pipelines#pipelines) that exist. 
 
+Now that we are ready to run our LLM, there is one last important consideration we need to make before running the model. That is, whether to quantize the LLM. Many models provided on Hugging Face are not quantized and for this reason are very large. Depending on the GPU you are using, this can be a very big problem because you may not have enough space on the GPU. For example, our `atesting_a100` partition only provides 20 GB of GPU memory, which is often too small for medium-sized models that have not been quantized. When this is the case, we often want to perform [Quantization](https://huggingface.co/docs/transformers/v4.56.2/quantization/overview) to reduce the memory footprint. Below we provide an example where we do not utilize quantization and one where we do.  
+
+
+(tabset-ref-transformers-run)=
+`````{tab-set}
+:sync-group: tabset-transformers-run
+
+````{tab-item} No quantization
+:sync: transformers-run-no-quant
+
+In this tab, we run our `gpt-oss-20b` model without quantization. Quantization is not needed for this model because by default, the model obtained from Hugging Face has been quantized using the MXFP4 format. Additionally, it nicely fits on one of our `atesting_a100` GPUs. To run the `gpt-oss-20b` model without quantization lets create the following script named `transformers_run_no_quant.py`:
 ```python
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-import torch 
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import os 
 
-path_to_model="/gpfs/alpine1/llms/hf-transformers/Llama-3.1-8B-Instruct"
-path_to_model="/gpfs/alpine1/llms/hf-transformers/gemma-3-12b-it"
-path_to_model="/gpfs/alpine1/llms/hf-transformers/gpt-oss-20b"
+# Get our system-defined path to CURC's shared LLMs
+CURC_LLM_DIR = os.getenv('CURC_LLM_DIR')
 
-# Use QLoRA or 4-bit quantization 
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",            
-    bnb_4bit_use_double_quant=True,        
-    bnb_4bit_compute_dtype=torch.bfloat16      # Optional: better numerics on A100
-)
+# Specify that we want to use the gpt-oss-20b model that is in CURC's shared LLM directory 
+path_to_model=f"{CURC_LLM_DIR}/hf-transformers/gpt-oss-20b"
 
-
+# Obtain the model-defined tokenizer
 tokenizer = AutoTokenizer.from_pretrained(path_to_model)
 
-model = AutoModelForCausalLM.from_pretrained(path_to_model, device_map="cuda", quantization_config=bnb_config, dtype=torch.bfloat16)
+# Load the model onto the GPU and do not apply quantization 
+model = AutoModelForCausalLM.from_pretrained(path_to_model, device_map="cuda")
 
-# No quantization 
-# model = AutoModelForCausalLM.from_pretrained(path_to_model, device_map="cuda")
-
+# Specify the task we want the LLM to perform
 messages = [{"role": "user", "content": "Write a paragraph about cookies."}]
+
+# Format the input we will provide to the LLM and load this onto the GPU 
 inputs = tokenizer.apply_chat_template(
 	messages,
 	add_generation_prompt=True,
@@ -406,16 +412,106 @@ inputs = tokenizer.apply_chat_template(
 	return_tensors="pt",
 ).to(model.device)
 
-
-# To use this in a script do not stream: 
+# Generate the LLM response 
 outputs = model.generate(**inputs, max_new_tokens=200)
-print(tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:]))
 
-# To stream from the command line: 
+# Print the provided LLM response
+print(tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:]))
+```
+Once the script has been created, we can then run the script as follows: 
+```
+python transformers_run_no_quant.py
+```
+At the time of running this script, we obtain the following output: 
+```text
+<|channel|>analysis<|message|>The user: "Write a paragraph about cookies." Simple task. They likely want a paragraph. 
+Could be about cookies (dessert) or cookie (browser cookie). ambiguous. The general reading is cookie as baked good. 
+Provide descriptive paragraph. Write about ingredients, aroma, crispness, making. Could mention varieties. I should 
+respond in a single paragraph. There's no other instruction. So produce a short, engaging paragraph.
+
+Probably best to describe cookies. Let's go with a general paragraph about cookies. Ensure it's cohesive.
+<|end|><|start|>assistant<|channel|>final<|message|>Cookies are the tiny, comforting bursts of sweetness that have 
+delighted taste buds across the globe for generations. A classic chocolate‑chip cookie, with its buttery dough studded 
+with melty chocolate morsels, offers a perfect balance of chewy center and slightly crisp edges—a texture symphony that 
+warms the soul. The dough itself is an artful blend of flour, sugar, eggs, and butter, seasoned with vanilla and a hint 
+of salt to amplify
+```
+
+````
+
+````{tab-item} Applying Quantization 
+:sync: transformers-run-quant
+
+In this tab, we run our `Llama-3.1-8B-Instruct` model with quantization. Quantization is needed for this model, if we want to run it on our `atesting_a100` GPUs. Here we will utilize QLoRA or 4-bit quantization. To run `Llama-3.1-8B-Instruct` with quantization lets create the following script named `transformers_run_quant.py`:
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+import torch
+import os 
+
+# Get our system-defined path to CURC's shared LLMs
+CURC_LLM_DIR = os.getenv('CURC_LLM_DIR')
+
+# Specify that we want to use the Llama-3.1-8B-Instruct model that is in CURC's shared LLM directory 
+path_to_model=f"{CURC_LLM_DIR}/hf-transformers/Llama-3.1-8B-Instruct"
+
+# Use QLoRA or 4-bit quantization 
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",            
+    bnb_4bit_use_double_quant=True,        
+    bnb_4bit_compute_dtype=torch.bfloat16  
+)
+
+# Obtain the model-defined tokenizer
+tokenizer = AutoTokenizer.from_pretrained(path_to_model)
+
+# Load the model onto the GPU and apply quantization using bitsandbytes 
+model = AutoModelForCausalLM.from_pretrained(path_to_model, device_map="cuda", quantization_config=bnb_config, dtype=torch.bfloat16)
+
+
+# Specify the task we want the LLM to perform
+messages = [{"role": "user", "content": "Write a paragraph about cookies."}]
+
+# Format the input we will provide to the LLM and load this onto the GPU 
+inputs = tokenizer.apply_chat_template(
+	messages,
+	add_generation_prompt=True,
+	tokenize=True,
+	return_dict=True,
+	return_tensors="pt",
+).to(model.device)
+
+# Generate the LLM response 
+outputs = model.generate(**inputs, max_new_tokens=200)
+
+# Print the provided LLM response
+print(tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:]))
+```
+
+Once the script has been created, we can then run the script as follows: 
+```
+python transformers_run_quant.py
+```
+At the time of running this script, we obtain the following output: 
+```text
+Cookies are a classic sweet treat that brings joy to people of all ages. Whether you prefer the classic
+chocolate chip, the spicy kick of snickerdoodle, or the delicate flavor of shortbread, there's a cookie 
+out there for everyone. With a wide range of textures and flavors to choose from, cookies are the perfect 
+snack to satisfy your sweet tooth. They can be enjoyed on their own, paired with a glass of cold milk, or 
+used as a topping for ice cream or yogurt. Whether you're baking a batch from scratch or grabbing a few 
+from the store, cookies are a timeless treat that's sure to put a smile on your face.<|eot_id|>
+```
+
+````
+
+`````
+
+If you are in an interactive session, it is often preferred to stream the content to the terminal. This can be done my replacing the `model.generate` function with the following:
+```python
 from transformers import TextStreamer
 streamer = TextStreamer(tokenizer)
 output = model.generate(**inputs, max_new_tokens=200, streamer=streamer)
 ```
-
-
+Once the model begins to generate the output, you will be able to see it appear in the terminal in real time. 
 ::::
