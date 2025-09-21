@@ -1,6 +1,6 @@
 # Running Large Language Models
 
-Large Language Models (LLMs) have become extremely popular. Although LLMs such as ChatGPT and Google's Gemini are extremely useful, there are two primary downsides to using such a service: data privacy and cost. Additionally, it is often the case that more specialized LLMs are needed (rather than large general models) or researchers want to train models to fit their specialized case. To address these cases, users can run local open-source LLMs. In this section, we provide several approaches for setting up and running open-source LLMs on Alpine and Blanca using popular frameworks. 
+Large Language Models (LLMs) have become extremely popular. Although LLMs such as ChatGPT and Google's Gemini are extremely useful, there are two primary downsides to using such a service: data privacy and cost. Additionally, it is often the case that more specialized LLMs are needed (rather than large general models) or researchers want to train models to fit their specialized case. To address these cases, users can run local open-source LLMs. In this section, we provide several approaches to setting up and running open-source LLMs on Alpine and Blanca using popular frameworks. 
 
 ```{warning}
 Before running or working with LLMs on CURC resources, please be sure that you are adhering to all [CURC User Policies](https://curc.readthedocs.io/en/latest/additional-resources/policies.html) and CU's policies and guidance around Artificial Intelligence outlined in the pages [Artificial Intelligence at CU Boulder](https://www.colorado.edu/information-technology/artificial-intelligence-cu-boulder) and [Resources & Guidance](https://www.colorado.edu/information-technology/ai-cu-boulder/resources-guidance#accordion-1981143711-1). 
@@ -103,7 +103,7 @@ Once the session has successfully started, we can startup an Ollama server and s
 module load ollama
 ```
 :::{tip}
-If you would like to point to your own directory for the Ollama models, you can do this as you load the module e.g.: 
+If you would like to point to your own directory that contains Ollama compatible models, you can do this as you load the module e.g.: 
 ```
 export OLLAMA_MODELS=/projects/$USER/my_ollama_models; module load ollama
 ```
@@ -163,9 +163,9 @@ When starting an Ollama server, it is important to pick a host port that is not 
 ```
 while true; do
 rand=$(( (RANDOM << 15) | RANDOM ))
-port=$((rand % (9999 - 9000 + 1) + 9000))
-if ! lsof -i :$port &>/dev/null; then
-    export OLLAMA_HOST=0.0.0.0:$port
+ollama_port=$((rand % (60000 - 40000 + 1) + 40000))
+if ! ss -tuln | grep -q ":$ollama_port"; then
+    export OLLAMA_HOST=0.0.0.0:$ollama_port
     break
 fi
 done
