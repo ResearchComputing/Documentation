@@ -334,20 +334,18 @@ All environment variables that have been set need to be set every time you want 
 
 In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
-At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environment. We can now proceed with installing the LLMs we would like to run. If you are using our Transformers model, your model path automatically points to CURC's models (see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) for more information). If you would like to install your own models, be sure to 
+After you have your account setup, you can search models using the [Hugging Face Models](https://huggingface.co/models) page. Here you can refine your search based on the task you want to complete, model size, and dependent libraries. Once you have identified a model that you would like to run, review the model card, paying attention to the libraries needed and examples provided. If necessary, accept the terms of use for the model. For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
+```{note}
+Depending on the model, it can take 30 minutes or more to get access to the model once you have accepted the terms of use. 
+```
 
-For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). In particular, see the [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete). 
+At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environment and we can begin downloading the LLMs we would like to run. If you are using our Transformers module, `HF_HOME` and `HF_HUB_CACHE` will point to your project's directory, ensuring that your home directory does not fill up. If you are not using our module, be sure these vairables are appropriately set before proceeding. There are several ways to install a model, however, we often suggest that you use the `huggingface-cli`. For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). The [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete) sections are particularly useful for managing models.
 
-
-`hf env`
-
-4. Do auth login on our system 
+Once the `huggingface-cli` is available, you can setup your token assocaited with our system using the following
 ```
 hf auth login
 ```
-When prompted for the token, provide the one you gave above.
-Add token as git credential? (Y/n) n 
-
+When prompted for the token, provide the one you generated at the beginning of this section. When asked if you would like to "Add token as git credential?" you may type "n", if you do not intend to use the token as a git credential. For new users, "n" is usually preferred for simplicity. 
 :::{important}
 To protect your tokens, it is suggested that you remove system-wide read privelages:
 ```
@@ -355,56 +353,25 @@ chmod o-r /projects/$USER/hf_transformers/stored_tokens
 chmod o-r /projects/$USER/hf_transformers/token
 ```
 :::
-
-5. While logged in go to the Hugging Face model card that you want to run and accept the terms of use (if it has them). For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
-
 ```{note}
-Depending on the model, it can take 30 minutes or more to get access to the model. 
+Before proceeding with a model install, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
 ```
-
+Now that we have our tokens setup and we have accepted the terms of use, we can install our model from the command line. Here, we will install a very simple Gemma model ([google/gemma-3-270m-it](https://huggingface.co/google/gemma-3-270m-it)) into our directory `/projects/$USER/hf_transformers/gemma-3-270m-it`:
 ```
-hf download openai/gpt-oss-20b 
+hf download --local-dir /projects/$USER/hf_transformers/gemma-3-270m-it google/gemma-3-270m-it 
 ```
-
-easy install 
-```
-hf download google/gemma-3-270m-it 
-```
-
-```
-hf download --force-download --local-dir ./my_model google/gemma-3-270m-it 
-```
-
 ```{tip}
-On Hugging Face there are often different types of models. For example, some have "instruct" in their name or specify that they are instruct models. Instruct models are, as the name implies, instruction models. These models are most likely what you want as they are ideal for specifying tasks for the LLM to perform and are the models used in common chat interfaces. In contrast, the base models make no assumption about structure and are attempting to only complete the text provided. 
+On Hugging Face there are often different types of LLMs. For example, some have "instruct" in their name or specify that they are instruct models. Instruct models are, as the name implies, instruction models. These models are most likely what you want as they are ideal for specifying tasks for the LLM to perform and are the models used in common chat interfaces. In contrast, the base models make no assumption about structure and are attempting to only complete the text provided. 
 ```
-
-6. Once you have received the email that you have access to your model (if it is a gated model), you can then proceed to use the model: 
-```
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B", dtype="auto", device_map="auto")
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B")
-
-model_inputs = tokenizer(["The secret to baking a good cake is "], return_tensors="pt").to(model.device)
-
-generated_ids = model.generate(**model_inputs, max_length=30)
-print(tokenizer.batch_decode(generated_ids)[0])
-```
+After this installation completes, you will then have access to your installed model! See the next section for instructions on running this LLM from Python. 
 ::::
 
-#### Running an LLM 
+#### Running an LLM from Python
 
 ::::{dropdown} Show 
 :icon: note
 
-```{tip}
-Before installing a model, see if CURC already provides this model! This will save you storage space and time. For more information, see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc).
-```
-
-https://huggingface.co/docs/transformers/installation
-
-https://huggingface.co/models
+In this section, we assume that you have installed all necessary libraries and the model you would like to run. 
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
