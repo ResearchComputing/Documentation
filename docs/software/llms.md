@@ -22,9 +22,18 @@ The path specified by `CURC_LLM_DIR` is only available on compute nodes.
 
 For the Ollama framework, we provide the following models: 
 - `gpt-oss:20b`
+    - An open-source model from OpenAI 
+    - This model has been quantized using the MXFP4 format
+    - It requires about 14 GB of GPU memory 
 - `gemma3:12b`
+    - An open-source model from Google 
+    - This model has been quantized using the Q4_K_M format
+    - Requires around 8 GB of GPU memory 
 - `llama3.1:8b`
-
+    - An open-source model from Meta
+    - This model has been quantized using the Q4_K_M format
+    - Requires about 5 GB of GPU memory 
+    
 If you are using your own installation of Ollama, you should set the Ollama model path as follows:
 ```
 export OLLAMA_MODELS=$CURC_LLM_DIR/ollama
@@ -38,7 +47,26 @@ If you are loading our Ollama module e.g. `module load ollama`, we automatically
 ````{tab-item} Transformers by Hugging Face
 :sync: curc-llms-hf-transformers
 
-Add content here 
+For the Transformers framework, we provide the following models: 
+- `gpt-oss-20b`
+    - An open-source model from OpenAI 
+    - This model has been quantized using the MXFP4 format
+    - It requires about 14 GB of GPU memory 
+- `gemma-3-12b-it`
+    - An open-source model from Google 
+    - This model has not been quantized and its tensors are in BF16 precision
+    - Requires more than 20 GB of GPU memory to run non-quantized version
+- `Llama-3.1-8B-Instruct`
+    - An open-source model from Meta
+    - This model has not been quantized and its tensors are in BF16 precision
+    - Requires more than 20 GB of GPU memory to run non-quantized version
+    
+:::{note}
+These models are contained in the following path: 
+```
+$CURC_LLM_DIR/hf-transformers
+```
+:::
 
 ````
 
@@ -243,7 +271,7 @@ This of course is just a simple example showing how one can query Ollama models 
 `````{tab-set}
 :sync-group: tabset-hf-transformers
 
-````{tab-item} Quickstart
+````{tab-item} CURC provided install
 :sync: hf-transformers-ollama
 
 Quick start
@@ -252,11 +280,6 @@ Quick start
 
 ````{tab-item} Self-install instructions
 :sync: hf-transformers-indepth
-
-
-## Setup a Hugging Face Account
-
-In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
 ## Installing Transformers
 
@@ -274,7 +297,7 @@ Now, we activate the environment and install all of our dependencies:
 ```
 source $UV_ENVS/hf-transformers-env/bin/activate
 uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
-uv pip install huggingface_hub[cli]
+uv pip install huggingface_hub[cli] protobuf tiktoken bitsandbytes
 uv pip install -U transformers datasets evaluate accelerate timm kernels
 ```
 ```{note}
@@ -285,7 +308,10 @@ At this point, all libraries needed to run our LLM examples have been installed.
 export HF_HOME=/projects/$USER/hf_transformers
 export HF_HUB_CACHE=/projects/$USER/hf_transformers/.cache
 export HF_HUB_DISABLE_TELEMETRY=True
-mkdir -p $ HF_HUB_CACHE
+mkdir -p $HF_HUB_CACHE
+```
+```{important}
+All environment variables that have been set need to be set every time you want to use your install of Transformers.
 ```
 
 ````
@@ -295,6 +321,8 @@ mkdir -p $ HF_HUB_CACHE
 #### Dowloading models 
 
 ::::{dropdown} Show 
+
+In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
 At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environmenmt. We can now proceed with installing the LLMs we would like to run. If you are using our Transformers model, your model path automatically points to CURC's models (see [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) for more information). If you would like to install your own models, be sure to 
 
@@ -310,6 +338,14 @@ hf auth login
 When prompted for the token, provide the one you gave above.
 Add token as git credential? (Y/n) n 
 
+:::{important}
+To protect your tokens, it is suggested that you remove system-wide read privelages:
+```
+chmod o-r /projects/$USER/hf_transformers/stored_tokens
+chmod o-r /projects/$USER/hf_transformers/token
+```
+:::
+
 5. While logged in go to the Hugging Face model card that you want to run and accept the terms of use (if it has them). For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
 
 ```{note}
@@ -317,7 +353,20 @@ Depending on the model, it can take 30 minutes or more to get access to the mode
 ```
 
 ```
-huggingface-cli download openai/gpt-oss-20b --include "original/*" --local-dir gpt-oss-20b/
+hf download openai/gpt-oss-20b 
+```
+
+easy install 
+```
+hf download google/gemma-3-270m-it 
+```
+
+```
+hf download --force-download --local-dir ./my_model google/gemma-3-270m-it 
+```
+
+```{tip}
+On Hugging Face there are often different types of models. For example, some have "instruct" in their name or specify that they are instruct models. Instruct models are, as the name implies, instruction models. These models are most likely what you want as they are ideal for specifying tasks for the LLM to perform and are the models used in common chat interfaces. In contrast, the base models make no assumption about structure and are attempting to only complete the text provided. 
 ```
 
 6. Once you have received the email that you have access to your model (if it is a gated model), you can then proceed to use the model: 
