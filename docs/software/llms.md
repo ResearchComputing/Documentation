@@ -274,7 +274,17 @@ This of course is just a simple example showing how one can query Ollama models 
 ````{tab-item} CURC provided install
 :sync: hf-transformers-ollama
 
-Quick start
+In this tab, we provide instructions for using our system installed Transformers. Although these instructions greatly simplify the steps needed to use Transformers, the system installed Transformers and associated libraries may not fit your needs. If you need to install a different version or need to customize the provided environment, you will need to follow the instructions in the [Self-install instructions tab](?tabset-hf-transformers=hf-transformers-indepth#tabset-ref-hf-transformers){.external}. 
+
+To begin, we first need to jump on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition.
+```
+sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+```
+Once you are on the GPU compute node, you can load the Transformers module, which contains the minimal libraries needed to run LLMs and sets important environment variables:
+```
+module load hf-transformers
+```
+Once this module has been loaded, you will be within the `uv` envrionment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
 
 ````
 
@@ -303,7 +313,7 @@ uv pip install -U transformers datasets evaluate accelerate timm kernels
 ```{note}
 Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. 
 ```
-At this point, all libraries needed to run our LLM examples have been installed. However, it is very important to set the following environment variables and makes sure the the associated directories exist (this will ensure that your home directory does not fill up):
+At this point, all libraries needed to run our LLM examples have been installed. However, it is very important to set the following environment variables and make sure that the associated directories exist (this will ensure that your home directory does not fill up):
 ```
 export HF_HOME=/projects/$USER/hf_transformers
 export HF_HUB_CACHE=/projects/$USER/hf_transformers/.cache
