@@ -28,6 +28,7 @@ getting_started/logging-in
 getting_started/faq
 getting_started/current-sem-trainings
 getting_started/acknowledge_curc_resources
+getting_started/ai-resources
 ```
 
 ```{toctree}
