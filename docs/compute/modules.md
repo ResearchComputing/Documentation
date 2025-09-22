@@ -6,12 +6,6 @@ must be loaded in. This allows Research Computing to provide multiple
 versions of the software concurrently and enables users to easily switch 
 between different versions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/csgl4czhD_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-```{warning}
-The above video is outdated and shows loading modules on our old HPC system. For this reason, some content is outdated. However, the general ideas presented are helpful. We will be replacing this content soon, we apologize for the inconvenience.  
-```
-
 ## The `module` Command
 
 **_Modules should be loaded in job scripts, interactive jobs, or on

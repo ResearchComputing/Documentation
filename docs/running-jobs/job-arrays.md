@@ -201,6 +201,82 @@ You can use `scancel` to cancel all or a specific set of the tasks in a job arra
   ```
 
 
+## Example Batch Scripts
+
+### Reading from Indexed Files or Directories
+This example demonstrates how you can organize your data to be "Job Array Friendly" by placing each task's data into a corresponding file. In order to pair each task with a unique data file, you must ensure the files are named in such a way that they include the job array's indexes (i.e. `$SLURM_ARRAY_TASK_ID`). 
+
+Example Directory of Data Files: 
+ * `DATA_1.txt`
+ * `DATA_2.txt`
+ * `DATA_3.txt`
+
+The batch script, provided below, will create a Job Array with 3 tasks. Each task will echo the contents of its corresponding data file to standard output
+
+```bash
+#!/bin/bash
+#SBATCH --time=00:00:10
+#SBATCH --partition=amilan
+#SBATCH --qos=normal
+#SBATCH --nodes=1 
+#SBATCH --ntasks=1 
+#SBATCH --job-name=Array_Example_Multiple_Files
+#SBATCH --output=files.%A_%a.out
+#SBATCH --array=1-3
+
+module purge
+
+# run workflow
+cat "DATA_${SLURM_ARRAY_TASK_ID}.txt"
+```
+
+
+### Reading Task-Specific Parameters from a text file
+
+This example includes three parts - a batch script, a python script, and a text file. The batch script is designed to create a Job Array with 5 tasks. Each task will read its assigned data `$(sed -n "${SLURM_ARRAY_TASK_ID}p" arguments.txt)` from the text file and pass it to the python script `python cars_mpg.py`. The python script then prints the provided arguments to standard output.  
+
+Please note, while this example uses Python, this approach can be used with just about any workflow that accepts commandline arguments. Also, if you would like to learn more about the `sed` command, consider checking its help page with `sed --help`. 
+
+Batch Script:
+```bash
+#!/bin/bash
+#SBATCH --time=00:00:10
+#SBATCH --partition=amilan
+#SBATCH --qos=normal
+#SBATCH --nodes=1 
+#SBATCH --ntasks=1 
+#SBATCH --job-name=cars
+#SBATCH --output=cars.%A_%a.out
+#SBATCH --array=1-5
+
+module purge
+module load miniforge
+
+# run workflow
+python cars_mpg.py $(sed -n "${SLURM_ARRAY_TASK_ID}p" arguments.txt)
+```
+
+Python Script: 
+```python
+import sys
+
+car=sys.argv[1]
+mpg=sys.argv[2]
+
+print("The " + car + " gets " + mpg + " mpg.")
+```
+
+Input File (arguments.txt):
+```bash
+mustang 25
+pinto 30
+chevette 33
+nova 21
+cutlass 23
+```
+````
+
+
 ```{seealso}
 If you would like to learn more about Job Arrays, please see the official [Job Array Support page](https://slurm.schedmd.com/job_array.html). 
 ```
