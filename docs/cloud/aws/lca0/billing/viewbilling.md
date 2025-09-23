@@ -53,6 +53,9 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    ```{image} images/cost-explorer-exclude-refunds.png
    :alt: Set the Charge Type filter to exclude refunds, enterprise discount program discount and solution provider program discounts.
    ```
+   ```{image} images/cost-explorer-exclude-solutionsprovider.png
+   :alt: Set the Charge Type filter to exclude refunds, enterprise discount program discount and solution provider program discounts.
+   ```
 
 1. Now you’ll see the raw costs for that billing period.
    ```{image} images/cost-explorer-raw.png
