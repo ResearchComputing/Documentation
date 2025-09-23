@@ -31,7 +31,7 @@ To convert a standard batch script into a job array, you will need to make three
   2. Modify the `--output` directive to include `%A` and `%a`
   3. Update your code to utilize the Job Array Environment Variables 
 
-Below is an example script that includes all three of these changes to create a job array with 3 tasks. 
+Below is an example script that includes all three of these changes to create a job array with three tasks. 
 
 ```bash
 #!/bin/bash
@@ -82,7 +82,7 @@ An example of each of these is provided below.
 `````{tab-set}
 :sync-group: tabset-ex-job-array-config
 
-````{tab-item} Default Step
+````{tab-item} Default Step Size
 :sync: ex-job-array-config-range
 
 Request 3 Jobs with Indexes 1, 2, and 3
@@ -132,7 +132,7 @@ To see the current resource limits for jobs submitted to the Alpine cluster, ple
 `````
 
 ```{important}
-Currently, a single job array is limited to, at most, {{ alpine_max_number_array_jobs }} tasks. This limit is in place to protect the SLURM controller and ensure it isn't overwhelmed trying to track too many tasks for a given user.
+Currently, a single job array is limited to, at most, {{ alpine_max_number_array_jobs }} tasks. This limit is in place to protect the SLURM controller and ensure it isn't overwhelmed trying to generate and track too many tasks.
 
 Please, be careful that you do not submit a large number of concurrent job arrays; this too can overwhelm the SLURM controller. To protect the stability of the cluster, Research Computing reserves the right to suspend and/or cancel any jobs that overwhelm the system. 
 
@@ -160,7 +160,7 @@ SLURM provides a set of environment variables specific to job arrays. Those vari
 | SLURM_ARRAY_TASK_MAX        | The highest index in the array                 |
 | SLURM_ARRAY_JOB_MIN         | The lowest index in the array                  |
 
-As an example, if a job array was submitted with `--array=1-3`. It would result in a set of three tasks with values similar to these: 
+As an example, if a job array was submitted with `--array=1-3`, it would result in a set of three tasks with values similar to these: 
 
 ```bash
 # 1
@@ -215,11 +215,11 @@ You can use `scancel` to cancel all of the tasks or a specific set of tasks in a
 
 ### Assigning Data to Tasks
 
-This example shows you how to organize your data so it's "job array friendly" by giving each task its own data file to process. One way to do this is to break your data into smaller files and name each file with a specific task id.
+This example shows you how to organize your data so it's "job array friendly" by giving each task its own data file to process. One way to do this is to divide your data into a set of smaller files and name each file with a specific task id.
 
-Here's how it works in this example:
-  * You create a job array batch script.
-  * You name the data files with the task ids (e.g., `DATA_1.csv`).
+Here's how it works:
+  * Create a job array batch script.
+  * Name each of the data files with a task id (e.g., `DATA_1.csv`, `DATA_2.csv`, and `DATA_3.csv`).
   * In the batch script, use the `SLURM_ARRAY_TASK_ID` so that each task only reads its assigned file.
 
 ```bash
@@ -251,45 +251,45 @@ Here's how it works:
 
 You can use this method with any program that takes command-line arguments, not just Python. For more on the `sed` command, review its help page by running `sed --help`.
 
-Batch Script:
-```bash
-#!/bin/bash
-#SBATCH --time=00:00:10
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
-#SBATCH --nodes=1 
-#SBATCH --ntasks=1 
-#SBATCH --job-name=cars
-#SBATCH --output=cars.%A_%a.out
-#SBATCH --array=1-5
+  * Batch Script: 
+    ```bash
+    #!/bin/bash
+    #SBATCH --time=00:00:10
+    #SBATCH --partition=amilan
+    #SBATCH --qos=normal
+    #SBATCH --nodes=1 
+    #SBATCH --ntasks=1 
+    #SBATCH --job-name=cars
+    #SBATCH --output=cars.%A_%a.out
+    #SBATCH --array=1-5
 
-module purge
-module load miniforge
+    module purge
+    module load miniforge
 
-# run workflow
-python cars_mpg.py $(sed -n "${SLURM_ARRAY_TASK_ID}p" parameters.txt)
-```
+    # run workflow
+    python cars_mpg.py $(sed -n "${SLURM_ARRAY_TASK_ID}p" parameters.txt)
+    ```
 
-Python Script: 
-```python
-import sys
+  * Python Script:  
 
-car=sys.argv[1]
-mpg=sys.argv[2]
+    ```python
+    import sys
 
-print("The " + car + " gets " + mpg + " mpg.")
-```
+    car=sys.argv[1]
+    mpg=sys.argv[2]
 
-Input File (parameters.txt):
-```bash
-mustang 25
-pinto 30
-chevette 33
-nova 21
-cutlass 23
-```
-````
+    print("The " + car + " gets " + mpg + " mpg.")
+    ```
 
+  * Input File (parameters.txt): 
+
+    ```bash
+    mustang 25
+    pinto 30
+    chevette 33
+    nova 21
+    cutlass 23
+    ```
 
 ```{seealso}
 If you would like to learn more about Job Arrays, please see the official [Job Array Support page](https://slurm.schedmd.com/job_array.html). 
