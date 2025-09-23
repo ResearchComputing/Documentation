@@ -49,9 +49,9 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    :alt: Unfiltered costs are $21,675.23.
    ```
 
-1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund, Solutions Provider Program Discount ` under `More Filters`.
+1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund, Enterprise Discount Program Discount and Solutions Provider Program Discount ` under `More Filters`.
    ```{image} images/cost-explorer-exclude-refunds.png
-   :alt: Set the Charge Type filter to exclude refunds and solution provider program discounts.
+   :alt: Set the Charge Type filter to exclude refunds, enterprise discount program discount and solution provider program discounts.
    ```
 
 1. Now you’ll see the raw costs for that billing period.
