@@ -1,9 +1,9 @@
+# Scaling Up with Job Arrays
+
 ```{warning}
 This page assumes you are already familiar with the basics of writing and submitting SLURM batch job scripts. If you are new to batch jobs, please review our documentation on [batch jobs](./batch-jobs.md) before continuing. 
 
 ```
-
-# Scaling Up with Job Arrays
 
 Job arrays in SLURM simplify the running of multiple similar jobs. Instead of creating and submitting a separate batch script for each job, you use a single template script. SLURM then automatically generates and schedules each job, or {ref}`task <jobarray-note-interactive>`, in the array, saving you time and effort. Job arrays are best suited for workflows where the core computational task is consistent, but the input data and/or parameters vary for each run. 
 
