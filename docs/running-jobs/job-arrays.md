@@ -1,22 +1,22 @@
+```{warning}
+This page assumes you are already familiar with the basics of writing and submitting SLURM batch job scripts. If you are new to batch jobs, please review our documentation on [batch jobs](./batch-jobs.md) before continuing. 
+
+```
+
 # Scaling Up with Job Arrays
 
-Job arrays streamline the submission and management of large collections of conceptually similar jobs where a single batch script serves as a template from which SLURM automatically generates and schedules each job, or {ref}`task <jobarray-note-interactive>`, in the array. This approach eliminates the need to manually create and submit each variation of the primary bash script, significantly simplifying the workflow for running numerous independent tasks.
+Job arrays in SLURM simplify the running of multiple similar jobs. Instead of creating and submitting a separate batch script for each job, you use a single template script. SLURM then automatically generates and schedules each job, or {ref}`task <jobarray-note-interactive>`, in the array, saving you time and effort. Job arrays are best suited for workflows where the core computational task is consistent, but the input data and/or parameters vary for each run. 
 
-Job arrays are best suited for workflows where the core computational task is consistent, but the input data and/or parameters vary for each run. Common scenarios include:
+Common job array scenarios include:
 
-* **Processing multiple data files:** Running the same analysis script on a large dataset where each file is processed as a separate, independent job.
+* **Processing multiple data files:** <br> Running the same analysis script on a large dataset where each file is processed as a separate, independent job.
 
-* **Parameter sweeping:** Executing simulations or models with a wide range of input parameters to explore a parameter space.
+* **Parameter sweeping:** <br> Executing simulations or models with a wide range of input parameters to explore a parameter space.
 
-* **Monte Carlo simulations:** Performing thousands or millions of independent trials to estimate a numerical result.
+* **Monte Carlo simulations:** <br> Performing thousands or millions of independent trials to estimate a numerical result.
 
-* **High-throughput computing:** Launching a large number of short, non-communicating jobs that can be run in parallel.
+* **High-throughput computing:** <br> Launching a large number of short, non-communicating jobs that can be run in parallel.
 
-```{warning}
-This page assumes you already know the basics of writing and submitting SLURM batch scripts. If you are new to writing and submitting batch jobs, please review our documentation on [batch jobs](./batch-jobs.md) before continuing on. 
-
-Please be aware that a job array can only be created from a [batch script](./batch-jobs.md). [Interactive sessions](./interactive-jobs.md) cannot be submitted with the `--array` directive.
-```
 
 (jobarray-note-interactive)=
 ```{note}
@@ -51,22 +51,27 @@ module purge
 
 echo "This task's index is $SLURM_ARRAY_TASK_ID "
 echo "This job array has $SLURM_ARRAY_TASK_COUNT tasks"
-echo "The shared Job ID for this array is $SLURM_ARRAY_JOB_ID"
-echo "The unique Job ID for this specific task is $SLURM_JOB_ID"
+echo "The array's Job ID is $SLURM_ARRAY_JOB_ID"
+echo "The task's Job ID is $SLURM_JOB_ID"
+echo "The combined array Job ID and Task ID is ${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
 
 ```
 
 ```{note}
-In order for SLURM to treat a batch script as a Job Array, it must include the `--array` directive. This can be added directly to the script, like in the example above, or added as a command-line argument when submitting the job (e.g. `sbatch --array=1-3 example.sh`). 
+In order for SLURM to treat a batch script as a Job Array, it must include the `--array` directive. This can be added directly to the script, like in the example above, or added as a command-line argument when submitting the job (e.g., `sbatch --array=1-3 example.sh`). 
+
+Also, please be aware that a job array can only be created from a [batch script](./batch-jobs.md). You cannot use the `--array` directive with [interactive sessions](./interactive-jobs.md).
 ```
 
 ```{important}
-The tasks in a job array are not guaranteed to run simultaneously or in any specific order. Therefore, it is crucial that you write your batch script so that each task in your job array can run independently. If your tasks must execute in a particular sequence, you will need to include the `--dependency` directive. Further information on the `--dependency` directive can be found in [SLURM's documentation](https://slurm.schedmd.com/job_array.html#dependencies).
+The tasks in a job array are not guaranteed to run simultaneously or in any specific order. Therefore, you must write your batch script so that each task can run independently. If your tasks must execute in a particular sequence, you may need to include the `--dependency` directive. 
+
+Further information on the `--dependency` directive can be found in [SLURM's documentation](https://slurm.schedmd.com/job_array.html#dependencies).
 ```
 
-## Setting the Job Array Indexes
+## Task Indexes
 
-The `--array` directive provides three methods for defining the job array's indexes: 
+The `--array` directive provides three methods for defining the job array's task indexes: 
   * a range with a default step size of 1
   * a range with a specific step size
   * or a list of specific index values
@@ -77,7 +82,7 @@ An example of each of these is provided below.
 `````{tab-set}
 :sync-group: tabset-ex-job-array-config
 
-````{tab-item} Setting a Range
+````{tab-item} Default Step
 :sync: ex-job-array-config-range
 
 Request 3 Jobs with Indexes 1, 2, and 3
@@ -88,7 +93,7 @@ Request 3 Jobs with Indexes 1, 2, and 3
 
 ````
 
-```` {tab-item} Setting a Step Size
+```` {tab-item} Specific Step Size
 :sync: ex-job-array-config-basic-step
 
 Request 4 Jobs with Indexes 3, 6, 9, and 12
@@ -99,10 +104,10 @@ Request 4 Jobs with Indexes 3, 6, 9, and 12
 
 ````
 
-```` {tab-item} Setting a Specific List of Indexes
+```` {tab-item} List of Indexes
 :sync: ex-job-array-config-basic-list
 
-Request 5 Jobs with Indexes 10, 45, and 83
+Request 5 Jobs with Indexes 10, 45, 83, 96, and 103
 ```bash
 #SBATCH --array=<INDEX 1>,<INDEX 2>,<INDEX N>
 #SBATCH --array=10,45,83,96,103
@@ -111,9 +116,9 @@ Request 5 Jobs with Indexes 10, 45, and 83
 ````
 
 ```` {tab-item} Limiting Concurrent Tasks
-You can limit the number of tasks that can run cuncurrently, i.e. at the same time, by adding the `%` modifier. This can be necessary when submitting job arrays that request a large number of tasks and/or a large number of resources per task. Without the `%` modifier, all of the tasks will try to run at once, which might cause your RC account to hit the system's resource limits and prevent you from running other jobs on a given partition and/or the cluster itself. 
+You can limit the number of tasks that can run concurrently, i.e., at the same time, by adding the `%` modifier. This can be necessary when submitting job arrays that request a large number of tasks and/or a large number of resources per task. Without the `%` modifier, all of the tasks will try to run at once, which might cause your RC account to hit the system's resource limits and prevent you from running other jobs on a given partition and/or the cluster itself. 
 
-To see the current resource limits for jobs subbmitted to the Alpine cluster, please check the [Quality-of-Service table](../clusters/alpine/alpine-hardware.md#quality-of-service-qos) and the [Partitions table](../clusters/alpine/alpine-hardware.md#partitions).
+To see the current resource limits for jobs submitted to the Alpine cluster, please check the [Quality-of-Service table](../clusters/alpine/alpine-hardware.md#quality-of-service-qos) and the [Partitions table](../clusters/alpine/alpine-hardware.md#partitions).
 
 ```bash
 
@@ -127,20 +132,24 @@ To see the current resource limits for jobs subbmitted to the Alpine cluster, pl
 `````
 
 ```{important}
-Currently, job arrays can contain at most {{ alpine_max_number_array_jobs }} tasks. Please do not submit a multiple large job arrays at the same time. Too many concurrent job arrays can overwhelm the SLURM controller. To protect the stability of the cluster, Research Computing reserves the right to suspend and/or cancel any jobs that overwhelm the system. 
+Currently, a single job array is limited to, at most, {{ alpine_max_number_array_jobs }} tasks. This limit is in place to protect the SLURM controller and ensure it isn't overwhelmed trying to track too many tasks for a given user.
 
-If you have questions about submitting large job arrays, please reach out to us at <rc-help@colorado.edu>.
+Please, be careful that you do not submit a large number of concurrent job arrays; this too can overwhelm the SLURM controller. To protect the stability of the cluster, Research Computing reserves the right to suspend and/or cancel any jobs that overwhelm the system. 
+
+If you have questions about submitting large job arrays and/or multiple job arrays, please reach out to us at <rc-help@colorado.edu>.
 ```
 
-## Output Files
-To differentiate the output files generated by each task, it is important to include the `%A` and `%a`, which SLURM will replace with their corresponding environment variables. `%A` refers to the `$SLURM_ARRAY_JOB_ID` and `%a` refers to the `$SLURM_ARRAY_TASK_ID`. These can be included in the `--output` and `--error` SBATCH directives: 
+## Output Filenames
+To differentiate the output files generated by each task, it is important to include `%A` (`SLURM_ARRAY_JOB_ID`) and `%a` (`SLURM_ARRAY_TASK_ID`) in the filename. These can be included in both the `--output` and `--error` SBATCH directives, like so: 
 
 ```bash
 #SBATCH --output=example-%A-%a.out
 #SBATCH --error=example-%A-%a.err
 ```
 
-## Job Array Environment Variables
+## Environment Variables
+
+SLURM provides a set of environment variables specific to job arrays. Those variables are listed and defined in the table below. 
 
 | Variable  | Description                                                      | 
 | :-------------------------- | :--------------------------------------------- |
@@ -151,7 +160,7 @@ To differentiate the output files generated by each task, it is important to inc
 | SLURM_ARRAY_TASK_MAX        | The highest index in the array                 |
 | SLURM_ARRAY_JOB_MIN         | The lowest index in the array                  |
 
-SLURM provides a set of Job Array specific environment variables.  For example, `--array=1-3` will result in a set of three tasks which have values similar to these: 
+As an example, if a job array was submitted with `--array=1-3`. It would result in a set of three tasks with values similar to these: 
 
 ```bash
 # 1
@@ -180,38 +189,38 @@ SLURM_ARRAY_TASK_MIN=1
 ```
 
 ## Canceling Job Arrays and Tasks
-You can use `scancel` to cancel all or a specific set of the tasks in a job array. 
+You can use `scancel` to cancel all of the tasks or a specific set of tasks in a job array. 
 
-  * Cancel an individual task
-  ```bash
-  scancel <SLURM_ARRAY_JOB_ID>_<SLURM_ARRAY_TASK_ID>
-  scancel 505_3
-  ```
+  * Cancel an individual task 
 
+    ```
+    scancel <SLURM_ARRAY_JOB_ID>_<SLURM_ARRAY_TASK_ID>
+    scancel 505_3
+    ```
   * Cancel a subset of tasks
-  ```bash
-  scancel <SLURM_ARRAY_JOB_ID>_[<SLURM_ARRAY_TASK_ID>-<SLURM_ARRAY_TASK_ID>]
-  scancel 505_[2-3]
-  ```
 
+    ```
+    scancel <SLURM_ARRAY_JOB_ID>_[<SLURM_ARRAY_TASK_ID>-<SLURM_ARRAY_TASK_ID>]
+    scancel 505_[2-3]
+    ```
   * Cancel all tasks
-  ```bash
-  scancel <SLURM_ARRAY_JOB_ID>
-  scancel 505
-  ```
+
+    ```
+    scancel <SLURM_ARRAY_JOB_ID>
+    scancel 505
+    ```
 
 
 ## Example Batch Scripts
 
-### Reading from Indexed Files or Directories
-This example demonstrates how you can organize your data to be "Job Array Friendly" by placing each task's data into a corresponding file. In order to pair each task with a unique data file, you must ensure the files are named in such a way that they include the job array's indexes (i.e. `$SLURM_ARRAY_TASK_ID`). 
+### Assigning Data to Tasks
 
-Example Directory of Data Files: 
- * `DATA_1.txt`
- * `DATA_2.txt`
- * `DATA_3.txt`
+This example shows you how to organize your data so it's "job array friendly" by giving each task its own data file to process. One way to do this is to break your data into smaller files and name each file with a specific task id.
 
-The batch script, provided below, will create a Job Array with 3 tasks. Each task will echo the contents of its corresponding data file to standard output
+Here's how it works in this example:
+  * You create a job array batch script.
+  * You name the data files with the task ids (e.g., `DATA_1.csv`).
+  * In the batch script, use the `SLURM_ARRAY_TASK_ID` so that each task only reads its assigned file.
 
 ```bash
 #!/bin/bash
@@ -226,16 +235,21 @@ The batch script, provided below, will create a Job Array with 3 tasks. Each tas
 
 module purge
 
-# run workflow
-cat "DATA_${SLURM_ARRAY_TASK_ID}.txt"
+# Prints the contents of the assigned data file to the standard output.
+cat "DATA_${SLURM_ARRAY_TASK_ID}.csv"
 ```
 
 
-### Reading Task-Specific Parameters from a text file
+### Assigning Parameters to Tasks
 
-This example includes three parts - a batch script, a python script, and a text file. The batch script is designed to create a Job Array with 5 tasks. Each task will read its assigned data `$(sed -n "${SLURM_ARRAY_TASK_ID}p" arguments.txt)` from the text file and pass it to the python script `python cars_mpg.py`. The python script then prints the provided arguments to standard output.  
+This example shows how to assign unique parameters to each task in a job array. The parameters are stored in a text file called `parameters.txt`.
 
-Please note, while this example uses Python, this approach can be used with just about any workflow that accepts commandline arguments. Also, if you would like to learn more about the `sed` command, consider checking its help page with `sed --help`. 
+Here's how it works:
+* A batch script creates a job array with five tasks.
+* Each task uses the `sed` command to read its specific parameters from `parameters.txt`.
+* These parameters are then passed to a Python script, `cars_mpg.py`, which prints them out.
+
+You can use this method with any program that takes command-line arguments, not just Python. For more on the `sed` command, review its help page by running `sed --help`.
 
 Batch Script:
 ```bash
@@ -253,7 +267,7 @@ module purge
 module load miniforge
 
 # run workflow
-python cars_mpg.py $(sed -n "${SLURM_ARRAY_TASK_ID}p" arguments.txt)
+python cars_mpg.py $(sed -n "${SLURM_ARRAY_TASK_ID}p" parameters.txt)
 ```
 
 Python Script: 
@@ -266,7 +280,7 @@ mpg=sys.argv[2]
 print("The " + car + " gets " + mpg + " mpg.")
 ```
 
-Input File (arguments.txt):
+Input File (parameters.txt):
 ```bash
 mustang 25
 pinto 30

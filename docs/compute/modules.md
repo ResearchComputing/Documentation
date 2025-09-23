@@ -75,6 +75,7 @@ command may require specialized syntax.
 Command                 | Shortened Command            | Description  | Example |
 ----------------------- | ---------------------------- | ------------ | --------|
 `module avail`          | `ml av`                      | List available software. Modules not listed here may have unmet dependencies which must be loaded for the module to be available. | `module avail`
+`module list` |  | List all of the currently loaded software modules. | `module list`
 `module spider <module>`| `ml spider <module>`         | Searches for a particular software. | `module spider openmpi`
 `module load <module>`  | `ml <module>`                | Load a module to use the software. In this example we are loading the GNU Compiler Collection. The default version will load because we have not specified a version. | `module load gcc`
 `module load <module>/<version>` | `ml <module>/<version>`      | Load GCC version 10.3.0 | `module load gcc/10.3.0`
