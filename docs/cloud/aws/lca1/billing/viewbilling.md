@@ -12,7 +12,7 @@ Four Points Technology (FPT) is our AWS reseller. They invoice you for your AWS 
 
 FPT provides us with the following discounts:
 
-* 4.5% discount on most AWS resources, excluding AWS Marketplace, S3 Glacier Deep Archive, and AWS Storage Deep Archive charges
+* Contract Discount on most AWS resources, excluding AWS Marketplace, S3 Glacier Deep Archive, and AWS Storage Deep Archive charges
 * Egress waiver for some traffic ([contact us](mailto:rc-help@colorado.edu) for additional details)
 
 ```{important}
@@ -41,22 +41,22 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
 
 1. Filter on the billing month.
    ```{image} images/cost-explorer-billing-month.png
-   :alt: Filter the date range to May 2025.
+   :alt: Filter the date range to July 2025.
    ```
 
 1. You’ll see the unfiltered cost at the top of the report. **This is NOT what you will be billed!**
    ```{image} images/cost-explorer-unfiltered.png
-   :alt: Unfiltered costs are $3,225.36.
+   :alt: Unfiltered costs are $21,675.23.
    ```
 
-1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund` under `More Filters`.
+1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund, Solutions Provider Program Discount ` under `More Filters`.
    ```{image} images/cost-explorer-exclude-refunds.png
-   :alt: Set the Charge Type filter to exclude refunds.
+   :alt: Set the Charge Type filter to exclude refunds and solution provider program discounts.
    ```
 
 1. Now you’ll see the raw costs for that billing period.
    ```{image} images/cost-explorer-raw.png
-   :alt: Raw costs are $3,381.06.
+   :alt: Raw costs are $22,669.03.
    ```
 
 1. Add a filter to remove AWS Marketplace costs. Set `Billing Entity → Excludes → AWS Marketplace`.
@@ -64,28 +64,39 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    :alt: Set the Billing entity filter to exclude AWS Marketplace.
    ```
 
-1. Add a filter to remove Deep Archive costs. Set `API Operation → Excludes → (everything matching DeepArchive)`.
+1. Add a filter to remove S3: Storage - Glacier Deep Archive. Set `Usage type group → Excludes → S3: Storage - Glacier Deep Archive`.
    ```{image} images/cost-explorer-exclude-deeparchive.png
-   :alt: Set the API Operation filter to exclude DeepArchiveObjectOverhead, DeepArchiveS3ObjectOverhead, and DeepArchiveStorage.
+   :alt: Set the Usage type group filter to exclude S3: Storage - Glacier Deep Archive.
+   ```
+1. Add a filter to remove OCBLateFee and Support (Enterprise). Set `Service-> Excludes →  OCBLateFee and Support (Enterprise)`.
+   ```{image} images/cost-explorer-exclude-ocblatefee.png
+   :alt: Set the Service filter to exclude OCBLateFee and Support (Enterprise).
    ```
 
+1. Add a filter to remove all items matching "Xfer-Out-Bytes" and "Transfer-Out-Bytes". Set `Usage type → Excludes → all items matching “Xfer-Out-Bytes” and “Transfer-Out-Bytes”`.
+   ```{image} images/cost-explorer-exclude-xferoutbytes.png
+   :alt: Set the Usage type filter to exclude all items matching “Xfer-Out-Bytes” and “Transfer-Out-Bytes”.
+   ```
+  ```{image} images/cost-explorer-exclude-transferoutbytes.png
+   :alt: Set the Usage type filter to exclude all items “Transfer-Out-Bytes”.
+   ```
 1. Now your total will show the AWS resources eligible for discount.
    ```{image} images/cost-explorer-discount-eligible.png
-   :alt: Costs eligible for discount are $2,036.25.
+   :alt: Costs eligible for discount are $22,001.87.
    ```
 
-1. Manually apply the 4.5% discount on the eligible costs from the previous step. In this example, the total discounted AWS resource costs are $1,944.62.
+1. Manually apply the discount in the contract(here we are considering a 1%) on the eligible costs from the previous step. In this example, the total discounted AWS resource costs are $1,944.62.
    ```{math}
-   Discounted AWS Resource Costs = Discount Eligible Costs - ( Discount Eligible Costs \times 4.5\% )
+   Discounted AWS Resource Costs = Discount Eligible Costs \times (100\% - 1\%)
    ```
    ```{math}
-   $1,944.62 = $2,036.25 - ( $2,036.25 \times 0.045 )
+   $21,781.85 = $22,001.87 \times 0.99
    ```
    ```{note}
    Note this number as `Discounted AWS Resource Costs` for future use below.
    ```
 
-1. Next we need to add AWS Marketplace and Deep Archive costs that are **NOT** eligible for discounts. Remove both the `Billing Entity` and `API Operations` filters. Your total should again show the raw costs ($3,381.06).
+1. Next we need to add AWS Marketplace and Deep Archive costs that are **NOT** eligible for discounts. Remove both the `Billing Entity` and `Usage type group` filters. Your total should again show the raw costs ($3,381.06).
    ```{important}
    Do not remove the `Charge Type` filter.
    ```
@@ -97,7 +108,7 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
 
 1. Your total should now show just AWS Marketplace costs.
    ```{image} images/cost-explorer-marketplace.png
-   :alt: AWS Marketplace costs are $1,344.78.
+   :alt: AWS Marketplace costs are $83.20.
    ```
    ```{note}
    Note this number as `AWS Marketplace Costs` for future use below.
@@ -105,14 +116,14 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
 
 1. Remove the `Billing Entity` filter.
 
-1. Determine Deep Archive costs. Add a filter for `API Operation → Includes → (everything matching DeepArchive)`.
+1. Determine Deep Archive costs. Add a filter for `Usage Type group → Includes → S3: Storage - Glacier Deep Archive`.
    ```{image} images/cost-explorer-include-deeparchive.png
-   :alt: Set the API Operation filter to include only DeepArchiveObjectOverhead, DeepArchiveS3ObjectOverhead, and DeepArchiveStorage.
+   :alt: Set the Usage Type group filter to include only S3: Storage - Glacier Deep Archive.
    ```
 
 1. You’ll see the total of just the Deep Archive costs.
    ```{image} images/cost-explorer-deeparchive.png
-   :alt: AWS Deep Archive costs are $0.02.
+   :alt: AWS Deep Archive costs are $52.62.
    ```
    ```{note}
    Note this number as `AWS Deep Archive Costs` for future use below.
@@ -123,7 +134,7 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    Account Total = Discounted AWS Resource Costs + AWS Marketplace Costs + AWS Deep Archive Costs
    ```
    ```{math}
-   $3,289.42 = $1,944.62 + $1,344.78 + $0.02
+   $21,917.67 = $21,781.85 + $83.20 + $52.62
    ```
 
 1. Repeat this process for each of your accounts. The total across all accounts that use the same PO should match the invoice you receive in the [CU Marketplace](https://www.cu.edu/uis/service-catalog/cu-marketplace).
