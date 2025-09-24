@@ -29,7 +29,7 @@ FPT combines the charges for all AWS accounts paid by the same PO into a single 
 
 ## Calculating your costs with AWS Cost Explorer
 
-Here's how to use AWS Cost Explorer to represent the charges you will see on an invoice from FPT. We'll use an example from May 2025.
+Here's how to use AWS Cost Explorer to represent the charges you will see on an invoice from FPT. We'll use an example from July 2025.
 
 1. [Log into your AWS account](../getting-started/aws-console-access) and navigate to the Billing and Cost Management service. Choose Cost Explorer from the menu on the left.
    ```{image} images/billing-and-cost-management.png
@@ -49,7 +49,7 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    :alt: Unfiltered costs are $21,675.23.
    ```
 
-1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund, Enterprise Discount Program Discount and Solutions Provider Program Discount ` under `More Filters`.
+1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund, Enterprise Discount Program Discount and Solutions Provider Program Discount ` under `More Filters`. `Enterprise Discount Program Discount` may not be present.
    ```{image} images/cost-explorer-exclude-refunds.png
    :alt: Set the Charge Type filter to exclude refunds, enterprise discount program discount and solution provider program discounts.
    ```
@@ -80,15 +80,16 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    ```{image} images/cost-explorer-exclude-xferoutbytes.png
    :alt: Set the Usage type filter to exclude all items matching “Xfer-Out-Bytes” and “Transfer-Out-Bytes”.
    ```
-  ```{image} images/cost-explorer-exclude-transferoutbytes.png
+   ```{image} images/cost-explorer-exclude-transferoutbytes.png
    :alt: Set the Usage type filter to exclude all items “Transfer-Out-Bytes”.
    ```
+
 1. Now your total will show the AWS resources eligible for discount.
    ```{image} images/cost-explorer-discount-eligible.png
    :alt: Costs eligible for discount are $22,001.87.
    ```
 
-1. Manually apply the discount in the contract(here we are considering a 1%) on the eligible costs from the previous step. In this example, the total discounted AWS resource costs are $1,944.62.
+1. Manually apply the discount in the contract (here we are considering a 1%) on the eligible costs from the previous step. In this example, the total discounted AWS resource costs are $1,944.62.
    ```{math}
    Discounted AWS Resource Costs = Discount Eligible Costs \times (100\% - 1\%)
    ```
