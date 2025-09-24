@@ -9,7 +9,7 @@ The **Blanca** compute cluster is a service provided by  **Research Comput
 - **Installation Location**: Contributions are installed in a CU data center at the discretion of Research Computing. 
 - **Operating Environment**: Contributed nodes are provisioned with a Linux-based OS and environment at the discretion of Research Computing. 
 - **Core Services Access**: Nodes are provisioned with access to Research Computing Core services and the PetaLibrary, to the extent technically feasible. 
-- **Acceptance Criteria**: Research Computing reserves the right to determine which contributions are accepted into Blanca. Recommended configurations are published on the Research Computing website. 
+- **Acceptance Criteria**: Research Computing reserves the right to determine which contributions are accepted into Blanca. Recommended configurations are published on the [Research Computing website](https://www.colorado.edu/rc/resources/blanca). 
 - **Cluster Configuration**: Contributed nodes are configured as part of a Slurm batch compute cluster. 
 
 ## Usage Model
