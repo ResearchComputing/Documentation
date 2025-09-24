@@ -17,9 +17,6 @@ Common job array scenarios include:
 
 * **High-throughput computing:** <br> Launching a large number of short, non-communicating jobs that can be run in parallel.
 
-```{seealso}
-The content presented in this page uses examples and information provided in the official SLURM Documentation. If you would like to learn more about Job Arrays, please see the [Job Array Support page](https://slurm.schedmd.com/job_array.html).
-```
 
 (jobarray-note-interactive)=
 ```{note}
@@ -308,3 +305,6 @@ You can use this method with any program that takes command-line arguments, not 
 `````
 
 
+```{seealso}
+The content presented in this page uses examples and information provided in the official SLURM Documentation. If you would like to learn more about Job Arrays, please see the [Job Array Support page](https://slurm.schedmd.com/job_array.html).
+```
