@@ -17,10 +17,14 @@ Common job array scenarios include:
 
 * **High-throughput computing:** <br> Launching a large number of short, non-communicating jobs that can be run in parallel.
 
+```{seealso}
+The content presented in this page uses examples and information provided in the official SLURM Documentation. If you would like to learn more about Job Arrays, please see the [Job Array Support page](https://slurm.schedmd.com/job_array.html).
+```
 
 (jobarray-note-interactive)=
 ```{note}
 In the context of a job array, SLURM refers to the individual "jobs" within the array as "tasks". To avoid any confusion, we will use that same language here. 
+
 ```
 
 
@@ -31,7 +35,7 @@ To convert a standard batch script into a job array, you will need to make three
   2. Modify the `--output` directive to include `%A` and `%a`
   3. Update your code to utilize the Job Array Environment Variables 
 
-Below is an example script that includes all three of these changes to create a job array with three tasks. 
+Here's a quick example that shows how all three (`--array`, `--output`, and the **environment variables**) work together. You'll find more details and examples in the sections below.
 
 ```bash
 #!/bin/bash
@@ -49,7 +53,7 @@ module purge
 # 3 - If necessary, update your script to use the Task ID. 
 #     This ensures each task will run its assigned workflow
 
-echo "This task's index is $SLURM_ARRAY_TASK_ID "
+echo "This task's index is $SLURM_ARRAY_TASK_ID"
 echo "This job array has $SLURM_ARRAY_TASK_COUNT tasks"
 echo "The array's Job ID is $SLURM_ARRAY_JOB_ID"
 echo "The task's Job ID is $SLURM_JOB_ID"
@@ -85,7 +89,7 @@ An example of each of these is provided below.
 ````{tab-item} Default Step Size
 :sync: ex-job-array-config-range
 
-Request 3 Jobs with Indexes 1, 2, and 3
+Request 3 Tasks with Indexes 1, 2, and 3
 ```bash
 #SBATCH --array=<START>-<STOP> 
 #SBATCH --array=1-3
@@ -96,7 +100,7 @@ Request 3 Jobs with Indexes 1, 2, and 3
 ```` {tab-item} Specific Step Size
 :sync: ex-job-array-config-basic-step
 
-Request 4 Jobs with Indexes 3, 6, 9, and 12
+Request 4 Tasks with Indexes 3, 6, 9, and 12
 ```bash
 #SBATCH --array=<START>-<STOP>:<STEP>
 #SBATCH --array=3-12:3 
@@ -107,7 +111,7 @@ Request 4 Jobs with Indexes 3, 6, 9, and 12
 ```` {tab-item} List of Indexes
 :sync: ex-job-array-config-basic-list
 
-Request 5 Jobs with Indexes 10, 45, 83, 96, and 103
+Request 5 Tasks with Indexes 10, 45, 83, 96, and 103
 ```bash
 #SBATCH --array=<INDEX 1>,<INDEX 2>,<INDEX N>
 #SBATCH --array=10,45,83,96,103
@@ -158,7 +162,7 @@ SLURM provides a set of environment variables specific to job arrays. Those vari
 | SLURM_ARRAY_TASK_ID         | The specific index of a task in the array       |
 | SLURM_ARRAY_TASK_COUNT      | The number of tasks within the array            |
 | SLURM_ARRAY_TASK_MAX        | The highest index in the array                 |
-| SLURM_ARRAY_JOB_MIN         | The lowest index in the array                  |
+| SLURM_ARRAY_TASK_MIN         | The lowest index in the array                  |
 
 As an example, if a job array was submitted with `--array=1-3`, it would result in a set of three tasks with values similar to these: 
 
@@ -213,7 +217,12 @@ You can use `scancel` to cancel all of the tasks or a specific set of tasks in a
 
 ## Example Batch Scripts
 
-### Assigning Data to Tasks
+(tabset-ref-ex-job-array-scripts)=
+`````{tab-set}
+:sync-group: tabset-ex-job-array-scripts
+
+````{tab-item} Assigning Data to Tasks
+:sync: ex-job-array-config-range
 
 This example shows you how to organize your data so it's "job array friendly" by giving each task its own data file to process. One way to do this is to divide your data into a set of smaller files and name each file with a specific task id.
 
@@ -239,8 +248,10 @@ module purge
 cat "DATA_${SLURM_ARRAY_TASK_ID}.csv"
 ```
 
+````
 
-### Assigning Parameters to Tasks
+```` {tab-item} Assigning Parameters to Tasks
+:sync: ex-job-array-config-basic-step
 
 This example shows how to assign unique parameters to each task in a job array. The parameters are stored in a text file called `parameters.txt`.
 
@@ -266,7 +277,8 @@ You can use this method with any program that takes command-line arguments, not 
     module purge
     module load miniforge
 
-    # run workflow
+    # Note - the python script assumes two arguments (car name and mpg) 
+    #        are listed on each line of the parameters.txt file
     python cars_mpg.py $(sed -n "${SLURM_ARRAY_TASK_ID}p" parameters.txt)
     ```
 
@@ -291,6 +303,8 @@ You can use this method with any program that takes command-line arguments, not 
     cutlass 23
     ```
 
-```{seealso}
-If you would like to learn more about Job Arrays, please see the official [Job Array Support page](https://slurm.schedmd.com/job_array.html). 
-```
+````
+
+`````
+
+
