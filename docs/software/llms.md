@@ -34,7 +34,7 @@ For the Ollama framework, we provide the following models:
     - This model has been quantized using the Q4_K_M format
     - Requires about 5 GB of GPU memory 
     
-If you are using your own installation of Ollama, you should set the Ollama model path as follows:
+If you are using your own installation of Ollama with a CURC-provided model, you should set the Ollama model path as follows:
 ```
 export OLLAMA_MODELS=$CURC_LLM_DIR/ollama
 ```
