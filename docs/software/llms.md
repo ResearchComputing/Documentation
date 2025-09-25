@@ -154,6 +154,7 @@ For non-testing workflows, users should request NVIDIA GPUs using the `aa100` pa
 
 Now that we have a session started, we will export important environment variables using the `ollama_v` variable we established in the previous section. 
 ```
+export ollama_v="v0.11.10"
 export PATH=/projects/$USER/ollama/$ollama_v/bin:$PATH
 export LD_LIBRARY_PATH=/projects/$USER/ollama/$ollama_v/lib:$LD_LIBRARY_PATH
 export OLLAMA_TMPDIR=$SCRATCHDIR/$USER/ollama_temp
