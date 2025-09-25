@@ -314,7 +314,7 @@ uv pip install huggingface_hub[cli] protobuf tiktoken bitsandbytes
 uv pip install -U transformers datasets evaluate accelerate timm kernels
 ```
 ```{note}
-Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. This will ensure that PyTorch can utilize all NVIDIA GPUs currently on CURC resources. 
+Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. This will ensure that PyTorch can run on all NVIDIA GPU models currently on CURC resources. 
 ```
 At this point, all libraries needed to run our LLM examples have been installed. However, it is very important to set the following environment variables and make sure that the associated directories exist (this will ensure that your home directory does not fill up):
 ```
