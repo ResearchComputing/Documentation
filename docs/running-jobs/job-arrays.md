@@ -192,24 +192,47 @@ SLURM_ARRAY_TASK_MIN=1
 ## Canceling Job Arrays and Tasks
 You can use `scancel` to cancel all of the tasks or a specific set of tasks in a job array. 
 
-  * Cancel an individual task 
+(tabset-ref-ex-job-array-scancel)=
+`````{tab-set}
+:sync-group: tabset-ex-job-array-scancel
 
-    ```
-    scancel <SLURM_ARRAY_JOB_ID>_<SLURM_ARRAY_TASK_ID>
-    scancel 505_3
-    ```
-  * Cancel a subset of tasks
+````{tab-item} One Task
+:sync: ex-job-array-scancel-one
+Cancel an individual task 
 
-    ```
-    scancel <SLURM_ARRAY_JOB_ID>_[<SLURM_ARRAY_TASK_ID>-<SLURM_ARRAY_TASK_ID>]
-    scancel 505_[2-3]
-    ```
-  * Cancel all tasks
+```
+scancel <SLURM_ARRAY_JOB_ID>_<SLURM_ARRAY_TASK_ID>
+scancel 505_3
+```
 
-    ```
-    scancel <SLURM_ARRAY_JOB_ID>
-    scancel 505
-    ```
+````
+
+```` {tab-item} Subset of Tasks
+:sync: ex-job-array-scancel-subset
+
+Cancel a subset of tasks
+
+  ```
+  scancel <SLURM_ARRAY_JOB_ID>_[<SLURM_ARRAY_TASK_ID>-<SLURM_ARRAY_TASK_ID>]
+  scancel 505_[2-3]
+  ```
+
+````
+
+```` {tab-item} All Tasks
+:sync: ex-job-array-scancel-all
+Cancel all tasks
+
+```
+scancel <SLURM_ARRAY_JOB_ID>
+scancel 505
+```
+
+
+````
+
+
+`````
 
 
 ## Example Batch Scripts
