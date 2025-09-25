@@ -510,12 +510,13 @@ from the store, cookies are a timeless treat that's sure to put a smile on your 
 ````
 
 `````
-
-If you are in an interactive session, it is often preferred to stream the content to the terminal. This can be done my replacing the `model.generate` function with the following:
+:::{tip}
+If you are in an interactive session, it is often preferred to stream the content to the terminal, rather than print out the output (e.g. use the `print(tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:]))` statement above). This can be done my replacing the `model.generate` function and the proceeding lines with the following:
 ```python
 from transformers import TextStreamer
 streamer = TextStreamer(tokenizer)
 output = model.generate(**inputs, max_new_tokens=200, streamer=streamer)
 ```
 Once the model begins to generate the output, you will be able to see it appear in the terminal in real time. 
+:::
 ::::
