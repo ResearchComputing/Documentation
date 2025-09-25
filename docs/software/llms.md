@@ -173,11 +173,12 @@ fi
 done
 ```
 We can now set the directory where our Ollama models are stored.
+```{note}
+- Before setting this variable, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
+- `OLLAMA_MODELS` must be set. If this variable is not set, models will be downloaded into your home directory. 
+```
 ```
 export OLLAMA_MODELS=/projects/$USER/my_ollama_models
-```
-```{note}
-Before setting this variable, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
 ```
 ```{important}
 All environment variables that have been set so far need to be set every time you want to use your install of Ollama. 
