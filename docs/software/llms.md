@@ -110,7 +110,7 @@ export OLLAMA_MODELS=/projects/$USER/my_ollama_models; module load ollama
 ```
 :::
 
-At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided [uv](./uv.md#uv) environment:
+At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided [uv](./uv.md) environment:
 ```
 module load uv 
 source $CURC_UV_ENV_DIR/ollama-python-api-env/bin/activate
@@ -197,7 +197,7 @@ This will enable us to use Ollama from the command line.
 
 ## Installing the Ollama Python API 
 
-In the previous section, we set up the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](./uv.md#uv):
+In the previous section, we set up the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](./uv.md):
 ```
 module load uv
 uv venv $UV_ENVS/ollama-python-api-env
@@ -287,7 +287,7 @@ Once you are on the GPU compute node, you can load the Transformers module, whic
 ```
 module load hf-transformers
 ```
-Once this module has been loaded, you will be within the `uv` environment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
+Once this module has been loaded, you will be within the [uv](./uv.md) environment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
 
 ````
 
@@ -314,7 +314,7 @@ uv pip install huggingface_hub[cli] protobuf tiktoken bitsandbytes
 uv pip install -U transformers datasets evaluate accelerate timm kernels
 ```
 ```{note}
-Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. 
+Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. This will ensure that PyTorch can utilize all NVIDIA GPUs currently on CURC resources. 
 ```
 At this point, all libraries needed to run our LLM examples have been installed. However, it is very important to set the following environment variables and make sure that the associated directories exist (this will ensure that your home directory does not fill up):
 ```
