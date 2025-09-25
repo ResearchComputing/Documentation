@@ -1,14 +1,14 @@
 # Running Large Language Models
 
-Large Language Models (LLMs) have become extremely popular. Although LLMs such as ChatGPT and Google's Gemini are extremely useful, there are two primary downsides to using such a service: data privacy and cost. Additionally, it is often the case that more specialized LLMs are needed (rather than large general models) or researchers want to train models to fit their specialized case. To address these cases, users can run local open-source LLMs. In this section, we provide several approaches to setting up and running open-source LLMs on Alpine and Blanca using popular frameworks. 
+Large Language Models (LLMs) have become extremely popular. Although LLMs such as ChatGPT and Google's Gemini are extremely useful, there are two primary downsides to using such a service: data privacy and cost. Additionally, it is often the case that more specialized LLMs are needed (rather than large general models), or researchers want to train models to fit their specialized case. To address these cases, users can run open-source LLMs locally. In this section, we provide several approaches to setting up and running open-source LLMs on Alpine and Blanca using popular frameworks. 
 
 ```{warning}
-Before running or working with LLMs on CURC resources, please be sure that you are adhering to all [CURC User Policies](https://curc.readthedocs.io/en/latest/additional-resources/policies.html) and CU's policies and guidance around Artificial Intelligence outlined in the pages [Artificial Intelligence at CU Boulder](https://www.colorado.edu/information-technology/artificial-intelligence-cu-boulder) and [Resources & Guidance](https://www.colorado.edu/information-technology/ai-cu-boulder/resources-guidance#accordion-1981143711-1). 
+Before running or working with LLMs on CURC resources, please be sure that you are adhering to all [CURC User Policies](https://curc.readthedocs.io/en/latest/additional-resources/policies.html) and CU's policies and guidance around Artificial Intelligence outlined in the pages [Artificial Intelligence at CU Boulder](https://www.colorado.edu/information-technology/artificial-intelligence-cu-boulder) and [Resources & Guidance](https://www.colorado.edu/information-technology/ai-cu-boulder/resources-guidance). 
 ```
 
 ## Accessing stored LLMs on CURC
 
-To streamline access and reduce redundant storage of LLMs, CURC has created a shared space for common LLMs. This is a CURC managed space, as such, users cannot install models themselves in this space. However, if you believe a model should be available in this directory, please reach out to <rc-help@colorado.edu>. To access these models, users should utilize the environment variable `CURC_LLM_DIR` followed by their framework of choice. For more information about what models and frameworks are provided, please consult the tabs below. 
+To streamline access and reduce redundant storage of LLMs, CURC has created a shared space for common LLMs. This is a CURC managed space. As such, users cannot install models themselves in this space. However, if you believe a model should be available in this directory, please reach out to <rc-help@colorado.edu>. To access the models stored in this shared space, users should utilize the environment variable `CURC_LLM_DIR`, followed by their framework of choice. For more information about what models and frameworks are provided, please consult the tabs below. 
 ```{important}
 The path specified by `CURC_LLM_DIR` is only available on compute nodes.  
 ```
@@ -24,7 +24,7 @@ For the Ollama framework, we provide the following models:
 - `gpt-oss:20b`
     - An open-source model from OpenAI 
     - This model has been quantized using the MXFP4 format
-    - It requires about 14 GB of GPU memory 
+    - Requires about 14 GB of GPU memory 
 - `gemma3:12b`
     - An open-source model from Google 
     - This model has been quantized using the Q4_K_M format
@@ -51,7 +51,7 @@ For the Transformers framework, we provide the following models:
 - `gpt-oss-20b`
     - An open-source model from OpenAI 
     - This model has been quantized using the MXFP4 format
-    - It requires about 14 GB of GPU memory 
+    - Requires about 14 GB of GPU memory 
 - `gemma-3-12b-it`
     - An open-source model from Google 
     - This model has not been quantized and its tensors are in BF16 precision
@@ -143,7 +143,7 @@ After execution, these commands should create a `bin` and `lib` directory contai
 
 ## Setting up the Ollama install 
 
-Now that we have Ollama installed, we need to startup an Ollama server on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). We will then be able to interact with Ollama and our LLMs from the command line. For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition:
+Now that we have Ollama installed, we need to start up an Ollama server on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). We will then be able to interact with Ollama and our LLMs from the command line. For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition:
 ```
 sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
 ```
@@ -194,7 +194,7 @@ This will enable us to use Ollama from the command line.
 
 ## Installing the Ollama Python API 
 
-In the previous section, we setup the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](./uv.md#uv):
+In the previous section, we set up the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](./uv.md#uv):
 ```
 module load uv
 uv venv $UV_ENVS/ollama-python-api-env
@@ -293,7 +293,7 @@ Once this module has been loaded, you will be within the `uv` environment named 
 
 ## Installing Transformers
 
-In this section, we describe how to setup a minimal [uv](./uv.md) environment, which provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
+In this section, we describe how to set up a minimal [uv](./uv.md) environment, which provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
 ```
 sinteractive --ntasks=4 --partition=acompile --qos=compile --nodes=1 --time=01:00:00
 ```
@@ -334,14 +334,14 @@ All environment variables that have been set need to be set every time you want 
 
 In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
-After you have your account setup, you can search models using the [Hugging Face Models](https://huggingface.co/models) page. Here you can refine your search based on the task you want to complete, model size, and dependent libraries. Once you have identified a model that you would like to run, review the model card, paying attention to the libraries needed and examples provided. If necessary, accept the terms of use for the model. For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
+After you have your account set up, you can search models using the [Hugging Face Models](https://huggingface.co/models) page. Here you can refine your search based on the task you want to complete, model size, and dependent libraries. Once you have identified a model that you would like to run, review the model card, paying attention to the libraries needed and examples provided. If necessary, accept the terms of use for the model. For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
 ```{note}
 Depending on the model, it can take 30 minutes or more to get access to the model once you have accepted the terms of use. 
 ```
 
 At this point, all necessary libraries should be installed in either your custom environment or CURC's provided environment and we can begin downloading the LLMs we would like to run. If you are using our Transformers module, `HF_HOME` and `HF_HUB_CACHE` will point to your project's directory, ensuring that your home directory does not fill up. If you are not using our module, be sure these variables are appropriately set before proceeding. There are several ways to install a model, however, we often suggest that you use the `huggingface-cli`. For more in-depth information about `huggingface-cli` (such as how to view models and delete them) see [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli#command-line-interface-cli). The [hf cache scan](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-scan) and [hf cache delete](https://huggingface.co/docs/huggingface_hub/en/guides/cli#hf-cache-delete) sections are particularly useful for managing models.
 
-Once the `huggingface-cli` is available, you can setup your token associated with our system using the following
+Once the `huggingface-cli` is available, you can set up your token associated with our system using the following
 ```
 hf auth login
 ```
@@ -356,24 +356,24 @@ chmod o-r /projects/$USER/hf_transformers/token
 ```{note}
 Before proceeding with a model install, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
 ```
-Now that we have our tokens setup and we have accepted the terms of use, we can install our model from the command line. Here, we will install a very simple Gemma model ([google/gemma-3-270m-it](https://huggingface.co/google/gemma-3-270m-it)) into our directory `/projects/$USER/hf_transformers/gemma-3-270m-it`:
+Now that we have our tokens set up and we have accepted the terms of use, we can install our model from the command line. Here, we will install a very simple Gemma model ([google/gemma-3-270m-it](https://huggingface.co/google/gemma-3-270m-it)) into our directory `/projects/$USER/hf_transformers/gemma-3-270m-it`:
 ```
 hf download --local-dir /projects/$USER/hf_transformers/gemma-3-270m-it google/gemma-3-270m-it 
 ```
 ```{tip}
-On Hugging Face there are often different types of LLMs. For example, some have "instruct" in their name or specify that they are instruct models. Instruct models are, as the name implies, instruction models. These models are most likely what you want as they are ideal for specifying tasks for the LLM to perform and are the models used in common chat interfaces. In contrast, the base models make no assumption about structure and are attempting to only complete the text provided. 
+On Hugging Face, there are often different types of LLMs. For example, some have "instruct" in their name or specify that they are instruct models. Instruct models are, as the name implies, instruction models. These models are most likely what you want as they are ideal for specifying tasks for the LLM to perform and are the models used in common chat interfaces. In contrast, the base models make no assumption about structure and are attempting to only complete the text provided. 
 ```
 After this installation completes, you will then have access to your installed model! See the next section for instructions on running this LLM from Python. 
 ::::
 
-#### Running an LLM from Python
+#### Running an LLM from Python using Hugging Face's Transformers
 
 ::::{dropdown} Show 
 :icon: note
 
 In this section, we assume that you have installed all necessary libraries and the model you would like to run (or are using our module and provided models). Additionally, we assume you are on an NVIDIA GPU compute node. Please note that the below instructions are just one possible way to run an LLM using Transformers. There are also other methods, such as [Pipelines](https://huggingface.co/docs/transformers/en/main_classes/pipelines#pipelines) that exist. 
 
-Now that we are ready to run our LLM, there is one last important consideration we need to make before running the model. That is, whether to quantize the LLM. Many models provided on Hugging Face are not quantized and for this reason are very large. Depending on the GPU you are using, this can be a very big problem because you may not have enough space on the GPU. For example, our `atesting_a100` partition only provides 20 GB of GPU memory, which is often too small for medium-sized models that have not been quantized. When this is the case, we often want to perform [Quantization](https://huggingface.co/docs/transformers/v4.56.2/quantization/overview) to reduce the memory footprint. Below we provide an example where we do not utilize quantization and one where we do.  
+Now that we are ready to run our LLM, there is one last important consideration we need to make before running the model: whether to quantize the LLM. Many models provided on Hugging Face are not quantized, and for this reason, are very large. Depending on the GPU you are using, this can be a big problem because you may not have enough space on the GPU's VRAM. For example, our `atesting_a100` partition only provides 20 GB of GPU memory (VRAM), which is often too small for medium-sized models that have not been quantized. When this is the case, we often want to perform [Quantization](https://huggingface.co/docs/transformers/v4.56.2/quantization/overview) to reduce the memory footprint. Below we provide an example where we do not utilize quantization and one where we do.  
 
 
 (tabset-ref-transformers-run)=
@@ -383,7 +383,7 @@ Now that we are ready to run our LLM, there is one last important consideration 
 ````{tab-item} No quantization
 :sync: transformers-run-no-quant
 
-In this tab, we run our `gpt-oss-20b` model without quantization. Quantization is not needed for this model because by default, the model obtained from Hugging Face has been quantized using the MXFP4 format. Additionally, it nicely fits on one of our `atesting_a100` GPUs. To run the `gpt-oss-20b` model without quantization lets create the following script named `transformers_run_no_quant.py`:
+In this tab, we run our `gpt-oss-20b` model without quantization. Quantization is not needed for this model, as by default, the model obtained from Hugging Face has been quantized using the MXFP4 format. Additionally, it nicely fits on one of our `atesting_a100` GPUs. To run the `gpt-oss-20b` model without quantization let's create the following script named `transformers_run_no_quant.py`:
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import os 
@@ -442,7 +442,7 @@ of salt to amplify
 ````{tab-item} Applying Quantization 
 :sync: transformers-run-quant
 
-In this tab, we run our `Llama-3.1-8B-Instruct` model with quantization. Quantization is needed for this model, if we want to run it on our `atesting_a100` GPUs. Here we will utilize QLoRA or 4-bit quantization. To run `Llama-3.1-8B-Instruct` with quantization lets create the following script named `transformers_run_quant.py`:
+In this tab, we run our `Llama-3.1-8B-Instruct` model with quantization. Quantization is needed for this model if we want to run it on our `atesting_a100` GPUs. Here we will utilize QLoRA or 4-bit quantization. To run `Llama-3.1-8B-Instruct` with quantization, let's create the following script named `transformers_run_quant.py`:
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
