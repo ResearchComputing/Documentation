@@ -335,6 +335,10 @@ All environment variables that have been set need to be set every time you want 
 
 ::::{dropdown} Show 
 
+```{note}
+Before proceeding with a model install, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
+```
+
 In order to install models from Hugging Face, you will need to create an account using <https://huggingface.co/join>. Once you have an account, you will then need to generate a token for our system using the documentation provided under the [User access tokens](https://huggingface.co/docs/hub/en/security-tokens#user-access-tokens) page. If you only intend to install publicly available models and data, then usually read permissions are sufficient for the token. 
 
 After you have your account set up, you can search models using the [Hugging Face Models](https://huggingface.co/models) page. Here you can refine your search based on the task you want to complete, model size, and dependent libraries. Once you have identified a model that you would like to run, review the model card, paying attention to the libraries needed and examples provided. If necessary, accept the terms of use for the model. For example, [Meta's Llama 3.1](https://huggingface.co/meta-llama/Llama-3.1-8B) requires you to accept a community license agreement. However, at the time of writing this documentation, OpenAI's [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) does not require a license agreement. 
@@ -356,9 +360,6 @@ chmod o-r /projects/$USER/hf_transformers/stored_tokens
 chmod o-r /projects/$USER/hf_transformers/token
 ```
 :::
-```{note}
-Before proceeding with a model install, consult [Accessing stored LLMs on CURC](#accessing-stored-llms-on-curc) to see if CURC already provides the model you intend to use! 
-```
 Now that we have our tokens set up and we have accepted the terms of use, we can install our model from the command line. Here, we will install a very simple Gemma model ([google/gemma-3-270m-it](https://huggingface.co/google/gemma-3-270m-it)) into our directory `/projects/$USER/hf_transformers/gemma-3-270m-it`:
 ```
 hf download --local-dir /projects/$USER/hf_transformers/gemma-3-270m-it google/gemma-3-270m-it 
