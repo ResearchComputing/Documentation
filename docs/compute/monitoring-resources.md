@@ -299,6 +299,10 @@ CPU Efficiency (%)
 ```
 The above indicates that all of the jobs displayed less than 40% CPU efficiency, with the majority (244/256) demonstrating between 10% and 20% efficiency. This information will also be displayed for memory and time efficiency. 
 
+```{seealso}
+If you are not familiar with Job Arrays in SLURM, you can learn more on the ["Scaling Up with job Arrays" page](../running-jobs/job-arrays.md).
+```
+
 ## XDMoD 
  
 XDMoD is a web portal for viewing metrics at the system-, partition- and user-levels.
