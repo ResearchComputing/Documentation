@@ -100,6 +100,7 @@ cloud/cumulus
 :caption: Software
 
 software/curc_provided_software
+software/llms
 software/loadbalancer
 software/gaussian
 software/matlab
