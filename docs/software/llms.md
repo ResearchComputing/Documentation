@@ -331,7 +331,7 @@ All environment variables that have been set need to be set every time you want 
 
 `````
 
-#### Dowloading models 
+#### Downloading Transformers Compatible Models
 
 ::::{dropdown} Show 
 
@@ -369,7 +369,7 @@ On Hugging Face, there are often different types of LLMs. For example, some have
 After this installation completes, you will then have access to your installed model! See the next section for instructions on running this LLM from Python. 
 ::::
 
-#### Running an LLM from Python using Hugging Face's Transformers
+#### Running an LLM from Python using Transformers
 
 ::::{dropdown} Show 
 :icon: note
