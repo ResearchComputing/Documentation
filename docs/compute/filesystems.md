@@ -88,7 +88,7 @@ cp new_file /projects/user1234/job/new_file
 
 ### How to increase I/O performance: 
 
-1. If you are running a job array and each job in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/alpine/$USER` first.  
+1. If you are running a [job array](../running-jobs/job-arrays.md) and each task in the array will be reading the same dataset, `/pl/active` is not an optimal place for simultaneous reads (or writes).  Instead, copy the data to `/scratch/alpine/$USER` first.  
 
 2. If you need to read data from `/pl/active` more than once during a job, copy it to `$SLURM_SCRATCH` at the beginning of the job and read it from there. Or. if the dataset is too big for `$SLURM_SCRATCH`, copy it to `/scratch/alpine/$USER` and read it from there. 
 
