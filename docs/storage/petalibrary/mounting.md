@@ -1,8 +1,13 @@
-# Adding Petalibrary to a Local Machine
+# Mounting Petalibrary on a Local Machine
 
-Users with Petalibrary allocations may access and transfer files to/from their local desktop workstatation within the CU internal network without needing to formally tranfer files via traditional methods such as `scp`, `sftp` `rsync` or `Globus`. This form of data access is referred to as _mounting_ and can be done on any operating system in a variety of ways.
+Users with Petalibrary allocations may access and transfer files to/from their local desktop workstatation within the CU internal network without needing to formally tranfer files via traditional methods such as `scp`, `sftp` `rsync` or `Globus`. This form of data access is referred to as _mounting_ and can be done on any operating system via `SMB` or `sshfs`.
 
-## SMB mounting to Petalibrary
+(tabset-ref-ucb-pl-mounting-types)=
+`````{tab-set}
+:sync-group: tabset-ucb-pl-mounting-types
+
+````{tab-item} SMB
+:sync: tabset-ucb-pl-mounting-types-smb
 
 SMB (Secure Message Block) is a cross platform network sharing protocol that allows users to mount their Petalibrary allocations onto their local machines. SMB is supported on all major operating systems and all it takes to mount is a simple connection to CURC's network.
 
@@ -29,8 +34,6 @@ smb://<RC-provided-hostname>/<your-pl-allocation>
 
 You will be prompted for your RC Username and Password. Type in the required information and click `Connect`. Accept your Duo notification and you Petalibrary Allocation will be mounted. 
 
-
-
 ### Mounting with SMB on Windows
 
 Mounting on Windows is a little more involved then on a Mac or Linux counterpart. First ensure you are connected to the CU VPN. Navigate to `This PC` and click on `Computer` -> `Add a network location`.
@@ -54,8 +57,10 @@ Password: <your-rc-password>
 
 ![](./mounting_images/smb3.png)
 
+````
 
-## `sshfs` mounting to Petalibrary
+````{tab-item} sshfs
+:sync: tabset-ucb-pl-mounting-types-sshfs
 
 Use of `sshfs` provides an alternate solution for mounting your Petalibrary allocation to a local machine. Like SMB you will need to be connected to CU's internal network to access this utility. The `sshfs` utility is primarily supported on Unix-based operating systems, but can be run on a Windows operating system with a bit more effort. 
 
@@ -89,3 +94,6 @@ Once this is done click the `connect` button. You will be prompted for a passwor
 - The sshfs-win manager application may point to the incorrect `sshfs` binary by default. You can correct this in the "Settings" menu and adding the correct path to the application.
 - You may run into an issue where `sshfs` fails to wait for your Duo response. To correct this, open the `Settings` menu and increase the `Process Timeout` field.
 
+````
+
+`````
