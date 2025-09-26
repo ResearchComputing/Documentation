@@ -24,6 +24,7 @@ Click the name of a training to view more details and register!
 ### **October**
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
+- [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
@@ -46,6 +47,7 @@ Click the name of a training to view more details and register!
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 19th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
+- [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 ### **Version Control**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 ### **Parallelization & Acceleration**
@@ -69,6 +71,7 @@ Click the name of a training to view more details and register!
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 19th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
+- [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 
 ### **Intermediate**
 - [Research Computing Workflow Workbench - Working with Slurm](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
