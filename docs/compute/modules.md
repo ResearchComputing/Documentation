@@ -6,9 +6,6 @@ must be loaded in. This allows Research Computing to provide multiple
 versions of the software concurrently and enables users to easily switch 
 between different versions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/csgl4czhD_k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
 ## The `module` Command
 
 **_Modules should be loaded in job scripts, interactive jobs, or on
@@ -19,14 +16,17 @@ or a compile node.
 
 To see what modules are available to load, ssh into a compile node by
 typing `acompile` from a login node, and type:
-
 ```
 module avail
 ```
-
 This will return a list of modules available to load into the
-environment. **_Please note if you run this command on a login node
-you will not receive a list of modules present on the system._** It is also important to note that if a module has dependencies, you may not see the module listed until dependencies are loaded.  
+environment.
+```{important} 
+If you run `module avail` from a login node, you will not see a full list of available software modules on the system. You must be on a compute node to see the full software stack. Additionally, if a module has dependencies, you may not see them listed until those dependencies have been loaded.  
+```
+```{tip}
+If you would prefer a table detailing all modules, consult our [CURC-Provided Software](../software/curc_provided_software.md) page. 
+```
 
 To load your chosen modules into the environment type:
 
@@ -75,6 +75,7 @@ command may require specialized syntax.
 Command                 | Shortened Command            | Description  | Example |
 ----------------------- | ---------------------------- | ------------ | --------|
 `module avail`          | `ml av`                      | List available software. Modules not listed here may have unmet dependencies which must be loaded for the module to be available. | `module avail`
+`module list` |  | List all of the currently loaded software modules. | `module list`
 `module spider <module>`| `ml spider <module>`         | Searches for a particular software. | `module spider openmpi`
 `module load <module>`  | `ml <module>`                | Load a module to use the software. In this example we are loading the GNU Compiler Collection. The default version will load because we have not specified a version. | `module load gcc`
 `module load <module>/<version>` | `ml <module>/<version>`      | Load GCC version 10.3.0 | `module load gcc/10.3.0`

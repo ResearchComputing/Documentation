@@ -3,10 +3,15 @@
 Anschutz Medical Campus users can access the Alpine Supercomputer using ssh keys. Please contact <hpcsupport@cuanschutz.edu> to initiate this process.
 
 ## *Prerequisites:*
-* If you do not already have an XSEDE/ACCESS account, follow the [instructions for new user registration](https://identity.access-ci.org/new-user). Please direct any questions about new accounts to the ACCESS ticketing system (<https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30>).
-* Sign and fill out CU Anschutz's Alpine form: <https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake>
-* You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
-* You must be connected to a CU Anschutz network or the CU Anshutz VPN.
+* You must have a valid CURC account to access Alpine. For instructions on obtaining a CURC account, please follow our [Getting a CURC account](../getting_started/logging-in.html?tabset-logging-in=logging-in-amc#tabset-ref-get-account){.external} documentation under the AMC tab.
+* Sign and fill out the [Anschutz ssh request form](https://ucdenverdata.formstack.com/forms/Alpine_ssh_request_form).
+* ssh on-boarding meetings are hosted monthly. You will not be able to get ssh access until you attend this meeting. You can notify the team you are interested in attending the next on-boarding session by emailing us at <hpcsupport@cuanschutz.edu>. Also feel free to reach out should you have any questions!
+* You must be connected to the CU Anschutz Wi-Fi network or the CU Anschutz VPN for Alpine ssh access to work.
+
+```{important}
+Steps 1-4 below should be completed during an on-boarding Zoom session with a CU Anschutz support member present.
+```
+
 
 ```{note}
 A download link for GlobalProtect VPN and setup instructions for CU Anschutz affiliates are available from <https://www.cuanschutz.edu/offices/office-of-information-technology/tools-services/remote-access-vpn>. Once the VPN is configured, a web login will require you to enter your CU Anschutz username and password and accept the Duo prompt.

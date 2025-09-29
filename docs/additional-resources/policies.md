@@ -127,8 +127,7 @@ opportunity to copy their needed data elsewhere.
 
 ## Compute allocations
 
-The cumulative computing allocations of a single research group across all projects may not exceed 5 M SU/year or 2.5 M SU over 6 
-months. Project allocations submitted by members of the same research group should have distinguishable research objectives. CURC 
+The cumulative computing allocations of a single research group across all projects may not exceed 6 M SU/year. Project allocations submitted by members of the same research group should have distinguishable research objectives. CURC 
 reserves the right to reject new project allocation requests and/or suggest amendments to existing allocations. 
 
 <br>

@@ -15,7 +15,7 @@ The GPUs provided are not meant for computationally intensive workflows. These G
 
 1. Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **"Core Desktop"**. 
 
-2. Select your preferred configuration option and then click **“Launch”** to submit the remote desktop job to the queue. The wait time depends on the number of other users presently on the resource. Requesting smaller and shorter jobs may facilitate shorter wait times. 
+2. Select your preferred configuration option and then click **“Launch”** to submit the remote desktop job to the queue. For more information on custom configuration options see [Configuring Open OnDemand interactive applications](./configuring_apps.md). The wait time depends on the number of other users presently on the resource. Requesting smaller and shorter jobs may facilitate shorter wait times. 
 
 3. When your remote desktop is ready, you can click the **"Launch Core Desktop"** button to bring up a web page with the remote desktop. In most cases, the default compression and image quality will suffice. If you do have problems with image quality, you can adjust these settings as necessary. 
 

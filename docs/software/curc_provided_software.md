@@ -1,16 +1,23 @@
-# Alpine Software
+# CURC-Provided Software
 
-## Software Installed on Alpine
-This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC Alpine. 
+The following page provides a list of all software that is included in CURC's software stack. This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC. These modules are accessible on both Alpine and Blanca. For more information on viewing and using modules, please refer to our [Modules System](../compute/modules.md) page. 
 
-Refer to our [Modules System](../../compute/modules.md) page for instructions on how to view and load software.
+```{important}
+Before requesting a software installation, please review our [Software installations](../additional-resources/policies.md#software-installations) policy. This should be done before each request, as the policy is subject to change. If you have any questions about this policy, please feel free to reach out to us at <rc-help@colorado.edu>. 
+```
+
+:::{admonition} Legend for software table
+:class: tip
+
+**(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
+:::
 
 | Application           | Version(s)          | Description      |
 | --------------------- | ------------------- | ---------------- |
 | [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) (L) | V6R2019x | Abaqus FEA is a software suite for finite element analysis and computer-aided engineering.|  
-| [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0, 2.3.1, 3.0.0 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structures.| 
+| [AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) (G) | 2.2.0, 2.3.1, 3.0.0, 3.0.1 (D) | AlphaFold is an artificial intelligence program developed by DeepMind, a subsidiary of Alphabet, which performs predictions of protein structures.| 
 | [AltairFEKO](https://altair.com/feko) (L) | 2019.2, 2023.1 (D) | FEKO is an electromagnetics software developed by Altair Engineering for use in field calculations for bodies of arbitrary shapes. | 
-| [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11, 2022.10, 2023.09 (D) | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](../../software/python.md)| 
+| [Anaconda](https://www.anaconda.com/products/distribution) | 2020.11, 2022.10, 2023.09 (D) | Anaconda is a distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment. [CURC Usage Guide](./python.md)| 
 | [Ansys](https://www.ansys.com/) (L,G) | EM21.2, EM22.2 (D), EM23.1 | CAE/multiphysics engineering simulation software for product design, testing and operation.|
 | [ANTLR](https://www.antlr.org/) | 4.13.1 | A parser generator for reading, processing, executing, or translating structured text or binary files. |
 | [AOCC](https://www.amd.com/en/developer/aocc.html) | 3.1.0 (D), 3.2.0 |The AMD Optimizing C/C++ and Fortran Compilers (“AOCC”) are a set of production compilers optimized for software performance when running on AMD host processors using the AMD “Zen” core architecture.| 
@@ -33,7 +40,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Cube](https://www.scalasca.org/scalasca/software/cube-4.x/download.html) | 3.4.3, 4.3.4 (D) | Cube, which is used as performance report explorer for Scalasca and Score-P, is a generic tool for displaying a multi-dimensional performance space. | 
 | [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) (G) | 11.2, 11.3, 11.4, 11.7, 11.8, 12.1.1 (D), 12.9* | The NVIDIA CUDA Toolkit includes GPU-accelerated libraries, debugging and optimization tools, a C/C++ compiler, and a runtime library to deploy your application. *Included in the `nvhpc_sdk/2025.255` module. Future CUDA versions will only be available through the NVIDIA HPC SDK module. | 
 | [cuDNN](https://developer.nvidia.com/cudnn) (G)| 8.1, 8.2, 8.6 (D), 9.10.2 | The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. | 
-| [curc-quota](../../compute/filesystems.md#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
+| [curc-quota](../compute/filesystems.md#monitoring-disk-usage) | 5.0 | CU Boulder script that provides information the user's home, projects, scratch, and PetaLibrary space.| 
 | [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) | 4.2 | Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequences from your high-throughput sequencing reads.| 
 | [DMTCP](https://dmtcp.sourceforge.io/) | 2.6.0 | DMTCP (Distributed MultiThreaded Checkpointing) transparently checkpoints a single-host or distributed computation in user-space without modifications to user code or to the OS.|
 | [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) | 3.4.0 | Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.|
@@ -44,7 +51,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [FFmpeg](https://ffmpeg.org/) | 4.4 | A complete, cross-platform solution to record, convert and stream audio and video.| 
 | [FFTW](https://www.fftw.org/) | 3.3.8, 3.3.9, 3.3.10 | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data.|
 | [GATK](https://gatk.broadinstitute.org/hc/en-us) | 4.3.0.0 | GATK4 aims to bring together well-established tools from the GATK and Picard codebases under a streamlined framework.|
-| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](../../software/gaussian.md)|
+| [Gaussian 16](https://gaussian.com/gaussian16/) (L,G) | g16_c.02 | Guassian 16 provides state-of-the-art capabilities for electronic structure modeling. [CURC Usage Guide](./gaussian.md)|
 | [gcc](https://gcc.gnu.org/) |  10.3.0, 11.2.0, 13.2.0, 14.2.0 (D) |The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).| 
 | [GDAL](https://gdal.org/) | 3.4.2, 3.5.0, 3.10.0 | GDAL is a translator library for raster and vector geospatial data formats.| 
 | [GDB](https://www.sourceware.org/gdb/) | 8.1, 10.1 (D) | GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed.|
@@ -53,7 +60,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Git](https://git-scm.com/downloads) | 2.31.0 | Git is a distributed version control system that tracks changes in any set of computer files.| 
 | [Git-LFS](https://git-lfs.com) | 3.1.2 | Git-LFS is a Git exention for versioning large files.| 
 | [Gmsh](https://gmsh.info/) | 2.16.0, 4.11.1 (D) | Gmsh is an open source 3D finite element mesh generator with a built-in CAD engine and post-processor.|
-| [GNU Parallel](https://www.gnu.org/software/parallel/) | 20160622, 20210322 (D) | GNU parallel is a shell tool for executing jobs in parallel using one or more computers. [CURC Usage Guide](../../software/GNUParallel.md)| 
+| [GNU Parallel](https://www.gnu.org/software/parallel/) | 20160622, 20210322 (D) | GNU parallel is a shell tool for executing jobs in parallel using one or more computers. [CURC Usage Guide](./GNUParallel.md)| 
 | [gnuplot](http://www.gnuplot.info/) | 5.4.3 | gnuplot is a command-line and GUI program that can generate two- and three-dimensional plots of functions, data, and data fits.| 
 | [GROMACS](https://www.gromacs.org/) (G) | 2022.4, 2024.2 | GROMACS is a molecular dynamics package mainly designed for simulations of proteins, lipids, and nucleic acids.| 
 | [GSL](https://www.gnu.org/software/gsl/doc/html/#) | 2.7, 2.8 |The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.|
@@ -72,15 +79,15 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [JDK (Java Development Kit)](https://www.oracle.com/java/) | 1.7.0, 1.8.0_91, 1.8.0_281, 1.8.0, 18.0.1.1 (D) | JDK is a software development environment used for developing Java applications and applets. |
 | [JPEG](https://jpegclub.org/reference/reference-sources/) | 9d, 9e, 9f | Open source JPEG image library.|
 | [Julia](https://julialang.org/) | 0.6.2, 1.6.0, 1.6.6, 1.8.1, 1.9.4, 1.10.0, 1.10.2, 1.11.6 (D) | Julia is a high-level, dynamic programming language. Its features are well suited for numerical analysis and computational science. |
-| [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 2Aug23, 29Sept21, 29Sept2021_update3, 29Sept21, 29Sept2021_update3.1.1 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
+| [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 22July25, 2Aug23, 29Sept21, 29Sept2021_update3, 29Sept21, 29Sept2021_update3.1.1 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4, 4.9.2 (D) | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2, 7.0.0 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
 | [Linaro DDT (formerly Allinea DDT)](https://www.linaroforge.com/linaro-ddt/) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
 | [Linaro Forge (formerly Arm Forge)](https://www.linaroforge.com/) | 19.1.3, 24.0.4 | Linaro Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
-| [Load Balancer](../../software/loadbalancer.md) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
-| [Mamba](https://mamba.readthedocs.io/) | 24.11.3-0 | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. Please see our [Mamba Package Manager](../../software/python.md#mamba-package-manager) section for more details.| 
+| [Load Balancer](./loadbalancer.md) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
+| [Mamba](https://mamba.readthedocs.io/) | 24.11.3-0 | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. Please see our [Mamba Package Manager](./python.md#mamba-package-manager) section for more details.| 
 | [Mathematica](https://www.wolfram.com/mathematica/) | 9.0, 11.1.0 (D) | A software system with built-in libraries for several areas of technical computing. | 
-| [MATLAB](https://www.mathworks.com/products/matlab.html) | R2018b, R2019b, R2020b, R2021b (D), R2022b, R2023b, R2024b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](../../software/matlab.md)| 
+| [MATLAB](https://www.mathworks.com/products/matlab.html) | R2018b, R2019b, R2020b, R2021b (D), R2022b, R2023b, R2024b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](./matlab.md)| 
 | [Maven](https://maven.apache.org/) | 3.8.1 | Apache Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. |
 | [MKL](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html#gs.ecsytg) | 2021.4.0, 2022.0.2, 2024.2 |A library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.|
 | [MultiQC](https://multiqc.info/) | 1.14 | MultiQC is a reporting tool that parses results and statistics from bioinformatics tool outputs, such as log files and console outputs.|
@@ -91,6 +98,7 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | 4.8.1, 4.9.2 | NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.|
 | [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04, 24.04.4 (D) | Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
 | [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) (G)| 2021.213(CUDA 11.2), 2022.229 (CUDA 11.7), 2023.233 (D, CUDA 12.0), 2025.251 (CUDA 12.6), 2025.255 (CUDA 12.9) | The NVIDIA HPC Software Development Kit (SDK) includes the proven compilers, libraries and software tools essential to maximizing developer productivity and the performance and portability of HPC applications. | 
+|[Ollama](https://ollama.com/) | Latest version only | Ollama is an open-source, lightweight, and extremely beginner friendly tool that enables users to run LLMs locally and retrieve models that are compatible with the system they are running on. For more information on using Ollama, see [Running Large Language Models](./llms.md#ollama) |
 | [OpenBLAS](https://www.openblas.net/) | 0.3.20, 0.3.28 | OpenBLAS is an optimized Basic Linear Algebra Subprograms (BLAS) library based on GotoBLAS 21.13 BSD version. | 
 | [OpenJPEG](https://www.openjpeg.org/) | 2.2.0, 2.5.2 | OpenJPEG is an open-source JPEG 2000 codec written in the C language. | 
 | [Open MPI](https://www.open-mpi.org/) | 4.1.1, 4.1.4, 5.0.6 | The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. | 
@@ -103,7 +111,9 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [PETSc](https://petsc.org/) | 3.18.3, 3.22.1 | PETSc is a suite of data structures and routines for the scalable (parallel) solution of scientific applications modeled by partial differential equations.| 
 | [pigz](https://zlib.net/pigz/) | 2.7 (D) | Pigz is a parallel implementation of gzip.| 
 | [Picard](https://broadinstitute.github.io/picard/) | 2.27.5 | Picard is a set of command line tools for manipulating high-throughput sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF.| 
-| [PLINK2](https://www.cog-genomics.org/plink/2.0/) | 2.00a2.3 | PLINK 2.0 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics.| 
+| [PLINK2](https://www.cog-genomics.org/plink/2.0/) | 2.00a2.3 | PLINK 2.0 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics.|
+| [PnetCDF](https://parallel-netcdf.github.io) | 1.12.2, 1.13.0 | PnetCDF is a high-performance parallel I/O library for accessing Unidata's NetCDF, files in classic formats, specifically the formats of CDF-1, 2, and 5. |
+| [PROJ](https://proj.org/en/stable/) | 6.0.0, 8.1.1, 8.2.1, 9.5.0 | PROJ is a generic coordinate transformation software that transforms geospatial coordinates from one coordinate reference system (CRS) to another. This includes cartographic projections as well as geodetic transformations. |
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
 | [QIIME 2](https://qiime2.org/) | 2023.5, Amplicon 2024.2, Amplicon 2024.10 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
@@ -116,21 +126,24 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Ruby](https://www.ruby-lang.org/en/) | 2.3.1, 3.0.0 (D) |Ruby is an interpreted, high-level, general-purpose programming language which supports multiple programming paradigms.| 
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
-| [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](../../software/containerization.md#apptainer)|
-| [Slurmtools](../../compute/monitoring-resources.md#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
+| [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](./containerization.md#apptainer)|
+| [Slurmtools](../compute/monitoring-resources.md#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
 | [SQLite](https://sqlite.org/index.html) | 3.36.0, 3.38.01, 3.46.1 |SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.| 
 | [SRA-Toolkit](https://hpc.nih.gov/apps/sratoolkit.html) | 3.0.0 | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.| 
 | [STAR](https://github.com/alexdobin/STAR/tree/master) | 2.7.10b | A tool to align RNA-seq data. The STAR algorithm uses suffix arrays, seed clustering, and stitching.| 
 | [Subversion](https://subversion.apache.org/) | 1.8.16, 1.10.2, 1.14.1 (D) |Apache Subversion is a software versioning and revision control system.| 
+| [Szip](http://www.compressconsult.com/szip/) | 2.1.1 | Szip is a freeware portable general purpose lossless compression program. |
 | [Tcl/Tk](https://www.tcl.tk/about/) | 8.6.5, 8.6.11, 9.0.1 (D) |Tcl is a high-level, general-purpose, interpreted, dynamic programming language.| 
 | [tDOM](http://tdom.org/index.html/dir?ci=release) | 0.8.3, 0.9.2 |tDOM is a Tcl extension for parsing XML.| 
 | [TeX Live](https://www.tug.org/texlive/) | 2021 |TeX Live is a cross-platform, free software distribution for the TeX typesetting system that includes major TeX-related programs, macro packages, and fonts.| 
 | [TIFF](http://www.simplesystems.org/libtiff/) | 4.3.0, 4.7.0 |The LibTIFF software provides support for the Tag Image File Format (TIFF), a widely used format for storing image data.| 
 | [TotalView](https://totalview.io/) | 2016.06.21 |TotalView debugging software provides tools you need to debug, analyze, and scale high-performance computing (HPC) applications.| 
+| [Transformers](https://huggingface.co/docs/transformers/en/index#transformers) by Hugging Face | Latest version only | Transformers is Hugging Face’s LLM framework. For more information on using Transformers, see [Running Large Language Models](./llms.md#transformers-by-hugging-face) |
 | [Trelis](https://coreform.com/news/trelis-is-now-coreform-cubit/) (L) | 16.3.6 | Software that includes everything needed for streamlined progress from CAD to analysis, with full-featured capabilities for geometry preparation and mesh generation, analysis, and fine-tuning. Now known as Coreform Cubit. | 
 | [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) | 0.39 | Trimmomatic performs a variety of useful trimming tasks for Illumina paired-end and single-ended data. |
 | [UCX](https://openucx.org/) | 1.10.1, 1.12.1 (D) | A communication framework for data-centric and high-performance applications.| 
 | [UDUNITS](https://www.unidata.ucar.edu/software/udunits/) | 2.2.20, 2.2.24, 2.2.25, 2.2.28 (D) |The UDUNITS package supports units of physical quantities. Its C library provides for arithmetic manipulation of units and for conversion of numeric values between compatible units.|
+| [uv](https://docs.astral.sh/uv/) | 0.8.15 (D) | uv is a Python package manager designed for fast, reproducible workflows. Built with Rust, uv uses the venv tool to create isolated Python environments, making it easy to manage dependencies and ensure consistency across different projects. For more information on using uv, see [CURC's uv usage guide](./uv.md)| 
 | [Valgrind](https://valgrind.org/) | 3.11.0, 3.17.0 (D) |Valgrind is an instrumentation framework containing tools that can automatically detect many memory management and threading bugs, and profile your programs in detail.| 
 | [VAPOR](https://github.com/NCAR/VAPOR) | 3.9.1 |VAPOR is the Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers.|
 | [vtf3](https://www.paratools.com/otf/) | 1.43 |VTF3 trace generation package.|  
@@ -138,37 +151,3 @@ Refer to our [Modules System](../../compute/modules.md) page for instructions on
 | [Yambo](https://www.yambo-code.eu/wiki/index.php/Main_Page) | 5.2.2 |An ab initio tool for excited state calculations.|  
 | [zip](https://infozip.sourceforge.net/) | rhel7|A compressor/archiver for creating and modifying zip files.|
 | [zlib](https://www.zlib.net/) | 1.2.11, 1.3.1 | Lossless data-compression library.|
-
-**(D)** Default module version **(G)** GPU-accelerated **(L)** License-restricted
-
-## Alpine Software Policy 
-
-Historically, software installations have been a sticking point for many users of CURC resources. Though we still encourage users to 
-install and manage their own packages locally, CURC has decided to move forward with the following software policy:
-
-CURC will perform software installations for users of CURC resources in a globally accessible module stack provided:
-
-- A user requires a specified software that is unavailable on the current stack.
-- A user requires a different version of a currently existing software which provides additional functionality required for the user’s work.
-- The user provides all of the relevant information including release, version, etc. 
-- The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (i.e., Anaconda Environments, Singularity Containers).
-
-Furthermore, licensed/proprietary software are subject the following requirements:
-
-- The user has access to an appropriate license for cluster usage.
-- The license can be installed or accessed on the cluster. 
-
-Software accepted for installation will be given an estimated installation time based on capacity of the team and urgency of the request. Note that this time is an estimation and not a strict deadline. Installed software will be available to load with a module in the ‘User Software’ category in the software stack. Unused modules will be pruned after 12 months without usage. Any pruned module may be restored by user request.
-
-Core software such as compilers, MPIs, and relevant libraries will be updated at a semesterly interval. A different version of these core softwares can be requested at any point, but installation may be performed in accordance to that timeline.
-
-All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources.
-
-To request a software installation please fill out the [Software Request Form](https://www.colorado.edu/rc/userservices/software-request)
-
-_Please note that this software policy is subject to change. Please review the software policy before submitting a request._
-
-
-Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
-
