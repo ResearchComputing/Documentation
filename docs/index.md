@@ -66,13 +66,14 @@ open_ondemand/index
 :maxdepth: 1
 :caption: Running Jobs
 
+running-jobs/batch-jobs
+running-jobs/interactive-jobs
+running-jobs/running-apps-with-jobs
+running-jobs/job-arrays
+running-jobs/roce-enabled
 running-jobs/job-resources
 running-jobs/slurm-commands
 running-jobs/squeue-status-codes
-running-jobs/running-apps-with-jobs
-running-jobs/batch-jobs
-running-jobs/interactive-jobs
-running-jobs/roce-enabled
 
 ```
 
@@ -100,6 +101,7 @@ cloud/cumulus
 :caption: Software
 
 software/curc_provided_software
+software/llms
 software/loadbalancer
 software/gaussian
 software/matlab
