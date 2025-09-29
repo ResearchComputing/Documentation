@@ -80,13 +80,13 @@ running-jobs/squeue-status-codes
 :maxdepth: 1
 :caption: PetaLibrary
 
-storage/petalibrary/petalibrary
+storage/petalibrary/index
 storage/petalibrary/allocation_types
 storage/petalibrary/ownership
 storage/petalibrary/billing
 storage/petalibrary/data_transfer
 storage/petalibrary/usage_statistics
-storage/petalibrary/snapshots
+storage/petalibrary/zfs_snapshots
 
 ```
    
