@@ -4,12 +4,12 @@
 The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs) at an internal cost rate. It is available at an external cost rate to researchers from other RMACC institutions.  
 
 Additional general information can be found below. Other pages in this section contain detailed information on: 
-* [Allocation tiers](./allocation_types.md)
-* [Roles and responsibilities](./ownership.md)
+* [Allocation Tiers](./allocation_types.md)
+* [Roles and Responsibilities](./ownership.md)
 * [Billing](./billing.md)
-* [Transferring data to/from PetaLibrary](./data_transfer.md)
-* [Monitoring allocation use](./usage_statistics.md)
-* [Data recovery](./zfs_snapshots.md)
+* [Data Transfer to/from PetaLibrary](./data_transfer.md)
+* [Monitoring Allocation Use](./usage_statistics.md)
+* [Data Recovery](./zfs_snapshots.md)
 
 ## Requesting a PetaLibrary allocation
 
