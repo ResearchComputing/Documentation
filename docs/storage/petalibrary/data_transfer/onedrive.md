@@ -11,32 +11,32 @@
 ### Step 1: Log into the Globus Web App
 Visit [https://app.globus.org](https://app.globus.org) and log in with your Colorado.edu credentials
 
-![](Globus_Login.png)
+![](../Globus_Login.png)
 
 ### Step 2: Open your OneDrive
 In the Collection Search, enter: "OneDrive CU Boulder" - this should show your OneDrive contents if you are logged in. You may need to authenticate with your OneDrive account.
 
-![](onedrivesearch.png)
+![](../onedrivesearch.png)
 
 ### Step 3: Open CURC (right pane)
 Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection Search (right pane), enter: "CU Boulder Research Computing"
 
 * You'll be asked to log in using your CURC Credentials - after clicking `Authenticate`, you should receive a Duo push on your Duo device which you will need to confirm
 
-![](splitview.png)
+![](../splitview.png)
 
 * Once authenticated, you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select `/pl` and proceed to your allocaiton. 
 
-![](Globus_CURC_Collection.png)
+![](../Globus_CURC_Collection.png)
 
 ### Step 4: Select files/folders from OneDrive to be transferred and initiate the transfer
 * In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job
 
-![](Globus_Intitiate_Transfer.png)
+![](../Globus_Intitiate_Transfer.png)
 
 * View progress of your transfer under the Activity tab in the Globus App
 
-![](Globus_Activity_GDrive.png)
+![](../Globus_Activity_GDrive.png)
 
 ````
 
