@@ -1,4 +1,4 @@
-# Data Transfer between Google Drive and PetaLibrary
+# Data Transfer to/from Google Drive
 
 (tabset-ref-ucb-pl-gdrive-types)=
 `````{tab-set}
