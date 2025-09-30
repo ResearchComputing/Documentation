@@ -1,15 +1,6 @@
 # Data Transfer
 
-There are numerous to transfer data to/from PetaLibrary. Select the option below that best serves your needs. 
-
-```{toctree}
-:maxdepth: 1
-
-General Data Transfer <../../compute/data-transfer.md>
-
-```
-* Documentation on common command line utilities such as `rsync`, `scp`, and `sftp`.
-* Documentation on `Globus`, a user-friendly browser-based file transfer tool.
+There are numerous ways to transfer data to/from PetaLibrary. Select the option below that best serves your needs. 
 
 ```{toctree}
 :maxdepth: 1
@@ -54,3 +45,7 @@ General Data Transfer <../../compute/data-transfer.md>
 ```
 * Documentation on transferring data from a local Synology network attached storage device to PetaLibrary.
 * additional documentation on scheduling recurring backups to PetaLibrary.
+
+```{note}
+In addition to the methods outlined above, data can also be transferred to/from PetaLibrary via common command line utilities such as `rsync`, `scp`, and `sftp`, as well as via `Globus`, a user-friendly browser-based file transfer tool.  Documentation on these methods can be found in our [General Data Transfer documentation](../../compute/data-transfer.md).
+```
