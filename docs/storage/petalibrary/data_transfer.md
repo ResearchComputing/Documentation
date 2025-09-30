@@ -13,7 +13,6 @@ General Data Transfer <../../compute/data-transfer.md>
 
 ```{toctree}
 :maxdepth: 1
-:caption: Mounting PetaLibrary as a volume on a local machine
 
 ./data_transfer/mounting.md
 
@@ -23,7 +22,6 @@ General Data Transfer <../../compute/data-transfer.md>
 
 ```{toctree}
 :maxdepth: 1
-:caption: Transferring data to PetaLibrary with rclone
 
 ./data_transfer/rclone.md
 
@@ -33,7 +31,6 @@ General Data Transfer <../../compute/data-transfer.md>
 
 ```{toctree}
 :maxdepth: 1
-:caption: Transferring data to PetaLibrary from Google Drive
 
 ./data_transfer/gdrive.md
 
@@ -42,7 +39,6 @@ General Data Transfer <../../compute/data-transfer.md>
 
 ```{toctree}
 :maxdepth: 1
-:caption: Transferring data to PetaLibrary from OneDrive
 
 ./data_transfer/onedrive.md
 
@@ -52,7 +48,6 @@ General Data Transfer <../../compute/data-transfer.md>
 
 ```{toctree}
 :maxdepth: 1
-:caption: Transferring data to PetaLibrary from a Synology NAS
 
 ./data_transfer/synology.md
 
