@@ -324,7 +324,7 @@ acl = private
 
 **Using the rclone prompt to create the .conf file**
 
-Once rclone is available to use run the command `rclone config` to see the options to create the configuration file. This example outlines configuring a connection to an AWS S3 bucket from Research Computing. See our [Google Drive connection](../storage/petalibrary/gdrive.md) and [Local connection to RC](../storage/petalibrary/rclone.md) examples for guides on other rclone connection methods.
+Once rclone is available to use run the command `rclone config` to see the options to create the configuration file. This example outlines configuring a connection to an AWS S3 bucket from Research Computing. See our [Google Drive connection](../storage/petalibrary/data_transfer/gdrive.md) and [Local connection to RC](../storage/petalibrary/data_transfer/rclone.md) examples for guides on other rclone connection methods.
 
 ```{note}
 _**This example assumes you have an S3 bucket already set up with AWS credentials.**_
