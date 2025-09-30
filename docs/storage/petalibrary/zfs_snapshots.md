@@ -27,7 +27,7 @@ week old.
 
 ## Default snapshot schedule
 
-The default snapshot schedule is as follows:
+The default snapshot schedule is 1 week, at the following time frequencies:
 
  - take snapshots every 15 minutes, save most recent 9 snapshots (two
    hours worth)
