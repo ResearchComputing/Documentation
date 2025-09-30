@@ -77,7 +77,7 @@ running-jobs/squeue-status-codes
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: PetaLibrary
 
 storage/petalibrary/index
