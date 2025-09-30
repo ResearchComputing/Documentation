@@ -93,7 +93,7 @@ Offsite backup options are available from cloud-based storage providers.
 
 - Microsoft OneDrive:  
     - _Access details:_  
-        - CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus or rclone](./onedrive.md) to copy data between PetaLibrary and OneDrive.  
+        - CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus or rclone](./data_transfer/onedrive.md) to copy data between PetaLibrary and OneDrive.  
     - _Pros:_ 
         - Free up to 5 TB using OneDrive 
         - Copy of data is off-campus 
