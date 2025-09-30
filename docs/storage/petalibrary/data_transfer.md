@@ -4,9 +4,8 @@ There are numerous to transfer data to/from PetaLibrary. Select the option below
 
 ```{toctree}
 :maxdepth: 1
-:caption: General data transfer methods
 
-../../compute/data-transfer.md
+General Data Transfer <../../compute/data-transfer.md>
 
 ```
 * Documentation on common command line utilities such as `rsync`, `scp`, and `sftp`.
