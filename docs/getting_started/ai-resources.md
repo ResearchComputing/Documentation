@@ -17,7 +17,7 @@
     * Transformers by Hugging Face: A popular framework for working with pre-trained LLMs and building NLP applications. For usage instructions, see [Running Large Language Models](https://curc.readthedocs.io/en/latest/software/llms.html#transformers-by-hugging-face).
     * AlphaFold: An AI tool from DeepMind that predicts 3D protein structures from amino acid sequences, revolutionizing biological and medical research. For documentation and usage details, see our [AlphaFold Page](../software/alphafold.md). 
     * CUDA Toolkit, cuDNN, NVIDIA HPC SDK: For GPU-accelerated AI training and inference.
-- Additional supported software can be found in the [CURC Software List](../software/curc_provided_software.md) or explore available modules using the `module spider` command.
+- Additional supported software can be found in the [CURC Software List](../software/curc_provided_software.md) or you can explore available modules using the `module spider` command.
 
 ## National Community Resources
 
