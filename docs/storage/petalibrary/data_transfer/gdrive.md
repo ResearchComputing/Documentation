@@ -65,7 +65,7 @@ If this step fails, your Google Drive remote is not configured properly. Try rec
 
 ### Step 3: Create your PetaLibrary remote configuration
 
-See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md#configure-rclone)
+See instructions for creating an [Rclone remote configuration for PetaLibrary](./rclone.md)
 
 ````
 `````
