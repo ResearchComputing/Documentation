@@ -1,4 +1,4 @@
-# Roles and responsibilities
+# Roles and Responsibilities
 
 ## PetaLibrary Owners
 
