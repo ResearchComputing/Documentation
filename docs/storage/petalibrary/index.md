@@ -9,7 +9,7 @@ Additional general information can be found below. Other pages in this section c
 * [Billing](./billing.md)
 * [Transferring data to/from PetaLibrary](./data_transfer.md)
 * [Monitoring allocation use](./usage_statistics.md)
-* [Data recovery](./snapshots.md)
+* [Data recovery](./zfs_snapshots.md)
 
 ## Requesting a PetaLibrary allocation
 
