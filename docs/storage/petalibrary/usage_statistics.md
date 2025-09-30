@@ -1,35 +1,22 @@
 # Monitoring Allocation Use
 
-## `alloc_stats`
-Research Computing has implemented a background task called `alloc_stats` 
-on the PetaLibrary cluster hosts to allow a PetaLibrary allocation owner 
-and group members to view the usage statistics and the sizes of individual 
-subdirectories in their allocation. This process collects this information 
-hourly and deposits it in a file in the allocation base directory called 
-`.cstats`.
+The PetaLibrary allocation owner and group members can view the usage statistics for their PetaLibrary allocation by viewing an hourly-updated file in the allocation base directory called `.cstats`.  The `.cstats` file contains the following information: 
 
-## `.cstats`
-The usage statistics file for an allocation contains the following 
-information:
-
-- time and date of latest `alloc_stats` run
+- time and date stamp for most recent usage query
 - overall statistics: allocated, available, and used space in the 
 allocation; data and snapshot usages reported separately
 - user statistics including user name, space used  and number of objects 
 (files and directories)
 
-The `.cstats` file is an ordinary text file. It is readable only by users 
-who are members of the group associated with the PetaLibrary allocation. 
+The `.cstats` file is an ordinary text file. It is readable only by users who are members of the group associated with the PetaLibrary allocation. 
 
-When logged into CURC systems, you can query these statistics from the 
-command line as follows: 
+When logged into CURC systems, you can query these statistics from the command line as follows: 
 
 ```
 cat /pl/active/<allocation_name>/.cstats
 ```
 
-For example, to get the usage information on the `/pl/active/rcops` 
-allocation, enter 
+For example, to get the usage information on the `/pl/active/rcops` allocation, enter 
 
 ```
 cat /pl/active/rcops/.cstats
