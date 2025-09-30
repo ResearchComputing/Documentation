@@ -10,28 +10,28 @@
 - CURC offers trainings each semester to help researchers deploy and optimize AI/ML workflows.
     * [Setting up LLMs on CURC Resources (an RC Short Course)](https://github.com/ResearchComputing/setting_up_llms_on_curc_resources_rc_short_course)
     * [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain)
-
-For a complete list of current semester offerings, see [CURC Trainings Page](../getting_started/current-sem-trainings.md)
+- For a complete list of current semester offerings, see [CURC Trainings Page](../getting_started/current-sem-trainings.md)
 ### CURC AI/ML Software Stack
 - The following AI/ML software are available and actively supported on CURC systems:
     * PyTorch (1.13.0): Popular deep learning framework supporting GPU acceleration.
     * AlphaFold: An AI tool from DeepMind that predicts 3D protein structures from amino acid sequences, revolutionizing biological and medical research. See documentation and usage details [here](../software/alphafold.md). 
     * CUDA Toolkit, cuDNN, NVIDIA HPC SDK: For GPU-accelerated AI training and inference.
-
-Additional supported software can be found in the [CURC Software List](../software/curc_provided_software.md) or accessed via the `module avail` command.
+- Additional supported software can be found in the [CURC Software List](../software/curc_provided_software.md) or accessed via the `module avail` command.
 
 ## National Community Resources
 
 ### NAIRR Pilot: AI Training & Events
 - The National AI Research Resource (NAIRR) pilot includes ongoing events and collaborative training initiatives. [https://nairrpilot.org/pilotevents](https://nairrpilot.org/pilotevents)
 ### ACCESS-CI: AI/ML Events & Workshops
-- National workshops hosted by ACCESS (formerly XSEDE) provide deep dives into topics such as distributed AI training, HPC-ML integration, and software best practices. [https://support.access-ci.org/events](https://support.access-ci.org/events)
+- National workshops hosted by ACCESS provide deep dives into topics such as distributed AI training, HPC-ML integration, and software best practices. [https://support.access-ci.org/events](https://support.access-ci.org/events)
 ### NSF AI Institutes Training Pages
-- The National AI Research Institutes provide ongoing courses and workshops open to all researchers. [https://www.nsf.gov/funding/opportunities/national-artificial-intelligence-research-institutes](https://www.nsf.gov/funding/opportunities/national-artificial-intelligence-research-institutes)
+- The NSF AI Institutes support research and training across 29 centers nationwide, with programs spanning AI in education, public health and more. Institutes host ongoing events, workshops, and educational outreach. [https://aiinstitutes.org/news/](https://aiinstitutes.org/news/)
 ### NCAR CISL YouTube Channel
 - Features in-depth trainings from the National Center for Atmospheric Research. Topics range from scientific computing to ML in environmental data science. [https://www.youtube.com/@NCAR_CISL/playlists](https://www.youtube.com/@NCAR_CISL/playlists)
 ### National Research Platform (NRP)
 - Events, workshops, and training sessions from the National Research Platform, focused on cyberinfrastructure, distributed computing, and related research computing topics. [https://nationalresearchplatform.org/category/events/](https://nationalresearchplatform.org/category/events/)
+### PSC AI/ML Trainings
+- The Pittsburgh Supercomputing Center (PSC) offers workshops and webinars focused on AI/ML research using the NSF-funded Neocortex system and Cerebras hardware. [https://www.psc.edu/resources/neocortex/training/](https://www.psc.edu/resources/neocortex/training/)
 
 ## Policy, Ethics, & Responsible AI Use
 
@@ -46,6 +46,8 @@ Additional supported software can be found in the [CURC Software List](../softwa
 - Harvard’s Kempner Institute offers detailed guidance on optimizing ML workflows, data management, and model efficiency. [https://handbook.eng.kempnerinstitute.harvard.edu/s9_workshops_and_trainings/optimizing_ml_workflows/optimizing_ml_workflows.html#](https://handbook.eng.kempnerinstitute.harvard.edu/s9_workshops_and_trainings/optimizing_ml_workflows/optimizing_ml_workflows.html#)
 ### PEARC Proceedings
 - Offers peer‐reviewed papers and proceedings in AI and Machine Learning as applied in computing systems and infrastructure. [https://dl.acm.org/doi/proceedings/10.1145/3708035](https://dl.acm.org/doi/proceedings/10.1145/3708035)
+### Software Carpentry
+- Offers foundational workshops in Python, data analysis, and version control, which increasingly include AI/ML-relevant tools and workflows (e.g., Jupyter, scikit-learn, TensorFlow intro sessions). [https://software-carpentry.org/workshops/workshops-upcoming/](https://software-carpentry.org/workshops/workshops-upcoming/)
 
 ## Vendor Trainings
 
@@ -59,7 +61,13 @@ Additional supported software can be found in the [CURC Software List](../softwa
 - Free Microsoft-hosted learning paths for Azure ML, generative AI, and AI governance. 
 [https://learn.microsoft.com/en-us/training/paths/introduction-to-ai-on-azure/](https://learn.microsoft.com/en-us/training/paths/introduction-to-ai-on-azure/)
 
+## Community Recognized Resources
 
-### Contribute or Suggest a Resource
+### Science Gateways Community Institute (SGCI)
+- SGCI offers occasional workshops on integrating AI/ML into science gateways and user-facing tools. [https://sciencegateways.org/engage/training](https://sciencegateways.org/engage/training) 
+### CaRCC (Campus Research Computing Consortium) 
+- While CaRCC primarily supports the broader research computing ecosystem, working groups and community calls sometimes cover AI/ML topics, especially in the context of campus-level support and policy. [https://carcc.org](https://carcc.org)
+
+## Contribute or Suggest a Resource
 Have a trusted training resource you'd like to share with the community?
 Contact us at <rc-help@colorado.edu> or submit a [GitHub issue](https://github.com/ResearchComputing/Documentation/issues) to our documentation.
