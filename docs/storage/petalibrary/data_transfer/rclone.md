@@ -4,7 +4,7 @@ This guide details the process of making a backup for local data on your laptop 
 
 ## Generate public/private keypair for CURC resources 
 
-In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on CURC resources will not work -- you must follow the documentation linked above. 
+In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on CURC resources will not work -- you must follow the documentation linked above. 
 
 ```{important}
 * Presently passwordless access is only available to users affiliated with the CU system.
@@ -22,7 +22,7 @@ You must have administrative privileges on your laptop or lab server in order to
 
 ## Configure rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTNs, [check out our documentation on data transfers.](../../compute/data-transfer.md)
+The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTNs, [check out our documentation on data transfers.](../../../compute/data-transfer.md)
 
 
 In this example we use rclone to create an sftp endpoint with the following settings:
