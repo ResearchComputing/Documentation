@@ -89,6 +89,8 @@ Click the name of a training to view more details and register!
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+
+### **Advanced**
 - [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
 
 ````
