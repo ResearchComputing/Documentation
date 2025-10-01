@@ -31,6 +31,7 @@ Click the name of a training to view more details and register!
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 ### **November**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Debugging and Profiling Workshop with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) ** November 13th, 9am, Virtual (Zoom)**
 
 ````
 
@@ -49,6 +50,7 @@ Click the name of a training to view more details and register!
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
 - [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
+- [Debugging and Profiling Workshop with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) ** November 13th, 9am, Virtual (Zoom)**
 ### **Version Control**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 ### **Parallelization & Acceleration**
@@ -84,6 +86,7 @@ Click the name of a training to view more details and register!
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Debugging and Profiling Workshop with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) ** November 13th, 9am, Virtual (Zoom)**
 
 ````
 
