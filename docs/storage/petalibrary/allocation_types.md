@@ -3,10 +3,10 @@
 ## Overview of PetaLibrary Tiers
 
 ```{eval-rst}
-.. figure:: ./pl_feature_comparison_chart.png
-   :align: center
-   :scale: 100%
+.. raw:: html
+    :file: ./images_and_html/pl_tier_table.html 
 ```
+
 *Data Integrity terminology definitions can be found [here](#data-integrety-terminology).
 
 **SMB is only available to CU Boulder customers.
