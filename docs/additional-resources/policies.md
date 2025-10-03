@@ -96,7 +96,7 @@ up and are not appropriate for long-term storage. Files are automatically delete
 created on the filesystem. However, data may be purged at shorter intervals subject to overall system needs. 
 
 Users requiring longer-term retention of their files should perform regular backups to a remote machine or
-a purchased storage, such as [PetaLibrary](https://curc.readthedocs.io/en/latest/storage/petalibrary/index.html). Inappropriate use of 
+a purchased storage, such as [PetaLibrary](../petalibrary/index.md). Inappropriate use of 
 scratch storage, including attempts to circumvent the automatic file purge policy, may result in loss of access to Research 
 Computing resources.
 

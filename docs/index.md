@@ -78,16 +78,16 @@ running-jobs/squeue-status-codes
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :caption: PetaLibrary
 
-storage/petalibrary/index
-storage/petalibrary/allocation_types
-storage/petalibrary/ownership
-storage/petalibrary/billing
-storage/petalibrary/data_transfer
-storage/petalibrary/usage_statistics
-storage/petalibrary/zfs_snapshots
+petalibrary/index
+petalibrary/allocation_types
+petalibrary/ownership
+petalibrary/billing
+petalibrary/data_transfer
+petalibrary/usage_statistics
+petalibrary/zfs_snapshots
 
 ```
    

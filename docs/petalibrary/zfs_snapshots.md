@@ -16,6 +16,9 @@ The `.zfs` directory is not visible to any utilities that list directory content
 
 The easiest way to demonstrate snapshot recovery is by example. Assume that on 2025-09-24 you deleted a file called `test.txt` , in the top level directory of your petalibrary allocation named `/pl/active/rcops`. Now, on 2025-09-30 you realize that you need to recover the file!   
 
+::::{dropdown} Show steps for snapshot recovery 
+:icon: note
+
 ### Step 1: choose the snapshot from which you want to recover
 
 ```
@@ -66,6 +69,8 @@ $ ls -l /pl/active/rcops/test.txt
 
 You have successfully recovered your file from snapshots. 
 
+::::
+
 ## How snapshots affect free space in your allocation
 
 PetaLibrary allocation sizes are set with quotas, and snapshot use does
@@ -92,7 +97,7 @@ The default snapshot schedule is 1 week, at the following time frequencies:
 If you would like to set a custom snapshot schedule for your allocation,
 please contact <rc-help@colorado.edu>. 
 
-```{note}
+```{warning}
 The longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 ```
 

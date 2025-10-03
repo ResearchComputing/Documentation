@@ -11,7 +11,7 @@ Globus is no longer an opton for Google Drive data transfers to PetaLibrary.
 
 ````
 
-````{tab-item} rclone
+````{tab-item} Rclone
 :sync: tabset-ucb-pl-gdrive-types-rclone
 
 ### Step 1: Login to a compile node on Alpine
@@ -40,17 +40,17 @@ The steps below are also outlined in the [Rclone Documentation for Google Drive]
 * When prompted for the type of storage to configure, select the number of the option for "Google Drive" (e.g., the number is "17" for _rclone_ v1.58.0)
 * When prompted for Client ID, leave the field blank
 * When prompted for Client Secret, leave the field blank
-* When prompted for scope that rclone should use when requesting access from Drive enter '1' for full drive access
+* When prompted for scope that `Rclone` should use when requesting access from Drive enter '1' for full drive access
 * When prompted for root_folder_id, leave the field blank unless you'd like to specify a different root folder
 * When prompted for service_account_file, leave the field blank
 * When prompted to edit advanced config, choose "N" for no (default)
-* When prompted for "Use Auto config?” choose "N" for no (default). Rclone will print a command in the form of:
+* When prompted for "Use Auto config?” choose "N" for no (default). `Rclone` will print a command in the form of:
    ```
    $ rclone authorize "drive" "<token>"
    ```
-   Copy this command and run it on your local machine (rclone must be installed). This will open your web browser to authenticate with your Google account.
-* Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow Rclone to access the files in your `gdrive`. Complete this step to grant access.  If successful you'll receive a "success" message. 
-* On your local machine, rclone will print out a token. Copy everything between the arrows as directed and paste in the config_token field in your Alpine terminal
+   Copy this command and run it on your local machine (`Rclone` must be installed). This will open your web browser to authenticate with your Google account.
+* Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow `Rclone` to access the files in your `gdrive`. Complete this step to grant access.  If successful you'll receive a "success" message. 
+* On your local machine, `Rclone` will print out a token. Copy everything between the arrows as directed and paste in the config_token field in your Alpine terminal
 * When prompted for whether you want to configure this as a Shared Drive (Team Drive). Choose the appropriate answer; if this is your personal Drive account then choose `no` (default)
 * Finally, you will be prompted to review the configuration and confirm whether it is okay. If everything looks okay, choose `yes` (default)
 * Now type `q` to quit the configuration. 

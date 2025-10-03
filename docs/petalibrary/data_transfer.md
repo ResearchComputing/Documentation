@@ -17,7 +17,7 @@ There are numerous ways to transfer data to/from PetaLibrary. Select the option 
 ./data_transfer/rclone.md
 
 ```
-* Documentation on using `rclone` to backup local data.
+* Documentation on using `Rclone` to backup local data.
 * Additional documentation on scheduling recurring backups to PetaLibrary.
 
 ```{toctree}
@@ -26,7 +26,7 @@ There are numerous ways to transfer data to/from PetaLibrary. Select the option 
 ./data_transfer/gdrive.md
 
 ```
-* Specific documentation on using `rclone` to transfer data from Google Drive to PetaLibrary.
+* Specific documentation on using `Rclone` to transfer data from Google Drive to PetaLibrary.
 
 ```{toctree}
 :maxdepth: 1
@@ -34,7 +34,7 @@ There are numerous ways to transfer data to/from PetaLibrary. Select the option 
 ./data_transfer/onedrive.md
 
 ```
-* Specific documentation on using `rclone` to transfer data from Onedrive to PetaLibrary.
+* Specific documentation on using `Rclone` to transfer data from Onedrive to PetaLibrary.
 * Additional documentation on using Globus to tranfer data from Onedrive to PetaLibrary.
 
 ```{toctree}
@@ -47,5 +47,5 @@ There are numerous ways to transfer data to/from PetaLibrary. Select the option 
 * additional documentation on scheduling recurring backups to PetaLibrary.
 
 ```{note}
-In addition to the methods outlined above, data can also be transferred to/from PetaLibrary via common command line utilities such as `rsync`, `scp`, and `sftp`, as well as via `Globus`, a user-friendly browser-based file transfer tool.  Documentation on these methods can be found in our [General Data Transfer documentation](../../compute/data-transfer.md).
+In addition to the methods outlined above, data can also be transferred to/from PetaLibrary via common command line utilities such as `rsync`, `scp`, and `sftp`, as well as via `Globus`, a user-friendly browser-based file transfer tool.  Documentation on these methods can be found in our [General Data Transfer documentation](../compute/data-transfer.md).
 ```

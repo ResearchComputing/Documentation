@@ -1,42 +1,46 @@
-# Backup local data with rclone
+# Backup local data with Rclone
 
-This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software _rclone_, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
+This guide details the process of making a backup for local data on your laptop or lab server to a PetaLibrary allocation. The method employs the software `Rclone`, which is a command line application that is available for many architectures. While the following tutorial is tailored for a MacOS user, the general steps to follow are the same and are relevant for Windows and Linux users too.
 
 ## Generate public/private keypair for CURC resources 
 
-In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on CURC resources will not work -- you must follow the documentation linked above. 
+In order to allow for passwordless access to CURC, which will enable you to seamlessly back up data, you need to generate a keypair for our system. This is a straightforward process and it is outlined in our [Uploading an SSH Key to CILogon Registry](../../additional-resources/registrycilogon-instructions.md) documentation. Please follow this documentation first before proceeding with the remaining steps. Note that generating a keypair yourself and placing it in `~/.ssh` on CURC resources will not work -- you must follow the documentation linked above. 
 
 ```{important}
 * Presently passwordless access is only available to users affiliated with the CU system.
 
-* Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to rclone file location and run `.\rclone.exe config`, then select `n) New Remote`.
+* Windows users should copy client (e.g. Globus, WinSCP, WSL2, ect) as Admin. Change directories to the _rclone_ file location and run `.\rclone.exe config`, then select `n) New Remote`.
 ```
 
-## Install rclone on the backup source host
+## Install Rclone on the backup source host
 
-The rclone application is available for a variety of architectures. [Download rclone](https://rclone.org/downloads/) and follow Rclone's provided instructions to setup the application.   
+The `Rclone` application is available for a variety of architectures. [Download Rclone](https://rclone.org/downloads/) and follow the vendor-provided instructions to setup the application.   
 
 ```{important}
-You must have administrative privileges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator. Additionally, if you use Windows, download rclone and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run rclone. 
+You must have administrative privileges on your laptop or lab server in order to install software. If you do not, you'll need to ask your system administrator. Additionally, if you use Windows, download `Rclone` and manually unzip the compressed files to your desired install location. Take note of this install location since you will need to manually access these binaries to setup and run the application. 
 ```
 
-## Configure rclone
+## Configure Rclone
 
-The rclone application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that rclone should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in rclone that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTNs, [check out our documentation on data transfers.](../../../compute/data-transfer.md)
+The `Rclone` application will require you to configure endpoints. Once your endpoints are configured, you can copy data to/from your local system to configured endpoints. Please note that `Rclone` should only ever be connected to an RC Data Transfer Node (DTN). Because of this, we will configure an sftp endpoint in `Rclone` that points to RC's DTN hosts. You must be connected to [CU's Network](https://oit.colorado.edu/services/network-internet-services/vpn) for this connection to work. For more information on DTNs, [check out our documentation on data transfers.](../../compute/data-transfer.md)
 
 
-In this example we use rclone to create an sftp endpoint with the following settings:
+In this example we use `Rclone` to create an sftp endpoint with the following settings:
+
+::::{dropdown} Rclone Configuration Example
+:icon: note
+
 ```
 name: cu_rc_dtn
 type: sftp
 host: dtn.rc.colorado.edu
 user = jesse
 ```
-The rclone application is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
+The `Rclone` application is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
 
 ```$  rclone config```     
 
-**Windows:** From the Command Prompt, navagate to rclone file location and run:
+**Windows:** From the Command Prompt, navagate to the _rclone_ file location and run:
 ```$ .\rclone.exe config```
 
 ```
@@ -178,9 +182,9 @@ s) Set configuration password
 q) Quit config
 e/n/d/r/c/s/q>
 ```
+::::
 
-
-## Verify rclone config
+## Verify Rclone config
 
 You can verify your settings by running `rclone config show`. The results from the example above looked like this after running through the initial configuration:
 
@@ -201,16 +205,16 @@ sha1sum_command = none
 ```
 
 
-## Test rclone
+## Test Rclone
 
-_Example_: The syntax for using rclone to synchronize a local directory `/tmp/local_backup_dir` to a directory `pl_backup_dir` in a PetaLibrary allocation named `pl_allocation`, the command (executed from your laptop or lab server) would be:
+_Example_: The syntax for using `Rclone` to synchronize a local directory `/tmp/local_backup_dir` to a directory `pl_backup_dir` in a PetaLibrary allocation named `pl_allocation`, the command (executed from your laptop or lab server) would be:
 
 ```$ rclone sync /tmp/local_backup_dir cu_rc_dtn:/pl/active/pl_allocation/pl_backup_dir```
 
-This should synchronize the data in the two directories (note that _rclone_ does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`. 
+This should synchronize the data in the two directories (note that `Rclone` does not report on the transfer so it will look like your terminal is "frozen" until the transfer is complete). The source directory will not be modified, and `pl_backup_dir` will have files added/removed to match the contents of `local_backup_dir`. 
 
-## Run rclone on a schedule
-On Mac or Linux hosts, you can set up a cron job to run the rclone sync job regularly (this step assumes you have set up an ssh key for passwordless transfers). To create a crontab entry type:
+## Run Rclone on a schedule
+On Mac or Linux hosts, you can set up a cron job to run the `Rclone` sync job regularly (this step assumes you have set up an ssh key for passwordless transfers). To create a crontab entry type:
 
 ```$ crontab -e```
 
@@ -218,7 +222,7 @@ And then add the line for the automated job you want to run, e.g.:
 ```
 0 4 * * 1 rclone sync /tmp/local_backup_dir cu_rc_dtn:/pl/active/pl_allocation/pl_backup_dir
 ```
-This would run the rclone sync command every Monday at 4am. The syntax for a crontab entry is:
+This would run the `rclone sync` command every Monday at 4am. The syntax for a crontab entry is:
 
 ```
 * * * * * command
@@ -231,7 +235,7 @@ command - command to execute
 (from left-to-right)
 ```
 
-Windows systems can set up scheduled tasks to run rclone automatically.
+Windows systems can set up scheduled tasks to run `Rclone` automatically.
 
 **Windows:** Windows host users, if you do not have WSL2 installed use taskschd.msc (Task Scheduler) as Admin and run Action=>Create Basic Task
 

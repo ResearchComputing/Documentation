@@ -20,7 +20,7 @@ Each PetaLibrary allocation *must* define an allocation owner, read more about P
 
 ### CURC Account
 
-Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. PetaLibrary storage is presented as a file system directory based on the type of allocation. For more information about obtaining a CURC account, see our [Logging In](../../getting_started/logging-in.md) page. 
+Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. PetaLibrary storage is presented as a file system directory based on the type of allocation. For more information about obtaining a CURC account, see our [Logging In](../getting_started/logging-in.md) page. 
 
 ### Access
 Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. To add new users to the allocation, the allocation owner or their authorized technical contact can email the RC help desk at <rc-help@colorado.edu> at any time to request that the users be added to the access group. 
