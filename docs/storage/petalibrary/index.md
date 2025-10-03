@@ -1,16 +1,8 @@
 # Introduction
 
 ## Overview
-The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs) at an internal cost rate. It is available at an external cost rate to researchers from other RMACC institutions.  
-
-Additional general information can be found below. Other pages in this section contain detailed information on: 
-* [Allocation Tiers](./allocation_types.md)
-* [Roles and Responsibilities](./ownership.md)
-* [Billing](./billing.md)
-* [Data Transfer to/from PetaLibrary](./data_transfer.md)
-* [Monitoring Allocation Use](./usage_statistics.md)
-* [Data Recovery](./zfs_snapshots.md)
-
+The PetaLibrary is a University of Colorado Boulder Research Computing service that supports the storage, archival, and sharing of research data. It is available to any researcher affiliated with the University of Colorado System (Boulder, Anschutz, Denver, Colorado Springs) at an internal cost rate. It is available at an external cost rate to researchers from other RMACC institutions.  General information can be found here. Information on specific topics can be found in the menu to the left.
+ 
 ## Requesting a PetaLibrary allocation
 
 Request PetaLibrary storage by selecting "Request a new PetaLibrary allocation" on the [RC PetaLibrary page](https://www.colorado.edu/rc/resources/petalibrary). 
@@ -34,7 +26,7 @@ Each person who accesses the PetaLibrary is required to have a Research Computin
 ### Access
 Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. 
 
-To add new users to the allocation, the allocation owner or their authorized techical contact can email the RC help desk at <rc-help@colorado.edu> at any time to request that the users be added to the access group. 
+To add new users to the allocation, the allocation owner or their authorized technical contact can email the RC help desk at <rc-help@colorado.edu> at any time to request that the users be added to the access group. 
 
 ## Performance
 PetaLibrary is a shared infrastructure and the instantaneous performance will vary depending on each individual workload and competing workloads from other clients.
