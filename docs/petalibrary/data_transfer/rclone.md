@@ -36,11 +36,11 @@ type: sftp
 host: dtn.rc.colorado.edu
 user = jesse
 ```
-The `Rclone` application is interactive and will prompt you for all of the above information. Here is the ouput of an example interactive session when creating an endpoint with the above settings:
+The `Rclone` application is interactive and will prompt you for all of the above information. Here is the output of an example interactive session when creating an endpoint with the above settings:
 
 ```$  rclone config```     
 
-**Windows:** From the Command Prompt, navagate to the _rclone_ file location and run:
+**Windows:** From the Command Prompt, navigate to the _rclone_ file location and run:
 ```$ .\rclone.exe config```
 
 ```

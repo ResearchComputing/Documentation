@@ -1,6 +1,6 @@
 # Mounting on a Local Machine
 
-Users with Petalibrary allocations may access and transfer files to/from their local desktop workstatation within the CU internal network without needing to formally tranfer files via traditional methods such as `scp`, `sftp` `rsync` or `Globus`. This form of data access is referred to as _mounting_ and can be done on any operating system via `SMB` or `sshfs`.
+Users with Petalibrary allocations may access and transfer files to/from their local desktop computer within the CU internal network without needing to formally tranfer files via traditional methods such as `scp`, `sftp` `rsync` or `Globus`. This form of data access is referred to as _mounting_ and can be done on any operating system via `SMB` or `sshfs`.
 
 (tabset-ref-ucb-pl-mounting-types)=
 `````{tab-set}
@@ -24,7 +24,7 @@ First, navigate to Finder and click “Connect to Server” under the “Go” m
 ![](../images_and_html/smbmac1.png)
 
 
-In the `Server Address` field, provide the hostname to a RC's internal server appended wity your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
+In the `Server Address` field, provide the hostname to a RC's internal server appended with your Petalibrary allocation. RC will provide you the hostname needed when requesting access to SMB.
 ```
 smb://<RC-provided-hostname>/<your-pl-allocation>
 ```

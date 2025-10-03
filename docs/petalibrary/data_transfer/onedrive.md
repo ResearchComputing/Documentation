@@ -25,7 +25,7 @@ Click the 2nd option in the Panel selection on the top right of the page to ente
 
 ![](../images_and_html/splitview.png)
 
-* Once authenticated, you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select `/pl` and proceed to your allocaiton. 
+* Once authenticated, you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select `/pl` and proceed to your allocation. 
 
 ![](../images_and_html/Globus_CURC_Collection.png)
 

@@ -7,7 +7,7 @@
 ````{tab-item} Globus
 :sync: tabset-ucb-pl-gdrive-types-globus
 
-Globus is no longer an opton for Google Drive data transfers to PetaLibrary.
+Globus is no longer an option for Google Drive data transfers to PetaLibrary.
 
 ````
 

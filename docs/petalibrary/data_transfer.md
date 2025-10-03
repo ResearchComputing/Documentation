@@ -35,7 +35,7 @@ There are numerous ways to transfer data to/from PetaLibrary. Select the option 
 
 ```
 * Specific documentation on using `Rclone` to transfer data from Onedrive to PetaLibrary.
-* Additional documentation on using Globus to tranfer data from Onedrive to PetaLibrary.
+* Additional documentation on using Globus to transfer data from Onedrive to PetaLibrary.
 
 ```{toctree}
 :maxdepth: 1

@@ -319,6 +319,48 @@ PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does coun
 If you would like to set a custom snapshot schedule for your allocation, please contact <rc-help@colorado.edu>. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 ::::
 
+### Are there any alternatives to using PetaLibrary for data backups?
+::::{dropdown} Show 
+:icon: note
+
+
+Offsite backup options are available from cloud-based storage providers. 
+
+(tabset-ref-alt-storage-methods)=
+`````{tab-set}
+:sync-group: tabset-alt-storage-methods
+
+````{tab-item} Microsoft OneDrive
+:sync: alt-storage-methods-onedrive
+
+- _Access details:_  
+	- CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus or rclone](../petalibrary/data_transfer/onedrive.md) to copy data between PetaLibrary and OneDrive.  
+- _Pros:_ 
+	- Free up to 5 TB using OneDrive 
+	- Copy of data is off-campus 
+- _Cons:_ 
+	- Limits on [file sizes](https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa#individualfilesize)
+	- OneDrive can be sensitive to [unconventional file names and long paths](https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa#invalidcharacters)  
+
+````
+````{tab-item} AWS S3
+:sync: alt-storage-methods-awss3
+ 
+- _Access details:_ 
+	- You can use `Rclone` to copy your data to AWS for a monthly fee. Contact <rc-help@colorado.edu> for options to establish access to AWS. 
+- _Pros:_ 
+	- No data volume limit 
+	- AWS data integrity assurance is very high 
+	- Copy of data is off-campus 
+- _Cons:_ 
+	- You incur additional costs 
+
+````
+
+`````
+
+::::
+
 ### I am a BioKEM facility user, how do I have my data deposited to my PetaLibrary Allocation?
 ::::{dropdown} Show 
 :icon: note
