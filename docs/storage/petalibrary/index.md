@@ -9,8 +9,8 @@ Request PetaLibrary storage by selecting "Request a new PetaLibrary allocation" 
 ```{note}
 * Minimum allocation size: 1 TB
 * Maximum _initial_ allocation size for new customers, pending availability:
- * 200 TB in Active storage
- * 100 TB in Archive storage (includes "Active+Archive" and "Archive+DR")
+    * 200 TB in Active storage
+    * 100 TB in Archive storage (includes "Active+Archive" and "Archive+DR")
 ```
 
 ## Requirements
