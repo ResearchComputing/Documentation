@@ -180,7 +180,7 @@
 </g>
 <!-- petalibrary -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="../storage/petalibrary/index.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../petalibrary/index.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="804.47" cy="-522" rx="55.06" ry="18"/>
 <text text-anchor="middle" x="804.47" y="-518.48" font-family="Verdana" font-size="12.00" fill="white">PetaLibrary</text>
 </a>

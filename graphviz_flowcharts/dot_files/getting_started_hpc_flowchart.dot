@@ -16,7 +16,7 @@ digraph "" {
          node_type [label="Node types", href="../compute/node-types.html", target="_blank", id="clickable"];
          filesystem [label="CURC filesystem", href="../compute/filesystems.html", target="_blank", id="clickable"];
          data_transfer [label="Transferring data", href="../compute/data-transfer.html", target="_blank", id="clickable"];
-         petalibrary [label="PetaLibrary", href="../storage/petalibrary/index.html", target="_blank", id="clickable"];
+         petalibrary [label="PetaLibrary", href="../petalibrary/index.html", target="_blank", id="clickable"];
          alpine [label="Alpine", href="../clusters/alpine/index.html", target="_blank", id="clickable"];
          blanca [label="Blanca", href="../clusters/blanca/blanca.html", target="_blank", id="clickable"];
          slurm [label="Slurm", href="../running-jobs/job-resources.html", target="_blank", id="clickable"];

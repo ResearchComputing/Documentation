@@ -1,0 +1,218 @@
+<style>
+  html[data-theme=dark] .alloc-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: sans-serif;
+  /* Reapply necessary styles explicitly: */
+  border: 1px solid #ccc;
+  color: black;
+  } 
+
+  .alloc-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: sans-serif;
+  /* Reapply necessary styles explicitly: */
+  border: 1px solid #ccc;
+  } 
+
+  .alloc-table th {
+    background-color: #91bff0; /* light blue for headers */
+    border: 2px solid black;
+    padding: 8px;
+    font-size: 22px;
+  }
+  .alloc-table td.category-cell-gray1 {
+    background-color: #f2f2f2; /* light gray for category cells */
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+    color: black;
+    font-size: 18px;
+  }
+  .alloc-table td.category-cell-gray2 {
+    background-color: #dfdddd; /* light gray for category cells */
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+    color: black;
+    font-size: 18px;
+  }
+  .alloc-table td.category-cell-gray3 {
+    background-color: #adabab; /* light gray for category cells */
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+    color: black;
+    font-size: 18px;
+  }
+  .alloc-table td.category-cell-gray4 {
+    background-color: #908f8f; /* light gray for category cells */
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+    color: black;
+    font-size: 18px;
+  }
+  .alloc-table td.category-cell-gray5 {
+    background-color: #656464; /* light gray for category cells */
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+    color: black;
+    font-size: 18px;
+  }
+
+
+  .alloc-table td {
+    background-color: #fafafa; /* your desired bg for data cells */
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+  }
+</style>
+
+<table class="alloc-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th rowspan="2">Category</th>
+      <th rowspan="2">Feature</th>
+      <th colspan="4">PetaLibrary Tier</th>
+    </tr>
+    <tr style="text-align: center;">
+      <th>Active</th>
+      <th>Archive</th>
+      <th>Active+Archive</th>
+      <th>Archive+DR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Data Integrity -->
+    <tr>
+      <td rowspan="6" class="category-cell-gray1">Data Integrity*</td>
+      <td class="category-cell-gray1">Snapshots</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray1">Offsite replication</td>
+      <td></td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray1">Offsite backup</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray1">RAID double parity protection</td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray1">RAID triple parity protection</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray1">Full monthly data checksumming</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+
+    <!-- Data Limits -->
+    <tr>
+      <td rowspan="4" class="category-cell-gray2">Data Limits</td>
+      <td class="category-cell-gray2">No data volume limit</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray2">Initial allocation request limit</td>
+      <td>200 T</td>
+      <td>100 T</td>
+      <td>100 T</td>
+      <td>100 T</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray2">No object limit</td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray2">10K object/TB limit</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+    </tr>
+
+    <!-- Data Access -->
+    <tr>
+      <td class="category-cell-gray3">Data Access</td>
+      <td class="category-cell-gray3">Accessible from CURC compute nodes</td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+    </tr>
+
+    <!-- Data Transfer -->
+    <tr>
+      <td rowspan="3" class="category-cell-gray4">Data Transfer</td>
+      <td class="category-cell-gray4">Globus access</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray4">rsync/scp/sftp/ access</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray4">SMB access**</td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+    </tr>
+
+    <!-- Data Compression -->
+    <tr>
+      <td rowspan="2" class="category-cell-gray5">Data Compression</td>
+      <td class="category-cell-gray5">lz4 data compression</td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="category-cell-gray5">zstd data compression</td>
+      <td></td>
+      <td>✅</td>
+      <td></td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
