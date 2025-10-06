@@ -8,6 +8,35 @@
   color: black;
   } 
 
+  /* Light theme variables */
+  html[data-theme="light"] {
+    --header-color: #91bff0; 
+    --color-data-integrity: #f2f2f2;
+    --color-data-limits: #dfdddd;;
+    --color-data-access: #adabab;
+    --color-data-transfer: #908f8f;
+    --color-data-compression: #656464;
+    --border-color: black; 
+    --text-color: black;
+    --header-border-weight: 2px;
+    --border-weight: 2px;
+  }
+
+  /* Dark theme variables */
+  html[data-theme="dark"] {
+    --header-color: var(--pst-color-surface); 
+    --color-data-integrity: var(--pst-color-on-background);
+    --color-data-limits: var(--pst-color-surface);
+    --color-data-access: var(--pst-color-on-background);
+    --color-data-transfer: var(--pst-color-surface);
+    --color-data-compression: var(--pst-color-on-background);
+    --border-color: #CFB87C; 
+    --text-color: white; 
+    --header-border-weight: 0.1px;
+    --border-weight: 0.1px; 
+  }
+
+
   .alloc-table {
   border-collapse: collapse;
   width: 100%;
@@ -17,62 +46,59 @@
   } 
 
   .alloc-table th {
-    background-color: #91bff0; /* light blue for headers */
-    border: 2px solid black;
+    background-color: var(--header-color); /* light blue for headers */
+    border: var(--header-border-weight) solid var(--border-color);
     padding: 8px;
     font-size: 22px;
+    color: var(--text-color);
   }
-   .alloc-table td.category-cell-gray1 {
-    background-color: #f2f2f2; /* light gray for category cells */
-    border: 2px solid black;
+  
+  .alloc-table tr.category-data-integrity td {
+    background-color: var(--color-data-integrity);
+    border: var(--border-weight) solid var(--border-color);
     padding: 8px;
     text-align: left;
-    color: black;
+    color: var(--text-color);
     font-size: 18px;
-  }
-  .alloc-table td.category-cell-gray2 {
-    background-color: #dfdddd; /* light gray for category cells */
-    border: 2px solid black;
-    padding: 8px;
-    text-align: left;
-    color: black;
-    font-size: 18px;
-  }
-  .alloc-table td.category-cell-gray3 {
-    background-color: #adabab; /* light gray for category cells */
-    border: 2px solid black;
-    padding: 8px;
-    text-align: left;
-    color: black;
-    font-size: 18px;
-  }
-  .alloc-table td.category-cell-gray4 {
-    background-color: #908f8f; /* light gray for category cells */
-    border: 2px solid black;
-    padding: 8px;
-    text-align: left;
-    color: black;
-    font-size: 18px;
-  }
-  .alloc-table td.category-cell-gray5 {
-    background-color: #656464; /* light gray for category cells */
-    border: 2px solid black;
-    padding: 8px;
-    text-align: left;
-    color: black;
-    font-size: 18px;
-  }
+  } 
 
-
-  .alloc-table td {
-    background-color: #fafafa; /* your desired bg for data cells */
-    border: 2px solid black;
+  .alloc-table tr.category-data-limits td {
+    background-color: var(--color-data-limits);
+    border: var(--border-weight) solid var(--border-color);
     padding: 8px;
-    text-align: center;
+    text-align: left;
+    color: var(--text-color);
     font-size: 18px;
+  } 
+
+  .alloc-table tr.category-data-access td {
+    background-color: var(--color-data-access);
+    border: var(--border-weight) solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 18px;
+  } 
+  .alloc-table tr.category-data-transfer td {
+    background-color: var(--color-data-transfer);
+    border: var(--border-weight) solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 18px;
+  } 
+  .alloc-table tr.category-data-compression td {
+    background-color: var(--color-data-compression);
+    border: var(--border-weight) solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 18px;
+  } 
+
+  .alloc-table td.tier-cell {
+  text-align: center !important;
   }
-
-
 
 </style>
 
@@ -92,130 +118,130 @@
   </thead>
   <tbody>
     <!-- Data Integrity -->
-    <tr>
-      <td rowspan="6" class="category-cell-gray1">Data Integrity*</td>
-      <td class="category-cell-gray1">Snapshots</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+    <tr class="category-data-integrity">
+      <td rowspan="6">Data Integrity*</td>
+      <td>Snapshots</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
     </tr>
-    <tr>
-      <td class="category-cell-gray1">Offsite replication</td>
-      <td></td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
+    <tr class="category-data-integrity">
+      <td>Offsite replication</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
     </tr>
-    <tr>
-      <td class="category-cell-gray1">Offsite backup</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>✅</td>
+    <tr class="category-data-integrity">
+      <td>Offsite backup</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
     </tr>
-    <tr>
-      <td class="category-cell-gray1">RAID double parity protection</td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
+    <tr class="category-data-integrity">
+      <td>RAID double parity protection</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
     </tr>
-    <tr>
-      <td class="category-cell-gray1">RAID triple parity protection</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
+    <tr class="category-data-integrity">
+      <td>RAID triple parity protection</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
     </tr>
-    <tr style="border-bottom: 4px solid rgb(145, 9, 9);">
-      <td class="category-cell-gray1">Full monthly data checksumming</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+    <tr class="category-data-integrity">
+      <td>Full monthly data checksumming</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
     </tr>
 
     <!-- Data Limits -->
-    <tr>
-      <td rowspan="4" class="category-cell-gray2">Data Limits</td>
-      <td class="category-cell-gray2">No data volume limit</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+    <tr class="category-data-limits">
+      <td rowspan="4">Data Limits</td>
+      <td>No data volume limit</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
     </tr>
-    <tr>
-      <td class="category-cell-gray2">Initial allocation request limit</td>
-      <td>200 T</td>
-      <td>100 T</td>
-      <td>100 T</td>
-      <td>100 T</td>
+    <tr class="category-data-limits">
+      <td>Initial allocation request limit</td>
+      <td class="tier-cell">200 T</td>
+      <td class="tier-cell">100 T</td>
+      <td class="tier-cell">100 T</td>
+      <td class="tier-cell">100 T</td>
     </tr>
-    <tr>
-      <td class="category-cell-gray2">No object limit</td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
+    <tr class="category-data-limits">
+      <td>No object limit</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
     </tr>
-    <tr>
-      <td class="category-cell-gray2">10K object/TB limit</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
+    <tr class="category-data-limits">
+      <td>10K object/TB limit</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
     </tr>
 
     <!-- Data Access -->
-    <tr>
-      <td class="category-cell-gray3">Data Access</td>
-      <td class="category-cell-gray3">Accessible from CURC compute nodes</td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
+    <tr class="category-data-access">
+      <td>Data Access</td>
+      <td>Accessible from CURC compute nodes</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
     </tr>
 
     <!-- Data Transfer -->
-    <tr>
-      <td rowspan="3" class="category-cell-gray4">Data Transfer</td>
-      <td class="category-cell-gray4">Globus access</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+    <tr class="category-data-transfer">
+      <td rowspan="3">Data Transfer</td>
+      <td>Globus access</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
     </tr>
-    <tr>
-      <td class="category-cell-gray4">rsync/scp/sftp/ access</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+    <tr class="category-data-transfer">
+      <td>rsync/scp/sftp/ access</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell">✅</td>
     </tr>
-    <tr>
-      <td class="category-cell-gray4">SMB access**</td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
+    <tr class="category-data-transfer">
+      <td>SMB access**</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
     </tr>
 
     <!-- Data Compression -->
-    <tr>
-      <td rowspan="2" class="category-cell-gray5">Data Compression</td>
-      <td class="category-cell-gray5">lz4 data compression</td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
+    <tr class="category-data-compression">
+      <td rowspan="2">Data Compression</td>
+      <td>lz4 data compression</td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
     </tr>
-    <tr>
-      <td class="category-cell-gray5">zstd data compression</td>
-      <td></td>
-      <td>✅</td>
-      <td></td>
-      <td>✅</td>
+    <tr class="category-data-compression">
+      <td>zstd data compression</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
+      <td class="tier-cell"></td>
+      <td class="tier-cell">✅</td>
     </tr>
   </tbody>
 </table>
