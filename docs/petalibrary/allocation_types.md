@@ -4,8 +4,23 @@
 .. raw:: html
     :file: ./images_and_html/pl_tier_table.html 
 ```
+<br></br>
+::::{dropdown} *Data integrity terminology definitions
+:icon: note
 
-*Data Integrity terminology definitions can be found in the [Data Integrity Terminology](#data-integrity-terminology).
+A PetaLibrary `active` or `archive` allocation is a single copy of your data that is not backed up. PetaLibrary can be a component of a good backup strategy, but for data that cannot be replaced, an active or archive PetaLibrary should not be the only copy. The PetaLibrary `active+archive` and `archive+DR` (DR=disaster recovery) tiers provide additional redundancy for your data.  Common terms used to describe data redundancy and integrity are defined below. 
+
+* __*Snapshots*__ are read-only representations of your PetaLibrary allocation on the `active` or `archive` tier at the time the snapshot was taken. [Snapshots](./zfs_snapshots.md) enable users to recover data that they have unintentionally deleted, during a specified retention period (default is seven days). Snapshots are not "backups" in the strict sense because they are not static, and because they reside on the same storage device as the primary data copy. 
+  
+* __*Replication*__ in the case of PetaLibrary refers specifically to the `active+archive` tier, and is the process whereby the snapshots from your `active` allocation are mirrored using the `archive` tier in a separate data center on the CU Campus.  This process provides an additional layer of disaster recovery protection compared to `snapshots` (the default for "active" allocations).
+  
+* __*Backup*__ in the case of PetaLibrary refers specifically to the `active+DR` tier, and is the process whereby a monthly backup copy of the "archive" allocation is made to an offsite data center.  This process provides an additional layer of disaster recovery protection compared to `snapshots` (the default for `archive` allocations).
+  
+* __*RAID Parity*__ is the process whereby your copy of data on a given PetaLibrary tier is written to multiple disks.  The PetaLibrary `active` tier employs double parity (up to two simultaneous disk failures will not cause data loss), and the `archive` tier employs triple parity (up to three simultaneous disk failures will not cause data loss).  
+  
+* __*Checksumming*__ is the process whereby a value that is derived from a data object is repeatedly checked over time to confirm that the data has not unnecessarily changed.  Checksumming is a way to detect and mitigate data corruption over time. 
+
+::::
 
 **SMB is only available to CU Boulder customers.
 
@@ -71,21 +86,3 @@ The PetaLibrary Archive tier is configured to maximize data integrity over perfo
 `````
 
 
-## Data Integrity Terminology
-
-::::{dropdown} Show data integrity terminology definitions
-:icon: note
-
-A PetaLibrary `active` or `archive` allocation is a single copy of your data that is not backed up. PetaLibrary can be a component of a good backup strategy, but for data that cannot be replaced, an active or archive PetaLibrary should not be the only copy. The PetaLibrary `active+archive` and `archive+DR` (DR=disaster recovery) tiers provide additional redundancy for your data.  Common terms used to describe data redundancy and integrity are defined below. 
-
-* __*Snapshots*__ are read-only representations of your PetaLibrary allocation on the `active` or `archive` tier at the time the snapshot was taken. [Snapshots](./zfs_snapshots.md) enable users to recover data that they have unintentionally deleted, during a specified retention period (default is seven days). Snapshots are not "backups" in the strict sense because they are not static, and because they reside on the same storage device as the primary data copy. 
-  
-* __*Replication*__ in the case of PetaLibrary refers specifically to the `active+archive` tier, and is the process whereby the snapshots from your `active` allocation are mirrored using the `archive` tier in a separate data center on the CU Campus.  This process provides an additional layer of disaster recovery protection compared to `snapshots` (the default for "active" allocations).
-  
-* __*Backup*__ in the case of PetaLibrary refers specifically to the `active+DR` tier, and is the process whereby a monthly backup copy of the "archive" allocation is made to an offsite data center.  This process provides an additional layer of disaster recovery protection compared to `snapshots` (the default for `archive` allocations).
-  
-* __*RAID Parity*__ is the process whereby your copy of data on a given PetaLibrary tier is written to multiple disks.  The PetaLibrary `active` tier employs double parity (up to two simultaneous disk failures will not cause data loss), and the `archive` tier employs triple parity (up to three simultaneous disk failures will not cause data loss).  
-  
-* __*Checksumming*__ is the process whereby a value that is derived from a data object is repeatedly checked over time to confirm that the data has not unnecessarily changed.  Checksumming is a way to detect and mitigate data corruption over time. 
-
-::::
