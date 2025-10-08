@@ -28,7 +28,6 @@ getting_started/logging-in
 getting_started/faq
 getting_started/current-sem-trainings
 getting_started/acknowledge_curc_resources
-getting_started/ai-resources
 ```
 
 ```{toctree}
@@ -104,10 +103,18 @@ cloud/cumulus
 
 ```{toctree}
 :maxdepth: 2
+:caption: AI/ML
+
+ai-ml/ai-resources
+ai-ml/llms
+
+```
+
+```{toctree}
+:maxdepth: 2
 :caption: Software
 
 software/curc_provided_software
-software/llms
 software/loadbalancer
 software/gaussian
 software/matlab

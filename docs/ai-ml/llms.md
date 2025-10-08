@@ -110,7 +110,7 @@ export OLLAMA_MODELS=/projects/$USER/my_ollama_models; module load ollama
 ```
 :::
 
-At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided [uv](./uv.md) environment:
+At this point, you can use Ollama from the command line. If you would like to also use Ollama from within Python (needed for the [Using Ollama in a Python script](#using-ollama-in-a-python-script) section below), then you will need to activate our provided [uv](../software/uv.md) environment:
 ```
 module load uv 
 source $CURC_UV_ENV_DIR/ollama-python-api-env/bin/activate
@@ -197,7 +197,7 @@ This will enable us to use Ollama from the command line.
 
 ## Installing the Ollama Python API 
 
-In the previous section, we set up the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](./uv.md):
+In the previous section, we set up the Ollama server. This will need to be done before you use the Ollama Python API. To use the Ollama Python API, you will also need to install the appropriate packages. This can be done by creating an environment (e.g. `ollama_api`). We will do this below using [uv](../software/uv.md):
 ```
 module load uv
 uv venv $UV_ENVS/ollama-python-api-env
@@ -287,7 +287,7 @@ Once you are on the GPU compute node, you can load the Transformers module, whic
 ```
 module load hf-transformers
 ```
-Once this module has been loaded, you will be within the [uv](./uv.md) environment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
+Once this module has been loaded, you will be within the [uv](../software/uv.md) environment named `hf-transformers-env`. This environment will allow you to run all Transformers usage examples on this page. 
 
 ````
 
@@ -296,7 +296,7 @@ Once this module has been loaded, you will be within the [uv](./uv.md) environme
 
 ## Installing Transformers
 
-In this section, we describe how to set up a minimal [uv](./uv.md) environment, which provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
+In this section, we describe how to set up a minimal [uv](../software/uv.md) environment, which provides access to Transformers. To begin, we will jump on a standard CPU node. Please note that jumping on a GPU node to create the environment is not necessary. However, when you run the LLMs, you will want to be on a GPU node for most models.
 ```
 sinteractive --ntasks=4 --partition=acompile --qos=compile --nodes=1 --time=01:00:00
 ```
