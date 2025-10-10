@@ -1,4 +1,4 @@
-# PetaLibrary Ownership and Contacts
+# Roles and Responsibilities
 
 ## PetaLibrary Owners
 
@@ -33,7 +33,7 @@ in that they may speak on behalf of the owner of an allocation, short
 of designating a new owner.
 
 RC will email technical contacts, if designated, regarding
-technical issues for an allocation, and "cc" the owner. In the absense of technical contacts,
+technical issues for an allocation, and "cc" the owner. In the absence of technical contacts,
 RC will email the allocation owner.
 
 ## Recommended owner/contacts

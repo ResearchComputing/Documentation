@@ -430,11 +430,60 @@ For individuals who need to install Python libraries not included in our base Py
 ::::{dropdown} Show 
 :icon: note
 
-Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. For more information on ZFS Snapshots, please refer to our [ZFS Snapshots](../storage/petalibrary/zfs_snapshots.md) documentation. 
+Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS snapshots are read-only representations of a ZFS filesystem at the time the snapshot is taken. For more information on ZFS Snapshots, please refer to our [ZFS Snapshots](../petalibrary/zfs_snapshots.md) documentation. 
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
 If you would like to set a custom snapshot schedule for your allocation, please contact <rc-help@colorado.edu>. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+::::
+
+### Are there any alternatives to using PetaLibrary for data backups?
+::::{dropdown} Show 
+:icon: note
+
+
+Offsite backup options are available from cloud-based storage providers. 
+
+(tabset-ref-alt-storage-methods)=
+`````{tab-set}
+:sync-group: tabset-alt-storage-methods
+
+````{tab-item} Microsoft OneDrive
+:sync: alt-storage-methods-onedrive
+
+- _Access details:_  
+	- CU Boulder affiliates all have 5 TB of space in Microsoft OneDrive. You can use [Globus or rclone](../petalibrary/data_transfer/onedrive.md) to copy data between PetaLibrary and OneDrive.  
+- _Pros:_ 
+	- Free up to 5 TB using OneDrive 
+	- Copy of data is off-campus 
+- _Cons:_ 
+	- Limits on [file sizes](https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa#individualfilesize)
+	- OneDrive can be sensitive to [unconventional file names and long paths](https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa#invalidcharacters)  
+
+````
+````{tab-item} AWS S3
+:sync: alt-storage-methods-awss3
+ 
+- _Access details:_ 
+	- You can use `Rclone` to copy your data to AWS for a monthly fee. Contact <rc-help@colorado.edu> for options to establish access to AWS. 
+- _Pros:_ 
+	- No data volume limit 
+	- AWS data integrity assurance is very high 
+	- Copy of data is off-campus 
+- _Cons:_ 
+	- You incur additional costs 
+
+````
+
+`````
+
+::::
+
+### I am a BioKEM facility user, how do I have my data deposited to my PetaLibrary Allocation?
+::::{dropdown} Show 
+:icon: note
+
+If you are a BioKEM facility user, you can choose to have your data deposited directly into your PetaLibrary allocations. This process involves creating a biokem-deposit directory in your allocation’s root directory and setting permissions to a biokem specific owner and group. Visit [our documentation](../additional-resources/biokem-facility.md) on the BioKEM facility to learn about the process.
 ::::
 
 ## Open OnDemand

@@ -1,4 +1,4 @@
-# PetaLibrary Billing
+# Billing
 
 ## General information
 
@@ -44,7 +44,7 @@ The invoice specifies a time frame for you to contact us to make
 changes. If anything on the invoice is incorrect, please notify us right
 away, and we will issue a new invoice. If we do not hear from you within
 the specified time frame, we will proceed with the charges outlined in
-the invoice. Please take note of the PetaLibrary [policy for non-payment](../../additional-resources/policies.md#petalibrary-non-payment).
+the invoice. Please take note of the PetaLibrary [policy for non-payment](../additional-resources/policies.md#petalibrary-non-payment).
 
 If a PetaLibrary allocation has one or more billing contacts defined,
 invoices are emailed to the billing contacts, and copied to the allocation
@@ -54,7 +54,7 @@ the owner.
 ### Sample Invoice
 
 ```{eval-rst}
-.. figure:: ./petalibrary_invoice.png
+.. figure:: ./images_and_html/petalibrary_invoice.png
    :align: center
    :scale: 80%
 ```

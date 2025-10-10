@@ -24,11 +24,16 @@ Click the name of a training to view more details and register!
 ### **October**
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
+- [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
+- [Getting started with AI Agents: An AWS Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/aiagents) - **October 15th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Research Computing Workflow Workbench](https://colorado.libcal.com/calendar/events/rcworkbench) - **October 15th, 1pm, Virtual (Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 ### **November**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [AWS Containers Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/containers) - **November 11th, 9am, Hybrid (Norlin Library E206/Zoom)**
+- [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
 
 ````
 
@@ -42,18 +47,24 @@ Click the name of a training to view more details and register!
 - [Working with Linux (an RC Short Course)](https://colorado.libcal.com/calendar/events/linux) - **August 29th, 11am, Virtual (Zoom)**
 - [Research Computing Workflow Workbench - Working with Slurm](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
 - [Scheduling Jobs on a Supercomputer (an RC Short Course)](https://colorado.libcal.com/calendar/events/jobssc) - **September 12th, 1pm, Hybrid (Norlin Library E206/Zoom)**
+- [Research Computing Workflow Workbench](https://colorado.libcal.com/calendar/events/rcworkbench) - **October 15th, 1pm, Virtual (Zoom)**
 ### **Software**
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 19th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
+- [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
 ### **Version Control**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 ### **Parallelization & Acceleration**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
 ### **AI/ML**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/llm) - **September 26th, 11am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
+### **Cloud**
+- [Getting started with AI Agents: An AWS Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/aiagents) - **October 15th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [AWS Containers Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/containers) - **November 11th, 9am, Hybrid (Norlin Library E206/Zoom)**
 
 ````
 
@@ -69,14 +80,21 @@ Click the name of a training to view more details and register!
 - [Installing Software on Alpine with Conda and Mamba (an RC Primer)](https://colorado.libcal.com/calendar/events/conda) - **September 19th, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [UV Package Manager--Get Your Sunscreen! (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/uv) - **October 1st, 11am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **October 7th, 11am, Virtual (Zoom)**
+- [An Introduction to Debugging (an RC Short Course)](https://colorado.libcal.com/calendar/events/debugging) - **October 8th, 1pm, Hybrid (Norlin Library E206/Zoom)**
+- [Getting started with AI Agents: An AWS Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/aiagents) - **October 15th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [AWS Containers Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/containers) - **November 11th, 9am, Hybrid (Norlin Library E206/Zoom)**
 
 ### **Intermediate**
 - [Research Computing Workflow Workbench - Working with Slurm](https://colorado.libcal.com/calendar/events/workbench) - **September 10th, 12noon, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/llm) - **September 26th, 11am, Virtual (Zoom)**
+- [Research Computing Workflow Workbench](https://colorado.libcal.com/calendar/events/rcworkbench) - **October 15th, 1pm, Virtual (Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **October 17th, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+
+### **Advanced**
+- [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
 
 ````
 

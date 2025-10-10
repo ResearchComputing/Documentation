@@ -65,21 +65,28 @@ open_ondemand/index
 :maxdepth: 1
 :caption: Running Jobs
 
+running-jobs/batch-jobs
+running-jobs/interactive-jobs
+running-jobs/running-apps-with-jobs
+running-jobs/job-arrays
+running-jobs/roce-enabled
 running-jobs/job-resources
 running-jobs/slurm-commands
 running-jobs/squeue-status-codes
-running-jobs/running-apps-with-jobs
-running-jobs/batch-jobs
-running-jobs/interactive-jobs
-running-jobs/roce-enabled
 
 ```
 
 ```{toctree}
-:maxdepth: 1
-:caption: Storage
+:maxdepth: 2
+:caption: PetaLibrary
 
-storage/petalibrary/index
+petalibrary/index
+petalibrary/allocation_types
+petalibrary/ownership
+petalibrary/billing
+petalibrary/data_transfer
+petalibrary/usage_statistics
+petalibrary/zfs_snapshots
 
 ```
    
@@ -91,6 +98,15 @@ cloud/aws/index
 cloud/azure/index
 cloud/gcp/index
 cloud/cumulus
+
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: AI/ML
+
+ai-ml/ai-resources
+ai-ml/llms
 
 ```
 
