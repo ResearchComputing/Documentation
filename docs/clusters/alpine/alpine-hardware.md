@@ -224,7 +224,7 @@ Compiling and testing partitions are, as their name implies, only meant for comp
 **Request one core per node for 10 minutes.**
 
 ```bash
-sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
+sinteractive --partition=atesting --ntasks=2 --ntasks-per-node=1 --nodes=2 --qos=testing --time=00:10:00
 ```
 
 ````
@@ -232,10 +232,10 @@ sinteractive --partition=atesting --ntasks-per-node=1 --nodes=2 --time=00:10:00
 ```` {tab-item} Example 2
 :sync: atesting-use-ex2
 
-**Request 4 cores for the default time of 30 minutes.**
+**Request 4 cores for 30 minutes.**
 
 ```bash
-sinteractive --partition=atesting --ntasks=4
+sinteractive --partition=atesting --ntasks=4 --nodes=1 --qos=testing --time=00:30:00 
 ```
 
 ````
@@ -243,10 +243,10 @@ sinteractive --partition=atesting --ntasks=4
 ```` {tab-item} Example 3
 :sync: atesting-use-ex3
 
-**Request 2 cores each from 2 nodes for testing MPI.**
+**Request 2 cores each from 2 nodes for 10 minutes - a good option for testing MPI jobs.**
 
 ```bash
-sinteractive --ntasks-per-node=2 --nodes=2 --partition=atesting
+sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos=testing --time=00:10:00
 ```
 
 ````
@@ -271,7 +271,7 @@ The `atesting_a100` partition utilizes NVIDIA's [Multi-Instance GPU (MIG)](https
 **Request 1 A100 MIG slice with 10 CPU cores for 30 minutes.**
 
 ```bash
-sinteractive --partition=atesting_a100 --gres=gpu --ntasks=10 --time=30:00
+sinteractive --partition=atesting_a100 --gres=gpu:1 --ntasks=10 --nodes=1 --qos=testing --time=00:30:00 
 ```
 
 ````
@@ -282,7 +282,7 @@ sinteractive --partition=atesting_a100 --gres=gpu --ntasks=10 --time=30:00
 **Request 1 MI100 GPU with 1 CPU core for one hour.**
 
 ```bash
-sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --time=60:00
+sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --nodes=1 --qos=testing --time=00:60:00
 ```
 
 ````
