@@ -33,6 +33,7 @@ Click the name of a training to view more details and register!
 ### **November**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [AWS Containers Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/containers) - **November 11th, 9am, Hybrid (Norlin Library E206/Zoom)**
+- [Research Computing Workflow Workbench: LLMs](https://colorado.libcal.com/calendar/events/rcworkbench3) - **November 12th, 1pm, Virtual (Zoom)**
 - [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
 
 ````
@@ -65,6 +66,7 @@ Click the name of a training to view more details and register!
 ### **Cloud**
 - [Getting started with AI Agents: An AWS Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/aiagents) - **October 15th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [AWS Containers Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/containers) - **November 11th, 9am, Hybrid (Norlin Library E206/Zoom)**
+- [Research Computing Workflow Workbench: LLMs](https://colorado.libcal.com/calendar/events/rcworkbench3) - **November 12th, 1pm, Virtual (Zoom)**
 
 ````
 
@@ -92,6 +94,7 @@ Click the name of a training to view more details and register!
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [Research Computing Workflow Workbench: LLMs](https://colorado.libcal.com/calendar/events/rcworkbench3) - **November 12th, 1pm, Virtual (Zoom)**
 
 ### **Advanced**
 - [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
