@@ -88,7 +88,8 @@ html_theme_options = {
       "image_dark": "_static/Research_Computing_white_letters.png",
    }, 
    "repository_url": "https://github.com/ResearchComputing/Documentation",
-   "use_repository_button": True,
+   "use_repository_button": True, 
+   "collapse_navbar": True
 }
 
 html_context = {
