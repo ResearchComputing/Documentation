@@ -32,22 +32,28 @@ html[data-theme=dark] {
     --pst-color-secondary: var(--cu-boulder-gold);
     --pst-color-primary: var(--cu-boulder-gold);
     --pst-color-accent: var(--cu-boulder-gold);
+    --help-text-color: var(--pst-color-text-base);
+    --help-background-color: var(--pst-color-background);
+    --help-border: var(--cu-boulder-gold);
 }
 
 html[data-theme=light] {
     --pst-font-size-base: none;
     --pst-color-secondary: #176de8;
     --pst-color-primary: #176de8;
+    --help-text-color: var(--pst-color-text-base);
+    --help-background-color: var(--pst-color-background);
+    --help-border: #176de8;
 }
 
 html[data-theme=dark] .bd-header-article .btn {
     align-items: center;
     border: none;
     color: var(--cu-boulder-gold);
-    display: flex;
+    /* display: flex; */
     font-size: 1.3rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    /* padding-left: .5rem;
+    padding-right: .5rem; */
 }
 
 html[data-theme=dark] .bd-header-article .btn:hover {
@@ -118,4 +124,12 @@ html[data-theme=dark]  details.sd-dropdown:hover{
 
 html[data-theme=light] details.sd-dropdown summary.sd-card-header {
     border-left: .2rem solid var(--pst-color-primary) !important;
+}
+
+.sidebar-announcement .card {
+  border: 1px solid var(--help-border);
+  border-radius: 8px;
+  background: var(--help-background-color);
+  color: var(--help-text-color);
+  font-size: var(--pst-sidebar-font-size);
 }
