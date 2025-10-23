@@ -113,8 +113,12 @@ scp <path-to-file> <username>@dtn.rc.colorado.edu:<target-path>
 scp <username>@dtn.rc.colorado.edu:<path-to-file> <target-path>    
 ``` 
 
+Once you've typed the `scp` command, press Enter. Accept your Duo 2-Factor notification. If the connection succeeds you will see your transfer begin.
+
+```{note}
 Windows users can access scp through PowerShell or using a GUI
 application like [WinSCP](https://winscp.net/eng/docs/protocols).
+```
 
 For more information on secure copy take a [look at some of our listed
 resources](#more-reading) or consult the scp manual page.
@@ -146,10 +150,14 @@ rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>
 rsync -r <username>@dtn.rc.colorado.edu:<path-to-directory> <target-path>  
 ```
 
+Once you've typed the `rsync` command, press Enter. Accept your Duo 2-Factor notification. If the connection succeeds you will see your transfer begin.
+
+```{note}
 rsync is not available on Windows by default, but [may be installed
 individually](https://www.itefix.net/cwrsync) or as part of [Windows
 Subsystem for Linux
 (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+```
 
 For more information on rsync [check out some of our listed
 resources](#more-reading) or consult the rsync manual page.
@@ -251,7 +259,7 @@ scp -v ./myfile23.txt dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt      # usi
 
 ## Rclone 
 
-Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. [Over 40 cloud storage products](https://rclone.org/#providers) support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols. Rclone has powerful cloud equivalents to the unix commands rsync, cp, mv, mount, ls, ncdu, tree, rm, and cat. Rclone's familiar syntax includes shell pipeline support, and `--dry-run` protection. It can be used at the command line, in scripts or via its [API](https://rclone.org/rc/).
+Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. [Over 40 cloud storage products](https://rclone.org/#providers) support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols. Rclone has powerful cloud equivalents to the unix commands `rsync`, `cp`, `mv`, `mount`, `ls`, `ncdu`, `tree`, `rm`, and `cat`. Rclone's familiar syntax includes shell pipeline support, and `--dry-run` protection. It can be used at the command line, in scripts or via its [API](https://rclone.org/rc/).
 
 ### What can rclone do for you?
 
@@ -261,7 +269,7 @@ Rclone is a command line program to manage files on cloud storage. It is a featu
 - Mirror cloud data to other cloud services or locally
 - Migrate data to the cloud, or between cloud storage vendors
 - Mount multiple, encrypted, cached or diverse cloud storage as a disk
-- Analyse and account for data held on cloud storage using [lsf](https://rclone.org/commands/rclone_lsf/), [ljson](https://rclone.org/commands/rclone_lsjson/), [size](https://rclone.org/commands/rclone_size/), [ncdu](https://rclone.org/commands/rclone_ncdu/) 
+- Analyze and account for data held on cloud storage using [lsf](https://rclone.org/commands/rclone_lsf/), [ljson](https://rclone.org/commands/rclone_lsjson/), [size](https://rclone.org/commands/rclone_size/), [ncdu](https://rclone.org/commands/rclone_ncdu/) 
 - [Union](https://rclone.org/union/) file systems together to present multiple local and/or cloud file systems as one
 
 ### Features
@@ -407,7 +415,7 @@ Enter a value. Press Enter to leave empty.
 secret_access_key> <SECRET-KEY> 
 ```
 
-- You will then be prompted to enter your region, here we are going to enter the value of ‘1' (you can set your appropreate region):
+- You will then be prompted to enter your region, here we are going to enter the value of ‘1' (you can set your appropriate region):
 ```
 Option region.
 Region to connect to.

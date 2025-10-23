@@ -27,6 +27,8 @@ All Alpine nodes are available to all users. For full details about node access,
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} Milan CPU test nodes; pulls from CU amilan pool | atesting | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | {{ alpine_ucb_total_atesting_a100_gpu_nodes }} Milan NVIDIA GPU testing node | atesting_a100 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_atesting_mi100_gpu_nodes }} Milan AMD GPU testing nodes; pulls from ami100 pool | atesting_mi100 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
+| {{ alpine_ucb_total_dtn_nodes }} data transfer nodes (DTNs) | dtn | x86_64 Intel Haswell | 2       | 24            | 1            |  3.8          | N/A  | 0         | NA                   | 2x100 Gb Ethernet                       | RHEL 8.10 |
+
 
 :::
 
@@ -204,7 +206,7 @@ All users, regardless of institution, should specify partitions as follows:
 
 #### Special-Purpose Partitions
 
-To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These partitions enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these special-purpose partitions, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
+To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These partitions enable users to quickly test or compile code on CPU and GPU compute nodes, and to transfer data to/from CURC systems. To ensure equal access to these special-purpose partitions, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
 
 ```{important}
 Compiling and testing partitions are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate partitions when running code. 
@@ -319,6 +321,83 @@ acompile --ntasks=2 --time=02:00:00
 
 ````
 
+`````
+
+##### `dtn` usage examples:
+
+`dtn` provides access to the CURC data transfer nodes (DTNs) for the purpose of conducting performant data transfers with command-line tools including `rsync`, `Rclone`, `scp`, `sftp` `globus-cli`, `curl`, and `wget`. 
+
+__Typical Use Cases:__ 
+
+* When you need to integrate performant data transfers as dependencies of computational jobs.
+* When automated (e.g, daily, monthly) performant data transfers are required.
+* When you want the convenience of scheduling a long-running data transfer as a batch job that won’t time-out due to a spotty `ssh` session connection.
+
+__Types of data transfers supported:__
+
+* _Onsite-to-onsite_ transfers from one filesystem to another (e.g., copying a folder from scratch to PetaLibrary with `rsync`)
+* _Downloading_ large datasets from websites, ftp servers, cloud providers, etc. (e.g., downloading an LLM from OpenAI with `wget` or `curl`). 
+* _Onsite-to-offsite_ transfers to that allow external access via ssh-based protocols (e.g,. a transfer from your PetaLibrary allocation to your lab’s linux server with `scp`, or to your lab's AWS S3 bucket with `rclone`).
+ ```{note}
+ If the offsite machine does not support external ssh access (e.g., your Mac or Windows laptop), you can conduct the transfer on the `dtns` using the [Globus Command Line Interface (CLI)](https://docs.globus.org/cli/) via the `globus` command _(requires a [Globus Connect Personal](https://www.globus.org/globus-connect-personal) endpoint on the offsite machine)_.   
+```
+
+__Resource constraints:__
+
+Users may consume a maximum of four cores across all simultaneous jobs on the `dtn` partition. For example, a user may run 4 simultaneous single-core data transfer jobs, or they may run 1 four-core job. We recommend requesting a single core per job for most transfers, as most data transfer protocols can only take advantage of a single core (only `globus-cli` and `curl` can parallelize transfers across multiple cores).    
+
+(tabset-ref-dtn-use)=
+`````{tab-set}
+:sync-group: tabset-dtn-use
+
+````{tab-item} Example 1
+:sync: dtn-use-ex1
+
+**Request one core `dtn` job for 12 hours.**
+
+```bash
+sinteractive --partition=dtn --qos=dtn --nodes=1 --ntasks=1 --time=12:00:00
+```
+
+````
+
+
+```` {tab-item} Example 2
+:sync: dtn-use-ex2
+
+**Create a job script that requests a 1 core job for 12 hours and conducts an `rsync` transfer and a wget download.**
+
+Create a job script called `mytransfer.sh`:
+
+```bash
+#!/bin/bash
+
+#SBATCH --partition=dtn
+#SBATCH --qos=dtn
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --job-name=transfer
+#SBATCH --time=12:00:00
+#SBATCH --output=transfer.%j.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=ralphie@colorado.edu
+
+# transfer the "bigfiles" folder from my /scratch directory to my petalibrary allocation:
+
+rsync -r /scratch/alpine/ralphie/bigfiles/ /pl/active/buffsfan/ralphie/
+
+# now download an additional file the "bigfiles" folder:
+
+cd /pl/active/buffsfan/ralphie/bigfiles
+wget https://cubuffs.org/another_hug_file.zip
+```
+
+Now schedule `mytransfer.sh` so that it runs as a dependency of your previously scheduled computational job, `73798236`, when it is finished:
+
+```bash
+sbatch --dependency=afterok:73798236 mytransfer.sh
+```
+````
 `````
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
