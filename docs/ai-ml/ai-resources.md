@@ -9,7 +9,7 @@
 ### CURC AI/ML Trainings
 - CURC offers trainings each semester to help researchers deploy and optimize AI/ML workflows.
     * [Setting up LLMs on CURC Resources (an RC Short Course)](https://github.com/ResearchComputing/setting_up_llms_on_curc_resources_rc_short_course)
-    * [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain)
+    * [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://github.com/ResearchComputing/applied_containerization_for_ml_short_course)
 - For a complete list of current semester offerings, see [CURC Trainings Page](../getting_started/current-sem-trainings.md).
 ### CURC AI/ML Software Stack
 - The following AI/ML software are available and actively supported on CURC systems:
