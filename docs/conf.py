@@ -90,7 +90,6 @@ html_theme_options = {
    }, 
    "repository_url": "https://github.com/ResearchComputing/Documentation",
    "use_repository_button": True, 
-   "collapse_navbar": True,
 }
 
 html_sidebars = {
