@@ -16,7 +16,7 @@
 /* -- .bd-article-container holds the "text in the middle" (notebook / md) ------ */
 /* -- width is as high as as 100 "ems" (characters) wide, scales with font size -*/
 .bd-main .bd-content .bd-article-container {
-    max-width: 100em;
+    max-width: 100rem;
 }
 
 .code-block-caption {
