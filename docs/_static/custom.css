@@ -47,13 +47,13 @@ html[data-theme=light] {
 }
 
 html[data-theme=dark] .bd-header-article .btn {
-    align-items: center;
-    border: none;
+    /* align-items: center;
+    border: none; */
     color: var(--cu-boulder-gold);
-    display: flex;
-    font-size: 1.3rem;
+    /* display: flex; */
+    /* font-size: 1.3rem;
     padding-left: .5rem;
-    padding-right: .5rem;
+    padding-right: .5rem; */
 }
 
 html[data-theme=dark] .bd-header-article .btn:hover {
