@@ -282,7 +282,7 @@ and potentially sensitive information stored there.
 Directories may be shared with all Research Computing users or with
 only a subset of our users. In the latter case, a system
 administrator will need to add your chosen collaborators to your Linux
-group. Please follow the instructions provided in the FAQ [How can I add users to my Linux group?](../getting_started/faq.md#how-can-i-add-users-to-my-linux-group) dropdown, if you would like to add users to your Linux group.
+group. Please follow the instructions provided in the FAQ [How can I add users to a Linux group?](../getting_started/faq.md#how-can-i-add-users-to-a-linux-group) dropdown, if you would like to add users to your Linux group.
 
 In the example that follows, we make our `/projects` directory open to
 all users and then create subdirectories with select read/write

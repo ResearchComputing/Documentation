@@ -145,15 +145,16 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 
 ## General High Performance Computing
 
-### How can I add users to my Linux group?
+### How can I add users to a Linux group?
 ::::{dropdown} Show 
 :icon: note
 
-Before requesting users be added to your Linux group, please fully read the [Workspace Sharing](../compute/filesystems.md#workspace-sharing) section, which provides an alternative approach for workspace sharing. If you would like to proceed with adding someone to your Linux group, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following: 
+Before requesting users be added to a Linux group, please fully read the [Workspace Sharing](../compute/filesystems.md#workspace-sharing) section, which provides an alternative approach for workspace sharing. If you would like to proceed with adding someone to a Linux group, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following: 
 
-1. `Nature of request`: `Storage`
-2. `Issue type`: `I would like to add a collaborator to my directory`
-3. Provide any justification or additional details in `Detailed description`
+1. Select `Storage` for `Nature of request`
+2. Select `I would like to add a collaborator to my directory` for `Issue type`
+3. Fill out the requested additional information
+4. Provide any justification or additional details in `Detailed description`
 
 ::::
 
@@ -274,9 +275,9 @@ The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from 
 
 Before submitting a software installation request, please review our [Software installation policies](../additional-resources/policies.md#software-installations). To proceed with a software installation request, you should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Within this form you should make the following selections:
 
-1. `Nature of request` select `Software`
-2. `Cluster` select the cluster you would like to run this software on 
-3. `Issue type` select `Software installation request`  
+1. Select `Software` for `Nature of request`
+2. Select the cluster you would like to run this software on for `Cluster`
+3. Select `Software installation request` for `Issue type`
 4. Complete all fields requested in the form
 5. Submit the form
 ::::
@@ -339,8 +340,8 @@ You can also check the amount of space being used by any directory with the `du 
 
 Before requesting an increase to your scratch storage space, please review our policies for [Alpine scratch quota increases](../additional-resources/policies.md#alpine-scratch-quota-increases). Once you have reviewed the policies, you can submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following:
 
-1. `Nature of request` select `Storage`
-2. `Issue type` select `I would like to request an increase to my scratch space`
+1. Select `Storage` for `Nature of request`
+2. Select `I would like to request an increase to my scratch space` for `Issue type`
 3. In the `Detailed description` box, provide a brief (approximately one paragraph) justification describing why a workflow requires the requested increase.
 
 ::::

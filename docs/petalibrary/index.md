@@ -23,7 +23,9 @@ Each PetaLibrary allocation *must* define an allocation owner, read more about P
 Each person who accesses the PetaLibrary is required to have a Research Computing account and Duo two-factor authentication. PetaLibrary storage is presented as a file system directory based on the type of allocation. For more information about obtaining a CURC account, see our [Logging In](../getting_started/logging-in.md) page. 
 
 ### Access
-Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. To add new users to the allocation, the allocation owner or their authorized technical contact can submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) at any time to request that the users be added to the access group. 
+Access to a PetaLibrary allocation is granted using an access group. This group may be an existing group in the Research Computing environment or a new group created specifically for the purpose of managing access to the allocation. To add new users to the allocation, the allocation owner or their authorized technical contact should follow the instructions provided in the FAQ [How can I add users to a Linux group?](../getting_started/faq.md#how-can-i-add-users-to-a-linux-group) dropdown, where the `Path to directory/file` is the PetaLibrary allocation location. This request can be made at any time. 
+
+
 
 ## Performance
 PetaLibrary is a shared infrastructure and the instantaneous performance will vary depending on each individual workload and competing workloads from other clients. The PetaLibrary service is designed for file storage and retrieval, and is not an ideal service for highly transactional workloads (e.g., relational databases).
