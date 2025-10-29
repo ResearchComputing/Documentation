@@ -282,7 +282,7 @@ and potentially sensitive information stored there.
 Directories may be shared with all Research Computing users or with
 only a subset of our users. In the latter case, a system
 administrator will need to add your chosen collaborators to your Linux
-group. Please email <rc-help@colorado.edu> if you would like to add
+group. Please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) if you would like to add
 users to your Linux group.
 
 In the example that follows, we make our `/projects` directory open to

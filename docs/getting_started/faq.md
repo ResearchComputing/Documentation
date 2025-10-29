@@ -113,7 +113,7 @@ Duo will then try to authenticate your account by push notification to verify yo
 
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account (e.g. do not have your old device), contact <rc-help@colorado.edu> for further assistance.
+If you cannot authenticate your account (e.g. do not have your old device), submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) for further assistance.
 
 ::::
 
@@ -329,7 +329,7 @@ Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS sna
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
-If you would like to set a custom snapshot schedule for your allocation, please contact <rc-help@colorado.edu>. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+If you would like to set a custom snapshot schedule for your allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 ::::
 
 ### Are there any alternatives to using PetaLibrary for data backups?
@@ -360,7 +360,7 @@ Offsite backup options are available from cloud-based storage providers.
 :sync: alt-storage-methods-awss3
  
 - _Access details:_ 
-	- You can use `Rclone` to copy your data to AWS for a monthly fee. Contact <rc-help@colorado.edu> for options to establish access to AWS. 
+	- You can use `Rclone` to copy your data to AWS for a monthly fee. Submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) for options to establish access to AWS. 
 - _Pros:_ 
 	- No data volume limit 
 	- AWS data integrity assurance is very high 

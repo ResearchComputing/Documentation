@@ -17,5 +17,5 @@ chmod 2770 ${dir}
 You should substitute your allocation name for `${ALLOCATION}`.
 ```
 
-If you would like to have a biokem-deposit directory added to your PetaLibrary allocation please have the allocation owner contact <rc-help@colorado.edu>. The recommended allocation size is 15 to 20 TB per active EM project that will be using the PetaLibrary allocation. 
+If you would like to have a biokem-deposit directory added to your PetaLibrary allocation please have the allocation owner submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). The recommended allocation size is 15 to 20 TB per active EM project that will be using the PetaLibrary allocation. 
 

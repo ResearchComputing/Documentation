@@ -4,7 +4,7 @@ CU Boulder Research Computing uses [CILogon](https://www.cilogon.org/) to manage
 
 ## *Step 1: Enroll in the RMACC CILogon Registry*
 
-Request an invitation to the RMACC CILogon Registry by emailing <rc-help@colorado.edu> and explaining your intended use case (e.g., automated data transfers). After your case has been assigned, you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
+Request an invitation to the RMACC CILogon Registry by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) and explaining your intended use case (e.g., automated data transfers). After your case has been assigned, you will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
 
 ![](./registry-images/email_invitation.png)
@@ -74,7 +74,7 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 
 ## Troubleshooting
 
-* If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please email <rc-help@colorado.edu>. Please include a screenshot of the error message and the date/time of your last login attempt.
+* If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). 
 
 ![](./registry-images/notregistered_error.png)
 <br>
