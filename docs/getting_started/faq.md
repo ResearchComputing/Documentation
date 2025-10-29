@@ -145,29 +145,16 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 
 ## General High Performance Computing
 
-### How do I check how full my directories are?
+### How can I add users to my Linux group?
 ::::{dropdown} Show 
 :icon: note
 
-You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
+Before requesting users be added to your Linux group, please fully read the [Workspace Sharing](../compute/filesystems.md#workspace-sharing) section, which provides an alternative approach for workspace sharing. If you would like to proceed with adding someone to your Linux group, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following: 
 
-```
-[janedoe@login11 ~]$ curc-quota
-------------------------------------------------------------------------
-									Used         Avail    Quota Limit
-------------------------------------------------------------------------
-/home/janedoe                          1.7G          339M           2.0G
-/projects/janedoe                       67G          184G           250G
-/scratch/alpine1                      1050G         8950G         10000G
-```
+1. `Nature of request`: `Storage`
+2. `Issue type`: `I would like to add a collaborator to my directory`
+3. Provide any justification or additional details in `Detailed description`
 
-You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
-
-```
-[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
-698M	WRF/run
-698M	WRF
-```
 ::::
 
 ### When will my job start?
@@ -318,6 +305,46 @@ This error usually means users do not have an allocation that would provide the 
 
 If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 ::::
+
+## General Storage
+
+### How do I check how full my directories are?
+::::{dropdown} Show 
+:icon: note
+
+You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
+
+```
+[janedoe@login11 ~]$ curc-quota
+------------------------------------------------------------------------
+									Used         Avail    Quota Limit
+------------------------------------------------------------------------
+/home/janedoe                          1.7G          339M           2.0G
+/projects/janedoe                       67G          184G           250G
+/scratch/alpine1                      1050G         8950G         10000G
+```
+
+You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
+
+```
+[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
+698M	WRF/run
+698M	WRF
+```
+::::
+
+### How can I request an increase in my scratch storage space?
+::::{dropdown} Show 
+:icon: note
+
+Before requesting an increase to your scratch storage space, please review our policies for [Alpine scratch quota increases](../additional-resources/policies.md#alpine-scratch-quota-increases). Once you have reviewed the policies, you can submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following:
+
+1. `Nature of request` select `Storage`
+2. `Issue type` select `I would like to request an increase to my scratch space`
+3. In the `Detailed description` box, provide a brief (approximately one paragraph) justification describing why a workflow requires the requested increase.
+
+::::
+
 
 ## PetaLibrary 
 
