@@ -279,6 +279,28 @@ This will print out an assortment of information including allocations and QoS a
 The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
 ::::
 
+## Software 
+
+### How can I submit a software installation request? 
+::::{dropdown} Show 
+:icon: note
+
+Before submitting a software installation request, please review our [Software installation policies](../additional-resources/policies.md#software-installations). To proceed with a software installation request, you should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Within this form you should make the following selections:
+
+1. `Nature of request` select `Software`
+2. `Cluster` select the cluster you would like to run this software on 
+3. `Issue type` select `Software installation request`  
+4. Complete all fields requested in the form
+5. Submit the form
+::::
+
+### How do I install Python libraries?
+::::{dropdown} Show 
+:icon: note
+
+For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+::::
+
 ## Alpine 
 
 ### Why do I get an `Invalid Partition` error when running an Alpine job?
@@ -295,15 +317,6 @@ This error usually means users do not have an allocation that would provide the 
 :icon: note
 
 If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
-::::
-
-## Software 
-
-### How do I install Python libraries?
-::::{dropdown} Show 
-:icon: note
-
-For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
 ::::
 
 ## PetaLibrary 
