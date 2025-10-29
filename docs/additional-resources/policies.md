@@ -84,8 +84,7 @@ core software can be requested at any point, but installation may be performed i
 All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that 
 is requested on CURC resources.
 
-To request a software installation please fill out the [Software Request 
-Form](https://www.colorado.edu/rc/userservices/software-request).
+To request a software installation, please follow the instructions provided under the FAQ [How can I submit a software installation request?](../getting_started/faq.md#how-can-i-submit-a-software-installation-request) dropdown.
 
 <br>
 
