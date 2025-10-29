@@ -94,8 +94,7 @@ The default snapshot schedule is 1 week, at the following time frequencies:
 
  - take snapshots every day, save more recent 8 snapshots (one week worth)
 
-If you would like to set a custom snapshot schedule for your allocation,
-please contact <rc-help@colorado.edu>. 
+If you would like to set a custom snapshot schedule for your allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ```{warning}
 The longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
