@@ -113,7 +113,7 @@ Duo will then try to authenticate your account by push notification to verify yo
 
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account (e.g. do not have your old device), submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) for further assistance.
+If you cannot authenticate your account (e.g. do not have your old device), we suggest reviewing the [Duo FAQ page](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access/faq) or contacting <oithelp@colorado.edu>. 
 
 ::::
 
