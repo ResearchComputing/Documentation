@@ -325,7 +325,7 @@ You have three directories allocated to your username (`$USER`). These include `
 /scratch/alpine1                      1050G         8950G         10000G
 ```
 
-You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
+You can also check the amount of space being used by any directory with the `du -sh --apparent-size` command or the directory's contents with the `du -h` command: 
 
 ```
 [janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
