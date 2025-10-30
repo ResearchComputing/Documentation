@@ -77,10 +77,16 @@ running-jobs/squeue-status-codes
 ```
 
 ```{toctree}
-:maxdepth: 1
-:caption: Storage
+:maxdepth: 2
+:caption: PetaLibrary
 
-storage/petalibrary/index
+petalibrary/index
+petalibrary/allocation_types
+petalibrary/ownership
+petalibrary/billing
+petalibrary/data_transfer
+petalibrary/usage_statistics
+petalibrary/zfs_snapshots
 
 ```
    
@@ -92,6 +98,15 @@ cloud/aws/index
 cloud/azure/index
 cloud/gcp/index
 cloud/cumulus
+
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: AI/ML
+
+ai-ml/ai-resources
+ai-ml/llms
 
 ```
 

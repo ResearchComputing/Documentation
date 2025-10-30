@@ -1,6 +1,6 @@
-# Copy data from a Synology Network Attached Storage (NAS) device to Petalibrary
+# Copy data from a Synology NAS device
 
-CU Research Computing (CURC) PetaLibrary allocations can be accessed via the data transfer node (DTN) hosts using _rsync_ over _ssh_. This document shows how to copy data from a Synology NAS device running DiskStation Manager (DSM) version 4.2 with hostname mylabstorage.colorado.edu to a PetaLibrary allocation named “peta_test” with RC account “RC_identikey.”  A typical use case is where a university laboratory stores data on a local Synology server in the lab, and wants to back up the data to PetaLibrary.
+CU Research Computing (CURC) PetaLibrary allocations can be accessed via the data transfer node (DTN) hosts using _rsync_ over _ssh_. This document shows how to copy data from a Synology network attached storage (NAS) device running DiskStation Manager (DSM) version 4.2 with hostname "mylabstorage.colorado.edu" to a PetaLibrary allocation named “peta_test” with RC account “RC_identikey.”  A typical use case is where a university laboratory stores data on a local Synology server in the lab, and wants to back up the data to PetaLibrary.
 
 ## Step 1: Connect to Synology via _ssh_ 
 
