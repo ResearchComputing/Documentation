@@ -35,6 +35,8 @@ Click the name of a training to view more details and register!
 - [Research Computing Workflow Workbench: LLMs](https://colorado.libcal.com/calendar/events/rcworkbench3) - **November 12th, 1pm, Virtual (Zoom)**
 - [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
 - [AWS Containers Immersion Day (RC Workshop)](https://colorado.libcal.com/calendar/events/containers) - **November 18th, 9am, Virtual (Zoom)**
+### **December**
+- [Using NVIDIA GPUs with Python (A Workshop)](https://colorado.libcal.com/calendar/events/nvidia) - **December 3rd, 12pm, Virtual (Zoom)**
 ````
 
 ````{tab-item} By Topic
@@ -59,6 +61,7 @@ Click the name of a training to view more details and register!
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
+- [Using NVIDIA GPUs with Python (A Workshop)](https://colorado.libcal.com/calendar/events/nvidia) - **December 3rd, 12pm, Virtual (Zoom)**
 ### **AI/ML**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/llm) - **September 26th, 11am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/contain) - **October 21st, 10am, Virtual (Zoom)**
@@ -94,6 +97,7 @@ Click the name of a training to view more details and register!
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/gpuacceleration) - **October 24th, 10:30am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **November 7th, 10am, Hybrid (Norlin Library E206/Zoom)**
 - [Research Computing Workflow Workbench: LLMs](https://colorado.libcal.com/calendar/events/rcworkbench3) - **November 12th, 1pm, Virtual (Zoom)**
+- [Using NVIDIA GPUs with Python (A Workshop)](https://colorado.libcal.com/calendar/events/nvidia) - **December 3rd, 12pm, Virtual (Zoom)**
 
 ### **Advanced**
 - [Debugging and Optimizing Parallel Codes with Linaro Forge (an RC Workshop)](https://colorado.libcal.com/calendar/events/linaro) - **November 13th, 9am, Virtual (Zoom)**
