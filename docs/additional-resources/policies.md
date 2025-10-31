@@ -41,7 +41,7 @@ The timetable will be as follows:
 
 Time is measured in full days, including weekends and holidays, starting the day after the first billing due date where the allocation owner or a representative does not make a payment. For existing allocations not up to date on payments as of the effective date of this policy, the clock will start on the effective date, July 1, 2024. 
 
-Users may request in writing extended time to secure payment if contracting and procurement are in process but not yet complete in the stated window. The owner or a representative may make the request by emailing <rc-help@colorado.edu>. Exceptions are subject to approval CURC. Users should not expect approval by CURC until confirmed in writing. 
+Users may request in writing extended time to secure payment if contracting and procurement are in process but not yet complete in the stated window. The owner or a representative may make the request by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Exceptions are subject to approval CURC. Users should not expect approval by CURC until confirmed in writing. 
 
 _This policy subject to change at any time._ 
 
@@ -84,8 +84,7 @@ core software can be requested at any point, but installation may be performed i
 All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that 
 is requested on CURC resources.
 
-To request a software installation please fill out the [Software Request 
-Form](https://www.colorado.edu/rc/userservices/software-request).
+To request a software installation, please follow the instructions provided under the FAQ [How can I submit a software installation request?](../getting_started/faq.md#how-can-i-submit-a-software-installation-request) dropdown.
 
 <br>
 

@@ -40,7 +40,7 @@ Alpine and Blanca users are provided a subdirectory on `/scratch/alpine`, the
 high-performance parallel scratch filesystem meant for I/O from jobs
 running on those systems (e.g., `/scratch/alpine/janedoe`). By default,
 each user is limited to a quota of 10 TB worth of storage space and
-20M files and directories. If you need these limits increased, see our [Scratch Quota Increases policy](../additional-resources/policies.md#alpine-scratch-quota-increases).
+20M files and directories. If you need your scratch quota increased, please follow the steps provided in the FAQ [How can I request an increase in my scratch storage space?](../getting_started/faq.md#how-can-i-request-an-increase-in-my-scratch-storage-space) dropdown.
 
 Scratch space should be used for all compute jobs run on Alpine or
 Blanca. This high-performance scratch directory is **not backed
@@ -282,8 +282,7 @@ and potentially sensitive information stored there.
 Directories may be shared with all Research Computing users or with
 only a subset of our users. In the latter case, a system
 administrator will need to add your chosen collaborators to your Linux
-group. Please email <rc-help@colorado.edu> if you would like to add
-users to your Linux group.
+group. Please follow the instructions provided in the FAQ [How can I add users to a Linux group?](../getting_started/faq.md#how-can-i-add-users-to-a-linux-group) dropdown, if you would like to add users to your Linux group.
 
 In the example that follows, we make our `/projects` directory open to
 all users and then create subdirectories with select read/write

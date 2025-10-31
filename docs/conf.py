@@ -81,6 +81,7 @@ myst_heading_anchors=6
 
 html_static_path = ['_static']
 html_css_files = ["custom.css"]
+templates_path = ['_templates']
 
 html_theme_options = {
    "logo": {
@@ -88,7 +89,17 @@ html_theme_options = {
       "image_dark": "_static/Research_Computing_white_letters.png",
    }, 
    "repository_url": "https://github.com/ResearchComputing/Documentation",
-   "use_repository_button": True,
+   "use_repository_button": True, 
+}
+
+html_sidebars = {
+    "**": [
+        "navbar-logo.html",
+        "sbt-sidebar-announcement.html", 
+        "icon-links.html",
+        "search-button-field.html",
+        "sbt-sidebar-nav.html",
+    ]
 }
 
 html_context = {

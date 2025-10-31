@@ -113,7 +113,7 @@ Duo will then try to authenticate your account by push notification to verify yo
 
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account (e.g. do not have your old device), contact <rc-help@colorado.edu> for further assistance.
+If you cannot authenticate your account (e.g. do not have your old device), we suggest reviewing the [Duo FAQ page](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access/faq) or contacting <oithelp@colorado.edu>. 
 
 ::::
 
@@ -145,29 +145,17 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 
 ## General High Performance Computing
 
-### How do I check how full my directories are?
+### How can I add users to a Linux group?
 ::::{dropdown} Show 
 :icon: note
 
-You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
+Before requesting users be added to a Linux group, please fully read the [Workspace Sharing](../compute/filesystems.md#workspace-sharing) section, which provides an alternative approach for workspace sharing. If you would like to proceed with adding someone to a Linux group, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following: 
 
-```
-[janedoe@login11 ~]$ curc-quota
-------------------------------------------------------------------------
-									Used         Avail    Quota Limit
-------------------------------------------------------------------------
-/home/janedoe                          1.7G          339M           2.0G
-/projects/janedoe                       67G          184G           250G
-/scratch/alpine1                      1050G         8950G         10000G
-```
+1. Select `Storage` for `Nature of request`
+2. Select `I would like to add a collaborator to my directory` for `Issue type`
+3. Fill out the requested additional information
+4. Provide any justification or additional details in `Detailed description`
 
-You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
-
-```
-[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
-698M	WRF/run
-698M	WRF
-```
 ::::
 
 ### When will my job start?
@@ -279,6 +267,28 @@ This will print out an assortment of information including allocations and QoS a
 The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
 ::::
 
+## Software 
+
+### How can I submit a software installation request? 
+::::{dropdown} Show 
+:icon: note
+
+Before submitting a software installation request, please review our [Software installation policies](../additional-resources/policies.md#software-installations). To proceed with a software installation request, you should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Within this form you should make the following selections:
+
+1. Select `Software` for `Nature of request`
+2. Select the cluster you would like to run this software on for `Cluster`
+3. Select `Software installation request` for `Issue type`
+4. Complete all fields requested in the form
+5. Submit the form
+::::
+
+### How do I install Python libraries?
+::::{dropdown} Show 
+:icon: note
+
+For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+::::
+
 ## Alpine 
 
 ### Why do I get an `Invalid Partition` error when running an Alpine job?
@@ -297,14 +307,45 @@ This error usually means users do not have an allocation that would provide the 
 If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 ::::
 
-## Software 
+## General Storage
 
-### How do I install Python libraries?
+### How do I check how full my directories are?
 ::::{dropdown} Show 
 :icon: note
 
-For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
+
+```
+[janedoe@login11 ~]$ curc-quota
+------------------------------------------------------------------------
+									Used         Avail    Quota Limit
+------------------------------------------------------------------------
+/home/janedoe                          1.7G          339M           2.0G
+/projects/janedoe                       67G          184G           250G
+/scratch/alpine1                      1050G         8950G         10000G
+```
+
+You can also check the amount of space being used by any directory with the `du -sh --apparent-size` command or the directory's contents with the `du -h` command: 
+
+```
+[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
+698M	WRF/run
+698M	WRF
+```
 ::::
+
+### How can I request an increase in my scratch storage space?
+::::{dropdown} Show 
+:icon: note
+
+Before requesting an increase to your scratch storage space, please review our policies for [Alpine scratch quota increases](../additional-resources/policies.md#alpine-scratch-quota-increases). Once you have reviewed the policies, you can submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following:
+
+1. Select `Storage` for `Nature of request`
+2. Select `I would like to request an increase to my scratch space` for `Issue type`
+3. In the `Detailed description` box, provide a brief (approximately one paragraph) justification describing why a workflow requires the requested increase.
+
+::::
+
 
 ## PetaLibrary 
 
@@ -316,7 +357,7 @@ Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS sna
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
-If you would like to set a custom snapshot schedule for your allocation, please contact <rc-help@colorado.edu>. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+If you would like to set a custom snapshot schedule for your allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 ::::
 
 ### Are there any alternatives to using PetaLibrary for data backups?
@@ -347,7 +388,7 @@ Offsite backup options are available from cloud-based storage providers.
 :sync: alt-storage-methods-awss3
  
 - _Access details:_ 
-	- You can use `Rclone` to copy your data to AWS for a monthly fee. Contact <rc-help@colorado.edu> for options to establish access to AWS. 
+	- You can use `Rclone` to copy your data to AWS for a monthly fee. Submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) for options to establish access to AWS. 
 - _Pros:_ 
 	- No data volume limit 
 	- AWS data integrity assurance is very high 

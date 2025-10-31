@@ -24,4 +24,4 @@ The following resources are available for course support:
 * Lectures/training
   * CURC staff can lecture on specified topics during the class meeting time (once per course per semester). 
 
-Students are welcome to use RC resources on their own for class projects and can request access as a regular UCB affiliate via the link off the RC homepage at: <https://www.colorado.edu/rc>. Students are not required to complete the course intake form noted above. To request help, contact <rc-help@colorado.edu> and please indicate that the work is for a class project and any deadlines.  
+Students are welcome to use RC resources on their own for class projects and can request access as a regular UCB affiliate via the link off the RC homepage at: <https://www.colorado.edu/rc>. Students are not required to complete the course intake form noted above. To request help, submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) and please indicate that the work is for a class project and any deadlines.  
