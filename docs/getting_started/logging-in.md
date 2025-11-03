@@ -66,12 +66,14 @@ RMACC members can obtain a CURC account by completing the following steps
 2. Navigate to our [CURC support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) and fill in the "Your information" section.
     - For `Institution`, select `Other RMACC Institution`
 
-3. In the CURC support request form select the `Issue type`: `I would like to request a CU Research Computing account`.
+3. In the CURC support request form select the `Nature of request`: `Login`.
 
-4. After completing step 3, boxes will appear asking for additional information needed to create your account. After filling in this required information, submit the request form. 
+4. Now, select the `Issue type`: `I would like to request a CU Research Computing account`.
+
+5. After completing step 4, boxes will appear asking for additional information needed to create your account. After filling in this required information, submit the request form. 
     - You may enter "N/A" in the `Detailed description` box, if you do not want to add additional information
 
-5. Once the request has been submitted, our team will work on creating your account and reach out to you once your account has been created or we require further information.
+6. Once the request has been submitted, our team will work on creating your account and reach out to you once your account has been created or we require further information.
 
 ```{important}
 - Once your account is provisioned, please wait 15 minutes before signing in
