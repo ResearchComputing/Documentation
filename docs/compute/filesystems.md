@@ -56,8 +56,10 @@ policy, may result in loss of access to Research Computing resources.
 ### Filesystems Reference Table
 | /home (2GB)| /projects (250GB) | /scratch/alpine (10TB)  |
 | ------------- |------------| -----|
-| <ul><li>Scripts, code, small important files/directories</li></ul> | <ul><li>Code/files/libraries</li><li>Software you are installing</li><li>Sharing Files</li></ul> | <ul><li>Output from running jobs</li><li>Large files/databases</li><li>Sharing Files</li><li>Cluster specific</li></ul> |
-| <ul><li> **Not** for sharing files or job output</li></ul> | <ul><li> **Not** for job output</li></ul> | <ul><li> **Not** for long-term storage</li></ul> |
+| Scripts, ssh keys, small important files/directories | Code, files, software installs | Output from running jobs, large files/databases |
+| Regularly backed up | Regularly backed up | **Not** backed up|
+| **Not** for sharing files | Suitable for sharing files| Suitable for sharing files |
+| **Not** for job output | **Not** for job output | Suitable for job output |
 
 
 
