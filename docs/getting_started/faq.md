@@ -18,9 +18,6 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 ### How do I setup Duo?
 :::{dropdown} Show 
 :icon: note 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/djn9bclMD3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 - CU Boulder users can follow these steps:
     1. Download the Duo mobile app to your phone (available via Apple App Store or Google Play Store).
 	2. Once installed, visit <https://duo.colorado.edu> to enroll.  
