@@ -22,7 +22,9 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
     1. Download the Duo mobile app to your phone (available via Apple App Store or Google Play Store).
 	2. Once installed, visit <https://duo.colorado.edu> to enroll.  
 - CSU users please see [CSU's documentation on Duo 2-factor authentication](https://it.colostate.edu/duo-two-factor-authentication/)
+	- CSU users can manage their account at [https://it.colostate.edu/duo-two-factor-authentication/](https://it.colostate.edu/duo-two-factor-authentication/)
 - AMC or RMACC users please see [Duo's documentation on 2-factor authentication](https://guide.duo.com/)
+	- AMC and RMACC users can manage their account at [https://cilogon.org/?selected_idp=httsp%3A%2F%2Faccess-ci.org%2Fidp&skin=access](https://cilogon.org/?selected_idp=httsp%3A%2F%2Faccess-ci.org%2Fidp&skin=access)
 :::
 
 ### As a CU Boulder user, how can I login with Duo? 
