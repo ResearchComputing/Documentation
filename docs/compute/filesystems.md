@@ -1,6 +1,5 @@
 # Filesystems
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xfeRDnZQrJ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 All users are allocated space on the `/home` and `/projects`
 filesystems. In addition, a separate `/scratch/alpine` directory is visible
@@ -53,6 +52,16 @@ regular backups to their local machine if they have not purchased
 space on the [PetaLibrary](../petalibrary/index.md). Inappropriate use of scratch
 storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
+
+### Filesystems Reference Table
+| /home (2GB)| /projects (250GB) | /scratch/alpine (10TB)  |
+| ------------- |------------| -----|
+| Scripts, ssh keys, small important files/directories | Code, files, software installs | Output from running jobs, large files/databases |
+| Regularly backed up | Regularly backed up | **Not** backed up|
+| **Not** for sharing files | Suitable for sharing files| Suitable for sharing files |
+| **Not** for job output | **Not** for job output | Suitable for job output |
+
+
 
 ### Local Scratch on Alpine and Blanca
 All Alpine nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
