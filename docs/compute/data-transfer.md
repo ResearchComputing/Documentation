@@ -14,7 +14,7 @@ transfers and automated (passwordless) transfers.
 
 Globus file transfers are typically initiated through an interactive
 web application (command-line access to Globus is also available, see [the Globus CLI documentation](https://docs.globus.org/cli/) for more information). Globus addresses deficiencies
-in traditional file-transfer mechanisms by automating large data
+`in traditional file-transfer mechanisms by automating large data
 transfers, resuming failed transfers, distributing large transfers
 across multiple servers, and brokering direct transfers between remote
 computing centers. Globus performs an MD5-Checksum for transfer verification.
