@@ -10,13 +10,10 @@ Data transfers using SSH protocols can be done through the
 Transfers via the DTNs support all types of transfers, including large and/or frequent file
 transfers and automated (passwordless) transfers.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UMBD7pSE0qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Globus transfers
 
 Globus file transfers are typically initiated through an interactive
-web application (command-line access to Globus is also available, but
-is beyond the scope of this document). Globus addresses deficiencies
+web application (command-line access to Globus is also available, see [https://docs.globus.org/cli/](https://docs.globus.org/cli/) for more information). Globus addresses deficiencies
 in traditional file-transfer mechanisms by automating large data
 transfers, resuming failed transfers, distributing large transfers
 across multiple servers, and brokering direct transfers between remote
