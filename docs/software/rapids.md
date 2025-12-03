@@ -1,6 +1,6 @@
 # RAPIDS
 
-NVIDIA RAPIDS allows researchers to adapt existing CPU-based Python data analytics and machine learning workflows for GPU acceleration with relatively small code changes. 
+[NVIDIA RAPIDS](https://rapids.ai/) allows researchers to adapt existing CPU-based Python data analytics and machine learning workflows for GPU acceleration with relatively small code changes. 
 
 ## Using our RAPIDS Environment
 
@@ -26,8 +26,13 @@ module load miniforge
 mamba activate /curc/sw/conda_env/rapids-25.10
 ```
 
+4. Start using RAPIDS in your Python code! The [RAPIDS user guide](https://docs.rapids.ai/user-guide) has some great examples.
+
 ## Creating a Custom RAPIDS Environment
 
+```{note}
+The example below is for installing RAPIDS version 25.10.  Information on installing the most recent version can be found in the [RAPIDS installation guide](https://docs.rapids.ai/install/).
+```
 1. Start an interactive session on a GPU node:
 
 ```
@@ -51,4 +56,4 @@ mamba create -n rapids-25.10 -c rapidsai -c conda-forge -c nvidia  \
 
 `mamba activate rapids-25.10`
 
-RAPIDS is now ready for use!
+8. Start using RAPIDS in your Python code! The [RAPIDS user guide](https://docs.rapids.ai/user-guide) has some great examples.
