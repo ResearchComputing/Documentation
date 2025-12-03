@@ -54,6 +54,8 @@ mamba create -n rapids-25.10 -c rapidsai -c conda-forge -c nvidia  \
 
 7. Activate the environment:
 
-`mamba activate rapids-25.10`
+```
+mamba activate rapids-25.10
+```
 
 8. Start using RAPIDS in your Python code! The [RAPIDS user guide](https://docs.rapids.ai/user-guide) has some great examples.
