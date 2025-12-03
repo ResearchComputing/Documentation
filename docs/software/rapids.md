@@ -1,8 +1,10 @@
+# RAPIDS
+
 NVIDIA RAPIDS allows researchers to adapt existing CPU-based Python data analytics and machine learning workflows for GPU acceleration with relatively small code changes. RAPIDS is supported on this HPC system for single-node GPU workloads; multi-node GPU jobs are not currently available.
 
 Please note that this environment just contains the basic packages required to run RAPIDS and Python 3.13. If you'd like to install additional packages to use alongside RAPIDS, please follow the instructions at the bottom to create your own custom environment.
 
-**To use our RAPIDS environment:**
+## Using our RAPIDS Environment
 
 1. Start an interactive session on an NVIDIA GPU compute node, or create a batch script.
 
@@ -16,8 +18,7 @@ Please note that this environment just contains the basic packages required to r
 
 `mamba activate /curc/sw/conda_env/rapids-25.10`
 
-
-**If you'd like to create your own custom environment with RAPIDS, follow these steps:**
+## Creating a Custom RAPIDS Environment
 
 1. Start an interactive session on a GPU node:
 
