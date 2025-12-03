@@ -69,4 +69,4 @@
 
 ## Contribute or Suggest a Resource
 Have a trusted training resource you'd like to share with the community?
-Contact us at <rc-help@colorado.edu> or submit a [GitHub Issue](https://github.com/ResearchComputing/Documentation/issues) to our documentation.
+Submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) or submit a [GitHub Issue](https://github.com/ResearchComputing/Documentation/issues) to our documentation.

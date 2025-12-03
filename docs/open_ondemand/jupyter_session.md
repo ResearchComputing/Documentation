@@ -195,7 +195,7 @@ __For an _R_ kernel__
 ```
 export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
 ```
-* If you need assistance creating or installing environments or Jupyter kernels, contact us at <rc-help@colorado.edu>. 
+* If you need assistance creating or installing environments or Jupyter kernels, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). 
 ````
 
 

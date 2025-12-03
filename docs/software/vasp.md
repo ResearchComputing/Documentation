@@ -4,7 +4,7 @@ The Vienna Ab initio Simulation Package ([VASP](https://www.vasp.at)) is a compu
 
 VASP requires a license. Individual students or entire departments/faculties are not eligible, and therefore CU Research Computing does not have a VASP module for community use. Licenses are issued to well-defined research groups under the direction of a single chair, professor, or group leader at one single physical location.  Group leaders may [apply for a VASP license](https://www.vasp.at/sign_in/registration_form/), after which they will be given access to the source code. 
 
-The documentation below demonstrates how to install and use VASP in one's `/projects/$USER` directory.  A typical case would be to install the software in the `/projects/$USER` directory of the group leader, and then make it available to group members by emailing rc-help@colorado.edu to request that they be added to the Linux user group of the group leader. 
+The documentation below demonstrates how to install and use VASP in one's `/projects/$USER` directory.  A typical case would be to install the software in the `/projects/$USER` directory of the group leader, and then make it available to group members by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to request that they be added to the Linux user group of the group leader. 
 
 ## Prerequisites
 * you have a copy of the source code
