@@ -32,27 +32,24 @@
 
 The provided VS Code application is utilizing [VS Code-Server](https://coder.com/docs/code-server/latest). For this reason, some aspects of the application may differ from the 
 standard installation of VS Code. One of these differences is accessing and installing extensions. While a majority of extensions are available in the Marketplace within the 
-application (and installable), some extensions may be missing. Although this is the case, thankfully one can download extensions directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) and then install them within the application. Below we provide a video that demonstrates three ways one can install extensions from within
-the application. Additionally, we provide a short description of these methods below the video.
-
-
-<iframe width="700" height="400" src="https://www.youtube.com/embed/2kgZQmm5TF4?si=NUVzamnXYojcd79e" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+application (and installable), some extensions may be missing. Although this is the case, thankfully one can download extensions directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) and then install them within the application.
 
 When attempting to install an extension, we suggest the following methods (listed in order of preference):
-- If possible, install extensions using the Marketplace from within the application.
-    1. On the left-hand side of the screen select the `Extensions` button. 
+
+- **Method 1:** If possible, install extensions using the Marketplace from within the application.
+    1. In VS Code-Server, select the `Extensions` button located on the left-hand side of the screen. 
     2. Use the provided search bar to search for the application you want. 
     3. Select the application and then click the `Install` button.
 
-        ![](OnDemand/vs_code_marketplace_install.png)
         
-- Install the application by dragging the downloaded file into the **extensions column** (for visual representation, please see above video).
+- **Method 2:** Install the application by dragging the downloaded file into the **extensions column**
     1. Navigate to the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) in your browser.
     2. Select the application you want and click `Download Extension` on the right-hand side. Some applications require that you chose the operating system. For 
     these applications, select the drop-down menu next to `Download Extension` and then select `Linux x64`.
     3. Drag and drop the downloaded file into the **extensions column** within the VS Code-Server application. 
-- Install the application by dragging the downloaded file into the **folder column** (for visual representation, please see above video).
+
+
+- **Method 3:** Install the application by dragging the downloaded file into the **folder column**.
     - **Note:** This option is sometimes necessary if the extensions rely on dependencies located in the downloaded file.
     1. Navigate to the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) in your browser.
     2. Select the application you want and click `Download Extension` on the right-hand side. Some applications require that you chose the operating system. For 
