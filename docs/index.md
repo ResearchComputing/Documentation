@@ -126,6 +126,7 @@ software/alphafold
 software/spack
 software/sratoolkit
 software/uv
+software/rapids
 
 ```
 
