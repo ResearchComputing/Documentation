@@ -8,7 +8,7 @@ Before running or working with LLMs on CURC resources, please be sure that you a
 
 ## Accessing stored LLMs on CURC
 
-To streamline access and reduce redundant storage of LLMs, CURC has created a shared space for common LLMs. This is a CURC managed space. As such, users cannot install models themselves in this space. However, if you believe a model should be available in this directory, please reach out to <rc-help@colorado.edu>. To access the models stored in this shared space, users should utilize the environment variable `CURC_LLM_DIR`, followed by their framework of choice. For more information about what models and frameworks are provided, please consult the tabs below. 
+To streamline access and reduce redundant storage of LLMs, CURC has created a shared space for common LLMs. This is a CURC managed space. As such, users cannot install models themselves in this space. However, if you believe a model should be available in this directory, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). To access the models stored in this shared space, users should utilize the environment variable `CURC_LLM_DIR`, followed by their framework of choice. For more information about what models and frameworks are provided, please consult the tabs below. 
 ```{important}
 The path specified by `CURC_LLM_DIR` is only available on compute nodes.  
 ```

@@ -22,7 +22,7 @@ All Alpine nodes are available to all users. For full details about node access,
 | {{ alpine_ucb_total_64_core_1TB_cpu_nodes }} Milan High-Memory   | amem                | x86_64 AMD Milan | 1       | 64            | 1            |  16           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_mi100_gpu_nodes }} Milan AMD GPU | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
 | {{ alpine_ucb_total_a100_gpu_nodes }} Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
-| {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please email <rc-help@colorado.edu>. | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8 T SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 9.5 |
+| {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8 T SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 9.5 |
 | {{ alpine_ucb_total_acompile_nodes }} Milan CPU compile nodes | acompile | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} Milan CPU test nodes; pulls from CU amilan pool | atesting | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  3.8          | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | RHEL 8.4 |
 | {{ alpine_ucb_total_atesting_a100_gpu_nodes }} Milan NVIDIA GPU testing node | atesting_a100 | x86_64 AMD Milan | 2       | 64            | 1            |  3.8          | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | RHEL 8.4 |
@@ -123,7 +123,7 @@ The available QoS for Alpine:
 | amc       | QoS for nodes contributed by AMC    | 24 hours              | -         |  -       | amc  | 
 | csu       | QoS for nodes contributed by CSU    | 24 hours              |  -        |  -       | csu  | 
 | rmacc       | QoS for nodes contributed by RMACC    | 24 hours              |    -      |   -      | rmacc  | 
-| gh200       | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please email <rc-help@colorado.edu>. | 7 days             |   1       |   1      | gh200  | 
+| gh200       | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1      | gh200  | 
 
 __QoS examples__:
 
@@ -177,13 +177,13 @@ Partitions available on Alpine:
 | atesting | AMD Milan test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU amilan pool | 64 |   3.75        | 0.025                   | see [atesting section](./alpine-hardware.md#atesting-usage-examples) below                 | see [atesting section](./alpine-hardware.md#atesting-usage-examples) below |
 | atesting_a100 | GPU-enabled testing node (3x NVIDIA A100 split w/ MIG) | {{ alpine_total_atesting_a100_nodes }} | 64         |   3.75       | 0.025     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below |
 | atesting_mi100 | GPU-enabled testing nodes (3x AMD MI100) | {{ alpine_total_atesting_mi100_nodes }} | 64         |   3.75       | 0.025     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below |
-| gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please email <rc-help@colorado.edu>. | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at twice the rate of our A100s   | 24H,7D     | see QoS table |
+| gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at twice the rate of our A100s   | 24H,7D     | see QoS table |
 
 ```{important}
 **Partition table footnotes:** 
 
 
-<sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 128 cores or fewer. For example, you can run one 128-core job or up to two 64-core jobs, etc. If you need more memory or cores, please contact <rc-help@colorado.edu>.
+<sup>1</sup>The `amem` partition requires the mem QOS. The mem QOS is only available to jobs asking for 256GB of RAM or more, 12 nodes or fewer, and 128 cores or fewer. For example, you can run one 128-core job or up to two 64-core jobs, etc. If you need more memory or cores, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 <sup>2</sup>The `amem` partition has a mixture of nodes with 48, 64, and 128 cores.  Nodes with 48 and 64 cores have 1 TB of RAM; nodes with 128 cores have 2 TB of RAM.  The default RAM-per-requested core on the `amem` partition is 15,927 MB, which is configured such that if you request all 64 (128) cores on a 64-core (128-core) `amem` node, you will receive roughly 1,000,000 MB of RAM (i.e., the full ~1 TB available). If you request all 48 cores on a 48-core node, by default you will receive 764,496 MB of RAM, which is less than the 1 TB available. If you require more RAM than the default of 15,927 MB per-requested-core, employ the `--mem` flag in your job script and specify the amount of RAM you need, in MB. For example, to request all of the RAM on a node, use "--mem=1000000M".   
 

@@ -8,14 +8,14 @@ If you would like to purchase a Blanca node, please visit the Research Computing
 
 ## Blanca Quick-Start
 
-1. If your group is a Blanca partner, ask your PI or PoC to send an email to <rc-help@colorado.edu> requesting access for you to their high-priority queue. Please include the Blanca group identifier and user IdentiKey (e.g. user1234 requesting access to blanca-curc)
+1. If your group is a Blanca partner, ask your PI or PoC to submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) requesting access for you to their high-priority queue. Please include the Blanca group identifier and user IdentiKey (e.g. user1234 requesting access to blanca-curc)
 2. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca.
 3. Consult the Table and the Examples section below to learn how to direct your jobs to the appropriate compute nodes.
 4. If needed, compile your application on the appropriate compute node type.
 
 ```{hint}
 - For a list of CURC provided software, see our [CURC-Provided Software](../../software/curc_provided_software.md) page.
-  - Users can also submit a software request using our [Software Request Form](https://www.colorado.edu/rc/userservices/software-request). Please review our [CURC-Provided Software](../../software/curc_provided_software.md) page before doing so.
+  - Users can also submit a software installation request by following the instructions provided under the FAQ [How can I submit a software installation request?](../../getting_started/faq.md#how-can-i-submit-a-software-installation-request) dropdown.
 - Consult our [compiling and linking documentation](../../compute/compiling.md) for more information on compiling software. 
 ```
 
@@ -31,7 +31,7 @@ More details about how to use Slurm can be found [here](../../running-jobs/runni
 
 Slurm on Blanca uses “Quality of Service”, or QoS, to classify jobs for scheduling.  A QoS in this case is analogous to a "queue" in other scheduling systems.  Each partner group has its own high-priority QoS called `blanca-<group identifier>` and can also use the cluster-wide low-priority QoS, which is called `preemptable`.
 
-If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests should be made via email to <rc-help@colorado.edu>.  You are only allowed to use a high-priority QoS if you have been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
+If you are a new Blanca user, ask your PI or Point of Contact person to request access for you to your group’s high-priority QoS; requests can be completed by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).  You are only allowed to use a high-priority QoS if you have been added as a member of it, and you can only use the low-priority preemptable QoS if you are also a member of a high-priority QoS.  Your PI may also be able to point you to group-specific documentation regarding Blanca.
 
 ## Node-QoS-Features
 

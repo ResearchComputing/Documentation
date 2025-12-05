@@ -351,8 +351,8 @@ We can then push our image with the command:
 docker push <your-docker-username>/<repository>
 ```
 
-Note that it is also possible to build intel/IMPI containers for use on Alpine. If you would like assistance building MPI-enabled containers contact <rc-help@colorado.edu>.
+Note that it is also possible to build intel/IMPI containers for use on Alpine. If you would like assistance building MPI-enabled containers submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ## Requesting a Container Installation
 
-Users can request that a container be installed on our system by filling out the [Software Request Form](https://www.colorado.edu/rc/userservices/software-request). Please note that all software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources. Additionally, please review the [Alpine Software Policy](https://curc.readthedocs.io/en/latest/clusters/alpine/software.html#alpine-software-policy). 
+Users can request that a container be installed on our system by submitting a software installation request. For more information on submitting a software installation request, see the FAQ [How can I submit a software installation request?](../getting_started/faq.md#how-can-i-submit-a-software-installation-request) dropdown.

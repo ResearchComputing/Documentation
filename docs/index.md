@@ -7,7 +7,7 @@ Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of
 - Can't find what you need or want to contribute to our documentation? Please see our [Contributing to CURC Documentation](./additional-resources/contrib_curc_docs.md) page.   
 - To provide feedback on CURC services, please see our [We want to hear from you!](./additional-resources/feedback) page.
 - For more information on the CU Research Computing group, please see <https://www.colorado.edu/rc>.
-- If you have any questions on documentation or CURC services, please feel free to contact our user support team at <rc-help@colorado.edu>.
+- If you have any questions on documentation or CURC services, please feel free to contact our user support team by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 ```
 
 ## Meet the RC User Support Team!
@@ -126,6 +126,7 @@ software/alphafold
 software/spack
 software/sratoolkit
 software/uv
+software/rapids
 
 ```
 
