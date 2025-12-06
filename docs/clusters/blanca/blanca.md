@@ -292,7 +292,7 @@ The interactive job won't start until the resources that it needs are available,
 
 ## Blanca Preemptable QOS
 
-Each partner group has its own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. To facilitate equitable access to preemptable resources, at any given time each user is limited to consuming a maximum of 2000 cores (roughly 25% of all resoures on Blanca) across all of their preemptable jobs. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
+Each partner group has its own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. To facilitate equitable access to preemptable resources, at any given time each user is limited to consuming a maximum of 2000 cores (roughly 25% of all resources on Blanca) across all of their preemptable jobs. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
 
 ### Usage
 
@@ -332,13 +332,24 @@ Batch jobs that are preempted will automatically requeue if the exit code is non
 
 Interactive jobs will not requeue if preempted.
 
-### Best practices
+## Using the Data Transfer Nodes in Blanca jobs
+
+CURC provides data transfer nodes (DTNs) to facilitate performant transfers of files to/from CURC, across CURC filesystems, and downloads from remote data providers. The `dtn` partition is part of the Alpine cluster, however it is accessible from jobs running on Blanca nodes by preceding the `sinteractive` or `sbatch` commands in [dtn partition usage examples 1 and 2](../alpine/alpine-hardware.md#dtn-usage-examples) with the Alpine `SLURM_CONF` environment, e.g.,
+
+```bash
+SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf sbatch mytransfer.sh
+```
+```{note}
+It is not possible to schedule a data transfer job on the Alpine `dtn` partition as a direct _dependency_ of a previous Blanca job, because the `--dependency` flag must reference a job on the same cluster. A workaround is to schedule a second Blanca job that is a dependency of the previous Blanca job, and within that second job schedule the Alpine `dtn` data transfer job per the example shown above.
+```
+
+## Best practices
 
 Checkpointing: Given that preemptable jobs can request wall times up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is preempted, killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable QoS should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
 
 Requeuing: Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
 
-### Example Job Scripts
+## Example Job Scripts
 
 (tabset-ref-blanca-job-scripts)=
 `````{tab-set}
@@ -414,22 +425,13 @@ python myscript.py
 
 `````
 
-### Other considerations
+## Other considerations
 
 Grace period upon preemption: When jobs are preempted, a 120 second grace period is available to enable users to save and exit their jobs should they have the ability to do so. The preempted job is immediately sent `SIGCONT` and `SIGTERM` signals by Slurm in order to provide notification of its imminent termination. This is followed by the `SIGCONT`, `SIGTERM` and `SIGKILL` signal sequence upon reaching the end of the 120 second grace period. Users wishing to do so can monitor the job for the SIGTERM signal and, when detected, take advantage of this 120 second grace period to save and exit their jobs.
 
 
-
-
 ## FAQ
 
- ### How would going from 480GB to 2TB SSD affect the price? 
-
- Commonly, additional RAM will increase pricing substantially, whereas increased local SSD will do so only slightly (perhaps by a few hundred dollars). However, we recommend using RC’s dedicated storage resources rather than adding persistent storage local to a single node. This increases functionality, redundancy, and our capacity to recover data in the event of issues. 
-
- ### Can you tell us more about the Service Level Agreement (SLA) this hardware comes with? 
-
- The hardware comes with a 5-year warranty that covers all hardware-related issues during that period. No additional node-related costs will be incurred by the owner during this period.  After the 5-year period, if the owner wishes to continue using the nodes, and if RC can still support the hardware, the owner will be responsible for purchasing hardware if/when it fails (e.g., SSDs, RAM, etc.). 
 
  ### Do you offer a percent uptime guarantee for the duration of the SLA? 
 
