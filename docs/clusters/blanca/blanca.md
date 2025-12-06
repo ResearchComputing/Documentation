@@ -334,41 +334,14 @@ Interactive jobs will not requeue if preempted.
 
 ## Using the Data Transfer Nodes in Blanca jobs
 
-CURC provides data transfer nodes (DTNs) to facilitate performant transfers of files to/from CURC, across CURC filesystems, and downloads from remote data providers. The `dtn` partition is part of the Alpine cluster, however it is accessible from jobs running on Blanca nodes by preceding the `sinteractive` or `sbatch` commands in the [dtn partition usage examples](../alpine/alpine-hardware.md#dtn-usage-examples) with the alpine `SLURM_CONF` environment, e.g.,
+CURC provides data transfer nodes (DTNs) to facilitate performant transfers of files to/from CURC, across CURC filesystems, and downloads from remote data providers. The `dtn` partition is part of the Alpine cluster, however it is accessible from jobs running on Blanca nodes by preceding the `sinteractive` or `sbatch` commands in [dtn partition usage examples 1 and 2](../alpine/alpine-hardware.md#dtn-usage-examples) with the Alpine `SLURM_CONF` environment, e.g.,
 
 ```bash
-SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf sinteractive --partition=dtn --qos=dtn --nodes=1 --ntasks=1 --time=12:00:00
+SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf sbatch mytransfer.sh
 ```
-
-### Usage
-
-(tabset-ref-blanca-dtn)=
-`````{tab-set}
-:sync-group: tabset-blanca-dtn
-
-````{tab-item} Example 1
-:sync: blanca-dtn-ex1
-
-**To start a `dtn` job from a Blanca interactive job:**
-
-```bash
-SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf sinteractive --partition=dtn --qos=dtn --nodes=1 --ntasks=1 --time=12:00:00
+```{note}
+It is not possible to schedule a data transfer job on the Alpine `dtn` partition as a direct _dependency_ of a previous Blanca job, because the `--dependency` flag must reference a job on the same cluster. A workaround is to schedule a second Blanca job that is a dependency of the previous Blanca job, and within that second job schedule the Alpine `dtn` data transfer job per the example shown above.
 ```
-
-````
-
-````{tab-item} Example 2
-:sync: blanca-dtn-ex2
-
-**To specify the preemptable QoS for an interactive job:**
-
-```bash
-$ sinteractive --qos=preemptable <other_arguments>
-```
-
-````
-
-`````
 
 ## Best practices
 

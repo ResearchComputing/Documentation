@@ -110,7 +110,7 @@ scp <path-to-file> <username>@dtn.rc.colorado.edu:<target-path>
 scp <username>@dtn.rc.colorado.edu:<path-to-file> <target-path>    
 ``` 
 
-Once you've typed the `scp` command, press Enter. Accept your Duo 2-Factor notification. If the connection succeeds you will see your transfer begin.
+Once you've typed the `scp` command, press Enter. If prompted, enter your password and then accept your Duo 2-Factor notification. If the connection succeeds you will see your transfer begin.
 
 ```{note}
 Windows users can access scp through PowerShell or using a GUI
@@ -147,7 +147,7 @@ rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>
 rsync -r <username>@dtn.rc.colorado.edu:<path-to-directory> <target-path>  
 ```
 
-Once you've typed the `rsync` command, press Enter. Accept your Duo 2-Factor notification. If the connection succeeds you will see your transfer begin.
+Once you've typed the `rsync` command, press Enter. If prompted, enter your password and then accept your Duo 2-Factor notification. If the connection succeeds you will see your transfer begin.
 
 ```{note}
 rsync is not available on Windows by default, but [may be installed

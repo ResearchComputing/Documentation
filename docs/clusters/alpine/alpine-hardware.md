@@ -329,7 +329,7 @@ acompile --ntasks=2 --time=02:00:00
 
 __Typical Use Cases:__ 
 
-* When you need to integrate performant data transfers as dependencies of computational jobs.
+* When you need to integrate performant data transfers as dependencies of computational jobs using the Slurm `--dependency` flag.
 * When automated (e.g, daily, monthly) performant data transfers are required.
 * When you want the convenience of scheduling a long-running data transfer as a batch job that won’t time-out due to a spotty `ssh` session connection.
 
@@ -337,7 +337,7 @@ __Types of data transfers supported:__
 
 * _Onsite-to-onsite_ transfers from one filesystem to another (e.g., copying a folder from scratch to PetaLibrary with `rsync`)
 * _Downloading_ large datasets from websites, ftp servers, cloud providers, etc. (e.g., downloading an LLM from OpenAI with `wget` or `curl`). 
-* _Onsite-to-offsite_ transfers to that allow external access via ssh-based protocols (e.g,. a transfer from your PetaLibrary allocation to your lab’s linux server with `scp`, or to your lab's AWS S3 bucket with `rclone`).
+* _Onsite-to-offsite_ transfers that allow external access via ssh-based protocols (e.g,. a transfer from your PetaLibrary allocation to your lab’s linux server with `scp`, or to your lab's AWS S3 bucket with `rclone`).
  ```{note}
  If the offsite machine does not support external ssh access (e.g., your Mac or Windows laptop), you can conduct the transfer on the `dtns` using the [Globus Command Line Interface (CLI)](https://docs.globus.org/cli/) via the `globus` command _(requires a [Globus Connect Personal](https://www.globus.org/globus-connect-personal) endpoint on the offsite machine)_.   
 ```
@@ -389,15 +389,30 @@ rsync -r /scratch/alpine/ralphie/bigfiles/ /pl/active/buffsfan/ralphie/
 # now download an additional file the "bigfiles" folder:
 
 cd /pl/active/buffsfan/ralphie/bigfiles
-wget https://cubuffs.org/another_hug_file.zip
+wget https://cubuffs.org/another_huge_file.zip
+```
+Now schedule the job:
+
+```bash
+sbatch mytransfer.sh
 ```
 
-Now schedule `mytransfer.sh` so that it runs as a dependency of your previously scheduled computational job, `73798236`, when it is finished:
+````
+
+```` {tab-item} Example 3
+:sync: dtn-use-ex3
+
+**Schedule a transfer that is a dependency of another job**
+
+Use the `--dependency` flag if you need to ensure your data transfer runs after a related job completes. For example, to run `mytransfer.sh` (see Example 2) only after a previously scheduled batch job with ID `73798236` has successfully completed, schedule it as follows:
 
 ```bash
 sbatch --dependency=afterok:73798236 mytransfer.sh
 ```
+You can learn more about `--dependency` in Slurm's [documentation for sbatch](https://slurm.schedmd.com/sbatch.html).
+
 ````
+
 `````
 
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
