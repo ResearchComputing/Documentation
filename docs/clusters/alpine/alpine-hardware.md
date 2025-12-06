@@ -415,5 +415,9 @@ You can learn more about `--dependency` in Slurm's [documentation for sbatch](ht
 
 `````
 
+ ```{warning}
+ Due to the manner in which the DTNs are configured, the Slurm `salloc` command cannot be used to start jobs on the `dtn` partition.  Please instead use the `sbatch` or `sinteractive` commands per the examples above.
+```
+
 Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).
 
