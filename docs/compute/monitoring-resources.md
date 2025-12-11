@@ -276,7 +276,6 @@ positional arguments:
 
 options:
   -j <jobid>            Specifies the Slurm job ID you want information about.
-  -P                    Output in pipe-delimited format (parseable).
   -n                    Removes the header row from the output.
   -o TRESUsageInMax     Chooses the output field(s). Here, you’re requesting to display maximum resource usage.
   -p                    Print fields with trailing delimiters (helpful for scripts).
