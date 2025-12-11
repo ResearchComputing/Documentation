@@ -277,8 +277,7 @@ positional arguments:
 options:
   -j <jobid>            Specifies the Slurm job ID you want information about.
   -n                    Removes the header row from the output.
-  -o TRESUsageInMax     Chooses the output field(s). Here, you’re requesting to display maximum resource usage.
-  -p                    Print fields with trailing delimiters (helpful for scripts).
+  -o TRESUsageInMax     Chooses the output field(s). Here, you’re requesting to display maximum resource usage for a specific jobid.
 ```
 In order to check the metrics for job 18194943, run: 
 ```
@@ -287,8 +286,9 @@ $ sacct -j 18194943 -pno JobID,TRESUsageInMax
 This will display the output:
 ```
 --------------------------------------------------------
-cpu=00:56:24,energy=0,fs/disk=350130624578,gres/gpumem=38888M,gres/gpuutil=100,mem=10372780K,pages=3465,vmem=10194376K|
-cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=256K,pages=0,vmem=0|
+18194943||
+18194943.batch|cpu=00:56:24,energy=0,fs/disk=350130624578,gres/gpumem=38888M,gres/gpuutil=100,mem=10372780K,pages=3465,vmem=10194376K|
+18194943.extern|cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=256K,pages=0,vmem=0|
 --------------------------------------------------------
 ```
 This tells us:
@@ -304,7 +304,7 @@ This tells us:
 |`vmem` | Virtual memory used by the job. Includes RAM + swap + memory-mapped files. |
 
 ```{note} 
-`sacct` reports two entries for each job: the first line reflects the actual workload (the primary job step) and contains the meaningful resource-usage metrics, while the second line corresponds to Slurm’s lightweight `extern` step, which performs the job’s shell setup and shows negligible usage. The first line is the one users should reference.
+`sacct` shows multiple entries for each job. The primary entry is the one with the `.batch` step, which reflects the actual workload and contains the meaningful resource-usage metrics. The `.extern` entry corresponds to Slurm’s lightweight setup step and will show minimal or negligible usage. Users should reference the `.batch` line when reviewing their job’s resource usage.
 ```
 
 Similarly, to view the average GPU resource usage for a job
@@ -319,26 +319,25 @@ options:
   -j <jobid>            Filters the report to only show information for the specified job ID.
   -n                    Removes the header row from the output.
   -o TRESUsageInAve     Chooses the output field(s). Here, you’re requesting to display average resource usage metrics.
-  -p                    Print fields with trailing delimiters (helpful for scripts).
   --noconvert           Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged.
 ```
 In order to check average GPU metrics for job 18194943, run:
 ```
-$ sacct -j 18194943 -Pno TRESUsageInAve -p --noconvert
+$ sacct -j 18194943 -pno JobID,TRESUsageInAve --noconvert
 ```
 This will display the output:
 ```
 --------------------------------------------------------
-cpu=00:56:24,energy=0,fs/disk=350130624578,gres/gpumem=40777023488,gres/gpuutil=100,mem=10621726720,pages=3465,vmem=10439041024|
-cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=262144,pages=0,vmem=0|
+18194943||
+18194943.batch|cpu=00:56:24,energy=0,fs/disk=350130624578,gres/gpumem=40777023488,gres/gpuutil=100,mem=10621726720,pages=3465,vmem=10439041024|
+18194943.extern|cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=262144,pages=0,vmem=0|
 --------------------------------------------------------
 ```
 This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of peak usage.
 
 ```{important}
 - GPU metrics are currently available only on NVIDIA GPUs. Accessing these metrics requires CUDA 12 or newer.
-- For AMD GPUs, memory usage (`gpumem`) is available, but GPU utilization (`gpuutil`) is not supported.
-- Alpine H200s and Blanca H100 GPUs do not currently support GPU metric collection.
+- Currently, AMD GPUs, H200s and Blanca H100 GPUs do not support GPU metric collection.
 - Users running jobs on unsupported GPUs or older CUDA versions will see zeros or infinite value for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
 ```
 
