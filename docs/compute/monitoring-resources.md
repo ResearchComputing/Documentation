@@ -282,7 +282,7 @@ options:
 ```
 In order to check the metrics for job 18194943, run: 
 ```
-$ sacct -j 18194943 -Pno TRESUsageInMax -p
+$ sacct -j 18194943 -pno JobID,TRESUsageInMax 
 ```
 This will display the output:
 ```
