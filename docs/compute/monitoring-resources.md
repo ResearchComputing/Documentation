@@ -1,59 +1,12 @@
 # Monitoring Resources
 
 CU Research Computing has two main tools which can help users monitor their HPC resources:
-* [Slurmtools](#slurmtools): A [module](./modules.md) that loads a collection of functions to assess recent usage statistics
+* [Slurm commands](#monitoring-through-slurm-commands): Slurm provides built-in commands that allow users to retrieve usage summaries, job efficiency data, job history, and priority.
 * [XDMoD](#xdmod): A web portal for viewing metrics at the system, partition, and user-levels.
 
-## Slurmtools
-Slurmtools is a collection of helper scripts for everyday use of the [SLURM](https://slurm.schedmd.com/overview.html) job scheduler. Slurmtools can be loaded in as a module from any node (including login nodes). Slurmtools can help us understand the following questions:
-* How many core hours (SUs) have I used recently?
-* Who is using all of the SUs on my group's account?
-* What jobs have I run over the past few days?
-* What is my priority?
-* How efficient are my jobs?
-
-### __Step 1__: Log in
-If you have a CURC account, login as you [normally would](../getting_started/logging-in.md) using your identikey and Duo from a terminal: 
-
-```bash
-$ ssh ralphie@login.rc.colorado.edu
-```
-
-### __Step 2__: Load the slurm module for the HPC resource you want to query metrics about (Blanca, Alpine):
-```bash
-$ module load slurm/alpine # substitute alpine for blanca
-```
-
-### __Step 3__: Load the `slurmtools` module
-```bash
-$ module load slurmtools
-```
-
-You will see the following informational message:
-
-```
-You have sucessfully loaded slurmtools, a collection of functions
- to assess recent usage statistics. Available commands include:
-
- 'suacct' (SU usage for each user of a specified account over N days)
-
- 'suuser' (SU usage for a specified user over N days)
-
- 'seff' (CPU and RAM efficiency for a specified job)
-
- 'seff-array' (CPU, RAM, and time efficiency for a specified array job)
-
- 'jobstats' (job statistics for all jobs run by a specified user over N days)
-
- 'levelfs' (current fair share priority for a specified user)
-
-
- Type any command without arguments for usage instructions
- ```
-
-### __Step 4__: Get some metrics!
-
-#### How many Service Units (core hours) have I used?
+## Monitoring Through Slurm Commands
+You can obtain important usage and efficiency metrics directly through Slurm’s built-in commands and answer the following questions:
+### How many Service Units (core hours) have I used?
 
 Type the command name for usage hint:
 ```bash
@@ -85,7 +38,7 @@ This output tells us that:
 * Ralphie's usage by account varied from 3,812 SUs to 15,987 SUs
 
 
-#### Who is using all of the SUs on my groups' account?
+### Who is using all of the SUs on my groups' account?
 
 Type the command name for usage hint:
 ```bash
@@ -121,7 +74,7 @@ This output tells us that:
 * Five users used the account in the past 180 days.
 * Their usage ranged from 24 SUs to 84,216 SUs
 
-#### What jobs have I run over the past few days?
+### What jobs have I run over the past few days?
 
 Type the command name for usage hint:
 ```bash
@@ -166,7 +119,7 @@ This output tells me that:
 * The elapsed times ranged from 0 hours to 1 hour and 48 minutes
 
 
-#### What is my priority?
+### What is my priority?
 
 Type the command name for usage hint:
 ```bash
@@ -212,7 +165,7 @@ What is "Priority"?
 * Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
 ```
 
-#### How efficient are my jobs?
+### How efficient are my jobs?
 
 Type the command name for usage hint:
 ```bash
@@ -250,7 +203,7 @@ This output tells us that:
 
 This information is also sent to users who include the `--mail` directive in jobs.
 
-#### How can I check the efficiency of array jobs?
+### How can I check the efficiency of array jobs?
 
 Use the `seff-array` command with the help flag for a usage hint: 
 ```
@@ -301,6 +254,94 @@ The above indicates that all of the jobs displayed less than 40% CPU efficiency,
 
 ```{seealso}
 If you are not familiar with Job Arrays in SLURM, you can learn more on the ["Scaling Up with job Arrays" page](../running-jobs/job-arrays.md).
+```
+
+### How can I check memory and GPU utilization for my jobs?
+
+Type the command name for usage hint:
+```
+$ sacct
+```
+```
+Purpose: This command reports detailed accounting information for completed jobs, 
+including CPU, memory, and GPU metrics such as `gpumem` and `gpuutil`.
+```
+To view the maximum GPU resource usage for a job, the command is:
+```
+Usage:
+sacct -j <jobid> -Pno TRESUsageInMax -p
+
+positional arguments:
+  jobid                 Job ID to query.
+
+options:
+  -j <jobid>            Specifies the Slurm job ID you want information about.
+  -P                    Output in pipe-delimited format (parseable).
+  -n                    Removes the header row from the output.
+  -o TRESUsageInMax     Chooses the output field(s). Here, you’re requesting to display maximum resource usage.
+  -p                    Print fields with trailing delimiters (helpful for scripts).
+```
+In order to check the metrics for job 18194943, run: 
+```
+$ sacct -j 18194943 -Pno TRESUsageInMax -p
+```
+This will display the output:
+```
+--------------------------------------------------------
+cpu=00:56:24,energy=0,fs/disk=350130624578,gres/gpumem=38888M,gres/gpuutil=100,mem=10372780K,pages=3465,vmem=10194376K|
+cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=256K,pages=0,vmem=0|
+--------------------------------------------------------
+```
+This tells us:
+| Variable | Description |
+| ------------- |------------|
+|`cpu` | Total CPU time consumed (hours:minutes:seconds).|
+|`energy` | Energy consumed by the job in arbitrary units (often 0 for systems without energy accounting).|
+|`fs/disk` | Amount of disk I/O performed by the job (in bytes). |
+|`gres/gpumem` | Peak GPU memory usage. |
+|`gres/gpuutil` | Peak GPU utilization as a percentage. |
+|`mem` | RAM used by the job. |
+|`pages` | Number of memory pages used. Typically for advanced monitoring; can often be ignored. |
+|`vmem` | Virtual memory used by the job. Includes RAM + swap + memory-mapped files. |
+
+```{note} 
+`sacct` reports two entries for each job: the first line reflects the actual workload (the primary job step) and contains the meaningful resource-usage metrics, while the second line corresponds to Slurm’s lightweight `extern` step, which performs the job’s shell setup and shows negligible usage. The first line is the one users should reference.
+```
+
+Similarly, to view the average GPU resource usage for a job
+```
+Usage:
+sacct -j <jobid> -Pno TRESUsageInAve -p --noconvert
+
+positional arguments:
+  jobid                 Job ID to query.
+
+options:
+  -j <jobid>            Filters the report to only show information for the specified job ID.
+  -P                    Output in pipe-delimited format (parseable).
+  -n                    Removes the header row from the output.
+  -o TRESUsageInAve     Chooses the output field(s). Here, you’re requesting to display average resource usage metrics.
+  -p                    Print fields with trailing delimiters (helpful for scripts).
+  --noconvert           Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged.
+```
+In order to check average GPU metrics for job 18194943, run:
+```
+$ sacct -j 18194943 -Pno TRESUsageInAve -p --noconvert
+```
+This will display the output:
+```
+--------------------------------------------------------
+cpu=00:56:24,energy=0,fs/disk=350130624578,gres/gpumem=40777023488,gres/gpuutil=100,mem=10621726720,pages=3465,vmem=10439041024|
+cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=262144,pages=0,vmem=0|
+--------------------------------------------------------
+```
+This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of peak usage.
+
+```{important}
+- GPU metrics are currently available only on NVIDIA GPUs. Accessing these metrics requires CUDA 12 or newer.
+- For AMD GPUs, memory usage (`gpumem`) is available, but GPU utilization (`gpuutil`) is not supported.
+- Alpine H200s and Blanca H100 GPUs do not currently support GPU metric collection.
+- Users running jobs on unsupported GPUs or older CUDA versions will see zeros or infinite value for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
 ```
 
 ## XDMoD 
