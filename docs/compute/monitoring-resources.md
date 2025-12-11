@@ -310,7 +310,7 @@ This tells us:
 Similarly, to view the average GPU resource usage for a job
 ```
 Usage:
-sacct -j <jobid> -Pno TRESUsageInAve -p --noconvert
+sacct -j <jobid> -pno JobID,TRESUsageInAve --noconvert
 
 positional arguments:
   jobid                 Job ID to query.
