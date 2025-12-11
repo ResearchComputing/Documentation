@@ -260,7 +260,7 @@ If you are not familiar with Job Arrays in SLURM, you can learn more on the ["Sc
 
 Type the command name for usage hint:
 ```
-$ sacct
+$ sacct -h
 ```
 ```
 Purpose: This command reports detailed accounting information for completed jobs, 
