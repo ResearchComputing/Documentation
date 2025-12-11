@@ -317,7 +317,6 @@ positional arguments:
 
 options:
   -j <jobid>            Filters the report to only show information for the specified job ID.
-  -P                    Output in pipe-delimited format (parseable).
   -n                    Removes the header row from the output.
   -o TRESUsageInAve     Chooses the output field(s). Here, you’re requesting to display average resource usage metrics.
   -p                    Print fields with trailing delimiters (helpful for scripts).
