@@ -269,7 +269,7 @@ including CPU, memory, and GPU metrics such as `gpumem` and `gpuutil`.
 To view the maximum GPU resource usage for a job, the command is:
 ```
 Usage:
-sacct -j <jobid> -Pno TRESUsageInMax -p
+sacct -j <jobid> -pno JobID,TRESUsageInMax 
 
 positional arguments:
   jobid                 Job ID to query.
