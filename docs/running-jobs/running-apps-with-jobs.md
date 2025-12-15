@@ -1,12 +1,14 @@
 # Running Applications with Jobs
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dZLSEyYTiBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 Because our HPC system is shared among many researchers, Research Computing manages system usage through jobs. **Jobs** are simply an allotment of resources that can be used to execute processes. Research Computing uses a program named the *Simple Linux Utility for Resource Management*, or **Slurm**, to create and manage jobs.
 
 In order to run a program on a cluster, you must request resources from Slurm to generate a job. Resources can be requested from a login node or a compile node. You must then provide commands to run your program on those requested resources. Where you provide your commands depends on whether you are running a [batch job](batch-jobs.md) or an [interactive job](interactive-jobs.md).
 
 When you run a batch job or an interactive job, it will be placed in a queue until resources are available. 
+
+```{seealso}
+Alpine provides four different hardware partitions that CURC users can run jobs on. Each partition has different offerings and configurations. See the [Alpine Hardware](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#alpine-hardware) page for determining which partition best supports your job's needs.
+``` 
 
 ```{seealso}
 A detailed guide on the Slurm queue and accounting tools can be found in the [Useful Slurm Commands](slurm-commands.md) page.
