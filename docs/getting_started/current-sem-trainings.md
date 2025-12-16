@@ -20,7 +20,7 @@ Click the name of a training to view more details and register!
 - [Four Ways to GPU Computing (NVIDIA-led)](https://colorado.libcal.com/calendar/events/gpucomputing) - **February 4, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/containers) - **February 5, 10am, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/setting_up_llms) - **February 6, 11am, Virtual (Zoom)**
-- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions[^1] (February 11, February 26, March 11, March 26, April 8), 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions[^1] (February 11, February 25, March 11, March 25, April 8), 2pm, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **February 18, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Lunch-n-Learn: Sharing data across institutions with PetaLibrary and Globus (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/globus) - **February 27, 12pm, Virtual (Zoom)**
@@ -48,11 +48,12 @@ Click the name of a training to view more details and register!
 ### **Parallelization & Acceleration**
 - [Four Ways to GPU Computing (NVIDIA-led)](https://colorado.libcal.com/calendar/events/gpucomputing) - **February 4, 10am, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/acceleration) - **March 6, 10:30am, Virtual (Zoom)**
 
 ### **AI/ML**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/setting_up_llms) - **February 6, 11am, Virtual (Zoom)**
-- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions[^1] (February 11, February 26, March 11, March 26, April 8), 2pm, Virtual (Zoom)**
-- [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/acceleration) - **March 6, 10:30am, Virtual (Zoom)**
+- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions[^1] (February 11, February 25, March 11, March 25, April 8), 2pm, Virtual (Zoom)**
+
 
 
 ````
@@ -70,7 +71,7 @@ Click the name of a training to view more details and register!
 - [Four Ways to GPU Computing (NVIDIA-led)](https://colorado.libcal.com/calendar/events/gpucomputing) - **February 4, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/containers) - **February 5, 10am, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/setting_up_llms) - **February 6, 11am, Virtual (Zoom)**
-- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions[^1] (February 11, February 26, March 11, March 26, April 8), 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions[^1] (February 11, February 25, March 11, March 25, April 8), 2pm, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **February 18, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **March 5, 11am, Virtual (Zoom)**
