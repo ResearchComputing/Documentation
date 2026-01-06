@@ -5,7 +5,7 @@ CU Research Computing has two main tools which can help users monitor their HPC 
 * [XDMoD](#xdmod): A web portal for viewing metrics at the system, partition, and user-levels.
 
 ## Monitoring Through Slurm Commands
-You can obtain important usage and efficiency metrics directly through Slurm’s built-in commands and answer the following questions:
+You can obtain important usage and efficiency metrics directly through Slurm’s built-in commands and answer questions posed by the subsections below. 
 ### How many Service Units (core hours) have I used?
 
 Type the command name for usage hint:
