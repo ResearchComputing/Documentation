@@ -333,7 +333,7 @@ This will display the output:
 18194943.extern|cpu=00:00:00,energy=0,fs/disk=5273,gres/gpumem=0,gres/gpuutil=0,mem=262144,pages=0,vmem=0|
 --------------------------------------------------------
 ```
-This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of peak usage.
+This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of max usage.
 
 ```{important}
 - GPU metrics are currently available only on select NVIDIA GPUs and require CUDA 12 or newer.
