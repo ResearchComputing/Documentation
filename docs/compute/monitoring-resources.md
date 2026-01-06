@@ -336,8 +336,9 @@ This will display the output:
 This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of peak usage.
 
 ```{important}
-- GPU metrics are currently available only on NVIDIA GPUs. Accessing these metrics requires CUDA 12 or newer.
-- Currently, AMD GPUs, H200s and Blanca H100 GPUs do not support GPU metric collection.
+- GPU metrics are currently available only on select NVIDIA GPUs and require CUDA 12 or newer.
+- At this time, GPU memory and utilization metrics are not available on the following configurations: AMD GPUs, GH200s and MIG enables GPUs on Alpine, P100s and A40s on Blanca.
+- Core cluster GPUs (e.g., core-gpu[0-4], viz1, viz2), which power Core Desktop and MATLAB GUI, do not currently support GPU memory or utilization metrics.
 - Users running jobs on unsupported GPUs or older CUDA versions will see zeros or infinite value for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
 ```
 
