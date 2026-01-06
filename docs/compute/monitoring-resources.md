@@ -297,8 +297,8 @@ This tells us:
 |`cpu` | Total CPU time consumed (hours:minutes:seconds).|
 |`energy` | Energy consumed by the job in arbitrary units (often 0 for systems without energy accounting).|
 |`fs/disk` | Amount of disk I/O performed by the job (in bytes). |
-|`gres/gpumem` | Peak GPU memory usage. |
-|`gres/gpuutil` | Peak GPU utilization as a percentage. |
+|`gres/gpumem` | Max GPU memory usage. |
+|`gres/gpuutil` | Max GPU utilization as a percentage. |
 |`mem` | RAM used by the job. |
 |`pages` | Number of memory pages used. Typically for advanced monitoring; can often be ignored. |
 |`vmem` | Virtual memory used by the job. Includes RAM + swap + memory-mapped files. |
