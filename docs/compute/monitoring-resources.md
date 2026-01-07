@@ -137,6 +137,8 @@ What is "Priority"?
   * The partition and qos you choose (this is a minor consideration on CURC systems)
 * Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
 ```
+The simplest method to determine your priority on the system is to review your fair share priority. This can be done using the `levelfs` command. 
+
 Type the command name for usage hint:
 ```bash
 $ levelfs
@@ -168,8 +170,8 @@ ucb-general         inf                 1.105260
 ```
 
 This output tells me:
-* Ralphie hasn't used `ucb-general` and therefore Ralphie has very high ("infinite") priority. 
-* Ralphie has used `admin` but not much. Priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
+* Ralphie hasn't used `ucb-general` and therefore Ralphie has very high ("infinite") fair share priority. 
+* Ralphie has used `admin` but not much. Fair share priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
 
 ### How efficient are my jobs?
 
@@ -299,7 +301,7 @@ If you are not familiar with Job Arrays in SLURM, you can learn more on the ["Sc
 
 ### How can I check memory and GPU utilization for my jobs?
 
-The `sacct` command provides detailed accounting information for completed jobs, including CPU, memory, and GPU metrics (e.g., `gpumem`, `gpuutil`). To see a list of available options and usage examples, run `sacct` with no arguments.
+The `sacct` command provides detailed accounting information for completed jobs, including CPU, memory, and GPU metrics (e.g., `gpumem`, `gpuutil`). To see a list of available options and usage examples, run `sacct` with the help argument.
 ```
 $ sacct -h
 ```
@@ -384,15 +386,14 @@ sacct [<OPTION>]
 ```
 To view the maximum GPU resource usage for a job, the command is:
 ```
-Usage:
-sacct -j <jobid> -pno JobID,TRESUsageInMax
+$ sacct -j <jobid> -pno JobID,TRESUsageInMax
 ```
 Arguments and Options:
 | Arguments | Description |
 | ------------- |------------|
 |`-j <jobid>` | Specifies the Slurm job ID you want information about. Here `jobid` is a positional argument. |
 |`-n` | Removes the header row from the output. |
-|`-o TRESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display maximum resource usage for a specific jobid. |
+|`-o TJobID,RESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display the JobID and maximum resource usage. |
 
 In order to check the metrics for job 18194943, run: 
 ```
@@ -429,15 +430,14 @@ When reviewing resource usage, users should generally focus on the steps that co
 
 Similarly, to view the average GPU resource usage for a job
 ```
-Usage:
-sacct -j <jobid> -pno JobID,TRESUsageInAve --noconvert
+$ sacct -j <jobid> -pno JobID,TRESUsageInAve --noconvert
 ```
 Arguments and Options:
 | Arguments | Description |
 | ------------- |------------|
 |`-j <jobid>` | Filters the report to only show information for the specified job ID. |
 |`-n` | Removes the header row from the output. |
-|`-o TRESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display maximum resource usage for a specific jobid. |
+|`-o JobID,TRESUsageInAve` | Chooses the output field(s). Here, you’re requesting to display the JobID and average resource usage. |
 |`--noconvert` | Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged. |
 
 In order to check average GPU metrics for job 18194943, run:

@@ -200,15 +200,16 @@ For more information on `sstat` or `sacct` commands, [take a look at our Useful 
 You can also view information related to service unit (SU) usage and CPU & RAM efficiency [using slurm commands](../compute/monitoring-resources.md#monitoring-through-slurm-commands). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
 ::::
 
-### Why am I not seeing GPU memory or utilization metrics for my job?
+### Why am I getting unexpected results for my GPU memory or utilization metrics?
 ::::{dropdown} Show 
 :icon: note
 
-- GPU metrics are available for most NVIDIA GPUs across Alpine and Blanca. At this time, GPU memory and utilization metrics are not available on the following configurations: AMD GPUs and GH200s on Alpine, and the P100s and A40s on Blanca.
+Currently, GPU metrics are collected by Slurm. Due to system limitations, there are some scenarios where GPU metric collection is not possible. Thus, the output of `sacct` or `seff` may not match your expectation or what is provided by `nvidia-smi` or `amd-smi`. Below we provide important considerations when reviewing GPU metrics collected by Slurm. 
+- GPU metrics are available for most NVIDIA GPUs across Alpine and Blanca. At this time, GPU memory and utilization metrics are not available on the following GPU types: AMD, GH200s, P100s, and A40s.
 - GPU metrics can only be collected if your code utilizes CUDA 12 or newer.
-- GPU metrics are partially available on MIG-enabled NVIDIA GPUs. You can get GPU utilization values, but GPU memory usage metrics are not reported for individual MIG partitions.
+- GPU metrics are partially available on MIG-enabled NVIDIA GPUs. You can get GPU memory usage values, but GPU utilization metrics are not reported for individual MIG partitions.
 - Core cluster GPUs (e.g., core-gpu[0-4], viz1, viz2), which power Core Desktop and MATLAB GUI, do not currently support GPU memory or utilization metrics.
-- Users running jobs on unsupported GPUs or older CUDA versions will see zeros or infinite values for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
+- Users running jobs on unsupported GPUs or older CUDA versions will see zeros or N/A or infinite values for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
 ::::
 
 ### How can I see my current FairShare priority?
