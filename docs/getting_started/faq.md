@@ -200,24 +200,26 @@ For more information on `sstat` or `sacct` commands, [take a look at our Useful 
 You can also view information related to service unit (SU) usage and CPU & RAM efficiency [here](../compute/monitoring-resources.md#monitoring-through-slurm-commands). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
 ::::
 
+### Why am I not seeing GPU memory or utilization metrics for my job?
+::::{dropdown} Show 
+:icon: note
+
+- GPU metrics are available for most NVIDIA GPUs across Alpine and Blanca. At this time, GPU memory and utilization metrics are not available on the following configurations: AMD GPUs and GH200s on Alpine, and the P100s and A40s on Blanca.
+- GPU metrics can only be collected if your code utilizes CUDA 12 or newer.
+- GPU metrics are partially available on MIG-enabled NVIDIA GPUs. You can get GPU utilization values, but GPU memory usage metrics are not reported for individual MIG partitions.
+- Core cluster GPUs (e.g., core-gpu[0-4], viz1, viz2), which power Core Desktop and MATLAB GUI, do not currently support GPU memory or utilization metrics.
+- Users running jobs on unsupported GPUs or older CUDA versions will see zeros or infinite values for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
+::::
+
 ### How can I see my current FairShare priority?
 ::::{dropdown} Show 
 :icon: note
 
 There are a couple ways you can check your FairShare priority:
 
-1. Using the `levelfs` tool in the `slurmtools` module. `levelfs` shows the current fair share priority of a specified user.
-	
-	You can use this tool by first loading in the `slurmtools` module (available from login nodes):
-	```
-	$ module load slurmtools
-	```
+1. Using the `levelfs` command. `levelfs` shows the current fair share priority of a specified user.
 
-	```{tip}
-	slurmtools is packed with lots of great features and tools like suacct, suuser, jobstats, seff, etc._
-	```
-
-	Then using `levelfs` on your username:
+	Using `levelfs` on your username:
 	```
 	$ levelfs $USER
 	```
