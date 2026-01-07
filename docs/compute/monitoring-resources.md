@@ -394,7 +394,7 @@ Arguments and Options:
 | Arguments | Description |
 | ------------- |------------|
 |`-j <jobid>` | Specifies the Slurm job ID you want information about. Here `jobid` is a positional argument. |
-|`p` | Parsable; output will be delimited with a `|` at the end |
+|`p` | Parsable; output will be delimited with a '\|' at the end |
 |`n` | Removes the header row from the output. |
 |`o JobID,TRESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display the JobID and maximum resource usage. |
 
@@ -439,7 +439,7 @@ Arguments and Options:
 | Arguments | Description |
 | ------------- |------------|
 |`-j <jobid>` | Filters the report to only show information for the specified job ID. |
-|`p` | Parsable; output will be delimited with a `|` at the end |
+|`p` | Parsable; output will be delimited with a '\|' at the end |
 |`n` | Removes the header row from the output. |
 |`o JobID,TRESUsageInAve` | Chooses the output field(s). Here, you’re requesting to display the JobID and average resource usage. |
 |`--noconvert` | Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged. |
