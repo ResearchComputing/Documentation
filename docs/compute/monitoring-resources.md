@@ -118,7 +118,7 @@ jobid        jobname  partition    qos          account      cpus state    start
 8800741      interact ahub         interacti+   ucb-gener+   1    CANCELLE 2021-10-19T08:11:44 01:48:38   0 hrs
 ```
 
-This output tells me that:
+This output tells us that:
 * Ralphie has run 14 jobs in the past 35 days
 * Most jobs had queue waits of < 1 hour
 * The number of cores requested ranged from 1-->8192
