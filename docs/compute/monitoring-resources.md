@@ -12,7 +12,8 @@ Type the command name for usage hint:
 ```bash
 $ suuser
 ```
-```
+This will display the output:
+```text
 Purpose: This function computes the number of Service Units (SUs)
 consumed by a specified user over N days.
 
@@ -24,7 +25,8 @@ Check usage for the last 365 days:
 ```bash
 $ suuser ralphie 365
 ```
-```
+This will display the output:
+```text
 SU used by user ralphie in the last 365 days:
 Cluster|Account|Login|Proper Name|Used|Energy|
 alpine|admin|ralphie|Ralphie|15987|0|
@@ -44,7 +46,8 @@ Type the command name for usage hint:
 ```bash
 $ suacct
 ```
-```
+This will display the output:
+```text
 Purpose: This function computes the number of Service Units (SUs)
 consumed by each user of a specified account over N days.
 
@@ -59,7 +62,8 @@ Most user accounts follow the naming convention `ucbXXX_ascX`, in this example w
 ```bash
 $ suacct admin 180
 ```
-```
+This will display the output:
+```text
 SU used by account (allocation) admin in the last 180 days:
 Cluster|Account|Login|Proper Name|Used|Energy
 alpine|admin|||763240|0
@@ -80,7 +84,8 @@ Type the command name for usage hint:
 ```bash
 $ jobstats
 ```
-```
+This will display the output:
+```text
 Purpose: This function shows statistics for each job
 run by a specified user over N days.
 
@@ -92,7 +97,8 @@ Check ralphie's jobstats for the past 35 days:
 ```bash
 $ jobstats ralphie 35
 ```
-```
+This will display the output:
+```text
 job stats for user ralphie over past 35 days
 jobid        jobname  partition    qos          account      cpus state    start-date-time     elapsed    wait
 -------------------------------------------------------------------------------------------------------------------
@@ -121,11 +127,22 @@ This output tells me that:
 
 ### What is my priority?
 
+```{important}
+What is "Priority"?
+* Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
+* Your priority is computed each time a job is scheduled and reflects the following factors:
+  * Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
+  * Your job size (slightly larger jobs have higher priority)
+  * Your time spent in the queue (jobs gain priority the longer they wait)
+  * The partition and qos you choose (this is a minor consideration on CURC systems)
+* Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
+```
 Type the command name for usage hint:
 ```bash
 $ levelfs
 ```
-```
+This will display the output:
+```text
 Purpose: This function shows the current fair share priority of a specified user.
 A value of 1 indicates average priority compared to other users in an account.
 A value of < 1 indicates lower than average priority
@@ -141,29 +158,18 @@ Check Ralphie's fair share priority:
 ```bash
 $ levelfs ralphie
 ```
-```
-ralphie
-admin LevelFS: inf
-ucb-general LevelFS: 44.796111
-tutorial1 LevelFS: inf
-ucb-testing LevelFS: inf
+```text
+LevelFS for user ralphie and institution ucb:
+
+Account             LevelFS_User        LevelFS_Inst
+-----------------------------------------------------
+admin               1.016845            1.105260
+ucb-general         inf                 1.105260
 ```
 
 This output tells me:
-* Ralphie hasn't used `admin`, `tutorial1`, or `ucb-testing` for more than a month, and therefore Ralphie has very high ("infinite") priority. 
-* Ralphie has used `ucb-general` but not much. Priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
-
-
-```{important}
-What is "Priority"?
-* Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
-* Your priority is computed each time a job is scheduled and reflects the following factors:
-  * Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
-  * Your job size (slightly larger jobs have higher priority)
-  * Your time spent in the queue (jobs gain priority the longer they wait)
-  * The partition and qos you choose (this is a minor consideration on CURC systems)
-* Your "Fair Share" priority has a half life of 14 days (i.e., it recovers fully in ~1 month with zero usage)
-```
+* Ralphie hasn't used `ucb-general` and therefore Ralphie has very high ("infinite") priority. 
+* Ralphie has used `admin` but not much. Priority is >> 1 , therefore Ralphie can expect lower-than-average queue waits compared to average ucb-general waits.
 
 ### How efficient are my jobs?
 
@@ -171,7 +177,8 @@ Type the command name for usage hint:
 ```bash
 $ seff
 ```
-```
+This will display the output:
+```text
 Usage: seff [Options] <Jobid>
        Options:
        -h    Help menu
@@ -179,29 +186,50 @@ Usage: seff [Options] <Jobid>
        -d    Debug mode: display raw Slurm data
 ```
 
-Now check the efficiency of job 8636572:
+Now check the efficiency of job 20522520:
 ```bash
-$ seff 8636572
+$ seff 20522520
 ```
-```
-Job ID: 8636572
+This will display the output:
+```text
+Job ID: 20522520
 Cluster: alpine
 User/Group: ralphie/ralphiegrp
 State: COMPLETED (exit code 0)
 Nodes: 1
-Cores per node: 24
-CPU Utilized: 04:04:05
-CPU Efficiency: 92.18% of 04:24:48 core-walltime
-Job Wall-clock time: 00:11:02
-Memory Utilized: 163.49 MB
-Memory Efficiency: 0.14% of 113.62 GB
-```
+Cores per node: 21
 
+──────── CPU Metrics ────────
+CPU Utilized: 7-14:11:13
+CPU Efficiency: 75.77% of 10-00:27:21 core-walltime
+Job Wall-clock time: 11:27:01
+Memory Utilized: 21.25 GiB
+Memory Efficiency: 27.96% of 76.00 GiB (76.00 GiB/node)
+
+──────── GPU Metrics ────────
+Number of GPUs: 1
+GPU Type: l40
+NOTE: GPU metric availability may vary by GPU type.
+      Please refer to our documentation for details: https://curc.readthedocs.io/en/latest/compute/monitoring-resources.html#how-can-i-check-memory-and-gpu-utilization-for-my-jobs
+Max GPU Utilization: 41%
+Max GPU Memory Utilized: 874.00 MiB
+```
+```{note}
+The `seff` output is divided into two sections: CPU Metrics and GPU Metrics.
+- CPU Metrics are always shown, regardless of the type of job, and summarize CPU utilization, memory usage, and efficiency.
+- GPU Metrics are displayed only for jobs that request GPUs. For CPU-only jobs, this section will not appear.
+The example above is for a GPU job, which is why both CPU and GPU metrics are shown.
+```
 This output tells us that:
-* the 24 cores reserved for this job were 92% utilized (anything > 80% is pretty good)
-* 163.49 MB RAM was used of 113.62 GB RAM reserved (0.14%). This job is "cpu bound" so the memory inefficiency is not a major issue.
+* The 21 CPU cores reserved for this job were ~76% utilized, which is reasonable but slightly below the ideal range (>80%).
+* The job ran for ~11.5 hours wall-clock time, accumulating ~7.6 days of total CPU time, indicating a long-running workload with sustained CPU usage.
+* 21.25 GiB of RAM was used out of 76.00 GiB reserved (~28%), suggesting the job was not memory-bound and could likely run with a smaller memory request.
+* One `L40` GPU was allocated, but maximum GPU utilization was 41%, with only ~874 MiB of GPU memory used, indicating the GPU was underutilized for much of the run.
 
 This information is also sent to users who include the `--mail` directive in jobs.
+```{see also}
+Not all GPUs support report memory and utilization metrics in `seff` output. See ["Why am I not seeing GPU memory or utilization metrics for my job?"](../getting-started/faq.md#why-am-I-not-seeing-GPU-memory-or-utilization-metrics-for-my-job) for supported configurations and requirements.
+```
 
 ### How can I check the efficiency of array jobs?
 
@@ -209,7 +237,8 @@ Use the `seff-array` command with the help flag for a usage hint:
 ```
 $ seff-array -h
 ```
-```
+This will display the output:
+```text
 usage: seff-array.py [-h] [-c CLUSTER] [--version] jobid
 
 positional arguments:
@@ -220,37 +249,49 @@ options:
   -c CLUSTER, --cluster CLUSTER
   --version             show program's version number and exit
 ```
-In order to check the efficiency of all jobs in job array 8636572, run the command: 
+In order to check the efficiency of all jobs in job array 14083647, run the command: 
 ```
-$ seff-array 8636572
+$ seff-array 14083647
 ```
 This will display the status of all jobs in the array:
-```
+```text
+--------------------------------------------------------
+Job Information
+ID: 14083647
+Name: vecjob_gpu
+Cluster: alpine
+User/Group: ralphie/ralphiegrp
+Requested CPUs: 1 cores on 1 node(s)
+Requested Memory: 3.75G
+Requested Time: 00:10:00
 --------------------------------------------------------
 Job Status
-COMPLETED: 249
-FAILED: 4
-PENDING: 1
-RUNNING: 22
-TIMEOUT: 4
+COMPLETED: 4
 --------------------------------------------------------
+--------------------------------------------------------
+Finished Job Statistics
+(excludes pending, running, and cancelled jobs)
+Average CPU Efficiency 19.21%
+Average Memory Usage 0.00G
+Average Run-time 3.50s
+---------------------
 ```
  Additionally, `seff-array` will display a histogram of the efficiency statistics all of the jobs in the array, separated into 10% increments. For example: 
-```
+```text
 CPU Efficiency (%)
 ---------------------
-+0.00e+00 - +1.00e+01  [  3]  ▌
-+1.00e+01 - +2.00e+01  [244]  ████████████████████████████████████████
-+2.00e+01 - +3.00e+01  [  8]  █▎
-+3.00e+01 - +4.00e+01  [  2]  ▍
-+4.00e+01 - +5.00e+01  [  0]
-+5.00e+01 - +6.00e+01  [  0]
-+6.00e+01 - +7.00e+01  [  0]
-+7.00e+01 - +8.00e+01  [  0]
-+8.00e+01 - +9.00e+01  [  0]
-+9.00e+01 - +1.00e+02  [  0]
++0.00e+00 - +1.00e+01  [0]
++1.00e+01 - +2.00e+01  [2]  ████████████████████████████████████████
++2.00e+01 - +3.00e+01  [2]  ████████████████████████████████████████
++3.00e+01 - +4.00e+01  [0]
++4.00e+01 - +5.00e+01  [0]
++5.00e+01 - +6.00e+01  [0]
++6.00e+01 - +7.00e+01  [0]
++7.00e+01 - +8.00e+01  [0]
++8.00e+01 - +9.00e+01  [0]
++9.00e+01 - +1.00e+02  [0]
 ```
-The above indicates that all of the jobs displayed less than 40% CPU efficiency, with the majority (244/256) demonstrating between 10% and 20% efficiency. This information will also be displayed for memory and time efficiency. 
+The above indicates that all of the jobs displayed less than 30% CPU efficiency, with the jobs evenly split (2/4) between 10%–20% and 20%–30% efficiency. This information will also be displayed for memory and time efficiency.
 
 ```{seealso}
 If you are not familiar with Job Arrays in SLURM, you can learn more on the ["Scaling Up with job Arrays" page](../running-jobs/job-arrays.md).
@@ -258,27 +299,101 @@ If you are not familiar with Job Arrays in SLURM, you can learn more on the ["Sc
 
 ### How can I check memory and GPU utilization for my jobs?
 
-Type the command name for usage hint:
+The `sacct` command provides detailed accounting information for completed jobs, including CPU, memory, and GPU metrics (e.g., `gpumem`, `gpuutil`). To see a list of available options and usage examples, run `sacct` with no arguments.
 ```
 $ sacct -h
 ```
-```
-Purpose: This command reports detailed accounting information for completed jobs, 
-including CPU, memory, and GPU metrics such as `gpumem` and `gpuutil`.
+This will display the output:
+```text
+sacct [<OPTION>]
+     Valid <OPTION> values are:
+     -a, --allusers:
+                   Display jobs for all users. By default, only the
+                   current user's jobs are displayed.  If ran by user root
+                   this is the default.
+     -A, --accounts:
+                   Use this comma separated list of accounts to select jobs
+                   to display.  By default, all accounts are selected.
+     --array:
+                   Expand job arrays. Display array tasks on separate lines
+                   instead of consolidating them to a single line.
+     -b, --brief:
+                   Equivalent to '--format=jobstep,state,error'.
+     -B, --batch-script:
+                   Print batch script of job.
+                   NOTE: AccountingStoreFlags=job_script is required for this
+                   NOTE: Requesting specific job(s) with '-j' is required
+                         for this.
+      .
+      .
+      .
+     -l, --long:
+                   Equivalent to specifying
+                   '--format=jobid,jobidraw,jobname,partition,maxvmsize,
+                             maxvmsizenode,maxvmsizetask,avevmsize,maxrss,
+                             maxrssnode,maxrsstask,averss,maxpages,
+                             maxpagesnode,maxpagestask,avepages,mincpu,
+                             mincpunode,mincputask,avecpu,ntasks,alloccpus,
+                             elapsed,state,exitcode,avecpufreq,reqcpufreqmin,
+                             reqcpufreqmax,reqcpufreqgov,reqmem,
+                             consumedenergy,maxdiskread,maxdiskreadnode,
+                             maxdiskreadtask,avediskread,maxdiskwrite,
+                             maxdiskwritenode,maxdiskwritetask,avediskwrite,
+                             reqtres,alloctres,
+                             tresusageinave,tresusageinmax,tresusageinmaxn,
+                             tresusageinmaxt,tresusageinmin,tresusageinminn,
+                             tresusageinmint,tresusageintot,tresusageoutmax,
+                             tresusageoutmaxn,tresusageoutmaxt,
+                             tresusageoutave,tresusageouttot
+     -n, --noheader:
+                   No header will be added to the beginning of output.
+                   The default is to print a header.
+     --noconvert:
+                   Don't convert units from their original type
+                   (e.g. 2048M won't be converted to 2G).
+     -N, --nodelist:
+                   Display jobs that ran on any of these nodes,
+                   can be one or more using a ranged string.
+     --name:
+                   Display jobs that have any of these name(s).
+     -o, --format:
+                   Comma separated list of fields. (use "--helpformat"
+                   for a list of available fields).
+     -p, --parsable: output will be '|' delimited with a '|' at the end
+     -P, --parsable2: output will be '|' delimited without a '|' at the end
+     -q, --qos:
+                   Only send data about jobs using these qos.  Default is all.
+     -r, --partition:
+                   Comma separated list of partitions to select jobs and
+                   job steps from. The default is all partitions.
+     -s, --state:
+                   Select jobs based on their current state or the state
+                   they were in during the time period given: running (r),
+                   completed (cd), failed (f), timeout (to), resizing (rs),
+                   deadline (dl) and node_fail (nf).
+     -S, --starttime:
+                   Select jobs eligible after this time.  Default is
+                   00:00:00 of the current day, unless '-s' is set then
+                   the default is 'now'.
+     Note, valid start/end time formats are...
+                   HH:MM[:SS] [AM|PM]
+                   MMDD[YY] or MM/DD[/YY] or MM.DD[.YY]
+                   MM/DD[/YY]-HH:MM[:SS]
+                   YYYY-MM-DD[THH:MM[:SS]]
+                   now[{+|-}count[seconds(default)|minutes|hours|days|weeks]]
 ```
 To view the maximum GPU resource usage for a job, the command is:
 ```
 Usage:
-sacct -j <jobid> -pno JobID,TRESUsageInMax 
-
-positional arguments:
-  jobid                 Job ID to query.
-
-options:
-  -j <jobid>            Specifies the Slurm job ID you want information about.
-  -n                    Removes the header row from the output.
-  -o TRESUsageInMax     Chooses the output field(s). Here, you’re requesting to display maximum resource usage for a specific jobid.
+sacct -j <jobid> -pno JobID,TRESUsageInMax
 ```
+Arguments and Options:
+| Arguments | Description |
+| ------------- |------------|
+|`-j <jobid>` | Specifies the Slurm job ID you want information about. Here `jobid` is a positional argument. |
+|`-n` | Removes the header row from the output. |
+|`-o TRESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display maximum resource usage for a specific jobid. |
+
 In order to check the metrics for job 18194943, run: 
 ```
 $ sacct -j 18194943 -pno JobID,TRESUsageInMax 
@@ -304,23 +419,27 @@ This tells us:
 |`vmem` | Virtual memory used by the job. Includes RAM + swap + memory-mapped files. |
 
 ```{note} 
-`sacct` shows multiple entries for each job. The primary entry is the one with the `.batch` step, which reflects the actual workload and contains the meaningful resource-usage metrics. The `.extern` entry corresponds to Slurm’s lightweight setup step and will show minimal or negligible usage. Users should reference the `.batch` line when reviewing their job’s resource usage.
+The `sacct` command may display multiple entries for a single job, depending on how it was submitted and its job structure:
+- `.batch` step: Appears for jobs submitted via `sbatch` and reflects the actual workload of the batch script. This is typically the most relevant entry for CPU, memory, and GPU usage.
+- `.extern` step: A lightweight Slurm setup step that usually shows minimal resource usage.
+- Other job steps or tasks: Jobs submitted via `acompile`, `srun`, or as part of job arrays may not have a `.batch` entry, and each step/task may appear separately.
+
+When reviewing resource usage, users should generally focus on the steps that correspond to their actual workload, rather than relying on all entries indiscriminately.
 ```
 
 Similarly, to view the average GPU resource usage for a job
 ```
 Usage:
 sacct -j <jobid> -pno JobID,TRESUsageInAve --noconvert
-
-positional arguments:
-  jobid                 Job ID to query.
-
-options:
-  -j <jobid>            Filters the report to only show information for the specified job ID.
-  -n                    Removes the header row from the output.
-  -o TRESUsageInAve     Chooses the output field(s). Here, you’re requesting to display average resource usage metrics.
-  --noconvert           Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged.
 ```
+Arguments and Options:
+| Arguments | Description |
+| ------------- |------------|
+|`-j <jobid>` | Filters the report to only show information for the specified job ID. |
+|`-n` | Removes the header row from the output. |
+|`-o TRESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display maximum resource usage for a specific jobid. |
+|`--noconvert` | Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged. |
+
 In order to check average GPU metrics for job 18194943, run:
 ```
 $ sacct -j 18194943 -pno JobID,TRESUsageInAve --noconvert
@@ -334,13 +453,11 @@ This will display the output:
 --------------------------------------------------------
 ```
 This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of max usage.
-
-```{important}
-- GPU metrics are currently available only on select NVIDIA GPUs and require CUDA 12 or newer.
-- At this time, GPU memory and utilization metrics are not available on the following configurations: AMD GPUs, GH200s and MIG enables GPUs on Alpine, P100s and A40s on Blanca.
-- Core cluster GPUs (e.g., core-gpu[0-4], viz1, viz2), which power Core Desktop and MATLAB GUI, do not currently support GPU memory or utilization metrics.
-- Users running jobs on unsupported GPUs or older CUDA versions will see zeros or infinite values for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
+```{see also}
+If GPU memory or utilization values appear as zero or infinite, your job may be running on unsupported hardware.
+Refer to ["Why am I not seeing GPU memory or utilization metrics for my job?"](../getting-started/faq.md#why-am-I-not-seeing-GPU-memory-or-utilization-metrics-for-my-job) for details on supported GPUs, CUDA requirements, and known limitations.
 ```
+
 
 ## XDMoD 
  
