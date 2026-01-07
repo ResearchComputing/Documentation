@@ -227,6 +227,9 @@ This output tells us that:
 * One `L40` GPU was allocated, but maximum GPU utilization was 41%, with only ~874 MiB of GPU memory used, indicating the GPU was underutilized for much of the run.
 
 This information is also sent to users who include the `--mail` directive in jobs.
+```{seealso}
+Not all GPUs support report memory and utilization metrics in `seff` output. See ["Why am I not seeing GPU memory or utilization metrics for my job?"](../getting_started/faq.md#why-am-i-not-seeing-gpu-memory-or-utilization-metrics-for-my-job) for supported configurations and requirements.
+```
 
 ### How can I check the efficiency of array jobs?
 
@@ -450,6 +453,10 @@ This will display the output:
 --------------------------------------------------------
 ```
 This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of max usage.
+```{seealso}
+If GPU memory or utilization values appear as zero or infinite, your job may be running on unsupported hardware.
+Refer to ["Why am I not seeing GPU memory or utilization metrics for my job?"](../getting_started/faq.md#why-am-i-not-seeing-gpu-memory-or-utilization-metrics-for-my-job) for details on supported GPUs, CUDA requirements, and known limitations.
+```
 
 ## XDMoD 
  
