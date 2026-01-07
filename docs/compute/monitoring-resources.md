@@ -145,12 +145,15 @@ $ levelfs
 ```
 This will display the output:
 ```text
-Purpose: This function shows the current fair share priority of a specified user.
-A value of 1 indicates average priority compared to other users in an account.
-A value of < 1 indicates lower than average priority
-	(longer than average queue waits)
-A value of > 1 indicates higher than average priority
-	(shorter than average queue waits)
+Purpose: This function shows the current fair share priority of a specified user and their institution.
+A value of 1 indicates actual usage matches expected usage.
+A value of < 1 indicates actual usage is more than expected usage.
+        (longer than average queue waits)
+A value of > 1 indicates actual usage is less than expected usage
+        (shorter than average queue waits)
+Note: It is possible to have high priority in a given account
+      and low priority for your institution as a whole, and vise-versa.
+      Both numbers affect your queue wait times.
 
 Usage: levelfs [userid]
 Hint: levelfs ralphie
@@ -228,9 +231,8 @@ This output tells us that:
 * 21.25 GiB of RAM was used out of 76.00 GiB reserved (~28%), suggesting the job was not memory-bound and could likely run with a smaller memory request.
 * One `L40` GPU was allocated, but maximum GPU utilization was 41%, with only ~874 MiB of GPU memory used, indicating the GPU was underutilized for much of the run.
 
-This information is also sent to users who include the `--mail` directive in jobs.
 ```{seealso}
-Not all GPUs support report memory and utilization metrics in `seff` output. See ["Why am I not seeing GPU memory or utilization metrics for my job?"](../getting_started/faq.md#why-am-i-not-seeing-gpu-memory-or-utilization-metrics-for-my-job) for supported configurations and requirements.
+Not all GPUs support report memory and utilization metrics in `seff` output. See ["Why am I getting unexpected results for my GPU memory or utilization metrics?"](../getting_started/faq.md#why-am-i-getting-unexpected-gpu-results-for-my-gpu-memory-or-utilization-metrics) for supported configurations and requirements.
 ```
 
 ### How can I check the efficiency of array jobs?
@@ -392,8 +394,9 @@ Arguments and Options:
 | Arguments | Description |
 | ------------- |------------|
 |`-j <jobid>` | Specifies the Slurm job ID you want information about. Here `jobid` is a positional argument. |
-|`-n` | Removes the header row from the output. |
-|`-o TJobID,RESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display the JobID and maximum resource usage. |
+|`p` | Parsable; output will be delimited with a `|` at the end |
+|`n` | Removes the header row from the output. |
+|`o JobID,TRESUsageInMax` | Chooses the output field(s). Here, you’re requesting to display the JobID and maximum resource usage. |
 
 In order to check the metrics for job 18194943, run: 
 ```
@@ -436,8 +439,9 @@ Arguments and Options:
 | Arguments | Description |
 | ------------- |------------|
 |`-j <jobid>` | Filters the report to only show information for the specified job ID. |
-|`-n` | Removes the header row from the output. |
-|`-o JobID,TRESUsageInAve` | Chooses the output field(s). Here, you’re requesting to display the JobID and average resource usage. |
+|`p` | Parsable; output will be delimited with a `|` at the end |
+|`n` | Removes the header row from the output. |
+|`o JobID,TRESUsageInAve` | Chooses the output field(s). Here, you’re requesting to display the JobID and average resource usage. |
 |`--noconvert` | Prevents conversion of the units (e.g., MB → GB), ensuring raw data remains unchanged. |
 
 In order to check average GPU metrics for job 18194943, run:
@@ -455,7 +459,7 @@ This will display the output:
 This output contains the same fields as in the `TRESUsageInMax` example, but here they represent average usage instead of max usage.
 ```{seealso}
 If GPU memory or utilization values appear as zero or infinite, your job may be running on unsupported hardware.
-Refer to ["Why am I not seeing GPU memory or utilization metrics for my job?"](../getting_started/faq.md#why-am-i-not-seeing-gpu-memory-or-utilization-metrics-for-my-job) for details on supported GPUs, CUDA requirements, and known limitations.
+Refer to ["Why am I getting unexpected results for my GPU memory or utilization metrics?"](../getting_started/faq.md#why-am-i-getting-unexpected-gpu-results-for-my-gpu-memory-or-utilization-metrics) for details on supported GPUs, CUDA requirements, and known limitations.
 ```
 
 ## XDMoD 
