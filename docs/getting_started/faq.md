@@ -144,6 +144,29 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 
 ## General High Performance Computing
 
+### What is Arbiter2? 
+::::{dropdown} Show 
+:icon: note
+
+[Arbiter2](https://github.com/chpc-uofu/arbiter2) is a tool created by the University of Utah which allows us to monitor non-compute node resources for undesirable behavior. Currently, Arbiter2 is deployed on low resource hosts, such as login nodes, to detect work that consumes substantial CPU or memory resources. For a list of all hosts that Arbiter2 is deployed on, see the `Host` column in the table below. Work that can consume substantial resources are items such as installing/compiling software, running software applications, and modification of large files. 
+
+When a user goes over defined limits for a given amount of time (see the table below), the amount of resources they have available to them on the login nodes will be throttled for a certain period of time. Additionally, the user will be sent a no-reply email stating they have violated our usage policies. If a user continues to violate the usage policy, they will eventually go to higher penalty states that have more strict throttling. If behavior is corrected, the user will return to a normal status and their usage will not be throttled.
+
+
+| User Status | Resource Limit | Resource Threshold | Penalty Action Upon Threshold Exceeded | Duration of Penalty |
+| :--- | :--- | :--- | :--- | :--- |
+| **Normal** | **CPU:** 2 Virtual Cores<br>**Memory:** 2 GB | **Threshold Exceeded:** Any sustained usage above 50% of the limit (e.g., 1 Core / 1 GB) starts badness score accumulation. | Badness score starts to accumulate (typically leads to Penalty1 after a time period, e.g., 10 minutes) | N/A (Default State) |
+| **Penalty1** | **CPU:** 2 Virtual Cores (No Throttling)<br>**Memory:** 2 GB (No Throttling) | **Threshold Exceeded:** Any sustained usage above 50% of the limit continues to increase the badness score. | **Warning:** Processes are *not* throttled, but email notification is sent. | 30 minutes |
+| **Penalty2** | **CPU:** 1.2 Virtual Cores (60% of Normal)<br>**Memory:** 1.2 GB (60% of Normal) | **Threshold Exceeded:** Any sustained usage above 50% of the *new, lower limit* (e.g., 0.6 Cores / 0.6 GB) continues to increase the badness score. | **Throttling:** CPU-intensive processes are slowed. **Termination:** Processes exceeding the Memory limit are killed. | 60 minutes |
+| **Penalty3** | **CPU:** 0.4 Virtual Cores (20% of Normal)<br>**Memory:** 0.4 GB (20% of Normal) | **Threshold Exceeded:** Any sustained usage above 50% of the *new, severely reduced limit* (e.g., 0.2 Cores / 0.2 GB) maintains the severe penalty. | **Severe Throttling/Termination:** Further reduced limits; memory limit violations terminate processes. | 120 minutes |
+
+```{eval-rst}
+.. raw:: html
+    :file: ./faq_html/arbiter_penalty_table.html
+```
+
+::::
+
 ### How can I add users to a Linux group?
 ::::{dropdown} Show 
 :icon: note
