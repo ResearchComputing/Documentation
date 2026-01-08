@@ -7,12 +7,14 @@ In order to run a program on a cluster, you must request resources from Slurm to
 When you run a batch job or an interactive job, it will be placed in a queue until resources are available. 
 
 ```{seealso}
-Alpine provides four different hardware partitions that CURC users can run jobs on. Each partition has different offerings and configurations. See the [Alpine Hardware](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#alpine-hardware) page for determining which partition best supports your job's needs.
-``` 
-
-```{seealso}
 A detailed guide on the Slurm queue and accounting tools can be found in the [Useful Slurm Commands](slurm-commands.md) page.
 ```
+
+```{note}
+Alpine is a heterogeneous system, meaning compute nodes have different hardware configurations. Nodes with similar capabilities are grouped into partitions, each offering different resources.
+ When submitting a job, you must choose the partition that best supports your job’s needs. For more information, see the [Alpine Hardware](https://curc.readthedocs.io/en/latest/clusters/alpine/alpine-hardware.html#alpine-hardware) page.
+ ```
+
 
 ## Batch Jobs
 
