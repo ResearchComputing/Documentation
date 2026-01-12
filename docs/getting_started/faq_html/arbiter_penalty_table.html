@@ -1,128 +1,4 @@
-<!-- <style>
-  .arbiter-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    border: 1px solid #e1e4e8;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  .arbiter-table th {
-    background-color: #24292e;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 12px;
-    text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .arbiter-table td {
-    padding: 12px;
-    border-bottom: 1px solid #e1e4e8;
-    vertical-align: top;
-    line-height: 1.5;
-  }
-  /* Alternating row colors for readability */
-  .arbiter-table tr:hover {
-    background-color: #fcfcfc;
-  }
-  /* The Host Sidebar */
-  .host-cell {
-    background-color: #f6f8fa;
-    font-weight: bold;
-    color: #0366d6;
-    border-right: 2px solid #e1e4e8;
-    vertical-align: middle !important;
-    text-align: center;
-    font-size: 1.1em;
-  }
-  /* Status Badges */
-  .badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: bold;
-  }
-  .normal { background: #dafbe1; color: #1a7f37; border: 1px solid #bc8; }
-  .p1 { background: #fff8c5; color: #9a6700; border: 1px solid #ee0; }
-  .p2 { background: #ffebe9; color: #cf222e; border: 1px solid #f99; }
-  .p3 { background: #1f2328; color: #ffffff; }
-
-  .resource-code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    background: #f6f8fa;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 0.9em;
-  }
-</style>
-
-<table class="arbiter-table">
-  <thead>
-    <tr>
-      <th>Target Host(s)</th>
-      <th>User Status</th>
-      <th>Resource Limits</th>
-      <th>Penalty Action</th>
-      <th>Duration</th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <tr>
-      <td class="host-cell" rowspan="4">login-01<br>login-02</td>
-      <td><span class="badge normal">NORMAL</span></td>
-      <td><span class="resource-code">CPU: 2.0</span><br><span class="resource-code">MEM: 2GB</span></td>
-      <td>Monitoring usage. Badness accumulates if load > 50%.</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td><span class="badge p1">PENALTY 1</span></td>
-      <td><span class="resource-code">CPU: 2.0</span><br><span class="resource-code">MEM: 2GB</span></td>
-      <td><strong>Warning:</strong> Notification email sent to user.</td>
-      <td>30m</td>
-    </tr>
-    <tr>
-      <td><span class="badge p2">PENALTY 2</span></td>
-      <td><span class="resource-code">CPU: 1.2</span><br><span class="resource-code">MEM: 1.2GB</span></td>
-      <td><strong>Throttling:</strong> CPU usage restricted. Memory kills active.</td>
-      <td>60m</td>
-    </tr>
-    <tr>
-      <td><span class="badge p3">PENALTY 3</span></td>
-      <td><span class="resource-code">CPU: 0.4</span><br><span class="resource-code">MEM: 0.4GB</span></td>
-      <td><strong>Severe:</strong> Critical throttling and immediate termination.</td>
-      <td>120m</td>
-    </tr>
-  </tbody>
-
-  <tbody>
-    <tr>
-      <td class="host-cell" rowspan="2" style="border-top: 3px solid #e1e4e8;">viz-node-01</td>
-      <td style="border-top: 3px solid #e1e4e8;"><span class="badge normal">NORMAL</span></td>
-      <td style="border-top: 3px solid #e1e4e8;"><span class="resource-code">CPU: 8.0</span><br><span class="resource-code">MEM: 16GB</span></td>
-      <td style="border-top: 3px solid #e1e4e8;">High-resource node monitoring.</td>
-      <td style="border-top: 3px solid #e1e4e8;">--</td>
-    </tr>
-    <tr>
-      <td><span class="badge p2">PENALTY 2</span></td>
-      <td><span class="resource-code">CPU: 4.0</span><br><span class="resource-code">MEM: 8GB</span></td>
-      <td>Mid-tier throttling for visualization tasks.</td>
-      <td>45m</td>
-    </tr>
-  </tbody>
-</table> -->
-
 <style>
-  html[data-theme=dark] .arbiter-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-family: sans-serif;
-  /* Reapply necessary styles explicitly: */
-  border: 1px solid #ccc;
-  color: black;
-  } 
 
   /* Light theme variables */
   html[data-theme="light"] {
@@ -155,7 +31,7 @@
 
   .arbiter-table {
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
   font-family: sans-serif;
   /* Reapply necessary styles explicitly: */
   border: 1px solid #ccc;
@@ -169,42 +45,8 @@
     color: var(--text-color);
   }
   
-  .arbiter-table tr.category-data-integrity td {
+  .arbiter-table tr.category-login-nodes td {
     background-color: var(--color-data-integrity);
-    border: var(--border-weight) solid var(--border-color);
-    padding: 8px;
-    text-align: left;
-    color: var(--text-color);
-    font-size: 18px;
-  } 
-
-  .arbiter-table tr.category-data-limits td {
-    background-color: var(--color-data-limits);
-    border: var(--border-weight) solid var(--border-color);
-    padding: 8px;
-    text-align: left;
-    color: var(--text-color);
-    font-size: 18px;
-  } 
-
-  .arbiter-table tr.category-data-access td {
-    background-color: var(--color-data-access);
-    border: var(--border-weight) solid var(--border-color);
-    padding: 8px;
-    text-align: left;
-    color: var(--text-color);
-    font-size: 18px;
-  } 
-  .arbiter-table tr.category-data-transfer td {
-    background-color: var(--color-data-transfer);
-    border: var(--border-weight) solid var(--border-color);
-    padding: 8px;
-    text-align: left;
-    color: var(--text-color);
-    font-size: 18px;
-  } 
-  .arbiter-table tr.category-data-compression td {
-    background-color: var(--color-data-compression);
     border: var(--border-weight) solid var(--border-color);
     padding: 8px;
     text-align: left;
@@ -216,6 +58,19 @@
   text-align: center !important;
   }
 
+  /* Status Badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .normal { background: #dafbe1; color: black; border: 1px solid #bc8; }
+  .p1 { background: #fff8c5; color: black; border: 1px solid #ee0; }
+  .p2 { background: #fbac77; color: black; border: 1px solid #ff6600; }
+  .p3 { background: #ffebe9; color: black; border: 1px solid #f99; }
+
 </style>
 
 <table class="arbiter-table">
@@ -224,41 +79,36 @@
       <th rowspan="2">Host</th>
       <th rowspan="2">Penalty Status</th>
       <th rowspan="2">Resource Limit</th>
-      <th rowspan="2">Resource Threshold</th>
-      <th rowspan="2">Penalty Action Upon Threshold Exceeded</th>
+      <th rowspan="2">What happens when I exceed a resource limit?</th>
       <th rowspan="2">Duration of Penalty</th>
     </tr>
   </thead>
   <tbody>
     <!-- Data Integrity -->
-    <tr class="category-data-integrity">
+    <tr class="category-login-nodes">
       <td rowspan="6">login nodes</td>
-      <td>normal</td>
-      <td>CPU: 2 Virtual Cores Memory: 2 GB</td>
-      <td>Threshold Exceeded: Any sustained usage above 50% of the limit (e.g., 1 Core / 1 GB) starts badness score accumulation.</td>
-      <td>Badness score starts to accumulate (typically leads to Penalty1 after a time period, e.g., 10 minutes)</td>
-      <td>N/A (Default State)</td>
+      <td class="tier-cell"><span class="badge normal">normal</span></td>
+      <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
+      <td>When you exceed either or both thresholds for 10 minutes, .</td>
+      <td class="tier-cell">N/A</td>
     </tr>
-    <tr class="category-data-integrity">
-      <td>penalty1</td>
-      <td>CPU: 2 Virtual Cores (No Throttling) Memory: 2 GB (No Throttling)</td>
+    <tr class="category-login-nodes">
+      <td class="tier-cell"><span class="badge p1">penalty1</span></td>
+      <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
       <td>Threshold Exceeded: Any sustained usage above 50% of the limit continues to increase the badness score.</td>
-      <td>Warning: Processes are not throttled, but email notification is sent.</td>
-      <td>30 minutes</td>
+      <td class="tier-cell">30 minutes</td>
     </tr>
-    <tr class="category-data-integrity">
-      <td>penalty2</td>
-      <td>CPU: 1.2 Virtual Cores (60% of Normal) Memory: 1.2 GB (60% of Normal)</td>
+    <tr class="category-login-nodes">
+      <td class="tier-cell"><span class="badge p2">penalty2</span></td>
+      <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
       <td>Threshold Exceeded: Any sustained usage above 50% of the new, lower limit (e.g., 0.6 Cores / 0.6 GB) continues to increase the badness score.</td>
-      <td>Throttling: CPU-intensive processes are slowed. Termination: Processes exceeding the Memory limit are killed.</td>
-      <td>60 minutes</td>
+      <td class="tier-cell">60 minutes</td>
     </tr>
-    <tr class="category-data-integrity">
-      <td>penalty3</td>
-      <td>CPU: 0.4 Virtual Cores (20% of Normal) Memory: 0.4 GB (20% of Normal)</td>
-      <td>TThreshold Exceeded: Any sustained usage above 50% of the new, severely reduced limit (e.g., 0.2 Cores / 0.2 GB) maintains the severe penalty.</td>
-      <td>Severe Throttling/Termination: Further reduced limits; memory limit violations terminate processes.</td>
-      <td>120 minutes</td>
+    <tr class="category-login-nodes">
+      <td class="tier-cell"><span class="badge p3">penalty3</span></td>
+      <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
+      <td>Threshold Exceeded: Any sustained usage above 50% of the new, severely reduced limit (e.g., 0.2 Cores / 0.2 GB) maintains the severe penalty.</td>
+      <td class="tier-cell">120 minutes</td>
     </tr>
   </tbody>
 </table>
