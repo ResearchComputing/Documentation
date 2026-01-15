@@ -12,7 +12,7 @@ The primary flags we recommend users specify are the `partition` flag and the `t
 sinteractive --partition=amilan --time=00:10:00 --ntasks=1 --nodes=1 --qos=normal
 ```
 
-This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the amilan partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). When you are finished with your interactive job, you can end the session by typing `exit`. If you do not end your session, the interactive job will run for the full time requested, which will use up part of your allocation.
+This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the amilan partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you load the Python module using `module load python` and then type `python`, you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). When you are finished with your interactive job, you can end the session by typing `exit`. If you do not end your session, the interactive job will run for the full time requested, which will use up part of your allocation.
 
 ```{seealso}
 Check out this [page](job-resources.md) for a list of Slurm directives that can be used with interactive jobs.
