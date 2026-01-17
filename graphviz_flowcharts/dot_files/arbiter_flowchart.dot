@@ -13,7 +13,7 @@ digraph "" {
     { rank=same; NS; Exceed; Badness; }
 
     // --- ROW 4: Logic Gates ---
-    { rank=same; TooBad; Track; }
+    { rank=same; TooBad; BehFix; Track; }
 
     // --- ROW 5: Branching Outcomes ---
     { rank=same; Penalty1; NextPen; }
@@ -33,6 +33,7 @@ digraph "" {
     Exceed [label="Thresholds exceeded?", style="filled,dashed"]
     DoSomething [label="If penalty occurrences > 0,\nstart the timer; at zero,\nreduce penalty occurrences\nby 1, repeating until zero.", fontsize="10"]
     Badness [label="Badness accumulates"]
+    BehFix [label="Below thresholds?", style="filled,dashed"]
     TooBad [label="Has badness\nreached 100?", style="filled,dashed"]
     Track [label="Do you have >0\npenalty occurrences?", style="filled,dashed"]
     Penalty1 [label="penalty1 state\nassigned"]
@@ -49,8 +50,12 @@ digraph "" {
     // Use constraint=false to point UP to the top row without pulling the chart apart
     Exceed -> DoSomething [label="  No"]
     Exceed -> Badness [label="Yes"]
-    
+
+    Badness -> BehFix
     Badness -> TooBad
+    
+    BehFix  -> Badness [label="  No"]
+    BehFix  -> BadnessFed [label="  Yes"]
     TooBad -> Track [label="Yes", constraint=false]
     
     Track -> Penalty1 [label=" No"]
