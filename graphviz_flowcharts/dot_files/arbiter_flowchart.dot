@@ -23,7 +23,7 @@ digraph "" {
     { rank=same; DurationEnded; }
 
     // --- ROW 7: State Management ---
-    { rank=same; StayIn; BadnessFed; }
+    { rank=same; BadnessFed; }
 
     // --- ROW 8: Final Check ---
     { rank=same; BadAtZero; }
@@ -40,7 +40,6 @@ digraph "" {
     SentEmail [label="Warning email sent\nand resources throttled"]
     DurationTimer [label="Penalty duration\ntimer starts"]
     DurationEnded [label="Has the penalty\nduration ended?", style="filled,dashed"]
-    StayIn [label="Remain in\npenalty state"]
     BadnessFed [label="Badness begins\nto reduce"]
     BadAtZero [label="Is badness\nat zero?", style="filled,dashed"]
 
@@ -52,7 +51,6 @@ digraph "" {
     Exceed -> Badness [label="Yes"]
     
     Badness -> TooBad
-    TooBad -> Badness [label="  No"]
     TooBad -> Track [label="Yes", constraint=false]
     
     Track -> Penalty1 [label=" No"]
@@ -64,11 +62,10 @@ digraph "" {
     SentEmail -> DurationTimer [constraint=false]
     DurationTimer -> DurationEnded
     
-    DurationEnded -> StayIn [label=" No"]
     DurationEnded -> BadnessFed [label=" Yes"]
     
     BadnessFed -> BadAtZero
-    BadAtZero -> BadnessFed [label="  No"]
+    BadnessFed -> Exceed
     
     // Loop back to start
     BadAtZero -> NS [label="  Yes"]
