@@ -1,0 +1,75 @@
+digraph "" {
+    bgcolor="transparent";
+    graph [id="doc-flowchart", rankdir=TB, nodesep=0.5, ranksep=0.4, bgcolor="none"];
+
+    // Node Styling
+    node [fontname="Verdana", fontsize="16", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white", shape=ellipse];
+    edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5", fontsize="14", fontcolor="#CFB87C"];
+
+    // --- ROW 0: The solitary top node ---
+    { rank=source; DoSomething; }
+
+    // --- ROW 1: The Start ---
+    { rank=same; NS; Exceed; Badness; }
+
+    // --- ROW 4: Logic Gates ---
+    { rank=same; TooBad; Track; }
+
+    // --- ROW 5: Branching Outcomes ---
+    { rank=same; Penalty1; NextPen; }
+
+    // --- ROW 6: Post-Penalty Actions ---
+    { rank=same; SentEmail; DurationTimer; }
+    { rank=same; DurationEnded; }
+
+    // --- ROW 7: State Management ---
+    { rank=same; StayIn; BadnessFed; }
+
+    // --- ROW 8: Final Check ---
+    { rank=same; BadAtZero; }
+
+    // Nodes
+    NS [label="normal state"]
+    Exceed [label="Thresholds exceeded?", style="filled,dashed"]
+    DoSomething [label="If penalty occurrences > 0,\nstart the timer; at zero,\nreduce penalty occurrences\nby 1, repeating until zero.", fontsize="10"]
+    Badness [label="Badness accumulates"]
+    TooBad [label="Has badness\nreached 100?", style="filled,dashed"]
+    Track [label="Do you have >0\npenalty occurrences?", style="filled,dashed"]
+    Penalty1 [label="penalty1 state\nassigned"]
+    NextPen [label="Penalty state\nincreased by 1"]
+    SentEmail [label="Warning email sent\nand resources throttled"]
+    DurationTimer [label="Penalty duration\ntimer starts"]
+    DurationEnded [label="Has the penalty\nduration ended?", style="filled,dashed"]
+    StayIn [label="Remain in\npenalty state"]
+    BadnessFed [label="Badness begins\nto reduce"]
+    BadAtZero [label="Is badness\nat zero?", style="filled,dashed"]
+
+    // Flow Logic
+    NS -> Exceed
+    
+    // Use constraint=false to point UP to the top row without pulling the chart apart
+    Exceed -> DoSomething [label="  No"]
+    Exceed -> Badness [label="Yes"]
+    
+    Badness -> TooBad
+    TooBad -> Badness [label="  No"]
+    TooBad -> Track [label="Yes", constraint=false]
+    
+    Track -> Penalty1 [label=" No"]
+    Track -> NextPen [label=" Yes"]
+    
+    Penalty1 -> SentEmail
+    NextPen -> SentEmail
+    
+    SentEmail -> DurationTimer [constraint=false]
+    DurationTimer -> DurationEnded
+    
+    DurationEnded -> StayIn [label=" No"]
+    DurationEnded -> BadnessFed [label=" Yes"]
+    
+    BadnessFed -> BadAtZero
+    BadAtZero -> BadnessFed [label="  No"]
+    
+    // Loop back to start
+    BadAtZero -> NS [label="  Yes"]
+}

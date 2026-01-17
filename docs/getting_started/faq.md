@@ -148,23 +148,34 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 ::::{dropdown} Show 
 :icon: note
 
-[Arbiter2](https://github.com/chpc-uofu/arbiter2) is a tool created by the University of Utah which allows us to monitor non-compute node resources for undesirable behavior. Currently, Arbiter2 is deployed on low resource hosts, such as login nodes, to detect work that consumes substantial CPU or memory resources. Work that can consume substantial resources are items such as installing/compiling software, running software applications, and modification of large files. For a list of all hosts that Arbiter2 is deployed on, see the `Host` column in the table below. 
+[Arbiter2](https://github.com/chpc-uofu/arbiter2) is a tool created by the University of Utah that allows us to monitor non-compute node resources for undesirable behavior. For an in-depth explanation of how Arbiter2 works, please see the official paper ["Arbiter: Dynamically Limiting Resource Consumption on Login Nodes"](https://dl.acm.org/doi/10.1145/3332186.3333043). Currently, Arbiter2 is deployed on low resource hosts, such as login nodes, to detect work that consumes substantial CPU or memory resources. Work that can consume substantial resources are items such as installing/compiling software, running software applications, and modification of large files. For a list of all hosts that Arbiter2 is deployed on, see the `Host` column in the table below. 
 
-When a user goes over the resource threshold, the user will accrue what is called "badness". When a user accrues a badness of 100, the user will be moved into the next penalty state for a defined amount of time. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. If the user adjusts their work so that they are under the threshold and they have not reached a badness of 100, then their badness will reduce. Once a user enters a penalty state, they will stay in that penalty state for a specified duration. If the thresholds are not violated while in a penalty state, then the user will return to a normal state after the penalty duration.  
+In general, when a user goes over a defined resource threshold, the user will accrue what is called "badness", which is a value between 0 and 100. When a user accrues a badness of 100, the user will be moved into the next penalty state for a defined amount of time and receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration. Once this duration ends, the user has adjusted their work so that they are under the threshold, and they have reached a badness of 0, then their resources will return to a normal state (i.e. no throttling will be applied). For a list of threshold values and durations for each penalty state, see table below. 
 
-Note that once you return to a normal state, you may not move sequentially through the penalty state, if you have violated the penalties multiple times. For example, you can go from a normal state to a penalty3 state, if you have ... 
+```{important}
+- Arbiter2 keeps track of the penalty state the user was last in. This means that if the user accrues a badness of 100 shortly after they returned to a normal state, they could potentially be moved into a higher penalty state, rather than sequentially going through the penalties. 
+- Arbiter2 is currently setup to track work across all login nodes. For this reason, the user's state will be the same on all login nodes. 
+- Resource limits, duration of penalty, and the time it takes to get moved into the next penalty state may change over time as we adjust Arbiter2 to fit the needs of the system and users. Please refer to this FAQ in the future for the most up-to-date information.
+```
 
-
- For the threshold values and durations for each penalty state, please refer to the table below. Additionally, the user will be sent a no-reply email stating they have violated our usage policies. If a user continues to violate the usage policy, they will eventually go to higher penalty states that have more strict throttling. If behavior is corrected, the user will return to a normal status and their usage will not be throttled.
 ```{eval-rst}
 .. raw:: html
     :file: ./faq_html/arbiter_penalty_table.html
 ```
 
-```{important}
-The information above for resource limits, duration of penalty, and the time it takes to get moved into the next penalty state may change over time as we adjust Arbiter2 to fit the needs of the system and users. Please refer to this FAQ in the future for the most up-to-date information. 
-```
+```{eval-rst}
+.. raw:: html
 
+   <br>
+   <div class="flowchart-container" style="width: 80%; height: 40%; margin: auto;">
+
+.. raw:: html
+   :file: ../../graphviz_flowcharts/generated_images/arbiter_flowchart.svg
+
+.. raw:: html
+
+   </div>
+```
 
 ::::
 
