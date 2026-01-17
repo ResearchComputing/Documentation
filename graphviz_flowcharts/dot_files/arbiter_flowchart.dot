@@ -38,7 +38,7 @@ digraph "" {
     Track [label="Do you have >0\npenalty occurrences?", style="filled,dashed"]
     Penalty1 [label="penalty1 state\nassigned"]
     NextPen [label="Penalty state\nincreased by 1"]
-    SentEmail [label="Warning email sent\nand resources throttled"]
+    SentEmail [label="Warning email sent, penalty\noccurrences increases by 1,\nand resources throttled"]
     DurationTimer [label="Penalty duration\ntimer starts"]
     DurationEnded [label="Has the penalty\nduration ended?", style="filled,dashed"]
     BadnessFed [label="Badness begins\nto reduce"]
