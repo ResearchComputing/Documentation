@@ -127,7 +127,6 @@ Before requesting a software installation, please review our [Software installat
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
 | [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](./containerization.md#apptainer)|
-| [Slurmtools](../compute/monitoring-resources.md#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
 | [SQLite](https://sqlite.org/index.html) | 3.36.0, 3.38.01, 3.46.1 |SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.| 
 | [SRA-Toolkit](https://hpc.nih.gov/apps/sratoolkit.html) | 3.0.0 | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.| 
 | [STAR](https://github.com/alexdobin/STAR/tree/master) | 2.7.10b | A tool to align RNA-seq data. The STAR algorithm uses suffix arrays, seed clustering, and stitching.| 
