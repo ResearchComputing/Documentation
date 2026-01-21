@@ -42,6 +42,7 @@ myst_substitutions = {
    'alpine_ucb_total_64_core_256GB_cpu_nodes_atesting': '2',
    'alpine_ucb_total_atesting_a100_gpu_nodes': '1',
    'alpine_ucb_total_atesting_mi100_gpu_nodes': '1',
+   'alpine_ucb_total_dtn_nodes': '4',
    ## AMC contributions
    'alpine_amc_total_64_core_256GB_cpu_nodes': '26', 
    'alpine_amc_total_64_core_1TB_cpu_nodes': '2',  
@@ -65,7 +66,7 @@ myst_substitutions = {
    'alpine_total_atesting_cpu_nodes': '2',
    'alpine_total_atesting_a100_nodes': '1',
    'alpine_total_atesting_mi100_nodes': '1',
-
+   'alpine_total_dtn_nodes': '4',
    # Alpine Array Jobs
    'alpine_max_number_array_jobs' : '1,000'
 }
