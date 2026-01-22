@@ -1,6 +1,6 @@
 digraph "" {
     bgcolor="transparent";
-    graph [id="doc-flowchart", rankdir=TB, nodesep=0.7, ranksep=0.7, bgcolor="none", splines=ortho];
+    graph [id="doc-flowchart", rankdir=TB, nodesep=0.7, ranksep=0.8, bgcolor="none", splines=ortho];
 
     // Node Styling
     node [fontname="Verdana", fontsize="16", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white", shape=ellipse];
@@ -13,13 +13,10 @@ digraph "" {
     { rank=same; NS; Exceed; Badness; }
 
     // --- ROW 5: Branching Outcomes ---
-    { rank=same; Track; TooBad; }
-
-    { rank=same; Penalty1; NextPen; } 
+    { rank=same; TooBad; }
 
     // --- ROW 6: Post-Penalty Actions ---
     { rank=same; DurationEnded; SentEmail; DurationTimer; }
-    // { rank=same; DurationEnded; }
 
     // Nodes
     NS [label="normal state"]
@@ -28,10 +25,7 @@ digraph "" {
     Badness [label="Badness accumulates"]
     BehFix [label="Below usage\nthresholds?", style="filled,dashed"]
     TooBad [label="Has badness\nreached 100?", style="filled,dashed"]
-    Track [label="Do you have >0\npenalty occurrences?", style="filled,dashed"]
-    Penalty1 [label="penalty1 state\nassigned"]
-    NextPen [label="Penalty state\nincreased by 1"]
-    SentEmail [label="Warning email sent, penalty\noccurrences increases by 1,\nand resources throttled"]
+    SentEmail [label="Warning email sent, penalty\noccurrences increases by 1,\n penalty state assigned,\nand resources throttled"]
     DurationTimer [label="Penalty duration\ntimer counts down"]
     DurationEnded [label="Has the penalty\nduration ended?", style="filled,dashed"]
     BadnessRed [label="Badness reduces"]
@@ -49,15 +43,9 @@ digraph "" {
     
     BehFix  -> Badness [xlabel="  No"]
     BehFix  -> BadnessRed [label="Yes", constraint=false]
-    TooBad -> Track [label="Yes", constraint=false]
     TooBad -> Badness [xlabel="No  "]
-    
-    Track -> Penalty1 [xlabel=" No"]
-    Track -> NextPen [xlabel="Yes  "]
-    
-    Penalty1 -> SentEmail
-    NextPen -> SentEmail
-    
+    TooBad -> SentEmail [xlabel="Yes  "]
+
     SentEmail -> DurationTimer [constraint=false]
     DurationTimer -> DurationEnded [constraint=false]
     

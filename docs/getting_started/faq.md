@@ -169,12 +169,9 @@ For those interested, we will now provide details on how Arbiter2 works, which i
 | Time to max baddness | The amount of time spent over a threshold that will trigger an increase in penalty occurrences. Currently, this value is set to 10 minutes | 
 | Time to min baddness | The amount of time spent under all thresholds to go from 100 to 0 badness. Currently, this value is set to 30 minutes | 
 
-In general, when a user goes over the resource threshold, the user will accrue badness. When a user accrues a badness of 100, the user's penalty occurrences will be incremented by 1, they will then be moved into the penalty state based on the penalty occurrences, and they will receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration. 
+In general, when a user goes over a CPU or memory threshold, the user will accrue badness. When a user accrues a badness of 100, the user's penalty occurrences will be incremented by 1, they will then be moved into the penalty state based on the penalty occurrences, and they will receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration. 
 
-Once the penalty state duration ends, the user will be placed back into the normal state (i.e. no throttling will be applied). If a user is in a normal state and does not accrue badness, their penalty occurrences will reduce by 1 after the penalty occurrence timer reaches zero. To improve 
-
-
-For a list of threshold values and durations for each penalty state, see the table below. Below we also provide a flowchart for the logic provided here to 
+Once the penalty state duration ends, the user will be placed back into the normal state (i.e. no throttling will be applied). If a user is in a normal state and does not accrue badness, their penalty occurrences will reduce by 1 after the penalty occurrence timer reaches zero. For a list of threshold values and durations for each penalty state, see the table below. Additionally, below we provide a flowchart representation for the logic Arbiter2 uses to put a user in a normal or penalty state. 
 
 ```{eval-rst}
 .. raw:: html
