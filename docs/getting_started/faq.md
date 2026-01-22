@@ -148,20 +148,33 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 ::::{dropdown} Show 
 :icon: note
 
-[Arbiter2](https://github.com/chpc-uofu/arbiter2) is a tool created by the University of Utah that allows us to monitor non-compute node resources for undesirable behavior. For an in-depth explanation of how Arbiter2 works, please see the official paper ["Arbiter: Dynamically Limiting Resource Consumption on Login Nodes"](https://dl.acm.org/doi/10.1145/3332186.3333043). Currently, Arbiter2 is deployed on low resource hosts, such as login nodes, to detect work that consumes substantial CPU or memory resources. Work that can consume substantial resources are items such as installing/compiling software, running software applications, and modification of large files. For a list of all hosts that Arbiter2 is deployed on, see the `Host` column in the table below. 
-
-In general, when a user goes over a defined resource threshold, the user will accrue what is called "badness", which is a value between 0 and 100. When a user accrues a badness of 100, the user will be moved into the next penalty state (for a defined amount of time), "penalty occurrences" will increment by one, and they will receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration. Once this duration ends, the user has adjusted their work so that they are under the threshold, and they have reached a badness of 0, then their resources will return to a normal state (i.e. no throttling will be applied). If a user is in a normal state and does not accrue badness, their penalty occurrences will reduce by 1 after a defined duration. For a list of threshold values and durations for each penalty state, see the table below. Below we also provide a flowchart for the logic provided here to 
+[Arbiter2](https://github.com/chpc-uofu/arbiter2) is a tool created by the University of Utah that allows us to monitor non-compute node resources for undesirable behavior. For an in-depth explanation of how Arbiter2 works, please see the official paper ["Arbiter: Dynamically Limiting Resource Consumption on Login Nodes"](https://dl.acm.org/doi/10.1145/3332186.3333043) (for a general overview, please see the remaining content in this FAQ). Currently, Arbiter2 is deployed on low resource hosts, such as login nodes, to detect work that consumes substantial CPU or memory resources. Work that can consume substantial resources are items such as installing/compiling software, running software applications, and modification of large files. For a list of all hosts that Arbiter2 is deployed on, see the `Host` column in the table below. 
 
 ```{important}
-- Arbiter2 keeps track of the penalty state the user was last in. This means that if the user accrues a badness of 100 shortly after they returned to a normal state, they could potentially be moved into a higher penalty state, rather than sequentially going through the penalties. 
 - Arbiter2 is currently setup to track work across all login nodes. For this reason, the user's state will be the same on all login nodes. 
-- Resource limits, duration of penalty, and the time it takes to get moved into the next penalty state may change over time as we adjust Arbiter2 to fit the needs of the system and users. Please refer to this FAQ in the future for the most up-to-date information.
+- Hosts that utilize Arbiter2 and Arbiter2 configuration values may change over time, as we adjust Arbiter2 to fit the needs of the system and users. Please refer to this FAQ in the future for the most up-to-date information.
 ```
 
-```{eval-rst}
-.. raw:: html
-    :file: ./faq_html/arbiter_penalty_table.html
-```
+For those interested, we will now provide details on how Arbiter2 works, which includes how penalty states are applied. Before we get started, it is important to define some Arbiter2 terms. Please review the following table before proceeding. 
+
+| Term                   | Description                                    | 
+| :---------------------- | :--------------------------------------------- | 
+| badness  | A value between 0 and 100 that accrues when a user exceeds defined resource thresholds  |
+| normal state         | | 
+| Penalty state         | | 
+| Penalty occurrences      |  | 
+| Penalty occurrences timer    |  | 
+cpu_badness_threshold = 0.75
+mem_badness_threshold = 0.75
+time_to_max_bad = 60  # 10 minutes
+time_to_min_bad = 220  # 30 minutes
+
+In general, when a user goes over the resource threshold, the user will accrue badness. When a user accrues a badness of 100, the user's penalty occurrences will be incremented by 1, they will then be moved into the penalty state based on the penalty occurrences, and they will receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration. 
+
+Once the penalty state duration ends, the user will be placed back into the normal state (i.e. no throttling will be applied). If a user is in a normal state and does not accrue badness, their penalty occurrences will reduce by 1 after the penalty occurrence timer reaches zero. To improve 
+
+
+For a list of threshold values and durations for each penalty state, see the table below. Below we also provide a flowchart for the logic provided here to 
 
 ```{eval-rst}
 .. raw:: html
@@ -175,6 +188,10 @@ In general, when a user goes over a defined resource threshold, the user will ac
 .. raw:: html
 
    </div>
+   <br>
+
+.. raw:: html
+    :file: ./faq_html/arbiter_penalty_table.html
 ```
 
 ::::

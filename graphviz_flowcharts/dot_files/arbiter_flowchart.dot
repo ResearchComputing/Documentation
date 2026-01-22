@@ -24,7 +24,7 @@ digraph "" {
     // Nodes
     NS [label="normal state"]
     Exceed [label="Usage thresholds\nexceeded?", style="filled,dashed"]
-    DoSomething [label="If penalty occurrences > 0,\nstart the timer; at zero,\nreduce penalty occurrences\nby 1, repeating until zero.", fontsize="13"]
+    DoSomething [label="If penalty occurrences > 0,\nstart penalty occurrences timer;\n at zero, reduce penalty occurrences\nby 1, repeating until zero.", fontsize="13"]
     Badness [label="Badness accumulates"]
     BehFix [label="Below usage\nthresholds?", style="filled,dashed"]
     TooBad [label="Has badness\nreached 100?", style="filled,dashed"]
@@ -61,7 +61,7 @@ digraph "" {
     SentEmail -> DurationTimer [constraint=false]
     DurationTimer -> DurationEnded [constraint=false]
     
-    DurationEnded -> NS [xlabel=" Yes"]
+    DurationEnded -> NS [xlabel="Yes  "]
     DurationEnded -> DurationTimer [xlabel=" No", constraint=false]
     
     BadnessRed -> Exceed
