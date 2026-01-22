@@ -1,77 +1,68 @@
 digraph "" {
     bgcolor="transparent";
-    graph [id="doc-flowchart", rankdir=TB, nodesep=0.5, ranksep=0.4, bgcolor="none"];
+    graph [id="doc-flowchart", rankdir=TB, nodesep=0.7, ranksep=0.7, bgcolor="none", splines=ortho];
 
     // Node Styling
     node [fontname="Verdana", fontsize="16", color="#CFB87C", style="filled", fillcolor="#121212", penwidth="2", fontcolor="white", shape=ellipse];
     edge [color="#CFB87C", fillcolor="#121212", penwidth="1.5", fontsize="14", fontcolor="#CFB87C"];
 
     // --- ROW 0: The solitary top node ---
-    { rank=source; DoSomething; }
+    { rank=source; DoSomething; BadnessRed; BehFix;}
 
     // --- ROW 1: The Start ---
     { rank=same; NS; Exceed; Badness; }
 
-    // --- ROW 4: Logic Gates ---
-    { rank=same; TooBad; BehFix; Track; }
-
     // --- ROW 5: Branching Outcomes ---
-    { rank=same; Penalty1; NextPen; }
+    { rank=same; Track; TooBad; }
+
+    { rank=same; Penalty1; NextPen; } 
 
     // --- ROW 6: Post-Penalty Actions ---
-    { rank=same; SentEmail; DurationTimer; }
-    { rank=same; DurationEnded; }
-
-    // --- ROW 7: State Management ---
-    { rank=same; BadnessFed; }
-
-    // --- ROW 8: Final Check ---
-    { rank=same; BadAtZero; }
+    { rank=same; DurationEnded; SentEmail; DurationTimer; }
+    // { rank=same; DurationEnded; }
 
     // Nodes
     NS [label="normal state"]
-    Exceed [label="Thresholds exceeded?", style="filled,dashed"]
-    DoSomething [label="If penalty occurrences > 0,\nstart the timer; at zero,\nreduce penalty occurrences\nby 1, repeating until zero.", fontsize="10"]
+    Exceed [label="Usage thresholds\nexceeded?", style="filled,dashed"]
+    DoSomething [label="If penalty occurrences > 0,\nstart the timer; at zero,\nreduce penalty occurrences\nby 1, repeating until zero.", fontsize="13"]
     Badness [label="Badness accumulates"]
-    BehFix [label="Below thresholds?", style="filled,dashed"]
+    BehFix [label="Below usage\nthresholds?", style="filled,dashed"]
     TooBad [label="Has badness\nreached 100?", style="filled,dashed"]
     Track [label="Do you have >0\npenalty occurrences?", style="filled,dashed"]
     Penalty1 [label="penalty1 state\nassigned"]
     NextPen [label="Penalty state\nincreased by 1"]
     SentEmail [label="Warning email sent, penalty\noccurrences increases by 1,\nand resources throttled"]
-    DurationTimer [label="Penalty duration\ntimer starts"]
+    DurationTimer [label="Penalty duration\ntimer counts down"]
     DurationEnded [label="Has the penalty\nduration ended?", style="filled,dashed"]
-    BadnessFed [label="Badness begins\nto reduce"]
-    BadAtZero [label="Is badness\nat zero?", style="filled,dashed"]
+    BadnessRed [label="Badness reduces"]
 
     // Flow Logic
     NS -> Exceed
+    NS -> DoSomething 
     
     // Use constraint=false to point UP to the top row without pulling the chart apart
-    Exceed -> DoSomething [label="  No"]
+    Exceed -> NS [xlabel="  No", constraint=false]
     Exceed -> Badness [label="Yes"]
 
     Badness -> BehFix
     Badness -> TooBad
     
-    BehFix  -> Badness [label="  No"]
-    BehFix  -> BadnessFed [label="  Yes"]
+    BehFix  -> Badness [xlabel="  No"]
+    BehFix  -> BadnessRed [label="Yes", constraint=false]
     TooBad -> Track [label="Yes", constraint=false]
+    TooBad -> Badness [xlabel="No  "]
     
-    Track -> Penalty1 [label=" No"]
-    Track -> NextPen [label=" Yes"]
+    Track -> Penalty1 [xlabel=" No"]
+    Track -> NextPen [xlabel="Yes  "]
     
     Penalty1 -> SentEmail
     NextPen -> SentEmail
     
     SentEmail -> DurationTimer [constraint=false]
-    DurationTimer -> DurationEnded
+    DurationTimer -> DurationEnded [constraint=false]
     
-    DurationEnded -> BadnessFed [label=" Yes"]
+    DurationEnded -> NS [xlabel=" Yes"]
+    DurationEnded -> DurationTimer [xlabel=" No", constraint=false]
     
-    BadnessFed -> BadAtZero
-    BadnessFed -> Exceed
-    
-    // Loop back to start
-    BadAtZero -> NS [label="  Yes"]
+    BadnessRed -> Exceed
 }

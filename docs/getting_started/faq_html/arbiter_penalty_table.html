@@ -78,7 +78,7 @@
     <tr style="text-align: center;">
       <th rowspan="2">Host</th>
       <th rowspan="2">Penalty Status</th>
-      <th rowspan="2">Resource Limit</th>
+      <th rowspan="2">Resource usage maximum</th>
       <th rowspan="2">What happens when I exceed a resource limit?</th>
       <th rowspan="2">Duration of Penalty</th>
     </tr>
@@ -88,26 +88,26 @@
     <tr class="category-login-nodes">
       <td rowspan="6">login nodes</td>
       <td class="tier-cell"><span class="badge normal">normal</span></td>
-      <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
-      <td>When you exceed either or both thresholds for 10 minutes, .</td>
+      <td class="tier-cell">4 CPU cores <br> 4 GB of RAM</td>
+      <td>After utilizing 3 CPU cores and or 3 GB of RAM for 10 minutes, the user will be placed into a  <span class="badge p1">penalty1</span> state and their penalty occurrences will increment by 1.</td>
       <td class="tier-cell">N/A</td>
     </tr>
     <tr class="category-login-nodes">
       <td class="tier-cell"><span class="badge p1">penalty1</span></td>
-      <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
-      <td>Threshold Exceeded: Any sustained usage above 50% of the limit continues to increase the badness score.</td>
+      <td class="tier-cell">3 CPU cores <br> 3 GB of RAM</td>
+      <td>After 10 minutes, above the resource usage threshold, the user will be placed into a  <span class="badge p2">penalty2</span> state and their penalty occurrences will increment by 1.</td>
       <td class="tier-cell">30 minutes</td>
     </tr>
     <tr class="category-login-nodes">
       <td class="tier-cell"><span class="badge p2">penalty2</span></td>
       <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
-      <td>Threshold Exceeded: Any sustained usage above 50% of the new, lower limit (e.g., 0.6 Cores / 0.6 GB) continues to increase the badness score.</td>
+      <td>After 10 minutes, above a threshold, the user will be placed into a  <span class="badge p3">penalty3</span> state and their penalty occurrences will increment by 1.</td>
       <td class="tier-cell">60 minutes</td>
     </tr>
     <tr class="category-login-nodes">
       <td class="tier-cell"><span class="badge p3">penalty3</span></td>
       <td class="tier-cell">2 CPU cores <br> 2 GB of RAM</td>
-      <td>Threshold Exceeded: Any sustained usage above 50% of the new, severely reduced limit (e.g., 0.2 Cores / 0.2 GB) maintains the severe penalty.</td>
+      <td>After 10 minutes, above a threshold, the user will remain in the <span class="badge p3">penalty3</span> state and their penalty occurrences will increment by 1.</td>
       <td class="tier-cell">120 minutes</td>
     </tr>
   </tbody>
