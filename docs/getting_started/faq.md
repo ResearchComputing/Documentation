@@ -160,14 +160,14 @@ For those interested, we will now provide details on how Arbiter2 works, which i
 | Term                   | Description                                    | 
 | :---------------------- | :--------------------------------------------- | 
 | badness  | A value between 0 and 100 that accrues when a user exceeds defined resource thresholds  |
-| normal state         | | 
-| Penalty state         | | 
-| Penalty occurrences      |  | 
-| Penalty occurrences timer    |  | 
-cpu_badness_threshold = 0.75
-mem_badness_threshold = 0.75
-time_to_max_bad = 60  # 10 minutes
-time_to_min_bad = 220  # 30 minutes
+| normal state         | The default user state that has the maximum amount of CPU and memory resources| 
+| Penalty state         | A user state with CPU and memory constraints applied | 
+| Penalty occurrences      | A variable that is used to determine what penalty state the user should be put in (see the table below for penalty state and penalty occurrences mapping) | 
+| Penalty occurrences timer    | A variable that defines how long the user must be in the normal state before their penalty occurrences is reduced by 1 | 
+| CPU threshold | A threshold percentage of normal-state CPU capacity that triggers badness accumulation. With the value set to `0.75` and `4` CPUs available in the normal state, badness begins accumulating when usage exceeds `3` CPUs (`4 × 0.75`). |
+| Memory threshold | A threshold percentage of normal-state memory (RAM) capacity that triggers badness accumulation. With the value set to `0.75` and `4 GB` of memory available in the normal state, badness begins accumulating when usage exceeds `3 GB` (`4 × 0.75`).
+| Time to max baddness | The amount of time spent over a threshold that will trigger an increase in penalty occurrences. Currently, this value is set to 10 minutes | 
+| Time to min baddness | The amount of time spent under all thresholds to go from 100 to 0 badness. Currently, this value is set to 30 minutes | 
 
 In general, when a user goes over the resource threshold, the user will accrue badness. When a user accrues a badness of 100, the user's penalty occurrences will be incremented by 1, they will then be moved into the penalty state based on the penalty occurrences, and they will receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration. 
 
