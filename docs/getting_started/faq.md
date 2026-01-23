@@ -186,7 +186,7 @@ Once the penalty state duration ends, the user will be placed back into the norm
 
 ```{note}
 When a user attempts to use more resources than their "Resource usage maximum" they will experience the following:
-- If they are using more CPUs, they will see that their CPU usage will automatically be throttled such that their CPU usage is below the maximum
+- If they are using more CPUs, they will see that their CPU usage will automatically be throttled below the maximum CPU usage
 - If they are trying to use more memory, their program will be automatically killed once they go over their memory usage maximum
 ```
 
