@@ -108,6 +108,15 @@ acompile -X
 
 From here, you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
 
+For example, to load Matlab, use the following commands:
+
+```
+module load matlab
+matlab
+```
+Shortly after running `matlab` the Matlab software should load and appear on your screen. See the example image below for reference.
+![](./interactive_jobs_images/matlab_GUI.png)
+
 
 
 
