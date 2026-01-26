@@ -153,41 +153,9 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 ```{important}
 - Arbiter2 currently monitors all CURC login nodes. For this reason, a user's state will be the same across all of  the login nodes. This means that if your account is placed in a penalty state on one login node, it will still be in a penalty state on the other login nodes. 
 - Where and how Arbiter2 is deployed may change over time. This is due to adjustments we may need to make so that Arbiter2 fits the needs of the system and users. Please refer to this FAQ for the most up-to-date information.
-```
-
-For those interested, we will now provide details on how Arbiter2 works, which includes how penalty states are applied. Before we get started, it is important to define some Arbiter2 terms. Please review the table of terms in the dropdown below before proceeding. 
-
-:::{dropdown} Show Arbiter2 terms
-:icon: note
-| Term                   | Description                                    | 
-| :---------------------- | :--------------------------------------------- | 
-| badness  | A value between 0 and 100 that accrues when a user exceeds defined resource thresholds.  |
-| normal state         | The default user state that has the maximum amount of CPU and memory resources.| 
-| Penalty state         | A user state with CPU and memory constraints applied. | 
-| Penalty occurrences      | A variable that is used to determine what penalty state the user should be put in (see the table below for penalty state and penalty occurrences mapping) | 
-| Penalty occurrences timer    | A variable that defines how long the user must be in the normal state before their penalty occurrences are reduced by 1. We currently set this value to `3 hours`.  | 
-| CPU threshold | A threshold percentage of normal-state CPU capacity that triggers badness accumulation. We set this value to `0.75`. Since there are `4` CPUs available in the normal state, badness begins accumulating when usage exceeds `3` CPUs (`4 × 0.75`). |
-| Memory threshold | A threshold percentage of normal-state memory (RAM) capacity that triggers badness accumulation. We set this value to `0.75`. Since there is `4GB` of memory available in the normal state, badness begins accumulating when usage exceeds `3GB` (`4 × 0.75`). |
-| Time to max baddness | The amount of time spent over a threshold that will result in 100 badness and trigger an increase in penalty occurrences. Currently, this value is set to `10 minutes`. | 
-| Time to min baddness | The amount of time spent under all thresholds to go from 100 to 0 badness. Currently, this value is set to `30 minutes`. | 
-:::
-In general, when a user goes over a CPU or memory threshold, the user will accrue badness. When a user accrues a badness of 100, the user's penalty occurrences will be incremented by 1, they will be moved into the penalty state corresponding to their penalty occurrences, and they will receive a no-reply warning email. Once in a penalty state, the amount of resources they have available to them on the host will be reduced (i.e. throttled) based on the penalty state they are in. They will stay in this penalty state for a set duration.
-
-Once the penalty state duration ends, the user will be placed back into the normal state (i.e. no throttling will be applied). If a user is in a normal state, their penalty occurrences will reduce by 1 after the penalty occurrence timer reaches zero. If a user has more than 1 penalty occurrences, the penalty occurrence timer will restart after reaching zero and repeat until the number of penalty occurrences reaches zero. For a list of threshold values and durations for each penalty state, see the table below. Additionally, in the dropdown below we provide a flowchart representation for the logic Arbiter2 uses to put a user in a normal or penalty state. 
-
-:::{dropdown} Show flowchart depiction of Arbiter2
-:icon: note
-```{eval-rst}
-.. raw:: html
-   :file: ../../graphviz_flowcharts/generated_images/arbiter_flowchart.svg
-
-```
-:::
-
-```{note}
-When a user's processes attempt to use too many compute resources than they run the risk of the following: 
-- If the processes are using too many CPUs, then the user's account will start to experience throttling of its CPU usage.
-- If the processes are using too much memory, the processes may be killed to prevent further over usage of memory.
+- When a user's processes attempt to use too many compute resources than they run the risk of the following: 
+    - If the processes are using too many CPUs, then the user's account will start to experience throttling of its CPU usage.
+    - If the processes are using too much memory, the processes may be killed to prevent further over usage of memory.
 ```
 
 ```{eval-rst}
