@@ -185,9 +185,9 @@ Once the penalty state duration ends, the user will be placed back into the norm
 :::
 
 ```{note}
-When a user attempts to use more resources than their "Resource usage maximum" they will experience the following:
-- If they are using more CPUs, they will see that their CPU usage will automatically be throttled below the maximum CPU usage
-- If they are trying to use more memory, their program will be automatically killed once they go over their memory usage maximum
+When a user's processes attempt to use too many compute resources than they run the risk of the following: 
+- If the processes are using too many CPUs, then the user's account will start to experience throttling of its CPU usage.
+- If the processes are using too much memory, the processes may be killed to prevent further over usage of memory.
 ```
 
 ```{eval-rst}
