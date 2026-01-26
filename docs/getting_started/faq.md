@@ -152,7 +152,7 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 
 ```{important}
 - Arbiter2 currently monitors all CURC login nodes. For this reason, a user's state will be the same across all of  the login nodes. This means that if your account is placed in a penalty state on one login node, it will still be in a penalty state on the other login nodes. 
-- Chosen configuration values (e.g. thresholds) and where Arbiter2 is deployed may change over time. This is due to adjustments we may need to make so that Arbiter2 fits the needs of the system and users. Please refer to this FAQ in the future for the most up-to-date information.
+- Where and how Arbiter2 is deployed may change over time. This is due to adjustments we may need to make so that Arbiter2 fits the needs of the system and users. Please refer to this FAQ for the most up-to-date information.
 ```
 
 For those interested, we will now provide details on how Arbiter2 works, which includes how penalty states are applied. Before we get started, it is important to define some Arbiter2 terms. Please review the table of terms in the dropdown below before proceeding. 
