@@ -157,6 +157,10 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 - If a user's processes use more memory than they are allotted, the processes will be automatically killed. 
 ```
 
+`````{admonition} Attention
+:class: danger
+Please note that the maximum values listed are intended to support intermittent spikes in demand for resources, not sustained usage. These hosts are a shared resource, so please be considerate of others and use the compute nodes whenever possible.
+`````
 ```{eval-rst}
 .. raw:: html
     :file: ./faq_html/arbiter_penalty_table.html
