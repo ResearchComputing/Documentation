@@ -92,6 +92,10 @@ html[data-theme=light] .graph#doc-flowchart .node text {
     fill: black; 
 }
 
+html[data-theme=light] .graph#doc-flowchart .edge text {
+    fill: black; 
+}
+
 .bd-content .sd-tab-set .sd-tab-content {
     padding: 1.5rem;
 }
