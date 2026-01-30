@@ -114,7 +114,7 @@ Once your interactive session has started, you can launch GUI-based applications
 module load matlab
 matlab
 ```
-Shortly after running `matlab` the Matlab software should load and appear on your screen. See the example image below for reference.
+This will start MATLAB on the allocated compute node and display the interface on your local machine via X11 forwarding. The MATLAB window should appear shortly after the command is executed. See the example image below for reference.
 ![](./interactive_jobs_images/matlab_GUI.png)
 
 
