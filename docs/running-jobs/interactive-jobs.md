@@ -115,6 +115,7 @@ module load matlab
 matlab
 ```
 This will start MATLAB on the allocated compute node and display the interface on your local machine via X11 forwarding. The MATLAB window should appear shortly after the command is executed. See the example image below for reference.
+
 ![](./interactive_jobs_images/matlab_GUI.png)
 
 
