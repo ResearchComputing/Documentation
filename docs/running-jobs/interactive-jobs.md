@@ -108,7 +108,7 @@ acompile -X
 
 From here, you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
 
-For example, to load Matlab, use the following commands:
+Once your interactive session has started, you can launch GUI-based applications such as MATLAB. For example:
 
 ```
 module load matlab
