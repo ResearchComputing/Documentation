@@ -1,0 +1,109 @@
+<style>
+
+  /* Light theme variables */
+  html[data-theme="light"] {
+    --header-color: #91bff0; 
+    --color-data-integrity: #dfdddd;
+    --color-data-limits: #f2f2f2;
+    --color-data-access: #dfdddd;
+    --color-data-transfer: #f2f2f2;
+    --color-data-compression: #dfdddd;
+    --border-color: black; 
+    --text-color: black;
+    --header-border-weight: 2px;
+    --border-weight: 2px;
+  }
+
+  /* Dark theme variables */
+  html[data-theme="dark"] {
+    --header-color: var(--pst-color-surface); 
+    --color-data-integrity: var(--pst-color-on-background);
+    --color-data-limits: var(--pst-color-surface);
+    --color-data-access: var(--pst-color-on-background);
+    --color-data-transfer: var(--pst-color-surface);
+    --color-data-compression: var(--pst-color-on-background);
+    --border-color: #CFB87C; 
+    --text-color: white; 
+    --header-border-weight: 0.1px;
+    --border-weight: 0.1px; 
+  }
+
+
+  .arbiter-table {
+  border-collapse: collapse;
+  width: 90%;
+  font-family: sans-serif;
+  /* Reapply necessary styles explicitly: */
+  border: 1px solid #ccc;
+  } 
+
+  .arbiter-table th {
+    background-color: var(--header-color); /* light blue for headers */
+    border: var(--header-border-weight) solid var(--border-color);
+    padding: 8px;
+    font-size: 22px;
+    color: var(--text-color);
+  }
+  
+  .arbiter-table tr.category-login-nodes td {
+    background-color: var(--color-data-integrity);
+    border: var(--border-weight) solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 18px;
+  } 
+
+  .arbiter-table td.tier-cell {
+  text-align: center !important;
+  }
+
+  /* Status Badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .normal { background: #dafbe1; color: black; border: 1px solid #bc8; }
+  .p1 { background: #fff8c5; color: black; border: 1px solid #ee0; }
+  .p2 { background: #fbac77; color: black; border: 1px solid #ff6600; }
+  .p3 { background: #ffebe9; color: black; border: 1px solid #f99; }
+
+</style>
+
+<table class="arbiter-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th rowspan="2">Host</th>
+      <th rowspan="2">Penalty State</th>
+      <th rowspan="2">Maximum User<br>Resource Allocation</th>
+      <th rowspan="2">Duration of Penalty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Data Integrity -->
+    <tr class="category-login-nodes">
+      <td rowspan="6">login nodes</td>
+      <td class="tier-cell"><span class="badge normal">normal</span></td>
+      <td class="tier-cell">4 CPU cores<br>4 GB of RAM</td>
+      <td class="tier-cell">N/A</td>
+    </tr>
+    <tr class="category-login-nodes">
+      <td class="tier-cell"><span class="badge p1">penalty1</span></td>
+      <td class="tier-cell">3.2 CPU cores<br>3.2 GB of RAM </td>
+      <td class="tier-cell">30 minutes</td>
+    </tr>
+    <tr class="category-login-nodes">
+      <td class="tier-cell"><span class="badge p2">penalty2</span></td>
+      <td class="tier-cell">2 CPU cores<br>2 GB of RAM</td>
+      <td class="tier-cell">1 hour</td>
+    </tr>
+    <tr class="category-login-nodes">
+      <td class="tier-cell"><span class="badge p3">penalty3</span></td>
+      <td class="tier-cell">1.2 CPU cores<br>1.2 GB of RAM</td>
+      <td class="tier-cell">2 hours</td>
+    </tr>
+  </tbody>
+</table>
