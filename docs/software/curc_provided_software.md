@@ -82,8 +82,6 @@ Before requesting a software installation, please review our [Software installat
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 22July25, 2Aug23, 29Sept21, 29Sept2021_update3, 29Sept21, 29Sept2021_update3.1.1 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4, 4.9.2 (D) | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2, 7.0.0 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
-| [Linaro DDT (formerly Allinea DDT)](https://www.linaroforge.com/linaro-ddt/) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
-| [Linaro Forge (formerly Arm Forge)](https://www.linaroforge.com/) | 19.1.3, 24.0.4 | Linaro Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
 | [Load Balancer](./loadbalancer.md) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
 | [Mamba](https://mamba.readthedocs.io/) | 24.11.3-0 | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. Please see our [Mamba Package Manager](./python.md#mamba-package-manager) section for more details.| 
 | [Mathematica](https://www.wolfram.com/mathematica/) | 9.0, 11.1.0 (D) | A software system with built-in libraries for several areas of technical computing. | 
