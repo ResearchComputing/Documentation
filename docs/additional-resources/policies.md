@@ -59,32 +59,37 @@ violation of this policy without notice. Repeated violations by the same user ma
 
 ## Software installations
 
-CURC will perform software installations for users of CURC resources in a globally accessible module stack provided:
+CURC will perform requested software installations for users in a globally accessible module stack provided all the following conditions are met:
 
-- A user requires a specified software that is unavailable on the current stack.
-- A user requires a different version of a currently existing software which provides additional functionality required for the 
-user’s work.
-- The user provides all of the relevant information including release, version, etc.
-- The installation will not violate the software’s User Agreement policy.
-- The installation is not better suited for a local install (e.g. Anaconda environments or Apptainer containers).
+* The software is needed by multiple users across more than one group or laboratory.
 
-Furthermore, licensed/proprietary software are subject to the following requirements:
+* The software is unavailable in the current module stack, or the user requires a different version of a software package currently in the module stack. The user provides all relevant information including release, version, installation instructions and other relevant documentation.
 
-- The user has access to a license that is valid for cluster usage.
-- The license can be installed on the cluster or accessed from the cluster if it is hosted on a license server.
+* The software complies with CU Boulder Office of Information Technology software and security policies
 
-Software accepted to be installed will be given an estimated installation time based on team capacity and urgency of the request. 
-Note that this time is an estimation and not a hard-set deadline. Installed software will be available to load with a module in 
-the ‘User Software’ category in the software stack. Unused modules will be pruned after 12 months without usage. Any pruned module 
-may be restored by user request.
+* The software complies with CURC policies, including but not limited to CURC User Policies.
 
-Core software such as compilers, MPIs, and relevant libraries will be updated at regular intervals. A different version of these 
-core software can be requested at any point, but installation may be performed in accordance to that timeline.
+* The software does not require user-specific configurations, packages, and/or other features that would make it better suited for local installation under individual user accounts.
 
-All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that 
-is requested on CURC resources.
+* The user has confirmed that the software has not already been installed by a colleague in their laboratory. In this case, the colleague may request that CURC grant the user access to the software installation.
 
-To request a software installation, please follow the instructions provided under the FAQ [How can I submit a software installation request?](../getting_started/faq.md#how-can-i-submit-a-software-installation-request) dropdown.
+* The software is compatible with CURC’s Linux-based operating system. Furthermore, if the software is licensed for use by the user’s laboratory or department, the following requirements must be met: the user has confirmed the use of the software on CURC resources adheres to the software license agreement, as well as the licensed software requirements in the CU Boulder Office of Information Technology software policy.  
+
+* The license is valid for cluster-wide usage; i.e., it is not restricted to a single node (aka “machine”, “computer”, or “workstation”).
+
+* If the license is a “floating license”, the user is responsible for hosting and maintaining the license server and ensuring the server is accessible from CURC systems.
+
+If the above requirements are not fully met, CURC will discuss alternatives with the user, such as installing the software in a location that is only accessible to the user’s group (e.g., a group-owned PetaLibrary allocation), or installing the software on a virtual machine hosted by a commercial or academic cloud provider.
+
+Software accepted to be installed will be given an estimated installation time based on team capacity and urgency of the request. Note that this time is an estimation and not a hard-set deadline. All software installations are “Best Effort” and are not guaranteed. RC reserves the right to deny any software installation that is requested on CURC resources.
+
+Core software such as compilers, MPIs, and relevant libraries will be updated at regular intervals. A different version of these core software packages can be requested at any point, but the installation timeframe will be subject to team capacity and build requirements.
+
+Unused modules may be pruned after 12 months without usage. Any pruned module may be restored by user request with sufficient justification. 
+
+CURC reserves the right to remove software that is not in compliance with CU Boulder Office of Information Technology  software or security policies.
+
+To request a software installation, please follow the instructions provided under the FAQ How can I submit a software installation request? dropdown.
 
 <br>
 
