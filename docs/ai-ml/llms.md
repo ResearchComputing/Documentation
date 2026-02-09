@@ -35,8 +35,8 @@ For the Ollama framework, we provide the following models:
     - Requires about 5 GB of GPU memory 
 - `embeddinggemma:latest`
     - An open-source embedding model from Google 
-    - Only used for turning text data into a numerical vector representation 
-    - Requires about 1 GB of GPU memory
+    - Used for turning text data into a numerical vector representation 
+    - Requires approximately 1 GB of GPU memory
     
 If you are using your own installation of Ollama and would like to use a CURC-provided model, you should set the Ollama model path as follows:
 ```
