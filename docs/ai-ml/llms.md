@@ -33,6 +33,10 @@ For the Ollama framework, we provide the following models:
     - An open-source model from Meta
     - This model has been quantized using the Q4_K_M format
     - Requires about 5 GB of GPU memory 
+- `embeddinggemma:latest`
+    - An open-source embedding model from Google 
+    - Used for turning text data into a numerical vector representation 
+    - Requires approximately 1 GB of GPU memory
     
 If you are using your own installation of Ollama and would like to use a CURC-provided model, you should set the Ollama model path as follows:
 ```
@@ -125,21 +129,30 @@ Below we provide detailed instructions for users who want to install their own v
 
 ## Ollama install 
 
-To begin, let's create a directory specifically for the version of Ollama that we want to install (here we choose version `v0.11.10`):
+To begin, let's create a directory specifically for the version of Ollama that we want to install (here we choose version `v0.15.4`):
 ```
-export ollama_v="v0.11.10"
+export ollama_v="v0.15.4"
 mkdir -p /projects/$USER/ollama/$ollama_v
 cd /projects/$USER/ollama/$ollama_v
 ```
 ```{tip}
 For available versions, consult [Ollama's release page](https://github.com/ollama/ollama/releases).
 ```
-Now, we grab the Ollama binary for this version:
+Now, we grab the Ollama binary and libraries for this version:
+```
+curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64.tar.zst
+tar --use-compress-program=unzstd -xf ollama-linux-amd64.tar.zst
+rm ollama-linux-amd64.tar.zst
+```
+:::{tip}
+Older Ollama versions were not compressed with `zst`. If you are trying to install one of these older versions that has the file extension `tgz`, you can obtain the binary and libraries as follows: 
 ```
 curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64.tgz 
 tar -xzf ollama-linux-amd64.tgz
 rm ollama-linux-amd64.tgz
 ```
+:::
+
 After execution, these commands should create a `bin` and `lib` directory containing our Ollama binary and associated libraries, respectively.
 
 ## Setting up the Ollama install 
@@ -154,7 +167,7 @@ For non-testing workflows, users should request NVIDIA GPUs using the `aa100` pa
 
 Now that we have a session started, we will export important environment variables using the `ollama_v` variable we established in the previous section. 
 ```
-export ollama_v="v0.11.10"
+export ollama_v="v0.15.4"
 export PATH=/projects/$USER/ollama/$ollama_v/bin:$PATH
 export LD_LIBRARY_PATH=/projects/$USER/ollama/$ollama_v/lib:$LD_LIBRARY_PATH
 export OLLAMA_TMPDIR=$SCRATCHDIR/$USER/ollama_temp
