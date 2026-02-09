@@ -138,12 +138,21 @@ cd /projects/$USER/ollama/$ollama_v
 ```{tip}
 For available versions, consult [Ollama's release page](https://github.com/ollama/ollama/releases).
 ```
-Now, we grab the Ollama binary for this version:
+Now, we grab the Ollama binary and libraries for this version:
 ```
 curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64.tar.zst
 tar --use-compress-program=unzstd -xf ollama-linux-amd64.tar.zst
 rm ollama-linux-amd64.tar.zst
 ```
+:::{tip}
+Older Ollama versions were not compressed with `zst`. If you are trying to install one of these older versions that has the file extension `tgz`, you can obtain the binary and libraries as follows: 
+```
+curl -LO https://github.com/ollama/ollama/releases/download/${ollama_v}/ollama-linux-amd64.tgz 
+tar -xzf ollama-linux-amd64.tgz
+rm ollama-linux-amd64.tgz
+```
+:::
+
 After execution, these commands should create a `bin` and `lib` directory containing our Ollama binary and associated libraries, respectively.
 
 ## Setting up the Ollama install 
