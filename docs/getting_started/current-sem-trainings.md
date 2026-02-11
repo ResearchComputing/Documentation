@@ -20,14 +20,20 @@ Click the name of a training to view more details and register!
 - [Four Ways to GPU Computing (NVIDIA-led)](https://colorado.libcal.com/calendar/events/gpucomputing) - **February 4, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/containers) - **February 5, 10am, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/setting_up_llms) - **February 6, 11am, Virtual (Zoom)**
-- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions<sup><a href="#footnote-1">[1]</a></sup> (February 11, February 25, March 11, March 25, April 8), 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 1 of 5: Introduction to Machine Learning and AI:  What is it and why we do we need it?](https://markiiisys.zoom.us/webinar/register/WN_ltk4b-f3T8GD1c_I5qZOXA) - **February 11, 2pm, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **February 18, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Mark III AI Education Series - Part 2 of 5: Introduction to Deep Learning: An Introduction to Neural Networks](https://markiiisys.zoom.us/webinar/register/WN_AVSeHDgJT_2VUqWEaCgEww) - **February 25, 2pm, Virtual (Zoom)**
 - [Lunch-n-Learn: Sharing data across institutions with PetaLibrary and Globus (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/globus) - **February 27, 12pm, Virtual (Zoom)**
 
 ### **March 2026**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **March 5, 11am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/acceleration) - **March 6, 10:30am, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 3 of 5: Introduction to Datasets](https://markiiisys.zoom.us/webinar/register/WN_zewAt2GTSL2cdVvgWwTnFQ) - **March 11, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 4 of 5: Introduction to Computer Vision](https://markiiisys.zoom.us/webinar/register/WN_6QT2fr5aTQmRtk5jKTv1yg) - **March 25, 2pm, Virtual (Zoom)**
+
+### **April 2026**
+- [Mark III AI Education Series - Part 5 of 5: Introduction to Large Language Models (LLMs)](https://markiiisys.zoom.us/webinar/register/WN_mJsc9x4bQQuz7gtussSETQ) - **April 8, 2pm, Virtual (Zoom)**
 
 ````
 
@@ -52,7 +58,11 @@ Click the name of a training to view more details and register!
 
 ### **AI/ML**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/setting_up_llms) - **February 6, 11am, Virtual (Zoom)**
-- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions<sup><a href="#footnote-1">[1]</a></sup>  (February 11, February 25, March 11, March 25, April 8), 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 1 of 5: Introduction to Machine Learning and AI:  What is it and why we do we need it?](https://markiiisys.zoom.us/webinar/register/WN_ltk4b-f3T8GD1c_I5qZOXA) - **February 11, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 2 of 5: Introduction to Deep Learning: An Introduction to Neural Networks](https://markiiisys.zoom.us/webinar/register/WN_AVSeHDgJT_2VUqWEaCgEww) - **February 25, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 3 of 5: Introduction to Datasets](https://markiiisys.zoom.us/webinar/register/WN_zewAt2GTSL2cdVvgWwTnFQ) - **March 11, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 4 of 5: Introduction to Computer Vision](https://markiiisys.zoom.us/webinar/register/WN_6QT2fr5aTQmRtk5jKTv1yg) - **March 25, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 5 of 5: Introduction to Large Language Models (LLMs)](https://markiiisys.zoom.us/webinar/register/WN_mJsc9x4bQQuz7gtussSETQ) - **April 8, 2pm, Virtual (Zoom)**
 
 ````
 
@@ -69,11 +79,15 @@ Click the name of a training to view more details and register!
 - [Four Ways to GPU Computing (NVIDIA-led)](https://colorado.libcal.com/calendar/events/gpucomputing) - **February 4, 10am, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (an RC Short Course)](https://colorado.libcal.com/calendar/events/containers) - **February 5, 10am, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (an RC Short Course)](https://colorado.libcal.com/calendar/events/setting_up_llms) - **February 6, 11am, Virtual (Zoom)**
-- [Mark III AI Education Series](https://trending.markiiisys.com/cu-nvidia-aiseries) - **Five 1-hour bi-weekly sessions<sup><a href="#footnote-1">[1]</a></sup> (February 11, February 25, March 11, March 25, April 8), 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 1 of 5: Introduction to Machine Learning and AI:  What is it and why we do we need it?](https://markiiisys.zoom.us/webinar/register/WN_ltk4b-f3T8GD1c_I5qZOXA) - **February 11, 2pm, Virtual (Zoom)**
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **February 18, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Mark III AI Education Series - Part 2 of 5: Introduction to Deep Learning: An Introduction to Neural Networks](https://markiiisys.zoom.us/webinar/register/WN_AVSeHDgJT_2VUqWEaCgEww) - **February 25, 2pm, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **March 5, 11am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/acceleration) - **March 6, 10:30am, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 3 of 5: Introduction to Datasets](https://markiiisys.zoom.us/webinar/register/WN_zewAt2GTSL2cdVvgWwTnFQ) - **March 11, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 4 of 5: Introduction to Computer Vision](https://markiiisys.zoom.us/webinar/register/WN_6QT2fr5aTQmRtk5jKTv1yg) - **March 25, 2pm, Virtual (Zoom)**
+- [Mark III AI Education Series - Part 5 of 5: Introduction to Large Language Models (LLMs)](https://markiiisys.zoom.us/webinar/register/WN_mJsc9x4bQQuz7gtussSETQ) - **April 8, 2pm, Virtual (Zoom)**
 
 
 ````
