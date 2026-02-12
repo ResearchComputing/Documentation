@@ -33,5 +33,6 @@ This is where jobs are executed after being passed to the scheduler.
 
 ## Data Transfer Nodes
 * Data Transfer Nodes (DTNs) are nodes which support [data transfer](data-transfer.md#data-transfer) on CURC systems. 
-* When transferring files using `scp`, `sftp`, or `ssh`, you can choose to host your transfers on a DTN.
+* When transferring data to/from CURC using `scp`, `sftp`, `rsync` or `Rclone`, you can choose to conduct your transfers on a DTN regardless of whether you initiate the transfer external to CURC or internal to CURC.
+* If you are working internal to CURC, the Alpine [dtn partition](../clusters/alpine/alpine-hardware.md#dtn-usage-examples) provides a convenient way to start data transfer jobs on the DTNs from CURC clusters.
 
