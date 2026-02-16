@@ -27,6 +27,7 @@ Click the name of a training to view more details and register!
 - [Lunch-n-Learn: Sharing data across institutions with PetaLibrary and Globus (an RC Quick Byte)](https://colorado.libcal.com/calendar/events/globus) - **February 27, 12pm, Virtual (Zoom)**
 
 ### **March 2026**
+- [Workshop (with AWS): Introduction to AWS for Research Computing Immersion Day](https://colorado.libcal.com/calendar/events/AWSimmersion) - **March 4, 1pm, Hybrid (Norlin Library E206/Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **March 5, 11am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/acceleration) - **March 6, 10:30am, Virtual (Zoom)**
 - [Mark III AI Education Series - Part 3 of 5: Introduction to Datasets](https://markiiisys.zoom.us/webinar/register/WN_zewAt2GTSL2cdVvgWwTnFQ) - **March 11, 2pm, Virtual (Zoom)**
@@ -64,6 +65,9 @@ Click the name of a training to view more details and register!
 - [Mark III AI Education Series - Part 4 of 5: Introduction to Computer Vision](https://markiiisys.zoom.us/webinar/register/WN_6QT2fr5aTQmRtk5jKTv1yg) - **March 25, 2pm, Virtual (Zoom)**
 - [Mark III AI Education Series - Part 5 of 5: Introduction to Large Language Models (LLMs)](https://markiiisys.zoom.us/webinar/register/WN_mJsc9x4bQQuz7gtussSETQ) - **April 8, 2pm, Virtual (Zoom)**
 
+### **AWS**
+- [Workshop (with AWS): Introduction to AWS for Research Computing Immersion Day](https://colorado.libcal.com/calendar/events/AWSimmersion) - **March 4, 1pm, Hybrid (Norlin Library E206/Zoom)**
+
 ````
 
 ````{tab-item} By Difficulty
@@ -83,6 +87,7 @@ Click the name of a training to view more details and register!
 - [Scaling Your Research: Parallelization Made Easy (an RC Primer)](https://colorado.libcal.com/calendar/events/parallelization) - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Git & GitHub In-depth (an RC Short Course)](https://colorado.libcal.com/calendar/events/git) - **February 18, 11am, Hybrid (Norlin Library E206/Zoom)**
 - [Mark III AI Education Series - Part 2 of 5: Introduction to Deep Learning: An Introduction to Neural Networks](https://markiiisys.zoom.us/webinar/register/WN_AVSeHDgJT_2VUqWEaCgEww) - **February 25, 2pm, Virtual (Zoom)**
+- [Workshop (with AWS): Introduction to AWS for Research Computing Immersion Day](https://colorado.libcal.com/calendar/events/AWSimmersion) - **March 4, 1pm, Hybrid (Norlin Library E206/Zoom)**
 - [AlphaFold3 on Alpine (RC Short Course)](https://colorado.libcal.com/calendar/events/alphafold3) - **March 5, 11am, Virtual (Zoom)**
 - [Introduction to GPU Acceleration on Alpine (an RC Primer)](https://colorado.libcal.com/calendar/events/acceleration) - **March 6, 10:30am, Virtual (Zoom)**
 - [Mark III AI Education Series - Part 3 of 5: Introduction to Datasets](https://markiiisys.zoom.us/webinar/register/WN_zewAt2GTSL2cdVvgWwTnFQ) - **March 11, 2pm, Virtual (Zoom)**
