@@ -24,7 +24,7 @@ You will receive an email from <registry@cilogon.org> inviting you to enroll in 
 
 ![](./amc_ssh_images/email_invitation.png)
 
-Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so complete all of [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry), [Step 2](#step-2-generate-an-ssh-key) and [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) before closing your browser tab.__ 
+Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so be sure to complete [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry), [Step 2](#step-2-generate-an-ssh-key) and [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) before closing your browser tab.__ 
 
 ![](./amc_ssh_images/accept_invitation.png)
 
