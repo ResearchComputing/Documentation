@@ -20,7 +20,7 @@ Step 3: Learn to use PetaLibrary via this documentation.
 
 ```{note}
 * Minimum allocation size: 1 TB
-* Maximum _initial_ allocation size for new customers: 200 T, pending availability.
+* Maximum _initial_ allocation size for new customers: 200 TB, pending availability.
 ```
 
 ## Requirements
