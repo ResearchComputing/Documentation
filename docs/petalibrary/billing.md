@@ -8,9 +8,9 @@ and end dates are prorated to the nearest whole month per the annual rate.
 The University of Colorado fiscal year begins on July 1 and ends on June 30. Therefore, for new allocations or mid-year changes to allocations, we will bill through the end of the current fiscal year. For annual renewals, we will bill for the entire fiscal year unless you inform us otherwise.
 
 ### Special circumstances
-If you have grant start and end dates that do not line up with the university fiscal year, we will break up the time period based on the start and end dates of the fiscal year, and handle billing in two transactions, each within the appropriate fiscal year.
+If your grant start and end dates conflict with our fiscal year billing process, please reach out to discuss options. 
 
-In all but the rarest circumstances, we will not bill for PetaLibrary services across multiple fiscal years due to the complexity it creates for our Finance, Planning & Procurement office. If you have grant constraints that demand that billing will occur across multiple fiscal years, such as a multi-year grant that may be depleted of funds near the end of the grant period, please let us know and we will do our best to make things work. 
+In all but the rarest circumstances, we will not bill for PetaLibrary services across multiple fiscal years due to the complexity it creates for our Finance, Planning & Procurement office. If you have grant constraints that demand that billing occur across multiple fiscal years, such as a multi-year grant that may be depleted of funds near the end of the grant period, please reach out to discuss options.
 
 ## Invoicing
 
