@@ -11,11 +11,12 @@
   /* Light theme variables */
   html[data-theme="light"] {
     --header-color: #91bff0; 
-    --color-data-integrity: #dfdddd;
-    --color-data-limits: #f2f2f2;
-    --color-data-access: #dfdddd;
-    --color-data-transfer: #f2f2f2;
-    --color-data-compression: #dfdddd;
+    --color-data-rates: #dfdddd;
+    --color-data-integrity: #f2f2f2;
+    --color-data-limits: #dfdddd;
+    --color-data-access: #f2f2f2;
+    --color-data-transfer: #dfdddd;
+    --color-data-compression: #f2f2f2;
     --border-color: black; 
     --text-color: black;
     --header-border-weight: 2px;
@@ -25,11 +26,12 @@
   /* Dark theme variables */
   html[data-theme="dark"] {
     --header-color: var(--pst-color-surface); 
-    --color-data-integrity: var(--pst-color-on-background);
-    --color-data-limits: var(--pst-color-surface);
-    --color-data-access: var(--pst-color-on-background);
-    --color-data-transfer: var(--pst-color-surface);
-    --color-data-compression: var(--pst-color-on-background);
+    --color-data-rates: var(--pst-color-on-background);
+    --color-data-integrity: var(--pst-color-surface);
+    --color-data-limits: var(--pst-color-on-background);
+    --color-data-access: var(--pst-color-surface);
+    --color-data-transfer: var(--pst-color-on-background);
+    --color-data-compression: var(--pst-color-surface);
     --border-color: #CFB87C; 
     --text-color: white; 
     --header-border-weight: 0.1px;
@@ -53,6 +55,15 @@
     color: var(--text-color);
   }
   
+  .alloc-table tr.category-data-rates td {
+    background-color: var(--color-data-rates);
+    border: var(--border-weight) solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 18px;
+  } 
+
   .alloc-table tr.category-data-integrity td {
     background-color: var(--color-data-integrity);
     border: var(--border-weight) solid var(--border-color);
@@ -117,6 +128,24 @@
     </tr>
   </thead>
   <tbody>
+
+    <!-- Rates -->
+    <tr class="category-data-rates">
+      <td rowspan="2">Rates per TB per year</td>
+      <td>CU System (FY26)</td>
+      <td class="tier-cell">$45</td>
+      <td class="tier-cell">$25</td>
+      <td class="tier-cell">$70</td>
+      <td class="tier-cell">$41</td>
+    </tr>
+    <tr class="category-data-rates">
+      <td>External (FY26)</td>
+      <td class="tier-cell">$115</td>
+      <td class="tier-cell">$75</td>
+      <td class="tier-cell">N/A</td>
+      <td class="tier-cell">N/A</td>
+    </tr>
+
     <!-- Data Integrity -->
     <tr class="category-data-integrity">
       <td rowspan="6">Data Integrity*</td>
@@ -174,9 +203,9 @@
     <tr class="category-data-limits">
       <td>Initial allocation request limit</td>
       <td class="tier-cell">200 T</td>
-      <td class="tier-cell">100 T</td>
-      <td class="tier-cell">100 T</td>
-      <td class="tier-cell">100 T</td>
+      <td class="tier-cell">200 T</td>
+      <td class="tier-cell">200 T</td>
+      <td class="tier-cell">200 T</td>
     </tr>
     <tr class="category-data-limits">
       <td>No object limit</td>

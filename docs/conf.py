@@ -67,7 +67,28 @@ myst_substitutions = {
    'alpine_total_atesting_mi100_nodes': '1',
 
    # Alpine Array Jobs
-   'alpine_max_number_array_jobs' : '1,000'
+   'alpine_max_number_array_jobs' : '1,000',
+
+   # Petalibrary substitutions
+   # Note: the below values currently cannot be used in the tier table 
+   # due to limitations in how variables can be integrated
+   # into html. Therefore, the variables below are published
+   # here for future reference, and to remind us to manually
+   # update pl_tier_table.html when these values change.
+
+   "pl_fy26_cu_data_rate_active": "$45",
+   "pl_fy26_cu_data_rate_archive": "$25",
+   "pl_fy26_cu_data_rate_active_archive": "$70",
+   "pl_fy26_cu_data_rate_archive_dr": "$41",
+   "pl_fy26_ext_data_rate_active": "$115",
+   "pl_fy26_ext_data_rate_archive": "$75",
+   "pl_fy26_ext_data_rate_active_archive": "N/A",
+   "pl_fy26_ext_data_rate_archive_dr": "N/A",
+   "pl_initial_allocation_request_limit_active": "200 T",
+   "pl_initial_allocation_request_limit_archive": "200 T",
+   "pl_initial_allocation_request_limit_active_archive": "200 T",
+   "pl_initial_allocation_request_limit_archive_dr": "200 T"
+
 }
 
 source_suffix = {
@@ -103,7 +124,7 @@ html_sidebars = {
 }
 
 html_context = {
-   "default_mode": "dark"
+   "default_mode": "dark",
 }
 
 copybutton_prompt_text = r'^\$ '
