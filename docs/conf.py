@@ -116,6 +116,7 @@ html_theme_options = {
 html_sidebars = {
     "**": [
         "navbar-logo.html",
+        "sbt-sidebar-training.html", 
         "sbt-sidebar-announcement.html", 
         "icon-links.html",
         "search-button-field.html",
