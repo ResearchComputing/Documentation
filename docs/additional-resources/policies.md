@@ -6,6 +6,19 @@
 
 Use of CU Research Computing resources is subject to the [CU Boulder OIT Acceptable Use Policy](https://www.colorado.edu/compliance/policies/acceptable-use-cu-boulders-it-resources) and as well as the policies noted below.  CU Research Computing resources may not be used for non-research purposes or for personal financial gain and/or commercial purposes, whether for-profit or nonprofit.
 
+For security compliance purposes, system activity on CU Boulder Research Computing resources is logged and retained for a minimum period of 90 days. Logged activity may include the following: 
+* Sudo command execution (privileged access)
+* Authentication events (successful and failed logins)
+* User session activity
+* Password changes
+* Failed access attempts
+* Security or privacy attribute changes
+* Administrative privilege usage
+* Personal Identity Verification (PIV) credential usage (where applicable)
+* Data action changes
+* Query parameters
+* External credential usage
+
 <br>
 
 ## Acceptable data storage and use on CURC resources
