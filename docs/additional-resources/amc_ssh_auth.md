@@ -24,7 +24,7 @@ You will receive an email from <registry@cilogon.org> inviting you to enroll in 
 
 ![](./amc_ssh_images/email_invitation.png)
 
-Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so complete all of [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry) before closing your browser tab.__ 
+Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so be sure to complete [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry), [Step 2](#step-2-generate-an-ssh-key), and [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) before closing your browser tab.__ 
 
 ![](./amc_ssh_images/accept_invitation.png)
 
@@ -96,18 +96,18 @@ You must be on the University of Colorado Anschutz Medical Campus VPN or network
 
 SSH into the CURC CI login node by entering the following in your terminal or terminal emulator:
 ```
-ssh -i <privatekey_file> <username>@xsede.org@login-ci.rc.colorado.edu
+ssh -i <privatekey_file> <username>@xsede.org@login.rc.colorado.edu
 ```
 The `-i` flag is used to point to the location of your __private__ key on your local system. The private key must correspond to the public key you uploaded to your RMACC CILogon profile.
 For example, if I uploaded `id_rsa.pub` to my profile, I would log in as such:
 ```
-ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login-ci.rc.colorado.edu
+ssh -i ~/.ssh/id_rsa lrf20@xsede.org@login.rc.colorado.edu
 ```
 
 You will be prompted to enter your passphrase if you set one during key generation.
 
 
-Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ci[1-2]`. The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
+Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ciX` (where `X` will be a numeric value). The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
 ![](./amc_ssh_images/loginprompt_motd.png)

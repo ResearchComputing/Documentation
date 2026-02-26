@@ -9,7 +9,7 @@ Request an invitation to the RMACC CILogon Registry by submitting a [support req
 
 ![](./registry-images/email_invitation.png)
 
-Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so complete all of Step 1 before closing your browser tab.__ 
+Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so be sure to complete [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry), [Step 2](#step-2-generate-an-ssh-key), and [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) before closing your browser tab.__ 
 
 ![](./registry-images/accept_invitation.png)
 
