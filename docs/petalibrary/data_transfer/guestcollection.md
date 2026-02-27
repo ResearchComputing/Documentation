@@ -1,11 +1,12 @@
 # Data sharing with a Globus Guest Collection
 
-Globus Guest Collections (formerly known as "Shared Endpoints") enable PetaLibrary customers to share a given folder in a PetaLibrary allocation with anyone -- regardless of whether they have a CURC account -- simply by using their email address.  Guest collections are a great way to share data with external collaborators. Below we outline the steps to share data from your PetaLibrary allocation on CURC. 
+Globus Guest Collections (formerly known as "Shared Endpoints") enable PetaLibrary customers to share a given folder in a PetaLibrary `active` or `archive` allocation with anyone -- regardless of whether they have a CURC account -- simply by using their email address.  Guest collections are a great way to share data with external collaborators. Below we outline the steps to share data from your PetaLibrary allocation on CURC. 
 
 ```{note}
 Additional information on Guest Collections is available at
 [docs.globus.org](https://docs.globus.org/how-to/share-files/).
 ``` 
+
 
 ## Step 1: Log into the Globus Web App
 Visit [https://app.globus.org](https://app.globus.org) and log in with your institutional credentials (University of Colorado Boulder in this example).
@@ -30,7 +31,7 @@ Within your allocation, navigate the the folder that contains the folder you wou
 ![](../images_and_html/base_crdds_pl_alloc.png)
 
 ```{important}
-Sharing is available for folders. Individual files can only be shared by sharing the folder that contains them.
+Sharing is available for folders. Individual files can only be shared by sharing the folder that contains them.  Your ability to create a Guest Collection depends on your permissions for the folder. For example, if you have read-only permissions to a folder, you can create a read-only Guest Collection for it (but not a Guest Collection with _write_ permissions).
 ```
 
 ## Step 4: Create a Guest Collection
@@ -50,6 +51,9 @@ Provide a name for the Guest Collection. In this example we choose `Mascot Image
 ```{note}
 If it is not already highlighted, check the box next to `Force encryption on transfers to and from this collection` prior to selecting the **Create Collection** button.
 ```
+```{warning}
+Guest Collections are only valid as long as the folder they point to still exists. If you delete the folder associated with the Guest Collection, it will be invalid.
+``` 
 
 ## Step 5: Add permissions to share the Guest Collection
 
@@ -69,6 +73,6 @@ The default sharing mode is read-only. Granting _write_ access to a folder allow
 The person you are sharing with _must already have a Globus ID_. Globus IDs are free and available to anyone. Many organizations are already part of Globus which enables you to login via your institutional credentials. To check if your organization is part of Globus, go to the [Globus login page](https://app.globus.org) and search for your institution in the dropdown list. If not, you (or your collaborator) can [create a new Globus ID](https://www.globusid.org/create).
 ```
 
-## Step 6: Confirm the sharing email has been received
+## Step 6: Confirm the email has been received
 
 After receiving the email notification, your colleague can click on the link to log into Globus and access the guest collection. 
