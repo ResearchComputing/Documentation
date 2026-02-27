@@ -46,6 +46,13 @@ There are numerous ways to transfer data to/from PetaLibrary. Select the option 
 * Documentation on transferring data from a local Synology network attached storage device to PetaLibrary.
 * additional documentation on scheduling recurring backups to PetaLibrary.
 
+```{toctree}
+:maxdepth: 1
+./data_transfer/guestcollection.md
+
+```
+* Specific documentation on creating a Globus Guest Collection. Guest collections enable sharing of data from a portion of your PetaLibrary allocation with external collaborators who do not have CURC accounts.
+
 ```{note}
 In addition to the methods outlined above, data can also be transferred to/from PetaLibrary via common command line utilities such as `rsync`, `scp`, and `sftp`, as well as via `Globus`, a user-friendly browser-based file transfer tool.  Documentation on these methods can be found in our [General Data Transfer documentation](../compute/data-transfer.md).
 ```
