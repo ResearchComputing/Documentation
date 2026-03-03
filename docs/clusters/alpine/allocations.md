@@ -129,7 +129,7 @@ The RMACC Ascent tier provides users with {{ rmacc_ascent_SUs }} SUs over a 12 m
 
 **Peak:**
 
-At this time, RMACC users are not eligible for Peak allocations. However, if you are an RMACC user with additional resource needs beyond the RMACC Ascent allocation, please contact us at (<rc-help@colorado.edu>).
+At this time, RMACC users are not eligible for Peak allocations. However, if you are an RMACC user with additional resource needs beyond the RMACC Ascent allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 **Comparison of Allocation Tiers:**
 
@@ -156,14 +156,14 @@ reviewed on an annual basis.
 ````{tab-item} CSU
 :sync: alpine-csu-inst
 
-**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should email (<rc-help@colorado.edu>).
+**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ````
 
 ````{tab-item} AMC
 :sync: alpine-amc-inst
 
-**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should email (<hpcsupport@cuanschutz.edu>).
+**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ````
 
@@ -227,21 +227,21 @@ Step 2: Look out for an email message from the CURC ticketing system (<rc-help@c
 
 **Peak:**
 
-At this time, RMACC users are not eligible for Peak allocations. However, if you are an RMACC user with additional resource needs beyond the RMACC Ascent allocation, please contact us at (<rc-help@colorado.edu>).
+At this time, RMACC users are not eligible for Peak allocations. However, if you are an RMACC user with additional resource needs beyond the RMACC Ascent allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ````
 
 ````{tab-item} CSU
 :sync: alpine-csu-inst
 
-**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should email (<rc-help@colorado.edu>).
+**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ````
 
 ````{tab-item} AMC
 :sync: alpine-amc-inst
 
-**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should email (<hpcsupport@cuanschutz.edu>).
+**Allocations for AMC are managed by that institution.** AMC users who are interested in learning about their institution's Alpine allocation processes should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ````
 
@@ -286,7 +286,7 @@ Step 3: Look out for email messages from the CURC ticketing system (<rc-help@col
 
 Step 1: Keep an eye on your email inbox for a notification that your allocation is about to expire. Notifications will be sent one month prior to expiration to give you plenty of time to renew. Allocations will automatically expire one year after they are provisioned. 
 
-Step 2: Please send an email to <rc-help@colorado.edu> requesting the renewal of your allocation. Be sure to provide your CURC username, the name of your allocation, and the CURC usernames of any of your collaborators.
+Step 2: Please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) requesting the renewal of your allocation. Be sure to provide your CURC username, the name of your allocation, and the CURC usernames of any of your collaborators.
 
 Step 3: Look out for email messages from the CURC ticketing system (<rc-help@colorado.edu>). User Support will contact you when the renewal request is received and when the renewed allocation is ready to use.
 
@@ -295,7 +295,7 @@ Step 3: Look out for email messages from the CURC ticketing system (<rc-help@col
 ````{tab-item} CSU
 :sync: alpine-csu-inst
 
-**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should email (<rc-help@colorado.edu>).
+**Allocations for CSU are managed by that institution.** CSU users who are interested in learning about their institution's Alpine allocation processes should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ````
 

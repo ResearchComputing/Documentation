@@ -10,14 +10,11 @@ Data transfers using SSH protocols can be done through the
 Transfers via the DTNs support all types of transfers, including large and/or frequent file
 transfers and automated (passwordless) transfers.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UMBD7pSE0qI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## Globus transfers
 
 Globus file transfers are typically initiated through an interactive
-web application (command-line access to Globus is also available, but
-is beyond the scope of this document). Globus addresses deficiencies
-in traditional file-transfer mechanisms by automating large data
+web application (command-line access to Globus is also available, see [the Globus CLI documentation](https://docs.globus.org/cli/) for more information). Globus addresses deficiencies
+`in traditional file-transfer mechanisms by automating large data
 transfers, resuming failed transfers, distributing large transfers
 across multiple servers, and brokering direct transfers between remote
 computing centers. Globus performs an MD5-Checksum for transfer verification.
@@ -55,8 +52,7 @@ GUI.
 
 ## Guest Collections (Globus Shared Endpoints)
 
-Guest Collections (also known as "Shared Endpoints") enable PetaLibrary customers to share a given folder in a PetaLibrary allocation with anyone who has a Globus account (both at CU and outside of CU). Detailed information on creating Guest Collections is available [at
-docs.globus.org](https://docs.globus.org/how-to/share-files/).
+Guest Collections (formerly known as "Shared Endpoints") enable PetaLibrary customers to share a given folder in a PetaLibrary allocation with anyone who has a Globus account (both at CU and outside of CU). Guest collections are a great way to share data with external collaborators. Our PetaLibrary documentation provides a [step-by-step guide for creating a Guest Collection on CURC](../petalibrary/data_transfer/guestcollection.md). 
 
 ## Globus to AWS S3 Bucket connection
 
@@ -261,7 +257,7 @@ Rclone is a command line program to manage files on cloud storage. It is a featu
 - Mirror cloud data to other cloud services or locally
 - Migrate data to the cloud, or between cloud storage vendors
 - Mount multiple, encrypted, cached or diverse cloud storage as a disk
-- Analyse and account for data held on cloud storage using [lsf](https://rclone.org/commands/rclone_lsf/), [ljson](https://rclone.org/commands/rclone_lsjson/), [size](https://rclone.org/commands/rclone_size/), [ncdu](https://rclone.org/commands/rclone_ncdu/) 
+- Analyze and account for data held on cloud storage using [lsf](https://rclone.org/commands/rclone_lsf/), [ljson](https://rclone.org/commands/rclone_lsjson/), [size](https://rclone.org/commands/rclone_size/), [ncdu](https://rclone.org/commands/rclone_ncdu/) 
 - [Union](https://rclone.org/union/) file systems together to present multiple local and/or cloud file systems as one
 
 ### Features
@@ -318,7 +314,7 @@ provider = S3
 access_key_id = <enter your access key here>
 secret_access_key = <enter your secret key here>
 region = us-west-2
-location_contraint = us-west-2
+location_constraint = us-west-2
 acl = private
 ```
 
@@ -407,7 +403,7 @@ Enter a value. Press Enter to leave empty.
 secret_access_key> <SECRET-KEY> 
 ```
 
-- You will then be prompted to enter your region, here we are going to enter the value of ‘1' (you can set your appropreate region):
+- You will then be prompted to enter your region, here we are going to enter the value of ‘1' (you can set your appropriate region):
 ```
 Option region.
 Region to connect to.

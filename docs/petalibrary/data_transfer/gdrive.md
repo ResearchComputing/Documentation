@@ -61,7 +61,7 @@ On your local machine type:
 ```bash
 $ rclone ls gdrive_johndoe_cu
 ```
-If this step fails, your Google Drive remote is not configured properly. Try reconfiguring your Google Drive remote again or contact <rc-help@colorado.edu> for assistance.
+If this step fails, your Google Drive remote is not configured properly. Try reconfiguring your Google Drive remote again or submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) for assistance.
 
 ### Step 3: Create your PetaLibrary remote configuration
 

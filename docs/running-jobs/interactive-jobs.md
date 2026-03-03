@@ -4,9 +4,7 @@ Interactive jobs allow a user to interact with applications in real-time within 
 
 ## General Interactive Jobs
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s53sjDubBpo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-To run an interactive job on Research Computing resources, request an interactive session by utilizing the `sinteractive` command.  The `sinteractive` command creates a job with parameters provided through flags run with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. 
+To run an interactive job on Research Computing resources, request an interactive session by utilizing the `sinteractive` command.  The `sinteractive` command creates a job with parameters provided through flags passed with the command. After moving through the Slurm queue the interactive job will put the user onto the command line of a compute node to interactively use their resource allotment. Any resource that could be specified in a job script or with `sbatch` can also be used with `sinteractive`. 
 
 The primary flags we recommend users specify are the `partition` flag and the `time` flag. These flags will specify partition and amount of time for your job respectively. The `sinteractive` command is run as follows:
 
@@ -14,15 +12,13 @@ The primary flags we recommend users specify are the `partition` flag and the `t
 sinteractive --partition=amilan --time=00:10:00 --ntasks=1 --nodes=1 --qos=normal
 ```
 
-This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the amilan partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you type `python` you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). 
+This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the amilan partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you load the Python module using `module load python` and then type `python`, you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). When you are finished with your interactive job, you can end the session by typing `exit`. If you do not end your session, the interactive job will run for the full time requested, which will use up part of your allocation.
 
 ```{seealso}
 Check out this [page](job-resources.md) for a list of Slurm directives that can be used with interactive jobs.
 ```
 
 ## Interactive GUI Applications
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DFnHsMxPC5w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 To run an interactive GUI application on HPC Systems, we must install an X windows server application and enable X11 forwarding on our personal computer.
 
@@ -111,6 +107,16 @@ acompile -X
 ```
 
 From here, you will be able to run your interactive job like normal and X11 forwarding will carry through to the job. 
+
+Once your interactive session has started, you can launch GUI-based applications such as MATLAB. For example:
+
+```
+module load matlab
+matlab
+```
+This will start MATLAB on the allocated compute node and display the interface on your local machine via X11 forwarding. The MATLAB window should appear shortly after the command is executed. See the example image below for reference.
+
+![](./interactive_jobs_images/matlab_GUI.png)
 
 
 

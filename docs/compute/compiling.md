@@ -170,5 +170,5 @@ The comparable c/c++ syntax would be:
 $FC my_program.cpp  -m64 -I$CURC_MKL_INC -o my_program.out   -L$CURC_MKL_LIB -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl
 ```
 
-Note that if your application uses FFTW, you will must use the FFTW include flag just as with the Intel compiler. See the link advisor or contact <rc-help@colorado.edu> if you have additional questions about how to link MKL to your application.
+Note that if your application uses FFTW, you must use the FFTW include flag just as with the Intel compiler. See the link advisor or submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form), if you have additional questions about how to link MKL to your application.
 

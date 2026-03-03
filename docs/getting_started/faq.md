@@ -18,14 +18,13 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 ### How do I setup Duo?
 :::{dropdown} Show 
 :icon: note 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/djn9bclMD3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 - CU Boulder users can follow these steps:
     1. Download the Duo mobile app to your phone (available via Apple App Store or Google Play Store).
 	2. Once installed, visit <https://duo.colorado.edu> to enroll.  
 - CSU users please see [CSU's documentation on Duo 2-factor authentication](https://it.colostate.edu/duo-two-factor-authentication/)
+	- CSU users can manage their account at [https://it.colostate.edu/duo-two-factor-authentication/](https://it.colostate.edu/duo-two-factor-authentication/)
 - AMC or RMACC users please see [Duo's documentation on 2-factor authentication](https://guide.duo.com/)
+	- AMC and RMACC users can manage their account at [https://cilogon.org/?selected_idp=httsp%3A%2F%2Faccess-ci.org%2Fidp&skin=access](https://cilogon.org/?selected_idp=httsp%3A%2F%2Faccess-ci.org%2Fidp&skin=access)
 :::
 
 ### As a CU Boulder user, how can I login with Duo? 
@@ -113,7 +112,7 @@ Duo will then try to authenticate your account by push notification to verify yo
 
 Once you have verified your identity, follow the instructions provided by Duo to add your device.
 
-If you cannot authenticate your account (e.g. do not have your old device), contact <rc-help@colorado.edu> for further assistance.
+If you cannot authenticate your account (e.g. do not have your old device), we suggest reviewing the [Duo FAQ page](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access/faq) or contacting <oithelp@colorado.edu>. 
 
 ::::
 
@@ -145,29 +144,41 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 
 ## General High Performance Computing
 
-### How do I check how full my directories are?
+### What is Arbiter2? 
 ::::{dropdown} Show 
 :icon: note
 
-You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
+[Arbiter2](https://github.com/chpc-uofu/arbiter2) is a tool created by the University of Utah that enables monitoring of non-compute node resources for undesirable behavior. For an in-depth explanation of how Arbiter2 works, please see the official paper ["Arbiter: Dynamically Limiting Resource Consumption on Login Nodes"](https://dl.acm.org/doi/10.1145/3332186.3333043). In the context of Arbiter2, "undesirable behavior" refers to processes that consume substantial CPU or memory (RAM) resources on low resource hosts, such as CURC's [login nodes](../compute/node-types.md#login-nodes). If Arbiter2 flags a user's process(es) as undesirable behavior, the user's account will be placed into a penalty state. Once in a penalty state, the amount of CPU and memory resources available to the user on the host will be reduced and the user will be sent a no-reply warning email. Examples of processes that can consume substantial resources include installing/compiling/running software applications and manipulating large files (e.g. compressing, uncompressing, and/or moving files). For a list of all hosts that Arbiter2 is deployed on, see the `Host` column in the table below. 
 
-```
-[janedoe@login11 ~]$ curc-quota
-------------------------------------------------------------------------
-									Used         Avail    Quota Limit
-------------------------------------------------------------------------
-/home/janedoe                          1.7G          339M           2.0G
-/projects/janedoe                       67G          184G           250G
-/scratch/alpine1                      1050G         8950G         10000G
+```{important}
+- A user's penalty state will be the same across all of the login nodes. This means that if your account is placed in a penalty state on one login node, it will be in the same penalty state on the other login nodes. 
+- Where and how Arbiter2 is deployed may change over time. This is due to adjustments we may need to make so that Arbiter2 fits the needs of the system and users. Please refer to this FAQ for the most up-to-date information.
+- Once a user's processes consume more than the allotted amount of CPU resources, their processes will be automatically throttled.
+- If a user's processes use more memory than they are allotted, the processes will be automatically killed. 
 ```
 
-You can also check the amount of space being used by any directory with the `du -sh` command or the directory's contents with the `du -h` command: 
+`````{admonition} Attention
+:class: danger
+Please note that the maximum values listed are intended to support intermittent spikes in demand for resources, not sustained usage. These hosts are a shared resource, so please be considerate of others and use the compute nodes whenever possible.
+`````
+```{eval-rst}
+.. raw:: html
+    :file: ./faq_html/arbiter_penalty_table.html
+```
 
-```
-[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
-698M	WRF/run
-698M	WRF
-```
+::::
+
+### How can I add users to a Linux group?
+::::{dropdown} Show 
+:icon: note
+
+Before requesting users be added to a Linux group, please fully read the [Workspace Sharing](../compute/filesystems.md#workspace-sharing) section, which provides an alternative approach for workspace sharing. If you would like to proceed with adding someone to a Linux group, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following: 
+
+1. Select `Storage` for `Nature of request`
+2. Select `I would like to add a collaborator to my directory` for `Issue type`
+3. Fill out the requested additional information
+4. Provide any justification or additional details in `Detailed description`
+
 ::::
 
 ### When will my job start?
@@ -210,7 +221,19 @@ sstat --jobs=your_job_id --format=User,JobName,JobId,MaxRSS
 
 For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](../running-jobs/slurm-commands.md) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
 
-You can also view information related to service unit (SU) usage and CPU & RAM efficiency by using [slurmtools](../compute/monitoring-resources.md#slurmtools). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
+You can also view information related to service unit (SU) usage and CPU & RAM efficiency [using slurm commands](../compute/monitoring-resources.md#monitoring-through-slurm-commands). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
+::::
+
+### Why am I getting unexpected results for my GPU memory or utilization metrics?
+::::{dropdown} Show 
+:icon: note
+
+Currently, GPU metrics are collected by Slurm. Due to system limitations, there are some scenarios where GPU metric collection is not possible. Thus, the output of `sacct` or `seff` may not match your expectation or what is provided by `nvidia-smi` or `amd-smi`. Below we provide important considerations when reviewing GPU metrics collected by Slurm. 
+- GPU metrics are available for most NVIDIA GPUs across Alpine and Blanca. At this time, GPU memory and utilization metrics are not available on the following GPU types: AMD, GH200s, P100s, and A40s.
+- GPU metrics can only be collected if your code utilizes CUDA 12 or newer.
+- GPU metrics are partially available on MIG-enabled NVIDIA GPUs. You can get GPU memory usage values, but GPU utilization metrics are not reported for individual MIG partitions.
+- Core cluster GPUs (e.g., core-gpu[0-4], viz1, viz2), which power Core Desktop and MATLAB GUI, do not currently support GPU memory or utilization metrics.
+- Users running jobs on unsupported GPUs or older CUDA versions will see zeros or N/A or infinite values for GPU memory and utilization fields. Make sure your jobs are running on compatible hardware to obtain meaningful GPU metrics.
 ::::
 
 ### How can I see my current FairShare priority?
@@ -219,18 +242,9 @@ You can also view information related to service unit (SU) usage and CPU & RAM e
 
 There are a couple ways you can check your FairShare priority:
 
-1. Using the `levelfs` tool in the `slurmtools` module. `levelfs` shows the current fair share priority of a specified user.
-	
-	You can use this tool by first loading in the `slurmtools` module (available from login nodes):
-	```
-	$ module load slurmtools
-	```
+1. Using the `levelfs` command. `levelfs` shows the current fair share priority of a specified user.
 
-	```{tip}
-	slurmtools is packed with lots of great features and tools like suacct, suuser, jobstats, seff, etc._
-	```
-
-	Then using `levelfs` on your username:
+	Using `levelfs` on your username:
 	```
 	$ levelfs $USER
 	```
@@ -279,6 +293,28 @@ This will print out an assortment of information including allocations and QoS a
 The `slurm/alpine` and `slurm/blanca` module environments cannot be loaded from compute nodes. It should only be loaded from login nodes when attempting to switch between Blanca and Alpine environments. This error can be disregarded, as no harm is done.
 ::::
 
+## Software 
+
+### How can I submit a software installation request? 
+::::{dropdown} Show 
+:icon: note
+
+Before submitting a software installation request, please review our [Software installation policies](../additional-resources/policies.md#software-installations). To proceed with a software installation request, you should submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Within this form you should make the following selections:
+
+1. Select `Software` for `Nature of request`
+2. Select the cluster you would like to run this software on for `Cluster`
+3. Select `Software installation request` for `Issue type`
+4. Complete all fields requested in the form
+5. Submit the form
+::::
+
+### How do I install Python libraries?
+::::{dropdown} Show 
+:icon: note
+
+For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+::::
+
 ## Alpine 
 
 ### Why do I get an `Invalid Partition` error when running an Alpine job?
@@ -297,14 +333,45 @@ This error usually means users do not have an allocation that would provide the 
 If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 ::::
 
-## Software 
+## General Storage
 
-### How do I install Python libraries?
+### How do I check how full my directories are?
 ::::{dropdown} Show 
 :icon: note
 
-For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+You have three directories allocated to your username (`$USER`). These include `/home/$USER` (2 G), `/projects/$USER` (250 G) and `/scratch/alpine/$USER` (10 T).  To see how much space you've used in each, from a login node, type `curc-quota` as follows:
+
+```
+[janedoe@login11 ~]$ curc-quota
+------------------------------------------------------------------------
+									Used         Avail    Quota Limit
+------------------------------------------------------------------------
+/home/janedoe                          1.7G          339M           2.0G
+/projects/janedoe                       67G          184G           250G
+/scratch/alpine1                      1050G         8950G         10000G
+```
+
+You can also check the amount of space being used by any directory with the `du -sh --apparent-size` command or the directory's contents with the `du -h` command: 
+
+```
+[janedoe@c3cpu-a7-u26-3 ~]$ du -h /scratch/alpine/janedoe/WRF
+698M	WRF/run
+698M	WRF
+```
 ::::
+
+### How can I request an increase in my scratch storage space?
+::::{dropdown} Show 
+:icon: note
+
+Before requesting an increase to your scratch storage space, please review our policies for [Alpine scratch quota increases](../additional-resources/policies.md#alpine-scratch-quota-increases). Once you have reviewed the policies, you can submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) using the following:
+
+1. Select `Storage` for `Nature of request`
+2. Select `I would like to request an increase to my scratch space` for `Issue type`
+3. In the `Detailed description` box, provide a brief (approximately one paragraph) justification describing why a workflow requires the requested increase.
+
+::::
+
 
 ## PetaLibrary 
 
@@ -316,7 +383,7 @@ Every ZFS-based PetaLibrary allocation has snapshots enabled by default. ZFS sna
 
 PetaLibrary allocation sizes are set with quotas, and ZFS snapshot use does count against your quota. Removing a file from your filesystem will only return free space to your filesystem if no snapshots reference the file. Filesystem free space does not increase until a file on a filesystem and all snapshots referencing said file are removed. Because snapshots can cause confusion about how space is utilized within an allocation, the default snapshot schedule discards snapshots that are more than one week old.
 
-If you would like to set a custom snapshot schedule for your allocation, please contact <rc-help@colorado.edu>. Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
+If you would like to set a custom snapshot schedule for your allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). Note that the longer you retain snapshots, the longer it will take to free up space by deleting files from your allocation.
 ::::
 
 ### Are there any alternatives to using PetaLibrary for data backups?
@@ -347,7 +414,7 @@ Offsite backup options are available from cloud-based storage providers.
 :sync: alt-storage-methods-awss3
  
 - _Access details:_ 
-	- You can use `Rclone` to copy your data to AWS for a monthly fee. Contact <rc-help@colorado.edu> for options to establish access to AWS. 
+	- You can use `Rclone` to copy your data to AWS for a monthly fee. Submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) for options to establish access to AWS. 
 - _Pros:_ 
 	- No data volume limit 
 	- AWS data integrity assurance is very high 

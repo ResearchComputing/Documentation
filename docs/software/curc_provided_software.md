@@ -3,7 +3,7 @@
 The following page provides a list of all software that is included in CURC's software stack. This list includes the software applications, compilers, libaries, and software development kits (SDKs) installed as modules on CURC. These modules are accessible on both Alpine and Blanca. For more information on viewing and using modules, please refer to our [Modules System](../compute/modules.md) page. 
 
 ```{important}
-Before requesting a software installation, please review our [Software installations](../additional-resources/policies.md#software-installations) policy. This should be done before each request, as the policy is subject to change. If you have any questions about this policy, please feel free to reach out to us at <rc-help@colorado.edu>. 
+Before requesting a software installation, please review our [Software installations](../additional-resources/policies.md#software-installations) policy. This should be done before each request, as the policy is subject to change. If you have any questions about this policy, please feel free to reach out to us by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). 
 ```
 
 :::{admonition} Legend for software table
@@ -33,7 +33,7 @@ Before requesting a software installation, please review our [Software installat
 | [CDO](https://code.mpimet.mpg.de/projects/cdo/) | 2.1.1, 2.4.4 | CDO is a collection of command line operators to manipulate and analyze climate and NWP model data.|
 | [Cellranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) | 7.1.0 | Cellranger is a set of analysis pipelines that process Chromium single cell data to align reads, generate feature-barcode matrices, perform clustering and other secondary analysis, and more.|
 | [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) | 1.2.5 | A next-generation molecular visualization program. | 
-| [CMake](https://cmake.org/) | 3.5.2, 3.9.2, 3.14.1, 3.20.2, 3.25.0, 3.27.7, 3.31.0 (D) | CMake is an open-source, cross-platform family of tools designed to build, test and package software.| 
+| [CMake](https://cmake.org/) | 3.5.2, 3.9.2, 3.14.1, 3.20.2, 3.25.0, 3.27.7, 3.31.0, 4.2.3 (D) | CMake is an open-source, cross-platform family of tools designed to build, test and package software.| 
 | [Coreform Cubit](https://coreform.com/products/coreform-cubit/) (L)| Coreform-Cubit-2021.5 | Coreform Cubit is a comprehensive toolset for high-quality FEA and CFD mesh generation that provides a similar user experience as GAMBIT.| 
 | [CP2K](https://www.cp2k.org/) | 2023.1 | CP2K is a quantum chemistry and solid state physics software package that can perform atomistic simulations of solid state, liquid, molecular, periodic, material, crystal, and biological systems.|
 | [CST Studio Suite](https://www.3ds.com/products-services/simulia/products/cst-studio-suite/) (L) | 2021, 2024 (D) | CST Studio Suite is a high-performance 3D EM analysis software package for designing, analyzing and optimizing electromagnetic (EM) components and systems. | 
@@ -82,12 +82,10 @@ Before requesting a software installation, please review our [Software installat
 | [LAMMPS](https://www.lammps.org/#nogo&gsc.tab=0) | 22July25, 2Aug23, 29Sept21, 29Sept2021_update3, 29Sept21, 29Sept2021_update3.1.1 | LAMMPS is a classical molecular dynamics code with a focus on materials modeling. |
 | [LFTP](https://lftp.yar.ru) | 4.8.4, 4.9.2 (D) | LFTP is a sophisticated file transfer program supporting a number of network protocols (ftp, http, sftp, fish, torrent) |
 | [Libxc](https://gitlab.com/libxc/libxc) | 5.2.2, 7.0.0 | Libxc is a library of exchange-correlation functionals for density-functional theory. |
-| [Linaro DDT (formerly Allinea DDT)](https://www.linaroforge.com/linaro-ddt/) | 6.0.4 | Graphical debugging tool for single-process, OpenMP, and MPI applications.| 
-| [Linaro Forge (formerly Arm Forge)](https://www.linaroforge.com/) | 19.1.3, 24.0.4 | Linaro Forge is a server and HPC development tool suite for C, C++, Fortran, and Python high performance code on Linux.|
 | [Load Balancer](./loadbalancer.md) | 0.2 |Load Balancer is an effective tool for optimally utilizing multiple processors and nodes on the CURC HPC resources, without the need to learn OpenMP or MPI.| 
 | [Mamba](https://mamba.readthedocs.io/) | 24.11.3-0 | Mamba is a fast, robust, and cross-platform package manager that aims to be a drop-in replacement for conda. Please see our [Mamba Package Manager](./python.md#mamba-package-manager) section for more details.| 
 | [Mathematica](https://www.wolfram.com/mathematica/) | 9.0, 11.1.0 (D) | A software system with built-in libraries for several areas of technical computing. | 
-| [MATLAB](https://www.mathworks.com/products/matlab.html) | R2018b, R2019b, R2020b, R2021b (D), R2022b, R2023b, R2024b | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](./matlab.md)| 
+| [MATLAB](https://www.mathworks.com/products/matlab.html) | R2018b, R2019b, R2020b, R2021b, R2022b, R2023b, R2024b, R2025b (D) | MATLAB is a proprietary multi-paradigm programming language and numeric computing environment. [CURC Usage Guide](./matlab.md)| 
 | [Maven](https://maven.apache.org/) | 3.8.1 | Apache Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages. |
 | [MKL](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html#gs.ecsytg) | 2021.4.0, 2022.0.2, 2024.2 |A library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.|
 | [MultiQC](https://multiqc.info/) | 1.14 | MultiQC is a reporting tool that parses results and statistics from bioinformatics tool outputs, such as log files and console outputs.|
@@ -96,7 +94,7 @@ Before requesting a software installation, please review our [Software installat
 | [NCO](https://nco.sourceforge.net/) | 4.8.1, 5.1.4, 5.2.9 | A toolkit that manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, HDF5, and, Zarr | 
 | [Ncview](https://cirrus.ucsd.edu/ncview/) | 2.1.7 | Ncview is a visual browser for netCDF format files. | 
 | [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | 4.8.1, 4.9.2 | NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data.|
-| [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04, 24.04.4 (D) | Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
+| [Nextflow](https://www.nextflow.io/) | 22.10.6, 23.04, 24.04.4 (D), 25.10.2 | Nextflow enables scalable and reproducible scientific workflows using software containers. It allows the adaptation of pipelines written in the most common scripting languages.|
 | [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) (G)| 2021.213(CUDA 11.2), 2022.229 (CUDA 11.7), 2023.233 (D, CUDA 12.0), 2025.251 (CUDA 12.6), 2025.255 (CUDA 12.9) | The NVIDIA HPC Software Development Kit (SDK) includes the proven compilers, libraries and software tools essential to maximizing developer productivity and the performance and portability of HPC applications. | 
 |[Ollama](https://ollama.com/) | Latest version only | Ollama is an open-source, lightweight, and extremely beginner friendly tool that enables users to run LLMs locally and retrieve models that are compatible with the system they are running on. For more information on using Ollama, see [Running Large Language Models](../ai-ml/llms.md#ollama) |
 | [OpenBLAS](https://www.openblas.net/) | 0.3.20, 0.3.28 | OpenBLAS is an optimized Basic Linear Algebra Subprograms (BLAS) library based on GotoBLAS 21.13 BSD version. | 
@@ -116,7 +114,7 @@ Before requesting a software installation, please review our [Software installat
 | [PROJ](https://proj.org/en/stable/) | 6.0.0, 8.1.1, 8.2.1, 9.5.0 | PROJ is a generic coordinate transformation software that transforms geospatial coordinates from one coordinate reference system (CRS) to another. This includes cartographic projections as well as geodetic transformations. |
 | [Python](https://www.python.org/) | 2.7.18, 3.10.2 (D) |Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.| 
 | [PyTorch](https://pytorch.org/) | 1.13.0 (G) |PyTorch is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing.| 
-| [QIIME 2](https://qiime2.org/) | 2023.5, Amplicon 2024.2, Amplicon 2024.10 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
+| [QIIME 2](https://qiime2.org/) | 2023.5, Amplicon 2024.2 (D), Amplicon 2024.10, Amplicon 2026.1 | QIIME 2 is a next-generation microbiome bioinformatics platform that is extensible, free, open source, and community developed.|
 | [Quantum ESPRESSO](https://www.quantum-espresso.org/) | 7.0, 7.2, 7.4.1 |An integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale.| 
 | [Qt](https://doc.qt.io/) | 5.6.0, 5.9.1, 5.15 (D) |Qt ("cute") is cross-platform software for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.| 
 | [R](https://www.r-project.org/) | 3.6.3, 4.2.2, 4.4.0 (D)|R is a programming language for statistical computing and graphics.| 
@@ -127,7 +125,6 @@ Before requesting a software installation, please review our [Software installat
 | [SAMtools](http://www.htslib.org/doc/samtools.html) | 1.16.1 | Samtools is a suite of programs for interacting with high-throughput sequencing data.| 
 | [ScaLAPACK](https://netlib.org/scalapack/) | 2.2.0 |ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines.| 
 | [Singularity/Apptainer](https://apptainer.org/) | 3.6.4 (D), 3.7.4 |Singularity/Apptainer is a computer program that performs operating-system-level virtualization also known as containerization. [CURC Usage Guide](./containerization.md#apptainer)|
-| [Slurmtools](../compute/monitoring-resources.md#slurmtools) | 0.0.0 |A collection of helper scripts for everyday use of the Slurm job scheduler.|
 | [SQLite](https://sqlite.org/index.html) | 3.36.0, 3.38.01, 3.46.1 |SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.| 
 | [SRA-Toolkit](https://hpc.nih.gov/apps/sratoolkit.html) | 3.0.0 | The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives.| 
 | [STAR](https://github.com/alexdobin/STAR/tree/master) | 2.7.10b | A tool to align RNA-seq data. The STAR algorithm uses suffix arrays, seed clustering, and stitching.| 
@@ -139,7 +136,6 @@ Before requesting a software installation, please review our [Software installat
 | [TIFF](http://www.simplesystems.org/libtiff/) | 4.3.0, 4.7.0 |The LibTIFF software provides support for the Tag Image File Format (TIFF), a widely used format for storing image data.| 
 | [TotalView](https://totalview.io/) | 2016.06.21 |TotalView debugging software provides tools you need to debug, analyze, and scale high-performance computing (HPC) applications.| 
 | [Transformers](https://huggingface.co/docs/transformers/en/index#transformers) by Hugging Face | Latest version only | Transformers is Hugging Face’s LLM framework. For more information on using Transformers, see [Running Large Language Models](../ai-ml/llms.md#transformers-by-hugging-face) |
-| [Trelis](https://coreform.com/news/trelis-is-now-coreform-cubit/) (L) | 16.3.6 | Software that includes everything needed for streamlined progress from CAD to analysis, with full-featured capabilities for geometry preparation and mesh generation, analysis, and fine-tuning. Now known as Coreform Cubit. | 
 | [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) | 0.39 | Trimmomatic performs a variety of useful trimming tasks for Illumina paired-end and single-ended data. |
 | [UCX](https://openucx.org/) | 1.10.1, 1.12.1 (D) | A communication framework for data-centric and high-performance applications.| 
 | [UDUNITS](https://www.unidata.ucar.edu/software/udunits/) | 2.2.20, 2.2.24, 2.2.25, 2.2.28 (D) |The UDUNITS package supports units of physical quantities. Its C library provides for arithmetic manipulation of units and for conversion of numeric values between compatible units.|

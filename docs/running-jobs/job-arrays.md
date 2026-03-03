@@ -137,7 +137,7 @@ Currently, a single job array is limited to, at most, {{ alpine_max_number_array
 
 Please, be careful that you do not submit a large number of concurrent job arrays; this too can overwhelm the SLURM controller. To protect the stability of the cluster, Research Computing reserves the right to suspend and/or cancel any jobs that overwhelm the system. 
 
-If you have questions about submitting large job arrays and/or multiple job arrays, please reach out to us at <rc-help@colorado.edu>.
+If you have questions about submitting large job arrays and/or multiple job arrays, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 ```
 
 ## Output Filenames
