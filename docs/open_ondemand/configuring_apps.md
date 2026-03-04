@@ -33,7 +33,9 @@ Unfortunately, specifying these options can be overwhelming! To help users make 
 | Time| The duration of the job, in hours. This is dependent on both the partition and the QoS on Alpine (see above).  On Blanca, users may specify jobs of up to 7 days (168 hours) in duration. |
 | Number of cores | The number of physical CPU cores for the job. Interactive job applications may use up to 16 cores, if using the `ahub` partition.  All jobs are limited to a single compute node. |
 | Reservation | A reservation reserves resources for jobs being executed by select users and/or accounts. Reservations are rare on our system, but can sometimes be granted for courses utilizing HPC resources or the testing of specialty hardware. | 
-| gres options | General resources (gres) allows for fine-grain hardware specifications. This option is often used to request GPUs. For more information on gres, see [General Resources (gres)](../clusters/alpine/alpine-hardware.md#general-resources-gres).| 
+| gres | General resources (gres) allows for fine-grain hardware specifications. This option is often used to request GPUs. For more information on gres, see [General Resources (gres)](../clusters/alpine/alpine-hardware.md#general-resources-gres).| 
+| nodelist | Allows individuals to request resources from a specific list of nodes. For example, one could provide `c3cpu-a2-u1-1` if they only wanted their job to request resources from that node. For more information on setting this field, please see [Slurm's documentation on `--nodelist`](https://slurm.schedmd.com/sbatch.html#OPT_nodelist).  | 
+| constraint | Provides users with the ability to request resources that have specific features. For example, if we only wanted nodes with EPYC 9534 processors, we could provide `epyc-9534`. For more information on setting this field, please see [Slurm's documentation on `--constraint`](https://slurm.schedmd.com/sbatch.html#OPT_constraint). | 
 
 ```{warning}
 Jobs scheduled on partitions other than `ahub` may take up to several hours to start depending on the hardware and duration selected.
