@@ -33,6 +33,12 @@ The `Customeradmin` role should be treated similarly to other administrative acc
 Creation of new users and roles is permitted with a few caveats:
 
 * Users and roles must be assigned the `oitcld-customer-roles-permission-boundary` permissions boundary during creation.
+* Role names must be prefixed with `customer-`, for example: `customer-role-test`. Failure to add the prefix will result in an error that you are not authorized to perform: iam:CreateRole api call.
+```{image} images/role-prefix-error.png
+:alt: The AWS shared responsibility model with CFS added between AWS and the customer
+```
+
+
 * Customers take on the responsibility for managing and rotating any static credentials associated with AWS IAM users they create.
 
 ```{note}
