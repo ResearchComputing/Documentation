@@ -131,3 +131,21 @@ html[data-theme=light] details.sd-dropdown summary.sd-card-header {
   color: var(--help-text-color);
   font-size: var(--pst-sidebar-font-size);
 }
+
+.sidebar-announcement .btn {
+  border: 1px solid var(--help-border);
+  border-radius: 8px;
+  background: var(--help-background-color);
+  color: var(--help-text-color);
+  font-size: var(--pst-sidebar-font-size);
+}
+
+.sidebar-announcement .btn:hover {
+  background: var(--help-text-color); 
+  color: var(--help-background-color);
+}
+
+/* Ensures the online training cards have equal spacings on each side of the card. */
+#online-trainings .sd-col{
+    padding-top: var(--sd-gutter-x);
+}
