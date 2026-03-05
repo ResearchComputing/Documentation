@@ -97,12 +97,6 @@ Click the name of a training to view more details and register!
 
 ````
 
-````{tab-item} Office Hours
-:sync: cur-sem-train-office-hours
-
-We offer office hours **every Tuesday** (hybrid, Norlin Library E206 or Zoom) and **Thursday** (on Zoom) throughout the academic year! Please see the following link for more information: [RC/CRDDS Office Hours](https://www.colorado.edu/crdds/events-consult).
-
-````
 
 `````
 <p id="footnote-1">[1] <i>Participants may register for specific sessions or all sessions.</i></p>
