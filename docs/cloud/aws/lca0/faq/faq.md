@@ -25,7 +25,7 @@ The **us-west-2** AWS region has the lowest latency from Colorado's Front Range 
 ## Can I use the root user?
 **Answer:**
 No.
-The root user is owned by the **Research Computing Cloud Team**.
+The root user is owned by the **Cloud Foundations Service** team.
 You must use your Customer-Admin role.
 
 
@@ -44,4 +44,12 @@ Send an email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and provide
 Click on the drop down on the top right corner of the console page to expand your account information.
 ```{image} images/AcctNum.png
 :alt: AWS console home page with account information drop-down highlighted
+```
+
+
+## Can I alter or remove CFS resources?
+**Answer:**
+No. Resources owned by the **Cloud Foundations Service (CFS)** team cannot be altered or removed and they can be identified by name prefix and/or resource tags. Any resources with the prefix `oitcld-` are owned by CFS, in addition to those with the below tag attached.
+```{image} images/CFSTag.png
+:alt: The CFS tag has the key/value pair of "oit-cld:management:central"/"true"
 ```
