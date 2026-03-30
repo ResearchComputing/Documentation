@@ -2,8 +2,6 @@ version: 2
 
 build:
   os: "ubuntu-26.04"
-  tools:
-    python: "mambaforge-latest"
   jobs:
     pre_build:
       - /bin/sh "./graphviz_flowcharts/create_svg.sh"
