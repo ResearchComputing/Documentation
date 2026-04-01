@@ -119,7 +119,7 @@ For CU Boulder users, the following methods are available for logging in to CURC
 For CSU users, the following methods are available for logging in to CURC resources:
 - Utilizing Secure Shell (SSH) from your computer's terminal to `ssh` into a login node
     - For more information, on how to do this, see [Terminal access for different operating systems](#terminal-access-for-different-operating-systems) below
-    - For CSU specific guides for this process, please refer to the **"Remote Login"** section of CSU's [Get Started with Alpine](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/get-started-with-alpine/) page
+    - For CSU specific guides for this process, please refer to the **"Remote Login"** section of CSU's [Get Started with Alpine](https://www.research.colostate.edu/rit/get-started-with-alpine/) page
 - Using Open OnDemand to obtain access to a terminal or launch interactive jobs 
     - See our [Open OnDemand (Browser Based HPC Portal)](../open_ondemand/index.md) documentation for more information
 
