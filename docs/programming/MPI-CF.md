@@ -29,7 +29,7 @@ following commands if using the GNU C++ compiler:
 `````{tab-set}
 :sync-group: tabset-mpi-c-comp
 
-````{tab-item} GNU Fortran Compiler
+````{tab-item} GNU C++ Compiler
 :sync: mpi-c-comp-gnu
 
 ```bash
@@ -39,7 +39,7 @@ module load openmpi
 
 ````
 
-````{tab-item} Intel Fortran Compiler
+````{tab-item} Intel C++ Compiler
 :sync: mpi-c-comp-gnu-intel
 
 ```bash

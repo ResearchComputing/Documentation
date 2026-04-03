@@ -64,7 +64,7 @@ compiler module we want into our environment. We can do so as such:
 `````{tab-set}
 :sync-group: tabset-openmp-c
 
-````{tab-item} GCC
+````{tab-item} GNU C++ Compiler
 :sync: openmp-c-openmpi
 
 ```bash
@@ -73,7 +73,7 @@ module load gcc
 
 ````
 
-````{tab-item} Intel C/C++ Compiler
+````{tab-item} Intel C++ Compiler
 :sync: openmp-c-intelmpi
 
 ```bash
