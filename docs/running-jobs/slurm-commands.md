@@ -64,16 +64,43 @@ to the terminal.
 ````
 
 ```{seealso}
-For more information on squeue, [visit the Slurm page on
+For more information, [visit the Slurm page on
 squeue](https://slurm.schedmd.com/squeue.html)
 ```
+
+## Assessing the priority and queue position of a job with `sprio`
+
+The Slurm `sprio` command enables users to view the priority score of their pending job(s), including the factors that contribute to the job's priority. The command can also be used to determine the job's position in the queue. The `sprio` command is most useful when it is run in a manner that sorts by the priority score, since your job will be behind jobs with higher priority scores: 
+
+```bash
+sprio -S '-Y'
+```
+The `-S` flag tells the command to sort the output by priority in descending order, `-Y`. The output includes the following columns of output, in order: _jobid, partition, priority_, as well as the five factors that are added together to determine _priority_: _site, age, fairshare, jobsize, and qos_. The _fairshare_ factor is generally the dominant factor; this factor quantifies your usage over the past 28 days relative to your expected usage in a given allocation (account).
+
+The output from the above command will show results across _all_ partitions. You will likely be most interested in the relative priority of your job compared to all other pending jobs in a specific partition. This can be done as follows, (e.g., for the `aa100` partition):
+
+```bash
+sprio -S '-Y' -p aa100
+```
+You can either scroll through the output to find your job, or you can find its numeric position in the partition queue as follows:
+
+```bash
+sprio -S '-Y' -p aa100 | grep -n 12345678
+```
+The modifier pipes the output of `sprio` into the linux pattern-matching command `grep`, and shows the line number (`-n`) of the jobid you specify (`12345678`).  The line number is the job's position in the partition queue.
+
+```{seealso}
+For more information, [visit the Slurm page on
+sprio](https://slurm.schedmd.com/sprio.html)
+```
+
 
 ## Stopping jobs with `scancel`
 
 Sometimes you may need to stop a job entirely while it’s running. The
 best way to accomplish this is with the `scancel` command. The scancel
 command allows you to cancel jobs you are running on Research
-Computing resources using the job’s ID. The command looks like this:
+Computing resources using the job’s ID. 
 
 ```bash
 $ scancel your_job-id
