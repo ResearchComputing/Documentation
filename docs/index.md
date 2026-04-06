@@ -138,10 +138,8 @@ software/rapids
 programming/coding-best-practices
 programming/parallel-programming-fundamentals
 programming/MPIBestpractices
-programming/MPI-C
-programming/MPI-Fortran
-programming/OpenMP-C
-programming/OpenMP-Fortran
+programming/MPI-CF
+programming/OpenMP-CF
 programming/profiling-nvidia-gpu-performance
 
 ```
