@@ -149,3 +149,9 @@ html[data-theme=light] details.sd-dropdown summary.sd-card-header {
 #online-trainings .sd-col{
     padding-top: var(--sd-gutter-x);
 }
+
+.svg-icon {
+  background: white;
+  fill: red;
+}
+
