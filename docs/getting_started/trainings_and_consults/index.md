@@ -13,7 +13,7 @@ online-trainings
 
 ## Weekly Office Hours
 
-Join the CURC Weekly Office Hours and get one-on-one support with a member of the User Support Team. Whether you're trying to optimize your workflows on Alpine and Blanca or just getting started with your first high-performance computing project, we’re here to help you bridge the gap between "it’s broken" and "it’s running."
+Join the CURC Weekly Office Hours during the academic year and get one-on-one support with a member of the User Support Team. Whether you're trying to optimize your workflows on Alpine and Blanca or just getting started with your first high-performance computing project, we’re here to help you bridge the gap between "it’s broken" and "it’s running."
 
 Don't let technical bottlenecks stall your progress. Come with your questions, leave with a plan, and get your research back on track.
 
