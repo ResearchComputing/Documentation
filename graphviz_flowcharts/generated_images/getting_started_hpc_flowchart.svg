@@ -38,7 +38,7 @@
 </g>
 <!-- training -->
 <g id="clickable" class="node">
-<g id="a_clickable"><a xlink:href="../getting_started/current-sem-trainings.html" target="_blank">
+<g id="a_clickable"><a xlink:href="../getting_started/trainings_and_consults/current-sem-trainings.html" target="_blank">
 <ellipse fill="#121212" stroke="#cfb87c" stroke-width="2" cx="254.47" cy="-666" rx="45.57" ry="18"/>
 <text text-anchor="middle" x="254.47" y="-662.48" font-family="Verdana" font-size="12.00" fill="white">Trainings</text>
 </a>

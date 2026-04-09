@@ -26,8 +26,9 @@ Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of
 getting_started/navigating_docs
 getting_started/logging-in
 getting_started/faq
-getting_started/current-sem-trainings
 getting_started/acknowledge_curc_resources
+getting_started/trainings_and_consults/index
+
 ```
 
 ```{toctree}
