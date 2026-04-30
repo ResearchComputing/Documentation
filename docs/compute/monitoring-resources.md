@@ -466,7 +466,7 @@ Refer to ["Why am I getting unexpected results for my GPU memory or utilization 
  
 XDMoD is a web portal for viewing metrics at the system-, partition- and user-levels.
 
-Would you like to know average queue wait times?  Do you need to better understand your historical resource utilization or utilization of your project account by user? The XDMoD ([XD Metrics on Demand](https://open.xdmod.org/9.0/index.html)) web-based tool provides users with the ability to easily obtain detailed metrics for high performance computing resources. This open-source tool was developed by the University at Buffalo [Center for Computational Research (CCR)](http://www.buffalo.edu/ccr.html). CU Boulder Research Computing runs its own instance, [CURC XDMoD](https://xdmod.rc.colorado.edu) that enables users to query metrics for the _RMACC_, _Alpine_ and _Blanca_ computing resources. 
+Would you like to know average queue wait times?  Do you need to better understand your historical resource utilization or utilization of your project account by user? The XDMoD ([XD Metrics on Demand](https://open.xdmod.org/9.0/index.html)) web-based tool provides users with the ability to easily obtain detailed metrics for High-Performance Computing resources. This open-source tool was developed by the University at Buffalo [Center for Computational Research (CCR)](http://www.buffalo.edu/ccr.html). CU Boulder Research Computing runs its own instance, [CURC XDMoD](https://xdmod.rc.colorado.edu) that enables users to query metrics for the _RMACC_, _Alpine_ and _Blanca_ computing resources. 
 
 __Getting started with XDMoD__
 

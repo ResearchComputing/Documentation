@@ -8,7 +8,7 @@
 :img-top: ./training_images/RC_Quiz.png
 :img-alt: A student is taking an online quiz to test their knowledge of HPC systems
 
-This course covers the ins and outs of CU Research Computing's (CURC) High Performance Computing (HPC) systems. 
+This course covers the ins and outs of CU Research Computing's (CURC) High-Performance Computing (HPC) systems. 
 
 Topics include: 
   * Alpine & Blanca Clusters 

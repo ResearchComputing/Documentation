@@ -273,7 +273,7 @@ python llama_query.py
 At the time of running this model, we obtain the following output:
 ```text
 CU Research Computing is an exceptionally cool and powerful resource that provides researchers 
-with access to high-performance computing clusters, advanced data storage systems, and expert 
+with access to High-Performance Computing clusters, advanced data storage systems, and expert 
 support to facilitate cutting-edge research and innovation.
 ```
 This of course is just a simple example showing how one can query Ollama models from within a Python script. This functionality opens the door for more complex queries and scripts. This example also touches on just one aspect of the Python API. For more tutorials and documentation of the API, see the `examples` directory and `README.md` file in the official [ollama-python](https://github.com/ollama/ollama-python) GitHub repository. 

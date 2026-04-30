@@ -1,6 +1,6 @@
 # Alpine Quick Start
 
-Alpine is the University of Colorado Boulder Research Computing's third-generation high performance computing (HPC) 
+Alpine is the University of Colorado Boulder Research Computing's third-generation High-Performance Computing (HPC) 
 cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
 Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers {{ alpine_total_compute_nodes }} compute nodes and a total 
 of {{ alpine_total_cores }} cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
