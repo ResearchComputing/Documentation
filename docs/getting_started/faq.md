@@ -333,12 +333,6 @@ This error usually means users do not have an allocation that would provide the 
 If you are getting an `Invalid Partition` error on a Blanca job which you know you have access to or have had access to before, you may have the `slurm/alpine` module loaded. From a login node, run `module load slurm/blanca` to access the Slurm job scheduler instance for Blanca, then try to resubmit your job.
 ::::
 
-### How would increasing a node's local storage affect the price? 
-::::{dropdown} Show 
-:icon: note
- Commonly, additional RAM will increase pricing substantially, whereas increased local storage (typically, SSD) will do so only slightly (perhaps by a few hundred dollars). However, we recommend using RC’s dedicated storage resources rather than adding persistent storage local to a single node. This increases functionality, redundancy, and our capacity to recover data in the event of issues. 
-::::
-
 ### Can you tell us more about the Service Level Agreement (SLA) this hardware comes with? 
 ::::{dropdown} Show 
 :icon: note
