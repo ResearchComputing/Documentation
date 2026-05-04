@@ -185,7 +185,7 @@ cluster = LocalCluster(
 
 ```
 
-#### Connecting to the Dashboard
+#### Step 5: Connecting to the Dashboard
 
 To connect the Dask extension to your running cluster, you must provide the dashboard URL.
 
@@ -208,7 +208,7 @@ https://ondemand.rc.colorado.edu/node/<node-name>/<port>/proxy/8787/status
 :align: center
 ```
 
-#### Viewing the Connected Dashboard
+#### Step 6: Viewing the Connected Dashboard
 
 Once the correct URL is entered, the Dask dashboard will connect and display live cluster metrics inside JupyterLab.
 
