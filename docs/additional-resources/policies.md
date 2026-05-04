@@ -102,7 +102,7 @@ Unused modules may be pruned after 12 months without usage. Any pruned module ma
 
 CURC reserves the right to remove software that is not in compliance with CU Boulder Office of Information Technology  software or security policies.
 
-To request a software installation, please follow the instructions provided under the FAQ How can I submit a software installation request? dropdown.
+To request a software installation, please follow the instructions provided under the FAQ [How can I submit a software installation request?](../getting_started/faq.md#how-can-i-submit-a-software-installation-request) dropdown.
 
 <br>
 
