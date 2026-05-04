@@ -12,19 +12,13 @@ Dask integrates well with familiar libraries like `NumPy` and `pandas`, making i
 
 ## Dask Distributed Cluster
 
-We can basically think of the Dask scheduler as our task orchestrator. To perform work, a scheduler must be assigned resources in the form of a Dask cluster. The Dask cluster has three main components for processing computations in parallel. These are the client, the scheduler and the workers.
+We can basically think of the Dask scheduler as our task orchestrator. To perform work, a scheduler must be assigned resources in the form of a Dask cluster. The Dask cluster has three main components for processing computations in parallel. These are the *client*, the *scheduler*, and the *workers*.
 
 * The *client* is responsible for submitting tasks to be executed to the *scheduler*. It also enables you to monitor job progress and access the dashboard.
 
-* After receiving the tasks from the client, the scheduler determines how tasks will be distributed among the workers and coordinates them to process tasks in parallel. It:
-    - Receives tasks from your Python code
-    - Decides how to execute them
-    - Distributes them to workers
+* The *scheduler* determines how *client* tasks will be distributed among the *workers* and coordinates the parallelized workload. 
 
-* Finally, the workers compute tasks and store and return computations results. Workers can be threads, processes, or separate machines in a cluster. Each worker:
-    - Runs tasks assigned by the scheduler
-    - Uses CPU cores and memory
-    - Can run on the same node or across multiple nodes
+* The *workers* compute tasks and store and return computations results. *Workers* can be threads, processes, or separate machines in a cluster. 
 
 ![](./dask_images/distributed_cluster.png) 
 
