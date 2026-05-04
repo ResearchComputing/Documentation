@@ -128,7 +128,7 @@ cluster.dashboard_link
 The provided link for the dashboard will not work in an Open OnDemand session as-is. The dashboard must be accessed through the Jupyter proxy.
 
 For instructions on how to construct and access the correct URL, refer to:
-[Connecting to the Dashboard](dask.md#connecting-to-the-dashboard)
+[Connecting to the Dashboard](#step-5-connecting-to-the-dashboard)
 ```
 
 ### JupyterLab Plugin for Dask
