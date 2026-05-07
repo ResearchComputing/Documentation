@@ -142,7 +142,7 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 303-735-4357.
 ::::
 
-## General High Performance Computing
+## General High-Performance Computing
 
 ### What is Arbiter2? 
 ::::{dropdown} Show 

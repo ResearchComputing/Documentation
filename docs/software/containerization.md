@@ -15,7 +15,7 @@ Containers distinguish themselves through their low computational overhead and t
 
 ## Container engines
 
-[Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run directly on high-performance computing (HPC) platforms like Alpine because users do not have administrative privileges._ CURC documentation on Docker can be found below. 
+[Docker](https://www.docker.com/) is the most widely used container engine, and  can be used on any system where you have administrative privileges. _Docker cannot be run directly on High-Performance Computing (HPC) platforms like Alpine because users do not have administrative privileges._ CURC documentation on Docker can be found below. 
 
 [Apptainer](https://apptainer.org/) (formerly Singularity) is a container engine that does not require administrative privileges to execute. Therefore, it is safe to run on HPC platforms like Alpine or Blanca.   
 

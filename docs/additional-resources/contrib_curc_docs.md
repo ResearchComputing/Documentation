@@ -140,6 +140,9 @@ To ensure that our documentation is uniform and is easily digestible for users, 
     ```
     ::::
 - [ ] Define any acronyms when they are first introduced.
+- [ ] Ensure the following common terms utilize the approved spelling and style: 
+    - High-Performance Computing : First letter is capitalized in each word and includes a hyphen
+    - HPC : Acronym for High-Performance Computing. Each letter must be capitalized.
 - [ ] If there is a related topic in our documentation, link to it.
 - [ ] Avoid links such as `[here]()` instead of using `here`, provide a title. 
 - [ ] For each new topic, provide at least a small introduction to the topic. The focus is on informing the user in a complete and clear way, not just stating information. 

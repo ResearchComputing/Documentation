@@ -134,7 +134,7 @@ Before requesting a software installation, please review our [Software installat
 | [tDOM](http://tdom.org/index.html/dir?ci=release) | 0.8.3, 0.9.2 |tDOM is a Tcl extension for parsing XML.| 
 | [TeX Live](https://www.tug.org/texlive/) | 2021 |TeX Live is a cross-platform, free software distribution for the TeX typesetting system that includes major TeX-related programs, macro packages, and fonts.| 
 | [TIFF](http://www.simplesystems.org/libtiff/) | 4.3.0, 4.7.0 |The LibTIFF software provides support for the Tag Image File Format (TIFF), a widely used format for storing image data.| 
-| [TotalView](https://totalview.io/) | 2016.06.21 |TotalView debugging software provides tools you need to debug, analyze, and scale high-performance computing (HPC) applications.| 
+| [TotalView](https://totalview.io/) | 2016.06.21 |TotalView debugging software provides tools you need to debug, analyze, and scale High-Performance Computing (HPC) applications.| 
 | [Transformers](https://huggingface.co/docs/transformers/en/index#transformers) by Hugging Face | Latest version only | Transformers is Hugging Face’s LLM framework. For more information on using Transformers, see [Running Large Language Models](../ai-ml/llms.md#transformers-by-hugging-face) |
 | [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) | 0.39 | Trimmomatic performs a variety of useful trimming tasks for Illumina paired-end and single-ended data. |
 | [UCX](https://openucx.org/) | 1.10.1, 1.12.1 (D) | A communication framework for data-centric and high-performance applications.| 
