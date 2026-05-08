@@ -289,7 +289,7 @@ The interactive job won't start until the resources that it needs are available,
 2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/scratch/alpine`, which will offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics, such as any node on Blanca HPC can run MPI applications much more efficiently.
-
+   
 ## Blanca Preemptable QOS
 
 Each partner group has its own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on nodes that it has contributed. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (“preemptable”) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours, and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. To facilitate equitable access to preemptable resources, at any given time each user is limited to consuming a maximum of 2000 cores (roughly 25% of all resoures on Blanca) across all of their preemptable jobs. The preemption process will terminate the low-priority job with a grace period of up to 120-seconds. Preempted low-priority jobs will then be requeued by default.  Additional details follow.
@@ -334,9 +334,11 @@ Interactive jobs will not requeue if preempted.
 
 ### Best practices
 
-Checkpointing: Given that preemptable jobs can request wall times up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is preempted, killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable QoS should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
+**Checkpointing** \
+Given that preemptable jobs can request wall times up to 24 hours in duration, there is the possibility that users may lose results if they do not checkpoint. Checkpointing is the practice of incrementally saving computed results such that -- if a job is preempted, killed, canceled or crashes -- a given software package or model can continue from the most recent checkpoint in a subsequent job, rather than starting over from the beginning. For example, if a user implements hourly checkpointing and their 24 hour simulation job is preempted after 22.5 hours, they will be able to continue their simulation from the most recent checkpoint data that was written out at 22 hours, rather than starting over. Checkpointing is an application-dependent process, not something that can be automated on the system end; many popular software packages have checkpointing built in (e.g., ‘restart’ files). In summary, users of the preemptable QoS should implement checkpointing if at all possible to ensure they can pick up where they left off in the event their job is preempted.
 
-Requeuing: Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
+**Requeuing** \
+Users running jobs that do not require requeuing if preempted should specify the `--no-requeue` flag noted above to avoid unnecessary use of compute resources.
 
 ### Example Job Scripts
 
@@ -418,31 +420,3 @@ python myscript.py
 
 Grace period upon preemption: When jobs are preempted, a 120 second grace period is available to enable users to save and exit their jobs should they have the ability to do so. The preempted job is immediately sent `SIGCONT` and `SIGTERM` signals by Slurm in order to provide notification of its imminent termination. This is followed by the `SIGCONT`, `SIGTERM` and `SIGKILL` signal sequence upon reaching the end of the 120 second grace period. Users wishing to do so can monitor the job for the SIGTERM signal and, when detected, take advantage of this 120 second grace period to save and exit their jobs.
 
-
-
-
-## FAQ
-
- ### How would going from 480GB to 2TB SSD affect the price? 
-
- Commonly, additional RAM will increase pricing substantially, whereas increased local SSD will do so only slightly (perhaps by a few hundred dollars). However, we recommend using RC’s dedicated storage resources rather than adding persistent storage local to a single node. This increases functionality, redundancy, and our capacity to recover data in the event of issues. 
-
- ### Can you tell us more about the Service Level Agreement (SLA) this hardware comes with? 
-
- The hardware comes with a 5-year warranty that covers all hardware-related issues during that period. No additional node-related costs will be incurred by the owner during this period.  After the 5-year period, if the owner wishes to continue using the nodes, and if RC can still support the hardware, the owner will be responsible for purchasing hardware if/when it fails (e.g., SSDs, RAM, etc.). 
-
- ### Do you offer a percent uptime guarantee for the duration of the SLA? 
-
- Individual nodes do not receive an uptime estimate due to wide variation in issues that may occur. 
-
- ### Are backup and restore options available?
-
- We do not offer backups as part of the Blanca service. Users wishing to use and store their own files with an option for backup are encouraged to purchase space on the RC maintained [PetaLibrary](../../petalibrary/index.md). The SSDs on each node are reserved for temporary data storage during jobs (data on SSDs is deleted at the end of each job); therefore, backup is not offered for SSDs.  
-
- ### Can you clarify how priority works? 
-
- Blanca node owners (and their designated group members) are guaranteed priority on nodes they purchase. Each Blanca owner has their own high-priority QoS (`blanca-<group identifier>`) for jobs that will run on their nodes. High-priority jobs can run for up to 7 days. All partners also have access to a low-priority QoS (`preemptable`) that can run on any Blanca nodes that are not already in use by the partners who contributed them. Low-priority jobs will have a maximum time limit of 24 hours and can be preempted at any time by high-priority jobs that request the same compute resources being used by the low-priority job. Additional factors for determining job priority include the job’s age and the number of jobs recently run by the user/account. 
-
- ### Can a priority tier system be implemented? 
-
-Often, users want to share resources with another faculty member potentially buying the same kind of node, this is defined as a priority tier system. In other words, two groups have priority on each other's resources when the other group is not using them and before other users on Blanca. Unfortunately, Blanca does not typically support tiers of priority, except to distinguish preemptable jobs from jobs submitted by node owners. However, a node owner may authorize another user or set of users to have equivalent priority access to their nodes, if they wish. 

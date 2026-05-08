@@ -4,7 +4,7 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 ## Acknowledging Alpine
 
-“This work utilized the Alpine high performance computing resource at the University of Colorado Boulder. Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).”
+“This work utilized the Alpine High-Performance Computing resource at the University of Colorado Boulder. Alpine is jointly funded by the University of Colorado Boulder, the University of Colorado Anschutz, Colorado State University, and the National Science Foundation (award 2201538).”
 
 - DOI: https://doi.org/10.25811/k3w6-pk81 
 - Citation: University of Colorado Boulder Research Computing. (2023). Alpine. University of Colorado Boulder. https://doi.org/10.25811/k3w6-pk81

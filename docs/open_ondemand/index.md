@@ -1,6 +1,6 @@
 # Open OnDemand _(Browser Based HPC Portal)_
 
-Open OnDemand is a browser based, integrated, single access point for all of your high performance computing (HPC) resources at CU Research Computing. Open OnDemand provides a graphical interface to manage files; create and view job Slurm jobs on CURC's clusters; and access interactive applications (such as Jupyter and RStudio). All of these actions are completed via a web browser and require only minimal knowledge of Linux and scheduler commands.
+Open OnDemand is a browser based, integrated, single access point for all of your High-Performance Computing (HPC) resources at CU Research Computing. Open OnDemand provides a graphical interface to manage files; create and view job Slurm jobs on CURC's clusters; and access interactive applications (such as Jupyter and RStudio). All of these actions are completed via a web browser and require only minimal knowledge of Linux and scheduler commands.
 
 ## Getting started with Open OnDemand
 
