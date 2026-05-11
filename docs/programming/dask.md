@@ -61,7 +61,7 @@ Using processes: True
 ```
 
 ```{figure} ./dask_images/dask-plugin-2.png
-:alt: A screenshot of a Jupyter Notebook displaying Python code for Dask. The code imports libraries, sets up a LocalCluster with specific parameters, and shows cluster details such as the number of workers, total threads, and status.
+:alt: A screenshot of a Jupyter Notebook displaying Python code for Dask that imports libraries, sets up a LocalCluster with specific parameters, and shows cluster details such as the number of workers, total threads, and status. Described under the heading Setting up a Local Cluster.
 :align: center
 ```
 
@@ -115,7 +115,7 @@ Dashboard: http://127.0.0.1:8787/status
 ```
 
 ```{figure} ./dask_images/dask-plugin-3.png
-:alt: Screenshot of a Jupyter notebook interface displaying a code segment initializing a Dask client. The section labeled 'Client' shows connection details, including the connection method, cluster type, and a URL for dashboard access.
+:alt: Screenshot of a Jupyter notebook interface displaying a code segment initializing a Dask client and the resulting connection details, including the connection method, cluster type, and a URL for dashboard access. Described under the heading Dask Dashboard.
 :align: center
 ```
 
@@ -166,7 +166,7 @@ Refer to the documentation here for detailed instructions on selecting and launc
 After launching JupyterLab, open the Dask tab from the left sidebar. The Dask icon appears alongside other JupyterLab tools such as the file browser and notebook panel.
 
 ```{figure} ./dask_images/dask-plugin-1.png
-:alt: Screenshot of a JupyterLab interface showing the Dask extension icon located in the left sidebar alongside notebook and file browser icons and displaying a code snippet for starting a local cluster on the right. 
+:alt: Screenshot of a JupyterLab interface showing the Dask extension icon located in the left sidebar alongside notebook and file browser icons and displaying a code snippet for starting a local cluster on the right. Described under the heading Step 4: Use the Dask Extension.
 :align: center
 ```
 
@@ -204,7 +204,7 @@ https://ondemand.rc.colorado.edu/node/<node-name>/<port>/proxy/8787/status
 ```
 
 ```{figure} ./dask_images/dask-plugin-4.png
-:alt: Screenshot showing a JupyterLab session and instructions for modifying the Dask dashboard URL by appending /proxy/8787/status for Open OnDemand access.
+:alt: Screenshot showing a JupyterLab session and instructions for modifying the Dask dashboard URL by appending /proxy/8787/status for Open OnDemand access. Described under heading Step 5: Connecting to the Dashboard.
 :align: center
 ```
 
