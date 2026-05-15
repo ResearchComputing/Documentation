@@ -176,7 +176,7 @@ Every Research Computing account has a .bashrc file in their /home directory. Th
 
 1. Navigate to your home directory : `cd ~`
 2. Open or create the .bashrc : `vim .bashrc` or `nano .bashrc` 
-3. Copy + Paste the following code snippet into your .bashrc and then save the file.  
+3. Copy + paste the following code snippet into your .bashrc and then save the file, replacing any existing text in the file (if any).  
 
 ```
 # .bashrc
