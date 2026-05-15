@@ -168,6 +168,27 @@ Please note that the maximum values listed are intended to support intermittent 
 
 ::::
 
+### How can I reset my .bashrc? 
+::::{dropdown} Show 
+:icon: note
+
+Every Research Computing account has a .bashrc file in their /home directory. This file ensures your account's environment is properly configured whenever you login or run a job on a compute node. We do not recommend editing this file, unless you know what you are doing. If you accidentally delete or edit the file, you can restore your .bashrc by taking the following steps: 
+
+1. Navigate to your home directory : `cd ~`
+2. Open or create the .bashrc : `vim .bashrc` or `nano .bashrc` 
+3. Copy + paste the following code snippet into your .bashrc and then save the file, replacing any existing text in the file (if any).  
+
+```
+# .bashrc
+
+if [ -f /etc/bashrc ]; then
+. /etc/bashrc
+fi
+```
+
+::::
+
+
 ### How can I add users to a Linux group?
 ::::{dropdown} Show 
 :icon: note
