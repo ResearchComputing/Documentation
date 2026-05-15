@@ -141,6 +141,7 @@ programming/MPIBestpractices
 programming/MPI-CF
 programming/OpenMP-CF
 programming/profiling-nvidia-gpu-performance
+programming/dask
 
 ```
    
