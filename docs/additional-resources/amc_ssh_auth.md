@@ -46,7 +46,7 @@ You can move on to [Step 2](#step-2-generate-an-ssh-key), but please make sure 1
 ```
 ## *Step 2: Generate an ssh key*
 
-You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. You are also strongly encouraged to create an ed25519 key type.
+You are strongly encouraged to set a passphrase for your key pair and generate a ed25519 key. You will be prompted to enter the passphrase each time you log in.
 
 ### SSH Key Generation for Windows Users: 
 - It is recommended you use Powershell, but command prompt or a basic windows terminal will also work:
