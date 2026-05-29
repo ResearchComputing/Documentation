@@ -20,11 +20,23 @@ This option is recommended when you have a quick task to do from a single shell.
 
 1. Launch the [AWS Management Console (SSO URL)](https://aws-classic.colorado.edu).
 2. Provide your university login credentials (like your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) for CU Boulder) when directed to Microsoft Entra.
+    ```{image} images/aws-console-access/login.png
+        :alt: CU SSO login page
+    ```
 3. Choose a method for authentication. We recommend you select "Send Me a Push". **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
 4. Accept the MFA request on your device.
 5. You will be presented with a list of account names and numbers to which you have access. Click on the name of the desired account to expand the roles allocated to you. Click on "Access Keys" next to the name of the desired role.
+    ```{image} images/aws-cli-access/select-access-keys.png
+    :alt: AWS SSO account and role selection page with "Access Keys" circled in red
+    ```
 6. You will be presented with multiple options for acquiring access keys for the CLI. Click on the tab that matches your operating system (OS).
+    ```{image} images/aws-cli-access/browser-cli-os-selection.png
+    :alt: AWS CLI credentials access page with "macOS and Linux" circled in red
+    ```
 7. Expand the section named "Option 1: Set AWS environment variables" and click on the overlapping squares icon to copy the environment variable commands that contain your credentials. The exact commands displayed will vary by OS and shell.
+    ```{image} images/aws-cli-access/browser-cli-option1.png
+    :alt: AWS CLI credentials access page with the copy icon circled in red next to a list of environment variable commands
+    ```
 8. In a terminal on your local machine, paste in the environment variable commands that you just copied and hit Enter. If you require authentication in multiple shell sessions, you'll need to paste the same keys in each one.
     ```bash
     $ export AWS_ACCESS_KEY_ID="AAAAAAAAAAAAAAAAAAAA"
@@ -49,11 +61,23 @@ This option is recommended when you want to use multiple shell sessions to acces
 
 1. Launch the [AWS Management Console (SSO URL)](https://aws-classic.colorado.edu).
 2. Provide your university login credentials (like your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) for CU Boulder) when directed to Microsoft Entra.
+    ```{image} images/aws-console-access/login.png
+        :alt: CU SSO login page
+    ```
 3. Choose a method for authentication. We recommend you select "Send Me a Push". **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
 4. Accept the MFA request on your device.
 5. You will be presented with a list of account names and numbers to which you have access. Click on the name of the desired account to expand the roles allocated to you. Click on "Access Keys" next to the name of the desired role.
+    ```{image} images/aws-cli-access/select-access-keys.png
+    :alt: AWS SSO account and role selection page with "Access Keys" circled in red
+    ```
 6. You will be presented with multiple options for acquiring access keys for the CLI. Click on the tab that matches your operating system (OS).
+    ```{image} images/aws-cli-access/browser-cli-os-selection.png
+    :alt: AWS CLI credentials access page with "macOS and Linux" circled in red
+    ```
 7. Expand the section named "Option 2: Add a profile to your AWS credentials file" and click on the overlapping squares icon to copy the configuration block that contain your credentials.
+    ```{image} images/aws-cli-access/browser-cli-option2.png
+    :alt: AWS CLI credentials access page with the copy icon circled in red next to a list of configuration lines that contain the current credentials and profile name
+    ```
 8. Append the credential block you copied in the previous step to your AWS credentials file. This file is located at `~/.aws/credentials` (for macOS and Linux) or `%USERPROFILE%\.aws\credentials` (for Windows). It's okay if other configuration is already present in this file.
     ```bash
     $ cat ~/.aws/credentials

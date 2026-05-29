@@ -16,9 +16,15 @@ You can access your AWS Account from anywhere with internet access.  You do not 
 
 1. Launch the [AWS Management Console (SSO URL)](https://aws-classic.colorado.edu).
 2. Provide your university login credentials (like your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) for CU Boulder) when directed to Microsoft Entra.
+    ```{image} images/aws-console-access/login.png
+        :alt: CU SSO login page
+    ```
 3. Choose a method for authentication.  We recommend you select "Send Me a Push".  **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
 4. Accept the MFA request on your device.
 5. If you only have access to a single AWS Account and a single Role, you will be logged straight in to the AWS Console.
 If you have access to multiple AWS Accounts and/or Roles, you will be presented with a list of Accounts/Roles to select.  Select the Account and Role you wish to log in to.
+    ```{image} images/aws-console-access/select-role.png
+        :alt: AWS SSO account and role selection page
+    ```
 6. You will be logged in to the AWS Management Console.  Always be sure to verify you have the AWS Region you are working with selected after logging in.
 Once logged in, you have a 4 hour session.  You will be asked to log back in and re-authenticate using MFA when your session expires.
