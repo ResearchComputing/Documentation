@@ -159,18 +159,18 @@ GPU nodes require the additional `--gres` directive (see above section).
 Partitions available on Alpine:
 
 
-| Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | Default/Max Walltime     | Resource Limits |
+| Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | Max Walltime     | Resource Limits |
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- | ------------------------ | ----------------------|
-| amilan    | AMD Milan (default)          | {{ alpine_total_amilan_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 24H, 7D                 | see QoS table |
-| ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}         | 6.1<sup>3</sup>     | 24H, 7D                 | 15 GPUs across all jobs |
-| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 24H, 7D     | 21 GPUs across all jobs |
-| al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 24H, 7D     | 6 GPUs across all jobs |
-| amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |  4H,  7D                 | see QoS table |
+| amilan    | AMD Milan (default)          | {{ alpine_total_amilan_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 7 days                 | see QoS table |
+| ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}         | 6.1<sup>3</sup>     | 7 days                  | 15 GPUs across all jobs |
+| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 7 days      | 21 GPUs across all jobs |
+| al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 7 days      | 6 GPUs across all jobs |
+| amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |  7 days                | see QoS table |
 | acompile | AMD Milan compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | see [acompile section](./alpine-hardware.md#acompile-usage-examples) below                 | see [acompile section](./alpine-hardware.md#atesting-usage-examples) below |
 | atesting | AMD Milan test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU amilan pool | 64 |   {{ alpine_standard_ram_per_core }}         | 0.025                   | see [atesting section](./alpine-hardware.md#atesting-usage-examples) below                 | see [atesting section](./alpine-hardware.md#atesting-usage-examples) below |
 | atesting_a100 | GPU-enabled testing node (3x NVIDIA A100 split w/ MIG) | {{ alpine_total_atesting_a100_nodes }} | 64         |   {{ alpine_standard_ram_per_core }}        | 0.025     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below |
 | atesting_mi100 | GPU-enabled testing nodes (3x AMD MI100) | {{ alpine_total_atesting_mi100_nodes }} | 64         |   {{ alpine_standard_ram_per_core }}        | 0.025     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below     | see [GPU atesting section](./alpine-hardware.md#gpu-atesting-usage-examples) below |
-| gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at twice the rate of our A100s   | 24H,7D     | see QoS table |
+| gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at twice the rate of our A100s   | 7 days     | see QoS table |
 
 ```{important}
 **Partition table footnotes:** 
