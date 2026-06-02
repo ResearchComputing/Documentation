@@ -55,7 +55,7 @@ Non CU Boulder user groups are managed through Microsoft Entra groups.
 
 ### Your Group Name
 The Entra group name to manage access to your AWS account is in the form '\<account-alias\>-CustomerAdmin'.
-To find your account alias look in the top right corner of the screen when you are logged into the AWS console.
+To find your account alias view the top right corner of the screen when logged into the AWS console.
    ![account-alias](images/managing-grouper-groups/alias.png)
 
 
