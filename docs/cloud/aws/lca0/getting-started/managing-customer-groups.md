@@ -3,6 +3,8 @@
 ## CU Boulder Users
 CU Boulder user groups are managed through grouper.
 
+> **Note:** Users must be logged in to the CU Boulder VPN to access Grouper.
+
 ### Adding Users
 
 AWS customers can add team members as Administrators to their AWS account.
@@ -57,7 +59,7 @@ AWS customers can add team members as Administrators to their AWS account.
 This is done using AWS Entra Groups.
 Note that changes can take up to 15 minutes to take effect.
 
-The technical contact person is added as admin to the entra group and they will have access to add members to the group.
+The technical contact person is added as Owner of the Entra group and they will have access to add members to the group.
 
 Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#add-members-or-owners-of-a-group) to add members to groups.
 

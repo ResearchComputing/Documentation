@@ -1,7 +1,7 @@
 # Accessing the AWS Management Console
 
 ## Prerequisites
-1. You are a member of CU Boulder you will be using your CU Identikey. If you are from another institution but have access to CU Boulder AWS resources, sign in using your institution's credentials.
+1. If you are a member of CU Boulder, you will be using your CU Identikey. If you are from another institution but have access to CU Boulder AWS resources, sign in using your institution's credentials.
 
 2. CU Anchutz users: to get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
 
@@ -10,7 +10,7 @@ Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu
 
 ## Single Sign-On
 
-Users access the [AWS Management Console](https://aws-classic.colorado.edu) using their university login credentials(like [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) for CU Boulder) in Microsoft Entra.
+Users access the [AWS Management Console](https://aws-classic.colorado.edu) using their university login credentials (like [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) for CU Boulder) in Microsoft Entra.
 The Single Sign-On (SSO) URL is [https://aws-classic.colorado.edu](https://aws-classic.colorado.edu).
 You can access your AWS Account from anywhere with internet access.  You do not need to have a VPN connection to campus.
 
@@ -21,10 +21,9 @@ You can access your AWS Account from anywhere with internet access.  You do not 
     ```
 3. Choose a method for authentication.  We recommend you select "Send Me a Push".  **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
 4. Accept the MFA request on your device.
-5. If you only have access to a single AWS Account and a single Role, you will be logged straight in to the AWS Console.
-If you have access to multiple AWS Accounts and/or Roles, you will be presented with a list of Accounts/Roles to select.  Select the Account and Role you wish to log in to.
+5. You will be presented with a list of account names and numbers to which you have access. Click on the name of the desired account to expand the roles allocated to you.  Select the Account and Role you wish to log in to.
     ```{image} images/aws-console-access/select-role.png
         :alt: AWS SSO account and role selection page
     ```
 6. You will be logged in to the AWS Management Console.  Always be sure to verify you have the AWS Region you are working with selected after logging in.
-Once logged in, you have a 4 hour session.  You will be asked to log back in and re-authenticate using MFA when your session expires.
+Once logged in, you have a 4 hour session.  When your session expires, return to the access portal to refresh your credentials.
