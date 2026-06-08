@@ -4,7 +4,7 @@ AWS CLI temporary credentials are valid for **4 hours** and can be established t
 
 **Note:** The `$` in the examples below indicates your prompt. Do not type it as input.
 
-## Prerequisite
+## Prerequisites
 * The [AWS CLI tools](https://aws.amazon.com/cli/) is installed. Please refer to the [AWS CLI installation documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) for instructions.
 
 * CU Anchutz users: to get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.

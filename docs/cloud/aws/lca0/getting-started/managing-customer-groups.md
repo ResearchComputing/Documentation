@@ -21,23 +21,33 @@ Note that changes can take up to 15 minutes to take effect.
    You will see a list of groups that you can administer.
    Select the Group for your AWS Account.
 
-      ![](images/managing-grouper-groups/my-grouper-groups.png)
+   ```{image} images/managing-grouper-groups/my-grouper-groups.png
+   :alt: The Grouper "My groups" page with the AWS filter applied
+   ```
 
 3. In the 'Members' tab view, click the "Add members" button.
 
-   ![](images/managing-grouper-groups/add-members-button.png)
+   ```{image} images/managing-grouper-groups/add-members-button.png
+   :alt: The Grouper "Add members" button
+   ```
 
 4. In the 'Member name or ID' field, enter the user's [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) and select the matching entry.
 
-   ![](images/managing-grouper-groups/enter-identikey.png)
+   ```{image} images/managing-grouper-groups/enter-identikey.png
+   :alt: The Grouper dropdown box for selecting members to add to a group
+   ```
 
 5. Click the 'Add' button.
 
-   ![](images/managing-grouper-groups/add-user.png)
+   ```{image} images/managing-grouper-groups/add-user.png
+   :alt: The Grouper "Add" button for adding the selected member to a group
+   ```
 
 6. Verify the new user show up in the table.
 
-   ![](images/managing-grouper-groups/verify-user.png)
+   ```{image} images/managing-grouper-groups/verify-user.png
+   :alt: The Grouper group membership page with a sample user circled in red
+   ```
 
 ### Removing Users
 
@@ -46,7 +56,9 @@ Users can be removed from accessing the AWS account by removing them from the Gr
 1. Login to the Grouper Group, as described above, using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
 2. In the 'Members' tab view, place a 'check' next to the user(s), and click the 'Remove selected members' button.
 
-    ![](images/managing-grouper-groups/remove-user.png)
+   ```{image} images/managing-grouper-groups/remove-user.png
+   :alt: The Grouper group membership page with a sample user checked for removal
+   ```
 
 3. Verify the user(s) no longer appear in the table.
 
@@ -56,7 +68,9 @@ Non CU Boulder user groups are managed through Microsoft Entra groups.
 ### Your Group Name
 The Entra group name to manage access to your AWS account is in the form '\<account-alias\>-CustomerAdmin'.
 To find your account alias view the top right corner of the screen when logged into the AWS console.
-   ![account-alias](images/managing-grouper-groups/alias.png)
+   ```{image} images/managing-grouper-groups/alias.png
+   :alt: AWS console top right corner showing the account alias identifier highlighted within a red square in the navigation bar
+   ```
 
 
 ### Adding Users
