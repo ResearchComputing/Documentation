@@ -5,7 +5,7 @@
 
 2. CU Anchutz users: to get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
 
-2. The [Microsoft authenticator App](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) (MFA) app is installed and enrolled.
+3. The [Microsoft authenticator App](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) (MFA) app is installed and enrolled.
 Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) documentation to install and enroll MFA.
 
 ## Single Sign-On

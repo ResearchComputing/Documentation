@@ -2,25 +2,25 @@
 
 ## Prerequisites
 
-1. You are a member of CUBoulder with a valid [IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey). Federated access to LCA1 from other institutions is not currently supported.
+1. If you are a member of CU Boulder, you will be using your CU Identikey. If you are from another institution but have access to CU Boulder AWS resources, sign in using your institution's credentials.
 
-2. The [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access) (MFA) app is installed and enrolled. Visit OIT's [DUO Multi-Factor Remote Access](https://oit.colorado.edu/services/identity-access-management/multi-factor-remote-access) documentation to install and enroll MFA.
+2. CU Anchutz users: to get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
+
+3. The [Microsoft authenticator App](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) (MFA) app is installed and enrolled.
+Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) documentation to install and enroll MFA.
 
 ## Single Sign-On
 
-Users access the [AWS Management Console](https://aws.colorado.edu) using their [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
+Users access the [AWS Management Console](https://aws.colorado.edu) using their university login credentials (like [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) for CU Boulder) in Microsoft Entra.
 The Single Sign-On (SSO) URL is [https://aws.colorado.edu](https://aws.colorado.edu).
 You can access your AWS Account from anywhere with internet access. You do not need to have a VPN connection to campus.
 
 1. Launch the [AWS Management Console (SSO URL)](https://aws.colorado.edu).
 2. Provide your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) credentials.
     ```{image} images/aws-console-access/login.png
-    :alt: CU FedAuth SSO login page with example user and password
+    :alt: CU SSO login page
     ```
 3. Choose a method for authentication. We recommend you select "Send Me a Push". **NOTE:** You may not see the MFA step if you've recently authenticated and have an active session.
-    ```{image} images/aws-console-access/mfa.png
-    :alt: Duo MFA authentication method selection page with "Send Me a Push" circled in red
-    ```
 4. Accept the MFA request on your device.
 5. You will be presented with a list of account names and numbers to which you have access. Click on the name of the desired account to expand the roles allocated to you. Click on the name of the desired role to log into the AWS console as that role. **Note:** Your access to the account selection page is valid for **8 hours**. Your access to any specific AWS account console is valid for **4 hours**.
     ```{image} images/aws-console-access/select-role.png
@@ -30,5 +30,4 @@ You can access your AWS Account from anywhere with internet access. You do not n
     ```{image} images/aws-console-access/select-region.png
     :alt: AWS Console home page with the region selection box circled in red
     ```
-
 7. To log out from the AWS console for an account, click on your role name in the upper right corner and choose "Sign out". To log out from the AWS account selection page, click your username in the upper right corner of the access portal and choose "Sign out".

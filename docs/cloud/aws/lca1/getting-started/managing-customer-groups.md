@@ -1,6 +1,11 @@
-# Managing User Access with Grouper
+# Managing User Access
 
-## Group Layout
+## CU Boulder Users
+CU Boulder user groups are managed through grouper.
+
+> **Note:** Users must be logged in to the CU Boulder VPN to access Grouper.
+
+### Group Layout
 
 Access to AWS LCA1 is driven by [CU's Grouper Tool](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management). Each account and role combination is allocated a Grouper group. Members of that group will be allowed to log into AWS as that role.
 
@@ -10,7 +15,7 @@ The necessary groups will be created for you as part of your AWS onboarding, and
 
 All access groups live in `Root -> Services -> Cloud Broker -> AWSLZA -> customer-access-groups`.
 
-## User Types
+### User Types
 
 Every person at CU has an [Identikey](https://oit.colorado.edu/services/identity-access-management/identikey) user that is used for daily work, like checking email and logging into campus portals. When a person has duties that require increased privileges, they are usually provisioned with a "super user" (SU) account that is separate from their Identikey. This supports the security best practice of separating privileged administrative activities from unprivileged work. SU accounts are preferred for all AWS cloud administration.
 
@@ -18,7 +23,7 @@ Every person at CU has an [Identikey](https://oit.colorado.edu/services/identity
 We recommend all AWS cloud administration be done using SU accounts. When adding users to AWS access groups in Grouper, choose the SU accounts of your team members instead of their regular Identikeys. If any team members need a new SU account, they may request one [here](https://oit.colorado.edu/accounts/secondary-accounts).
 ```
 
-## Adding Users
+### Adding Users
 
 AWS customers can add team members as Administrators to their AWS account. This is done using [CU's Grouper Tool](https://oit.colorado.edu/services/identity-access-management/enterprise-access-management). Note that changes can take up to 15 minutes to take effect.
 
@@ -57,7 +62,7 @@ AWS customers can add team members as Administrators to their AWS account. This 
    :alt: The Grouper group membership page with a sample user circled in red
    ```
 
-## Removing Users
+### Removing Users
 
 Users can be removed from accessing the AWS account by removing them from the Grouper Group.
 
@@ -69,3 +74,30 @@ Users can be removed from accessing the AWS account by removing them from the Gr
    ```
 
 3. Verify the user(s) no longer appear in the table.
+
+## Non CU Boulder Users
+Non CU Boulder user groups are managed through [Microsoft Entra groups](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/Overview).
+
+### Your Group Name
+The Entra group name to manage access to your AWS account is in the form '\<account-alias\>-CustomerAdmin'.
+To find your account alias view the top right corner of the screen when logged into the AWS console.
+   ```{image} images/managing-grouper-groups/alias.png
+   :alt: AWS console top right corner showing the account alias identifier highlighted within a red square in the navigation bar
+   ```
+
+### Adding Users
+
+AWS customers can add team members as Administrators to their AWS account.
+This is done using AWS Entra Groups.
+Note that changes can take up to 15 minutes to take effect.
+
+The technical contact person is added as Owner of the Entra group and they will have access to add members to the group.
+
+Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#add-members-or-owners-of-a-group) to add members to groups.
+
+
+### Removing Users
+Users can be removed from accessing the AWS account by removing them from the Entra Group.
+
+Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#remove-members-or-owners-of-a-group) to remove members from groups.
+
