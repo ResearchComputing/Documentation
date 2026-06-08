@@ -63,7 +63,7 @@ Users can be removed from accessing the AWS account by removing them from the Gr
 3. Verify the user(s) no longer appear in the table.
 
 ## Non CU Boulder Users
-Non CU Boulder user groups are managed through Microsoft Entra groups.
+Non CU Boulder user groups are managed through [Microsoft Entra groups](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/Overview).
 
 ### Your Group Name
 The Entra group name to manage access to your AWS account is in the form '\<account-alias\>-CustomerAdmin'.
