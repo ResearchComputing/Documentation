@@ -3,7 +3,15 @@
 ## Prerequisites
 1. If you are a member of CU Boulder, you will be using your CU Identikey. If you are from another institution but have access to CU Boulder AWS resources, sign in using your institution's credentials.
 
-2. CU Anchutz users: to get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
+2. If you are a member of another CU campus:
+
+    a. **CU Anschutz users**: To get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
+
+    b. **CU System (UIS) users**: To access campus cloud content/resources such as AWS, Microsoft 365 (Teams, SharePoint, Azure), please email [help@cu.edu](mailto:help@cu.edu) and provide the following:
+
+    * Which campus do you need access to?
+    * Which resources are you trying to access?
+    * Indicate your justification for access to these resources.
 
 3. The [Microsoft authenticator App](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) (MFA) app is installed and enrolled.
 Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) documentation to install and enroll MFA.
