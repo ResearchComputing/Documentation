@@ -4,7 +4,10 @@
 
 Many workflow management tools, including Nextflow, Snakemake, and KinBot, require a process that remains active for days or weeks while monitoring workflow progress and submitting jobs to the cluster. Because these applications must remain running for extended periods, they are not suitable for execution as standard Slurm jobs and should not be run on login nodes.
 
-Persistence1 provides a dedicated environment where users can run workflow managers and other workflow orchestration tools that require continuous execution while maintaining access to Alpine resources. It is not intended for running computational intensive workloads directly, interactive analysis, high-memory applications or replacing Slurm job submissions. 
+`Persistence1` provides a dedicated environment where users can run workflow managers and other workflow orchestration tools that require continuous execution while maintaining access to Alpine resources. 
+
+````{important}
+`Persistence1` is not intended for running computationally intensive workloads directly, interactive analysis, high-memory applications or replacing Slurm job submissions. 
 
 
 ## Getting Started
