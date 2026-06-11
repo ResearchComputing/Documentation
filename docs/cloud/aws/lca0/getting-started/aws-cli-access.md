@@ -7,7 +7,15 @@ AWS CLI temporary credentials are valid for **4 hours** and can be established t
 ## Prerequisites
 * The [AWS CLI tools](https://aws.amazon.com/cli/) is installed. Please refer to the [AWS CLI installation documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) for instructions.
 
-* CU Anchutz users: to get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
+* If you are a member of another CU campus:
+
+  **CU Anschutz users**: To get your account synced to the Boulder Entra tenant, send a ticket to the [CU Anschutz OIT Service Desk](https://www.ucdenver.edu/offices/office-of-information-technology/get-help) and request access to Boulder's AWS instance. As part of this process, you'll need to set up Microsoft MFA, so have your mobile phone number ready.
+
+  **CU System (UIS) users**: To access campus cloud content/resources such as AWS, Microsoft 365 (Teams, SharePoint, Azure), please email [help@cu.edu](mailto:help@cu.edu) and provide the following:
+
+    * Which campus do you need access to?
+    * Which resources are you trying to access?
+    * Indicate your justification for access to these resources.
 
 * The [Microsoft authenticator App](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) (MFA) app is installed and enrolled.
 Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) documentation to install and enroll MFA.
