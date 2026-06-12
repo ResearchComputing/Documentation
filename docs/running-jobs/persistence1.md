@@ -6,8 +6,9 @@ Many workflow management tools, including Nextflow, Snakemake, and KinBot, requi
 
 `Persistence1` provides a dedicated environment where users can run workflow managers and other workflow orchestration tools that require continuous execution while maintaining access to Alpine resources. 
 
-````{important}
-`Persistence1` is not intended for running computationally intensive workloads directly, interactive analysis, high-memory applications or replacing Slurm job submissions. 
+```{important}
+`Persistence1` is not intended for running computationally intensive workloads directly, interactive analysis, high-memory applications or replacing Slurm job submissions.
+```
 
 
 ## Getting Started
