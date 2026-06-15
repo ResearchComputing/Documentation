@@ -47,6 +47,10 @@ All Alpine nodes are available to all users. For full details about node access,
 
 :::
 
+```{note}
+**CU Anschutz job submission limit:** CU Anschutz users on Alpine are subject to a campus-wide hard limit of **200 concurrent jobs** across all QoS types (including `normal`, which system-wide allows up to 1000 jobs/user). This limit applies to all job types and partitions. It was implemented to reduce queue wait times for all Anschutz users given limited core-hour availability. If you need to run large numbers of jobs, consider using [GNU Parallel](https://github.com/kf-cuanschutz/CU-Anschutz-HPC-documentation/blob/main/Office-hours-presentation-files/GNU_parallel_presentation.pdf) as a workaround.
+```
+
 ### Colorado State University contribution
 
 :::{table}
@@ -120,6 +124,10 @@ The available QoS for Alpine:
 | testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting,atesting_a100,atesting_mi100     | 
 | compile | Used for acompile jobs  | 12 hours              |    -      |   1 node      | acompile   | 
 | gh200 | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1 node      | gh200  | 
+
+```{important}
+**CU Anschutz users:** Regardless of the QoS selected, CU Anschutz accounts are subject to a campus-level hard limit of **200 concurrent jobs** across all QoS types. The system-wide `normal` QoS limit of 1000 jobs/user does not apply to CU Anschutz accounts. See the [CU Anschutz hardware section](#cu-anschutz-medical-campus-contribution) for more details.
+```
 
 __QoS examples__:
 
