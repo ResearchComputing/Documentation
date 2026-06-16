@@ -5,10 +5,9 @@
 :caption: Getting Started Documentation
 
 aws-console-access
-aws-cli-saml2aws
-non-cu-boulder/index
+aws-cli-access
 customer-permission-boundary
-managing-grouper-groups
+managing-customer-groups
 customer-support
 
 ```
