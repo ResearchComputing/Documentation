@@ -35,11 +35,26 @@ Once inside Powershell (or similar), execute the following command:
 ```
 ssh-keygen -t ed25519
 ```
-- After, create a passphrase and note the file path of the generated key. This will be important for step 3. Example output:
+- After, it is important that you **_create a passphrase_** and note the file path of the generated key. This will be important for step 3. Example output:
 
-![](./amc_ssh_images/windows_ssh_keygen_ex.png)
+```
+Z:\> ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\username/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\username/.ssh/id_ed25519.
+Your public key has been saved in C:\Users\username/.ssh/id_ed25519.pub.
+The key fingerprint is :
+SHA256:<key here>
+The key's randomart image is:
++-- [ED25519 256] --+
+|   .++*=B=.        |
+...
++---- [SHA256] -----+
+```
 <br>
-- 
+
 - Using PuTTY: <https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/>
 
 ### SSH Key Generation for Mac and Linux Users: 
@@ -47,9 +62,24 @@ ssh-keygen -t ed25519
 ```
 ssh-keygen -t ed25519
 ```
-- After, create a passphrase and note the file path of the generated key. This will be important for step 3. Example output:
+- After, it is important that you **_create a passphrase_** and note the file path of the generated key. This will be important for step 3. Example output:
 
-![](./amc_ssh_images/mac_sshkeygen_real.png)
+```
+username$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/username/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/username/.ssh/id_ed25519.
+Your public key has been saved in /Users/username/.ssh/id_ed25519.pub.
+The key fingerprint is :
+SHA256:<key here>
+The key's ranomart image is:
++-- [ED25519 256] --+
+|   .++*=B=.        |
+...
++---- [SHA256] -----+
+```
 <br>
 - NOTE for Mac users: There is a chance you need to create or alter your ssh config file (~/.ssh/config). See more in the [Troubleshooting](#troubleshooting) section below.
 
