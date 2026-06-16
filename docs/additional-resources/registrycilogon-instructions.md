@@ -79,7 +79,7 @@ The key's ranomart image is:
 ...
 +---- [SHA256] -----+
 ```
-<br>
+
 - NOTE for Mac users: There is a chance you need to create or alter your ssh config file `~/.ssh/config`. See more in the [Troubleshooting](#troubleshooting) section below.
 
 ## *Step 3: Upload your ssh key to registry.cilogon.org*
@@ -120,11 +120,11 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 
 ## Troubleshooting
 * For Mac users: If you have set up the key and followed all the steps above but are prompted for a **__password__** instead of a **__passphrase__**, you may need to edit or create a config file (~/.ssh/config). If you don't have an ssh config file, you can create it from the terminal window with the command `touch ~/.ssh/config`. After, edit the file and add the following 3 lines before trying again:
-```
-Host *
-HostKeyAlgorithms ssh-ed25519
-PubkeyAcceptedAlgorithms ssh-ed25519
-```
+  ```
+  Host login.rc.colorado.edu
+  HostKeyAlgorithms ssh-ed25519
+  PubkeyAcceptedAlgorithms ssh-ed25519
+  ```
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). 
 
 ![](./registry-images/notregistered_error.png)
