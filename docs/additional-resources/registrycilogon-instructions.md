@@ -53,7 +53,6 @@ The key's randomart image is:
 ...
 +---- [SHA256] -----+
 ```
-<br>
 
 - Using PuTTY: <https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/>
 
@@ -81,7 +80,7 @@ The key's ranomart image is:
 +---- [SHA256] -----+
 ```
 <br>
-- NOTE for Mac users: There is a chance you need to create or alter your ssh config file (~/.ssh/config). See more in the [Troubleshooting](#troubleshooting) section below.
+- NOTE for Mac users: There is a chance you need to create or alter your ssh config file `~/.ssh/config`. See more in the [Troubleshooting](#troubleshooting) section below.
 
 ## *Step 3: Upload your ssh key to registry.cilogon.org*
 
