@@ -174,13 +174,13 @@ $ sinfo --Format Partition,Gres |grep gpu
 
 #### Available GRES on Alpine:
 
-| GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | 
-| ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | 
-| `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` |  <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | <ul><li>Total: 0</li><li>Max/user: 0</li></ul> | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   |
-| `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   |
-| `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   |
-| `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   |
-| `mi100` | AMD MI100 GPU with 34 GB of VRAM |  `ami100` |  <ul><li>Total: 18</li><li>Max/user: 5</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 3</li><li>Max/user: 1</li></ul>   |
+| GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | Max cores/GPU
+| ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | ------------------ | 
+| `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` |  <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | <ul><li>Total: 0</li><li>Max/user: 0</li></ul> | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 |
+| `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |
+| `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |
+| `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |
+| `mi100` | AMD MI100 GPU with 34 GB of VRAM |  `ami100` |  <ul><li>Total: 18</li><li>Max/user: 5</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 3</li><li>Max/user: 1</li></ul>   | 21 |
 
 ```{important}
 - The `Max/user` value provided for each GRES type is the maximum amount of the provided GRES type that an individual can utilize at a given time. Users jobs will be temporarily held in the queue, if they go over this maximum amount. Once the number of resources utilized drops below these values, the held jobs will be automatically eligible to run. 
@@ -222,7 +222,7 @@ $ sinfo --Format Partition,Gres |grep gpu
 To help users test out their workflows, CURC provides several special-purpose resources on Alpine. These resources enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these resources, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
 
 ```{important}
-Compiling and testing partitions are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate partitions when running code. 
+Compiling and testing resources are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate resources when running code. 
 ```
 
 ## Special-Purpose CPU-only Resources
@@ -303,37 +303,37 @@ sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos
 ````
 `````
 
-## Special-Purpose GPU-only Resources
+## Special-Purpose GPU Resources
 
-`atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. For the `atesting_mi100` partition, users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour. Due to limitations with MIG (see below), we limit users to 1 GPU (with 20 GB of VRAM) and at most 10 CPU cores on the `atesting_a100` partition.  Currently there is no testing partition for the L40 GPUs, however most workflows that successfully test on the `atesting_a100` partition will work on the `al40` partition.
+Access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications is made available by specifying a GPU partition, GPU type, and utilizing the `gpu-testing` QoS. For a list of resources that are available via `gpu-testing` as well as limitations of the QoS, see the sections [Quality of Service (qos)](#quality-of-service-qos) and [General Resources (gres)](#general-resources-gres). 
 
 ```{important}
-
-The `atesting_a100` partition utilizes NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature, which can "slice" GPUs into multiple GPU instances. These GPU instances can be treated as a single GPU. The increase in available GPUs, and in effect increase in GPU access, provided by MIG does come with certain limitations. One important limitation is that MIG does not allow for multiple GPU instances to communicate with each other. This is the reason we limit users to just 1 GPU on the `atesting_a100` partition. For more information on limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html#application-considerations) documentation. 
+- The `a100_3g.20gb` GPU type made available on the `gpu-testing` QoS is an NVIDIA [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html). MIG is a feature that can "slice" GPUs into multiple GPU instances. These GPU instances can be treated as a single GPU. The increase in available GPUs, and in effect increase in GPU access, provided by MIG does come with certain limitations. One important limitation is that MIG does not allow for multiple GPU instances to communicate with each other. This is the reason we limit users to just 1 GPU under the `gput-testing` QoS for each GPU type. For more information on limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/latest/deployment-considerations.html#application-considerations) documentation. 
+- Currently there are no testing resources for the L40 GPUs, however most workflows that successfully run on the `aa100` resources will work on the `al40` partition.
 ```
 
-(tabset-ref-gpu-atesting-use)=
+(tabset-ref-gpu-testing-use)=
 `````{tab-set}
-:sync-group: tabset-gpu-atesting-use
+:sync-group: tabset-gpu-testing-use
 
-````{tab-item} Example 1
-:sync: gpu-atesting-use-ex1
+````{tab-item} NVIDIA A100 GPU
+:sync: gpu-testing-use-a100
 
-**Request 1 A100 MIG slice with 10 CPU cores for 30 minutes.**
+**Request one 20 GB A100 MIG slice with 10 CPU cores for 30 minutes.**
 
 ```bash
-sinteractive --partition=atesting_a100 --gres=gpu:1 --ntasks=10 --nodes=1 --qos=testing --time=00:30:00 
+sinteractive --partition=aa100 --gres=gpu:a100_3g.20gb:1 --ntasks=10 --nodes=1 --qos=gpu-testing --time=00:30:00 
 ```
 
 ````
 
-```` {tab-item} Example 2
-:sync: gpu-atesting-use-ex2
+```` {tab-item} AMD MI100 GPU
+:sync: gpu-testing-use-mi100
 
-**Request 1 MI100 GPU with 1 CPU core for one hour.**
+**Request one MI100 GPU with 21 CPU cores for one hour.**
 
 ```bash
-sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --nodes=1 --qos=testing --time=00:60:00
+sinteractive --partition=ami100 --gres=gpu:mi100:1 --ntasks=21 --nodes=1 --qos=gpu-testing --time=00:60:00
 ```
 
 ````
