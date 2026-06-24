@@ -63,90 +63,9 @@ All Alpine nodes are available to all users. For full details about node access,
 
 ## Requesting Hardware Resources
 Resources are requested within jobs by passing in SLURM directives, or resource flags, to either a job script (most common) or to the command line when submitting a job. Below are some common resource directives for Alpine (summarized then detailed):
-* **Gres (General Resources):** Specifies the number of GPUs (*required if using a GPU node*)
-* **QOS (Quality of Service):** Constrains or modifies job characteristics
-* **Partition:** Specifies node type
-
-### General Resources (gres)
-
-**General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. At a minimum, one would specify `--gres=gpu` in their job script (or on the command line when submitting a job) to specify that they would like to use a single GPU on their specified partition. One can also request multiple GPU accelerators on nodes that have multiple accelerators. Alpine GPU resources and configurations can be viewed as follows on a login node with the `slurm/alpine` module loaded:
-
-```bash
-$ sinfo --Format Partition,Gres |grep gpu
-```
-
-__Examples of GPU configurations/requests__:
-
-(tabset-ref-ex-gpu-conf-req)=
-`````{tab-set}
-:sync-group: tabset-ex-gpu-conf-req
-
-````{tab-item} Single GPU
-:sync: ex-gpu-conf-req-single-gpu
-
-**Request a single GPU accelerator.**
-
-```bash
---gres=gpu
-```
-
-````
-
-```` {tab-item} Multiple GPUs
-:sync: ex-gpu-conf-req-multiple-gpu
-
-**Request multiple (in this case 3) GPU accelerators.**
-
-```bash
---gres=gpu:3
-```
-
-````
-
-`````
-
-### Quality of Service (qos)
-
-**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
-
-The available QoS for Alpine:
-
-| QOS name    | Description                | Max walltime    | Max jobs/user | Max hardware/user        | Valid Partitions | 
-| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
-| normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | amilan,aa100,ami100  |
-| long | Longer wall times          | 7 days              | 200           | 20 nodes               | amilan,aa100,ami100              | 
-| mem-normal | High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
-| mem-long | High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
-| testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting,atesting_a100,atesting_mi100     | 
-| compile | Used for acompile jobs  | 12 hours              |    -      |   1 node      | acompile   | 
-| gh200 | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1 node      | gh200  | 
-
-__QoS examples__:
-
-(tabset-ref-ex-qos-req)=
-`````{tab-set}
-:sync-group: tabset-ex-qos-req
-
-````{tab-item} Requesting the normal partition 
-:sync: ex-qos-req-normal-partition
-
-```bash
---qos=normal
-```
-
-````
-
-```` {tab-item} Requesting the long partition
-:sync: ex-qos-req-long-partition
-
-```bash
---qos=long
-```
-
-````
-
-`````
-
+* [Partition](#partitions): Specifies node type
+* [Quality of Service (qos)](#quality-of-service-qos): Constrains or modifies job characteristics
+* [General Resources (gres)](#general-resources-gres): Specifies the number and type of GPU you would like to request (*required if using a GPU node*)
 
 ### Partitions
 
@@ -194,7 +113,92 @@ All users, regardless of institution, should specify partitions as follows:
 --partition=amem
 ```
 
-#### Special-Purpose Partitions
+### Quality of Service (qos)
+
+**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+
+The available QoS for Alpine:
+
+| QOS name    | Description                | Max walltime    | Max jobs/user | Max hardware/user        | Valid Partitions | 
+| ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
+| normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | amilan,aa100,ami100  |
+| long | Longer wall times          | 7 days              | 200           | 20 nodes               | amilan,aa100,ami100              | 
+| mem-normal | High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
+| mem-long | High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
+| testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting,atesting_a100,atesting_mi100     | 
+| compile | Used for acompile jobs  | 12 hours              |    -      |   1 node      | acompile   | 
+| gh200 | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1 node      | gh200  | 
+
+__QoS examples__:
+
+(tabset-ref-ex-qos-req)=
+`````{tab-set}
+:sync-group: tabset-ex-qos-req
+
+````{tab-item} Requesting the normal partition 
+:sync: ex-qos-req-normal-partition
+
+```bash
+--qos=normal
+```
+
+````
+
+```` {tab-item} Requesting the long partition
+:sync: ex-qos-req-long-partition
+
+```bash
+--qos=long
+```
+
+````
+
+`````
+
+
+### General Resources (gres)
+
+**General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. The general form for specifying `gres` is as follows: `--gres=gpu:<GRES type>:N`. In this general form `<GRES type>` specifies the type of GPU you want to run on within a given partition and `N` is the number of GPUs you want to request. In the table below we specify the available GRES types for each partition and common constraints associated with them.
+````{note}
+Alpine GPU resources and configurations can be viewed as follows on a login node (with the `slurm/alpine` module loaded):
+
+```bash
+$ sinfo --Format Partition,Gres |grep gpu
+```
+````
+
+
+__Examples of GPU configurations/requests__:
+
+(tabset-ref-ex-gpu-conf-req)=
+`````{tab-set}
+:sync-group: tabset-ex-gpu-conf-req
+
+````{tab-item} Single GPU
+:sync: ex-gpu-conf-req-single-gpu
+
+**Request a single GPU accelerator.**
+
+```bash
+--gres=gpu
+```
+
+````
+
+```` {tab-item} Multiple GPUs
+:sync: ex-gpu-conf-req-multiple-gpu
+
+**Request multiple (in this case 3) GPU accelerators.**
+
+```bash
+--gres=gpu:3
+```
+
+````
+
+`````
+
+# Special-Purpose Partitions
 
 To help users test out their workflows, CURC provides several special-purpose partitions on Alpine. These partitions enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these special-purpose partitions, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
 
@@ -202,7 +206,7 @@ To help users test out their workflows, CURC provides several special-purpose pa
 Compiling and testing partitions are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate partitions when running code. 
 ```
 
-##### `atesting` usage examples:
+## `atesting` usage examples:
 
 `atesting` provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour (default  1 hour) and 16 CPUs. Users who need GPU nodes to test workflows should use the appropriate GPU testing partitions (`atesting_a100` or `atesting_mi100`) instead of `atesting`.
 
@@ -244,7 +248,7 @@ sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos
 ````
 `````
 
-##### GPU `atesting` usage examples:
+## GPU `atesting` usage examples:
 
 `atesting_a100` and `atesting_mi100` provide access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. For the `atesting_mi100` partition, users can request up to 3 GPUs and all associated CPU cores (64 max) from a single node for up to one hour. Due to limitations with MIG (see below), we limit users to 1 GPU (with 20 GB of VRAM) and at most 10 CPU cores on the `atesting_a100` partition.  Currently there is no testing partition for the L40 GPUs, however most workflows that successfully test on the `atesting_a100` partition will work on the `al40` partition.
 
@@ -281,7 +285,7 @@ sinteractive --partition=atesting_mi100 --gres=gpu:1 --ntasks=1 --nodes=1 --qos=
 
 `````
 
-##### `acompile` usage examples:
+## `acompile` usage examples:
 
 `acompile` provides near-immediate access to limited resources for the purpose of viewing the module stack, verifying non-MPI jobs, and compiling software. Users can request up to 4 CPU cores (but no GPUs) for a maximum runtime of 12 hours. The partition is accessed with the `acompile` command. Users who need GPU nodes to compile software should use Slurm's `sinteractive` command with the appropriate GPU partition (`ami100` or `aa100`) instead of `acompile`.
 
