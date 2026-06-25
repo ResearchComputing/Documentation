@@ -25,8 +25,8 @@ All Alpine nodes are available to all users. For full details about node access,
 | {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8 T SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_acompile_nodes }} Milan CPU compile nodes | acompile | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} Milan CPU test nodes; pulls from CU amilan pool | atesting | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
-| {{ alpine_ucb_total_atesting_a100_gpu_nodes }} Milan NVIDIA GPU testing node | aa100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
-| {{ alpine_ucb_total_atesting_mi100_gpu_nodes }} Milan AMD GPU testing nodes; pulls from ami100 pool | ami100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
+| {{ alpine_ucb_total_a100_test_gpu_nodes }} Milan NVIDIA GPU testing node | aa100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
+| {{ alpine_ucb_total_mi100_test_gpu_nodes }} Milan AMD GPU testing nodes; pulls from ami100 pool | ami100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 
 :::
 
@@ -84,14 +84,12 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- |
 | amilan    | AMD Milan (default)          | {{ alpine_total_amilan_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 
 | ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}         | 6.1<sup>3</sup>     |
-| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup> | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 
+| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup>. For select nodes, MIG has been enabled providing 6x 20 GB NVIDIA A100 MIG instances. | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 
 | al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |
 | acompile | AMD Milan compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | 
-| atesting | AMD Milan test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU amilan pool | 64 |   {{ alpine_standard_ram_per_core }}         | 0.025                   | 
-| atesting_a100 | GPU-enabled testing node (3x NVIDIA A100 split w/ MIG) | {{ alpine_total_atesting_a100_nodes }} | 64         |   {{ alpine_standard_ram_per_core }}        | 0.025     | 
-| atesting_mi100 | GPU-enabled testing nodes (3x AMD MI100) | {{ alpine_total_atesting_mi100_nodes }} | 64         |   {{ alpine_standard_ram_per_core }}        | 0.025     | 
-| gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at twice the rate of our A100s   | 
+| atesting | AMD Milan test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU amilan pool | 64 |   {{ alpine_standard_ram_per_core }}         | 0.025                   |  
+| gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at roughly twice the rate of our A100s   | 
 
 ```{important}
 **Partition table footnotes:** 
@@ -101,7 +99,7 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 <sup>2</sup>The `amem` partition has a mixture of nodes with 48, 64, and 128 cores.  Nodes with 48 and 64 cores have 1 TB of RAM; nodes with 128 cores have 2 TB of RAM.  The default RAM-per-requested core on the `amem` partition is 15,927 MB, which is configured such that if you request all 64 (128) cores on a 64-core (128-core) `amem` node, you will receive roughly 1,000,000 MB of RAM (i.e., the full ~1 TB available). If you request all 48 cores on a 48-core node, by default you will receive 764,496 MB of RAM, which is less than the 1 TB available. If you require more RAM than the default of 15,927 MB per-requested-core, employ the `--mem` flag in your job script and specify the amount of RAM you need, in MB. For example, to request all of the RAM on a node, use "--mem=1000000M".   
 
-<sup>3</sup>On the GPU partitions, `ami100`, `aa100`, and `al40`, the _billing_weight_ value of 6.1/core is an aggregate estimate. In practice, users are billed 1.0 for each core they request, and 108.2 for each GPU they request. For example, if a user requests all 64 cores and all three GPUs for one hour, they will be billed (1.0 * 64) + (108.2 * 3)=389 SUs.
+<sup>3</sup>On the GPU partitions, `ami100`, `aa100`, and `al40`, the _billing_weight_ value of 6.1/core is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request, and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
 
 <sup>4</sup>NVIDIA A100 and L40 GPUs only support CUDA versions >11.x
 ```
@@ -125,11 +123,11 @@ All users, regardless of institution, should specify partitions as follows:
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
 | normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | amilan  |
 | long | Longer wall times          | 7 days              | 200           | 20 nodes               | amilan            | 
-| mem-normal | High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
-| mem-long | High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
-| gpu-normal |         |               |          |                |       | 
-| gpu-long |         |               |          |                |       | 
-| gpu-testing |         |               |          |                |       | 
+| mem-normal | Standard QoS for High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
+| mem-long | QoS for longer running High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
+| gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40     | 
+| gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40 | 
+| gpu-testing | Testing QoS for GPU jobs        | 1 hour | 5 | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100     | 
 | testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting     | 
 | compile | Used for acompile jobs  | 12 hours              |    -      |   1 node      | acompile   | 
 | gh200 | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1 node      | gh200  | 
@@ -174,17 +172,20 @@ $ sinfo --Format Partition,Gres |grep gpu
 
 #### Available GRES on Alpine:
 
-| GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | Max cores/GPU
-| ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | ------------------ | 
-| `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` |  <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | <ul><li>Total: 0</li><li>Max/user: 0</li></ul> | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 |
-| `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |
-| `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |
-| `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |
-| `mi100` | AMD MI100 GPU with 34 GB of VRAM |  `ami100` |  <ul><li>Total: 18</li><li>Max/user: 5</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 3</li><li>Max/user: 1</li></ul>   | 21 |
+| GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | Max cores/GPU | Billing_weight/GPU |
+| ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | ------------------ | ------------------ | 
+| `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` |  <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | <ul><li>Total: 0</li><li>Max/user: 0</li></ul> | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 | 54.3 |
+| `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 | 108.6 |
+| `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |  108.6 |
+| `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |  108.6 |
+| `mi100` | AMD MI100 GPU with 34 GB of VRAM |  `ami100` |  <ul><li>Total: 18</li><li>Max/user: 5</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 3</li><li>Max/user: 1</li></ul>   | 21 |  108.6 |
+| `gh200` | NVIDIA GH200 GPU with 102 GB of VRAM |  `gh200` | N/A  | N/A | N/A   | 72 |  260.64 |
 
 ```{important}
 - The `Max/user` value provided for each GRES type is the maximum amount of the provided GRES type that an individual can utilize at a given time. Users jobs will be temporarily held in the queue, if they go over this maximum amount. Once the number of resources utilized drops below these values, the held jobs will be automatically eligible to run. 
 - Resources belonging to `gpu-testing` are for verifying GPU workflows and building GPU-accelerated applications. Established workflows should be submitted to `gpu-normal` or `gpu-long`. 
+- Resources requested via `gpu-testing` are currently only charged 10% of the provided CPU and GPU billing weights. 
+- GH200 resources are part of the `gh200` QoS, which is only available to users upon request. 
 ```
 
 #### Examples of GRES Usage
