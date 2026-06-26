@@ -377,7 +377,7 @@ For a reference of all possible admonitions, see the [MyST Admonitions page](htt
 :::::{dropdown} Drop-downs and Collapsible Content
 :icon: rows 
 
-Drop-down boxes are a great way to include content but keeping it hidden until needed, so as to not overwhelm the reader. If you do decide to organize content into drop-downs, make sure to avoid [uninformative link phrases](https://webaim.org/techniques/hypertext/link_text#uninformative), such as "click here", for the title. 
+Drop-down boxes are a great way to include content but keep it hidden until needed, so as to not overwhelm the reader. If you do decide to organize content into drop-downs, make sure to avoid [uninformative link phrases](https://webaim.org/techniques/hypertext/link_text#uninformative), such as "click here", for the title. 
 
 
 ```````{grid} 2
