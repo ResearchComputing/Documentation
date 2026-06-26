@@ -99,7 +99,7 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 <sup>2</sup>The `amem` partition has a mixture of nodes with 48, 64, and 128 cores.  Nodes with 48 and 64 cores have 1 TB of RAM; nodes with 128 cores have 2 TB of RAM.  The default RAM-per-requested core on the `amem` partition is 15,927 MB, which is configured such that if you request all 64 (128) cores on a 64-core (128-core) `amem` node, you will receive roughly 1,000,000 MB of RAM (i.e., the full ~1 TB available). If you request all 48 cores on a 48-core node, by default you will receive 764,496 MB of RAM, which is less than the 1 TB available. If you require more RAM than the default of 15,927 MB per-requested-core, employ the `--mem` flag in your job script and specify the amount of RAM you need, in MB. For example, to request all of the RAM on a node, use "--mem=1000000M".   
 
-<sup>3</sup>On the GPU partitions, `ami100`, `aa100`, and `al40`, the _billing_weight_ value of 6.1/core is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request, and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
+<sup>3</sup>On the GPU partitions, `ami100`, `aa100`, and `al40`, the _billing_weight_ value of 6.1/core is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
 
 <sup>4</sup>NVIDIA A100 and L40 GPUs only support CUDA versions >11.x
 ```
@@ -264,7 +264,7 @@ acompile --ntasks=2 --time=02:00:00
 
 ### `atesting` usage
 
-The `atesting` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour (default  1 hour) and 16 CPUs. 
+The `atesting` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
 
 (tabset-ref-atesting-use)=
 `````{tab-set}
@@ -295,7 +295,7 @@ sinteractive --partition=atesting --ntasks=4 --nodes=1 --qos=testing --time=00:3
 ```` {tab-item} Example 3
 :sync: atesting-use-ex3
 
-**Request 2 cores each from 2 nodes for 10 minutes - a good option for testing MPI jobs.**
+**Request 2 nodes with 2 cores per node for 10 minutes - a good option for testing MPI jobs.**
 
 ```bash
 sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos=testing --time=00:10:00
