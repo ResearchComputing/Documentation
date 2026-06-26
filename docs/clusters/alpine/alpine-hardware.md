@@ -129,7 +129,7 @@ All users, regardless of institution, should specify partitions as follows:
 | gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40 | 
 | gpu-testing | Testing QoS for GPU jobs        | 1 hour | 5 | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100     | 
 | testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting     | 
-| compile | Used for acompile jobs  | 12 hours              |    -      |   1 node      | acompile   | 
+| compile | Used for acompile jobs  | 12 hours              |    4     |   1 node      | acompile   | 
 | gh200 | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1 node      | gh200  | 
 
 #### QoS examples
