@@ -327,7 +327,7 @@ For more information on creating `.dot` files, please see [Graphviz's documentat
 :::::{dropdown} Admonitions
 :icon: alert 
 
-Admonitions are a great way to draw attention to a specific detail that is important for the reader (e.g. key notes, warnings, or important policy considerations). Please do not use adhoc admonitions and instead use official admonitions. 
+Admonitions are a great way to draw attention to a specific detail that is important for the reader (e.g. key notes, warnings, or important policy considerations). Please do not use ad hoc admonitions; instead, use official admonitions. 
 
 ```````{grid} 2
 ``````{grid-item-card} Admonition syntax examples
