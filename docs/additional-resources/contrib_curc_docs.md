@@ -157,7 +157,7 @@ To ensure that our documentation is uniform and is easily digestible for users, 
 :::::{dropdown} Links & References
 :icon: link
 
-- ***HyperLink Text***: Avoid links such as `[here]()` instead of using `here`, provide a title. For example, instead of saying "You can find more about sacct `[here]()`", explicitly state the linked page's title "You can find more iinformation on `[Slurm's sacct Documentation Page]()`.
+- ***HyperLink Text***: Avoid links such as `[here]()`. Instead of using `here`, provide a title. For example, instead of saying "You can find more about sacct `[here]()`", explicitly state the linked page's title: "You can find more information on `[Slurm's sacct Documentation Page]()`.
 - ***Related Topics & Cross-References***: If there is a related topic in our documentation, link to it using an appropriate cross-reference. Properly formatted cross-references ensure the documentation build scripts are able to detect and warn of broken links.   
     ::::{dropdown} How to include cross-references
     :icon: note
