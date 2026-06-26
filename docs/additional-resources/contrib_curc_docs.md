@@ -245,7 +245,7 @@ You can use admonition and code blocks within tabs!
 
     | Field&nbsp;Name | Purpose |
     | ---------- | ------- |
-    | ***(target)=*** | To cross-reference the tabset, you must add a target tag for the Myst parser. The naming convention for our tab targets is `(tabset-ref-<descriptive-name>)=`. You can learn more about targetes in [Myst's Online Documentation](https://myst-parser.readthedocs.io/en/v0.17.2/syntax/syntax.html#targets-and-cross-referencing). |
+    | ***(target)=*** | To cross-reference the tabset, you must add a target tag for the Myst parser. The naming convention for our tab targets is `(tabset-ref-<descriptive-name>)=`. You can learn more about targets in [Myst's Online Documentation](https://myst-parser.readthedocs.io/en/v0.17.2/syntax/syntax.html#targets-and-cross-referencing). |
     | ***sync&#8209;group*** | The `:sync-group:` should be included and start with `tabset` followed by the descriptive name you choose e.g. `:sync-group: tabset-<descriptive-name>`. |
     | ***sync*** | Each tab should include a `:sync:` and begin with the descriptive name followed by a way to reference the tab e.g. `:sync: <descriptive-name>-<tab-name>` |
 
