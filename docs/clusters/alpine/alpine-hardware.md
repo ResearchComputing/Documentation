@@ -161,7 +161,7 @@ All users, regardless of institution, should specify partitions as follows:
 
 ### General Resources (gres)
 
-**General resources allows for fine-grain hardware specifications**. On Alpine the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. The general form for specifying `gres` is as follows: `--gres=gpu:<GRES type>:N`. In this general form `<GRES type>` specifies the type of GPU you want to run on within a given partition and `N` is the number of GPUs you want to request. In the table below we specify the available GRES types for each partition and common constraints associated with them.
+**General resources allows for fine-grain hardware specifications**. On Alpine, the `gres` directive is _**required**_ to use GPU accelerators on GPU nodes. The general form for specifying `gres` is as follows: `--gres=gpu:<GRES type>:N`. In this general form, `<GRES type>` specifies the type of GPU you want to run on within a given partition, and `N` is the number of GPUs you want to request. In the table below, we specify the available GRES types for each partition and common constraints associated with them.
 ````{note}
 Alpine GPU resources and configurations can be viewed as follows on a login node (with the `slurm/alpine` module loaded):
 
@@ -174,18 +174,18 @@ $ sinfo --Format Partition,Gres |grep gpu
 
 | GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | Max cores/GPU | Billing_weight/GPU |
 | ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | ------------------ | ------------------ | 
-| `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` |  <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | <ul><li>Total: 0</li><li>Max/user: 0</li></ul> | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 | 54.3 |
-| `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 | 108.6 |
-| `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |  108.6 |
-| `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> | <ul><li>Total: 0</li><li>Max/user: 0</li></ul>   | 21 |  108.6 |
+| `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` | N/A |  N/A | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 | 54.3 |
+| `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> |  N/A | 21 | 108.6 |
+| `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> |  N/A | 21 |  108.6 |
+| `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> |  N/A  | 21 |  108.6 |
 | `mi100` | AMD MI100 GPU with 34 GB of VRAM |  `ami100` |  <ul><li>Total: 18</li><li>Max/user: 5</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 3</li><li>Max/user: 1</li></ul>   | 21 |  108.6 |
 | `gh200` | NVIDIA GH200 GPU with 102 GB of VRAM |  `gh200` | N/A  | N/A | N/A   | 72 |  260.64 |
 
 ```{important}
-- The `Max/user` value provided for each GRES type is the maximum amount of the provided GRES type that an individual can utilize at a given time. Users jobs will be temporarily held in the queue, if they go over this maximum amount. Once the number of resources utilized drops below these values, the held jobs will be automatically eligible to run. 
+- The `Max/user` value is the concurrent GPU limit per user for a given GRES type. Jobs exceeding this limit are held in the queue and will only be eligible to run once the user's active GPU consumption falls below the threshold. 
 - Resources belonging to `gpu-testing` are for verifying GPU workflows and building GPU-accelerated applications. Established workflows should be submitted to `gpu-normal` or `gpu-long`. 
 - Resources requested via `gpu-testing` are currently only charged 10% of the provided CPU and GPU billing weights. 
-- GH200 resources are part of the `gh200` QoS, which is only available to users upon request. 
+- GH200 resources are part of the `gh200` QoS, which is only available to users upon request. To request access, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 ```
 
 #### Examples of GRES Usage
@@ -309,7 +309,7 @@ sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos
 Access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications is made available by specifying a GPU partition, GPU type, and utilizing the `gpu-testing` QoS. For a list of resources that are available via `gpu-testing` as well as limitations of the QoS, see the sections [Quality of Service (qos)](#quality-of-service-qos) and [General Resources (gres)](#general-resources-gres). 
 
 ```{important}
-- The `a100_3g.20gb` GPU type made available on the `gpu-testing` QoS is an NVIDIA [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html). MIG is a feature that can "slice" GPUs into multiple GPU instances. These GPU instances can be treated as a single GPU. The increase in available GPUs, and in effect increase in GPU access, provided by MIG does come with certain limitations. One important limitation is that MIG does not allow for multiple GPU instances to communicate with each other. This is the reason we limit users to just 1 GPU under the `gput-testing` QoS for each GPU type. For more information on limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/latest/deployment-considerations.html#application-considerations) documentation. 
+- The `a100_3g.20gb` GPU type made available on the `gpu-testing` QoS is a NVIDIA [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html). MIG is a feature that can "slice" GPUs into multiple GPU instances. These GPU instances can be treated as a single GPU. The increase in available GPUs, and in effect increase in GPU access, provided by MIG does come with certain limitations. One important limitation is that MIG does not allow for multiple GPU instances to communicate with each other. This is the reason we limit users to just 1 GPU under the `gpu-testing` QoS for each GPU type. For more information on the limitations of MIG, please see NVIDIA's MIG [Application Considerations](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/latest/deployment-considerations.html#application-considerations) documentation. 
 - Currently there are no testing resources for the L40 GPUs, however most workflows that successfully run on the `aa100` resources will work on the `al40` partition.
 ```
 
