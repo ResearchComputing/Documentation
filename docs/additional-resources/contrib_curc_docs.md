@@ -277,7 +277,7 @@ You can use admonition and code blocks within tabs!
     Providing the rendered version: [getting a CURC account for CSU users](../getting_started/logging-in.html?tabset-logging-in=logging-in-csu#tabset-ref-get-account){.external}. 
 
 ```{important}
-Links must follow this format to ensure the build scripts are able to verify each link and provide an appropriate warning for borken links. documentation's automatic routine will be able to checks tab references exist. Please ensure to always reference tabs using the provided format.
+Links must follow this format to ensure the build scripts are able to verify each link and provide an appropriate warning for broken links. The documentation's automatic routine will be able to check tab references exist. Please ensure to always reference tabs using the provided format.
 ```
 
 ```{seealso}
