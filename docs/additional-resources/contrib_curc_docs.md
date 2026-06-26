@@ -250,7 +250,7 @@ You can use admonition and code blocks within tabs!
     | ***sync*** | Each tab should include a `:sync:` and begin with the descriptive name followed by a way to reference the tab e.g. `:sync: <descriptive-name>-<tab-name>` |
 
     ```{note}
-    The `sync-group` and `sync` fields are primarily meant for syncing up tabs across multiple tabsets. For example, for the [login page](../getting_started/logging-in.md) the tabs are grouped by university (UCB, AMC, CSU, RMACCC). The `sync-group` and `sync` are currently also required to reference a specific tab within a tabset. So even if you are not syncing tabs across multiple tabsets, you should still add the `sync-group` and `sync` options to enable proper cross-references of tabs. 
+    The `sync-group` and `sync` fields are primarily meant for syncing up tabs across multiple tabsets. For example, for the [login page](../getting_started/logging-in.md) the tabs are grouped by university (UCB, AMC, CSU, RMACC). The `sync-group` and `sync` are currently also required to reference a specific tab within a tabset. So even if you are not syncing tabs across multiple tabsets, you should still add the `sync-group` and `sync` options to enable proper cross-references of tabs. 
 
     ```
 
