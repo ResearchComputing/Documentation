@@ -331,8 +331,8 @@ Now, we activate the environment and install all of our dependencies:
 ```
 source $UV_ENVS/hf-transformers-env/bin/activate
 uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
-uv pip install huggingface_hub[cli] protobuf tiktoken bitsandbytes
-uv pip install -U transformers datasets evaluate accelerate timm kernels
+uv pip install huggingface_hub[torch] protobuf tiktoken bitsandbytes
+uv pip install transformers datasets evaluate accelerate timm "kernels<0.15"
 ```
 ```{note}
 Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. This will ensure that PyTorch can run on all NVIDIA GPU models currently on CURC resources. 
