@@ -46,15 +46,60 @@ You can move on to [Step 2](#step-2-generate-an-ssh-key), but please make sure 1
 ```
 ## *Step 2: Generate an ssh key*
 
-You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. 
+You are strongly encouraged to set a passphrase for your key pair. You will be prompted to enter the passphrase each time you log in. You are also strongly encouraged to create an ed25519 key type.
 
-SSH Key Generation for Windows Users: 
-- Using the command prompt, PowerShell, or Windows Terminal: <https://www.howtogeek.com/762863/how-to-generate-ssh-keys-in-windows-10-and-windows-11/>
+### SSH Key Generation for Windows Users: 
+- It is recommended you use Powershell, but command prompt or a basic windows terminal will also work:
+Once inside Powershell (or similar), execute the following command:
+```
+ssh-keygen -t ed25519
+```
+- After, it is important that you **_create a passphrase_** and note the file path of the generated key. This will be important for step 3. Example output:
+
+```
+Z:\> ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\username/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\username/.ssh/id_ed25519.
+Your public key has been saved in C:\Users\username/.ssh/id_ed25519.pub.
+The key fingerprint is :
+SHA256:<key here>
+The key's randomart image is:
++-- [ED25519 256] --+
+|   .++*=B=.        |
+...
++---- [SHA256] -----+
+```
+
 - Using PuTTY: <https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/>
 
-SSH Key Generation for Mac Users: 
-<https://docs.tritondatacenter.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x>
+### SSH Key Generation for Mac and Linux Users: 
+- From a terminal window, execute the following command:
+```
+ssh-keygen -t ed25519
+```
+- After, it is important that you **_create a passphrase_** and note the file path of the generated key. This will be important for step 3. Example output:
 
+```
+username$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/username/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/username/.ssh/id_ed25519.
+Your public key has been saved in /Users/username/.ssh/id_ed25519.pub.
+The key fingerprint is :
+SHA256:<key here>
+The key's ranomart image is:
++-- [ED25519 256] --+
+|   .++*=B=.        |
+...
++---- [SHA256] -----+
+```
+
+- NOTE for Mac users: There is a chance you need to create or alter your ssh config file `~/.ssh/config`. See more in the [Troubleshooting](#troubleshooting) section below.
 
 ## *Step 3: Upload your ssh key to [registry.cilogon.org](https://registry.cilogon.org/registry/)*
 
@@ -121,6 +166,12 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 ## Troubleshooting
 
 * If you are able to get through [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) but unable to ssh in from your terminal, check that the ssh key in your command is the same key you uploaded to the registry.
+* For Mac users: If you have set up the key and followed all the steps above but are prompted for a **__password__** instead of a **__passphrase__**, you may need to edit or create a config file (~/.ssh/config). If you don't have an ssh config file, you can create it from the terminal window with the command `touch ~/.ssh/config`. After, edit the file and add the following 3 lines before trying again:
+  ```
+  Host login.rc.colorado.edu
+  HostKeyAlgorithms ssh-ed25519
+  PubkeyAcceptedAlgorithms ssh-ed25519
+  ```
 * If you are prompted for a **__passphrase__** (not a password) when signing in from your terminal, this refers to the passphrase you set when you generated your ssh key. If you don't remember it then you will have to generate and upload a new ssh key to the registry. If you are prompted for a **__password__**, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form), as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt.
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
