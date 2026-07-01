@@ -24,11 +24,15 @@ For the Ollama framework, we provide the following models:
 - `gpt-oss:20b`
     - An open-source model from OpenAI 
     - This model has been quantized using the MXFP4 format
-    - Requires about 14 GB of GPU memory 
+    - Requires about 14 GB of GPU memory
+- `gemma4:26b`
+	- An open-source model from Google
+	- This model has been quantized using the Q4_K_M format
+	- Requires about 18 GB of GPU memory
 - `gemma3:12b`
     - An open-source model from Google 
     - This model has been quantized using the Q4_K_M format
-    - Requires around 8 GB of GPU memory 
+    - Requires about 8 GB of GPU memory 
 - `llama3.1:8b`
     - An open-source model from Meta
     - This model has been quantized using the Q4_K_M format
@@ -36,7 +40,7 @@ For the Ollama framework, we provide the following models:
 - `embeddinggemma:latest`
     - An open-source embedding model from Google 
     - Used for turning text data into a numerical vector representation 
-    - Requires approximately 1 GB of GPU memory
+    - Requires about 1 GB of GPU memory
     
 If you are using your own installation of Ollama and would like to use a CURC-provided model, you should set the Ollama model path as follows:
 ```
@@ -56,7 +60,11 @@ For the Transformers framework, we provide the following models:
 - `gpt-oss-20b`
     - An open-source model from OpenAI 
     - This model has been quantized using the MXFP4 format
-    - Requires about 14 GB of GPU memory 
+    - Requires about 14 GB of GPU memory
+- `gemma-4-26B-A4B-it`
+	- An open-source model from Google
+	- This model has not been quantized and its tensors are in BF16 precision
+	- Requires more than 40 GB of GPU memory to run non-quantized version
 - `gemma-3-12b-it`
     - An open-source model from Google 
     - This model has not been quantized and its tensors are in BF16 precision
@@ -323,8 +331,8 @@ Now, we activate the environment and install all of our dependencies:
 ```
 source $UV_ENVS/hf-transformers-env/bin/activate
 uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
-uv pip install huggingface_hub[cli] protobuf tiktoken bitsandbytes
-uv pip install -U transformers datasets evaluate accelerate timm kernels
+uv pip install huggingface_hub[torch] protobuf tiktoken bitsandbytes
+uv pip install transformers datasets evaluate accelerate timm "kernels<0.15"
 ```
 ```{note}
 Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. This will ensure that PyTorch can run on all NVIDIA GPU models currently on CURC resources. 
