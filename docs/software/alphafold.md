@@ -59,8 +59,8 @@ cp /curc/sw/install/bio/alphafold/2.3.1/alphafold_alpine.sh .
 #SBATCH --nodes=1
 #SBATCH --time=06:00:00
 #SBATCH --partition=aa100
-#SBATCH --qos=normal
-#SBATCH --gres=gpu:1
+#SBATCH --qos=gpu-normal
+#SBATCH --gres=gpu:a100-40gb:1
 #SBATCH --job-name=multimer_test
 #SBATCH --output=multimer_test_%j.out
 #SBATCH --ntasks=40
@@ -165,8 +165,8 @@ Path of the script: `$AF3_EXAMPLES/alphafold3_alpine.sh`
 #SBATCH --nodes=1
 #SBATCH --time=30:00
 #SBATCH --partition=al40
-#SBATCH --qos=normal
-#SBATCH --gres=gpu:1
+#SBATCH --qos=gpu-normal
+#SBATCH --gres=gpu:l40:1
 #SBATCH --job-name=af3_test
 #SBATCH --output=af3_test_%j.out
 #SBATCH --ntasks=8
