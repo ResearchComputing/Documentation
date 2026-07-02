@@ -47,6 +47,10 @@ All Alpine nodes are available to all users. For full details about node access,
 
 :::
 
+```{note}
+**CU Anschutz job submission limit:** CU Anschutz users on Alpine are subject to a campus-wide hard limit of **200 concurrent jobs** across all QoS types (including `normal`, which system-wide allows up to 1000 jobs/user). This limit applies to all job types and partitions. It was implemented to reduce queue wait times for all Anschutz users given limited core-hour availability. If you need to run large numbers of jobs, consider using [GNU Parallel](https://github.com/kf-cuanschutz/CU-Anschutz-HPC-documentation/blob/main/Office-hours-presentation-files/GNU_parallel_presentation.pdf) as a workaround.
+```
+
 ### Colorado State University contribution
 
 :::{table}
