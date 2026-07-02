@@ -42,7 +42,7 @@ The process for obtaining a CURC account for CSU users is straightforward. Simpl
 Currently, AMC users must go through the following steps to create a CURC account: 
 
 1. If you do not already have an XSEDE/ACCESS account, follow the [instructions for new user registration](https://identity.access-ci.org/new-user). Please direct any questions about new accounts to the [ACCESS ticketing system](https://access-ci.atlassian.net/servicedesk/customer/portal/2/create/30).
-2. Sign and fill out [CU Anschutz's Alpine form](https://ucdenverdata.formstack.com/forms/alpine_eua_and_intake)
+2. Go to [this link](https://support.cuanschutz.edu/TDClient/277/Portal/Requests/Service/10799/Alpine-High-Performance-Computing-HPC), Select "Request HPC Access", and fill out the EUA intake form.
 3. You will receive an email from <hpcsupport@cuanschutz.edu> in approximately 1-2 weeks confirming your CURC account has been created.
 
 ```{important}
