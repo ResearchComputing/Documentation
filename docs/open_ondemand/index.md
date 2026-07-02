@@ -103,5 +103,6 @@ vs_code-server
 files_app
 jobs_app
 terminal_app
+llm_chat_interface
 
 ```
