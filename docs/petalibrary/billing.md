@@ -28,13 +28,13 @@ invoice. The following are billable events:
    * Decommissioning an allocation
 
 ### Invoice details
-A sample invoice is shown below. The invoice details the services being billed for, and includes a speedtype for CU System customers. For new allocations, the speedtype will be the one provided on the new allocation request form. For renewals or additional space, the speedtype will be the last one used for the allocation in question. A Journal ID will also be provided, which allows you to find the university transaction in which funds are moved between speedtypes.
+A sample invoice is shown below. The invoice has a unique identifier and details the services being billed for, including a speedtype for CU System customers. For new allocations, the speedtype will be the one provided on the new allocation request form. For renewals or additional space, the speedtype will be the last one used for the allocation in question. A Journal ID will also be provided, which allows you to find the university transaction in which funds are moved between speedtypes.
 
 ### Invoice recipients
-If a PetaLibrary allocation has one or more billing contacts defined, invoices are emailed to the billing contacts, and copied to the allocation owner. If no billing contacts are defined, invoices are emailed to the owner.
+All invoices are sent via email through the CURC ticketing system and include a case number. If a PetaLibrary allocation has one or more billing contacts defined, invoices are sent to the billing contacts, and copied to the allocation owner. If no billing contacts are defined, invoices are sent to the owner. 
 
 ### What to do when you require changes to your invoice
-The invoice specifies a time frame for you to contact us to make changes. If anything on the invoice is incorrect, please notify us right away, and we will issue a new invoice. If we do not hear from you within the specified time frame, we will proceed with the charges outlined in
+The invoice specifies a time frame for you to contact us to make changes. If anything on the invoice requires modification, please respond in the invoicing ticket or submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to notify us (include the _Invoice Identifier_ in your message), and we will issue a new invoice. If we do not hear from you within the specified time frame, we will proceed with the charges outlined in
 the invoice. Please take note of the PetaLibrary [policy for non-payment](../additional-resources/policies.md#petalibrary-non-payment).
 
 ### Annual renewal invoices
