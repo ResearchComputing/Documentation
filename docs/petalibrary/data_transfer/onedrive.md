@@ -21,7 +21,7 @@ In the Collection Search, enter: "OneDrive CU Boulder" - this should show your O
 ### Step 3: Open CURC (right pane)
 Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection Search (right pane), enter: "CU Boulder Research Computing"
 
-* You'll be asked to log in using your CURC Credentials - after clicking `Authenticate`, you should receive a Duo push on your Duo device which you will need to confirm
+* You'll be asked to log in using your CURC Credentials and then click `Authenticate`.
 
 ![](../images_and_html/splitview.png)
 

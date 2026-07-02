@@ -11,7 +11,8 @@ Open OnDemand is a browser based, integrated, single access point for all of you
 ````{tab-item} CU Boulder
 :sync: ood-gs-ucb
 
-To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult [our account request page](../getting_started/logging-in.md) to get started. Once you have a CU Research Computing account you can connect to Open OnDemand by visiting <https://ondemand.rc.colorado.edu>. This link will bring you to a login page for Open OnDemand. Use your CU Research Computing credentials and Duo 2-factor authentication to login.
+To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult [our account request page](../getting_started/logging-in.md) to get started. Once you have a CU Research Computing account you can connect to Open OnDemand by visiting <https://ondemand.rc.colorado.edu>. This link will bring you to a login page for Open OnDemand. Use your CU Research Computing credentials and [Microsoft multi-factor authentication (MFA)](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) to login. No additional MFA setup is required if you are already enrolled in Microsoft MFA.
+
 
 ![](OnDemand/login_page.png)
 

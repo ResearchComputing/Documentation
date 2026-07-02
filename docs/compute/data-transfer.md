@@ -58,7 +58,7 @@ Guest Collections (formerly known as "Shared Endpoints") enable PetaLibrary cust
 
 CU Research Computing has a trial license for Globus to AWS S3 bucket connections which allow for transfers to/from CURC resources to AWS S3 buckets using the familiar Globus web app. For those that would like to use a command-line tool rclone is also available for transfers to/from AWS S3 buckets (see [rclone example](#rclone)). For _both_ transfer methods it is assumed you have an AWS S3 bucket already created and available. First search for your S3 bucket in the Globus collections search bar. The first time you establish connection to your S3 bucket you will need to authenticate via 2 sources:
 
-1) Your CU IdentiKey and accept a Duo push
+1) Your CU IdentiKey with [Microsoft MFA](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication)
 2) Your AWS Credentials (access key and secret key)
 
 Once you have signed in one time, your AWS credentials will be stored on your individual Globus account. You will now be able to explore the file structure like you would any other Globus endpoint. 
