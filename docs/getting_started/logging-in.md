@@ -15,12 +15,16 @@ All individuals wanting to access CU Research Computing (CURC) HPC systems (Alpi
 `````{tab-item} CU Boulder
 :sync: logging-in-ucb
 
-The process for obtaining a CURC account for CU Boulder users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"University of Colorado Boulder"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need to enroll in CU Boulder's Duo two-factor authentication service. After installing the Duo mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll. 
+The process for obtaining a CURC account for CU Boulder users is straightforward. Simply navigate to our [Account Request](https://rcamp.rc.colorado.edu/accounts/account-request/create/organization) page, select **"University of Colorado Boulder"**, fill out the provided information, and select **"Verify & Continue"**. Once the form has been completed and submitted, an automatic process will provision your account. Once you've received a CURC account, you will need multi-factor authentication (MFA) to access Research Computing resources. CU Boulder uses two MFA systems depending on how you connect:
+
+- **Web portal services** (such as [Open OnDemand](../open_ondemand/index.md) and [Globus](https://app.globus.org/)) use **[Microsoft MFA](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication)**. Use the same Microsoft MFA method you already have configured for campus services such as Outlook and Teams. Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) documentation if you need to enroll.
+- **SSH and login-node access** (including `ssh`, `scp`, `sftp`, and connections to data transfer nodes) use **[Duo MFA](https://duo.colorado.edu)**. After installing the Duo mobile app to your phone (available via Apple App Store or Google Play Store), visit [https://duo.colorado.edu](https://duo.colorado.edu) to enroll.
 
 ````{important}
 - Research Computing accounts are separate from your CU accounts. You must sign up for an individual Research Computing account if you wish to access Research Computing resources.
 - Once your account is provisioned, please wait 15 minutes before signing in
 - If you are having issues with DUO, please consult our [Duo Frequently Asked Questions](./faq.md#duo-multi-factor-authentication) section
+- If you are having issues with Microsoft MFA, contact the [IT Service Center](https://oit.colorado.edu/support/it-service-center) or visit [Buff Techs](https://oit.colorado.edu/support/buff-techs). You will be required to have your Buff OneCard or government ID for MFA help.
 ````
 
 `````

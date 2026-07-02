@@ -142,6 +142,21 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 303-735-4357.
 ::::
 
+## Microsoft Multi-Factor Authentication
+
+CU Boulder web portal services use [Microsoft MFA](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication). You will use the same Microsoft MFA method you already have configured for campus services such as Outlook and Teams (for example, the Microsoft Authenticator app, text message, or a security key).
+
+### Which CURC services use Microsoft MFA?
+:::{dropdown} Show 
+:icon: note 
+CU Boulder users authenticate with Microsoft MFA when signing in to the following web-based services:
+
+- [Open OnDemand](https://ondemand.rc.colorado.edu)
+- [Globus](https://app.globus.org/) (when signing in with University of Colorado at Boulder credentials)
+
+If you need to enroll in or manage Microsoft MFA, visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) documentation. If you have trouble signing in, the [IT Service Center](https://oit.colorado.edu/support/it-service-center) can help. Support is also available through [Buff Techs](https://oit.colorado.edu/support/buff-techs) and Buff Techs Pro. You will be required to have your Buff OneCard or government ID for MFA help.
+:::
+
 ## General High-Performance Computing
 
 ### What is Arbiter2? 
