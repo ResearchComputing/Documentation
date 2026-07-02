@@ -11,7 +11,7 @@ This environment contains only the basic packages required to run RAPIDS and Pyt
 1. Start an interactive session on an NVIDIA GPU compute node, or create a batch script.
 
 ```
-sinteractive --ntasks=10 --gres=gpu:1 --nodes=1 --qos=testing --time=01:00:00 --partition=atesting_a100
+sinteractive --partition=aa100 --qos=gpu-testing --ntasks=10 --gres=gpu:a100_3g.20gb:1 --nodes=1 --time=01:00:00 
 ```
 
 2. Load the miniforge module:
@@ -36,7 +36,7 @@ The example below is for installing RAPIDS version 25.10.  Information on instal
 1. Start an interactive session on a GPU node:
 
 ```
-sinteractive --ntasks=10 --gres=gpu:1 --nodes=1 --qos=testing --time=01:00:00 --partition=atesting_a100
+sinteractive --partition=aa100 --qos=gpu-testing --ntasks=10 --gres=gpu:a100_3g.20gb:1 --nodes=1 --time=01:00:00 
 ```
 
 3. Load the miniforge module to use Mamba:
