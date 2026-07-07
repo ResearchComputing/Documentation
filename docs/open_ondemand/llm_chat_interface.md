@@ -14,7 +14,7 @@ The LLM Chat Interface is currently offered as a beta service. Functionality, av
 
    - Ollama model path: Select which model library Ollama should load. The default **CURC LLM Models** uses CURC-hosted Ollama models. You may also provide the **absolute path** to your own Ollama model directory, if you have downloaded or fine-tuned models there. See [Ollama documentation](../ai-ml/llms.md#ollama) for more details.
    - Configuration type: 
-      - If you selected **Preset configuration**, (recommended for most users) choose **10 cores, 1 GPU, 1 hour**. This submits your job to the `a100 testing` partition with one GPU, which is required to run the LLM backend
+      - If you selected **Preset configuration** (recommended for most users), choose **10 cores, 1 GPU, 1 hour**. This submits your job to the `a100 testing` partition with one GPU, which is required to run the LLM backend
       - If you selected **Custom configuration**, you **must** request at least one GPU in the **gres** field (for example, `gpu:1:a100_3g.20gb`). See the [Limitations](#limitations) section for guidance on GPU memory (VRAM) and model size. For details on custom configuration options, see [Configuring Open OnDemand interactive applications](./configuring_apps.md).
 
 4. Click **Launch** and wait for your session to start. When the job is ready, click **Connect to LLM Chat Interface** to open the chat in a new browser tab.
