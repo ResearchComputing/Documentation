@@ -1,9 +1,9 @@
 # LLM Chat Interface
 
-The **LLM Chat Interface** is an interactive Open OnDemand application that provides a browser-based chat experience powered by [Chainlit](https://docs.chainlit.io) and [Ollama](https://ollama.com). When you launch a session, the application starts an Ollama server on a GPU-equipped compute node and connects it to CURC-hosted large language models (LLMs). You can ask questions, draft and debug code, summarize documents, and analyze images (with vision-capable models), all from your web browser. 
+The **LLM Chat Interface** is an interactive Open OnDemand application that provides a browser-based chat experience to support a variety of [use cases](#use-cases). It is powered by [Chainlit](https://docs.chainlit.io) and [Ollama](https://ollama.com). When you launch a session, the application starts an Ollama server on a GPU-equipped compute node and connects it to CURC-hosted large language models (LLMs). You can ask questions, draft and debug code, summarize documents, and analyze images (with vision-capable models), all from your web browser. 
 
 ```{important}
-The LLM Chat Interface is currently offered as a beta service. Functionality, available models, and resource allocations may change as we gather feedback and refine the service. Please report issues or suggestions through the [CURC support form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
+The LLM Chat Interface is currently offered as a beta service. Functionality, available models, and resource allocations may change as we gather feedback and refine the service. Please report issues or make suggestions through the [CURC support form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 ```
 
 ## Launching the LLM Chat Interface
@@ -12,7 +12,7 @@ The LLM Chat Interface is currently offered as a beta service. Functionality, av
 2. Navigate to either the **Interactive Apps** drop-down menu or the **My Interactive Sessions** tab and select **LLM Chat Interface**.
 3. Review the launch form fields:
 
-   - Ollama model path — Select which model library Ollama should load. The default **CURC LLM Models** uses CURC-hosted models. You may also provide the **absolute path** to your own Ollama model directory, if you have pulled or fine-tuned models there. See [Ollama documentation](../ai-ml/llms.md#ollama) for more details.
+   - Ollama model path — Select which model library Ollama should load. The default **CURC LLM Models** uses CURC-hosted models. You may also provide the **absolute path** to your own Ollama model directory, if you have downloaded or fine-tuned models there. See [Ollama documentation](../ai-ml/llms.md#ollama) for more details.
    - Configuration type — Choose Preset configuration (recommended for most users) or Custom configuration for advanced resource control. For details on these options, see [Configuring Open OnDemand interactive applications](./configuring_apps.md).
 
 4. If you selected **Preset configuration**, choose **10 cores, 1 GPU, 1 hour**. This submits your job to Alpine with one GPU, which is required to run the LLM backend.
