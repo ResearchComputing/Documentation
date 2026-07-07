@@ -12,18 +12,16 @@ The LLM Chat Interface is currently offered as a beta service. Functionality, av
 2. Navigate to either the **Interactive Apps** drop-down menu or the **My Interactive Sessions** tab and select **LLM Chat Interface**.
 3. Review the launch form fields:
 
-   - Ollama model path — Select which model library Ollama should load. The default **CURC LLM Models** uses CURC-hosted models. You may also provide the **absolute path** to your own Ollama model directory, if you have downloaded or fine-tuned models there. See [Ollama documentation](../ai-ml/llms.md#ollama) for more details.
-   - Configuration type — Choose Preset configuration (recommended for most users) or Custom configuration for advanced resource control. For details on these options, see [Configuring Open OnDemand interactive applications](./configuring_apps.md).
+   - Ollama model path: Select which model library Ollama should load. The default **CURC LLM Models** uses CURC-hosted Ollama models. You may also provide the **absolute path** to your own Ollama model directory, if you have downloaded or fine-tuned models there. See [Ollama documentation](../ai-ml/llms.md#ollama) for more details.
+   - Configuration type: 
+      - Preset configuration (recommended for most users). If you selected **Preset configuration**, choose **10 cores, 1 GPU, 1 hour**. This submits your job to the `a100 testing` partition with one GPU, which is required to run the LLM backend
+      - If you selected **Custom configuration**, you **must** request at least one GPU in the **gres** field (for example, `gpu:1:a100_3g.20gb`). See the [Limitations](#limitations) section for guidance on GPU memory (VRAM) and model size. For details on custom configuration options, see [Configuring Open OnDemand interactive applications](./configuring_apps.md).
 
-4. If you selected **Preset configuration**, choose **10 cores, 1 GPU, 1 hour**. This submits your job to Alpine with one GPU, which is required to run the LLM backend.
+4. Click **Launch** and wait for your session to start. When the job is ready, click **Connect to LLM Chat Interface** to open the chat in a new browser tab.
 
 ```{important}
-When you launch with **Preset configuration**, your job is submitted to Alpine **testing** hardware (`atesting_a100` partition, `testing` QoS). Testing resources are shared and **limited in capacity**, so sessions may queue during high demand, run for a maximum of **one hour**, and are not intended for sustained or large-scale work. For longer runtimes or heavier workloads, use **Custom configuration** and request appropriate resources.
+When a session is launched with Preset configuration, the job is submitted to Alpine testing hardware (`aa100` partition and `gpu-testing` QoS). Testing resources are shared and limited in capacity, so sessions may queue during high demand. For longer runtimes or heavier workloads, use Custom configuration and request appropriate resources (jobs will be subject to queue waits and may not start immediately).
 ```
-
-5. If you selected **Custom configuration**, you **must** request at least one GPU in the **gres** field (for example, `gpu:1`). See the [Limitations](#limitations) section for guidance on GPU memory (VRAM) and model size.
-6. Click **Launch** and wait for your session to start. When the job is ready, click **Connect to LLM Chat Interface** to open the chat in a new browser tab.
-
 
 ## Getting started
 
@@ -91,7 +89,7 @@ Summarize the report and check whether the script implements the methods describ
 If you send `/file` with paths but no follow-up question, the assistant is asked to analyze the attached file(s) by default.
 
 ```{important}
-Do **not** paste a bare filesystem path without the `/file` prefix, as the assistant will not attach the file. When files are attached successfully, the chat displays a confirmation as such **File attached from Alpine filesystem**.
+Do **not** paste a bare filesystem path without the `/file` prefix, as the assistant will not attach the file. When files are attached successfully, the assistant displays a confirmation as such **File attached from Alpine filesystem**.
 ```
 
 #### Allowed locations
@@ -124,24 +122,23 @@ Attachments must be absolute paths under one of these:
 
 ### GPU memory (VRAM) and model size
 
-Every LLM Chat Interface session runs on **GPU hardware**. The preset configuration requests **one GPU** (`gpu:1`). Custom configurations also **require** at least one GPU in **gres**.
+Every LLM Chat Interface session runs on **GPU hardware**. The preset configuration requests **one GPU**. Custom configurations also **require** at least one GPU in **gres**.
 
 Large language models load into GPU video memory (VRAM). Important constraints:
 
 - **Larger models use more VRAM.** A model's parameter size (shown in the model selector) is a rough guide: multi-billion-parameter models need substantially more memory than smaller ones.
-- **Only one GPU is allocated by default.** Very large models may fail to load, run slowly, or return errors if they exceed available VRAM on the assigned node.
+- **Only one GPU is allocated by default in custom configuration.** Very large models may fail to load, run slowly, or return errors if they exceed available VRAM on the assigned node.
 - **Vision models and long contexts increase memory pressure.** Attaching images, long PDFs, or maintaining a long conversation history all consume context window space and can contribute to out-of-memory failures or empty responses.
 
 ```{important}
 This assistant was **not** trained on [CU Research Computing (CURC) documentation](https://curc.readthedocs.io). It does **not** have reliable, up-to-date knowledge of CURC-specific systems, policies, or procedures. The model may produce plausible-sounding but **incorrect** answers for system specific topics. **Always verify** CURC-specific information against official documentation.
-
 ```
 
 ### Other limitations
 
 - **Context window.** The backend uses a large but finite context window (32,768 tokens). Extremely long files, many attachments, or very long threads may be truncated or cause degraded responses.
 - **Not for sensitive or regulated data.** Do not paste export-controlled, HIPAA, or other restricted data into the chat. Treat prompts and attachments as you would any shared compute resource.
-- **Resuming old threads** reloads conversation text but does not re-inject large file bodies from earlier turns; re-attach files if you need the model to see them again.
+- **Resuming old threads** reloads conversation text but does not re-inject large files from previous conversations; re-attach the files if you need the model to see them again.
 
 
 ## Use cases
