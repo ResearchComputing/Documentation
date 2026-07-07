@@ -44,11 +44,11 @@ To run a 16-core job for 24 hours on a single Alpine AMD GPU node, using all thr
 
 ```bash
 #SBATCH --partition=ami100
-#SBATCH --qos=normal
+#SBATCH --qos=gpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --time=24:00:00
-#SBATCH --gres=gpu:3
+#SBATCH --gres=gpu:mi100:3
 ```
 
 ````
@@ -56,15 +56,15 @@ To run a 16-core job for 24 hours on a single Alpine AMD GPU node, using all thr
 ````{tab-item} Example 4
 :sync: slurm-dir-exs-4
 
-To run a 50-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 GPUs:
+To run a 42-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 40 GB GPUs:
 
 ```bash
 #SBATCH --partition=aa100
-#SBATCH --qos=normal
+#SBATCH --qos=gpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=42
 #SBATCH --time=02:00:00
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:a100-40gb:2
 ```
 
 ````

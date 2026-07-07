@@ -346,9 +346,9 @@ To actively monitor GPU performance within a job script, you can run `nvidia-smi
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=10
-#SBATCH --gres=gpu
-#SBATCH --partition=atesting_a100 
-#SBATCH --qos=testing
+#SBATCH --gres=gpu:a100_3g.20gb:1
+#SBATCH --partition=aa100 
+#SBATCH --qos=gpu-testing
 #SBATCH --time=00:10:00
 
 # Start GPU monitoring in the background

@@ -24,11 +24,15 @@ For the Ollama framework, we provide the following models:
 - `gpt-oss:20b`
     - An open-source model from OpenAI 
     - This model has been quantized using the MXFP4 format
-    - Requires about 14 GB of GPU memory 
+    - Requires about 14 GB of GPU memory
+- `gemma4:26b`
+	- An open-source model from Google
+	- This model has been quantized using the Q4_K_M format
+	- Requires about 18 GB of GPU memory
 - `gemma3:12b`
     - An open-source model from Google 
     - This model has been quantized using the Q4_K_M format
-    - Requires around 8 GB of GPU memory 
+    - Requires about 8 GB of GPU memory 
 - `llama3.1:8b`
     - An open-source model from Meta
     - This model has been quantized using the Q4_K_M format
@@ -36,7 +40,7 @@ For the Ollama framework, we provide the following models:
 - `embeddinggemma:latest`
     - An open-source embedding model from Google 
     - Used for turning text data into a numerical vector representation 
-    - Requires approximately 1 GB of GPU memory
+    - Requires about 1 GB of GPU memory
     
 If you are using your own installation of Ollama and would like to use a CURC-provided model, you should set the Ollama model path as follows:
 ```
@@ -56,7 +60,11 @@ For the Transformers framework, we provide the following models:
 - `gpt-oss-20b`
     - An open-source model from OpenAI 
     - This model has been quantized using the MXFP4 format
-    - Requires about 14 GB of GPU memory 
+    - Requires about 14 GB of GPU memory
+- `gemma-4-26B-A4B-it`
+	- An open-source model from Google
+	- This model has not been quantized and its tensors are in BF16 precision
+	- Requires more than 40 GB of GPU memory to run non-quantized version
 - `gemma-3-12b-it`
     - An open-source model from Google 
     - This model has not been quantized and its tensors are in BF16 precision
@@ -101,7 +109,7 @@ In this tab, we provide instructions for using our system installed Ollama. Alth
 
 To begin, we first need to jump on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition.
 ```
-sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+sinteractive --partition=aa100 --qos=gpu-testing --nodes=1 --gres=gpu:a100_3g.20gb:1 --ntasks=10 --time=01:00:00
 ```
 Once the session has successfully started, we can startup an Ollama server and set default environment variables by loading the Ollama module:
 ```
@@ -159,7 +167,7 @@ After execution, these commands should create a `bin` and `lib` directory contai
 
 Now that we have Ollama installed, we need to start up an Ollama server on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). We will then be able to interact with Ollama and our LLMs from the command line. For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition:
 ```
-sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+sinteractive --partition=aa100 --qos=gpu-testing --nodes=1 --gres=gpu:a100_3g.20gb:1 --ntasks=10 --time=01:00:00
 ```
 ```{important}
 For non-testing workflows, users should request NVIDIA GPUs using the `aa100` partition. 
@@ -294,7 +302,7 @@ In this tab, we provide instructions for using our system installed Transformers
 
 To begin, we first need to jump on an NVIDIA GPU compute node (i.e. submitting a job to either the `aa100` or `atesting_a100` partition). For the purposes of this tutorial, we will start an interactive session on the `atesting_a100` partition.
 ```
-sinteractive --partition=atesting_a100 --qos=testing --nodes=1 --gres=gpu --ntasks=10 --time=01:00:00
+sinteractive --partition=aa100 --qos=gpu-testing --nodes=1 --gres=gpu:a100_3g.20gb:1 --ntasks=10 --time=01:00:00
 ```
 Once you are on the GPU compute node, you can load the Transformers module, which contains the minimal libraries needed to run LLMs and sets important environment variables:
 ```
@@ -323,8 +331,8 @@ Now, we activate the environment and install all of our dependencies:
 ```
 source $UV_ENVS/hf-transformers-env/bin/activate
 uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
-uv pip install huggingface_hub[cli] protobuf tiktoken bitsandbytes
-uv pip install -U transformers datasets evaluate accelerate timm kernels
+uv pip install huggingface_hub[torch] protobuf tiktoken bitsandbytes
+uv pip install transformers datasets evaluate accelerate timm "kernels<0.13"
 ```
 ```{note}
 Here we specifically grab the newest stable PyTorch version that is compatible with CUDA 12.9. This will ensure that PyTorch can run on all NVIDIA GPU models currently on CURC resources. 

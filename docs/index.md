@@ -74,6 +74,7 @@ running-jobs/roce-enabled
 running-jobs/job-resources
 running-jobs/slurm-commands
 running-jobs/squeue-status-codes
+running-jobs/persistence1
 
 ```
 
