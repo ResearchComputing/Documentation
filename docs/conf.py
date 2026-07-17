@@ -23,9 +23,9 @@ myst_substitutions = {
 
    # Alpine cluster summary substitutions
    'alpine_total_256GB_cpu_nodes': '406',
-   'alpine_total_gpu_nodes': '25',
+   'alpine_total_gpu_nodes': '41',
    'alpine_total_hi_mem_cpu_nodes': '24',
-   'ucb_alpine_total_nodes': '342',
+   'ucb_alpine_total_nodes': '358',
    'amc_alpine_total_nodes': '37',
    'csu_alpine_total_nodes': '77',
 
