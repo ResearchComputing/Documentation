@@ -31,6 +31,8 @@ myst_substitutions = {
 
    # Alpine hardware page general substitutions
    'alpine_standard_ram_per_core': '3.8',
+   'alpine_h200_ram_per_core': '12.4',
+   'alpine_rtxpro6000_ram_per_core': '12.4',
 
    # Alpine hardware page, hardware summary section substitutions
    ## UCB contributions 
@@ -39,6 +41,8 @@ myst_substitutions = {
    'alpine_ucb_total_64_core_1TB_cpu_nodes': '8',
    'alpine_ucb_total_48_core_1TB_cpu_nodes': '12',
    'alpine_ucb_total_a100_gpu_nodes': '7',
+   'alpine_ucb_total_h200_gpu_nodes': '8',
+   'alpine_ucb_total_rtxpro6000_gpu_nodes': '8',
    'alpine_ucb_total_mi100_gpu_nodes': '7',
    'alpine_ucb_total_gh200_gpu_nodes': '2',
    'alpine_ucb_total_acompile_nodes': '2',
