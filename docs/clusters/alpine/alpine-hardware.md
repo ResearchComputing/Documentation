@@ -90,7 +90,9 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- |
 | amilan    | AMD Milan (default)          | {{ alpine_total_amilan_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 
 | ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}         | 6.1<sup>3</sup>     |
-| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup>. For select nodes, MIG has been enabled providing 6x 20 GB NVIDIA A100 MIG instances. | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 
+| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup>. For select nodes, MIG has been enabled providing 6x 20 GB NVIDIA A100 MIG instances. | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
+| ah200     | GPU-enabled (4x NVIDIA H200)<sup>5</sup>. For select nodes, MIG has been enabled (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_ah200_nodes }}          | 128         |   {{ alpine_h200_ram_per_core }}        | 7.78<sup>3</sup>     |
+| artxpro6000    | GPU-enabled (4x NVIDIA RTX Pro 6000)<sup>5</sup>. For select nodes, MIG has been enabled (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_artxpro6000_nodes }}          | 128         |   {{ alpine_rtxpro6000_ram_per_core }}        | 6.1<sup>3</sup>     |
 | al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |
 | acompile | AMD Milan compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | 
@@ -105,15 +107,19 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 <sup>2</sup>The `amem` partition has a mixture of nodes with 48, 64, and 128 cores.  Nodes with 48 and 64 cores have 1 TB of RAM; nodes with 128 cores have 2 TB of RAM.  The default RAM-per-requested core on the `amem` partition is 15,927 MB, which is configured such that if you request all 64 (128) cores on a 64-core (128-core) `amem` node, you will receive roughly 1,000,000 MB of RAM (i.e., the full ~1 TB available). If you request all 48 cores on a 48-core node, by default you will receive 764,496 MB of RAM, which is less than the 1 TB available. If you require more RAM than the default of 15,927 MB per-requested-core, employ the `--mem` flag in your job script and specify the amount of RAM you need, in MB. For example, to request all of the RAM on a node, use "--mem=1000000M".   
 
-<sup>3</sup>On the GPU partitions, `ami100`, `aa100`, and `al40`, the _billing_weight_ value of 6.1/core is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
+<sup>3</sup>On the GPU partitions, the _billing_weight_ value (e.g. 6.1/core) is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
 
 <sup>4</sup>NVIDIA A100 and L40 GPUs only support CUDA versions >11.x
+
+<sup>5</sup>NVIDIA H200 and RTX Pro 6000 GPUs only support CUDA versions TODO: SPECIFY
 ```
 
 All users, regardless of institution, should specify partitions as follows:
 ```bash
 --partition=amilan
 --partition=aa100
+--partition=ah200
+--partition=artxpro6000
 --partition=ami100
 --partition=al40
 --partition=amem
@@ -131,8 +137,8 @@ All users, regardless of institution, should specify partitions as follows:
 | long | Longer wall times          | 7 days              | 200           | 20 nodes               | amilan            | 
 | mem-normal | Standard QoS for High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
 | mem-long | QoS for longer running High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
-| gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40     | 
-| gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40 | 
+| gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40,ah200,artxpro6000     | 
+| gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40,ah200,artxpro6000 | 
 | gpu-testing | Testing QoS for GPU jobs        | 1 hour | 5 | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100     | 
 | testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting     | 
 | compile | Used for acompile jobs  | 12 hours              |    4     |   1 node      | acompile   | 

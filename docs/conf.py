@@ -63,6 +63,8 @@ myst_substitutions = {
    'alpine_total_amilan_nodes': '403',
    'alpine_total_ami100_nodes': '8',
    'alpine_total_aa100_nodes': '12',
+   'alpine_total_ah200_nodes': '8',
+   'alpine_total_artxpro6000_nodes': '8',
    'alpine_total_al40_nodes': '3',
    'alpine_total_amem_nodes': '24',
    'alpine_total_acompile_nodes': '2',
