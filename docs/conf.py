@@ -34,7 +34,7 @@ myst_substitutions = {
 
    # Alpine hardware page, hardware summary section substitutions
    ## UCB contributions 
-   'alpine_ucb_total_128_core_256GB_cpu_nodes': '33',
+   'alpine_ucb_total_128_core_512GB_cpu_nodes': '33',
    'alpine_ucb_total_64_core_256GB_cpu_nodes': '284',
    'alpine_ucb_total_64_core_1TB_cpu_nodes': '8',
    'alpine_ucb_total_48_core_1TB_cpu_nodes': '12',
