@@ -92,4 +92,3 @@ Click the name of a training to view more details and register!
 
 
 `````
-<p id="footnote-1">[1] <i>Participants may register for specific sessions or all sessions.</i></p>
