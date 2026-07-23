@@ -73,7 +73,7 @@ running-jobs/job-arrays
 running-jobs/roce-enabled
 running-jobs/job-resources
 running-jobs/slurm-commands
-running-jobs/squeue-status-codes
+running-jobs/error-status-codes
 running-jobs/persistence1
 
 ```
