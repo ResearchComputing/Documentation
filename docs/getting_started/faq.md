@@ -142,6 +142,21 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 303-735-4357.
 ::::
 
+## Microsoft Multi-Factor Authentication
+
+CU Boulder web portal services use [Microsoft MFA](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication). You will use the same Microsoft MFA method you already have configured for campus services such as Outlook and Teams (for example, the Microsoft Authenticator app, text message, or a security key).
+
+### Which CURC services use Microsoft MFA?
+:::{dropdown} Show 
+:icon: note 
+CU Boulder users authenticate with Microsoft MFA when signing in to the following web-based services:
+
+- [Open OnDemand](https://ondemand.rc.colorado.edu)
+- [Globus](https://app.globus.org/) (when signing in with University of Colorado at Boulder credentials)
+
+If you need to enroll in or manage Microsoft MFA, visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) documentation. If you have trouble signing in, the [IT Service Center](https://oit.colorado.edu/support/it-service-center) can help. Support is also available through [Buff Techs](https://oit.colorado.edu/support/buff-techs-desktop-support) and Buff Techs Pro. You will be required to have your Buff OneCard or government ID for MFA help.
+:::
+
 ## General High-Performance Computing
 
 ### What is Arbiter2? 
@@ -167,6 +182,27 @@ Please note that the maximum values listed are intended to support intermittent 
 ```
 
 ::::
+
+### How can I reset my .bashrc? 
+::::{dropdown} Show 
+:icon: note
+
+Every Research Computing account has a .bashrc file in their /home directory. This file ensures your account's environment is properly configured whenever you login or run a job on a compute node. We do not recommend editing this file, unless you know what you are doing. If you accidentally delete or edit the file, you can restore your .bashrc by taking the following steps: 
+
+1. Navigate to your home directory : `cd ~`
+2. Open or create the .bashrc : `vim .bashrc` or `nano .bashrc` 
+3. Copy + paste the following code snippet into your .bashrc and then save the file, replacing any existing text in the file (if any).  
+
+```
+# .bashrc
+
+if [ -f /etc/bashrc ]; then
+. /etc/bashrc
+fi
+```
+
+::::
+
 
 ### How can I add users to a Linux group?
 ::::{dropdown} Show 

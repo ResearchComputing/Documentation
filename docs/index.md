@@ -74,6 +74,7 @@ running-jobs/roce-enabled
 running-jobs/job-resources
 running-jobs/slurm-commands
 running-jobs/squeue-status-codes
+running-jobs/persistence1
 
 ```
 
@@ -141,6 +142,7 @@ programming/MPIBestpractices
 programming/MPI-CF
 programming/OpenMP-CF
 programming/profiling-nvidia-gpu-performance
+programming/dask
 
 ```
    

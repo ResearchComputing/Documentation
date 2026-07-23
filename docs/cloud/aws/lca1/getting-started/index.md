@@ -7,7 +7,7 @@
 shared-responsibility-model
 aws-console-access
 aws-cli-access
-managing-grouper-groups
+managing-customer-groups
 customer-permission-boundary
 aws-restricted-regions
 ```
