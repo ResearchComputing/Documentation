@@ -12,29 +12,25 @@ Click the name of a training to view more details and register!
 :sync: cur-sem-train-by-month
 
 ### **August 2026**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [HPC Microcredential](https://calendar.colorado.edu/event/hpc-microcredential) - **August 10-12, 9am, Hybrid (Norlin Library E206/Zoom)**
+- [Alpine New User Seminar (A Primer)](https://calendar.colorado.edu/event/alpine-new-user-seminar-a-primer) - **Wednesday, August 26, 10am, Virtual (Zoom)**
 
 ### **September 2026**
-- [name]() - **February 4, 10am, Virtual (Zoom)**
-- [name]() - **February 5, 10am, Virtual (Zoom)**
-- [name]() - **February 6, 11am, Virtual (Zoom)**
-- [name]() - **February 11, 2pm, Virtual (Zoom)**
-- [name]() - **February 12, 11am, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **February 18, 11am, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **February 25, 2pm, Virtual (Zoom)**
-- [name]() - **February 27, 12pm, Virtual (Zoom)**
+- [Getting Started with Research Computing: From Command Line to Job Scheduling (A Short Course)]() - **September 2, 11am, Virtual (Zoom)**
+- [AWS/CFS New Account Days]() - **September 3, 2pm, Virtual (Zoom)**
+- [Lunch-n-Learn: Supercharge Your Python with Dask (A Quick Byte)]() - **September 8, 11am, Virtual (Zoom)**
+- [Applied Containerization for Machine Learning in HPC (A Short Course)]() - **September 9, 11am, Virtual (Zoom)**
+- [Lunch-n-Learn: Sharing Data Across Institutions with PetaLibrary and Globus (A Quick Byte)]() - **September 11, 11am, Virtual (Zoom)**
+- [Workflow Management with persistence1 (A Primer)]() - **September 17, 1:30pm, Virtual (Zoom)**
 
 ### **October 2026**
-- [name]() - **March 4, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **March 5, 11am, Virtual (Zoom)**
-- [name]() - **March 6, 10:30am, Virtual (Zoom)**
-- [name]() - **March 11, 2pm, Virtual (Zoom)**
-- [name]() - **March 25, 2pm, Virtual (Zoom)**
+- [Setting up LLMs on CURC Resources (A Short Course)]() - **October 1, 11am, Virtual (Zoom)**
+- [Harnessing the Power of GPU-Accelerated Workflows with Alpine (A Primer)]() - **October 15, 11am, Virtual (Zoom)**
+- [Git & GitHub In-Depth (A Short Course)]() - **October 22, 10am, Hybrid (Norlin Library E206/Zoom)**
 
 ### **November 2026**
-- [name]() - **April 8, 2pm, Virtual (Zoom)**
+- [AI Data Readiness Workshop (A Primer)]() - **November 5, 10am, Virtual (Zoom)**
+- [AlphaFold3 on Alpine (A Short Course)]() - **November 12, 11am, Virtual (Zoom)**
 
 ````
 
@@ -42,29 +38,27 @@ Click the name of a training to view more details and register!
 :sync: cur-sem-train-by-topic
 
 ### **CU Research Computing Fundamentals**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [HPC Microcredential](https://calendar.colorado.edu/event/hpc-microcredential) - **August 10-12, 9am, Hybrid (Norlin Library E206/Zoom)**
+- [Alpine New User Seminar (A Primer)](https://calendar.colorado.edu/event/alpine-new-user-seminar-a-primer) - **Wednesday, August 26, 10am, Virtual (Zoom)**
+- [Getting Started with Research Computing: From Command Line to Job Scheduling (A Short Course)]() - **September 2, 11am, Virtual (Zoom)**
+- [Lunch-n-Learn: Sharing Data Across Institutions with PetaLibrary and Globus (A Quick Byte)]() - **September 11, 11am, Virtual (Zoom)**
 
 ### **Software**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Workflow Management with persistence1 (A Primer)]() - **September 17, 1:30pm, Virtual (Zoom)**
+- [Git & GitHub In-Depth (A Short Course)]() - **October 22, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [AlphaFold3 on Alpine (A Short Course)]() - **November 12, 11am, Virtual (Zoom)**
 
 ### **Parallelization & Acceleration**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Lunch-n-Learn: Supercharge Your Python with Dask (A Quick Byte)]() - **September 8, 11am, Virtual (Zoom)**
+- [Harnessing the Power of GPU-Accelerated Workflows with Alpine (A Primer)]() - **October 15, 11am, Virtual (Zoom)**
 
 ### **AI/ML**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [Applied Containerization for Machine Learning in HPC (A Short Course)]() - **September 9, 11am, Virtual (Zoom)**
+- [Setting up LLMs on CURC Resources (A Short Course)]() - **October 1, 11am, Virtual (Zoom)**
+- [AI Data Readiness Workshop (A Primer)]() - **November 5, 10am, Virtual (Zoom)**
 
 ### **AWS**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [AWS/CFS New Account Days]() - **September 3, 2pm, Virtual (Zoom)**
 
 ````
 
@@ -72,21 +66,21 @@ Click the name of a training to view more details and register!
 :sync: cur-sem-train-by-diff
 
 ### **Getting Started**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
+- [HPC Microcredential](https://calendar.colorado.edu/event/hpc-microcredential) - **August 10-12, 9am, Hybrid (Norlin Library E206/Zoom)**
+- [Alpine New User Seminar (A Primer)](https://calendar.colorado.edu/event/alpine-new-user-seminar-a-primer) - **Wednesday, August 26, 10am, Virtual (Zoom)**
+- [Getting Started with Research Computing: From Command Line to Job Scheduling (A Short Course)]() - **September 2, 11am, Virtual (Zoom)**
+- [AWS/CFS New Account Days]() - **September 3, 2pm, Virtual (Zoom)**
+- [Lunch-n-Learn: Sharing Data Across Institutions with PetaLibrary and Globus (A Quick Byte)]() - **September 11, 11am, Virtual (Zoom)**
 
 ### **Intermediate**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 14, 1pm, Virtual (Zoom)**
-- [name]() - **January 21, 1pm, Hybrid (Norlin Library E206/Zoom)**
-- [name]() - **January 29, 11am, Hybrid (Norlin Library E206/Zoom)**
-
+- [Lunch-n-Learn: Supercharge Your Python with Dask (A Quick Byte)]() - **September 8, 11am, Virtual (Zoom)**
+- [Applied Containerization for Machine Learning in HPC (A Short Course)]() - **September 9, 11am, Virtual (Zoom)**
+- [Workflow Management with persistence1 (A Primer)]() - **September 17, 1:30pm, Virtual (Zoom)**
+- [Setting up LLMs on CURC Resources (A Short Course)]() - **October 1, 11am, Virtual (Zoom)**
+- [Harnessing the Power of GPU-Accelerated Workflows with Alpine (A Primer)]() - **October 15, 11am, Virtual (Zoom)**
+- [Git & GitHub In-Depth (A Short Course)]() - **October 22, 10am, Hybrid (Norlin Library E206/Zoom)**
+- [AI Data Readiness Workshop (A Primer)]() - **November 5, 10am, Virtual (Zoom)**
+- [AlphaFold3 on Alpine (A Short Course)]() - **November 12, 11am, Virtual (Zoom)**
 
 ````
 
