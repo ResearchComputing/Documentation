@@ -1,4 +1,4 @@
-# CU Research Computing System Changelog
+# CURC System Changelog
 
 The following is a high-level list of notable changes made to CU Research Computing systems grouped by year.
 
