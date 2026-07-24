@@ -11,7 +11,7 @@ The following is a high-level list of notable changes made to CU Research Comput
 | **Date** | **Change** | **Impact** |
 | ------ | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Feb-26 | Arbiter2 added to login nodes | All users will receive warnings (and potentially have their session terminated) if running intensive proccesses on login nodes |
-| Feb-26 | Added Mines IP ranges to greenlist for passwordless SSH via CILogon | Enable Mines users to log in via SSH instead of Open OnDemand-only |
+| Feb-26 | Added Mines IP ranges to greenlist for passwordless SSH via CILogon | Enable Mines users to log in and transfer files via terminal-based ssh in addition to Open OnDemand |
 | Feb-26 | Added NVIDIA GPU and VRAM utilization to `seff` command | Users and support staff are better able to track GPU usage metrics on NVIDIA nodes; Slurm job emails will now include this data also |
 | Mar-26 | `amilan128c` partition removed (rolled into `amilan`) | Users need to be aware that the `amilan128c` partition is no longer valid, but nodes are still accessible via `amilan`+constraint |
 | Apr-26 | `amc`, `csu`, and `rmacc` partitions removed | Affects user job submission parameters |
