@@ -29,7 +29,7 @@ Register for **Tuesday** Office Hours {octicon}`calendar`
 :outline:
 Register for **Thursday** Office Hours {octicon}`calendar`
 ```
-
+## First Friday Office Hours 
 We are excited to announce an expansion of our consultation hours for the Fall 2026 semester! On the first Friday of each month, we will host “CU Research Computing: Ask Us Anything!”, a 3-hour virtual drop-in office hours session.
 
 ```{button-link} https://calendar.colorado.edu/event/cu-research-computing-ask-us-anything
