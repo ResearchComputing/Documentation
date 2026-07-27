@@ -40,7 +40,7 @@ Register for CU Research Computing: Ask Us Anything! {octicon}`calendar`
 ```
 
 ```{note}
-If you are unable to meet during the weekly office hours, or if you need a consultation outside of the academic year, please use the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to request a virtual consultation. 
+If you are unable to meet during the scheduled office hours, or if you need a consultation outside of the academic year, please use the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to request a virtual consultation. 
 
 ```
 
