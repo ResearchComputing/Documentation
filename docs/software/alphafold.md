@@ -184,7 +184,7 @@ Path of the script: `$AF3_EXAMPLES/alphafold3_alpine.sh`
 
 # Load the AlphaFold 3 module
 module purge
-module load alphafold/3.0.0
+module load alphafold/3.0.3
 
 # Set input JSON, output directory, and model parameter path
 export INPUT_FILE=$AF3_EXAMPLES/fold_protein_2PV7/alphafold_input.json
