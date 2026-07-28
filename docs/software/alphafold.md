@@ -97,7 +97,7 @@ AlphaFold 3 version 3.0.3 is supported on **all NVIDIA GPU types** on Alpine.
 
 Load AlphaFold 3 module:
 ```
-module load alphafold/3.0.0
+module load alphafold/3.0.3
 ```
 View run options:
 ```
