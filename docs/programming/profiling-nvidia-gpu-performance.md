@@ -4,7 +4,7 @@
 Ensure you are using a CUDA version compatible with the GPU you are using. For more information, see our FAQ on [Which NVIDIA SDK version should I use on Alpine GPUs?](../getting_started/faq.md#which-nvidia-sdk-version-should-i-use-on-alpine-gpus)
 ```
 
-The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. This is especially important for optimizing workloads on Alpine’s A100 GPU nodes, where GPU time is a valuable and shared resource.
+The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. Optimizing workloads on Alpine’s GPU nodes is important due to the high demand for these valuable shared resources.
 
 The following tools are available for interacting with performance counters:
 
@@ -374,7 +374,7 @@ NVIDIA Nsight Compute is a command-line CUDA kernel profiler that provides detai
 
 ### Why do these metrics matter?
 
-Modern GPUs, such as the NVIDIA A100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
+Modern GPUs have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
 
 Key Features:
 
@@ -410,7 +410,6 @@ $ ncu --set full --target-processes all ./vectorAdd
 
 - `--target-processes all`: Profiles all child processes (useful for multi-threaded applications).
 
-```{note}
 `ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on GPU nodes without MIG.
 ```
 
