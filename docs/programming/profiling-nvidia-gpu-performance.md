@@ -390,6 +390,10 @@ Collecting performance data using `ncu` can incur significant runtime overhead. 
 
 ### Getting Started
 
+```{attention}
+`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on GPU nodes without MIG.
+```
+
 To use `ncu`, first load the appropriate CUDA module:
 
 ```
@@ -410,8 +414,6 @@ $ ncu --set full --target-processes all ./vectorAdd
 
 - `--target-processes all`: Profiles all child processes (useful for multi-threaded applications).
 
-`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on GPU nodes without MIG.
-```
 
 ::::{dropdown} Click here to view the full `ncu` report
 :icon: note
