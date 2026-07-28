@@ -10,6 +10,10 @@ AlphaFold is a program that predicts the three-dimensional structure of proteins
 ````{tab-item} AlphaFold 2 
 :sync: batch-scripting-ex1
 
+```{attention}
+AlphaFold 2 is supported on A100 and L40 GPUs, but **not on H200 and RTX Pro 6000 GPUs**.
+```
+
 Load the default AlphaFold 2 module:
 ```
 module load alphafold/2.3.1
@@ -86,6 +90,11 @@ AlphaFold 3 has a substantially updated diffusion-based architecture that is cap
 On CURC’s Alpine system, AlphaFold 3 is available as a containerized module. It uses Apptainer/Singularity under the hood and is fully self-contained except for the separately downloaded model parameters (required).
 
 #### AlphaFold 3 Module
+```{attention}
+AlphaFold 3 versions 3.0.0 and 3.0.1 are supported on A100, L40, and H200 GPUs, but **not on RTX Pro 6000 GPUs**.
+AlphaFold 3 version 3.0.3 is supported on **all NVIDIA GPU types** on Alpine.
+```
+
 Load AlphaFold 3 module:
 ```
 module load alphafold/3.0.0
