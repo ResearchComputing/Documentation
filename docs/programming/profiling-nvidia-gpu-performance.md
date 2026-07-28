@@ -245,7 +245,7 @@ Example output of `nvidia-smi` on the `aa100` partition using [matrixMultiply.cu
 
 ### nvidia-smi on MIG-Enabled GPUs
 
-Some A100 GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, `nvidia-smi` shows a different output format, displaying information for both full GPUs and individual MIG instances.
+Some GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, `nvidia-smi` shows a different output format, displaying information for both full GPUs and individual MIG instances.
 
 Here's an example output from a MIG-enabled A100 node:
 ```
@@ -411,7 +411,7 @@ $ ncu --set full --target-processes all ./vectorAdd
 - `--target-processes all`: Profiles all child processes (useful for multi-threaded applications).
 
 ```{note}
-`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on A100 nodes without MIG.
+`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on GPU nodes without MIG.
 ```
 
 ::::{dropdown} Click here to view the full `ncu` report
