@@ -355,7 +355,7 @@ For individuals who need to install Python libraries not included in our base Py
 ::::{dropdown} Show 
 :icon: note
 
-Our recommendation is to use >= nvhpc_sdk/2025.251 on all GPUs. If you require more specific information on the CUDA versions a given GPU architecture will support, please see the [NVIDIA Toolkit, Driver and Architecture Matrix](https://docs.nvidia.com/datacenter/tesla/drivers/cuda-toolkit-driver-and-architecture-matrix.html), noting the following architectures available on Alpine:
+Our recommendation is to use >= `nvhpc_sdk/2025.251` on all GPUs. If you require more specific information on the CUDA versions a given GPU architecture will support, please see the [NVIDIA Toolkit, Driver and Architecture Matrix](https://docs.nvidia.com/datacenter/tesla/drivers/cuda-toolkit-driver-and-architecture-matrix.html), noting the following architectures available on Alpine:
 
 * A100: Ampere
 * L40: Ada
