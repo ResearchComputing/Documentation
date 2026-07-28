@@ -146,7 +146,7 @@ To better utilize limited GPU resources, these stages can be split using flags:
  - `--norun_data_pipeline` → Run only the inference step (Stage 2)
 
 #### AlphaFold 3 Examples
-Example input files and scripts are in `/curc/sw/install/bio/alphafold/3.0.0/examples`.
+Example input files and scripts are in `/curc/sw/install/bio/alphafold/3.0.3/examples`.
 Loading the AlphaFold 3 module stores this path in `AF3_EXAMPLES`:
 ```
 ls $AF3_EXAMPLES
