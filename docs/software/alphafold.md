@@ -112,7 +112,7 @@ Loading the AlphaFold 3 module does the following:
 - redirects temporary files to `/scratch/alpine/$USER`
     - you can override this path by resetting TMPDIR *after* you load the module:
         ```
-        module load alphafold/3.0.0
+        module load alphafold/3.0.3
         export TMPDIR=<path/of/your/choosing>
         ```
 - creates a shortcut to the AlphaFold 3 script so you can run the program with `run_alphafold`
