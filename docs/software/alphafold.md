@@ -161,7 +161,7 @@ You can copy the examples folder to a location where you have write permissions 
 
 ```bash
 cd /projects/$USER
-cp -R /curc/sw/install/bio/alphafold/3.0.0/examples .
+cp -R /curc/sw/install/bio/alphafold/3.0.3/examples .
 cd examples
 ```
 
