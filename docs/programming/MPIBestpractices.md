@@ -115,8 +115,8 @@ Simply select the Compiler and MPI wrapper you wish to use and place it in a job
 #!/bin/bash
 #SBATCH --nodes=2
 #SBATCH --time=04:00:00
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --constraint=ib
 #SBATCH --ntasks=128
 #SBATCH --job-name=mpi-job
