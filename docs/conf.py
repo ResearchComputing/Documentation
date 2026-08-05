@@ -56,7 +56,7 @@ myst_substitutions = {
    'alpine_csu_total_32_core_256GB_cpu_nodes': '49',
 
    # Alpine hardware page, partition section substitutions
-   'alpine_total_amilan_nodes': '403',
+   'alpine_total_acpu_nodes': '403',
    'alpine_total_ami100_nodes': '8',
    'alpine_total_aa100_nodes': '12',
    'alpine_total_al40_nodes': '3',

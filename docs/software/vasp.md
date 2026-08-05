@@ -35,8 +35,8 @@ make
 ```bash
 #!/bin/bash
 
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=2
 #SBATCH --time=1:00:00
