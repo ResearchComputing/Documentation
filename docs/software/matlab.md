@@ -5,6 +5,12 @@ resources. In this tutorial we will learn how to run Matlab on these
 resources. The tutorial assumes you are familiar with Matlab and basic
 Linux terminal commands.
 
+```{attention}
+If you are running on **A100, L40, or H200 GPUs**, use Matlab R2025b.
+
+If you are running on an **RTX Pro 6000 GPU**, use Matlab R2025b_FC to ensure forward compatibility with the GPU compute capability. Future versions of Matlab are anticipated to work on all GPUs without needing a forward compatibility module.
+```
+
 There are two basic ways to run Matlab (or many other kinds of
 software) on RC resources. The first is through an interactive job,
 and the second is through a batch job. An interactive job allows one
