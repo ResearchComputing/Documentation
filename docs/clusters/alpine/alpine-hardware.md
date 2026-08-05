@@ -122,6 +122,7 @@ All users, regardless of institution, should specify partitions as follows:
 --partition=aa100
 --partition=ah200
 --partition=artxpro6000
+--partition=gh200
 --partition=ami100
 --partition=al40
 --partition=amem
