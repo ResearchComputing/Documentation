@@ -17,10 +17,10 @@ sbatch <your-job-script-name>
 Because job scripts specify the desired resources for your job, you won't need to specify any resources on the command line. You can, however, overwrite or add any job parameter by providing the specific resource as a flag within `sbatch` command:
 
 ```bash
-sbatch --partition=amilan <your-job-script>
+sbatch --partition=acpu <your-job-script>
 ```
 
-Running this command would force your job to run on the amilan partition *no matter what your job script specified*.
+Running this command would force your job to run on the `acpu` partition *no matter what your job script specified*.
 
 ## Making a Job Script
 
