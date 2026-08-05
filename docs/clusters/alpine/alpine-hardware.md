@@ -113,7 +113,7 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 <sup>5</sup>NVIDIA H200 GPUs only support CUDA versions >12.0
 
-<sup>6</sup>NVIDIA H200 RTX Pro 6000 GPUs only support CUDA versions >12.8
+<sup>6</sup>NVIDIA RTX Pro 6000 GPUs only support CUDA versions >12.8
 ```
 
 All users, regardless of institution, should specify partitions as follows:
