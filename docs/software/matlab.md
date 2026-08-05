@@ -199,8 +199,7 @@ end
 ```
 
 Now all we have left to do is modify our batch script to specify that
-we want to run 4 tasks on the node (we can use up to 64 cores on each
-‘amilan' node on Alpine). We can also change the name of the job and the
+we want to run 4 tasks on the node (one can request a larger amount of tasks by utilizing an `acpu` node on Alpine). We can also change the name of the job and the
 output file if we choose.
 
 ```bash

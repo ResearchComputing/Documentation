@@ -18,14 +18,14 @@ myst_substitutions = {
    'rmacc_ascent_SUs': '100,000',
 
    # Alpine compute total counts substitutions 
-   'alpine_total_compute_nodes': '456', 
-   'alpine_total_cores': '28,144',
+   'alpine_total_compute_nodes': '473', 
+   'alpine_total_cores': '30,320',
 
    # Alpine cluster summary substitutions
-   'alpine_total_256GB_cpu_nodes': '406',
+   'alpine_total_256GB_512GB_cpu_nodes': '423',
    'alpine_total_gpu_nodes': '25',
    'alpine_total_hi_mem_cpu_nodes': '24',
-   'ucb_alpine_total_nodes': '342',
+   'ucb_alpine_total_nodes': '359',
    'amc_alpine_total_nodes': '37',
    'csu_alpine_total_nodes': '77',
 
@@ -34,7 +34,7 @@ myst_substitutions = {
 
    # Alpine hardware page, hardware summary section substitutions
    ## UCB contributions 
-   'alpine_ucb_total_128_core_256GB_cpu_nodes': '16',
+   'alpine_ucb_total_128_core_512GB_cpu_nodes': '33',
    'alpine_ucb_total_64_core_256GB_cpu_nodes': '284',
    'alpine_ucb_total_64_core_1TB_cpu_nodes': '8',
    'alpine_ucb_total_48_core_1TB_cpu_nodes': '12',
@@ -56,7 +56,7 @@ myst_substitutions = {
    'alpine_csu_total_32_core_256GB_cpu_nodes': '49',
 
    # Alpine hardware page, partition section substitutions
-   'alpine_total_amilan_nodes': '403',
+   'alpine_total_acpu_nodes': '420',
    'alpine_total_ami100_nodes': '8',
    'alpine_total_aa100_nodes': '12',
    'alpine_total_al40_nodes': '3',
