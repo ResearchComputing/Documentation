@@ -22,7 +22,9 @@ All Alpine nodes are available to all users. For full details about node access,
 | {{ alpine_ucb_total_64_core_1TB_cpu_nodes }} Milan High-Memory   | amem                | x86_64 AMD Milan | 1       | 64            | 1            |  16           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_mi100_gpu_nodes }} Milan AMD GPU | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_a100_gpu_nodes }} Milan NVIDIA GPU    | aa100               | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
-| {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8 T SSD                   | 2x25 Gb Ethernet +RoCE                       |
+| {{ alpine_ucb_total_h200_gpu_nodes }} Turin NVIDIA GPU    | ah200               | x86_64 AMD Turin | 2       | 128            | 1            |  {{ alpine_h200_ram_per_core }}           | NVIDIA H200 | 4         | 5.4T SSD                   | 100 Gb Ethernet                        |
+| {{ alpine_ucb_total_rtxpro6000_gpu_nodes }} Turin NVIDIA GPU    | artxpro6000             | x86_64 AMD Turin | 2       | 128            | 1            |  {{ alpine_rtxpro6000_ram_per_core }}           | NVIDIA RTX Pro 6000 | 4         | 5.4T SSD                   | 100 Gb Ethernet                     |
+| {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8T SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_acompile_nodes }} AMD CPU compile nodes | acompile | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} AMD CPU test nodes; pulls from CU's `acpu` pool | atesting | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_a100_test_gpu_nodes }} Milan NVIDIA GPU testing node | aa100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
@@ -88,7 +90,9 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- |
 | acpu    | AMD CPU nodes (default)          | {{ alpine_total_acpu_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 
 | ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}         | 6.1<sup>3</sup>     |
-| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup>. For select nodes, MIG has been enabled providing 6x 20 GB NVIDIA A100 MIG instances. | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     | 
+| aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup>. For select nodes, MIG has been enabled providing 6x 20 GB NVIDIA A100 MIG instances (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
+| ah200     | GPU-enabled (4x NVIDIA H200)<sup>5</sup>. For select nodes, MIG has been enabled (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_ah200_nodes }}          | 128         |   {{ alpine_h200_ram_per_core }}        | 12.6<sup>3</sup>     |
+| artxpro6000    | GPU-enabled (4x NVIDIA RTX Pro 6000)<sup>6</sup>. For select nodes, MIG has been enabled (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_artxpro6000_nodes }}          | 128         |   {{ alpine_rtxpro6000_ram_per_core }}        | 9.1<sup>3</sup>     |
 | al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |
 | acompile | AMD CPU compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | 
@@ -103,15 +107,22 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 <sup>2</sup>The `amem` partition has a mixture of nodes with 48, 64, and 128 cores.  Nodes with 48 and 64 cores have 1 TB of RAM; nodes with 128 cores have 2 TB of RAM.  The default RAM-per-requested core on the `amem` partition is 15,927 MB, which is configured such that if you request all 64 (128) cores on a 64-core (128-core) `amem` node, you will receive roughly 1,000,000 MB of RAM (i.e., the full ~1 TB available). If you request all 48 cores on a 48-core node, by default you will receive 764,496 MB of RAM, which is less than the 1 TB available. If you require more RAM than the default of 15,927 MB per-requested-core, employ the `--mem` flag in your job script and specify the amount of RAM you need, in MB. For example, to request all of the RAM on a node, use "--mem=1000000M".   
 
-<sup>3</sup>On the GPU partitions, `ami100`, `aa100`, and `al40`, the _billing_weight_ value of 6.1/core is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
+<sup>3</sup>On the GPU partitions, the _billing_weight_ value (e.g. 6.1/core) is an aggregate estimate and will be smaller for MIG instances. In practice, users are billed 1.0 for each core they request and an amount for each GPU they request (which is defined by GPU type). For the amount charged per GPU type, see the `Billing_weight/GPU` column in the table provided in the section [Available GRES on Alpine](#available-gres-on-alpine). For example, if a user requests all 64 cores and three `a100-40gb` GPUs for one hour, they will be billed (1.0 * 64) + (108.6 * 3)=389.8 SUs. 
 
 <sup>4</sup>NVIDIA A100 and L40 GPUs only support CUDA versions >11.x
+
+<sup>5</sup>NVIDIA H200 GPUs only support CUDA versions >12.0
+
+<sup>6</sup>NVIDIA RTX Pro 6000 GPUs only support CUDA versions >12.8
 ```
 
 All users, regardless of institution, should specify partitions as follows:
 ```bash
 --partition=acpu
 --partition=aa100
+--partition=ah200
+--partition=artxpro6000
+--partition=gh200
 --partition=ami100
 --partition=al40
 --partition=amem
@@ -129,8 +140,8 @@ All users, regardless of institution, should specify partitions as follows:
 | cpu-long | Longer wall times          | 7 days              | 200           | 20 nodes               | acpu            | 
 | mem-normal | Standard QoS for High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
 | mem-long | QoS for longer running High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
-| gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40     | 
-| gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40 | 
+| gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40,ah200,artxpro6000     | 
+| gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40,ah200,artxpro6000 | 
 | gpu-testing | Testing QoS for GPU jobs        | 1 hour | 5 | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100     | 
 | testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting     | 
 | compile | Used for acompile jobs  | 12 hours              |    4     |   1 node      | acompile   | 
@@ -176,11 +187,17 @@ $ sinfo --Format Partition,Gres |grep gpu
 
 #### Available GRES on Alpine:
 
-| GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | Max cores/GPU | Billing_weight/GPU |
+| GRES type   | Description                | Partition | `gpu-normal` GPU&nbsp;Resources | `gpu-long` GPU&nbsp;Resources | `gpu-testing` GPU&nbsp;Resources | Max cores/GPU | Billing_weight/GPU |
 | ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | ------------------ | ------------------ | 
 | `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` | N/A |  N/A | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 | 54.3 |
 | `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> |  N/A | 21 | 108.6 |
 | `a100_80gb` | NVIDIA A100 GPU with 80 GB of VRAM |  `aa100` |  <ul><li>Total: 10</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 1</li></ul> |  N/A | 21 |  108.6 |
+| `rtx_pro_6000` | NVIDIA RTX Pro 6000 GPU with 96 GB of VRAM |  `artxpro6000` |  <ul><li>Total: 13</li><li>Max/user: 4</li></ul>   | <ul><li>Total: 5</li><li>Max/user: 2</li></ul> |  N/A | 32 |  260.4|
+| `rtx_pro_6000_2g.48gb` | NVIDIA RTX Pro 6000 GPU with 48 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `artxpro6000` |  <ul><li>Total: 13</li><li>Max/user: 4</li></ul>   | <ul><li>Total: 5</li><li>Max/user: 2</li></ul> |  N/A | 16 |  130.2 |
+| `rtx_pro_6000_1g.24gb` | NVIDIA RTX Pro 6000 GPU with 24 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `artxpro6000` |  <ul><li>Total: 29</li><li>Max/user: 7</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 2</li></ul> |  N/A | 8 |  65.1 |
+| `h200` | NVIDIA H200 GPU with 141 GB of VRAM |  `ah200` |  <ul><li>Total: 13</li><li>Max/user: 4</li></ul>   | <ul><li>Total: 5</li><li>Max/user: 2</li></ul> |  N/A | 32 |  370.4 |
+| `h200_3g.71gb` | NVIDIA H200 GPU with 71 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `ah200` |  <ul><li>Total: 13</li><li>Max/user: 4</li></ul>   | <ul><li>Total: 5</li><li>Max/user: 2</li></ul> |  N/A | 16 |  185.2 |
+| `h200_2g.35gb` | NVIDIA H200 GPU with 35 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `ah200` |  <ul><li>Total: 21</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 5</li><li>Max/user: 2</li></ul> |  N/A | 10 |  123.5 |
 | `l40` | NVIDIA L40 GPU with 48 GB of VRAM |  `al40` |  <ul><li>Total: 7</li><li>Max/user: 3</li></ul>   | <ul><li>Total: 3</li><li>Max/user: 3</li></ul> |  N/A  | 21 |  108.6 |
 | `mi100` | AMD MI100 GPU with 34 GB of VRAM |  `ami100` |  <ul><li>Total: 18</li><li>Max/user: 5</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> | <ul><li>Total: 3</li><li>Max/user: 1</li></ul>   | 21 |  108.6 |
 | `gh200` | NVIDIA GH200 GPU with 102 GB of VRAM |  `gh200` | N/A  | N/A | N/A   | 72 |  260.64 |

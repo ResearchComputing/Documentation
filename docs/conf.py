@@ -18,19 +18,21 @@ myst_substitutions = {
    'rmacc_ascent_SUs': '100,000',
 
    # Alpine compute total counts substitutions 
-   'alpine_total_compute_nodes': '473', 
-   'alpine_total_cores': '30,320',
+   'alpine_total_compute_nodes': '489', 
+   'alpine_total_cores': '32,368',
 
    # Alpine cluster summary substitutions
    'alpine_total_256GB_512GB_cpu_nodes': '423',
-   'alpine_total_gpu_nodes': '25',
+   'alpine_total_gpu_nodes': '41',
    'alpine_total_hi_mem_cpu_nodes': '24',
-   'ucb_alpine_total_nodes': '359',
+   'ucb_alpine_total_nodes': '375',
    'amc_alpine_total_nodes': '37',
    'csu_alpine_total_nodes': '77',
 
    # Alpine hardware page general substitutions
    'alpine_standard_ram_per_core': '3.8',
+   'alpine_h200_ram_per_core': '12',
+   'alpine_rtxpro6000_ram_per_core': '12',
 
    # Alpine hardware page, hardware summary section substitutions
    ## UCB contributions 
@@ -39,6 +41,8 @@ myst_substitutions = {
    'alpine_ucb_total_64_core_1TB_cpu_nodes': '8',
    'alpine_ucb_total_48_core_1TB_cpu_nodes': '12',
    'alpine_ucb_total_a100_gpu_nodes': '7',
+   'alpine_ucb_total_h200_gpu_nodes': '8',
+   'alpine_ucb_total_rtxpro6000_gpu_nodes': '8',
    'alpine_ucb_total_mi100_gpu_nodes': '7',
    'alpine_ucb_total_gh200_gpu_nodes': '2',
    'alpine_ucb_total_acompile_nodes': '2',
@@ -59,6 +63,8 @@ myst_substitutions = {
    'alpine_total_acpu_nodes': '420',
    'alpine_total_ami100_nodes': '8',
    'alpine_total_aa100_nodes': '12',
+   'alpine_total_ah200_nodes': '8',
+   'alpine_total_artxpro6000_nodes': '8',
    'alpine_total_al40_nodes': '3',
    'alpine_total_amem_nodes': '24',
    'alpine_total_acompile_nodes': '2',
