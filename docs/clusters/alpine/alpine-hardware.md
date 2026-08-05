@@ -187,7 +187,7 @@ $ sinfo --Format Partition,Gres |grep gpu
 
 #### Available GRES on Alpine:
 
-| GRES type   | Description                | Partition | `gpu-normal` GPU Resources | `gpu-long` GPU Resources | `gpu-testing` GPU Resources | Max cores/GPU | Billing_weight/GPU |
+| GRES type   | Description                | Partition | `gpu-normal` GPU&nbsp;Resources | `gpu-long` GPU&nbsp;Resources | `gpu-testing` GPU&nbsp;Resources | Max cores/GPU | Billing_weight/GPU |
 | ----------- | -------------------------- | --------------- | --------------- | ------------- | ------------------ | ------------------ | ------------------ | 
 | `a100_3g.20gb` | NVIDIA A100 GPU with 20 GB of VRAM made possible by NVIDIA's [Multi-Instance GPU (MIG)](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html) feature |  `aa100` | N/A |  N/A | <ul><li>Total: 6</li><li>Max/user: 1</li></ul>   | 10 | 54.3 |
 | `a100-40gb` | NVIDIA A100 GPU with 40 GB of VRAM |  `aa100` |  <ul><li>Total: 18</li><li>Max/user: 6</li></ul>   | <ul><li>Total: 6</li><li>Max/user: 3</li></ul> |  N/A | 21 | 108.6 |
