@@ -30,7 +30,7 @@ section.
 ## Cluster Summary
 ### Nodes
 The Alpine cluster is made up of different types of nodes. A general overview of these nodes is as follows: 
-- **CPU nodes**: {{ alpine_total_256GB_cpu_nodes }} AMD compute nodes with 256 GB RAM
+- **CPU nodes**: {{ alpine_total_256GB_512GB_cpu_nodes }} AMD CPU compute nodes
 - **GPU nodes**: a mixture of {{ alpine_total_gpu_nodes }} NVIDIA and AMD GPUs
 - **High-memory nodes**: {{ alpine_total_hi_mem_cpu_nodes }} high-memory nodes with 1 TB of memory or more
 
