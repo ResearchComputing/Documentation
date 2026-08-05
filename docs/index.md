@@ -151,6 +151,7 @@ programming/dask
 :caption: Additional resources
 
 additional-resources/policies
+additional-resources/changelog
 additional-resources/courses_using_curc_resources
 additional-resources/feedback
 additional-resources/contrib_curc_docs

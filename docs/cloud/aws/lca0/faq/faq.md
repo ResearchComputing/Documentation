@@ -26,7 +26,7 @@ The **us-west-2** AWS region has the lowest latency from Colorado's Front Range 
 **Answer:**
 No.
 The root user is owned by the **Cloud Foundations Service** team.
-You must use your Customer-Admin role.
+You must use your CustomerAdmin role.
 
 
 ## Are MTurk users supported?
