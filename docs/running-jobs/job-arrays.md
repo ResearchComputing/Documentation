@@ -254,8 +254,8 @@ Here's how it works:
 ```bash
 #!/bin/bash
 #SBATCH --time=00:00:10
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --nodes=1 
 #SBATCH --ntasks=1 
 #SBATCH --job-name=Array_Example_Multiple_Files
@@ -286,8 +286,8 @@ You can use this method with any program that takes command-line arguments, not 
     ```bash
     #!/bin/bash
     #SBATCH --time=00:00:10
-    #SBATCH --partition=amilan
-    #SBATCH --qos=normal
+    #SBATCH --partition=acpu
+    #SBATCH --qos=cpu-normal
     #SBATCH --nodes=1 
     #SBATCH --ntasks=1 
     #SBATCH --job-name=cars

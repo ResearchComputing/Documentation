@@ -106,7 +106,7 @@ print("\n \n --- Breaking things down by partition ---")
 
 partition_names = get_all_partition_names()
 for partition_name in partition_names:
-    if partition_name == 'amilan*':
-       partition_name = 'amilan' 
+    if partition_name == 'acpu*':
+       partition_name = 'acpu' 
     num_nodes = get_num_nodes_partition(partition_name)
     print(f"Partition {partition_name} has {num_nodes} nodes")

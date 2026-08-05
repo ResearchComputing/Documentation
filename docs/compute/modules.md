@@ -102,8 +102,8 @@ loads Anaconda into the environment is provided below:
 #SBATCH --nodes=1
 #SBATCH --time=00:01:00
 #SBATCH --ntasks=1
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --job-name=test-job
 #SBATCH --output=test-job.%j.out
 

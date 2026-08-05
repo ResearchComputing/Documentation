@@ -16,8 +16,8 @@ All Alpine nodes are available to all users. For full details about node access,
 
 | Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       |
 | --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- |
-| {{ alpine_ucb_total_64_core_256GB_cpu_nodes }} Milan General CPU | amilan              | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}         | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
-| {{ alpine_ucb_total_128_core_512GB_cpu_nodes }} Milan CPU | amilan             | x86_64 AMD Milan | 2  | 128            | 1            |  {{ alpine_standard_ram_per_core }}         | N/A         | 0         | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) |
+| {{ alpine_ucb_total_64_core_256GB_cpu_nodes }} AMD CPU | acpu              | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}         | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
+| {{ alpine_ucb_total_128_core_512GB_cpu_nodes }} AMD CPU | acpu             | x86_64 AMD | 2  | 128            | 1            |  {{ alpine_standard_ram_per_core }}         | N/A         | 0         | 416G SSD | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_48_core_1TB_cpu_nodes }} Milan High-Memory  | amem                | x86_64 AMD Milan | 2       | 48            | 1            | 21.5          | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_64_core_1TB_cpu_nodes }} Milan High-Memory   | amem                | x86_64 AMD Milan | 1       | 64            | 1            |  16           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_mi100_gpu_nodes }} Milan AMD GPU | ami100              | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
@@ -27,6 +27,9 @@ All Alpine nodes are available to all users. For full details about node access,
 | {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8T SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_acompile_nodes }} Milan CPU compile nodes | acompile | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} Milan CPU test nodes; pulls from CU amilan pool | atesting | x86_64 AMD Milan | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
+| {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8 T SSD                   | 2x25 Gb Ethernet +RoCE                       |
+| {{ alpine_ucb_total_acompile_nodes }} AMD CPU compile nodes | acompile | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
+| {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} AMD CPU test nodes; pulls from CU's `acpu` pool | atesting | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_a100_test_gpu_nodes }} Milan NVIDIA GPU testing node | aa100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_mi100_test_gpu_nodes }} Milan AMD GPU testing nodes; pulls from ami100 pool | ami100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 
@@ -41,7 +44,7 @@ All Alpine nodes are available to all users. For full details about node access,
 
 | Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       |
 | --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- |
-| {{ alpine_amc_total_64_core_256GB_cpu_nodes }} Milan General CPU  | amilan         | x86_64 AMD Milan | 1       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
+| {{ alpine_amc_total_64_core_256GB_cpu_nodes }} AMD CPU  | acpu         | x86_64 AMD | 1       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_amc_total_64_core_1TB_cpu_nodes }} Milan High-Memory   | amem           | x86_64 AMD Milan | 1       | 64            | 1            |  16          | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | 
 | {{ alpine_amc_total_128_core_2TB_cpu_nodes }} Milan High-Memory   | amem           | x86_64 AMD Milan | 2       | 128           | 1            |  16           | N/A         | 0         |  70G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) | 
 | {{ alpine_amc_total_a100_gpu_nodes }} Milan NVIDIA GPU    | aa100          | x86_64 AMD Milan | 1       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
@@ -50,7 +53,7 @@ All Alpine nodes are available to all users. For full details about node access,
 :::
 
 ```{note}
-**CU Anschutz job submission limit:** CU Anschutz users on Alpine are subject to a campus-wide hard limit of **200 concurrent jobs** across all QoS types (including `normal`, which system-wide allows up to 1000 jobs/user). This limit applies to all job types and partitions. It was implemented to reduce queue wait times for all Anschutz users given limited core-hour availability. If you need to run large numbers of jobs, consider using [GNU Parallel](https://github.com/kf-cuanschutz/CU-Anschutz-HPC-documentation/blob/main/Office-hours-presentation-files/GNU_parallel_presentation.pdf) as a workaround.
+**CU Anschutz job submission limit:** CU Anschutz users on Alpine are subject to a campus-wide hard limit of **200 concurrent jobs** across all QoS types (including `cpu-normal`, which system-wide allows up to 1000 jobs/user). This limit applies to all job types and partitions. It was implemented to reduce queue wait times for all Anschutz users given limited core-hour availability. If you need to run large numbers of jobs, consider using [GNU Parallel](https://github.com/kf-cuanschutz/CU-Anschutz-HPC-documentation/blob/main/Office-hours-presentation-files/GNU_parallel_presentation.pdf) as a workaround.
 ```
 
 ### Colorado State University contribution
@@ -62,8 +65,8 @@ All Alpine nodes are available to all users. For full details about node access,
 
 | Count & Type          | Partition | Processor        | Sockets | Cores (total) | Threads per Core | RAM per Core (GB) | GPU type    | GPU count | Local Disk Capacity & Type | Fabric                                       |
 | --------------------- | ------------------- | ---------------- | :-------: | :-------------: | :------------: | :-------------: | ----------- | :---------: | -------------------------- | -------------------------------------------- |
-| {{ alpine_csu_total_48_core_256GB_cpu_nodes }} Milan General CPU  | amilan         | x86_64 AMD Milan | 2       | 48            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
-| {{ alpine_csu_total_32_core_256GB_cpu_nodes }} Milan General CPU  | amilan         | x86_64 AMD Milan | 2       | 32            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | 
+| {{ alpine_csu_total_48_core_256GB_cpu_nodes }} AMD CPU  | acpu         | x86_64 AMD | 2       | 48            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
+| {{ alpine_csu_total_32_core_256GB_cpu_nodes }} AMD CPU  | acpu         | x86_64 AMD | 2       | 32            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       | 
 :::
 
 
@@ -88,15 +91,15 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 | Partition | Description                  | # of nodes | cores/node | RAM/core (GB) | Billing_weight/core | 
 | --------- | ---------------------------- | ---------- | ---------- | ------------- | ------------------- |
-| amilan    | AMD Milan (default)          | {{ alpine_total_amilan_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 
+| acpu    | AMD CPU nodes (default)          | {{ alpine_total_acpu_nodes }}        | 32 or 48 or 64 or 128 |   {{ alpine_standard_ram_per_core }}         | 1                   | 
 | ami100    | GPU-enabled (3x AMD MI100)   | {{ alpine_total_ami100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}         | 6.1<sup>3</sup>     |
 | aa100     | GPU-enabled (3x NVIDIA A100)<sup>4</sup>. For select nodes, MIG has been enabled providing 6x 20 GB NVIDIA A100 MIG instances. | {{ alpine_total_aa100_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
 | ah200     | GPU-enabled (4x NVIDIA H200)<sup>5</sup>. For select nodes, MIG has been enabled (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_ah200_nodes }}          | 128         |   {{ alpine_h200_ram_per_core }}        | 7.78<sup>3</sup>     |
 | artxpro6000    | GPU-enabled (4x NVIDIA RTX Pro 6000)<sup>5</sup>. For select nodes, MIG has been enabled (see [Available GRES on Alpine](#available-gres-on-alpine)). | {{ alpine_total_artxpro6000_nodes }}          | 128         |   {{ alpine_rtxpro6000_ram_per_core }}        | 6.1<sup>3</sup>     |
 | al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |
-| acompile | AMD Milan compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | 
-| atesting | AMD Milan test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU amilan pool | 64 |   {{ alpine_standard_ram_per_core }}         | 0.025                   |  
+| acompile | AMD CPU compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | 
+| atesting | AMD CPU test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU's `acpu` pool | 64 |   {{ alpine_standard_ram_per_core }}         | 0.025                   |  
 | gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at roughly twice the rate of our A100s   | 
 
 ```{important}
@@ -116,7 +119,7 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 
 All users, regardless of institution, should specify partitions as follows:
 ```bash
---partition=amilan
+--partition=acpu
 --partition=aa100
 --partition=ah200
 --partition=artxpro6000
@@ -127,14 +130,14 @@ All users, regardless of institution, should specify partitions as follows:
 
 ### Quality of Service (qos)
 
-**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** For example, by selecting the `long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
+**Quality of Service or QoS is used to constrain or modify the characteristics that a job can have.** For example, by selecting the `cpu-long` QoS, a user can place the job in a **lower priority queue** with a max wall time increased from 24 hours to 7 days.
 
 #### Available QoS for Alpine:
 
 | QOS name    | Description                | Max walltime    | Max jobs/user | Max hardware/user        | Valid Partitions | 
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
-| normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | amilan  |
-| long | Longer wall times          | 7 days              | 200           | 20 nodes               | amilan            | 
+| cpu-normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | acpu  |
+| cpu-long | Longer wall times          | 7 days              | 200           | 20 nodes               | acpu            | 
 | mem-normal | Standard QoS for High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
 | mem-long | QoS for longer running High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
 | gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40,ah200,artxpro6000     | 
@@ -150,20 +153,20 @@ All users, regardless of institution, should specify partitions as follows:
 `````{tab-set}
 :sync-group: tabset-ex-qos-req
 
-````{tab-item} Requesting the normal partition 
-:sync: ex-qos-req-normal-partition
+````{tab-item} Requesting the cpu-normal QoS 
+:sync: ex-qos-req-cpu-normal-partition
 
 ```bash
---qos=normal
+--qos=cpu-normal
 ```
 
 ````
 
-```` {tab-item} Requesting the long partition
-:sync: ex-qos-req-long-partition
+```` {tab-item} Requesting the cpu-long QoS
+:sync: ex-qos-req-cpu-long-partition
 
 ```bash
---qos=long
+--qos=cpu-long
 ```
 
 ````
