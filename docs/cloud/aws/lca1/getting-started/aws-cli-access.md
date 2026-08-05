@@ -18,6 +18,8 @@ AWS CLI temporary credentials are valid for **4 hours** and can be established t
     * Which resources are you trying to access?
     * Indicate your justification for access to these resources.
 
+  [**UCCS users**](https://uccs.haloitsm.com/portal/anonymouskb?&key=f9709e6e-0c9f-4a83-94a1-b0e61d525d66&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYklkIjoiMjg1ZDA2ZjUtMjcyZS00MWM1LWJjZDgtOWI5OTI5M2NlOTcxIiwicElkIjoiMjQ1IiwiaWQiOiJmOTcwOWU2ZS0wYzlmLTRhODMtOTRhMS1iMGU2MWQ1MjVkNjYiLCJuYmYiOjE3ODQzMDg5MTMsImV4cCI6MTMwNjMzMzI3NzMzLCJpYXQiOjE3ODQzMDg5MTN9.zTs2Vr2ZBTEv1hhVnwM4LE5K9Ea-BUpIPkX8nxQincM)
+
 * The [Microsoft authenticator App](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) (MFA) app is installed and enrolled.
 Visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) documentation to install and enroll MFA.
 
