@@ -73,7 +73,7 @@ running-jobs/job-arrays
 running-jobs/roce-enabled
 running-jobs/job-resources
 running-jobs/slurm-commands
-running-jobs/squeue-status-codes
+running-jobs/error-status-codes
 running-jobs/persistence1
 
 ```
@@ -151,6 +151,7 @@ programming/dask
 :caption: Additional resources
 
 additional-resources/policies
+additional-resources/changelog
 additional-resources/courses_using_curc_resources
 additional-resources/feedback
 additional-resources/contrib_curc_docs

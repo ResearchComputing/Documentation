@@ -351,6 +351,18 @@ Before submitting a software installation request, please review our [Software i
 For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
 ::::
 
+### Which NVIDIA SDK version should I use on Alpine GPUs?
+::::{dropdown} Show 
+:icon: note
+
+Our recommendation is to use >= `nvhpc_sdk/2025.251` on all GPUs. If you require more specific information on the CUDA versions a given GPU architecture will support, please see the [NVIDIA Toolkit, Driver and Architecture Matrix](https://docs.nvidia.com/datacenter/tesla/drivers/cuda-toolkit-driver-and-architecture-matrix.html), noting the following architectures available on Alpine:
+
+* A100: Ampere
+* L40: Ada
+* H200: Hopper
+* RTX Pro 6000: Blackwell
+::::
+
 ## Alpine 
 
 ### Why do I get an `Invalid Partition` error when running an Alpine job?

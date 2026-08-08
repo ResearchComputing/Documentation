@@ -18,7 +18,7 @@ Topics include:
   * Job Submission (Slurm)
 +++
 
-```{button-link} https://researchcomputing.github.io/New_User_Async_Training/?new_user.md
+```{button-link} https://researchcomputing.github.io/liascript/course/?https://raw.githubusercontent.com/ResearchComputing/New_User_Async_Training/refs/heads/main/new_user.md
 :expand:
 :color: secondary
 :outline:

@@ -31,8 +31,8 @@ __Example SMP job script:__
 #!/bin/bash
 
 #SBATCH --job-name=g16-test
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=64
@@ -60,7 +60,7 @@ g16 -m=20gb -p=${SLURM_CPUS_PER_TASK} my_input.com
 
 ### Multi-node parallel jobs (Linda)
 
-In order to run on more than 64 cores in the `amilan` partition on Alpine, your job will need to span multiple nodes using the Linda network parallel communication model. We advise using one Linda worker per node, with multiple (up to 64) SMP cores per node. The nodes on which `g16` will run will be determined once the job starts, before invoking `g16` The batch script example below demonstrates how to run `g16` across multiple nodes. A sample input file is at the bottom of this documentation page.
+In order to run on more than 64 cores in the `acpu` partition on Alpine, your job will need to span multiple nodes using the Linda network parallel communication model. We advise using one Linda worker per node, with multiple (up to 64) SMP cores per node. The nodes on which `g16` will run will be determined once the job starts, before invoking `g16` The batch script example below demonstrates how to run `g16` across multiple nodes. A sample input file is at the bottom of this documentation page.
 
 __Example Linda Parallel job script__
 
@@ -68,8 +68,8 @@ __Example Linda Parallel job script__
 #!/bin/bash
 
 #SBATCH --job-name=g16-test
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=64
@@ -109,7 +109,7 @@ Not all G16 computations scale efficiently beyond a single node! According to th
 
 ### G16 on Alpine NVIDIA GPUs
 
-Please see the [Gaussian GPU documentation](https://gaussian.com/running/?tabid=5)] for information on how configure Gaussian input files to run on GPUs. CURC presently does not have example job scripts for running Gaussian on GPUs. The Gaussian GPU documentation will also enable you to determine whether the A100 GPUs in Alpine's `aa100` partition will be effective for your calculations. In many cases, SMP parallelization across all of the cores in an amilan node will provide better speedup than offloading computational work to a GPU.  
+Please see the [Gaussian GPU documentation](https://gaussian.com/running/?tabid=5)] for information on how configure Gaussian input files to run on GPUs. CURC presently does not have example job scripts for running Gaussian on GPUs. The Gaussian GPU documentation will also enable you to determine whether the A100 GPUs in Alpine's `aa100` partition will be effective for your calculations. In many cases, SMP parallelization across all of the cores in an `acpu` node will provide better speedup than offloading computational work to a GPU.  
 
 ```{warning}
 G16 can not use the AMD MI100 GPUs in Alpine's `ami100` partition.
