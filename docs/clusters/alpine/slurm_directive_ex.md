@@ -13,8 +13,8 @@ Below are some examples of SLURM directives that can be used in your batch scrip
 To run a 32-core job for 24 hours on a single Alpine CPU node:
 
 ```bash
-#SBATCH --partition=amilan
-#SBATCH --qos=normal
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=32
 #SBATCH --time=24:00:00
@@ -28,11 +28,11 @@ To run a 32-core job for 24 hours on a single Alpine CPU node:
 To run a 56-core job (28 cores/node) across two Alpine CPU nodes in the low-priority qos for seven days:
 
 ```bash
-#SBATCH --partition=amilan
+#SBATCH --partition=acpu
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=28
 #SBATCH --time=7-00:00:00
-#SBATCH --qos=long
+#SBATCH --qos=cpu-long
 ```
 
 ````
@@ -44,11 +44,11 @@ To run a 16-core job for 24 hours on a single Alpine AMD GPU node, using all thr
 
 ```bash
 #SBATCH --partition=ami100
-#SBATCH --qos=normal
+#SBATCH --qos=gpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --time=24:00:00
-#SBATCH --gres=gpu:3
+#SBATCH --gres=gpu:mi100:3
 ```
 
 ````
@@ -56,15 +56,15 @@ To run a 16-core job for 24 hours on a single Alpine AMD GPU node, using all thr
 ````{tab-item} Example 4
 :sync: slurm-dir-exs-4
 
-To run a 50-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 GPUs:
+To run a 42-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 40 GB GPUs:
 
 ```bash
 #SBATCH --partition=aa100
-#SBATCH --qos=normal
+#SBATCH --qos=gpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=42
 #SBATCH --time=02:00:00
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:a100-40gb:2
 ```
 
 ````
@@ -72,16 +72,16 @@ To run a 50-core job for 2 hours on a single Alpine NVIDIA GPU node, using 2 GPU
 
 ## Full Example Job Script
 
-Run a 1-hour job on 4 cores on an Alpine CPU node with the normal qos that runs a python script using a custom conda environment.
+Run a 1-hour job on 4 cores on an Alpine CPU node with the `cpu-normal` QoS that runs a python script using a custom conda environment.
 
 ```
 #!/bin/bash
 
-#SBATCH --partition=amilan
+#SBATCH --partition=acpu
 #SBATCH --job-name=example-job
 #SBATCH --output=example-job.%j.out
 #SBATCH --time=01:00:00
-#SBATCH --qos=normal
+#SBATCH --qos=cpu-normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
 #SBATCH --mail-type=ALL

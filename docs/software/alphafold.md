@@ -10,6 +10,10 @@ AlphaFold is a program that predicts the three-dimensional structure of proteins
 ````{tab-item} AlphaFold 2 
 :sync: batch-scripting-ex1
 
+```{attention}
+AlphaFold 2 is supported on A100 and L40 GPUs, but **not on H200 and RTX Pro 6000 GPUs**.
+```
+
 Load the default AlphaFold 2 module:
 ```
 module load alphafold/2.3.1
@@ -59,8 +63,8 @@ cp /curc/sw/install/bio/alphafold/2.3.1/alphafold_alpine.sh .
 #SBATCH --nodes=1
 #SBATCH --time=06:00:00
 #SBATCH --partition=aa100
-#SBATCH --qos=normal
-#SBATCH --gres=gpu:1
+#SBATCH --qos=gpu-normal
+#SBATCH --gres=gpu:a100-40gb:1
 #SBATCH --job-name=multimer_test
 #SBATCH --output=multimer_test_%j.out
 #SBATCH --ntasks=40
@@ -86,9 +90,14 @@ AlphaFold 3 has a substantially updated diffusion-based architecture that is cap
 On CURC’s Alpine system, AlphaFold 3 is available as a containerized module. It uses Apptainer/Singularity under the hood and is fully self-contained except for the separately downloaded model parameters (required).
 
 #### AlphaFold 3 Module
+```{attention}
+AlphaFold 3 versions 3.0.0 and 3.0.1 are supported on A100, L40, and H200 GPUs, but **not on RTX Pro 6000 GPUs**.
+AlphaFold 3 version 3.0.3 is supported on **all NVIDIA GPU types** on Alpine.
+```
+
 Load AlphaFold 3 module:
 ```
-module load alphafold/3.0.0
+module load alphafold/3.0.3
 ```
 View run options:
 ```
@@ -103,7 +112,7 @@ Loading the AlphaFold 3 module does the following:
 - redirects temporary files to `/scratch/alpine/$USER`
     - you can override this path by resetting TMPDIR *after* you load the module:
         ```
-        module load alphafold/3.0.0
+        module load alphafold/3.0.3
         export TMPDIR=<path/of/your/choosing>
         ```
 - creates a shortcut to the AlphaFold 3 script so you can run the program with `run_alphafold`
@@ -137,7 +146,7 @@ To better utilize limited GPU resources, these stages can be split using flags:
  - `--norun_data_pipeline` → Run only the inference step (Stage 2)
 
 #### AlphaFold 3 Examples
-Example input files and scripts are in `/curc/sw/install/bio/alphafold/3.0.0/examples`.
+Example input files and scripts are in `/curc/sw/install/bio/alphafold/3.0.3/examples`.
 Loading the AlphaFold 3 module stores this path in `AF3_EXAMPLES`:
 ```
 ls $AF3_EXAMPLES
@@ -152,7 +161,7 @@ You can copy the examples folder to a location where you have write permissions 
 
 ```bash
 cd /projects/$USER
-cp -R /curc/sw/install/bio/alphafold/3.0.0/examples .
+cp -R /curc/sw/install/bio/alphafold/3.0.3/examples .
 cd examples
 ```
 
@@ -165,8 +174,8 @@ Path of the script: `$AF3_EXAMPLES/alphafold3_alpine.sh`
 #SBATCH --nodes=1
 #SBATCH --time=30:00
 #SBATCH --partition=al40
-#SBATCH --qos=normal
-#SBATCH --gres=gpu:1
+#SBATCH --qos=gpu-normal
+#SBATCH --gres=gpu:l40:1
 #SBATCH --job-name=af3_test
 #SBATCH --output=af3_test_%j.out
 #SBATCH --ntasks=8
@@ -175,7 +184,7 @@ Path of the script: `$AF3_EXAMPLES/alphafold3_alpine.sh`
 
 # Load the AlphaFold 3 module
 module purge
-module load alphafold/3.0.0
+module load alphafold/3.0.3
 
 # Set input JSON, output directory, and model parameter path
 export INPUT_FILE=$AF3_EXAMPLES/fold_protein_2PV7/alphafold_input.json

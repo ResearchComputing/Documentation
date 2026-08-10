@@ -111,15 +111,15 @@ Be very careful when using the `rm -rf` command. This command will permanently d
 
 ## Example Job Script
 
-Here’s an example Slurm job script for running a Python task within a `uv` virtual environment.
+Here’s an example Slurm job script for running a Python task within a `uv` virtual environment on our CPU testing resources.
 
 ``` bash
 #!/bin/bash
 
 #SBATCH --nodes=1
 #SBATCH --time=06:00:00
-#SBATCH --partition=aa100
-#SBATCH --qos=normal
+#SBATCH --partition=atesting
+#SBATCH --qos=testing
 #SBATCH --job-name=python_task
 #SBATCH --output=python_task_%j.out
 #SBATCH --ntasks=1

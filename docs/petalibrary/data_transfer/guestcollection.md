@@ -18,7 +18,7 @@ All of your files on CU Research Computing, including those in your PetaLibrary 
 
 ![](../images_and_html/curc_collection_search.png)
 
-There may be several choices that meet this search criterion. Select the one that is associated with "DTN23" and is _not_ marked as "Legacy".  Once you have selected the endpoint, you'll be asked to log in using your CURC Credentials; after clicking `Authenticate`, you should receive a Duo push on your Duo device which you will need to confirm.
+There may be several choices that meet this search criterion. Select the one that is associated with "DTN23" and is _not_ marked as "Legacy".  Once you have selected the endpoint, you'll be asked to log in using your CURC Credentials by selecting `Authenticate`.
 
 Once authenticated, you will see a list of filesystems available to you (`/home`, `/pl`, `/projects`, `/scratch`). To access Petalibrary select `/pl` and proceed to your allocation. 
 

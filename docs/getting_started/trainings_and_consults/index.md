@@ -17,15 +17,30 @@ Join the CURC Weekly Office Hours during the academic year and get one-on-one su
 
 Don't let technical bottlenecks stall your progress. Come with your questions, leave with a plan, and get your research back on track.
 
-```{button-link} https://www.colorado.edu/crdds/events-consult
+```{button-link} https://calendar.colorado.edu/event/cu-research-computing-consultation-hours-tuesday
 :align: center
 :color: secondary
 :outline:
-Register for Office Hours {octicon}`calendar`
+Register for **Tuesday** Office Hours {octicon}`calendar`
+```
+```{button-link} https://calendar.colorado.edu/event/cu-research-computing-consultation-hours-thursday
+:align: center
+:color: secondary
+:outline:
+Register for **Thursday** Office Hours {octicon}`calendar`
+```
+## First Friday Office Hours 
+We are excited to announce an expansion of our consultation hours for the Fall 2026 semester! On the first Friday of each month, we will host “CU Research Computing: Ask Us Anything!”, a 3-hour virtual drop-in office hours session.
+
+```{button-link} https://calendar.colorado.edu/event/cu-research-computing-ask-us-anything
+:align: center
+:color: secondary
+:outline:
+Register for CU Research Computing: Ask Us Anything! {octicon}`calendar`
 ```
 
 ```{note}
-If you are unable to meet during the weekly office hours, or if you need a consultation outside of the academic year, please use the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to request a virtual consultation. 
+If you are unable to meet during the scheduled office hours, or if you need a consultation outside of the academic year, please use the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to request a virtual consultation. 
 
 ```
 

@@ -1,6 +1,10 @@
 # Profiling NVIDIA GPU Performance
 
-The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. This is especially important for optimizing workloads on Alpine’s A100 GPU nodes, where GPU time is a valuable and shared resource.
+```{warning}
+Ensure you are using a CUDA version compatible with the GPU you are using. For more information, see our FAQ on [Which NVIDIA SDK version should I use on Alpine GPUs?](../getting_started/faq.md#which-nvidia-sdk-version-should-i-use-on-alpine-gpus)
+```
+
+The NVIDIA Performance Counters provide low-level metrics on GPU usage, enabling users to understand how efficiently their code uses the GPU. Optimizing workloads on Alpine’s GPU nodes is important due to the high demand for these valuable shared resources.
 
 The following tools are available for interacting with performance counters:
 
@@ -241,7 +245,7 @@ Example output of `nvidia-smi` on the `aa100` partition using [matrixMultiply.cu
 
 ### nvidia-smi on MIG-Enabled GPUs
 
-Some A100 GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, `nvidia-smi` shows a different output format, displaying information for both full GPUs and individual MIG instances.
+Some GPUs on our systems are MIG-enabled (Multi-Instance GPU). On these nodes, `nvidia-smi` shows a different output format, displaying information for both full GPUs and individual MIG instances.
 
 Here's an example output from a MIG-enabled A100 node:
 ```
@@ -346,9 +350,9 @@ To actively monitor GPU performance within a job script, you can run `nvidia-smi
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=10
-#SBATCH --gres=gpu
-#SBATCH --partition=atesting_a100 
-#SBATCH --qos=testing
+#SBATCH --gres=gpu:a100_3g.20gb:1
+#SBATCH --partition=aa100 
+#SBATCH --qos=gpu-testing
 #SBATCH --time=00:10:00
 
 # Start GPU monitoring in the background
@@ -370,7 +374,7 @@ NVIDIA Nsight Compute is a command-line CUDA kernel profiler that provides detai
 
 ### Why do these metrics matter?
 
-Modern GPUs, such as the NVIDIA A100, have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
+Modern GPUs have hundreds of compute units (Streaming Multiprocessors or SMs). To fully exploit this parallel architecture, your kernel must be configured to launch enough threads and blocks to keep these units busy.
 
 Key Features:
 
@@ -385,6 +389,10 @@ Collecting performance data using `ncu` can incur significant runtime overhead. 
 ```
 
 ### Getting Started
+
+```{attention}
+`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on GPU nodes without MIG.
+```
 
 To use `ncu`, first load the appropriate CUDA module:
 
@@ -406,9 +414,6 @@ $ ncu --set full --target-processes all ./vectorAdd
 
 - `--target-processes all`: Profiles all child processes (useful for multi-threaded applications).
 
-```{note}
-`ncu` is not compatible with MIG-enabled GPUs. Ensure you run `ncu` only on A100 nodes without MIG.
-```
 
 ::::{dropdown} Click here to view the full `ncu` report
 :icon: note

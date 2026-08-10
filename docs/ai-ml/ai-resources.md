@@ -35,7 +35,8 @@
 - The Pittsburgh Supercomputing Center (PSC) offers workshops and webinars focused on AI/ML research using the NSF-funded Neocortex system and Cerebras hardware. Learn more on the [PSC Neocortex Training Page](https://www.psc.edu/resources/neocortex/training/).
 
 ## Policy, Ethics, & Responsible AI Use
-
+### CU Boulder AI Data Security Guidelines
+- Guidance from CU Boulder on precautions to take to ensure data security is maintained when using AI tools, particularly for data that may be considered sensitive, is provided on the [CU Boulder AI Data Security Guidelines](https://oit.colorado.edu/services/it-security/artificial-intelligence-ai-data-security-guidelines) page.
 ### RDA: Guidance on AI Tools Usage
 - Guidance from the Research Data Alliance for responsible use of AI tools in research and collaboration contexts. Topics include informed consent, transparency, privacy, and attribution. See the [RDA Guidance on AI tools](https://www.rd-alliance.org/about/code-of-conduct/rda-guidance-on-ai-tools-usage/).
 ### RAISE: Responsible AI in Evidence Synthesis

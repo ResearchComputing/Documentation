@@ -5,6 +5,12 @@ resources. In this tutorial we will learn how to run Matlab on these
 resources. The tutorial assumes you are familiar with Matlab and basic
 Linux terminal commands.
 
+```{attention}
+If you are running on **A100, L40, or H200 GPUs**, use Matlab R2025b.
+
+If you are running on an **RTX Pro 6000 GPU**, use Matlab R2025b_FC to ensure forward compatibility with the GPU compute capability. Future versions of Matlab are anticipated to work on all GPUs without needing a forward compatibility module.
+```
+
 There are two basic ways to run Matlab (or many other kinds of
 software) on RC resources. The first is through an interactive job,
 and the second is through a batch job. An interactive job allows one
@@ -193,8 +199,7 @@ end
 ```
 
 Now all we have left to do is modify our batch script to specify that
-we want to run 4 tasks on the node (we can use up to 64 cores on each
-‘amilan' node on Alpine). We can also change the name of the job and the
+we want to run 4 tasks on the node (one can request a larger amount of tasks by utilizing an `acpu` node on Alpine). We can also change the name of the job and the
 output file if we choose.
 
 ```bash

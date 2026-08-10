@@ -142,6 +142,21 @@ re-enroll by visiting <https://duo.colorado.edu>. If that did not resolve your i
 303-735-4357.
 ::::
 
+## Microsoft Multi-Factor Authentication
+
+CU Boulder web portal services use [Microsoft MFA](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication). You will use the same Microsoft MFA method you already have configured for campus services such as Outlook and Teams (for example, the Microsoft Authenticator app, text message, or a security key).
+
+### Which CURC services use Microsoft MFA?
+:::{dropdown} Show 
+:icon: note 
+CU Boulder users authenticate with Microsoft MFA when signing in to the following web-based services:
+
+- [Open OnDemand](https://ondemand.rc.colorado.edu)
+- [Globus](https://app.globus.org/) (when signing in with University of Colorado at Boulder credentials)
+
+If you need to enroll in or manage Microsoft MFA, visit OIT's [Microsoft 365 Multi-Factor Authentication](https://oit.colorado.edu/tutorial/microsoft-365-multi-factor-authentication-register-and-set-microsoft-authenticator-app) documentation. If you have trouble signing in, the [IT Service Center](https://oit.colorado.edu/support/it-service-center) can help. Support is also available through [Buff Techs](https://oit.colorado.edu/support/buff-techs-desktop-support) and Buff Techs Pro. You will be required to have your Buff OneCard or government ID for MFA help.
+:::
+
 ## General High-Performance Computing
 
 ### What is Arbiter2? 
@@ -334,6 +349,18 @@ Before submitting a software installation request, please review our [Software i
 :icon: note
 
 For individuals who need to install Python libraries not included in our base Python or Anaconda modules, we recommend using Conda environments through the Anaconda module. Instructions for creating a custom Conda environment can be found on our [Python and R with Anaconda](../software/python.md) documentation page. 
+::::
+
+### Which NVIDIA SDK version should I use on Alpine GPUs?
+::::{dropdown} Show 
+:icon: note
+
+Our recommendation is to use >= `nvhpc_sdk/2025.251` on all GPUs. If you require more specific information on the CUDA versions a given GPU architecture will support, please see the [NVIDIA Toolkit, Driver and Architecture Matrix](https://docs.nvidia.com/datacenter/tesla/drivers/cuda-toolkit-driver-and-architecture-matrix.html), noting the following architectures available on Alpine:
+
+* A100: Ampere
+* L40: Ada
+* H200: Hopper
+* RTX Pro 6000: Blackwell
 ::::
 
 ## Alpine 
