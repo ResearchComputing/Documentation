@@ -125,6 +125,7 @@ html_sidebars = {
         "sbt-sidebar-training.html", 
         "sbt-sidebar-announcement.html", 
         "icon-links.html",
+        "search-button-field.html",
         "sbt-sidebar-nav.html",
         "ads.html"
     ]
