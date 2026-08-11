@@ -8,7 +8,7 @@ dependencies:
   - graphviz==14.1.2
   - pip
   - pip:
-    - sphinx-book-theme==1.3.0
+    - sphinx-book-theme==1.2.0
     - sphinx-copybutton==0.5.2
     - lxml==6.1.1
     - sphinx-design==0.7.0
