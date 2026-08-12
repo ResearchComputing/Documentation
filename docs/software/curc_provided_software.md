@@ -11,5 +11,6 @@ Before requesting a software installation, please review our [Software installat
         width="100%"
         height="600px"
         style="border:none;">
+Your browser was unable to render the embedded content. Please visit the external [SDS website](https://sds.rc.colorado.edu) to view this content.
 </iframe>
 ```
