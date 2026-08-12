@@ -79,7 +79,7 @@ Users can be removed from accessing the AWS account by removing them from the Gr
 Non CU Boulder user groups are managed through [Microsoft Entra groups](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/Overview).
 
 ### Your Group Name
-The Entra group name to manage access to your AWS account is in the form '\<account-alias\>-CustomerAdmin'.
+The Entra group name to manage access to your AWS account is in the form `oitcld-entra-<account-alias>-CustomerAdmin`.
 To find your account alias view the top right corner of the screen when logged into the AWS console.
    ```{image} images/managing-customer-groups/alias.png
    :alt: AWS console top right corner showing the account alias identifier highlighted within a red square in the navigation bar
