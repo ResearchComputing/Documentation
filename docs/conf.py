@@ -11,7 +11,7 @@ myst_enable_checkboxes = True
 myst_substitutions = {
 
    # Allocation specific substitutions 
-   'trailhead_SUs': 'NA',
+   'trailhead_SUs': '2000',
    'boulder_ascent_SUs': '450,000', 
    'boulder_ascent_SU_group_limit': '1.8 M', 
    'boulder_peak_SUs': '7,500,000', 

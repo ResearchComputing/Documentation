@@ -38,7 +38,7 @@ Alpine is made possible due to its contributors. Below we provide each contribut
 
 ```{note}
 - For specific details on node types and a breakdown of contributions made to Alpine, please see the [Hardware Summary](./alpine-hardware.md#hardware-summary) section of our Alpine Hardware page. 
-- All nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
+- All nodes are available to all users via the [Slurm Fair Tree Fairshare Algoritm](https://slurm.schedmd.com/fair_tree.html). For additional details on how to check your priority and shares, see the FAQ entitled [How can I see my current FairShare priority?](../../getting_started/faq.md#how-can-i-see-my-current-fairshare-priority)
 ```
 
 ### Interconnect
