@@ -50,7 +50,6 @@ compute/monitoring-resources
 
 clusters/alpine/index
 clusters/blanca/blanca
-clusters/summit/summit
 
 ```
 

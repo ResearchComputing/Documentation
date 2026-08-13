@@ -1,9 +1,6 @@
 # Alpine Quick Start
 
-Alpine is the University of Colorado Boulder Research Computing's third-generation High-Performance Computing (HPC) 
-cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado 
-Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers {{ alpine_total_compute_nodes }} compute nodes and a total 
-of {{ alpine_total_cores }} cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
+Alpine is the University of Colorado Boulder Research Computing's third-generation High-Performance Computing (HPC) cluster. Alpine is a heterogeneous compute cluster currently composed of hardware provided from University of Colorado Boulder, Colorado State University, and Anschutz Medical Campus. Alpine currently offers {{ alpine_total_compute_nodes }} compute nodes and a total of {{ alpine_total_cores }} cores. Alpine can be securely accessed anywhere, anytime using Open OnDemand or ssh connectivity to the CURC system.
 
 ## Alpine Quick-Start
 
@@ -65,13 +62,15 @@ sinfo --format="%N | %f"
 ```
 
 ### Description of features
-- **milan**: 64-core and dual-socket 32-core AMD EPYC Milan CPU
-- **milan128c**: dual-socket 128-core AMD EPYC Milan CPU
+- **cpu**: AMD EPYC CPU (cores per node vary between 32-128)
 - **a100**: NVIDIA A100 GPU
 - **mi100**: AMD MI100 GPU
 - **l40**: NVIDIA L40 GPU
+- **h200**: NVIDIA H200 GPU
+- **rtxpro6000**: NVIDIA RTX Pro 6000 GPU
 - **storage**: large, fast RAID disk storage in node
 - **rh8**: RedHat Enterprise Linux version 8 operating system
+- **ib**: Features Infiniband, a high-speed message passing fabric for MPI jobs
 
 ## Job Scheduling
 
