@@ -3,7 +3,7 @@
 ## Hardware Summary
 
 ```{important}
-All Alpine nodes are available to all users. For full details about node access, please read the [Alpine node access and FairShare policy](condo-fairshare-and-resource-access.md).
+All nodes are available to all users via the [Slurm Fair Tree Fairshare Algoritm](https://slurm.schedmd.com/fair_tree.html). For additional details on how to check your priority and shares, see the FAQ entitled [How can I see my current FairShare priority?](../../getting_started/faq.md#how-can-i-see-my-current-fairshare-priority)
 ```
 
 ### University of Colorado Boulder contribution
