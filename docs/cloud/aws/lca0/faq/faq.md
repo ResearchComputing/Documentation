@@ -7,7 +7,7 @@ If you are looking for help with specific errors, please visit the [Troubleshoot
 
 ## What is the URL for the Single Sign-On Console?
 **Answer:**
-Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) [here:](https://buff.link/aws).
+Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) at [https://aws-classic.colorado.edu/](https://aws-classic.colorado.edu/).
 
 
 ## Why can't I see the AWS resources I created?

@@ -4,7 +4,7 @@ All new AWS accounts are configured with Basic Support. AWS offers higher suppor
 
 **How to Get your Current Support Plan**
 
-1. The AWS Account Number and Support Plan can be found by logging in to the AWS Console using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) here: [https://buff.link/aws](https://buff.link/aws).
+1. The AWS Account Number and Support Plan can be found by logging in to the AWS Console using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) at [https://aws-classic.colorado.edu/](https://aws-classic.colorado.edu/).
 2. Navigate to the [AWS Support Center](https://console.aws.amazon.com/support). In the upper left corner, the Account Number and Support Plan is shown.
 
 **How to Upgrade your Support Plan**
