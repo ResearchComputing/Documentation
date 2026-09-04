@@ -31,12 +31,18 @@ You can move on to Step 2, but please make sure 10 minutes have elapsed between 
 You are strongly encouraged to set a passphrase for your key pair and generate a Ed25519 key. You will be prompted to enter the passphrase each time you log in.
 ```
 
+Your SSH keys are stored in a hidden directory named `.ssh` in your home directory (e.g. `~/.ssh` on Mac/Linux or `C:\Users\username\.ssh` on Windows). SSH requires this directory (and the files in it) to have restrictive permissions so that only you can read them. If the directory already exists on your system, `ssh-keygen` will use it as-is; if it doesn't exist yet, `ssh-keygen` will create it automatically with the correct permissions the first time you generate a key. It's best to let `ssh-keygen` create this directory rather than making it yourself (e.g. through a file manager), since a manually created folder may not have the restrictive permissions SSH expects and could cause SSH to refuse to use it.
+
 (tabset-ref-get-account)=
 ``````{tab-set}
 :sync-group: tabset-os-version
 `````{tab-item} Windows
 :sync: os-version-windows
-When generating a key on Windows it is recommended you use Powershell, but the command prompt or a basic Windows terminal will also work. Once inside Powershell (or similar), execute the following command to generate an Ed25519 key:
+When generating a key on Windows it is recommended you use Powershell, but the command prompt or a basic Windows terminal will also work. Before generating your key, navigate to the directory where you want it saved. If your `.ssh` directory already exists, navigate to it:
+```
+cd $HOME\.ssh
+```
+If it doesn't exist yet, there's no need to create it yourself — just enter the full path (e.g. `$HOME\.ssh\id_ed25519`) at the `Enter file in which to save the key` prompt below, and `ssh-keygen` will create the directory for you with the correct permissions. Once inside Powershell (or similar), execute the following command to generate an Ed25519 key:
 ```
 ssh-keygen -t ed25519
 ```
@@ -62,7 +68,11 @@ The key's randomart image is:
 `````
 `````{tab-item} Mac
 :sync: os-version-mac
-SSH key generation for Mac and Linux users can be completed from a terminal window. In a terminal, execute the following command to generate an Ed25519 key:
+SSH key generation for Mac and Linux users can be completed from a terminal window. Before generating your key, navigate to the directory where you want it saved. If your `~/.ssh` directory already exists, navigate to it:
+```
+cd ~/.ssh
+```
+If it doesn't exist yet, there's no need to create it yourself — just enter the full path (e.g. `~/.ssh/id_ed25519`) at the `Enter file in which to save the key` prompt below, and `ssh-keygen` will create the directory for you with the correct permissions. In a terminal, execute the following command to generate an Ed25519 key:
 ```
 ssh-keygen -t ed25519
 ```
