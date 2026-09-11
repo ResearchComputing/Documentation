@@ -7,32 +7,29 @@
 1. Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **Jupyter Session**. 
 
 2. Select the Anaconda version, Conda environment, and type of GUI you would like to launch the application with. The Conda environment configuration can be particularly useful, if you need to utilize Jupyter extensions. For more information on creating a compatible Conda environment for Jupyter sessions, please see the section [Creating a Jupyter Session Conda Environment](#creating-a-jupyter-session-conda-environment) below.
-
-```{eval-rst}
-.. figure:: ./OnDemand/jupyter_session_configs.png
-   :align: center
+```{image} ./OnDemand/jupyter_session_configs.png
+:alt: Jupyter session configuration options for selecting an Anaconda version, Conda environment, and JupyterLab. Here Anaconda version 2020.11 is selected, Conda environment "base" is provided, and the JupyterLab checkbox is selected.  
+:align: center
 ```
 
 3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
 
 4. When your Jupyter session is ready, you can click the **"Connect to Jupyter"** button to bring up a web page with the Jupyter interface. When there is high usage on the system, it may take several minutes to open a **Jupyter Session**.
-
-```{eval-rst}
-.. figure:: ./OnDemand/jupyter_session_launch.png
-   :align: center
-   :scale: 50%
+```{image} ./OnDemand/jupyter_session_launch.png
+:alt: Running Jupyter session with a Connect to Jupyter button.
+:align: center
+:scale: 50%
 ```
 
 5. After connecting to the Jupyter session, you should then be able to utilize Jupyter as if it were on your own computer! 
 
 ````{important}
 * The first time the session starts, you are placed in CURC root. This allows you to access all of your directories. However, you will not be able to create a notebook in this directory. You should navigate to one of your CURC spaces. In the JupyterLab GUI this is done by going to **"File"** in the upper left-hand corner, selecting **"Open from Path..."**, and entering the path you want to navigate to (e.g. `/projects/<your username>`).
-
-```{eval-rst}
-.. figure:: ./OnDemand/jupyterlab_change_dirs.png
-   :align: center
+```{image} ./OnDemand/jupyterlab_change_dirs.png
+:alt: JupyterLab File menu showing the Open from Path option.
+:align: center
+:scale: 99%
 ```
-
 * Sometimes it can be useful to create a custom Jupyter kernel, which allows you to switch between different environments without having to use the **"Conda environment"** field in the configuration. We provide detailed instructions on how to do this in the [Creating your own custom Jupyter kernel](#creating-your-own-custom-jupyter-kernel) section below. 
 
 * Closing the window will not terminate the job, you can use the **“My Interactive Sessions”** tab to view all open interactive sessions and terminate them.
@@ -44,12 +41,11 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
 1. Launch a Jupyter session by selecting the Anaconda version of your choice, specifying the `base` Conda environment, and checking the use JupyterLab checkbox.
 
-2. Once the Jupyter session has been launched, open up a terminal in JupyterLab.
-
-```{eval-rst}
-.. figure:: ./OnDemand/jupyter_session_open_terminal.png
-   :align: center
-   :scale: 60%
+2. Once the Jupyter session has been launched, open up a terminal in JupyterLab by clicking the "New Launcher" icon and then selecting "Terminal" (listed under "Other").
+```{image} ./OnDemand/jupyter_session_open_terminal.png
+:alt: A screenshot showing how to open a terminal application in Jupyter Notebook by clicking the "New Launcher" icon on the left side of the screen and then selecting "Terminal", listed under Other.
+:align: center
+:scale: 60%
 ```
 
 3. In your terminal, load the Anaconda version you wish to use e.g.
@@ -87,9 +83,9 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 ### Launching a Jupyter Session using `my-conda-env` Conda environment
 
 1. Specify `my-conda-env` in **"Conda environment"** field. 
-```{eval-rst}
-.. figure:: ./OnDemand/jupyter_session_use_env.png
-   :align: center
+```{image} ./OnDemand/jupyter_session_use_env.png
+:alt: Jupyter session configuration options with Anaconda version 2020.11 selected and Conda environment "my-conda-env" provided.  
+:align: center
 ```
 
 2. Once the session is launched, it is also important to ensure that your environment is being correctly utilized. To do this, open up a terminal application and determine what Python and Jupyter are being used:
@@ -110,27 +106,32 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
   1. Select **"My Interactive Sessions"** in the Open OnDemand interface.
   
   2. Click the link next to the "Session ID" for your running job
-
-  ```{eval-rst}
-  .. figure:: ./OnDemand/jupyter_session_launch_circled.png
-    :align: center
-    :scale: 50%
+  ```{image} ./OnDemand/jupyter_session_launch_circled.png
+  :alt: Running Jupyter session with a Connect to Jupyter button and the link next to the "Session ID" circled.
+  :align: center
+  :scale: 50%
   ```
   
   3. Open the file `output.log` by clicking it
-  
-  ```{eval-rst}
-  .. figure:: ./OnDemand/output_log_file.png
-    :align: center
-    :scale: 60%
+  ```{image} ./OnDemand/output_log_file.png
+  :alt: List of files resulting from clicking the link next to "Session ID" with output.log circled
+  :align: center
+  :scale: 60%
   ```
   
-  4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used
+  4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used e.g. 
+   ```
+   Script starting...
+   Waiting for Jupyter Notebook server to open port 22233...
+   TIMING - Starting wait at: Thu Oct 26 13:18:28 MDT 2023
+   TIMING - Starting main script at: Thu Oct 26 13:18:28 MDT 2023
+   Currently Loaded Modules:
+      1) anaconda/2020.11
 
-  ```{eval-rst}
-  .. figure:: ./OnDemand/env_not_found.png
-    :align: center
-  ```
+
+   EnvironmentNameNotFound: Could not find conda environment: my-conda-ENV 
+   You can list all discoverable environments with `conda info --envs`.  
+   ```
 
 ## Creating your own custom Jupyter kernel
 
