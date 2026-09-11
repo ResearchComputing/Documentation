@@ -1,10 +1,9 @@
 # Configuring Open OnDemand interactive applications
 
 Within Open OnDemand, interactive applications contain different configuration options. These options vary by application and for a select number of applications one can select **"Configuration type"**. This field allows one to specify either **"Preset configuration"** or **"Custom configuration"**. The **"Preset configuration"** option provides the **"Preset configuration"** field, which provides a select number of options for resources and automatically sets important Slurm directives for you. Although **"Preset configurations"** work for most users, some users may want to have finer control of the resources they would like to run on. This can be accomplished by selecting **"Custom configuration"** in the **"Configuration type"** field. For more information on these custom configurations, consult the section [Custom configuration options](#custom-configuration-options) below. 
-
-```{eval-rst}
-.. figure:: ./OnDemand/preset_custom_configs.png
-   :align: center
+```{image} ./OnDemand/preset_custom_configs.png
+:alt: Preset configuration with predefined resources compared with custom configuration fields for specifying Slurm resources.
+:align: center
 ```
 
 ```{important}

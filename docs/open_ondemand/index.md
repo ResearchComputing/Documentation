@@ -13,8 +13,10 @@ Open OnDemand is a browser based, integrated, single access point for all of you
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult [our account request page](../getting_started/logging-in.md) to get started. Once you have a CU Research Computing account you can connect to Open OnDemand by visiting <https://ondemand.rc.colorado.edu>. This link will bring you to a login page for Open OnDemand. Use your CU Research Computing credentials and [Microsoft multi-factor authentication (MFA)](https://oit.colorado.edu/services/identity-access-management/microsoft-multi-factor-authentication) to login. No additional MFA setup is required if you are already enrolled in Microsoft MFA.
 
-
-![](OnDemand/login_page.png)
+```{image} ./OnDemand/login_page.png
+:alt: University of Colorado Boulder Federated Identity Service login page for ondemand.rc.colorado.edu.
+:align: center
+```
 
 ````
 
@@ -23,14 +25,14 @@ To connect to Open OnDemand, you must first have a CU Research Computing account
 
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult our [getting a CURC account for CSU users](../getting_started/logging-in.html?tabset-logging-in=logging-in-csu#tabset-ref-get-account){.external} documentation. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"Colorado State University"**. 
-```{eval-rst}
-.. figure:: ./OnDemand/csu_select_identity.png
-   :align: center
+```{image} ./OnDemand/csu_select_identity.png
+:alt: Identity provider selection page with Colorado State University selected and a Log On button.
+:align: center
 ```
 This will bring you to a login prompt where you should use your CSU NetID and Duo 2-factor authentication to login. 
-```{eval-rst}
-.. figure:: ./OnDemand/csu_ood_login.png
-   :align: center
+```{image} ./OnDemand/csu_ood_login.png
+:alt: Colorado State University and CSU Pueblo CILogon page with NetID and password fields and a Login button.
+:align: center
 ```
 
 ````
@@ -39,14 +41,17 @@ This will bring you to a login prompt where you should use your CSU NetID and Du
 :sync: ood-gs-amc
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. If you do not have an account, please consult our [getting a CURC account for AMC users](../getting_started/logging-in.html?tabset-logging-in=logging-in-amc#tabset-ref-get-account){.external} documentation. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"ACCESS CI (XSEDE)"**. 
-```{eval-rst}
-.. figure:: ./OnDemand/access_select_identity.png
-   :align: center
+
+```{image} ./OnDemand/access_select_identity.png
+:alt: Identity provider selection page with ACCESS CI (XSEDE) selected and a Log On button.
+:align: center
 ```
+
 This will bring you to a login prompt where you should use your XSEDE/ACCESS account information and Duo 2-factor authentication to login. 
-```{eval-rst}
-.. figure:: ./OnDemand/access_ood_login.png
-   :align: center
+
+```{image} ./OnDemand/access_ood_login.png
+:alt: ACCESS login page with ACCESS ID and password fields and a Login button.
+:align: center
 ```
 
 ````
@@ -55,14 +60,14 @@ This will bring you to a login prompt where you should use your XSEDE/ACCESS acc
 :sync: ood-gs-rmacc
 
 To connect to Open OnDemand, you must first have a CU Research Computing account. For more information on creating a CU Research Computing account, please see our [getting a CURC account for RMACC users](../getting_started/logging-in.html?tabset-logging-in=logging-in-rmacc#tabset-ref-get-account){.external} documentation. Once you have obtained an account, you can connect to Open OnDemand by visiting <https://ondemand-rmacc.rc.colorado.edu>. This will bring you to a CILogon page. Once on this page, click the drop-down menu under **"Select an Identity Provider"** and select **"ACCESS CI (XSEDE)"**. 
-```{eval-rst}
-.. figure:: ./OnDemand/access_select_identity.png
-   :align: center
+```{image} ./OnDemand/access_select_identity.png
+:alt: Identity provider selection page with ACCESS CI (XSEDE) selected and a Log On button.
+:align: center
 ```
 This will bring you to a login prompt where you should use your XSEDE/ACCESS account information and Duo 2-factor authentication to login. 
-```{eval-rst}
-.. figure:: ./OnDemand/access_ood_login.png
-   :align: center
+```{image} ./OnDemand/access_ood_login.png
+:alt: ACCESS login page with ACCESS ID and password fields and a Login button.
+:align: center
 ```
 
 ````
@@ -78,14 +83,15 @@ Using a **"private browsing mode"** window while using OnDemand is a great way t
 ## Overview of Open OnDemand's graphical interface 
 
 When you have successfully logged into Open OnDemand, you will see the landing page with the following features broken into tabs along the top of the page: __Files__, __Jobs__, __Clusters__ (shell access), __Interactive Apps__, and __My Interactive Sessions__. These tabs are your main gateway to the amazing features Open OnDemand has available! For more information on these features, please see the section [What should I read next?](#what-should-i-read-next) at the bottom of this page. 
-```{eval-rst}
-.. figure:: ./OnDemand/landing_page.png
-   :align: center
+```{image} ./OnDemand/landing_page.png
+:alt: University of Colorado Boulder Research Computing OnDemand homepage with navigation for Files, Jobs, Clusters (shell access), Interactive Apps, and My Interactive Sessions.
+:align: center
 ```
+
 All interactive applications can be accessed via the **"Interactive Apps"** drop-down menu (pictured left). This drop-down menu is meant as a convenience feature to get you quick access to your interactive applications. Although this is nice, sometimes you need to see more information about your interactive applications, such as currently running sessions, sessions waiting in the queue, and sessions that have completed. To obtain this information you can use select the **"My Interactive Sessions"** tab (pictured right).
-```{eval-rst}
-.. figure:: ./OnDemand/interactive_access.png
-   :align: center
+```{image} ./OnDemand/interactive_access.png
+:alt: Interactive Apps menu and My Interactive Sessions page showing queued and running sessions.
+:align: center
 ```
 
 ---
