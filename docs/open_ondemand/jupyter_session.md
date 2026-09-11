@@ -48,12 +48,12 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 :scale: 60%
 ```
 
-3. In your terminal, load the Anaconda version you wish to use e.g.
+3. In your terminal, load Miniforge to obtain access to conda and mamba e.g.
    ```
-   [user@c3cpu-a2-u3-4 ~]$ module load anaconda/2020.11
+   [user@c3cpu-a2-u3-4 ~]$ module load miniforge
    ``` 
 
-4. Follow our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
+4. Review our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
 
 5. Create a Conda environment with the name and Python version of your choice (here we use `my-conda-env` and Python version 3.10)
    ```
@@ -63,7 +63,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
    ```
    [user@c3cpu-a2-u3-4 ~]$ conda activate my-conda-env
    ```
-7. Install either JupyterLab **or** Jupyter Notebook (it is preferred that users install JupyterLab)
+7. Install either JupyterLab **or** Jupyter Notebook (we recommend that users install JupyterLab)
    - If you would like to install **JupyterLab**:
        ```
        (my-conda-env) [user@c3cpu-a2-u3-4 ~]$ conda install -c conda-forge jupyterlab
@@ -99,7 +99,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
    - The provided output should be utilizing the environment you created, as seen by the output `anaconda/envs/my-conda-env`. 
    - If your environment is not being used, this is usually due to one of two reasons:
        - You have incorrectly provided the name of your Conda environment
-       - You have chosen an Anaconda version that is not the same as the one you used to install your Conda environment
+       - You have chosen an Anaconda/Miniforge version that is not the same as the one you used to install your Conda environment
        
   In both of these scenarios, you can confirm that your environment is not being used by looking at the `output.log` for your job:
 
@@ -126,7 +126,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
    TIMING - Starting wait at: Thu Oct 26 13:18:28 MDT 2023
    TIMING - Starting main script at: Thu Oct 26 13:18:28 MDT 2023
    Currently Loaded Modules:
-      1) anaconda/2020.11
+      1) miniforge/24.11.3-0
 
 
    EnvironmentNameNotFound: Could not find conda environment: my-conda-ENV 
@@ -135,16 +135,14 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
 ## Creating your own custom Jupyter kernel
 
-[Anaconda](http://anaconda.com) is an open-source software that provides access to _Python_ and _R_ distributions, and it includes the _Conda_ package manager to easily install software and packages. Software and associated Jupyter [kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) other than _Python_ and _R_ can also be installed using _Conda_. The following steps describe how to create your own custom Anaconda environments and associated Jupyter kernels for use within a Jupyter Session. 
+The following steps describe how to create your own custom environments and associated Jupyter kernels for use within a Jupyter Session. Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
 
-Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
+1.  Review your Conda settings by following our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
 
-1.  Configure your Conda settings by following our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
-
-2. Activate the CURC Anaconda environment
+2. Load Miniforge to obtain access to conda and mamba
 
 ```
-[johndoe@c3cpu-a5-u15-4 ~]$ module load anaconda
+[johndoe@c3cpu-a5-u15-4 ~]$ module load miniforge
 ```
 
 You will know that you have properly activated the environment because you should see `(base)` in front of your prompt. For example, 
@@ -191,7 +189,7 @@ __For an _R_ kernel__
 * The second command will start _R_. The third command, executed from within _R_, will create an _R_ kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note: that the name and display-name are not required to match the environment name -- call them anything you want). The kernel will be installed in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you launch a Jupyter Session.
 
 ````{note}
-* If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 5_ above from within the active environment.  
+* If you have already installed your own version of Miniforge or Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 5_ above from within the active environment.  
 * If you need to use custom kernels that are in a location other than `/home/$USER/.local/share/jupyter` (for example, if your research team has a group installation of Anaconda environments located in `/pl/active/<some_env>`), you can create a file in your home directory named `~/.jupyterrc` containing the following line:
 ```
 export JUPYTER_PATH=/pl/active/<some_env>/share/jupyter
