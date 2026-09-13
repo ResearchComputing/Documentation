@@ -1,4 +1,4 @@
-# AWS - View Billing Data
+# View Billing Data
 
 ```{note}
 For all billing periods beginning after 6/30/2025, you should refer directly to [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) and your invoices in the [CU Marketplace](https://www.cu.edu/uis/service-catalog/cu-marketplace). CloudCheckr is no longer used for billing information.

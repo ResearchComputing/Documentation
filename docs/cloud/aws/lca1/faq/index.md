@@ -1,6 +1,4 @@
-# AWS - FAQs
-
-Frequently Asked Questions
+# Frequently Asked Questions
 
 ## What is the URL for the Single Sign-On Console?
 **Answer:**

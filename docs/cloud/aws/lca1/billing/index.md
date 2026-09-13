@@ -1,4 +1,4 @@
-# AWS - Billing
+# Billing
 
 AWS provides numerous ways to predict, view, and manage your costs.
 
@@ -12,10 +12,7 @@ Costs can be viewed directly in the [AWS Cost Explorer](./viewbilling). You shou
 
 ```{toctree}
 :maxdepth: 1
-:caption: View Billing
-
 viewbilling
-
 ```
 
 ## Payment
@@ -32,8 +29,5 @@ AWS accounts are paid via CU Purchase Order (PO). We will provide guidance on se
 
 ```{toctree}
 :maxdepth: 1
-:caption: Budget Actions
-
 budget-actions
-
 ```
