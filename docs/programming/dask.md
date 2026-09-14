@@ -159,7 +159,7 @@ Then you can install the [JupyterLab plugin for Dask](https://github.com/dask/da
 
 Once your environment is set up, launch a Jupyter Session using the `dask_lab_env` environment that includes the extension. 
 
-Refer to the documentation here for detailed instructions on selecting and launching a [jupyter session with custom Conda environment](../open_ondemand/jupyter_session.md#launching-a-jupyter-session-using-my-conda-env-conda-environment)
+Refer to the documentation here for detailed instructions on selecting and launching a [jupyter session with custom Conda environment](../open_ondemand/jupyter_session.md#launching-a-jupyter-session-using-the-my-conda-env-conda-environment)
 
 #### Step 4: Use the Dask Extension
 
