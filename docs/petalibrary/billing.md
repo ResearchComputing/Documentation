@@ -28,7 +28,7 @@ invoice. The following are billable events:
    * Decommissioning an allocation
 
 ### Invoice details
-A sample invoice is shown below. The invoice has a unique identifier and details the services being billed for, including a SpeedType for CU System customers. For new allocations, the SpeedType will be the one provided on the new allocation request form. For renewals or additional space, the SpeedType will be the last one used for the allocation in question. A Journal ID will also be provided, which allows you to find the university transaction in which funds are moved between SpeedTypes.
+A PetaLibrary invoice has a unique identifier and details the services being billed for, including a SpeedType for CU System customers. For new allocations, the SpeedType will be the one provided on the new allocation request form. For renewals or additional space, the SpeedType will be the last one used for the allocation in question. A Journal ID will also be provided, which allows you to find the university transaction in which funds are moved between SpeedTypes.
 
 ### Invoice recipients
 All invoices are sent via email through the CURC ticketing system and include a case number. If a PetaLibrary allocation has one or more billing contacts defined, invoices are sent to the billing contacts, and copied to the allocation owner. If no billing contacts are defined, invoices are sent to the owner. 
@@ -39,15 +39,3 @@ the invoice. Please take note of the PetaLibrary [policy for non-payment](../add
 
 ### Annual renewal invoices
 The most common billable event is the annual renewal. These invoices are sent out within 1-2 months of the beginning of the University Fiscal Year, July 1.  **Please carefully read the information on your annual renewal invoice and make sure that the SpeedType we have on file is still valid**. If it is not, please let us know as soon as possible so that the invoice can be revised before the transaction posts.
-
-### Sample Invoice
-
-```{image} ./images_and_html/petalibrary_invoice.png
-:alt: An image of a Sample PetaLibrary invoice. The invoice shows contact information for OIT, the invoice date, a SpeedType to charge, a Journal Entry identifier, an Invoice Identifier, a description of charges (including allocation type, size, name, and quantity, as well as contact information), and total costs for the invoice. The bottom of the invoice contains a disclaimer that the contacts on the allocation have five business days to notify Research Computing of any necessary changes before payment is processed.
-:align: center
-:scale: 80%
-```
-
-
-
-
