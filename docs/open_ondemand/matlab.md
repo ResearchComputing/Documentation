@@ -2,7 +2,7 @@
 
 The **MATLAB** application provides users with a MATLAB graphical user interface (GUI). This GUI can often be helpful when prototyping code. The **MATLAB** application is configured such that a **Core Desktop** session is started and then MATLAB is launched. Due to this reason, all the functionalities and limitations of the **Core Desktop** application also apply. For more information on the **Core Desktop** application, see our documentation [Core Desktop (remote desktop)](./core_desktop.md). 
 ```{image} ./OnDemand/matlab_gui_app.png
-:alt: MATLAB graphical user interface showing the Editor, Current Folder, Workspace, and Command Window.
+:alt: The MATLAB graphical user interface within a Linux desktop environment. The MATLAB interface is showing the Editor, Current Folder, Workspace, and Command Window. Some example code is displayed, as well as its output.
 :align: center
 ```
 
@@ -18,7 +18,7 @@ The GPUs provided are not meant for computationally intensive workflows. These G
 
 3. When your MATLAB session is ready, you can click the **"Launch MATLAB"** button to bring up a web page with the MATLAB GUI. In most cases, the default compression and image quality will suffice. If you do have problems with image quality, you can adjust these settings as necessary. 
 ```{image} ./OnDemand/matlab_gui_launch.png
-:alt: Running MATLAB session with the Launch MATLAB button circled.
+:alt: The Open OnDemand interactive job information interface. The running job, labeled "MATLAB (26531)", shows a hostname of "viz1.rc.int.colorado.edu", creation time, time remaining, session ID, and the number of nodes and cores available. Sliders for "Compression" and "Image Quality", increasing from zero (lowest) at the left to nine (highest) at the right are below the running job. The button "Launch MATLAB" is visible in the bottom-left below the sliders. In the bottom right, a "View Only (Share-able Link)" button is visible. A "Delete" button is also visible in the top-right.
 :align: center
 :scale: 50%
 ```
@@ -30,7 +30,7 @@ The GPUs provided are not meant for computationally intensive workflows. These G
 
 * You can copy/paste into/out of the desktop using the clipboard in the "hidden" tab on the left-hand-side of the screen.
 ```{image} ./OnDemand/core_desktop_copy_paste.png
-:alt: noVNC Clipboard panel used to copy and paste text between the local computer and Core Desktop session.
+:alt: noVNC Clipboard panel used to copy and paste text between the local computer and Core Desktop session. It consists of a blank text box labeled "Clipboard", and a "Clear" button in the bottom-right below the text box.
 :align: center
 :scale: 50%
 ```

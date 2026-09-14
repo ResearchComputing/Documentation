@@ -2,7 +2,7 @@
 
 RStudio is an integrated development environment (IDE) for R. It can be an extremely useful tool when developing and running R code. It allows users to navigate the filesystem, edit and run code, view plots, and much more all in the same place. In Open OnDemand we allow users to easily access this functionality using the **RStudio Server** application. Furthermore, each RStudio session is launched from a [container](../software/containerization.md), which allows users to customize it to their needs. For more information on customizing your container, see [Installing dependencies for RStudio Server](#installing-dependencies-for-rstudio-server) below. 
 ```{image} ./OnDemand/rstudio_gui.png
-:alt: RStudio interface showing the Console, Environment, and Files panes.
+:alt: The RStudio interface showing the Console, Environment, and Files panes. The R Console pane is shown on the left, the Environment pane is shown at the top-right, and the Files pane is shown at the bottom-right.
 :align: center
 ```
 
@@ -12,7 +12,7 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 
 2. Select the RStudio version you would like to launch the application with.
 ```{image} ./OnDemand/rstudio_config.png
-:alt: RStudio server configuration option for selecting the RStudio Version. Here RStudio Version 2024.04.2, R 4.4.1 is selected.
+:alt: RStudio server configuration option for selecting the RStudio Version. Here RStudio Version 2024.04.2, R 4.4.1 is selected from the drop-down menu.
 :align: center
 ```
 
@@ -20,7 +20,7 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 
 4. When your RStudio session is ready, you can click the **"Connect to RStudio Server"** button to bring up a web page with the RStudio IDE. 
 ```{image} ./OnDemand/rstudio_launch.png
-:alt: Running RStudio Server session with a Connect to RStudio Server button.
+:alt: The Open OnDemand interactive job information interface. The running job, labeled "RStudio Server (7516931)", shows a hostname of "c3cpu-c15-u32-3.rc.int.colorado.edu", creation time, time remaining, session ID, and the number of nodes and cores available. The button "® Connect to RStudio Server" is visible below the running job. A "Delete" button is visible in the top-right.
 :align: center
 :scale: 50%
 ```
@@ -61,7 +61,7 @@ ERROR: compilation failed for package ‘XVector’
 
 This install failed because our container and overlay do not have `zlib` installed. To remedy this, we can install `zlib` by modifying our overlay. To do this, we must first completely close the RStudio session __AND__ delete the job. This is necessary because our overlay cannot be changed if it is being used. Next, open up a terminal in Open OnDemand by selecting **"Clusters"** -> **"Alpine Shell"** from the top menu bar.
 ```{image} ./OnDemand/alpine_shell_depiction.png
-:alt: Clusters menu showing the Alpine Shell option.
+:alt: The Clusters menu bar item in Open OnDemand showing the Alpine Shell option in its drop-down menu.
 ```
 
 Next, start an interactive session on a compute node (here we start up an Alpine `acompile` session).

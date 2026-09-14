@@ -8,15 +8,15 @@
 
 2. Select the Anaconda version, Conda environment, and type of GUI you would like to launch the application with. The Conda environment configuration can be particularly useful, if you need to utilize Jupyter extensions. For more information on creating a compatible Conda environment for Jupyter sessions, please see the section [Creating a Jupyter Session Conda Environment](#creating-a-jupyter-session-conda-environment) below.
 ```{image} ./OnDemand/jupyter_session_configs.png
-:alt: Jupyter session configuration options for selecting an Anaconda version, Conda environment, and JupyterLab. Here Anaconda version 2020.11 is selected, Conda environment "base" is provided, and the JupyterLab checkbox is selected.  
+:alt: Jupyter session configuration options for selecting an Anaconda version, Conda environment, and JupyterLab. Here Anaconda version 2020.11 is selected from the drop-down menu, Conda environment "base" is provided as text, and the "Use JupyterLab instead of Jupyter Notebook?" checkbox is selected.  
 :align: center
 ```
 
-3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
+3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality, see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
 
 4. When your Jupyter session is ready, you can click the **"Connect to Jupyter"** button to bring up a web page with the Jupyter interface. When there is high usage on the system, it may take several minutes to open a **Jupyter Session**.
 ```{image} ./OnDemand/jupyter_session_launch.png
-:alt: Running Jupyter session with a Connect to Jupyter button.
+:alt: The Open OnDemand interactive job information interface. The running job, labeled "Jupyter Session (7511081)", shows a hostname of "c3cpu-c15-u32-3.rc.int.colorado.edu", creation time, time remaining, session ID, and the number of nodes and cores available. The button "Connect to Jupyter" is visible below the running job. A "Delete" button is visible in the top-right.
 :align: center
 :scale: 50%
 ```
@@ -26,7 +26,7 @@
 ````{important}
 * The first time the session starts, you are placed in CURC root. This allows you to access all of your directories. However, you will not be able to create a notebook in this directory. You should navigate to one of your CURC spaces. In the JupyterLab GUI this is done by going to **"File"** in the upper left-hand corner, selecting **"Open from Path..."**, and entering the path you want to navigate to (e.g. `/projects/<your username>`).
 ```{image} ./OnDemand/jupyterlab_change_dirs.png
-:alt: JupyterLab File menu showing the Open from Path option.
+:alt: The menu bar in JupyterLab, showing the File menu opened, with options for "New", "New Launcher", and "Open from Path...". Other items in the menu bar, not selected, are: Edit, View, Run, Kernel, Tabs, Settings, and Help.
 :align: center
 :scale: 99%
 ```
@@ -80,11 +80,11 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
       ```
 8. You can now install the rest of the packages you require in this environment. 
 
-### Launching a Jupyter Session using `my-conda-env` Conda environment
+### Launching a Jupyter Session using the my-conda-env Conda environment
 
 1. Specify `my-conda-env` in **"Conda environment"** field. 
 ```{image} ./OnDemand/jupyter_session_use_env.png
-:alt: Jupyter session configuration options with Anaconda version 2020.11 selected and Conda environment "my-conda-env" provided.  
+:alt: Jupyter session configuration options with Anaconda version 2020.11 selected from the drop-down menu and Conda environment "my-conda-env" provided as text.
 :align: center
 ```
 
@@ -107,19 +107,19 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
   
   2. Click the link next to the "Session ID" for your running job
   ```{image} ./OnDemand/jupyter_session_launch_circled.png
-  :alt: Running Jupyter session with a Connect to Jupyter button and the link next to the "Session ID" circled.
+  :alt: The Open OnDemand interactive job information interface. The running job, labeled "Jupyter Session (7511081)", shows a hostname of "c3cpu-c15-u32-3.rc.int.colorado.edu", creation time, time remaining, session ID, and the number of nodes and cores available. The button "Connect to Jupyter" is visible below the running job. A "Delete" button is visible in the top-right. The session ID is circled in red.
   :align: center
   :scale: 50%
   ```
   
   3. Open the file `output.log` by clicking it
   ```{image} ./OnDemand/output_log_file.png
-  :alt: List of files resulting from clicking the link next to "Session ID" with output.log circled
+  :alt: The Open OnDemand file browser is opened due to clicking the link next to "Session ID". A list of files is shown, with columns for "Type", "Name", "Size", and "Modified at". The text in each row of the name field is a clickable link to the filename shown. The output.log file is circled in red.
   :align: center
   :scale: 60%
   ```
   
-  4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used e.g. 
+  4. If you see an `EnvironmentNameNotFound` this means that your environment is **NOT** being used e.g., 
    ```
    Script starting...
    Waiting for Jupyter Notebook server to open port 22233...
@@ -135,7 +135,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
 ## Creating your own custom Jupyter kernel
 
-The following steps describe how to create your own custom environments and associated Jupyter kernels for use within a Jupyter Session. Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter using `New`-> `Terminal`.
+The following steps describe how to create your own custom environments and associated Jupyter kernels for use within a Jupyter Session. Follow these steps from a terminal session. You can get a new terminal session directly from Jupyter by selecting `New` in the menu bar, then selecting `Terminal`.
 
 1.  Review your Conda settings by following our documentation: [steps on configuring your Conda settings via ~.condarc](../software/python.md#configuring-conda-and-mamba-with-condarc).
 
