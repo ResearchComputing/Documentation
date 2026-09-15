@@ -1,6 +1,10 @@
 # Compiling and Linking
 
-Before compiling in the RC environment, begin a compile job by using the `acompile` command. Next, load the modules corresponding to the compiler, MPI version (if needed), and any third-party libraries required by your application. The load order should always be compiler first, MPI second, and third-party libraries last.
+Before compiling in the RC environment, begin a compile job by using the `acompile` command. Next, load the modules corresponding to the compiler, MPI version (if needed), and any third-party libraries required by your application. 
+
+```{tip}
+The load order should always be compiler first, MPI second, and third-party libraries last.
+```
 
 For example, suppose your application requires MPI and the HDF5
 library. To compile using the Intel compiler and Intel MPI, the
@@ -15,7 +19,7 @@ module load hdf5
 
 Supporting library-modules will be loaded as needed, and your
 environment will be updated so that the appropriate library
-directories are prepended to your `$PATH` and `$LD_LIBRARY_PATH`. The standard compiler variables `FC`, `CC` and `CXX` are set as appropriate for your compiler/MPI combination. These environment variables reference the Fortran, C, and C++ compilers respectively
+directories are prepended to your `$PATH` and `$LD_LIBRARY_PATH`. The standard compiler variables `FC`, `CC` and `CXX` are set as appropriate for your compiler/MPI combination. These environment variables reference the Fortran, C, and C++ compilers, respectively.
 
 In addition, several environment variables are set that may be useful during the compilation process.  These variables are prefixed by `CURC` and may easily be found by searching your environment for `CURC` via `env | grep CURC`. This will yield output similar to:
 
@@ -40,7 +44,7 @@ $FC my_program.f90 -I$CURC_HDF5_INC -L$CURC_HDF5_LIB -lhdf5_fortran -o my_progra
 ```
 
 ```{caution}
-Your run-time environment should reflect your compilation environment. Be sure to include the same sequence of `module` commands in your job script as that used at compile time.
+Your run-time environment should reflect your compilation environment. Be sure to include the same sequence of `module` commands in your job script as those used at compile time.
 ```
 
 
@@ -133,8 +137,8 @@ Finally, to see which modules must be loaded to make your desired version availa
 
 ## Compiler and Optimization Recommendations
 
-The Alpine cluster runs on AMD-designed hardware, whereas the Blanca cluster runs on Intel-designed hardware. As such, we **strongly recommend** using the appropriate compiler and MPI library when compiling software.  For production, we
-suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on. More compiler options and flags can be found in [AMD's reference guide](https://developer.amd.com/wp-content/resources/Compiler%20Options%20Quick%20Ref%20Guide%20for%20AMD%20EPYC%207xx3%20Series%20Processors.pdf). 
+The Alpine cluster runs on AMD-designed hardware, whereas the Blanca cluster runs on a mix of AMD-designed and Intel-designed hardware. As such, we **strongly recommend** using the appropriate compiler and MPI library when compiling software.  For production, we
+suggest compiling with the `-O2` or `-O3` optimization flags along with the vectorization flags appropriate for the node you plan to run on. If you have questions on the optimal compiler for your particular workflow, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
 ## Linking to the Math Kernel Library (MKL)
 

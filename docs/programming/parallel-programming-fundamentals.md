@@ -51,7 +51,9 @@ __Shared Memory Model:__
 In a shared memory model, all processors to have access to a pool of
 common memory that they can freely use.
 
-![](https://hpc.llnl.gov/sites/default/files/shared_mem.gif "shared memory model")
+```{image} https://hpc.llnl.gov/sites/default/files/shared_mem.gif
+:alt: An image of a blue rectangle labeled "Memory", with four red rectangles each labeled "CPU" on each side of the "Memory" rectangle, each connected by a single solid black line to the "Memory" rectangle.
+```
 
 (Image courtesy of [LLNL](https://computing.llnl.gov/tutorials/parallel_comp/))
 
@@ -62,7 +64,9 @@ available to each processor.  Because memory isn’t shared inherently,
 information that must be shared between processes is sent over a
 network.
 
-![](https://hpc.llnl.gov/sites/default/files/distributed_mem.gif "distributed memory model")
+```{image} https://hpc.llnl.gov/sites/default/files/distributed_mem.gif
+:alt: An image of four half-blue, half-red rectangles. The left half of each rectangle is red and labeled "CPU", while the right half of each rectangle is blue and labeled "Memory". All of the rectangles are connected by a solid black central line labeled "network".
+```
 
 (Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 
@@ -72,7 +76,9 @@ A split distributed/shared model is a hybrid between a shared and
 distributed model and has the properties of both. Each separate set of
 processors sharing a set of common memory is called a node.
 
-![](https://hpc.llnl.gov/sites/default/files/hybrid_mem2.gif "hybrid_model")
+```{image} https://hpc.llnl.gov/sites/default/files/hybrid_mem2.gif
+:alt: An image of four half-blue, half-red rectangles. The left half of each rectangle is red and split into four sections, two labeled GPU and two labeled CPU, while the right half of each rectangle is blue and labeled "Memory". All of the rectangles are connected by a solid black central line labeled "network".
+```
 
 (Image courtesy of [LLNL](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial##MemoryArch))
 

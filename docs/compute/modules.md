@@ -2,17 +2,19 @@
 
 Research Computing uses a module system to load most software into a
 user's environment. Most software is not accessible by default and
-must be loaded in. This allows Research Computing to provide multiple
+must be loaded. This allows Research Computing to provide multiple
 versions of the software concurrently and enables users to easily switch 
 between different versions.
 
 ## The `module` Command
 
-**_Modules should be loaded in job scripts, interactive jobs, or on
+```{warning}
+Modules should be loaded in job scripts, interactive jobs, or on
 compile nodes only. They should not be loaded when on one of the
-login nodes._** The login node will restrict the loading of modules,
+login nodes. The login node will restrict the loading of modules,
 so you won't be able to access software unless you do so through a job
 or a compile node.
+```
 
 To see what modules are available to load, ssh into a compile node by
 typing `acompile` from a login node, and type:

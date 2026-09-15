@@ -54,17 +54,17 @@ storage, including attempts to circumvent the automatic file purge
 policy, may result in loss of access to Research Computing resources.
 
 ### Filesystems Reference Table
-| /home (2GB)| /projects (250GB) | /scratch/alpine (10TB)  |
-| ------------- |------------| -----|
-| Scripts, ssh keys, small important files/directories | Code, files, software installs | Output from running jobs, large files/databases |
-| Regularly backed up | Regularly backed up | **Not** backed up|
-| **Not** for sharing files | Suitable for sharing files| Suitable for sharing files |
-| **Not** for job output | **Not** for job output | Suitable for job output |
+|  | /home (2GB)| /projects (250GB) | /scratch/alpine (10TB)  |
+| -- | ------------- |------------| -----|
+| What is it meant to store? | Scripts, ssh keys, small important files/directories | Code, files, software installs | Output from running jobs, large files/databases |
+| Is it backed up? | Regularly backed up | Regularly backed up | **Not** backed up|
+| Does it support file sharing? | **Not** for sharing files | Suitable for sharing files| Suitable for sharing files |
+| Can it be used for job data? | **Not** for job output | **Not** for job output | Suitable for job output |
 
 
 
 ### Local Scratch on Alpine and Blanca
-All Alpine nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
+All Alpine nodes and most Blanca nodes have a local scratch area exceeding 100GB ideal for heavily used temporary files.  This directory can be accessed in a job script with the `$SLURM_SCRATCH` variable.  To ensure local scratch space remains free for subsequent jobs, files placed in this directory will be removed automatically on job completion (successful or otherwise) and cannot be recovered.  Therefore, before your job script exits, it is important to copy any newly created files to a persistent file system such as your `/projects/$USER` directory. 
 
 As an example of how to use `$SLURM_SCRATCH`, the following code copies a file to the temporary directory, operates on the file in some fashion creating a new file, then copies that new file back to the projects directory before the job ends.
 
@@ -121,7 +121,7 @@ cp new_file /projects/user1234/job/new_file
 ````{tab-item} curc-quota
 :sync: monitor-disk-usage-curc-quota
 
-### The `curc-quota` command
+### The curc-quota command
 Disk usage may be checked using the `curc-quota` command. When run
 from a login node or Alpine `compile node`, you will see output similar to:
 
@@ -174,7 +174,7 @@ summary of the backup schedule is provided in the table below.
 | `/projects`   | 1 wk          |   15 d |
 | `/scratch/alpine`    | **no backups** | N/A |
 
-If disaster strikes and you need access to a previous version of your
+If disaster strikes, and you need access to a previous version of your
 `/home` or `/projects` directories, change to that directory and look
 through the `.snapshot` hidden subdirectory. You will see a subdirectory
 associated with each snapshot of your `/home` or `/projects`
@@ -221,17 +221,17 @@ In the above listing for `-rwxrwxr-- 1 brwe2321 brwe2321pgrp      98 Dec  9 17:0
 
 The file permissions flags are arranged in four groups, the first character of the string, followed by 3 groups of 3 characters each:
 
-+ the first character can be either  a `-` or a `d`. the `-` indicates the entry is a file. The  `d` indicates the entry is a directory (which can contain other files and/or directories). The `l` indicates the file entry is a symbolic link to another file.
++ the first character can be a `-`, `d`, or `l`. The `-` indicates the entry is a file. The  `d` indicates the entry is a directory (which can contain other files and/or directories). The `l` indicates the file entry is a symbolic link to another file.
 
 + In each of the following three groups of three characters, `r` indicates the file/directory is readable, `w` indicates the file/directory is writable, and the `x` indicates a file that is executable, or a directory that permits programs to execute within itself. These letters are also referred to as permission `bits` for historical reasons.
 
 + The three groups of permissions condition the actions of three different groups of users. The first (or left-most) group is the file/directory owner’s permissions, the next group (middle) is the permissions granted to members of the group associated with the file, and the last group (right-most) is permissions granted to all others (not owners or group members).
 
 ```{tip}
-For files, the owner and group execute flags(bits) can occasionally be replaced with an `s`. In the owner’s permissions bits, an `x` replaced with an `s` indicates the file is executable but will execute with an effective user ID of the file owner. The `S` replacing the `x` in the group permission bits indicates the file can execute but with an effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the "other" execute bit if set to `t` or `T`, indicates that files in this directory can only be moved or deleted by the owner of the file.
+For files, the owner and group execute flags(bits) can occasionally be replaced with an `s` (lowercase). In the owner’s permissions bits, an `x` replaced with an `s` (lowercase) indicates the file is executable but will execute with an effective user ID of the file owner. The `S` (uppercase) replacing the `x` in the group permission bits indicates the file can execute but with an effective group  set to the group of the directory. Essentially this means that new files and directories created under this directory will inherit the group of this directory. Finally, the "other" execute bit if set to `t` (lowercase) or `T` (uppercase), indicates that files in this directory can only be moved or deleted by the owner of the file.
 ```
 
-For a more comprehensive and detailed exposition of the UNIX file system permissions, see the wikipedia [Traditional Unix permissions section](https://en.wikipedia.org/wiki/File-system_permissions).
+For a more comprehensive and detailed exposition of the UNIX file system permissions, see the Wikipedia page on [Traditional Unix permissions](https://en.wikipedia.org/wiki/File-system_permissions).
 
 
 ## How to turn on/off the execute bits
@@ -271,13 +271,13 @@ The man page (run `umask --help` from a terminal) for `umask` explains the detai
 
 ## Creating and copying directories and files
 
-`mkdir <new_directory_name>`<br />
+`mkdir <new_directory_name>`:<br />
 A directory with the specified name is created having permissions defined by the user’s default _mode creation mask_, modified by the user’s `umask`.
 
-`cp <source_file> <destination_file>`<br /> 
+`cp <source_file> <destination_file>`:<br /> 
 The destination file will have the same permissions as the source file unless those are modified by the user’s `umask`. Note that more sophisticated copy programs can modify the destination permissions, again subject to the user’s `umask`.
 
-`rsync -var <source_file/directory>/ <destination_file/directory/`<br />  
+`rsync -var <source_file/directory>/ <destination_file/directory/`:<br />  
 See our [Data Transfer](../compute/data-transfer.md#rsync) page for more information about `rsync`.
 
 ## Workspace Sharing
@@ -291,7 +291,7 @@ and potentially sensitive information stored there.
 Directories may be shared with all Research Computing users or with
 only a subset of our users. In the latter case, a system
 administrator will need to add your chosen collaborators to your Linux
-group. Please follow the instructions provided in the FAQ [How can I add users to a Linux group?](../getting_started/faq.md#how-can-i-add-users-to-a-linux-group) dropdown, if you would like to add users to your Linux group.
+group. Please follow the instructions provided in the FAQ [How can I add users to a Linux group?](../getting_started/faq.md#how-can-i-add-users-to-a-linux-group) dropdown if you would like to add users to your Linux group.
 
 In the example that follows, we make our `/projects` directory open to
 all users and then create subdirectories with select read/write
