@@ -1,4 +1,4 @@
-# AWS Support
+# AWS Support Plan
 
 All new AWS accounts are configured with Basic Support. AWS offers higher support tiers at pay-by-the-month pricing.
 
@@ -16,5 +16,5 @@ For more information about OIT Support, visit the website: [https://oit.colorado
 
 **Support Levels and Costs**
 
-For more information about AWS Support Plans and Pricing, please see the AWS documentation here: [https://aws.amazon.com/premiumsupport/pricing/?nc=sn&loc=3](https://aws.amazon.com/premiumsupport/pricing/?nc=sn&loc=3)
+For more information about AWS Support Plans and Pricing, please see the AWS documentation here: [https://aws.amazon.com/premiumsupport/pricing/](https://aws.amazon.com/premiumsupport/pricing/?nc=sn&loc=3)
 

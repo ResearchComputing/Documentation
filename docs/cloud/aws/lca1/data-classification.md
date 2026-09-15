@@ -26,7 +26,7 @@ Externally-regulated data also includes, but is not limited to: contracts with a
 **No External (regulated) data of any kind is supported on LCA1.** If you need to host regulated data, please contact the [Secure Research Computing team](https://www.colorado.edu/rc/secure-research-computing-resources). They run a separate platform specifically designed to handle highly-secure data.
 ```
 
-## AWS LCA1 Data Classification Support
+## Data Classification Support
 
 The table below outlines the level of support for the different data classifications in the AWS LCA1 landing zone.
 

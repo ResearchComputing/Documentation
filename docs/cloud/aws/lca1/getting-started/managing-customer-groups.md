@@ -100,4 +100,3 @@ Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fun
 Users can be removed from accessing the AWS account by removing them from the Entra Group.
 
 Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#remove-members-or-owners-of-a-group) to remove members from groups.
-

@@ -1,6 +1,4 @@
-# AWS - FAQs
-
-Frequently Asked Questions
+# Frequently Asked Questions
 
 If you are looking for help with specific errors, please visit the [Troubleshooting](../troubleshooting/troubleshooting.md) guide.
 
@@ -24,9 +22,7 @@ The **us-west-2** AWS region has the lowest latency from Colorado's Front Range 
 
 ## Can I use the root user?
 **Answer:**
-No.
-The root user is owned by the **Cloud Foundations Service** team.
-You must use your CustomerAdmin role.
+No, the root user is owned by the **Cloud Foundations Service** team. You must use your `CustomerAdmin` role.
 
 
 ## Are MTurk users supported?
@@ -51,5 +47,5 @@ Click on the drop down on the top right corner of the console page to expand you
 **Answer:**
 No. Resources owned by the **Cloud Foundations Service (CFS)** team cannot be altered or removed and they can be identified by name prefix and/or resource tags. Any resources with the prefix `oitcld-` are owned by CFS, in addition to those with the below tag attached.
 ```{image} images/CFSTag.png
-:alt: The CFS tag has the key/value pair of "oit-cld:management:central"/"true"
+:alt: AWS resource tag with key oit-cld:management:central and value true.
 ```

@@ -1,4 +1,4 @@
-# AWS - View Billing Data
+# View Billing Data
 
 ```{note}
 For all billing periods beginning after 6/30/2025, you should refer directly to [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) and your invoices in the [CU Marketplace](https://www.cu.edu/uis/service-catalog/cu-marketplace). CloudCheckr is no longer used for billing information.
@@ -36,17 +36,17 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    :alt: Search for "Billing and Cost Management" in the AWS console.
    ```
    ```{image} images/cost-explorer-menu.png
-   :alt: Click on "Cost Explorer" in the menu on the left.
+   :alt: AWS Billing and Cost Management left menu with Cost Explorer selected.
    ```
 
 1. Filter on the billing month.
    ```{image} images/cost-explorer-billing-month.png
-   :alt: Filter the date range to July 2025.
+   :alt: AWS Cost Explorer date range filter set to July 2025.
    ```
 
 1. You’ll see the unfiltered cost at the top of the report. **This is NOT what you will be billed!**
    ```{image} images/cost-explorer-unfiltered.png
-   :alt: Unfiltered costs are $21,675.23.
+   :alt: AWS Cost Explorer unfiltered total of 21675.23 dollars.
    ```
 
 1. Remove automatically applied refunds by adding the filter `Charge Type → Excludes → Refund, Enterprise Discount Program Discount and Solutions Provider Program Discount ` under `More Filters`. `Enterprise Discount Program Discount` may not be present.
@@ -59,12 +59,12 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
 
 1. Now you’ll see the raw costs for that billing period.
    ```{image} images/cost-explorer-raw.png
-   :alt: Raw costs are $22,669.03.
+   :alt: AWS Cost Explorer raw cost total of 22669.03 dollars.
    ```
 
 1. Add a filter to remove AWS Marketplace costs. Set `Billing Entity → Excludes → AWS Marketplace`.
    ```{image} images/cost-explorer-exclude-marketplace.png
-   :alt: Set the Billing entity filter to exclude AWS Marketplace.
+   :alt: AWS Cost Explorer Billing Entity filter excluding AWS Marketplace.
    ```
 
 1. Add a filter to remove S3: Storage - Glacier Deep Archive. Set `Usage type group → Excludes → S3: Storage - Glacier Deep Archive`.
@@ -147,5 +147,5 @@ Here's how to use AWS Cost Explorer to represent the charges you will see on an 
    ```
 
 ```{note}
-If you have any questions about your bill or need help calculating your costs, please [contact us](mailto:rc-help@colorado.edu).
+If you have any questions about your bill or need help calculating your costs, please contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
 ```
