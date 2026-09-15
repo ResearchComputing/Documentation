@@ -1,10 +1,9 @@
 # RStudio Server
 
 RStudio is an integrated development environment (IDE) for R. It can be an extremely useful tool when developing and running R code. It allows users to navigate the filesystem, edit and run code, view plots, and much more all in the same place. In Open OnDemand we allow users to easily access this functionality using the **RStudio Server** application. Furthermore, each RStudio session is launched from a [container](../software/containerization.md), which allows users to customize it to their needs. For more information on customizing your container, see [Installing dependencies for RStudio Server](#installing-dependencies-for-rstudio-server) below. 
-
-```{eval-rst}
-.. figure:: ./OnDemand/rstudio_gui.png
-   :align: center
+```{image} ./OnDemand/rstudio_gui.png
+:alt: The RStudio interface showing the Console, Environment, and Files panes. The R Console pane is shown on the left, the Environment pane is shown at the top-right, and the Files pane is shown at the bottom-right.
+:align: center
 ```
 
 ## Launching a RStudio Server
@@ -12,20 +11,18 @@ RStudio is an integrated development environment (IDE) for R. It can be an extre
 1. Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **RStudio Server**. 
 
 2. Select the RStudio version you would like to launch the application with.
-
-```{eval-rst}
-.. figure:: ./OnDemand/rstudio_config.png
-   :align: center
+```{image} ./OnDemand/rstudio_config.png
+:alt: RStudio server configuration option for selecting the RStudio Version. Here RStudio Version 2024.04.2, R 4.4.1 is selected from the drop-down menu.
+:align: center
 ```
 
 3. Specify a **"Configuration type"** and select the resources you would like to use. For more information on this functionality see [Configuring Open OnDemand interactive applications](./configuring_apps.md). 
 
 4. When your RStudio session is ready, you can click the **"Connect to RStudio Server"** button to bring up a web page with the RStudio IDE. 
-
-```{eval-rst}
-.. figure:: ./OnDemand/rstudio_launch.png
-   :align: center
-   :scale: 50%
+```{image} ./OnDemand/rstudio_launch.png
+:alt: The Open OnDemand interactive job information interface. The running job, labeled "RStudio Server (7516931)", shows a hostname of "c3cpu-c15-u32-3.rc.int.colorado.edu", creation time, time remaining, session ID, and the number of nodes and cores available. The button "® Connect to RStudio Server" is visible below the running job. A "Delete" button is visible in the top-right.
+:align: center
+:scale: 50%
 ```
 
 5. After connecting to RStudio Server, you should then be able to utilize RStudio as if it were on your own computer! 
@@ -52,13 +49,20 @@ BiocManager::install("XVector")
 If you are ever provided the prompt "Update all/some/none? [a/s/n]:",  always choose "n". You will not be able to update the items because RStudio needs to be launched using a read only container, which cannot be modified. However, choosing the wrong option should not harm anything.
 ```
 
-When the above lines are executed, we will eventually reach a state in the `XVector` install where we receive the following error.
-
-![](OnDemand/xvector_install_error.png)
+When the above lines are executed, we will eventually reach a state in the `XVector` install where we receive the following error:
+```r
+io_utils.c:16:10: fatal error: zlib.h: No such file or directory
+   16 | #include <zlib.h>
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [/usr/local/lib/R/etc/Makeconf:172: io_utils.o] Error 1
+ERROR: compilation failed for package ‘XVector’
+```
 
 This install failed because our container and overlay do not have `zlib` installed. To remedy this, we can install `zlib` by modifying our overlay. To do this, we must first completely close the RStudio session __AND__ delete the job. This is necessary because our overlay cannot be changed if it is being used. Next, open up a terminal in Open OnDemand by selecting **"Clusters"** -> **"Alpine Shell"** from the top menu bar.
-
-![](OnDemand/alpine_shell_depiction.png)
+```{image} ./OnDemand/alpine_shell_depiction.png
+:alt: The Clusters menu bar item in Open OnDemand showing the Alpine Shell option in its drop-down menu.
+```
 
 Next, start an interactive session on a compute node (here we start up an Alpine `acompile` session).
 ```
@@ -91,8 +95,27 @@ Now, we can startup a new Rstudio session and attempt the XVector install.
 BiocManager::install("XVector")
 ```
 We should now see that the XVector install goes through!
+```r
+installing to /projects/ralphie/Rstudio_libs/4.2.2/00LOCK-XVector/00new/XVector/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (XVector)
 
-![](OnDemand/successful_x_vector_install_rstudio.png)
+The downloaded source packages are in
+        ‘/projects/ralphie/.rstudio-server/RtmpJTjPZO/downloaded_packages’
+Old packages: 'boot', 'class', 'codetools', 'foreign', 'MASS', 'Matrix', 'mgcv', 'nlme', 'spatial', 'survival'
+Update all/some/none? [a/s/n]:
+n
+>
+```
 
 ## Running code developed in the RStudio Server application
 
