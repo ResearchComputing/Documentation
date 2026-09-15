@@ -43,7 +43,7 @@ In Jupyter Session applications you have the option to launch a Jupyter session 
 
 2. Once the Jupyter session has been launched, open up a terminal in JupyterLab by clicking the "New Launcher" icon and then selecting "Terminal" (listed under "Other").
 ```{image} ./OnDemand/jupyter_session_open_terminal.png
-:alt: A screenshot showing how to open a terminal application in Jupyter Notebook by clicking the "New Launcher" icon on the left side of the screen and then selecting "Terminal", listed under Other.
+:alt: A screenshot showing how to open a terminal application in Jupyter notebook. This process is described in the section Creating a Jupyter Session Conda Environment.
 :align: center
 :scale: 60%
 ```
