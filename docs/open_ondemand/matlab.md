@@ -1,10 +1,9 @@
 # MATLAB GUI
 
 The **MATLAB** application provides users with a MATLAB graphical user interface (GUI). This GUI can often be helpful when prototyping code. The **MATLAB** application is configured such that a **Core Desktop** session is started and then MATLAB is launched. Due to this reason, all the functionalities and limitations of the **Core Desktop** application also apply. For more information on the **Core Desktop** application, see our documentation [Core Desktop (remote desktop)](./core_desktop.md). 
-
-```{eval-rst}
-.. figure:: ./OnDemand/matlab_gui_app.png
-   :align: center
+```{image} ./OnDemand/matlab_gui_app.png
+:alt: The MATLAB graphical user interface within a Linux desktop environment. The MATLAB interface is showing the Editor, Current Folder, Workspace, and Command Window. Some example code is displayed, as well as its output.
+:align: center
 ```
 
 ```{attention}
@@ -18,11 +17,10 @@ The GPUs provided are not meant for computationally intensive workflows. These G
 2. Select your preferred configuration option and then click **“Launch”** to submit the MATLAB job to the queue. For more information on custom configuration options see [Configuring Open OnDemand interactive applications](./configuring_apps.md). The wait time depends on the number of other users presently on the resource. Requesting smaller and shorter jobs may facilitate shorter wait times. 
 
 3. When your MATLAB session is ready, you can click the **"Launch MATLAB"** button to bring up a web page with the MATLAB GUI. In most cases, the default compression and image quality will suffice. If you do have problems with image quality, you can adjust these settings as necessary. 
-
-```{eval-rst}
-.. figure:: ./OnDemand/matlab_gui_launch.png
-   :align: center
-   :scale: 50%
+```{image} ./OnDemand/matlab_gui_launch.png
+:alt: The Open OnDemand interactive job information interface. The running job, labeled "MATLAB (26531)", shows a hostname of "viz1.rc.int.colorado.edu", creation time, time remaining, session ID, and the number of nodes and cores available. Sliders for "Compression" and "Image Quality", increasing from zero (lowest) at the left to nine (highest) at the right are below the running job. The button "Launch MATLAB" is visible in the bottom-left below the sliders. In the bottom right, a "View Only (Share-able Link)" button is visible. A "Delete" button is also visible in the top-right.
+:align: center
+:scale: 50%
 ```
 
 4. Once launched, it may take a few minutes for MATLAB to begin. However, once started, you should be able to interact with MATLAB as you would on your own computer.  
@@ -31,10 +29,10 @@ The GPUs provided are not meant for computationally intensive workflows. These G
 * Currently, the MATLAB software is installed locally on the resources. This restricts users to the provided versions, if you want to launch MATLAB via this application. Alternatively, you may also start up a [Core Desktop](./core_desktop.md) session and launch MATLAB from the command line. This is often useful if you would like to utilize a different version of MATLAB. 
 
 * You can copy/paste into/out of the desktop using the clipboard in the "hidden" tab on the left-hand-side of the screen.
-```{eval-rst}
-.. figure:: ./OnDemand/core_desktop_copy_paste.png
-   :align: center
-   :scale: 50%
+```{image} ./OnDemand/core_desktop_copy_paste.png
+:alt: noVNC Clipboard panel used to copy and paste text between the local computer and Core Desktop session. It consists of a blank text box labeled "Clipboard", and a "Clear" button in the bottom-right below the text box.
+:align: center
+:scale: 50%
 ```
 
 * Closing the window will not terminate the job. You can use the **“My Interactive Sessions”** tab to view all open interactive sessions and terminate them.
