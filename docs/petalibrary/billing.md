@@ -14,6 +14,10 @@ In all but the rarest circumstances, we will not bill for PetaLibrary services a
 
 ## Invoicing
 
+```{note}
+External (non-CU System) customers should send payment to: **3645 Marine Street, UCB 455, Boulder, CO 80309**.
+```
+
 ### Billable Events
 When a PetaLibrary billable event occurs, Research Computing will generate an
 invoice. The following are billable events: 
