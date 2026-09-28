@@ -254,12 +254,12 @@ Additionally, if you would like to see the features applied to a specific node, 
 
 Features on Alpine follow the following format:
 ```
-ActiveFeatures=<data center>,<rack>,<institution>,<node type>,<CPU chip manufacturer>-cpu,<CPU microarchitecture generation>,<cpu model>,<num cores>c,<num threads per core>t, <GPU manufacturer>-gpu,ib 
+ActiveFeatures=<data center>,<rack>,<institution>,<node type>,<CPU chip manufacturer>-cpu,<CPU microarchitecture generation>,<cpu model>,<num cores>c,<num threads per core>t,<GPU manufacturer>-gpu,ib 
 ```
 
 In the table below we provide descriptions and examples for each of these features.
 
-| Feature  | Description | Example |
+| Feature  | Description | Examples |
 | -------- | ----------- | ------- |
 |   `<data center>`      | The data center where the node is located.            |  `hpcf`, `spsc`       | 
 | `<rack>`        |   The rack the node is located in.          |   `e2`, `c9`, `a9`      | 
@@ -271,7 +271,7 @@ In the table below we provide descriptions and examples for each of these featur
 |   `<num cores>c`      |   The total number of cores on the node.          |   `128c`, `64c`, `48c`      | 
 | `<num threads per core>t`        |    The number of threads per core.         |  `1t`, `2t`       | 
 |  `<GPU manufacturer>-gpu`       |  The company that designs the GPU. Note that this will be left off it is not a GPU node.           |  `nvidia-gpu`, `amd-gpu`       | 
-|  `<ib, if Infiniband is present>`       |   States if the node has Infiniband and is connected to other nodes via Infiniband. If there is no Infiniband on the node, this will be left off.          |   `ib`      | 
+|  `<Infiniband>`       |   States if the node has Infiniband and is connected to other nodes via Infiniband. If there is Infiniband on the node, `ib` will be specified, if not, `ib` will not appear.          |   `ib`      | 
 
 
 # Special-Purpose Resources
