@@ -27,6 +27,7 @@ Click the name of a training to view more details and register!
 
 ### **October 2026**
 - [Setting up LLMs on CURC Resources (A Short Course)](https://calendar.colorado.edu/event/setting-up-llms-on-curc-resources-a-short-course) - **October 1, 11am, Virtual (Zoom)**
+- [AWS Kiro IDE Immersion Day: Building Applications with AI (A Workshop)](https://calendar.colorado.edu/event/aws-kiro-ide-immersion-day-building-applications-with-ai-an-rc-workshop) - **October 7, 9:00am, Hybrid (Norlin Library E206/Zoom)**
 - [Harnessing the Power of GPU-Accelerated Workflows with Alpine (A Primer)](https://calendar.colorado.edu/event/harnessing-the-power-of-gpu-accelerated-workflows-with-alpine-a-primer) - **October 15, 11am, Virtual (Zoom)**
 - [Git & GitHub In-Depth (A Short Course)](https://calendar.colorado.edu/event/git-github-in-depth-a-short-course-7850) - **October 22, 10am, Hybrid (Norlin Library E206/Zoom)**
 
@@ -63,6 +64,7 @@ Click the name of a training to view more details and register!
 
 ### **Cloud**
 - [AWS New Accounts Onboarding Session](https://calendar.colorado.edu/event/aws-new-accounts-onboarding-session) - **September 16, 2:00pm, Hybrid (Norlin Library E206/Zoom)**
+- [AWS Kiro IDE Immersion Day: Building Applications with AI (A Workshop)](https://calendar.colorado.edu/event/aws-kiro-ide-immersion-day-building-applications-with-ai-an-rc-workshop) - **October 7, 9:00am, Hybrid (Norlin Library E206/Zoom)**
 
 ````
 
@@ -75,6 +77,7 @@ Click the name of a training to view more details and register!
 - [Getting Started with Research Computing: From Command Line to Job Scheduling (A Short Course)](https://calendar.colorado.edu/event/getting-started-with-research-computing-from-command-line-to-job-scheduling-a-short-course-6841) - **September 2, 11am, Virtual (Zoom)**
 - [Lunch-and-Learn: Sharing Data Across Institutions with PetaLibrary and Globus (A Quick Byte)](https://calendar.colorado.edu/event/lunch-n-learn-sharing-data-across-institutions-with-petalibrary-and-globus-a-quick-byte) - **September 11, 11am, Virtual (Zoom)**
 - [AWS New Accounts Onboarding Session](https://calendar.colorado.edu/event/aws-new-accounts-onboarding-session) - **September 16, 2:00pm, Hybrid (Norlin Library E206/Zoom)**
+- [AWS Kiro IDE Immersion Day: Building Applications with AI (A Workshop)](https://calendar.colorado.edu/event/aws-kiro-ide-immersion-day-building-applications-with-ai-an-rc-workshop) - **October 7, 9:00am, Hybrid (Norlin Library E206/Zoom)**
 
 ### **Intermediate**
 - [Lunch-and-Learn: [How to request GPUs on Alpine](https://calendar.colorado.edu/event/alpine-new-user-seminar-a-primer](https://calendar.colorado.edu/event/curc-lunch-and-learn-how-to-request-gpus-on-alpine) - **Friday, August 21, 12pm, Virtual (Zoom)**
