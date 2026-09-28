@@ -5,6 +5,7 @@ The **Files** application allows users to easily make modifications to directori
 ```{eval-rst}
 .. figure:: ./OnDemand/files_app_main_drop_down.png
    :align: center
+   :alt: A screenshot of Open OnDemand's file browser with the "Files" dropdown expanded to list a user's home directory, scratch directory, projects directory, and PetaLibrary. Instructions for navigating the file browser are provided under the "Files application" header.
 ```
 
 ```{important}
@@ -24,11 +25,13 @@ From the picture provided above, one can see that there are several convenient f
 ```{eval-rst}
 .. figure:: ./OnDemand/files_app_copy_move.png
    :align: center
+   :alt: A closeup screenshot of the file browser's Copy or Move window. Instructions for using the Copy or Move window are provided under the "Files application features" header.
 ```
-- Renaming, downloading, and deleting files or directories can be done from the drop-down menu next to the data. Additionally, one can view and edit files using this drop-down menu. The menu can be found by selecting the three vertical dots next to the data (pictured below). 
+- `Actions Dropdown` - Renaming, downloading, and deleting files or directories can be done from the drop-down menu next to the data. Additionally, one can view and edit files using this drop-down menu. The menu can be found by selecting the three vertical dots next to the data (pictured below). 
 ```{eval-rst}
 .. figure:: ./OnDemand/files_app_view_edit.png
    :align: center
+   :alt: A screenshot of the actions dropdown which lists the options for potential file modifications as View, Edit, Rename, Download, and Delete. 
 ```
 
 ```{note}

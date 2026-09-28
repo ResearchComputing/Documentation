@@ -25,8 +25,7 @@ may encounter when using squeue to check on your jobs.
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
 ```{seealso}
-A full list of these Job State codes can be found in [Slurm’s
-documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
+A full list of these Job State codes can be found in [Slurm’s Job State Codes](https://slurm.schedmd.com/squeue.html#lbAG) documentation.
 ```
 
 ### Job Reason Codes
@@ -49,8 +48,7 @@ documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
 | `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
 
 ```{seealso}
-A full list of these Job Reason Codes can be found [in Slurm’s
-documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
+A full list of these Job Reason Codes can be found in [Slurm’s Job Reason Codes](https://slurm.schedmd.com/squeue.html#lbAF) documentation.
 ```
 
 ## Alpine Job Submission Error Codes

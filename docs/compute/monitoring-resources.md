@@ -36,7 +36,7 @@ alpine|ucb-general|ralphie|Ralphie|5403|0|
 ```
 
 This output tells us that:
-* Ralphie has used "SUs" across four different accounts over the past year
+* Ralphie has used Service Units (SUs) across four different accounts over the past year
 * Ralphie's usage by account varied from 3,812 SUs to 15,987 SUs
 
 
@@ -57,7 +57,7 @@ Hint: suacct ucb-general 15
 
 Check `admin` account usage over past 180 days:
 ```{tip}
-Most user accounts follow the naming convention `ucbXXX_ascX`, in this example we show the `admin` account.
+Most user accounts follow the naming convention `ucbXXX_ascX`. In this example, we show the `admin` account.
 ```
 ```bash
 $ suacct admin 180
@@ -129,7 +129,7 @@ This output tells us that:
 
 ```{important}
 What is "Priority"?
-* Your priority is a number between 0.0 --> 1.0 that defines your relative placement in the queue of scheduled jobs
+* Your priority is a number between 0.0 and 1.0 that defines your relative placement in the queue of scheduled jobs.
 * Your priority is computed each time a job is scheduled and reflects the following factors:
   * Your "Fair Share priority" (the ratio of resources you are allocated versus those you have consumed for a given account)
   * Your job size (slightly larger jobs have higher priority)
@@ -468,31 +468,40 @@ XDMoD is a web portal for viewing metrics at the system-, partition- and user-le
 
 Would you like to know average queue wait times?  Do you need to better understand your historical resource utilization or utilization of your project account by user? The XDMoD ([XD Metrics on Demand](https://open.xdmod.org/9.0/index.html)) web-based tool provides users with the ability to easily obtain detailed metrics for High-Performance Computing resources. This open-source tool was developed by the University at Buffalo [Center for Computational Research (CCR)](http://www.buffalo.edu/ccr.html). CU Boulder Research Computing runs its own instance, [CURC XDMoD](https://xdmod.rc.colorado.edu) that enables users to query metrics for the _RMACC_, _Alpine_ and _Blanca_ computing resources. 
 
-__Getting started with XDMoD__
+### Getting started with XDMoD
 
 All CURC users have access to XDMoD (CU Boulder, CSU and RMACC). At this time, login is only supported for CU Boulder users.  Non-CU Boulder users may still query all of the statistics available to CU Boulder users, they just won't have the ability to personalize metrics. 
 
-### Step 1: Navigate to the CURC XDMoD instance
+#### Step 1: Navigate to the CURC XDMoD instance
 
-In your browser navigate to [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu). Upon reaching there you will see a summary screen similar to the following image.
+In your browser navigate to [https://xdmod.rc.colorado.edu](https://xdmod.rc.colorado.edu). Upon reaching there, you will see a summary screen similar to the following image.
 
-![](xdmod/xdmod_homescreen.png)
+```{image} ./xdmod/xdmod_homescreen.png
+:alt: The XDMoD home screen, showing various charts and graphs, such as wait time per job per queue for Blanca, and total CPU hours by resource.
+:align: center
+```
 
-This screen provides some "quick stats" and summary plots that address some of the most common user questions, such as average wait times and recent resource usage by system (Alpine or Blanca) and partition.  These metrics may be all you need. If you want to personalize metrics you can login with your CURC username and password (*currently only supported for CU Boulder users*).
+This screen provides some "quick stats" and summary plots that address some of the most common user questions, such as average wait times and recent resource usage by system (Alpine or Blanca) and partition.  These metrics may be all you need. If you want to personalize metrics, you can login with your CURC username and password (*currently only supported for CU Boulder users*).
 
-### Step 2: Login (CU Boulder users only)
+#### Step 2: Login (CU Boulder users only)
 
 Choose the __Sign In__ option near the upper left of the screen.  This will initiate a pop-up window that gives you the option to _"Sign in with CU Boulder Research Computing"_ or _"Sign in with a local XDMoD account"_. 
 
-![](xdmod/xdmod_sign_in.png)
+```{image} ./xdmod/xdmod_sign_in.png
+:alt: The XDMoD sign-in dialog box, showing options to either sign in with CU Boulder Research Computing or sign in with a local XDMoD account.
+:align: center
+```
 
 Choose the option for _"Sign in with CU Boulder Research Computing"_ and enter your CURC username and password. The portal uses 2-factor authentication, so you will need to accept the Duo push to your phone to complete login.
 
-### Step 3: Familiarize yourself with XDMoD
+#### Step 3: Familiarize yourself with XDMoD
 
-Whether or not you login, you'll start on the _"Summary"_ screen.  
+Whether or not you log in, you'll start on the _"Summary"_ screen.  
 
-![](xdmod/xdmod_post_login.png)
+```{image} ./xdmod/xdmod_post_login.png
+:alt: The XDMoD home screen, showing various charts and graphs, such as wait time per job per queue for Blanca, and total CPU hours by resource. Various additional options are now available at the top post-sign in.
+:align: center
+```
 
 The following tabs will be available, depending on whether you are logged in
 * __Summary__ (the screen you are on when you login)
@@ -511,11 +520,11 @@ _XDMoD Syntax_
 * A "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`)
 ```
 
-### Step 4: Become a pro!
+#### Step 4: Become a pro!
 
 XDMoD can query a seemingly endless number of metrics, more than could ever be described in this documentation.  To learn how to query specific metrics, customize your views, etc., please refer to the [XDMoD documentation](https://xdmod.rc.colorado.edu/user_manual/index.php).
 
-### Example use case
+#### Example use case
 
 Let's say you want to see how many core hours your project account has used over time, including the usage by user.  
 
@@ -523,7 +532,10 @@ Let's say you want to see how many core hours your project account has used over
 * In the "Metrics and Options" menu, choose _CPU Hours: Total_ to create a graph of total CPU hours consumed over a default period. In XDMoD syntax a "CPU Hour" refers to a "core hour" (for a single job, this would be the number of `ntasks` a user chooses in their job script multiplied by how long the job runs).  
 * Click anywhere on the blue line in the graph to expose the "Drill Down" menu:
 
-![](xdmod/xdmod_cpuhrs_total.png)
+```{image} ./xdmod/xdmod_cpuhrs_total.png
+:alt: A graph of CPU hours shown under the Usage tab in XDMoD. After having clicked a point on the blue line of the graph representing CPU hours, a "drilldown" menu appears with options to filter by various parameters such as User, Queue, or Job Wait Time.
+:align: center
+```
 
 * Choose the "PI" option.  In XDMoD syntax a "PI" is a project account (e.g., `ucb-general` or `ucb124_asc1`).  
 * This will revise the graph to show CPU usage for different "PIs" (accounts), showing only the accounts with the greatest usage. Your account may not be shown. To find it click the _Filter_ tab at the top and search for your project (e.g., `ucb-general`). 

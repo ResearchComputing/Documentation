@@ -41,7 +41,7 @@ OnDemand. CURC OnDemand is a browser-based, integrated, single access
 point for HPC resources. It includes access to interactive apps such 
 as Matlab, a virtual desktop, and more. 
 
-	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../open_ondemand/matlab.md). 
+	You can find instructions to start an interactive Matlab session in our [OnDemand Matlab](../open_ondemand/matlab.md) documentation. 
 
 
 2. Interactive SLURM job:
@@ -133,9 +133,7 @@ This file has a few basic parts:
    by bash, but will be read by Slurm. Of particular note is the
    `--output` parameter which specifies the file where stderr and
    stdout (including the output from our Matlab script) will be
-   written. For a description of the Slurm parameters, [please see the
-   general Slurm documentation
-   here](https://slurm.schedmd.com/sbatch.html)
+   written. For a description of the Slurm parameters, [please see the Slurm documentation on sbatch](https://slurm.schedmd.com/sbatch.html)
 
 3. The lines beginning with `module purge` remove any unneeded
    software and ensure that the appropriate Matlab module is loaded on

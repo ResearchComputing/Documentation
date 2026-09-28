@@ -1,47 +1,36 @@
-# AWS
-
-Amazon Web Services (AWS) Documentation
-
-This applies to customers who are using a **Research Computing Cloud Foundations** managed AWS account.
+# Amazon Web Services
 
 ```{important}
-Research Computing Cloud Foundations managed AWS accounts can be provisioned only for direct affiliates (students, faculty, staff) of the University of Colorado. Access to the account can be shared beyond that scope at the discretion of the account holder.
+Cloud Foundations managed AWS accounts can be provisioned only for direct affiliates (students, faculty, and staff) of the University of Colorado. Access to the account can be shared beyond that scope at the discretion of the account holder.
 ```
 
 ## Landing Zones
 
-Each managed AWS account is associated with exactly one landing zone. A landing zone is a consistent group of account configuration, networking, and security controls that are applied to all associated accounts.
+Every managed AWS account is associated with exactly one landing zone. A landing zone is a standardized set of account configuration, networking, and security controls that is applied to the accounts associated with it.
 
-The Cloud Foundations team currently supports two landing zones, **LCA0** and **LCA1**. The landing zone associated with your AWS account dictates how you should log in and how the account is designed to work. You should reference documentation below that aligns with your landing zone.
+Currently we support two landing zones:
+
+| Landing zone | Description |
+| --- | --- |
+| LCA0 | The original landing zone, intended for public data. |
+| LCA1 | The next-generation landing zone, designed to support a wider range of data classifications. |
+
+Your account's landing zone determines how you access your AWS account and which capabilities and security controls are available.
 
 ### How do I know what landing zone my AWS account is in?
 
-You received a url to log into your AWS account as part of your onboarding.
+You can determine which landing zone your AWS account uses from the AWS login URL provided during account onboarding.
 
-If you login via [https://aws-classic.colorado.edu/](https://aws-classic.colorado.edu/), you are using **LCA0**.
-
-If you login via [https://aws.colorado.edu/](https://aws.colorado.edu/), you are using **LCA1**.
-
-### Landing Zone: LCA0
-
-LCA0 is the original landing zone, rated only for public data.
-
+If you access your AWS account through [https://aws-classic.colorado.edu/](https://aws-classic.colorado.edu/), you are using **LCA0**.
 ```{toctree}
 :maxdepth: 2
-:caption: LCA0
-
+:hidden:
 lca0/index
-
 ```
 
-### Landing Zone: LCA1
-
-LCA1 is the next generation landing zone that will be rated to support a variety of data classifications.
-
+If you access your AWS account through [https://aws.colorado.edu/](https://aws.colorado.edu/), you are using **LCA1**.
 ```{toctree}
 :maxdepth: 2
-:caption: LCA1
-
+:hidden:
 lca1/index
-
 ```

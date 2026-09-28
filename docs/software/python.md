@@ -44,7 +44,7 @@ Follow these steps from a Research Computing terminal session on an Alpine
 Run the following command to load the base Anaconda software:  
 
 ```
-[johndoe@c3cpu-a7-u19-1 ~]$ module load anaconda
+[johndoe@c3cpu-a7-u19-1 ~]$ module load miniforge
 ```
 
 ```{note}
@@ -74,7 +74,7 @@ __2. Create your own custom environment(s).__
 
 Both options are discussed below.
 
-#### Using one of CURC's pre-installed environment:
+#### Using one of CURC's pre-installed environments:
 
 To use the CURC environment with OpenMP, run the following command with 
 Anaconda initialized:
@@ -116,7 +116,7 @@ In the examples below the environment is created in `/projects/$USER/software/an
 __1. Initialize Anaconda if you haven't already done so:__
  
 ```
-[johndoe@c3cpu-a7-u19-1 ~]$ module load anaconda
+[johndoe@c3cpu-a7-u19-1 ~]$ module load miniforge
 (base) [johndoe@c3cpu-a7-u19-1 ~]$ 
 ```
 
@@ -175,7 +175,7 @@ If you encounter a `--- Please select a CRAN mirror for use in this session ---`
 >install.packages('RMySQL', repos='http://cran.us.r-project.org')
 ```
 
-For more information on managing conda environments, [check out Anaconda's documentation here.](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+For more information on managing conda environments, check out Anaconda's documentation on [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
 
 ### Basic Conda commands to get you started:

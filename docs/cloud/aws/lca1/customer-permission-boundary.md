@@ -2,8 +2,6 @@
 
 The `CustomerAdmin` role is the default role that customers use to administer their AWS account. This role should be used to set up new IAM roles and deploy required cloud infrastructure. In order to protect resources owned by other systems, some permissions are limited.
 
-If you have any questions about `CustomerAdmin` permissions or they are blocking the deployment of cloud resources, please reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
-
 ## Exclusions
 
 Explicitly denied actions to the `CustomerAdmin` role include:
@@ -34,8 +32,10 @@ Creation of new users and roles is permitted with a few caveats:
 
 * Users and roles must be assigned the `oitcld-customer-roles-permission-boundary` permissions boundary during creation.
 * Role names must be prefixed with `customer-`, for example: `customer-role-test`. Failure to add the prefix will result in an error that you are not authorized to perform: iam:CreateRole api call.
-```{image} images/role-prefix-error.png
-:alt: The AWS shared responsibility model with CFS added between AWS and the customer
+
+```{image} lca1_images/role-prefix-error.png
+:alt: AWS console error banner titled Failed to create role test. Error message: User arn:aws:sts::111111111111:assumed-role/test-role/ralphie@colorado.edu is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::111111111111:role/test-role with an explicit deny in a permissions boundary: arn:aws:iam::111111111111:policy/test-boundary. Described under Creating Users and Roles.
+:align: center
 ```
 
 
@@ -55,6 +55,7 @@ When creating new AWS Roles or Users, customers must set the permissions boundar
 
 On Step 2 of the "Create role" or "Create user" wizard, search for and add the `oitcld-customer-roles-permission-boundary` policy to the "Set permissions boundary" section.
 
-```{image} images/customer-permission-boundary/permissions-boundary.png
-:alt: Attaching a permissions boundary to a new role in the AWS console
+```{image} lca1_images/customer-permission-boundary/permissions-boundary.png
+:alt: Attaching a permissions boundary to a new role in the AWS console. Described under Attaching Permissions Boundary.
+:align: center
 ```

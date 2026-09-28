@@ -287,7 +287,7 @@ The `CMD` tag indicates the default command you wish your container to run (opti
 
 The `WORKDIR` tag indicates the directory you wish start in when running the container.
 
-Docker will parse through the Dockerfile and build the image exactly as you’ve specified. There is a large assortment of commands that can be utilized in a Dockerfile including default file transfers, volume mounting, changing the default shell, and more. Read more about creating Dockerfiles here: <https://docs.docker.com/engine/reference/builder/>
+Docker will parse through the Dockerfile and build the image exactly as you’ve specified. There is a large assortment of commands that can be utilized in a Dockerfile including default file transfers, volume mounting, changing the default shell, and more. You can learn more on the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/) page.
 
 In the directory with your Dockerfile, you can build your Docker image with the following command:
 

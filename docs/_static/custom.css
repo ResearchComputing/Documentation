@@ -19,6 +19,10 @@
     max-width: 100rem;
 }
 
+img {
+    margin-bottom: 1em;
+}
+
 .code-block-caption {
     color: black;
 }

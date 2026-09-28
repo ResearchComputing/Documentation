@@ -27,6 +27,14 @@ CURC systems and services (Alpine, Blanca, Open OnDemand, Petalibrary, core stor
  
 For users requiring secure research computing environments to ensure compliance for sensitive data types such as those mentioned above, CURC offers secure research computing services. More information can be found on the [Secure Research Computing Resources](https://www.colorado.edu/rc/secure-research-computing-resources) webpage.
 
+## Federal Contract Information (FCI) and PetaLibrary storage tiers
+
+Some federally funded research involves Federal Contract Information (FCI), as defined in [FAR 52.204-21](https://www.acquisition.gov/far/52.204-21). Currently, only the active PetaLibrary storage tier is available for storing FCI. The archive tiers, including "active+archive", are not currently available for storing FCI data. We'll update this page when the other tiers become available.
+
+Please note, FCI is not the same as Controlled Unclassified Information (CUI). CUI may not be stored on any Research Computing system. If your project involves CUI, contact [The Preserve](https://www.colorado.edu/rc/secure-research-computing-resources).
+
+If an existing allocation will start storing FCI or if you are unsure which tier is best for your allocation, please contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu). A Research Computing staff member can help confirm the appropriate tier for your data storage needs.
+
 <br>
 
 ## Core storage data retention

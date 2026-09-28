@@ -2,10 +2,10 @@
 
 ## Security Incidents
 
-All security incidents and *suspected* security incidents that occur in your AWS account **must be reported to both [OIT Security](https://www.cu.edu/security/reporting-incident) and [Cloud Foundations](mailto:rc-help@colorado.edu)**.
+All security incidents and *suspected* security incidents that occur in your AWS account **must be reported to both [OIT Security](https://www.cu.edu/security/reporting-incident) and Cloud Foundations via the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form)**.
 
 ```{important}
-If you become aware of, or suspect, a security incident has occurred in your AWS account, please [report it immediately](https://www.cu.edu/security/reporting-incident) directly to the CU Boulder OIT Security office **and** by emailing Cloud Foundations at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
+If you become aware of, or suspect, a security incident has occurred in your AWS account, please [report it immediately](https://www.cu.edu/security/reporting-incident) directly to the CU Boulder OIT Security office **and** notify Cloud Foundations by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 ```
 
 ### Information to include in the incident report
@@ -22,7 +22,7 @@ Please provide the following information when reporting an incident (as specifie
 
 ## Operational Incidents
 
-If Cloud Foundations-supported infrastructure in your AWS account is not behaving as you expect, please let us know by mailing [rc-help@colorado.edu](mailto:rc-help@colorado.edu). We'll do our best to get it corrected as soon as possible. Cloud Foundations provides support during official CU business hours.
+If Cloud Foundations-supported infrastructure in your AWS account is not behaving as you expect, please let us know by submitting a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). We'll do our best to get it corrected as soon as possible. Cloud Foundations provides support during official CU business hours.
 
 ```{note}
 While we may be able to advise, support is limited for AWS resources not managed by Cloud Foundations. We are not able to assist with issues specific to customer-managed applications.
