@@ -120,7 +120,7 @@ Click "Manage" in the SSHKeyAuthenticator row.
 
 Select "Add SSH Key".
 ```{image} ./registry-images/add_sshkey.png
-:alt: CILogon Add SSH Key form with the Add SSH Key button.
+:alt: CILogon Add SSH Key form that is empty with no entries. The Add SSH Key button is highlighted in the top right corner.
 :align: center
 ```
 
