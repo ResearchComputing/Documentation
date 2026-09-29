@@ -136,7 +136,7 @@ Select "Authenticators" from the menu on the right.
 
 Click "Manage" in the SSHKeyAuthenticator row. 
 ```{image} ./amc_ssh_images/manage_sshkeyauthenticator.png
-:alt: CILogon SSHKeyAuthenticator management page.
+:alt: CILogon SSHKeyAuthenticator management page which shows an example table of SSH Key authenticators. The table lists one entry for SSHKeyAuthenticator with a status of "Not set (Not set)" and an action button labeled "manage". 
 :align: center
 ```
 
