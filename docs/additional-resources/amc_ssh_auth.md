@@ -22,21 +22,33 @@ A download link for GlobalProtect VPN and setup instructions for CU Anschutz aff
 You will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
 
-![](./amc_ssh_images/email_invitation.png)
+```{image} ./amc_ssh_images/email_invitation.png
+:alt: Email invitation from registry@cilogon.org to enroll in the RMACC Registry.
+:align: center
+```
 
 Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so be sure to complete [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry), [Step 2](#step-2-generate-an-ssh-key), and [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) before closing your browser tab.__ 
 
-![](./amc_ssh_images/accept_invitation.png)
+```{image} ./amc_ssh_images/accept_invitation.png
+:alt: CILogon invitation acceptance page with the Accept button.
+:align: center
+```
 
 You will be automatically routed to the login page. Select "ACCESS CI (XSEDE)" from the Identity Provider dropdown menu and click "Log On".
 <br>
 
-![](./amc_ssh_images/cilogon_identityprovider_access.png)
+```{image} ./amc_ssh_images/cilogon_identityprovider_access.png
+:alt: CILogon identity provider selection page with ACCESS CI (XSEDE) highlighted.
+:align: center
+```
 
 Enter your ACCESS/XSEDE username and password and click "Login".
 <br>
 
-![](./amc_ssh_images/access_credentials.png)
+```{image} ./amc_ssh_images/access_credentials.png
+:alt: CILogon login form for ACCESS or XSEDE credentials.
+:align: center
+```
 <br>
 
 Accept the Duo push from your device.
@@ -116,26 +128,41 @@ Select "MY PROFILE (RMACC)".
 Select "Authenticators" from the menu on the right. 
 <br>
 
-![](./amc_ssh_images/menu_options.png)
+```{image} ./amc_ssh_images/menu_options.png
+:alt: CILogon profile menu with the Authenticators option selected.
+:align: center
+```
 <br>
 
 Click "Manage" in the SSHKeyAuthenticator row. 
-![](./amc_ssh_images/manage_sshkeyauthenticator.png)
+```{image} ./amc_ssh_images/manage_sshkeyauthenticator.png
+:alt: CILogon SSHKeyAuthenticator management page.
+:align: center
+```
 
 Select "Add SSH Key".
-![](./amc_ssh_images/add_sshkey.png)
+```{image} ./amc_ssh_images/add_sshkey.png
+:alt: CILogon Add SSH Key form with the Add SSH Key button.
+:align: center
+```
 
 Click "Choose File". If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_ed25519.pub ~/Desktop`
 <br>
 
 Locate your __public__ key (`<keyname>.pub`) on your local drive, then click "UPLOAD".
-![](./amc_ssh_images/upload_sshkey.png)
+```{image} ./amc_ssh_images/upload_sshkey.png
+:alt: CILogon upload SSH key page with the public key selected and upload button.
+:align: center
+```
 
 <br>
 
 A green message box will notify you that your SSH key has been successfully added to your account.
 <br>
-![](./amc_ssh_images/sshkeyadded.png)
+```{image} ./amc_ssh_images/sshkeyadded.png
+:alt: Success message confirming the SSH key was added to the CILogon account.
+:align: center
+```
 
 After a few minutes, you can proceed to [Step 4](#step-4-sign-in-from-a-terminal-or-terminal-emulator).
 
@@ -162,7 +189,10 @@ You will be prompted to enter your passphrase if you set one during key generati
 Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ciX` (where `X` will be a numeric value). The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
-![](./amc_ssh_images/loginprompt_motd.png)
+```{image} ./amc_ssh_images/loginprompt_motd.png
+:alt: CURC login terminal showing the message of the day and command prompt after a successful SSH login.
+:align: center
+```
 
 
 ## Deleting or Replacing SSH Keys in RMACC CILogon Registry
@@ -183,7 +213,10 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 * If you are prompted for a **__password__** please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form), as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt. **Mac users should first attempt the solution provided in the bullet point above.**
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
-![](./amc_ssh_images/notregistered_error.png)
+```{image} ./amc_ssh_images/notregistered_error.png
+:alt: Error message indicating the user is not in the COmanage registry.
+:align: center
+```
 <br>
 
 <br>
