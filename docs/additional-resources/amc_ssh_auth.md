@@ -209,10 +209,11 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 * If you are prompted for a **__password__** please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form), as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt. **Mac users should first attempt the solution provided in the bullet point above.**
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
-```{image} ./amc_ssh_images/notregistered_error.png
+```{figure} ./amc_ssh_images/notregistered_error.png
 :alt: Error message indicating the user is not in the COmanage registry.
 :align: center
-```
+
+Error Message : The identifier "http:/cilogon.org/serverE/users/51802" is not registered. If your request for enrollment is still being processed, you will not be able to login until it is approved. Please contact an administrator for assistance.
 <br>
 
 <br>
