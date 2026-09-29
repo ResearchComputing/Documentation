@@ -11,7 +11,10 @@ Before creating a new issue, please review all currently open and closed issues 
 
 Creating an issue is straightforward. To create an issue, first navigate to our [GitHub issues](https://github.com/ResearchComputing/Documentation/issues) page, select the green **"New Issue"** button, and login into your GitHub account.
 
-![](./contributing_to_docs_images/creating_issue.png)
+```{image} ./contributing_to_docs_images/creating_issue.png
+:alt: GitHub repository issue creation page with the New Issue button highlighted.
+:align: center
+```
 
 Once the new issue screen has been opened, please fill out the following two items: 
 - [ ] In the **"Add a title"** section, create a succinct title for your issue that clearly states what the issue is about. 
@@ -37,11 +40,17 @@ Before creating a pull request please review all guidelines provided in the [CUR
     - Navigate to [ResearchComputing/Documentation](https://github.com/ResearchComputing/Documentation) and make sure that you are signed into your GitHub account
     - Click the **"Fork"** button in the upper right corner of the page
 
-        ![](./contributing_to_docs_images/start_fork.png)
+        ```{image} ./contributing_to_docs_images/start_fork.png
+        :alt: A closeup of the GitHub repository page's menu showing the Edit Pins, Unwatchable, Fork, and Starred options.
+        :align: center
+        ```
 
     - You may then leave all of the default settings (select yourself as the owner) and click the green button **"Create fork"**
     
-        ![](./contributing_to_docs_images/create_new_fork.png)
+        ```{image} ./contributing_to_docs_images/create_new_fork.png
+        :alt: Create fork dialog with the default repository settings and Create fork button.
+        :align: center
+        ```
 
     - Once executed, this will create your own version of the Documentation repo under your GitHub
 
@@ -67,35 +76,56 @@ Before creating a pull request please review all guidelines provided in the [CUR
     **Opening a pull request** from GitHub can be done in one of two ways:
     - If you have just committed and pushed, you will see the following message in your forked repo (**this will disappear after some time**). To create a pull request from here, click on **"Compare & pull request"**.
 
-        ![](./contributing_to_docs_images/open_pr_method_1.png)
+        ```{image} ./contributing_to_docs_images/open_pr_method_1.png
+        :alt: Compare and pull request prompt in a GitHub forked repository.
+        :align: center
+        ```
 
     - If the above message has disappeared, you can also open a pull request by selecting your branch, clicking the drop-down **"Contribute"** menu, and then clicking on **"Open pull request"**
 
-        ![](./contributing_to_docs_images/open_pr_method_2.png)
+        ```{image} ./contributing_to_docs_images/open_pr_method_2.png
+        :alt: GitHub branch menu with the Contribute drop-down and Open pull request option.
+        :align: center
+        ```
 
     **Creating the pull request** from GitHub can be done once you have opened up the pull request and have added a descriptive title and description by selecting the **"Create pull request"** button.
 
-    ![](./contributing_to_docs_images/filling_in_pr_info.png)
+    ```{image} ./contributing_to_docs_images/filling_in_pr_info.png
+    :alt: GitHub pull request form with title and description fields.
+    :align: center
+    ```
 
     :::{important}
     - Make sure that you are merging into the **"main"** branch of the official repository.
     - If the changes you have made are not done, you can also choose to create a draft pull request. This notifies others that the pull request is in progress. To do this, select **"Create draft pull request"** from the green drop-down.
 
-        ![](./contributing_to_docs_images/set_type_of_pr.png)
+        ```{image} ./contributing_to_docs_images/set_type_of_pr.png
+        :alt: GitHub pull request type selector with the Create draft pull request option.
+        :align: center
+        ```
 
     :::
 
 7. **View documentation:** The rendered documentation for the changes in the pull request can be seen once the pull request has been created. To view them go to the bottom of the pull request and select **"show all checks"** and then select **"Details"** next to the readthedocs check. This will automatically open up the documentation (you can right click and open up this in a new tab if you want).
 
-    ![](./contributing_to_docs_images/view_docs_pr.png)
+    ```{image} ./contributing_to_docs_images/view_docs_pr.png
+    :alt: GitHub pull request checks panel showing the readthedocs details link.
+    :align: center
+    ```
 
 8. **Ready to merge:** If you have the appropriate permissions and all checks have passed, you can then **squash and merge** in your changes. This can be done by selecting the **"Squash and merge"** option from the drop-down menu and then clicking it.
 
-    ![](./contributing_to_docs_images/merging_in_pr.jpg)
+    ```{image} ./contributing_to_docs_images/merging_in_pr.jpg
+    :alt: GitHub pull request menu with the Squash and merge option selected.
+    :align: center
+    ```
 
     Once **"Squash and merge"** has been selected, you can merge in the pull request by selecting **"Confirm squash and merge"**:
 
-    ![](./contributing_to_docs_images/confirm_squash_merge.jpg)
+    ```{image} ./contributing_to_docs_images/confirm_squash_merge.jpg
+    :alt: GitHub confirmation dialog for Squash and merge before finalizing the pull request.
+    :align: center
+    ```
 
     :::{note}
     - The PR branch must be up-to-date with the base branch (**"main"**).
