@@ -41,7 +41,7 @@ Before creating a pull request please review all guidelines provided in the [CUR
     - Click the **"Fork"** button in the upper right corner of the page
 
         ```{image} ./contributing_to_docs_images/start_fork.png
-        :alt: GitHub repository page with the Fork button in the upper right corner.
+        :alt: A closeup of the GitHub repository page's menu showing the Edit Pins, Unwatchable, Fork, and Starred options.
         :align: center
         ```
 
