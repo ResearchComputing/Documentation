@@ -25,7 +25,7 @@ All jobs are run through a batch/queue system.  Interactive jobs on compute node
 
 Blanca uses a separate instance of the Slurm scheduling system from the other RC compute resources.  You can use Blanca’s Slurm instance by loading a special module on a login node: `module load slurm/blanca`.
 
-More details about how to use Slurm can be found [here](../../running-jobs/running-apps-with-jobs.md)
+More details about how to use Slurm can be found in the [Running Applications with Jobs documentation](../../running-jobs/running-apps-with-jobs.md).
 
 ## QoS
 
@@ -286,7 +286,7 @@ The interactive job won't start until the resources that it needs are available,
 ## Important notes
 
 1. To see what modules are available, start an interactive job on a compute node and use `module avail` or `module spider` on it.
-2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/scratch/alpine`, which will offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on storage.](../../compute/filesystems.md)
+2. `/home`, `/projects`, and `/pl/active` (PetaLibrary Active) are available on all Blanca nodes.  Scratch I/O can be written to `/scratch/alpine`, which will offer much better performance than `/projects`.  Most Blanca nodes also have at least 400 GB of scratch space on a local disk, available to jobs as `$SLURM_SCRATCH`.  For more info on the different RC storage spaces, [please see our page on filesystems](../../compute/filesystems.md).
 3. There are no dedicated Blanca compile nodes.  To build software that will run on Blanca, start an interactive job on a node like the one on which you expect your jobs to run, and compile your software there.  Do not compile on the login nodes!
 4. Multi-node MPI jobs that do a lot of inter-process communication do not run well on most standard Blanca nodes. Nodes equipped with specialty fabrics, such as any node on Blanca HPC can run MPI applications much more efficiently.
    
