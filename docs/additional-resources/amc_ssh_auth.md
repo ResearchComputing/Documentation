@@ -189,10 +189,6 @@ You will be prompted to enter your passphrase if you set one during key generati
 Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ciX` (where `X` will be a numeric value). The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
-```{image} ./amc_ssh_images/loginprompt_motd.png
-:alt: CURC login terminal showing the message of the day and command prompt after a successful SSH login.
-:align: center
-```
 
 
 ## Deleting or Replacing SSH Keys in RMACC CILogon Registry
