@@ -13,6 +13,22 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 
 ::::
 
+## How do I reset my CURC password?
+
+::::{dropdown} Show 
+:icon: note
+
+CU Research Computing does not manage passwords and cannot reset your password. If you have lost your password, please use the following links to reset it: 
+
+[CU Boulder users](https://identikey.colorado.edu/reset_password_ui.html)
+
+[CSU users](https://netid.colostate.edu/recover)
+
+[ACCESS/XSEDE users](https://account.access-ci.org/password)
+
+
+::::
+
 ## Duo Multi-Factor Authentication 
 
 ### How do I set up Duo?
