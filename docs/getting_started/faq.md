@@ -71,7 +71,15 @@ If you prefer to not use the Duo app or if you don't have a smart device, then D
 
 1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
 2. Enter your password when prompted, as `mypassword,sms`. For example, if my password is Ih3artdu0 I would type: `Ih3artdu0,sms`.
-3. A list of one-time-passwords (OTPs) will be texted to you via SMS. Another login prompt will appear on your screen. Using the first OTP in the list, login with your password as `mypassword,OTP`. For example, if my password is Ih3artdu0 and my OTP is 330456 I would type (without quotes): `Ih3artdu0,330456`.
+3. A list of one-time-passwords (OTPs) will be texted to you via SMS. While you are waiting for the SMS message, you'll see a "_Permission denied, please try again_" message followed by another login prompt. Now, using the first OTP in the list, login with your password as `mypassword,OTP`. For example, if my password is `Ih3artdu0` and my OTP is `330456` I would type: `Ih3artdu0,330456`.
+
+Example (noting that the password will not appear on your screen like below):
+
+```bash
+ralphie@login.rc.colorado.edu password: Ih3artdu0,sms
+Permission denied, please try again.
+ralphie@login.rc.colorado.edu password: Ih3artdu0,330456
+```
 4. Note that the next time you login, you can either request a new list of OTPs using Step 2 and then enter the first OTP via Step 3, or you can just use the next OTP in the list, and skip directly to Step 3.
 
 ````
