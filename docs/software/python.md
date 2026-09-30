@@ -37,7 +37,11 @@ variable because the `@` symbol in the usernames can occasionally be misinterpre
 
 ## Using the CURC Anaconda environment
 Follow these steps from a Research Computing terminal session on an Alpine 
-`acompile` node or within a Alpine/Blanca batch or interactive job.
+`acompile` node or within a Alpine/Blanca batch or interactive job. For example, begin by starting an Alpine `acompile` job as follows from a login node:  
+
+```
+[johndoe@login-ci3 ~]$ acompile
+```
 
 ### Activate the CURC Anaconda environment:
 

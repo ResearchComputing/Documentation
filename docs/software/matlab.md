@@ -159,6 +159,11 @@ will be shown in `Matlab_Hello_World.out`.
 
 ## Parallel Matlab on Alpine
 
+```{note}
+CURC Matlab currently does not support parallelization across nodes,
+only across cores on one node.
+```
+
 To fully utilize the multi-core capabilities of Alpine to speed up
 jobs, most code must first be parallelized. Matlab has many built in
 tools to accomplish this task. In this tutorial we will parallelize
@@ -229,6 +234,7 @@ Hello World from process 2
 Hello World from process 3
 ```
 
-CURC Matlab currently does not support parallelization across nodes,
-only across cores on one node.
+```{note}
+By default the Matlab `c.NumWorkers` parameter sets a hard limit of 12 workers in a parallel pool. To use more than 12 workers, you can specify a larger parallel pool with `parpool` prior to invoking the `parfor` loop. Additional details and examples can be found in the [Matlab parpool documentation](https://www.mathworks.com/help/parallel-computing/parpool.html).
+```
 

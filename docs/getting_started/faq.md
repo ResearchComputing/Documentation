@@ -13,6 +13,22 @@ On our [Acknowledging CURC Resources](./acknowledge_curc_resources.md) page, we 
 
 ::::
 
+## How do I reset my CURC password?
+
+::::{dropdown} Show 
+:icon: note
+
+CU Research Computing does not manage passwords and cannot reset your password. If you have lost your password, please use the following links to reset it: 
+
+[CU Boulder users](https://identikey.colorado.edu/reset_password_ui.html)
+
+[CSU users](https://netid.colostate.edu/recover)
+
+[ACCESS/XSEDE users](https://account.access-ci.org/password)
+
+
+::::
+
 ## Duo Multi-Factor Authentication 
 
 ### How do I set up Duo?
@@ -71,7 +87,15 @@ If you prefer to not use the Duo app or if you don't have a smart device, then D
 
 1. Type: `ssh <username>@login.rc.colorado.edu` into the command line. For example, if my username is jodo2018 I would type `ssh jodo2018@login.rc.colorado.edu`.
 2. Enter your password when prompted, as `mypassword,sms`. For example, if my password is Ih3artdu0 I would type: `Ih3artdu0,sms`.
-3. A list of one-time-passwords (OTPs) will be texted to you via SMS. Another login prompt will appear on your screen. Using the first OTP in the list, login with your password as `mypassword,OTP`. For example, if my password is Ih3artdu0 and my OTP is 330456 I would type (without quotes): `Ih3artdu0,330456`.
+3. A list of one-time-passwords (OTPs) will be texted to you via SMS. While you are waiting for the SMS message, you'll see a "_Permission denied, please try again_" message followed by another login prompt. Now, using the first OTP in the list, login with your password as `mypassword,OTP`. For example, if my password is `Ih3artdu0` and my OTP is `330456` I would type: `Ih3artdu0,330456`.
+
+Example (noting that the password will not appear on your screen like below):
+
+```bash
+ralphie@login.rc.colorado.edu password: Ih3artdu0,sms
+Permission denied, please try again.
+ralphie@login.rc.colorado.edu password: Ih3artdu0,330456
+```
 4. Note that the next time you login, you can either request a new list of OTPs using Step 2 and then enter the first OTP via Step 3, or you can just use the next OTP in the list, and skip directly to Step 3.
 
 ````
@@ -234,6 +258,36 @@ sstat --jobs=your_job_id --format=User,JobName,JobId,MaxRSS
 For more information on `sstat` or `sacct` commands, [take a look at our Useful Slurm Commands tutorial.](../running-jobs/slurm-commands.md) Or visit the Slurm reference pages on [sstat](https://slurm.schedmd.com/sstat.html) and [sacct](https://slurm.schedmd.com/sacct.html). 
 
 You can also view information related to service unit (SU) usage and CPU & RAM efficiency [using slurm commands](../compute/monitoring-resources.md#monitoring-through-slurm-commands). Note that CPU & RAM efficiency statistics will be included in emails sent when a job completes, if requested. 
+::::
+
+### Why are my run times so different across iterations of my workflow?
+::::{dropdown} Show 
+:icon: note
+
+Alpine is a large, shared, and heterogeneous computing environment, so some variation in application run time is expected, even when running the same workflow with the same resource requests.
+
+Several factors can contribute to this variability:
+
+* __CPU hardware__: Alpine contains multiple generations and models of CPUs with different performance characteristics. Jobs may therefore run faster or slower depending on which nodes they are assigned.
+
+* __CPU clock speeds__: Alpine CPUs use dynamic frequency scaling (“turbo”), which adjusts CPU clock speeds based on factors such as processor utilization, power, and temperature. Activity from other jobs sharing the same node can therefore affect the CPU performance available to your job.
+
+* __Shared storage__: Alpine’s networked storage systems are shared by many users and jobs. I/O performance can vary depending on overall system load, particularly for workflows that frequently read or write data.
+
+As a result, differences in run time do not necessarily indicate a problem with your workflow. For performance-sensitive benchmarking, consider the following:
+
+* Use node features to constrain hardware in your Slurm job script with the `--constraint` flag. Available node features can be determined by running variants of `scontrol show node |grep -i ActiveFeatures`. Examples include the CPU model (e.g,. `--constraint=epyc-9534`) and the rack (e.g., `--constraint=a9`)
+* Use the `--exclusive` flag to ensure no one else is using the node where you are running benchmarks.
+* Eliminate or minimize reliance on network-mounted filesystems such as `/home`, `/projects`, `/scratch/`, and `/pl`. Instead, if you require disk storage for your benchmark use the [local SSD on the node](../compute/filesystems.md/#local-scratch-on-alpine-and-blanca)
+
+Additionally, run multiple iterations and compare average or median run times rather than relying on a single run.
+
+You might also consider running benchmarks on systems that are better suited for consistency, for example, the NSF-sponsored [Chameleon platform](https://chameleoncloud.org). 
+
+```{note}
+The same principles apply for benchmarks run on Alpine GPUs.
+```
+
 ::::
 
 ### Why am I getting unexpected results for my GPU memory or utilization metrics?
