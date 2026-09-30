@@ -135,7 +135,8 @@ datasets.
 In the examples here, replace `<path-to-file>` with the path of the
 file you wish to copy, `<username>` with your Research Computing
 username, and `<target-path>` with the full path to the directory you
-would like to send the file to.
+would like to send the file to. Note that both commands are run locally
+from the perspective of the user, and not directly on Alpine.
 
 ```bash
 # Synchronizing from a local workstation to Research Computing
