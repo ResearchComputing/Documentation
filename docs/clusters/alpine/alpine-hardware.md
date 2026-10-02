@@ -273,7 +273,7 @@ In the table below we provide descriptions and examples for each of these featur
 |  `<GPU manufacturer>-gpu`       |  The company that designs the GPU. Note that this will be left off it is not a GPU node.           |  `nvidia-gpu`, `amd-gpu`       | 
 |  `<Infiniband>`       |   States if the node has Infiniband and is connected to other nodes via Infiniband. If there is Infiniband on the node, `ib` will be specified, if not, `ib` will not appear.          |   `ib`      | 
 
-# Special-Purpose Resources
+## Special-Purpose Resources
 
 To help users test out their workflows, CURC provides several special-purpose resources on Alpine. These resources enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these resources, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
 
