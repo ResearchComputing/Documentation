@@ -33,7 +33,7 @@ Some federally funded research involves Federal Contract Information (FCI), as d
 
 Please note, FCI is not the same as Controlled Unclassified Information (CUI). CUI may not be stored on any Research Computing system. If your project involves CUI, contact [The Preserve](https://www.colorado.edu/rc/secure-research-computing-resources).
 
-If an existing allocation will start storing FCI or if you are unsure which tier is best for your allocation, please contact [rc-help@colorado.edu](mailto:rc-help@colorado.edu). A Research Computing staff member can help confirm the appropriate tier for your data storage needs.
+If an existing allocation will start storing FCI or if you are unsure which tier is best for your allocation, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). A Research Computing staff member can help confirm the appropriate tier for your data storage needs.
 
 <br>
 

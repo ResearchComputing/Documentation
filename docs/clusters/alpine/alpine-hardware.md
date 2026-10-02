@@ -273,7 +273,6 @@ In the table below we provide descriptions and examples for each of these featur
 |  `<GPU manufacturer>-gpu`       |  The company that designs the GPU. Note that this will be left off it is not a GPU node.           |  `nvidia-gpu`, `amd-gpu`       | 
 |  `<Infiniband>`       |   States if the node has Infiniband and is connected to other nodes via Infiniband. If there is Infiniband on the node, `ib` will be specified, if not, `ib` will not appear.          |   `ib`      | 
 
-
 # Special-Purpose Resources
 
 To help users test out their workflows, CURC provides several special-purpose resources on Alpine. These resources enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these resources, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
@@ -282,7 +281,7 @@ To help users test out their workflows, CURC provides several special-purpose re
 Compiling and testing resources are, as their name implies, only meant for compiling code and testing workflows. They are not to be used outside of compiling or testing. Please utilize the appropriate resources when running code. 
 ```
 
-## Special-Purpose CPU-only Resources
+### Special-Purpose CPU-only Resources
 
 CURC currently provides two types of special-purpose CPU-only resources on Alpine that are made available through the partitions `atesting` and `acompile`. 
 
@@ -318,7 +317,7 @@ acompile --ntasks=2 --time=02:00:00
 
 `````
 
-### `atesting` usage
+#### `atesting` usage
 
 The `atesting` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
 
@@ -360,7 +359,7 @@ sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos
 ````
 `````
 
-## Special-Purpose GPU Resources
+### Special-Purpose GPU Resources
 
 The `gpu-testing` QoS provides access to limited GPU resources for the purpose of verifying GPU workflows and building GPU-accelerated applications. Please note that the `gpu-testing` QoS must be used in conjunction with a chosen GPU partition and GPU type. For a list of resources that are available via `gpu-testing` as well as limitations of the QoS, see the sections [Quality of Service (qos)](#quality-of-service-qos) and [General Resources (gres)](#general-resources-gres). 
 

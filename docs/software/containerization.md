@@ -47,6 +47,12 @@ A container registry is simply a server that manages uploaded containers. Docker
 apptainer pull docker://another:example
 ```
 
+```{warning}
+Apptainer version 1.5.2-1 (installed on CURC systems as of Autumn 2026) has a [bug](https://github.com/apptainer/apptainer/issues/3597) that prevents containers from being created using `apptainer pull` and `apptainer build` unless the following environment variable is set before running either command: 
+
+`export APPTAINER_IGNORE_PROOT=1`
+```
+
 ### Running a SIF image as a container
 
 SIF images can be run as containers much like Docker images. Apptainer commands, however, follow a bit more nuanced syntax depending on what you’d like to do. After pulling your image from Docker Hub you can run the image by using the `apptainer run` command. Type:

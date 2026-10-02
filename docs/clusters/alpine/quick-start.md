@@ -28,7 +28,7 @@ section.
 ### Nodes
 The Alpine cluster is made up of different types of nodes. A general overview of these nodes is as follows: 
 - **CPU nodes**: {{ alpine_total_256GB_512GB_cpu_nodes }} AMD CPU compute nodes
-- **GPU nodes**: a mixture of {{ alpine_total_gpu_nodes }} NVIDIA and AMD GPUs
+- **GPU nodes**: a mixture of {{ alpine_total_gpu_nodes }} NVIDIA and AMD GPU nodes
 - **High-memory nodes**: {{ alpine_total_hi_mem_cpu_nodes }} high-memory nodes with 1 TB of memory or more
 
 Alpine is made possible due to its contributors. Below we provide each contributor, along with the number of nodes they have provided:
@@ -43,7 +43,7 @@ Alpine is made possible due to its contributors. Below we provide each contribut
 
 ### Interconnect
 The Alpine cluster has different types of interconnects/fabrics which connect different types of hardware, outlined below:
-- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric); available on most CPU nodes as of July 2023 and on most remaining CPU nodes pending hardware arrivals
+- **CPU nodes**: HDR-100 InfiniBand (200Gb inter-node fabric); available on most CPU nodes
 - **GPU nodes**: 2x25 Gb Ethernet +RoCE
 - **High-memory nodes**: A mixture of 2x25 Gb Ethernet +RoCE and 100 Gb Ethernet
 - **Scratch storage**: 25Gb Ethernet +RoCE
