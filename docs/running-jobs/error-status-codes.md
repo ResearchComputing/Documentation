@@ -25,8 +25,7 @@ may encounter when using squeue to check on your jobs.
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
 ```{seealso}
-A full list of these Job State codes can be found in [Slurm’s
-documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
+A full list of these Job State codes can be found in [Slurm’s Job State Codes](https://slurm.schedmd.com/squeue.html#lbAG) documentation.
 ```
 
 ### Job Reason Codes
@@ -49,8 +48,7 @@ documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
 | `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
 
 ```{seealso}
-A full list of these Job Reason Codes can be found [in Slurm’s
-documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
+A full list of these Job Reason Codes can be found in [Slurm’s Job Reason Codes](https://slurm.schedmd.com/squeue.html#lbAF) documentation.
 ```
 
 ## Alpine Job Submission Error Codes
@@ -78,6 +76,7 @@ documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
 | 19 | The requested runtime of the `<qos>` QoS must be greater than `<N>` hour(s). | You have not requested enough time to meet the minimum required for this QoS. | Increase the time requested for the job, or switch to a different QoS that supports shorter jobs. You can find a list of valid QoS values and their associated runtime constraints in our [Alpine QoS Documentation](../clusters/alpine/alpine-hardware.md#quality-of-service-qos). |
 | 20 | When requesting resources from GPU partitions, users must specify `--gres`. | You have not specified a `GRES` using the `--gres` directive, which is required on this partition. | Specify a `GRES` using the `--gres` directive. You can find a list of Alpine `GRES`, as well as examples, in our [Alpine GRES Documentation](../clusters/alpine/alpine-hardware.md#general-resources-gres). |
 | 21 | If a list of GPU partitions is provided, then `GRES` must be set to `--gres=gpu:N`, where `N` is the number of GPUs. | You have provided an invalid `GRES` format while using a list of GPU partitions. | Use the `GRES` format `--gres=gpu:N`, where `N` is the number of GPUs. |
+| 22 | The oversubscribe Slurm directive cannot be used with the provided partition. | You have provided the `--oversubscribe` Slurm directive and it is not allowed to be used with the provided partition. | Remove the `--oversubscribe` Slurm directive or change to a compatible partition. |
 
 ## Alpine Job Submission Warning Codes
 

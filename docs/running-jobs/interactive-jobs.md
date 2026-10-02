@@ -15,7 +15,7 @@ sinteractive --partition=acpu --time=00:10:00 --ntasks=1 --nodes=1 --qos=cpu-nor
 This will run an interactive job to the Slurm queue that will start a terminal session that will run on one core of one node on the `acpu` partition for ten minutes. Once the session has started you can run any application or script you may need from the command line.  For example, if you load the Python module using `module load python` and then type `python`, you will open an interactive python shell on a compute node (rather than the login nodes, which is forbidden). When you are finished with your interactive job, you can end the session by typing `exit`. If you do not end your session, the interactive job will run for the full time requested, which will use up part of your allocation.
 
 ```{seealso}
-Check out this [page](job-resources.md) for a list of Slurm directives that can be used with interactive jobs.
+Check out the [Slurm Flags, Partitions, and QoS](job-resources.md) page for a list of Slurm directives that can be used with interactive jobs.
 ```
 
 ## Interactive GUI Applications
@@ -36,11 +36,17 @@ this. [Download Xming here](http://www.straightrunning.com/XmingNotes/).
 
 Download and install the [PuTTY application](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) here if you have not done so already.
 
-![](./interactive_jobs_images/putty-1.png)
+```{image} ./interactive_jobs_images/putty-1.png
+:alt: A screenshot of the Putty application, with the SSH tab highlighted. Instructions for using Putty are provided under the "Windows setup" header.
+:align: center
+```
 
 Expand the SSH tab on the left side of the application and click X11.
 
-![](./interactive_jobs_images/putty-2.png)
+```{image} ./interactive_jobs_images/putty-2.png
+:alt: A screenshot of the Putty application, with the X11 tab and X11 configurations highlighted. Instructions for configuring X11 in Putty are provided under the "Windows setup" header.
+:align: center
+```
 
 In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0" in the X display location field.  Clicking "Open" will open a terminal window where you can login.
 ````
@@ -49,7 +55,7 @@ In the X11 Menu check the "Enable X11 Forwarding" checkbox and type "localhost:0
 :sync: interactive-windows-command-prompt
 
 ```{seealso}
-This tutorial assumes that you are already set up with OpenSSH for Windows. Here is a [guide](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) for setting up OpenSSH for Windows. Note that OpenSSH Server does not have to be running for you to proceed.
+This tutorial assumes that you are already set up with OpenSSH for Windows. Here is a [guide for setting up OpenSSH for Windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui). Note that OpenSSH Server does not have to be running for you to proceed.
 ```
 
 You can deploy Xming by running the Xlaunch application (or opening the Xlaunch shortcut on your desktop). When prompted to select display settings, select 'Multiple windows' and set the Display number to 0. From there, use the default selections until Xlaunch is finished.
@@ -116,7 +122,11 @@ matlab
 ```
 This will start MATLAB on the allocated compute node and display the interface on your local machine via X11 forwarding. The MATLAB window should appear shortly after the command is executed. See the example image below for reference.
 
-![](./interactive_jobs_images/matlab_GUI.png)
+```{image} ./interactive_jobs_images/matlab_GUI.png
+:alt: A screenshot showing a MATLAB GUI being launched for an interactive terminal session. Instructions for launching MATLAB can be found under the "Running GUI Applications" header. 
+:align: center
+```
+
 
 
 

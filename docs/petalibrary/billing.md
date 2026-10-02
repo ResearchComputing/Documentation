@@ -14,6 +14,10 @@ In all but the rarest circumstances, we will not bill for PetaLibrary services a
 
 ## Invoicing
 
+```{note}
+External (non-CU System) customers should send payment to: **3645 Marine Street, UCB 455, Boulder, CO 80309**.
+```
+
 ### Billable Events
 When a PetaLibrary billable event occurs, Research Computing will generate an
 invoice. The following are billable events: 
@@ -28,7 +32,7 @@ invoice. The following are billable events:
    * Decommissioning an allocation
 
 ### Invoice details
-A sample invoice is shown below. The invoice has a unique identifier and details the services being billed for, including a speedtype for CU System customers. For new allocations, the speedtype will be the one provided on the new allocation request form. For renewals or additional space, the speedtype will be the last one used for the allocation in question. A Journal ID will also be provided, which allows you to find the university transaction in which funds are moved between speedtypes.
+A PetaLibrary invoice has a unique identifier and details the services being billed for, including a SpeedType for CU System customers. For new allocations, the SpeedType will be the one provided on the new allocation request form. For renewals or additional space, the SpeedType will be the last one used for the allocation in question. A Journal ID will also be provided, which allows you to find the university transaction in which funds are moved between SpeedTypes.
 
 ### Invoice recipients
 All invoices are sent via email through the CURC ticketing system and include a case number. If a PetaLibrary allocation has one or more billing contacts defined, invoices are sent to the billing contacts, and copied to the allocation owner. If no billing contacts are defined, invoices are sent to the owner. 
@@ -38,15 +42,4 @@ The invoice specifies a time frame for you to contact us to make changes. If any
 the invoice. Please take note of the PetaLibrary [policy for non-payment](../additional-resources/policies.md#petalibrary-non-payment).
 
 ### Annual renewal invoices
-The most common billable event is the annual renewal. These invoices are sent out within 1-2 months of the beginning of the University Fiscal Year, July 1.  **Please carefully read the information on your annual renewal invoice and make sure that the speedtype we have on file is still valid**. If it is not, please let us know as soon as possible so that the invoice can be revised before the transaction posts.
-
-### Sample Invoice
-
-```{eval-rst}
-.. figure:: ./images_and_html/petalibrary_invoice.png
-   :align: center
-   :scale: 80%
-```
-
-
-
+The most common billable event is the annual renewal. These invoices are sent out within 1-2 months of the beginning of the University Fiscal Year, July 1.  **Please carefully read the information on your annual renewal invoice and make sure that the SpeedType we have on file is still valid**. If it is not, please let us know as soon as possible so that the invoice can be revised before the transaction posts.

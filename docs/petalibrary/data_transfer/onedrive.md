@@ -11,32 +11,44 @@
 ### Step 1: Log into the Globus Web App
 Visit [https://app.globus.org](https://app.globus.org) and log in with your Colorado.edu credentials
 
-![](../images_and_html/Globus_Login.png)
+```{image} ../images_and_html/Globus_Login.png
+:alt: An image of the Globus login page, with "University of Colorado at Boulder" selected in the drop-down menu under "Use your existing organizational login". A blue "Continue" button is available just below the drop-down menu box.
+```
 
 ### Step 2: Open your OneDrive
 In the Collection Search, enter: "OneDrive CU Boulder" - this should show your OneDrive contents if you are logged in. You may need to authenticate with your OneDrive account.
 
-![](../images_and_html/onedrivesearch.png)
+```{image} ../images_and_html/onedrivesearch.png
+:alt: An image of the "Collection Search" pane of the Globus File Manager. "onedrive CU" is typed into the "Collection" search box, and the collection result "OneDrive CU Boulder" is visible below the search box.
+```
 
 ### Step 3: Open CURC (right pane)
 Click the 2nd option in the Panel selection on the top right of the page to enter split view. In the Collection Search (right pane), enter: "CU Boulder Research Computing"
 
 * You'll be asked to log in using your CURC Credentials by selecting `Authenticate`.
 
-![](../images_and_html/splitview.png)
+```{image} ../images_and_html/splitview.png
+:alt: An image of the Split View of the Globus File Manager, with the "OneDrive CU Boulder" collection open in the left pane, and "CU Boulder Research Computing" collection open in the right pane. Messages about authentication being required are visible in both endpoints, with no files or folders yet visible.
+```
 
 * Once authenticated, you should see your CURC home directory - to access Petalibrary click "Up One Directory" and then select `/pl` and proceed to your allocation. 
 
-![](../images_and_html/Globus_CURC_Collection.png)
+```{image} ../images_and_html/Globus_CURC_Collection.png
+:alt: A closer view of the right side of the collection and file path boxes in the Globus Split View. The collection is "CU Research Computing", and the current file path is "/~/", the home directory.
+```
 
 ### Step 4: Select files/folders from OneDrive to be transferred and initiate the transfer
-* In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job
+* In the left pane, select the file or folder you'd like to transfer and click Start - this will initiate a Globus Transfer job.
 
-![](../images_and_html/Globus_Intitiate_Transfer.png)
+```{image} ../images_and_html/Globus_Initiate_Transfer_OneDrive.png
+:alt: A closer view of the left side of the Split View in Globus, showing a folder selected, and a blue "Start" button in the middle to initiate data transfer to the location shown on the right side of the Split View. The right side is not visible in this image.
+```
 
 * View progress of your transfer under the Activity tab in the Globus App
 
-![](../images_and_html/Globus_Activity_GDrive.png)
+```{image} ../images_and_html/Globus_Activity_OneDrive.png
+:alt: An image of the transfer status page under the "Activity" tab in Globus, showing a successful transfer from OneDrive to CU Boulder Research Computing. Information is shown about the transfer, including a name, Task ID, status, speed, and size metrics for the transfer.
+```
 
 ````
 

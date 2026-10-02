@@ -3,7 +3,9 @@
 ## CU Boulder Users
 CU Boulder user groups are managed through grouper.
 
-> **Note:** Users must be logged in to the CU Boulder VPN to access Grouper.
+```{note}
+Users must be logged in to the CU Boulder VPN to access Grouper.
+```
 
 ### Group Layout
 
@@ -20,7 +22,7 @@ All access groups live in `Root -> Services -> Cloud Broker -> AWSLZA -> custome
 Every person at CU has an [Identikey](https://oit.colorado.edu/services/identity-access-management/identikey) user that is used for daily work, like checking email and logging into campus portals. When a person has duties that require increased privileges, they are usually provisioned with a "super user" (SU) account that is separate from their Identikey. This supports the security best practice of separating privileged administrative activities from unprivileged work. SU accounts are preferred for all AWS cloud administration.
 
 ```{important}
-We recommend all AWS cloud administration be done using SU accounts. When adding users to AWS access groups in Grouper, choose the SU accounts of your team members instead of their regular Identikeys. If any team members need a new SU account, they may request one [here](https://oit.colorado.edu/accounts/secondary-accounts).
+We recommend all AWS cloud administration be done using SU accounts. When adding users to AWS access groups in Grouper, choose the SU accounts of your team members instead of their regular Identikeys. If any team members need a new SU account, they may request one using [Secondary Account Request Form](https://oit.colorado.edu/accounts/secondary-accounts).
 ```
 
 ### Adding Users
@@ -34,32 +36,37 @@ AWS customers can add team members as Administrators to their AWS account. This 
    **Method 2:** Go to the [My Grouper Groups](https://mygroups.colorado.edu/grouper/grouperUi/app/UiV2Main.index?operation=UiV2MyGroups.myGroups) view in Grouper.
    Login using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey). Filter for `AWSLCA` (if you can't find your group easily). You will see a list of groups that you can administer. Select the Group for your AWS Account.
 
-      ```{image} images/managing-customer-groups/my-grouper-groups.png
-      :alt: The Grouper "My groups" page with the AWS filter applied
+      ```{image} lca1_images/managing-customer-groups/my-grouper-groups.png
+      :alt: The Grouper "My groups" page with the AWS filter applied. Described under Adding Users.
+      :align: center
       ```
 
-3. In the "Members" tab view, click the "Add members" button.
+2. In the "Members" tab view, click the "Add members" button.
 
-   ```{image} images/managing-customer-groups/add-members-button.png
-   :alt: The Grouper "Add members" button
+   ```{image} lca1_images/managing-customer-groups/add-members-button.png
+   :alt: The Grouper "Add members" button. Described under Adding Users.
+   :align: center
    ```
 
-4. In the "Member name or ID" field, enter the user's [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) and select the matching entry.
+3. In the "Member name or ID" field, enter the user's [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey) and select the matching entry.
 
-   ```{image} images/managing-customer-groups/enter-identikey.png
-   :alt: The Grouper dropdown box for selecting members to add to a group
+   ```{image} lca1_images/managing-customer-groups/enter-identikey.png
+   :alt: The Grouper dropdown box for selecting members to add to a group. Described under Adding Users.
+   :align: center
    ```
 
-5. Click the "Add" button.
+4. Click the "Add" button.
 
-   ```{image} images/managing-customer-groups/add-user.png
-   :alt: The Grouper "Add" button for adding the selected member to a group
+   ```{image} lca1_images/managing-customer-groups/add-user.png
+   :alt: The Grouper "Add" button for adding the selected member to a group. Described under Adding Users.
+   :align: center
    ```
 
-6. Verify the new user show up in the table.
+5. Verify the new user show up in the table.
 
-   ```{image} images/managing-customer-groups/verify-user.png
-   :alt: The Grouper group membership page with a sample user circled in red
+   ```{image} lca1_images/managing-customer-groups/verify-user.png
+   :alt: The Grouper group membership page with a sample user circled in red. Described under Adding Users.
+   :align: center
    ```
 
 ### Removing Users
@@ -69,20 +76,22 @@ Users can be removed from accessing the AWS account by removing them from the Gr
 1. Login to the [Grouper Group](https://mygroups.colorado.edu/grouper/grouperUi/app/UiV2Main.index?operation=UiV2MyGroups.myGroups), as described above, using your [CU IdentiKey](https://oit.colorado.edu/services/identity-access-management/identikey).
 2. In the "Members" tab view, place a check next to the user(s), and click the "Remove selected members" button.
 
-   ```{image} images/managing-customer-groups/remove-user.png
-   :alt: The Grouper group membership page with a sample user checked for removal
+   ```{image} lca1_images/managing-customer-groups/remove-user.png
+   :alt: The Grouper group membership page with a sample user checked for removal. Described under Removing Users.
+   :align: center
    ```
 
 3. Verify the user(s) no longer appear in the table.
 
 ## Non CU Boulder Users
-Non CU Boulder user groups are managed through [Microsoft Entra groups](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/Overview).
+Non CU Boulder user groups are managed through [Microsoft Entra Groups Management Portal](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/Overview).
 
 ### Your Group Name
 The Entra group name to manage access to your AWS account is in the form `oitcld-entra-<account-alias>-CustomerAdmin`.
 To find your account alias view the top right corner of the screen when logged into the AWS console.
-   ```{image} images/managing-customer-groups/alias.png
-   :alt: AWS console top right corner showing the account alias identifier highlighted within a red square in the navigation bar
+   ```{image} lca1_images/managing-customer-groups/alias.png
+   :alt: AWS console top right corner showing the account alias identifier highlighted within a red square in the navigation bar. Described under Your Group Name.
+   :align: center
    ```
 
 ### Adding Users
@@ -93,11 +102,10 @@ Note that changes can take up to 15 minutes to take effect.
 
 The technical contact person is added as Owner of the Entra group and they will have access to add members to the group.
 
-Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#add-members-or-owners-of-a-group) to add members to groups.
+Refer to [Microsoft Entra Group Add Members Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#add-members-or-owners-of-a-group) for instructions on adding members to groups.
 
 
 ### Removing Users
 Users can be removed from accessing the AWS account by removing them from the Entra Group.
 
-Refer to [Microsoft's Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#remove-members-or-owners-of-a-group) to remove members from groups.
-
+Refer to [Microsoft Entra Group Remove Members Documentation](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#remove-members-or-owners-of-a-group) for instructions on removing members from groups.

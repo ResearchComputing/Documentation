@@ -14,10 +14,10 @@ transfers and automated (passwordless) transfers.
 
 Globus file transfers are typically initiated through an interactive
 web application (command-line access to Globus is also available, see [the Globus CLI documentation](https://docs.globus.org/cli/) for more information). Globus addresses deficiencies
-`in traditional file-transfer mechanisms by automating large data
+"in traditional file-transfer mechanisms by automating large data
 transfers, resuming failed transfers, distributing large transfers
 across multiple servers, and brokering direct transfers between remote
-computing centers. Globus performs an MD5-Checksum for transfer verification.
+computing centers. Globus performs an MD5-Checksum for transfer verification."
 
 Globus can be used on macOS, Linux, and Windows operating systems and
 is RC's recommended way of transferring data.
@@ -30,7 +30,10 @@ and by logging in using your CU IdentiKey and password.
 **For non-CU Boulder users:** If you are with an institution other than CU Boulder (e.g. **ACCESS**), your institution may still be available for Globus authentication using the InCommon federation. Look for your institution in the dropdown menu (e.g. instead of `University of Colorado at Boulder` use `ACCESS`) and sign in with your local credentials. If your institution is not listed, you will need to [create a Globus account](https://www.globusid.org/create).
 ``` 
 
-![](./globus_images/globus-image-1.png)
+```{image} ./globus_images/globus-image-1.png
+:alt: The Globus login page, showing a drop down list with several institutions to choose from. University of Colorado at Boulder is highlighted.
+:align: center
+```
 
 Research Computing storage resources are available via multiple Globus
 "endpoints." You can connect to an RC endpoint using the "collections"
@@ -47,8 +50,10 @@ Using the web app, connect your local workstation endpoint with the
 Research Computing endpoint and transfer files easily using the Globus
 GUI.
 
-![](./globus_images/globus-image-2.png)
-
+```{image} ./globus_images/globus-image-2.png
+:alt: The Globus file manager page, showing the split-pane view. A search box for collection and path is visible on both the left- and right- sides of the page.
+:align: center
+```
 
 ## Guest Collections (Globus Shared Endpoints)
 
@@ -76,7 +81,7 @@ RC Users also have the option of connecting to RC via _Filezilla_. _Filezilla_ i
 1. Fill in the hostname, username, and password fields at the top of the application window.
 
     - _Data Transfer Node_
-      - Host: sftp://dtn.rc.colorado.edu
+      - Host: `sftp://dtn.rc.colorado.edu`
       - Username: your-rc-username
       - Password: your-rc-password
 
@@ -112,7 +117,7 @@ scp <username>@dtn.rc.colorado.edu:<path-to-file> <target-path>
 Windows users can access scp through PowerShell or using a GUI
 application like [WinSCP](https://winscp.net/eng/docs/protocols).
 
-For more information on secure copy take a [look at some of our listed
+For more information on Secure Copy, take a [look at some of our listed
 resources](#more-reading) or consult the scp manual page.
 
 
@@ -147,7 +152,7 @@ individually](https://www.itefix.net/cwrsync) or as part of [Windows
 Subsystem for Linux
 (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-For more information on rsync [check out some of our listed
+For more information on rsync, [check out some of our listed
 resources](#more-reading) or consult the rsync manual page.
 
 
@@ -182,20 +187,23 @@ Command | Function | Example
 Windows users can access sftp through PowerShell or using a GUI
 application like [WinSCP](https://winscp.net/eng/docs/protocols).
 
-For more information on sftp [check out some of our listed
-resources](#more-reading) or consult the sftp manual page.
+For more information on sftp, [check out some of our listed
+resources](#more-reading), or consult the sftp manual page.
 
 
 ## Automated scp and rsync
 
-Key-based transfers over the DTNs are only available to CU Boulder, CU Anschutz, and CU Denver users. *You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.* The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few
-simple setup procedures to prepare your local machine.
-  
+```{warning}
+Key-based transfers over the Data Transfer Nodes (DTNs) are only available to CU Boulder, CU Anschutz, and CU Denver users. *You must be on a CU (UCB/AMC/UCD) campus network or logged into the campus VPN to perform passwordless data transfers to CURC.*
+```
+
 ```{important}
 These instructions only apply to local macOS and Linux systems. Automating file transfers from Windows is outside of the scope of this document.
 ```
+The `scp` and `rsync` commands both allow a user to transfer files without needing to reenter a password. All that is required is a few
+simple setup procedures to prepare your local machine:
 
-1. Generate a local ssh key pair. You will only need to perform this once per local system. From a local terminal run:
+1. Generate a local ssh key pair. You will only need to perform this once per local system. From a local terminal, run:
 
 ```bash
 ssh-keygen -t ed25519
@@ -247,7 +255,7 @@ scp -v ./myfile23.txt dtn.rc.colorado.edu:/pl/active/crdds/myfile.txt      # usi
 
 ## Rclone 
 
-Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. [Over 40 cloud storage products](https://rclone.org/#providers) support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols. Rclone has powerful cloud equivalents to the unix commands rsync, cp, mv, mount, ls, ncdu, tree, rm, and cat. Rclone's familiar syntax includes shell pipeline support, and `--dry-run` protection. It can be used at the command line, in scripts or via its [API](https://rclone.org/rc/).
+Rclone is a command line program to manage files on cloud storage. It is a feature rich alternative to cloud vendors' web storage interfaces. [Over 40 cloud storage products](https://rclone.org/#providers) support rclone, including S3 object stores, business & consumer file storage services, as well as standard transfer protocols. Rclone has powerful cloud equivalents to the unix commands rsync, cp, mv, mount, ls, ncdu, tree, rm, and cat. Rclone's familiar syntax includes shell pipeline support, and `--dry-run` protection. It can be used at the command line, in scripts or via its [API](https://rclone.org/rc/).
 
 ### What can rclone do for you?
 
@@ -277,7 +285,7 @@ Rclone is a command line program to manage files on cloud storage. It is a featu
 
 ### How to use rclone with CURC
 
-Since rclone is intended to be used with cloud technologies, any server that can use cloud protocols can use rclone to transfer data. Rclone can be used on the CURC system to connect and transfer data to/from cloud-based storage (e.g. google drive or AWS S3 buckets) as well as locally from your machine to connect to RC storage via ssh/sftp connection.
+Since rclone is intended to be used with cloud technologies, any server that can use cloud protocols can use rclone to transfer data. Rclone can be used on the CURC system to connect and transfer data to/from cloud-based storage (e.g. Google Drive or AWS S3 buckets) as well as locally from your machine to connect to RC storage via ssh/sftp connection.
 
 #### Step 1: Make sure rclone is installed
 
@@ -296,7 +304,7 @@ $ module load rclone/1.58.0 	# Load rclone module
 
 Before using rclone you must set up a configuration file that details the information about the remote server you want to transfer data to. There are two different ways of setting up your rclone configuration file:
 
-**Create the `.conf` file manually**
+##### Create the `.conf` file manually
 
 If you are already familiar with rclone and the options that are available to include into your rclone configuration file, you can simply navigate to your .config folder in your home directory on and create a folder for rclone to create a file to enter these options. Example below:
 
@@ -318,7 +326,7 @@ location_constraint = us-west-2
 acl = private
 ```
 
-**Using the rclone prompt to create the .conf file**
+##### Use the rclone prompt to create the .conf file
 
 Once rclone is available to use run the command `rclone config` to see the options to create the configuration file. This example outlines configuring a connection to an AWS S3 bucket from Research Computing. See our [Google Drive connection](../petalibrary/data_transfer/gdrive.md) and [Local connection to RC](../petalibrary/data_transfer/rclone.md) examples for guides on other rclone connection methods.
 
@@ -512,7 +520,7 @@ Congratulations! You now have a remote rclone connection set up.
 
 #### Step 3: Basic usage commands for rclone
 
-The basic syntax goes as follows rclone `<function> <source> <destination endpoint>:<bucket>`.
+The basic syntax is as follows: `rclone <function> <source> <destination endpoint>:<bucket>`.
 
 the basic functions are:
 - copy
@@ -522,7 +530,6 @@ the basic functions are:
 - mount
 - serve
 
-More information on rclone and the transfer functions can be found on [their official documentation](https://rclone.org/docs/). 
 
 Example of a transfer via the rclone copy command from a CURC PetaLibrary allocation to your S3 bucket:
 ```
@@ -531,6 +538,9 @@ $ ls
 rclonetest.csv
 $ rclone copy rclonetest.csv aws_s3:testbucket/
 ```
+
+More information on rclone and its transfer functions can be found on [Rclone's official documentation](https://rclone.org/docs/). 
+
 
 ## CU Large File Transfer service
 
@@ -570,7 +580,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0Pp4D+GvSYfq0GB+dAEBQcKJTkeTkJ5bQlMPzkh1N
 
 ## More reading
 
-* [Indiana University Tutorial on SFTP](https://kb.iu.edu/d/akqg)
-* [A Cloud Guru's Tutorial on SSH and SCP](https://acloudguru.com/blog/engineering/ssh-and-scp-howto-tips-tricks)
+* [Pluralsight's Tutorial on SSH and SCP](https://www.pluralsight.com/resources/blog/cloud/ssh-and-scp-howto-tips-tricks)
 * [ssh.com's Tutorial on SCP and SFTP](https://www.ssh.com/ssh/sftp/)
 * [Linuxize's Tutorial on Rsync](https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/)

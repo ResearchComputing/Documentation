@@ -1,21 +1,18 @@
-# AWS - Billing
+# Billing
 
 AWS provides numerous ways to predict, view, and manage your costs.
 
 ## Cost Estimates
 
-The [AWS Pricing Calculator](https://docs.aws.amazon.com/pricing-calculator/latest/userguide/create-configure-estimate.html) is a great way to estimate costs before deploying your infrastructure. If you'd like additional assistance in creating an estimate, please reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
+The [AWS Pricing Calculator](https://docs.aws.amazon.com/pricing-calculator/latest/userguide/create-configure-estimate.html) is a great way to estimate costs before deploying your infrastructure. 
 
 ## Viewing Costs
 
-Costs can be viewed directly in the [AWS Cost Explorer](./viewbilling). You should no longer look at costs in CloudCheckr.
+Costs can be viewed directly in the [AWS Cost Explorer](./viewbilling) section. You should no longer look at costs in CloudCheckr. For more information, see the Viewing Costs guide.
 
 ```{toctree}
 :maxdepth: 1
-:caption: View Billing
-
 viewbilling
-
 ```
 
 ## Payment
@@ -30,10 +27,9 @@ AWS accounts are paid via CU Purchase Order (PO). We will provide guidance on se
 
 [AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) can be used to send notifications and take other actions when a defined spend limit is reached.
 
+You can attach budget actions to an alert for either a cost budget or a usage budget. For more information, see the Budgets Actions guide below.
+
 ```{toctree}
 :maxdepth: 1
-:caption: Budget Actions
-
 budget-actions
-
 ```

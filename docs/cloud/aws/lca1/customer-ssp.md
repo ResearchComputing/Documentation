@@ -5,7 +5,7 @@ Systems that fall under the [CU Data Classification](https://www.cu.edu/data-gov
 An SSP is a document that outlines how an organization protects the security of a system.
 An SSP is a critical document that helps organizations meet compliance requirements.
 
-Look here for more information about [Data Classification](../data-classification.md).
+Look here for more information about [Data Classification](data-classification.md).
 
 OIT's [IT Security](https://oit.colorado.edu/services/it-security) group is responsible for guiding and evaluating your SSP.
 [IT Security](https://oit.colorado.edu/services/it-security) prescribes the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
@@ -22,16 +22,14 @@ is on the horizon.
 The rest of this document will discuss how the CFS service can help you meet some of your security requirements.
 We also have a guide to help you get started on your SSP journey.
 
-## Contents
 * [Shared Responsibility Model](#shared-responsibility-model)
 * [CFS **LCA1** Features](#cfs-lca1-features)
 * [Getting Started](#getting-started)
 
-### Shared Responsibility Model
-Start with understanding the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
+## Shared Responsibility Model
 It is important to know that the cloud provider, our service and you as the cloud customer all share the burden of securing systems.
 
-### CFS **LCA1** Features
+## CFS **LCA1** Features
 The OIT Research Computing [Cloud Foundations Service](https://www.colorado.edu/rc/cloudfoundations)
 (CFS) team owns and manages an [AWS Landing Zone](https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-aws-environment/understanding-landing-zones.html)
 specifically designed to enable support of the [NIST SP 800-171 Rev. 2](https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final)
@@ -64,8 +62,7 @@ We have alarms set up to detect any usage of this important and powerful admin u
 procedures ensure that the root user is only used for approved use, requires approval, and is only
 used for very rare cases.  For a list of things that only the root user can do,
 [see this page](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#root-user-tasks).
-In the rare event that any of these actions are needed, [rc-support@colorado.edu](mailto:rc-support@colorado)
-can assist with submitting a ticket with the CFS team.
+In the rare event that any of these actions are needed, submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) so we can assist with submitting a ticket with the CFS team.
 
 **Centralized Audit Logging**
 
@@ -89,7 +86,7 @@ Both inbound and outbound traffic are inspected.
 The firewall and campus connection are managed by a partnership with
 [OIT Network and Internet Services](https://oit.colorado.edu/services/network-internet-services).
 
-For more information about this feature, see the **LCA1** [Network Information](../networking.md) page.
+For more information about this feature, see the **LCA1** [Network Information](networking.md) page.
 
 **Training and Support**
 
@@ -103,16 +100,13 @@ We maintain a **Cloud Foundations NIST 800-171 Customer Guide** that provides mo
 
 Our service features can supplement your work to address each security control, but they do not automatically ensure compliance. Full compliance is dependent upon the details of your application and review from OIT Security.
 
-Please contact us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu) to request access to the guide.
+Please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) to request access to the guide.
 ```
 
-Not sure where to start with your cloud journey?  RC User Support is here to guide and assist!
-Reach out to us at [rc-help@colorado.edu](mailto:rc-help@colorado.edu).
-
-### Getting Started
+## Getting Started
 Beginning your SSP can be intimidating, but there are strategies your can take to set yourself up for success and streamline the process. These are the steps we recommend for working through your SSP.
 
-#### Prepare for the SSP
+### Prepare for the SSP
 Before you begin, make sure you have the necessary technical infrastructure and social processes defined to act as a consistent, coordinated team.
 
 1. **Identify a service owner.** Your service needs a single person to be accountable for implementing and operating the service. This person will ensure security work is actually implemented and make the final decision about when to move forward after IT Security review.
@@ -168,15 +162,15 @@ Here are some tools you might consider for implementing the systems above. Think
   * A database
   * [Airtable](https://www.airtable.com/)
 ```
-#### Implement the SSP
+### Implement the SSP
 The next step is to stand up your service, creating the necessary security control implementations and documentation.
 
 1. **Get the latest controls.** Reach out to [IT Security](https://oit.colorado.edu/services/it-security) to get the latest official list of required controls. Import this into your SSP tracking system. Confirm which subset of the controls apply to your service (usually based on data classification and service criticality).
-2. **Learn about shared responsibility.** Read and understand the [Shared Responsibility Model](../getting-started/shared-responsibility-model.md).
-3. **Stand up your service.** Get an account on **LCA1**. Reach out to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) so that we can gather basic questionnaire information about your workload. Build out your service on AWS, but _do not put any non-public data in yet._
+2. **Learn about shared responsibility.** Read and understand the [Shared Responsibility Model](shared-responsibility-model.md).
+3. **Stand up your service.** Get an account on **LCA1**. Submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) so that we can gather basic questionnaire information about your workload. Build out your service on AWS, but _do not put any non-public data in yet._
 4. **Secure your service.** Implement each of the required security controls by appropriately configuring your infrastructure, establishing team processes, and documenting everything. Ensure your documentation provides enough detail an auditor can use for evidence of proper implementation. Consider using references to your configuration management system and screenshots where appropriate.
 
-#### Review the SSP
+### Review the SSP
 Finally, review your SSP implementation with IT Security. After they have reviewed, the service owner can decide if it's appropriate for non-public data to be introduced to the service.
 
 1. **Review.** Request an SSP review from [IT Security](https://oit.colorado.edu/services/it-security). Work with them to fix any gaps in the plan. If there are gaps that can't be addressed, work with IT Security to draft a [Plan of Action and Milestones (POA&M)](https://csrc.nist.gov/glossary/term/POAM) for those items or document the additional risk that gap creates.

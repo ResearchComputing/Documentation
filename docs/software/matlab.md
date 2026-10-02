@@ -41,7 +41,7 @@ OnDemand. CURC OnDemand is a browser-based, integrated, single access
 point for HPC resources. It includes access to interactive apps such 
 as Matlab, a virtual desktop, and more. 
 
-	You can find instructions to start an interactive Matlab session in our [OnDemand documentation](../open_ondemand/matlab.md). 
+	You can find instructions to start an interactive Matlab session in our [OnDemand Matlab](../open_ondemand/matlab.md) documentation. 
 
 
 2. Interactive SLURM job:
@@ -133,9 +133,7 @@ This file has a few basic parts:
    by bash, but will be read by Slurm. Of particular note is the
    `--output` parameter which specifies the file where stderr and
    stdout (including the output from our Matlab script) will be
-   written. For a description of the Slurm parameters, [please see the
-   general Slurm documentation
-   here](https://slurm.schedmd.com/sbatch.html)
+   written. For a description of the Slurm parameters, [please see the Slurm documentation on sbatch](https://slurm.schedmd.com/sbatch.html)
 
 3. The lines beginning with `module purge` remove any unneeded
    software and ensure that the appropriate Matlab module is loaded on
@@ -160,6 +158,11 @@ will be shown in `Matlab_Hello_World.out`.
 
 
 ## Parallel Matlab on Alpine
+
+```{note}
+CURC Matlab currently does not support parallelization across nodes,
+only across cores on one node.
+```
 
 To fully utilize the multi-core capabilities of Alpine to speed up
 jobs, most code must first be parallelized. Matlab has many built in
@@ -231,6 +234,7 @@ Hello World from process 2
 Hello World from process 3
 ```
 
-CURC Matlab currently does not support parallelization across nodes,
-only across cores on one node.
+```{note}
+By default the Matlab `c.NumWorkers` parameter sets a hard limit of 12 workers in a parallel pool. To use more than 12 workers, you can specify a larger parallel pool with `parpool` prior to invoking the `parfor` loop. Additional details and examples can be found in the [Matlab parpool documentation](https://www.mathworks.com/help/parallel-computing/parpool.html).
+```
 

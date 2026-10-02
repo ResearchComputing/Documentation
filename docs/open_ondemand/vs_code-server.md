@@ -4,17 +4,19 @@
 
 ```{eval-rst}
 .. figure:: ./OnDemand/vs_code_server_gui.png
+   :alt: A screenshot of VS Code's GUI interface, showing a Hello World python program in the code editor. At the bottom of the screen is an active terminal showing the output of the program, a message of "Hello World!".
    :align: center
 ```
 
 ## Launching a VS Code-Server
 
-1. Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **VS Code-Server**. 
+1. In Open OnDemand, Navigate to either the __Interactive Apps__ or __My Interactive Sessions__ tab and select **VS Code-Server**. 
 
 2. Select the VS Code-Server version you would like to launch the application with.
 
 ```{eval-rst}
 .. figure:: ./OnDemand/vs_code_server_config.png
+   :alt: A screenshot for Open OnDemand's VS Code configuration settings that shows the "Code-Server version" set to 4.16.1 via a dropdown menu.
    :align: center
 ```
 
@@ -24,6 +26,7 @@
 
 ```{eval-rst}
 .. figure:: ./OnDemand/vs_code_server_launch.png
+   :alt: A screenshot of Open OnDemand's interactive application launcher which is configured for the VS Code-Server application. The launcher shows information on the host, creation date, time remaining for the interactive app, the Session ID, and includes buttons labeled "Connect to VS Code" and "Delete". 
    :align: center
    :scale: 50%
 ```
@@ -45,7 +48,12 @@ When attempting to install an extension, we suggest the following methods (liste
     2. Use the provided search bar to search for the application you want. 
     3. Select the application and then click the `Install` button.
 
-        ![](OnDemand/vs_code_marketplace_install.png)
+```{eval-rst}
+.. figure:: ./OnDemand/vs_code_marketplace_install.png
+   :alt: A screenshot of VS Code's Extension Marketplace showing an active search "Jupyter" and a listing of three different Jupyter extensions.
+   :align: center
+   :scale: 50%
+```
         
 - Install the application by dragging the downloaded file into the **extensions column** (for visual representation, please see above video).
     1. Navigate to the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) in your browser.
