@@ -139,12 +139,12 @@ would like to send the file to. Note that both commands are run locally
 from the perspective of the user, and not directly on Alpine.
 
 ```bash
-# Synchronizing from a local workstation to Research Computing
+# Synchronize (push) data from your local workstation to Research Computing
 rsync -r <path-to-directory> <username>@dtn.rc.colorado.edu:<target-path>  
 ```
 
 ```bash
-# Synchronizing from Research Computing to a local workstation
+# Synchronize (pull) data from Research Computing to your local workstation
 rsync -r <username>@dtn.rc.colorado.edu:<path-to-directory> <target-path>  
 ```
 
