@@ -9,7 +9,7 @@ The AWS Cloud Credits for Research program (formerly AWS Research Grants) suppor
 2.	Perform proof of concept or benchmark tests evaluating the efficacy of moving research workloads or open data sets to the cloud.
 3.	Train a broader community on the usage of cloud for research workloads via workshops or tutorials.
 
-[Apply Now](https://pages.awscloud.com/aws-cloud-credit-for-research.html)
+[AWS Cloud Credit for Research Application Form](https://pages.awscloud.com/aws-cloud-credit-for-research.html)
 
 ## Application process
 
@@ -23,7 +23,7 @@ Awards are in the form of AWS Promotional Credit applicable to AWS services. Ama
 
 Communication regarding applications and awards are via <aws-research-credit@amazon.com>
 
-If you are awarded AWS Promotional Credit for no-cost usage of applicable AWS services, the AWS Promotional Credit will be good for the entirety of the one or until the credit has been fully utilized.
+If you are awarded AWS Promotional Credit for no-cost usage of applicable AWS services, the AWS Promotional Credit will be good for the entirety of the one year or until the credit has been fully utilized.
 
 Please make sure to account for the duration of the AWS Promotional Credit in your project timeline.
 

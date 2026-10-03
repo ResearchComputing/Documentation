@@ -1,29 +1,13 @@
-# AWS - Billing
+# Billing
 
 ```{note}
-The data in AWS Cost Explorer does not directly map to the charges in the invoices you receive. See the links below to learn how to accurately calculate your charges in AWS Cost Explorer and set budget alerts.
+The data in AWS Cost Explorer does not directly map to the charges on your AWS invoices.
 ```
+See the guides below to learn how to accurately calculate your AWS charges, set budget alerts, and estimate costs.
 
 ```{toctree}
 :maxdepth: 1
-:caption: View Billing
-
 viewbilling
-
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Budget Actions
-
 budget-actions
-
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Network Cost Guide
-
 cost-est
-
 ```

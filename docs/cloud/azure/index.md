@@ -1,39 +1,29 @@
 
-# Azure
+# Microsoft Azure
 
+Microsoft Azure is a commercial cloud platform supported by CU Research Computing. To use a CU-managed Azure account, you must be affiliated with the University of Colorado Boulder as a student, faculty member, or staff member.
 
-Microsoft Azure Documentation
+CU Research Computing provides support for billing Azure usage against CU funds, as well as high-level guidance on using Azure services. Account holders are responsible for managing their own applications, data, and use of Azure services.
 
-For users who are using a **Research Computing Cloud Team** managed Azure account.
+Once your account has been provisioned, sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com) with your CU IdentiKey and Microsoft multi-factor authentication (MFA).
+
+If you need a new Azure account or have questions about an existing subscription, submit a request using the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
+
+## What should I read next?
 
 ```{toctree}
 :maxdepth: 1
-:caption: Frequently Asked Questions
-
-faq/faq
-
+faq
 ```
-
 ```{toctree}
 :maxdepth: 1
-:caption: Billing Documentation
-
-billing/index
-
+billing/billing
 ```
-
 ```{toctree}
 :maxdepth: 1
-:caption: Research Credits
-
-Microsoft-Azure-for-Academic-Research
-
-```
-
-```{toctree}
-:maxdepth: 1
-:caption: Budget Actions
-
 budget-actions/budget-actions
-
+```
+```{toctree}
+:maxdepth: 1
+Microsoft-Azure-for-Academic-Research
 ```

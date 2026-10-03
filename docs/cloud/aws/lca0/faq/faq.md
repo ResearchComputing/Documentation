@@ -1,6 +1,4 @@
-# AWS - FAQs
-
-Frequently Asked Questions
+# Frequently Asked Questions
 
 If you are looking for help with specific errors, please visit the [Troubleshooting](../troubleshooting/troubleshooting.md) guide.
 
@@ -24,9 +22,7 @@ The **us-west-2** AWS region has the lowest latency from Colorado's Front Range 
 
 ## Can I use the root user?
 **Answer:**
-No.
-The root user is owned by the **Cloud Foundations Service** team.
-You must use your CustomerAdmin role.
+No, the root user is owned by the **Cloud Foundations Service** team. You must use your `CustomerAdmin` role.
 
 
 ## Are MTurk users supported?
@@ -36,20 +32,22 @@ Console users are not supported because it requires root user access.
 
 ## How do I close my AWS account?
 **Answer:**
-Send an email to [rc-help@colorado.edu](mailto:rc-help@colorado.edu) and provide the account number or account alias for the AWS Account you wish to close.  Be sure to leave your PO open for 2 billing cycles after the account has been closed to make sure there are no further charges before closing your PO.
+Submit a request using the [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form) and provide the account number or account alias for the AWS account you want to close. Leave your purchase order (PO) open for two billing cycles after the account is closed so any remaining charges can be processed before you close the PO.
 
 
 ## How do I find my Account ID and Alias?
 **Answer:**
 Click on the drop down on the top right corner of the console page to expand your account information.
-```{image} images/AcctNum.png
-:alt: AWS console home page with account information drop-down highlighted
+```{image} faq_images/AcctNum.png
+:alt: AWS console home page with account information drop-down highlighted. Described under How do I find my Account ID and Alias?
+:align: center
 ```
 
 
 ## Can I alter or remove CFS resources?
 **Answer:**
 No. Resources owned by the **Cloud Foundations Service (CFS)** team cannot be altered or removed and they can be identified by name prefix and/or resource tags. Any resources with the prefix `oitcld-` are owned by CFS, in addition to those with the below tag attached.
-```{image} images/CFSTag.png
-:alt: The CFS tag has the key/value pair of "oit-cld:management:central"/"true"
+```{image} faq_images/CFSTag.png
+:alt: AWS resource tag with key oit-cld:management:central and value true. Described under Can I alter or remove CFS resources?
+:align: center
 ```

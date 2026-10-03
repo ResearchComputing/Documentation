@@ -12,7 +12,10 @@ Welcome to CU Research Computing's (CURC's) user guide! CURC offers a variety of
 
 ## Meet the RC User Support Team!
 
-![The RC User Support team](./landing_page_images/MeetTheUserSupportTeam.png)
+```{image} ./landing_page_images/MeetTheUserSupportTeam.png
+:alt: The RC User Support team.
+:align: center
+```
 
 ----
 
@@ -154,7 +157,6 @@ additional-resources/changelog
 additional-resources/courses_using_curc_resources
 additional-resources/feedback
 additional-resources/contrib_curc_docs
-additional-resources/CURC-cheatsheet
 additional-resources/amc_ssh_auth
 additional-resources/registrycilogon-instructions
 additional-resources/blanca-MOU

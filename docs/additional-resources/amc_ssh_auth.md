@@ -22,21 +22,33 @@ A download link for GlobalProtect VPN and setup instructions for CU Anschutz aff
 You will receive an email from <registry@cilogon.org> inviting you to enroll in the RMACC Registry. 
 <br>
 
-![](./amc_ssh_images/email_invitation.png)
+```{image} ./amc_ssh_images/email_invitation.png
+:alt: Email invitation from registry@cilogon.org to enroll in the RMACC Registry.
+:align: center
+```
 
 Follow the invitation URL and click "Accept". __The invitation link becomes invalid once you click "Accept", so be sure to complete [Step 1](#step-1-enroll-in-the-rmacc-cilogon-registry), [Step 2](#step-2-generate-an-ssh-key), and [Step 3](#step-3-upload-your-ssh-key-to-registrycilogonorg) before closing your browser tab.__ 
 
-![](./amc_ssh_images/accept_invitation.png)
+```{image} ./amc_ssh_images/accept_invitation.png
+:alt: CILogon invitation acceptance page with the Accept button.
+:align: center
+```
 
 You will be automatically routed to the login page. Select "ACCESS CI (XSEDE)" from the Identity Provider dropdown menu and click "Log On".
 <br>
 
-![](./amc_ssh_images/cilogon_identityprovider_access.png)
+```{image} ./amc_ssh_images/cilogon_identityprovider_access.png
+:alt: CILogon identity provider selection page with ACCESS CI (XSEDE) highlighted.
+:align: center
+```
 
 Enter your ACCESS/XSEDE username and password and click "Login".
 <br>
 
-![](./amc_ssh_images/access_credentials.png)
+```{image} ./amc_ssh_images/access_credentials.png
+:alt: CILogon login form for ACCESS or XSEDE credentials.
+:align: center
+```
 <br>
 
 Accept the Duo push from your device.
@@ -50,12 +62,18 @@ You can move on to [Step 2](#step-2-generate-an-ssh-key), but please make sure 1
 You are strongly encouraged to set a passphrase for your key pair and generate a Ed25519 key. You will be prompted to enter the passphrase each time you log in.
 ```
 
+Your SSH keys are stored in a hidden directory named `.ssh` in your home directory (e.g. `~/.ssh` on Mac/Linux or `C:\Users\username\.ssh` on Windows). SSH requires this directory (and the files in it) to have restrictive permissions so that only you can read them. If the directory already exists on your system, `ssh-keygen` will use it as-is; if it doesn't exist yet, `ssh-keygen` will create it automatically with the correct permissions the first time you generate a key. It's best to let `ssh-keygen` create this directory rather than making it yourself (e.g. through a file manager), since a manually created folder may not have the restrictive permissions SSH expects and could cause SSH to refuse to use it.
+
 (tabset-ref-get-account)=
 ``````{tab-set}
 :sync-group: tabset-os-version
 `````{tab-item} Windows
 :sync: os-version-windows
-When generating a key on Windows it is recommended you use Powershell, but the command prompt or a basic Windows terminal will also work. Once inside Powershell (or similar), execute the following command to generate an Ed25519 key:
+When generating a key on Windows it is recommended you use Powershell, but the command prompt or a basic Windows terminal will also work. Before generating your key, navigate to the directory where you want it saved. If your `.ssh` directory already exists, navigate to it:
+```
+cd $HOME\.ssh
+```
+If it doesn't exist yet, there's no need to create it yourself — just enter the full path (e.g. `$HOME\.ssh\id_ed25519`) at the `Enter file in which to save the key` prompt below, and `ssh-keygen` will create the directory for you with the correct permissions. Once inside Powershell (or similar), execute the following command to generate an Ed25519 key:
 ```
 ssh-keygen -t ed25519
 ```
@@ -81,7 +99,11 @@ The key's randomart image is:
 `````
 `````{tab-item} Mac
 :sync: os-version-mac
-SSH key generation for Mac and Linux users can be completed from a terminal window. In a terminal, execute the following command to generate an Ed25519 key:
+SSH key generation for Mac and Linux users can be completed from a terminal window. Before generating your key, navigate to the directory where you want it saved. If your `~/.ssh` directory already exists, navigate to it:
+```
+cd ~/.ssh
+```
+If it doesn't exist yet, there's no need to create it yourself — just enter the full path (e.g. `~/.ssh/id_ed25519`) at the `Enter file in which to save the key` prompt below, and `ssh-keygen` will create the directory for you with the correct permissions. In a terminal, execute the following command to generate an Ed25519 key:
 ```
 ssh-keygen -t ed25519
 ```
@@ -116,26 +138,41 @@ Select "MY PROFILE (RMACC)".
 Select "Authenticators" from the menu on the right. 
 <br>
 
-![](./amc_ssh_images/menu_options.png)
+```{image} ./amc_ssh_images/menu_options.png
+:alt: CILogon profile menu with the Authenticators option selected.
+:align: center
+```
 <br>
 
 Click "Manage" in the SSHKeyAuthenticator row. 
-![](./amc_ssh_images/manage_sshkeyauthenticator.png)
+```{image} ./amc_ssh_images/manage_sshkeyauthenticator.png
+:alt: CILogon SSHKeyAuthenticator management page which shows an example table of SSH Key authenticators. The table lists one entry for SSHKeyAuthenticator with a status of "Not set (Not set)" and an action button labeled "manage". 
+:align: center
+```
 
 Select "Add SSH Key".
-![](./amc_ssh_images/add_sshkey.png)
+```{image} ./amc_ssh_images/add_sshkey.png
+:alt: CILogon Add SSH Key form that is empty with no entries. The Add SSH Key button is highlighted in the top right corner.
+:align: center
+```
 
 Click "Choose File". If you store your SSH keys in a hidden directory (e.g. `~/.ssh`), it may be difficult to locate your public key using a Finder/File Explorer window. As a workaround, you can copy your public key to an easily discoverable location using the Terminal App/Windows Command Prompt: <br>`cp ~/.ssh/id_ed25519.pub ~/Desktop`
 <br>
 
 Locate your __public__ key (`<keyname>.pub`) on your local drive, then click "UPLOAD".
-![](./amc_ssh_images/upload_sshkey.png)
+```{image} ./amc_ssh_images/upload_sshkey.png
+:alt: CILogon upload SSH key page with the public key selected and upload button.
+:align: center
+```
 
 <br>
 
 A green message box will notify you that your SSH key has been successfully added to your account.
 <br>
-![](./amc_ssh_images/sshkeyadded.png)
+```{image} ./amc_ssh_images/sshkeyadded.png
+:alt: Success message confirming the SSH key was added to the CILogon account.
+:align: center
+```
 
 After a few minutes, you can proceed to [Step 4](#step-4-sign-in-from-a-terminal-or-terminal-emulator).
 
@@ -162,7 +199,6 @@ You will be prompted to enter your passphrase if you set one during key generati
 Once you are logged in, you will see the CURC Message of the Day and your prompt will change to `<username>@login-ciX` (where `X` will be a numeric value). The Message of the Day contains important information and reminders about CURC systems, so please take time to read this on a regular basis.
 <br>
 
-![](./amc_ssh_images/loginprompt_motd.png)
 
 
 ## Deleting or Replacing SSH Keys in RMACC CILogon Registry
@@ -183,7 +219,11 @@ Log in at [registry.cilogon.org](https://registry.cilogon.org/registry/) and nav
 * If you are prompted for a **__password__** please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form), as this indicates an issue with your CILogon enrollment. Please include a screenshot of the error message and the date/time of your last login attempt. **Mac users should first attempt the solution provided in the bullet point above.**
 * If you receive an error message indicating that you are not in the COmanage registry (see screenshot below), please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form).
 
-![](./amc_ssh_images/notregistered_error.png)
+```{figure} ./amc_ssh_images/notregistered_error.png
+:alt: Error message indicating the user is not in the COmanage registry.
+:align: center
+
+Error Message : The identifier "http:/cilogon.org/serverE/users/51802" is not registered. If your request for enrollment is still being processed, you will not be able to login until it is approved. Please contact an administrator for assistance.
 <br>
 
 <br>

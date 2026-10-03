@@ -140,4 +140,4 @@ python myscript.py
 
 -  `uv` Documentation: [https://astral.sh/blog/uv/](https://astral.sh/blog/uv/)
 
-- Python `venv` Documentation: [https://docs.python.org/3/library/venv.html](https://astral.sh/blog/uv/)
+- Python `venv` Documentation: [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html)

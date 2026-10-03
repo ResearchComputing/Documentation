@@ -13,11 +13,12 @@
 - For a complete list of current semester offerings, see [CURC Trainings Page](../getting_started/trainings_and_consults/current-sem-trainings.md).
 ### CURC AI/ML Software Stack
 - The following AI/ML software are available and actively supported on CURC systems:
-    * Ollama: A lightweight and beginner-friendly tool for running large language models locally. Compatible with a variety of systems and enables easy model retrieval. For usage instructions, see [Running Large Language Models](./llms.md#ollama).
-    * Transformers by Hugging Face: A popular framework for working with pre-trained LLMs and building Natural Language Processing(NLP) applications. For usage instructions, see [Running Large Language Models](./llms.md#transformers-by-hugging-face).
+    * Ollama: A lightweight and beginner-friendly tool for running large language models locally. Compatible with a variety of systems and enables easy model retrieval. For usage instructions, see our [Ollama](./llms.md#ollama) documentation.
+        * In addition to the Ollama module, we have an easy to use LLM chat interface within Open OnDemand that utilizes Ollama. For more information, see our [LLM Chat Interface](../open_ondemand/llm_chat_interface.md) documentation. 
+    * Transformers by Hugging Face: A popular framework for working with pre-trained LLMs and building Natural Language Processing (NLP) applications. For usage instructions, see our [Transformers by Hugging Face](./llms.md#transformers-by-hugging-face) documentation.
     * AlphaFold: An AI tool from DeepMind that predicts 3D protein structures from amino acid sequences, revolutionizing biological and medical research. For documentation and usage details, see our [AlphaFold Page](../software/alphafold.md). 
     * CUDA Toolkit, cuDNN, NVIDIA HPC SDK: For GPU-accelerated AI training and inference.
-- Additional supported software can be found in the [CURC Software List](../software/curc_provided_software.md) or you can explore available modules using the `module spider` command.
+- Additional supported software can be found in the [CURC-Provided Software page](../software/curc_provided_software.md) or you can explore available modules using the `module spider` command.
 
 ## National Community Resources
 

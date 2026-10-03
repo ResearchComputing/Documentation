@@ -4,6 +4,7 @@ Individuals who are comfortable with the Linux command line may be interested in
 
 ```{eval-rst}
 .. figure:: ./OnDemand/cluster_terminal_app.png
+   :alt: A screenshot that shows on the left the "Alpine Shell Access" option selected from the Cluster's dropdown menu in Open OnDemand. On the right is a screenshot of an active terminal session, where the terminal commands "module list" and "ls" have been entered.
    :align: center
 ```
 

@@ -33,9 +33,9 @@ Now create a job script called `run_hello.sh` that will use GNU Parallel
 to run as many instances of your python script as you want. Before running GNU Parallel in our script, we need to load the python and GNU Parallel modules. Your job script should look something like this:
 
 ```{tip}
-This example uses a custom python environment built with conda, 
-more information on using python or R with conda can be found 
-[here](./python.md)
+This example uses a custom Python environment built with Anaconda; 
+more information on using Python or R with Anaconda can be found 
+[in the Python and R tutorial](./python.md).
 ```
 
 ```bash
@@ -49,7 +49,7 @@ more information on using python or R with conda can be found
 #SBATCH --output gnuparallel.out
 
 module purge
-module load anaconda 
+module load miniforge 
 conda activate your_custom_env
 module load gnu_parallel
 
@@ -97,5 +97,4 @@ Tip: For sufficiently-large workflows one can add the `--joblog` and `--resume` 
 - [https://www.gnu.org/software/parallel/parallel_tutorial.html](https://www.gnu.org/software/parallel/parallel_tutorial.html)
 - [https://github.com/ResearchComputing/easy_parallelization_htc_primer](https://github.com/ResearchComputing/easy_parallelization_htc_primer)
 - [https://rcc-uchicago.github.io/user-guide/tutorials/kicp/#gnu-parallel](https://rcc-uchicago.github.io/user-guide/tutorials/kicp/#gnu-parallel)
-- [https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html](https://rcc.uchicago.edu/docs/tutorials/kicp-tutorials/running-jobs.html)
 

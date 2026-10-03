@@ -1,12 +1,12 @@
 # Gaussian
 
 ```{important}
-Gaussian is available on Alpine and Blanca, only to members of universities that have purchased Gaussian licenses. It cannot be run by other users. Please note and abide by the licensing rights, and citation information shown at the top of your Gaussian output files.
+Gaussian is available on Alpine and Blanca, only to members of universities that have purchased Gaussian licenses. It cannot be run by other users. Please note and abide by the licensing rights and citation information shown at the top of your Gaussian output files.
 ```
 
 This document describes how to run G16 jobs efficiently on Alpine. It does not attempt to teach how to use Gaussian for solving science/engineering questions.
 
-Good general instructions can be found [here](http://gaussian.com/running/); however some minor modifications are needed when running on Alpine.
+Good general instructions can be found on the [Running Gaussian](http://gaussian.com/running/) page; however some minor modifications are needed when running on Alpine.
 
 ## Running G16
 
@@ -19,7 +19,7 @@ _Scratch storage:_ It is important to specify `GAUSS_SCRDIR` to tell G16 where t
 
 _Memory:_ The default dynamic memory request in G16 is frequently too small to support the amount of memory that needs to be allocated to efficiently
 support computations on even modest-sized molecules. If too little memory is requested, the job can crash. Thus, use the `-m` flag in
-your `g16` command line (e.g. `-m=48gb`) to specify at least 50% of the amount of memory your Slurm job has requested.
+your `g16` command line (e.g. `-m=48gb`) to specify how much memory your G16 run may access. We recommend setting aside at least 50% of the memory your Slurm job has requested. For example, if your Slurm job has requested 60GB of memory, than you would want to assign at least 30GB of memory to G16 (`-m=30gb`).
 
 ### Single-node parallel jobs (SMP)
 
@@ -109,10 +109,10 @@ Not all G16 computations scale efficiently beyond a single node! According to th
 
 ### G16 on Alpine NVIDIA GPUs
 
-Please see the [Gaussian GPU documentation](https://gaussian.com/running/?tabid=5)] for information on how configure Gaussian input files to run on GPUs. CURC presently does not have example job scripts for running Gaussian on GPUs. The Gaussian GPU documentation will also enable you to determine whether the A100 GPUs in Alpine's `aa100` partition will be effective for your calculations. In many cases, SMP parallelization across all of the cores in an `acpu` node will provide better speedup than offloading computational work to a GPU.  
+Please see the [Gaussian GPU](https://gaussian.com/running/?tabid=5) documentation for information on how configure Gaussian input files to run on GPUs. CURC presently does not have example job scripts for running Gaussian on GPUs. The Gaussian GPU documentation will also enable you to determine which of the [GPU types](../clusters/alpine/alpine-hardware.md#general-resources-gres) currently supported by Alpine will be effective for your calculations. In many cases, SMP parallelization across all of the cores in an `acpu` node will provide better speedup than offloading computational work to a GPU.  
 
 ```{warning}
-G16 can not use the AMD MI100 GPUs in Alpine's `ami100` partition.
+G16 cannot use the AMD MI100 GPUs in Alpine's `ami100` partition.
 ```
 
 ## Running GaussView
@@ -130,7 +130,10 @@ $ gview.exe
 
 ...this will start the `GaussView` graphical user interface.  Your screen should look similar to the following example: 
 
-![](software_images/gview_ood.png)
+```{image} ./software_images/gview_ood.png
+:alt: A screenshot of the Gauss View GUI launched from within Open OnDemand's Core Desktop. Instructions for launching GaussView are provided under the "Running GaussView" header.
+:align: center
+```
 
 ## Sample input file
 

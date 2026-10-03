@@ -1,19 +1,16 @@
-# AWS - Network Cost Guide
+# Network Cost Guide
 
-## Document Purpose
-
-This document gives some sample cost estimates for select network access methods and provides the URL's to find current pricing. 
-
-## Network access methods 
+There are three network acess methods available:
 
 1) Internet Gateway - used with public IP
 2) NAT Gateway - used with private IP
 3) CFS Transit Gateway (VPN) - used with private IP address, VPN connects back to CU Boulder
 
-### Internet Gateway
+## Internet Gateway
 
-**Important**
-Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing.
+```{important}
+Always check [AWS EC2 On-Demand Pricing Page](https://aws.amazon.com/ec2/pricing/on-demand/) for current pricing.
+```
  
 **Network costs**
 
@@ -30,10 +27,11 @@ Always check [AWS documentation](https://aws.amazon.com/ec2/pricing/on-demand/) 
 
 	Total Network Cost = $36/month
 
-### NAT Gateway
+## NAT Gateway
 
-**Important**
-Always check [AWS documentation](https://aws.amazon.com/vpc/pricing/) for current pricing.
+```{important}
+Always check [AWS VPC Pricing Page](https://aws.amazon.com/vpc/pricing/) for current pricing.
+```
 
 **Network Costs**
 1) Downloads - $0.045/GB
@@ -50,10 +48,11 @@ Always check [AWS documentation](https://aws.amazon.com/vpc/pricing/) for curren
 
 	Total Network Cost = $59.40/month
 
-### CFS Transit Gateway VPN
+## CFS Transit Gateway VPN
 
-**Important**
-Always check [AWS documentation](https://aws.amazon.com/transit-gateway/pricing/) for current pricing.
+```{important}
+Always check [AWS Transit Gateway Pricing Page](https://aws.amazon.com/transit-gateway/pricing/) for current pricing.
+```
 
 **Network Costs**
 1) Downloads - $0.02/GB
@@ -69,4 +68,3 @@ Always check [AWS documentation](https://aws.amazon.com/transit-gateway/pricing/
 	3) Attachment cost = $0.05 x (24hr x 30day= 720hr) = $36
 
 	Total Network Cost = $48/month
-
