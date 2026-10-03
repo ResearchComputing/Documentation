@@ -79,6 +79,7 @@ documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
 | 20 | When requesting resources from GPU partitions, users must specify `--gres`. | You have not specified a `GRES` using the `--gres` directive, which is required on this partition. | Specify a `GRES` using the `--gres` directive. You can find a list of Alpine `GRES`, as well as examples, in our [Alpine GRES Documentation](../clusters/alpine/alpine-hardware.md#general-resources-gres). |
 | 21 | If a list of GPU partitions is provided, then `GRES` must be set to `--gres=gpu:N`, where `N` is the number of GPUs. | You have provided an invalid `GRES` format while using a list of GPU partitions. | Use the `GRES` format `--gres=gpu:N`, where `N` is the number of GPUs. |
 | 22 | The oversubscribe Slurm directive cannot be used with the provided partition. | You have provided the `--oversubscribe` Slurm directive and it is not allowed to be used with the provided partition. | Remove the `--oversubscribe` Slurm directive or change to a compatible partition. |
+| 23 | The `--exclusive` Slurm directive cannot be used with the provided partition and provided QoS. | You used plain `--exclusive` on a resource that cannot give a job exclusive access to an entire node. This applies to the `acompile` and `ahub` partitions, and to the `cpu-testing` and `gpu-testing` QoS. | Remove `--exclusive` from your job submission. |
 
 ## Alpine Job Submission Warning Codes
 
