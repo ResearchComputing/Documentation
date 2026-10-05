@@ -284,7 +284,7 @@ acompile --ntasks=2 --time=02:00:00
 
 #### Testing resources within `acpu`
 
-The `cpu-testing` QoS available within the `acpu` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
+The `cpu-testing` QoS available within the `acpu` partition provides access to limited resources for the purpose of verifying multi-node workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
 
 (tabset-ref-atesting-use)=
 `````{tab-set}
