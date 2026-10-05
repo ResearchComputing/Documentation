@@ -137,7 +137,7 @@ All users, regardless of institution, should specify partitions as follows:
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
 | cpu-normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | acpu  |
 | cpu-long | Longer wall times          | 7 days              | 200           | 20 nodes               | acpu            | 
-| cpu-testing | Testing QoS for multi-node CPU jobs        | 1 hour | 5 | 2 nodes and 16 cores |  acpu    | 
+| cpu-testing | Testing QoS for CPU workflows (see [Testing resources within acpu](#testing-resources-within-acpu))        | 1 hour | 5 | 2 nodes and 16 cores |  acpu    | 
 | mem-normal | Standard QoS for High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
 | mem-long | QoS for longer running High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
 | gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40,ah200,artxpro6000     | 
@@ -284,7 +284,7 @@ acompile --ntasks=2 --time=02:00:00
 
 #### Testing resources within `acpu`
 
-The `cpu-testing` QoS available within the `acpu` partition provides access to limited resources for the purpose of verifying multi-node workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
+The `cpu-testing` QoS available within the `acpu` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. These resources are particularly useful for verifying multi-node jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
 
 (tabset-ref-atesting-use)=
 `````{tab-set}

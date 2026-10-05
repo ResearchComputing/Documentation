@@ -41,12 +41,12 @@ more information on using Python or R with Anaconda can be found
 ```bash
 #!/bin/bash
 
-#SBATCH --time 00:02:00
-#SBATCH --partition atesting
-#SBATCH --qos testing
+#SBATCH --time=00:02:00
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=4
-#SBATCH --job-name gpPythonDemo
-#SBATCH --output gnuparallel.out
+#SBATCH --job-name=gpPythonDemo
+#SBATCH --output=gnuparallel.out
 
 module purge
 module load miniforge 

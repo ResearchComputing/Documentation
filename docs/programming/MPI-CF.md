@@ -219,14 +219,14 @@ something like this:
 
 ```bash
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --qos testing
-#SBATCH --constraint ib
-#SBATCH --time 00:01:00
-#SBATCH --output parallel_hello_world.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --job-name=parallel_hello
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
+#SBATCH --constraint=ib
+#SBATCH --time=00:01:00
+#SBATCH --output=parallel_hello_world.out
 
 module purge
 
@@ -243,13 +243,13 @@ mpirun -np 4 ./hello_world_mpi.exe
 
 ```bash
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --qos testing
-#SBATCH --constraint ib
-#SBATCH --time 00:01:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --job-name=parallel_hello
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
+#SBATCH --constraint=ib
+#SBATCH --time=00:01:00
 #SBATCH --output parallel_hello_world.out
 
 module purge
@@ -881,14 +881,14 @@ job script should look something like this:
 
 ```bash
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --qos testing
-#SBATCH --constraint ib
-#SBATCH --time 00:01:00
-#SBATCH --output parallel_hello_world.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --job-name=parallel_hello
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
+#SBATCH --constraint=ib
+#SBATCH --time=00:01:00
+#SBATCH --output=parallel_hello_world.out
 
 module purge
 
@@ -905,14 +905,14 @@ mpirun -np 4 ./hello_world_mpi.exe
 
 ```bash
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH --ntasks 4
-#SBATCH --job-name parallel_hello
-#SBATCH --partition atesting
-#SBATCH --qos testing
-#SBATCH --constraint ib
-#SBATCH --time 00:01:00
-#SBATCH --output parallel_hello_world.out
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --job-name=parallel_hello
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
+#SBATCH --constraint=ib
+#SBATCH --time=00:01:00
+#SBATCH --output=parallel_hello_world.out
 
 module purge
 
