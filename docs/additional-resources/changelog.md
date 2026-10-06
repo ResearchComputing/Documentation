@@ -10,6 +10,7 @@ The following is a high-level list of notable changes made to CU Research Comput
 
 | **Date** | **Change** | **Impact** |
 | ------ | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Oct | Applied the standardized node feature flags (constraints) to all Alpine compute nodes. Reduced the `acompile` partition to the two nodes. Replaced the `atesting` partition with the `acpu` partition and the `cpu-testing` QoS. Added a job submission check that rejects plain `--exclusive` on the `acompile` and `ahub` partitions and on the `cpu-testing` and `gpu-testing` QoS. | Affects user job submission parameters. |
 | Feb | Arbiter2 added to login nodes | All users will receive warnings (and potentially have their session terminated) if running intensive proccesses on login nodes |
 | Feb | Added Mines IP ranges to greenlist for passwordless SSH via CILogon | Enable Mines users to log in and transfer files via terminal-based ssh in addition to Open OnDemand |
 | Feb | Added NVIDIA GPU and VRAM utilization to `seff` command | Users and support staff are better able to track GPU usage metrics on NVIDIA nodes; Slurm job emails will now include this data also |
