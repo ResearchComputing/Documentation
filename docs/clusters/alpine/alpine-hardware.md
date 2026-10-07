@@ -239,6 +239,40 @@ $ sinfo --Format Partition,Gres |grep gpu
 
 `````
 
+### Node Features
+
+The Alpine cluster features some heterogeneity with respect to compute node resources. To enable users to apply fine grained selection of particular resources, we set Slurm features on each compute node. These resource flags specify items such as CPU model, physical rack, and Infiniband capability. If you would like to see all the features that are available on every node in the cluster, you can use the `sinfo` command.
+
+```bash
+[ralphie@login-ci4 ~]$ sinfo --format="%N | %f"
+```
+Additionally, if you would like to see the features applied to a specific node, you can use `scontrol show node <node name>` and refer to the `ActiveFeatures` setting. For example, we can see the active features on the compute node `c3cpu-e2-u2` as follows:
+```bash 
+[ralphie@login-ci4 ~]$ scontrol show node c3cpu-e2-u2 | grep ActiveFeatures
+    ActiveFeatures=hpcf,e2,ucb,cpu,amd-cpu,genoa,epyc-9534,128c,1t,ib
+```
+
+Features on Alpine follow the following format:
+```
+ActiveFeatures=<data center>,<rack>,<institution>,<node type>,<CPU chip manufacturer>-cpu,<CPU microarchitecture generation>,<cpu model>,<num cores>c,<num threads per core>t,<GPU manufacturer>-gpu,ib 
+```
+
+In the table below we provide descriptions and examples for each of these features.
+
+| Feature  | Description | Examples |
+| -------- | ----------- | ------- |
+|   `<data center>`      | The data center where the node is located.            |  `hpcf`, `spsc`       | 
+| `<rack>`        |   The rack the node is located in.          |   `e2`, `c9`, `a9`      | 
+| `<institution>`        |  The institution the node belongs to.           | `ucb`, `csu`, `amc`, `rmacc`        | 
+|  `<node type>`       |  The defining hardware type for the node.           |  `cpu`, `mem`, `gpu`       | 
+|  `<CPU chip manufacturer>-cpu`       |  The company that designs the CPU chip.           |   `intel-cpu`, `amd-cpu`      | 
+|  `<CPU microarchitecture generation>`       |   The CPU microarchitecture generation for the chip i.e. code name.          |    `milan`, `rome`, `genoa`, `turin`, `grace`     | 
+|  `<cpu model>`       |  The CPU’s processor model.           |  `7313`, `7443`, `74F3`, `7502`, `7543`, `7713`, `7713P`, `9534`, `9555`, `grace-a02`        | 
+|   `<num cores>c`      |   The total number of cores on the node.          |   `128c`, `64c`, `48c`      | 
+| `<num threads per core>t`        |    The number of threads per core.         |  `1t`, `2t`       | 
+|  `<GPU manufacturer>-gpu`       |  The company that designs the GPU. Note that this will be left off it is not a GPU node.           |  `nvidia-gpu`, `amd-gpu`       | 
+|  `<Infiniband>`       |   States if the node has Infiniband and is connected to other nodes via Infiniband. If there is Infiniband on the node, `ib` will be specified, if not, `ib` will not appear.          |   `ib`      | 
+
 ## Special-Purpose Resources
 
 To help users test out their workflows, CURC provides several special-purpose resources on Alpine. These resources enable users to quickly test or compile code on CPU and GPU compute nodes. To ensure equal access to these resources, the amount of resources (such as CPUs, GPUs, and runtime) are limited. 
