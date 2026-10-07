@@ -26,7 +26,7 @@ All nodes are available to all users via the [Slurm Fair Tree Fairshare Algoritm
 | {{ alpine_ucb_total_rtxpro6000_gpu_nodes }} Turin NVIDIA GPU    | artxpro6000             | x86_64 AMD Turin | 2       | 128            | 1            |  {{ alpine_rtxpro6000_ram_per_core }}           | NVIDIA RTX Pro 6000 | 4         | 5.4T SSD                   | 100 Gb Ethernet                     |
 | {{ alpine_ucb_total_gh200_gpu_nodes }} Grace CPU NVIDIA Hopper GPU    | gh200<br><br>Note: these nodes are only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | ARM Neoverse V2 | 1       | 72            | 1            |  6.6          | NVIDIA Hopper GPU | 1         | 1.8T SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_acompile_nodes }} AMD CPU compile nodes | acompile | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
-| {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} AMD CPU test nodes; pulls from CU's `acpu` pool | atesting | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
+| {{ alpine_ucb_total_64_core_256GB_cpu_nodes_atesting }} AMD CPU test nodes; pulls from CU's `acpu` pool | acpu (requested using the cpu-testing QoS) | x86_64 AMD | 1 or 2  | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | N/A         | 0         | 416G SSD                   | HDR-100 InfiniBand (200Gb inter-node fabric) |
 | {{ alpine_ucb_total_a100_test_gpu_nodes }} Milan NVIDIA GPU testing node | aa100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | NVIDIA A100 | 3 (each split by MIG)        | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 | {{ alpine_ucb_total_mi100_test_gpu_nodes }} Milan AMD GPU testing nodes; pulls from ami100 pool | ami100 (requested using the gpu-testing QoS) | x86_64 AMD Milan | 2       | 64            | 1            |  {{ alpine_standard_ram_per_core }}           | AMD MI100   | 3         | 416G SSD                   | 2x25 Gb Ethernet +RoCE                       |
 
@@ -96,7 +96,6 @@ Resources are requested within jobs by passing in SLURM directives, or resource 
 | al40      | GPU-enabled (3x NVIDIA L40)<sup>4</sup> | {{ alpine_total_al40_nodes }}          | 64         |   {{ alpine_standard_ram_per_core }}        | 6.1<sup>3</sup>     |
 | amem<sup>1</sup> | High-memory           | {{ alpine_total_amem_nodes }}          | 48 or 64 or 128     |  16<sup>2</sup> | 4.0           |
 | acompile | AMD CPU compile nodes | {{ alpine_total_acompile_nodes }} | 64 |   {{ alpine_standard_ram_per_core }}         | N/A                   | 
-| atesting | AMD CPU test nodes | {{ alpine_total_atesting_cpu_nodes }}; Pulls from CU's `acpu` pool | 64 |   {{ alpine_standard_ram_per_core }}         | 0.025                   |  
 | gh200 | NVIDIA Grace-Hopper (GH200) nodes<br><br>Note: this partition is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | {{ alpine_ucb_total_gh200_gpu_nodes }} | 72        |   6.65       | Billed at roughly twice the rate of our A100s   | 
 
 ```{important}
@@ -138,12 +137,12 @@ All users, regardless of institution, should specify partitions as follows:
 | ----------- | -------------------------- | --------------- | ------------- | ------------------ | ---------------- |
 | cpu-normal | Standard QoS for non-testing partitions                    | 1 day              | 1000          | 128 nodes                | acpu  |
 | cpu-long | Longer wall times          | 7 days              | 200           | 20 nodes               | acpu            | 
+| cpu-testing | Testing QoS for CPU workflows (see [Testing resources within acpu](#testing-resources-within-acpu))        | 1 hour | 5 | 2 nodes and 16 cores |  acpu    | 
 | mem-normal | Standard QoS for High-memory jobs           | 24 hours              | 1000          | 256 CPU cores                | amem        | 
 | mem-long | QoS for longer running High-memory jobs           | 7 days              | 200          | 185 CPU cores                | amem       | 
 | gpu-normal | Standard QoS for GPU jobs        |  24 hours             |    1000      | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100,al40,ah200,artxpro6000     | 
 | gpu-long |  QoS for longer running GPU jobs          |   7 days            |    200      | see [Available GRES on Alpine](#available-gres-on-alpine)  | aa100,ami100,al40,ah200,artxpro6000 | 
 | gpu-testing | Testing QoS for GPU jobs        | 1 hour | 5 | see [Available GRES on Alpine](#available-gres-on-alpine) |  aa100,ami100     | 
-| testing | Used for all testing partitions   | 1 hour              | 5          |  2 nodes      | atesting     | 
 | compile | Used for acompile jobs  | 12 hours              |    4     |   1 node      | acompile   | 
 | gh200 | Used for GH200 jobs<br><br>Note: this QoS is only available upon request, please submit a [support request form](https://colorado.service-now.com/req_portal?id=ucb_sc_rc_form). | 7 days             |   1       |   1 node      | gh200  | 
 
@@ -283,7 +282,7 @@ Compiling and testing resources are, as their name implies, only meant for compi
 
 ### Special-Purpose CPU-only Resources
 
-CURC currently provides two types of special-purpose CPU-only resources on Alpine that are made available through the partitions `atesting` and `acompile`. 
+CURC currently provides two types of special-purpose CPU-only resources on Alpine. Descriptions on accessing these resources are provided in the following subsections.  
 
 ### `acompile` usage
 
@@ -317,9 +316,9 @@ acompile --ntasks=2 --time=02:00:00
 
 `````
 
-#### `atesting` usage
+#### Testing resources within `acpu`
 
-The `atesting` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
+The `cpu-testing` QoS available within the `acpu` partition provides access to limited resources for the purpose of verifying workflows and MPI jobs. These resources are particularly useful for verifying multi-node jobs. Users are able to request up to 2 CPU nodes (8 cores per node) for a maximum runtime of 1 hour and 16 CPUs. 
 
 (tabset-ref-atesting-use)=
 `````{tab-set}
@@ -331,7 +330,7 @@ The `atesting` partition provides access to limited resources for the purpose of
 **Request one core per node for 10 minutes.**
 
 ```bash
-sinteractive --partition=atesting --ntasks=2 --ntasks-per-node=1 --nodes=2 --qos=testing --time=00:10:00
+sinteractive --partition=acpu --qos=cpu-testing --ntasks=2 --ntasks-per-node=1 --nodes=2 --time=00:10:00
 ```
 
 ````
@@ -342,7 +341,7 @@ sinteractive --partition=atesting --ntasks=2 --ntasks-per-node=1 --nodes=2 --qos
 **Request 4 cores for 30 minutes.**
 
 ```bash
-sinteractive --partition=atesting --ntasks=4 --nodes=1 --qos=testing --time=00:30:00 
+sinteractive --partition=acpu --qos=cpu-testing --ntasks=4 --nodes=1 --time=00:30:00 
 ```
 
 ````
@@ -353,7 +352,7 @@ sinteractive --partition=atesting --ntasks=4 --nodes=1 --qos=testing --time=00:3
 **Request 2 nodes with 2 cores per node for 10 minutes - a good option for testing MPI jobs.**
 
 ```bash
-sinteractive --partition=atesting --ntasks=4 --ntasks-per-node=2 --nodes=2 --qos=testing --time=00:10:00
+sinteractive --partition=acpu --qos=cpu-testing --ntasks=4 --ntasks-per-node=2 --nodes=2 --time=00:10:00
 ```
 
 ````

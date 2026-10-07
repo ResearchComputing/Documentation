@@ -34,8 +34,8 @@ A job script looks something like this:
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --time=00:10:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --output=sample-%j.out
 
 module purge
@@ -127,8 +127,8 @@ echo "== End of Job =="
 
 #SBATCH --nodes=1
 #SBATCH --time=00:05:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=1
 #SBATCH --job-name=cpp-job
 #SBATCH --output=cpp-job.%j.out
@@ -150,8 +150,8 @@ module load gcc
 
 #SBATCH --nodes=1
 #SBATCH --time=00:07:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=omp-cpp-job
 #SBATCH --output=omp-cpp-job.%j.out
@@ -176,8 +176,8 @@ export OMP_NUM_THREADS=4
 
 #SBATCH --nodes=2
 #SBATCH --time=00:10:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=16
 #SBATCH --job-name=mpi-cpp-job
 #SBATCH --output=mpi-cpp-job.%j.out
