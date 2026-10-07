@@ -118,8 +118,8 @@ Here’s an example Slurm job script for running a Python task within a `uv` vir
 
 #SBATCH --nodes=1
 #SBATCH --time=06:00:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --job-name=python_task
 #SBATCH --output=python_task_%j.out
 #SBATCH --ntasks=1

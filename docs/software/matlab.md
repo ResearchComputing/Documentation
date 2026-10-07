@@ -109,8 +109,8 @@ which contains the following lines:
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=1
 #SBATCH --job-name=Matlab_Hello_World
 #SBATCH --output=Matlab_Hello_World.out
@@ -210,8 +210,8 @@ output file if we choose.
 
 #SBATCH --nodes=1
 #SBATCH --time=0:01:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=Matlab_Parallel_Hello
 #SBATCH --output=Matlab_Parallel_Hello.out

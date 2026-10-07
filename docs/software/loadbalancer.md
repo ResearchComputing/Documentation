@@ -79,12 +79,12 @@ Now create a job script called `run_hello.sh` that will run all instances of you
 #!/bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --time 00:02:00
-#SBATCH --partition atesting
-#SBATCH --qos testing
+#SBATCH --time=00:02:00
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --ntasks=4
-#SBATCH --job-name lbPythonDemo
-#SBATCH --output loadbalance.out
+#SBATCH --job-name=lbPythonDemo
+#SBATCH --output=loadbalance.out
 
 module purge
 

@@ -116,8 +116,8 @@ executable. Your job script should look something like this:
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --time=00:01:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --constraint=ib
 #SBATCH --ntasks=4
 #SBATCH --job-name=CPP_Hello_World
@@ -669,10 +669,9 @@ executable. Your job script should look something like this:
 
 #SBATCH --nodes=1
 #SBATCH --time=00:01:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --constraint=ib
-#SBATCH --qos=testing
 #SBATCH --ntasks=4
 #SBATCH --job-name=Fortran_Hello_World
 #SBATCH --output=Fortran_Hello_World.out

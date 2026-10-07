@@ -40,8 +40,8 @@ Here's a quick example that shows how all three (`--array`, `--output`, and the 
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --time=00:10:00
-#SBATCH --partition=atesting
-#SBATCH --qos=testing
+#SBATCH --partition=acpu
+#SBATCH --qos=cpu-testing
 #SBATCH --array=1-3                # 1 - Set Array Indexes
 #SBATCH --output=example-%A-%a.out # 2 - Add the Job ID and Task ID for each array task
 
