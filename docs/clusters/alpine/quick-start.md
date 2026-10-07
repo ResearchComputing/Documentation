@@ -48,30 +48,6 @@ The Alpine cluster has different types of interconnects/fabrics which connect di
 - **High-memory nodes**: A mixture of 2x25 Gb Ethernet +RoCE and 100 Gb Ethernet
 - **Scratch storage**: 25Gb Ethernet +RoCE
 
-## Node Features
-The Alpine cluster features some heterogeneity. A variety of feature tags are applied to nodes deployed in Alpine to allow jobs to target specific CPU, GPU, network, and storage requirements.
-
-Use the `sinfo` command to determine the features that are available on any node in the cluster.
-
-```bash
-sinfo --format="%N | %f"
-```
-
-```{note}
-**Feature descriptions and finalized partition names are still being added to Alpine nodes. Refer to the description of features list below for current node features.**
-```
-
-### Description of features
-- **cpu**: AMD EPYC CPU (cores per node vary between 32-128)
-- **a100**: NVIDIA A100 GPU
-- **mi100**: AMD MI100 GPU
-- **l40**: NVIDIA L40 GPU
-- **h200**: NVIDIA H200 GPU
-- **rtxpro6000**: NVIDIA RTX Pro 6000 GPU
-- **storage**: large, fast RAID disk storage in node
-- **rh8**: RedHat Enterprise Linux version 8 operating system
-- **ib**: Features Infiniband, a high-speed message passing fabric for MPI jobs
-
 ## Job Scheduling
 
 All jobs on Alpine are run through a queue system using the SLURM job scheduler. Though many HPC workflows are run through batch-type jobs, interactive jobs on compute nodes are allowed; however, these jobs must also be initiated through the scheduler. High-priority jobs move to the top of the queue and are thus guaranteed to start running within a few minutes, unless other high-priority jobs are already queued or running ahead of them. High-priority jobs can run for a maximum wall time of 24 hours. Low-priority jobs have a maximum wall time of 7 days.
