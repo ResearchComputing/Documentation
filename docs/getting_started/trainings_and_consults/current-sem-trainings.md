@@ -32,9 +32,10 @@ Click the name of a training to view more details and register!
 - [Git & GitHub In-Depth (A Short Course)](https://calendar.colorado.edu/event/git-github-in-depth-a-short-course-7850) - **October 22, 10am, Hybrid (Norlin Library E206/Zoom)**
 
 ### **November 2026**
-- [AI Data Readiness Workshop (A Primer)](https://calendar.colorado.edu/event/ai-data-readiness-workshop-a-primer) - **November 5, 10am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (A Short Course)](https://calendar.colorado.edu/event/alphafold3-on-alpine-a-short-course) - **November 12, 11am, Virtual (Zoom)**
 
+### **December 2026**
+- [AI Data Readiness Workshop (A Primer)](https://calendar.colorado.edu/event/ai-data-readiness-workshop-a-primer) - **December 4, 11am, Virtual (Zoom)**
 ````
 
 ````{tab-item} By Topic
@@ -60,7 +61,7 @@ Click the name of a training to view more details and register!
 - [Lunch-and-Learn: How to request GPUs on Alpine](https://calendar.colorado.edu/event/curc-lunch-and-learn-how-to-request-gpus-on-alpine) - **Friday, August 21, 12pm, Virtual (Zoom)**
 - [Applied Containerization for Machine Learning in HPC (A Short Course)](https://calendar.colorado.edu/event/applied-containerization-for-machine-learning-in-hpc-a-short-course) - **September 9, 11am, Virtual (Zoom)**
 - [Setting up LLMs on CURC Resources (A Short Course)](https://calendar.colorado.edu/event/setting-up-llms-on-curc-resources-a-short-course) - **October 1, 11am, Virtual (Zoom)**
-- [AI Data Readiness Workshop (A Primer)](https://calendar.colorado.edu/event/ai-data-readiness-workshop-a-primer) - **November 5, 10am, Virtual (Zoom)**
+- [AI Data Readiness Workshop (A Primer)](https://calendar.colorado.edu/event/ai-data-readiness-workshop-a-primer) - **December 4, 11am, Virtual (Zoom)**
 
 ### **Cloud**
 - [AWS New Accounts Onboarding Session](https://calendar.colorado.edu/event/aws-new-accounts-onboarding-session) - **September 16, 2:00pm, Hybrid (Norlin Library E206/Zoom)**
@@ -88,8 +89,8 @@ Click the name of a training to view more details and register!
 - [Setting up LLMs on CURC Resources (A Short Course)](https://calendar.colorado.edu/event/setting-up-llms-on-curc-resources-a-short-course) - **October 1, 11am, Virtual (Zoom)**
 - [Harnessing the Power of GPU-Accelerated Workflows with Alpine (A Primer)](https://calendar.colorado.edu/event/harnessing-the-power-of-gpu-accelerated-workflows-with-alpine-a-primer) - **October 15, 11am, Virtual (Zoom)**
 - [Git & GitHub In-Depth (A Short Course)](https://calendar.colorado.edu/event/git-github-in-depth-a-short-course-7850) - **October 22, 10am, Hybrid (Norlin Library E206/Zoom)**
-- [AI Data Readiness Workshop (A Primer)](https://calendar.colorado.edu/event/ai-data-readiness-workshop-a-primer) - **November 5, 10am, Virtual (Zoom)**
 - [AlphaFold3 on Alpine (A Short Course)](https://calendar.colorado.edu/event/alphafold3-on-alpine-a-short-course) - **November 12, 11am, Virtual (Zoom)**
+- [AI Data Readiness Workshop (A Primer)](https://calendar.colorado.edu/event/ai-data-readiness-workshop-a-primer) - **December 4, 11am, Virtual (Zoom)**
 
 ````
 
