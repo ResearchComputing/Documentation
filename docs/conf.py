@@ -22,7 +22,7 @@ myst_substitutions = {
    'alpine_total_cores': '32,368',
 
    # Alpine cluster summary substitutions
-   'alpine_total_256GB_512GB_cpu_nodes': '423',
+   'alpine_total_256GB_512GB_cpu_nodes': '424',
    'alpine_total_gpu_nodes': '41',
    'alpine_total_hi_mem_cpu_nodes': '24',
    'ucb_alpine_total_nodes': '375',
