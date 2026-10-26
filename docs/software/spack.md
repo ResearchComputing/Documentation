@@ -234,15 +234,24 @@ From there, you can add the compiler to Spack. All compilers in the software sta
 
 ### Troubleshooting Spack
 
-If an installation fails, there are several ways to troubleshoot the failure. Common issues with installations include: 
+If an installation fails, there are several ways to troubleshoot or resolve the failure. 
 
 * __Building with the wrong compiler:__ Double check if the compiler you are using is compatible with the software you are attempting to build. 
 * __Building with an incompatible variant set:__ Confirm that the configuration settings for the software are compatible and as expected. If not, try enabling or disabling variants that may be causing problems. 
     * One can easily see variants and possible conflicts by searching the package using [Spack's provided search engine](https://packages.spack.io/) and viewing the "Variants" and "Conflicts" section of the documentation. Additionally, one can view `package.py` in the "Build System" section to directly view the code that defines variants and conflicts.
 * __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try installing an older version. 
 * __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
-
-Additionally, Spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, use `spack -dv install`. 
+* __Error when removing an environment:__ Certain versions of Spack are not fully compatible with our filesystem. In versions with this issue, you will have to remove the environment directory manually, after you have executed `spack env remove <environment name>`. For example, say we have created an environment named `test_env`, in Spack version 1.2.2 when we remove `test_env` we will obtain the following error:
+    ```
+    [johndoe@c3cpu-a2-u32-4 ~]$ spack env remove test_env
+    ==> Really remove environment test_env? [y/N] y
+    ==> Error: [Errno 39] Directory not empty: '.spack-env'
+    ```
+    Once this error is received you will have to complete the removal by removing the Spack environment directory e.g. 
+    ```
+    [johndoe@c3cpu-a2-u32-4 ~]$ rm -rf /projects/$USER/spack/1.2.2/environments/test_env
+    ```
+* __Increasing the verbosity of output:__ Spack will oftentimes output troubleshooting suggestions. To increase the verbosity of `spack install`, use `spack -dv install`. 
 
 __Need additional help?__ Fill out our [help form](https://www.colorado.edu/rc/userservices/contact) to request assistance. We are happy to help with any questions you may have! 
 
