@@ -241,7 +241,7 @@ If an installation fails, there are several ways to troubleshoot or resolve the 
     * One can easily see variants and possible conflicts by searching the package using [Spack's provided search engine](https://packages.spack.io/) and viewing the "Variants" and "Conflicts" section of the documentation. Additionally, one can view `package.py` in the "Build System" section to directly view the code that defines variants and conflicts.
 * __Building an unexpected version:__ Make sure you are building the intended version of a software. If a new version is failing, try installing an older version. 
 * __Building with an unexpected version of a dependency:__ If there are issues installing a dependency, you can modify the specs of a dependency.
-* __Error when removing an environment:__ Certain versions of Spack are not fully compatible with our filesystem. In versions with this issue, you will have to remove the environment directory manually, after you have executed `spack env remove <environment name>`. For example, say we have created an environment named `test_env`, in Spack version 1.2.2 when we remove `test_env` we will obtain the following error:
+* __Error when removing an environment:__ Certain versions of Spack are not fully compatible with our filesystem. In versions with this issue, you will have to remove the environment directory manually, after you have executed `spack env remove <environment name>`. For example, say we try to remove an environment named `test_env`, created in Spack version 1.2.2, and see the following error:
     ```
     [johndoe@c3cpu-a2-u32-4 ~]$ spack env remove test_env
     ==> Really remove environment test_env? [y/N] y
