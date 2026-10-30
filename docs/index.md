@@ -145,6 +145,7 @@ programming/MPI-CF
 programming/OpenMP-CF
 programming/profiling-nvidia-gpu-performance
 programming/dask
+programming/remote-vscode-sessions
 
 ```
    
