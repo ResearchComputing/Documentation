@@ -42,13 +42,14 @@ Gross why would you use Windows...
 
 2. On a CURC login node add `id_hpc_compute.pub` to `authorized_keys` and execute:
 ```
-mkdir /projects/$USER/remote_vscode
+[ralphie@login-ci5 ~]$ mkdir /projects/$USER/remote_vscode
 ```
 
 3. On your local machine add the following to `~/.ssh/config`:
 ```{important}
-```
 Make sure to replace `<CURC username>` with your CU Research Computing username
+```
+
 ```
 Host hpc-login
     HostName login.rc.colorado.edu
@@ -65,7 +66,7 @@ Host hpc-login
 Include ~/.ssh/config.d/*
 ```
 
-5. Add the script `connect-remote-vscode.sh` to automatically connect you to the node session you already have established:
+5. Add the script `connect-remote-vscode.sh` to your local machine. This script will automatically connect you to the node session you already have established:
 ```{note}
 TODO: instructions for adding this to your path
 ```
@@ -75,7 +76,7 @@ TODO: instructions for adding this to your path
 set -euo pipefail
 
 # Validate arguments.
-if [[ $# -ne 1 ]]; then
+if [[ $# -ne 2 ]]; then
     echo "Usage: $(basename "$0") <CURC username> <compute-node>" >&2
     exit 1
 fi
@@ -128,34 +129,35 @@ fi
 
 # Launch VS Code using the existing SSH connection.
 echo "Launching VS Code on $node..."
-code --remote ssh-remote+hpc-compute
+code --new-window --remote ssh-remote+hpc-compute
 ```
 
 6. Install `code` cli locally
-    a. Open Visual Studio Code.
-    b. Open the Command Palette with Cmd + Shift + P.
-    c. Search for and select `Shell Command: Install 'code' command in PATH`.
-    d. Restart iTerm2 (or open a new terminal session).
-    e. Verify the installation of the `code` CLI by executing the following in your command line:
+    1. Open Visual Studio Code.
+    2. Open the Command Palette with Cmd + Shift + P.
+    3. Search for and select `Shell Command: Install 'code' command in PATH`.
+    4. Restart iTerm2 (or open a new terminal session).
+    5. Verify the installation of the `code` CLI by executing the following in your command line:
         ```
         code --version
         ```
 
 7. Add the Remote-SSH settings in VS Code:
-    a. Open VS Code.
-    b. Press Cmd + Shift + P to open the Command Palette.
-    c. Search for Preferences: Open User Settings (JSON) and select it.
-    d. Add the following settings (do not remove existing settings):
+    1. Open VS Code.
+    2. Press Cmd + Shift + P to open the Command Palette.
+    3. Search for Preferences: Open User Settings (JSON) and select it.
+    4. Add the following settings (do not remove existing settings):
         ```{important}
         Make sure to replace `<CURC username>` with your CU Research Computing username
         ```
-        ```"remote.SSH.serverInstallPath": {    
+        ```
+        "remote.SSH.serverInstallPath": {    
                 "hpc-compute": "/projects/<CURC username>/remote_vscode"
             },
-            "remote.SSH.showLoginTerminal": true,
-            "remote.SSH.useLocalServer": false,
+        "remote.SSH.showLoginTerminal": true,
+        "remote.SSH.useLocalServer": false,
         ```
-    e. Make sure to save these settings, if you do not have automatic save on.
+    5. Make sure to save these settings, if you do not have automatic save on.
 
 
 ## Launching Remote VS Code Session
@@ -167,6 +169,14 @@ Submitting job for remote VS Code session ...
 salloc: Granted job allocation 35110350
 salloc: Nodes c3cpu-c15-u34-1 are ready for job
 ```
+````{tip}
+If you want to submit to non-standard compute resources you can use use `salloc --no-shell`, rather than `remote-vscode` e.g. 
+```
+salloc --no-shell <Slurm directives>
+```
+````
+
+
 ```{note}
 Make special note of the compute node your job launched on e.g. `c3cpu-c15-u34-1` in the example above. 
 ```
