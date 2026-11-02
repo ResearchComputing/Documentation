@@ -212,7 +212,7 @@ Logging in with a Mac requires no extra installation on your local machine. Simp
 ````{tab-item} Linux
 :sync: terminal-access-linux
 
-Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the your Linux terminal to access Research Computing resources. 
+Much like with Macs, Linux machines require no additional setup to access Research Computing resources. Simply utilize the Linux terminal to access Research Computing resources. 
 
 1. Open a terminal window from your application menu and type: `ssh username@login.rc.colorado.edu`, where `username` is your research computing username.
 
@@ -220,6 +220,9 @@ Much like with Macs, Linux machines require no additional setup to access Resear
     * If you are logging in using Duo Push, simply type your Identikey password. You will then receive an authentication request on the Duo app on your phone. Approve the request.
     * If you are using Duo SMS, Phone Call, or Token login methods, instructions can be found under the [As a CU Boulder user, how can I login with Duo?](./faq.md#as-a-cu-boulder-user-how-can-i-login-with-duo) FAQ section.
 
+```{hint}
+Due to a recent bug with `gcr-ssh-agent` you might not see a password prompt in response to your login request. A workaround is to add the `-o IdentityAgent=none` option to the first step.
+```
 ````
 `````
 
