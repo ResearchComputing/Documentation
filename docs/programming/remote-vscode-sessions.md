@@ -261,13 +261,16 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     ```{tip}
     VS Code needs to setup the remote connection and the environment associated with the remote session. This process can take quite awhile when you first execute this launch. Subsequent sessions should be significantly faster. 
 
-    You will know the remote session is being setup when you see "sdfsdfsdf" in the lower left corner. TODO
-
-    You will know the remote session has been connected when you see "asdfsdf" in the lower left corner. TODO
+    - You will know the remote session is being setup when you see "Opening Remote ..." in the lower left corner.
+    - The remote session has been connected when you see "SSH: hpc-compute" in the lower left corner. 
 
     ```
 
-5. Congrats, you did it!
+5. Once you see "SSH: hpc-compute" in the lower left corner you are all set! You can begin navigating the CURC filesystem within your remote VS Code session.
+
+    ```{warning}
+    When the job you created in step 1 finishes, your remote connection will disconnect. If this happens and you would still like to be connected to VS Code remotely, simply close VS Code and repeat the steps in this section.   
+    ```
 
 
 
