@@ -246,7 +246,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     ````{tab-item} Windows 
     :sync: remote-ssh-windows
 
-    1. Create the file `ssh.bat` under your home directory in WSL and add the following content
+    1. Create the file `~/ssh.bat` in WSL and add the following content
         ```
         @echo off
         C:\Windows\System32\wsl.exe -d Ubuntu --exec /usr/bin/ssh %*
@@ -263,7 +263,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
         - If you have no JSON settings, make sure to surround the following with `{}`.
         ```
         ```
-        "remote.SSH.path": "C:\\Users\\<WSL username>\\ssh.bat",
+        "remote.SSH.path": "\\wsl.localhost\\Ubuntu\\home\\<WSL username>\\ssh.bat",
         "remote.SSH.serverInstallPath": {"hpc-compute": "/projects/<CURC username>/remote_vscode"},
         "remote.SSH.showLoginTerminal": true,
         "remote.SSH.useLocalServer": false,
