@@ -110,6 +110,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
 
     cat > "$tmp" <<EOF
     Host hpc-compute
+        StrictHostKeyChecking accept-new
         HostName $node
         User $curc_username
         ProxyJump hpc-login
@@ -273,6 +274,92 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     ```
 
 
+Powershell script 
+```
+
+param(
+    [Parameter(Mandatory = $true, Position = 0)]
+    [string]$CurcUsername,
+
+    [Parameter(Mandatory = $true, Position = 1)]
+    [string]$Node
+)
+
+$ErrorActionPreference = "Stop"
+
+# SSH configuration.
+$sshDir = Join-Path $env:USERPROFILE ".ssh"
+$configDir = Join-Path $sshDir "config.d"
+$configFile = Join-Path $configDir "hpc-vscode"
+
+New-Item -ItemType Directory -Force -Path $configDir | Out-Null
+
+# Generate the SSH configuration.
+$sshConfig = @"
+Host hpc-compute
+    HostName $Node
+    User $CurcUsername
+    ProxyJump hpc-login
+    IdentityFile ~/.ssh/id_hpc_compute
+    IdentitiesOnly yes
+"@
+
+# Write to a temporary file, then replace the configuration.
+$tmp = Join-Path $configDir ([IO.Path]::GetRandomFileName())
+
+try {
+    [IO.File]::WriteAllText(
+        $tmp,
+        $sshConfig,
+        [Text.UTF8Encoding]::new($false)
+    )
+
+    Move-Item -LiteralPath $tmp -Destination $configFile -Force
+}
+finally {
+    if (Test-Path -LiteralPath $tmp) {
+        Remove-Item -LiteralPath $tmp -Force
+    }
+}
+
+Write-Host "Compute node: $Node"
+Write-Host "SSH alias:    hpc-compute"
+
+# Verify the SSH configuration.
+$resolvedHost = ssh -G hpc-compute 2>$null |
+    Select-String '^hostname ' |
+    Select-Object -First 1
+
+if (-not $resolvedHost -or
+    $resolvedHost.ToString().Trim() -ne "hostname $Node") {
+    throw "SSH failed to resolve hpc-compute to $Node"
+}
+
+# Ensure VS Code CLI is available.
+if (-not (Get-Command code.cmd -ErrorAction SilentlyContinue)) {
+    throw "VS Code CLI ('code.cmd') not found in PATH."
+}
+
+# Launch VS Code Remote-SSH.
+Write-Host "Launching VS Code on $Node..."
+code.cmd --new-window --remote ssh-remote+hpc-compute
+```
+
+VS code:
+```
+{
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "hpc-compute": "linux"
+    }
+}
+```
+
+Run from powershell 
+```
+.\connect-vscode.ps1 ralphie <compute node>
+```
 
 
 
