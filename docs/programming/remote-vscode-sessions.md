@@ -10,7 +10,11 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
 ## Setting up Remote VS Code
 
 
-1. Open a terminal on your local computer. 
+1. Open a terminal on your local computer.
+
+    ```{note}
+    In all subsequent steps when you should use this terminal when asked to execute something in your local terminal. 
+    ```
 
     (tabset-ref-terminal)=
     `````{tab-set}
@@ -25,6 +29,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     Once you have setup WSL with the Ubuntu distribution, you can use either of these options to launch your Ubuntu terminal:
 
     - Search for and launch the "Ubuntu" application 
+    - Launch the WSL application
     - In PowerShell launch directly into WSL: 
         ```
         wsl -d ubuntu --cd ~
@@ -190,6 +195,13 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
 9. Install the `Remote - SSH` extension in your local VS Code. 
 
 10. Add necessary `Remote - SSH` settings in VS Code using the following steps:
+
+    (tabset-ref-remote-ssh)=
+    `````{tab-set}
+    :sync-group: tabset-remote-ssh
+    ````{tab-item} Mac and Linux
+    :sync: remote-ssh-mac-linux
+
     1. Open VS Code.
     2. Open the "Command Palette" in VS Code. This can typically be done using `Cmd + Shift + P` or `Ctrl + Shift + P`.
     3. Search for `Preferences: Open User Settings (JSON)` and select it.
@@ -227,6 +239,70 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
         }
         ```
     5. Make sure to save these settings, if you do not have automatic save on.
+   
+
+    ````
+
+    ````{tab-item} Windows 
+    :sync: remote-ssh-windows
+
+    1. Create the file `ssh.bat` under your home directory in WSL and add the following content
+        ```
+        @echo off
+        C:\Windows\System32\wsl.exe -d Ubuntu --exec /usr/bin/ssh %*
+        ```
+    2. Open VS Code.
+    3. Open the "Command Palette" in VS Code. This can typically be done using `Ctrl + Shift + P`.
+    4. Search for `Preferences: Open User Settings (JSON)` and select it.
+    5. Add the following settings to your JSON:
+        ```{important}
+        - Make sure to replace `<CURC username>` with your CU Research Computing username.
+        - Make sure to replace `<WSL username>` with your username as it is displayed in the WSL terminal.
+        - Do not remove existing settings, unless they conflict with the ones provided.
+        - If JSON settings exist, make sure to add a comma where appropriate.
+        - If you have no JSON settings, make sure to surround the following with `{}`.
+        ```
+        ```
+        "remote.SSH.path": "C:\\Users\\<WSL username>\\ssh.bat",
+        "remote.SSH.serverInstallPath": {"hpc-compute": "/projects/<CURC username>/remote_vscode"},
+        "remote.SSH.showLoginTerminal": true,
+        "remote.SSH.useLocalServer": false,
+        "remote.SSH.enableDynamicForwarding": false,
+        "remote.SSH.remotePlatform": {"hpc-compute": "linux"},
+        ```
+        For example, say you have the following JSON for your settings: 
+        ```
+        {
+            "workbench.colorTheme": "Dark+",
+            "files.autoSave": "afterDelay",
+            "chat.disableAIFeatures": true
+        }
+        ```
+        We would add the items as follows:
+        ```
+        {
+            "workbench.colorTheme": "Dark+",
+            "files.autoSave": "afterDelay",
+            "chat.disableAIFeatures": true,
+            "remote.SSH.path": "C:\\Users\\<WSL username>\\ssh.bat",
+            "remote.SSH.serverInstallPath": {"hpc-compute": "/projects/<CURC username>/remote_vscode"},
+            "remote.SSH.showLoginTerminal": true,
+            "remote.SSH.useLocalServer": false,
+            "remote.SSH.enableDynamicForwarding": false,
+            "remote.SSH.remotePlatform": {"hpc-compute": "linux"},
+        }
+        ```
+    5. Make sure to save these settings, if you do not have automatic save on.
+
+
+    ````
+    `````
+
+
+
+
+
+    
 
 
 ## Launching Remote VS Code Session
@@ -272,96 +348,3 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     ```{warning}
     When the job you created in step 1 finishes, your remote connection will disconnect. If this happens and you would still like to be connected to VS Code remotely, simply close VS Code and repeat the steps in this section.   
     ```
-
-
-Powershell script 
-```
-
-param(
-    [Parameter(Mandatory = $true, Position = 0)]
-    [string]$CurcUsername,
-
-    [Parameter(Mandatory = $true, Position = 1)]
-    [string]$Node
-)
-
-$ErrorActionPreference = "Stop"
-
-# SSH configuration.
-$sshDir = Join-Path $env:USERPROFILE ".ssh"
-$configDir = Join-Path $sshDir "config.d"
-$configFile = Join-Path $configDir "hpc-vscode"
-
-New-Item -ItemType Directory -Force -Path $configDir | Out-Null
-
-# Generate the SSH configuration.
-$sshConfig = @"
-Host hpc-compute
-    HostName $Node
-    User $CurcUsername
-    ProxyJump hpc-login
-    IdentityFile ~/.ssh/id_hpc_compute
-    IdentitiesOnly yes
-"@
-
-# Write to a temporary file, then replace the configuration.
-$tmp = Join-Path $configDir ([IO.Path]::GetRandomFileName())
-
-try {
-    [IO.File]::WriteAllText(
-        $tmp,
-        $sshConfig,
-        [Text.UTF8Encoding]::new($false)
-    )
-
-    Move-Item -LiteralPath $tmp -Destination $configFile -Force
-}
-finally {
-    if (Test-Path -LiteralPath $tmp) {
-        Remove-Item -LiteralPath $tmp -Force
-    }
-}
-
-Write-Host "Compute node: $Node"
-Write-Host "SSH alias:    hpc-compute"
-
-# Verify the SSH configuration.
-$resolvedHost = ssh -G hpc-compute 2>$null |
-    Select-String '^hostname ' |
-    Select-Object -First 1
-
-if (-not $resolvedHost -or
-    $resolvedHost.ToString().Trim() -ne "hostname $Node") {
-    throw "SSH failed to resolve hpc-compute to $Node"
-}
-
-# Ensure VS Code CLI is available.
-if (-not (Get-Command code.cmd -ErrorAction SilentlyContinue)) {
-    throw "VS Code CLI ('code.cmd') not found in PATH."
-}
-
-# Launch VS Code Remote-SSH.
-Write-Host "Launching VS Code on $Node..."
-code.cmd --new-window --remote ssh-remote+hpc-compute
-```
-
-VS code:
-```
-{
-    "remote.SSH.showLoginTerminal": true,
-    "remote.SSH.useLocalServer": false,
-    "remote.SSH.remotePlatform": {
-        "hpc-compute": "linux"
-    }
-}
-```
-
-Run from powershell 
-```
-.\connect-vscode.ps1 ralphie <compute node>
-```
-
-
-
-
-
