@@ -54,7 +54,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     [ralphie@local-machine ~]$ cat ~/.ssh/id_hpc_compute.pub
     ```
 
-4. On a CURC login node add the output of `id_hpc_compute.pub` obtained in the previous step to `authorized_keys` using your favorite editor and execute the following (which will be the directory we use for all VS Code related items):
+4. On a CURC login node add the output of `id_hpc_compute.pub` obtained in the previous step to `~/.ssh/authorized_keys` using your favorite editor and execute the following (which will be the directory we use for all VS Code related items):
     ```
     [ralphie@login-ci5 ~]$ mkdir /projects/$USER/remote_vscode
     ```
