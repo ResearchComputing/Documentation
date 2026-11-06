@@ -216,7 +216,7 @@ Depending on the version of `ssh` on your local machine, you may see the followi
 ** The server may need to be upgraded. See https://openssh.com/pq.html
 ```
 
-This warning is _not_ considered a security risk for use of CURC resources, and can be ignored. To remove the warning the following lines can be added to the `~/.ssh/config` file on your local machine: 
+This warning is _not_ considered a security risk for use of CURC resources and can be ignored. To remove the warning, the following lines can be added to the `~/.ssh/config` file on your local machine: 
 
 ```bash
 Match host login.rc.colorado.edu
