@@ -263,7 +263,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
         - If you have no JSON settings, make sure to surround the following with `{}`.
         ```
         ```
-        "remote.SSH.path": "\\wsl.localhost\\Ubuntu\\home\\<WSL username>\\ssh.bat",
+        "remote.SSH.path": "\\\\wsl.localhost\\Ubuntu\\home\\<WSL username>\\ssh.bat",
         "remote.SSH.serverInstallPath": {"hpc-compute": "/projects/<CURC username>/remote_vscode"},
         "remote.SSH.showLoginTerminal": true,
         "remote.SSH.useLocalServer": false,
