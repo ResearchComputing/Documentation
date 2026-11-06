@@ -208,7 +208,7 @@ fi
 ::::{dropdown} Show 
 :icon: note
 
-Depending on `ssh` version on your local machine, you may see the following warning in the terminal when logging into CURC: 
+Depending on the `ssh` version on your local machine, you may see the following warning in the terminal when logging into CURC: 
 
 ```bash
 ** WARNING: connection is not using a post-quantum key exchange algorithm.
