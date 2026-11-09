@@ -9,6 +9,8 @@ For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serve
 
 ## Setting up Remote VS Code
 
+In this section we provide step-by-step instructions for configuring VS Code so that you can easily launch a remote VS Code session. Once items are configured, you can follow the instructions provided in [Launching Remote VS Code Session](#launching-remote-vs-code-session) to start a remote VS Code session. 
+
 
 1. Open a terminal on your local computer.
 
@@ -298,14 +300,9 @@ For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serve
     ````
     `````
 
-
-
-
-
-    
-
-
 ## Launching Remote VS Code Session
+
+In this section we show you how to launch the remote VS Code session. Please note that you must execute the steps in [Setting up Remote VS Code](#setting-up-remote-vs-code) before continuing with this section. 
 
 1. On a CURC login node launch a job (the compute node provided is where our remote VS Code session will run):
 
