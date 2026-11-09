@@ -61,6 +61,7 @@ clusters/blanca/blanca
 :caption: Portals & Gateways
 
 open_ondemand/index
+remote_vs_code/remote-vscode-sessions
 
 ```
 
@@ -145,7 +146,6 @@ programming/MPI-CF
 programming/OpenMP-CF
 programming/profiling-nvidia-gpu-performance
 programming/dask
-programming/remote-vscode-sessions
 
 ```
    

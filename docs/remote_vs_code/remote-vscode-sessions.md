@@ -1,6 +1,6 @@
-# Launching Remote VS Code Sessions
+# Remote VS Code Sessions
 
-For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-server.md) application is sufficient and significantly easier to use. However, some users may prefer to remotely connect their local VS Code to our system. Additionally, remote connection can be needed if you are utilizing extensions that need the newest version of VS Code to function correctly or are only compatible with the official release of VS Code. To ensure minimal disruption to login nodes, remote VS Code sessions cannot be established with our login nodes. Instead, they must be ran on our compute nodes. On this page, we provide you with instructions for setting up a remote VS Code session on our compute nodes. 
+For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-server.md) application is sufficient and significantly easier to use. However, some users may prefer to remotely connect their local VS Code to our system. Additionally, remote connection can be needed if you are utilizing extensions that need the newest version of VS Code to function correctly or are only compatible with the official release of VS Code. To ensure minimal disruption to login nodes, remote VS Code sessions cannot be established with our login nodes. Instead, they must be ran on our compute nodes. On this page we provide you with instructions for setting up a remote VS Code session on our compute nodes. 
 
 ```{important}
 - Remote VS Code Sessions are only available for institutions with ssh access to CURC resources. 
@@ -13,7 +13,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
 1. Open a terminal on your local computer.
 
     ```{note}
-    In all subsequent steps when you should use this terminal when asked to execute something in your local terminal. 
+    In all subsequent steps you should use this terminal when asked to execute something in your local terminal. 
     ```
 
     (tabset-ref-terminal)=
@@ -26,7 +26,7 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     ````{tab-item} Windows 
     :sync: terminal-access-windows
 
-    Once you have setup WSL with the Ubuntu distribution, you can use either of these options to launch your Ubuntu terminal:
+    Once you have setup WSL with the Ubuntu distribution, you can use any of these options to launch your Ubuntu terminal:
 
     - Search for and launch the "Ubuntu" application 
     - Launch the WSL application
@@ -192,9 +192,9 @@ For many users, the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serv
     ````
     `````
 
-9. Install the `Remote - SSH` extension in your local VS Code. 
+10. Install the `Remote - SSH` VS Code extension in your local VS Code. This must be installed in addition to the code CLI and is not installed by default. 
 
-10. Add necessary `Remote - SSH` settings in VS Code using the following steps:
+11. Add necessary `Remote - SSH` settings in VS Code using the following steps:
 
     (tabset-ref-remote-ssh)=
     `````{tab-set}
