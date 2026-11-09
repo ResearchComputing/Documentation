@@ -20,13 +20,13 @@ In this section we provide step-by-step instructions for configuring VS Code so 
 
     (tabset-ref-terminal)=
     `````{tab-set}
-    :sync-group: tabset-terminal
+    :sync-group: tabset-os
     ````{tab-item} Mac and Linux
-    :sync: terminal-access-mac-linux
+    :sync: mac-linux
     On a Mac or Linux system a terminal can be launched by searching for the terminal application. 
     ````
     ````{tab-item} Windows 
-    :sync: terminal-access-windows
+    :sync: windows
 
     Once you have setup WSL with the Ubuntu distribution, you can use any of these options to launch your Ubuntu terminal:
 
@@ -164,9 +164,9 @@ In this section we provide step-by-step instructions for configuring VS Code so 
 
     (tabset-ref-code-cli)=
     `````{tab-set}
-    :sync-group: tabset-code-cli
+    :sync-group: tabset-os
     ````{tab-item} Mac and Linux
-    :sync: code-cli-mac-linux
+    :sync: mac-linux
 
     On a Mac or Linux system you will likely need to install the code CLI. This can be done as follows:
 
@@ -184,7 +184,7 @@ In this section we provide step-by-step instructions for configuring VS Code so 
     ````
 
     ````{tab-item} Windows 
-    :sync: code-cli-windows
+    :sync: windows
 
     For Windows machines the `code` CLI should have been automatically installed when you installed VS Code. To verify that it is installed, execute the following in your terminal (which should show the version of `code` you have installed):
     ```
@@ -200,9 +200,9 @@ In this section we provide step-by-step instructions for configuring VS Code so 
 
     (tabset-ref-remote-ssh)=
     `````{tab-set}
-    :sync-group: tabset-remote-ssh
+    :sync-group: tabset-os
     ````{tab-item} Mac and Linux
-    :sync: remote-ssh-mac-linux
+    :sync: mac-linux
 
     1. Open VS Code.
     2. Open the "Command Palette" in VS Code. This can typically be done using `Cmd + Shift + P` or `Ctrl + Shift + P`.
@@ -246,7 +246,7 @@ In this section we provide step-by-step instructions for configuring VS Code so 
     ````
 
     ````{tab-item} Windows 
-    :sync: remote-ssh-windows
+    :sync: windows
 
     1. Create the file `~/ssh.bat` in WSL and add the following content
         ```
