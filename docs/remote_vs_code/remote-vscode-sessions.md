@@ -319,7 +319,7 @@ For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-serve
     ````{tip}
     If you want to submit to non-standard compute resources you can use use `salloc --no-shell`, rather than `remote-vscode` e.g. 
     ```
-    salloc --no-shell <Slurm directives>
+    salloc --no-shell --job-name=remote-vscode-session <Slurm directives>
     ```
     ````
 
