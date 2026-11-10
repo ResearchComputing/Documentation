@@ -286,7 +286,7 @@ In this section we provide step-by-step instructions for configuring VS Code so 
             "workbench.colorTheme": "Dark+",
             "files.autoSave": "afterDelay",
             "chat.disableAIFeatures": true,
-            "remote.SSH.path": "C:\\Users\\<WSL username>\\ssh.bat",
+            "remote.SSH.path": "\\\\wsl.localhost\\Ubuntu\\home\\<WSL username>\\ssh.bat",
             "remote.SSH.serverInstallPath": {"hpc-compute": "/projects/<CURC username>/remote_vscode"},
             "remote.SSH.showLoginTerminal": true,
             "remote.SSH.useLocalServer": false,
@@ -304,9 +304,7 @@ In this section we provide step-by-step instructions for configuring VS Code so 
 
 In this section we show you how to launch the remote VS Code session. Please note that you must execute the steps in [Setting up Remote VS Code](#setting-up-remote-vs-code) before continuing with this section. 
 
-1. On a CURC login node launch a job (the compute node provided is where our remote VS Code session will run):
-
-    TODO: do we want to create a helper script for folks i.e. `remote-vscode` below?
+1. On a CURC login node use the command `remote-vscode` to launch a job for your remote VS Code session. Make special note of the compute node your job launched on e.g. `c3cpu-c15-u34-1` in the example below.
     ```
     [ralphie@login-ci5 ~]$ remote-vscode
     Submitting job for remote VS Code session ...
@@ -314,15 +312,11 @@ In this section we show you how to launch the remote VS Code session. Please not
     salloc: Nodes c3cpu-c15-u34-1 are ready for job
     ```
     ````{tip}
-    If you want to submit to non-standard compute resources you can use use `salloc --no-shell`, rather than `remote-vscode` e.g. 
+    Command line options can be provided to `remote-vscode` to customize the resources you want to run on. To see the available options, you can provide `--help` to `remote-vscode`:
     ```
-    salloc --no-shell --job-name=remote-vscode-session <Slurm directives>
+    [ralphie@login-ci5 ~]$ remote-vscode --help
     ```
     ````
-
-    ```{note}
-    Make special note of the compute node your job launched on e.g. `c3cpu-c15-u34-1` in the example above. 
-    ```
 
 2. On your local computer execute `connect-remote-vscode.sh` using your CURC username and the compute node your job launched on e.g. 
     ```
