@@ -465,7 +465,7 @@ Refer to ["Why am I getting unexpected results for my GPU memory or utilization 
 ## XDMoD 
 
 ```{Warning}
-As of November 2026 the XDMoD service is unavailable until further notice. As an alternative, please use the `Slurm` commands outlined above to monitor resource usage. 
+As of November 2026, the XDMoD service is unavailable until further notice. As an alternative, please use the Slurm commands outlined in the section above to monitor resource usage. 
 ```
  
 XDMoD is a web portal for viewing metrics at the system-, partition- and user-levels.
