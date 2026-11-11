@@ -3,7 +3,7 @@
 For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-server.md) application is an optimal solution for using VS Code on CURC resources. However, some users may prefer to remotely connect their local VS Code to our system. Additionally, remote connection can be needed if users are utilizing extensions that need a specific version or official release of VS Code to function correctly. To ensure minimal disruption to other users, remote VS Code sessions cannot be established on CURC login nodes. Instead, they must be run on CURC compute nodes. On this page we provide instructions for setting up a remote VS Code session on CURC compute nodes. 
 
 ```{important}
-- Remote VS Code Sessions are only available for institutions with ssh access to CURC resources. 
+- Remote VS Code Sessions are only available for institutions with `ssh` access to CURC resources. 
 - The instructions created for Windows machines assume that you are utilizing WSL with the Ubuntu distribution. The instructions provided on this page will not work with PowerShell and have not been tested on other shells or distributions available on Windows. We highly recommend that you utilize WSL with the Ubuntu distribution. For instructions on installing WSL with the Ubuntu distribution, please see [How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install). 
 ```
 
@@ -39,24 +39,24 @@ In this section we provide step-by-step instructions for configuring VS Code so 
     ````
     `````
 
-2. Generate an SSH key on your local machine (allows you to connect to the compute node session).
+2. Generate an SSH key pair on your local machine (allows you to connect to the compute node session).
 
     ```{tip}
-    When creating your SSH key it is recommended that you do not create a passphrase. You can skip the addition of a passphrase by hitting "Enter" when prompted to input a passphrase.  
+    When creating your SSH key pair it is recommended that you do not create a passphrase. You can skip the addition of a passphrase by hitting "Enter" when prompted to input a passphrase.  
     ```
 
-    To create an SSH key, you can execute the following from your local terminal:
+    To create an SSH key pair, you can execute the following from your local terminal:
     ```
     [ralphie@local-machine ~]$ mkdir -p ~/.ssh
     [ralphie@local-machine ~]$ ssh-keygen -t ed25519 -f ~/.ssh/id_hpc_compute
     ```
 
-3. Once your SSH key has been generated, you will need to obtain your public key so that we can add it to the CURC system. To do this, you can output the content of `id_hpc_compute.pub` as follows:
+3. Once your SSH key pair has been generated, you will need to add the public part of the key pair to the CURC system. To do this, you can output the content of `id_hpc_compute.pub` as follows:
     ```
     [ralphie@local-machine ~]$ cat ~/.ssh/id_hpc_compute.pub
     ```
 
-4. On a CURC login node add the output of `id_hpc_compute.pub` obtained in the previous step to `~/.ssh/authorized_keys` using your favorite editor and execute the following (which will be the directory we use for all VS Code related items):
+4. On a CURC login node add (paste) the output of `id_hpc_compute.pub` obtained in the previous step to `~/.ssh/authorized_keys` using your favorite editor and execute the following (which will be the directory we use for all VS Code related items):
     ```
     [ralphie@login-ci5 ~]$ mkdir -p /projects/$USER/remote_vscode
     ```
