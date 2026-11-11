@@ -1,6 +1,6 @@
 # Remote VS Code Sessions
 
-For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-server.md) application is sufficient and significantly easier to use. However, some users may prefer to remotely connect their local VS Code to our system. Additionally, remote connection can be needed if you are utilizing extensions that need the newest version of VS Code to function correctly or are only compatible with the official release of VS Code. To ensure minimal disruption to login nodes, remote VS Code sessions cannot be established with our login nodes. Instead, they must be ran on our compute nodes. On this page we provide you with instructions for setting up a remote VS Code session on our compute nodes. 
+For many users the Open OnDemand [VS Code-Server](../open_ondemand/vs_code-server.md) application is an optimal solution for using VS Code on CURC resources. However, some users may prefer to remotely connect their local VS Code to our system. Additionally, remote connection can be needed if users are utilizing extensions that need a specific version or official release of VS Code to function correctly. To ensure minimal disruption to other users, remote VS Code sessions cannot be established on CURC login nodes. Instead, they must be run on CURC compute nodes. On this page we provide instructions for setting up a remote VS Code session on CURC compute nodes. 
 
 ```{important}
 - Remote VS Code Sessions are only available for institutions with ssh access to CURC resources. 
