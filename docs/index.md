@@ -61,6 +61,7 @@ clusters/blanca/blanca
 :caption: Portals & Gateways
 
 open_ondemand/index
+remote_vs_code/remote-vscode-sessions
 
 ```
 
