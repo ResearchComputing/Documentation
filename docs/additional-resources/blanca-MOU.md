@@ -44,7 +44,7 @@ The Blanca compute cluster is a service provided by Research Computing within OI
   </li>
   <li>Termination
     <ol type="a">
-      <li>This agreement will automatically terminate on whichever comes sooner: 1) two years beyond the initial 5-year warranty expiration or, if the contributor purchases the optional 2-year extended warranty, when the 7-year warranty expires or 2) when all equipment is removed from the data center or when ownership of the equipment is transferred to OI </li>
+      <li>This agreement will automatically terminate on whichever comes sooner: 1) two years beyond the initial 5-year warranty expiration or, if the contributor purchases the optional 2-year extended warranty, when the 7-year warranty expires or 2) when all equipment is removed from the data center or when ownership of the equipment is transferred to OIT. </li>
     </ol>
   </li>
 </ol>
